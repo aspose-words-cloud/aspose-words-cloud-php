@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit bootstrap="vendor/autoload.php" colors="true">
+    <testsuites>
+        <testsuite>
+            <directory suffix='Tests.php'>tests</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="junit" target="testReports/logfile.xml" logIncompleteSkipped="false"/>
+    </logging>
+</phpunit>

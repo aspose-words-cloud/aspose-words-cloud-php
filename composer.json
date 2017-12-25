@@ -1,0 +1,40 @@
+{
+    "description": 	"This repository contains Aspose Cloud SDK for PHP source code. Aspose Cloud SDK for PHP lets PHP developers convert and process a variety of file formats in the cloud quickly and easily.",
+    "name": 		"aspose/words-sdk-php",
+    "type": 		"library",
+    "keywords" : 	["aspose", "php", "aspose cloud"],
+    "homepage": "https://github.com/asposecloud/Aspose.Words-CloudSDK-PHP",
+    "authors": [
+        {
+            "name": "YaroslawEkimov",
+            "homepage": "https://github.com/asposecloud/Aspose.Words-CloudSDK-PHP"
+        },
+		{
+            "name": "IvanovJohnAspose",
+			"homepage": "https://github.com/asposecloud/Aspose.Words-CloudSDK-PHP"
+		}
+    ],
+	"config": {
+        "platform": {
+            "php": "5.6.32"
+        }
+    },
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2",
+		"aspose/storage-sdk-php": "1.0.*",
+        "friendsofphp/php-cs-fixer": "~1.12"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*",
+        "phpunit/phpunit": "^4.8"
+    },
+	"autoload": {
+        "psr-0": {
+            "Aspose": "src/"
+        }
+    }
+}

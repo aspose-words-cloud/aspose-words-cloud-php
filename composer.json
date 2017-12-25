@@ -1,6 +1,7 @@
 {
     "description": 	"This repository contains Aspose Cloud SDK for PHP source code. Aspose Cloud SDK for PHP lets PHP developers convert and process a variety of file formats in the cloud quickly and easily.",
     "name": 		"aspose/words-sdk-php",
+	"license": "MIT",
     "type": 		"library",
     "keywords" : 	["aspose", "php", "aspose cloud"],
     "homepage": "https://github.com/asposecloud/Aspose.Words-CloudSDK-PHP",

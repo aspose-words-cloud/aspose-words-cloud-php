@@ -69,7 +69,7 @@ class RunTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Run/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Run/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteRunRequest($remoteName, "paragraphs/1", $index, $folder=self::$baseTestPath . $subfolder);
@@ -93,7 +93,7 @@ class RunTests extends \PHPUnit_Framework_TestCase
         $index = 0;
         $run = new Run(array("text" => "Run with text"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Run/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Run/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostRunRequest($remoteName, $run, "paragraphs/1", $index, $folder=self::$baseTestPath . $subfolder);
@@ -116,7 +116,7 @@ class RunTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $run = new Run(array("text" => "run with text"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Run/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Run/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PutRunRequest($remoteName, "paragraphs/1", $run, $folder=self::$baseTestPath . $subfolder);

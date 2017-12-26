@@ -15,8 +15,10 @@ See [API Reference](https://apireference.aspose.cloud/words/) for full API speci
 ## How to use the SDK?
 The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution](https://packagist.org/packages/aspose/words-sdk-php) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/wordscloud/Available+SDKs).
 
-[Tests](tests/Aspose/Words) contain various examples of using the SDK. 
-Please put your credentials into [Configuration](src/Aspose/Words/Configuration.php) before you launch the tests.
+[Tests](tests/Aspose/Words) contain various examples of using the SDK.
+Before you launch tests you have to download full repository with all SDKs here is a link [SDKs](https://github.com/asposecloud/Aspose.Words-Cloud).
+In full repository this project is available as a submodule.
+Please put your credentials into [Configuration](src/Aspose/Words/Configuration.php).
 
 ## Dependencies
 - PHP 5.6 or later

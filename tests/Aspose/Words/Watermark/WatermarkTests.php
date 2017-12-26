@@ -68,7 +68,7 @@ class WatermarkTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentActions/Watermark";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteDocumentWatermarkRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
@@ -91,9 +91,9 @@ class WatermarkTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
         $rotationAngle = 0;
-        $image = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
+        $image = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . "aspose-cloud.png";
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostInsertDocumentWatermarkImageRequest($remoteName, $image, $folder=self::$baseTestPath . $subfolder,
@@ -119,7 +119,7 @@ class WatermarkTests extends \PHPUnit_Framework_TestCase
         $destName = self::$baseTestOut . $remoteName;
         $body = new WatermarkText(array("text" => "This is the text", "rotation_angle" => 90));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostInsertDocumentWatermarkTextRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,

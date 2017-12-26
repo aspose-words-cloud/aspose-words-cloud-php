@@ -78,7 +78,7 @@ class FormFieldTests extends \PHPUnit_Framework_TestCase
             "text_input_default" => ""
         ));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostFormFieldRequest($remoteName, $body, $index, $folder=self::$baseTestPath . $subfolder,
@@ -112,7 +112,7 @@ class FormFieldTests extends \PHPUnit_Framework_TestCase
             "text_input_format" => "UPPERCASE"
         ));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PutFormFieldRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
@@ -137,7 +137,7 @@ class FormFieldTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteFormFieldRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -161,7 +161,7 @@ class FormFieldTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetFormFieldRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -184,7 +184,7 @@ class FormFieldTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentElements/FormField";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetFormFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,

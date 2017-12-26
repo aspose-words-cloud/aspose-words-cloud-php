@@ -70,7 +70,7 @@ class ParagraphTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteParagraphRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -95,7 +95,7 @@ class ParagraphTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentParagraphRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -119,7 +119,7 @@ class ParagraphTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentParagraphRunRequest($remoteName, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder);
@@ -142,7 +142,7 @@ class ParagraphTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentParagraphRunFontRequest($remoteName, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder);
@@ -164,7 +164,7 @@ class ParagraphTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentParagraphRunsRequest($remoteName, "sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder);
@@ -186,7 +186,7 @@ class ParagraphTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentParagraphsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
@@ -212,7 +212,7 @@ class ParagraphTests extends \PHPUnit_Framework_TestCase
         $destName = self::$baseTestOut . $remoteName;
         $fontDto = new Font(array("bold" => true));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostDocumentParagraphRunFontRequest($remoteName, $fontDto, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder,
@@ -236,7 +236,7 @@ class ParagraphTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $paragraph = new ParagraphInsert(array("text" => "This is a new paragraph for your document"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PutParagraphRequest($remoteName, $paragraph, $folder=self::$baseTestPath . $subfolder,
@@ -262,7 +262,7 @@ class ParagraphTests extends \PHPUnit_Framework_TestCase
         $index = 0;
         $format = "png";
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\RenderParagraphRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,

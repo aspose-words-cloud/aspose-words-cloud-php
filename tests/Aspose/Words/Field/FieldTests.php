@@ -69,7 +69,7 @@ class FieldTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
@@ -93,7 +93,7 @@ class FieldTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetFieldRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -119,7 +119,7 @@ class FieldTests extends \PHPUnit_Framework_TestCase
         $destName = self::$baseTestOut . $remoteName;
         $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostFieldRequest($remoteName, $body, $index, $folder=self::$baseTestPath . $subfolder,
@@ -144,7 +144,7 @@ class FieldTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PutFieldRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
@@ -168,7 +168,7 @@ class FieldTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostUpdateDocumentFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
@@ -193,7 +193,7 @@ class FieldTests extends \PHPUnit_Framework_TestCase
         $destName = self::$baseTestOut . $remoteName;
         $body = new PageNumber(array("alignment" => "center", "format" => "{PAGE} of {NUMPAGES}"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostInsertPageNumbersRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
@@ -217,7 +217,7 @@ class FieldTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $fieldIndex = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Field/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteFieldRequest($remoteName,
@@ -242,7 +242,7 @@ class FieldTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,

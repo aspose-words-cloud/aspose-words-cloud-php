@@ -71,7 +71,7 @@ class ConvertDocumentTests extends \PHPUnit_Framework_TestCase
         $destName = self::$baseTestOut . "TestPostDocumentSaveAs.pdf";
         $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => $destName));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostDocumentSaveAsRequest($remoteName, $saveOptions, $folder=self::$baseTestPath . $subfolder);
@@ -95,7 +95,7 @@ class ConvertDocumentTests extends \PHPUnit_Framework_TestCase
         $destName = self::$baseTestOut . "TestPostDocumentSaveAsFromPdfToDoc.docx";
         $saveOptions = new SaveOptionsData(array("save_format" => "docx", "file_name" => $destName));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Conversion/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Conversion/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostDocumentSaveAsRequest($remoteName, $saveOptions, $folder=self::$baseTestPath . $subfolder);
@@ -113,7 +113,7 @@ class ConvertDocumentTests extends \PHPUnit_Framework_TestCase
     public function testPutConvertDocument()
     {
         $format = "pdf";
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/ConvertDocument/' . "test_uploadfile.docx";
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/ConvertDocument/' . "test_uploadfile.docx";
 
         $request = new Requests\PutConvertDocumentRequest($file, $format);
 
@@ -136,7 +136,7 @@ class ConvertDocumentTests extends \PHPUnit_Framework_TestCase
         $destName = self::$baseTestOut . "TestPutDocumentSaveAsTiff.tiff";
         $body = new TiffSaveOptionsData(array("file_name" => "abc.tiff", "save_format" => "tiff"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PutDocumentSaveAsTiffRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,

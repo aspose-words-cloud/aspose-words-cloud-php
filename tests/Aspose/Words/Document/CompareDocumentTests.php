@@ -73,9 +73,9 @@ class CompareDocumentTests extends \PHPUnit_Framework_TestCase
         $destName = self::$baseTestOut . "TestCompareDocumentOut.doc";
         $compareData = new CompareData(array("author" => "author", "comparing_with_document" => $fullName2, "date_time" => new \DateTime("now")));
 
-        $file1 = realpath(__DIR__ . '/../../../..') . '/TestData/CompareDocument/' . $localName1;
+        $file1 = realpath(__DIR__ . '/../../../../../..') . '/TestData/CompareDocument/' . $localName1;
         $this->storage->PutCreate($Path=$fullName1, $versionId = null, $storage = null, $file1);
-        $file2 = realpath(__DIR__ . '/../../../..') . '/TestData/CompareDocument/' . $localName2;
+        $file2 = realpath(__DIR__ . '/../../../../../..') . '/TestData/CompareDocument/' . $localName2;
         $this->storage->PutCreate($Path=$fullName2, $versionId = null, $storage = null, $file2);
 
 

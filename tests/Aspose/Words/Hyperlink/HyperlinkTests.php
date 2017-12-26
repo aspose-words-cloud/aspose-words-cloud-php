@@ -68,7 +68,7 @@ class HyperlinkTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentHyperlinkByIndexRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder);
@@ -90,7 +90,7 @@ class HyperlinkTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentElements/Hyperlink";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentHyperlinksRequest($remoteName, $folder=self::$baseTestPath . $subfolder);

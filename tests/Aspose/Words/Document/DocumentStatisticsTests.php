@@ -67,7 +67,7 @@ class DocumentStatisticsTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentActions/Statistics";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentStatisticsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);

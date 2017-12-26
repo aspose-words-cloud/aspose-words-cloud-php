@@ -71,7 +71,7 @@ class SplitDocumentToFormatTests extends \PHPUnit_Framework_TestCase
         $from = 1;
         $to = 2;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostSplitDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder, null,

@@ -73,7 +73,7 @@ class AppendDocumentTests extends \PHPUnit_Framework_TestCase
         $docEntry = new DocumentEntry(array("href" => $fullName, "import_format_mode" => "KeepSourceFormatting"));
         $body->setDocumentEntries(array($docEntry));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostAppendDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,

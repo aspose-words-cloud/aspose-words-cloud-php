@@ -68,7 +68,7 @@ class TextTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentActions/Text";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentTextItemsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
@@ -92,7 +92,7 @@ class TextTests extends \PHPUnit_Framework_TestCase
         $destName = self::$baseTestOut . $remoteName;
         $body = new ReplaceTextRequest(array("old_value" => "aspose", "new_value" => "aspose new"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostReplaceTextRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
@@ -116,7 +116,7 @@ class TextTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $pattern = "aspose";
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Text/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Text/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\SearchRequest($remoteName, $pattern, $folder=self::$baseTestPath . $subfolder);

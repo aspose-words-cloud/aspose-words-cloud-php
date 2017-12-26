@@ -69,7 +69,7 @@ class PageSetupTests extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetSectionPageSetupRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder);
@@ -98,7 +98,7 @@ class PageSetupTests extends \PHPUnit_Framework_TestCase
             "paper_size" => PageSetup::PAPER_SIZE_A5
         ));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\UpdateSectionPageSetupRequest($remoteName, $index, $body, $folder=self::$baseTestPath . $subfolder);
@@ -122,7 +122,7 @@ class PageSetupTests extends \PHPUnit_Framework_TestCase
         $pageNumber = 1;
         $format = "png";
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Text/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Text/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\RenderPageRequest($remoteName, $pageNumber, $format, $folder=self::$baseTestPath . $subfolder);

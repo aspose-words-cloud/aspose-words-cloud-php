@@ -67,9 +67,9 @@ class ExecuteMailMergeTests extends \PHPUnit_Framework_TestCase
         $subfolder = "DocumentActions/MailMerge";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
-        $data = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . "SampleMailMergeTemplateData.txt");
+        $data = file_get_contents(realpath(__DIR__ . '/../../../../../..') . '/TestData/MailMerge/' . "SampleMailMergeTemplateData.txt");
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . $localName;
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/MailMerge/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostDocumentExecuteMailMergeRequest($remoteName, false, $data, $folder=self::$baseTestPath . $subfolder,
@@ -88,8 +88,8 @@ class ExecuteMailMergeTests extends \PHPUnit_Framework_TestCase
      */
     public function testPutExecuteMailMergeOnline()
     {
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . "SampleMailMergeTemplate.docx";
-        $data = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . "SampleMailMergeTemplateData.txt";
+        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/MailMerge/' . "SampleMailMergeTemplate.docx";
+        $data = realpath(__DIR__ . '/../../../../../..') . '/TestData/MailMerge/' . "SampleMailMergeTemplateData.txt";
         $request = new Requests\PutExecuteMailMergeOnlineRequest($file, $data);
 
         $result = $this->words->putExecuteMailMergeOnline($request);

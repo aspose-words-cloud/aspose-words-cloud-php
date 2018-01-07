@@ -25,9 +25,7 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-use Aspose\Storage\StorageApi;
-use Aspose\Words\Configuration;
-use Aspose\Words\WordsApi;
+include_once($_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php");
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\TableInsert;
 use Aspose\Words\Model\TableRowInsert;
@@ -39,29 +37,8 @@ use Aspose\Words\Model\Border;
 use Aspose\Words\Model\XmlColor;
 use PHPUnit\Framework\Assert;
 
-class TableTests extends \PHPUnit_Framework_TestCase
+class TableTests extends \BaseTest\BaseTestContext
 {
-    protected $storage;
-
-    protected $words;
-
-    protected $config;
-    protected static $baseTestPath = "Temp/SdkTests/TestData/";
-    protected static $baseTestOut = "TestOut/";
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->storage = new StorageApi();
-        $this->config = new Configuration();
-        $this->storage->apiClient->apiKey = $this->config->getAppKey();
-        $this->storage->apiClient->appSid = $this->config->getAppSid();
-        $this->storage->apiClient->apiServer = $this->config->getHost() . "/v1.1/";
-        $this->words = new WordsApi(null, $this->config);
-    }
-
     /**
      * Test case for deleteTable
      *

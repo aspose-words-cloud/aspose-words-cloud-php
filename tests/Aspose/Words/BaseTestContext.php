@@ -1,7 +1,7 @@
 <?php
 /*
 * --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="DocumentStatisticsTests.php">
+* <copyright company="Aspose" file="BaseTestContext.php">
 *   Copyright (c) 2017 Aspose.Words for Cloud
 * </copyright>
 * <summary>
@@ -25,31 +25,36 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-include_once($_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php");
-use Aspose\Words\Model\Requests;
-use PHPUnit\Framework\Assert;
-
-class DocumentStatisticsTests extends \BaseTest\BaseTestContext
+namespace BaseTest;
+use Aspose\Storage\StorageApi;
+use Aspose\Words\Configuration;
+use Aspose\Words\WordsApi;
+abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
 {
+    protected $words;
+
+    protected $storage;
+
+    protected $config;
+    protected static $baseTestPath = "Temp/SdkTests/TestData/";
+    protected static $baseTestOut = "TestOut/";
+
     /**
-     * Test case for getDocumentStatistics
-     *
-     * Read document statistics..
-     *
+     * Setup before running each test case
      */
-    public function testGetDocumentStatistics()
+    public function setUp()
     {
-        $localName = "test_multi_pages.docx";
-        $remoteName = "TestGetDocumentStatistics.docx";
-        $subfolder = "DocumentActions/Statistics";
-        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
-
-        $request = new Requests\GetDocumentStatisticsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
-
-        $result = $this->words->getDocumentStatistics($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $this->storage = new StorageApi();
+        $this->config = new Configuration();
+        $creds = \GuzzleHttp\json_decode(file_get_contents(realpath(__DIR__  . '/../../../..' . "/servercreds.json")), true);
+        /*
+         * To run with your own credentials please, replace parameter in methods 'setAppKey' and 'setAppSid' accordingly to your's AppSid and AppKey
+         */
+        $this->config->setAppKey($creds["AppKey"]);
+        $this->config->setAppSid($creds["AppSid"]);
+        $this->storage->apiClient->apiKey = $this->config->getAppKey();
+        $this->storage->apiClient->appSid = $this->config->getAppSid();
+        $this->storage->apiClient->apiServer = $this->config->getHost() . "/v1.1/";
+        $this->words = new WordsApi(null, $this->config);
     }
 }

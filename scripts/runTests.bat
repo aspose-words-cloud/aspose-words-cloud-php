@@ -1,1 +1,1 @@
-docker run -v %cd%/SDKs/PHP/:/Work/NewCloudSdk/SDKs/PHP -v %cd%/SDKs/servercreds.json:/Work/NewCloudSdk/SDKs/servercreds.json -v %cd%/TestData:/Work/NewCloudSdk/TestData -w="/Work/NewCloudSdk/SDKs/PHP" --rm php:7.2.0 vendor/bin/phpunit -c phpunit.xml
+docker run -v %cd%/SDKs/PHP/:/PHP -v %cd%/SDKs/servercreds.json:/servercreds.json -v %cd%/TestData:/TestData -w="/PHP" --rm php:7.2.0 vendor/bin/phpunit -c phpunit.xml

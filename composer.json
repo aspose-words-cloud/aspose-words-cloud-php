@@ -4,15 +4,15 @@
 	"license": "MIT",
     "type": 		"library",
     "keywords" : 	["aspose", "report", "convert", "doc", "docx", "rtf", "mail merge", "reporting", "pdf"],
-    "homepage": "https://github.com/asposecloud/Aspose.Words-CloudSDK-PHP",
+    "homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php",
     "authors": [
         {
             "name": "YaroslawEkimov",
-            "homepage": "https://github.com/asposecloud/Aspose.Words-CloudSDK-PHP"
+            "homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php"
         },
 		{
             "name": "IvanovJohnAspose",
-			"homepage": "https://github.com/asposecloud/Aspose.Words-CloudSDK-PHP"
+			"homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php"
 		}
     ],
 	"config": {

@@ -1,0 +1,36 @@
+<DrawingObject>
+  <Link>
+    <Href>http://api-dev.aspose.cloud/v1.1/words/TestGetDocumentDrawingObjectByIndex.docx/sections/0/paragraphs/1/drawingObjects/0?folder=Temp%5cSdkTests%5cTestData%5cDocumentElements%5cDrawingObjects</Href>
+    <Rel>self</Rel>
+  </Link>
+  <NodeId>0.1.0</NodeId>
+  <RelativeHorizontalPosition>Column</RelativeHorizontalPosition>
+  <RelativeVerticalPosition>TextFrameDefault</RelativeVerticalPosition>
+  <WrapType>Inline</WrapType>
+  <RenderLinks>
+    <WordsApiLink>
+      <Href>http://api-dev.aspose.cloud/v1.1/words/TestGetDocumentDrawingObjectByIndex.docx/sections/0/paragraphs/1/drawingObjects/0?folder=Temp%5cSdkTests%5cTestData%5cDocumentElements%5cDrawingObjects&amp;format=jpeg</Href>
+      <Rel>self</Rel>
+    </WordsApiLink>
+    <WordsApiLink>
+      <Href>http://api-dev.aspose.cloud/v1.1/words/TestGetDocumentDrawingObjectByIndex.docx/sections/0/paragraphs/1/drawingObjects/0?folder=Temp%5cSdkTests%5cTestData%5cDocumentElements%5cDrawingObjects&amp;format=tiff</Href>
+      <Rel>self</Rel>
+    </WordsApiLink>
+    <WordsApiLink>
+      <Href>http://api-dev.aspose.cloud/v1.1/words/TestGetDocumentDrawingObjectByIndex.docx/sections/0/paragraphs/1/drawingObjects/0?folder=Temp%5cSdkTests%5cTestData%5cDocumentElements%5cDrawingObjects&amp;format=png</Href>
+      <Rel>self</Rel>
+    </WordsApiLink>
+    <WordsApiLink>
+      <Href>http://api-dev.aspose.cloud/v1.1/words/TestGetDocumentDrawingObjectByIndex.docx/sections/0/paragraphs/1/drawingObjects/0?folder=Temp%5cSdkTests%5cTestData%5cDocumentElements%5cDrawingObjects&amp;format=bmp</Href>
+      <Rel>self</Rel>
+    </WordsApiLink>
+  </RenderLinks>
+  <Width>300</Width>
+  <Height>300</Height>
+  <ImageDataLink>
+    <Href>http://api-dev.aspose.cloud/v1.1/words/TestGetDocumentDrawingObjectByIndex.docx/sections/0/paragraphs/1/drawingObjects/0/ImageData?folder=Temp%5cSdkTests%5cTestData%5cDocumentElements%5cDrawingObjects</Href>
+    <Rel>self</Rel>
+  </ImageDataLink>
+  <Left>0</Left>
+  <Top>0</Top>
+</DrawingObject>

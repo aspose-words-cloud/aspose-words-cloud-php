@@ -46,7 +46,7 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $footerType = HeaderFooter::TYPE_FOOTER_EVEN;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/HeaderFooter/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/HeaderFooter/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PutHeaderFooterRequest($remoteName, $footerType, $folder=self::$baseTestPath . $subfolder,
@@ -71,7 +71,7 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/HeaderFooter/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/HeaderFooter/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetHeaderFooterRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder);
@@ -95,7 +95,7 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $index = 0;
         $sectionIndex = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/HeaderFooter/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/HeaderFooter/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetHeaderFooterOfSectionRequest($remoteName, $index, $sectionIndex, $folder=self::$baseTestPath . $subfolder);
@@ -117,7 +117,7 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/HeaderFooter";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/HeaderFooter/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/HeaderFooter/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetHeaderFootersRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
@@ -141,7 +141,7 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/HeaderFooter/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/HeaderFooter/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteHeaderFooterRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -164,7 +164,7 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/HeaderFooter";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/HeaderFooter/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/HeaderFooter/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteHeadersFootersRequest($remoteName, $folder=self::$baseTestPath . $subfolder,

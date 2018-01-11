@@ -44,7 +44,7 @@ class RevisionsTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentActions/Revisions";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\AcceptAllRevisionsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
@@ -67,7 +67,7 @@ class RevisionsTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\RejectAllRevisionsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,

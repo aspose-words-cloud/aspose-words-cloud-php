@@ -44,7 +44,7 @@ class MailMergeFieldTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/MergeField";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentFieldNamesRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
@@ -61,7 +61,7 @@ class MailMergeFieldTests extends \BaseTest\BaseTestContext
      */
     public function testPutDocumentFieldNames()
     {
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/MailMerge/' . "SampleExecuteTemplate.docx";
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . "SampleExecuteTemplate.docx";
         $request = new Requests\PutDocumentFieldNamesRequest($file, true);
 
         $result = $this->words->putDocumentFieldNames($request);

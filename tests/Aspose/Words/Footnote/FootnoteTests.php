@@ -46,7 +46,7 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Footnote/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetFootnoteRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -69,7 +69,7 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/Footnote";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Footnote/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetFootnotesRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
@@ -93,7 +93,7 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Footnote/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteFootnoteRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -119,7 +119,7 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $index = 0;
         $footNote = new Footnote(array("text" => "new text is here"));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Footnote/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostFootnoteRequest($remoteName, $footNote, $index, $folder=self::$baseTestPath . $subfolder,
@@ -144,7 +144,7 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $footnote = new Footnote(array("footnote_type" => Footnote::FOOTNOTE_TYPE_ENDNOTE, "text" => "test endnote"));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Footnote/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PutFootnoteRequest($remoteName, $footnote, $folder=self::$baseTestPath . $subfolder,

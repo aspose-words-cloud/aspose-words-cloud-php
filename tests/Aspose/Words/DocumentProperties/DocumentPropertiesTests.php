@@ -47,7 +47,7 @@ class DocumentPropertiesTests extends \BaseTest\BaseTestContext
         $propertyName = "AsposeAuthor";
         $property = new DocumentProperty(array("name" => "Author", "value" => "Imran Anwar"));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\CreateOrUpdateDocumentPropertyRequest($remoteName, $propertyName, $property, $folder=self::$baseTestPath . $subfolder);
@@ -71,7 +71,7 @@ class DocumentPropertiesTests extends \BaseTest\BaseTestContext
         $propertyName = "testProp";
         $destName = self::$baseTestOut . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteDocumentPropertyRequest($remoteName, $propertyName, $folder=self::$baseTestPath . $subfolder, null, null, null, $destName);
@@ -93,7 +93,7 @@ class DocumentPropertiesTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/DocumentProperties";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentPropertiesRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
@@ -116,7 +116,7 @@ class DocumentPropertiesTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $propertyName = "Author";
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentPropertyRequest($remoteName, $propertyName, $folder=self::$baseTestPath . $subfolder);

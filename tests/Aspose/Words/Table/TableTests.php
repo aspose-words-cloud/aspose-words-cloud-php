@@ -53,7 +53,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 1;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteTableRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -78,7 +78,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteTableCellRequest($remoteName, "sections/0/tables/2/rows/0", $index, $folder=self::$baseTestPath . $subfolder);
@@ -101,7 +101,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteTableRowRequest($remoteName, "tables/1", $index, $folder=self::$baseTestPath . $subfolder);
@@ -124,7 +124,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetBorderRequest($remoteName, "tables/1/rows/0/cells/0/", $index, $folder=self::$baseTestPath . $subfolder);
@@ -146,7 +146,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/Table";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetBordersRequest($remoteName, "tables/1/rows/0/cells/0/", $folder=self::$baseTestPath . $subfolder);
@@ -169,7 +169,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 1;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetTableRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -193,7 +193,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetTableCellRequest($remoteName, "sections/0/tables/2/rows/0", $index, $folder=self::$baseTestPath . $subfolder);
@@ -216,7 +216,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetTableCellFormatRequest($remoteName, "sections/0/tables/2/rows/0", $index, $folder=self::$baseTestPath . $subfolder);
@@ -239,7 +239,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 1;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetTablePropertiesRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -263,7 +263,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetTableRowRequest($remoteName, "tables/1", $index, $folder=self::$baseTestPath . $subfolder);
@@ -286,7 +286,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetTableRowFormatRequest($remoteName, "sections/0/tables/2", $index, $folder=self::$baseTestPath . $subfolder);
@@ -308,7 +308,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/Table";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetTablesRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
@@ -332,7 +332,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $tableDto = new TableInsert(array("columns_count" => 3, "rows_count" => 5));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\InsertTableRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
@@ -357,7 +357,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $cell = new TableCellInsert();
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\InsertTableCellRequest($remoteName, "sections/0/tables/2/rows/0", $folder=self::$baseTestPath . $subfolder,
@@ -382,7 +382,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $row = new TableRowInsert(array("columns_count" => 5));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\InsertTableRowRequest($remoteName, "sections/0/tables/2", $folder=self::$baseTestPath . $subfolder,
@@ -408,7 +408,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 0;
         $format = "png";
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\RenderTableRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
@@ -439,7 +439,7 @@ class TableTests extends \BaseTest\BaseTestContext
             "wrap_text" => true
         ));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\UpdateTableCellFormatRequest($remoteName, $nodePath, $index, $folder=self::$baseTestPath . $subfolder,
@@ -476,7 +476,7 @@ class TableTests extends \BaseTest\BaseTestContext
             "top_padding" => 6
         ));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\UpdateTablePropertiesRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -508,7 +508,7 @@ class TableTests extends \BaseTest\BaseTestContext
             "height_rule" => TableRowFormat::HEIGHT_RULE_AUTO
         ));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\UpdateTableRowFormatRequest($remoteName, $nodePath, $index, $folder=self::$baseTestPath . $subfolder,
@@ -533,7 +533,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteBorderRequest($remoteName, "tables/1/rows/0/cells/0/", 0, self::$baseTestPath . $subfolder,
@@ -556,7 +556,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/TableBorders";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteBordersRequest($remoteName, "tables/1/rows/0/cells/0/", $folder=self::$baseTestPath . $subfolder);
@@ -588,7 +588,7 @@ class TableTests extends \BaseTest\BaseTestContext
             "shadow" => true
         ));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\UpdateBorderRequest($remoteName, $border, $nodePath, $index, $folder=self::$baseTestPath . $subfolder);

@@ -46,7 +46,7 @@ abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
     {
         $this->storage = new StorageApi();
         $this->config = new Configuration();
-        $creds = \GuzzleHttp\json_decode(file_get_contents(realpath(__DIR__  . '/../../../..' . "/servercreds.json")), true);
+        $creds = \GuzzleHttp\json_decode(file_get_contents(realpath(__DIR__  . '/../../..' . "/Settings/servercreds.json")), true);
         /*
          * To run with your own credentials please, replace parameter in methods 'setAppKey' and 'setAppSid' accordingly to your's AppSid and AppKey
          */

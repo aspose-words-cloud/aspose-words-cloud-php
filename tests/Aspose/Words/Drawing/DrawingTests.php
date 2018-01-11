@@ -45,7 +45,7 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentDrawingObjectByIndexRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -69,7 +69,7 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentDrawingObjectImageDataRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -93,7 +93,7 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Drawing/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Drawing/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentDrawingObjectOleDataRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
@@ -116,7 +116,7 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/DrawingObjects";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentDrawingObjectsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
@@ -138,9 +138,9 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $remoteName = "TestPostDrawingObject.docx";
         $subfolder = "DocumentElements/DrawingObjects";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $data = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . "aspose-cloud.png";
+        $data = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostDrawingObjectRequest($remoteName, "{\"Left\": 0}", $data, 0, $folder=self::$baseTestPath . $subfolder,
@@ -163,9 +163,9 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $remoteName = "TestPutDrawingObject.docx";
         $subfolder = "DocumentElements/DrawingObjects";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $image = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . "aspose-cloud.png";
+        $image = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PutDrawingObjectRequest($remoteName, "{\"Left\": 0}", $image, $folder=self::$baseTestPath . $subfolder,
@@ -191,7 +191,7 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $index = 0;
         $format = "png";
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\RenderDrawingObjectRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
@@ -215,7 +215,7 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $objectIndex = 0;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $file = str_replace("\\", "/", $file);
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 

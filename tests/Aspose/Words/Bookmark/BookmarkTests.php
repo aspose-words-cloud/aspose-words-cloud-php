@@ -45,7 +45,7 @@ class BookmarkTests extends BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $bookmarkName = "aspose";
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentBookmarkByNameRequest($remoteName, $bookmarkName, $folder=self::$baseTestPath . $subfolder);
@@ -67,7 +67,7 @@ class BookmarkTests extends BaseTest\BaseTestContext
         $subfolder = "DocumentElements/Bookmarks";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentBookmarksRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
@@ -93,7 +93,7 @@ class BookmarkTests extends BaseTest\BaseTestContext
         $bookmarkName = "aspose";
         $body = new BookmarkData(array("name" => $bookmarkName, "text" => "This will be the text for Aspose"));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostUpdateDocumentBookmarkRequest($remoteName, $body, $bookmarkName, $folder=self::$baseTestPath . $subfolder,

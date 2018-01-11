@@ -45,7 +45,7 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentActions/Protection";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\GetDocumentProtectionRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
@@ -69,7 +69,7 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $destName = self::$baseTestOut . $remoteName;
         $body = new ProtectionRequest(array("new_password" => "123"));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PutProtectDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
@@ -93,7 +93,7 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $body = new ProtectionRequest(array("new_password" => ""));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/Common/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\PostChangeDocumentProtectionRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);
@@ -116,7 +116,7 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $body = new ProtectionRequest(array("password" => "aspose"));
 
-        $file = realpath(__DIR__ . '/../../../../../..') . '/TestData/DocumentProtection/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentProtection/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
         $request = new Requests\DeleteUnprotectDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);

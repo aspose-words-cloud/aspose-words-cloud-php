@@ -24,5 +24,14 @@ Please put your credentials into [Configuration](src/Aspose/Words/Configuration.
 - PHP 5.6 or later
 - referenced packages (see [here](composer.json) for more details)
 
+## Comparison with Old generation SDK
+New SDK has the following advantages over the [previous version](https://github.com/aspose-words/Aspose.Words-for-Cloud):
++ SDK is fully in sync with the API, all missing methods are added
++ Classes, methods and properties have comments and are IDE-friendly
++ Better security
++ Usage of Request/Response classes to represent long lists of parameters. This allows for cleaner code and easier backwards-compatibility going forward
+
+New SDK is not backwards compatible with previous generation because of the last item. It should be straightforward to convert your code to using Request/Response objects, if you need any help on migration please ask at [Free Support Forums](https://forum.aspose.cloud/c/words).
+
 ## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.aspose.cloud/c/words).

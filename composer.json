@@ -3,15 +3,15 @@
     "name": 		"aspose-cloud/php-sdk",
     "type": 		"library",
     "keywords" : 	["aspose", "php", "aspose cloud"],
-    "homepage": "https://github.com/asposecloud/Aspose.Words-Cloud",
+    "homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php",
     "authors": [
         {
             "name": "YaroslawEkimov",
-            "homepage": "https://github.com/asposecloud/Aspose.Words-Cloud"
+			"homepage": "https://github.com/aspose-words-cloud"
         },
 		{
             "name": "IvanovJohnAspose",
-			"homepage": "https://github.com/asposecloud/Aspose.Words-Cloud"
+			"homepage": "https://github.com/aspose-words-cloud"
 		}
     ],
 	"config": {
@@ -34,7 +34,8 @@
     },
 	"autoload": {
         "psr-0": {
-            "Aspose": "src/"
+            "Aspose": "src/",
+            "BaseTest": "tests/"
         }
     }
 }

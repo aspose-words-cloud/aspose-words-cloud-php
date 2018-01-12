@@ -1,18 +1,17 @@
 {
-    "description": 	"Aspose Words Cloud SDK for PHP lets convert, process and generate reports in a variety (20+) of file formats in Aspose Cloud quickly and easily, with zero initial costs.",
-    "name": 		"aspose/words-sdk-php",
-	"license": "MIT",
+    "description": 	"This repository contains Aspose Cloud SDK for PHP source code. Aspose Cloud SDK for PHP lets PHP developers convert and process a variety of file formats in the cloud quickly and easily.",
+    "name": 		"aspose-cloud/php-sdk",
     "type": 		"library",
-    "keywords" : 	["aspose", "report", "convert", "doc", "docx", "rtf", "mail merge", "reporting", "pdf"],
-    "homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php",
+    "keywords" : 	["aspose", "php", "aspose cloud"],
+    "homepage": "https://github.com/asposecloud/Aspose.Words-Cloud",
     "authors": [
         {
             "name": "YaroslawEkimov",
-            "homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php"
+            "homepage": "https://github.com/asposecloud/Aspose.Words-Cloud"
         },
 		{
             "name": "IvanovJohnAspose",
-			"homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php"
+			"homepage": "https://github.com/asposecloud/Aspose.Words-Cloud"
 		}
     ],
 	"config": {
@@ -35,8 +34,7 @@
     },
 	"autoload": {
         "psr-0": {
-            "Aspose": "src/",
-            "BaseTest": "tests/"
+            "Aspose": "src/"
         }
     }
 }

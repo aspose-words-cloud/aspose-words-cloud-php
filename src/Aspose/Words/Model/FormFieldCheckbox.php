@@ -54,9 +54,9 @@ class FormFieldCheckbox extends FormField
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'checked' => 'bool',
         'is_check_box_exact_size' => 'bool',
-        'check_box_size' => 'double',
-        'checked' => 'bool'
+        'check_box_size' => 'double'
     ];
 
     /*
@@ -65,9 +65,9 @@ class FormFieldCheckbox extends FormField
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'checked' => null,
         'is_check_box_exact_size' => null,
-        'check_box_size' => 'double',
-        'checked' => null
+        'check_box_size' => 'double'
     ];
 
     /*
@@ -97,9 +97,9 @@ class FormFieldCheckbox extends FormField
      * @var string[]
      */
     protected static $attributeMap = [
+        'checked' => 'Checked',
         'is_check_box_exact_size' => 'IsCheckBoxExactSize',
-        'check_box_size' => 'CheckBoxSize',
-        'checked' => 'Checked'
+        'check_box_size' => 'CheckBoxSize'
     ];
 
     /*
@@ -108,9 +108,9 @@ class FormFieldCheckbox extends FormField
      * @var string[]
      */
     protected static $setters = [
+        'checked' => 'setChecked',
         'is_check_box_exact_size' => 'setIsCheckBoxExactSize',
-        'check_box_size' => 'setCheckBoxSize',
-        'checked' => 'setChecked'
+        'check_box_size' => 'setCheckBoxSize'
     ];
 
     /*
@@ -119,9 +119,9 @@ class FormFieldCheckbox extends FormField
      * @var string[]
      */
     protected static $getters = [
+        'checked' => 'getChecked',
         'is_check_box_exact_size' => 'getIsCheckBoxExactSize',
-        'check_box_size' => 'getCheckBoxSize',
-        'checked' => 'getChecked'
+        'check_box_size' => 'getCheckBoxSize'
     ];
 
     /*
@@ -180,9 +180,9 @@ class FormFieldCheckbox extends FormField
     {
         parent::__construct($data);
 
+        $this->container['checked'] = isset($data['checked']) ? $data['checked'] : null;
         $this->container['is_check_box_exact_size'] = isset($data['is_check_box_exact_size']) ? $data['is_check_box_exact_size'] : null;
         $this->container['check_box_size'] = isset($data['check_box_size']) ? $data['check_box_size'] : null;
-        $this->container['checked'] = isset($data['checked']) ? $data['checked'] : null;
     }
 
     /*
@@ -212,6 +212,30 @@ class FormFieldCheckbox extends FormField
         return true;
     }
 
+
+    /*
+     * Gets checked
+     *
+     * @return bool
+     */
+    public function getChecked()
+    {
+        return $this->container['checked'];
+    }
+
+    /*
+     * Sets checked
+     *
+     * @param bool $checked Gets or sets the checked status of the check box form field.
+     *
+     * @return $this
+     */
+    public function setChecked($checked)
+    {
+        $this->container['checked'] = $checked;
+
+        return $this;
+    }
 
     /*
      * Gets is_check_box_exact_size
@@ -257,30 +281,6 @@ class FormFieldCheckbox extends FormField
     public function setCheckBoxSize($check_box_size)
     {
         $this->container['check_box_size'] = $check_box_size;
-
-        return $this;
-    }
-
-    /*
-     * Gets checked
-     *
-     * @return bool
-     */
-    public function getChecked()
-    {
-        return $this->container['checked'];
-    }
-
-    /*
-     * Sets checked
-     *
-     * @param bool $checked Gets or sets the checked status of the check box form field.
-     *
-     * @return $this
-     */
-    public function setChecked($checked)
-    {
-        $this->container['checked'] = $checked;
 
         return $this;
     }

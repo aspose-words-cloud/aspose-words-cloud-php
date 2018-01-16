@@ -214,7 +214,7 @@ class TextItems extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\TextItem[] $list list
+     * @param \Aspose\Words\Model\TextItem[] $list Collection of text items.
      *
      * @return $this
      */

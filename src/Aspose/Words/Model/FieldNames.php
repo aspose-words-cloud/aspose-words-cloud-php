@@ -214,7 +214,7 @@ class FieldNames extends LinkElement
     /*
      * Sets names
      *
-     * @param string[] $names names
+     * @param string[] $names Collection of fields names.
      *
      * @return $this
      */

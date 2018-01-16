@@ -214,7 +214,7 @@ class TextItem extends LinkElement
     /*
      * Sets text
      *
-     * @param string $text text
+     * @param string $text Text.
      *
      * @return $this
      */

@@ -56,18 +56,18 @@ class TableProperties extends LinkElement
     protected static $swaggerTypes = [
         'alignment' => 'string',
         'allow_auto_fit' => 'bool',
-        'preferred_width' => '\Aspose\Words\Model\PreferredWidth',
         'bidi' => 'bool',
-        'left_padding' => 'double',
-        'right_padding' => 'double',
-        'top_padding' => 'double',
         'bottom_padding' => 'double',
         'cell_spacing' => 'double',
         'left_indent' => 'double',
-        'style_options' => 'string',
-        'style_name' => 'string',
+        'left_padding' => 'double',
+        'preferred_width' => '\Aspose\Words\Model\PreferredWidth',
+        'right_padding' => 'double',
         'style_identifier' => 'string',
-        'text_wrapping' => 'string'
+        'style_name' => 'string',
+        'style_options' => 'string',
+        'text_wrapping' => 'string',
+        'top_padding' => 'double'
     ];
 
     /*
@@ -78,18 +78,18 @@ class TableProperties extends LinkElement
     protected static $swaggerFormats = [
         'alignment' => null,
         'allow_auto_fit' => null,
-        'preferred_width' => null,
         'bidi' => null,
-        'left_padding' => 'double',
-        'right_padding' => 'double',
-        'top_padding' => 'double',
         'bottom_padding' => 'double',
         'cell_spacing' => 'double',
         'left_indent' => 'double',
-        'style_options' => null,
-        'style_name' => null,
+        'left_padding' => 'double',
+        'preferred_width' => null,
+        'right_padding' => 'double',
         'style_identifier' => null,
-        'text_wrapping' => null
+        'style_name' => null,
+        'style_options' => null,
+        'text_wrapping' => null,
+        'top_padding' => 'double'
     ];
 
     /*
@@ -121,18 +121,18 @@ class TableProperties extends LinkElement
     protected static $attributeMap = [
         'alignment' => 'Alignment',
         'allow_auto_fit' => 'AllowAutoFit',
-        'preferred_width' => 'PreferredWidth',
         'bidi' => 'Bidi',
-        'left_padding' => 'LeftPadding',
-        'right_padding' => 'RightPadding',
-        'top_padding' => 'TopPadding',
         'bottom_padding' => 'BottomPadding',
         'cell_spacing' => 'CellSpacing',
         'left_indent' => 'LeftIndent',
-        'style_options' => 'StyleOptions',
-        'style_name' => 'StyleName',
+        'left_padding' => 'LeftPadding',
+        'preferred_width' => 'PreferredWidth',
+        'right_padding' => 'RightPadding',
         'style_identifier' => 'StyleIdentifier',
-        'text_wrapping' => 'TextWrapping'
+        'style_name' => 'StyleName',
+        'style_options' => 'StyleOptions',
+        'text_wrapping' => 'TextWrapping',
+        'top_padding' => 'TopPadding'
     ];
 
     /*
@@ -143,18 +143,18 @@ class TableProperties extends LinkElement
     protected static $setters = [
         'alignment' => 'setAlignment',
         'allow_auto_fit' => 'setAllowAutoFit',
-        'preferred_width' => 'setPreferredWidth',
         'bidi' => 'setBidi',
-        'left_padding' => 'setLeftPadding',
-        'right_padding' => 'setRightPadding',
-        'top_padding' => 'setTopPadding',
         'bottom_padding' => 'setBottomPadding',
         'cell_spacing' => 'setCellSpacing',
         'left_indent' => 'setLeftIndent',
-        'style_options' => 'setStyleOptions',
-        'style_name' => 'setStyleName',
+        'left_padding' => 'setLeftPadding',
+        'preferred_width' => 'setPreferredWidth',
+        'right_padding' => 'setRightPadding',
         'style_identifier' => 'setStyleIdentifier',
-        'text_wrapping' => 'setTextWrapping'
+        'style_name' => 'setStyleName',
+        'style_options' => 'setStyleOptions',
+        'text_wrapping' => 'setTextWrapping',
+        'top_padding' => 'setTopPadding'
     ];
 
     /*
@@ -165,18 +165,18 @@ class TableProperties extends LinkElement
     protected static $getters = [
         'alignment' => 'getAlignment',
         'allow_auto_fit' => 'getAllowAutoFit',
-        'preferred_width' => 'getPreferredWidth',
         'bidi' => 'getBidi',
-        'left_padding' => 'getLeftPadding',
-        'right_padding' => 'getRightPadding',
-        'top_padding' => 'getTopPadding',
         'bottom_padding' => 'getBottomPadding',
         'cell_spacing' => 'getCellSpacing',
         'left_indent' => 'getLeftIndent',
-        'style_options' => 'getStyleOptions',
-        'style_name' => 'getStyleName',
+        'left_padding' => 'getLeftPadding',
+        'preferred_width' => 'getPreferredWidth',
+        'right_padding' => 'getRightPadding',
         'style_identifier' => 'getStyleIdentifier',
-        'text_wrapping' => 'getTextWrapping'
+        'style_name' => 'getStyleName',
+        'style_options' => 'getStyleOptions',
+        'text_wrapping' => 'getTextWrapping',
+        'top_padding' => 'getTopPadding'
     ];
 
     /*
@@ -223,15 +223,6 @@ class TableProperties extends LinkElement
     const ALIGNMENT_LEFT = 'Left';
     const ALIGNMENT_CENTER = 'Center';
     const ALIGNMENT_RIGHT = 'Right';
-    const STYLE_OPTIONS_NONE = 'None';
-    const STYLE_OPTIONS_FIRST_ROW = 'FirstRow';
-    const STYLE_OPTIONS_LAST_ROW = 'LastRow';
-    const STYLE_OPTIONS_FIRST_COLUMN = 'FirstColumn';
-    const STYLE_OPTIONS_LAST_COLUMN = 'LastColumn';
-    const STYLE_OPTIONS_ROW_BANDS = 'RowBands';
-    const STYLE_OPTIONS__DEFAULT = 'Default';
-    const STYLE_OPTIONS_COLUMN_BANDS = 'ColumnBands';
-    const STYLE_OPTIONS_DEFAULT2003 = 'Default2003';
     const STYLE_IDENTIFIER_NORMAL = 'Normal';
     const STYLE_IDENTIFIER_HEADING1 = 'Heading1';
     const STYLE_IDENTIFIER_HEADING2 = 'Heading2';
@@ -605,6 +596,15 @@ class TableProperties extends LinkElement
     const STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6 = 'ListTable7ColorfulAccent6';
     const STYLE_IDENTIFIER_USER = 'User';
     const STYLE_IDENTIFIER_NIL = 'Nil';
+    const STYLE_OPTIONS_NONE = 'None';
+    const STYLE_OPTIONS_FIRST_ROW = 'FirstRow';
+    const STYLE_OPTIONS_LAST_ROW = 'LastRow';
+    const STYLE_OPTIONS_FIRST_COLUMN = 'FirstColumn';
+    const STYLE_OPTIONS_LAST_COLUMN = 'LastColumn';
+    const STYLE_OPTIONS_ROW_BANDS = 'RowBands';
+    const STYLE_OPTIONS__DEFAULT = 'Default';
+    const STYLE_OPTIONS_COLUMN_BANDS = 'ColumnBands';
+    const STYLE_OPTIONS_DEFAULT2003 = 'Default2003';
     const TEXT_WRAPPING__DEFAULT = 'Default';
     const TEXT_WRAPPING_NONE = 'None';
     const TEXT_WRAPPING_AROUND = 'Around';
@@ -622,26 +622,6 @@ class TableProperties extends LinkElement
             self::ALIGNMENT_LEFT,
             self::ALIGNMENT_CENTER,
             self::ALIGNMENT_RIGHT,
-        ];
-    }
-    
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStyleOptionsAllowableValues()
-    {
-        return [
-            self::STYLE_OPTIONS_NONE,
-            self::STYLE_OPTIONS_FIRST_ROW,
-            self::STYLE_OPTIONS_LAST_ROW,
-            self::STYLE_OPTIONS_FIRST_COLUMN,
-            self::STYLE_OPTIONS_LAST_COLUMN,
-            self::STYLE_OPTIONS_ROW_BANDS,
-            self::STYLE_OPTIONS__DEFAULT,
-            self::STYLE_OPTIONS_COLUMN_BANDS,
-            self::STYLE_OPTIONS_DEFAULT2003,
         ];
     }
     
@@ -1034,6 +1014,26 @@ class TableProperties extends LinkElement
      *
      * @return string[]
      */
+    public function getStyleOptionsAllowableValues()
+    {
+        return [
+            self::STYLE_OPTIONS_NONE,
+            self::STYLE_OPTIONS_FIRST_ROW,
+            self::STYLE_OPTIONS_LAST_ROW,
+            self::STYLE_OPTIONS_FIRST_COLUMN,
+            self::STYLE_OPTIONS_LAST_COLUMN,
+            self::STYLE_OPTIONS_ROW_BANDS,
+            self::STYLE_OPTIONS__DEFAULT,
+            self::STYLE_OPTIONS_COLUMN_BANDS,
+            self::STYLE_OPTIONS_DEFAULT2003,
+        ];
+    }
+    
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
     public function getTextWrappingAllowableValues()
     {
         return [
@@ -1057,18 +1057,18 @@ class TableProperties extends LinkElement
 
         $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
         $this->container['allow_auto_fit'] = isset($data['allow_auto_fit']) ? $data['allow_auto_fit'] : null;
-        $this->container['preferred_width'] = isset($data['preferred_width']) ? $data['preferred_width'] : null;
         $this->container['bidi'] = isset($data['bidi']) ? $data['bidi'] : null;
-        $this->container['left_padding'] = isset($data['left_padding']) ? $data['left_padding'] : null;
-        $this->container['right_padding'] = isset($data['right_padding']) ? $data['right_padding'] : null;
-        $this->container['top_padding'] = isset($data['top_padding']) ? $data['top_padding'] : null;
         $this->container['bottom_padding'] = isset($data['bottom_padding']) ? $data['bottom_padding'] : null;
         $this->container['cell_spacing'] = isset($data['cell_spacing']) ? $data['cell_spacing'] : null;
         $this->container['left_indent'] = isset($data['left_indent']) ? $data['left_indent'] : null;
-        $this->container['style_options'] = isset($data['style_options']) ? $data['style_options'] : null;
-        $this->container['style_name'] = isset($data['style_name']) ? $data['style_name'] : null;
+        $this->container['left_padding'] = isset($data['left_padding']) ? $data['left_padding'] : null;
+        $this->container['preferred_width'] = isset($data['preferred_width']) ? $data['preferred_width'] : null;
+        $this->container['right_padding'] = isset($data['right_padding']) ? $data['right_padding'] : null;
         $this->container['style_identifier'] = isset($data['style_identifier']) ? $data['style_identifier'] : null;
+        $this->container['style_name'] = isset($data['style_name']) ? $data['style_name'] : null;
+        $this->container['style_options'] = isset($data['style_options']) ? $data['style_options'] : null;
         $this->container['text_wrapping'] = isset($data['text_wrapping']) ? $data['text_wrapping'] : null;
+        $this->container['top_padding'] = isset($data['top_padding']) ? $data['top_padding'] : null;
     }
 
     /*
@@ -1088,18 +1088,18 @@ class TableProperties extends LinkElement
             );
         }
 
-        $allowedValues = $this->getStyleOptionsAllowableValues();
-        if (!in_array($this->container['style_options'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'style_options', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         $allowedValues = $this->getStyleIdentifierAllowableValues();
         if (!in_array($this->container['style_identifier'], $allowedValues)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'style_identifier', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getStyleOptionsAllowableValues();
+        if (!in_array($this->container['style_options'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'style_options', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -1131,12 +1131,12 @@ class TableProperties extends LinkElement
         if (!in_array($this->container['alignment'], $allowedValues)) {
             return false;
         }
-        $allowedValues = $this->getStyleOptionsAllowableValues();
-        if (!in_array($this->container['style_options'], $allowedValues)) {
-            return false;
-        }
         $allowedValues = $this->getStyleIdentifierAllowableValues();
         if (!in_array($this->container['style_identifier'], $allowedValues)) {
+            return false;
+        }
+        $allowedValues = $this->getStyleOptionsAllowableValues();
+        if (!in_array($this->container['style_options'], $allowedValues)) {
             return false;
         }
         $allowedValues = $this->getTextWrappingAllowableValues();
@@ -1201,30 +1201,6 @@ class TableProperties extends LinkElement
     }
 
     /*
-     * Gets preferred_width
-     *
-     * @return \Aspose\Words\Model\PreferredWidth
-     */
-    public function getPreferredWidth()
-    {
-        return $this->container['preferred_width'];
-    }
-
-    /*
-     * Sets preferred_width
-     *
-     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets the table preferred width.  Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
-     *
-     * @return $this
-     */
-    public function setPreferredWidth($preferred_width)
-    {
-        $this->container['preferred_width'] = $preferred_width;
-
-        return $this;
-    }
-
-    /*
      * Gets bidi
      *
      * @return bool
@@ -1244,78 +1220,6 @@ class TableProperties extends LinkElement
     public function setBidi($bidi)
     {
         $this->container['bidi'] = $bidi;
-
-        return $this;
-    }
-
-    /*
-     * Gets left_padding
-     *
-     * @return double
-     */
-    public function getLeftPadding()
-    {
-        return $this->container['left_padding'];
-    }
-
-    /*
-     * Sets left_padding
-     *
-     * @param double $left_padding Gets or sets the amount of space (in points) to add to the left of the contents of cells.
-     *
-     * @return $this
-     */
-    public function setLeftPadding($left_padding)
-    {
-        $this->container['left_padding'] = $left_padding;
-
-        return $this;
-    }
-
-    /*
-     * Gets right_padding
-     *
-     * @return double
-     */
-    public function getRightPadding()
-    {
-        return $this->container['right_padding'];
-    }
-
-    /*
-     * Sets right_padding
-     *
-     * @param double $right_padding Gets or sets the amount of space (in points) to add to the right of the contents of cells.
-     *
-     * @return $this
-     */
-    public function setRightPadding($right_padding)
-    {
-        $this->container['right_padding'] = $right_padding;
-
-        return $this;
-    }
-
-    /*
-     * Gets top_padding
-     *
-     * @return double
-     */
-    public function getTopPadding()
-    {
-        return $this->container['top_padding'];
-    }
-
-    /*
-     * Sets top_padding
-     *
-     * @param double $top_padding Gets or sets the amount of space (in points) to add above the contents of cells.
-     *
-     * @return $this
-     */
-    public function setTopPadding($top_padding)
-    {
-        $this->container['top_padding'] = $top_padding;
 
         return $this;
     }
@@ -1393,54 +1297,73 @@ class TableProperties extends LinkElement
     }
 
     /*
-     * Gets style_options
+     * Gets left_padding
      *
-     * @return string
+     * @return double
      */
-    public function getStyleOptions()
+    public function getLeftPadding()
     {
-        return $this->container['style_options'];
+        return $this->container['left_padding'];
     }
 
     /*
-     * Sets style_options
+     * Sets left_padding
      *
-     * @param string $style_options Gets or sets bit flags that specify how a table style is applied to this table.
+     * @param double $left_padding Gets or sets the amount of space (in points) to add to the left of the contents of cells.
      *
      * @return $this
      */
-    public function setStyleOptions($style_options)
+    public function setLeftPadding($left_padding)
     {
-        $allowedValues = $this->getStyleOptionsAllowableValues();
-        if ((!is_numeric($style_options) && !in_array($style_options, $allowedValues)) || (is_numeric($style_options) && !in_array($allowedValues[$style_options], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'style_options', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['style_options'] = $style_options;
+        $this->container['left_padding'] = $left_padding;
 
         return $this;
     }
 
     /*
-     * Gets style_name
+     * Gets preferred_width
      *
-     * @return string
+     * @return \Aspose\Words\Model\PreferredWidth
      */
-    public function getStyleName()
+    public function getPreferredWidth()
     {
-        return $this->container['style_name'];
+        return $this->container['preferred_width'];
     }
 
     /*
-     * Sets style_name
+     * Sets preferred_width
      *
-     * @param string $style_name Gets or sets the name of the table style applied to this table.
+     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets the table preferred width.  Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
      *
      * @return $this
      */
-    public function setStyleName($style_name)
+    public function setPreferredWidth($preferred_width)
     {
-        $this->container['style_name'] = $style_name;
+        $this->container['preferred_width'] = $preferred_width;
+
+        return $this;
+    }
+
+    /*
+     * Gets right_padding
+     *
+     * @return double
+     */
+    public function getRightPadding()
+    {
+        return $this->container['right_padding'];
+    }
+
+    /*
+     * Sets right_padding
+     *
+     * @param double $right_padding Gets or sets the amount of space (in points) to add to the right of the contents of cells.
+     *
+     * @return $this
+     */
+    public function setRightPadding($right_padding)
+    {
+        $this->container['right_padding'] = $right_padding;
 
         return $this;
     }
@@ -1475,6 +1398,59 @@ class TableProperties extends LinkElement
     }
 
     /*
+     * Gets style_name
+     *
+     * @return string
+     */
+    public function getStyleName()
+    {
+        return $this->container['style_name'];
+    }
+
+    /*
+     * Sets style_name
+     *
+     * @param string $style_name Gets or sets the name of the table style applied to this table.
+     *
+     * @return $this
+     */
+    public function setStyleName($style_name)
+    {
+        $this->container['style_name'] = $style_name;
+
+        return $this;
+    }
+
+    /*
+     * Gets style_options
+     *
+     * @return string
+     */
+    public function getStyleOptions()
+    {
+        return $this->container['style_options'];
+    }
+
+    /*
+     * Sets style_options
+     *
+     * @param string $style_options Gets or sets bit flags that specify how a table style is applied to this table.
+     *
+     * @return $this
+     */
+    public function setStyleOptions($style_options)
+    {
+        $allowedValues = $this->getStyleOptionsAllowableValues();
+        if ((!is_numeric($style_options) && !in_array($style_options, $allowedValues)) || (is_numeric($style_options) && !in_array($allowedValues[$style_options], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'style_options', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['style_options'] = $style_options;
+
+        return $this;
+    }
+
+    /*
      * Gets text_wrapping
      *
      * @return string
@@ -1499,6 +1475,30 @@ class TableProperties extends LinkElement
         }
 			
         $this->container['text_wrapping'] = $text_wrapping;
+
+        return $this;
+    }
+
+    /*
+     * Gets top_padding
+     *
+     * @return double
+     */
+    public function getTopPadding()
+    {
+        return $this->container['top_padding'];
+    }
+
+    /*
+     * Sets top_padding
+     *
+     * @param double $top_padding Gets or sets the amount of space (in points) to add above the contents of cells.
+     *
+     * @return $this
+     */
+    public function setTopPadding($top_padding)
+    {
+        $this->container['top_padding'] = $top_padding;
 
         return $this;
     }

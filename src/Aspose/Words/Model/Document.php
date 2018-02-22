@@ -201,7 +201,6 @@ class Document implements ArrayAccess
     const SOURCE_FORMAT_OTT = 'Ott';
     const SOURCE_FORMAT_PDF = 'Pdf';
     const SOURCE_FORMAT_XPS = 'Xps';
-    const SOURCE_FORMAT_SWF = 'Swf';
     const SOURCE_FORMAT_TIFF = 'Tiff';
     const SOURCE_FORMAT_SVG = 'Svg';
     
@@ -234,7 +233,6 @@ class Document implements ArrayAccess
             self::SOURCE_FORMAT_OTT,
             self::SOURCE_FORMAT_PDF,
             self::SOURCE_FORMAT_XPS,
-            self::SOURCE_FORMAT_SWF,
             self::SOURCE_FORMAT_TIFF,
             self::SOURCE_FORMAT_SVG,
         ];

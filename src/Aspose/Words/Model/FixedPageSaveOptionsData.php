@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FixedPageSaveOptionsData
  *
- * @description Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, SWF, images etc).
+ * @description Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, images etc).
  */
 class FixedPageSaveOptionsData extends SaveOptionsData 
 {

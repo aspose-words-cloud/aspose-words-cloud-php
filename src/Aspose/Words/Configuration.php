@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Configuration.php">
- *   Copyright (c) 2017 Aspose.Words for Cloud
+ *   Copyright (c) 2018 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -94,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://localhost/v1.1';
+    protected $host = 'https://api.aspose.com';
 
     /*
      * User agent of the HTTP request, set to "PHP-Swagger" by default
@@ -128,7 +128,7 @@ class Configuration
      * Version of Aspose.Words Cloud API
      *
      */
-    protected $clientVersion = '17.10';
+    protected $clientVersion = '18.2';
 
     /*
      * Constructor

@@ -41142,7 +41142,7 @@ class WordsApi
          $UrlToSign = trim($url, "/");
          $urlQuery = http_build_query($queryParams);
  
-         $urlPartToSign = parse_url($UrlToSign, PHP_URL_SCHEME) . '://' . "v1.1/" . parse_url($UrlToSign, PHP_URL_HOST) . parse_url($UrlToSign, PHP_URL_PATH) . "?" . $urlQuery;
+         $urlPartToSign = parse_url($UrlToSign, PHP_URL_SCHEME) . '://' . $this->config->getBasePath() .  "/" . parse_url($UrlToSign, PHP_URL_HOST) . parse_url($UrlToSign, PHP_URL_PATH) . "?" . $urlQuery;
         
         return $urlPartToSign;
     }

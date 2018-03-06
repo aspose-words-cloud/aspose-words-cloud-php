@@ -3,6 +3,7 @@
     "name": 		"aspose-cloud/php-sdk",
     "type": 		"library",
     "keywords" : 	["aspose", "php", "aspose cloud"],
+	"license": 		"MIT",
     "homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php",
     "authors": [
         {

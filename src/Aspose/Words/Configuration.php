@@ -96,12 +96,12 @@ class Configuration
      */
     protected $host = 'https://api.aspose.com';
 	
-	/*
-	 * Version of API to use, possible values are v1, v1.1, v2, v3
-	 * default value is v1
-	 * @var string
-	 */
-	protected $base_path = "v1";
+    /*
+     * Version of API to use, possible values are v1, v1.1, v2, v3
+     * default value is v1
+     * @var string
+     */
+    protected $base_path = "v1";
 
     /*
      * User agent of the HTTP request, set to "PHP-Swagger" by default

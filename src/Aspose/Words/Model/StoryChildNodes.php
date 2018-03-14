@@ -217,7 +217,7 @@ class StoryChildNodes implements ArrayAccess
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Child nodes.
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Child nodes.         // TODO: add table as child node
      *
      * @return $this
      */

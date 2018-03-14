@@ -250,7 +250,7 @@ class DocumentProperty extends LinkElement
     /*
      * Sets value
      *
-     * @param string $value String value of the document property.
+     * @param string $value string value of the document property.
      *
      * @return $this
      */

@@ -283,7 +283,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
     /*
      * Sets permissions
      *
-     * @param string $permissions Specifies the operations that are allowed to a user on an encrypted PDF document // TODO (andrey.ushakov) : think use this form or list of permissions
+     * @param string $permissions Specifies the operations that are allowed to a user on an encrypted PDF document
      *
      * @return $this
      */

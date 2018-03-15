@@ -54,8 +54,8 @@ class FormFieldDropDown extends FormField
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'drop_down_selected_index' => 'int',
-        'drop_down_items' => 'string[]'
+        'drop_down_items' => 'string[]',
+        'drop_down_selected_index' => 'int'
     ];
 
     /*
@@ -64,8 +64,8 @@ class FormFieldDropDown extends FormField
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'drop_down_selected_index' => 'int32',
-        'drop_down_items' => null
+        'drop_down_items' => null,
+        'drop_down_selected_index' => 'int32'
     ];
 
     /*
@@ -95,8 +95,8 @@ class FormFieldDropDown extends FormField
      * @var string[]
      */
     protected static $attributeMap = [
-        'drop_down_selected_index' => 'DropDownSelectedIndex',
-        'drop_down_items' => 'DropDownItems'
+        'drop_down_items' => 'DropDownItems',
+        'drop_down_selected_index' => 'DropDownSelectedIndex'
     ];
 
     /*
@@ -105,8 +105,8 @@ class FormFieldDropDown extends FormField
      * @var string[]
      */
     protected static $setters = [
-        'drop_down_selected_index' => 'setDropDownSelectedIndex',
-        'drop_down_items' => 'setDropDownItems'
+        'drop_down_items' => 'setDropDownItems',
+        'drop_down_selected_index' => 'setDropDownSelectedIndex'
     ];
 
     /*
@@ -115,8 +115,8 @@ class FormFieldDropDown extends FormField
      * @var string[]
      */
     protected static $getters = [
-        'drop_down_selected_index' => 'getDropDownSelectedIndex',
-        'drop_down_items' => 'getDropDownItems'
+        'drop_down_items' => 'getDropDownItems',
+        'drop_down_selected_index' => 'getDropDownSelectedIndex'
     ];
 
     /*
@@ -175,8 +175,8 @@ class FormFieldDropDown extends FormField
     {
         parent::__construct($data);
 
-        $this->container['drop_down_selected_index'] = isset($data['drop_down_selected_index']) ? $data['drop_down_selected_index'] : null;
         $this->container['drop_down_items'] = isset($data['drop_down_items']) ? $data['drop_down_items'] : null;
+        $this->container['drop_down_selected_index'] = isset($data['drop_down_selected_index']) ? $data['drop_down_selected_index'] : null;
     }
 
     /*
@@ -208,30 +208,6 @@ class FormFieldDropDown extends FormField
 
 
     /*
-     * Gets drop_down_selected_index
-     *
-     * @return int
-     */
-    public function getDropDownSelectedIndex()
-    {
-        return $this->container['drop_down_selected_index'];
-    }
-
-    /*
-     * Sets drop_down_selected_index
-     *
-     * @param int $drop_down_selected_index Gets or sets the index specifying the currently selected item in a dropdown form field.
-     *
-     * @return $this
-     */
-    public function setDropDownSelectedIndex($drop_down_selected_index)
-    {
-        $this->container['drop_down_selected_index'] = $drop_down_selected_index;
-
-        return $this;
-    }
-
-    /*
      * Gets drop_down_items
      *
      * @return string[]
@@ -251,6 +227,30 @@ class FormFieldDropDown extends FormField
     public function setDropDownItems($drop_down_items)
     {
         $this->container['drop_down_items'] = $drop_down_items;
+
+        return $this;
+    }
+
+    /*
+     * Gets drop_down_selected_index
+     *
+     * @return int
+     */
+    public function getDropDownSelectedIndex()
+    {
+        return $this->container['drop_down_selected_index'];
+    }
+
+    /*
+     * Sets drop_down_selected_index
+     *
+     * @param int $drop_down_selected_index Gets or sets the index specifying the currently selected item in a dropdown form field.
+     *
+     * @return $this
+     */
+    public function setDropDownSelectedIndex($drop_down_selected_index)
+    {
+        $this->container['drop_down_selected_index'] = $drop_down_selected_index;
 
         return $this;
     }

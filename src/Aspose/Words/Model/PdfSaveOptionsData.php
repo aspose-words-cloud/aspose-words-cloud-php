@@ -54,22 +54,15 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'bookmarks_outline_level' => 'int',
         'create_note_hyperlinks' => 'bool',
         'compliance' => 'string',
         'digital_signature_details' => '\Aspose\Words\Model\PdfDigitalSignatureDetailsData',
         'display_doc_title' => 'bool',
-        'downsample_images' => 'bool',
-        'downsample_resolution' => 'int',
         'downsample_options' => '\Aspose\Words\Model\DownsampleOptionsData',
         'embed_full_fonts' => 'bool',
-        'embed_standard_windows_fonts' => 'bool',
         'encryption_details' => '\Aspose\Words\Model\PdfEncryptionDetailsData',
-        'expanded_outline_levels' => 'int',
-        'export_custom_properties_as_metadata' => 'bool',
         'export_document_structure' => 'bool',
         'font_embedding_mode' => 'string',
-        'headings_outline_levels' => 'int',
         'image_compression' => 'string',
         'open_hyperlinks_in_new_window' => 'bool',
         'outline_options' => '\Aspose\Words\Model\OutlineOptionsData',
@@ -91,22 +84,15 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'bookmarks_outline_level' => 'int32',
         'create_note_hyperlinks' => null,
         'compliance' => null,
         'digital_signature_details' => null,
         'display_doc_title' => null,
-        'downsample_images' => null,
-        'downsample_resolution' => 'int32',
         'downsample_options' => null,
         'embed_full_fonts' => null,
-        'embed_standard_windows_fonts' => null,
         'encryption_details' => null,
-        'expanded_outline_levels' => 'int32',
-        'export_custom_properties_as_metadata' => null,
         'export_document_structure' => null,
         'font_embedding_mode' => null,
-        'headings_outline_levels' => 'int32',
         'image_compression' => null,
         'open_hyperlinks_in_new_window' => null,
         'outline_options' => null,
@@ -149,22 +135,15 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'bookmarks_outline_level' => 'BookmarksOutlineLevel',
         'create_note_hyperlinks' => 'CreateNoteHyperlinks',
         'compliance' => 'Compliance',
         'digital_signature_details' => 'DigitalSignatureDetails',
         'display_doc_title' => 'DisplayDocTitle',
-        'downsample_images' => 'DownsampleImages',
-        'downsample_resolution' => 'DownsampleResolution',
         'downsample_options' => 'DownsampleOptions',
         'embed_full_fonts' => 'EmbedFullFonts',
-        'embed_standard_windows_fonts' => 'EmbedStandardWindowsFonts',
         'encryption_details' => 'EncryptionDetails',
-        'expanded_outline_levels' => 'ExpandedOutlineLevels',
-        'export_custom_properties_as_metadata' => 'ExportCustomPropertiesAsMetadata',
         'export_document_structure' => 'ExportDocumentStructure',
         'font_embedding_mode' => 'FontEmbeddingMode',
-        'headings_outline_levels' => 'HeadingsOutlineLevels',
         'image_compression' => 'ImageCompression',
         'open_hyperlinks_in_new_window' => 'OpenHyperlinksInNewWindow',
         'outline_options' => 'OutlineOptions',
@@ -186,22 +165,15 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'bookmarks_outline_level' => 'setBookmarksOutlineLevel',
         'create_note_hyperlinks' => 'setCreateNoteHyperlinks',
         'compliance' => 'setCompliance',
         'digital_signature_details' => 'setDigitalSignatureDetails',
         'display_doc_title' => 'setDisplayDocTitle',
-        'downsample_images' => 'setDownsampleImages',
-        'downsample_resolution' => 'setDownsampleResolution',
         'downsample_options' => 'setDownsampleOptions',
         'embed_full_fonts' => 'setEmbedFullFonts',
-        'embed_standard_windows_fonts' => 'setEmbedStandardWindowsFonts',
         'encryption_details' => 'setEncryptionDetails',
-        'expanded_outline_levels' => 'setExpandedOutlineLevels',
-        'export_custom_properties_as_metadata' => 'setExportCustomPropertiesAsMetadata',
         'export_document_structure' => 'setExportDocumentStructure',
         'font_embedding_mode' => 'setFontEmbeddingMode',
-        'headings_outline_levels' => 'setHeadingsOutlineLevels',
         'image_compression' => 'setImageCompression',
         'open_hyperlinks_in_new_window' => 'setOpenHyperlinksInNewWindow',
         'outline_options' => 'setOutlineOptions',
@@ -223,22 +195,15 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'bookmarks_outline_level' => 'getBookmarksOutlineLevel',
         'create_note_hyperlinks' => 'getCreateNoteHyperlinks',
         'compliance' => 'getCompliance',
         'digital_signature_details' => 'getDigitalSignatureDetails',
         'display_doc_title' => 'getDisplayDocTitle',
-        'downsample_images' => 'getDownsampleImages',
-        'downsample_resolution' => 'getDownsampleResolution',
         'downsample_options' => 'getDownsampleOptions',
         'embed_full_fonts' => 'getEmbedFullFonts',
-        'embed_standard_windows_fonts' => 'getEmbedStandardWindowsFonts',
         'encryption_details' => 'getEncryptionDetails',
-        'expanded_outline_levels' => 'getExpandedOutlineLevels',
-        'export_custom_properties_as_metadata' => 'getExportCustomPropertiesAsMetadata',
         'export_document_structure' => 'getExportDocumentStructure',
         'font_embedding_mode' => 'getFontEmbeddingMode',
-        'headings_outline_levels' => 'getHeadingsOutlineLevels',
         'image_compression' => 'getImageCompression',
         'open_hyperlinks_in_new_window' => 'getOpenHyperlinksInNewWindow',
         'outline_options' => 'getOutlineOptions',
@@ -310,22 +275,15 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     {
         parent::__construct($data);
 
-        $this->container['bookmarks_outline_level'] = isset($data['bookmarks_outline_level']) ? $data['bookmarks_outline_level'] : null;
         $this->container['create_note_hyperlinks'] = isset($data['create_note_hyperlinks']) ? $data['create_note_hyperlinks'] : null;
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
         $this->container['digital_signature_details'] = isset($data['digital_signature_details']) ? $data['digital_signature_details'] : null;
         $this->container['display_doc_title'] = isset($data['display_doc_title']) ? $data['display_doc_title'] : null;
-        $this->container['downsample_images'] = isset($data['downsample_images']) ? $data['downsample_images'] : null;
-        $this->container['downsample_resolution'] = isset($data['downsample_resolution']) ? $data['downsample_resolution'] : null;
         $this->container['downsample_options'] = isset($data['downsample_options']) ? $data['downsample_options'] : null;
         $this->container['embed_full_fonts'] = isset($data['embed_full_fonts']) ? $data['embed_full_fonts'] : null;
-        $this->container['embed_standard_windows_fonts'] = isset($data['embed_standard_windows_fonts']) ? $data['embed_standard_windows_fonts'] : null;
         $this->container['encryption_details'] = isset($data['encryption_details']) ? $data['encryption_details'] : null;
-        $this->container['expanded_outline_levels'] = isset($data['expanded_outline_levels']) ? $data['expanded_outline_levels'] : null;
-        $this->container['export_custom_properties_as_metadata'] = isset($data['export_custom_properties_as_metadata']) ? $data['export_custom_properties_as_metadata'] : null;
         $this->container['export_document_structure'] = isset($data['export_document_structure']) ? $data['export_document_structure'] : null;
         $this->container['font_embedding_mode'] = isset($data['font_embedding_mode']) ? $data['font_embedding_mode'] : null;
-        $this->container['headings_outline_levels'] = isset($data['headings_outline_levels']) ? $data['headings_outline_levels'] : null;
         $this->container['image_compression'] = isset($data['image_compression']) ? $data['image_compression'] : null;
         $this->container['open_hyperlinks_in_new_window'] = isset($data['open_hyperlinks_in_new_window']) ? $data['open_hyperlinks_in_new_window'] : null;
         $this->container['outline_options'] = isset($data['outline_options']) ? $data['outline_options'] : null;
@@ -368,30 +326,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return true;
     }
 
-
-    /*
-     * Gets bookmarks_outline_level
-     *
-     * @return int
-     */
-    public function getBookmarksOutlineLevel()
-    {
-        return $this->container['bookmarks_outline_level'];
-    }
-
-    /*
-     * Sets bookmarks_outline_level
-     *
-     * @param int $bookmarks_outline_level Specifies the level in the PDF document outline at which to display Word bookmarks
-     *
-     * @return $this
-     */
-    public function setBookmarksOutlineLevel($bookmarks_outline_level)
-    {
-        $this->container['bookmarks_outline_level'] = $bookmarks_outline_level;
-
-        return $this;
-    }
 
     /*
      * Gets create_note_hyperlinks
@@ -490,54 +424,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets downsample_images
-     *
-     * @return bool
-     */
-    public function getDownsampleImages()
-    {
-        return $this->container['downsample_images'];
-    }
-
-    /*
-     * Sets downsample_images
-     *
-     * @param bool $downsample_images Specifies whether or not the images should be downsampled
-     *
-     * @return $this
-     */
-    public function setDownsampleImages($downsample_images)
-    {
-        $this->container['downsample_images'] = $downsample_images;
-
-        return $this;
-    }
-
-    /*
-     * Gets downsample_resolution
-     *
-     * @return int
-     */
-    public function getDownsampleResolution()
-    {
-        return $this->container['downsample_resolution'];
-    }
-
-    /*
-     * Sets downsample_resolution
-     *
-     * @param int $downsample_resolution Specifies the resolution in pixels per inch to which the images should be downsampled
-     *
-     * @return $this
-     */
-    public function setDownsampleResolution($downsample_resolution)
-    {
-        $this->container['downsample_resolution'] = $downsample_resolution;
-
-        return $this;
-    }
-
-    /*
      * Gets downsample_options
      *
      * @return \Aspose\Words\Model\DownsampleOptionsData
@@ -586,30 +472,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets embed_standard_windows_fonts
-     *
-     * @return bool
-     */
-    public function getEmbedStandardWindowsFonts()
-    {
-        return $this->container['embed_standard_windows_fonts'];
-    }
-
-    /*
-     * Sets embed_standard_windows_fonts
-     *
-     * @param bool $embed_standard_windows_fonts Determines whether or not to embed standard windows fonts Arial and Times New Roman
-     *
-     * @return $this
-     */
-    public function setEmbedStandardWindowsFonts($embed_standard_windows_fonts)
-    {
-        $this->container['embed_standard_windows_fonts'] = $embed_standard_windows_fonts;
-
-        return $this;
-    }
-
-    /*
      * Gets encryption_details
      *
      * @return \Aspose\Words\Model\PdfEncryptionDetailsData
@@ -629,54 +491,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setEncryptionDetails($encryption_details)
     {
         $this->container['encryption_details'] = $encryption_details;
-
-        return $this;
-    }
-
-    /*
-     * Gets expanded_outline_levels
-     *
-     * @return int
-     */
-    public function getExpandedOutlineLevels()
-    {
-        return $this->container['expanded_outline_levels'];
-    }
-
-    /*
-     * Sets expanded_outline_levels
-     *
-     * @param int $expanded_outline_levels Specifies how many levels in the PDF document outline to show expanded when the PDF file is viewed
-     *
-     * @return $this
-     */
-    public function setExpandedOutlineLevels($expanded_outline_levels)
-    {
-        $this->container['expanded_outline_levels'] = $expanded_outline_levels;
-
-        return $this;
-    }
-
-    /*
-     * Gets export_custom_properties_as_metadata
-     *
-     * @return bool
-     */
-    public function getExportCustomPropertiesAsMetadata()
-    {
-        return $this->container['export_custom_properties_as_metadata'];
-    }
-
-    /*
-     * Sets export_custom_properties_as_metadata
-     *
-     * @param bool $export_custom_properties_as_metadata Determines whether or not to export custom properties of document as Metadata
-     *
-     * @return $this
-     */
-    public function setExportCustomPropertiesAsMetadata($export_custom_properties_as_metadata)
-    {
-        $this->container['export_custom_properties_as_metadata'] = $export_custom_properties_as_metadata;
 
         return $this;
     }
@@ -725,30 +539,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setFontEmbeddingMode($font_embedding_mode)
     {
         $this->container['font_embedding_mode'] = $font_embedding_mode;
-
-        return $this;
-    }
-
-    /*
-     * Gets headings_outline_levels
-     *
-     * @return int
-     */
-    public function getHeadingsOutlineLevels()
-    {
-        return $this->container['headings_outline_levels'];
-    }
-
-    /*
-     * Sets headings_outline_levels
-     *
-     * @param int $headings_outline_levels Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the PDF document outline
-     *
-     * @return $this
-     */
-    public function setHeadingsOutlineLevels($headings_outline_levels)
-    {
-        $this->container['headings_outline_levels'] = $headings_outline_levels;
 
         return $this;
     }

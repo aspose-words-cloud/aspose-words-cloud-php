@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostInsertDocumentWatermarkImageRequest.php">
@@ -117,4 +118,3 @@ class PostInsertDocumentWatermarkImageRequest
      * The image file server full name. If the name is empty the image is expected in request content.
      */
     public $image;
-}

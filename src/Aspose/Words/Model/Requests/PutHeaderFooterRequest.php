@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutHeaderFooterRequest.php">
@@ -110,4 +111,3 @@ class PutHeaderFooterRequest
      * Path to parent section.
      */
     public $section_path;
-}

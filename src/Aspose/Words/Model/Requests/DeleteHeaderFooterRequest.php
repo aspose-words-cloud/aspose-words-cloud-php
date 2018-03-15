@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteHeaderFooterRequest.php">
@@ -110,4 +111,3 @@ class DeleteHeaderFooterRequest
      * Path to parent section.
      */
     public $section_path;
-}

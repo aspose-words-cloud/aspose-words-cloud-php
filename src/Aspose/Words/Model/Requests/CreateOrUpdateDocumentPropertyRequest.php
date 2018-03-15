@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CreateOrUpdateDocumentPropertyRequest.php">
@@ -110,4 +111,3 @@ class CreateOrUpdateDocumentPropertyRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-}

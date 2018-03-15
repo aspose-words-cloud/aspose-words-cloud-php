@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetHeaderFooterOfSectionRequest.php">
@@ -96,4 +97,3 @@ class GetHeaderFooterOfSectionRequest
      * List of types of headers and footers.
      */
     public $filter_by_type;
-}

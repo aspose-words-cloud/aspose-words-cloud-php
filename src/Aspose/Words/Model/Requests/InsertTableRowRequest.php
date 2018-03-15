@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableRowRequest.php">
@@ -110,4 +111,3 @@ class InsertTableRowRequest
      * Table row parameters/
      */
     public $row;
-}

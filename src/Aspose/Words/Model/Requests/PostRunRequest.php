@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostRunRequest.php">
@@ -117,4 +118,3 @@ class PostRunRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-}

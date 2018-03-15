@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentParagraphsRequest.php">
@@ -82,4 +83,3 @@ class GetDocumentParagraphsRequest
      * Path to node which contains paragraphs.
      */
     public $node_path;
-}

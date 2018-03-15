@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetSectionsRequest.php">
@@ -75,4 +76,3 @@ class GetSectionsRequest
      * Password for opening an encrypted document.
      */
     public $password;
-}

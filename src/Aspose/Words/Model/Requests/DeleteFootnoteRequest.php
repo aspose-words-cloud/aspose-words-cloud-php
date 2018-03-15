@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteFootnoteRequest.php">
@@ -110,4 +111,3 @@ class DeleteFootnoteRequest
      * Path to node, which contains collection of footnotes.
      */
     public $node_path;
-}

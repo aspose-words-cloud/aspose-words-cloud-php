@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RenderPageRequest.php">
@@ -96,4 +97,3 @@ class RenderPageRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
-}

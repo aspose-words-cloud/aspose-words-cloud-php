@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetTableRowFormatRequest.php">
@@ -89,4 +90,3 @@ class GetTableRowFormatRequest
      * Password for opening an encrypted document.
      */
     public $password;
-}

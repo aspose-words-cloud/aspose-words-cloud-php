@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteFieldRequest.php">
@@ -110,4 +111,3 @@ class DeleteFieldRequest
      * Path to node, which contains collection of fields.
      */
     public $node_path;
-}

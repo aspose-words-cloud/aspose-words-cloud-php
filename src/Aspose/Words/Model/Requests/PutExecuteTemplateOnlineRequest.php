@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutExecuteTemplateOnlineRequest.php">
@@ -75,4 +76,3 @@ class PutExecuteTemplateOnlineRequest
      * Merge with regions or not. True by default
      */
     public $with_regions;
-}

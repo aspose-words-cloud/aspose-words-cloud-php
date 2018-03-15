@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostSplitDocumentRequest.php">
@@ -117,4 +118,3 @@ class PostSplitDocumentRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
-}

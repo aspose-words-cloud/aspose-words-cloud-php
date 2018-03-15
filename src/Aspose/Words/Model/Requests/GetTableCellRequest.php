@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetTableCellRequest.php">
@@ -89,4 +90,3 @@ class GetTableCellRequest
      * Password for opening an encrypted document.
      */
     public $password;
-}

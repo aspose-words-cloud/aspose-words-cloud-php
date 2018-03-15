@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutDocumentFieldNamesRequest.php">
@@ -54,4 +55,3 @@ class PutDocumentFieldNamesRequest
      * Use non merge fields or not.
      */
     public $use_non_merge_fields;
-}

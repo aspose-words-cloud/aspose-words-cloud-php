@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostDrawingObjectRequest.php">
@@ -124,4 +125,3 @@ class PostDrawingObjectRequest
      * Path to node, which contains collection of drawing objects.
      */
     public $node_path;
-}

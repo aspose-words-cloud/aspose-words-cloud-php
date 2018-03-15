@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RenderDrawingObjectRequest.php">
@@ -103,4 +104,3 @@ class RenderDrawingObjectRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
-}

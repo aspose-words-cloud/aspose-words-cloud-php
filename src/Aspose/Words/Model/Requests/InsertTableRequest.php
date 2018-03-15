@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableRequest.php">
@@ -110,4 +111,3 @@ class InsertTableRequest
      * Path to node, which contains tables.
      */
     public $node_path;
-}

@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentParagraphRunsRequest.php">
@@ -82,4 +83,3 @@ class GetDocumentParagraphRunsRequest
      * Password for opening an encrypted document.
      */
     public $password;
-}

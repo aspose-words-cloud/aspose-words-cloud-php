@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutDocumentSaveAsTiffRequest.php">
@@ -222,4 +223,3 @@ class PutDocumentSaveAsTiffRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
-}

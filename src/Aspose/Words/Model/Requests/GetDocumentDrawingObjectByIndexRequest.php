@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentDrawingObjectByIndexRequest.php">
@@ -89,4 +90,3 @@ class GetDocumentDrawingObjectByIndexRequest
      * Path to node, which contains collection of drawing objects.
      */
     public $node_path;
-}

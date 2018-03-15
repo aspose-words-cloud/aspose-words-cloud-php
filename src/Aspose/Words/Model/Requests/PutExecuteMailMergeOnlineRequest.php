@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutExecuteMailMergeOnlineRequest.php">
@@ -68,4 +69,3 @@ class PutExecuteMailMergeOnlineRequest
      * Clean up options.
      */
     public $cleanup;
-}

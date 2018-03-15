@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutFormFieldRequest.php">
@@ -117,4 +118,3 @@ class PutFormFieldRequest
      * Form field will be inserted before node with index.
      */
     public $insert_before_node;
-}

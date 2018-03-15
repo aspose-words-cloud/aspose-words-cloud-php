@@ -1,5 +1,6 @@
 <?php
 
+}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutRunRequest.php">
@@ -117,4 +118,3 @@ class PutRunRequest
      * Paragraph will be inserted before node with index.
      */
     public $insert_before_node;
-}

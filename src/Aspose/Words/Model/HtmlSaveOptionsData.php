@@ -822,7 +822,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     /*
      * Sets export_metafile_as_raster
      *
-     * @param bool $export_metafile_as_raster Specifies whether to convert metafiles into raster images when exporting
+     * @param bool $export_metafile_as_raster Specifies whether to convert metafiles into raster images when exporting.  Deprecated - use the MetafileFormat property instead
      *
      * @return $this
      */

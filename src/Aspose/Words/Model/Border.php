@@ -54,12 +54,12 @@ class Border extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'border_type' => 'string',
-        'color' => '\Aspose\Words\Model\XmlColor',
-        'distance_from_text' => 'double',
         'line_style' => 'string',
         'line_width' => 'double',
-        'shadow' => 'bool'
+        'color' => '\Aspose\Words\Model\XmlColor',
+        'distance_from_text' => 'double',
+        'shadow' => 'bool',
+        'border_type' => 'string'
     ];
 
     /*
@@ -68,12 +68,12 @@ class Border extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'border_type' => null,
-        'color' => null,
-        'distance_from_text' => 'double',
         'line_style' => null,
         'line_width' => 'double',
-        'shadow' => null
+        'color' => null,
+        'distance_from_text' => 'double',
+        'shadow' => null,
+        'border_type' => null
     ];
 
     /*
@@ -103,12 +103,12 @@ class Border extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'border_type' => 'BorderType',
-        'color' => 'Color',
-        'distance_from_text' => 'DistanceFromText',
         'line_style' => 'LineStyle',
         'line_width' => 'LineWidth',
-        'shadow' => 'Shadow'
+        'color' => 'Color',
+        'distance_from_text' => 'DistanceFromText',
+        'shadow' => 'Shadow',
+        'border_type' => 'BorderType'
     ];
 
     /*
@@ -117,12 +117,12 @@ class Border extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'border_type' => 'setBorderType',
-        'color' => 'setColor',
-        'distance_from_text' => 'setDistanceFromText',
         'line_style' => 'setLineStyle',
         'line_width' => 'setLineWidth',
-        'shadow' => 'setShadow'
+        'color' => 'setColor',
+        'distance_from_text' => 'setDistanceFromText',
+        'shadow' => 'setShadow',
+        'border_type' => 'setBorderType'
     ];
 
     /*
@@ -131,12 +131,12 @@ class Border extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'border_type' => 'getBorderType',
-        'color' => 'getColor',
-        'distance_from_text' => 'getDistanceFromText',
         'line_style' => 'getLineStyle',
         'line_width' => 'getLineWidth',
-        'shadow' => 'getShadow'
+        'color' => 'getColor',
+        'distance_from_text' => 'getDistanceFromText',
+        'shadow' => 'getShadow',
+        'border_type' => 'getBorderType'
     ];
 
     /*
@@ -180,15 +180,6 @@ class Border extends LinkElement
         return self::$swaggerModelName;
     }
 
-    const BORDER_TYPE_BOTTOM = 'Bottom';
-    const BORDER_TYPE_LEFT = 'Left';
-    const BORDER_TYPE_RIGHT = 'Right';
-    const BORDER_TYPE_TOP = 'Top';
-    const BORDER_TYPE_HORIZONTAL = 'Horizontal';
-    const BORDER_TYPE_VERTICAL = 'Vertical';
-    const BORDER_TYPE_DIAGONAL_DOWN = 'DiagonalDown';
-    const BORDER_TYPE_DIAGONAL_UP = 'DiagonalUp';
-    const BORDER_TYPE_NONE = 'None';
     const LINE_STYLE_NONE = 'None';
     const LINE_STYLE_SINGLE = 'Single';
     const LINE_STYLE_THICK = 'Thick';
@@ -216,28 +207,17 @@ class Border extends LinkElement
     const LINE_STYLE_ENGRAVE3_D = 'Engrave3D';
     const LINE_STYLE_OUTSET = 'Outset';
     const LINE_STYLE_INSET = 'Inset';
+    const BORDER_TYPE_BOTTOM = 'Bottom';
+    const BORDER_TYPE_LEFT = 'Left';
+    const BORDER_TYPE_RIGHT = 'Right';
+    const BORDER_TYPE_TOP = 'Top';
+    const BORDER_TYPE_HORIZONTAL = 'Horizontal';
+    const BORDER_TYPE_VERTICAL = 'Vertical';
+    const BORDER_TYPE_DIAGONAL_DOWN = 'DiagonalDown';
+    const BORDER_TYPE_DIAGONAL_UP = 'DiagonalUp';
+    const BORDER_TYPE_NONE = 'None';
     
 
-    
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getBorderTypeAllowableValues()
-    {
-        return [
-            self::BORDER_TYPE_BOTTOM,
-            self::BORDER_TYPE_LEFT,
-            self::BORDER_TYPE_RIGHT,
-            self::BORDER_TYPE_TOP,
-            self::BORDER_TYPE_HORIZONTAL,
-            self::BORDER_TYPE_VERTICAL,
-            self::BORDER_TYPE_DIAGONAL_DOWN,
-            self::BORDER_TYPE_DIAGONAL_UP,
-            self::BORDER_TYPE_NONE,
-        ];
-    }
     
     /*
      * Gets allowable values of the enum
@@ -277,6 +257,26 @@ class Border extends LinkElement
         ];
     }
     
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBorderTypeAllowableValues()
+    {
+        return [
+            self::BORDER_TYPE_BOTTOM,
+            self::BORDER_TYPE_LEFT,
+            self::BORDER_TYPE_RIGHT,
+            self::BORDER_TYPE_TOP,
+            self::BORDER_TYPE_HORIZONTAL,
+            self::BORDER_TYPE_VERTICAL,
+            self::BORDER_TYPE_DIAGONAL_DOWN,
+            self::BORDER_TYPE_DIAGONAL_UP,
+            self::BORDER_TYPE_NONE,
+        ];
+    }
+    
 
 
     /*
@@ -289,12 +289,12 @@ class Border extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['border_type'] = isset($data['border_type']) ? $data['border_type'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['distance_from_text'] = isset($data['distance_from_text']) ? $data['distance_from_text'] : null;
         $this->container['line_style'] = isset($data['line_style']) ? $data['line_style'] : null;
         $this->container['line_width'] = isset($data['line_width']) ? $data['line_width'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['distance_from_text'] = isset($data['distance_from_text']) ? $data['distance_from_text'] : null;
         $this->container['shadow'] = isset($data['shadow']) ? $data['shadow'] : null;
+        $this->container['border_type'] = isset($data['border_type']) ? $data['border_type'] : null;
     }
 
     /*
@@ -306,18 +306,18 @@ class Border extends LinkElement
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        $allowedValues = $this->getBorderTypeAllowableValues();
-        if (!in_array($this->container['border_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'border_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         $allowedValues = $this->getLineStyleAllowableValues();
         if (!in_array($this->container['line_style'], $allowedValues)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'line_style', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getBorderTypeAllowableValues();
+        if (!in_array($this->container['border_type'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'border_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -337,94 +337,17 @@ class Border extends LinkElement
             return false;
         }
 
-        $allowedValues = $this->getBorderTypeAllowableValues();
-        if (!in_array($this->container['border_type'], $allowedValues)) {
-            return false;
-        }
         $allowedValues = $this->getLineStyleAllowableValues();
         if (!in_array($this->container['line_style'], $allowedValues)) {
+            return false;
+        }
+        $allowedValues = $this->getBorderTypeAllowableValues();
+        if (!in_array($this->container['border_type'], $allowedValues)) {
             return false;
         }
         return true;
     }
 
-
-    /*
-     * Gets border_type
-     *
-     * @return string
-     */
-    public function getBorderType()
-    {
-        return $this->container['border_type'];
-    }
-
-    /*
-     * Sets border_type
-     *
-     * @param string $border_type Gets or sets the border type.
-     *
-     * @return $this
-     */
-    public function setBorderType($border_type)
-    {
-        $allowedValues = $this->getBorderTypeAllowableValues();
-        if ((!is_numeric($border_type) && !in_array($border_type, $allowedValues)) || (is_numeric($border_type) && !in_array($allowedValues[$border_type], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'border_type', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['border_type'] = $border_type;
-
-        return $this;
-    }
-
-    /*
-     * Gets color
-     *
-     * @return \Aspose\Words\Model\XmlColor
-     */
-    public function getColor()
-    {
-        return $this->container['color'];
-    }
-
-    /*
-     * Sets color
-     *
-     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the border color.
-     *
-     * @return $this
-     */
-    public function setColor($color)
-    {
-        $this->container['color'] = $color;
-
-        return $this;
-    }
-
-    /*
-     * Gets distance_from_text
-     *
-     * @return double
-     */
-    public function getDistanceFromText()
-    {
-        return $this->container['distance_from_text'];
-    }
-
-    /*
-     * Sets distance_from_text
-     *
-     * @param double $distance_from_text Gets or sets distance of the border from text or from the page edge in points.
-     *
-     * @return $this
-     */
-    public function setDistanceFromText($distance_from_text)
-    {
-        $this->container['distance_from_text'] = $distance_from_text;
-
-        return $this;
-    }
 
     /*
      * Gets line_style
@@ -480,6 +403,54 @@ class Border extends LinkElement
     }
 
     /*
+     * Gets color
+     *
+     * @return \Aspose\Words\Model\XmlColor
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /*
+     * Sets color
+     *
+     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the border color.
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
+
+        return $this;
+    }
+
+    /*
+     * Gets distance_from_text
+     *
+     * @return double
+     */
+    public function getDistanceFromText()
+    {
+        return $this->container['distance_from_text'];
+    }
+
+    /*
+     * Sets distance_from_text
+     *
+     * @param double $distance_from_text Gets or sets distance of the border from text or from the page edge in points.
+     *
+     * @return $this
+     */
+    public function setDistanceFromText($distance_from_text)
+    {
+        $this->container['distance_from_text'] = $distance_from_text;
+
+        return $this;
+    }
+
+    /*
      * Gets shadow
      *
      * @return bool
@@ -499,6 +470,35 @@ class Border extends LinkElement
     public function setShadow($shadow)
     {
         $this->container['shadow'] = $shadow;
+
+        return $this;
+    }
+
+    /*
+     * Gets border_type
+     *
+     * @return string
+     */
+    public function getBorderType()
+    {
+        return $this->container['border_type'];
+    }
+
+    /*
+     * Sets border_type
+     *
+     * @param string $border_type Gets or sets the border type.
+     *
+     * @return $this
+     */
+    public function setBorderType($border_type)
+    {
+        $allowedValues = $this->getBorderTypeAllowableValues();
+        if ((!is_numeric($border_type) && !in_array($border_type, $allowedValues)) || (is_numeric($border_type) && !in_array($allowedValues[$border_type], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'border_type', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['border_type'] = $border_type;
 
         return $this;
     }

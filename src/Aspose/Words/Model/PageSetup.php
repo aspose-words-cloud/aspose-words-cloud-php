@@ -54,35 +54,35 @@ class PageSetup extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'bidi' => 'bool',
-        'border_always_in_front' => 'bool',
-        'border_applies_to' => 'string',
-        'border_distance_from' => 'string',
-        'bottom_margin' => 'double',
         'different_first_page_header_footer' => 'bool',
-        'first_page_tray' => 'int',
-        'footer_distance' => 'double',
-        'gutter' => 'double',
-        'header_distance' => 'double',
-        'left_margin' => 'double',
-        'line_number_count_by' => 'int',
-        'line_number_distance_from_text' => 'double',
-        'line_number_restart_mode' => 'string',
-        'line_starting_number' => 'int',
-        'orientation' => 'string',
-        'other_pages_tray' => 'int',
-        'page_height' => 'double',
-        'page_number_style' => 'string',
-        'page_starting_number' => 'int',
-        'page_width' => 'double',
-        'paper_size' => 'string',
-        'restart_page_numbering' => 'bool',
-        'right_margin' => 'double',
-        'rtl_gutter' => 'bool',
         'section_start' => 'string',
         'suppress_endnotes' => 'bool',
+        'vertical_alignment' => 'string',
+        'bidi' => 'bool',
+        'page_width' => 'double',
+        'page_height' => 'double',
+        'paper_size' => 'string',
+        'orientation' => 'string',
+        'left_margin' => 'double',
+        'right_margin' => 'double',
         'top_margin' => 'double',
-        'vertical_alignment' => 'string'
+        'bottom_margin' => 'double',
+        'header_distance' => 'double',
+        'footer_distance' => 'double',
+        'gutter' => 'double',
+        'first_page_tray' => 'int',
+        'other_pages_tray' => 'int',
+        'page_number_style' => 'string',
+        'restart_page_numbering' => 'bool',
+        'page_starting_number' => 'int',
+        'line_number_restart_mode' => 'string',
+        'line_number_count_by' => 'int',
+        'line_number_distance_from_text' => 'double',
+        'line_starting_number' => 'int',
+        'rtl_gutter' => 'bool',
+        'border_always_in_front' => 'bool',
+        'border_distance_from' => 'string',
+        'border_applies_to' => 'string'
     ];
 
     /*
@@ -91,35 +91,35 @@ class PageSetup extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'bidi' => null,
-        'border_always_in_front' => null,
-        'border_applies_to' => null,
-        'border_distance_from' => null,
-        'bottom_margin' => 'double',
         'different_first_page_header_footer' => null,
-        'first_page_tray' => 'int32',
-        'footer_distance' => 'double',
-        'gutter' => 'double',
-        'header_distance' => 'double',
-        'left_margin' => 'double',
-        'line_number_count_by' => 'int32',
-        'line_number_distance_from_text' => 'double',
-        'line_number_restart_mode' => null,
-        'line_starting_number' => 'int32',
-        'orientation' => null,
-        'other_pages_tray' => 'int32',
-        'page_height' => 'double',
-        'page_number_style' => null,
-        'page_starting_number' => 'int32',
-        'page_width' => 'double',
-        'paper_size' => null,
-        'restart_page_numbering' => null,
-        'right_margin' => 'double',
-        'rtl_gutter' => null,
         'section_start' => null,
         'suppress_endnotes' => null,
+        'vertical_alignment' => null,
+        'bidi' => null,
+        'page_width' => 'double',
+        'page_height' => 'double',
+        'paper_size' => null,
+        'orientation' => null,
+        'left_margin' => 'double',
+        'right_margin' => 'double',
         'top_margin' => 'double',
-        'vertical_alignment' => null
+        'bottom_margin' => 'double',
+        'header_distance' => 'double',
+        'footer_distance' => 'double',
+        'gutter' => 'double',
+        'first_page_tray' => 'int32',
+        'other_pages_tray' => 'int32',
+        'page_number_style' => null,
+        'restart_page_numbering' => null,
+        'page_starting_number' => 'int32',
+        'line_number_restart_mode' => null,
+        'line_number_count_by' => 'int32',
+        'line_number_distance_from_text' => 'double',
+        'line_starting_number' => 'int32',
+        'rtl_gutter' => null,
+        'border_always_in_front' => null,
+        'border_distance_from' => null,
+        'border_applies_to' => null
     ];
 
     /*
@@ -149,35 +149,35 @@ class PageSetup extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'bidi' => 'Bidi',
-        'border_always_in_front' => 'BorderAlwaysInFront',
-        'border_applies_to' => 'BorderAppliesTo',
-        'border_distance_from' => 'BorderDistanceFrom',
-        'bottom_margin' => 'BottomMargin',
         'different_first_page_header_footer' => 'DifferentFirstPageHeaderFooter',
-        'first_page_tray' => 'FirstPageTray',
-        'footer_distance' => 'FooterDistance',
-        'gutter' => 'Gutter',
-        'header_distance' => 'HeaderDistance',
-        'left_margin' => 'LeftMargin',
-        'line_number_count_by' => 'LineNumberCountBy',
-        'line_number_distance_from_text' => 'LineNumberDistanceFromText',
-        'line_number_restart_mode' => 'LineNumberRestartMode',
-        'line_starting_number' => 'LineStartingNumber',
-        'orientation' => 'Orientation',
-        'other_pages_tray' => 'OtherPagesTray',
-        'page_height' => 'PageHeight',
-        'page_number_style' => 'PageNumberStyle',
-        'page_starting_number' => 'PageStartingNumber',
-        'page_width' => 'PageWidth',
-        'paper_size' => 'PaperSize',
-        'restart_page_numbering' => 'RestartPageNumbering',
-        'right_margin' => 'RightMargin',
-        'rtl_gutter' => 'RtlGutter',
         'section_start' => 'SectionStart',
         'suppress_endnotes' => 'SuppressEndnotes',
+        'vertical_alignment' => 'VerticalAlignment',
+        'bidi' => 'Bidi',
+        'page_width' => 'PageWidth',
+        'page_height' => 'PageHeight',
+        'paper_size' => 'PaperSize',
+        'orientation' => 'Orientation',
+        'left_margin' => 'LeftMargin',
+        'right_margin' => 'RightMargin',
         'top_margin' => 'TopMargin',
-        'vertical_alignment' => 'VerticalAlignment'
+        'bottom_margin' => 'BottomMargin',
+        'header_distance' => 'HeaderDistance',
+        'footer_distance' => 'FooterDistance',
+        'gutter' => 'Gutter',
+        'first_page_tray' => 'FirstPageTray',
+        'other_pages_tray' => 'OtherPagesTray',
+        'page_number_style' => 'PageNumberStyle',
+        'restart_page_numbering' => 'RestartPageNumbering',
+        'page_starting_number' => 'PageStartingNumber',
+        'line_number_restart_mode' => 'LineNumberRestartMode',
+        'line_number_count_by' => 'LineNumberCountBy',
+        'line_number_distance_from_text' => 'LineNumberDistanceFromText',
+        'line_starting_number' => 'LineStartingNumber',
+        'rtl_gutter' => 'RtlGutter',
+        'border_always_in_front' => 'BorderAlwaysInFront',
+        'border_distance_from' => 'BorderDistanceFrom',
+        'border_applies_to' => 'BorderAppliesTo'
     ];
 
     /*
@@ -186,35 +186,35 @@ class PageSetup extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'bidi' => 'setBidi',
-        'border_always_in_front' => 'setBorderAlwaysInFront',
-        'border_applies_to' => 'setBorderAppliesTo',
-        'border_distance_from' => 'setBorderDistanceFrom',
-        'bottom_margin' => 'setBottomMargin',
         'different_first_page_header_footer' => 'setDifferentFirstPageHeaderFooter',
-        'first_page_tray' => 'setFirstPageTray',
-        'footer_distance' => 'setFooterDistance',
-        'gutter' => 'setGutter',
-        'header_distance' => 'setHeaderDistance',
-        'left_margin' => 'setLeftMargin',
-        'line_number_count_by' => 'setLineNumberCountBy',
-        'line_number_distance_from_text' => 'setLineNumberDistanceFromText',
-        'line_number_restart_mode' => 'setLineNumberRestartMode',
-        'line_starting_number' => 'setLineStartingNumber',
-        'orientation' => 'setOrientation',
-        'other_pages_tray' => 'setOtherPagesTray',
-        'page_height' => 'setPageHeight',
-        'page_number_style' => 'setPageNumberStyle',
-        'page_starting_number' => 'setPageStartingNumber',
-        'page_width' => 'setPageWidth',
-        'paper_size' => 'setPaperSize',
-        'restart_page_numbering' => 'setRestartPageNumbering',
-        'right_margin' => 'setRightMargin',
-        'rtl_gutter' => 'setRtlGutter',
         'section_start' => 'setSectionStart',
         'suppress_endnotes' => 'setSuppressEndnotes',
+        'vertical_alignment' => 'setVerticalAlignment',
+        'bidi' => 'setBidi',
+        'page_width' => 'setPageWidth',
+        'page_height' => 'setPageHeight',
+        'paper_size' => 'setPaperSize',
+        'orientation' => 'setOrientation',
+        'left_margin' => 'setLeftMargin',
+        'right_margin' => 'setRightMargin',
         'top_margin' => 'setTopMargin',
-        'vertical_alignment' => 'setVerticalAlignment'
+        'bottom_margin' => 'setBottomMargin',
+        'header_distance' => 'setHeaderDistance',
+        'footer_distance' => 'setFooterDistance',
+        'gutter' => 'setGutter',
+        'first_page_tray' => 'setFirstPageTray',
+        'other_pages_tray' => 'setOtherPagesTray',
+        'page_number_style' => 'setPageNumberStyle',
+        'restart_page_numbering' => 'setRestartPageNumbering',
+        'page_starting_number' => 'setPageStartingNumber',
+        'line_number_restart_mode' => 'setLineNumberRestartMode',
+        'line_number_count_by' => 'setLineNumberCountBy',
+        'line_number_distance_from_text' => 'setLineNumberDistanceFromText',
+        'line_starting_number' => 'setLineStartingNumber',
+        'rtl_gutter' => 'setRtlGutter',
+        'border_always_in_front' => 'setBorderAlwaysInFront',
+        'border_distance_from' => 'setBorderDistanceFrom',
+        'border_applies_to' => 'setBorderAppliesTo'
     ];
 
     /*
@@ -223,35 +223,35 @@ class PageSetup extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'bidi' => 'getBidi',
-        'border_always_in_front' => 'getBorderAlwaysInFront',
-        'border_applies_to' => 'getBorderAppliesTo',
-        'border_distance_from' => 'getBorderDistanceFrom',
-        'bottom_margin' => 'getBottomMargin',
         'different_first_page_header_footer' => 'getDifferentFirstPageHeaderFooter',
-        'first_page_tray' => 'getFirstPageTray',
-        'footer_distance' => 'getFooterDistance',
-        'gutter' => 'getGutter',
-        'header_distance' => 'getHeaderDistance',
-        'left_margin' => 'getLeftMargin',
-        'line_number_count_by' => 'getLineNumberCountBy',
-        'line_number_distance_from_text' => 'getLineNumberDistanceFromText',
-        'line_number_restart_mode' => 'getLineNumberRestartMode',
-        'line_starting_number' => 'getLineStartingNumber',
-        'orientation' => 'getOrientation',
-        'other_pages_tray' => 'getOtherPagesTray',
-        'page_height' => 'getPageHeight',
-        'page_number_style' => 'getPageNumberStyle',
-        'page_starting_number' => 'getPageStartingNumber',
-        'page_width' => 'getPageWidth',
-        'paper_size' => 'getPaperSize',
-        'restart_page_numbering' => 'getRestartPageNumbering',
-        'right_margin' => 'getRightMargin',
-        'rtl_gutter' => 'getRtlGutter',
         'section_start' => 'getSectionStart',
         'suppress_endnotes' => 'getSuppressEndnotes',
+        'vertical_alignment' => 'getVerticalAlignment',
+        'bidi' => 'getBidi',
+        'page_width' => 'getPageWidth',
+        'page_height' => 'getPageHeight',
+        'paper_size' => 'getPaperSize',
+        'orientation' => 'getOrientation',
+        'left_margin' => 'getLeftMargin',
+        'right_margin' => 'getRightMargin',
         'top_margin' => 'getTopMargin',
-        'vertical_alignment' => 'getVerticalAlignment'
+        'bottom_margin' => 'getBottomMargin',
+        'header_distance' => 'getHeaderDistance',
+        'footer_distance' => 'getFooterDistance',
+        'gutter' => 'getGutter',
+        'first_page_tray' => 'getFirstPageTray',
+        'other_pages_tray' => 'getOtherPagesTray',
+        'page_number_style' => 'getPageNumberStyle',
+        'restart_page_numbering' => 'getRestartPageNumbering',
+        'page_starting_number' => 'getPageStartingNumber',
+        'line_number_restart_mode' => 'getLineNumberRestartMode',
+        'line_number_count_by' => 'getLineNumberCountBy',
+        'line_number_distance_from_text' => 'getLineNumberDistanceFromText',
+        'line_starting_number' => 'getLineStartingNumber',
+        'rtl_gutter' => 'getRtlGutter',
+        'border_always_in_front' => 'getBorderAlwaysInFront',
+        'border_distance_from' => 'getBorderDistanceFrom',
+        'border_applies_to' => 'getBorderAppliesTo'
     ];
 
     /*
@@ -295,14 +295,32 @@ class PageSetup extends LinkElement
         return self::$swaggerModelName;
     }
 
-    const BORDER_APPLIES_TO_ALL_PAGES = 'AllPages';
-    const BORDER_APPLIES_TO_FIRST_PAGE = 'FirstPage';
-    const BORDER_APPLIES_TO_OTHER_PAGES = 'OtherPages';
-    const BORDER_DISTANCE_FROM_TEXT = 'Text';
-    const BORDER_DISTANCE_FROM_PAGE_EDGE = 'PageEdge';
-    const LINE_NUMBER_RESTART_MODE_RESTART_PAGE = 'RestartPage';
-    const LINE_NUMBER_RESTART_MODE_RESTART_SECTION = 'RestartSection';
-    const LINE_NUMBER_RESTART_MODE_CONTINUOUS = 'Continuous';
+    const SECTION_START_CONTINUOUS = 'Continuous';
+    const SECTION_START_NEW_COLUMN = 'NewColumn';
+    const SECTION_START_NEW_PAGE = 'NewPage';
+    const SECTION_START_EVEN_PAGE = 'EvenPage';
+    const SECTION_START_ODD_PAGE = 'OddPage';
+    const VERTICAL_ALIGNMENT_TOP = 'Top';
+    const VERTICAL_ALIGNMENT_CENTER = 'Center';
+    const VERTICAL_ALIGNMENT_JUSTIFY = 'Justify';
+    const VERTICAL_ALIGNMENT_BOTTOM = 'Bottom';
+    const PAPER_SIZE_A3 = 'A3';
+    const PAPER_SIZE_A4 = 'A4';
+    const PAPER_SIZE_A5 = 'A5';
+    const PAPER_SIZE_B4 = 'B4';
+    const PAPER_SIZE_B5 = 'B5';
+    const PAPER_SIZE_EXECUTIVE = 'Executive';
+    const PAPER_SIZE_FOLIO = 'Folio';
+    const PAPER_SIZE_LEDGER = 'Ledger';
+    const PAPER_SIZE_LEGAL = 'Legal';
+    const PAPER_SIZE_LETTER = 'Letter';
+    const PAPER_SIZE_ENVELOPE_DL = 'EnvelopeDL';
+    const PAPER_SIZE_QUARTO = 'Quarto';
+    const PAPER_SIZE_STATEMENT = 'Statement';
+    const PAPER_SIZE_TABLOID = 'Tabloid';
+    const PAPER_SIZE_PAPER10X14 = 'Paper10x14';
+    const PAPER_SIZE_PAPER11X17 = 'Paper11x17';
+    const PAPER_SIZE_CUSTOM = 'Custom';
     const ORIENTATION_PORTRAIT = 'Portrait';
     const ORIENTATION_LANDSCAPE = 'Landscape';
     const PAGE_NUMBER_STYLE_ARABIC = 'Arabic';
@@ -368,32 +386,14 @@ class PageSetup extends LinkElement
     const PAGE_NUMBER_STYLE_UPPERCASE_RUSSIAN = 'UppercaseRussian';
     const PAGE_NUMBER_STYLE_NONE = 'None';
     const PAGE_NUMBER_STYLE_CUSTOM = 'Custom';
-    const PAPER_SIZE_A3 = 'A3';
-    const PAPER_SIZE_A4 = 'A4';
-    const PAPER_SIZE_A5 = 'A5';
-    const PAPER_SIZE_B4 = 'B4';
-    const PAPER_SIZE_B5 = 'B5';
-    const PAPER_SIZE_EXECUTIVE = 'Executive';
-    const PAPER_SIZE_FOLIO = 'Folio';
-    const PAPER_SIZE_LEDGER = 'Ledger';
-    const PAPER_SIZE_LEGAL = 'Legal';
-    const PAPER_SIZE_LETTER = 'Letter';
-    const PAPER_SIZE_ENVELOPE_DL = 'EnvelopeDL';
-    const PAPER_SIZE_QUARTO = 'Quarto';
-    const PAPER_SIZE_STATEMENT = 'Statement';
-    const PAPER_SIZE_TABLOID = 'Tabloid';
-    const PAPER_SIZE_PAPER10X14 = 'Paper10x14';
-    const PAPER_SIZE_PAPER11X17 = 'Paper11x17';
-    const PAPER_SIZE_CUSTOM = 'Custom';
-    const SECTION_START_CONTINUOUS = 'Continuous';
-    const SECTION_START_NEW_COLUMN = 'NewColumn';
-    const SECTION_START_NEW_PAGE = 'NewPage';
-    const SECTION_START_EVEN_PAGE = 'EvenPage';
-    const SECTION_START_ODD_PAGE = 'OddPage';
-    const VERTICAL_ALIGNMENT_TOP = 'Top';
-    const VERTICAL_ALIGNMENT_CENTER = 'Center';
-    const VERTICAL_ALIGNMENT_JUSTIFY = 'Justify';
-    const VERTICAL_ALIGNMENT_BOTTOM = 'Bottom';
+    const LINE_NUMBER_RESTART_MODE_RESTART_PAGE = 'RestartPage';
+    const LINE_NUMBER_RESTART_MODE_RESTART_SECTION = 'RestartSection';
+    const LINE_NUMBER_RESTART_MODE_CONTINUOUS = 'Continuous';
+    const BORDER_DISTANCE_FROM_TEXT = 'Text';
+    const BORDER_DISTANCE_FROM_PAGE_EDGE = 'PageEdge';
+    const BORDER_APPLIES_TO_ALL_PAGES = 'AllPages';
+    const BORDER_APPLIES_TO_FIRST_PAGE = 'FirstPage';
+    const BORDER_APPLIES_TO_OTHER_PAGES = 'OtherPages';
     
 
     
@@ -402,12 +402,14 @@ class PageSetup extends LinkElement
      *
      * @return string[]
      */
-    public function getBorderAppliesToAllowableValues()
+    public function getSectionStartAllowableValues()
     {
         return [
-            self::BORDER_APPLIES_TO_ALL_PAGES,
-            self::BORDER_APPLIES_TO_FIRST_PAGE,
-            self::BORDER_APPLIES_TO_OTHER_PAGES,
+            self::SECTION_START_CONTINUOUS,
+            self::SECTION_START_NEW_COLUMN,
+            self::SECTION_START_NEW_PAGE,
+            self::SECTION_START_EVEN_PAGE,
+            self::SECTION_START_ODD_PAGE,
         ];
     }
     
@@ -416,11 +418,13 @@ class PageSetup extends LinkElement
      *
      * @return string[]
      */
-    public function getBorderDistanceFromAllowableValues()
+    public function getVerticalAlignmentAllowableValues()
     {
         return [
-            self::BORDER_DISTANCE_FROM_TEXT,
-            self::BORDER_DISTANCE_FROM_PAGE_EDGE,
+            self::VERTICAL_ALIGNMENT_TOP,
+            self::VERTICAL_ALIGNMENT_CENTER,
+            self::VERTICAL_ALIGNMENT_JUSTIFY,
+            self::VERTICAL_ALIGNMENT_BOTTOM,
         ];
     }
     
@@ -429,12 +433,26 @@ class PageSetup extends LinkElement
      *
      * @return string[]
      */
-    public function getLineNumberRestartModeAllowableValues()
+    public function getPaperSizeAllowableValues()
     {
         return [
-            self::LINE_NUMBER_RESTART_MODE_RESTART_PAGE,
-            self::LINE_NUMBER_RESTART_MODE_RESTART_SECTION,
-            self::LINE_NUMBER_RESTART_MODE_CONTINUOUS,
+            self::PAPER_SIZE_A3,
+            self::PAPER_SIZE_A4,
+            self::PAPER_SIZE_A5,
+            self::PAPER_SIZE_B4,
+            self::PAPER_SIZE_B5,
+            self::PAPER_SIZE_EXECUTIVE,
+            self::PAPER_SIZE_FOLIO,
+            self::PAPER_SIZE_LEDGER,
+            self::PAPER_SIZE_LEGAL,
+            self::PAPER_SIZE_LETTER,
+            self::PAPER_SIZE_ENVELOPE_DL,
+            self::PAPER_SIZE_QUARTO,
+            self::PAPER_SIZE_STATEMENT,
+            self::PAPER_SIZE_TABLOID,
+            self::PAPER_SIZE_PAPER10X14,
+            self::PAPER_SIZE_PAPER11X17,
+            self::PAPER_SIZE_CUSTOM,
         ];
     }
     
@@ -530,26 +548,12 @@ class PageSetup extends LinkElement
      *
      * @return string[]
      */
-    public function getPaperSizeAllowableValues()
+    public function getLineNumberRestartModeAllowableValues()
     {
         return [
-            self::PAPER_SIZE_A3,
-            self::PAPER_SIZE_A4,
-            self::PAPER_SIZE_A5,
-            self::PAPER_SIZE_B4,
-            self::PAPER_SIZE_B5,
-            self::PAPER_SIZE_EXECUTIVE,
-            self::PAPER_SIZE_FOLIO,
-            self::PAPER_SIZE_LEDGER,
-            self::PAPER_SIZE_LEGAL,
-            self::PAPER_SIZE_LETTER,
-            self::PAPER_SIZE_ENVELOPE_DL,
-            self::PAPER_SIZE_QUARTO,
-            self::PAPER_SIZE_STATEMENT,
-            self::PAPER_SIZE_TABLOID,
-            self::PAPER_SIZE_PAPER10X14,
-            self::PAPER_SIZE_PAPER11X17,
-            self::PAPER_SIZE_CUSTOM,
+            self::LINE_NUMBER_RESTART_MODE_RESTART_PAGE,
+            self::LINE_NUMBER_RESTART_MODE_RESTART_SECTION,
+            self::LINE_NUMBER_RESTART_MODE_CONTINUOUS,
         ];
     }
     
@@ -558,14 +562,11 @@ class PageSetup extends LinkElement
      *
      * @return string[]
      */
-    public function getSectionStartAllowableValues()
+    public function getBorderDistanceFromAllowableValues()
     {
         return [
-            self::SECTION_START_CONTINUOUS,
-            self::SECTION_START_NEW_COLUMN,
-            self::SECTION_START_NEW_PAGE,
-            self::SECTION_START_EVEN_PAGE,
-            self::SECTION_START_ODD_PAGE,
+            self::BORDER_DISTANCE_FROM_TEXT,
+            self::BORDER_DISTANCE_FROM_PAGE_EDGE,
         ];
     }
     
@@ -574,13 +575,12 @@ class PageSetup extends LinkElement
      *
      * @return string[]
      */
-    public function getVerticalAlignmentAllowableValues()
+    public function getBorderAppliesToAllowableValues()
     {
         return [
-            self::VERTICAL_ALIGNMENT_TOP,
-            self::VERTICAL_ALIGNMENT_CENTER,
-            self::VERTICAL_ALIGNMENT_JUSTIFY,
-            self::VERTICAL_ALIGNMENT_BOTTOM,
+            self::BORDER_APPLIES_TO_ALL_PAGES,
+            self::BORDER_APPLIES_TO_FIRST_PAGE,
+            self::BORDER_APPLIES_TO_OTHER_PAGES,
         ];
     }
     
@@ -596,35 +596,35 @@ class PageSetup extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['bidi'] = isset($data['bidi']) ? $data['bidi'] : null;
-        $this->container['border_always_in_front'] = isset($data['border_always_in_front']) ? $data['border_always_in_front'] : null;
-        $this->container['border_applies_to'] = isset($data['border_applies_to']) ? $data['border_applies_to'] : null;
-        $this->container['border_distance_from'] = isset($data['border_distance_from']) ? $data['border_distance_from'] : null;
-        $this->container['bottom_margin'] = isset($data['bottom_margin']) ? $data['bottom_margin'] : null;
         $this->container['different_first_page_header_footer'] = isset($data['different_first_page_header_footer']) ? $data['different_first_page_header_footer'] : null;
-        $this->container['first_page_tray'] = isset($data['first_page_tray']) ? $data['first_page_tray'] : null;
-        $this->container['footer_distance'] = isset($data['footer_distance']) ? $data['footer_distance'] : null;
-        $this->container['gutter'] = isset($data['gutter']) ? $data['gutter'] : null;
-        $this->container['header_distance'] = isset($data['header_distance']) ? $data['header_distance'] : null;
-        $this->container['left_margin'] = isset($data['left_margin']) ? $data['left_margin'] : null;
-        $this->container['line_number_count_by'] = isset($data['line_number_count_by']) ? $data['line_number_count_by'] : null;
-        $this->container['line_number_distance_from_text'] = isset($data['line_number_distance_from_text']) ? $data['line_number_distance_from_text'] : null;
-        $this->container['line_number_restart_mode'] = isset($data['line_number_restart_mode']) ? $data['line_number_restart_mode'] : null;
-        $this->container['line_starting_number'] = isset($data['line_starting_number']) ? $data['line_starting_number'] : null;
-        $this->container['orientation'] = isset($data['orientation']) ? $data['orientation'] : null;
-        $this->container['other_pages_tray'] = isset($data['other_pages_tray']) ? $data['other_pages_tray'] : null;
-        $this->container['page_height'] = isset($data['page_height']) ? $data['page_height'] : null;
-        $this->container['page_number_style'] = isset($data['page_number_style']) ? $data['page_number_style'] : null;
-        $this->container['page_starting_number'] = isset($data['page_starting_number']) ? $data['page_starting_number'] : null;
-        $this->container['page_width'] = isset($data['page_width']) ? $data['page_width'] : null;
-        $this->container['paper_size'] = isset($data['paper_size']) ? $data['paper_size'] : null;
-        $this->container['restart_page_numbering'] = isset($data['restart_page_numbering']) ? $data['restart_page_numbering'] : null;
-        $this->container['right_margin'] = isset($data['right_margin']) ? $data['right_margin'] : null;
-        $this->container['rtl_gutter'] = isset($data['rtl_gutter']) ? $data['rtl_gutter'] : null;
         $this->container['section_start'] = isset($data['section_start']) ? $data['section_start'] : null;
         $this->container['suppress_endnotes'] = isset($data['suppress_endnotes']) ? $data['suppress_endnotes'] : null;
-        $this->container['top_margin'] = isset($data['top_margin']) ? $data['top_margin'] : null;
         $this->container['vertical_alignment'] = isset($data['vertical_alignment']) ? $data['vertical_alignment'] : null;
+        $this->container['bidi'] = isset($data['bidi']) ? $data['bidi'] : null;
+        $this->container['page_width'] = isset($data['page_width']) ? $data['page_width'] : null;
+        $this->container['page_height'] = isset($data['page_height']) ? $data['page_height'] : null;
+        $this->container['paper_size'] = isset($data['paper_size']) ? $data['paper_size'] : null;
+        $this->container['orientation'] = isset($data['orientation']) ? $data['orientation'] : null;
+        $this->container['left_margin'] = isset($data['left_margin']) ? $data['left_margin'] : null;
+        $this->container['right_margin'] = isset($data['right_margin']) ? $data['right_margin'] : null;
+        $this->container['top_margin'] = isset($data['top_margin']) ? $data['top_margin'] : null;
+        $this->container['bottom_margin'] = isset($data['bottom_margin']) ? $data['bottom_margin'] : null;
+        $this->container['header_distance'] = isset($data['header_distance']) ? $data['header_distance'] : null;
+        $this->container['footer_distance'] = isset($data['footer_distance']) ? $data['footer_distance'] : null;
+        $this->container['gutter'] = isset($data['gutter']) ? $data['gutter'] : null;
+        $this->container['first_page_tray'] = isset($data['first_page_tray']) ? $data['first_page_tray'] : null;
+        $this->container['other_pages_tray'] = isset($data['other_pages_tray']) ? $data['other_pages_tray'] : null;
+        $this->container['page_number_style'] = isset($data['page_number_style']) ? $data['page_number_style'] : null;
+        $this->container['restart_page_numbering'] = isset($data['restart_page_numbering']) ? $data['restart_page_numbering'] : null;
+        $this->container['page_starting_number'] = isset($data['page_starting_number']) ? $data['page_starting_number'] : null;
+        $this->container['line_number_restart_mode'] = isset($data['line_number_restart_mode']) ? $data['line_number_restart_mode'] : null;
+        $this->container['line_number_count_by'] = isset($data['line_number_count_by']) ? $data['line_number_count_by'] : null;
+        $this->container['line_number_distance_from_text'] = isset($data['line_number_distance_from_text']) ? $data['line_number_distance_from_text'] : null;
+        $this->container['line_starting_number'] = isset($data['line_starting_number']) ? $data['line_starting_number'] : null;
+        $this->container['rtl_gutter'] = isset($data['rtl_gutter']) ? $data['rtl_gutter'] : null;
+        $this->container['border_always_in_front'] = isset($data['border_always_in_front']) ? $data['border_always_in_front'] : null;
+        $this->container['border_distance_from'] = isset($data['border_distance_from']) ? $data['border_distance_from'] : null;
+        $this->container['border_applies_to'] = isset($data['border_applies_to']) ? $data['border_applies_to'] : null;
     }
 
     /*
@@ -636,26 +636,26 @@ class PageSetup extends LinkElement
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        $allowedValues = $this->getBorderAppliesToAllowableValues();
-        if (!in_array($this->container['border_applies_to'], $allowedValues)) {
+        $allowedValues = $this->getSectionStartAllowableValues();
+        if (!in_array($this->container['section_start'], $allowedValues)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'border_applies_to', must be one of '%s'",
+                "invalid value for 'section_start', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        $allowedValues = $this->getBorderDistanceFromAllowableValues();
-        if (!in_array($this->container['border_distance_from'], $allowedValues)) {
+        $allowedValues = $this->getVerticalAlignmentAllowableValues();
+        if (!in_array($this->container['vertical_alignment'], $allowedValues)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'border_distance_from', must be one of '%s'",
+                "invalid value for 'vertical_alignment', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        $allowedValues = $this->getLineNumberRestartModeAllowableValues();
-        if (!in_array($this->container['line_number_restart_mode'], $allowedValues)) {
+        $allowedValues = $this->getPaperSizeAllowableValues();
+        if (!in_array($this->container['paper_size'], $allowedValues)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'line_number_restart_mode', must be one of '%s'",
+                "invalid value for 'paper_size', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -676,26 +676,26 @@ class PageSetup extends LinkElement
             );
         }
 
-        $allowedValues = $this->getPaperSizeAllowableValues();
-        if (!in_array($this->container['paper_size'], $allowedValues)) {
+        $allowedValues = $this->getLineNumberRestartModeAllowableValues();
+        if (!in_array($this->container['line_number_restart_mode'], $allowedValues)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'paper_size', must be one of '%s'",
+                "invalid value for 'line_number_restart_mode', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        $allowedValues = $this->getSectionStartAllowableValues();
-        if (!in_array($this->container['section_start'], $allowedValues)) {
+        $allowedValues = $this->getBorderDistanceFromAllowableValues();
+        if (!in_array($this->container['border_distance_from'], $allowedValues)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'section_start', must be one of '%s'",
+                "invalid value for 'border_distance_from', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        $allowedValues = $this->getVerticalAlignmentAllowableValues();
-        if (!in_array($this->container['vertical_alignment'], $allowedValues)) {
+        $allowedValues = $this->getBorderAppliesToAllowableValues();
+        if (!in_array($this->container['border_applies_to'], $allowedValues)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'vertical_alignment', must be one of '%s'",
+                "invalid value for 'border_applies_to', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -715,16 +715,16 @@ class PageSetup extends LinkElement
             return false;
         }
 
-        $allowedValues = $this->getBorderAppliesToAllowableValues();
-        if (!in_array($this->container['border_applies_to'], $allowedValues)) {
+        $allowedValues = $this->getSectionStartAllowableValues();
+        if (!in_array($this->container['section_start'], $allowedValues)) {
             return false;
         }
-        $allowedValues = $this->getBorderDistanceFromAllowableValues();
-        if (!in_array($this->container['border_distance_from'], $allowedValues)) {
+        $allowedValues = $this->getVerticalAlignmentAllowableValues();
+        if (!in_array($this->container['vertical_alignment'], $allowedValues)) {
             return false;
         }
-        $allowedValues = $this->getLineNumberRestartModeAllowableValues();
-        if (!in_array($this->container['line_number_restart_mode'], $allowedValues)) {
+        $allowedValues = $this->getPaperSizeAllowableValues();
+        if (!in_array($this->container['paper_size'], $allowedValues)) {
             return false;
         }
         $allowedValues = $this->getOrientationAllowableValues();
@@ -735,151 +735,21 @@ class PageSetup extends LinkElement
         if (!in_array($this->container['page_number_style'], $allowedValues)) {
             return false;
         }
-        $allowedValues = $this->getPaperSizeAllowableValues();
-        if (!in_array($this->container['paper_size'], $allowedValues)) {
+        $allowedValues = $this->getLineNumberRestartModeAllowableValues();
+        if (!in_array($this->container['line_number_restart_mode'], $allowedValues)) {
             return false;
         }
-        $allowedValues = $this->getSectionStartAllowableValues();
-        if (!in_array($this->container['section_start'], $allowedValues)) {
+        $allowedValues = $this->getBorderDistanceFromAllowableValues();
+        if (!in_array($this->container['border_distance_from'], $allowedValues)) {
             return false;
         }
-        $allowedValues = $this->getVerticalAlignmentAllowableValues();
-        if (!in_array($this->container['vertical_alignment'], $allowedValues)) {
+        $allowedValues = $this->getBorderAppliesToAllowableValues();
+        if (!in_array($this->container['border_applies_to'], $allowedValues)) {
             return false;
         }
         return true;
     }
 
-
-    /*
-     * Gets bidi
-     *
-     * @return bool
-     */
-    public function getBidi()
-    {
-        return $this->container['bidi'];
-    }
-
-    /*
-     * Sets bidi
-     *
-     * @param bool $bidi Specifies that this section contains bidirectional (complex scripts) text.
-     *
-     * @return $this
-     */
-    public function setBidi($bidi)
-    {
-        $this->container['bidi'] = $bidi;
-
-        return $this;
-    }
-
-    /*
-     * Gets border_always_in_front
-     *
-     * @return bool
-     */
-    public function getBorderAlwaysInFront()
-    {
-        return $this->container['border_always_in_front'];
-    }
-
-    /*
-     * Sets border_always_in_front
-     *
-     * @param bool $border_always_in_front Specifies where the page border is positioned relative to intersecting texts and objects.
-     *
-     * @return $this
-     */
-    public function setBorderAlwaysInFront($border_always_in_front)
-    {
-        $this->container['border_always_in_front'] = $border_always_in_front;
-
-        return $this;
-    }
-
-    /*
-     * Gets border_applies_to
-     *
-     * @return string
-     */
-    public function getBorderAppliesTo()
-    {
-        return $this->container['border_applies_to'];
-    }
-
-    /*
-     * Sets border_applies_to
-     *
-     * @param string $border_applies_to Specifies which pages the page border is printed on.
-     *
-     * @return $this
-     */
-    public function setBorderAppliesTo($border_applies_to)
-    {
-        $allowedValues = $this->getBorderAppliesToAllowableValues();
-        if ((!is_numeric($border_applies_to) && !in_array($border_applies_to, $allowedValues)) || (is_numeric($border_applies_to) && !in_array($allowedValues[$border_applies_to], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'border_applies_to', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['border_applies_to'] = $border_applies_to;
-
-        return $this;
-    }
-
-    /*
-     * Gets border_distance_from
-     *
-     * @return string
-     */
-    public function getBorderDistanceFrom()
-    {
-        return $this->container['border_distance_from'];
-    }
-
-    /*
-     * Sets border_distance_from
-     *
-     * @param string $border_distance_from Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.
-     *
-     * @return $this
-     */
-    public function setBorderDistanceFrom($border_distance_from)
-    {
-        $allowedValues = $this->getBorderDistanceFromAllowableValues();
-        if ((!is_numeric($border_distance_from) && !in_array($border_distance_from, $allowedValues)) || (is_numeric($border_distance_from) && !in_array($allowedValues[$border_distance_from], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'border_distance_from', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['border_distance_from'] = $border_distance_from;
-
-        return $this;
-    }
-
-    /*
-     * Gets bottom_margin
-     *
-     * @return double
-     */
-    public function getBottomMargin()
-    {
-        return $this->container['bottom_margin'];
-    }
-
-    /*
-     * Sets bottom_margin
-     *
-     * @param double $bottom_margin Returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.
-     *
-     * @return $this
-     */
-    public function setBottomMargin($bottom_margin)
-    {
-        $this->container['bottom_margin'] = $bottom_margin;
-
-        return $this;
-    }
 
     /*
      * Gets different_first_page_header_footer
@@ -901,482 +771,6 @@ class PageSetup extends LinkElement
     public function setDifferentFirstPageHeaderFooter($different_first_page_header_footer)
     {
         $this->container['different_first_page_header_footer'] = $different_first_page_header_footer;
-
-        return $this;
-    }
-
-    /*
-     * Gets first_page_tray
-     *
-     * @return int
-     */
-    public function getFirstPageTray()
-    {
-        return $this->container['first_page_tray'];
-    }
-
-    /*
-     * Sets first_page_tray
-     *
-     * @param int $first_page_tray Gets or sets the paper tray (bin) to use for the first page of a section. The value is implementation (printer) specific.
-     *
-     * @return $this
-     */
-    public function setFirstPageTray($first_page_tray)
-    {
-        $this->container['first_page_tray'] = $first_page_tray;
-
-        return $this;
-    }
-
-    /*
-     * Gets footer_distance
-     *
-     * @return double
-     */
-    public function getFooterDistance()
-    {
-        return $this->container['footer_distance'];
-    }
-
-    /*
-     * Sets footer_distance
-     *
-     * @param double $footer_distance Returns or sets the distance (in points) between the footer and the bottom of the page.
-     *
-     * @return $this
-     */
-    public function setFooterDistance($footer_distance)
-    {
-        $this->container['footer_distance'] = $footer_distance;
-
-        return $this;
-    }
-
-    /*
-     * Gets gutter
-     *
-     * @return double
-     */
-    public function getGutter()
-    {
-        return $this->container['gutter'];
-    }
-
-    /*
-     * Sets gutter
-     *
-     * @param double $gutter Gets or sets the amount of extra space added to the margin for document binding.
-     *
-     * @return $this
-     */
-    public function setGutter($gutter)
-    {
-        $this->container['gutter'] = $gutter;
-
-        return $this;
-    }
-
-    /*
-     * Gets header_distance
-     *
-     * @return double
-     */
-    public function getHeaderDistance()
-    {
-        return $this->container['header_distance'];
-    }
-
-    /*
-     * Sets header_distance
-     *
-     * @param double $header_distance Returns or sets the distance (in points) between the header and the top of the page.
-     *
-     * @return $this
-     */
-    public function setHeaderDistance($header_distance)
-    {
-        $this->container['header_distance'] = $header_distance;
-
-        return $this;
-    }
-
-    /*
-     * Gets left_margin
-     *
-     * @return double
-     */
-    public function getLeftMargin()
-    {
-        return $this->container['left_margin'];
-    }
-
-    /*
-     * Sets left_margin
-     *
-     * @param double $left_margin Returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.
-     *
-     * @return $this
-     */
-    public function setLeftMargin($left_margin)
-    {
-        $this->container['left_margin'] = $left_margin;
-
-        return $this;
-    }
-
-    /*
-     * Gets line_number_count_by
-     *
-     * @return int
-     */
-    public function getLineNumberCountBy()
-    {
-        return $this->container['line_number_count_by'];
-    }
-
-    /*
-     * Sets line_number_count_by
-     *
-     * @param int $line_number_count_by Returns or sets the numeric increment for line numbers.
-     *
-     * @return $this
-     */
-    public function setLineNumberCountBy($line_number_count_by)
-    {
-        $this->container['line_number_count_by'] = $line_number_count_by;
-
-        return $this;
-    }
-
-    /*
-     * Gets line_number_distance_from_text
-     *
-     * @return double
-     */
-    public function getLineNumberDistanceFromText()
-    {
-        return $this->container['line_number_distance_from_text'];
-    }
-
-    /*
-     * Sets line_number_distance_from_text
-     *
-     * @param double $line_number_distance_from_text Gets or sets distance between the right edge of line numbers and the left edge of the document.
-     *
-     * @return $this
-     */
-    public function setLineNumberDistanceFromText($line_number_distance_from_text)
-    {
-        $this->container['line_number_distance_from_text'] = $line_number_distance_from_text;
-
-        return $this;
-    }
-
-    /*
-     * Gets line_number_restart_mode
-     *
-     * @return string
-     */
-    public function getLineNumberRestartMode()
-    {
-        return $this->container['line_number_restart_mode'];
-    }
-
-    /*
-     * Sets line_number_restart_mode
-     *
-     * @param string $line_number_restart_mode Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new page or section or runs continuously.
-     *
-     * @return $this
-     */
-    public function setLineNumberRestartMode($line_number_restart_mode)
-    {
-        $allowedValues = $this->getLineNumberRestartModeAllowableValues();
-        if ((!is_numeric($line_number_restart_mode) && !in_array($line_number_restart_mode, $allowedValues)) || (is_numeric($line_number_restart_mode) && !in_array($allowedValues[$line_number_restart_mode], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'line_number_restart_mode', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['line_number_restart_mode'] = $line_number_restart_mode;
-
-        return $this;
-    }
-
-    /*
-     * Gets line_starting_number
-     *
-     * @return int
-     */
-    public function getLineStartingNumber()
-    {
-        return $this->container['line_starting_number'];
-    }
-
-    /*
-     * Sets line_starting_number
-     *
-     * @param int $line_starting_number Gets or sets the starting line number.
-     *
-     * @return $this
-     */
-    public function setLineStartingNumber($line_starting_number)
-    {
-        $this->container['line_starting_number'] = $line_starting_number;
-
-        return $this;
-    }
-
-    /*
-     * Gets orientation
-     *
-     * @return string
-     */
-    public function getOrientation()
-    {
-        return $this->container['orientation'];
-    }
-
-    /*
-     * Sets orientation
-     *
-     * @param string $orientation Returns or sets the orientation of the page.
-     *
-     * @return $this
-     */
-    public function setOrientation($orientation)
-    {
-        $allowedValues = $this->getOrientationAllowableValues();
-        if ((!is_numeric($orientation) && !in_array($orientation, $allowedValues)) || (is_numeric($orientation) && !in_array($allowedValues[$orientation], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'orientation', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['orientation'] = $orientation;
-
-        return $this;
-    }
-
-    /*
-     * Gets other_pages_tray
-     *
-     * @return int
-     */
-    public function getOtherPagesTray()
-    {
-        return $this->container['other_pages_tray'];
-    }
-
-    /*
-     * Sets other_pages_tray
-     *
-     * @param int $other_pages_tray Gets or sets the paper tray (bin) to be used for all but the first page of a section. The value is implementation (printer) specific.
-     *
-     * @return $this
-     */
-    public function setOtherPagesTray($other_pages_tray)
-    {
-        $this->container['other_pages_tray'] = $other_pages_tray;
-
-        return $this;
-    }
-
-    /*
-     * Gets page_height
-     *
-     * @return double
-     */
-    public function getPageHeight()
-    {
-        return $this->container['page_height'];
-    }
-
-    /*
-     * Sets page_height
-     *
-     * @param double $page_height Returns or sets the height of the page in points.
-     *
-     * @return $this
-     */
-    public function setPageHeight($page_height)
-    {
-        $this->container['page_height'] = $page_height;
-
-        return $this;
-    }
-
-    /*
-     * Gets page_number_style
-     *
-     * @return string
-     */
-    public function getPageNumberStyle()
-    {
-        return $this->container['page_number_style'];
-    }
-
-    /*
-     * Sets page_number_style
-     *
-     * @param string $page_number_style Gets or sets the page number format.
-     *
-     * @return $this
-     */
-    public function setPageNumberStyle($page_number_style)
-    {
-        $allowedValues = $this->getPageNumberStyleAllowableValues();
-        if ((!is_numeric($page_number_style) && !in_array($page_number_style, $allowedValues)) || (is_numeric($page_number_style) && !in_array($allowedValues[$page_number_style], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'page_number_style', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['page_number_style'] = $page_number_style;
-
-        return $this;
-    }
-
-    /*
-     * Gets page_starting_number
-     *
-     * @return int
-     */
-    public function getPageStartingNumber()
-    {
-        return $this->container['page_starting_number'];
-    }
-
-    /*
-     * Sets page_starting_number
-     *
-     * @param int $page_starting_number Gets or sets the starting page number of the section.
-     *
-     * @return $this
-     */
-    public function setPageStartingNumber($page_starting_number)
-    {
-        $this->container['page_starting_number'] = $page_starting_number;
-
-        return $this;
-    }
-
-    /*
-     * Gets page_width
-     *
-     * @return double
-     */
-    public function getPageWidth()
-    {
-        return $this->container['page_width'];
-    }
-
-    /*
-     * Sets page_width
-     *
-     * @param double $page_width Returns or sets the width of the page in points.
-     *
-     * @return $this
-     */
-    public function setPageWidth($page_width)
-    {
-        $this->container['page_width'] = $page_width;
-
-        return $this;
-    }
-
-    /*
-     * Gets paper_size
-     *
-     * @return string
-     */
-    public function getPaperSize()
-    {
-        return $this->container['paper_size'];
-    }
-
-    /*
-     * Sets paper_size
-     *
-     * @param string $paper_size Returns or sets the paper size.
-     *
-     * @return $this
-     */
-    public function setPaperSize($paper_size)
-    {
-        $allowedValues = $this->getPaperSizeAllowableValues();
-        if ((!is_numeric($paper_size) && !in_array($paper_size, $allowedValues)) || (is_numeric($paper_size) && !in_array($allowedValues[$paper_size], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'paper_size', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['paper_size'] = $paper_size;
-
-        return $this;
-    }
-
-    /*
-     * Gets restart_page_numbering
-     *
-     * @return bool
-     */
-    public function getRestartPageNumbering()
-    {
-        return $this->container['restart_page_numbering'];
-    }
-
-    /*
-     * Sets restart_page_numbering
-     *
-     * @param bool $restart_page_numbering True if page numbering restarts at the beginning of the section.
-     *
-     * @return $this
-     */
-    public function setRestartPageNumbering($restart_page_numbering)
-    {
-        $this->container['restart_page_numbering'] = $restart_page_numbering;
-
-        return $this;
-    }
-
-    /*
-     * Gets right_margin
-     *
-     * @return double
-     */
-    public function getRightMargin()
-    {
-        return $this->container['right_margin'];
-    }
-
-    /*
-     * Sets right_margin
-     *
-     * @param double $right_margin Returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.
-     *
-     * @return $this
-     */
-    public function setRightMargin($right_margin)
-    {
-        $this->container['right_margin'] = $right_margin;
-
-        return $this;
-    }
-
-    /*
-     * Gets rtl_gutter
-     *
-     * @return bool
-     */
-    public function getRtlGutter()
-    {
-        return $this->container['rtl_gutter'];
-    }
-
-    /*
-     * Sets rtl_gutter
-     *
-     * @param bool $rtl_gutter Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.
-     *
-     * @return $this
-     */
-    public function setRtlGutter($rtl_gutter)
-    {
-        $this->container['rtl_gutter'] = $rtl_gutter;
 
         return $this;
     }
@@ -1435,30 +829,6 @@ class PageSetup extends LinkElement
     }
 
     /*
-     * Gets top_margin
-     *
-     * @return double
-     */
-    public function getTopMargin()
-    {
-        return $this->container['top_margin'];
-    }
-
-    /*
-     * Sets top_margin
-     *
-     * @param double $top_margin Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.
-     *
-     * @return $this
-     */
-    public function setTopMargin($top_margin)
-    {
-        $this->container['top_margin'] = $top_margin;
-
-        return $this;
-    }
-
-    /*
      * Gets vertical_alignment
      *
      * @return string
@@ -1483,6 +853,636 @@ class PageSetup extends LinkElement
         }
 			
         $this->container['vertical_alignment'] = $vertical_alignment;
+
+        return $this;
+    }
+
+    /*
+     * Gets bidi
+     *
+     * @return bool
+     */
+    public function getBidi()
+    {
+        return $this->container['bidi'];
+    }
+
+    /*
+     * Sets bidi
+     *
+     * @param bool $bidi Specifies that this section contains bidirectional (complex scripts) text.
+     *
+     * @return $this
+     */
+    public function setBidi($bidi)
+    {
+        $this->container['bidi'] = $bidi;
+
+        return $this;
+    }
+
+    /*
+     * Gets page_width
+     *
+     * @return double
+     */
+    public function getPageWidth()
+    {
+        return $this->container['page_width'];
+    }
+
+    /*
+     * Sets page_width
+     *
+     * @param double $page_width Returns or sets the width of the page in points.
+     *
+     * @return $this
+     */
+    public function setPageWidth($page_width)
+    {
+        $this->container['page_width'] = $page_width;
+
+        return $this;
+    }
+
+    /*
+     * Gets page_height
+     *
+     * @return double
+     */
+    public function getPageHeight()
+    {
+        return $this->container['page_height'];
+    }
+
+    /*
+     * Sets page_height
+     *
+     * @param double $page_height Returns or sets the height of the page in points.
+     *
+     * @return $this
+     */
+    public function setPageHeight($page_height)
+    {
+        $this->container['page_height'] = $page_height;
+
+        return $this;
+    }
+
+    /*
+     * Gets paper_size
+     *
+     * @return string
+     */
+    public function getPaperSize()
+    {
+        return $this->container['paper_size'];
+    }
+
+    /*
+     * Sets paper_size
+     *
+     * @param string $paper_size Returns or sets the paper size.
+     *
+     * @return $this
+     */
+    public function setPaperSize($paper_size)
+    {
+        $allowedValues = $this->getPaperSizeAllowableValues();
+        if ((!is_numeric($paper_size) && !in_array($paper_size, $allowedValues)) || (is_numeric($paper_size) && !in_array($allowedValues[$paper_size], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'paper_size', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['paper_size'] = $paper_size;
+
+        return $this;
+    }
+
+    /*
+     * Gets orientation
+     *
+     * @return string
+     */
+    public function getOrientation()
+    {
+        return $this->container['orientation'];
+    }
+
+    /*
+     * Sets orientation
+     *
+     * @param string $orientation Returns or sets the orientation of the page.
+     *
+     * @return $this
+     */
+    public function setOrientation($orientation)
+    {
+        $allowedValues = $this->getOrientationAllowableValues();
+        if ((!is_numeric($orientation) && !in_array($orientation, $allowedValues)) || (is_numeric($orientation) && !in_array($allowedValues[$orientation], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'orientation', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['orientation'] = $orientation;
+
+        return $this;
+    }
+
+    /*
+     * Gets left_margin
+     *
+     * @return double
+     */
+    public function getLeftMargin()
+    {
+        return $this->container['left_margin'];
+    }
+
+    /*
+     * Sets left_margin
+     *
+     * @param double $left_margin Returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.
+     *
+     * @return $this
+     */
+    public function setLeftMargin($left_margin)
+    {
+        $this->container['left_margin'] = $left_margin;
+
+        return $this;
+    }
+
+    /*
+     * Gets right_margin
+     *
+     * @return double
+     */
+    public function getRightMargin()
+    {
+        return $this->container['right_margin'];
+    }
+
+    /*
+     * Sets right_margin
+     *
+     * @param double $right_margin Returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.
+     *
+     * @return $this
+     */
+    public function setRightMargin($right_margin)
+    {
+        $this->container['right_margin'] = $right_margin;
+
+        return $this;
+    }
+
+    /*
+     * Gets top_margin
+     *
+     * @return double
+     */
+    public function getTopMargin()
+    {
+        return $this->container['top_margin'];
+    }
+
+    /*
+     * Sets top_margin
+     *
+     * @param double $top_margin Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.
+     *
+     * @return $this
+     */
+    public function setTopMargin($top_margin)
+    {
+        $this->container['top_margin'] = $top_margin;
+
+        return $this;
+    }
+
+    /*
+     * Gets bottom_margin
+     *
+     * @return double
+     */
+    public function getBottomMargin()
+    {
+        return $this->container['bottom_margin'];
+    }
+
+    /*
+     * Sets bottom_margin
+     *
+     * @param double $bottom_margin Returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.
+     *
+     * @return $this
+     */
+    public function setBottomMargin($bottom_margin)
+    {
+        $this->container['bottom_margin'] = $bottom_margin;
+
+        return $this;
+    }
+
+    /*
+     * Gets header_distance
+     *
+     * @return double
+     */
+    public function getHeaderDistance()
+    {
+        return $this->container['header_distance'];
+    }
+
+    /*
+     * Sets header_distance
+     *
+     * @param double $header_distance Returns or sets the distance (in points) between the header and the top of the page.
+     *
+     * @return $this
+     */
+    public function setHeaderDistance($header_distance)
+    {
+        $this->container['header_distance'] = $header_distance;
+
+        return $this;
+    }
+
+    /*
+     * Gets footer_distance
+     *
+     * @return double
+     */
+    public function getFooterDistance()
+    {
+        return $this->container['footer_distance'];
+    }
+
+    /*
+     * Sets footer_distance
+     *
+     * @param double $footer_distance Returns or sets the distance (in points) between the footer and the bottom of the page.
+     *
+     * @return $this
+     */
+    public function setFooterDistance($footer_distance)
+    {
+        $this->container['footer_distance'] = $footer_distance;
+
+        return $this;
+    }
+
+    /*
+     * Gets gutter
+     *
+     * @return double
+     */
+    public function getGutter()
+    {
+        return $this->container['gutter'];
+    }
+
+    /*
+     * Sets gutter
+     *
+     * @param double $gutter Gets or sets the amount of extra space added to the margin for document binding.
+     *
+     * @return $this
+     */
+    public function setGutter($gutter)
+    {
+        $this->container['gutter'] = $gutter;
+
+        return $this;
+    }
+
+    /*
+     * Gets first_page_tray
+     *
+     * @return int
+     */
+    public function getFirstPageTray()
+    {
+        return $this->container['first_page_tray'];
+    }
+
+    /*
+     * Sets first_page_tray
+     *
+     * @param int $first_page_tray Gets or sets the paper tray (bin) to use for the first page of a section. The value is implementation (printer) specific.
+     *
+     * @return $this
+     */
+    public function setFirstPageTray($first_page_tray)
+    {
+        $this->container['first_page_tray'] = $first_page_tray;
+
+        return $this;
+    }
+
+    /*
+     * Gets other_pages_tray
+     *
+     * @return int
+     */
+    public function getOtherPagesTray()
+    {
+        return $this->container['other_pages_tray'];
+    }
+
+    /*
+     * Sets other_pages_tray
+     *
+     * @param int $other_pages_tray Gets or sets the paper tray (bin) to be used for all but the first page of a section. The value is implementation (printer) specific.
+     *
+     * @return $this
+     */
+    public function setOtherPagesTray($other_pages_tray)
+    {
+        $this->container['other_pages_tray'] = $other_pages_tray;
+
+        return $this;
+    }
+
+    /*
+     * Gets page_number_style
+     *
+     * @return string
+     */
+    public function getPageNumberStyle()
+    {
+        return $this->container['page_number_style'];
+    }
+
+    /*
+     * Sets page_number_style
+     *
+     * @param string $page_number_style Gets or sets the page number format.
+     *
+     * @return $this
+     */
+    public function setPageNumberStyle($page_number_style)
+    {
+        $allowedValues = $this->getPageNumberStyleAllowableValues();
+        if ((!is_numeric($page_number_style) && !in_array($page_number_style, $allowedValues)) || (is_numeric($page_number_style) && !in_array($allowedValues[$page_number_style], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'page_number_style', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['page_number_style'] = $page_number_style;
+
+        return $this;
+    }
+
+    /*
+     * Gets restart_page_numbering
+     *
+     * @return bool
+     */
+    public function getRestartPageNumbering()
+    {
+        return $this->container['restart_page_numbering'];
+    }
+
+    /*
+     * Sets restart_page_numbering
+     *
+     * @param bool $restart_page_numbering True if page numbering restarts at the beginning of the section.
+     *
+     * @return $this
+     */
+    public function setRestartPageNumbering($restart_page_numbering)
+    {
+        $this->container['restart_page_numbering'] = $restart_page_numbering;
+
+        return $this;
+    }
+
+    /*
+     * Gets page_starting_number
+     *
+     * @return int
+     */
+    public function getPageStartingNumber()
+    {
+        return $this->container['page_starting_number'];
+    }
+
+    /*
+     * Sets page_starting_number
+     *
+     * @param int $page_starting_number Gets or sets the starting page number of the section.
+     *
+     * @return $this
+     */
+    public function setPageStartingNumber($page_starting_number)
+    {
+        $this->container['page_starting_number'] = $page_starting_number;
+
+        return $this;
+    }
+
+    /*
+     * Gets line_number_restart_mode
+     *
+     * @return string
+     */
+    public function getLineNumberRestartMode()
+    {
+        return $this->container['line_number_restart_mode'];
+    }
+
+    /*
+     * Sets line_number_restart_mode
+     *
+     * @param string $line_number_restart_mode Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new page or section or runs continuously.
+     *
+     * @return $this
+     */
+    public function setLineNumberRestartMode($line_number_restart_mode)
+    {
+        $allowedValues = $this->getLineNumberRestartModeAllowableValues();
+        if ((!is_numeric($line_number_restart_mode) && !in_array($line_number_restart_mode, $allowedValues)) || (is_numeric($line_number_restart_mode) && !in_array($allowedValues[$line_number_restart_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'line_number_restart_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['line_number_restart_mode'] = $line_number_restart_mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets line_number_count_by
+     *
+     * @return int
+     */
+    public function getLineNumberCountBy()
+    {
+        return $this->container['line_number_count_by'];
+    }
+
+    /*
+     * Sets line_number_count_by
+     *
+     * @param int $line_number_count_by Returns or sets the numeric increment for line numbers.
+     *
+     * @return $this
+     */
+    public function setLineNumberCountBy($line_number_count_by)
+    {
+        $this->container['line_number_count_by'] = $line_number_count_by;
+
+        return $this;
+    }
+
+    /*
+     * Gets line_number_distance_from_text
+     *
+     * @return double
+     */
+    public function getLineNumberDistanceFromText()
+    {
+        return $this->container['line_number_distance_from_text'];
+    }
+
+    /*
+     * Sets line_number_distance_from_text
+     *
+     * @param double $line_number_distance_from_text Gets or sets distance between the right edge of line numbers and the left edge of the document.
+     *
+     * @return $this
+     */
+    public function setLineNumberDistanceFromText($line_number_distance_from_text)
+    {
+        $this->container['line_number_distance_from_text'] = $line_number_distance_from_text;
+
+        return $this;
+    }
+
+    /*
+     * Gets line_starting_number
+     *
+     * @return int
+     */
+    public function getLineStartingNumber()
+    {
+        return $this->container['line_starting_number'];
+    }
+
+    /*
+     * Sets line_starting_number
+     *
+     * @param int $line_starting_number Gets or sets the starting line number.
+     *
+     * @return $this
+     */
+    public function setLineStartingNumber($line_starting_number)
+    {
+        $this->container['line_starting_number'] = $line_starting_number;
+
+        return $this;
+    }
+
+    /*
+     * Gets rtl_gutter
+     *
+     * @return bool
+     */
+    public function getRtlGutter()
+    {
+        return $this->container['rtl_gutter'];
+    }
+
+    /*
+     * Sets rtl_gutter
+     *
+     * @param bool $rtl_gutter Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.
+     *
+     * @return $this
+     */
+    public function setRtlGutter($rtl_gutter)
+    {
+        $this->container['rtl_gutter'] = $rtl_gutter;
+
+        return $this;
+    }
+
+    /*
+     * Gets border_always_in_front
+     *
+     * @return bool
+     */
+    public function getBorderAlwaysInFront()
+    {
+        return $this->container['border_always_in_front'];
+    }
+
+    /*
+     * Sets border_always_in_front
+     *
+     * @param bool $border_always_in_front Specifies where the page border is positioned relative to intersecting texts and objects.
+     *
+     * @return $this
+     */
+    public function setBorderAlwaysInFront($border_always_in_front)
+    {
+        $this->container['border_always_in_front'] = $border_always_in_front;
+
+        return $this;
+    }
+
+    /*
+     * Gets border_distance_from
+     *
+     * @return string
+     */
+    public function getBorderDistanceFrom()
+    {
+        return $this->container['border_distance_from'];
+    }
+
+    /*
+     * Sets border_distance_from
+     *
+     * @param string $border_distance_from Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.
+     *
+     * @return $this
+     */
+    public function setBorderDistanceFrom($border_distance_from)
+    {
+        $allowedValues = $this->getBorderDistanceFromAllowableValues();
+        if ((!is_numeric($border_distance_from) && !in_array($border_distance_from, $allowedValues)) || (is_numeric($border_distance_from) && !in_array($allowedValues[$border_distance_from], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'border_distance_from', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['border_distance_from'] = $border_distance_from;
+
+        return $this;
+    }
+
+    /*
+     * Gets border_applies_to
+     *
+     * @return string
+     */
+    public function getBorderAppliesTo()
+    {
+        return $this->container['border_applies_to'];
+    }
+
+    /*
+     * Sets border_applies_to
+     *
+     * @param string $border_applies_to Specifies which pages the page border is printed on.
+     *
+     * @return $this
+     */
+    public function setBorderAppliesTo($border_applies_to)
+    {
+        $allowedValues = $this->getBorderAppliesToAllowableValues();
+        if ((!is_numeric($border_applies_to) && !in_array($border_applies_to, $allowedValues)) || (is_numeric($border_applies_to) && !in_array($allowedValues[$border_applies_to], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'border_applies_to', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['border_applies_to'] = $border_applies_to;
 
         return $this;
     }

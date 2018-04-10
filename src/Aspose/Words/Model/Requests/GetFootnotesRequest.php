@@ -1,5 +1,4 @@
 <?php
-
 }
 /*
  * --------------------------------------------------------------------------------------------------------------------
@@ -30,7 +29,7 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for getFootnotes" operation.
+ * Request model for getFootnotes operation.
  */
 class GetFootnotesRequest
 {

@@ -1,5 +1,4 @@
 <?php
-
 }
 /*
  * --------------------------------------------------------------------------------------------------------------------
@@ -30,7 +29,7 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for postAppendDocument" operation.
+ * Request model for postAppendDocument operation.
  */
 class PostAppendDocumentRequest
 {

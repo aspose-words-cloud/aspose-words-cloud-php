@@ -86,13 +86,13 @@ class WordsApi
      *
      * Accept all revisions in document
      *
-     * @param Requests\AcceptAllRevisionsRequest $request is a request object for operation
+     * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\RevisionsModificationResponse
      */
-    public function acceptAllRevisions(Requests\AcceptAllRevisionsRequest $request)
+    public function acceptAllRevisions(Requests\acceptAllRevisionsRequest $request)
     {
         try {
              list($response) = $this->acceptAllRevisionsWithHttpInfo($request);
@@ -109,16 +109,16 @@ class WordsApi
      *
      * Accept all revisions in document
      *
-     * @param Requests\AcceptAllRevisionsRequest $request is a request object for operation
+     * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\RevisionsModificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function acceptAllRevisionsWithHttpInfo(Requests\AcceptAllRevisionsRequest $request)
+    public function acceptAllRevisionsWithHttpInfo(Requests\acceptAllRevisionsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
-        $request = $this->AcceptAllRevisionsRequest($request);
+        $request = $this->acceptAllRevisionsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -175,12 +175,12 @@ class WordsApi
      *
      * Accept all revisions in document
      *
-     * @param Requests\AcceptAllRevisionsRequest $request is a request object for operation
+     * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function acceptAllRevisionsAsync(Requests\AcceptAllRevisionsRequest $request) 
+    public function acceptAllRevisionsAsync(Requests\acceptAllRevisionsRequest $request) 
     {
         return $this->acceptAllRevisionsAsyncWithHttpInfo($request)
             ->then(
@@ -195,15 +195,15 @@ class WordsApi
      *
      * Accept all revisions in document
      *
-     * @param Requests\AcceptAllRevisionsRequest $request is a request object for operation
+     * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function acceptAllRevisionsAsyncWithHttpInfo(Requests\AcceptAllRevisionsRequest $request) 
+    public function acceptAllRevisionsAsyncWithHttpInfo(Requests\acceptAllRevisionsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
-        $request = $this->AcceptAllRevisionsRequest($request);
+        $request = $this->acceptAllRevisionsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -248,12 +248,12 @@ class WordsApi
     /*
      * Create request for operation 'acceptAllRevisions'
      *
-     * @param Requests\AcceptAllRevisionsRequest $request is a request object for operation
+     * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function AcceptAllRevisionsRequest(Requests\AcceptAllRevisionsRequest $request)
+    protected function acceptAllRevisionsRequest(Requests\acceptAllRevisionsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -407,13 +407,13 @@ class WordsApi
      *
      * Add new or update existing document property.
      *
-     * @param Requests\CreateOrUpdateDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\createOrUpdateDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentPropertyResponse
      */
-    public function createOrUpdateDocumentProperty(Requests\CreateOrUpdateDocumentPropertyRequest $request)
+    public function createOrUpdateDocumentProperty(Requests\createOrUpdateDocumentPropertyRequest $request)
     {
         try {
              list($response) = $this->createOrUpdateDocumentPropertyWithHttpInfo($request);
@@ -430,16 +430,16 @@ class WordsApi
      *
      * Add new or update existing document property.
      *
-     * @param Requests\CreateOrUpdateDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\createOrUpdateDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createOrUpdateDocumentPropertyWithHttpInfo(Requests\CreateOrUpdateDocumentPropertyRequest $request)
+    public function createOrUpdateDocumentPropertyWithHttpInfo(Requests\createOrUpdateDocumentPropertyRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
-        $request = $this->CreateOrUpdateDocumentPropertyRequest($request);
+        $request = $this->createOrUpdateDocumentPropertyRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -496,12 +496,12 @@ class WordsApi
      *
      * Add new or update existing document property.
      *
-     * @param Requests\CreateOrUpdateDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\createOrUpdateDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrUpdateDocumentPropertyAsync(Requests\CreateOrUpdateDocumentPropertyRequest $request) 
+    public function createOrUpdateDocumentPropertyAsync(Requests\createOrUpdateDocumentPropertyRequest $request) 
     {
         return $this->createOrUpdateDocumentPropertyAsyncWithHttpInfo($request)
             ->then(
@@ -516,15 +516,15 @@ class WordsApi
      *
      * Add new or update existing document property.
      *
-     * @param Requests\CreateOrUpdateDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\createOrUpdateDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrUpdateDocumentPropertyAsyncWithHttpInfo(Requests\CreateOrUpdateDocumentPropertyRequest $request) 
+    public function createOrUpdateDocumentPropertyAsyncWithHttpInfo(Requests\createOrUpdateDocumentPropertyRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
-        $request = $this->CreateOrUpdateDocumentPropertyRequest($request);
+        $request = $this->createOrUpdateDocumentPropertyRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -569,12 +569,12 @@ class WordsApi
     /*
      * Create request for operation 'createOrUpdateDocumentProperty'
      *
-     * @param Requests\CreateOrUpdateDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\createOrUpdateDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function CreateOrUpdateDocumentPropertyRequest(Requests\CreateOrUpdateDocumentPropertyRequest $request)
+    protected function createOrUpdateDocumentPropertyRequest(Requests\createOrUpdateDocumentPropertyRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -768,13 +768,13 @@ class WordsApi
      *
      * Resets border properties to default values.
      *
-     * @param Requests\DeleteBorderRequest $request is a request object for operation
+     * @param Requests\deleteBorderRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\BorderResponse
      */
-    public function deleteBorder(Requests\DeleteBorderRequest $request)
+    public function deleteBorder(Requests\deleteBorderRequest $request)
     {
         try {
              list($response) = $this->deleteBorderWithHttpInfo($request);
@@ -791,16 +791,16 @@ class WordsApi
      *
      * Resets border properties to default values.
      *
-     * @param Requests\DeleteBorderRequest $request is a request object for operation
+     * @param Requests\deleteBorderRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\BorderResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBorderWithHttpInfo(Requests\DeleteBorderRequest $request)
+    public function deleteBorderWithHttpInfo(Requests\deleteBorderRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
-        $request = $this->DeleteBorderRequest($request);
+        $request = $this->deleteBorderRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -857,12 +857,12 @@ class WordsApi
      *
      * Resets border properties to default values.
      *
-     * @param Requests\DeleteBorderRequest $request is a request object for operation
+     * @param Requests\deleteBorderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBorderAsync(Requests\DeleteBorderRequest $request) 
+    public function deleteBorderAsync(Requests\deleteBorderRequest $request) 
     {
         return $this->deleteBorderAsyncWithHttpInfo($request)
             ->then(
@@ -877,15 +877,15 @@ class WordsApi
      *
      * Resets border properties to default values.
      *
-     * @param Requests\DeleteBorderRequest $request is a request object for operation
+     * @param Requests\deleteBorderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBorderAsyncWithHttpInfo(Requests\DeleteBorderRequest $request) 
+    public function deleteBorderAsyncWithHttpInfo(Requests\deleteBorderRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
-        $request = $this->DeleteBorderRequest($request);
+        $request = $this->deleteBorderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -930,12 +930,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteBorder'
      *
-     * @param Requests\DeleteBorderRequest $request is a request object for operation
+     * @param Requests\deleteBorderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteBorderRequest(Requests\DeleteBorderRequest $request)
+    protected function deleteBorderRequest(Requests\deleteBorderRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -1127,13 +1127,13 @@ class WordsApi
      *
      * Resets borders properties to default values.
      *
-     * @param Requests\DeleteBordersRequest $request is a request object for operation
+     * @param Requests\deleteBordersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\BordersResponse
      */
-    public function deleteBorders(Requests\DeleteBordersRequest $request)
+    public function deleteBorders(Requests\deleteBordersRequest $request)
     {
         try {
              list($response) = $this->deleteBordersWithHttpInfo($request);
@@ -1150,16 +1150,16 @@ class WordsApi
      *
      * Resets borders properties to default values.
      *
-     * @param Requests\DeleteBordersRequest $request is a request object for operation
+     * @param Requests\deleteBordersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\BordersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBordersWithHttpInfo(Requests\DeleteBordersRequest $request)
+    public function deleteBordersWithHttpInfo(Requests\deleteBordersRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
-        $request = $this->DeleteBordersRequest($request);
+        $request = $this->deleteBordersRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1216,12 +1216,12 @@ class WordsApi
      *
      * Resets borders properties to default values.
      *
-     * @param Requests\DeleteBordersRequest $request is a request object for operation
+     * @param Requests\deleteBordersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBordersAsync(Requests\DeleteBordersRequest $request) 
+    public function deleteBordersAsync(Requests\deleteBordersRequest $request) 
     {
         return $this->deleteBordersAsyncWithHttpInfo($request)
             ->then(
@@ -1236,15 +1236,15 @@ class WordsApi
      *
      * Resets borders properties to default values.
      *
-     * @param Requests\DeleteBordersRequest $request is a request object for operation
+     * @param Requests\deleteBordersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBordersAsyncWithHttpInfo(Requests\DeleteBordersRequest $request) 
+    public function deleteBordersAsyncWithHttpInfo(Requests\deleteBordersRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
-        $request = $this->DeleteBordersRequest($request);
+        $request = $this->deleteBordersRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1289,12 +1289,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteBorders'
      *
-     * @param Requests\DeleteBordersRequest $request is a request object for operation
+     * @param Requests\deleteBordersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteBordersRequest(Requests\DeleteBordersRequest $request)
+    protected function deleteBordersRequest(Requests\deleteBordersRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -1477,13 +1477,13 @@ class WordsApi
      *
      * Remove comment from document.
      *
-     * @param Requests\DeleteCommentRequest $request is a request object for operation
+     * @param Requests\deleteCommentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteComment(Requests\DeleteCommentRequest $request)
+    public function deleteComment(Requests\deleteCommentRequest $request)
     {
         try {
              list($response) = $this->deleteCommentWithHttpInfo($request);
@@ -1500,16 +1500,16 @@ class WordsApi
      *
      * Remove comment from document.
      *
-     * @param Requests\DeleteCommentRequest $request is a request object for operation
+     * @param Requests\deleteCommentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCommentWithHttpInfo(Requests\DeleteCommentRequest $request)
+    public function deleteCommentWithHttpInfo(Requests\deleteCommentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteCommentRequest($request);
+        $request = $this->deleteCommentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1566,12 +1566,12 @@ class WordsApi
      *
      * Remove comment from document.
      *
-     * @param Requests\DeleteCommentRequest $request is a request object for operation
+     * @param Requests\deleteCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCommentAsync(Requests\DeleteCommentRequest $request) 
+    public function deleteCommentAsync(Requests\deleteCommentRequest $request) 
     {
         return $this->deleteCommentAsyncWithHttpInfo($request)
             ->then(
@@ -1586,15 +1586,15 @@ class WordsApi
      *
      * Remove comment from document.
      *
-     * @param Requests\DeleteCommentRequest $request is a request object for operation
+     * @param Requests\deleteCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCommentAsyncWithHttpInfo(Requests\DeleteCommentRequest $request) 
+    public function deleteCommentAsyncWithHttpInfo(Requests\deleteCommentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteCommentRequest($request);
+        $request = $this->deleteCommentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1639,12 +1639,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteComment'
      *
-     * @param Requests\DeleteCommentRequest $request is a request object for operation
+     * @param Requests\deleteCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteCommentRequest(Requests\DeleteCommentRequest $request)
+    protected function deleteCommentRequest(Requests\deleteCommentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -1827,13 +1827,13 @@ class WordsApi
      *
      * Remove macros from document.
      *
-     * @param Requests\DeleteDocumentMacrosRequest $request is a request object for operation
+     * @param Requests\deleteDocumentMacrosRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteDocumentMacros(Requests\DeleteDocumentMacrosRequest $request)
+    public function deleteDocumentMacros(Requests\deleteDocumentMacrosRequest $request)
     {
         try {
              list($response) = $this->deleteDocumentMacrosWithHttpInfo($request);
@@ -1850,16 +1850,16 @@ class WordsApi
      *
      * Remove macros from document.
      *
-     * @param Requests\DeleteDocumentMacrosRequest $request is a request object for operation
+     * @param Requests\deleteDocumentMacrosRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteDocumentMacrosWithHttpInfo(Requests\DeleteDocumentMacrosRequest $request)
+    public function deleteDocumentMacrosWithHttpInfo(Requests\deleteDocumentMacrosRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteDocumentMacrosRequest($request);
+        $request = $this->deleteDocumentMacrosRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1916,12 +1916,12 @@ class WordsApi
      *
      * Remove macros from document.
      *
-     * @param Requests\DeleteDocumentMacrosRequest $request is a request object for operation
+     * @param Requests\deleteDocumentMacrosRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentMacrosAsync(Requests\DeleteDocumentMacrosRequest $request) 
+    public function deleteDocumentMacrosAsync(Requests\deleteDocumentMacrosRequest $request) 
     {
         return $this->deleteDocumentMacrosAsyncWithHttpInfo($request)
             ->then(
@@ -1936,15 +1936,15 @@ class WordsApi
      *
      * Remove macros from document.
      *
-     * @param Requests\DeleteDocumentMacrosRequest $request is a request object for operation
+     * @param Requests\deleteDocumentMacrosRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentMacrosAsyncWithHttpInfo(Requests\DeleteDocumentMacrosRequest $request) 
+    public function deleteDocumentMacrosAsyncWithHttpInfo(Requests\deleteDocumentMacrosRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteDocumentMacrosRequest($request);
+        $request = $this->deleteDocumentMacrosRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1989,12 +1989,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteDocumentMacros'
      *
-     * @param Requests\DeleteDocumentMacrosRequest $request is a request object for operation
+     * @param Requests\deleteDocumentMacrosRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteDocumentMacrosRequest(Requests\DeleteDocumentMacrosRequest $request)
+    protected function deleteDocumentMacrosRequest(Requests\deleteDocumentMacrosRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -2168,13 +2168,13 @@ class WordsApi
      *
      * Delete document property.
      *
-     * @param Requests\DeleteDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\deleteDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteDocumentProperty(Requests\DeleteDocumentPropertyRequest $request)
+    public function deleteDocumentProperty(Requests\deleteDocumentPropertyRequest $request)
     {
         try {
              list($response) = $this->deleteDocumentPropertyWithHttpInfo($request);
@@ -2191,16 +2191,16 @@ class WordsApi
      *
      * Delete document property.
      *
-     * @param Requests\DeleteDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\deleteDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteDocumentPropertyWithHttpInfo(Requests\DeleteDocumentPropertyRequest $request)
+    public function deleteDocumentPropertyWithHttpInfo(Requests\deleteDocumentPropertyRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteDocumentPropertyRequest($request);
+        $request = $this->deleteDocumentPropertyRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -2257,12 +2257,12 @@ class WordsApi
      *
      * Delete document property.
      *
-     * @param Requests\DeleteDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\deleteDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentPropertyAsync(Requests\DeleteDocumentPropertyRequest $request) 
+    public function deleteDocumentPropertyAsync(Requests\deleteDocumentPropertyRequest $request) 
     {
         return $this->deleteDocumentPropertyAsyncWithHttpInfo($request)
             ->then(
@@ -2277,15 +2277,15 @@ class WordsApi
      *
      * Delete document property.
      *
-     * @param Requests\DeleteDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\deleteDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentPropertyAsyncWithHttpInfo(Requests\DeleteDocumentPropertyRequest $request) 
+    public function deleteDocumentPropertyAsyncWithHttpInfo(Requests\deleteDocumentPropertyRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteDocumentPropertyRequest($request);
+        $request = $this->deleteDocumentPropertyRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -2330,12 +2330,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteDocumentProperty'
      *
-     * @param Requests\DeleteDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\deleteDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteDocumentPropertyRequest(Requests\DeleteDocumentPropertyRequest $request)
+    protected function deleteDocumentPropertyRequest(Requests\deleteDocumentPropertyRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -2518,13 +2518,13 @@ class WordsApi
      *
      * Delete watermark (for deleting last watermark from the document).
      *
-     * @param Requests\DeleteDocumentWatermarkRequest $request is a request object for operation
+     * @param Requests\deleteDocumentWatermarkRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function deleteDocumentWatermark(Requests\DeleteDocumentWatermarkRequest $request)
+    public function deleteDocumentWatermark(Requests\deleteDocumentWatermarkRequest $request)
     {
         try {
              list($response) = $this->deleteDocumentWatermarkWithHttpInfo($request);
@@ -2541,16 +2541,16 @@ class WordsApi
      *
      * Delete watermark (for deleting last watermark from the document).
      *
-     * @param Requests\DeleteDocumentWatermarkRequest $request is a request object for operation
+     * @param Requests\deleteDocumentWatermarkRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteDocumentWatermarkWithHttpInfo(Requests\DeleteDocumentWatermarkRequest $request)
+    public function deleteDocumentWatermarkWithHttpInfo(Requests\deleteDocumentWatermarkRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->DeleteDocumentWatermarkRequest($request);
+        $request = $this->deleteDocumentWatermarkRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -2607,12 +2607,12 @@ class WordsApi
      *
      * Delete watermark (for deleting last watermark from the document).
      *
-     * @param Requests\DeleteDocumentWatermarkRequest $request is a request object for operation
+     * @param Requests\deleteDocumentWatermarkRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentWatermarkAsync(Requests\DeleteDocumentWatermarkRequest $request) 
+    public function deleteDocumentWatermarkAsync(Requests\deleteDocumentWatermarkRequest $request) 
     {
         return $this->deleteDocumentWatermarkAsyncWithHttpInfo($request)
             ->then(
@@ -2627,15 +2627,15 @@ class WordsApi
      *
      * Delete watermark (for deleting last watermark from the document).
      *
-     * @param Requests\DeleteDocumentWatermarkRequest $request is a request object for operation
+     * @param Requests\deleteDocumentWatermarkRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentWatermarkAsyncWithHttpInfo(Requests\DeleteDocumentWatermarkRequest $request) 
+    public function deleteDocumentWatermarkAsyncWithHttpInfo(Requests\deleteDocumentWatermarkRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->DeleteDocumentWatermarkRequest($request);
+        $request = $this->deleteDocumentWatermarkRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -2680,12 +2680,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteDocumentWatermark'
      *
-     * @param Requests\DeleteDocumentWatermarkRequest $request is a request object for operation
+     * @param Requests\deleteDocumentWatermarkRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteDocumentWatermarkRequest(Requests\DeleteDocumentWatermarkRequest $request)
+    protected function deleteDocumentWatermarkRequest(Requests\deleteDocumentWatermarkRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -2859,13 +2859,13 @@ class WordsApi
      *
      * Removes drawing object from document.
      *
-     * @param Requests\DeleteDrawingObjectRequest $request is a request object for operation
+     * @param Requests\deleteDrawingObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteDrawingObject(Requests\DeleteDrawingObjectRequest $request)
+    public function deleteDrawingObject(Requests\deleteDrawingObjectRequest $request)
     {
         try {
              list($response) = $this->deleteDrawingObjectWithHttpInfo($request);
@@ -2882,16 +2882,16 @@ class WordsApi
      *
      * Removes drawing object from document.
      *
-     * @param Requests\DeleteDrawingObjectRequest $request is a request object for operation
+     * @param Requests\deleteDrawingObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteDrawingObjectWithHttpInfo(Requests\DeleteDrawingObjectRequest $request)
+    public function deleteDrawingObjectWithHttpInfo(Requests\deleteDrawingObjectRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteDrawingObjectRequest($request);
+        $request = $this->deleteDrawingObjectRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -2948,12 +2948,12 @@ class WordsApi
      *
      * Removes drawing object from document.
      *
-     * @param Requests\DeleteDrawingObjectRequest $request is a request object for operation
+     * @param Requests\deleteDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDrawingObjectAsync(Requests\DeleteDrawingObjectRequest $request) 
+    public function deleteDrawingObjectAsync(Requests\deleteDrawingObjectRequest $request) 
     {
         return $this->deleteDrawingObjectAsyncWithHttpInfo($request)
             ->then(
@@ -2968,15 +2968,15 @@ class WordsApi
      *
      * Removes drawing object from document.
      *
-     * @param Requests\DeleteDrawingObjectRequest $request is a request object for operation
+     * @param Requests\deleteDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDrawingObjectAsyncWithHttpInfo(Requests\DeleteDrawingObjectRequest $request) 
+    public function deleteDrawingObjectAsyncWithHttpInfo(Requests\deleteDrawingObjectRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteDrawingObjectRequest($request);
+        $request = $this->deleteDrawingObjectRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -3021,12 +3021,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteDrawingObject'
      *
-     * @param Requests\DeleteDrawingObjectRequest $request is a request object for operation
+     * @param Requests\deleteDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteDrawingObjectRequest(Requests\DeleteDrawingObjectRequest $request)
+    protected function deleteDrawingObjectRequest(Requests\deleteDrawingObjectRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -3219,13 +3219,13 @@ class WordsApi
      *
      * Delete field from document.
      *
-     * @param Requests\DeleteFieldRequest $request is a request object for operation
+     * @param Requests\deleteFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteField(Requests\DeleteFieldRequest $request)
+    public function deleteField(Requests\deleteFieldRequest $request)
     {
         try {
              list($response) = $this->deleteFieldWithHttpInfo($request);
@@ -3242,16 +3242,16 @@ class WordsApi
      *
      * Delete field from document.
      *
-     * @param Requests\DeleteFieldRequest $request is a request object for operation
+     * @param Requests\deleteFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFieldWithHttpInfo(Requests\DeleteFieldRequest $request)
+    public function deleteFieldWithHttpInfo(Requests\deleteFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteFieldRequest($request);
+        $request = $this->deleteFieldRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -3308,12 +3308,12 @@ class WordsApi
      *
      * Delete field from document.
      *
-     * @param Requests\DeleteFieldRequest $request is a request object for operation
+     * @param Requests\deleteFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFieldAsync(Requests\DeleteFieldRequest $request) 
+    public function deleteFieldAsync(Requests\deleteFieldRequest $request) 
     {
         return $this->deleteFieldAsyncWithHttpInfo($request)
             ->then(
@@ -3328,15 +3328,15 @@ class WordsApi
      *
      * Delete field from document.
      *
-     * @param Requests\DeleteFieldRequest $request is a request object for operation
+     * @param Requests\deleteFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFieldAsyncWithHttpInfo(Requests\DeleteFieldRequest $request) 
+    public function deleteFieldAsyncWithHttpInfo(Requests\deleteFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteFieldRequest($request);
+        $request = $this->deleteFieldRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -3381,12 +3381,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteField'
      *
-     * @param Requests\DeleteFieldRequest $request is a request object for operation
+     * @param Requests\deleteFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteFieldRequest(Requests\DeleteFieldRequest $request)
+    protected function deleteFieldRequest(Requests\deleteFieldRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -3579,13 +3579,13 @@ class WordsApi
      *
      * Remove fields from section paragraph.
      *
-     * @param Requests\DeleteFieldsRequest $request is a request object for operation
+     * @param Requests\deleteFieldsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteFields(Requests\DeleteFieldsRequest $request)
+    public function deleteFields(Requests\deleteFieldsRequest $request)
     {
         try {
              list($response) = $this->deleteFieldsWithHttpInfo($request);
@@ -3602,16 +3602,16 @@ class WordsApi
      *
      * Remove fields from section paragraph.
      *
-     * @param Requests\DeleteFieldsRequest $request is a request object for operation
+     * @param Requests\deleteFieldsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFieldsWithHttpInfo(Requests\DeleteFieldsRequest $request)
+    public function deleteFieldsWithHttpInfo(Requests\deleteFieldsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteFieldsRequest($request);
+        $request = $this->deleteFieldsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -3668,12 +3668,12 @@ class WordsApi
      *
      * Remove fields from section paragraph.
      *
-     * @param Requests\DeleteFieldsRequest $request is a request object for operation
+     * @param Requests\deleteFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFieldsAsync(Requests\DeleteFieldsRequest $request) 
+    public function deleteFieldsAsync(Requests\deleteFieldsRequest $request) 
     {
         return $this->deleteFieldsAsyncWithHttpInfo($request)
             ->then(
@@ -3688,15 +3688,15 @@ class WordsApi
      *
      * Remove fields from section paragraph.
      *
-     * @param Requests\DeleteFieldsRequest $request is a request object for operation
+     * @param Requests\deleteFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFieldsAsyncWithHttpInfo(Requests\DeleteFieldsRequest $request) 
+    public function deleteFieldsAsyncWithHttpInfo(Requests\deleteFieldsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteFieldsRequest($request);
+        $request = $this->deleteFieldsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -3741,12 +3741,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteFields'
      *
-     * @param Requests\DeleteFieldsRequest $request is a request object for operation
+     * @param Requests\deleteFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteFieldsRequest(Requests\DeleteFieldsRequest $request)
+    protected function deleteFieldsRequest(Requests\deleteFieldsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -3930,13 +3930,13 @@ class WordsApi
      *
      * Removes footnote from document.
      *
-     * @param Requests\DeleteFootnoteRequest $request is a request object for operation
+     * @param Requests\deleteFootnoteRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteFootnote(Requests\DeleteFootnoteRequest $request)
+    public function deleteFootnote(Requests\deleteFootnoteRequest $request)
     {
         try {
              list($response) = $this->deleteFootnoteWithHttpInfo($request);
@@ -3953,16 +3953,16 @@ class WordsApi
      *
      * Removes footnote from document.
      *
-     * @param Requests\DeleteFootnoteRequest $request is a request object for operation
+     * @param Requests\deleteFootnoteRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFootnoteWithHttpInfo(Requests\DeleteFootnoteRequest $request)
+    public function deleteFootnoteWithHttpInfo(Requests\deleteFootnoteRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteFootnoteRequest($request);
+        $request = $this->deleteFootnoteRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -4019,12 +4019,12 @@ class WordsApi
      *
      * Removes footnote from document.
      *
-     * @param Requests\DeleteFootnoteRequest $request is a request object for operation
+     * @param Requests\deleteFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFootnoteAsync(Requests\DeleteFootnoteRequest $request) 
+    public function deleteFootnoteAsync(Requests\deleteFootnoteRequest $request) 
     {
         return $this->deleteFootnoteAsyncWithHttpInfo($request)
             ->then(
@@ -4039,15 +4039,15 @@ class WordsApi
      *
      * Removes footnote from document.
      *
-     * @param Requests\DeleteFootnoteRequest $request is a request object for operation
+     * @param Requests\deleteFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFootnoteAsyncWithHttpInfo(Requests\DeleteFootnoteRequest $request) 
+    public function deleteFootnoteAsyncWithHttpInfo(Requests\deleteFootnoteRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteFootnoteRequest($request);
+        $request = $this->deleteFootnoteRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -4092,12 +4092,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteFootnote'
      *
-     * @param Requests\DeleteFootnoteRequest $request is a request object for operation
+     * @param Requests\deleteFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteFootnoteRequest(Requests\DeleteFootnoteRequest $request)
+    protected function deleteFootnoteRequest(Requests\deleteFootnoteRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -4290,13 +4290,13 @@ class WordsApi
      *
      * Removes form field from document.
      *
-     * @param Requests\DeleteFormFieldRequest $request is a request object for operation
+     * @param Requests\deleteFormFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteFormField(Requests\DeleteFormFieldRequest $request)
+    public function deleteFormField(Requests\deleteFormFieldRequest $request)
     {
         try {
              list($response) = $this->deleteFormFieldWithHttpInfo($request);
@@ -4313,16 +4313,16 @@ class WordsApi
      *
      * Removes form field from document.
      *
-     * @param Requests\DeleteFormFieldRequest $request is a request object for operation
+     * @param Requests\deleteFormFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFormFieldWithHttpInfo(Requests\DeleteFormFieldRequest $request)
+    public function deleteFormFieldWithHttpInfo(Requests\deleteFormFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteFormFieldRequest($request);
+        $request = $this->deleteFormFieldRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -4379,12 +4379,12 @@ class WordsApi
      *
      * Removes form field from document.
      *
-     * @param Requests\DeleteFormFieldRequest $request is a request object for operation
+     * @param Requests\deleteFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFormFieldAsync(Requests\DeleteFormFieldRequest $request) 
+    public function deleteFormFieldAsync(Requests\deleteFormFieldRequest $request) 
     {
         return $this->deleteFormFieldAsyncWithHttpInfo($request)
             ->then(
@@ -4399,15 +4399,15 @@ class WordsApi
      *
      * Removes form field from document.
      *
-     * @param Requests\DeleteFormFieldRequest $request is a request object for operation
+     * @param Requests\deleteFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFormFieldAsyncWithHttpInfo(Requests\DeleteFormFieldRequest $request) 
+    public function deleteFormFieldAsyncWithHttpInfo(Requests\deleteFormFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteFormFieldRequest($request);
+        $request = $this->deleteFormFieldRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -4452,12 +4452,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteFormField'
      *
-     * @param Requests\DeleteFormFieldRequest $request is a request object for operation
+     * @param Requests\deleteFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteFormFieldRequest(Requests\DeleteFormFieldRequest $request)
+    protected function deleteFormFieldRequest(Requests\deleteFormFieldRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -4650,13 +4650,13 @@ class WordsApi
      *
      * Delete header/footer from document.
      *
-     * @param Requests\DeleteHeaderFooterRequest $request is a request object for operation
+     * @param Requests\deleteHeaderFooterRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteHeaderFooter(Requests\DeleteHeaderFooterRequest $request)
+    public function deleteHeaderFooter(Requests\deleteHeaderFooterRequest $request)
     {
         try {
              list($response) = $this->deleteHeaderFooterWithHttpInfo($request);
@@ -4673,16 +4673,16 @@ class WordsApi
      *
      * Delete header/footer from document.
      *
-     * @param Requests\DeleteHeaderFooterRequest $request is a request object for operation
+     * @param Requests\deleteHeaderFooterRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteHeaderFooterWithHttpInfo(Requests\DeleteHeaderFooterRequest $request)
+    public function deleteHeaderFooterWithHttpInfo(Requests\deleteHeaderFooterRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteHeaderFooterRequest($request);
+        $request = $this->deleteHeaderFooterRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -4739,12 +4739,12 @@ class WordsApi
      *
      * Delete header/footer from document.
      *
-     * @param Requests\DeleteHeaderFooterRequest $request is a request object for operation
+     * @param Requests\deleteHeaderFooterRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteHeaderFooterAsync(Requests\DeleteHeaderFooterRequest $request) 
+    public function deleteHeaderFooterAsync(Requests\deleteHeaderFooterRequest $request) 
     {
         return $this->deleteHeaderFooterAsyncWithHttpInfo($request)
             ->then(
@@ -4759,15 +4759,15 @@ class WordsApi
      *
      * Delete header/footer from document.
      *
-     * @param Requests\DeleteHeaderFooterRequest $request is a request object for operation
+     * @param Requests\deleteHeaderFooterRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteHeaderFooterAsyncWithHttpInfo(Requests\DeleteHeaderFooterRequest $request) 
+    public function deleteHeaderFooterAsyncWithHttpInfo(Requests\deleteHeaderFooterRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteHeaderFooterRequest($request);
+        $request = $this->deleteHeaderFooterRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -4812,12 +4812,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteHeaderFooter'
      *
-     * @param Requests\DeleteHeaderFooterRequest $request is a request object for operation
+     * @param Requests\deleteHeaderFooterRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteHeaderFooterRequest(Requests\DeleteHeaderFooterRequest $request)
+    protected function deleteHeaderFooterRequest(Requests\deleteHeaderFooterRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -5010,13 +5010,13 @@ class WordsApi
      *
      * Delete document headers and footers.
      *
-     * @param Requests\DeleteHeadersFootersRequest $request is a request object for operation
+     * @param Requests\deleteHeadersFootersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteHeadersFooters(Requests\DeleteHeadersFootersRequest $request)
+    public function deleteHeadersFooters(Requests\deleteHeadersFootersRequest $request)
     {
         try {
              list($response) = $this->deleteHeadersFootersWithHttpInfo($request);
@@ -5033,16 +5033,16 @@ class WordsApi
      *
      * Delete document headers and footers.
      *
-     * @param Requests\DeleteHeadersFootersRequest $request is a request object for operation
+     * @param Requests\deleteHeadersFootersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteHeadersFootersWithHttpInfo(Requests\DeleteHeadersFootersRequest $request)
+    public function deleteHeadersFootersWithHttpInfo(Requests\deleteHeadersFootersRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteHeadersFootersRequest($request);
+        $request = $this->deleteHeadersFootersRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -5099,12 +5099,12 @@ class WordsApi
      *
      * Delete document headers and footers.
      *
-     * @param Requests\DeleteHeadersFootersRequest $request is a request object for operation
+     * @param Requests\deleteHeadersFootersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteHeadersFootersAsync(Requests\DeleteHeadersFootersRequest $request) 
+    public function deleteHeadersFootersAsync(Requests\deleteHeadersFootersRequest $request) 
     {
         return $this->deleteHeadersFootersAsyncWithHttpInfo($request)
             ->then(
@@ -5119,15 +5119,15 @@ class WordsApi
      *
      * Delete document headers and footers.
      *
-     * @param Requests\DeleteHeadersFootersRequest $request is a request object for operation
+     * @param Requests\deleteHeadersFootersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteHeadersFootersAsyncWithHttpInfo(Requests\DeleteHeadersFootersRequest $request) 
+    public function deleteHeadersFootersAsyncWithHttpInfo(Requests\deleteHeadersFootersRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteHeadersFootersRequest($request);
+        $request = $this->deleteHeadersFootersRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -5172,12 +5172,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteHeadersFooters'
      *
-     * @param Requests\DeleteHeadersFootersRequest $request is a request object for operation
+     * @param Requests\deleteHeadersFootersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteHeadersFootersRequest(Requests\DeleteHeadersFootersRequest $request)
+    protected function deleteHeadersFootersRequest(Requests\deleteHeadersFootersRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -5371,13 +5371,13 @@ class WordsApi
      *
      * Removes OfficeMath object from document.
      *
-     * @param Requests\DeleteOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\deleteOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteOfficeMathObject(Requests\DeleteOfficeMathObjectRequest $request)
+    public function deleteOfficeMathObject(Requests\deleteOfficeMathObjectRequest $request)
     {
         try {
              list($response) = $this->deleteOfficeMathObjectWithHttpInfo($request);
@@ -5394,16 +5394,16 @@ class WordsApi
      *
      * Removes OfficeMath object from document.
      *
-     * @param Requests\DeleteOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\deleteOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteOfficeMathObjectWithHttpInfo(Requests\DeleteOfficeMathObjectRequest $request)
+    public function deleteOfficeMathObjectWithHttpInfo(Requests\deleteOfficeMathObjectRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteOfficeMathObjectRequest($request);
+        $request = $this->deleteOfficeMathObjectRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -5460,12 +5460,12 @@ class WordsApi
      *
      * Removes OfficeMath object from document.
      *
-     * @param Requests\DeleteOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\deleteOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOfficeMathObjectAsync(Requests\DeleteOfficeMathObjectRequest $request) 
+    public function deleteOfficeMathObjectAsync(Requests\deleteOfficeMathObjectRequest $request) 
     {
         return $this->deleteOfficeMathObjectAsyncWithHttpInfo($request)
             ->then(
@@ -5480,15 +5480,15 @@ class WordsApi
      *
      * Removes OfficeMath object from document.
      *
-     * @param Requests\DeleteOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\deleteOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOfficeMathObjectAsyncWithHttpInfo(Requests\DeleteOfficeMathObjectRequest $request) 
+    public function deleteOfficeMathObjectAsyncWithHttpInfo(Requests\deleteOfficeMathObjectRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteOfficeMathObjectRequest($request);
+        $request = $this->deleteOfficeMathObjectRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -5533,12 +5533,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteOfficeMathObject'
      *
-     * @param Requests\DeleteOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\deleteOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteOfficeMathObjectRequest(Requests\DeleteOfficeMathObjectRequest $request)
+    protected function deleteOfficeMathObjectRequest(Requests\deleteOfficeMathObjectRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -5731,13 +5731,13 @@ class WordsApi
      *
      * Remove paragraph from section.
      *
-     * @param Requests\DeleteParagraphRequest $request is a request object for operation
+     * @param Requests\deleteParagraphRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteParagraph(Requests\DeleteParagraphRequest $request)
+    public function deleteParagraph(Requests\deleteParagraphRequest $request)
     {
         try {
              list($response) = $this->deleteParagraphWithHttpInfo($request);
@@ -5754,16 +5754,16 @@ class WordsApi
      *
      * Remove paragraph from section.
      *
-     * @param Requests\DeleteParagraphRequest $request is a request object for operation
+     * @param Requests\deleteParagraphRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteParagraphWithHttpInfo(Requests\DeleteParagraphRequest $request)
+    public function deleteParagraphWithHttpInfo(Requests\deleteParagraphRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteParagraphRequest($request);
+        $request = $this->deleteParagraphRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -5820,12 +5820,12 @@ class WordsApi
      *
      * Remove paragraph from section.
      *
-     * @param Requests\DeleteParagraphRequest $request is a request object for operation
+     * @param Requests\deleteParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteParagraphAsync(Requests\DeleteParagraphRequest $request) 
+    public function deleteParagraphAsync(Requests\deleteParagraphRequest $request) 
     {
         return $this->deleteParagraphAsyncWithHttpInfo($request)
             ->then(
@@ -5840,15 +5840,15 @@ class WordsApi
      *
      * Remove paragraph from section.
      *
-     * @param Requests\DeleteParagraphRequest $request is a request object for operation
+     * @param Requests\deleteParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteParagraphAsyncWithHttpInfo(Requests\DeleteParagraphRequest $request) 
+    public function deleteParagraphAsyncWithHttpInfo(Requests\deleteParagraphRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteParagraphRequest($request);
+        $request = $this->deleteParagraphRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -5893,12 +5893,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteParagraph'
      *
-     * @param Requests\DeleteParagraphRequest $request is a request object for operation
+     * @param Requests\deleteParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteParagraphRequest(Requests\DeleteParagraphRequest $request)
+    protected function deleteParagraphRequest(Requests\deleteParagraphRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -6091,13 +6091,13 @@ class WordsApi
      *
      * Removes run from document.
      *
-     * @param Requests\DeleteRunRequest $request is a request object for operation
+     * @param Requests\deleteRunRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteRun(Requests\DeleteRunRequest $request)
+    public function deleteRun(Requests\deleteRunRequest $request)
     {
         try {
              list($response) = $this->deleteRunWithHttpInfo($request);
@@ -6114,16 +6114,16 @@ class WordsApi
      *
      * Removes run from document.
      *
-     * @param Requests\DeleteRunRequest $request is a request object for operation
+     * @param Requests\deleteRunRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteRunWithHttpInfo(Requests\DeleteRunRequest $request)
+    public function deleteRunWithHttpInfo(Requests\deleteRunRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteRunRequest($request);
+        $request = $this->deleteRunRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -6180,12 +6180,12 @@ class WordsApi
      *
      * Removes run from document.
      *
-     * @param Requests\DeleteRunRequest $request is a request object for operation
+     * @param Requests\deleteRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteRunAsync(Requests\DeleteRunRequest $request) 
+    public function deleteRunAsync(Requests\deleteRunRequest $request) 
     {
         return $this->deleteRunAsyncWithHttpInfo($request)
             ->then(
@@ -6200,15 +6200,15 @@ class WordsApi
      *
      * Removes run from document.
      *
-     * @param Requests\DeleteRunRequest $request is a request object for operation
+     * @param Requests\deleteRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteRunAsyncWithHttpInfo(Requests\DeleteRunRequest $request) 
+    public function deleteRunAsyncWithHttpInfo(Requests\deleteRunRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteRunRequest($request);
+        $request = $this->deleteRunRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -6253,12 +6253,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteRun'
      *
-     * @param Requests\DeleteRunRequest $request is a request object for operation
+     * @param Requests\deleteRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteRunRequest(Requests\DeleteRunRequest $request)
+    protected function deleteRunRequest(Requests\deleteRunRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -6450,13 +6450,13 @@ class WordsApi
      *
      * Delete a table.
      *
-     * @param Requests\DeleteTableRequest $request is a request object for operation
+     * @param Requests\deleteTableRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteTable(Requests\DeleteTableRequest $request)
+    public function deleteTable(Requests\deleteTableRequest $request)
     {
         try {
              list($response) = $this->deleteTableWithHttpInfo($request);
@@ -6473,16 +6473,16 @@ class WordsApi
      *
      * Delete a table.
      *
-     * @param Requests\DeleteTableRequest $request is a request object for operation
+     * @param Requests\deleteTableRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTableWithHttpInfo(Requests\DeleteTableRequest $request)
+    public function deleteTableWithHttpInfo(Requests\deleteTableRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteTableRequest($request);
+        $request = $this->deleteTableRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -6539,12 +6539,12 @@ class WordsApi
      *
      * Delete a table.
      *
-     * @param Requests\DeleteTableRequest $request is a request object for operation
+     * @param Requests\deleteTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTableAsync(Requests\DeleteTableRequest $request) 
+    public function deleteTableAsync(Requests\deleteTableRequest $request) 
     {
         return $this->deleteTableAsyncWithHttpInfo($request)
             ->then(
@@ -6559,15 +6559,15 @@ class WordsApi
      *
      * Delete a table.
      *
-     * @param Requests\DeleteTableRequest $request is a request object for operation
+     * @param Requests\deleteTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTableAsyncWithHttpInfo(Requests\DeleteTableRequest $request) 
+    public function deleteTableAsyncWithHttpInfo(Requests\deleteTableRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteTableRequest($request);
+        $request = $this->deleteTableRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -6612,12 +6612,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteTable'
      *
-     * @param Requests\DeleteTableRequest $request is a request object for operation
+     * @param Requests\deleteTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteTableRequest(Requests\DeleteTableRequest $request)
+    protected function deleteTableRequest(Requests\deleteTableRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -6810,13 +6810,13 @@ class WordsApi
      *
      * Delete a table cell.
      *
-     * @param Requests\DeleteTableCellRequest $request is a request object for operation
+     * @param Requests\deleteTableCellRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteTableCell(Requests\DeleteTableCellRequest $request)
+    public function deleteTableCell(Requests\deleteTableCellRequest $request)
     {
         try {
              list($response) = $this->deleteTableCellWithHttpInfo($request);
@@ -6833,16 +6833,16 @@ class WordsApi
      *
      * Delete a table cell.
      *
-     * @param Requests\DeleteTableCellRequest $request is a request object for operation
+     * @param Requests\deleteTableCellRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTableCellWithHttpInfo(Requests\DeleteTableCellRequest $request)
+    public function deleteTableCellWithHttpInfo(Requests\deleteTableCellRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteTableCellRequest($request);
+        $request = $this->deleteTableCellRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -6899,12 +6899,12 @@ class WordsApi
      *
      * Delete a table cell.
      *
-     * @param Requests\DeleteTableCellRequest $request is a request object for operation
+     * @param Requests\deleteTableCellRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTableCellAsync(Requests\DeleteTableCellRequest $request) 
+    public function deleteTableCellAsync(Requests\deleteTableCellRequest $request) 
     {
         return $this->deleteTableCellAsyncWithHttpInfo($request)
             ->then(
@@ -6919,15 +6919,15 @@ class WordsApi
      *
      * Delete a table cell.
      *
-     * @param Requests\DeleteTableCellRequest $request is a request object for operation
+     * @param Requests\deleteTableCellRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTableCellAsyncWithHttpInfo(Requests\DeleteTableCellRequest $request) 
+    public function deleteTableCellAsyncWithHttpInfo(Requests\deleteTableCellRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteTableCellRequest($request);
+        $request = $this->deleteTableCellRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -6972,12 +6972,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteTableCell'
      *
-     * @param Requests\DeleteTableCellRequest $request is a request object for operation
+     * @param Requests\deleteTableCellRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteTableCellRequest(Requests\DeleteTableCellRequest $request)
+    protected function deleteTableCellRequest(Requests\deleteTableCellRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -7169,13 +7169,13 @@ class WordsApi
      *
      * Delete a table row.
      *
-     * @param Requests\DeleteTableRowRequest $request is a request object for operation
+     * @param Requests\deleteTableRowRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function deleteTableRow(Requests\DeleteTableRowRequest $request)
+    public function deleteTableRow(Requests\deleteTableRowRequest $request)
     {
         try {
              list($response) = $this->deleteTableRowWithHttpInfo($request);
@@ -7192,16 +7192,16 @@ class WordsApi
      *
      * Delete a table row.
      *
-     * @param Requests\DeleteTableRowRequest $request is a request object for operation
+     * @param Requests\deleteTableRowRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTableRowWithHttpInfo(Requests\DeleteTableRowRequest $request)
+    public function deleteTableRowWithHttpInfo(Requests\deleteTableRowRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteTableRowRequest($request);
+        $request = $this->deleteTableRowRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -7258,12 +7258,12 @@ class WordsApi
      *
      * Delete a table row.
      *
-     * @param Requests\DeleteTableRowRequest $request is a request object for operation
+     * @param Requests\deleteTableRowRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTableRowAsync(Requests\DeleteTableRowRequest $request) 
+    public function deleteTableRowAsync(Requests\deleteTableRowRequest $request) 
     {
         return $this->deleteTableRowAsyncWithHttpInfo($request)
             ->then(
@@ -7278,15 +7278,15 @@ class WordsApi
      *
      * Delete a table row.
      *
-     * @param Requests\DeleteTableRowRequest $request is a request object for operation
+     * @param Requests\deleteTableRowRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTableRowAsyncWithHttpInfo(Requests\DeleteTableRowRequest $request) 
+    public function deleteTableRowAsyncWithHttpInfo(Requests\deleteTableRowRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->DeleteTableRowRequest($request);
+        $request = $this->deleteTableRowRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -7331,12 +7331,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteTableRow'
      *
-     * @param Requests\DeleteTableRowRequest $request is a request object for operation
+     * @param Requests\deleteTableRowRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteTableRowRequest(Requests\DeleteTableRowRequest $request)
+    protected function deleteTableRowRequest(Requests\deleteTableRowRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -7528,13 +7528,13 @@ class WordsApi
      *
      * Unprotect document.
      *
-     * @param Requests\DeleteUnprotectDocumentRequest $request is a request object for operation
+     * @param Requests\deleteUnprotectDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\ProtectionDataResponse
      */
-    public function deleteUnprotectDocument(Requests\DeleteUnprotectDocumentRequest $request)
+    public function deleteUnprotectDocument(Requests\deleteUnprotectDocumentRequest $request)
     {
         try {
              list($response) = $this->deleteUnprotectDocumentWithHttpInfo($request);
@@ -7551,16 +7551,16 @@ class WordsApi
      *
      * Unprotect document.
      *
-     * @param Requests\DeleteUnprotectDocumentRequest $request is a request object for operation
+     * @param Requests\deleteUnprotectDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteUnprotectDocumentWithHttpInfo(Requests\DeleteUnprotectDocumentRequest $request)
+    public function deleteUnprotectDocumentWithHttpInfo(Requests\deleteUnprotectDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
-        $request = $this->DeleteUnprotectDocumentRequest($request);
+        $request = $this->deleteUnprotectDocumentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -7617,12 +7617,12 @@ class WordsApi
      *
      * Unprotect document.
      *
-     * @param Requests\DeleteUnprotectDocumentRequest $request is a request object for operation
+     * @param Requests\deleteUnprotectDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUnprotectDocumentAsync(Requests\DeleteUnprotectDocumentRequest $request) 
+    public function deleteUnprotectDocumentAsync(Requests\deleteUnprotectDocumentRequest $request) 
     {
         return $this->deleteUnprotectDocumentAsyncWithHttpInfo($request)
             ->then(
@@ -7637,15 +7637,15 @@ class WordsApi
      *
      * Unprotect document.
      *
-     * @param Requests\DeleteUnprotectDocumentRequest $request is a request object for operation
+     * @param Requests\deleteUnprotectDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUnprotectDocumentAsyncWithHttpInfo(Requests\DeleteUnprotectDocumentRequest $request) 
+    public function deleteUnprotectDocumentAsyncWithHttpInfo(Requests\deleteUnprotectDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
-        $request = $this->DeleteUnprotectDocumentRequest($request);
+        $request = $this->deleteUnprotectDocumentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -7690,12 +7690,12 @@ class WordsApi
     /*
      * Create request for operation 'deleteUnprotectDocument'
      *
-     * @param Requests\DeleteUnprotectDocumentRequest $request is a request object for operation
+     * @param Requests\deleteUnprotectDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function DeleteUnprotectDocumentRequest(Requests\DeleteUnprotectDocumentRequest $request)
+    protected function deleteUnprotectDocumentRequest(Requests\deleteUnprotectDocumentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -7860,13 +7860,13 @@ class WordsApi
      *
      * Return a border.
      *
-     * @param Requests\GetBorderRequest $request is a request object for operation
+     * @param Requests\getBorderRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\BorderResponse
      */
-    public function getBorder(Requests\GetBorderRequest $request)
+    public function getBorder(Requests\getBorderRequest $request)
     {
         try {
              list($response) = $this->getBorderWithHttpInfo($request);
@@ -7883,16 +7883,16 @@ class WordsApi
      *
      * Return a border.
      *
-     * @param Requests\GetBorderRequest $request is a request object for operation
+     * @param Requests\getBorderRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\BorderResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBorderWithHttpInfo(Requests\GetBorderRequest $request)
+    public function getBorderWithHttpInfo(Requests\getBorderRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
-        $request = $this->GetBorderRequest($request);
+        $request = $this->getBorderRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -7949,12 +7949,12 @@ class WordsApi
      *
      * Return a border.
      *
-     * @param Requests\GetBorderRequest $request is a request object for operation
+     * @param Requests\getBorderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBorderAsync(Requests\GetBorderRequest $request) 
+    public function getBorderAsync(Requests\getBorderRequest $request) 
     {
         return $this->getBorderAsyncWithHttpInfo($request)
             ->then(
@@ -7969,15 +7969,15 @@ class WordsApi
      *
      * Return a border.
      *
-     * @param Requests\GetBorderRequest $request is a request object for operation
+     * @param Requests\getBorderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBorderAsyncWithHttpInfo(Requests\GetBorderRequest $request) 
+    public function getBorderAsyncWithHttpInfo(Requests\getBorderRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
-        $request = $this->GetBorderRequest($request);
+        $request = $this->getBorderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -8022,12 +8022,12 @@ class WordsApi
     /*
      * Create request for operation 'getBorder'
      *
-     * @param Requests\GetBorderRequest $request is a request object for operation
+     * @param Requests\getBorderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetBorderRequest(Requests\GetBorderRequest $request)
+    protected function getBorderRequest(Requests\getBorderRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -8189,13 +8189,13 @@ class WordsApi
      *
      * Return a collection of borders.
      *
-     * @param Requests\GetBordersRequest $request is a request object for operation
+     * @param Requests\getBordersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\BordersResponse
      */
-    public function getBorders(Requests\GetBordersRequest $request)
+    public function getBorders(Requests\getBordersRequest $request)
     {
         try {
              list($response) = $this->getBordersWithHttpInfo($request);
@@ -8212,16 +8212,16 @@ class WordsApi
      *
      * Return a collection of borders.
      *
-     * @param Requests\GetBordersRequest $request is a request object for operation
+     * @param Requests\getBordersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\BordersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBordersWithHttpInfo(Requests\GetBordersRequest $request)
+    public function getBordersWithHttpInfo(Requests\getBordersRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
-        $request = $this->GetBordersRequest($request);
+        $request = $this->getBordersRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -8278,12 +8278,12 @@ class WordsApi
      *
      * Return a collection of borders.
      *
-     * @param Requests\GetBordersRequest $request is a request object for operation
+     * @param Requests\getBordersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBordersAsync(Requests\GetBordersRequest $request) 
+    public function getBordersAsync(Requests\getBordersRequest $request) 
     {
         return $this->getBordersAsyncWithHttpInfo($request)
             ->then(
@@ -8298,15 +8298,15 @@ class WordsApi
      *
      * Return a collection of borders.
      *
-     * @param Requests\GetBordersRequest $request is a request object for operation
+     * @param Requests\getBordersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBordersAsyncWithHttpInfo(Requests\GetBordersRequest $request) 
+    public function getBordersAsyncWithHttpInfo(Requests\getBordersRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
-        $request = $this->GetBordersRequest($request);
+        $request = $this->getBordersRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -8351,12 +8351,12 @@ class WordsApi
     /*
      * Create request for operation 'getBorders'
      *
-     * @param Requests\GetBordersRequest $request is a request object for operation
+     * @param Requests\getBordersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetBordersRequest(Requests\GetBordersRequest $request)
+    protected function getBordersRequest(Requests\getBordersRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -8509,13 +8509,13 @@ class WordsApi
      *
      * Get comment from document.
      *
-     * @param Requests\GetCommentRequest $request is a request object for operation
+     * @param Requests\getCommentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\CommentResponse
      */
-    public function getComment(Requests\GetCommentRequest $request)
+    public function getComment(Requests\getCommentRequest $request)
     {
         try {
              list($response) = $this->getCommentWithHttpInfo($request);
@@ -8532,16 +8532,16 @@ class WordsApi
      *
      * Get comment from document.
      *
-     * @param Requests\GetCommentRequest $request is a request object for operation
+     * @param Requests\getCommentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\CommentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCommentWithHttpInfo(Requests\GetCommentRequest $request)
+    public function getCommentWithHttpInfo(Requests\getCommentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
-        $request = $this->GetCommentRequest($request);
+        $request = $this->getCommentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -8598,12 +8598,12 @@ class WordsApi
      *
      * Get comment from document.
      *
-     * @param Requests\GetCommentRequest $request is a request object for operation
+     * @param Requests\getCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommentAsync(Requests\GetCommentRequest $request) 
+    public function getCommentAsync(Requests\getCommentRequest $request) 
     {
         return $this->getCommentAsyncWithHttpInfo($request)
             ->then(
@@ -8618,15 +8618,15 @@ class WordsApi
      *
      * Get comment from document.
      *
-     * @param Requests\GetCommentRequest $request is a request object for operation
+     * @param Requests\getCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommentAsyncWithHttpInfo(Requests\GetCommentRequest $request) 
+    public function getCommentAsyncWithHttpInfo(Requests\getCommentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
-        $request = $this->GetCommentRequest($request);
+        $request = $this->getCommentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -8671,12 +8671,12 @@ class WordsApi
     /*
      * Create request for operation 'getComment'
      *
-     * @param Requests\GetCommentRequest $request is a request object for operation
+     * @param Requests\getCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetCommentRequest(Requests\GetCommentRequest $request)
+    protected function getCommentRequest(Requests\getCommentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -8829,13 +8829,13 @@ class WordsApi
      *
      * Get comments from document.
      *
-     * @param Requests\GetCommentsRequest $request is a request object for operation
+     * @param Requests\getCommentsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\CommentsResponse
      */
-    public function getComments(Requests\GetCommentsRequest $request)
+    public function getComments(Requests\getCommentsRequest $request)
     {
         try {
              list($response) = $this->getCommentsWithHttpInfo($request);
@@ -8852,16 +8852,16 @@ class WordsApi
      *
      * Get comments from document.
      *
-     * @param Requests\GetCommentsRequest $request is a request object for operation
+     * @param Requests\getCommentsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\CommentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCommentsWithHttpInfo(Requests\GetCommentsRequest $request)
+    public function getCommentsWithHttpInfo(Requests\getCommentsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentsResponse';
-        $request = $this->GetCommentsRequest($request);
+        $request = $this->getCommentsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -8918,12 +8918,12 @@ class WordsApi
      *
      * Get comments from document.
      *
-     * @param Requests\GetCommentsRequest $request is a request object for operation
+     * @param Requests\getCommentsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommentsAsync(Requests\GetCommentsRequest $request) 
+    public function getCommentsAsync(Requests\getCommentsRequest $request) 
     {
         return $this->getCommentsAsyncWithHttpInfo($request)
             ->then(
@@ -8938,15 +8938,15 @@ class WordsApi
      *
      * Get comments from document.
      *
-     * @param Requests\GetCommentsRequest $request is a request object for operation
+     * @param Requests\getCommentsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommentsAsyncWithHttpInfo(Requests\GetCommentsRequest $request) 
+    public function getCommentsAsyncWithHttpInfo(Requests\getCommentsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentsResponse';
-        $request = $this->GetCommentsRequest($request);
+        $request = $this->getCommentsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -8991,12 +8991,12 @@ class WordsApi
     /*
      * Create request for operation 'getComments'
      *
-     * @param Requests\GetCommentsRequest $request is a request object for operation
+     * @param Requests\getCommentsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetCommentsRequest(Requests\GetCommentsRequest $request)
+    protected function getCommentsRequest(Requests\getCommentsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -9140,13 +9140,13 @@ class WordsApi
      *
      * Read document common info.
      *
-     * @param Requests\GetDocumentRequest $request is a request object for operation
+     * @param Requests\getDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function getDocument(Requests\GetDocumentRequest $request)
+    public function getDocument(Requests\getDocumentRequest $request)
     {
         try {
              list($response) = $this->getDocumentWithHttpInfo($request);
@@ -9163,16 +9163,16 @@ class WordsApi
      *
      * Read document common info.
      *
-     * @param Requests\GetDocumentRequest $request is a request object for operation
+     * @param Requests\getDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentWithHttpInfo(Requests\GetDocumentRequest $request)
+    public function getDocumentWithHttpInfo(Requests\getDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->GetDocumentRequest($request);
+        $request = $this->getDocumentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -9229,12 +9229,12 @@ class WordsApi
      *
      * Read document common info.
      *
-     * @param Requests\GetDocumentRequest $request is a request object for operation
+     * @param Requests\getDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentAsync(Requests\GetDocumentRequest $request) 
+    public function getDocumentAsync(Requests\getDocumentRequest $request) 
     {
         return $this->getDocumentAsyncWithHttpInfo($request)
             ->then(
@@ -9249,15 +9249,15 @@ class WordsApi
      *
      * Read document common info.
      *
-     * @param Requests\GetDocumentRequest $request is a request object for operation
+     * @param Requests\getDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentAsyncWithHttpInfo(Requests\GetDocumentRequest $request) 
+    public function getDocumentAsyncWithHttpInfo(Requests\getDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->GetDocumentRequest($request);
+        $request = $this->getDocumentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -9302,12 +9302,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocument'
      *
-     * @param Requests\GetDocumentRequest $request is a request object for operation
+     * @param Requests\getDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentRequest(Requests\GetDocumentRequest $request)
+    protected function getDocumentRequest(Requests\getDocumentRequest $request)
     {
         // verify the required parameter 'document_name' is set
         if ($request->document_name === null) {
@@ -9451,13 +9451,13 @@ class WordsApi
      *
      * Read document bookmark data by its name.
      *
-     * @param Requests\GetDocumentBookmarkByNameRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarkByNameRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\BookmarkResponse
      */
-    public function getDocumentBookmarkByName(Requests\GetDocumentBookmarkByNameRequest $request)
+    public function getDocumentBookmarkByName(Requests\getDocumentBookmarkByNameRequest $request)
     {
         try {
              list($response) = $this->getDocumentBookmarkByNameWithHttpInfo($request);
@@ -9474,16 +9474,16 @@ class WordsApi
      *
      * Read document bookmark data by its name.
      *
-     * @param Requests\GetDocumentBookmarkByNameRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarkByNameRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\BookmarkResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentBookmarkByNameWithHttpInfo(Requests\GetDocumentBookmarkByNameRequest $request)
+    public function getDocumentBookmarkByNameWithHttpInfo(Requests\getDocumentBookmarkByNameRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
-        $request = $this->GetDocumentBookmarkByNameRequest($request);
+        $request = $this->getDocumentBookmarkByNameRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -9540,12 +9540,12 @@ class WordsApi
      *
      * Read document bookmark data by its name.
      *
-     * @param Requests\GetDocumentBookmarkByNameRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarkByNameRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentBookmarkByNameAsync(Requests\GetDocumentBookmarkByNameRequest $request) 
+    public function getDocumentBookmarkByNameAsync(Requests\getDocumentBookmarkByNameRequest $request) 
     {
         return $this->getDocumentBookmarkByNameAsyncWithHttpInfo($request)
             ->then(
@@ -9560,15 +9560,15 @@ class WordsApi
      *
      * Read document bookmark data by its name.
      *
-     * @param Requests\GetDocumentBookmarkByNameRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarkByNameRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentBookmarkByNameAsyncWithHttpInfo(Requests\GetDocumentBookmarkByNameRequest $request) 
+    public function getDocumentBookmarkByNameAsyncWithHttpInfo(Requests\getDocumentBookmarkByNameRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
-        $request = $this->GetDocumentBookmarkByNameRequest($request);
+        $request = $this->getDocumentBookmarkByNameRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -9613,12 +9613,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentBookmarkByName'
      *
-     * @param Requests\GetDocumentBookmarkByNameRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarkByNameRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentBookmarkByNameRequest(Requests\GetDocumentBookmarkByNameRequest $request)
+    protected function getDocumentBookmarkByNameRequest(Requests\getDocumentBookmarkByNameRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -9771,13 +9771,13 @@ class WordsApi
      *
      * Read document bookmarks common info.
      *
-     * @param Requests\GetDocumentBookmarksRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarksRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\BookmarksResponse
      */
-    public function getDocumentBookmarks(Requests\GetDocumentBookmarksRequest $request)
+    public function getDocumentBookmarks(Requests\getDocumentBookmarksRequest $request)
     {
         try {
              list($response) = $this->getDocumentBookmarksWithHttpInfo($request);
@@ -9794,16 +9794,16 @@ class WordsApi
      *
      * Read document bookmarks common info.
      *
-     * @param Requests\GetDocumentBookmarksRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarksRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\BookmarksResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentBookmarksWithHttpInfo(Requests\GetDocumentBookmarksRequest $request)
+    public function getDocumentBookmarksWithHttpInfo(Requests\getDocumentBookmarksRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BookmarksResponse';
-        $request = $this->GetDocumentBookmarksRequest($request);
+        $request = $this->getDocumentBookmarksRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -9860,12 +9860,12 @@ class WordsApi
      *
      * Read document bookmarks common info.
      *
-     * @param Requests\GetDocumentBookmarksRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarksRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentBookmarksAsync(Requests\GetDocumentBookmarksRequest $request) 
+    public function getDocumentBookmarksAsync(Requests\getDocumentBookmarksRequest $request) 
     {
         return $this->getDocumentBookmarksAsyncWithHttpInfo($request)
             ->then(
@@ -9880,15 +9880,15 @@ class WordsApi
      *
      * Read document bookmarks common info.
      *
-     * @param Requests\GetDocumentBookmarksRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarksRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentBookmarksAsyncWithHttpInfo(Requests\GetDocumentBookmarksRequest $request) 
+    public function getDocumentBookmarksAsyncWithHttpInfo(Requests\getDocumentBookmarksRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BookmarksResponse';
-        $request = $this->GetDocumentBookmarksRequest($request);
+        $request = $this->getDocumentBookmarksRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -9933,12 +9933,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentBookmarks'
      *
-     * @param Requests\GetDocumentBookmarksRequest $request is a request object for operation
+     * @param Requests\getDocumentBookmarksRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentBookmarksRequest(Requests\GetDocumentBookmarksRequest $request)
+    protected function getDocumentBookmarksRequest(Requests\getDocumentBookmarksRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -10082,13 +10082,13 @@ class WordsApi
      *
      * Read document drawing object common info by its index or convert to format specified.
      *
-     * @param Requests\GetDocumentDrawingObjectByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectByIndexRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DrawingObjectResponse
      */
-    public function getDocumentDrawingObjectByIndex(Requests\GetDocumentDrawingObjectByIndexRequest $request)
+    public function getDocumentDrawingObjectByIndex(Requests\getDocumentDrawingObjectByIndexRequest $request)
     {
         try {
              list($response) = $this->getDocumentDrawingObjectByIndexWithHttpInfo($request);
@@ -10105,16 +10105,16 @@ class WordsApi
      *
      * Read document drawing object common info by its index or convert to format specified.
      *
-     * @param Requests\GetDocumentDrawingObjectByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectByIndexRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentDrawingObjectByIndexWithHttpInfo(Requests\GetDocumentDrawingObjectByIndexRequest $request)
+    public function getDocumentDrawingObjectByIndexWithHttpInfo(Requests\getDocumentDrawingObjectByIndexRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
-        $request = $this->GetDocumentDrawingObjectByIndexRequest($request);
+        $request = $this->getDocumentDrawingObjectByIndexRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -10171,12 +10171,12 @@ class WordsApi
      *
      * Read document drawing object common info by its index or convert to format specified.
      *
-     * @param Requests\GetDocumentDrawingObjectByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectByIndexRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentDrawingObjectByIndexAsync(Requests\GetDocumentDrawingObjectByIndexRequest $request) 
+    public function getDocumentDrawingObjectByIndexAsync(Requests\getDocumentDrawingObjectByIndexRequest $request) 
     {
         return $this->getDocumentDrawingObjectByIndexAsyncWithHttpInfo($request)
             ->then(
@@ -10191,15 +10191,15 @@ class WordsApi
      *
      * Read document drawing object common info by its index or convert to format specified.
      *
-     * @param Requests\GetDocumentDrawingObjectByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectByIndexRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentDrawingObjectByIndexAsyncWithHttpInfo(Requests\GetDocumentDrawingObjectByIndexRequest $request) 
+    public function getDocumentDrawingObjectByIndexAsyncWithHttpInfo(Requests\getDocumentDrawingObjectByIndexRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
-        $request = $this->GetDocumentDrawingObjectByIndexRequest($request);
+        $request = $this->getDocumentDrawingObjectByIndexRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -10244,12 +10244,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentDrawingObjectByIndex'
      *
-     * @param Requests\GetDocumentDrawingObjectByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectByIndexRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentDrawingObjectByIndexRequest(Requests\GetDocumentDrawingObjectByIndexRequest $request)
+    protected function getDocumentDrawingObjectByIndexRequest(Requests\getDocumentDrawingObjectByIndexRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -10412,13 +10412,13 @@ class WordsApi
      *
      * Read drawing object image data.
      *
-     * @param Requests\GetDocumentDrawingObjectImageDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectImageDataRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function getDocumentDrawingObjectImageData(Requests\GetDocumentDrawingObjectImageDataRequest $request)
+    public function getDocumentDrawingObjectImageData(Requests\getDocumentDrawingObjectImageDataRequest $request)
     {
         try {
              list($response) = $this->getDocumentDrawingObjectImageDataWithHttpInfo($request);
@@ -10435,16 +10435,16 @@ class WordsApi
      *
      * Read drawing object image data.
      *
-     * @param Requests\GetDocumentDrawingObjectImageDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectImageDataRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentDrawingObjectImageDataWithHttpInfo(Requests\GetDocumentDrawingObjectImageDataRequest $request)
+    public function getDocumentDrawingObjectImageDataWithHttpInfo(Requests\getDocumentDrawingObjectImageDataRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->GetDocumentDrawingObjectImageDataRequest($request);
+        $request = $this->getDocumentDrawingObjectImageDataRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -10501,12 +10501,12 @@ class WordsApi
      *
      * Read drawing object image data.
      *
-     * @param Requests\GetDocumentDrawingObjectImageDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectImageDataRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentDrawingObjectImageDataAsync(Requests\GetDocumentDrawingObjectImageDataRequest $request) 
+    public function getDocumentDrawingObjectImageDataAsync(Requests\getDocumentDrawingObjectImageDataRequest $request) 
     {
         return $this->getDocumentDrawingObjectImageDataAsyncWithHttpInfo($request)
             ->then(
@@ -10521,15 +10521,15 @@ class WordsApi
      *
      * Read drawing object image data.
      *
-     * @param Requests\GetDocumentDrawingObjectImageDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectImageDataRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentDrawingObjectImageDataAsyncWithHttpInfo(Requests\GetDocumentDrawingObjectImageDataRequest $request) 
+    public function getDocumentDrawingObjectImageDataAsyncWithHttpInfo(Requests\getDocumentDrawingObjectImageDataRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->GetDocumentDrawingObjectImageDataRequest($request);
+        $request = $this->getDocumentDrawingObjectImageDataRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -10574,12 +10574,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentDrawingObjectImageData'
      *
-     * @param Requests\GetDocumentDrawingObjectImageDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectImageDataRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentDrawingObjectImageDataRequest(Requests\GetDocumentDrawingObjectImageDataRequest $request)
+    protected function getDocumentDrawingObjectImageDataRequest(Requests\getDocumentDrawingObjectImageDataRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -10742,13 +10742,13 @@ class WordsApi
      *
      * Get drawing object OLE data.
      *
-     * @param Requests\GetDocumentDrawingObjectOleDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectOleDataRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function getDocumentDrawingObjectOleData(Requests\GetDocumentDrawingObjectOleDataRequest $request)
+    public function getDocumentDrawingObjectOleData(Requests\getDocumentDrawingObjectOleDataRequest $request)
     {
         try {
              list($response) = $this->getDocumentDrawingObjectOleDataWithHttpInfo($request);
@@ -10765,16 +10765,16 @@ class WordsApi
      *
      * Get drawing object OLE data.
      *
-     * @param Requests\GetDocumentDrawingObjectOleDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectOleDataRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentDrawingObjectOleDataWithHttpInfo(Requests\GetDocumentDrawingObjectOleDataRequest $request)
+    public function getDocumentDrawingObjectOleDataWithHttpInfo(Requests\getDocumentDrawingObjectOleDataRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->GetDocumentDrawingObjectOleDataRequest($request);
+        $request = $this->getDocumentDrawingObjectOleDataRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -10831,12 +10831,12 @@ class WordsApi
      *
      * Get drawing object OLE data.
      *
-     * @param Requests\GetDocumentDrawingObjectOleDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectOleDataRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentDrawingObjectOleDataAsync(Requests\GetDocumentDrawingObjectOleDataRequest $request) 
+    public function getDocumentDrawingObjectOleDataAsync(Requests\getDocumentDrawingObjectOleDataRequest $request) 
     {
         return $this->getDocumentDrawingObjectOleDataAsyncWithHttpInfo($request)
             ->then(
@@ -10851,15 +10851,15 @@ class WordsApi
      *
      * Get drawing object OLE data.
      *
-     * @param Requests\GetDocumentDrawingObjectOleDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectOleDataRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentDrawingObjectOleDataAsyncWithHttpInfo(Requests\GetDocumentDrawingObjectOleDataRequest $request) 
+    public function getDocumentDrawingObjectOleDataAsyncWithHttpInfo(Requests\getDocumentDrawingObjectOleDataRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->GetDocumentDrawingObjectOleDataRequest($request);
+        $request = $this->getDocumentDrawingObjectOleDataRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -10904,12 +10904,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentDrawingObjectOleData'
      *
-     * @param Requests\GetDocumentDrawingObjectOleDataRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectOleDataRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentDrawingObjectOleDataRequest(Requests\GetDocumentDrawingObjectOleDataRequest $request)
+    protected function getDocumentDrawingObjectOleDataRequest(Requests\getDocumentDrawingObjectOleDataRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -11072,13 +11072,13 @@ class WordsApi
      *
      * Read document drawing objects common info.
      *
-     * @param Requests\GetDocumentDrawingObjectsRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DrawingObjectsResponse
      */
-    public function getDocumentDrawingObjects(Requests\GetDocumentDrawingObjectsRequest $request)
+    public function getDocumentDrawingObjects(Requests\getDocumentDrawingObjectsRequest $request)
     {
         try {
              list($response) = $this->getDocumentDrawingObjectsWithHttpInfo($request);
@@ -11095,16 +11095,16 @@ class WordsApi
      *
      * Read document drawing objects common info.
      *
-     * @param Requests\GetDocumentDrawingObjectsRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DrawingObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentDrawingObjectsWithHttpInfo(Requests\GetDocumentDrawingObjectsRequest $request)
+    public function getDocumentDrawingObjectsWithHttpInfo(Requests\getDocumentDrawingObjectsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
-        $request = $this->GetDocumentDrawingObjectsRequest($request);
+        $request = $this->getDocumentDrawingObjectsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -11161,12 +11161,12 @@ class WordsApi
      *
      * Read document drawing objects common info.
      *
-     * @param Requests\GetDocumentDrawingObjectsRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentDrawingObjectsAsync(Requests\GetDocumentDrawingObjectsRequest $request) 
+    public function getDocumentDrawingObjectsAsync(Requests\getDocumentDrawingObjectsRequest $request) 
     {
         return $this->getDocumentDrawingObjectsAsyncWithHttpInfo($request)
             ->then(
@@ -11181,15 +11181,15 @@ class WordsApi
      *
      * Read document drawing objects common info.
      *
-     * @param Requests\GetDocumentDrawingObjectsRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentDrawingObjectsAsyncWithHttpInfo(Requests\GetDocumentDrawingObjectsRequest $request) 
+    public function getDocumentDrawingObjectsAsyncWithHttpInfo(Requests\getDocumentDrawingObjectsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
-        $request = $this->GetDocumentDrawingObjectsRequest($request);
+        $request = $this->getDocumentDrawingObjectsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -11234,12 +11234,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentDrawingObjects'
      *
-     * @param Requests\GetDocumentDrawingObjectsRequest $request is a request object for operation
+     * @param Requests\getDocumentDrawingObjectsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentDrawingObjectsRequest(Requests\GetDocumentDrawingObjectsRequest $request)
+    protected function getDocumentDrawingObjectsRequest(Requests\getDocumentDrawingObjectsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -11393,13 +11393,13 @@ class WordsApi
      *
      * Read document field names.
      *
-     * @param Requests\GetDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\getDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FieldNamesResponse
      */
-    public function getDocumentFieldNames(Requests\GetDocumentFieldNamesRequest $request)
+    public function getDocumentFieldNames(Requests\getDocumentFieldNamesRequest $request)
     {
         try {
              list($response) = $this->getDocumentFieldNamesWithHttpInfo($request);
@@ -11416,16 +11416,16 @@ class WordsApi
      *
      * Read document field names.
      *
-     * @param Requests\GetDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\getDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FieldNamesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentFieldNamesWithHttpInfo(Requests\GetDocumentFieldNamesRequest $request)
+    public function getDocumentFieldNamesWithHttpInfo(Requests\getDocumentFieldNamesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
-        $request = $this->GetDocumentFieldNamesRequest($request);
+        $request = $this->getDocumentFieldNamesRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -11482,12 +11482,12 @@ class WordsApi
      *
      * Read document field names.
      *
-     * @param Requests\GetDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\getDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentFieldNamesAsync(Requests\GetDocumentFieldNamesRequest $request) 
+    public function getDocumentFieldNamesAsync(Requests\getDocumentFieldNamesRequest $request) 
     {
         return $this->getDocumentFieldNamesAsyncWithHttpInfo($request)
             ->then(
@@ -11502,15 +11502,15 @@ class WordsApi
      *
      * Read document field names.
      *
-     * @param Requests\GetDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\getDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentFieldNamesAsyncWithHttpInfo(Requests\GetDocumentFieldNamesRequest $request) 
+    public function getDocumentFieldNamesAsyncWithHttpInfo(Requests\getDocumentFieldNamesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
-        $request = $this->GetDocumentFieldNamesRequest($request);
+        $request = $this->getDocumentFieldNamesRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -11555,12 +11555,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentFieldNames'
      *
-     * @param Requests\GetDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\getDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentFieldNamesRequest(Requests\GetDocumentFieldNamesRequest $request)
+    protected function getDocumentFieldNamesRequest(Requests\getDocumentFieldNamesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -11714,13 +11714,13 @@ class WordsApi
      *
      * Read document hyperlink by its index.
      *
-     * @param Requests\GetDocumentHyperlinkByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinkByIndexRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\HyperlinkResponse
      */
-    public function getDocumentHyperlinkByIndex(Requests\GetDocumentHyperlinkByIndexRequest $request)
+    public function getDocumentHyperlinkByIndex(Requests\getDocumentHyperlinkByIndexRequest $request)
     {
         try {
              list($response) = $this->getDocumentHyperlinkByIndexWithHttpInfo($request);
@@ -11737,16 +11737,16 @@ class WordsApi
      *
      * Read document hyperlink by its index.
      *
-     * @param Requests\GetDocumentHyperlinkByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinkByIndexRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentHyperlinkByIndexWithHttpInfo(Requests\GetDocumentHyperlinkByIndexRequest $request)
+    public function getDocumentHyperlinkByIndexWithHttpInfo(Requests\getDocumentHyperlinkByIndexRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HyperlinkResponse';
-        $request = $this->GetDocumentHyperlinkByIndexRequest($request);
+        $request = $this->getDocumentHyperlinkByIndexRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -11803,12 +11803,12 @@ class WordsApi
      *
      * Read document hyperlink by its index.
      *
-     * @param Requests\GetDocumentHyperlinkByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinkByIndexRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentHyperlinkByIndexAsync(Requests\GetDocumentHyperlinkByIndexRequest $request) 
+    public function getDocumentHyperlinkByIndexAsync(Requests\getDocumentHyperlinkByIndexRequest $request) 
     {
         return $this->getDocumentHyperlinkByIndexAsyncWithHttpInfo($request)
             ->then(
@@ -11823,15 +11823,15 @@ class WordsApi
      *
      * Read document hyperlink by its index.
      *
-     * @param Requests\GetDocumentHyperlinkByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinkByIndexRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentHyperlinkByIndexAsyncWithHttpInfo(Requests\GetDocumentHyperlinkByIndexRequest $request) 
+    public function getDocumentHyperlinkByIndexAsyncWithHttpInfo(Requests\getDocumentHyperlinkByIndexRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HyperlinkResponse';
-        $request = $this->GetDocumentHyperlinkByIndexRequest($request);
+        $request = $this->getDocumentHyperlinkByIndexRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -11876,12 +11876,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentHyperlinkByIndex'
      *
-     * @param Requests\GetDocumentHyperlinkByIndexRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinkByIndexRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentHyperlinkByIndexRequest(Requests\GetDocumentHyperlinkByIndexRequest $request)
+    protected function getDocumentHyperlinkByIndexRequest(Requests\getDocumentHyperlinkByIndexRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -12034,13 +12034,13 @@ class WordsApi
      *
      * Read document hyperlinks common info.
      *
-     * @param Requests\GetDocumentHyperlinksRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinksRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\HyperlinksResponse
      */
-    public function getDocumentHyperlinks(Requests\GetDocumentHyperlinksRequest $request)
+    public function getDocumentHyperlinks(Requests\getDocumentHyperlinksRequest $request)
     {
         try {
              list($response) = $this->getDocumentHyperlinksWithHttpInfo($request);
@@ -12057,16 +12057,16 @@ class WordsApi
      *
      * Read document hyperlinks common info.
      *
-     * @param Requests\GetDocumentHyperlinksRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinksRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\HyperlinksResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentHyperlinksWithHttpInfo(Requests\GetDocumentHyperlinksRequest $request)
+    public function getDocumentHyperlinksWithHttpInfo(Requests\getDocumentHyperlinksRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HyperlinksResponse';
-        $request = $this->GetDocumentHyperlinksRequest($request);
+        $request = $this->getDocumentHyperlinksRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -12123,12 +12123,12 @@ class WordsApi
      *
      * Read document hyperlinks common info.
      *
-     * @param Requests\GetDocumentHyperlinksRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinksRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentHyperlinksAsync(Requests\GetDocumentHyperlinksRequest $request) 
+    public function getDocumentHyperlinksAsync(Requests\getDocumentHyperlinksRequest $request) 
     {
         return $this->getDocumentHyperlinksAsyncWithHttpInfo($request)
             ->then(
@@ -12143,15 +12143,15 @@ class WordsApi
      *
      * Read document hyperlinks common info.
      *
-     * @param Requests\GetDocumentHyperlinksRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinksRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentHyperlinksAsyncWithHttpInfo(Requests\GetDocumentHyperlinksRequest $request) 
+    public function getDocumentHyperlinksAsyncWithHttpInfo(Requests\getDocumentHyperlinksRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HyperlinksResponse';
-        $request = $this->GetDocumentHyperlinksRequest($request);
+        $request = $this->getDocumentHyperlinksRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -12196,12 +12196,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentHyperlinks'
      *
-     * @param Requests\GetDocumentHyperlinksRequest $request is a request object for operation
+     * @param Requests\getDocumentHyperlinksRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentHyperlinksRequest(Requests\GetDocumentHyperlinksRequest $request)
+    protected function getDocumentHyperlinksRequest(Requests\getDocumentHyperlinksRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -12345,13 +12345,13 @@ class WordsApi
      *
      * This resource represents one of the paragraphs contained in the document.
      *
-     * @param Requests\GetDocumentParagraphRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\ParagraphResponse
      */
-    public function getDocumentParagraph(Requests\GetDocumentParagraphRequest $request)
+    public function getDocumentParagraph(Requests\getDocumentParagraphRequest $request)
     {
         try {
              list($response) = $this->getDocumentParagraphWithHttpInfo($request);
@@ -12368,16 +12368,16 @@ class WordsApi
      *
      * This resource represents one of the paragraphs contained in the document.
      *
-     * @param Requests\GetDocumentParagraphRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\ParagraphResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentParagraphWithHttpInfo(Requests\GetDocumentParagraphRequest $request)
+    public function getDocumentParagraphWithHttpInfo(Requests\getDocumentParagraphRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
-        $request = $this->GetDocumentParagraphRequest($request);
+        $request = $this->getDocumentParagraphRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -12434,12 +12434,12 @@ class WordsApi
      *
      * This resource represents one of the paragraphs contained in the document.
      *
-     * @param Requests\GetDocumentParagraphRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphAsync(Requests\GetDocumentParagraphRequest $request) 
+    public function getDocumentParagraphAsync(Requests\getDocumentParagraphRequest $request) 
     {
         return $this->getDocumentParagraphAsyncWithHttpInfo($request)
             ->then(
@@ -12454,15 +12454,15 @@ class WordsApi
      *
      * This resource represents one of the paragraphs contained in the document.
      *
-     * @param Requests\GetDocumentParagraphRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphAsyncWithHttpInfo(Requests\GetDocumentParagraphRequest $request) 
+    public function getDocumentParagraphAsyncWithHttpInfo(Requests\getDocumentParagraphRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
-        $request = $this->GetDocumentParagraphRequest($request);
+        $request = $this->getDocumentParagraphRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -12507,12 +12507,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentParagraph'
      *
-     * @param Requests\GetDocumentParagraphRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentParagraphRequest(Requests\GetDocumentParagraphRequest $request)
+    protected function getDocumentParagraphRequest(Requests\getDocumentParagraphRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -12675,13 +12675,13 @@ class WordsApi
      *
      * This resource represents run of text contained in the document.
      *
-     * @param Requests\GetDocumentParagraphRunRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\RunResponse
      */
-    public function getDocumentParagraphRun(Requests\GetDocumentParagraphRunRequest $request)
+    public function getDocumentParagraphRun(Requests\getDocumentParagraphRunRequest $request)
     {
         try {
              list($response) = $this->getDocumentParagraphRunWithHttpInfo($request);
@@ -12698,16 +12698,16 @@ class WordsApi
      *
      * This resource represents run of text contained in the document.
      *
-     * @param Requests\GetDocumentParagraphRunRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\RunResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentParagraphRunWithHttpInfo(Requests\GetDocumentParagraphRunRequest $request)
+    public function getDocumentParagraphRunWithHttpInfo(Requests\getDocumentParagraphRunRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
-        $request = $this->GetDocumentParagraphRunRequest($request);
+        $request = $this->getDocumentParagraphRunRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -12764,12 +12764,12 @@ class WordsApi
      *
      * This resource represents run of text contained in the document.
      *
-     * @param Requests\GetDocumentParagraphRunRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphRunAsync(Requests\GetDocumentParagraphRunRequest $request) 
+    public function getDocumentParagraphRunAsync(Requests\getDocumentParagraphRunRequest $request) 
     {
         return $this->getDocumentParagraphRunAsyncWithHttpInfo($request)
             ->then(
@@ -12784,15 +12784,15 @@ class WordsApi
      *
      * This resource represents run of text contained in the document.
      *
-     * @param Requests\GetDocumentParagraphRunRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphRunAsyncWithHttpInfo(Requests\GetDocumentParagraphRunRequest $request) 
+    public function getDocumentParagraphRunAsyncWithHttpInfo(Requests\getDocumentParagraphRunRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
-        $request = $this->GetDocumentParagraphRunRequest($request);
+        $request = $this->getDocumentParagraphRunRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -12837,12 +12837,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentParagraphRun'
      *
-     * @param Requests\GetDocumentParagraphRunRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentParagraphRunRequest(Requests\GetDocumentParagraphRunRequest $request)
+    protected function getDocumentParagraphRunRequest(Requests\getDocumentParagraphRunRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -13004,13 +13004,13 @@ class WordsApi
      *
      * This resource represents font of run.
      *
-     * @param Requests\GetDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FontResponse
      */
-    public function getDocumentParagraphRunFont(Requests\GetDocumentParagraphRunFontRequest $request)
+    public function getDocumentParagraphRunFont(Requests\getDocumentParagraphRunFontRequest $request)
     {
         try {
              list($response) = $this->getDocumentParagraphRunFontWithHttpInfo($request);
@@ -13027,16 +13027,16 @@ class WordsApi
      *
      * This resource represents font of run.
      *
-     * @param Requests\GetDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FontResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentParagraphRunFontWithHttpInfo(Requests\GetDocumentParagraphRunFontRequest $request)
+    public function getDocumentParagraphRunFontWithHttpInfo(Requests\getDocumentParagraphRunFontRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
-        $request = $this->GetDocumentParagraphRunFontRequest($request);
+        $request = $this->getDocumentParagraphRunFontRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -13093,12 +13093,12 @@ class WordsApi
      *
      * This resource represents font of run.
      *
-     * @param Requests\GetDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphRunFontAsync(Requests\GetDocumentParagraphRunFontRequest $request) 
+    public function getDocumentParagraphRunFontAsync(Requests\getDocumentParagraphRunFontRequest $request) 
     {
         return $this->getDocumentParagraphRunFontAsyncWithHttpInfo($request)
             ->then(
@@ -13113,15 +13113,15 @@ class WordsApi
      *
      * This resource represents font of run.
      *
-     * @param Requests\GetDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphRunFontAsyncWithHttpInfo(Requests\GetDocumentParagraphRunFontRequest $request) 
+    public function getDocumentParagraphRunFontAsyncWithHttpInfo(Requests\getDocumentParagraphRunFontRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
-        $request = $this->GetDocumentParagraphRunFontRequest($request);
+        $request = $this->getDocumentParagraphRunFontRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -13166,12 +13166,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentParagraphRunFont'
      *
-     * @param Requests\GetDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentParagraphRunFontRequest(Requests\GetDocumentParagraphRunFontRequest $request)
+    protected function getDocumentParagraphRunFontRequest(Requests\getDocumentParagraphRunFontRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -13333,13 +13333,13 @@ class WordsApi
      *
      * This resource represents collection of runs in the paragraph.
      *
-     * @param Requests\GetDocumentParagraphRunsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\RunsResponse
      */
-    public function getDocumentParagraphRuns(Requests\GetDocumentParagraphRunsRequest $request)
+    public function getDocumentParagraphRuns(Requests\getDocumentParagraphRunsRequest $request)
     {
         try {
              list($response) = $this->getDocumentParagraphRunsWithHttpInfo($request);
@@ -13356,16 +13356,16 @@ class WordsApi
      *
      * This resource represents collection of runs in the paragraph.
      *
-     * @param Requests\GetDocumentParagraphRunsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\RunsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentParagraphRunsWithHttpInfo(Requests\GetDocumentParagraphRunsRequest $request)
+    public function getDocumentParagraphRunsWithHttpInfo(Requests\getDocumentParagraphRunsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunsResponse';
-        $request = $this->GetDocumentParagraphRunsRequest($request);
+        $request = $this->getDocumentParagraphRunsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -13422,12 +13422,12 @@ class WordsApi
      *
      * This resource represents collection of runs in the paragraph.
      *
-     * @param Requests\GetDocumentParagraphRunsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphRunsAsync(Requests\GetDocumentParagraphRunsRequest $request) 
+    public function getDocumentParagraphRunsAsync(Requests\getDocumentParagraphRunsRequest $request) 
     {
         return $this->getDocumentParagraphRunsAsyncWithHttpInfo($request)
             ->then(
@@ -13442,15 +13442,15 @@ class WordsApi
      *
      * This resource represents collection of runs in the paragraph.
      *
-     * @param Requests\GetDocumentParagraphRunsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphRunsAsyncWithHttpInfo(Requests\GetDocumentParagraphRunsRequest $request) 
+    public function getDocumentParagraphRunsAsyncWithHttpInfo(Requests\getDocumentParagraphRunsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunsResponse';
-        $request = $this->GetDocumentParagraphRunsRequest($request);
+        $request = $this->getDocumentParagraphRunsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -13495,12 +13495,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentParagraphRuns'
      *
-     * @param Requests\GetDocumentParagraphRunsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphRunsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentParagraphRunsRequest(Requests\GetDocumentParagraphRunsRequest $request)
+    protected function getDocumentParagraphRunsRequest(Requests\getDocumentParagraphRunsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -13653,13 +13653,13 @@ class WordsApi
      *
      * Return a list of paragraphs that are contained in the document.
      *
-     * @param Requests\GetDocumentParagraphsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\ParagraphLinkCollectionResponse
      */
-    public function getDocumentParagraphs(Requests\GetDocumentParagraphsRequest $request)
+    public function getDocumentParagraphs(Requests\getDocumentParagraphsRequest $request)
     {
         try {
              list($response) = $this->getDocumentParagraphsWithHttpInfo($request);
@@ -13676,16 +13676,16 @@ class WordsApi
      *
      * Return a list of paragraphs that are contained in the document.
      *
-     * @param Requests\GetDocumentParagraphsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\ParagraphLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentParagraphsWithHttpInfo(Requests\GetDocumentParagraphsRequest $request)
+    public function getDocumentParagraphsWithHttpInfo(Requests\getDocumentParagraphsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
-        $request = $this->GetDocumentParagraphsRequest($request);
+        $request = $this->getDocumentParagraphsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -13742,12 +13742,12 @@ class WordsApi
      *
      * Return a list of paragraphs that are contained in the document.
      *
-     * @param Requests\GetDocumentParagraphsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphsAsync(Requests\GetDocumentParagraphsRequest $request) 
+    public function getDocumentParagraphsAsync(Requests\getDocumentParagraphsRequest $request) 
     {
         return $this->getDocumentParagraphsAsyncWithHttpInfo($request)
             ->then(
@@ -13762,15 +13762,15 @@ class WordsApi
      *
      * Return a list of paragraphs that are contained in the document.
      *
-     * @param Requests\GetDocumentParagraphsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentParagraphsAsyncWithHttpInfo(Requests\GetDocumentParagraphsRequest $request) 
+    public function getDocumentParagraphsAsyncWithHttpInfo(Requests\getDocumentParagraphsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
-        $request = $this->GetDocumentParagraphsRequest($request);
+        $request = $this->getDocumentParagraphsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -13815,12 +13815,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentParagraphs'
      *
-     * @param Requests\GetDocumentParagraphsRequest $request is a request object for operation
+     * @param Requests\getDocumentParagraphsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentParagraphsRequest(Requests\GetDocumentParagraphsRequest $request)
+    protected function getDocumentParagraphsRequest(Requests\getDocumentParagraphsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -13974,13 +13974,13 @@ class WordsApi
      *
      * Read document properties info.
      *
-     * @param Requests\GetDocumentPropertiesRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentPropertiesResponse
      */
-    public function getDocumentProperties(Requests\GetDocumentPropertiesRequest $request)
+    public function getDocumentProperties(Requests\getDocumentPropertiesRequest $request)
     {
         try {
              list($response) = $this->getDocumentPropertiesWithHttpInfo($request);
@@ -13997,16 +13997,16 @@ class WordsApi
      *
      * Read document properties info.
      *
-     * @param Requests\GetDocumentPropertiesRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentPropertiesWithHttpInfo(Requests\GetDocumentPropertiesRequest $request)
+    public function getDocumentPropertiesWithHttpInfo(Requests\getDocumentPropertiesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
-        $request = $this->GetDocumentPropertiesRequest($request);
+        $request = $this->getDocumentPropertiesRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -14063,12 +14063,12 @@ class WordsApi
      *
      * Read document properties info.
      *
-     * @param Requests\GetDocumentPropertiesRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentPropertiesAsync(Requests\GetDocumentPropertiesRequest $request) 
+    public function getDocumentPropertiesAsync(Requests\getDocumentPropertiesRequest $request) 
     {
         return $this->getDocumentPropertiesAsyncWithHttpInfo($request)
             ->then(
@@ -14083,15 +14083,15 @@ class WordsApi
      *
      * Read document properties info.
      *
-     * @param Requests\GetDocumentPropertiesRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentPropertiesAsyncWithHttpInfo(Requests\GetDocumentPropertiesRequest $request) 
+    public function getDocumentPropertiesAsyncWithHttpInfo(Requests\getDocumentPropertiesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
-        $request = $this->GetDocumentPropertiesRequest($request);
+        $request = $this->getDocumentPropertiesRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -14136,12 +14136,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentProperties'
      *
-     * @param Requests\GetDocumentPropertiesRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentPropertiesRequest(Requests\GetDocumentPropertiesRequest $request)
+    protected function getDocumentPropertiesRequest(Requests\getDocumentPropertiesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -14285,13 +14285,13 @@ class WordsApi
      *
      * Read document property info by the property name.
      *
-     * @param Requests\GetDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentPropertyResponse
      */
-    public function getDocumentProperty(Requests\GetDocumentPropertyRequest $request)
+    public function getDocumentProperty(Requests\getDocumentPropertyRequest $request)
     {
         try {
              list($response) = $this->getDocumentPropertyWithHttpInfo($request);
@@ -14308,16 +14308,16 @@ class WordsApi
      *
      * Read document property info by the property name.
      *
-     * @param Requests\GetDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentPropertyWithHttpInfo(Requests\GetDocumentPropertyRequest $request)
+    public function getDocumentPropertyWithHttpInfo(Requests\getDocumentPropertyRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
-        $request = $this->GetDocumentPropertyRequest($request);
+        $request = $this->getDocumentPropertyRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -14374,12 +14374,12 @@ class WordsApi
      *
      * Read document property info by the property name.
      *
-     * @param Requests\GetDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentPropertyAsync(Requests\GetDocumentPropertyRequest $request) 
+    public function getDocumentPropertyAsync(Requests\getDocumentPropertyRequest $request) 
     {
         return $this->getDocumentPropertyAsyncWithHttpInfo($request)
             ->then(
@@ -14394,15 +14394,15 @@ class WordsApi
      *
      * Read document property info by the property name.
      *
-     * @param Requests\GetDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentPropertyAsyncWithHttpInfo(Requests\GetDocumentPropertyRequest $request) 
+    public function getDocumentPropertyAsyncWithHttpInfo(Requests\getDocumentPropertyRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
-        $request = $this->GetDocumentPropertyRequest($request);
+        $request = $this->getDocumentPropertyRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -14447,12 +14447,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentProperty'
      *
-     * @param Requests\GetDocumentPropertyRequest $request is a request object for operation
+     * @param Requests\getDocumentPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentPropertyRequest(Requests\GetDocumentPropertyRequest $request)
+    protected function getDocumentPropertyRequest(Requests\getDocumentPropertyRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -14605,13 +14605,13 @@ class WordsApi
      *
      * Read document protection common info.
      *
-     * @param Requests\GetDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\getDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\ProtectionDataResponse
      */
-    public function getDocumentProtection(Requests\GetDocumentProtectionRequest $request)
+    public function getDocumentProtection(Requests\getDocumentProtectionRequest $request)
     {
         try {
              list($response) = $this->getDocumentProtectionWithHttpInfo($request);
@@ -14628,16 +14628,16 @@ class WordsApi
      *
      * Read document protection common info.
      *
-     * @param Requests\GetDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\getDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentProtectionWithHttpInfo(Requests\GetDocumentProtectionRequest $request)
+    public function getDocumentProtectionWithHttpInfo(Requests\getDocumentProtectionRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
-        $request = $this->GetDocumentProtectionRequest($request);
+        $request = $this->getDocumentProtectionRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -14694,12 +14694,12 @@ class WordsApi
      *
      * Read document protection common info.
      *
-     * @param Requests\GetDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\getDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentProtectionAsync(Requests\GetDocumentProtectionRequest $request) 
+    public function getDocumentProtectionAsync(Requests\getDocumentProtectionRequest $request) 
     {
         return $this->getDocumentProtectionAsyncWithHttpInfo($request)
             ->then(
@@ -14714,15 +14714,15 @@ class WordsApi
      *
      * Read document protection common info.
      *
-     * @param Requests\GetDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\getDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentProtectionAsyncWithHttpInfo(Requests\GetDocumentProtectionRequest $request) 
+    public function getDocumentProtectionAsyncWithHttpInfo(Requests\getDocumentProtectionRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
-        $request = $this->GetDocumentProtectionRequest($request);
+        $request = $this->getDocumentProtectionRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -14767,12 +14767,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentProtection'
      *
-     * @param Requests\GetDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\getDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentProtectionRequest(Requests\GetDocumentProtectionRequest $request)
+    protected function getDocumentProtectionRequest(Requests\getDocumentProtectionRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -14916,13 +14916,13 @@ class WordsApi
      *
      * Read document statistics.
      *
-     * @param Requests\GetDocumentStatisticsRequest $request is a request object for operation
+     * @param Requests\getDocumentStatisticsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\StatDataResponse
      */
-    public function getDocumentStatistics(Requests\GetDocumentStatisticsRequest $request)
+    public function getDocumentStatistics(Requests\getDocumentStatisticsRequest $request)
     {
         try {
              list($response) = $this->getDocumentStatisticsWithHttpInfo($request);
@@ -14939,16 +14939,16 @@ class WordsApi
      *
      * Read document statistics.
      *
-     * @param Requests\GetDocumentStatisticsRequest $request is a request object for operation
+     * @param Requests\getDocumentStatisticsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\StatDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentStatisticsWithHttpInfo(Requests\GetDocumentStatisticsRequest $request)
+    public function getDocumentStatisticsWithHttpInfo(Requests\getDocumentStatisticsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StatDataResponse';
-        $request = $this->GetDocumentStatisticsRequest($request);
+        $request = $this->getDocumentStatisticsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -15005,12 +15005,12 @@ class WordsApi
      *
      * Read document statistics.
      *
-     * @param Requests\GetDocumentStatisticsRequest $request is a request object for operation
+     * @param Requests\getDocumentStatisticsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentStatisticsAsync(Requests\GetDocumentStatisticsRequest $request) 
+    public function getDocumentStatisticsAsync(Requests\getDocumentStatisticsRequest $request) 
     {
         return $this->getDocumentStatisticsAsyncWithHttpInfo($request)
             ->then(
@@ -15025,15 +15025,15 @@ class WordsApi
      *
      * Read document statistics.
      *
-     * @param Requests\GetDocumentStatisticsRequest $request is a request object for operation
+     * @param Requests\getDocumentStatisticsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentStatisticsAsyncWithHttpInfo(Requests\GetDocumentStatisticsRequest $request) 
+    public function getDocumentStatisticsAsyncWithHttpInfo(Requests\getDocumentStatisticsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StatDataResponse';
-        $request = $this->GetDocumentStatisticsRequest($request);
+        $request = $this->getDocumentStatisticsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -15078,12 +15078,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentStatistics'
      *
-     * @param Requests\GetDocumentStatisticsRequest $request is a request object for operation
+     * @param Requests\getDocumentStatisticsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentStatisticsRequest(Requests\GetDocumentStatisticsRequest $request)
+    protected function getDocumentStatisticsRequest(Requests\getDocumentStatisticsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -15257,13 +15257,13 @@ class WordsApi
      *
      * Read document text items.
      *
-     * @param Requests\GetDocumentTextItemsRequest $request is a request object for operation
+     * @param Requests\getDocumentTextItemsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TextItemsResponse
      */
-    public function getDocumentTextItems(Requests\GetDocumentTextItemsRequest $request)
+    public function getDocumentTextItems(Requests\getDocumentTextItemsRequest $request)
     {
         try {
              list($response) = $this->getDocumentTextItemsWithHttpInfo($request);
@@ -15280,16 +15280,16 @@ class WordsApi
      *
      * Read document text items.
      *
-     * @param Requests\GetDocumentTextItemsRequest $request is a request object for operation
+     * @param Requests\getDocumentTextItemsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TextItemsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentTextItemsWithHttpInfo(Requests\GetDocumentTextItemsRequest $request)
+    public function getDocumentTextItemsWithHttpInfo(Requests\getDocumentTextItemsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TextItemsResponse';
-        $request = $this->GetDocumentTextItemsRequest($request);
+        $request = $this->getDocumentTextItemsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -15346,12 +15346,12 @@ class WordsApi
      *
      * Read document text items.
      *
-     * @param Requests\GetDocumentTextItemsRequest $request is a request object for operation
+     * @param Requests\getDocumentTextItemsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentTextItemsAsync(Requests\GetDocumentTextItemsRequest $request) 
+    public function getDocumentTextItemsAsync(Requests\getDocumentTextItemsRequest $request) 
     {
         return $this->getDocumentTextItemsAsyncWithHttpInfo($request)
             ->then(
@@ -15366,15 +15366,15 @@ class WordsApi
      *
      * Read document text items.
      *
-     * @param Requests\GetDocumentTextItemsRequest $request is a request object for operation
+     * @param Requests\getDocumentTextItemsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentTextItemsAsyncWithHttpInfo(Requests\GetDocumentTextItemsRequest $request) 
+    public function getDocumentTextItemsAsyncWithHttpInfo(Requests\getDocumentTextItemsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TextItemsResponse';
-        $request = $this->GetDocumentTextItemsRequest($request);
+        $request = $this->getDocumentTextItemsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -15419,12 +15419,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentTextItems'
      *
-     * @param Requests\GetDocumentTextItemsRequest $request is a request object for operation
+     * @param Requests\getDocumentTextItemsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentTextItemsRequest(Requests\GetDocumentTextItemsRequest $request)
+    protected function getDocumentTextItemsRequest(Requests\getDocumentTextItemsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -15568,13 +15568,13 @@ class WordsApi
      *
      * Export the document into the specified format.
      *
-     * @param Requests\GetDocumentWithFormatRequest $request is a request object for operation
+     * @param Requests\getDocumentWithFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function getDocumentWithFormat(Requests\GetDocumentWithFormatRequest $request)
+    public function getDocumentWithFormat(Requests\getDocumentWithFormatRequest $request)
     {
         try {
              list($response) = $this->getDocumentWithFormatWithHttpInfo($request);
@@ -15591,16 +15591,16 @@ class WordsApi
      *
      * Export the document into the specified format.
      *
-     * @param Requests\GetDocumentWithFormatRequest $request is a request object for operation
+     * @param Requests\getDocumentWithFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentWithFormatWithHttpInfo(Requests\GetDocumentWithFormatRequest $request)
+    public function getDocumentWithFormatWithHttpInfo(Requests\getDocumentWithFormatRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->GetDocumentWithFormatRequest($request);
+        $request = $this->getDocumentWithFormatRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -15657,12 +15657,12 @@ class WordsApi
      *
      * Export the document into the specified format.
      *
-     * @param Requests\GetDocumentWithFormatRequest $request is a request object for operation
+     * @param Requests\getDocumentWithFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentWithFormatAsync(Requests\GetDocumentWithFormatRequest $request) 
+    public function getDocumentWithFormatAsync(Requests\getDocumentWithFormatRequest $request) 
     {
         return $this->getDocumentWithFormatAsyncWithHttpInfo($request)
             ->then(
@@ -15677,15 +15677,15 @@ class WordsApi
      *
      * Export the document into the specified format.
      *
-     * @param Requests\GetDocumentWithFormatRequest $request is a request object for operation
+     * @param Requests\getDocumentWithFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentWithFormatAsyncWithHttpInfo(Requests\GetDocumentWithFormatRequest $request) 
+    public function getDocumentWithFormatAsyncWithHttpInfo(Requests\getDocumentWithFormatRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->GetDocumentWithFormatRequest($request);
+        $request = $this->getDocumentWithFormatRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -15730,12 +15730,12 @@ class WordsApi
     /*
      * Create request for operation 'getDocumentWithFormat'
      *
-     * @param Requests\GetDocumentWithFormatRequest $request is a request object for operation
+     * @param Requests\getDocumentWithFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetDocumentWithFormatRequest(Requests\GetDocumentWithFormatRequest $request)
+    protected function getDocumentWithFormatRequest(Requests\getDocumentWithFormatRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -15913,13 +15913,13 @@ class WordsApi
      *
      * Get field from document.
      *
-     * @param Requests\GetFieldRequest $request is a request object for operation
+     * @param Requests\getFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FieldResponse
      */
-    public function getField(Requests\GetFieldRequest $request)
+    public function getField(Requests\getFieldRequest $request)
     {
         try {
              list($response) = $this->getFieldWithHttpInfo($request);
@@ -15936,16 +15936,16 @@ class WordsApi
      *
      * Get field from document.
      *
-     * @param Requests\GetFieldRequest $request is a request object for operation
+     * @param Requests\getFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFieldWithHttpInfo(Requests\GetFieldRequest $request)
+    public function getFieldWithHttpInfo(Requests\getFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
-        $request = $this->GetFieldRequest($request);
+        $request = $this->getFieldRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -16002,12 +16002,12 @@ class WordsApi
      *
      * Get field from document.
      *
-     * @param Requests\GetFieldRequest $request is a request object for operation
+     * @param Requests\getFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFieldAsync(Requests\GetFieldRequest $request) 
+    public function getFieldAsync(Requests\getFieldRequest $request) 
     {
         return $this->getFieldAsyncWithHttpInfo($request)
             ->then(
@@ -16022,15 +16022,15 @@ class WordsApi
      *
      * Get field from document.
      *
-     * @param Requests\GetFieldRequest $request is a request object for operation
+     * @param Requests\getFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFieldAsyncWithHttpInfo(Requests\GetFieldRequest $request) 
+    public function getFieldAsyncWithHttpInfo(Requests\getFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
-        $request = $this->GetFieldRequest($request);
+        $request = $this->getFieldRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -16075,12 +16075,12 @@ class WordsApi
     /*
      * Create request for operation 'getField'
      *
-     * @param Requests\GetFieldRequest $request is a request object for operation
+     * @param Requests\getFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetFieldRequest(Requests\GetFieldRequest $request)
+    protected function getFieldRequest(Requests\getFieldRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -16243,13 +16243,13 @@ class WordsApi
      *
      * Get fields from document.
      *
-     * @param Requests\GetFieldsRequest $request is a request object for operation
+     * @param Requests\getFieldsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FieldsResponse
      */
-    public function getFields(Requests\GetFieldsRequest $request)
+    public function getFields(Requests\getFieldsRequest $request)
     {
         try {
              list($response) = $this->getFieldsWithHttpInfo($request);
@@ -16266,16 +16266,16 @@ class WordsApi
      *
      * Get fields from document.
      *
-     * @param Requests\GetFieldsRequest $request is a request object for operation
+     * @param Requests\getFieldsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FieldsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFieldsWithHttpInfo(Requests\GetFieldsRequest $request)
+    public function getFieldsWithHttpInfo(Requests\getFieldsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldsResponse';
-        $request = $this->GetFieldsRequest($request);
+        $request = $this->getFieldsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -16332,12 +16332,12 @@ class WordsApi
      *
      * Get fields from document.
      *
-     * @param Requests\GetFieldsRequest $request is a request object for operation
+     * @param Requests\getFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFieldsAsync(Requests\GetFieldsRequest $request) 
+    public function getFieldsAsync(Requests\getFieldsRequest $request) 
     {
         return $this->getFieldsAsyncWithHttpInfo($request)
             ->then(
@@ -16352,15 +16352,15 @@ class WordsApi
      *
      * Get fields from document.
      *
-     * @param Requests\GetFieldsRequest $request is a request object for operation
+     * @param Requests\getFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFieldsAsyncWithHttpInfo(Requests\GetFieldsRequest $request) 
+    public function getFieldsAsyncWithHttpInfo(Requests\getFieldsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldsResponse';
-        $request = $this->GetFieldsRequest($request);
+        $request = $this->getFieldsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -16405,12 +16405,12 @@ class WordsApi
     /*
      * Create request for operation 'getFields'
      *
-     * @param Requests\GetFieldsRequest $request is a request object for operation
+     * @param Requests\getFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetFieldsRequest(Requests\GetFieldsRequest $request)
+    protected function getFieldsRequest(Requests\getFieldsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -16564,13 +16564,13 @@ class WordsApi
      *
      * Read footnote by index.
      *
-     * @param Requests\GetFootnoteRequest $request is a request object for operation
+     * @param Requests\getFootnoteRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FootnoteResponse
      */
-    public function getFootnote(Requests\GetFootnoteRequest $request)
+    public function getFootnote(Requests\getFootnoteRequest $request)
     {
         try {
              list($response) = $this->getFootnoteWithHttpInfo($request);
@@ -16587,16 +16587,16 @@ class WordsApi
      *
      * Read footnote by index.
      *
-     * @param Requests\GetFootnoteRequest $request is a request object for operation
+     * @param Requests\getFootnoteRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFootnoteWithHttpInfo(Requests\GetFootnoteRequest $request)
+    public function getFootnoteWithHttpInfo(Requests\getFootnoteRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
-        $request = $this->GetFootnoteRequest($request);
+        $request = $this->getFootnoteRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -16653,12 +16653,12 @@ class WordsApi
      *
      * Read footnote by index.
      *
-     * @param Requests\GetFootnoteRequest $request is a request object for operation
+     * @param Requests\getFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFootnoteAsync(Requests\GetFootnoteRequest $request) 
+    public function getFootnoteAsync(Requests\getFootnoteRequest $request) 
     {
         return $this->getFootnoteAsyncWithHttpInfo($request)
             ->then(
@@ -16673,15 +16673,15 @@ class WordsApi
      *
      * Read footnote by index.
      *
-     * @param Requests\GetFootnoteRequest $request is a request object for operation
+     * @param Requests\getFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFootnoteAsyncWithHttpInfo(Requests\GetFootnoteRequest $request) 
+    public function getFootnoteAsyncWithHttpInfo(Requests\getFootnoteRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
-        $request = $this->GetFootnoteRequest($request);
+        $request = $this->getFootnoteRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -16726,12 +16726,12 @@ class WordsApi
     /*
      * Create request for operation 'getFootnote'
      *
-     * @param Requests\GetFootnoteRequest $request is a request object for operation
+     * @param Requests\getFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetFootnoteRequest(Requests\GetFootnoteRequest $request)
+    protected function getFootnoteRequest(Requests\getFootnoteRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -16894,13 +16894,13 @@ class WordsApi
      *
      * Get footnotes from document.
      *
-     * @param Requests\GetFootnotesRequest $request is a request object for operation
+     * @param Requests\getFootnotesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FootnotesResponse
      */
-    public function getFootnotes(Requests\GetFootnotesRequest $request)
+    public function getFootnotes(Requests\getFootnotesRequest $request)
     {
         try {
              list($response) = $this->getFootnotesWithHttpInfo($request);
@@ -16917,16 +16917,16 @@ class WordsApi
      *
      * Get footnotes from document.
      *
-     * @param Requests\GetFootnotesRequest $request is a request object for operation
+     * @param Requests\getFootnotesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FootnotesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFootnotesWithHttpInfo(Requests\GetFootnotesRequest $request)
+    public function getFootnotesWithHttpInfo(Requests\getFootnotesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnotesResponse';
-        $request = $this->GetFootnotesRequest($request);
+        $request = $this->getFootnotesRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -16983,12 +16983,12 @@ class WordsApi
      *
      * Get footnotes from document.
      *
-     * @param Requests\GetFootnotesRequest $request is a request object for operation
+     * @param Requests\getFootnotesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFootnotesAsync(Requests\GetFootnotesRequest $request) 
+    public function getFootnotesAsync(Requests\getFootnotesRequest $request) 
     {
         return $this->getFootnotesAsyncWithHttpInfo($request)
             ->then(
@@ -17003,15 +17003,15 @@ class WordsApi
      *
      * Get footnotes from document.
      *
-     * @param Requests\GetFootnotesRequest $request is a request object for operation
+     * @param Requests\getFootnotesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFootnotesAsyncWithHttpInfo(Requests\GetFootnotesRequest $request) 
+    public function getFootnotesAsyncWithHttpInfo(Requests\getFootnotesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnotesResponse';
-        $request = $this->GetFootnotesRequest($request);
+        $request = $this->getFootnotesRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -17056,12 +17056,12 @@ class WordsApi
     /*
      * Create request for operation 'getFootnotes'
      *
-     * @param Requests\GetFootnotesRequest $request is a request object for operation
+     * @param Requests\getFootnotesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetFootnotesRequest(Requests\GetFootnotesRequest $request)
+    protected function getFootnotesRequest(Requests\getFootnotesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -17215,13 +17215,13 @@ class WordsApi
      *
      * Returns representation of an one of the form field.
      *
-     * @param Requests\GetFormFieldRequest $request is a request object for operation
+     * @param Requests\getFormFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FormFieldResponse
      */
-    public function getFormField(Requests\GetFormFieldRequest $request)
+    public function getFormField(Requests\getFormFieldRequest $request)
     {
         try {
              list($response) = $this->getFormFieldWithHttpInfo($request);
@@ -17238,16 +17238,16 @@ class WordsApi
      *
      * Returns representation of an one of the form field.
      *
-     * @param Requests\GetFormFieldRequest $request is a request object for operation
+     * @param Requests\getFormFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFormFieldWithHttpInfo(Requests\GetFormFieldRequest $request)
+    public function getFormFieldWithHttpInfo(Requests\getFormFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
-        $request = $this->GetFormFieldRequest($request);
+        $request = $this->getFormFieldRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -17304,12 +17304,12 @@ class WordsApi
      *
      * Returns representation of an one of the form field.
      *
-     * @param Requests\GetFormFieldRequest $request is a request object for operation
+     * @param Requests\getFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFormFieldAsync(Requests\GetFormFieldRequest $request) 
+    public function getFormFieldAsync(Requests\getFormFieldRequest $request) 
     {
         return $this->getFormFieldAsyncWithHttpInfo($request)
             ->then(
@@ -17324,15 +17324,15 @@ class WordsApi
      *
      * Returns representation of an one of the form field.
      *
-     * @param Requests\GetFormFieldRequest $request is a request object for operation
+     * @param Requests\getFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFormFieldAsyncWithHttpInfo(Requests\GetFormFieldRequest $request) 
+    public function getFormFieldAsyncWithHttpInfo(Requests\getFormFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
-        $request = $this->GetFormFieldRequest($request);
+        $request = $this->getFormFieldRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -17377,12 +17377,12 @@ class WordsApi
     /*
      * Create request for operation 'getFormField'
      *
-     * @param Requests\GetFormFieldRequest $request is a request object for operation
+     * @param Requests\getFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetFormFieldRequest(Requests\GetFormFieldRequest $request)
+    protected function getFormFieldRequest(Requests\getFormFieldRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -17545,13 +17545,13 @@ class WordsApi
      *
      * Get form fields from document.
      *
-     * @param Requests\GetFormFieldsRequest $request is a request object for operation
+     * @param Requests\getFormFieldsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FormFieldsResponse
      */
-    public function getFormFields(Requests\GetFormFieldsRequest $request)
+    public function getFormFields(Requests\getFormFieldsRequest $request)
     {
         try {
              list($response) = $this->getFormFieldsWithHttpInfo($request);
@@ -17568,16 +17568,16 @@ class WordsApi
      *
      * Get form fields from document.
      *
-     * @param Requests\GetFormFieldsRequest $request is a request object for operation
+     * @param Requests\getFormFieldsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FormFieldsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFormFieldsWithHttpInfo(Requests\GetFormFieldsRequest $request)
+    public function getFormFieldsWithHttpInfo(Requests\getFormFieldsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldsResponse';
-        $request = $this->GetFormFieldsRequest($request);
+        $request = $this->getFormFieldsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -17634,12 +17634,12 @@ class WordsApi
      *
      * Get form fields from document.
      *
-     * @param Requests\GetFormFieldsRequest $request is a request object for operation
+     * @param Requests\getFormFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFormFieldsAsync(Requests\GetFormFieldsRequest $request) 
+    public function getFormFieldsAsync(Requests\getFormFieldsRequest $request) 
     {
         return $this->getFormFieldsAsyncWithHttpInfo($request)
             ->then(
@@ -17654,15 +17654,15 @@ class WordsApi
      *
      * Get form fields from document.
      *
-     * @param Requests\GetFormFieldsRequest $request is a request object for operation
+     * @param Requests\getFormFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFormFieldsAsyncWithHttpInfo(Requests\GetFormFieldsRequest $request) 
+    public function getFormFieldsAsyncWithHttpInfo(Requests\getFormFieldsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldsResponse';
-        $request = $this->GetFormFieldsRequest($request);
+        $request = $this->getFormFieldsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -17707,12 +17707,12 @@ class WordsApi
     /*
      * Create request for operation 'getFormFields'
      *
-     * @param Requests\GetFormFieldsRequest $request is a request object for operation
+     * @param Requests\getFormFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetFormFieldsRequest(Requests\GetFormFieldsRequest $request)
+    protected function getFormFieldsRequest(Requests\getFormFieldsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -17866,13 +17866,13 @@ class WordsApi
      *
      * Return a header/footer that is contained in the document.
      *
-     * @param Requests\GetHeaderFooterRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\HeaderFooterResponse
      */
-    public function getHeaderFooter(Requests\GetHeaderFooterRequest $request)
+    public function getHeaderFooter(Requests\getHeaderFooterRequest $request)
     {
         try {
              list($response) = $this->getHeaderFooterWithHttpInfo($request);
@@ -17889,16 +17889,16 @@ class WordsApi
      *
      * Return a header/footer that is contained in the document.
      *
-     * @param Requests\GetHeaderFooterRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getHeaderFooterWithHttpInfo(Requests\GetHeaderFooterRequest $request)
+    public function getHeaderFooterWithHttpInfo(Requests\getHeaderFooterRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
-        $request = $this->GetHeaderFooterRequest($request);
+        $request = $this->getHeaderFooterRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -17955,12 +17955,12 @@ class WordsApi
      *
      * Return a header/footer that is contained in the document.
      *
-     * @param Requests\GetHeaderFooterRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getHeaderFooterAsync(Requests\GetHeaderFooterRequest $request) 
+    public function getHeaderFooterAsync(Requests\getHeaderFooterRequest $request) 
     {
         return $this->getHeaderFooterAsyncWithHttpInfo($request)
             ->then(
@@ -17975,15 +17975,15 @@ class WordsApi
      *
      * Return a header/footer that is contained in the document.
      *
-     * @param Requests\GetHeaderFooterRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getHeaderFooterAsyncWithHttpInfo(Requests\GetHeaderFooterRequest $request) 
+    public function getHeaderFooterAsyncWithHttpInfo(Requests\getHeaderFooterRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
-        $request = $this->GetHeaderFooterRequest($request);
+        $request = $this->getHeaderFooterRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -18028,12 +18028,12 @@ class WordsApi
     /*
      * Create request for operation 'getHeaderFooter'
      *
-     * @param Requests\GetHeaderFooterRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetHeaderFooterRequest(Requests\GetHeaderFooterRequest $request)
+    protected function getHeaderFooterRequest(Requests\getHeaderFooterRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -18196,13 +18196,13 @@ class WordsApi
      *
      * Return a header/footer that is contained in the document.
      *
-     * @param Requests\GetHeaderFooterOfSectionRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterOfSectionRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\HeaderFooterResponse
      */
-    public function getHeaderFooterOfSection(Requests\GetHeaderFooterOfSectionRequest $request)
+    public function getHeaderFooterOfSection(Requests\getHeaderFooterOfSectionRequest $request)
     {
         try {
              list($response) = $this->getHeaderFooterOfSectionWithHttpInfo($request);
@@ -18219,16 +18219,16 @@ class WordsApi
      *
      * Return a header/footer that is contained in the document.
      *
-     * @param Requests\GetHeaderFooterOfSectionRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterOfSectionRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getHeaderFooterOfSectionWithHttpInfo(Requests\GetHeaderFooterOfSectionRequest $request)
+    public function getHeaderFooterOfSectionWithHttpInfo(Requests\getHeaderFooterOfSectionRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
-        $request = $this->GetHeaderFooterOfSectionRequest($request);
+        $request = $this->getHeaderFooterOfSectionRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -18285,12 +18285,12 @@ class WordsApi
      *
      * Return a header/footer that is contained in the document.
      *
-     * @param Requests\GetHeaderFooterOfSectionRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterOfSectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getHeaderFooterOfSectionAsync(Requests\GetHeaderFooterOfSectionRequest $request) 
+    public function getHeaderFooterOfSectionAsync(Requests\getHeaderFooterOfSectionRequest $request) 
     {
         return $this->getHeaderFooterOfSectionAsyncWithHttpInfo($request)
             ->then(
@@ -18305,15 +18305,15 @@ class WordsApi
      *
      * Return a header/footer that is contained in the document.
      *
-     * @param Requests\GetHeaderFooterOfSectionRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterOfSectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getHeaderFooterOfSectionAsyncWithHttpInfo(Requests\GetHeaderFooterOfSectionRequest $request) 
+    public function getHeaderFooterOfSectionAsyncWithHttpInfo(Requests\getHeaderFooterOfSectionRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
-        $request = $this->GetHeaderFooterOfSectionRequest($request);
+        $request = $this->getHeaderFooterOfSectionRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -18358,12 +18358,12 @@ class WordsApi
     /*
      * Create request for operation 'getHeaderFooterOfSection'
      *
-     * @param Requests\GetHeaderFooterOfSectionRequest $request is a request object for operation
+     * @param Requests\getHeaderFooterOfSectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetHeaderFooterOfSectionRequest(Requests\GetHeaderFooterOfSectionRequest $request)
+    protected function getHeaderFooterOfSectionRequest(Requests\getHeaderFooterOfSectionRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -18535,13 +18535,13 @@ class WordsApi
      *
      * Return a list of header/footers that are contained in the document.
      *
-     * @param Requests\GetHeaderFootersRequest $request is a request object for operation
+     * @param Requests\getHeaderFootersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\HeaderFootersResponse
      */
-    public function getHeaderFooters(Requests\GetHeaderFootersRequest $request)
+    public function getHeaderFooters(Requests\getHeaderFootersRequest $request)
     {
         try {
              list($response) = $this->getHeaderFootersWithHttpInfo($request);
@@ -18558,16 +18558,16 @@ class WordsApi
      *
      * Return a list of header/footers that are contained in the document.
      *
-     * @param Requests\GetHeaderFootersRequest $request is a request object for operation
+     * @param Requests\getHeaderFootersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\HeaderFootersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getHeaderFootersWithHttpInfo(Requests\GetHeaderFootersRequest $request)
+    public function getHeaderFootersWithHttpInfo(Requests\getHeaderFootersRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
-        $request = $this->GetHeaderFootersRequest($request);
+        $request = $this->getHeaderFootersRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -18624,12 +18624,12 @@ class WordsApi
      *
      * Return a list of header/footers that are contained in the document.
      *
-     * @param Requests\GetHeaderFootersRequest $request is a request object for operation
+     * @param Requests\getHeaderFootersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getHeaderFootersAsync(Requests\GetHeaderFootersRequest $request) 
+    public function getHeaderFootersAsync(Requests\getHeaderFootersRequest $request) 
     {
         return $this->getHeaderFootersAsyncWithHttpInfo($request)
             ->then(
@@ -18644,15 +18644,15 @@ class WordsApi
      *
      * Return a list of header/footers that are contained in the document.
      *
-     * @param Requests\GetHeaderFootersRequest $request is a request object for operation
+     * @param Requests\getHeaderFootersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getHeaderFootersAsyncWithHttpInfo(Requests\GetHeaderFootersRequest $request) 
+    public function getHeaderFootersAsyncWithHttpInfo(Requests\getHeaderFootersRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
-        $request = $this->GetHeaderFootersRequest($request);
+        $request = $this->getHeaderFootersRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -18697,12 +18697,12 @@ class WordsApi
     /*
      * Create request for operation 'getHeaderFooters'
      *
-     * @param Requests\GetHeaderFootersRequest $request is a request object for operation
+     * @param Requests\getHeaderFootersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetHeaderFootersRequest(Requests\GetHeaderFootersRequest $request)
+    protected function getHeaderFootersRequest(Requests\getHeaderFootersRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -18866,13 +18866,13 @@ class WordsApi
      *
      * Read OfficeMath object by index.
      *
-     * @param Requests\GetOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\OfficeMathObjectResponse
      */
-    public function getOfficeMathObject(Requests\GetOfficeMathObjectRequest $request)
+    public function getOfficeMathObject(Requests\getOfficeMathObjectRequest $request)
     {
         try {
              list($response) = $this->getOfficeMathObjectWithHttpInfo($request);
@@ -18889,16 +18889,16 @@ class WordsApi
      *
      * Read OfficeMath object by index.
      *
-     * @param Requests\GetOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\OfficeMathObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOfficeMathObjectWithHttpInfo(Requests\GetOfficeMathObjectRequest $request)
+    public function getOfficeMathObjectWithHttpInfo(Requests\getOfficeMathObjectRequest $request)
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
-        $request = $this->GetOfficeMathObjectRequest($request);
+        $request = $this->getOfficeMathObjectRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -18955,12 +18955,12 @@ class WordsApi
      *
      * Read OfficeMath object by index.
      *
-     * @param Requests\GetOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfficeMathObjectAsync(Requests\GetOfficeMathObjectRequest $request) 
+    public function getOfficeMathObjectAsync(Requests\getOfficeMathObjectRequest $request) 
     {
         return $this->getOfficeMathObjectAsyncWithHttpInfo($request)
             ->then(
@@ -18975,15 +18975,15 @@ class WordsApi
      *
      * Read OfficeMath object by index.
      *
-     * @param Requests\GetOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfficeMathObjectAsyncWithHttpInfo(Requests\GetOfficeMathObjectRequest $request) 
+    public function getOfficeMathObjectAsyncWithHttpInfo(Requests\getOfficeMathObjectRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
-        $request = $this->GetOfficeMathObjectRequest($request);
+        $request = $this->getOfficeMathObjectRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -19028,12 +19028,12 @@ class WordsApi
     /*
      * Create request for operation 'getOfficeMathObject'
      *
-     * @param Requests\GetOfficeMathObjectRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetOfficeMathObjectRequest(Requests\GetOfficeMathObjectRequest $request)
+    protected function getOfficeMathObjectRequest(Requests\getOfficeMathObjectRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -19196,13 +19196,13 @@ class WordsApi
      *
      * Get OfficeMath objects from document.
      *
-     * @param Requests\GetOfficeMathObjectsRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\OfficeMathObjectsResponse
      */
-    public function getOfficeMathObjects(Requests\GetOfficeMathObjectsRequest $request)
+    public function getOfficeMathObjects(Requests\getOfficeMathObjectsRequest $request)
     {
         try {
              list($response) = $this->getOfficeMathObjectsWithHttpInfo($request);
@@ -19219,16 +19219,16 @@ class WordsApi
      *
      * Get OfficeMath objects from document.
      *
-     * @param Requests\GetOfficeMathObjectsRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\OfficeMathObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOfficeMathObjectsWithHttpInfo(Requests\GetOfficeMathObjectsRequest $request)
+    public function getOfficeMathObjectsWithHttpInfo(Requests\getOfficeMathObjectsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
-        $request = $this->GetOfficeMathObjectsRequest($request);
+        $request = $this->getOfficeMathObjectsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -19285,12 +19285,12 @@ class WordsApi
      *
      * Get OfficeMath objects from document.
      *
-     * @param Requests\GetOfficeMathObjectsRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfficeMathObjectsAsync(Requests\GetOfficeMathObjectsRequest $request) 
+    public function getOfficeMathObjectsAsync(Requests\getOfficeMathObjectsRequest $request) 
     {
         return $this->getOfficeMathObjectsAsyncWithHttpInfo($request)
             ->then(
@@ -19305,15 +19305,15 @@ class WordsApi
      *
      * Get OfficeMath objects from document.
      *
-     * @param Requests\GetOfficeMathObjectsRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfficeMathObjectsAsyncWithHttpInfo(Requests\GetOfficeMathObjectsRequest $request) 
+    public function getOfficeMathObjectsAsyncWithHttpInfo(Requests\getOfficeMathObjectsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
-        $request = $this->GetOfficeMathObjectsRequest($request);
+        $request = $this->getOfficeMathObjectsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -19358,12 +19358,12 @@ class WordsApi
     /*
      * Create request for operation 'getOfficeMathObjects'
      *
-     * @param Requests\GetOfficeMathObjectsRequest $request is a request object for operation
+     * @param Requests\getOfficeMathObjectsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetOfficeMathObjectsRequest(Requests\GetOfficeMathObjectsRequest $request)
+    protected function getOfficeMathObjectsRequest(Requests\getOfficeMathObjectsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -19517,13 +19517,13 @@ class WordsApi
      *
      * Get document section by index.
      *
-     * @param Requests\GetSectionRequest $request is a request object for operation
+     * @param Requests\getSectionRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\SectionResponse
      */
-    public function getSection(Requests\GetSectionRequest $request)
+    public function getSection(Requests\getSectionRequest $request)
     {
         try {
              list($response) = $this->getSectionWithHttpInfo($request);
@@ -19540,16 +19540,16 @@ class WordsApi
      *
      * Get document section by index.
      *
-     * @param Requests\GetSectionRequest $request is a request object for operation
+     * @param Requests\getSectionRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\SectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSectionWithHttpInfo(Requests\GetSectionRequest $request)
+    public function getSectionWithHttpInfo(Requests\getSectionRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionResponse';
-        $request = $this->GetSectionRequest($request);
+        $request = $this->getSectionRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -19606,12 +19606,12 @@ class WordsApi
      *
      * Get document section by index.
      *
-     * @param Requests\GetSectionRequest $request is a request object for operation
+     * @param Requests\getSectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSectionAsync(Requests\GetSectionRequest $request) 
+    public function getSectionAsync(Requests\getSectionRequest $request) 
     {
         return $this->getSectionAsyncWithHttpInfo($request)
             ->then(
@@ -19626,15 +19626,15 @@ class WordsApi
      *
      * Get document section by index.
      *
-     * @param Requests\GetSectionRequest $request is a request object for operation
+     * @param Requests\getSectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSectionAsyncWithHttpInfo(Requests\GetSectionRequest $request) 
+    public function getSectionAsyncWithHttpInfo(Requests\getSectionRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionResponse';
-        $request = $this->GetSectionRequest($request);
+        $request = $this->getSectionRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -19679,12 +19679,12 @@ class WordsApi
     /*
      * Create request for operation 'getSection'
      *
-     * @param Requests\GetSectionRequest $request is a request object for operation
+     * @param Requests\getSectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetSectionRequest(Requests\GetSectionRequest $request)
+    protected function getSectionRequest(Requests\getSectionRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -19837,13 +19837,13 @@ class WordsApi
      *
      * Get page setup of section.
      *
-     * @param Requests\GetSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\getSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\SectionPageSetupResponse
      */
-    public function getSectionPageSetup(Requests\GetSectionPageSetupRequest $request)
+    public function getSectionPageSetup(Requests\getSectionPageSetupRequest $request)
     {
         try {
              list($response) = $this->getSectionPageSetupWithHttpInfo($request);
@@ -19860,16 +19860,16 @@ class WordsApi
      *
      * Get page setup of section.
      *
-     * @param Requests\GetSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\getSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\SectionPageSetupResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSectionPageSetupWithHttpInfo(Requests\GetSectionPageSetupRequest $request)
+    public function getSectionPageSetupWithHttpInfo(Requests\getSectionPageSetupRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
-        $request = $this->GetSectionPageSetupRequest($request);
+        $request = $this->getSectionPageSetupRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -19926,12 +19926,12 @@ class WordsApi
      *
      * Get page setup of section.
      *
-     * @param Requests\GetSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\getSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSectionPageSetupAsync(Requests\GetSectionPageSetupRequest $request) 
+    public function getSectionPageSetupAsync(Requests\getSectionPageSetupRequest $request) 
     {
         return $this->getSectionPageSetupAsyncWithHttpInfo($request)
             ->then(
@@ -19946,15 +19946,15 @@ class WordsApi
      *
      * Get page setup of section.
      *
-     * @param Requests\GetSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\getSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSectionPageSetupAsyncWithHttpInfo(Requests\GetSectionPageSetupRequest $request) 
+    public function getSectionPageSetupAsyncWithHttpInfo(Requests\getSectionPageSetupRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
-        $request = $this->GetSectionPageSetupRequest($request);
+        $request = $this->getSectionPageSetupRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -19999,12 +19999,12 @@ class WordsApi
     /*
      * Create request for operation 'getSectionPageSetup'
      *
-     * @param Requests\GetSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\getSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetSectionPageSetupRequest(Requests\GetSectionPageSetupRequest $request)
+    protected function getSectionPageSetupRequest(Requests\getSectionPageSetupRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -20157,13 +20157,13 @@ class WordsApi
      *
      * Return a list of sections that are contained in the document.
      *
-     * @param Requests\GetSectionsRequest $request is a request object for operation
+     * @param Requests\getSectionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\SectionLinkCollectionResponse
      */
-    public function getSections(Requests\GetSectionsRequest $request)
+    public function getSections(Requests\getSectionsRequest $request)
     {
         try {
              list($response) = $this->getSectionsWithHttpInfo($request);
@@ -20180,16 +20180,16 @@ class WordsApi
      *
      * Return a list of sections that are contained in the document.
      *
-     * @param Requests\GetSectionsRequest $request is a request object for operation
+     * @param Requests\getSectionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\SectionLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSectionsWithHttpInfo(Requests\GetSectionsRequest $request)
+    public function getSectionsWithHttpInfo(Requests\getSectionsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
-        $request = $this->GetSectionsRequest($request);
+        $request = $this->getSectionsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -20246,12 +20246,12 @@ class WordsApi
      *
      * Return a list of sections that are contained in the document.
      *
-     * @param Requests\GetSectionsRequest $request is a request object for operation
+     * @param Requests\getSectionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSectionsAsync(Requests\GetSectionsRequest $request) 
+    public function getSectionsAsync(Requests\getSectionsRequest $request) 
     {
         return $this->getSectionsAsyncWithHttpInfo($request)
             ->then(
@@ -20266,15 +20266,15 @@ class WordsApi
      *
      * Return a list of sections that are contained in the document.
      *
-     * @param Requests\GetSectionsRequest $request is a request object for operation
+     * @param Requests\getSectionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSectionsAsyncWithHttpInfo(Requests\GetSectionsRequest $request) 
+    public function getSectionsAsyncWithHttpInfo(Requests\getSectionsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
-        $request = $this->GetSectionsRequest($request);
+        $request = $this->getSectionsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -20319,12 +20319,12 @@ class WordsApi
     /*
      * Create request for operation 'getSections'
      *
-     * @param Requests\GetSectionsRequest $request is a request object for operation
+     * @param Requests\getSectionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetSectionsRequest(Requests\GetSectionsRequest $request)
+    protected function getSectionsRequest(Requests\getSectionsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -20468,13 +20468,13 @@ class WordsApi
      *
      * Return a table.
      *
-     * @param Requests\GetTableRequest $request is a request object for operation
+     * @param Requests\getTableRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableResponse
      */
-    public function getTable(Requests\GetTableRequest $request)
+    public function getTable(Requests\getTableRequest $request)
     {
         try {
              list($response) = $this->getTableWithHttpInfo($request);
@@ -20491,16 +20491,16 @@ class WordsApi
      *
      * Return a table.
      *
-     * @param Requests\GetTableRequest $request is a request object for operation
+     * @param Requests\getTableRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTableWithHttpInfo(Requests\GetTableRequest $request)
+    public function getTableWithHttpInfo(Requests\getTableRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
-        $request = $this->GetTableRequest($request);
+        $request = $this->getTableRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -20557,12 +20557,12 @@ class WordsApi
      *
      * Return a table.
      *
-     * @param Requests\GetTableRequest $request is a request object for operation
+     * @param Requests\getTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableAsync(Requests\GetTableRequest $request) 
+    public function getTableAsync(Requests\getTableRequest $request) 
     {
         return $this->getTableAsyncWithHttpInfo($request)
             ->then(
@@ -20577,15 +20577,15 @@ class WordsApi
      *
      * Return a table.
      *
-     * @param Requests\GetTableRequest $request is a request object for operation
+     * @param Requests\getTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableAsyncWithHttpInfo(Requests\GetTableRequest $request) 
+    public function getTableAsyncWithHttpInfo(Requests\getTableRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
-        $request = $this->GetTableRequest($request);
+        $request = $this->getTableRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -20630,12 +20630,12 @@ class WordsApi
     /*
      * Create request for operation 'getTable'
      *
-     * @param Requests\GetTableRequest $request is a request object for operation
+     * @param Requests\getTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetTableRequest(Requests\GetTableRequest $request)
+    protected function getTableRequest(Requests\getTableRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -20798,13 +20798,13 @@ class WordsApi
      *
      * Return a table cell.
      *
-     * @param Requests\GetTableCellRequest $request is a request object for operation
+     * @param Requests\getTableCellRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableCellResponse
      */
-    public function getTableCell(Requests\GetTableCellRequest $request)
+    public function getTableCell(Requests\getTableCellRequest $request)
     {
         try {
              list($response) = $this->getTableCellWithHttpInfo($request);
@@ -20821,16 +20821,16 @@ class WordsApi
      *
      * Return a table cell.
      *
-     * @param Requests\GetTableCellRequest $request is a request object for operation
+     * @param Requests\getTableCellRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableCellResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTableCellWithHttpInfo(Requests\GetTableCellRequest $request)
+    public function getTableCellWithHttpInfo(Requests\getTableCellRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
-        $request = $this->GetTableCellRequest($request);
+        $request = $this->getTableCellRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -20887,12 +20887,12 @@ class WordsApi
      *
      * Return a table cell.
      *
-     * @param Requests\GetTableCellRequest $request is a request object for operation
+     * @param Requests\getTableCellRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableCellAsync(Requests\GetTableCellRequest $request) 
+    public function getTableCellAsync(Requests\getTableCellRequest $request) 
     {
         return $this->getTableCellAsyncWithHttpInfo($request)
             ->then(
@@ -20907,15 +20907,15 @@ class WordsApi
      *
      * Return a table cell.
      *
-     * @param Requests\GetTableCellRequest $request is a request object for operation
+     * @param Requests\getTableCellRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableCellAsyncWithHttpInfo(Requests\GetTableCellRequest $request) 
+    public function getTableCellAsyncWithHttpInfo(Requests\getTableCellRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
-        $request = $this->GetTableCellRequest($request);
+        $request = $this->getTableCellRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -20960,12 +20960,12 @@ class WordsApi
     /*
      * Create request for operation 'getTableCell'
      *
-     * @param Requests\GetTableCellRequest $request is a request object for operation
+     * @param Requests\getTableCellRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetTableCellRequest(Requests\GetTableCellRequest $request)
+    protected function getTableCellRequest(Requests\getTableCellRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -21127,13 +21127,13 @@ class WordsApi
      *
      * Return a table cell format.
      *
-     * @param Requests\GetTableCellFormatRequest $request is a request object for operation
+     * @param Requests\getTableCellFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableCellFormatResponse
      */
-    public function getTableCellFormat(Requests\GetTableCellFormatRequest $request)
+    public function getTableCellFormat(Requests\getTableCellFormatRequest $request)
     {
         try {
              list($response) = $this->getTableCellFormatWithHttpInfo($request);
@@ -21150,16 +21150,16 @@ class WordsApi
      *
      * Return a table cell format.
      *
-     * @param Requests\GetTableCellFormatRequest $request is a request object for operation
+     * @param Requests\getTableCellFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableCellFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTableCellFormatWithHttpInfo(Requests\GetTableCellFormatRequest $request)
+    public function getTableCellFormatWithHttpInfo(Requests\getTableCellFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
-        $request = $this->GetTableCellFormatRequest($request);
+        $request = $this->getTableCellFormatRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -21216,12 +21216,12 @@ class WordsApi
      *
      * Return a table cell format.
      *
-     * @param Requests\GetTableCellFormatRequest $request is a request object for operation
+     * @param Requests\getTableCellFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableCellFormatAsync(Requests\GetTableCellFormatRequest $request) 
+    public function getTableCellFormatAsync(Requests\getTableCellFormatRequest $request) 
     {
         return $this->getTableCellFormatAsyncWithHttpInfo($request)
             ->then(
@@ -21236,15 +21236,15 @@ class WordsApi
      *
      * Return a table cell format.
      *
-     * @param Requests\GetTableCellFormatRequest $request is a request object for operation
+     * @param Requests\getTableCellFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableCellFormatAsyncWithHttpInfo(Requests\GetTableCellFormatRequest $request) 
+    public function getTableCellFormatAsyncWithHttpInfo(Requests\getTableCellFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
-        $request = $this->GetTableCellFormatRequest($request);
+        $request = $this->getTableCellFormatRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -21289,12 +21289,12 @@ class WordsApi
     /*
      * Create request for operation 'getTableCellFormat'
      *
-     * @param Requests\GetTableCellFormatRequest $request is a request object for operation
+     * @param Requests\getTableCellFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetTableCellFormatRequest(Requests\GetTableCellFormatRequest $request)
+    protected function getTableCellFormatRequest(Requests\getTableCellFormatRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -21456,13 +21456,13 @@ class WordsApi
      *
      * Return a table properties.
      *
-     * @param Requests\GetTablePropertiesRequest $request is a request object for operation
+     * @param Requests\getTablePropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TablePropertiesResponse
      */
-    public function getTableProperties(Requests\GetTablePropertiesRequest $request)
+    public function getTableProperties(Requests\getTablePropertiesRequest $request)
     {
         try {
              list($response) = $this->getTablePropertiesWithHttpInfo($request);
@@ -21479,16 +21479,16 @@ class WordsApi
      *
      * Return a table properties.
      *
-     * @param Requests\GetTablePropertiesRequest $request is a request object for operation
+     * @param Requests\getTablePropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TablePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTablePropertiesWithHttpInfo(Requests\GetTablePropertiesRequest $request)
+    public function getTablePropertiesWithHttpInfo(Requests\getTablePropertiesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
-        $request = $this->GetTablePropertiesRequest($request);
+        $request = $this->getTablePropertiesRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -21545,12 +21545,12 @@ class WordsApi
      *
      * Return a table properties.
      *
-     * @param Requests\GetTablePropertiesRequest $request is a request object for operation
+     * @param Requests\getTablePropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTablePropertiesAsync(Requests\GetTablePropertiesRequest $request) 
+    public function getTablePropertiesAsync(Requests\getTablePropertiesRequest $request) 
     {
         return $this->getTablePropertiesAsyncWithHttpInfo($request)
             ->then(
@@ -21565,15 +21565,15 @@ class WordsApi
      *
      * Return a table properties.
      *
-     * @param Requests\GetTablePropertiesRequest $request is a request object for operation
+     * @param Requests\getTablePropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTablePropertiesAsyncWithHttpInfo(Requests\GetTablePropertiesRequest $request) 
+    public function getTablePropertiesAsyncWithHttpInfo(Requests\getTablePropertiesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
-        $request = $this->GetTablePropertiesRequest($request);
+        $request = $this->getTablePropertiesRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -21618,12 +21618,12 @@ class WordsApi
     /*
      * Create request for operation 'getTableProperties'
      *
-     * @param Requests\GetTablePropertiesRequest $request is a request object for operation
+     * @param Requests\getTablePropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetTablePropertiesRequest(Requests\GetTablePropertiesRequest $request)
+    protected function getTablePropertiesRequest(Requests\getTablePropertiesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -21786,13 +21786,13 @@ class WordsApi
      *
      * Return a table row.
      *
-     * @param Requests\GetTableRowRequest $request is a request object for operation
+     * @param Requests\getTableRowRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableRowResponse
      */
-    public function getTableRow(Requests\GetTableRowRequest $request)
+    public function getTableRow(Requests\getTableRowRequest $request)
     {
         try {
              list($response) = $this->getTableRowWithHttpInfo($request);
@@ -21809,16 +21809,16 @@ class WordsApi
      *
      * Return a table row.
      *
-     * @param Requests\GetTableRowRequest $request is a request object for operation
+     * @param Requests\getTableRowRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableRowResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTableRowWithHttpInfo(Requests\GetTableRowRequest $request)
+    public function getTableRowWithHttpInfo(Requests\getTableRowRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
-        $request = $this->GetTableRowRequest($request);
+        $request = $this->getTableRowRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -21875,12 +21875,12 @@ class WordsApi
      *
      * Return a table row.
      *
-     * @param Requests\GetTableRowRequest $request is a request object for operation
+     * @param Requests\getTableRowRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableRowAsync(Requests\GetTableRowRequest $request) 
+    public function getTableRowAsync(Requests\getTableRowRequest $request) 
     {
         return $this->getTableRowAsyncWithHttpInfo($request)
             ->then(
@@ -21895,15 +21895,15 @@ class WordsApi
      *
      * Return a table row.
      *
-     * @param Requests\GetTableRowRequest $request is a request object for operation
+     * @param Requests\getTableRowRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableRowAsyncWithHttpInfo(Requests\GetTableRowRequest $request) 
+    public function getTableRowAsyncWithHttpInfo(Requests\getTableRowRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
-        $request = $this->GetTableRowRequest($request);
+        $request = $this->getTableRowRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -21948,12 +21948,12 @@ class WordsApi
     /*
      * Create request for operation 'getTableRow'
      *
-     * @param Requests\GetTableRowRequest $request is a request object for operation
+     * @param Requests\getTableRowRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetTableRowRequest(Requests\GetTableRowRequest $request)
+    protected function getTableRowRequest(Requests\getTableRowRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -22115,13 +22115,13 @@ class WordsApi
      *
      * Return a table row format.
      *
-     * @param Requests\GetTableRowFormatRequest $request is a request object for operation
+     * @param Requests\getTableRowFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableRowFormatResponse
      */
-    public function getTableRowFormat(Requests\GetTableRowFormatRequest $request)
+    public function getTableRowFormat(Requests\getTableRowFormatRequest $request)
     {
         try {
              list($response) = $this->getTableRowFormatWithHttpInfo($request);
@@ -22138,16 +22138,16 @@ class WordsApi
      *
      * Return a table row format.
      *
-     * @param Requests\GetTableRowFormatRequest $request is a request object for operation
+     * @param Requests\getTableRowFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableRowFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTableRowFormatWithHttpInfo(Requests\GetTableRowFormatRequest $request)
+    public function getTableRowFormatWithHttpInfo(Requests\getTableRowFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
-        $request = $this->GetTableRowFormatRequest($request);
+        $request = $this->getTableRowFormatRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -22204,12 +22204,12 @@ class WordsApi
      *
      * Return a table row format.
      *
-     * @param Requests\GetTableRowFormatRequest $request is a request object for operation
+     * @param Requests\getTableRowFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableRowFormatAsync(Requests\GetTableRowFormatRequest $request) 
+    public function getTableRowFormatAsync(Requests\getTableRowFormatRequest $request) 
     {
         return $this->getTableRowFormatAsyncWithHttpInfo($request)
             ->then(
@@ -22224,15 +22224,15 @@ class WordsApi
      *
      * Return a table row format.
      *
-     * @param Requests\GetTableRowFormatRequest $request is a request object for operation
+     * @param Requests\getTableRowFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTableRowFormatAsyncWithHttpInfo(Requests\GetTableRowFormatRequest $request) 
+    public function getTableRowFormatAsyncWithHttpInfo(Requests\getTableRowFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
-        $request = $this->GetTableRowFormatRequest($request);
+        $request = $this->getTableRowFormatRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -22277,12 +22277,12 @@ class WordsApi
     /*
      * Create request for operation 'getTableRowFormat'
      *
-     * @param Requests\GetTableRowFormatRequest $request is a request object for operation
+     * @param Requests\getTableRowFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetTableRowFormatRequest(Requests\GetTableRowFormatRequest $request)
+    protected function getTableRowFormatRequest(Requests\getTableRowFormatRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -22444,13 +22444,13 @@ class WordsApi
      *
      * Return a list of tables that are contained in the document.
      *
-     * @param Requests\GetTablesRequest $request is a request object for operation
+     * @param Requests\getTablesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableLinkCollectionResponse
      */
-    public function getTables(Requests\GetTablesRequest $request)
+    public function getTables(Requests\getTablesRequest $request)
     {
         try {
              list($response) = $this->getTablesWithHttpInfo($request);
@@ -22467,16 +22467,16 @@ class WordsApi
      *
      * Return a list of tables that are contained in the document.
      *
-     * @param Requests\GetTablesRequest $request is a request object for operation
+     * @param Requests\getTablesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTablesWithHttpInfo(Requests\GetTablesRequest $request)
+    public function getTablesWithHttpInfo(Requests\getTablesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
-        $request = $this->GetTablesRequest($request);
+        $request = $this->getTablesRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -22533,12 +22533,12 @@ class WordsApi
      *
      * Return a list of tables that are contained in the document.
      *
-     * @param Requests\GetTablesRequest $request is a request object for operation
+     * @param Requests\getTablesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTablesAsync(Requests\GetTablesRequest $request) 
+    public function getTablesAsync(Requests\getTablesRequest $request) 
     {
         return $this->getTablesAsyncWithHttpInfo($request)
             ->then(
@@ -22553,15 +22553,15 @@ class WordsApi
      *
      * Return a list of tables that are contained in the document.
      *
-     * @param Requests\GetTablesRequest $request is a request object for operation
+     * @param Requests\getTablesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTablesAsyncWithHttpInfo(Requests\GetTablesRequest $request) 
+    public function getTablesAsyncWithHttpInfo(Requests\getTablesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
-        $request = $this->GetTablesRequest($request);
+        $request = $this->getTablesRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -22606,12 +22606,12 @@ class WordsApi
     /*
      * Create request for operation 'getTables'
      *
-     * @param Requests\GetTablesRequest $request is a request object for operation
+     * @param Requests\getTablesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function GetTablesRequest(Requests\GetTablesRequest $request)
+    protected function getTablesRequest(Requests\getTablesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -22765,13 +22765,13 @@ class WordsApi
      *
      * Adds table to document, returns added table's data.
      *
-     * @param Requests\InsertTableRequest $request is a request object for operation
+     * @param Requests\insertTableRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableResponse
      */
-    public function insertTable(Requests\InsertTableRequest $request)
+    public function insertTable(Requests\insertTableRequest $request)
     {
         try {
              list($response) = $this->insertTableWithHttpInfo($request);
@@ -22788,16 +22788,16 @@ class WordsApi
      *
      * Adds table to document, returns added table's data.
      *
-     * @param Requests\InsertTableRequest $request is a request object for operation
+     * @param Requests\insertTableRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function insertTableWithHttpInfo(Requests\InsertTableRequest $request)
+    public function insertTableWithHttpInfo(Requests\insertTableRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
-        $request = $this->InsertTableRequest($request);
+        $request = $this->insertTableRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -22854,12 +22854,12 @@ class WordsApi
      *
      * Adds table to document, returns added table's data.
      *
-     * @param Requests\InsertTableRequest $request is a request object for operation
+     * @param Requests\insertTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function insertTableAsync(Requests\InsertTableRequest $request) 
+    public function insertTableAsync(Requests\insertTableRequest $request) 
     {
         return $this->insertTableAsyncWithHttpInfo($request)
             ->then(
@@ -22874,15 +22874,15 @@ class WordsApi
      *
      * Adds table to document, returns added table's data.
      *
-     * @param Requests\InsertTableRequest $request is a request object for operation
+     * @param Requests\insertTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function insertTableAsyncWithHttpInfo(Requests\InsertTableRequest $request) 
+    public function insertTableAsyncWithHttpInfo(Requests\insertTableRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
-        $request = $this->InsertTableRequest($request);
+        $request = $this->insertTableRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -22927,12 +22927,12 @@ class WordsApi
     /*
      * Create request for operation 'insertTable'
      *
-     * @param Requests\InsertTableRequest $request is a request object for operation
+     * @param Requests\insertTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function InsertTableRequest(Requests\InsertTableRequest $request)
+    protected function insertTableRequest(Requests\insertTableRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -23123,13 +23123,13 @@ class WordsApi
      *
      * Adds table cell to table, returns added cell's data.
      *
-     * @param Requests\InsertTableCellRequest $request is a request object for operation
+     * @param Requests\insertTableCellRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableCellResponse
      */
-    public function insertTableCell(Requests\InsertTableCellRequest $request)
+    public function insertTableCell(Requests\insertTableCellRequest $request)
     {
         try {
              list($response) = $this->insertTableCellWithHttpInfo($request);
@@ -23146,16 +23146,16 @@ class WordsApi
      *
      * Adds table cell to table, returns added cell's data.
      *
-     * @param Requests\InsertTableCellRequest $request is a request object for operation
+     * @param Requests\insertTableCellRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableCellResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function insertTableCellWithHttpInfo(Requests\InsertTableCellRequest $request)
+    public function insertTableCellWithHttpInfo(Requests\insertTableCellRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
-        $request = $this->InsertTableCellRequest($request);
+        $request = $this->insertTableCellRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -23212,12 +23212,12 @@ class WordsApi
      *
      * Adds table cell to table, returns added cell's data.
      *
-     * @param Requests\InsertTableCellRequest $request is a request object for operation
+     * @param Requests\insertTableCellRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function insertTableCellAsync(Requests\InsertTableCellRequest $request) 
+    public function insertTableCellAsync(Requests\insertTableCellRequest $request) 
     {
         return $this->insertTableCellAsyncWithHttpInfo($request)
             ->then(
@@ -23232,15 +23232,15 @@ class WordsApi
      *
      * Adds table cell to table, returns added cell's data.
      *
-     * @param Requests\InsertTableCellRequest $request is a request object for operation
+     * @param Requests\insertTableCellRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function insertTableCellAsyncWithHttpInfo(Requests\InsertTableCellRequest $request) 
+    public function insertTableCellAsyncWithHttpInfo(Requests\insertTableCellRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
-        $request = $this->InsertTableCellRequest($request);
+        $request = $this->insertTableCellRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -23285,12 +23285,12 @@ class WordsApi
     /*
      * Create request for operation 'insertTableCell'
      *
-     * @param Requests\InsertTableCellRequest $request is a request object for operation
+     * @param Requests\insertTableCellRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function InsertTableCellRequest(Requests\InsertTableCellRequest $request)
+    protected function insertTableCellRequest(Requests\insertTableCellRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -23480,13 +23480,13 @@ class WordsApi
      *
      * Adds table row to table, returns added row's data.
      *
-     * @param Requests\InsertTableRowRequest $request is a request object for operation
+     * @param Requests\insertTableRowRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableRowResponse
      */
-    public function insertTableRow(Requests\InsertTableRowRequest $request)
+    public function insertTableRow(Requests\insertTableRowRequest $request)
     {
         try {
              list($response) = $this->insertTableRowWithHttpInfo($request);
@@ -23503,16 +23503,16 @@ class WordsApi
      *
      * Adds table row to table, returns added row's data.
      *
-     * @param Requests\InsertTableRowRequest $request is a request object for operation
+     * @param Requests\insertTableRowRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableRowResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function insertTableRowWithHttpInfo(Requests\InsertTableRowRequest $request)
+    public function insertTableRowWithHttpInfo(Requests\insertTableRowRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
-        $request = $this->InsertTableRowRequest($request);
+        $request = $this->insertTableRowRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -23569,12 +23569,12 @@ class WordsApi
      *
      * Adds table row to table, returns added row's data.
      *
-     * @param Requests\InsertTableRowRequest $request is a request object for operation
+     * @param Requests\insertTableRowRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function insertTableRowAsync(Requests\InsertTableRowRequest $request) 
+    public function insertTableRowAsync(Requests\insertTableRowRequest $request) 
     {
         return $this->insertTableRowAsyncWithHttpInfo($request)
             ->then(
@@ -23589,15 +23589,15 @@ class WordsApi
      *
      * Adds table row to table, returns added row's data.
      *
-     * @param Requests\InsertTableRowRequest $request is a request object for operation
+     * @param Requests\insertTableRowRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function insertTableRowAsyncWithHttpInfo(Requests\InsertTableRowRequest $request) 
+    public function insertTableRowAsyncWithHttpInfo(Requests\insertTableRowRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
-        $request = $this->InsertTableRowRequest($request);
+        $request = $this->insertTableRowRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -23642,12 +23642,12 @@ class WordsApi
     /*
      * Create request for operation 'insertTableRow'
      *
-     * @param Requests\InsertTableRowRequest $request is a request object for operation
+     * @param Requests\insertTableRowRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function InsertTableRowRequest(Requests\InsertTableRowRequest $request)
+    protected function insertTableRowRequest(Requests\insertTableRowRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -23837,13 +23837,13 @@ class WordsApi
      *
      * Append documents to original document.
      *
-     * @param Requests\PostAppendDocumentRequest $request is a request object for operation
+     * @param Requests\postAppendDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function postAppendDocument(Requests\PostAppendDocumentRequest $request)
+    public function postAppendDocument(Requests\postAppendDocumentRequest $request)
     {
         try {
              list($response) = $this->postAppendDocumentWithHttpInfo($request);
@@ -23860,16 +23860,16 @@ class WordsApi
      *
      * Append documents to original document.
      *
-     * @param Requests\PostAppendDocumentRequest $request is a request object for operation
+     * @param Requests\postAppendDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postAppendDocumentWithHttpInfo(Requests\PostAppendDocumentRequest $request)
+    public function postAppendDocumentWithHttpInfo(Requests\postAppendDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostAppendDocumentRequest($request);
+        $request = $this->postAppendDocumentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -23926,12 +23926,12 @@ class WordsApi
      *
      * Append documents to original document.
      *
-     * @param Requests\PostAppendDocumentRequest $request is a request object for operation
+     * @param Requests\postAppendDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postAppendDocumentAsync(Requests\PostAppendDocumentRequest $request) 
+    public function postAppendDocumentAsync(Requests\postAppendDocumentRequest $request) 
     {
         return $this->postAppendDocumentAsyncWithHttpInfo($request)
             ->then(
@@ -23946,15 +23946,15 @@ class WordsApi
      *
      * Append documents to original document.
      *
-     * @param Requests\PostAppendDocumentRequest $request is a request object for operation
+     * @param Requests\postAppendDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postAppendDocumentAsyncWithHttpInfo(Requests\PostAppendDocumentRequest $request) 
+    public function postAppendDocumentAsyncWithHttpInfo(Requests\postAppendDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostAppendDocumentRequest($request);
+        $request = $this->postAppendDocumentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -23999,12 +23999,12 @@ class WordsApi
     /*
      * Create request for operation 'postAppendDocument'
      *
-     * @param Requests\PostAppendDocumentRequest $request is a request object for operation
+     * @param Requests\postAppendDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostAppendDocumentRequest(Requests\PostAppendDocumentRequest $request)
+    protected function postAppendDocumentRequest(Requests\postAppendDocumentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -24189,13 +24189,13 @@ class WordsApi
      *
      * Change document protection.
      *
-     * @param Requests\PostChangeDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\postChangeDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\ProtectionDataResponse
      */
-    public function postChangeDocumentProtection(Requests\PostChangeDocumentProtectionRequest $request)
+    public function postChangeDocumentProtection(Requests\postChangeDocumentProtectionRequest $request)
     {
         try {
              list($response) = $this->postChangeDocumentProtectionWithHttpInfo($request);
@@ -24212,16 +24212,16 @@ class WordsApi
      *
      * Change document protection.
      *
-     * @param Requests\PostChangeDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\postChangeDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postChangeDocumentProtectionWithHttpInfo(Requests\PostChangeDocumentProtectionRequest $request)
+    public function postChangeDocumentProtectionWithHttpInfo(Requests\postChangeDocumentProtectionRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
-        $request = $this->PostChangeDocumentProtectionRequest($request);
+        $request = $this->postChangeDocumentProtectionRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -24278,12 +24278,12 @@ class WordsApi
      *
      * Change document protection.
      *
-     * @param Requests\PostChangeDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\postChangeDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postChangeDocumentProtectionAsync(Requests\PostChangeDocumentProtectionRequest $request) 
+    public function postChangeDocumentProtectionAsync(Requests\postChangeDocumentProtectionRequest $request) 
     {
         return $this->postChangeDocumentProtectionAsyncWithHttpInfo($request)
             ->then(
@@ -24298,15 +24298,15 @@ class WordsApi
      *
      * Change document protection.
      *
-     * @param Requests\PostChangeDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\postChangeDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postChangeDocumentProtectionAsyncWithHttpInfo(Requests\PostChangeDocumentProtectionRequest $request) 
+    public function postChangeDocumentProtectionAsyncWithHttpInfo(Requests\postChangeDocumentProtectionRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
-        $request = $this->PostChangeDocumentProtectionRequest($request);
+        $request = $this->postChangeDocumentProtectionRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -24351,12 +24351,12 @@ class WordsApi
     /*
      * Create request for operation 'postChangeDocumentProtection'
      *
-     * @param Requests\PostChangeDocumentProtectionRequest $request is a request object for operation
+     * @param Requests\postChangeDocumentProtectionRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostChangeDocumentProtectionRequest(Requests\PostChangeDocumentProtectionRequest $request)
+    protected function postChangeDocumentProtectionRequest(Requests\postChangeDocumentProtectionRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -24521,13 +24521,13 @@ class WordsApi
      *
      * Updates the comment, returns updated comment's data.
      *
-     * @param Requests\PostCommentRequest $request is a request object for operation
+     * @param Requests\postCommentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\CommentResponse
      */
-    public function postComment(Requests\PostCommentRequest $request)
+    public function postComment(Requests\postCommentRequest $request)
     {
         try {
              list($response) = $this->postCommentWithHttpInfo($request);
@@ -24544,16 +24544,16 @@ class WordsApi
      *
      * Updates the comment, returns updated comment's data.
      *
-     * @param Requests\PostCommentRequest $request is a request object for operation
+     * @param Requests\postCommentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\CommentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCommentWithHttpInfo(Requests\PostCommentRequest $request)
+    public function postCommentWithHttpInfo(Requests\postCommentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
-        $request = $this->PostCommentRequest($request);
+        $request = $this->postCommentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -24610,12 +24610,12 @@ class WordsApi
      *
      * Updates the comment, returns updated comment's data.
      *
-     * @param Requests\PostCommentRequest $request is a request object for operation
+     * @param Requests\postCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCommentAsync(Requests\PostCommentRequest $request) 
+    public function postCommentAsync(Requests\postCommentRequest $request) 
     {
         return $this->postCommentAsyncWithHttpInfo($request)
             ->then(
@@ -24630,15 +24630,15 @@ class WordsApi
      *
      * Updates the comment, returns updated comment's data.
      *
-     * @param Requests\PostCommentRequest $request is a request object for operation
+     * @param Requests\postCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCommentAsyncWithHttpInfo(Requests\PostCommentRequest $request) 
+    public function postCommentAsyncWithHttpInfo(Requests\postCommentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
-        $request = $this->PostCommentRequest($request);
+        $request = $this->postCommentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -24683,12 +24683,12 @@ class WordsApi
     /*
      * Create request for operation 'postComment'
      *
-     * @param Requests\PostCommentRequest $request is a request object for operation
+     * @param Requests\postCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostCommentRequest(Requests\PostCommentRequest $request)
+    protected function postCommentRequest(Requests\postCommentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -24882,13 +24882,13 @@ class WordsApi
      *
      * Compare document with original document.
      *
-     * @param Requests\PostCompareDocumentRequest $request is a request object for operation
+     * @param Requests\postCompareDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function postCompareDocument(Requests\PostCompareDocumentRequest $request)
+    public function postCompareDocument(Requests\postCompareDocumentRequest $request)
     {
         try {
              list($response) = $this->postCompareDocumentWithHttpInfo($request);
@@ -24905,16 +24905,16 @@ class WordsApi
      *
      * Compare document with original document.
      *
-     * @param Requests\PostCompareDocumentRequest $request is a request object for operation
+     * @param Requests\postCompareDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCompareDocumentWithHttpInfo(Requests\PostCompareDocumentRequest $request)
+    public function postCompareDocumentWithHttpInfo(Requests\postCompareDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostCompareDocumentRequest($request);
+        $request = $this->postCompareDocumentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -24971,12 +24971,12 @@ class WordsApi
      *
      * Compare document with original document.
      *
-     * @param Requests\PostCompareDocumentRequest $request is a request object for operation
+     * @param Requests\postCompareDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCompareDocumentAsync(Requests\PostCompareDocumentRequest $request) 
+    public function postCompareDocumentAsync(Requests\postCompareDocumentRequest $request) 
     {
         return $this->postCompareDocumentAsyncWithHttpInfo($request)
             ->then(
@@ -24991,15 +24991,15 @@ class WordsApi
      *
      * Compare document with original document.
      *
-     * @param Requests\PostCompareDocumentRequest $request is a request object for operation
+     * @param Requests\postCompareDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCompareDocumentAsyncWithHttpInfo(Requests\PostCompareDocumentRequest $request) 
+    public function postCompareDocumentAsyncWithHttpInfo(Requests\postCompareDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostCompareDocumentRequest($request);
+        $request = $this->postCompareDocumentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -25044,12 +25044,12 @@ class WordsApi
     /*
      * Create request for operation 'postCompareDocument'
      *
-     * @param Requests\PostCompareDocumentRequest $request is a request object for operation
+     * @param Requests\postCompareDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostCompareDocumentRequest(Requests\PostCompareDocumentRequest $request)
+    protected function postCompareDocumentRequest(Requests\postCompareDocumentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -25214,13 +25214,13 @@ class WordsApi
      *
      * Execute document mail merge operation.
      *
-     * @param Requests\PostDocumentExecuteMailMergeRequest $request is a request object for operation
+     * @param Requests\postDocumentExecuteMailMergeRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function postDocumentExecuteMailMerge(Requests\PostDocumentExecuteMailMergeRequest $request)
+    public function postDocumentExecuteMailMerge(Requests\postDocumentExecuteMailMergeRequest $request)
     {
         try {
              list($response) = $this->postDocumentExecuteMailMergeWithHttpInfo($request);
@@ -25237,16 +25237,16 @@ class WordsApi
      *
      * Execute document mail merge operation.
      *
-     * @param Requests\PostDocumentExecuteMailMergeRequest $request is a request object for operation
+     * @param Requests\postDocumentExecuteMailMergeRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postDocumentExecuteMailMergeWithHttpInfo(Requests\PostDocumentExecuteMailMergeRequest $request)
+    public function postDocumentExecuteMailMergeWithHttpInfo(Requests\postDocumentExecuteMailMergeRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostDocumentExecuteMailMergeRequest($request);
+        $request = $this->postDocumentExecuteMailMergeRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -25303,12 +25303,12 @@ class WordsApi
      *
      * Execute document mail merge operation.
      *
-     * @param Requests\PostDocumentExecuteMailMergeRequest $request is a request object for operation
+     * @param Requests\postDocumentExecuteMailMergeRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postDocumentExecuteMailMergeAsync(Requests\PostDocumentExecuteMailMergeRequest $request) 
+    public function postDocumentExecuteMailMergeAsync(Requests\postDocumentExecuteMailMergeRequest $request) 
     {
         return $this->postDocumentExecuteMailMergeAsyncWithHttpInfo($request)
             ->then(
@@ -25323,15 +25323,15 @@ class WordsApi
      *
      * Execute document mail merge operation.
      *
-     * @param Requests\PostDocumentExecuteMailMergeRequest $request is a request object for operation
+     * @param Requests\postDocumentExecuteMailMergeRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postDocumentExecuteMailMergeAsyncWithHttpInfo(Requests\PostDocumentExecuteMailMergeRequest $request) 
+    public function postDocumentExecuteMailMergeAsyncWithHttpInfo(Requests\postDocumentExecuteMailMergeRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostDocumentExecuteMailMergeRequest($request);
+        $request = $this->postDocumentExecuteMailMergeRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -25376,12 +25376,12 @@ class WordsApi
     /*
      * Create request for operation 'postDocumentExecuteMailMerge'
      *
-     * @param Requests\PostDocumentExecuteMailMergeRequest $request is a request object for operation
+     * @param Requests\postDocumentExecuteMailMergeRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostDocumentExecuteMailMergeRequest(Requests\PostDocumentExecuteMailMergeRequest $request)
+    protected function postDocumentExecuteMailMergeRequest(Requests\postDocumentExecuteMailMergeRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -25583,13 +25583,13 @@ class WordsApi
      *
      * Updates font properties, returns updated font data.
      *
-     * @param Requests\PostDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\postDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FontResponse
      */
-    public function postDocumentParagraphRunFont(Requests\PostDocumentParagraphRunFontRequest $request)
+    public function postDocumentParagraphRunFont(Requests\postDocumentParagraphRunFontRequest $request)
     {
         try {
              list($response) = $this->postDocumentParagraphRunFontWithHttpInfo($request);
@@ -25606,16 +25606,16 @@ class WordsApi
      *
      * Updates font properties, returns updated font data.
      *
-     * @param Requests\PostDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\postDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FontResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postDocumentParagraphRunFontWithHttpInfo(Requests\PostDocumentParagraphRunFontRequest $request)
+    public function postDocumentParagraphRunFontWithHttpInfo(Requests\postDocumentParagraphRunFontRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
-        $request = $this->PostDocumentParagraphRunFontRequest($request);
+        $request = $this->postDocumentParagraphRunFontRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -25672,12 +25672,12 @@ class WordsApi
      *
      * Updates font properties, returns updated font data.
      *
-     * @param Requests\PostDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\postDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postDocumentParagraphRunFontAsync(Requests\PostDocumentParagraphRunFontRequest $request) 
+    public function postDocumentParagraphRunFontAsync(Requests\postDocumentParagraphRunFontRequest $request) 
     {
         return $this->postDocumentParagraphRunFontAsyncWithHttpInfo($request)
             ->then(
@@ -25692,15 +25692,15 @@ class WordsApi
      *
      * Updates font properties, returns updated font data.
      *
-     * @param Requests\PostDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\postDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postDocumentParagraphRunFontAsyncWithHttpInfo(Requests\PostDocumentParagraphRunFontRequest $request) 
+    public function postDocumentParagraphRunFontAsyncWithHttpInfo(Requests\postDocumentParagraphRunFontRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
-        $request = $this->PostDocumentParagraphRunFontRequest($request);
+        $request = $this->postDocumentParagraphRunFontRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -25745,12 +25745,12 @@ class WordsApi
     /*
      * Create request for operation 'postDocumentParagraphRunFont'
      *
-     * @param Requests\PostDocumentParagraphRunFontRequest $request is a request object for operation
+     * @param Requests\postDocumentParagraphRunFontRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostDocumentParagraphRunFontRequest(Requests\PostDocumentParagraphRunFontRequest $request)
+    protected function postDocumentParagraphRunFontRequest(Requests\postDocumentParagraphRunFontRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -25953,13 +25953,13 @@ class WordsApi
      *
      * Convert document to destination format with detailed settings and save result to storage.
      *
-     * @param Requests\PostDocumentSaveAsRequest $request is a request object for operation
+     * @param Requests\postDocumentSaveAsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\SaveResponse
      */
-    public function postDocumentSaveAs(Requests\PostDocumentSaveAsRequest $request)
+    public function postDocumentSaveAs(Requests\postDocumentSaveAsRequest $request)
     {
         try {
              list($response) = $this->postDocumentSaveAsWithHttpInfo($request);
@@ -25976,16 +25976,16 @@ class WordsApi
      *
      * Convert document to destination format with detailed settings and save result to storage.
      *
-     * @param Requests\PostDocumentSaveAsRequest $request is a request object for operation
+     * @param Requests\postDocumentSaveAsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postDocumentSaveAsWithHttpInfo(Requests\PostDocumentSaveAsRequest $request)
+    public function postDocumentSaveAsWithHttpInfo(Requests\postDocumentSaveAsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
-        $request = $this->PostDocumentSaveAsRequest($request);
+        $request = $this->postDocumentSaveAsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -26042,12 +26042,12 @@ class WordsApi
      *
      * Convert document to destination format with detailed settings and save result to storage.
      *
-     * @param Requests\PostDocumentSaveAsRequest $request is a request object for operation
+     * @param Requests\postDocumentSaveAsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postDocumentSaveAsAsync(Requests\PostDocumentSaveAsRequest $request) 
+    public function postDocumentSaveAsAsync(Requests\postDocumentSaveAsRequest $request) 
     {
         return $this->postDocumentSaveAsAsyncWithHttpInfo($request)
             ->then(
@@ -26062,15 +26062,15 @@ class WordsApi
      *
      * Convert document to destination format with detailed settings and save result to storage.
      *
-     * @param Requests\PostDocumentSaveAsRequest $request is a request object for operation
+     * @param Requests\postDocumentSaveAsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postDocumentSaveAsAsyncWithHttpInfo(Requests\PostDocumentSaveAsRequest $request) 
+    public function postDocumentSaveAsAsyncWithHttpInfo(Requests\postDocumentSaveAsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
-        $request = $this->PostDocumentSaveAsRequest($request);
+        $request = $this->postDocumentSaveAsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -26115,12 +26115,12 @@ class WordsApi
     /*
      * Create request for operation 'postDocumentSaveAs'
      *
-     * @param Requests\PostDocumentSaveAsRequest $request is a request object for operation
+     * @param Requests\postDocumentSaveAsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostDocumentSaveAsRequest(Requests\PostDocumentSaveAsRequest $request)
+    protected function postDocumentSaveAsRequest(Requests\postDocumentSaveAsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -26295,13 +26295,13 @@ class WordsApi
      *
      * Updates drawing object, returns updated  drawing object's data.
      *
-     * @param Requests\PostDrawingObjectRequest $request is a request object for operation
+     * @param Requests\postDrawingObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DrawingObjectResponse
      */
-    public function postDrawingObject(Requests\PostDrawingObjectRequest $request)
+    public function postDrawingObject(Requests\postDrawingObjectRequest $request)
     {
         try {
              list($response) = $this->postDrawingObjectWithHttpInfo($request);
@@ -26318,16 +26318,16 @@ class WordsApi
      *
      * Updates drawing object, returns updated  drawing object's data.
      *
-     * @param Requests\PostDrawingObjectRequest $request is a request object for operation
+     * @param Requests\postDrawingObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postDrawingObjectWithHttpInfo(Requests\PostDrawingObjectRequest $request)
+    public function postDrawingObjectWithHttpInfo(Requests\postDrawingObjectRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
-        $request = $this->PostDrawingObjectRequest($request);
+        $request = $this->postDrawingObjectRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -26384,12 +26384,12 @@ class WordsApi
      *
      * Updates drawing object, returns updated  drawing object's data.
      *
-     * @param Requests\PostDrawingObjectRequest $request is a request object for operation
+     * @param Requests\postDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postDrawingObjectAsync(Requests\PostDrawingObjectRequest $request) 
+    public function postDrawingObjectAsync(Requests\postDrawingObjectRequest $request) 
     {
         return $this->postDrawingObjectAsyncWithHttpInfo($request)
             ->then(
@@ -26404,15 +26404,15 @@ class WordsApi
      *
      * Updates drawing object, returns updated  drawing object's data.
      *
-     * @param Requests\PostDrawingObjectRequest $request is a request object for operation
+     * @param Requests\postDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postDrawingObjectAsyncWithHttpInfo(Requests\PostDrawingObjectRequest $request) 
+    public function postDrawingObjectAsyncWithHttpInfo(Requests\postDrawingObjectRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
-        $request = $this->PostDrawingObjectRequest($request);
+        $request = $this->postDrawingObjectRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -26457,12 +26457,12 @@ class WordsApi
     /*
      * Create request for operation 'postDrawingObject'
      *
-     * @param Requests\PostDrawingObjectRequest $request is a request object for operation
+     * @param Requests\postDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostDrawingObjectRequest(Requests\PostDrawingObjectRequest $request)
+    protected function postDrawingObjectRequest(Requests\postDrawingObjectRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -26676,13 +26676,13 @@ class WordsApi
      *
      * Populate document template with data.
      *
-     * @param Requests\PostExecuteTemplateRequest $request is a request object for operation
+     * @param Requests\postExecuteTemplateRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function postExecuteTemplate(Requests\PostExecuteTemplateRequest $request)
+    public function postExecuteTemplate(Requests\postExecuteTemplateRequest $request)
     {
         try {
              list($response) = $this->postExecuteTemplateWithHttpInfo($request);
@@ -26699,16 +26699,16 @@ class WordsApi
      *
      * Populate document template with data.
      *
-     * @param Requests\PostExecuteTemplateRequest $request is a request object for operation
+     * @param Requests\postExecuteTemplateRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postExecuteTemplateWithHttpInfo(Requests\PostExecuteTemplateRequest $request)
+    public function postExecuteTemplateWithHttpInfo(Requests\postExecuteTemplateRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostExecuteTemplateRequest($request);
+        $request = $this->postExecuteTemplateRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -26765,12 +26765,12 @@ class WordsApi
      *
      * Populate document template with data.
      *
-     * @param Requests\PostExecuteTemplateRequest $request is a request object for operation
+     * @param Requests\postExecuteTemplateRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postExecuteTemplateAsync(Requests\PostExecuteTemplateRequest $request) 
+    public function postExecuteTemplateAsync(Requests\postExecuteTemplateRequest $request) 
     {
         return $this->postExecuteTemplateAsyncWithHttpInfo($request)
             ->then(
@@ -26785,15 +26785,15 @@ class WordsApi
      *
      * Populate document template with data.
      *
-     * @param Requests\PostExecuteTemplateRequest $request is a request object for operation
+     * @param Requests\postExecuteTemplateRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postExecuteTemplateAsyncWithHttpInfo(Requests\PostExecuteTemplateRequest $request) 
+    public function postExecuteTemplateAsyncWithHttpInfo(Requests\postExecuteTemplateRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostExecuteTemplateRequest($request);
+        $request = $this->postExecuteTemplateRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -26838,12 +26838,12 @@ class WordsApi
     /*
      * Create request for operation 'postExecuteTemplate'
      *
-     * @param Requests\PostExecuteTemplateRequest $request is a request object for operation
+     * @param Requests\postExecuteTemplateRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostExecuteTemplateRequest(Requests\PostExecuteTemplateRequest $request)
+    protected function postExecuteTemplateRequest(Requests\postExecuteTemplateRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -27035,13 +27035,13 @@ class WordsApi
      *
      * Updates field's properties, returns updated field's data.
      *
-     * @param Requests\PostFieldRequest $request is a request object for operation
+     * @param Requests\postFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FieldResponse
      */
-    public function postField(Requests\PostFieldRequest $request)
+    public function postField(Requests\postFieldRequest $request)
     {
         try {
              list($response) = $this->postFieldWithHttpInfo($request);
@@ -27058,16 +27058,16 @@ class WordsApi
      *
      * Updates field's properties, returns updated field's data.
      *
-     * @param Requests\PostFieldRequest $request is a request object for operation
+     * @param Requests\postFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postFieldWithHttpInfo(Requests\PostFieldRequest $request)
+    public function postFieldWithHttpInfo(Requests\postFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
-        $request = $this->PostFieldRequest($request);
+        $request = $this->postFieldRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -27124,12 +27124,12 @@ class WordsApi
      *
      * Updates field's properties, returns updated field's data.
      *
-     * @param Requests\PostFieldRequest $request is a request object for operation
+     * @param Requests\postFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFieldAsync(Requests\PostFieldRequest $request) 
+    public function postFieldAsync(Requests\postFieldRequest $request) 
     {
         return $this->postFieldAsyncWithHttpInfo($request)
             ->then(
@@ -27144,15 +27144,15 @@ class WordsApi
      *
      * Updates field's properties, returns updated field's data.
      *
-     * @param Requests\PostFieldRequest $request is a request object for operation
+     * @param Requests\postFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFieldAsyncWithHttpInfo(Requests\PostFieldRequest $request) 
+    public function postFieldAsyncWithHttpInfo(Requests\postFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
-        $request = $this->PostFieldRequest($request);
+        $request = $this->postFieldRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -27197,12 +27197,12 @@ class WordsApi
     /*
      * Create request for operation 'postField'
      *
-     * @param Requests\PostFieldRequest $request is a request object for operation
+     * @param Requests\postFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostFieldRequest(Requests\PostFieldRequest $request)
+    protected function postFieldRequest(Requests\postFieldRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -27406,13 +27406,13 @@ class WordsApi
      *
      * Updates footnote's properties, returns updated run's data.
      *
-     * @param Requests\PostFootnoteRequest $request is a request object for operation
+     * @param Requests\postFootnoteRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FootnoteResponse
      */
-    public function postFootnote(Requests\PostFootnoteRequest $request)
+    public function postFootnote(Requests\postFootnoteRequest $request)
     {
         try {
              list($response) = $this->postFootnoteWithHttpInfo($request);
@@ -27429,16 +27429,16 @@ class WordsApi
      *
      * Updates footnote's properties, returns updated run's data.
      *
-     * @param Requests\PostFootnoteRequest $request is a request object for operation
+     * @param Requests\postFootnoteRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postFootnoteWithHttpInfo(Requests\PostFootnoteRequest $request)
+    public function postFootnoteWithHttpInfo(Requests\postFootnoteRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
-        $request = $this->PostFootnoteRequest($request);
+        $request = $this->postFootnoteRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -27495,12 +27495,12 @@ class WordsApi
      *
      * Updates footnote's properties, returns updated run's data.
      *
-     * @param Requests\PostFootnoteRequest $request is a request object for operation
+     * @param Requests\postFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFootnoteAsync(Requests\PostFootnoteRequest $request) 
+    public function postFootnoteAsync(Requests\postFootnoteRequest $request) 
     {
         return $this->postFootnoteAsyncWithHttpInfo($request)
             ->then(
@@ -27515,15 +27515,15 @@ class WordsApi
      *
      * Updates footnote's properties, returns updated run's data.
      *
-     * @param Requests\PostFootnoteRequest $request is a request object for operation
+     * @param Requests\postFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFootnoteAsyncWithHttpInfo(Requests\PostFootnoteRequest $request) 
+    public function postFootnoteAsyncWithHttpInfo(Requests\postFootnoteRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
-        $request = $this->PostFootnoteRequest($request);
+        $request = $this->postFootnoteRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -27568,12 +27568,12 @@ class WordsApi
     /*
      * Create request for operation 'postFootnote'
      *
-     * @param Requests\PostFootnoteRequest $request is a request object for operation
+     * @param Requests\postFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostFootnoteRequest(Requests\PostFootnoteRequest $request)
+    protected function postFootnoteRequest(Requests\postFootnoteRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -27777,13 +27777,13 @@ class WordsApi
      *
      * Updates properties of form field, returns updated form field.
      *
-     * @param Requests\PostFormFieldRequest $request is a request object for operation
+     * @param Requests\postFormFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FormFieldResponse
      */
-    public function postFormField(Requests\PostFormFieldRequest $request)
+    public function postFormField(Requests\postFormFieldRequest $request)
     {
         try {
              list($response) = $this->postFormFieldWithHttpInfo($request);
@@ -27800,16 +27800,16 @@ class WordsApi
      *
      * Updates properties of form field, returns updated form field.
      *
-     * @param Requests\PostFormFieldRequest $request is a request object for operation
+     * @param Requests\postFormFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postFormFieldWithHttpInfo(Requests\PostFormFieldRequest $request)
+    public function postFormFieldWithHttpInfo(Requests\postFormFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
-        $request = $this->PostFormFieldRequest($request);
+        $request = $this->postFormFieldRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -27866,12 +27866,12 @@ class WordsApi
      *
      * Updates properties of form field, returns updated form field.
      *
-     * @param Requests\PostFormFieldRequest $request is a request object for operation
+     * @param Requests\postFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFormFieldAsync(Requests\PostFormFieldRequest $request) 
+    public function postFormFieldAsync(Requests\postFormFieldRequest $request) 
     {
         return $this->postFormFieldAsyncWithHttpInfo($request)
             ->then(
@@ -27886,15 +27886,15 @@ class WordsApi
      *
      * Updates properties of form field, returns updated form field.
      *
-     * @param Requests\PostFormFieldRequest $request is a request object for operation
+     * @param Requests\postFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFormFieldAsyncWithHttpInfo(Requests\PostFormFieldRequest $request) 
+    public function postFormFieldAsyncWithHttpInfo(Requests\postFormFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
-        $request = $this->PostFormFieldRequest($request);
+        $request = $this->postFormFieldRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -27939,12 +27939,12 @@ class WordsApi
     /*
      * Create request for operation 'postFormField'
      *
-     * @param Requests\PostFormFieldRequest $request is a request object for operation
+     * @param Requests\postFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostFormFieldRequest(Requests\PostFormFieldRequest $request)
+    protected function postFormFieldRequest(Requests\postFormFieldRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -28148,13 +28148,13 @@ class WordsApi
      *
      * Insert document watermark image.
      *
-     * @param Requests\PostInsertDocumentWatermarkImageRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkImageRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function postInsertDocumentWatermarkImage(Requests\PostInsertDocumentWatermarkImageRequest $request)
+    public function postInsertDocumentWatermarkImage(Requests\postInsertDocumentWatermarkImageRequest $request)
     {
         try {
              list($response) = $this->postInsertDocumentWatermarkImageWithHttpInfo($request);
@@ -28171,16 +28171,16 @@ class WordsApi
      *
      * Insert document watermark image.
      *
-     * @param Requests\PostInsertDocumentWatermarkImageRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkImageRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postInsertDocumentWatermarkImageWithHttpInfo(Requests\PostInsertDocumentWatermarkImageRequest $request)
+    public function postInsertDocumentWatermarkImageWithHttpInfo(Requests\postInsertDocumentWatermarkImageRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostInsertDocumentWatermarkImageRequest($request);
+        $request = $this->postInsertDocumentWatermarkImageRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -28237,12 +28237,12 @@ class WordsApi
      *
      * Insert document watermark image.
      *
-     * @param Requests\PostInsertDocumentWatermarkImageRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkImageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postInsertDocumentWatermarkImageAsync(Requests\PostInsertDocumentWatermarkImageRequest $request) 
+    public function postInsertDocumentWatermarkImageAsync(Requests\postInsertDocumentWatermarkImageRequest $request) 
     {
         return $this->postInsertDocumentWatermarkImageAsyncWithHttpInfo($request)
             ->then(
@@ -28257,15 +28257,15 @@ class WordsApi
      *
      * Insert document watermark image.
      *
-     * @param Requests\PostInsertDocumentWatermarkImageRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkImageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postInsertDocumentWatermarkImageAsyncWithHttpInfo(Requests\PostInsertDocumentWatermarkImageRequest $request) 
+    public function postInsertDocumentWatermarkImageAsyncWithHttpInfo(Requests\postInsertDocumentWatermarkImageRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostInsertDocumentWatermarkImageRequest($request);
+        $request = $this->postInsertDocumentWatermarkImageRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -28310,12 +28310,12 @@ class WordsApi
     /*
      * Create request for operation 'postInsertDocumentWatermarkImage'
      *
-     * @param Requests\PostInsertDocumentWatermarkImageRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkImageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostInsertDocumentWatermarkImageRequest(Requests\PostInsertDocumentWatermarkImageRequest $request)
+    protected function postInsertDocumentWatermarkImageRequest(Requests\postInsertDocumentWatermarkImageRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -28518,13 +28518,13 @@ class WordsApi
      *
      * Insert document watermark text.
      *
-     * @param Requests\PostInsertDocumentWatermarkTextRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkTextRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function postInsertDocumentWatermarkText(Requests\PostInsertDocumentWatermarkTextRequest $request)
+    public function postInsertDocumentWatermarkText(Requests\postInsertDocumentWatermarkTextRequest $request)
     {
         try {
              list($response) = $this->postInsertDocumentWatermarkTextWithHttpInfo($request);
@@ -28541,16 +28541,16 @@ class WordsApi
      *
      * Insert document watermark text.
      *
-     * @param Requests\PostInsertDocumentWatermarkTextRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkTextRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postInsertDocumentWatermarkTextWithHttpInfo(Requests\PostInsertDocumentWatermarkTextRequest $request)
+    public function postInsertDocumentWatermarkTextWithHttpInfo(Requests\postInsertDocumentWatermarkTextRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostInsertDocumentWatermarkTextRequest($request);
+        $request = $this->postInsertDocumentWatermarkTextRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -28607,12 +28607,12 @@ class WordsApi
      *
      * Insert document watermark text.
      *
-     * @param Requests\PostInsertDocumentWatermarkTextRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkTextRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postInsertDocumentWatermarkTextAsync(Requests\PostInsertDocumentWatermarkTextRequest $request) 
+    public function postInsertDocumentWatermarkTextAsync(Requests\postInsertDocumentWatermarkTextRequest $request) 
     {
         return $this->postInsertDocumentWatermarkTextAsyncWithHttpInfo($request)
             ->then(
@@ -28627,15 +28627,15 @@ class WordsApi
      *
      * Insert document watermark text.
      *
-     * @param Requests\PostInsertDocumentWatermarkTextRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkTextRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postInsertDocumentWatermarkTextAsyncWithHttpInfo(Requests\PostInsertDocumentWatermarkTextRequest $request) 
+    public function postInsertDocumentWatermarkTextAsyncWithHttpInfo(Requests\postInsertDocumentWatermarkTextRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostInsertDocumentWatermarkTextRequest($request);
+        $request = $this->postInsertDocumentWatermarkTextRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -28680,12 +28680,12 @@ class WordsApi
     /*
      * Create request for operation 'postInsertDocumentWatermarkText'
      *
-     * @param Requests\PostInsertDocumentWatermarkTextRequest $request is a request object for operation
+     * @param Requests\postInsertDocumentWatermarkTextRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostInsertDocumentWatermarkTextRequest(Requests\PostInsertDocumentWatermarkTextRequest $request)
+    protected function postInsertDocumentWatermarkTextRequest(Requests\postInsertDocumentWatermarkTextRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -28870,13 +28870,13 @@ class WordsApi
      *
      * Insert document page numbers.
      *
-     * @param Requests\PostInsertPageNumbersRequest $request is a request object for operation
+     * @param Requests\postInsertPageNumbersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function postInsertPageNumbers(Requests\PostInsertPageNumbersRequest $request)
+    public function postInsertPageNumbers(Requests\postInsertPageNumbersRequest $request)
     {
         try {
              list($response) = $this->postInsertPageNumbersWithHttpInfo($request);
@@ -28893,16 +28893,16 @@ class WordsApi
      *
      * Insert document page numbers.
      *
-     * @param Requests\PostInsertPageNumbersRequest $request is a request object for operation
+     * @param Requests\postInsertPageNumbersRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postInsertPageNumbersWithHttpInfo(Requests\PostInsertPageNumbersRequest $request)
+    public function postInsertPageNumbersWithHttpInfo(Requests\postInsertPageNumbersRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostInsertPageNumbersRequest($request);
+        $request = $this->postInsertPageNumbersRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -28959,12 +28959,12 @@ class WordsApi
      *
      * Insert document page numbers.
      *
-     * @param Requests\PostInsertPageNumbersRequest $request is a request object for operation
+     * @param Requests\postInsertPageNumbersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postInsertPageNumbersAsync(Requests\PostInsertPageNumbersRequest $request) 
+    public function postInsertPageNumbersAsync(Requests\postInsertPageNumbersRequest $request) 
     {
         return $this->postInsertPageNumbersAsyncWithHttpInfo($request)
             ->then(
@@ -28979,15 +28979,15 @@ class WordsApi
      *
      * Insert document page numbers.
      *
-     * @param Requests\PostInsertPageNumbersRequest $request is a request object for operation
+     * @param Requests\postInsertPageNumbersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postInsertPageNumbersAsyncWithHttpInfo(Requests\PostInsertPageNumbersRequest $request) 
+    public function postInsertPageNumbersAsyncWithHttpInfo(Requests\postInsertPageNumbersRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostInsertPageNumbersRequest($request);
+        $request = $this->postInsertPageNumbersRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -29032,12 +29032,12 @@ class WordsApi
     /*
      * Create request for operation 'postInsertPageNumbers'
      *
-     * @param Requests\PostInsertPageNumbersRequest $request is a request object for operation
+     * @param Requests\postInsertPageNumbersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostInsertPageNumbersRequest(Requests\PostInsertPageNumbersRequest $request)
+    protected function postInsertPageNumbersRequest(Requests\postInsertPageNumbersRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -29222,13 +29222,13 @@ class WordsApi
      *
      * Loads new document from web into the file with any supported format of data.
      *
-     * @param Requests\PostLoadWebDocumentRequest $request is a request object for operation
+     * @param Requests\postLoadWebDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\SaveResponse
      */
-    public function postLoadWebDocument(Requests\PostLoadWebDocumentRequest $request)
+    public function postLoadWebDocument(Requests\postLoadWebDocumentRequest $request)
     {
         try {
              list($response) = $this->postLoadWebDocumentWithHttpInfo($request);
@@ -29245,16 +29245,16 @@ class WordsApi
      *
      * Loads new document from web into the file with any supported format of data.
      *
-     * @param Requests\PostLoadWebDocumentRequest $request is a request object for operation
+     * @param Requests\postLoadWebDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postLoadWebDocumentWithHttpInfo(Requests\PostLoadWebDocumentRequest $request)
+    public function postLoadWebDocumentWithHttpInfo(Requests\postLoadWebDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
-        $request = $this->PostLoadWebDocumentRequest($request);
+        $request = $this->postLoadWebDocumentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -29311,12 +29311,12 @@ class WordsApi
      *
      * Loads new document from web into the file with any supported format of data.
      *
-     * @param Requests\PostLoadWebDocumentRequest $request is a request object for operation
+     * @param Requests\postLoadWebDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postLoadWebDocumentAsync(Requests\PostLoadWebDocumentRequest $request) 
+    public function postLoadWebDocumentAsync(Requests\postLoadWebDocumentRequest $request) 
     {
         return $this->postLoadWebDocumentAsyncWithHttpInfo($request)
             ->then(
@@ -29331,15 +29331,15 @@ class WordsApi
      *
      * Loads new document from web into the file with any supported format of data.
      *
-     * @param Requests\PostLoadWebDocumentRequest $request is a request object for operation
+     * @param Requests\postLoadWebDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postLoadWebDocumentAsyncWithHttpInfo(Requests\PostLoadWebDocumentRequest $request) 
+    public function postLoadWebDocumentAsyncWithHttpInfo(Requests\postLoadWebDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
-        $request = $this->PostLoadWebDocumentRequest($request);
+        $request = $this->postLoadWebDocumentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -29384,12 +29384,12 @@ class WordsApi
     /*
      * Create request for operation 'postLoadWebDocument'
      *
-     * @param Requests\PostLoadWebDocumentRequest $request is a request object for operation
+     * @param Requests\postLoadWebDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostLoadWebDocumentRequest(Requests\PostLoadWebDocumentRequest $request)
+    protected function postLoadWebDocumentRequest(Requests\postLoadWebDocumentRequest $request)
     {
         // verify the required parameter 'data' is set
         if ($request->data === null) {
@@ -29505,13 +29505,13 @@ class WordsApi
      *
      * Replace document text.
      *
-     * @param Requests\PostReplaceTextRequest $request is a request object for operation
+     * @param Requests\postReplaceTextRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\ReplaceTextResponse
      */
-    public function postReplaceText(Requests\PostReplaceTextRequest $request)
+    public function postReplaceText(Requests\postReplaceTextRequest $request)
     {
         try {
              list($response) = $this->postReplaceTextWithHttpInfo($request);
@@ -29528,16 +29528,16 @@ class WordsApi
      *
      * Replace document text.
      *
-     * @param Requests\PostReplaceTextRequest $request is a request object for operation
+     * @param Requests\postReplaceTextRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\ReplaceTextResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postReplaceTextWithHttpInfo(Requests\PostReplaceTextRequest $request)
+    public function postReplaceTextWithHttpInfo(Requests\postReplaceTextRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ReplaceTextResponse';
-        $request = $this->PostReplaceTextRequest($request);
+        $request = $this->postReplaceTextRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -29594,12 +29594,12 @@ class WordsApi
      *
      * Replace document text.
      *
-     * @param Requests\PostReplaceTextRequest $request is a request object for operation
+     * @param Requests\postReplaceTextRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postReplaceTextAsync(Requests\PostReplaceTextRequest $request) 
+    public function postReplaceTextAsync(Requests\postReplaceTextRequest $request) 
     {
         return $this->postReplaceTextAsyncWithHttpInfo($request)
             ->then(
@@ -29614,15 +29614,15 @@ class WordsApi
      *
      * Replace document text.
      *
-     * @param Requests\PostReplaceTextRequest $request is a request object for operation
+     * @param Requests\postReplaceTextRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postReplaceTextAsyncWithHttpInfo(Requests\PostReplaceTextRequest $request) 
+    public function postReplaceTextAsyncWithHttpInfo(Requests\postReplaceTextRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ReplaceTextResponse';
-        $request = $this->PostReplaceTextRequest($request);
+        $request = $this->postReplaceTextRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -29667,12 +29667,12 @@ class WordsApi
     /*
      * Create request for operation 'postReplaceText'
      *
-     * @param Requests\PostReplaceTextRequest $request is a request object for operation
+     * @param Requests\postReplaceTextRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostReplaceTextRequest(Requests\PostReplaceTextRequest $request)
+    protected function postReplaceTextRequest(Requests\postReplaceTextRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -29857,13 +29857,13 @@ class WordsApi
      *
      * Updates run's properties, returns updated run's data.
      *
-     * @param Requests\PostRunRequest $request is a request object for operation
+     * @param Requests\postRunRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\RunResponse
      */
-    public function postRun(Requests\PostRunRequest $request)
+    public function postRun(Requests\postRunRequest $request)
     {
         try {
              list($response) = $this->postRunWithHttpInfo($request);
@@ -29880,16 +29880,16 @@ class WordsApi
      *
      * Updates run's properties, returns updated run's data.
      *
-     * @param Requests\PostRunRequest $request is a request object for operation
+     * @param Requests\postRunRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\RunResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postRunWithHttpInfo(Requests\PostRunRequest $request)
+    public function postRunWithHttpInfo(Requests\postRunRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
-        $request = $this->PostRunRequest($request);
+        $request = $this->postRunRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -29946,12 +29946,12 @@ class WordsApi
      *
      * Updates run's properties, returns updated run's data.
      *
-     * @param Requests\PostRunRequest $request is a request object for operation
+     * @param Requests\postRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postRunAsync(Requests\PostRunRequest $request) 
+    public function postRunAsync(Requests\postRunRequest $request) 
     {
         return $this->postRunAsyncWithHttpInfo($request)
             ->then(
@@ -29966,15 +29966,15 @@ class WordsApi
      *
      * Updates run's properties, returns updated run's data.
      *
-     * @param Requests\PostRunRequest $request is a request object for operation
+     * @param Requests\postRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postRunAsyncWithHttpInfo(Requests\PostRunRequest $request) 
+    public function postRunAsyncWithHttpInfo(Requests\postRunRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
-        $request = $this->PostRunRequest($request);
+        $request = $this->postRunRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -30019,12 +30019,12 @@ class WordsApi
     /*
      * Create request for operation 'postRun'
      *
-     * @param Requests\PostRunRequest $request is a request object for operation
+     * @param Requests\postRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostRunRequest(Requests\PostRunRequest $request)
+    protected function postRunRequest(Requests\postRunRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -30227,13 +30227,13 @@ class WordsApi
      *
      * Split document.
      *
-     * @param Requests\PostSplitDocumentRequest $request is a request object for operation
+     * @param Requests\postSplitDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\SplitDocumentResponse
      */
-    public function postSplitDocument(Requests\PostSplitDocumentRequest $request)
+    public function postSplitDocument(Requests\postSplitDocumentRequest $request)
     {
         try {
              list($response) = $this->postSplitDocumentWithHttpInfo($request);
@@ -30250,16 +30250,16 @@ class WordsApi
      *
      * Split document.
      *
-     * @param Requests\PostSplitDocumentRequest $request is a request object for operation
+     * @param Requests\postSplitDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\SplitDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSplitDocumentWithHttpInfo(Requests\PostSplitDocumentRequest $request)
+    public function postSplitDocumentWithHttpInfo(Requests\postSplitDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SplitDocumentResponse';
-        $request = $this->PostSplitDocumentRequest($request);
+        $request = $this->postSplitDocumentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -30316,12 +30316,12 @@ class WordsApi
      *
      * Split document.
      *
-     * @param Requests\PostSplitDocumentRequest $request is a request object for operation
+     * @param Requests\postSplitDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSplitDocumentAsync(Requests\PostSplitDocumentRequest $request) 
+    public function postSplitDocumentAsync(Requests\postSplitDocumentRequest $request) 
     {
         return $this->postSplitDocumentAsyncWithHttpInfo($request)
             ->then(
@@ -30336,15 +30336,15 @@ class WordsApi
      *
      * Split document.
      *
-     * @param Requests\PostSplitDocumentRequest $request is a request object for operation
+     * @param Requests\postSplitDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSplitDocumentAsyncWithHttpInfo(Requests\PostSplitDocumentRequest $request) 
+    public function postSplitDocumentAsyncWithHttpInfo(Requests\postSplitDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SplitDocumentResponse';
-        $request = $this->PostSplitDocumentRequest($request);
+        $request = $this->postSplitDocumentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -30389,12 +30389,12 @@ class WordsApi
     /*
      * Create request for operation 'postSplitDocument'
      *
-     * @param Requests\PostSplitDocumentRequest $request is a request object for operation
+     * @param Requests\postSplitDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostSplitDocumentRequest(Requests\PostSplitDocumentRequest $request)
+    protected function postSplitDocumentRequest(Requests\postSplitDocumentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -30598,13 +30598,13 @@ class WordsApi
      *
      * Update document bookmark.
      *
-     * @param Requests\PostUpdateDocumentBookmarkRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentBookmarkRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\BookmarkResponse
      */
-    public function postUpdateDocumentBookmark(Requests\PostUpdateDocumentBookmarkRequest $request)
+    public function postUpdateDocumentBookmark(Requests\postUpdateDocumentBookmarkRequest $request)
     {
         try {
              list($response) = $this->postUpdateDocumentBookmarkWithHttpInfo($request);
@@ -30621,16 +30621,16 @@ class WordsApi
      *
      * Update document bookmark.
      *
-     * @param Requests\PostUpdateDocumentBookmarkRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentBookmarkRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\BookmarkResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postUpdateDocumentBookmarkWithHttpInfo(Requests\PostUpdateDocumentBookmarkRequest $request)
+    public function postUpdateDocumentBookmarkWithHttpInfo(Requests\postUpdateDocumentBookmarkRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
-        $request = $this->PostUpdateDocumentBookmarkRequest($request);
+        $request = $this->postUpdateDocumentBookmarkRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -30687,12 +30687,12 @@ class WordsApi
      *
      * Update document bookmark.
      *
-     * @param Requests\PostUpdateDocumentBookmarkRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentBookmarkRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUpdateDocumentBookmarkAsync(Requests\PostUpdateDocumentBookmarkRequest $request) 
+    public function postUpdateDocumentBookmarkAsync(Requests\postUpdateDocumentBookmarkRequest $request) 
     {
         return $this->postUpdateDocumentBookmarkAsyncWithHttpInfo($request)
             ->then(
@@ -30707,15 +30707,15 @@ class WordsApi
      *
      * Update document bookmark.
      *
-     * @param Requests\PostUpdateDocumentBookmarkRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentBookmarkRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUpdateDocumentBookmarkAsyncWithHttpInfo(Requests\PostUpdateDocumentBookmarkRequest $request) 
+    public function postUpdateDocumentBookmarkAsyncWithHttpInfo(Requests\postUpdateDocumentBookmarkRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
-        $request = $this->PostUpdateDocumentBookmarkRequest($request);
+        $request = $this->postUpdateDocumentBookmarkRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -30760,12 +30760,12 @@ class WordsApi
     /*
      * Create request for operation 'postUpdateDocumentBookmark'
      *
-     * @param Requests\PostUpdateDocumentBookmarkRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentBookmarkRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostUpdateDocumentBookmarkRequest(Requests\PostUpdateDocumentBookmarkRequest $request)
+    protected function postUpdateDocumentBookmarkRequest(Requests\postUpdateDocumentBookmarkRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -30959,13 +30959,13 @@ class WordsApi
      *
      * Update (reevaluate) fields in document.
      *
-     * @param Requests\PostUpdateDocumentFieldsRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentFieldsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function postUpdateDocumentFields(Requests\PostUpdateDocumentFieldsRequest $request)
+    public function postUpdateDocumentFields(Requests\postUpdateDocumentFieldsRequest $request)
     {
         try {
              list($response) = $this->postUpdateDocumentFieldsWithHttpInfo($request);
@@ -30982,16 +30982,16 @@ class WordsApi
      *
      * Update (reevaluate) fields in document.
      *
-     * @param Requests\PostUpdateDocumentFieldsRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentFieldsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postUpdateDocumentFieldsWithHttpInfo(Requests\PostUpdateDocumentFieldsRequest $request)
+    public function postUpdateDocumentFieldsWithHttpInfo(Requests\postUpdateDocumentFieldsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostUpdateDocumentFieldsRequest($request);
+        $request = $this->postUpdateDocumentFieldsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -31048,12 +31048,12 @@ class WordsApi
      *
      * Update (reevaluate) fields in document.
      *
-     * @param Requests\PostUpdateDocumentFieldsRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUpdateDocumentFieldsAsync(Requests\PostUpdateDocumentFieldsRequest $request) 
+    public function postUpdateDocumentFieldsAsync(Requests\postUpdateDocumentFieldsRequest $request) 
     {
         return $this->postUpdateDocumentFieldsAsyncWithHttpInfo($request)
             ->then(
@@ -31068,15 +31068,15 @@ class WordsApi
      *
      * Update (reevaluate) fields in document.
      *
-     * @param Requests\PostUpdateDocumentFieldsRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUpdateDocumentFieldsAsyncWithHttpInfo(Requests\PostUpdateDocumentFieldsRequest $request) 
+    public function postUpdateDocumentFieldsAsyncWithHttpInfo(Requests\postUpdateDocumentFieldsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PostUpdateDocumentFieldsRequest($request);
+        $request = $this->postUpdateDocumentFieldsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -31121,12 +31121,12 @@ class WordsApi
     /*
      * Create request for operation 'postUpdateDocumentFields'
      *
-     * @param Requests\PostUpdateDocumentFieldsRequest $request is a request object for operation
+     * @param Requests\postUpdateDocumentFieldsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PostUpdateDocumentFieldsRequest(Requests\PostUpdateDocumentFieldsRequest $request)
+    protected function postUpdateDocumentFieldsRequest(Requests\postUpdateDocumentFieldsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -31280,13 +31280,13 @@ class WordsApi
      *
      * Adds comment to document, returns inserted comment's data.
      *
-     * @param Requests\PutCommentRequest $request is a request object for operation
+     * @param Requests\putCommentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\CommentResponse
      */
-    public function putComment(Requests\PutCommentRequest $request)
+    public function putComment(Requests\putCommentRequest $request)
     {
         try {
              list($response) = $this->putCommentWithHttpInfo($request);
@@ -31303,16 +31303,16 @@ class WordsApi
      *
      * Adds comment to document, returns inserted comment's data.
      *
-     * @param Requests\PutCommentRequest $request is a request object for operation
+     * @param Requests\putCommentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\CommentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putCommentWithHttpInfo(Requests\PutCommentRequest $request)
+    public function putCommentWithHttpInfo(Requests\putCommentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
-        $request = $this->PutCommentRequest($request);
+        $request = $this->putCommentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -31369,12 +31369,12 @@ class WordsApi
      *
      * Adds comment to document, returns inserted comment's data.
      *
-     * @param Requests\PutCommentRequest $request is a request object for operation
+     * @param Requests\putCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putCommentAsync(Requests\PutCommentRequest $request) 
+    public function putCommentAsync(Requests\putCommentRequest $request) 
     {
         return $this->putCommentAsyncWithHttpInfo($request)
             ->then(
@@ -31389,15 +31389,15 @@ class WordsApi
      *
      * Adds comment to document, returns inserted comment's data.
      *
-     * @param Requests\PutCommentRequest $request is a request object for operation
+     * @param Requests\putCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putCommentAsyncWithHttpInfo(Requests\PutCommentRequest $request) 
+    public function putCommentAsyncWithHttpInfo(Requests\putCommentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
-        $request = $this->PutCommentRequest($request);
+        $request = $this->putCommentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -31442,12 +31442,12 @@ class WordsApi
     /*
      * Create request for operation 'putComment'
      *
-     * @param Requests\PutCommentRequest $request is a request object for operation
+     * @param Requests\putCommentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutCommentRequest(Requests\PutCommentRequest $request)
+    protected function putCommentRequest(Requests\putCommentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -31632,13 +31632,13 @@ class WordsApi
      *
      * Convert document from request content to format specified.
      *
-     * @param Requests\PutConvertDocumentRequest $request is a request object for operation
+     * @param Requests\putConvertDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function putConvertDocument(Requests\PutConvertDocumentRequest $request)
+    public function putConvertDocument(Requests\putConvertDocumentRequest $request)
     {
         try {
              list($response) = $this->putConvertDocumentWithHttpInfo($request);
@@ -31655,16 +31655,16 @@ class WordsApi
      *
      * Convert document from request content to format specified.
      *
-     * @param Requests\PutConvertDocumentRequest $request is a request object for operation
+     * @param Requests\putConvertDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putConvertDocumentWithHttpInfo(Requests\PutConvertDocumentRequest $request)
+    public function putConvertDocumentWithHttpInfo(Requests\putConvertDocumentRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->PutConvertDocumentRequest($request);
+        $request = $this->putConvertDocumentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -31721,12 +31721,12 @@ class WordsApi
      *
      * Convert document from request content to format specified.
      *
-     * @param Requests\PutConvertDocumentRequest $request is a request object for operation
+     * @param Requests\putConvertDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putConvertDocumentAsync(Requests\PutConvertDocumentRequest $request) 
+    public function putConvertDocumentAsync(Requests\putConvertDocumentRequest $request) 
     {
         return $this->putConvertDocumentAsyncWithHttpInfo($request)
             ->then(
@@ -31741,15 +31741,15 @@ class WordsApi
      *
      * Convert document from request content to format specified.
      *
-     * @param Requests\PutConvertDocumentRequest $request is a request object for operation
+     * @param Requests\putConvertDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putConvertDocumentAsyncWithHttpInfo(Requests\PutConvertDocumentRequest $request) 
+    public function putConvertDocumentAsyncWithHttpInfo(Requests\putConvertDocumentRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->PutConvertDocumentRequest($request);
+        $request = $this->putConvertDocumentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -31794,12 +31794,12 @@ class WordsApi
     /*
      * Create request for operation 'putConvertDocument'
      *
-     * @param Requests\PutConvertDocumentRequest $request is a request object for operation
+     * @param Requests\putConvertDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutConvertDocumentRequest(Requests\PutConvertDocumentRequest $request)
+    protected function putConvertDocumentRequest(Requests\putConvertDocumentRequest $request)
     {
         // verify the required parameter 'document' is set
         if ($request->document === null) {
@@ -31951,13 +31951,13 @@ class WordsApi
      *
      * Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\"
      *
-     * @param Requests\PutCreateDocumentRequest $request is a request object for operation
+     * @param Requests\putCreateDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DocumentResponse
      */
-    public function putCreateDocument(Requests\PutCreateDocumentRequest $request)
+    public function putCreateDocument(Requests\putCreateDocumentRequest $request)
     {
         try {
              list($response) = $this->putCreateDocumentWithHttpInfo($request);
@@ -31974,16 +31974,16 @@ class WordsApi
      *
      * Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\"
      *
-     * @param Requests\PutCreateDocumentRequest $request is a request object for operation
+     * @param Requests\putCreateDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putCreateDocumentWithHttpInfo(Requests\PutCreateDocumentRequest $request)
+    public function putCreateDocumentWithHttpInfo(Requests\putCreateDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PutCreateDocumentRequest($request);
+        $request = $this->putCreateDocumentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -32040,12 +32040,12 @@ class WordsApi
      *
      * Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\"
      *
-     * @param Requests\PutCreateDocumentRequest $request is a request object for operation
+     * @param Requests\putCreateDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putCreateDocumentAsync(Requests\PutCreateDocumentRequest $request) 
+    public function putCreateDocumentAsync(Requests\putCreateDocumentRequest $request) 
     {
         return $this->putCreateDocumentAsyncWithHttpInfo($request)
             ->then(
@@ -32060,15 +32060,15 @@ class WordsApi
      *
      * Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\"
      *
-     * @param Requests\PutCreateDocumentRequest $request is a request object for operation
+     * @param Requests\putCreateDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putCreateDocumentAsyncWithHttpInfo(Requests\PutCreateDocumentRequest $request) 
+    public function putCreateDocumentAsyncWithHttpInfo(Requests\putCreateDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
-        $request = $this->PutCreateDocumentRequest($request);
+        $request = $this->putCreateDocumentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -32113,12 +32113,12 @@ class WordsApi
     /*
      * Create request for operation 'putCreateDocument'
      *
-     * @param Requests\PutCreateDocumentRequest $request is a request object for operation
+     * @param Requests\putCreateDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutCreateDocumentRequest(Requests\PutCreateDocumentRequest $request)
+    protected function putCreateDocumentRequest(Requests\putCreateDocumentRequest $request)
     {
 
         $resourcePath = '/words/create';
@@ -32243,13 +32243,13 @@ class WordsApi
      *
      * Read document field names.
      *
-     * @param Requests\PutDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\putDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FieldNamesResponse
      */
-    public function putDocumentFieldNames(Requests\PutDocumentFieldNamesRequest $request)
+    public function putDocumentFieldNames(Requests\putDocumentFieldNamesRequest $request)
     {
         try {
              list($response) = $this->putDocumentFieldNamesWithHttpInfo($request);
@@ -32266,16 +32266,16 @@ class WordsApi
      *
      * Read document field names.
      *
-     * @param Requests\PutDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\putDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FieldNamesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putDocumentFieldNamesWithHttpInfo(Requests\PutDocumentFieldNamesRequest $request)
+    public function putDocumentFieldNamesWithHttpInfo(Requests\putDocumentFieldNamesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
-        $request = $this->PutDocumentFieldNamesRequest($request);
+        $request = $this->putDocumentFieldNamesRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -32332,12 +32332,12 @@ class WordsApi
      *
      * Read document field names.
      *
-     * @param Requests\PutDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\putDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putDocumentFieldNamesAsync(Requests\PutDocumentFieldNamesRequest $request) 
+    public function putDocumentFieldNamesAsync(Requests\putDocumentFieldNamesRequest $request) 
     {
         return $this->putDocumentFieldNamesAsyncWithHttpInfo($request)
             ->then(
@@ -32352,15 +32352,15 @@ class WordsApi
      *
      * Read document field names.
      *
-     * @param Requests\PutDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\putDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putDocumentFieldNamesAsyncWithHttpInfo(Requests\PutDocumentFieldNamesRequest $request) 
+    public function putDocumentFieldNamesAsyncWithHttpInfo(Requests\putDocumentFieldNamesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
-        $request = $this->PutDocumentFieldNamesRequest($request);
+        $request = $this->putDocumentFieldNamesRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -32405,12 +32405,12 @@ class WordsApi
     /*
      * Create request for operation 'putDocumentFieldNames'
      *
-     * @param Requests\PutDocumentFieldNamesRequest $request is a request object for operation
+     * @param Requests\putDocumentFieldNamesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutDocumentFieldNamesRequest(Requests\PutDocumentFieldNamesRequest $request)
+    protected function putDocumentFieldNamesRequest(Requests\putDocumentFieldNamesRequest $request)
     {
         // verify the required parameter 'template' is set
         if ($request->template === null) {
@@ -32528,13 +32528,13 @@ class WordsApi
      *
      * Convert document to tiff with detailed settings and save result to storage.
      *
-     * @param Requests\PutDocumentSaveAsTiffRequest $request is a request object for operation
+     * @param Requests\putDocumentSaveAsTiffRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\SaveResponse
      */
-    public function putDocumentSaveAsTiff(Requests\PutDocumentSaveAsTiffRequest $request)
+    public function putDocumentSaveAsTiff(Requests\putDocumentSaveAsTiffRequest $request)
     {
         try {
              list($response) = $this->putDocumentSaveAsTiffWithHttpInfo($request);
@@ -32551,16 +32551,16 @@ class WordsApi
      *
      * Convert document to tiff with detailed settings and save result to storage.
      *
-     * @param Requests\PutDocumentSaveAsTiffRequest $request is a request object for operation
+     * @param Requests\putDocumentSaveAsTiffRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putDocumentSaveAsTiffWithHttpInfo(Requests\PutDocumentSaveAsTiffRequest $request)
+    public function putDocumentSaveAsTiffWithHttpInfo(Requests\putDocumentSaveAsTiffRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
-        $request = $this->PutDocumentSaveAsTiffRequest($request);
+        $request = $this->putDocumentSaveAsTiffRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -32617,12 +32617,12 @@ class WordsApi
      *
      * Convert document to tiff with detailed settings and save result to storage.
      *
-     * @param Requests\PutDocumentSaveAsTiffRequest $request is a request object for operation
+     * @param Requests\putDocumentSaveAsTiffRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putDocumentSaveAsTiffAsync(Requests\PutDocumentSaveAsTiffRequest $request) 
+    public function putDocumentSaveAsTiffAsync(Requests\putDocumentSaveAsTiffRequest $request) 
     {
         return $this->putDocumentSaveAsTiffAsyncWithHttpInfo($request)
             ->then(
@@ -32637,15 +32637,15 @@ class WordsApi
      *
      * Convert document to tiff with detailed settings and save result to storage.
      *
-     * @param Requests\PutDocumentSaveAsTiffRequest $request is a request object for operation
+     * @param Requests\putDocumentSaveAsTiffRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putDocumentSaveAsTiffAsyncWithHttpInfo(Requests\PutDocumentSaveAsTiffRequest $request) 
+    public function putDocumentSaveAsTiffAsyncWithHttpInfo(Requests\putDocumentSaveAsTiffRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
-        $request = $this->PutDocumentSaveAsTiffRequest($request);
+        $request = $this->putDocumentSaveAsTiffRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -32690,12 +32690,12 @@ class WordsApi
     /*
      * Create request for operation 'putDocumentSaveAsTiff'
      *
-     * @param Requests\PutDocumentSaveAsTiffRequest $request is a request object for operation
+     * @param Requests\putDocumentSaveAsTiffRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutDocumentSaveAsTiffRequest(Requests\PutDocumentSaveAsTiffRequest $request)
+    protected function putDocumentSaveAsTiffRequest(Requests\putDocumentSaveAsTiffRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -33050,13 +33050,13 @@ class WordsApi
      *
      * Adds  drawing object to document, returns added  drawing object's data.
      *
-     * @param Requests\PutDrawingObjectRequest $request is a request object for operation
+     * @param Requests\putDrawingObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\DrawingObjectResponse
      */
-    public function putDrawingObject(Requests\PutDrawingObjectRequest $request)
+    public function putDrawingObject(Requests\putDrawingObjectRequest $request)
     {
         try {
              list($response) = $this->putDrawingObjectWithHttpInfo($request);
@@ -33073,16 +33073,16 @@ class WordsApi
      *
      * Adds  drawing object to document, returns added  drawing object's data.
      *
-     * @param Requests\PutDrawingObjectRequest $request is a request object for operation
+     * @param Requests\putDrawingObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putDrawingObjectWithHttpInfo(Requests\PutDrawingObjectRequest $request)
+    public function putDrawingObjectWithHttpInfo(Requests\putDrawingObjectRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
-        $request = $this->PutDrawingObjectRequest($request);
+        $request = $this->putDrawingObjectRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -33139,12 +33139,12 @@ class WordsApi
      *
      * Adds  drawing object to document, returns added  drawing object's data.
      *
-     * @param Requests\PutDrawingObjectRequest $request is a request object for operation
+     * @param Requests\putDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putDrawingObjectAsync(Requests\PutDrawingObjectRequest $request) 
+    public function putDrawingObjectAsync(Requests\putDrawingObjectRequest $request) 
     {
         return $this->putDrawingObjectAsyncWithHttpInfo($request)
             ->then(
@@ -33159,15 +33159,15 @@ class WordsApi
      *
      * Adds  drawing object to document, returns added  drawing object's data.
      *
-     * @param Requests\PutDrawingObjectRequest $request is a request object for operation
+     * @param Requests\putDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putDrawingObjectAsyncWithHttpInfo(Requests\PutDrawingObjectRequest $request) 
+    public function putDrawingObjectAsyncWithHttpInfo(Requests\putDrawingObjectRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
-        $request = $this->PutDrawingObjectRequest($request);
+        $request = $this->putDrawingObjectRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -33212,12 +33212,12 @@ class WordsApi
     /*
      * Create request for operation 'putDrawingObject'
      *
-     * @param Requests\PutDrawingObjectRequest $request is a request object for operation
+     * @param Requests\putDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutDrawingObjectRequest(Requests\PutDrawingObjectRequest $request)
+    protected function putDrawingObjectRequest(Requests\putDrawingObjectRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -33422,13 +33422,13 @@ class WordsApi
      *
      * Execute document mail merge online.
      *
-     * @param Requests\PutExecuteMailMergeOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteMailMergeOnlineRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function putExecuteMailMergeOnline(Requests\PutExecuteMailMergeOnlineRequest $request)
+    public function putExecuteMailMergeOnline(Requests\putExecuteMailMergeOnlineRequest $request)
     {
         try {
              list($response) = $this->putExecuteMailMergeOnlineWithHttpInfo($request);
@@ -33445,16 +33445,16 @@ class WordsApi
      *
      * Execute document mail merge online.
      *
-     * @param Requests\PutExecuteMailMergeOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteMailMergeOnlineRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putExecuteMailMergeOnlineWithHttpInfo(Requests\PutExecuteMailMergeOnlineRequest $request)
+    public function putExecuteMailMergeOnlineWithHttpInfo(Requests\putExecuteMailMergeOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->PutExecuteMailMergeOnlineRequest($request);
+        $request = $this->putExecuteMailMergeOnlineRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -33511,12 +33511,12 @@ class WordsApi
      *
      * Execute document mail merge online.
      *
-     * @param Requests\PutExecuteMailMergeOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteMailMergeOnlineRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putExecuteMailMergeOnlineAsync(Requests\PutExecuteMailMergeOnlineRequest $request) 
+    public function putExecuteMailMergeOnlineAsync(Requests\putExecuteMailMergeOnlineRequest $request) 
     {
         return $this->putExecuteMailMergeOnlineAsyncWithHttpInfo($request)
             ->then(
@@ -33531,15 +33531,15 @@ class WordsApi
      *
      * Execute document mail merge online.
      *
-     * @param Requests\PutExecuteMailMergeOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteMailMergeOnlineRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putExecuteMailMergeOnlineAsyncWithHttpInfo(Requests\PutExecuteMailMergeOnlineRequest $request) 
+    public function putExecuteMailMergeOnlineAsyncWithHttpInfo(Requests\putExecuteMailMergeOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->PutExecuteMailMergeOnlineRequest($request);
+        $request = $this->putExecuteMailMergeOnlineRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -33584,12 +33584,12 @@ class WordsApi
     /*
      * Create request for operation 'putExecuteMailMergeOnline'
      *
-     * @param Requests\PutExecuteMailMergeOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteMailMergeOnlineRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutExecuteMailMergeOnlineRequest(Requests\PutExecuteMailMergeOnlineRequest $request)
+    protected function putExecuteMailMergeOnlineRequest(Requests\putExecuteMailMergeOnlineRequest $request)
     {
         // verify the required parameter 'template' is set
         if ($request->template === null) {
@@ -33730,13 +33730,13 @@ class WordsApi
      *
      * Populate document template with data online.
      *
-     * @param Requests\PutExecuteTemplateOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteTemplateOnlineRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function putExecuteTemplateOnline(Requests\PutExecuteTemplateOnlineRequest $request)
+    public function putExecuteTemplateOnline(Requests\putExecuteTemplateOnlineRequest $request)
     {
         try {
              list($response) = $this->putExecuteTemplateOnlineWithHttpInfo($request);
@@ -33753,16 +33753,16 @@ class WordsApi
      *
      * Populate document template with data online.
      *
-     * @param Requests\PutExecuteTemplateOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteTemplateOnlineRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putExecuteTemplateOnlineWithHttpInfo(Requests\PutExecuteTemplateOnlineRequest $request)
+    public function putExecuteTemplateOnlineWithHttpInfo(Requests\putExecuteTemplateOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->PutExecuteTemplateOnlineRequest($request);
+        $request = $this->putExecuteTemplateOnlineRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -33819,12 +33819,12 @@ class WordsApi
      *
      * Populate document template with data online.
      *
-     * @param Requests\PutExecuteTemplateOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteTemplateOnlineRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putExecuteTemplateOnlineAsync(Requests\PutExecuteTemplateOnlineRequest $request) 
+    public function putExecuteTemplateOnlineAsync(Requests\putExecuteTemplateOnlineRequest $request) 
     {
         return $this->putExecuteTemplateOnlineAsyncWithHttpInfo($request)
             ->then(
@@ -33839,15 +33839,15 @@ class WordsApi
      *
      * Populate document template with data online.
      *
-     * @param Requests\PutExecuteTemplateOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteTemplateOnlineRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putExecuteTemplateOnlineAsyncWithHttpInfo(Requests\PutExecuteTemplateOnlineRequest $request) 
+    public function putExecuteTemplateOnlineAsyncWithHttpInfo(Requests\putExecuteTemplateOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->PutExecuteTemplateOnlineRequest($request);
+        $request = $this->putExecuteTemplateOnlineRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -33892,12 +33892,12 @@ class WordsApi
     /*
      * Create request for operation 'putExecuteTemplateOnline'
      *
-     * @param Requests\PutExecuteTemplateOnlineRequest $request is a request object for operation
+     * @param Requests\putExecuteTemplateOnlineRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutExecuteTemplateOnlineRequest(Requests\PutExecuteTemplateOnlineRequest $request)
+    protected function putExecuteTemplateOnlineRequest(Requests\putExecuteTemplateOnlineRequest $request)
     {
         // verify the required parameter 'template' is set
         if ($request->template === null) {
@@ -34048,13 +34048,13 @@ class WordsApi
      *
      * Adds field to document, returns inserted field's data.
      *
-     * @param Requests\PutFieldRequest $request is a request object for operation
+     * @param Requests\putFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FieldResponse
      */
-    public function putField(Requests\PutFieldRequest $request)
+    public function putField(Requests\putFieldRequest $request)
     {
         try {
              list($response) = $this->putFieldWithHttpInfo($request);
@@ -34071,16 +34071,16 @@ class WordsApi
      *
      * Adds field to document, returns inserted field's data.
      *
-     * @param Requests\PutFieldRequest $request is a request object for operation
+     * @param Requests\putFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putFieldWithHttpInfo(Requests\PutFieldRequest $request)
+    public function putFieldWithHttpInfo(Requests\putFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
-        $request = $this->PutFieldRequest($request);
+        $request = $this->putFieldRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -34137,12 +34137,12 @@ class WordsApi
      *
      * Adds field to document, returns inserted field's data.
      *
-     * @param Requests\PutFieldRequest $request is a request object for operation
+     * @param Requests\putFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putFieldAsync(Requests\PutFieldRequest $request) 
+    public function putFieldAsync(Requests\putFieldRequest $request) 
     {
         return $this->putFieldAsyncWithHttpInfo($request)
             ->then(
@@ -34157,15 +34157,15 @@ class WordsApi
      *
      * Adds field to document, returns inserted field's data.
      *
-     * @param Requests\PutFieldRequest $request is a request object for operation
+     * @param Requests\putFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putFieldAsyncWithHttpInfo(Requests\PutFieldRequest $request) 
+    public function putFieldAsyncWithHttpInfo(Requests\putFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
-        $request = $this->PutFieldRequest($request);
+        $request = $this->putFieldRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -34210,12 +34210,12 @@ class WordsApi
     /*
      * Create request for operation 'putField'
      *
-     * @param Requests\PutFieldRequest $request is a request object for operation
+     * @param Requests\putFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutFieldRequest(Requests\PutFieldRequest $request)
+    protected function putFieldRequest(Requests\putFieldRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -34420,13 +34420,13 @@ class WordsApi
      *
      * Adds footnote to document, returns added footnote's data.
      *
-     * @param Requests\PutFootnoteRequest $request is a request object for operation
+     * @param Requests\putFootnoteRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FootnoteResponse
      */
-    public function putFootnote(Requests\PutFootnoteRequest $request)
+    public function putFootnote(Requests\putFootnoteRequest $request)
     {
         try {
              list($response) = $this->putFootnoteWithHttpInfo($request);
@@ -34443,16 +34443,16 @@ class WordsApi
      *
      * Adds footnote to document, returns added footnote's data.
      *
-     * @param Requests\PutFootnoteRequest $request is a request object for operation
+     * @param Requests\putFootnoteRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putFootnoteWithHttpInfo(Requests\PutFootnoteRequest $request)
+    public function putFootnoteWithHttpInfo(Requests\putFootnoteRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
-        $request = $this->PutFootnoteRequest($request);
+        $request = $this->putFootnoteRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -34509,12 +34509,12 @@ class WordsApi
      *
      * Adds footnote to document, returns added footnote's data.
      *
-     * @param Requests\PutFootnoteRequest $request is a request object for operation
+     * @param Requests\putFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putFootnoteAsync(Requests\PutFootnoteRequest $request) 
+    public function putFootnoteAsync(Requests\putFootnoteRequest $request) 
     {
         return $this->putFootnoteAsyncWithHttpInfo($request)
             ->then(
@@ -34529,15 +34529,15 @@ class WordsApi
      *
      * Adds footnote to document, returns added footnote's data.
      *
-     * @param Requests\PutFootnoteRequest $request is a request object for operation
+     * @param Requests\putFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putFootnoteAsyncWithHttpInfo(Requests\PutFootnoteRequest $request) 
+    public function putFootnoteAsyncWithHttpInfo(Requests\putFootnoteRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
-        $request = $this->PutFootnoteRequest($request);
+        $request = $this->putFootnoteRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -34582,12 +34582,12 @@ class WordsApi
     /*
      * Create request for operation 'putFootnote'
      *
-     * @param Requests\PutFootnoteRequest $request is a request object for operation
+     * @param Requests\putFootnoteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutFootnoteRequest(Requests\PutFootnoteRequest $request)
+    protected function putFootnoteRequest(Requests\putFootnoteRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -34782,13 +34782,13 @@ class WordsApi
      *
      * Adds form field to paragraph, returns added form field's data.
      *
-     * @param Requests\PutFormFieldRequest $request is a request object for operation
+     * @param Requests\putFormFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\FormFieldResponse
      */
-    public function putFormField(Requests\PutFormFieldRequest $request)
+    public function putFormField(Requests\putFormFieldRequest $request)
     {
         try {
              list($response) = $this->putFormFieldWithHttpInfo($request);
@@ -34805,16 +34805,16 @@ class WordsApi
      *
      * Adds form field to paragraph, returns added form field's data.
      *
-     * @param Requests\PutFormFieldRequest $request is a request object for operation
+     * @param Requests\putFormFieldRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putFormFieldWithHttpInfo(Requests\PutFormFieldRequest $request)
+    public function putFormFieldWithHttpInfo(Requests\putFormFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
-        $request = $this->PutFormFieldRequest($request);
+        $request = $this->putFormFieldRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -34871,12 +34871,12 @@ class WordsApi
      *
      * Adds form field to paragraph, returns added form field's data.
      *
-     * @param Requests\PutFormFieldRequest $request is a request object for operation
+     * @param Requests\putFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putFormFieldAsync(Requests\PutFormFieldRequest $request) 
+    public function putFormFieldAsync(Requests\putFormFieldRequest $request) 
     {
         return $this->putFormFieldAsyncWithHttpInfo($request)
             ->then(
@@ -34891,15 +34891,15 @@ class WordsApi
      *
      * Adds form field to paragraph, returns added form field's data.
      *
-     * @param Requests\PutFormFieldRequest $request is a request object for operation
+     * @param Requests\putFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putFormFieldAsyncWithHttpInfo(Requests\PutFormFieldRequest $request) 
+    public function putFormFieldAsyncWithHttpInfo(Requests\putFormFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
-        $request = $this->PutFormFieldRequest($request);
+        $request = $this->putFormFieldRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -34944,12 +34944,12 @@ class WordsApi
     /*
      * Create request for operation 'putFormField'
      *
-     * @param Requests\PutFormFieldRequest $request is a request object for operation
+     * @param Requests\putFormFieldRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutFormFieldRequest(Requests\PutFormFieldRequest $request)
+    protected function putFormFieldRequest(Requests\putFormFieldRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -35154,13 +35154,13 @@ class WordsApi
      *
      * Insert to document header or footer.
      *
-     * @param Requests\PutHeaderFooterRequest $request is a request object for operation
+     * @param Requests\putHeaderFooterRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\HeaderFooterResponse
      */
-    public function putHeaderFooter(Requests\PutHeaderFooterRequest $request)
+    public function putHeaderFooter(Requests\putHeaderFooterRequest $request)
     {
         try {
              list($response) = $this->putHeaderFooterWithHttpInfo($request);
@@ -35177,16 +35177,16 @@ class WordsApi
      *
      * Insert to document header or footer.
      *
-     * @param Requests\PutHeaderFooterRequest $request is a request object for operation
+     * @param Requests\putHeaderFooterRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putHeaderFooterWithHttpInfo(Requests\PutHeaderFooterRequest $request)
+    public function putHeaderFooterWithHttpInfo(Requests\putHeaderFooterRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
-        $request = $this->PutHeaderFooterRequest($request);
+        $request = $this->putHeaderFooterRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -35243,12 +35243,12 @@ class WordsApi
      *
      * Insert to document header or footer.
      *
-     * @param Requests\PutHeaderFooterRequest $request is a request object for operation
+     * @param Requests\putHeaderFooterRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putHeaderFooterAsync(Requests\PutHeaderFooterRequest $request) 
+    public function putHeaderFooterAsync(Requests\putHeaderFooterRequest $request) 
     {
         return $this->putHeaderFooterAsyncWithHttpInfo($request)
             ->then(
@@ -35263,15 +35263,15 @@ class WordsApi
      *
      * Insert to document header or footer.
      *
-     * @param Requests\PutHeaderFooterRequest $request is a request object for operation
+     * @param Requests\putHeaderFooterRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putHeaderFooterAsyncWithHttpInfo(Requests\PutHeaderFooterRequest $request) 
+    public function putHeaderFooterAsyncWithHttpInfo(Requests\putHeaderFooterRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
-        $request = $this->PutHeaderFooterRequest($request);
+        $request = $this->putHeaderFooterRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -35316,12 +35316,12 @@ class WordsApi
     /*
      * Create request for operation 'putHeaderFooter'
      *
-     * @param Requests\PutHeaderFooterRequest $request is a request object for operation
+     * @param Requests\putHeaderFooterRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutHeaderFooterRequest(Requests\PutHeaderFooterRequest $request)
+    protected function putHeaderFooterRequest(Requests\putHeaderFooterRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -35516,13 +35516,13 @@ class WordsApi
      *
      * Adds paragraph to document, returns added paragraph's data.
      *
-     * @param Requests\PutParagraphRequest $request is a request object for operation
+     * @param Requests\putParagraphRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\ParagraphResponse
      */
-    public function putParagraph(Requests\PutParagraphRequest $request)
+    public function putParagraph(Requests\putParagraphRequest $request)
     {
         try {
              list($response) = $this->putParagraphWithHttpInfo($request);
@@ -35539,16 +35539,16 @@ class WordsApi
      *
      * Adds paragraph to document, returns added paragraph's data.
      *
-     * @param Requests\PutParagraphRequest $request is a request object for operation
+     * @param Requests\putParagraphRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\ParagraphResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putParagraphWithHttpInfo(Requests\PutParagraphRequest $request)
+    public function putParagraphWithHttpInfo(Requests\putParagraphRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
-        $request = $this->PutParagraphRequest($request);
+        $request = $this->putParagraphRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -35605,12 +35605,12 @@ class WordsApi
      *
      * Adds paragraph to document, returns added paragraph's data.
      *
-     * @param Requests\PutParagraphRequest $request is a request object for operation
+     * @param Requests\putParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putParagraphAsync(Requests\PutParagraphRequest $request) 
+    public function putParagraphAsync(Requests\putParagraphRequest $request) 
     {
         return $this->putParagraphAsyncWithHttpInfo($request)
             ->then(
@@ -35625,15 +35625,15 @@ class WordsApi
      *
      * Adds paragraph to document, returns added paragraph's data.
      *
-     * @param Requests\PutParagraphRequest $request is a request object for operation
+     * @param Requests\putParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putParagraphAsyncWithHttpInfo(Requests\PutParagraphRequest $request) 
+    public function putParagraphAsyncWithHttpInfo(Requests\putParagraphRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
-        $request = $this->PutParagraphRequest($request);
+        $request = $this->putParagraphRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -35678,12 +35678,12 @@ class WordsApi
     /*
      * Create request for operation 'putParagraph'
      *
-     * @param Requests\PutParagraphRequest $request is a request object for operation
+     * @param Requests\putParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutParagraphRequest(Requests\PutParagraphRequest $request)
+    protected function putParagraphRequest(Requests\putParagraphRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -35888,13 +35888,13 @@ class WordsApi
      *
      * Protect document.
      *
-     * @param Requests\PutProtectDocumentRequest $request is a request object for operation
+     * @param Requests\putProtectDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\ProtectionDataResponse
      */
-    public function putProtectDocument(Requests\PutProtectDocumentRequest $request)
+    public function putProtectDocument(Requests\putProtectDocumentRequest $request)
     {
         try {
              list($response) = $this->putProtectDocumentWithHttpInfo($request);
@@ -35911,16 +35911,16 @@ class WordsApi
      *
      * Protect document.
      *
-     * @param Requests\PutProtectDocumentRequest $request is a request object for operation
+     * @param Requests\putProtectDocumentRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putProtectDocumentWithHttpInfo(Requests\PutProtectDocumentRequest $request)
+    public function putProtectDocumentWithHttpInfo(Requests\putProtectDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
-        $request = $this->PutProtectDocumentRequest($request);
+        $request = $this->putProtectDocumentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -35977,12 +35977,12 @@ class WordsApi
      *
      * Protect document.
      *
-     * @param Requests\PutProtectDocumentRequest $request is a request object for operation
+     * @param Requests\putProtectDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putProtectDocumentAsync(Requests\PutProtectDocumentRequest $request) 
+    public function putProtectDocumentAsync(Requests\putProtectDocumentRequest $request) 
     {
         return $this->putProtectDocumentAsyncWithHttpInfo($request)
             ->then(
@@ -35997,15 +35997,15 @@ class WordsApi
      *
      * Protect document.
      *
-     * @param Requests\PutProtectDocumentRequest $request is a request object for operation
+     * @param Requests\putProtectDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putProtectDocumentAsyncWithHttpInfo(Requests\PutProtectDocumentRequest $request) 
+    public function putProtectDocumentAsyncWithHttpInfo(Requests\putProtectDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
-        $request = $this->PutProtectDocumentRequest($request);
+        $request = $this->putProtectDocumentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -36050,12 +36050,12 @@ class WordsApi
     /*
      * Create request for operation 'putProtectDocument'
      *
-     * @param Requests\PutProtectDocumentRequest $request is a request object for operation
+     * @param Requests\putProtectDocumentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutProtectDocumentRequest(Requests\PutProtectDocumentRequest $request)
+    protected function putProtectDocumentRequest(Requests\putProtectDocumentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -36220,13 +36220,13 @@ class WordsApi
      *
      * Adds run to document, returns added paragraph's data.
      *
-     * @param Requests\PutRunRequest $request is a request object for operation
+     * @param Requests\putRunRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\RunResponse
      */
-    public function putRun(Requests\PutRunRequest $request)
+    public function putRun(Requests\putRunRequest $request)
     {
         try {
              list($response) = $this->putRunWithHttpInfo($request);
@@ -36243,16 +36243,16 @@ class WordsApi
      *
      * Adds run to document, returns added paragraph's data.
      *
-     * @param Requests\PutRunRequest $request is a request object for operation
+     * @param Requests\putRunRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\RunResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putRunWithHttpInfo(Requests\PutRunRequest $request)
+    public function putRunWithHttpInfo(Requests\putRunRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
-        $request = $this->PutRunRequest($request);
+        $request = $this->putRunRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -36309,12 +36309,12 @@ class WordsApi
      *
      * Adds run to document, returns added paragraph's data.
      *
-     * @param Requests\PutRunRequest $request is a request object for operation
+     * @param Requests\putRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putRunAsync(Requests\PutRunRequest $request) 
+    public function putRunAsync(Requests\putRunRequest $request) 
     {
         return $this->putRunAsyncWithHttpInfo($request)
             ->then(
@@ -36329,15 +36329,15 @@ class WordsApi
      *
      * Adds run to document, returns added paragraph's data.
      *
-     * @param Requests\PutRunRequest $request is a request object for operation
+     * @param Requests\putRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putRunAsyncWithHttpInfo(Requests\PutRunRequest $request) 
+    public function putRunAsyncWithHttpInfo(Requests\putRunRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
-        $request = $this->PutRunRequest($request);
+        $request = $this->putRunRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -36382,12 +36382,12 @@ class WordsApi
     /*
      * Create request for operation 'putRun'
      *
-     * @param Requests\PutRunRequest $request is a request object for operation
+     * @param Requests\putRunRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function PutRunRequest(Requests\PutRunRequest $request)
+    protected function putRunRequest(Requests\putRunRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -36591,13 +36591,13 @@ class WordsApi
      *
      * Reject all revisions in document
      *
-     * @param Requests\RejectAllRevisionsRequest $request is a request object for operation
+     * @param Requests\rejectAllRevisionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\RevisionsModificationResponse
      */
-    public function rejectAllRevisions(Requests\RejectAllRevisionsRequest $request)
+    public function rejectAllRevisions(Requests\rejectAllRevisionsRequest $request)
     {
         try {
              list($response) = $this->rejectAllRevisionsWithHttpInfo($request);
@@ -36614,16 +36614,16 @@ class WordsApi
      *
      * Reject all revisions in document
      *
-     * @param Requests\RejectAllRevisionsRequest $request is a request object for operation
+     * @param Requests\rejectAllRevisionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\RevisionsModificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function rejectAllRevisionsWithHttpInfo(Requests\RejectAllRevisionsRequest $request)
+    public function rejectAllRevisionsWithHttpInfo(Requests\rejectAllRevisionsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
-        $request = $this->RejectAllRevisionsRequest($request);
+        $request = $this->rejectAllRevisionsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -36680,12 +36680,12 @@ class WordsApi
      *
      * Reject all revisions in document
      *
-     * @param Requests\RejectAllRevisionsRequest $request is a request object for operation
+     * @param Requests\rejectAllRevisionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function rejectAllRevisionsAsync(Requests\RejectAllRevisionsRequest $request) 
+    public function rejectAllRevisionsAsync(Requests\rejectAllRevisionsRequest $request) 
     {
         return $this->rejectAllRevisionsAsyncWithHttpInfo($request)
             ->then(
@@ -36700,15 +36700,15 @@ class WordsApi
      *
      * Reject all revisions in document
      *
-     * @param Requests\RejectAllRevisionsRequest $request is a request object for operation
+     * @param Requests\rejectAllRevisionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function rejectAllRevisionsAsyncWithHttpInfo(Requests\RejectAllRevisionsRequest $request) 
+    public function rejectAllRevisionsAsyncWithHttpInfo(Requests\rejectAllRevisionsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
-        $request = $this->RejectAllRevisionsRequest($request);
+        $request = $this->rejectAllRevisionsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -36753,12 +36753,12 @@ class WordsApi
     /*
      * Create request for operation 'rejectAllRevisions'
      *
-     * @param Requests\RejectAllRevisionsRequest $request is a request object for operation
+     * @param Requests\rejectAllRevisionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function RejectAllRevisionsRequest(Requests\RejectAllRevisionsRequest $request)
+    protected function rejectAllRevisionsRequest(Requests\rejectAllRevisionsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -36912,13 +36912,13 @@ class WordsApi
      *
      * Renders drawing object to specified format.
      *
-     * @param Requests\RenderDrawingObjectRequest $request is a request object for operation
+     * @param Requests\renderDrawingObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function renderDrawingObject(Requests\RenderDrawingObjectRequest $request)
+    public function renderDrawingObject(Requests\renderDrawingObjectRequest $request)
     {
         try {
              list($response) = $this->renderDrawingObjectWithHttpInfo($request);
@@ -36935,16 +36935,16 @@ class WordsApi
      *
      * Renders drawing object to specified format.
      *
-     * @param Requests\RenderDrawingObjectRequest $request is a request object for operation
+     * @param Requests\renderDrawingObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function renderDrawingObjectWithHttpInfo(Requests\RenderDrawingObjectRequest $request)
+    public function renderDrawingObjectWithHttpInfo(Requests\renderDrawingObjectRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderDrawingObjectRequest($request);
+        $request = $this->renderDrawingObjectRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -37001,12 +37001,12 @@ class WordsApi
      *
      * Renders drawing object to specified format.
      *
-     * @param Requests\RenderDrawingObjectRequest $request is a request object for operation
+     * @param Requests\renderDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderDrawingObjectAsync(Requests\RenderDrawingObjectRequest $request) 
+    public function renderDrawingObjectAsync(Requests\renderDrawingObjectRequest $request) 
     {
         return $this->renderDrawingObjectAsyncWithHttpInfo($request)
             ->then(
@@ -37021,15 +37021,15 @@ class WordsApi
      *
      * Renders drawing object to specified format.
      *
-     * @param Requests\RenderDrawingObjectRequest $request is a request object for operation
+     * @param Requests\renderDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderDrawingObjectAsyncWithHttpInfo(Requests\RenderDrawingObjectRequest $request) 
+    public function renderDrawingObjectAsyncWithHttpInfo(Requests\renderDrawingObjectRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderDrawingObjectRequest($request);
+        $request = $this->renderDrawingObjectRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -37074,12 +37074,12 @@ class WordsApi
     /*
      * Create request for operation 'renderDrawingObject'
      *
-     * @param Requests\RenderDrawingObjectRequest $request is a request object for operation
+     * @param Requests\renderDrawingObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function RenderDrawingObjectRequest(Requests\RenderDrawingObjectRequest $request)
+    protected function renderDrawingObjectRequest(Requests\renderDrawingObjectRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -37266,13 +37266,13 @@ class WordsApi
      *
      * Renders math object to specified format.
      *
-     * @param Requests\RenderMathObjectRequest $request is a request object for operation
+     * @param Requests\renderMathObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function renderMathObject(Requests\RenderMathObjectRequest $request)
+    public function renderMathObject(Requests\renderMathObjectRequest $request)
     {
         try {
              list($response) = $this->renderMathObjectWithHttpInfo($request);
@@ -37289,16 +37289,16 @@ class WordsApi
      *
      * Renders math object to specified format.
      *
-     * @param Requests\RenderMathObjectRequest $request is a request object for operation
+     * @param Requests\renderMathObjectRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function renderMathObjectWithHttpInfo(Requests\RenderMathObjectRequest $request)
+    public function renderMathObjectWithHttpInfo(Requests\renderMathObjectRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderMathObjectRequest($request);
+        $request = $this->renderMathObjectRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -37355,12 +37355,12 @@ class WordsApi
      *
      * Renders math object to specified format.
      *
-     * @param Requests\RenderMathObjectRequest $request is a request object for operation
+     * @param Requests\renderMathObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderMathObjectAsync(Requests\RenderMathObjectRequest $request) 
+    public function renderMathObjectAsync(Requests\renderMathObjectRequest $request) 
     {
         return $this->renderMathObjectAsyncWithHttpInfo($request)
             ->then(
@@ -37375,15 +37375,15 @@ class WordsApi
      *
      * Renders math object to specified format.
      *
-     * @param Requests\RenderMathObjectRequest $request is a request object for operation
+     * @param Requests\renderMathObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderMathObjectAsyncWithHttpInfo(Requests\RenderMathObjectRequest $request) 
+    public function renderMathObjectAsyncWithHttpInfo(Requests\renderMathObjectRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderMathObjectRequest($request);
+        $request = $this->renderMathObjectRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -37428,12 +37428,12 @@ class WordsApi
     /*
      * Create request for operation 'renderMathObject'
      *
-     * @param Requests\RenderMathObjectRequest $request is a request object for operation
+     * @param Requests\renderMathObjectRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function RenderMathObjectRequest(Requests\RenderMathObjectRequest $request)
+    protected function renderMathObjectRequest(Requests\renderMathObjectRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -37620,13 +37620,13 @@ class WordsApi
      *
      * Renders page to specified format.
      *
-     * @param Requests\RenderPageRequest $request is a request object for operation
+     * @param Requests\renderPageRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function renderPage(Requests\RenderPageRequest $request)
+    public function renderPage(Requests\renderPageRequest $request)
     {
         try {
              list($response) = $this->renderPageWithHttpInfo($request);
@@ -37643,16 +37643,16 @@ class WordsApi
      *
      * Renders page to specified format.
      *
-     * @param Requests\RenderPageRequest $request is a request object for operation
+     * @param Requests\renderPageRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function renderPageWithHttpInfo(Requests\RenderPageRequest $request)
+    public function renderPageWithHttpInfo(Requests\renderPageRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderPageRequest($request);
+        $request = $this->renderPageRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -37709,12 +37709,12 @@ class WordsApi
      *
      * Renders page to specified format.
      *
-     * @param Requests\RenderPageRequest $request is a request object for operation
+     * @param Requests\renderPageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderPageAsync(Requests\RenderPageRequest $request) 
+    public function renderPageAsync(Requests\renderPageRequest $request) 
     {
         return $this->renderPageAsyncWithHttpInfo($request)
             ->then(
@@ -37729,15 +37729,15 @@ class WordsApi
      *
      * Renders page to specified format.
      *
-     * @param Requests\RenderPageRequest $request is a request object for operation
+     * @param Requests\renderPageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderPageAsyncWithHttpInfo(Requests\RenderPageRequest $request) 
+    public function renderPageAsyncWithHttpInfo(Requests\renderPageRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderPageRequest($request);
+        $request = $this->renderPageRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -37782,12 +37782,12 @@ class WordsApi
     /*
      * Create request for operation 'renderPage'
      *
-     * @param Requests\RenderPageRequest $request is a request object for operation
+     * @param Requests\renderPageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function RenderPageRequest(Requests\RenderPageRequest $request)
+    protected function renderPageRequest(Requests\renderPageRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -37964,13 +37964,13 @@ class WordsApi
      *
      * Renders paragraph to specified format.
      *
-     * @param Requests\RenderParagraphRequest $request is a request object for operation
+     * @param Requests\renderParagraphRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function renderParagraph(Requests\RenderParagraphRequest $request)
+    public function renderParagraph(Requests\renderParagraphRequest $request)
     {
         try {
              list($response) = $this->renderParagraphWithHttpInfo($request);
@@ -37987,16 +37987,16 @@ class WordsApi
      *
      * Renders paragraph to specified format.
      *
-     * @param Requests\RenderParagraphRequest $request is a request object for operation
+     * @param Requests\renderParagraphRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function renderParagraphWithHttpInfo(Requests\RenderParagraphRequest $request)
+    public function renderParagraphWithHttpInfo(Requests\renderParagraphRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderParagraphRequest($request);
+        $request = $this->renderParagraphRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -38053,12 +38053,12 @@ class WordsApi
      *
      * Renders paragraph to specified format.
      *
-     * @param Requests\RenderParagraphRequest $request is a request object for operation
+     * @param Requests\renderParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderParagraphAsync(Requests\RenderParagraphRequest $request) 
+    public function renderParagraphAsync(Requests\renderParagraphRequest $request) 
     {
         return $this->renderParagraphAsyncWithHttpInfo($request)
             ->then(
@@ -38073,15 +38073,15 @@ class WordsApi
      *
      * Renders paragraph to specified format.
      *
-     * @param Requests\RenderParagraphRequest $request is a request object for operation
+     * @param Requests\renderParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderParagraphAsyncWithHttpInfo(Requests\RenderParagraphRequest $request) 
+    public function renderParagraphAsyncWithHttpInfo(Requests\renderParagraphRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderParagraphRequest($request);
+        $request = $this->renderParagraphRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -38126,12 +38126,12 @@ class WordsApi
     /*
      * Create request for operation 'renderParagraph'
      *
-     * @param Requests\RenderParagraphRequest $request is a request object for operation
+     * @param Requests\renderParagraphRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function RenderParagraphRequest(Requests\RenderParagraphRequest $request)
+    protected function renderParagraphRequest(Requests\renderParagraphRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -38318,13 +38318,13 @@ class WordsApi
      *
      * Renders table to specified format.
      *
-     * @param Requests\RenderTableRequest $request is a request object for operation
+     * @param Requests\renderTableRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function renderTable(Requests\RenderTableRequest $request)
+    public function renderTable(Requests\renderTableRequest $request)
     {
         try {
              list($response) = $this->renderTableWithHttpInfo($request);
@@ -38341,16 +38341,16 @@ class WordsApi
      *
      * Renders table to specified format.
      *
-     * @param Requests\RenderTableRequest $request is a request object for operation
+     * @param Requests\renderTableRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function renderTableWithHttpInfo(Requests\RenderTableRequest $request)
+    public function renderTableWithHttpInfo(Requests\renderTableRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderTableRequest($request);
+        $request = $this->renderTableRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -38407,12 +38407,12 @@ class WordsApi
      *
      * Renders table to specified format.
      *
-     * @param Requests\RenderTableRequest $request is a request object for operation
+     * @param Requests\renderTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderTableAsync(Requests\RenderTableRequest $request) 
+    public function renderTableAsync(Requests\renderTableRequest $request) 
     {
         return $this->renderTableAsyncWithHttpInfo($request)
             ->then(
@@ -38427,15 +38427,15 @@ class WordsApi
      *
      * Renders table to specified format.
      *
-     * @param Requests\RenderTableRequest $request is a request object for operation
+     * @param Requests\renderTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderTableAsyncWithHttpInfo(Requests\RenderTableRequest $request) 
+    public function renderTableAsyncWithHttpInfo(Requests\renderTableRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->RenderTableRequest($request);
+        $request = $this->renderTableRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -38480,12 +38480,12 @@ class WordsApi
     /*
      * Create request for operation 'renderTable'
      *
-     * @param Requests\RenderTableRequest $request is a request object for operation
+     * @param Requests\renderTableRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function RenderTableRequest(Requests\RenderTableRequest $request)
+    protected function renderTableRequest(Requests\renderTableRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -38672,13 +38672,13 @@ class WordsApi
      *
      * Resets font's cache.
      *
-     * @param Requests\ResetCacheRequest $request is a request object for operation
+     * @param Requests\resetCacheRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\AsposeResponse
      */
-    public function resetCache(Requests\ResetCacheRequest $request)
+    public function resetCache(Requests\resetCacheRequest $request)
     {
         try {
              list($response) = $this->resetCacheWithHttpInfo($request);
@@ -38695,16 +38695,16 @@ class WordsApi
      *
      * Resets font's cache.
      *
-     * @param Requests\ResetCacheRequest $request is a request object for operation
+     * @param Requests\resetCacheRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function resetCacheWithHttpInfo(Requests\ResetCacheRequest $request)
+    public function resetCacheWithHttpInfo(Requests\resetCacheRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->ResetCacheRequest($request);
+        $request = $this->resetCacheRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -38761,12 +38761,12 @@ class WordsApi
      *
      * Resets font's cache.
      *
-     * @param Requests\ResetCacheRequest $request is a request object for operation
+     * @param Requests\resetCacheRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resetCacheAsync(Requests\ResetCacheRequest $request) 
+    public function resetCacheAsync(Requests\resetCacheRequest $request) 
     {
         return $this->resetCacheAsyncWithHttpInfo($request)
             ->then(
@@ -38781,15 +38781,15 @@ class WordsApi
      *
      * Resets font's cache.
      *
-     * @param Requests\ResetCacheRequest $request is a request object for operation
+     * @param Requests\resetCacheRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resetCacheAsyncWithHttpInfo(Requests\ResetCacheRequest $request) 
+    public function resetCacheAsyncWithHttpInfo(Requests\resetCacheRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AsposeResponse';
-        $request = $this->ResetCacheRequest($request);
+        $request = $this->resetCacheRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -38834,12 +38834,12 @@ class WordsApi
     /*
      * Create request for operation 'resetCache'
      *
-     * @param Requests\ResetCacheRequest $request is a request object for operation
+     * @param Requests\resetCacheRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function ResetCacheRequest(Requests\ResetCacheRequest $request)
+    protected function resetCacheRequest(Requests\resetCacheRequest $request)
     {
 
         $resourcePath = '/words/fonts/cache';
@@ -38934,13 +38934,13 @@ class WordsApi
      *
      * Search text in document.
      *
-     * @param Requests\SearchRequest $request is a request object for operation
+     * @param Requests\searchRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\SearchResponse
      */
-    public function search(Requests\SearchRequest $request)
+    public function search(Requests\searchRequest $request)
     {
         try {
              list($response) = $this->searchWithHttpInfo($request);
@@ -38957,16 +38957,16 @@ class WordsApi
      *
      * Search text in document.
      *
-     * @param Requests\SearchRequest $request is a request object for operation
+     * @param Requests\searchRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\SearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchWithHttpInfo(Requests\SearchRequest $request)
+    public function searchWithHttpInfo(Requests\searchRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SearchResponse';
-        $request = $this->SearchRequest($request);
+        $request = $this->searchRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -39023,12 +39023,12 @@ class WordsApi
      *
      * Search text in document.
      *
-     * @param Requests\SearchRequest $request is a request object for operation
+     * @param Requests\searchRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsync(Requests\SearchRequest $request) 
+    public function searchAsync(Requests\searchRequest $request) 
     {
         return $this->searchAsyncWithHttpInfo($request)
             ->then(
@@ -39043,15 +39043,15 @@ class WordsApi
      *
      * Search text in document.
      *
-     * @param Requests\SearchRequest $request is a request object for operation
+     * @param Requests\searchRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsyncWithHttpInfo(Requests\SearchRequest $request) 
+    public function searchAsyncWithHttpInfo(Requests\searchRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SearchResponse';
-        $request = $this->SearchRequest($request);
+        $request = $this->searchRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -39096,12 +39096,12 @@ class WordsApi
     /*
      * Create request for operation 'search'
      *
-     * @param Requests\SearchRequest $request is a request object for operation
+     * @param Requests\searchRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function SearchRequest(Requests\SearchRequest $request)
+    protected function searchRequest(Requests\searchRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -39259,13 +39259,13 @@ class WordsApi
      *
      * Updates border properties.
      *
-     * @param Requests\UpdateBorderRequest $request is a request object for operation
+     * @param Requests\updateBorderRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\BorderResponse
      */
-    public function updateBorder(Requests\UpdateBorderRequest $request)
+    public function updateBorder(Requests\updateBorderRequest $request)
     {
         try {
              list($response) = $this->updateBorderWithHttpInfo($request);
@@ -39282,16 +39282,16 @@ class WordsApi
      *
      * Updates border properties.
      *
-     * @param Requests\UpdateBorderRequest $request is a request object for operation
+     * @param Requests\updateBorderRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\BorderResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateBorderWithHttpInfo(Requests\UpdateBorderRequest $request)
+    public function updateBorderWithHttpInfo(Requests\updateBorderRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
-        $request = $this->UpdateBorderRequest($request);
+        $request = $this->updateBorderRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -39348,12 +39348,12 @@ class WordsApi
      *
      * Updates border properties.
      *
-     * @param Requests\UpdateBorderRequest $request is a request object for operation
+     * @param Requests\updateBorderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateBorderAsync(Requests\UpdateBorderRequest $request) 
+    public function updateBorderAsync(Requests\updateBorderRequest $request) 
     {
         return $this->updateBorderAsyncWithHttpInfo($request)
             ->then(
@@ -39368,15 +39368,15 @@ class WordsApi
      *
      * Updates border properties.
      *
-     * @param Requests\UpdateBorderRequest $request is a request object for operation
+     * @param Requests\updateBorderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateBorderAsyncWithHttpInfo(Requests\UpdateBorderRequest $request) 
+    public function updateBorderAsyncWithHttpInfo(Requests\updateBorderRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
-        $request = $this->UpdateBorderRequest($request);
+        $request = $this->updateBorderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -39421,12 +39421,12 @@ class WordsApi
     /*
      * Create request for operation 'updateBorder'
      *
-     * @param Requests\UpdateBorderRequest $request is a request object for operation
+     * @param Requests\updateBorderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function UpdateBorderRequest(Requests\UpdateBorderRequest $request)
+    protected function updateBorderRequest(Requests\updateBorderRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -39629,13 +39629,13 @@ class WordsApi
      *
      * Update page setup of section.
      *
-     * @param Requests\UpdateSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\updateSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\SectionPageSetupResponse
      */
-    public function updateSectionPageSetup(Requests\UpdateSectionPageSetupRequest $request)
+    public function updateSectionPageSetup(Requests\updateSectionPageSetupRequest $request)
     {
         try {
              list($response) = $this->updateSectionPageSetupWithHttpInfo($request);
@@ -39652,16 +39652,16 @@ class WordsApi
      *
      * Update page setup of section.
      *
-     * @param Requests\UpdateSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\updateSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\SectionPageSetupResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateSectionPageSetupWithHttpInfo(Requests\UpdateSectionPageSetupRequest $request)
+    public function updateSectionPageSetupWithHttpInfo(Requests\updateSectionPageSetupRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
-        $request = $this->UpdateSectionPageSetupRequest($request);
+        $request = $this->updateSectionPageSetupRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -39718,12 +39718,12 @@ class WordsApi
      *
      * Update page setup of section.
      *
-     * @param Requests\UpdateSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\updateSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateSectionPageSetupAsync(Requests\UpdateSectionPageSetupRequest $request) 
+    public function updateSectionPageSetupAsync(Requests\updateSectionPageSetupRequest $request) 
     {
         return $this->updateSectionPageSetupAsyncWithHttpInfo($request)
             ->then(
@@ -39738,15 +39738,15 @@ class WordsApi
      *
      * Update page setup of section.
      *
-     * @param Requests\UpdateSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\updateSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateSectionPageSetupAsyncWithHttpInfo(Requests\UpdateSectionPageSetupRequest $request) 
+    public function updateSectionPageSetupAsyncWithHttpInfo(Requests\updateSectionPageSetupRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
-        $request = $this->UpdateSectionPageSetupRequest($request);
+        $request = $this->updateSectionPageSetupRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -39791,12 +39791,12 @@ class WordsApi
     /*
      * Create request for operation 'updateSectionPageSetup'
      *
-     * @param Requests\UpdateSectionPageSetupRequest $request is a request object for operation
+     * @param Requests\updateSectionPageSetupRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function UpdateSectionPageSetupRequest(Requests\UpdateSectionPageSetupRequest $request)
+    protected function updateSectionPageSetupRequest(Requests\updateSectionPageSetupRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -39990,13 +39990,13 @@ class WordsApi
      *
      * Updates a table cell format.
      *
-     * @param Requests\UpdateTableCellFormatRequest $request is a request object for operation
+     * @param Requests\updateTableCellFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableCellFormatResponse
      */
-    public function updateTableCellFormat(Requests\UpdateTableCellFormatRequest $request)
+    public function updateTableCellFormat(Requests\updateTableCellFormatRequest $request)
     {
         try {
              list($response) = $this->updateTableCellFormatWithHttpInfo($request);
@@ -40013,16 +40013,16 @@ class WordsApi
      *
      * Updates a table cell format.
      *
-     * @param Requests\UpdateTableCellFormatRequest $request is a request object for operation
+     * @param Requests\updateTableCellFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableCellFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateTableCellFormatWithHttpInfo(Requests\UpdateTableCellFormatRequest $request)
+    public function updateTableCellFormatWithHttpInfo(Requests\updateTableCellFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
-        $request = $this->UpdateTableCellFormatRequest($request);
+        $request = $this->updateTableCellFormatRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -40079,12 +40079,12 @@ class WordsApi
      *
      * Updates a table cell format.
      *
-     * @param Requests\UpdateTableCellFormatRequest $request is a request object for operation
+     * @param Requests\updateTableCellFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTableCellFormatAsync(Requests\UpdateTableCellFormatRequest $request) 
+    public function updateTableCellFormatAsync(Requests\updateTableCellFormatRequest $request) 
     {
         return $this->updateTableCellFormatAsyncWithHttpInfo($request)
             ->then(
@@ -40099,15 +40099,15 @@ class WordsApi
      *
      * Updates a table cell format.
      *
-     * @param Requests\UpdateTableCellFormatRequest $request is a request object for operation
+     * @param Requests\updateTableCellFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTableCellFormatAsyncWithHttpInfo(Requests\UpdateTableCellFormatRequest $request) 
+    public function updateTableCellFormatAsyncWithHttpInfo(Requests\updateTableCellFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
-        $request = $this->UpdateTableCellFormatRequest($request);
+        $request = $this->updateTableCellFormatRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -40152,12 +40152,12 @@ class WordsApi
     /*
      * Create request for operation 'updateTableCellFormat'
      *
-     * @param Requests\UpdateTableCellFormatRequest $request is a request object for operation
+     * @param Requests\updateTableCellFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function UpdateTableCellFormatRequest(Requests\UpdateTableCellFormatRequest $request)
+    protected function updateTableCellFormatRequest(Requests\updateTableCellFormatRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -40356,13 +40356,13 @@ class WordsApi
      *
      * Updates a table properties.
      *
-     * @param Requests\UpdateTablePropertiesRequest $request is a request object for operation
+     * @param Requests\updateTablePropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TablePropertiesResponse
      */
-    public function updateTableProperties(Requests\UpdateTablePropertiesRequest $request)
+    public function updateTableProperties(Requests\updateTablePropertiesRequest $request)
     {
         try {
              list($response) = $this->updateTablePropertiesWithHttpInfo($request);
@@ -40379,16 +40379,16 @@ class WordsApi
      *
      * Updates a table properties.
      *
-     * @param Requests\UpdateTablePropertiesRequest $request is a request object for operation
+     * @param Requests\updateTablePropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TablePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateTablePropertiesWithHttpInfo(Requests\UpdateTablePropertiesRequest $request)
+    public function updateTablePropertiesWithHttpInfo(Requests\updateTablePropertiesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
-        $request = $this->UpdateTablePropertiesRequest($request);
+        $request = $this->updateTablePropertiesRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -40445,12 +40445,12 @@ class WordsApi
      *
      * Updates a table properties.
      *
-     * @param Requests\UpdateTablePropertiesRequest $request is a request object for operation
+     * @param Requests\updateTablePropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTablePropertiesAsync(Requests\UpdateTablePropertiesRequest $request) 
+    public function updateTablePropertiesAsync(Requests\updateTablePropertiesRequest $request) 
     {
         return $this->updateTablePropertiesAsyncWithHttpInfo($request)
             ->then(
@@ -40465,15 +40465,15 @@ class WordsApi
      *
      * Updates a table properties.
      *
-     * @param Requests\UpdateTablePropertiesRequest $request is a request object for operation
+     * @param Requests\updateTablePropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTablePropertiesAsyncWithHttpInfo(Requests\UpdateTablePropertiesRequest $request) 
+    public function updateTablePropertiesAsyncWithHttpInfo(Requests\updateTablePropertiesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
-        $request = $this->UpdateTablePropertiesRequest($request);
+        $request = $this->updateTablePropertiesRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -40518,12 +40518,12 @@ class WordsApi
     /*
      * Create request for operation 'updateTableProperties'
      *
-     * @param Requests\UpdateTablePropertiesRequest $request is a request object for operation
+     * @param Requests\updateTablePropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function UpdateTablePropertiesRequest(Requests\UpdateTablePropertiesRequest $request)
+    protected function updateTablePropertiesRequest(Requests\updateTablePropertiesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -40723,13 +40723,13 @@ class WordsApi
      *
      * Updates a table row format.
      *
-     * @param Requests\UpdateTableRowFormatRequest $request is a request object for operation
+     * @param Requests\updateTableRowFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\TableRowFormatResponse
      */
-    public function updateTableRowFormat(Requests\UpdateTableRowFormatRequest $request)
+    public function updateTableRowFormat(Requests\updateTableRowFormatRequest $request)
     {
         try {
              list($response) = $this->updateTableRowFormatWithHttpInfo($request);
@@ -40746,16 +40746,16 @@ class WordsApi
      *
      * Updates a table row format.
      *
-     * @param Requests\UpdateTableRowFormatRequest $request is a request object for operation
+     * @param Requests\updateTableRowFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\TableRowFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateTableRowFormatWithHttpInfo(Requests\UpdateTableRowFormatRequest $request)
+    public function updateTableRowFormatWithHttpInfo(Requests\updateTableRowFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
-        $request = $this->UpdateTableRowFormatRequest($request);
+        $request = $this->updateTableRowFormatRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -40812,12 +40812,12 @@ class WordsApi
      *
      * Updates a table row format.
      *
-     * @param Requests\UpdateTableRowFormatRequest $request is a request object for operation
+     * @param Requests\updateTableRowFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTableRowFormatAsync(Requests\UpdateTableRowFormatRequest $request) 
+    public function updateTableRowFormatAsync(Requests\updateTableRowFormatRequest $request) 
     {
         return $this->updateTableRowFormatAsyncWithHttpInfo($request)
             ->then(
@@ -40832,15 +40832,15 @@ class WordsApi
      *
      * Updates a table row format.
      *
-     * @param Requests\UpdateTableRowFormatRequest $request is a request object for operation
+     * @param Requests\updateTableRowFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTableRowFormatAsyncWithHttpInfo(Requests\UpdateTableRowFormatRequest $request) 
+    public function updateTableRowFormatAsyncWithHttpInfo(Requests\updateTableRowFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
-        $request = $this->UpdateTableRowFormatRequest($request);
+        $request = $this->updateTableRowFormatRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -40885,12 +40885,12 @@ class WordsApi
     /*
      * Create request for operation 'updateTableRowFormat'
      *
-     * @param Requests\UpdateTableRowFormatRequest $request is a request object for operation
+     * @param Requests\updateTableRowFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function UpdateTableRowFormatRequest(Requests\UpdateTableRowFormatRequest $request)
+    protected function updateTableRowFormatRequest(Requests\updateTableRowFormatRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {

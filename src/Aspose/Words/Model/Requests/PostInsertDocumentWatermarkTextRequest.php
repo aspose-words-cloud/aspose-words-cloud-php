@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostInsertDocumentWatermarkTextRequest.php">
@@ -103,3 +102,4 @@ class PostInsertDocumentWatermarkTextRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
+}

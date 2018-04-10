@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RenderParagraphRequest.php">
@@ -103,3 +102,4 @@ class RenderParagraphRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
+}

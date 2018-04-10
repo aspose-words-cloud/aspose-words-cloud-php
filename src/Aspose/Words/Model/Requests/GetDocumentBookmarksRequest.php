@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentBookmarksRequest.php">
@@ -75,3 +74,4 @@ class GetDocumentBookmarksRequest
      * Password for opening an encrypted document.
      */
     public $password;
+}

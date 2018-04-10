@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutConvertDocumentRequest.php">
@@ -75,3 +74,4 @@ class PutConvertDocumentRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
+}

@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostLoadWebDocumentRequest.php">
@@ -54,3 +53,4 @@ class PostLoadWebDocumentRequest
      * File storage, which have to be used.
      */
     public $storage;
+}

@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteDocumentWatermarkRequest.php">
@@ -96,3 +95,4 @@ class DeleteDocumentWatermarkRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
+}

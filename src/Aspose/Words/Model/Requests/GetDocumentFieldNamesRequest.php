@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentFieldNamesRequest.php">
@@ -82,3 +81,4 @@ class GetDocumentFieldNamesRequest
      * If true, result includes \"mustache\" field names.
      */
     public $use_non_merge_fields;
+}

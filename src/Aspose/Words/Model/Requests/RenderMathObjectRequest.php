@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RenderMathObjectRequest.php">
@@ -103,3 +102,4 @@ class RenderMathObjectRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
+}

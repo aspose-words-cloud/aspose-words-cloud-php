@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteBorderRequest.php">
@@ -110,3 +109,4 @@ class DeleteBorderRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
+}

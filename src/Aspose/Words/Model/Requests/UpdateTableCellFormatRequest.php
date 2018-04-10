@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateTableCellFormatRequest.php">
@@ -117,3 +116,4 @@ class UpdateTableCellFormatRequest
      * The properties.
      */
     public $format;
+}

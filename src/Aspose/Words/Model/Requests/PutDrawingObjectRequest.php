@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutDrawingObjectRequest.php">
@@ -117,3 +116,4 @@ class PutDrawingObjectRequest
      * Path to node, which contains collection of drawing objects.
      */
     public $node_path;
+}

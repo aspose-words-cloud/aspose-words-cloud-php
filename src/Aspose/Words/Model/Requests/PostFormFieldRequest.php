@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostFormFieldRequest.php">
@@ -117,3 +116,4 @@ class PostFormFieldRequest
      * Path to node that contains collection of formfields.
      */
     public $node_path;
+}

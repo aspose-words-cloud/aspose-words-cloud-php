@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetFootnotesRequest.php">
@@ -82,3 +81,4 @@ class GetFootnotesRequest
      * Path to node, which contains collection of footnotes.
      */
     public $node_path;
+}

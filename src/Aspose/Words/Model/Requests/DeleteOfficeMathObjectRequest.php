@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteOfficeMathObjectRequest.php">
@@ -110,3 +109,4 @@ class DeleteOfficeMathObjectRequest
      * Path to node, which contains collection of OfficeMath objects.
      */
     public $node_path;
+}

@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetSectionPageSetupRequest.php">
@@ -82,3 +81,4 @@ class GetSectionPageSetupRequest
      * Password for opening an encrypted document.
      */
     public $password;
+}

@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetTableRequest.php">
@@ -89,3 +88,4 @@ class GetTableRequest
      * Path to node, which contains tables.
      */
     public $node_path;
+}

@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutFieldRequest.php">
@@ -117,3 +116,4 @@ class PutFieldRequest
      * Field will be inserted before node with id=\"nodeId\".
      */
     public $insert_before_node;
+}

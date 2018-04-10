@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentWithFormatRequest.php">
@@ -96,3 +95,4 @@ class GetDocumentWithFormatRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
+}

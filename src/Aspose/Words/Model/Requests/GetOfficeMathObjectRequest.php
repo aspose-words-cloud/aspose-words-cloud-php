@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetOfficeMathObjectRequest.php">
@@ -89,3 +88,4 @@ class GetOfficeMathObjectRequest
      * Path to node, which contains collection of OfficeMath objects.
      */
     public $node_path;
+}

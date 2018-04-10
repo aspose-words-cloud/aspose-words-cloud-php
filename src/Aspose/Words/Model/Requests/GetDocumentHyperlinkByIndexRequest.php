@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentHyperlinkByIndexRequest.php">
@@ -82,3 +81,4 @@ class GetDocumentHyperlinkByIndexRequest
      * Password for opening an encrypted document.
      */
     public $password;
+}

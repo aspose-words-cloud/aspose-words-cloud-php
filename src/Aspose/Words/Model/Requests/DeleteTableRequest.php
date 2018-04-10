@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteTableRequest.php">
@@ -110,3 +109,4 @@ class DeleteTableRequest
      * Path to node, which contains tables.
      */
     public $node_path;
+}

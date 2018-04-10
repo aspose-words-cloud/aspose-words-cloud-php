@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutCreateDocumentRequest.php">
@@ -61,3 +60,4 @@ class PutCreateDocumentRequest
      * The document folder.
      */
     public $folder;
+}

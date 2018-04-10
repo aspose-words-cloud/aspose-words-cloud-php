@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteDrawingObjectRequest.php">
@@ -110,3 +109,4 @@ class DeleteDrawingObjectRequest
      * Path to node, which contains collection of drawing objects.
      */
     public $node_path;
+}

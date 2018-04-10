@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostUpdateDocumentFieldsRequest.php">
@@ -82,3 +81,4 @@ class PostUpdateDocumentFieldsRequest
      * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
+}

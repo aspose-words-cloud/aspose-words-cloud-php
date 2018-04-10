@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteHeadersFootersRequest.php">
@@ -110,3 +109,4 @@ class DeleteHeadersFootersRequest
      * List of types of headers and footers.
      */
     public $headers_footers_types;
+}

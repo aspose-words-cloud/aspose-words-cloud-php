@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RenderTableRequest.php">
@@ -103,3 +102,4 @@ class RenderTableRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
+}

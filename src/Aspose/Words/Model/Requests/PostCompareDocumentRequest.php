@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostCompareDocumentRequest.php">
@@ -89,3 +88,4 @@ class PostCompareDocumentRequest
      * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
+}

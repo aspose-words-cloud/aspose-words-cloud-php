@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetBorderRequest.php">
@@ -89,3 +88,4 @@ class GetBorderRequest
      * Password for opening an encrypted document.
      */
     public $password;
+}

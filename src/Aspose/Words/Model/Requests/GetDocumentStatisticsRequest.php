@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentStatisticsRequest.php">
@@ -96,3 +95,4 @@ class GetDocumentStatisticsRequest
      * Support including/excluding shape's text from the WordCount. Default value is \"false\"
      */
     public $include_text_in_shapes;
+}

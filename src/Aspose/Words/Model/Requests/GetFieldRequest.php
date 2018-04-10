@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetFieldRequest.php">
@@ -89,3 +88,4 @@ class GetFieldRequest
      * Path to node, which contains collection of fields.
      */
     public $node_path;
+}

@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ResetCacheRequest.php">
@@ -33,3 +32,4 @@ namespace Aspose\Words\Model\Requests;
  */
 class ResetCacheRequest
 {
+}

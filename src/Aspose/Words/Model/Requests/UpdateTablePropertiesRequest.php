@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateTablePropertiesRequest.php">
@@ -117,3 +116,4 @@ class UpdateTablePropertiesRequest
      * Path to node, which contains tables.
      */
     public $node_path;
+}

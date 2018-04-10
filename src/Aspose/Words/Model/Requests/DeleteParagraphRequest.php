@@ -1,5 +1,4 @@
 <?php
-}
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteParagraphRequest.php">
@@ -110,3 +109,4 @@ class DeleteParagraphRequest
      * Path to node which contains paragraphs.
      */
     public $node_path;
+}

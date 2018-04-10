@@ -37,17 +37,17 @@ class GetDocumentRequest
      *  
      * @param string $document_name The file name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($document_name, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($document_name, $folder = null, $load_encoding = null, $password = null, $storage = null)             
     {
         $this->document_name = $document_name;
         $this->folder = $folder;
-        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->storage = $storage;
     }
 
     /*
@@ -61,11 +61,6 @@ class GetDocumentRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
-     */
-    public $storage;
-	
-    /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
@@ -74,4 +69,9 @@ class GetDocumentRequest
      * Password for opening an encrypted document.
      */
     public $password;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 }

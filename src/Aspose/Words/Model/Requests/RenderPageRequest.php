@@ -35,27 +35,32 @@ class RenderPageRequest
     /*
      * Initializes a new instance of the RenderPageRequest class.
      *  
+     * @param string $format The destination format.
      * @param string $name The file name.
      * @param int $page_index Comment index
-     * @param string $format The destination format.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $page_index, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)             
+    public function __construct($format, $name, $page_index, $folder = null, $fonts_location = null, $load_encoding = null, $password = null, $storage = null)             
     {
+        $this->format = $format;
         $this->name = $name;
         $this->page_index = $page_index;
-        $this->format = $format;
         $this->folder = $folder;
-        $this->storage = $storage;
+        $this->fonts_location = $fonts_location;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->fonts_location = $fonts_location;
+        $this->storage = $storage;
     }
 
+    /*
+     * The destination format.
+     */
+    public $format;
+	
     /*
      * The file name.
      */
@@ -67,19 +72,14 @@ class RenderPageRequest
     public $page_index;
 	
     /*
-     * The destination format.
-     */
-    public $format;
-	
-    /*
      * Original document folder.
      */
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Folder in filestorage with custom fonts.
      */
-    public $storage;
+    public $fonts_location;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -92,7 +92,7 @@ class RenderPageRequest
     public $password;
 	
     /*
-     * Folder in filestorage with custom fonts.
+     * File storage, which have to be used.
      */
-    public $fonts_location;
+    public $storage;
 }

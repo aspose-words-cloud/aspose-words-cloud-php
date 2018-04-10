@@ -35,36 +35,36 @@ class GetDocumentWithFormatRequest
     /*
      * Initializes a new instance of the GetDocumentWithFormatRequest class.
      *  
-     * @param string $name The file name.
      * @param string $format The destination format.
+     * @param string $name The file name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $out_path Path to save result
      * @param string $fonts_location Folder in filestorage with custom fonts.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $out_path Path to save result
+     * @param string $password Password for opening an encrypted document.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $out_path = null, $fonts_location = null)             
+    public function __construct($format, $name, $folder = null, $fonts_location = null, $load_encoding = null, $out_path = null, $password = null, $storage = null)             
     {
-        $this->name = $name;
         $this->format = $format;
+        $this->name = $name;
         $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->out_path = $out_path;
         $this->fonts_location = $fonts_location;
+        $this->load_encoding = $load_encoding;
+        $this->out_path = $out_path;
+        $this->password = $password;
+        $this->storage = $storage;
     }
 
-    /*
-     * The file name.
-     */
-    public $name;
-	
     /*
      * The destination format.
      */
     public $format;
+	
+    /*
+     * The file name.
+     */
+    public $name;
 	
     /*
      * Original document folder.
@@ -72,9 +72,9 @@ class GetDocumentWithFormatRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Folder in filestorage with custom fonts.
      */
-    public $storage;
+    public $fonts_location;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -82,17 +82,17 @@ class GetDocumentWithFormatRequest
     public $load_encoding;
 	
     /*
-     * Password for opening an encrypted document.
-     */
-    public $password;
-	
-    /*
      * Path to save result
      */
     public $out_path;
 	
     /*
-     * Folder in filestorage with custom fonts.
+     * Password for opening an encrypted document.
      */
-    public $fonts_location;
+    public $password;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 }

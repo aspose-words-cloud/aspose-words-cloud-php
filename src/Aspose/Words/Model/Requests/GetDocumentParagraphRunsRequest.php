@@ -38,18 +38,18 @@ class GetDocumentParagraphRunsRequest
      * @param string $name The document name.
      * @param string $paragraph_path Path to parent paragraph.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $paragraph_path, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($name, $paragraph_path, $folder = null, $load_encoding = null, $password = null, $storage = null)             
     {
         $this->name = $name;
         $this->paragraph_path = $paragraph_path;
         $this->folder = $folder;
-        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->storage = $storage;
     }
 
     /*
@@ -68,11 +68,6 @@ class GetDocumentParagraphRunsRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
-     */
-    public $storage;
-	
-    /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
@@ -81,4 +76,9 @@ class GetDocumentParagraphRunsRequest
      * Password for opening an encrypted document.
      */
     public $password;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 }

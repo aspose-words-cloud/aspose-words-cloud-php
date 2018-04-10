@@ -37,23 +37,23 @@ class GetDocumentStatisticsRequest
      *  
      * @param string $name The document name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
      * @param bool $include_comments Support including/excluding comments from the WordCount. Default value is \"true\".
      * @param bool $include_footnotes Support including/excluding footnotes from the WordCount. Default value is \"false\".
      * @param bool $include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is \"false\"
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)             
+    public function __construct($name, $folder = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null, $load_encoding = null, $password = null, $storage = null)             
     {
         $this->name = $name;
         $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
         $this->include_comments = $include_comments;
         $this->include_footnotes = $include_footnotes;
         $this->include_text_in_shapes = $include_text_in_shapes;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->storage = $storage;
     }
 
     /*
@@ -65,21 +65,6 @@ class GetDocumentStatisticsRequest
      * Original document folder.
      */
     public $folder;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
-	
-    /*
-     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     */
-    public $load_encoding;
-	
-    /*
-     * Password for opening an encrypted document.
-     */
-    public $password;
 	
     /*
      * Support including/excluding comments from the WordCount. Default value is \"true\".
@@ -95,4 +80,19 @@ class GetDocumentStatisticsRequest
      * Support including/excluding shape's text from the WordCount. Default value is \"false\"
      */
     public $include_text_in_shapes;
+	
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public $load_encoding;
+	
+    /*
+     * Password for opening an encrypted document.
+     */
+    public $password;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 }

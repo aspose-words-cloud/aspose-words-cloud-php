@@ -36,22 +36,22 @@ class GetHeaderFootersRequest
      * Initializes a new instance of the GetHeaderFootersRequest class.
      *  
      * @param string $name The document name.
+     * @param string $filter_by_type List of types of headers and footers.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $section_path Path to parent section.
-     * @param string $filter_by_type List of types of headers and footers.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $section_path = null, $filter_by_type = null)             
+    public function __construct($name, $filter_by_type = null, $folder = null, $load_encoding = null, $password = null, $section_path = null, $storage = null)             
     {
         $this->name = $name;
+        $this->filter_by_type = $filter_by_type;
         $this->folder = $folder;
-        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->section_path = $section_path;
-        $this->filter_by_type = $filter_by_type;
+        $this->storage = $storage;
     }
 
     /*
@@ -60,14 +60,14 @@ class GetHeaderFootersRequest
     public $name;
 	
     /*
+     * List of types of headers and footers.
+     */
+    public $filter_by_type;
+	
+    /*
      * Original document folder.
      */
     public $folder;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -85,7 +85,7 @@ class GetHeaderFootersRequest
     public $section_path;
 	
     /*
-     * List of types of headers and footers.
+     * File storage, which have to be used.
      */
-    public $filter_by_type;
+    public $storage;
 }

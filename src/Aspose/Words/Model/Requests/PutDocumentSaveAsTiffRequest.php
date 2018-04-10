@@ -37,59 +37,59 @@ class PutDocumentSaveAsTiffRequest
      *  
      * @param string $name The document name.
      * @param \Aspose\Words\Model\TiffSaveOptionsData $save_options Tiff save options.
-     * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $result_file The resulting file name.
-     * @param bool $use_anti_aliasing Use antialiasing flag.
-     * @param bool $use_high_quality_rendering Use high quality flag.
+     * @param string $dml_effects_rendering_mode Optional, default is Simplified.
+     * @param string $dml_rendering_mode Optional, default is Fallback.
+     * @param string $folder Original document folder.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
      * @param double $image_brightness Brightness for the generated images.
      * @param string $image_color_mode Color mode for the generated images.
      * @param double $image_contrast The contrast for the generated images.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $numeral_format The images numeral format.
      * @param int $page_count Number of pages to render.
      * @param int $page_index Page index to start rendering.
      * @param string $paper_color Background image color.
+     * @param string $password Password for opening an encrypted document.
      * @param string $pixel_format The pixel format of generated images.
      * @param double $resolution The resolution of generated images.
+     * @param string $result_file The resulting file name.
      * @param double $scale Zoom factor for generated images.
-     * @param string $tiff_compression The compression tipe.
-     * @param string $dml_rendering_mode Optional, default is Fallback.
-     * @param string $dml_effects_rendering_mode Optional, default is Simplified.
+     * @param string $storage File storage, which have to be used.
      * @param string $tiff_binarization_method Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
+     * @param string $tiff_compression The compression tipe.
+     * @param bool $use_anti_aliasing Use antialiasing flag.
+     * @param bool $use_high_quality_rendering Use high quality flag.
      * @param bool $zip_output Optional. A value determining zip output or not.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $save_options, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $result_file = null, $use_anti_aliasing = null, $use_high_quality_rendering = null, $image_brightness = null, $image_color_mode = null, $image_contrast = null, $numeral_format = null, $page_count = null, $page_index = null, $paper_color = null, $pixel_format = null, $resolution = null, $scale = null, $tiff_compression = null, $dml_rendering_mode = null, $dml_effects_rendering_mode = null, $tiff_binarization_method = null, $zip_output = null, $fonts_location = null)             
+    public function __construct($name, $save_options, $dest_file_name = null, $dml_effects_rendering_mode = null, $dml_rendering_mode = null, $folder = null, $fonts_location = null, $image_brightness = null, $image_color_mode = null, $image_contrast = null, $load_encoding = null, $numeral_format = null, $page_count = null, $page_index = null, $paper_color = null, $password = null, $pixel_format = null, $resolution = null, $result_file = null, $scale = null, $storage = null, $tiff_binarization_method = null, $tiff_compression = null, $use_anti_aliasing = null, $use_high_quality_rendering = null, $zip_output = null)             
     {
         $this->name = $name;
         $this->save_options = $save_options;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
         $this->dest_file_name = $dest_file_name;
-        $this->result_file = $result_file;
-        $this->use_anti_aliasing = $use_anti_aliasing;
-        $this->use_high_quality_rendering = $use_high_quality_rendering;
+        $this->dml_effects_rendering_mode = $dml_effects_rendering_mode;
+        $this->dml_rendering_mode = $dml_rendering_mode;
+        $this->folder = $folder;
+        $this->fonts_location = $fonts_location;
         $this->image_brightness = $image_brightness;
         $this->image_color_mode = $image_color_mode;
         $this->image_contrast = $image_contrast;
+        $this->load_encoding = $load_encoding;
         $this->numeral_format = $numeral_format;
         $this->page_count = $page_count;
         $this->page_index = $page_index;
         $this->paper_color = $paper_color;
+        $this->password = $password;
         $this->pixel_format = $pixel_format;
         $this->resolution = $resolution;
+        $this->result_file = $result_file;
         $this->scale = $scale;
-        $this->tiff_compression = $tiff_compression;
-        $this->dml_rendering_mode = $dml_rendering_mode;
-        $this->dml_effects_rendering_mode = $dml_effects_rendering_mode;
+        $this->storage = $storage;
         $this->tiff_binarization_method = $tiff_binarization_method;
+        $this->tiff_compression = $tiff_compression;
+        $this->use_anti_aliasing = $use_anti_aliasing;
+        $this->use_high_quality_rendering = $use_high_quality_rendering;
         $this->zip_output = $zip_output;
-        $this->fonts_location = $fonts_location;
     }
 
     /*
@@ -103,44 +103,29 @@ class PutDocumentSaveAsTiffRequest
     public $save_options;
 	
     /*
-     * Original document folder.
-     */
-    public $folder;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
-	
-    /*
-     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     */
-    public $load_encoding;
-	
-    /*
-     * Password for opening an encrypted document.
-     */
-    public $password;
-	
-    /*
      * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
 	
     /*
-     * The resulting file name.
+     * Optional, default is Simplified.
      */
-    public $result_file;
+    public $dml_effects_rendering_mode;
 	
     /*
-     * Use antialiasing flag.
+     * Optional, default is Fallback.
      */
-    public $use_anti_aliasing;
+    public $dml_rendering_mode;
 	
     /*
-     * Use high quality flag.
+     * Original document folder.
      */
-    public $use_high_quality_rendering;
+    public $folder;
+	
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public $fonts_location;
 	
     /*
      * Brightness for the generated images.
@@ -156,6 +141,11 @@ class PutDocumentSaveAsTiffRequest
      * The contrast for the generated images.
      */
     public $image_contrast;
+	
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public $load_encoding;
 	
     /*
      * The images numeral format.
@@ -178,6 +168,11 @@ class PutDocumentSaveAsTiffRequest
     public $paper_color;
 	
     /*
+     * Password for opening an encrypted document.
+     */
+    public $password;
+	
+    /*
      * The pixel format of generated images.
      */
     public $pixel_format;
@@ -188,24 +183,19 @@ class PutDocumentSaveAsTiffRequest
     public $resolution;
 	
     /*
+     * The resulting file name.
+     */
+    public $result_file;
+	
+    /*
      * Zoom factor for generated images.
      */
     public $scale;
 	
     /*
-     * The compression tipe.
+     * File storage, which have to be used.
      */
-    public $tiff_compression;
-	
-    /*
-     * Optional, default is Fallback.
-     */
-    public $dml_rendering_mode;
-	
-    /*
-     * Optional, default is Simplified.
-     */
-    public $dml_effects_rendering_mode;
+    public $storage;
 	
     /*
      * Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
@@ -213,12 +203,22 @@ class PutDocumentSaveAsTiffRequest
     public $tiff_binarization_method;
 	
     /*
+     * The compression tipe.
+     */
+    public $tiff_compression;
+	
+    /*
+     * Use antialiasing flag.
+     */
+    public $use_anti_aliasing;
+	
+    /*
+     * Use high quality flag.
+     */
+    public $use_high_quality_rendering;
+	
+    /*
      * Optional. A value determining zip output or not.
      */
     public $zip_output;
-	
-    /*
-     * Folder in filestorage with custom fonts.
-     */
-    public $fonts_location;
 }

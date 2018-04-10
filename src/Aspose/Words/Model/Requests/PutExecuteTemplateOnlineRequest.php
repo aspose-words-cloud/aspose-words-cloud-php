@@ -35,30 +35,30 @@ class PutExecuteTemplateOnlineRequest
     /*
      * Initializes a new instance of the PutExecuteTemplateOnlineRequest class.
      *  
-     * @param \SplFileObject $template File with template
      * @param \SplFileObject $data File with mailmerge data
+     * @param \SplFileObject $template File with template
      * @param string $cleanup Clean up options.
      * @param bool $use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
      * @param bool $with_regions Merge with regions or not. True by default
      */
-    public function __construct($template, $data, $cleanup = null, $use_whole_paragraph_as_region = null, $with_regions = null)             
+    public function __construct($data, $template, $cleanup = null, $use_whole_paragraph_as_region = null, $with_regions = null)             
     {
-        $this->template = $template;
         $this->data = $data;
+        $this->template = $template;
         $this->cleanup = $cleanup;
         $this->use_whole_paragraph_as_region = $use_whole_paragraph_as_region;
         $this->with_regions = $with_regions;
     }
 
     /*
-     * File with template
-     */
-    public $template;
-	
-    /*
      * File with mailmerge data
      */
     public $data;
+	
+    /*
+     * File with template
+     */
+    public $template;
 	
     /*
      * Clean up options.

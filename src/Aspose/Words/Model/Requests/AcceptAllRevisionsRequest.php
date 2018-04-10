@@ -36,20 +36,20 @@ class AcceptAllRevisionsRequest
      * Initializes a new instance of the AcceptAllRevisionsRequest class.
      *  
      * @param string $name The document name.
+     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    public function __construct($name, $dest_file_name = null, $folder = null, $load_encoding = null, $password = null, $storage = null)             
     {
         $this->name = $name;
+        $this->dest_file_name = $dest_file_name;
         $this->folder = $folder;
-        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
+        $this->storage = $storage;
     }
 
     /*
@@ -58,14 +58,14 @@ class AcceptAllRevisionsRequest
     public $name;
 	
     /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public $dest_file_name;
+	
+    /*
      * Original document folder.
      */
     public $folder;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -78,7 +78,7 @@ class AcceptAllRevisionsRequest
     public $password;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * File storage, which have to be used.
      */
-    public $dest_file_name;
+    public $storage;
 }

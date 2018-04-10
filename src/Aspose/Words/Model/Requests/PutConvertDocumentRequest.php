@@ -37,17 +37,17 @@ class PutConvertDocumentRequest
      *  
      * @param \SplFileObject $document Converting document
      * @param string $format Format to convert.
-     * @param string $storage File storage, which have to be used.
-     * @param string $out_path Path for saving operation result to the local storage.
      * @param string $fonts_location Folder in filestorage with custom fonts.
+     * @param string $out_path Path for saving operation result to the local storage.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($document, $format, $storage = null, $out_path = null, $fonts_location = null)             
+    public function __construct($document, $format, $fonts_location = null, $out_path = null, $storage = null)             
     {
         $this->document = $document;
         $this->format = $format;
-        $this->storage = $storage;
-        $this->out_path = $out_path;
         $this->fonts_location = $fonts_location;
+        $this->out_path = $out_path;
+        $this->storage = $storage;
     }
 
     /*
@@ -61,9 +61,9 @@ class PutConvertDocumentRequest
     public $format;
 	
     /*
-     * File storage, which have to be used.
+     * Folder in filestorage with custom fonts.
      */
-    public $storage;
+    public $fonts_location;
 	
     /*
      * Path for saving operation result to the local storage.
@@ -71,7 +71,7 @@ class PutConvertDocumentRequest
     public $out_path;
 	
     /*
-     * Folder in filestorage with custom fonts.
+     * File storage, which have to be used.
      */
-    public $fonts_location;
+    public $storage;
 }

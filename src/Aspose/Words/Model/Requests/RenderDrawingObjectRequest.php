@@ -35,34 +35,29 @@ class RenderDrawingObjectRequest
     /*
      * Initializes a new instance of the RenderDrawingObjectRequest class.
      *  
-     * @param string $name The file name.
      * @param string $format The destination format.
      * @param int $index Object's index
+     * @param string $name The file name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $node_path Path to node, which contains drawing objects.
      * @param string $fonts_location Folder in filestorage with custom fonts.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $node_path Path to node, which contains drawing objects.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $format, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null, $fonts_location = null)             
+    public function __construct($format, $index, $name, $folder = null, $fonts_location = null, $load_encoding = null, $node_path = null, $password = null, $storage = null)             
     {
-        $this->name = $name;
         $this->format = $format;
         $this->index = $index;
+        $this->name = $name;
         $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->node_path = $node_path;
         $this->fonts_location = $fonts_location;
+        $this->load_encoding = $load_encoding;
+        $this->node_path = $node_path;
+        $this->password = $password;
+        $this->storage = $storage;
     }
 
-    /*
-     * The file name.
-     */
-    public $name;
-	
     /*
      * The destination format.
      */
@@ -74,14 +69,19 @@ class RenderDrawingObjectRequest
     public $index;
 	
     /*
+     * The file name.
+     */
+    public $name;
+	
+    /*
      * Original document folder.
      */
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Folder in filestorage with custom fonts.
      */
-    public $storage;
+    public $fonts_location;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -89,17 +89,17 @@ class RenderDrawingObjectRequest
     public $load_encoding;
 	
     /*
-     * Password for opening an encrypted document.
-     */
-    public $password;
-	
-    /*
      * Path to node, which contains drawing objects.
      */
     public $node_path;
 	
     /*
-     * Folder in filestorage with custom fonts.
+     * Password for opening an encrypted document.
      */
-    public $fonts_location;
+    public $password;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 }

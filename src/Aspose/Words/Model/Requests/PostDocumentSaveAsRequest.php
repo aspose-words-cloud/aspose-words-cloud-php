@@ -37,23 +37,23 @@ class PostDocumentSaveAsRequest
      *  
      * @param string $name The document name.
      * @param \Aspose\Words\Model\SaveOptionsData $save_options_data Save options.
+     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $save_options_data, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $fonts_location = null)             
+    public function __construct($name, $save_options_data, $dest_file_name = null, $folder = null, $fonts_location = null, $load_encoding = null, $password = null, $storage = null)             
     {
         $this->name = $name;
         $this->save_options_data = $save_options_data;
+        $this->dest_file_name = $dest_file_name;
         $this->folder = $folder;
-        $this->storage = $storage;
+        $this->fonts_location = $fonts_location;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
-        $this->fonts_location = $fonts_location;
+        $this->storage = $storage;
     }
 
     /*
@@ -67,14 +67,19 @@ class PostDocumentSaveAsRequest
     public $save_options_data;
 	
     /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public $dest_file_name;
+	
+    /*
      * Original document folder.
      */
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Folder in filestorage with custom fonts.
      */
-    public $storage;
+    public $fonts_location;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -87,12 +92,7 @@ class PostDocumentSaveAsRequest
     public $password;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * File storage, which have to be used.
      */
-    public $dest_file_name;
-	
-    /*
-     * Folder in filestorage with custom fonts.
-     */
-    public $fonts_location;
+    public $storage;
 }

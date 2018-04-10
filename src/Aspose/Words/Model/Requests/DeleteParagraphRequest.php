@@ -35,40 +35,45 @@ class DeleteParagraphRequest
     /*
      * Initializes a new instance of the DeleteParagraphRequest class.
      *  
-     * @param string $name The file name.
      * @param int $index Object's index
-     * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
+     * @param string $name The file name.
      * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $folder Original document folder.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $node_path Path to node which contains paragraphs.
+     * @param string $password Password for opening an encrypted document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $node_path Path to node which contains paragraphs.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $node_path = null)             
+    public function __construct($index, $name, $dest_file_name = null, $folder = null, $load_encoding = null, $node_path = null, $password = null, $revision_author = null, $revision_date_time = null, $storage = null)             
     {
-        $this->name = $name;
         $this->index = $index;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
+        $this->name = $name;
         $this->dest_file_name = $dest_file_name;
+        $this->folder = $folder;
+        $this->load_encoding = $load_encoding;
+        $this->node_path = $node_path;
+        $this->password = $password;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->node_path = $node_path;
+        $this->storage = $storage;
     }
 
+    /*
+     * Object's index
+     */
+    public $index;
+	
     /*
      * The file name.
      */
     public $name;
 	
     /*
-     * Object's index
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public $index;
+    public $dest_file_name;
 	
     /*
      * Original document folder.
@@ -76,24 +81,19 @@ class DeleteParagraphRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
-     */
-    public $storage;
-	
-    /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
 	
     /*
+     * Path to node which contains paragraphs.
+     */
+    public $node_path;
+	
+    /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public $dest_file_name;
 	
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
@@ -106,7 +106,7 @@ class DeleteParagraphRequest
     public $revision_date_time;
 	
     /*
-     * Path to node which contains paragraphs.
+     * File storage, which have to be used.
      */
-    public $node_path;
+    public $storage;
 }

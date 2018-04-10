@@ -35,34 +35,34 @@ class GetFieldRequest
     /*
      * Initializes a new instance of the GetFieldRequest class.
      *  
-     * @param string $name The file name.
      * @param int $index Object's index
+     * @param string $name The file name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
      * @param string $node_path Path to node, which contains collection of fields.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null)             
+    public function __construct($index, $name, $folder = null, $load_encoding = null, $node_path = null, $password = null, $storage = null)             
     {
-        $this->name = $name;
         $this->index = $index;
+        $this->name = $name;
         $this->folder = $folder;
-        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
-        $this->password = $password;
         $this->node_path = $node_path;
+        $this->password = $password;
+        $this->storage = $storage;
     }
 
-    /*
-     * The file name.
-     */
-    public $name;
-	
     /*
      * Object's index
      */
     public $index;
+	
+    /*
+     * The file name.
+     */
+    public $name;
 	
     /*
      * Original document folder.
@@ -70,14 +70,14 @@ class GetFieldRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
-     */
-    public $storage;
-	
-    /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
+	
+    /*
+     * Path to node, which contains collection of fields.
+     */
+    public $node_path;
 	
     /*
      * Password for opening an encrypted document.
@@ -85,7 +85,7 @@ class GetFieldRequest
     public $password;
 	
     /*
-     * Path to node, which contains collection of fields.
+     * File storage, which have to be used.
      */
-    public $node_path;
+    public $storage;
 }

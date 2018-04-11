@@ -54,8 +54,8 @@ class ProtectionResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'protection_result' => 'bool',
-        'document_link' => '\Aspose\Words\Model\FileLink'
+        'document_link' => '\Aspose\Words\Model\FileLink',
+        'protection_result' => 'bool'
     ];
 
     /*
@@ -64,8 +64,8 @@ class ProtectionResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'protection_result' => null,
-        'document_link' => null
+        'document_link' => null,
+        'protection_result' => null
     ];
 
     /*
@@ -95,8 +95,8 @@ class ProtectionResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'protection_result' => 'ProtectionResult',
-        'document_link' => 'DocumentLink'
+        'document_link' => 'DocumentLink',
+        'protection_result' => 'ProtectionResult'
     ];
 
     /*
@@ -105,8 +105,8 @@ class ProtectionResponse extends AsposeResponse
      * @var string[]
      */
     protected static $setters = [
-        'protection_result' => 'setProtectionResult',
-        'document_link' => 'setDocumentLink'
+        'document_link' => 'setDocumentLink',
+        'protection_result' => 'setProtectionResult'
     ];
 
     /*
@@ -115,8 +115,8 @@ class ProtectionResponse extends AsposeResponse
      * @var string[]
      */
     protected static $getters = [
-        'protection_result' => 'getProtectionResult',
-        'document_link' => 'getDocumentLink'
+        'document_link' => 'getDocumentLink',
+        'protection_result' => 'getProtectionResult'
     ];
 
     /*
@@ -175,8 +175,8 @@ class ProtectionResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['protection_result'] = isset($data['protection_result']) ? $data['protection_result'] : null;
         $this->container['document_link'] = isset($data['document_link']) ? $data['document_link'] : null;
+        $this->container['protection_result'] = isset($data['protection_result']) ? $data['protection_result'] : null;
     }
 
     /*
@@ -208,30 +208,6 @@ class ProtectionResponse extends AsposeResponse
 
 
     /*
-     * Gets protection_result
-     *
-     * @return bool
-     */
-    public function getProtectionResult()
-    {
-        return $this->container['protection_result'];
-    }
-
-    /*
-     * Sets protection_result
-     *
-     * @param bool $protection_result Result of the changing of protection
-     *
-     * @return $this
-     */
-    public function setProtectionResult($protection_result)
-    {
-        $this->container['protection_result'] = $protection_result;
-
-        return $this;
-    }
-
-    /*
      * Gets document_link
      *
      * @return \Aspose\Words\Model\FileLink
@@ -251,6 +227,30 @@ class ProtectionResponse extends AsposeResponse
     public function setDocumentLink($document_link)
     {
         $this->container['document_link'] = $document_link;
+
+        return $this;
+    }
+
+    /*
+     * Gets protection_result
+     *
+     * @return bool
+     */
+    public function getProtectionResult()
+    {
+        return $this->container['protection_result'];
+    }
+
+    /*
+     * Sets protection_result
+     *
+     * @param bool $protection_result Result of the changing of protection
+     *
+     * @return $this
+     */
+    public function setProtectionResult($protection_result)
+    {
+        $this->container['protection_result'] = $protection_result;
 
         return $this;
     }

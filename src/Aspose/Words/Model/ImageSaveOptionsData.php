@@ -54,19 +54,19 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'graphics_quality_options' => '\Aspose\Words\Model\GraphicsQualityOptionsData',
+        'horizontal_resolution' => 'double',
         'image_brightness' => 'double',
         'image_color_mode' => 'string',
         'image_contrast' => 'double',
-        'graphics_quality_options' => '\Aspose\Words\Model\GraphicsQualityOptionsData',
-        'pixel_format' => 'string',
         'paper_color' => 'string',
+        'pixel_format' => 'string',
         'resolution' => 'double',
-        'horizontal_resolution' => 'double',
-        'vertical_resolution' => 'double',
         'scale' => 'double',
-        'use_high_quality_rendering' => 'bool',
         'use_anti_aliasing' => 'bool',
-        'use_gdi_emf_renderer' => 'bool'
+        'use_gdi_emf_renderer' => 'bool',
+        'use_high_quality_rendering' => 'bool',
+        'vertical_resolution' => 'double'
     ];
 
     /*
@@ -75,19 +75,19 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'graphics_quality_options' => null,
+        'horizontal_resolution' => 'double',
         'image_brightness' => 'double',
         'image_color_mode' => null,
         'image_contrast' => 'double',
-        'graphics_quality_options' => null,
-        'pixel_format' => null,
         'paper_color' => null,
+        'pixel_format' => null,
         'resolution' => 'double',
-        'horizontal_resolution' => 'double',
-        'vertical_resolution' => 'double',
         'scale' => 'double',
-        'use_high_quality_rendering' => null,
         'use_anti_aliasing' => null,
-        'use_gdi_emf_renderer' => null
+        'use_gdi_emf_renderer' => null,
+        'use_high_quality_rendering' => null,
+        'vertical_resolution' => 'double'
     ];
 
     /*
@@ -117,19 +117,19 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
+        'graphics_quality_options' => 'GraphicsQualityOptions',
+        'horizontal_resolution' => 'HorizontalResolution',
         'image_brightness' => 'ImageBrightness',
         'image_color_mode' => 'ImageColorMode',
         'image_contrast' => 'ImageContrast',
-        'graphics_quality_options' => 'GraphicsQualityOptions',
-        'pixel_format' => 'PixelFormat',
         'paper_color' => 'PaperColor',
+        'pixel_format' => 'PixelFormat',
         'resolution' => 'Resolution',
-        'horizontal_resolution' => 'HorizontalResolution',
-        'vertical_resolution' => 'VerticalResolution',
         'scale' => 'Scale',
-        'use_high_quality_rendering' => 'UseHighQualityRendering',
         'use_anti_aliasing' => 'UseAntiAliasing',
-        'use_gdi_emf_renderer' => 'UseGdiEmfRenderer'
+        'use_gdi_emf_renderer' => 'UseGdiEmfRenderer',
+        'use_high_quality_rendering' => 'UseHighQualityRendering',
+        'vertical_resolution' => 'VerticalResolution'
     ];
 
     /*
@@ -138,19 +138,19 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
+        'graphics_quality_options' => 'setGraphicsQualityOptions',
+        'horizontal_resolution' => 'setHorizontalResolution',
         'image_brightness' => 'setImageBrightness',
         'image_color_mode' => 'setImageColorMode',
         'image_contrast' => 'setImageContrast',
-        'graphics_quality_options' => 'setGraphicsQualityOptions',
-        'pixel_format' => 'setPixelFormat',
         'paper_color' => 'setPaperColor',
+        'pixel_format' => 'setPixelFormat',
         'resolution' => 'setResolution',
-        'horizontal_resolution' => 'setHorizontalResolution',
-        'vertical_resolution' => 'setVerticalResolution',
         'scale' => 'setScale',
-        'use_high_quality_rendering' => 'setUseHighQualityRendering',
         'use_anti_aliasing' => 'setUseAntiAliasing',
-        'use_gdi_emf_renderer' => 'setUseGdiEmfRenderer'
+        'use_gdi_emf_renderer' => 'setUseGdiEmfRenderer',
+        'use_high_quality_rendering' => 'setUseHighQualityRendering',
+        'vertical_resolution' => 'setVerticalResolution'
     ];
 
     /*
@@ -159,19 +159,19 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
+        'graphics_quality_options' => 'getGraphicsQualityOptions',
+        'horizontal_resolution' => 'getHorizontalResolution',
         'image_brightness' => 'getImageBrightness',
         'image_color_mode' => 'getImageColorMode',
         'image_contrast' => 'getImageContrast',
-        'graphics_quality_options' => 'getGraphicsQualityOptions',
-        'pixel_format' => 'getPixelFormat',
         'paper_color' => 'getPaperColor',
+        'pixel_format' => 'getPixelFormat',
         'resolution' => 'getResolution',
-        'horizontal_resolution' => 'getHorizontalResolution',
-        'vertical_resolution' => 'getVerticalResolution',
         'scale' => 'getScale',
-        'use_high_quality_rendering' => 'getUseHighQualityRendering',
         'use_anti_aliasing' => 'getUseAntiAliasing',
-        'use_gdi_emf_renderer' => 'getUseGdiEmfRenderer'
+        'use_gdi_emf_renderer' => 'getUseGdiEmfRenderer',
+        'use_high_quality_rendering' => 'getUseHighQualityRendering',
+        'vertical_resolution' => 'getVerticalResolution'
     ];
 
     /*
@@ -230,19 +230,19 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     {
         parent::__construct($data);
 
+        $this->container['graphics_quality_options'] = isset($data['graphics_quality_options']) ? $data['graphics_quality_options'] : null;
+        $this->container['horizontal_resolution'] = isset($data['horizontal_resolution']) ? $data['horizontal_resolution'] : null;
         $this->container['image_brightness'] = isset($data['image_brightness']) ? $data['image_brightness'] : null;
         $this->container['image_color_mode'] = isset($data['image_color_mode']) ? $data['image_color_mode'] : null;
         $this->container['image_contrast'] = isset($data['image_contrast']) ? $data['image_contrast'] : null;
-        $this->container['graphics_quality_options'] = isset($data['graphics_quality_options']) ? $data['graphics_quality_options'] : null;
-        $this->container['pixel_format'] = isset($data['pixel_format']) ? $data['pixel_format'] : null;
         $this->container['paper_color'] = isset($data['paper_color']) ? $data['paper_color'] : null;
+        $this->container['pixel_format'] = isset($data['pixel_format']) ? $data['pixel_format'] : null;
         $this->container['resolution'] = isset($data['resolution']) ? $data['resolution'] : null;
-        $this->container['horizontal_resolution'] = isset($data['horizontal_resolution']) ? $data['horizontal_resolution'] : null;
-        $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
         $this->container['scale'] = isset($data['scale']) ? $data['scale'] : null;
-        $this->container['use_high_quality_rendering'] = isset($data['use_high_quality_rendering']) ? $data['use_high_quality_rendering'] : null;
         $this->container['use_anti_aliasing'] = isset($data['use_anti_aliasing']) ? $data['use_anti_aliasing'] : null;
         $this->container['use_gdi_emf_renderer'] = isset($data['use_gdi_emf_renderer']) ? $data['use_gdi_emf_renderer'] : null;
+        $this->container['use_high_quality_rendering'] = isset($data['use_high_quality_rendering']) ? $data['use_high_quality_rendering'] : null;
+        $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
     }
 
     /*
@@ -272,6 +272,54 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return true;
     }
 
+
+    /*
+     * Gets graphics_quality_options
+     *
+     * @return \Aspose\Words\Model\GraphicsQualityOptionsData
+     */
+    public function getGraphicsQualityOptions()
+    {
+        return $this->container['graphics_quality_options'];
+    }
+
+    /*
+     * Sets graphics_quality_options
+     *
+     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options Allows to specify additional System.Drawing.Graphics quality options.
+     *
+     * @return $this
+     */
+    public function setGraphicsQualityOptions($graphics_quality_options)
+    {
+        $this->container['graphics_quality_options'] = $graphics_quality_options;
+
+        return $this;
+    }
+
+    /*
+     * Gets horizontal_resolution
+     *
+     * @return double
+     */
+    public function getHorizontalResolution()
+    {
+        return $this->container['horizontal_resolution'];
+    }
+
+    /*
+     * Sets horizontal_resolution
+     *
+     * @param double $horizontal_resolution Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+     *
+     * @return $this
+     */
+    public function setHorizontalResolution($horizontal_resolution)
+    {
+        $this->container['horizontal_resolution'] = $horizontal_resolution;
+
+        return $this;
+    }
 
     /*
      * Gets image_brightness
@@ -346,25 +394,25 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets graphics_quality_options
+     * Gets paper_color
      *
-     * @return \Aspose\Words\Model\GraphicsQualityOptionsData
+     * @return string
      */
-    public function getGraphicsQualityOptions()
+    public function getPaperColor()
     {
-        return $this->container['graphics_quality_options'];
+        return $this->container['paper_color'];
     }
 
     /*
-     * Sets graphics_quality_options
+     * Sets paper_color
      *
-     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options Allows to specify additional System.Drawing.Graphics quality options.
+     * @param string $paper_color Background (paper) color of image
      *
      * @return $this
      */
-    public function setGraphicsQualityOptions($graphics_quality_options)
+    public function setPaperColor($paper_color)
     {
-        $this->container['graphics_quality_options'] = $graphics_quality_options;
+        $this->container['paper_color'] = $paper_color;
 
         return $this;
     }
@@ -394,30 +442,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets paper_color
-     *
-     * @return string
-     */
-    public function getPaperColor()
-    {
-        return $this->container['paper_color'];
-    }
-
-    /*
-     * Sets paper_color
-     *
-     * @param string $paper_color Background (paper) color of image
-     *
-     * @return $this
-     */
-    public function setPaperColor($paper_color)
-    {
-        $this->container['paper_color'] = $paper_color;
-
-        return $this;
-    }
-
-    /*
      * Gets resolution
      *
      * @return double
@@ -442,54 +466,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets horizontal_resolution
-     *
-     * @return double
-     */
-    public function getHorizontalResolution()
-    {
-        return $this->container['horizontal_resolution'];
-    }
-
-    /*
-     * Sets horizontal_resolution
-     *
-     * @param double $horizontal_resolution Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
-     *
-     * @return $this
-     */
-    public function setHorizontalResolution($horizontal_resolution)
-    {
-        $this->container['horizontal_resolution'] = $horizontal_resolution;
-
-        return $this;
-    }
-
-    /*
-     * Gets vertical_resolution
-     *
-     * @return double
-     */
-    public function getVerticalResolution()
-    {
-        return $this->container['vertical_resolution'];
-    }
-
-    /*
-     * Sets vertical_resolution
-     *
-     * @param double $vertical_resolution Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
-     *
-     * @return $this
-     */
-    public function setVerticalResolution($vertical_resolution)
-    {
-        $this->container['vertical_resolution'] = $vertical_resolution;
-
-        return $this;
-    }
-
-    /*
      * Gets scale
      *
      * @return double
@@ -509,30 +485,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setScale($scale)
     {
         $this->container['scale'] = $scale;
-
-        return $this;
-    }
-
-    /*
-     * Gets use_high_quality_rendering
-     *
-     * @return bool
-     */
-    public function getUseHighQualityRendering()
-    {
-        return $this->container['use_high_quality_rendering'];
-    }
-
-    /*
-     * Sets use_high_quality_rendering
-     *
-     * @param bool $use_high_quality_rendering Determine whether or not to use high quality (i.e. slow) rendering algorithms
-     *
-     * @return $this
-     */
-    public function setUseHighQualityRendering($use_high_quality_rendering)
-    {
-        $this->container['use_high_quality_rendering'] = $use_high_quality_rendering;
 
         return $this;
     }
@@ -581,6 +533,54 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseGdiEmfRenderer($use_gdi_emf_renderer)
     {
         $this->container['use_gdi_emf_renderer'] = $use_gdi_emf_renderer;
+
+        return $this;
+    }
+
+    /*
+     * Gets use_high_quality_rendering
+     *
+     * @return bool
+     */
+    public function getUseHighQualityRendering()
+    {
+        return $this->container['use_high_quality_rendering'];
+    }
+
+    /*
+     * Sets use_high_quality_rendering
+     *
+     * @param bool $use_high_quality_rendering Determine whether or not to use high quality (i.e. slow) rendering algorithms
+     *
+     * @return $this
+     */
+    public function setUseHighQualityRendering($use_high_quality_rendering)
+    {
+        $this->container['use_high_quality_rendering'] = $use_high_quality_rendering;
+
+        return $this;
+    }
+
+    /*
+     * Gets vertical_resolution
+     *
+     * @return double
+     */
+    public function getVerticalResolution()
+    {
+        return $this->container['vertical_resolution'];
+    }
+
+    /*
+     * Sets vertical_resolution
+     *
+     * @param double $vertical_resolution Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+     *
+     * @return $this
+     */
+    public function setVerticalResolution($vertical_resolution)
+    {
+        $this->container['vertical_resolution'] = $vertical_resolution;
 
         return $this;
     }

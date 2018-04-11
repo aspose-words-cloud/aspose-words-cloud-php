@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DocumentPropertiesResponse
  *
- * @description This resonse should be returned by the service when handling:  GET /documentProperties.
+ * @description This response should be returned by the service when handling:  GET /documentProperties.
  */
 class DocumentPropertiesResponse extends AsposeResponse 
 {

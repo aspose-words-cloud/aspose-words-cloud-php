@@ -54,8 +54,8 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'pretty_format' => 'bool',
-        'is_strict_schema11' => 'bool'
+        'is_strict_schema11' => 'bool',
+        'pretty_format' => 'bool'
     ];
 
     /*
@@ -64,8 +64,8 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'pretty_format' => null,
-        'is_strict_schema11' => null
+        'is_strict_schema11' => null,
+        'pretty_format' => null
     ];
 
     /*
@@ -95,8 +95,8 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'pretty_format' => 'PrettyFormat',
-        'is_strict_schema11' => 'IsStrictSchema11'
+        'is_strict_schema11' => 'IsStrictSchema11',
+        'pretty_format' => 'PrettyFormat'
     ];
 
     /*
@@ -105,8 +105,8 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'pretty_format' => 'setPrettyFormat',
-        'is_strict_schema11' => 'setIsStrictSchema11'
+        'is_strict_schema11' => 'setIsStrictSchema11',
+        'pretty_format' => 'setPrettyFormat'
     ];
 
     /*
@@ -115,8 +115,8 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'pretty_format' => 'getPrettyFormat',
-        'is_strict_schema11' => 'getIsStrictSchema11'
+        'is_strict_schema11' => 'getIsStrictSchema11',
+        'pretty_format' => 'getPrettyFormat'
     ];
 
     /*
@@ -175,8 +175,8 @@ class OdtSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
 
-        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
         $this->container['is_strict_schema11'] = isset($data['is_strict_schema11']) ? $data['is_strict_schema11'] : null;
+        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
     }
 
     /*
@@ -208,30 +208,6 @@ class OdtSaveOptionsData extends SaveOptionsData
 
 
     /*
-     * Gets pretty_format
-     *
-     * @return bool
-     */
-    public function getPrettyFormat()
-    {
-        return $this->container['pretty_format'];
-    }
-
-    /*
-     * Sets pretty_format
-     *
-     * @param bool $pretty_format Specifies whether or not use pretty formats output
-     *
-     * @return $this
-     */
-    public function setPrettyFormat($pretty_format)
-    {
-        $this->container['pretty_format'] = $pretty_format;
-
-        return $this;
-    }
-
-    /*
      * Gets is_strict_schema11
      *
      * @return bool
@@ -251,6 +227,30 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function setIsStrictSchema11($is_strict_schema11)
     {
         $this->container['is_strict_schema11'] = $is_strict_schema11;
+
+        return $this;
+    }
+
+    /*
+     * Gets pretty_format
+     *
+     * @return bool
+     */
+    public function getPrettyFormat()
+    {
+        return $this->container['pretty_format'];
+    }
+
+    /*
+     * Sets pretty_format
+     *
+     * @param bool $pretty_format Specifies whether or not use pretty formats output
+     *
+     * @return $this
+     */
+    public function setPrettyFormat($pretty_format)
+    {
+        $this->container['pretty_format'] = $pretty_format;
 
         return $this;
     }

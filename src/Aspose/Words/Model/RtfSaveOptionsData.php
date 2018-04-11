@@ -54,9 +54,9 @@ class RtfSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'pretty_format' => 'bool',
         'export_compact_size' => 'bool',
-        'export_images_for_old_readers' => 'bool'
+        'export_images_for_old_readers' => 'bool',
+        'pretty_format' => 'bool'
     ];
 
     /*
@@ -65,9 +65,9 @@ class RtfSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'pretty_format' => null,
         'export_compact_size' => null,
-        'export_images_for_old_readers' => null
+        'export_images_for_old_readers' => null,
+        'pretty_format' => null
     ];
 
     /*
@@ -97,9 +97,9 @@ class RtfSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'pretty_format' => 'PrettyFormat',
         'export_compact_size' => 'ExportCompactSize',
-        'export_images_for_old_readers' => 'ExportImagesForOldReaders'
+        'export_images_for_old_readers' => 'ExportImagesForOldReaders',
+        'pretty_format' => 'PrettyFormat'
     ];
 
     /*
@@ -108,9 +108,9 @@ class RtfSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'pretty_format' => 'setPrettyFormat',
         'export_compact_size' => 'setExportCompactSize',
-        'export_images_for_old_readers' => 'setExportImagesForOldReaders'
+        'export_images_for_old_readers' => 'setExportImagesForOldReaders',
+        'pretty_format' => 'setPrettyFormat'
     ];
 
     /*
@@ -119,9 +119,9 @@ class RtfSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'pretty_format' => 'getPrettyFormat',
         'export_compact_size' => 'getExportCompactSize',
-        'export_images_for_old_readers' => 'getExportImagesForOldReaders'
+        'export_images_for_old_readers' => 'getExportImagesForOldReaders',
+        'pretty_format' => 'getPrettyFormat'
     ];
 
     /*
@@ -180,9 +180,9 @@ class RtfSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
 
-        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
         $this->container['export_compact_size'] = isset($data['export_compact_size']) ? $data['export_compact_size'] : null;
         $this->container['export_images_for_old_readers'] = isset($data['export_images_for_old_readers']) ? $data['export_images_for_old_readers'] : null;
+        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
     }
 
     /*
@@ -212,30 +212,6 @@ class RtfSaveOptionsData extends SaveOptionsData
         return true;
     }
 
-
-    /*
-     * Gets pretty_format
-     *
-     * @return bool
-     */
-    public function getPrettyFormat()
-    {
-        return $this->container['pretty_format'];
-    }
-
-    /*
-     * Sets pretty_format
-     *
-     * @param bool $pretty_format Specifies whether or not use pretty formats output
-     *
-     * @return $this
-     */
-    public function setPrettyFormat($pretty_format)
-    {
-        $this->container['pretty_format'] = $pretty_format;
-
-        return $this;
-    }
 
     /*
      * Gets export_compact_size
@@ -281,6 +257,30 @@ class RtfSaveOptionsData extends SaveOptionsData
     public function setExportImagesForOldReaders($export_images_for_old_readers)
     {
         $this->container['export_images_for_old_readers'] = $export_images_for_old_readers;
+
+        return $this;
+    }
+
+    /*
+     * Gets pretty_format
+     *
+     * @return bool
+     */
+    public function getPrettyFormat()
+    {
+        return $this->container['pretty_format'];
+    }
+
+    /*
+     * Sets pretty_format
+     *
+     * @param bool $pretty_format Specifies whether or not use pretty formats output
+     *
+     * @return $this
+     */
+    public function setPrettyFormat($pretty_format)
+    {
+        $this->container['pretty_format'] = $pretty_format;
 
         return $this;
     }

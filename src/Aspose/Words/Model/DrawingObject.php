@@ -54,15 +54,15 @@ class DrawingObject extends DrawingObjectLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'render_links' => '\Aspose\Words\Model\WordsApiLink[]',
-        'width' => 'double',
         'height' => 'double',
-        'ole_data_link' => '\Aspose\Words\Model\WordsApiLink',
         'image_data_link' => '\Aspose\Words\Model\WordsApiLink',
-        'relative_horizontal_position' => 'string',
         'left' => 'double',
+        'ole_data_link' => '\Aspose\Words\Model\WordsApiLink',
+        'relative_horizontal_position' => 'string',
         'relative_vertical_position' => 'string',
+        'render_links' => '\Aspose\Words\Model\WordsApiLink[]',
         'top' => 'double',
+        'width' => 'double',
         'wrap_type' => 'string'
     ];
 
@@ -72,15 +72,15 @@ class DrawingObject extends DrawingObjectLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'render_links' => null,
-        'width' => 'double',
         'height' => 'double',
-        'ole_data_link' => null,
         'image_data_link' => null,
-        'relative_horizontal_position' => null,
         'left' => 'double',
+        'ole_data_link' => null,
+        'relative_horizontal_position' => null,
         'relative_vertical_position' => null,
+        'render_links' => null,
         'top' => 'double',
+        'width' => 'double',
         'wrap_type' => null
     ];
 
@@ -111,15 +111,15 @@ class DrawingObject extends DrawingObjectLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'render_links' => 'RenderLinks',
-        'width' => 'Width',
         'height' => 'Height',
-        'ole_data_link' => 'OleDataLink',
         'image_data_link' => 'ImageDataLink',
-        'relative_horizontal_position' => 'RelativeHorizontalPosition',
         'left' => 'Left',
+        'ole_data_link' => 'OleDataLink',
+        'relative_horizontal_position' => 'RelativeHorizontalPosition',
         'relative_vertical_position' => 'RelativeVerticalPosition',
+        'render_links' => 'RenderLinks',
         'top' => 'Top',
+        'width' => 'Width',
         'wrap_type' => 'WrapType'
     ];
 
@@ -129,15 +129,15 @@ class DrawingObject extends DrawingObjectLink
      * @var string[]
      */
     protected static $setters = [
-        'render_links' => 'setRenderLinks',
-        'width' => 'setWidth',
         'height' => 'setHeight',
-        'ole_data_link' => 'setOleDataLink',
         'image_data_link' => 'setImageDataLink',
-        'relative_horizontal_position' => 'setRelativeHorizontalPosition',
         'left' => 'setLeft',
+        'ole_data_link' => 'setOleDataLink',
+        'relative_horizontal_position' => 'setRelativeHorizontalPosition',
         'relative_vertical_position' => 'setRelativeVerticalPosition',
+        'render_links' => 'setRenderLinks',
         'top' => 'setTop',
+        'width' => 'setWidth',
         'wrap_type' => 'setWrapType'
     ];
 
@@ -147,15 +147,15 @@ class DrawingObject extends DrawingObjectLink
      * @var string[]
      */
     protected static $getters = [
-        'render_links' => 'getRenderLinks',
-        'width' => 'getWidth',
         'height' => 'getHeight',
-        'ole_data_link' => 'getOleDataLink',
         'image_data_link' => 'getImageDataLink',
-        'relative_horizontal_position' => 'getRelativeHorizontalPosition',
         'left' => 'getLeft',
+        'ole_data_link' => 'getOleDataLink',
+        'relative_horizontal_position' => 'getRelativeHorizontalPosition',
         'relative_vertical_position' => 'getRelativeVerticalPosition',
+        'render_links' => 'getRenderLinks',
         'top' => 'getTop',
+        'width' => 'getWidth',
         'wrap_type' => 'getWrapType'
     ];
 
@@ -298,15 +298,15 @@ class DrawingObject extends DrawingObjectLink
     {
         parent::__construct($data);
 
-        $this->container['render_links'] = isset($data['render_links']) ? $data['render_links'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['ole_data_link'] = isset($data['ole_data_link']) ? $data['ole_data_link'] : null;
         $this->container['image_data_link'] = isset($data['image_data_link']) ? $data['image_data_link'] : null;
-        $this->container['relative_horizontal_position'] = isset($data['relative_horizontal_position']) ? $data['relative_horizontal_position'] : null;
         $this->container['left'] = isset($data['left']) ? $data['left'] : null;
+        $this->container['ole_data_link'] = isset($data['ole_data_link']) ? $data['ole_data_link'] : null;
+        $this->container['relative_horizontal_position'] = isset($data['relative_horizontal_position']) ? $data['relative_horizontal_position'] : null;
         $this->container['relative_vertical_position'] = isset($data['relative_vertical_position']) ? $data['relative_vertical_position'] : null;
+        $this->container['render_links'] = isset($data['render_links']) ? $data['render_links'] : null;
         $this->container['top'] = isset($data['top']) ? $data['top'] : null;
+        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['wrap_type'] = isset($data['wrap_type']) ? $data['wrap_type'] : null;
     }
 
@@ -375,54 +375,6 @@ class DrawingObject extends DrawingObjectLink
 
 
     /*
-     * Gets render_links
-     *
-     * @return \Aspose\Words\Model\WordsApiLink[]
-     */
-    public function getRenderLinks()
-    {
-        return $this->container['render_links'];
-    }
-
-    /*
-     * Sets render_links
-     *
-     * @param \Aspose\Words\Model\WordsApiLink[] $render_links A list of links that originate from this .
-     *
-     * @return $this
-     */
-    public function setRenderLinks($render_links)
-    {
-        $this->container['render_links'] = $render_links;
-
-        return $this;
-    }
-
-    /*
-     * Gets width
-     *
-     * @return double
-     */
-    public function getWidth()
-    {
-        return $this->container['width'];
-    }
-
-    /*
-     * Sets width
-     *
-     * @param double $width Width of the drawing objects in points.
-     *
-     * @return $this
-     */
-    public function setWidth($width)
-    {
-        $this->container['width'] = $width;
-
-        return $this;
-    }
-
-    /*
      * Gets height
      *
      * @return double
@@ -447,30 +399,6 @@ class DrawingObject extends DrawingObjectLink
     }
 
     /*
-     * Gets ole_data_link
-     *
-     * @return \Aspose\Words\Model\WordsApiLink
-     */
-    public function getOleDataLink()
-    {
-        return $this->container['ole_data_link'];
-    }
-
-    /*
-     * Sets ole_data_link
-     *
-     * @param \Aspose\Words\Model\WordsApiLink $ole_data_link Link to ole object. Can be null if shape does not have ole data.
-     *
-     * @return $this
-     */
-    public function setOleDataLink($ole_data_link)
-    {
-        $this->container['ole_data_link'] = $ole_data_link;
-
-        return $this;
-    }
-
-    /*
      * Gets image_data_link
      *
      * @return \Aspose\Words\Model\WordsApiLink
@@ -490,6 +418,54 @@ class DrawingObject extends DrawingObjectLink
     public function setImageDataLink($image_data_link)
     {
         $this->container['image_data_link'] = $image_data_link;
+
+        return $this;
+    }
+
+    /*
+     * Gets left
+     *
+     * @return double
+     */
+    public function getLeft()
+    {
+        return $this->container['left'];
+    }
+
+    /*
+     * Sets left
+     *
+     * @param double $left Distance in points from the origin to the left side of the image.
+     *
+     * @return $this
+     */
+    public function setLeft($left)
+    {
+        $this->container['left'] = $left;
+
+        return $this;
+    }
+
+    /*
+     * Gets ole_data_link
+     *
+     * @return \Aspose\Words\Model\WordsApiLink
+     */
+    public function getOleDataLink()
+    {
+        return $this->container['ole_data_link'];
+    }
+
+    /*
+     * Sets ole_data_link
+     *
+     * @param \Aspose\Words\Model\WordsApiLink $ole_data_link Link to ole object. Can be null if shape does not have ole data.
+     *
+     * @return $this
+     */
+    public function setOleDataLink($ole_data_link)
+    {
+        $this->container['ole_data_link'] = $ole_data_link;
 
         return $this;
     }
@@ -524,30 +500,6 @@ class DrawingObject extends DrawingObjectLink
     }
 
     /*
-     * Gets left
-     *
-     * @return double
-     */
-    public function getLeft()
-    {
-        return $this->container['left'];
-    }
-
-    /*
-     * Sets left
-     *
-     * @param double $left Distance in points from the origin to the left side of the image.
-     *
-     * @return $this
-     */
-    public function setLeft($left)
-    {
-        $this->container['left'] = $left;
-
-        return $this;
-    }
-
-    /*
      * Gets relative_vertical_position
      *
      * @return string
@@ -577,6 +529,30 @@ class DrawingObject extends DrawingObjectLink
     }
 
     /*
+     * Gets render_links
+     *
+     * @return \Aspose\Words\Model\WordsApiLink[]
+     */
+    public function getRenderLinks()
+    {
+        return $this->container['render_links'];
+    }
+
+    /*
+     * Sets render_links
+     *
+     * @param \Aspose\Words\Model\WordsApiLink[] $render_links A list of links that originate from this .
+     *
+     * @return $this
+     */
+    public function setRenderLinks($render_links)
+    {
+        $this->container['render_links'] = $render_links;
+
+        return $this;
+    }
+
+    /*
      * Gets top
      *
      * @return double
@@ -596,6 +572,30 @@ class DrawingObject extends DrawingObjectLink
     public function setTop($top)
     {
         $this->container['top'] = $top;
+
+        return $this;
+    }
+
+    /*
+     * Gets width
+     *
+     * @return double
+     */
+    public function getWidth()
+    {
+        return $this->container['width'];
+    }
+
+    /*
+     * Sets width
+     *
+     * @param double $width Width of the drawing objects in points.
+     *
+     * @return $this
+     */
+    public function setWidth($width)
+    {
+        $this->container['width'] = $width;
 
         return $this;
     }

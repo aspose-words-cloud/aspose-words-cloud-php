@@ -54,8 +54,8 @@ class Table extends NodeLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'table_row_list' => '\Aspose\Words\Model\TableRow[]',
-        'table_properties' => '\Aspose\Words\Model\TableProperties'
+        'table_properties' => '\Aspose\Words\Model\TableProperties',
+        'table_row_list' => '\Aspose\Words\Model\TableRow[]'
     ];
 
     /*
@@ -64,8 +64,8 @@ class Table extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'table_row_list' => null,
-        'table_properties' => null
+        'table_properties' => null,
+        'table_row_list' => null
     ];
 
     /*
@@ -95,8 +95,8 @@ class Table extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'table_row_list' => 'TableRowList',
-        'table_properties' => 'TableProperties'
+        'table_properties' => 'TableProperties',
+        'table_row_list' => 'TableRowList'
     ];
 
     /*
@@ -105,8 +105,8 @@ class Table extends NodeLink
      * @var string[]
      */
     protected static $setters = [
-        'table_row_list' => 'setTableRowList',
-        'table_properties' => 'setTableProperties'
+        'table_properties' => 'setTableProperties',
+        'table_row_list' => 'setTableRowList'
     ];
 
     /*
@@ -115,8 +115,8 @@ class Table extends NodeLink
      * @var string[]
      */
     protected static $getters = [
-        'table_row_list' => 'getTableRowList',
-        'table_properties' => 'getTableProperties'
+        'table_properties' => 'getTableProperties',
+        'table_row_list' => 'getTableRowList'
     ];
 
     /*
@@ -175,8 +175,8 @@ class Table extends NodeLink
     {
         parent::__construct($data);
 
-        $this->container['table_row_list'] = isset($data['table_row_list']) ? $data['table_row_list'] : null;
         $this->container['table_properties'] = isset($data['table_properties']) ? $data['table_properties'] : null;
+        $this->container['table_row_list'] = isset($data['table_row_list']) ? $data['table_row_list'] : null;
     }
 
     /*
@@ -208,30 +208,6 @@ class Table extends NodeLink
 
 
     /*
-     * Gets table_row_list
-     *
-     * @return \Aspose\Words\Model\TableRow[]
-     */
-    public function getTableRowList()
-    {
-        return $this->container['table_row_list'];
-    }
-
-    /*
-     * Sets table_row_list
-     *
-     * @param \Aspose\Words\Model\TableRow[] $table_row_list Collection of table's rows.
-     *
-     * @return $this
-     */
-    public function setTableRowList($table_row_list)
-    {
-        $this->container['table_row_list'] = $table_row_list;
-
-        return $this;
-    }
-
-    /*
      * Gets table_properties
      *
      * @return \Aspose\Words\Model\TableProperties
@@ -251,6 +227,30 @@ class Table extends NodeLink
     public function setTableProperties($table_properties)
     {
         $this->container['table_properties'] = $table_properties;
+
+        return $this;
+    }
+
+    /*
+     * Gets table_row_list
+     *
+     * @return \Aspose\Words\Model\TableRow[]
+     */
+    public function getTableRowList()
+    {
+        return $this->container['table_row_list'];
+    }
+
+    /*
+     * Sets table_row_list
+     *
+     * @param \Aspose\Words\Model\TableRow[] $table_row_list Collection of table's rows.
+     *
+     * @return $this
+     */
+    public function setTableRowList($table_row_list)
+    {
+        $this->container['table_row_list'] = $table_row_list;
 
         return $this;
     }

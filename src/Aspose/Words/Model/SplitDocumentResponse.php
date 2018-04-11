@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SplitDocumentResponse
  *
- * @description This resonse should be returned by the service when handling:  POST /{name}/split .
+ * @description This response should be returned by the service when handling:  POST /{name}/split .
  */
 class SplitDocumentResponse extends AsposeResponse 
 {

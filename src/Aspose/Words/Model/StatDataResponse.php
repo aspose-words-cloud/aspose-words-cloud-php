@@ -54,8 +54,8 @@ class StatDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'stat_data' => '\Aspose\Words\Model\DocumentStatData',
-        'document_link' => '\Aspose\Words\Model\FileLink'
+        'document_link' => '\Aspose\Words\Model\FileLink',
+        'stat_data' => '\Aspose\Words\Model\DocumentStatData'
     ];
 
     /*
@@ -64,8 +64,8 @@ class StatDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'stat_data' => null,
-        'document_link' => null
+        'document_link' => null,
+        'stat_data' => null
     ];
 
     /*
@@ -95,8 +95,8 @@ class StatDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'stat_data' => 'StatData',
-        'document_link' => 'DocumentLink'
+        'document_link' => 'DocumentLink',
+        'stat_data' => 'StatData'
     ];
 
     /*
@@ -105,8 +105,8 @@ class StatDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $setters = [
-        'stat_data' => 'setStatData',
-        'document_link' => 'setDocumentLink'
+        'document_link' => 'setDocumentLink',
+        'stat_data' => 'setStatData'
     ];
 
     /*
@@ -115,8 +115,8 @@ class StatDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $getters = [
-        'stat_data' => 'getStatData',
-        'document_link' => 'getDocumentLink'
+        'document_link' => 'getDocumentLink',
+        'stat_data' => 'getStatData'
     ];
 
     /*
@@ -175,8 +175,8 @@ class StatDataResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['stat_data'] = isset($data['stat_data']) ? $data['stat_data'] : null;
         $this->container['document_link'] = isset($data['document_link']) ? $data['document_link'] : null;
+        $this->container['stat_data'] = isset($data['stat_data']) ? $data['stat_data'] : null;
     }
 
     /*
@@ -208,30 +208,6 @@ class StatDataResponse extends AsposeResponse
 
 
     /*
-     * Gets stat_data
-     *
-     * @return \Aspose\Words\Model\DocumentStatData
-     */
-    public function getStatData()
-    {
-        return $this->container['stat_data'];
-    }
-
-    /*
-     * Sets stat_data
-     *
-     * @param \Aspose\Words\Model\DocumentStatData $stat_data Statistical data of the document
-     *
-     * @return $this
-     */
-    public function setStatData($stat_data)
-    {
-        $this->container['stat_data'] = $stat_data;
-
-        return $this;
-    }
-
-    /*
      * Gets document_link
      *
      * @return \Aspose\Words\Model\FileLink
@@ -251,6 +227,30 @@ class StatDataResponse extends AsposeResponse
     public function setDocumentLink($document_link)
     {
         $this->container['document_link'] = $document_link;
+
+        return $this;
+    }
+
+    /*
+     * Gets stat_data
+     *
+     * @return \Aspose\Words\Model\DocumentStatData
+     */
+    public function getStatData()
+    {
+        return $this->container['stat_data'];
+    }
+
+    /*
+     * Sets stat_data
+     *
+     * @param \Aspose\Words\Model\DocumentStatData $stat_data Statistical data of the document
+     *
+     * @return $this
+     */
+    public function setStatData($stat_data)
+    {
+        $this->container['stat_data'] = $stat_data;
 
         return $this;
     }

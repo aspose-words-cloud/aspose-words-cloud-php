@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TextItemsResponse
  *
- * @description This resonse should be returned by the service when handling:  GET /{name}/textItems .
+ * @description This response should be returned by the service when handling:  GET /{name}/textItems .
  */
 class TextItemsResponse extends AsposeResponse 
 {

@@ -54,11 +54,11 @@ class Footnote extends FootnoteLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'position' => '\Aspose\Words\Model\DocumentPosition',
+        'content' => '\Aspose\Words\Model\StoryChildNodes',
         'footnote_type' => 'string',
+        'position' => '\Aspose\Words\Model\DocumentPosition',
         'reference_mark' => 'string',
-        'text' => 'string',
-        'content' => '\Aspose\Words\Model\StoryChildNodes'
+        'text' => 'string'
     ];
 
     /*
@@ -67,11 +67,11 @@ class Footnote extends FootnoteLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'position' => null,
+        'content' => null,
         'footnote_type' => null,
+        'position' => null,
         'reference_mark' => null,
-        'text' => null,
-        'content' => null
+        'text' => null
     ];
 
     /*
@@ -101,11 +101,11 @@ class Footnote extends FootnoteLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'position' => 'Position',
+        'content' => 'Content',
         'footnote_type' => 'FootnoteType',
+        'position' => 'Position',
         'reference_mark' => 'ReferenceMark',
-        'text' => 'Text',
-        'content' => 'Content'
+        'text' => 'Text'
     ];
 
     /*
@@ -114,11 +114,11 @@ class Footnote extends FootnoteLink
      * @var string[]
      */
     protected static $setters = [
-        'position' => 'setPosition',
+        'content' => 'setContent',
         'footnote_type' => 'setFootnoteType',
+        'position' => 'setPosition',
         'reference_mark' => 'setReferenceMark',
-        'text' => 'setText',
-        'content' => 'setContent'
+        'text' => 'setText'
     ];
 
     /*
@@ -127,11 +127,11 @@ class Footnote extends FootnoteLink
      * @var string[]
      */
     protected static $getters = [
-        'position' => 'getPosition',
+        'content' => 'getContent',
         'footnote_type' => 'getFootnoteType',
+        'position' => 'getPosition',
         'reference_mark' => 'getReferenceMark',
-        'text' => 'getText',
-        'content' => 'getContent'
+        'text' => 'getText'
     ];
 
     /*
@@ -205,11 +205,11 @@ class Footnote extends FootnoteLink
     {
         parent::__construct($data);
 
-        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['footnote_type'] = isset($data['footnote_type']) ? $data['footnote_type'] : null;
+        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
         $this->container['reference_mark'] = isset($data['reference_mark']) ? $data['reference_mark'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
     }
 
     /*
@@ -253,25 +253,25 @@ class Footnote extends FootnoteLink
 
 
     /*
-     * Gets position
+     * Gets content
      *
-     * @return \Aspose\Words\Model\DocumentPosition
+     * @return \Aspose\Words\Model\StoryChildNodes
      */
-    public function getPosition()
+    public function getContent()
     {
-        return $this->container['position'];
+        return $this->container['content'];
     }
 
     /*
-     * Sets position
+     * Sets content
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Link to comment range start node.
+     * @param \Aspose\Words\Model\StoryChildNodes $content Content of footnote.
      *
      * @return $this
      */
-    public function setPosition($position)
+    public function setContent($content)
     {
-        $this->container['position'] = $position;
+        $this->container['content'] = $content;
 
         return $this;
     }
@@ -301,6 +301,30 @@ class Footnote extends FootnoteLink
         }
 			
         $this->container['footnote_type'] = $footnote_type;
+
+        return $this;
+    }
+
+    /*
+     * Gets position
+     *
+     * @return \Aspose\Words\Model\DocumentPosition
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /*
+     * Sets position
+     *
+     * @param \Aspose\Words\Model\DocumentPosition $position Link to comment range start node.
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
 
         return $this;
     }
@@ -349,30 +373,6 @@ class Footnote extends FootnoteLink
     public function setText($text)
     {
         $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /*
-     * Gets content
-     *
-     * @return \Aspose\Words\Model\StoryChildNodes
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /*
-     * Sets content
-     *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Content of footnote.
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
 
         return $this;
     }

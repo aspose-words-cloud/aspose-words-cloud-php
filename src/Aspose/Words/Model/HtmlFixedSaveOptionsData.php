@@ -55,17 +55,17 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $swaggerTypes = [
         'css_class_names_prefix' => 'string',
+        'encoding' => 'string',
         'export_embedded_css' => 'bool',
         'export_embedded_fonts' => 'bool',
         'export_embedded_images' => 'bool',
         'export_form_fields' => 'bool',
-        'encoding' => 'string',
         'font_format' => 'string',
+        'page_horizontal_alignment' => 'string',
+        'page_margins' => 'double',
         'resources_folder' => 'string',
         'resources_folder_alias' => 'string',
-        'show_page_border' => 'bool',
-        'page_horizontal_alignment' => 'string',
-        'page_margins' => 'double'
+        'show_page_border' => 'bool'
     ];
 
     /*
@@ -75,17 +75,17 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $swaggerFormats = [
         'css_class_names_prefix' => null,
+        'encoding' => null,
         'export_embedded_css' => null,
         'export_embedded_fonts' => null,
         'export_embedded_images' => null,
         'export_form_fields' => null,
-        'encoding' => null,
         'font_format' => null,
+        'page_horizontal_alignment' => null,
+        'page_margins' => 'double',
         'resources_folder' => null,
         'resources_folder_alias' => null,
-        'show_page_border' => null,
-        'page_horizontal_alignment' => null,
-        'page_margins' => 'double'
+        'show_page_border' => null
     ];
 
     /*
@@ -116,17 +116,17 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $attributeMap = [
         'css_class_names_prefix' => 'CssClassNamesPrefix',
+        'encoding' => 'Encoding',
         'export_embedded_css' => 'ExportEmbeddedCss',
         'export_embedded_fonts' => 'ExportEmbeddedFonts',
         'export_embedded_images' => 'ExportEmbeddedImages',
         'export_form_fields' => 'ExportFormFields',
-        'encoding' => 'Encoding',
         'font_format' => 'FontFormat',
+        'page_horizontal_alignment' => 'PageHorizontalAlignment',
+        'page_margins' => 'PageMargins',
         'resources_folder' => 'ResourcesFolder',
         'resources_folder_alias' => 'ResourcesFolderAlias',
-        'show_page_border' => 'ShowPageBorder',
-        'page_horizontal_alignment' => 'PageHorizontalAlignment',
-        'page_margins' => 'PageMargins'
+        'show_page_border' => 'ShowPageBorder'
     ];
 
     /*
@@ -136,17 +136,17 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $setters = [
         'css_class_names_prefix' => 'setCssClassNamesPrefix',
+        'encoding' => 'setEncoding',
         'export_embedded_css' => 'setExportEmbeddedCss',
         'export_embedded_fonts' => 'setExportEmbeddedFonts',
         'export_embedded_images' => 'setExportEmbeddedImages',
         'export_form_fields' => 'setExportFormFields',
-        'encoding' => 'setEncoding',
         'font_format' => 'setFontFormat',
+        'page_horizontal_alignment' => 'setPageHorizontalAlignment',
+        'page_margins' => 'setPageMargins',
         'resources_folder' => 'setResourcesFolder',
         'resources_folder_alias' => 'setResourcesFolderAlias',
-        'show_page_border' => 'setShowPageBorder',
-        'page_horizontal_alignment' => 'setPageHorizontalAlignment',
-        'page_margins' => 'setPageMargins'
+        'show_page_border' => 'setShowPageBorder'
     ];
 
     /*
@@ -156,17 +156,17 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $getters = [
         'css_class_names_prefix' => 'getCssClassNamesPrefix',
+        'encoding' => 'getEncoding',
         'export_embedded_css' => 'getExportEmbeddedCss',
         'export_embedded_fonts' => 'getExportEmbeddedFonts',
         'export_embedded_images' => 'getExportEmbeddedImages',
         'export_form_fields' => 'getExportFormFields',
-        'encoding' => 'getEncoding',
         'font_format' => 'getFontFormat',
+        'page_horizontal_alignment' => 'getPageHorizontalAlignment',
+        'page_margins' => 'getPageMargins',
         'resources_folder' => 'getResourcesFolder',
         'resources_folder_alias' => 'getResourcesFolderAlias',
-        'show_page_border' => 'getShowPageBorder',
-        'page_horizontal_alignment' => 'getPageHorizontalAlignment',
-        'page_margins' => 'getPageMargins'
+        'show_page_border' => 'getShowPageBorder'
     ];
 
     /*
@@ -226,17 +226,17 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         parent::__construct($data);
 
         $this->container['css_class_names_prefix'] = isset($data['css_class_names_prefix']) ? $data['css_class_names_prefix'] : null;
+        $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
         $this->container['export_embedded_css'] = isset($data['export_embedded_css']) ? $data['export_embedded_css'] : null;
         $this->container['export_embedded_fonts'] = isset($data['export_embedded_fonts']) ? $data['export_embedded_fonts'] : null;
         $this->container['export_embedded_images'] = isset($data['export_embedded_images']) ? $data['export_embedded_images'] : null;
         $this->container['export_form_fields'] = isset($data['export_form_fields']) ? $data['export_form_fields'] : null;
-        $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
         $this->container['font_format'] = isset($data['font_format']) ? $data['font_format'] : null;
+        $this->container['page_horizontal_alignment'] = isset($data['page_horizontal_alignment']) ? $data['page_horizontal_alignment'] : null;
+        $this->container['page_margins'] = isset($data['page_margins']) ? $data['page_margins'] : null;
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
         $this->container['show_page_border'] = isset($data['show_page_border']) ? $data['show_page_border'] : null;
-        $this->container['page_horizontal_alignment'] = isset($data['page_horizontal_alignment']) ? $data['page_horizontal_alignment'] : null;
-        $this->container['page_margins'] = isset($data['page_margins']) ? $data['page_margins'] : null;
     }
 
     /*
@@ -287,6 +287,30 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setCssClassNamesPrefix($css_class_names_prefix)
     {
         $this->container['css_class_names_prefix'] = $css_class_names_prefix;
+
+        return $this;
+    }
+
+    /*
+     * Gets encoding
+     *
+     * @return string
+     */
+    public function getEncoding()
+    {
+        return $this->container['encoding'];
+    }
+
+    /*
+     * Sets encoding
+     *
+     * @param string $encoding Encoding.
+     *
+     * @return $this
+     */
+    public function setEncoding($encoding)
+    {
+        $this->container['encoding'] = $encoding;
 
         return $this;
     }
@@ -388,30 +412,6 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets encoding
-     *
-     * @return string
-     */
-    public function getEncoding()
-    {
-        return $this->container['encoding'];
-    }
-
-    /*
-     * Sets encoding
-     *
-     * @param string $encoding Encoding.
-     *
-     * @return $this
-     */
-    public function setEncoding($encoding)
-    {
-        $this->container['encoding'] = $encoding;
-
-        return $this;
-    }
-
-    /*
      * Gets font_format
      *
      * @return string
@@ -431,6 +431,54 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setFontFormat($font_format)
     {
         $this->container['font_format'] = $font_format;
+
+        return $this;
+    }
+
+    /*
+     * Gets page_horizontal_alignment
+     *
+     * @return string
+     */
+    public function getPageHorizontalAlignment()
+    {
+        return $this->container['page_horizontal_alignment'];
+    }
+
+    /*
+     * Sets page_horizontal_alignment
+     *
+     * @param string $page_horizontal_alignment Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
+     *
+     * @return $this
+     */
+    public function setPageHorizontalAlignment($page_horizontal_alignment)
+    {
+        $this->container['page_horizontal_alignment'] = $page_horizontal_alignment;
+
+        return $this;
+    }
+
+    /*
+     * Gets page_margins
+     *
+     * @return double
+     */
+    public function getPageMargins()
+    {
+        return $this->container['page_margins'];
+    }
+
+    /*
+     * Sets page_margins
+     *
+     * @param double $page_margins Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
+     *
+     * @return $this
+     */
+    public function setPageMargins($page_margins)
+    {
+        $this->container['page_margins'] = $page_margins;
 
         return $this;
     }
@@ -503,54 +551,6 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setShowPageBorder($show_page_border)
     {
         $this->container['show_page_border'] = $show_page_border;
-
-        return $this;
-    }
-
-    /*
-     * Gets page_horizontal_alignment
-     *
-     * @return string
-     */
-    public function getPageHorizontalAlignment()
-    {
-        return $this->container['page_horizontal_alignment'];
-    }
-
-    /*
-     * Sets page_horizontal_alignment
-     *
-     * @param string $page_horizontal_alignment Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
-     *
-     * @return $this
-     */
-    public function setPageHorizontalAlignment($page_horizontal_alignment)
-    {
-        $this->container['page_horizontal_alignment'] = $page_horizontal_alignment;
-
-        return $this;
-    }
-
-    /*
-     * Gets page_margins
-     *
-     * @return double
-     */
-    public function getPageMargins()
-    {
-        return $this->container['page_margins'];
-    }
-
-    /*
-     * Sets page_margins
-     *
-     * @param double $page_margins Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
-     *
-     * @return $this
-     */
-    public function setPageMargins($page_margins)
-    {
-        $this->container['page_margins'] = $page_margins;
 
         return $this;
     }

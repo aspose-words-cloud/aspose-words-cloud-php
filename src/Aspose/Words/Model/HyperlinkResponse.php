@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HyperlinkResponse
  *
- * @description This resonse should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .
+ * @description This response should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .
  */
 class HyperlinkResponse extends AsposeResponse 
 {

@@ -54,9 +54,9 @@ class DocumentProperty extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'built_in' => 'bool',
         'name' => 'string',
-        'value' => 'string',
-        'built_in' => 'bool'
+        'value' => 'string'
     ];
 
     /*
@@ -65,9 +65,9 @@ class DocumentProperty extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'built_in' => null,
         'name' => null,
-        'value' => null,
-        'built_in' => null
+        'value' => null
     ];
 
     /*
@@ -97,9 +97,9 @@ class DocumentProperty extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
+        'built_in' => 'BuiltIn',
         'name' => 'Name',
-        'value' => 'Value',
-        'built_in' => 'BuiltIn'
+        'value' => 'Value'
     ];
 
     /*
@@ -108,9 +108,9 @@ class DocumentProperty extends LinkElement
      * @var string[]
      */
     protected static $setters = [
+        'built_in' => 'setBuiltIn',
         'name' => 'setName',
-        'value' => 'setValue',
-        'built_in' => 'setBuiltIn'
+        'value' => 'setValue'
     ];
 
     /*
@@ -119,9 +119,9 @@ class DocumentProperty extends LinkElement
      * @var string[]
      */
     protected static $getters = [
+        'built_in' => 'getBuiltIn',
         'name' => 'getName',
-        'value' => 'getValue',
-        'built_in' => 'getBuiltIn'
+        'value' => 'getValue'
     ];
 
     /*
@@ -180,9 +180,9 @@ class DocumentProperty extends LinkElement
     {
         parent::__construct($data);
 
+        $this->container['built_in'] = isset($data['built_in']) ? $data['built_in'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['built_in'] = isset($data['built_in']) ? $data['built_in'] : null;
     }
 
     /*
@@ -212,6 +212,30 @@ class DocumentProperty extends LinkElement
         return true;
     }
 
+
+    /*
+     * Gets built_in
+     *
+     * @return bool
+     */
+    public function getBuiltIn()
+    {
+        return $this->container['built_in'];
+    }
+
+    /*
+     * Sets built_in
+     *
+     * @param bool $built_in Flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
+     *
+     * @return $this
+     */
+    public function setBuiltIn($built_in)
+    {
+        $this->container['built_in'] = $built_in;
+
+        return $this;
+    }
 
     /*
      * Gets name
@@ -257,30 +281,6 @@ class DocumentProperty extends LinkElement
     public function setValue($value)
     {
         $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /*
-     * Gets built_in
-     *
-     * @return bool
-     */
-    public function getBuiltIn()
-    {
-        return $this->container['built_in'];
-    }
-
-    /*
-     * Sets built_in
-     *
-     * @param bool $built_in Flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
-     *
-     * @return $this
-     */
-    public function setBuiltIn($built_in)
-    {
-        $this->container['built_in'] = $built_in;
 
         return $this;
     }

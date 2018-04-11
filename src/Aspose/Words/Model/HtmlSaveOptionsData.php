@@ -54,7 +54,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'pretty_format' => 'bool',
         'allow_negative_indent' => 'bool',
         'css_style_sheet_file_name' => 'string',
         'css_style_sheet_type' => 'string',
@@ -62,8 +61,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'document_split_heading_level' => 'int',
         'encoding' => 'string',
         'export_document_properties' => 'bool',
-        'export_fonts_as_base64' => 'bool',
+        'export_drop_down_form_field_as_text' => 'bool',
         'export_font_resources' => 'bool',
+        'export_fonts_as_base64' => 'bool',
         'export_headers_footers_mode' => 'string',
         'export_images_as_base64' => 'bool',
         'export_language_information' => 'bool',
@@ -78,19 +78,19 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_text_input_form_field_as_text' => 'bool',
         'export_toc_page_numbers' => 'bool',
         'export_xhtml_transitional' => 'bool',
+        'font_resources_subsetting_size_threshold' => 'int',
         'fonts_folder' => 'string',
         'fonts_folder_alias' => 'string',
-        'font_resources_subsetting_size_threshold' => 'int',
         'html_version' => 'string',
+        'image_resolution' => 'int',
         'images_folder' => 'string',
         'images_folder_alias' => 'string',
-        'image_resolution' => 'int',
         'office_math_output_mode' => 'string',
+        'pretty_format' => 'bool',
         'resource_folder' => 'string',
         'resource_folder_alias' => 'string',
         'scale_image_to_shape_size' => 'bool',
-        'table_width_output_mode' => 'string',
-        'export_drop_down_form_field_as_text' => 'bool'
+        'table_width_output_mode' => 'string'
     ];
 
     /*
@@ -99,7 +99,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'pretty_format' => null,
         'allow_negative_indent' => null,
         'css_style_sheet_file_name' => null,
         'css_style_sheet_type' => null,
@@ -107,8 +106,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'document_split_heading_level' => 'int32',
         'encoding' => null,
         'export_document_properties' => null,
-        'export_fonts_as_base64' => null,
+        'export_drop_down_form_field_as_text' => null,
         'export_font_resources' => null,
+        'export_fonts_as_base64' => null,
         'export_headers_footers_mode' => null,
         'export_images_as_base64' => null,
         'export_language_information' => null,
@@ -123,19 +123,19 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_text_input_form_field_as_text' => null,
         'export_toc_page_numbers' => null,
         'export_xhtml_transitional' => null,
+        'font_resources_subsetting_size_threshold' => 'int32',
         'fonts_folder' => null,
         'fonts_folder_alias' => null,
-        'font_resources_subsetting_size_threshold' => 'int32',
         'html_version' => null,
+        'image_resolution' => 'int32',
         'images_folder' => null,
         'images_folder_alias' => null,
-        'image_resolution' => 'int32',
         'office_math_output_mode' => null,
+        'pretty_format' => null,
         'resource_folder' => null,
         'resource_folder_alias' => null,
         'scale_image_to_shape_size' => null,
-        'table_width_output_mode' => null,
-        'export_drop_down_form_field_as_text' => null
+        'table_width_output_mode' => null
     ];
 
     /*
@@ -165,7 +165,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'pretty_format' => 'PrettyFormat',
         'allow_negative_indent' => 'AllowNegativeIndent',
         'css_style_sheet_file_name' => 'CssStyleSheetFileName',
         'css_style_sheet_type' => 'CssStyleSheetType',
@@ -173,8 +172,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'document_split_heading_level' => 'DocumentSplitHeadingLevel',
         'encoding' => 'Encoding',
         'export_document_properties' => 'ExportDocumentProperties',
-        'export_fonts_as_base64' => 'ExportFontsAsBase64',
+        'export_drop_down_form_field_as_text' => 'ExportDropDownFormFieldAsText',
         'export_font_resources' => 'ExportFontResources',
+        'export_fonts_as_base64' => 'ExportFontsAsBase64',
         'export_headers_footers_mode' => 'ExportHeadersFootersMode',
         'export_images_as_base64' => 'ExportImagesAsBase64',
         'export_language_information' => 'ExportLanguageInformation',
@@ -189,19 +189,19 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_text_input_form_field_as_text' => 'ExportTextInputFormFieldAsText',
         'export_toc_page_numbers' => 'ExportTocPageNumbers',
         'export_xhtml_transitional' => 'ExportXhtmlTransitional',
+        'font_resources_subsetting_size_threshold' => 'FontResourcesSubsettingSizeThreshold',
         'fonts_folder' => 'FontsFolder',
         'fonts_folder_alias' => 'FontsFolderAlias',
-        'font_resources_subsetting_size_threshold' => 'FontResourcesSubsettingSizeThreshold',
         'html_version' => 'HtmlVersion',
+        'image_resolution' => 'ImageResolution',
         'images_folder' => 'ImagesFolder',
         'images_folder_alias' => 'ImagesFolderAlias',
-        'image_resolution' => 'ImageResolution',
         'office_math_output_mode' => 'OfficeMathOutputMode',
+        'pretty_format' => 'PrettyFormat',
         'resource_folder' => 'ResourceFolder',
         'resource_folder_alias' => 'ResourceFolderAlias',
         'scale_image_to_shape_size' => 'ScaleImageToShapeSize',
-        'table_width_output_mode' => 'TableWidthOutputMode',
-        'export_drop_down_form_field_as_text' => 'ExportDropDownFormFieldAsText'
+        'table_width_output_mode' => 'TableWidthOutputMode'
     ];
 
     /*
@@ -210,7 +210,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'pretty_format' => 'setPrettyFormat',
         'allow_negative_indent' => 'setAllowNegativeIndent',
         'css_style_sheet_file_name' => 'setCssStyleSheetFileName',
         'css_style_sheet_type' => 'setCssStyleSheetType',
@@ -218,8 +217,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'document_split_heading_level' => 'setDocumentSplitHeadingLevel',
         'encoding' => 'setEncoding',
         'export_document_properties' => 'setExportDocumentProperties',
-        'export_fonts_as_base64' => 'setExportFontsAsBase64',
+        'export_drop_down_form_field_as_text' => 'setExportDropDownFormFieldAsText',
         'export_font_resources' => 'setExportFontResources',
+        'export_fonts_as_base64' => 'setExportFontsAsBase64',
         'export_headers_footers_mode' => 'setExportHeadersFootersMode',
         'export_images_as_base64' => 'setExportImagesAsBase64',
         'export_language_information' => 'setExportLanguageInformation',
@@ -234,19 +234,19 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_text_input_form_field_as_text' => 'setExportTextInputFormFieldAsText',
         'export_toc_page_numbers' => 'setExportTocPageNumbers',
         'export_xhtml_transitional' => 'setExportXhtmlTransitional',
+        'font_resources_subsetting_size_threshold' => 'setFontResourcesSubsettingSizeThreshold',
         'fonts_folder' => 'setFontsFolder',
         'fonts_folder_alias' => 'setFontsFolderAlias',
-        'font_resources_subsetting_size_threshold' => 'setFontResourcesSubsettingSizeThreshold',
         'html_version' => 'setHtmlVersion',
+        'image_resolution' => 'setImageResolution',
         'images_folder' => 'setImagesFolder',
         'images_folder_alias' => 'setImagesFolderAlias',
-        'image_resolution' => 'setImageResolution',
         'office_math_output_mode' => 'setOfficeMathOutputMode',
+        'pretty_format' => 'setPrettyFormat',
         'resource_folder' => 'setResourceFolder',
         'resource_folder_alias' => 'setResourceFolderAlias',
         'scale_image_to_shape_size' => 'setScaleImageToShapeSize',
-        'table_width_output_mode' => 'setTableWidthOutputMode',
-        'export_drop_down_form_field_as_text' => 'setExportDropDownFormFieldAsText'
+        'table_width_output_mode' => 'setTableWidthOutputMode'
     ];
 
     /*
@@ -255,7 +255,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'pretty_format' => 'getPrettyFormat',
         'allow_negative_indent' => 'getAllowNegativeIndent',
         'css_style_sheet_file_name' => 'getCssStyleSheetFileName',
         'css_style_sheet_type' => 'getCssStyleSheetType',
@@ -263,8 +262,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'document_split_heading_level' => 'getDocumentSplitHeadingLevel',
         'encoding' => 'getEncoding',
         'export_document_properties' => 'getExportDocumentProperties',
-        'export_fonts_as_base64' => 'getExportFontsAsBase64',
+        'export_drop_down_form_field_as_text' => 'getExportDropDownFormFieldAsText',
         'export_font_resources' => 'getExportFontResources',
+        'export_fonts_as_base64' => 'getExportFontsAsBase64',
         'export_headers_footers_mode' => 'getExportHeadersFootersMode',
         'export_images_as_base64' => 'getExportImagesAsBase64',
         'export_language_information' => 'getExportLanguageInformation',
@@ -279,19 +279,19 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_text_input_form_field_as_text' => 'getExportTextInputFormFieldAsText',
         'export_toc_page_numbers' => 'getExportTocPageNumbers',
         'export_xhtml_transitional' => 'getExportXhtmlTransitional',
+        'font_resources_subsetting_size_threshold' => 'getFontResourcesSubsettingSizeThreshold',
         'fonts_folder' => 'getFontsFolder',
         'fonts_folder_alias' => 'getFontsFolderAlias',
-        'font_resources_subsetting_size_threshold' => 'getFontResourcesSubsettingSizeThreshold',
         'html_version' => 'getHtmlVersion',
+        'image_resolution' => 'getImageResolution',
         'images_folder' => 'getImagesFolder',
         'images_folder_alias' => 'getImagesFolderAlias',
-        'image_resolution' => 'getImageResolution',
         'office_math_output_mode' => 'getOfficeMathOutputMode',
+        'pretty_format' => 'getPrettyFormat',
         'resource_folder' => 'getResourceFolder',
         'resource_folder_alias' => 'getResourceFolderAlias',
         'scale_image_to_shape_size' => 'getScaleImageToShapeSize',
-        'table_width_output_mode' => 'getTableWidthOutputMode',
-        'export_drop_down_form_field_as_text' => 'getExportDropDownFormFieldAsText'
+        'table_width_output_mode' => 'getTableWidthOutputMode'
     ];
 
     /*
@@ -382,7 +382,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
 
-        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
         $this->container['allow_negative_indent'] = isset($data['allow_negative_indent']) ? $data['allow_negative_indent'] : null;
         $this->container['css_style_sheet_file_name'] = isset($data['css_style_sheet_file_name']) ? $data['css_style_sheet_file_name'] : null;
         $this->container['css_style_sheet_type'] = isset($data['css_style_sheet_type']) ? $data['css_style_sheet_type'] : null;
@@ -390,8 +389,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['document_split_heading_level'] = isset($data['document_split_heading_level']) ? $data['document_split_heading_level'] : null;
         $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
         $this->container['export_document_properties'] = isset($data['export_document_properties']) ? $data['export_document_properties'] : null;
-        $this->container['export_fonts_as_base64'] = isset($data['export_fonts_as_base64']) ? $data['export_fonts_as_base64'] : null;
+        $this->container['export_drop_down_form_field_as_text'] = isset($data['export_drop_down_form_field_as_text']) ? $data['export_drop_down_form_field_as_text'] : null;
         $this->container['export_font_resources'] = isset($data['export_font_resources']) ? $data['export_font_resources'] : null;
+        $this->container['export_fonts_as_base64'] = isset($data['export_fonts_as_base64']) ? $data['export_fonts_as_base64'] : null;
         $this->container['export_headers_footers_mode'] = isset($data['export_headers_footers_mode']) ? $data['export_headers_footers_mode'] : null;
         $this->container['export_images_as_base64'] = isset($data['export_images_as_base64']) ? $data['export_images_as_base64'] : null;
         $this->container['export_language_information'] = isset($data['export_language_information']) ? $data['export_language_information'] : null;
@@ -406,19 +406,19 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_text_input_form_field_as_text'] = isset($data['export_text_input_form_field_as_text']) ? $data['export_text_input_form_field_as_text'] : null;
         $this->container['export_toc_page_numbers'] = isset($data['export_toc_page_numbers']) ? $data['export_toc_page_numbers'] : null;
         $this->container['export_xhtml_transitional'] = isset($data['export_xhtml_transitional']) ? $data['export_xhtml_transitional'] : null;
+        $this->container['font_resources_subsetting_size_threshold'] = isset($data['font_resources_subsetting_size_threshold']) ? $data['font_resources_subsetting_size_threshold'] : null;
         $this->container['fonts_folder'] = isset($data['fonts_folder']) ? $data['fonts_folder'] : null;
         $this->container['fonts_folder_alias'] = isset($data['fonts_folder_alias']) ? $data['fonts_folder_alias'] : null;
-        $this->container['font_resources_subsetting_size_threshold'] = isset($data['font_resources_subsetting_size_threshold']) ? $data['font_resources_subsetting_size_threshold'] : null;
         $this->container['html_version'] = isset($data['html_version']) ? $data['html_version'] : null;
+        $this->container['image_resolution'] = isset($data['image_resolution']) ? $data['image_resolution'] : null;
         $this->container['images_folder'] = isset($data['images_folder']) ? $data['images_folder'] : null;
         $this->container['images_folder_alias'] = isset($data['images_folder_alias']) ? $data['images_folder_alias'] : null;
-        $this->container['image_resolution'] = isset($data['image_resolution']) ? $data['image_resolution'] : null;
         $this->container['office_math_output_mode'] = isset($data['office_math_output_mode']) ? $data['office_math_output_mode'] : null;
+        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
         $this->container['resource_folder'] = isset($data['resource_folder']) ? $data['resource_folder'] : null;
         $this->container['resource_folder_alias'] = isset($data['resource_folder_alias']) ? $data['resource_folder_alias'] : null;
         $this->container['scale_image_to_shape_size'] = isset($data['scale_image_to_shape_size']) ? $data['scale_image_to_shape_size'] : null;
         $this->container['table_width_output_mode'] = isset($data['table_width_output_mode']) ? $data['table_width_output_mode'] : null;
-        $this->container['export_drop_down_form_field_as_text'] = isset($data['export_drop_down_form_field_as_text']) ? $data['export_drop_down_form_field_as_text'] : null;
     }
 
     /*
@@ -472,30 +472,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return true;
     }
 
-
-    /*
-     * Gets pretty_format
-     *
-     * @return bool
-     */
-    public function getPrettyFormat()
-    {
-        return $this->container['pretty_format'];
-    }
-
-    /*
-     * Sets pretty_format
-     *
-     * @param bool $pretty_format Specifies whether or not use pretty formats output
-     *
-     * @return $this
-     */
-    public function setPrettyFormat($pretty_format)
-    {
-        $this->container['pretty_format'] = $pretty_format;
-
-        return $this;
-    }
 
     /*
      * Gets allow_negative_indent
@@ -666,25 +642,25 @@ class HtmlSaveOptionsData extends SaveOptionsData
     }
 
     /*
-     * Gets export_fonts_as_base64
+     * Gets export_drop_down_form_field_as_text
      *
      * @return bool
      */
-    public function getExportFontsAsBase64()
+    public function getExportDropDownFormFieldAsText()
     {
-        return $this->container['export_fonts_as_base64'];
+        return $this->container['export_drop_down_form_field_as_text'];
     }
 
     /*
-     * Sets export_fonts_as_base64
+     * Sets export_drop_down_form_field_as_text
      *
-     * @param bool $export_fonts_as_base64 Specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.
+     * @param bool $export_drop_down_form_field_as_text Controls how drop-down form fields are saved to HTML. Default value is false.
      *
      * @return $this
      */
-    public function setExportFontsAsBase64($export_fonts_as_base64)
+    public function setExportDropDownFormFieldAsText($export_drop_down_form_field_as_text)
     {
-        $this->container['export_fonts_as_base64'] = $export_fonts_as_base64;
+        $this->container['export_drop_down_form_field_as_text'] = $export_drop_down_form_field_as_text;
 
         return $this;
     }
@@ -709,6 +685,30 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportFontResources($export_font_resources)
     {
         $this->container['export_font_resources'] = $export_font_resources;
+
+        return $this;
+    }
+
+    /*
+     * Gets export_fonts_as_base64
+     *
+     * @return bool
+     */
+    public function getExportFontsAsBase64()
+    {
+        return $this->container['export_fonts_as_base64'];
+    }
+
+    /*
+     * Sets export_fonts_as_base64
+     *
+     * @param bool $export_fonts_as_base64 Specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.
+     *
+     * @return $this
+     */
+    public function setExportFontsAsBase64($export_fonts_as_base64)
+    {
+        $this->container['export_fonts_as_base64'] = $export_fonts_as_base64;
 
         return $this;
     }
@@ -1050,6 +1050,30 @@ class HtmlSaveOptionsData extends SaveOptionsData
     }
 
     /*
+     * Gets font_resources_subsetting_size_threshold
+     *
+     * @return int
+     */
+    public function getFontResourcesSubsettingSizeThreshold()
+    {
+        return $this->container['font_resources_subsetting_size_threshold'];
+    }
+
+    /*
+     * Sets font_resources_subsetting_size_threshold
+     *
+     * @param int $font_resources_subsetting_size_threshold Controls which font resources need subsetting when saving
+     *
+     * @return $this
+     */
+    public function setFontResourcesSubsettingSizeThreshold($font_resources_subsetting_size_threshold)
+    {
+        $this->container['font_resources_subsetting_size_threshold'] = $font_resources_subsetting_size_threshold;
+
+        return $this;
+    }
+
+    /*
      * Gets fonts_folder
      *
      * @return string
@@ -1098,30 +1122,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
     }
 
     /*
-     * Gets font_resources_subsetting_size_threshold
-     *
-     * @return int
-     */
-    public function getFontResourcesSubsettingSizeThreshold()
-    {
-        return $this->container['font_resources_subsetting_size_threshold'];
-    }
-
-    /*
-     * Sets font_resources_subsetting_size_threshold
-     *
-     * @param int $font_resources_subsetting_size_threshold Controls which font resources need subsetting when saving
-     *
-     * @return $this
-     */
-    public function setFontResourcesSubsettingSizeThreshold($font_resources_subsetting_size_threshold)
-    {
-        $this->container['font_resources_subsetting_size_threshold'] = $font_resources_subsetting_size_threshold;
-
-        return $this;
-    }
-
-    /*
      * Gets html_version
      *
      * @return string
@@ -1146,6 +1146,30 @@ class HtmlSaveOptionsData extends SaveOptionsData
         }
 			
         $this->container['html_version'] = $html_version;
+
+        return $this;
+    }
+
+    /*
+     * Gets image_resolution
+     *
+     * @return int
+     */
+    public function getImageResolution()
+    {
+        return $this->container['image_resolution'];
+    }
+
+    /*
+     * Sets image_resolution
+     *
+     * @param int $image_resolution Specifies the output resolution for images when exporting
+     *
+     * @return $this
+     */
+    public function setImageResolution($image_resolution)
+    {
+        $this->container['image_resolution'] = $image_resolution;
 
         return $this;
     }
@@ -1199,30 +1223,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
     }
 
     /*
-     * Gets image_resolution
-     *
-     * @return int
-     */
-    public function getImageResolution()
-    {
-        return $this->container['image_resolution'];
-    }
-
-    /*
-     * Sets image_resolution
-     *
-     * @param int $image_resolution Specifies the output resolution for images when exporting
-     *
-     * @return $this
-     */
-    public function setImageResolution($image_resolution)
-    {
-        $this->container['image_resolution'] = $image_resolution;
-
-        return $this;
-    }
-
-    /*
      * Gets office_math_output_mode
      *
      * @return string
@@ -1247,6 +1247,30 @@ class HtmlSaveOptionsData extends SaveOptionsData
         }
 			
         $this->container['office_math_output_mode'] = $office_math_output_mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets pretty_format
+     *
+     * @return bool
+     */
+    public function getPrettyFormat()
+    {
+        return $this->container['pretty_format'];
+    }
+
+    /*
+     * Sets pretty_format
+     *
+     * @param bool $pretty_format Specifies whether or not use pretty formats output
+     *
+     * @return $this
+     */
+    public function setPrettyFormat($pretty_format)
+    {
+        $this->container['pretty_format'] = $pretty_format;
 
         return $this;
     }
@@ -1343,30 +1367,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setTableWidthOutputMode($table_width_output_mode)
     {
         $this->container['table_width_output_mode'] = $table_width_output_mode;
-
-        return $this;
-    }
-
-    /*
-     * Gets export_drop_down_form_field_as_text
-     *
-     * @return bool
-     */
-    public function getExportDropDownFormFieldAsText()
-    {
-        return $this->container['export_drop_down_form_field_as_text'];
-    }
-
-    /*
-     * Sets export_drop_down_form_field_as_text
-     *
-     * @param bool $export_drop_down_form_field_as_text Controls how drop-down form fields are saved to HTML. Default value is false.
-     *
-     * @return $this
-     */
-    public function setExportDropDownFormFieldAsText($export_drop_down_form_field_as_text)
-    {
-        $this->container['export_drop_down_form_field_as_text'] = $export_drop_down_form_field_as_text;
 
         return $this;
     }

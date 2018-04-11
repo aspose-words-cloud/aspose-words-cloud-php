@@ -54,8 +54,8 @@ class Field extends FieldLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'result' => 'string',
-        'locale_id' => 'string'
+        'locale_id' => 'string',
+        'result' => 'string'
     ];
 
     /*
@@ -64,8 +64,8 @@ class Field extends FieldLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'result' => null,
-        'locale_id' => null
+        'locale_id' => null,
+        'result' => null
     ];
 
     /*
@@ -95,8 +95,8 @@ class Field extends FieldLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'result' => 'Result',
-        'locale_id' => 'LocaleId'
+        'locale_id' => 'LocaleId',
+        'result' => 'Result'
     ];
 
     /*
@@ -105,8 +105,8 @@ class Field extends FieldLink
      * @var string[]
      */
     protected static $setters = [
-        'result' => 'setResult',
-        'locale_id' => 'setLocaleId'
+        'locale_id' => 'setLocaleId',
+        'result' => 'setResult'
     ];
 
     /*
@@ -115,8 +115,8 @@ class Field extends FieldLink
      * @var string[]
      */
     protected static $getters = [
-        'result' => 'getResult',
-        'locale_id' => 'getLocaleId'
+        'locale_id' => 'getLocaleId',
+        'result' => 'getResult'
     ];
 
     /*
@@ -175,8 +175,8 @@ class Field extends FieldLink
     {
         parent::__construct($data);
 
-        $this->container['result'] = isset($data['result']) ? $data['result'] : null;
         $this->container['locale_id'] = isset($data['locale_id']) ? $data['locale_id'] : null;
+        $this->container['result'] = isset($data['result']) ? $data['result'] : null;
     }
 
     /*
@@ -208,30 +208,6 @@ class Field extends FieldLink
 
 
     /*
-     * Gets result
-     *
-     * @return string
-     */
-    public function getResult()
-    {
-        return $this->container['result'];
-    }
-
-    /*
-     * Sets result
-     *
-     * @param string $result Field result
-     *
-     * @return $this
-     */
-    public function setResult($result)
-    {
-        $this->container['result'] = $result;
-
-        return $this;
-    }
-
-    /*
      * Gets locale_id
      *
      * @return string
@@ -251,6 +227,30 @@ class Field extends FieldLink
     public function setLocaleId($locale_id)
     {
         $this->container['locale_id'] = $locale_id;
+
+        return $this;
+    }
+
+    /*
+     * Gets result
+     *
+     * @return string
+     */
+    public function getResult()
+    {
+        return $this->container['result'];
+    }
+
+    /*
+     * Sets result
+     *
+     * @param string $result Field result
+     *
+     * @return $this
+     */
+    public function setResult($result)
+    {
+        $this->container['result'] = $result;
 
         return $this;
     }

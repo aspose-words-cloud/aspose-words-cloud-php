@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * CommentsResponse
  *
- * @description This resonse should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/comments
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/comments
  */
 class CommentsResponse extends AsposeResponse 
 {

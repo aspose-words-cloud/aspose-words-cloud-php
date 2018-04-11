@@ -54,11 +54,11 @@ class Section extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'paragraphs' => '\Aspose\Words\Model\LinkElement',
-        'page_setup' => '\Aspose\Words\Model\LinkElement',
+        'child_nodes' => '\Aspose\Words\Model\NodeLink[]',
         'header_footers' => '\Aspose\Words\Model\LinkElement',
-        'tables' => '\Aspose\Words\Model\LinkElement',
-        'child_nodes' => '\Aspose\Words\Model\NodeLink[]'
+        'page_setup' => '\Aspose\Words\Model\LinkElement',
+        'paragraphs' => '\Aspose\Words\Model\LinkElement',
+        'tables' => '\Aspose\Words\Model\LinkElement'
     ];
 
     /*
@@ -67,11 +67,11 @@ class Section extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'paragraphs' => null,
-        'page_setup' => null,
+        'child_nodes' => null,
         'header_footers' => null,
-        'tables' => null,
-        'child_nodes' => null
+        'page_setup' => null,
+        'paragraphs' => null,
+        'tables' => null
     ];
 
     /*
@@ -101,11 +101,11 @@ class Section extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'paragraphs' => 'Paragraphs',
-        'page_setup' => 'PageSetup',
+        'child_nodes' => 'ChildNodes',
         'header_footers' => 'HeaderFooters',
-        'tables' => 'Tables',
-        'child_nodes' => 'ChildNodes'
+        'page_setup' => 'PageSetup',
+        'paragraphs' => 'Paragraphs',
+        'tables' => 'Tables'
     ];
 
     /*
@@ -114,11 +114,11 @@ class Section extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'paragraphs' => 'setParagraphs',
-        'page_setup' => 'setPageSetup',
+        'child_nodes' => 'setChildNodes',
         'header_footers' => 'setHeaderFooters',
-        'tables' => 'setTables',
-        'child_nodes' => 'setChildNodes'
+        'page_setup' => 'setPageSetup',
+        'paragraphs' => 'setParagraphs',
+        'tables' => 'setTables'
     ];
 
     /*
@@ -127,11 +127,11 @@ class Section extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'paragraphs' => 'getParagraphs',
-        'page_setup' => 'getPageSetup',
+        'child_nodes' => 'getChildNodes',
         'header_footers' => 'getHeaderFooters',
-        'tables' => 'getTables',
-        'child_nodes' => 'getChildNodes'
+        'page_setup' => 'getPageSetup',
+        'paragraphs' => 'getParagraphs',
+        'tables' => 'getTables'
     ];
 
     /*
@@ -190,11 +190,11 @@ class Section extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['paragraphs'] = isset($data['paragraphs']) ? $data['paragraphs'] : null;
-        $this->container['page_setup'] = isset($data['page_setup']) ? $data['page_setup'] : null;
-        $this->container['header_footers'] = isset($data['header_footers']) ? $data['header_footers'] : null;
-        $this->container['tables'] = isset($data['tables']) ? $data['tables'] : null;
         $this->container['child_nodes'] = isset($data['child_nodes']) ? $data['child_nodes'] : null;
+        $this->container['header_footers'] = isset($data['header_footers']) ? $data['header_footers'] : null;
+        $this->container['page_setup'] = isset($data['page_setup']) ? $data['page_setup'] : null;
+        $this->container['paragraphs'] = isset($data['paragraphs']) ? $data['paragraphs'] : null;
+        $this->container['tables'] = isset($data['tables']) ? $data['tables'] : null;
     }
 
     /*
@@ -226,49 +226,25 @@ class Section extends LinkElement
 
 
     /*
-     * Gets paragraphs
+     * Gets child_nodes
      *
-     * @return \Aspose\Words\Model\LinkElement
+     * @return \Aspose\Words\Model\NodeLink[]
      */
-    public function getParagraphs()
+    public function getChildNodes()
     {
-        return $this->container['paragraphs'];
+        return $this->container['child_nodes'];
     }
 
     /*
-     * Sets paragraphs
+     * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs Link to Paragraphs resource
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Child nodes.
      *
      * @return $this
      */
-    public function setParagraphs($paragraphs)
+    public function setChildNodes($child_nodes)
     {
-        $this->container['paragraphs'] = $paragraphs;
-
-        return $this;
-    }
-
-    /*
-     * Gets page_setup
-     *
-     * @return \Aspose\Words\Model\LinkElement
-     */
-    public function getPageSetup()
-    {
-        return $this->container['page_setup'];
-    }
-
-    /*
-     * Sets page_setup
-     *
-     * @param \Aspose\Words\Model\LinkElement $page_setup Link to PageSetup resource
-     *
-     * @return $this
-     */
-    public function setPageSetup($page_setup)
-    {
-        $this->container['page_setup'] = $page_setup;
+        $this->container['child_nodes'] = $child_nodes;
 
         return $this;
     }
@@ -298,6 +274,54 @@ class Section extends LinkElement
     }
 
     /*
+     * Gets page_setup
+     *
+     * @return \Aspose\Words\Model\LinkElement
+     */
+    public function getPageSetup()
+    {
+        return $this->container['page_setup'];
+    }
+
+    /*
+     * Sets page_setup
+     *
+     * @param \Aspose\Words\Model\LinkElement $page_setup Link to PageSetup resource
+     *
+     * @return $this
+     */
+    public function setPageSetup($page_setup)
+    {
+        $this->container['page_setup'] = $page_setup;
+
+        return $this;
+    }
+
+    /*
+     * Gets paragraphs
+     *
+     * @return \Aspose\Words\Model\LinkElement
+     */
+    public function getParagraphs()
+    {
+        return $this->container['paragraphs'];
+    }
+
+    /*
+     * Sets paragraphs
+     *
+     * @param \Aspose\Words\Model\LinkElement $paragraphs Link to Paragraphs resource
+     *
+     * @return $this
+     */
+    public function setParagraphs($paragraphs)
+    {
+        $this->container['paragraphs'] = $paragraphs;
+
+        return $this;
+    }
+
+    /*
      * Gets tables
      *
      * @return \Aspose\Words\Model\LinkElement
@@ -317,30 +341,6 @@ class Section extends LinkElement
     public function setTables($tables)
     {
         $this->container['tables'] = $tables;
-
-        return $this;
-    }
-
-    /*
-     * Gets child_nodes
-     *
-     * @return \Aspose\Words\Model\NodeLink[]
-     */
-    public function getChildNodes()
-    {
-        return $this->container['child_nodes'];
-    }
-
-    /*
-     * Sets child_nodes
-     *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Child nodes.
-     *
-     * @return $this
-     */
-    public function setChildNodes($child_nodes)
-    {
-        $this->container['child_nodes'] = $child_nodes;
 
         return $this;
     }

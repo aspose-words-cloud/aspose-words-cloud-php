@@ -54,13 +54,13 @@ class Comment extends CommentLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'range_start' => '\Aspose\Words\Model\DocumentPosition',
-        'range_end' => '\Aspose\Words\Model\DocumentPosition',
         'author' => 'string',
-        'initial' => 'string',
+        'content' => '\Aspose\Words\Model\StoryChildNodes',
         'date_time' => '\DateTime',
-        'text' => 'string',
-        'content' => '\Aspose\Words\Model\StoryChildNodes'
+        'initial' => 'string',
+        'range_end' => '\Aspose\Words\Model\DocumentPosition',
+        'range_start' => '\Aspose\Words\Model\DocumentPosition',
+        'text' => 'string'
     ];
 
     /*
@@ -69,13 +69,13 @@ class Comment extends CommentLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'range_start' => null,
-        'range_end' => null,
         'author' => null,
-        'initial' => null,
+        'content' => null,
         'date_time' => 'date-time',
-        'text' => null,
-        'content' => null
+        'initial' => null,
+        'range_end' => null,
+        'range_start' => null,
+        'text' => null
     ];
 
     /*
@@ -105,13 +105,13 @@ class Comment extends CommentLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'range_start' => 'RangeStart',
-        'range_end' => 'RangeEnd',
         'author' => 'Author',
-        'initial' => 'Initial',
+        'content' => 'Content',
         'date_time' => 'DateTime',
-        'text' => 'Text',
-        'content' => 'Content'
+        'initial' => 'Initial',
+        'range_end' => 'RangeEnd',
+        'range_start' => 'RangeStart',
+        'text' => 'Text'
     ];
 
     /*
@@ -120,13 +120,13 @@ class Comment extends CommentLink
      * @var string[]
      */
     protected static $setters = [
-        'range_start' => 'setRangeStart',
-        'range_end' => 'setRangeEnd',
         'author' => 'setAuthor',
-        'initial' => 'setInitial',
+        'content' => 'setContent',
         'date_time' => 'setDateTime',
-        'text' => 'setText',
-        'content' => 'setContent'
+        'initial' => 'setInitial',
+        'range_end' => 'setRangeEnd',
+        'range_start' => 'setRangeStart',
+        'text' => 'setText'
     ];
 
     /*
@@ -135,13 +135,13 @@ class Comment extends CommentLink
      * @var string[]
      */
     protected static $getters = [
-        'range_start' => 'getRangeStart',
-        'range_end' => 'getRangeEnd',
         'author' => 'getAuthor',
-        'initial' => 'getInitial',
+        'content' => 'getContent',
         'date_time' => 'getDateTime',
-        'text' => 'getText',
-        'content' => 'getContent'
+        'initial' => 'getInitial',
+        'range_end' => 'getRangeEnd',
+        'range_start' => 'getRangeStart',
+        'text' => 'getText'
     ];
 
     /*
@@ -200,13 +200,13 @@ class Comment extends CommentLink
     {
         parent::__construct($data);
 
-        $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
-        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
         $this->container['author'] = isset($data['author']) ? $data['author'] : null;
-        $this->container['initial'] = isset($data['initial']) ? $data['initial'] : null;
-        $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
+        $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
+        $this->container['initial'] = isset($data['initial']) ? $data['initial'] : null;
+        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
+        $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
     }
 
     /*
@@ -238,54 +238,6 @@ class Comment extends CommentLink
 
 
     /*
-     * Gets range_start
-     *
-     * @return \Aspose\Words\Model\DocumentPosition
-     */
-    public function getRangeStart()
-    {
-        return $this->container['range_start'];
-    }
-
-    /*
-     * Sets range_start
-     *
-     * @param \Aspose\Words\Model\DocumentPosition $range_start Link to comment range start node.
-     *
-     * @return $this
-     */
-    public function setRangeStart($range_start)
-    {
-        $this->container['range_start'] = $range_start;
-
-        return $this;
-    }
-
-    /*
-     * Gets range_end
-     *
-     * @return \Aspose\Words\Model\DocumentPosition
-     */
-    public function getRangeEnd()
-    {
-        return $this->container['range_end'];
-    }
-
-    /*
-     * Sets range_end
-     *
-     * @param \Aspose\Words\Model\DocumentPosition $range_end Link to comment range end node.
-     *
-     * @return $this
-     */
-    public function setRangeEnd($range_end)
-    {
-        $this->container['range_end'] = $range_end;
-
-        return $this;
-    }
-
-    /*
      * Gets author
      *
      * @return string
@@ -310,25 +262,25 @@ class Comment extends CommentLink
     }
 
     /*
-     * Gets initial
+     * Gets content
      *
-     * @return string
+     * @return \Aspose\Words\Model\StoryChildNodes
      */
-    public function getInitial()
+    public function getContent()
     {
-        return $this->container['initial'];
+        return $this->container['content'];
     }
 
     /*
-     * Sets initial
+     * Sets content
      *
-     * @param string $initial Returns or sets the initials of the user associated with a specific comment.
+     * @param \Aspose\Words\Model\StoryChildNodes $content Content of comment
      *
      * @return $this
      */
-    public function setInitial($initial)
+    public function setContent($content)
     {
-        $this->container['initial'] = $initial;
+        $this->container['content'] = $content;
 
         return $this;
     }
@@ -358,6 +310,78 @@ class Comment extends CommentLink
     }
 
     /*
+     * Gets initial
+     *
+     * @return string
+     */
+    public function getInitial()
+    {
+        return $this->container['initial'];
+    }
+
+    /*
+     * Sets initial
+     *
+     * @param string $initial Returns or sets the initials of the user associated with a specific comment.
+     *
+     * @return $this
+     */
+    public function setInitial($initial)
+    {
+        $this->container['initial'] = $initial;
+
+        return $this;
+    }
+
+    /*
+     * Gets range_end
+     *
+     * @return \Aspose\Words\Model\DocumentPosition
+     */
+    public function getRangeEnd()
+    {
+        return $this->container['range_end'];
+    }
+
+    /*
+     * Sets range_end
+     *
+     * @param \Aspose\Words\Model\DocumentPosition $range_end Link to comment range end node.
+     *
+     * @return $this
+     */
+    public function setRangeEnd($range_end)
+    {
+        $this->container['range_end'] = $range_end;
+
+        return $this;
+    }
+
+    /*
+     * Gets range_start
+     *
+     * @return \Aspose\Words\Model\DocumentPosition
+     */
+    public function getRangeStart()
+    {
+        return $this->container['range_start'];
+    }
+
+    /*
+     * Sets range_start
+     *
+     * @param \Aspose\Words\Model\DocumentPosition $range_start Link to comment range start node.
+     *
+     * @return $this
+     */
+    public function setRangeStart($range_start)
+    {
+        $this->container['range_start'] = $range_start;
+
+        return $this;
+    }
+
+    /*
      * Gets text
      *
      * @return string
@@ -377,30 +401,6 @@ class Comment extends CommentLink
     public function setText($text)
     {
         $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /*
-     * Gets content
-     *
-     * @return \Aspose\Words\Model\StoryChildNodes
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /*
-     * Sets content
-     *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Content of comment
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
 
         return $this;
     }

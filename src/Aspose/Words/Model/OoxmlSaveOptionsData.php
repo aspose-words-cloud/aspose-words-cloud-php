@@ -54,9 +54,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'pretty_format' => 'bool',
         'compliance' => 'string',
-        'password' => 'string'
+        'password' => 'string',
+        'pretty_format' => 'bool'
     ];
 
     /*
@@ -65,9 +65,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'pretty_format' => null,
         'compliance' => null,
-        'password' => null
+        'password' => null,
+        'pretty_format' => null
     ];
 
     /*
@@ -97,9 +97,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'pretty_format' => 'PrettyFormat',
         'compliance' => 'Compliance',
-        'password' => 'Password'
+        'password' => 'Password',
+        'pretty_format' => 'PrettyFormat'
     ];
 
     /*
@@ -108,9 +108,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'pretty_format' => 'setPrettyFormat',
         'compliance' => 'setCompliance',
-        'password' => 'setPassword'
+        'password' => 'setPassword',
+        'pretty_format' => 'setPrettyFormat'
     ];
 
     /*
@@ -119,9 +119,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'pretty_format' => 'getPrettyFormat',
         'compliance' => 'getCompliance',
-        'password' => 'getPassword'
+        'password' => 'getPassword',
+        'pretty_format' => 'getPrettyFormat'
     ];
 
     /*
@@ -180,9 +180,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
 
-        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
     }
 
     /*
@@ -212,30 +212,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         return true;
     }
 
-
-    /*
-     * Gets pretty_format
-     *
-     * @return bool
-     */
-    public function getPrettyFormat()
-    {
-        return $this->container['pretty_format'];
-    }
-
-    /*
-     * Sets pretty_format
-     *
-     * @param bool $pretty_format Specifies whether or not use pretty formats output
-     *
-     * @return $this
-     */
-    public function setPrettyFormat($pretty_format)
-    {
-        $this->container['pretty_format'] = $pretty_format;
-
-        return $this;
-    }
 
     /*
      * Gets compliance
@@ -281,6 +257,30 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /*
+     * Gets pretty_format
+     *
+     * @return bool
+     */
+    public function getPrettyFormat()
+    {
+        return $this->container['pretty_format'];
+    }
+
+    /*
+     * Sets pretty_format
+     *
+     * @param bool $pretty_format Specifies whether or not use pretty formats output
+     *
+     * @return $this
+     */
+    public function setPrettyFormat($pretty_format)
+    {
+        $this->container['pretty_format'] = $pretty_format;
 
         return $this;
     }

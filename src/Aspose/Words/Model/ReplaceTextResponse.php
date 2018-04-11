@@ -54,8 +54,8 @@ class ReplaceTextResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'matches' => 'int',
-        'document_link' => '\Aspose\Words\Model\FileLink'
+        'document_link' => '\Aspose\Words\Model\FileLink',
+        'matches' => 'int'
     ];
 
     /*
@@ -64,8 +64,8 @@ class ReplaceTextResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'matches' => 'int32',
-        'document_link' => null
+        'document_link' => null,
+        'matches' => 'int32'
     ];
 
     /*
@@ -95,8 +95,8 @@ class ReplaceTextResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'matches' => 'Matches',
-        'document_link' => 'DocumentLink'
+        'document_link' => 'DocumentLink',
+        'matches' => 'Matches'
     ];
 
     /*
@@ -105,8 +105,8 @@ class ReplaceTextResponse extends AsposeResponse
      * @var string[]
      */
     protected static $setters = [
-        'matches' => 'setMatches',
-        'document_link' => 'setDocumentLink'
+        'document_link' => 'setDocumentLink',
+        'matches' => 'setMatches'
     ];
 
     /*
@@ -115,8 +115,8 @@ class ReplaceTextResponse extends AsposeResponse
      * @var string[]
      */
     protected static $getters = [
-        'matches' => 'getMatches',
-        'document_link' => 'getDocumentLink'
+        'document_link' => 'getDocumentLink',
+        'matches' => 'getMatches'
     ];
 
     /*
@@ -175,8 +175,8 @@ class ReplaceTextResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['matches'] = isset($data['matches']) ? $data['matches'] : null;
         $this->container['document_link'] = isset($data['document_link']) ? $data['document_link'] : null;
+        $this->container['matches'] = isset($data['matches']) ? $data['matches'] : null;
     }
 
     /*
@@ -208,30 +208,6 @@ class ReplaceTextResponse extends AsposeResponse
 
 
     /*
-     * Gets matches
-     *
-     * @return int
-     */
-    public function getMatches()
-    {
-        return $this->container['matches'];
-    }
-
-    /*
-     * Sets matches
-     *
-     * @param int $matches Number of occurrences of the captured text in the document.
-     *
-     * @return $this
-     */
-    public function setMatches($matches)
-    {
-        $this->container['matches'] = $matches;
-
-        return $this;
-    }
-
-    /*
      * Gets document_link
      *
      * @return \Aspose\Words\Model\FileLink
@@ -251,6 +227,30 @@ class ReplaceTextResponse extends AsposeResponse
     public function setDocumentLink($document_link)
     {
         $this->container['document_link'] = $document_link;
+
+        return $this;
+    }
+
+    /*
+     * Gets matches
+     *
+     * @return int
+     */
+    public function getMatches()
+    {
+        return $this->container['matches'];
+    }
+
+    /*
+     * Sets matches
+     *
+     * @param int $matches Number of occurrences of the captured text in the document.
+     *
+     * @return $this
+     */
+    public function setMatches($matches)
+    {
+        $this->container['matches'] = $matches;
 
         return $this;
     }

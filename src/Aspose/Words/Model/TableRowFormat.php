@@ -54,10 +54,10 @@ class TableRowFormat extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'height' => 'double',
-        'height_rule' => 'string',
         'allow_break_across_pages' => 'bool',
-        'heading_format' => 'bool'
+        'heading_format' => 'bool',
+        'height' => 'double',
+        'height_rule' => 'string'
     ];
 
     /*
@@ -66,10 +66,10 @@ class TableRowFormat extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'height' => 'double',
-        'height_rule' => null,
         'allow_break_across_pages' => null,
-        'heading_format' => null
+        'heading_format' => null,
+        'height' => 'double',
+        'height_rule' => null
     ];
 
     /*
@@ -99,10 +99,10 @@ class TableRowFormat extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'height' => 'Height',
-        'height_rule' => 'HeightRule',
         'allow_break_across_pages' => 'AllowBreakAcrossPages',
-        'heading_format' => 'HeadingFormat'
+        'heading_format' => 'HeadingFormat',
+        'height' => 'Height',
+        'height_rule' => 'HeightRule'
     ];
 
     /*
@@ -111,10 +111,10 @@ class TableRowFormat extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'height' => 'setHeight',
-        'height_rule' => 'setHeightRule',
         'allow_break_across_pages' => 'setAllowBreakAcrossPages',
-        'heading_format' => 'setHeadingFormat'
+        'heading_format' => 'setHeadingFormat',
+        'height' => 'setHeight',
+        'height_rule' => 'setHeightRule'
     ];
 
     /*
@@ -123,10 +123,10 @@ class TableRowFormat extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'height' => 'getHeight',
-        'height_rule' => 'getHeightRule',
         'allow_break_across_pages' => 'getAllowBreakAcrossPages',
-        'heading_format' => 'getHeadingFormat'
+        'heading_format' => 'getHeadingFormat',
+        'height' => 'getHeight',
+        'height_rule' => 'getHeightRule'
     ];
 
     /*
@@ -202,10 +202,10 @@ class TableRowFormat extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['height_rule'] = isset($data['height_rule']) ? $data['height_rule'] : null;
         $this->container['allow_break_across_pages'] = isset($data['allow_break_across_pages']) ? $data['allow_break_across_pages'] : null;
         $this->container['heading_format'] = isset($data['heading_format']) ? $data['heading_format'] : null;
+        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
+        $this->container['height_rule'] = isset($data['height_rule']) ? $data['height_rule'] : null;
     }
 
     /*
@@ -247,6 +247,54 @@ class TableRowFormat extends LinkElement
         return true;
     }
 
+
+    /*
+     * Gets allow_break_across_pages
+     *
+     * @return bool
+     */
+    public function getAllowBreakAcrossPages()
+    {
+        return $this->container['allow_break_across_pages'];
+    }
+
+    /*
+     * Sets allow_break_across_pages
+     *
+     * @param bool $allow_break_across_pages True if the text in a table row is allowed to split across a page break.
+     *
+     * @return $this
+     */
+    public function setAllowBreakAcrossPages($allow_break_across_pages)
+    {
+        $this->container['allow_break_across_pages'] = $allow_break_across_pages;
+
+        return $this;
+    }
+
+    /*
+     * Gets heading_format
+     *
+     * @return bool
+     */
+    public function getHeadingFormat()
+    {
+        return $this->container['heading_format'];
+    }
+
+    /*
+     * Sets heading_format
+     *
+     * @param bool $heading_format True if the row is repeated as a table heading on every page when the table spans more than one page.
+     *
+     * @return $this
+     */
+    public function setHeadingFormat($heading_format)
+    {
+        $this->container['heading_format'] = $heading_format;
+
+        return $this;
+    }
 
     /*
      * Gets height
@@ -297,54 +345,6 @@ class TableRowFormat extends LinkElement
         }
 			
         $this->container['height_rule'] = $height_rule;
-
-        return $this;
-    }
-
-    /*
-     * Gets allow_break_across_pages
-     *
-     * @return bool
-     */
-    public function getAllowBreakAcrossPages()
-    {
-        return $this->container['allow_break_across_pages'];
-    }
-
-    /*
-     * Sets allow_break_across_pages
-     *
-     * @param bool $allow_break_across_pages True if the text in a table row is allowed to split across a page break.
-     *
-     * @return $this
-     */
-    public function setAllowBreakAcrossPages($allow_break_across_pages)
-    {
-        $this->container['allow_break_across_pages'] = $allow_break_across_pages;
-
-        return $this;
-    }
-
-    /*
-     * Gets heading_format
-     *
-     * @return bool
-     */
-    public function getHeadingFormat()
-    {
-        return $this->container['heading_format'];
-    }
-
-    /*
-     * Sets heading_format
-     *
-     * @param bool $heading_format True if the row is repeated as a table heading on every page when the table spans more than one page.
-     *
-     * @return $this
-     */
-    public function setHeadingFormat($heading_format)
-    {
-        $this->container['heading_format'] = $heading_format;
 
         return $this;
     }

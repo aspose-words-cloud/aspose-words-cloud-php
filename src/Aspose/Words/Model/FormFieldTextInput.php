@@ -54,10 +54,10 @@ class FormFieldTextInput extends FormField
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'text_input_format' => 'string',
-        'text_input_type' => 'string',
+        'max_length' => 'int',
         'text_input_default' => 'string',
-        'max_length' => 'int'
+        'text_input_format' => 'string',
+        'text_input_type' => 'string'
     ];
 
     /*
@@ -66,10 +66,10 @@ class FormFieldTextInput extends FormField
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'text_input_format' => null,
-        'text_input_type' => null,
+        'max_length' => 'int32',
         'text_input_default' => null,
-        'max_length' => 'int32'
+        'text_input_format' => null,
+        'text_input_type' => null
     ];
 
     /*
@@ -99,10 +99,10 @@ class FormFieldTextInput extends FormField
      * @var string[]
      */
     protected static $attributeMap = [
-        'text_input_format' => 'TextInputFormat',
-        'text_input_type' => 'TextInputType',
+        'max_length' => 'MaxLength',
         'text_input_default' => 'TextInputDefault',
-        'max_length' => 'MaxLength'
+        'text_input_format' => 'TextInputFormat',
+        'text_input_type' => 'TextInputType'
     ];
 
     /*
@@ -111,10 +111,10 @@ class FormFieldTextInput extends FormField
      * @var string[]
      */
     protected static $setters = [
-        'text_input_format' => 'setTextInputFormat',
-        'text_input_type' => 'setTextInputType',
+        'max_length' => 'setMaxLength',
         'text_input_default' => 'setTextInputDefault',
-        'max_length' => 'setMaxLength'
+        'text_input_format' => 'setTextInputFormat',
+        'text_input_type' => 'setTextInputType'
     ];
 
     /*
@@ -123,10 +123,10 @@ class FormFieldTextInput extends FormField
      * @var string[]
      */
     protected static $getters = [
-        'text_input_format' => 'getTextInputFormat',
-        'text_input_type' => 'getTextInputType',
+        'max_length' => 'getMaxLength',
         'text_input_default' => 'getTextInputDefault',
-        'max_length' => 'getMaxLength'
+        'text_input_format' => 'getTextInputFormat',
+        'text_input_type' => 'getTextInputType'
     ];
 
     /*
@@ -208,10 +208,10 @@ class FormFieldTextInput extends FormField
     {
         parent::__construct($data);
 
+        $this->container['max_length'] = isset($data['max_length']) ? $data['max_length'] : null;
+        $this->container['text_input_default'] = isset($data['text_input_default']) ? $data['text_input_default'] : null;
         $this->container['text_input_format'] = isset($data['text_input_format']) ? $data['text_input_format'] : null;
         $this->container['text_input_type'] = isset($data['text_input_type']) ? $data['text_input_type'] : null;
-        $this->container['text_input_default'] = isset($data['text_input_default']) ? $data['text_input_default'] : null;
-        $this->container['max_length'] = isset($data['max_length']) ? $data['max_length'] : null;
     }
 
     /*
@@ -253,6 +253,54 @@ class FormFieldTextInput extends FormField
         return true;
     }
 
+
+    /*
+     * Gets max_length
+     *
+     * @return int
+     */
+    public function getMaxLength()
+    {
+        return $this->container['max_length'];
+    }
+
+    /*
+     * Sets max_length
+     *
+     * @param int $max_length Maximum length for the text field. Zero when the length is not limited.
+     *
+     * @return $this
+     */
+    public function setMaxLength($max_length)
+    {
+        $this->container['max_length'] = $max_length;
+
+        return $this;
+    }
+
+    /*
+     * Gets text_input_default
+     *
+     * @return string
+     */
+    public function getTextInputDefault()
+    {
+        return $this->container['text_input_default'];
+    }
+
+    /*
+     * Sets text_input_default
+     *
+     * @param string $text_input_default Gets or sets the default string or a calculation expression of a text form field.
+     *
+     * @return $this
+     */
+    public function setTextInputDefault($text_input_default)
+    {
+        $this->container['text_input_default'] = $text_input_default;
+
+        return $this;
+    }
 
     /*
      * Gets text_input_format
@@ -303,54 +351,6 @@ class FormFieldTextInput extends FormField
         }
 			
         $this->container['text_input_type'] = $text_input_type;
-
-        return $this;
-    }
-
-    /*
-     * Gets text_input_default
-     *
-     * @return string
-     */
-    public function getTextInputDefault()
-    {
-        return $this->container['text_input_default'];
-    }
-
-    /*
-     * Sets text_input_default
-     *
-     * @param string $text_input_default Gets or sets the default string or a calculation expression of a text form field.
-     *
-     * @return $this
-     */
-    public function setTextInputDefault($text_input_default)
-    {
-        $this->container['text_input_default'] = $text_input_default;
-
-        return $this;
-    }
-
-    /*
-     * Gets max_length
-     *
-     * @return int
-     */
-    public function getMaxLength()
-    {
-        return $this->container['max_length'];
-    }
-
-    /*
-     * Sets max_length
-     *
-     * @param int $max_length Maximum length for the text field. Zero when the length is not limited.
-     *
-     * @return $this
-     */
-    public function setMaxLength($max_length)
-    {
-        $this->container['max_length'] = $max_length;
 
         return $this;
     }

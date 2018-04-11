@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * BookmarkResponse
  *
- * @description This resonse should be returned by the service when handling:  GET bookmarks/{bookmarkName}.
+ * @description This response should be returned by the service when handling:  GET bookmarks/{bookmarkName}.
  */
 class BookmarkResponse extends AsposeResponse 
 {

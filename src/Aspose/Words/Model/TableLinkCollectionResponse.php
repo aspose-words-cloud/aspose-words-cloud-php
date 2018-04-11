@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableLinkCollectionResponse
  *
- * @description This resonse should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/tables.
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/tables.
  */
 class TableLinkCollectionResponse extends AsposeResponse 
 {

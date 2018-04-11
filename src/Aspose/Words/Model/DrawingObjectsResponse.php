@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DrawingObjectsResponse
  *
- * @description This resonse should be returned by the service when handling:  GET /drawingObjects.
+ * @description This response should be returned by the service when handling:  GET /drawingObjects.
  */
 class DrawingObjectsResponse extends AsposeResponse 
 {

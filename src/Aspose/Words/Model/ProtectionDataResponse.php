@@ -54,8 +54,8 @@ class ProtectionDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'protection_data' => '\Aspose\Words\Model\ProtectionData',
-        'document_link' => '\Aspose\Words\Model\FileLink'
+        'document_link' => '\Aspose\Words\Model\FileLink',
+        'protection_data' => '\Aspose\Words\Model\ProtectionData'
     ];
 
     /*
@@ -64,8 +64,8 @@ class ProtectionDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'protection_data' => null,
-        'document_link' => null
+        'document_link' => null,
+        'protection_data' => null
     ];
 
     /*
@@ -95,8 +95,8 @@ class ProtectionDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'protection_data' => 'ProtectionData',
-        'document_link' => 'DocumentLink'
+        'document_link' => 'DocumentLink',
+        'protection_data' => 'ProtectionData'
     ];
 
     /*
@@ -105,8 +105,8 @@ class ProtectionDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $setters = [
-        'protection_data' => 'setProtectionData',
-        'document_link' => 'setDocumentLink'
+        'document_link' => 'setDocumentLink',
+        'protection_data' => 'setProtectionData'
     ];
 
     /*
@@ -115,8 +115,8 @@ class ProtectionDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $getters = [
-        'protection_data' => 'getProtectionData',
-        'document_link' => 'getDocumentLink'
+        'document_link' => 'getDocumentLink',
+        'protection_data' => 'getProtectionData'
     ];
 
     /*
@@ -175,8 +175,8 @@ class ProtectionDataResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['protection_data'] = isset($data['protection_data']) ? $data['protection_data'] : null;
         $this->container['document_link'] = isset($data['document_link']) ? $data['document_link'] : null;
+        $this->container['protection_data'] = isset($data['protection_data']) ? $data['protection_data'] : null;
     }
 
     /*
@@ -208,30 +208,6 @@ class ProtectionDataResponse extends AsposeResponse
 
 
     /*
-     * Gets protection_data
-     *
-     * @return \Aspose\Words\Model\ProtectionData
-     */
-    public function getProtectionData()
-    {
-        return $this->container['protection_data'];
-    }
-
-    /*
-     * Sets protection_data
-     *
-     * @param \Aspose\Words\Model\ProtectionData $protection_data Protection's data of the document
-     *
-     * @return $this
-     */
-    public function setProtectionData($protection_data)
-    {
-        $this->container['protection_data'] = $protection_data;
-
-        return $this;
-    }
-
-    /*
      * Gets document_link
      *
      * @return \Aspose\Words\Model\FileLink
@@ -251,6 +227,30 @@ class ProtectionDataResponse extends AsposeResponse
     public function setDocumentLink($document_link)
     {
         $this->container['document_link'] = $document_link;
+
+        return $this;
+    }
+
+    /*
+     * Gets protection_data
+     *
+     * @return \Aspose\Words\Model\ProtectionData
+     */
+    public function getProtectionData()
+    {
+        return $this->container['protection_data'];
+    }
+
+    /*
+     * Sets protection_data
+     *
+     * @param \Aspose\Words\Model\ProtectionData $protection_data Protection's data of the document
+     *
+     * @return $this
+     */
+    public function setProtectionData($protection_data)
+    {
+        $this->container['protection_data'] = $protection_data;
 
         return $this;
     }

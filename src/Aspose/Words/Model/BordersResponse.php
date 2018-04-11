@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * BordersResponse
  *
- * @description This resonse should be returned by the service when handling: GET {nodeWithBorders}/borders.
+ * @description This response should be returned by the service when handling: GET {nodeWithBorders}/borders.
  */
 class BordersResponse extends AsposeResponse 
 {

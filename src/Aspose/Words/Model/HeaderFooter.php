@@ -54,8 +54,8 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'paragraphs' => '\Aspose\Words\Model\LinkElement',
-        'drawing_objects' => '\Aspose\Words\Model\LinkElement'
+        'drawing_objects' => '\Aspose\Words\Model\LinkElement',
+        'paragraphs' => '\Aspose\Words\Model\LinkElement'
     ];
 
     /*
@@ -64,8 +64,8 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'paragraphs' => null,
-        'drawing_objects' => null
+        'drawing_objects' => null,
+        'paragraphs' => null
     ];
 
     /*
@@ -95,8 +95,8 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'paragraphs' => 'Paragraphs',
-        'drawing_objects' => 'DrawingObjects'
+        'drawing_objects' => 'DrawingObjects',
+        'paragraphs' => 'Paragraphs'
     ];
 
     /*
@@ -105,8 +105,8 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $setters = [
-        'paragraphs' => 'setParagraphs',
-        'drawing_objects' => 'setDrawingObjects'
+        'drawing_objects' => 'setDrawingObjects',
+        'paragraphs' => 'setParagraphs'
     ];
 
     /*
@@ -115,8 +115,8 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $getters = [
-        'paragraphs' => 'getParagraphs',
-        'drawing_objects' => 'getDrawingObjects'
+        'drawing_objects' => 'getDrawingObjects',
+        'paragraphs' => 'getParagraphs'
     ];
 
     /*
@@ -175,8 +175,8 @@ class HeaderFooter extends HeaderFooterLink
     {
         parent::__construct($data);
 
-        $this->container['paragraphs'] = isset($data['paragraphs']) ? $data['paragraphs'] : null;
         $this->container['drawing_objects'] = isset($data['drawing_objects']) ? $data['drawing_objects'] : null;
+        $this->container['paragraphs'] = isset($data['paragraphs']) ? $data['paragraphs'] : null;
     }
 
     /*
@@ -208,30 +208,6 @@ class HeaderFooter extends HeaderFooterLink
 
 
     /*
-     * Gets paragraphs
-     *
-     * @return \Aspose\Words\Model\LinkElement
-     */
-    public function getParagraphs()
-    {
-        return $this->container['paragraphs'];
-    }
-
-    /*
-     * Sets paragraphs
-     *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs Link to Paragraphs resource
-     *
-     * @return $this
-     */
-    public function setParagraphs($paragraphs)
-    {
-        $this->container['paragraphs'] = $paragraphs;
-
-        return $this;
-    }
-
-    /*
      * Gets drawing_objects
      *
      * @return \Aspose\Words\Model\LinkElement
@@ -251,6 +227,30 @@ class HeaderFooter extends HeaderFooterLink
     public function setDrawingObjects($drawing_objects)
     {
         $this->container['drawing_objects'] = $drawing_objects;
+
+        return $this;
+    }
+
+    /*
+     * Gets paragraphs
+     *
+     * @return \Aspose\Words\Model\LinkElement
+     */
+    public function getParagraphs()
+    {
+        return $this->container['paragraphs'];
+    }
+
+    /*
+     * Sets paragraphs
+     *
+     * @param \Aspose\Words\Model\LinkElement $paragraphs Link to Paragraphs resource
+     *
+     * @return $this
+     */
+    public function setParagraphs($paragraphs)
+    {
+        $this->container['paragraphs'] = $paragraphs;
 
         return $this;
     }

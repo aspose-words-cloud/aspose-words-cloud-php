@@ -54,8 +54,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'create_note_hyperlinks' => 'bool',
         'compliance' => 'string',
+        'create_note_hyperlinks' => 'bool',
+        'custom_properties_export' => 'string',
         'digital_signature_details' => '\Aspose\Words\Model\PdfDigitalSignatureDetailsData',
         'display_doc_title' => 'bool',
         'downsample_options' => '\Aspose\Words\Model\DownsampleOptionsData',
@@ -63,19 +64,18 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'encryption_details' => '\Aspose\Words\Model\PdfEncryptionDetailsData',
         'export_document_structure' => 'bool',
         'font_embedding_mode' => 'string',
+        'image_color_space_export_mode' => 'string',
         'image_compression' => 'string',
         'open_hyperlinks_in_new_window' => 'bool',
         'outline_options' => '\Aspose\Words\Model\OutlineOptionsData',
         'page_mode' => 'string',
-        'image_color_space_export_mode' => 'string',
+        'preblend_images' => 'bool',
         'preserve_form_fields' => 'bool',
         'text_compression' => 'string',
-        'use_core_fonts' => 'bool',
         'use_book_fold_printing_settings' => 'bool',
+        'use_core_fonts' => 'bool',
         'zoom_behavior' => 'string',
-        'zoom_factor' => 'int',
-        'custom_properties_export' => 'string',
-        'preblend_images' => 'bool'
+        'zoom_factor' => 'int'
     ];
 
     /*
@@ -84,8 +84,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'create_note_hyperlinks' => null,
         'compliance' => null,
+        'create_note_hyperlinks' => null,
+        'custom_properties_export' => null,
         'digital_signature_details' => null,
         'display_doc_title' => null,
         'downsample_options' => null,
@@ -93,19 +94,18 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'encryption_details' => null,
         'export_document_structure' => null,
         'font_embedding_mode' => null,
+        'image_color_space_export_mode' => null,
         'image_compression' => null,
         'open_hyperlinks_in_new_window' => null,
         'outline_options' => null,
         'page_mode' => null,
-        'image_color_space_export_mode' => null,
+        'preblend_images' => null,
         'preserve_form_fields' => null,
         'text_compression' => null,
-        'use_core_fonts' => null,
         'use_book_fold_printing_settings' => null,
+        'use_core_fonts' => null,
         'zoom_behavior' => null,
-        'zoom_factor' => 'int32',
-        'custom_properties_export' => null,
-        'preblend_images' => null
+        'zoom_factor' => 'int32'
     ];
 
     /*
@@ -135,8 +135,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'create_note_hyperlinks' => 'CreateNoteHyperlinks',
         'compliance' => 'Compliance',
+        'create_note_hyperlinks' => 'CreateNoteHyperlinks',
+        'custom_properties_export' => 'CustomPropertiesExport',
         'digital_signature_details' => 'DigitalSignatureDetails',
         'display_doc_title' => 'DisplayDocTitle',
         'downsample_options' => 'DownsampleOptions',
@@ -144,19 +145,18 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'encryption_details' => 'EncryptionDetails',
         'export_document_structure' => 'ExportDocumentStructure',
         'font_embedding_mode' => 'FontEmbeddingMode',
+        'image_color_space_export_mode' => 'ImageColorSpaceExportMode',
         'image_compression' => 'ImageCompression',
         'open_hyperlinks_in_new_window' => 'OpenHyperlinksInNewWindow',
         'outline_options' => 'OutlineOptions',
         'page_mode' => 'PageMode',
-        'image_color_space_export_mode' => 'ImageColorSpaceExportMode',
+        'preblend_images' => 'PreblendImages',
         'preserve_form_fields' => 'PreserveFormFields',
         'text_compression' => 'TextCompression',
-        'use_core_fonts' => 'UseCoreFonts',
         'use_book_fold_printing_settings' => 'UseBookFoldPrintingSettings',
+        'use_core_fonts' => 'UseCoreFonts',
         'zoom_behavior' => 'ZoomBehavior',
-        'zoom_factor' => 'ZoomFactor',
-        'custom_properties_export' => 'CustomPropertiesExport',
-        'preblend_images' => 'PreblendImages'
+        'zoom_factor' => 'ZoomFactor'
     ];
 
     /*
@@ -165,8 +165,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'create_note_hyperlinks' => 'setCreateNoteHyperlinks',
         'compliance' => 'setCompliance',
+        'create_note_hyperlinks' => 'setCreateNoteHyperlinks',
+        'custom_properties_export' => 'setCustomPropertiesExport',
         'digital_signature_details' => 'setDigitalSignatureDetails',
         'display_doc_title' => 'setDisplayDocTitle',
         'downsample_options' => 'setDownsampleOptions',
@@ -174,19 +175,18 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'encryption_details' => 'setEncryptionDetails',
         'export_document_structure' => 'setExportDocumentStructure',
         'font_embedding_mode' => 'setFontEmbeddingMode',
+        'image_color_space_export_mode' => 'setImageColorSpaceExportMode',
         'image_compression' => 'setImageCompression',
         'open_hyperlinks_in_new_window' => 'setOpenHyperlinksInNewWindow',
         'outline_options' => 'setOutlineOptions',
         'page_mode' => 'setPageMode',
-        'image_color_space_export_mode' => 'setImageColorSpaceExportMode',
+        'preblend_images' => 'setPreblendImages',
         'preserve_form_fields' => 'setPreserveFormFields',
         'text_compression' => 'setTextCompression',
-        'use_core_fonts' => 'setUseCoreFonts',
         'use_book_fold_printing_settings' => 'setUseBookFoldPrintingSettings',
+        'use_core_fonts' => 'setUseCoreFonts',
         'zoom_behavior' => 'setZoomBehavior',
-        'zoom_factor' => 'setZoomFactor',
-        'custom_properties_export' => 'setCustomPropertiesExport',
-        'preblend_images' => 'setPreblendImages'
+        'zoom_factor' => 'setZoomFactor'
     ];
 
     /*
@@ -195,8 +195,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'create_note_hyperlinks' => 'getCreateNoteHyperlinks',
         'compliance' => 'getCompliance',
+        'create_note_hyperlinks' => 'getCreateNoteHyperlinks',
+        'custom_properties_export' => 'getCustomPropertiesExport',
         'digital_signature_details' => 'getDigitalSignatureDetails',
         'display_doc_title' => 'getDisplayDocTitle',
         'downsample_options' => 'getDownsampleOptions',
@@ -204,19 +205,18 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'encryption_details' => 'getEncryptionDetails',
         'export_document_structure' => 'getExportDocumentStructure',
         'font_embedding_mode' => 'getFontEmbeddingMode',
+        'image_color_space_export_mode' => 'getImageColorSpaceExportMode',
         'image_compression' => 'getImageCompression',
         'open_hyperlinks_in_new_window' => 'getOpenHyperlinksInNewWindow',
         'outline_options' => 'getOutlineOptions',
         'page_mode' => 'getPageMode',
-        'image_color_space_export_mode' => 'getImageColorSpaceExportMode',
+        'preblend_images' => 'getPreblendImages',
         'preserve_form_fields' => 'getPreserveFormFields',
         'text_compression' => 'getTextCompression',
-        'use_core_fonts' => 'getUseCoreFonts',
         'use_book_fold_printing_settings' => 'getUseBookFoldPrintingSettings',
+        'use_core_fonts' => 'getUseCoreFonts',
         'zoom_behavior' => 'getZoomBehavior',
-        'zoom_factor' => 'getZoomFactor',
-        'custom_properties_export' => 'getCustomPropertiesExport',
-        'preblend_images' => 'getPreblendImages'
+        'zoom_factor' => 'getZoomFactor'
     ];
 
     /*
@@ -275,8 +275,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     {
         parent::__construct($data);
 
-        $this->container['create_note_hyperlinks'] = isset($data['create_note_hyperlinks']) ? $data['create_note_hyperlinks'] : null;
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
+        $this->container['create_note_hyperlinks'] = isset($data['create_note_hyperlinks']) ? $data['create_note_hyperlinks'] : null;
+        $this->container['custom_properties_export'] = isset($data['custom_properties_export']) ? $data['custom_properties_export'] : null;
         $this->container['digital_signature_details'] = isset($data['digital_signature_details']) ? $data['digital_signature_details'] : null;
         $this->container['display_doc_title'] = isset($data['display_doc_title']) ? $data['display_doc_title'] : null;
         $this->container['downsample_options'] = isset($data['downsample_options']) ? $data['downsample_options'] : null;
@@ -284,19 +285,18 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['encryption_details'] = isset($data['encryption_details']) ? $data['encryption_details'] : null;
         $this->container['export_document_structure'] = isset($data['export_document_structure']) ? $data['export_document_structure'] : null;
         $this->container['font_embedding_mode'] = isset($data['font_embedding_mode']) ? $data['font_embedding_mode'] : null;
+        $this->container['image_color_space_export_mode'] = isset($data['image_color_space_export_mode']) ? $data['image_color_space_export_mode'] : null;
         $this->container['image_compression'] = isset($data['image_compression']) ? $data['image_compression'] : null;
         $this->container['open_hyperlinks_in_new_window'] = isset($data['open_hyperlinks_in_new_window']) ? $data['open_hyperlinks_in_new_window'] : null;
         $this->container['outline_options'] = isset($data['outline_options']) ? $data['outline_options'] : null;
         $this->container['page_mode'] = isset($data['page_mode']) ? $data['page_mode'] : null;
-        $this->container['image_color_space_export_mode'] = isset($data['image_color_space_export_mode']) ? $data['image_color_space_export_mode'] : null;
+        $this->container['preblend_images'] = isset($data['preblend_images']) ? $data['preblend_images'] : null;
         $this->container['preserve_form_fields'] = isset($data['preserve_form_fields']) ? $data['preserve_form_fields'] : null;
         $this->container['text_compression'] = isset($data['text_compression']) ? $data['text_compression'] : null;
-        $this->container['use_core_fonts'] = isset($data['use_core_fonts']) ? $data['use_core_fonts'] : null;
         $this->container['use_book_fold_printing_settings'] = isset($data['use_book_fold_printing_settings']) ? $data['use_book_fold_printing_settings'] : null;
+        $this->container['use_core_fonts'] = isset($data['use_core_fonts']) ? $data['use_core_fonts'] : null;
         $this->container['zoom_behavior'] = isset($data['zoom_behavior']) ? $data['zoom_behavior'] : null;
         $this->container['zoom_factor'] = isset($data['zoom_factor']) ? $data['zoom_factor'] : null;
-        $this->container['custom_properties_export'] = isset($data['custom_properties_export']) ? $data['custom_properties_export'] : null;
-        $this->container['preblend_images'] = isset($data['preblend_images']) ? $data['preblend_images'] : null;
     }
 
     /*
@@ -328,6 +328,30 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
 
 
     /*
+     * Gets compliance
+     *
+     * @return string
+     */
+    public function getCompliance()
+    {
+        return $this->container['compliance'];
+    }
+
+    /*
+     * Sets compliance
+     *
+     * @param string $compliance Specifies the PDF standards compliance level for output documents
+     *
+     * @return $this
+     */
+    public function setCompliance($compliance)
+    {
+        $this->container['compliance'] = $compliance;
+
+        return $this;
+    }
+
+    /*
      * Gets create_note_hyperlinks
      *
      * @return bool
@@ -352,25 +376,25 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets compliance
+     * Gets custom_properties_export
      *
      * @return string
      */
-    public function getCompliance()
+    public function getCustomPropertiesExport()
     {
-        return $this->container['compliance'];
+        return $this->container['custom_properties_export'];
     }
 
     /*
-     * Sets compliance
+     * Sets custom_properties_export
      *
-     * @param string $compliance Specifies the PDF standards compliance level for output documents
+     * @param string $custom_properties_export Gets or sets a value determining the way  are exported to PDF file. Default value is .
      *
      * @return $this
      */
-    public function setCompliance($compliance)
+    public function setCustomPropertiesExport($custom_properties_export)
     {
-        $this->container['compliance'] = $compliance;
+        $this->container['custom_properties_export'] = $custom_properties_export;
 
         return $this;
     }
@@ -544,6 +568,30 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
+     * Gets image_color_space_export_mode
+     *
+     * @return string
+     */
+    public function getImageColorSpaceExportMode()
+    {
+        return $this->container['image_color_space_export_mode'];
+    }
+
+    /*
+     * Sets image_color_space_export_mode
+     *
+     * @param string $image_color_space_export_mode Specifies how the color space will be selected for the images in PDF document.
+     *
+     * @return $this
+     */
+    public function setImageColorSpaceExportMode($image_color_space_export_mode)
+    {
+        $this->container['image_color_space_export_mode'] = $image_color_space_export_mode;
+
+        return $this;
+    }
+
+    /*
      * Gets image_compression
      *
      * @return string
@@ -640,25 +688,25 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets image_color_space_export_mode
+     * Gets preblend_images
      *
-     * @return string
+     * @return bool
      */
-    public function getImageColorSpaceExportMode()
+    public function getPreblendImages()
     {
-        return $this->container['image_color_space_export_mode'];
+        return $this->container['preblend_images'];
     }
 
     /*
-     * Sets image_color_space_export_mode
+     * Sets preblend_images
      *
-     * @param string $image_color_space_export_mode Specifies how the color space will be selected for the images in PDF document.
+     * @param bool $preblend_images Gets or sets a value determining whether or not to preblend transparent images with black background color.
      *
      * @return $this
      */
-    public function setImageColorSpaceExportMode($image_color_space_export_mode)
+    public function setPreblendImages($preblend_images)
     {
-        $this->container['image_color_space_export_mode'] = $image_color_space_export_mode;
+        $this->container['preblend_images'] = $preblend_images;
 
         return $this;
     }
@@ -712,30 +760,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets use_core_fonts
-     *
-     * @return bool
-     */
-    public function getUseCoreFonts()
-    {
-        return $this->container['use_core_fonts'];
-    }
-
-    /*
-     * Sets use_core_fonts
-     *
-     * @param bool $use_core_fonts Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts
-     *
-     * @return $this
-     */
-    public function setUseCoreFonts($use_core_fonts)
-    {
-        $this->container['use_core_fonts'] = $use_core_fonts;
-
-        return $this;
-    }
-
-    /*
      * Gets use_book_fold_printing_settings
      *
      * @return bool
@@ -755,6 +779,30 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseBookFoldPrintingSettings($use_book_fold_printing_settings)
     {
         $this->container['use_book_fold_printing_settings'] = $use_book_fold_printing_settings;
+
+        return $this;
+    }
+
+    /*
+     * Gets use_core_fonts
+     *
+     * @return bool
+     */
+    public function getUseCoreFonts()
+    {
+        return $this->container['use_core_fonts'];
+    }
+
+    /*
+     * Sets use_core_fonts
+     *
+     * @param bool $use_core_fonts Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts
+     *
+     * @return $this
+     */
+    public function setUseCoreFonts($use_core_fonts)
+    {
+        $this->container['use_core_fonts'] = $use_core_fonts;
 
         return $this;
     }
@@ -803,54 +851,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setZoomFactor($zoom_factor)
     {
         $this->container['zoom_factor'] = $zoom_factor;
-
-        return $this;
-    }
-
-    /*
-     * Gets custom_properties_export
-     *
-     * @return string
-     */
-    public function getCustomPropertiesExport()
-    {
-        return $this->container['custom_properties_export'];
-    }
-
-    /*
-     * Sets custom_properties_export
-     *
-     * @param string $custom_properties_export Gets or sets a value determining the way  are exported to PDF file. Default value is .
-     *
-     * @return $this
-     */
-    public function setCustomPropertiesExport($custom_properties_export)
-    {
-        $this->container['custom_properties_export'] = $custom_properties_export;
-
-        return $this;
-    }
-
-    /*
-     * Gets preblend_images
-     *
-     * @return bool
-     */
-    public function getPreblendImages()
-    {
-        return $this->container['preblend_images'];
-    }
-
-    /*
-     * Sets preblend_images
-     *
-     * @param bool $preblend_images Gets or sets a value determining whether or not to preblend transparent images with black background color.
-     *
-     * @return $this
-     */
-    public function setPreblendImages($preblend_images)
-    {
-        $this->container['preblend_images'] = $preblend_images;
 
         return $this;
     }

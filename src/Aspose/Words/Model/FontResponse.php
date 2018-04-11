@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FontResponse
  *
- * @description This resonse should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/runs/{1}/font
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/runs/{1}/font
  */
 class FontResponse extends AsposeResponse 
 {

@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FieldNamesResponse
  *
- * @description This resonse should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.
+ * @description This response should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.
  */
 class FieldNamesResponse extends AsposeResponse 
 {

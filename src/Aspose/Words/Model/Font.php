@@ -54,46 +54,46 @@ class Font extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'all_caps' => 'bool',
-        'bidi' => 'bool',
-        'bold' => 'bool',
-        'bold_bi' => 'bool',
-        'border' => '\Aspose\Words\Model\Border',
-        'color' => '\Aspose\Words\Model\XmlColor',
-        'complex_script' => 'bool',
-        'double_strike_through' => 'bool',
-        'emboss' => 'bool',
-        'engrave' => 'bool',
-        'hidden' => 'bool',
-        'highlight_color' => '\Aspose\Words\Model\XmlColor',
-        'italic' => 'bool',
-        'italic_bi' => 'bool',
-        'kerning' => 'double',
-        'locale_id' => 'int',
-        'locale_id_bi' => 'int',
-        'locale_id_far_east' => 'int',
         'name' => 'string',
         'name_ascii' => 'string',
         'name_bi' => 'string',
         'name_far_east' => 'string',
         'name_other' => 'string',
-        'no_proofing' => 'bool',
-        'outline' => 'bool',
-        'position' => 'double',
-        'scaling' => 'int',
-        'shadow' => 'bool',
         'size' => 'double',
         'size_bi' => 'double',
-        'small_caps' => 'bool',
-        'spacing' => 'double',
+        'bold' => 'bool',
+        'bold_bi' => 'bool',
+        'italic' => 'bool',
+        'italic_bi' => 'bool',
+        'color' => '\Aspose\Words\Model\XmlColor',
         'strike_through' => 'bool',
-        'style_identifier' => 'string',
-        'style_name' => 'string',
-        'subscript' => 'bool',
+        'double_strike_through' => 'bool',
+        'shadow' => 'bool',
+        'outline' => 'bool',
+        'emboss' => 'bool',
+        'engrave' => 'bool',
         'superscript' => 'bool',
-        'text_effect' => 'string',
+        'subscript' => 'bool',
+        'small_caps' => 'bool',
+        'all_caps' => 'bool',
+        'hidden' => 'bool',
         'underline' => 'string',
-        'underline_color' => '\Aspose\Words\Model\XmlColor'
+        'underline_color' => '\Aspose\Words\Model\XmlColor',
+        'scaling' => 'int',
+        'spacing' => 'double',
+        'position' => 'double',
+        'kerning' => 'double',
+        'highlight_color' => '\Aspose\Words\Model\XmlColor',
+        'text_effect' => 'string',
+        'bidi' => 'bool',
+        'complex_script' => 'bool',
+        'no_proofing' => 'bool',
+        'locale_id' => 'int',
+        'locale_id_bi' => 'int',
+        'locale_id_far_east' => 'int',
+        'border' => '\Aspose\Words\Model\Border',
+        'style_name' => 'string',
+        'style_identifier' => 'string'
     ];
 
     /*
@@ -102,46 +102,46 @@ class Font extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'all_caps' => null,
-        'bidi' => null,
-        'bold' => null,
-        'bold_bi' => null,
-        'border' => null,
-        'color' => null,
-        'complex_script' => null,
-        'double_strike_through' => null,
-        'emboss' => null,
-        'engrave' => null,
-        'hidden' => null,
-        'highlight_color' => null,
-        'italic' => null,
-        'italic_bi' => null,
-        'kerning' => 'double',
-        'locale_id' => 'int32',
-        'locale_id_bi' => 'int32',
-        'locale_id_far_east' => 'int32',
         'name' => null,
         'name_ascii' => null,
         'name_bi' => null,
         'name_far_east' => null,
         'name_other' => null,
-        'no_proofing' => null,
-        'outline' => null,
-        'position' => 'double',
-        'scaling' => 'int32',
-        'shadow' => null,
         'size' => 'double',
         'size_bi' => 'double',
-        'small_caps' => null,
-        'spacing' => 'double',
+        'bold' => null,
+        'bold_bi' => null,
+        'italic' => null,
+        'italic_bi' => null,
+        'color' => null,
         'strike_through' => null,
-        'style_identifier' => null,
-        'style_name' => null,
-        'subscript' => null,
+        'double_strike_through' => null,
+        'shadow' => null,
+        'outline' => null,
+        'emboss' => null,
+        'engrave' => null,
         'superscript' => null,
-        'text_effect' => null,
+        'subscript' => null,
+        'small_caps' => null,
+        'all_caps' => null,
+        'hidden' => null,
         'underline' => null,
-        'underline_color' => null
+        'underline_color' => null,
+        'scaling' => 'int32',
+        'spacing' => 'double',
+        'position' => 'double',
+        'kerning' => 'double',
+        'highlight_color' => null,
+        'text_effect' => null,
+        'bidi' => null,
+        'complex_script' => null,
+        'no_proofing' => null,
+        'locale_id' => 'int32',
+        'locale_id_bi' => 'int32',
+        'locale_id_far_east' => 'int32',
+        'border' => null,
+        'style_name' => null,
+        'style_identifier' => null
     ];
 
     /*
@@ -171,46 +171,46 @@ class Font extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'all_caps' => 'AllCaps',
-        'bidi' => 'Bidi',
-        'bold' => 'Bold',
-        'bold_bi' => 'BoldBi',
-        'border' => 'Border',
-        'color' => 'Color',
-        'complex_script' => 'ComplexScript',
-        'double_strike_through' => 'DoubleStrikeThrough',
-        'emboss' => 'Emboss',
-        'engrave' => 'Engrave',
-        'hidden' => 'Hidden',
-        'highlight_color' => 'HighlightColor',
-        'italic' => 'Italic',
-        'italic_bi' => 'ItalicBi',
-        'kerning' => 'Kerning',
-        'locale_id' => 'LocaleId',
-        'locale_id_bi' => 'LocaleIdBi',
-        'locale_id_far_east' => 'LocaleIdFarEast',
         'name' => 'Name',
         'name_ascii' => 'NameAscii',
         'name_bi' => 'NameBi',
         'name_far_east' => 'NameFarEast',
         'name_other' => 'NameOther',
-        'no_proofing' => 'NoProofing',
-        'outline' => 'Outline',
-        'position' => 'Position',
-        'scaling' => 'Scaling',
-        'shadow' => 'Shadow',
         'size' => 'Size',
         'size_bi' => 'SizeBi',
-        'small_caps' => 'SmallCaps',
-        'spacing' => 'Spacing',
+        'bold' => 'Bold',
+        'bold_bi' => 'BoldBi',
+        'italic' => 'Italic',
+        'italic_bi' => 'ItalicBi',
+        'color' => 'Color',
         'strike_through' => 'StrikeThrough',
-        'style_identifier' => 'StyleIdentifier',
-        'style_name' => 'StyleName',
-        'subscript' => 'Subscript',
+        'double_strike_through' => 'DoubleStrikeThrough',
+        'shadow' => 'Shadow',
+        'outline' => 'Outline',
+        'emboss' => 'Emboss',
+        'engrave' => 'Engrave',
         'superscript' => 'Superscript',
-        'text_effect' => 'TextEffect',
+        'subscript' => 'Subscript',
+        'small_caps' => 'SmallCaps',
+        'all_caps' => 'AllCaps',
+        'hidden' => 'Hidden',
         'underline' => 'Underline',
-        'underline_color' => 'UnderlineColor'
+        'underline_color' => 'UnderlineColor',
+        'scaling' => 'Scaling',
+        'spacing' => 'Spacing',
+        'position' => 'Position',
+        'kerning' => 'Kerning',
+        'highlight_color' => 'HighlightColor',
+        'text_effect' => 'TextEffect',
+        'bidi' => 'Bidi',
+        'complex_script' => 'ComplexScript',
+        'no_proofing' => 'NoProofing',
+        'locale_id' => 'LocaleId',
+        'locale_id_bi' => 'LocaleIdBi',
+        'locale_id_far_east' => 'LocaleIdFarEast',
+        'border' => 'Border',
+        'style_name' => 'StyleName',
+        'style_identifier' => 'StyleIdentifier'
     ];
 
     /*
@@ -219,46 +219,46 @@ class Font extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'all_caps' => 'setAllCaps',
-        'bidi' => 'setBidi',
-        'bold' => 'setBold',
-        'bold_bi' => 'setBoldBi',
-        'border' => 'setBorder',
-        'color' => 'setColor',
-        'complex_script' => 'setComplexScript',
-        'double_strike_through' => 'setDoubleStrikeThrough',
-        'emboss' => 'setEmboss',
-        'engrave' => 'setEngrave',
-        'hidden' => 'setHidden',
-        'highlight_color' => 'setHighlightColor',
-        'italic' => 'setItalic',
-        'italic_bi' => 'setItalicBi',
-        'kerning' => 'setKerning',
-        'locale_id' => 'setLocaleId',
-        'locale_id_bi' => 'setLocaleIdBi',
-        'locale_id_far_east' => 'setLocaleIdFarEast',
         'name' => 'setName',
         'name_ascii' => 'setNameAscii',
         'name_bi' => 'setNameBi',
         'name_far_east' => 'setNameFarEast',
         'name_other' => 'setNameOther',
-        'no_proofing' => 'setNoProofing',
-        'outline' => 'setOutline',
-        'position' => 'setPosition',
-        'scaling' => 'setScaling',
-        'shadow' => 'setShadow',
         'size' => 'setSize',
         'size_bi' => 'setSizeBi',
-        'small_caps' => 'setSmallCaps',
-        'spacing' => 'setSpacing',
+        'bold' => 'setBold',
+        'bold_bi' => 'setBoldBi',
+        'italic' => 'setItalic',
+        'italic_bi' => 'setItalicBi',
+        'color' => 'setColor',
         'strike_through' => 'setStrikeThrough',
-        'style_identifier' => 'setStyleIdentifier',
-        'style_name' => 'setStyleName',
-        'subscript' => 'setSubscript',
+        'double_strike_through' => 'setDoubleStrikeThrough',
+        'shadow' => 'setShadow',
+        'outline' => 'setOutline',
+        'emboss' => 'setEmboss',
+        'engrave' => 'setEngrave',
         'superscript' => 'setSuperscript',
-        'text_effect' => 'setTextEffect',
+        'subscript' => 'setSubscript',
+        'small_caps' => 'setSmallCaps',
+        'all_caps' => 'setAllCaps',
+        'hidden' => 'setHidden',
         'underline' => 'setUnderline',
-        'underline_color' => 'setUnderlineColor'
+        'underline_color' => 'setUnderlineColor',
+        'scaling' => 'setScaling',
+        'spacing' => 'setSpacing',
+        'position' => 'setPosition',
+        'kerning' => 'setKerning',
+        'highlight_color' => 'setHighlightColor',
+        'text_effect' => 'setTextEffect',
+        'bidi' => 'setBidi',
+        'complex_script' => 'setComplexScript',
+        'no_proofing' => 'setNoProofing',
+        'locale_id' => 'setLocaleId',
+        'locale_id_bi' => 'setLocaleIdBi',
+        'locale_id_far_east' => 'setLocaleIdFarEast',
+        'border' => 'setBorder',
+        'style_name' => 'setStyleName',
+        'style_identifier' => 'setStyleIdentifier'
     ];
 
     /*
@@ -267,46 +267,46 @@ class Font extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'all_caps' => 'getAllCaps',
-        'bidi' => 'getBidi',
-        'bold' => 'getBold',
-        'bold_bi' => 'getBoldBi',
-        'border' => 'getBorder',
-        'color' => 'getColor',
-        'complex_script' => 'getComplexScript',
-        'double_strike_through' => 'getDoubleStrikeThrough',
-        'emboss' => 'getEmboss',
-        'engrave' => 'getEngrave',
-        'hidden' => 'getHidden',
-        'highlight_color' => 'getHighlightColor',
-        'italic' => 'getItalic',
-        'italic_bi' => 'getItalicBi',
-        'kerning' => 'getKerning',
-        'locale_id' => 'getLocaleId',
-        'locale_id_bi' => 'getLocaleIdBi',
-        'locale_id_far_east' => 'getLocaleIdFarEast',
         'name' => 'getName',
         'name_ascii' => 'getNameAscii',
         'name_bi' => 'getNameBi',
         'name_far_east' => 'getNameFarEast',
         'name_other' => 'getNameOther',
-        'no_proofing' => 'getNoProofing',
-        'outline' => 'getOutline',
-        'position' => 'getPosition',
-        'scaling' => 'getScaling',
-        'shadow' => 'getShadow',
         'size' => 'getSize',
         'size_bi' => 'getSizeBi',
-        'small_caps' => 'getSmallCaps',
-        'spacing' => 'getSpacing',
+        'bold' => 'getBold',
+        'bold_bi' => 'getBoldBi',
+        'italic' => 'getItalic',
+        'italic_bi' => 'getItalicBi',
+        'color' => 'getColor',
         'strike_through' => 'getStrikeThrough',
-        'style_identifier' => 'getStyleIdentifier',
-        'style_name' => 'getStyleName',
-        'subscript' => 'getSubscript',
+        'double_strike_through' => 'getDoubleStrikeThrough',
+        'shadow' => 'getShadow',
+        'outline' => 'getOutline',
+        'emboss' => 'getEmboss',
+        'engrave' => 'getEngrave',
         'superscript' => 'getSuperscript',
-        'text_effect' => 'getTextEffect',
+        'subscript' => 'getSubscript',
+        'small_caps' => 'getSmallCaps',
+        'all_caps' => 'getAllCaps',
+        'hidden' => 'getHidden',
         'underline' => 'getUnderline',
-        'underline_color' => 'getUnderlineColor'
+        'underline_color' => 'getUnderlineColor',
+        'scaling' => 'getScaling',
+        'spacing' => 'getSpacing',
+        'position' => 'getPosition',
+        'kerning' => 'getKerning',
+        'highlight_color' => 'getHighlightColor',
+        'text_effect' => 'getTextEffect',
+        'bidi' => 'getBidi',
+        'complex_script' => 'getComplexScript',
+        'no_proofing' => 'getNoProofing',
+        'locale_id' => 'getLocaleId',
+        'locale_id_bi' => 'getLocaleIdBi',
+        'locale_id_far_east' => 'getLocaleIdFarEast',
+        'border' => 'getBorder',
+        'style_name' => 'getStyleName',
+        'style_identifier' => 'getStyleIdentifier'
     ];
 
     /*
@@ -350,6 +350,31 @@ class Font extends LinkElement
         return self::$swaggerModelName;
     }
 
+    const UNDERLINE_NONE = 'None';
+    const UNDERLINE_SINGLE = 'Single';
+    const UNDERLINE_WORDS = 'Words';
+    const UNDERLINE_DOUBLE = 'Double';
+    const UNDERLINE_DOTTED = 'Dotted';
+    const UNDERLINE_THICK = 'Thick';
+    const UNDERLINE_DASH = 'Dash';
+    const UNDERLINE_DOT_DASH = 'DotDash';
+    const UNDERLINE_DOT_DOT_DASH = 'DotDotDash';
+    const UNDERLINE_WAVY = 'Wavy';
+    const UNDERLINE_DOTTED_HEAVY = 'DottedHeavy';
+    const UNDERLINE_DASH_HEAVY = 'DashHeavy';
+    const UNDERLINE_DOT_DASH_HEAVY = 'DotDashHeavy';
+    const UNDERLINE_DOT_DOT_DASH_HEAVY = 'DotDotDashHeavy';
+    const UNDERLINE_WAVY_HEAVY = 'WavyHeavy';
+    const UNDERLINE_DASH_LONG = 'DashLong';
+    const UNDERLINE_WAVY_DOUBLE = 'WavyDouble';
+    const UNDERLINE_DASH_LONG_HEAVY = 'DashLongHeavy';
+    const TEXT_EFFECT_NONE = 'None';
+    const TEXT_EFFECT_LAS_VEGAS_LIGHTS = 'LasVegasLights';
+    const TEXT_EFFECT_BLINKING_BACKGROUND = 'BlinkingBackground';
+    const TEXT_EFFECT_SPARKLE_TEXT = 'SparkleText';
+    const TEXT_EFFECT_MARCHING_BLACK_ANTS = 'MarchingBlackAnts';
+    const TEXT_EFFECT_MARCHING_RED_ANTS = 'MarchingRedAnts';
+    const TEXT_EFFECT_SHIMMER = 'Shimmer';
     const STYLE_IDENTIFIER_NORMAL = 'Normal';
     const STYLE_IDENTIFIER_HEADING1 = 'Heading1';
     const STYLE_IDENTIFIER_HEADING2 = 'Heading2';
@@ -723,33 +748,55 @@ class Font extends LinkElement
     const STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6 = 'ListTable7ColorfulAccent6';
     const STYLE_IDENTIFIER_USER = 'User';
     const STYLE_IDENTIFIER_NIL = 'Nil';
-    const TEXT_EFFECT_NONE = 'None';
-    const TEXT_EFFECT_LAS_VEGAS_LIGHTS = 'LasVegasLights';
-    const TEXT_EFFECT_BLINKING_BACKGROUND = 'BlinkingBackground';
-    const TEXT_EFFECT_SPARKLE_TEXT = 'SparkleText';
-    const TEXT_EFFECT_MARCHING_BLACK_ANTS = 'MarchingBlackAnts';
-    const TEXT_EFFECT_MARCHING_RED_ANTS = 'MarchingRedAnts';
-    const TEXT_EFFECT_SHIMMER = 'Shimmer';
-    const UNDERLINE_NONE = 'None';
-    const UNDERLINE_SINGLE = 'Single';
-    const UNDERLINE_WORDS = 'Words';
-    const UNDERLINE_DOUBLE = 'Double';
-    const UNDERLINE_DOTTED = 'Dotted';
-    const UNDERLINE_THICK = 'Thick';
-    const UNDERLINE_DASH = 'Dash';
-    const UNDERLINE_DOT_DASH = 'DotDash';
-    const UNDERLINE_DOT_DOT_DASH = 'DotDotDash';
-    const UNDERLINE_WAVY = 'Wavy';
-    const UNDERLINE_DOTTED_HEAVY = 'DottedHeavy';
-    const UNDERLINE_DASH_HEAVY = 'DashHeavy';
-    const UNDERLINE_DOT_DASH_HEAVY = 'DotDashHeavy';
-    const UNDERLINE_DOT_DOT_DASH_HEAVY = 'DotDotDashHeavy';
-    const UNDERLINE_WAVY_HEAVY = 'WavyHeavy';
-    const UNDERLINE_DASH_LONG = 'DashLong';
-    const UNDERLINE_WAVY_DOUBLE = 'WavyDouble';
-    const UNDERLINE_DASH_LONG_HEAVY = 'DashLongHeavy';
     
 
+    
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getUnderlineAllowableValues()
+    {
+        return [
+            self::UNDERLINE_NONE,
+            self::UNDERLINE_SINGLE,
+            self::UNDERLINE_WORDS,
+            self::UNDERLINE_DOUBLE,
+            self::UNDERLINE_DOTTED,
+            self::UNDERLINE_THICK,
+            self::UNDERLINE_DASH,
+            self::UNDERLINE_DOT_DASH,
+            self::UNDERLINE_DOT_DOT_DASH,
+            self::UNDERLINE_WAVY,
+            self::UNDERLINE_DOTTED_HEAVY,
+            self::UNDERLINE_DASH_HEAVY,
+            self::UNDERLINE_DOT_DASH_HEAVY,
+            self::UNDERLINE_DOT_DOT_DASH_HEAVY,
+            self::UNDERLINE_WAVY_HEAVY,
+            self::UNDERLINE_DASH_LONG,
+            self::UNDERLINE_WAVY_DOUBLE,
+            self::UNDERLINE_DASH_LONG_HEAVY,
+        ];
+    }
+    
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTextEffectAllowableValues()
+    {
+        return [
+            self::TEXT_EFFECT_NONE,
+            self::TEXT_EFFECT_LAS_VEGAS_LIGHTS,
+            self::TEXT_EFFECT_BLINKING_BACKGROUND,
+            self::TEXT_EFFECT_SPARKLE_TEXT,
+            self::TEXT_EFFECT_MARCHING_BLACK_ANTS,
+            self::TEXT_EFFECT_MARCHING_RED_ANTS,
+            self::TEXT_EFFECT_SHIMMER,
+        ];
+    }
     
     /*
      * Gets allowable values of the enum
@@ -1135,53 +1182,6 @@ class Font extends LinkElement
         ];
     }
     
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTextEffectAllowableValues()
-    {
-        return [
-            self::TEXT_EFFECT_NONE,
-            self::TEXT_EFFECT_LAS_VEGAS_LIGHTS,
-            self::TEXT_EFFECT_BLINKING_BACKGROUND,
-            self::TEXT_EFFECT_SPARKLE_TEXT,
-            self::TEXT_EFFECT_MARCHING_BLACK_ANTS,
-            self::TEXT_EFFECT_MARCHING_RED_ANTS,
-            self::TEXT_EFFECT_SHIMMER,
-        ];
-    }
-    
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getUnderlineAllowableValues()
-    {
-        return [
-            self::UNDERLINE_NONE,
-            self::UNDERLINE_SINGLE,
-            self::UNDERLINE_WORDS,
-            self::UNDERLINE_DOUBLE,
-            self::UNDERLINE_DOTTED,
-            self::UNDERLINE_THICK,
-            self::UNDERLINE_DASH,
-            self::UNDERLINE_DOT_DASH,
-            self::UNDERLINE_DOT_DOT_DASH,
-            self::UNDERLINE_WAVY,
-            self::UNDERLINE_DOTTED_HEAVY,
-            self::UNDERLINE_DASH_HEAVY,
-            self::UNDERLINE_DOT_DASH_HEAVY,
-            self::UNDERLINE_DOT_DOT_DASH_HEAVY,
-            self::UNDERLINE_WAVY_HEAVY,
-            self::UNDERLINE_DASH_LONG,
-            self::UNDERLINE_WAVY_DOUBLE,
-            self::UNDERLINE_DASH_LONG_HEAVY,
-        ];
-    }
-    
 
 
     /*
@@ -1194,46 +1194,46 @@ class Font extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['all_caps'] = isset($data['all_caps']) ? $data['all_caps'] : null;
-        $this->container['bidi'] = isset($data['bidi']) ? $data['bidi'] : null;
-        $this->container['bold'] = isset($data['bold']) ? $data['bold'] : null;
-        $this->container['bold_bi'] = isset($data['bold_bi']) ? $data['bold_bi'] : null;
-        $this->container['border'] = isset($data['border']) ? $data['border'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['complex_script'] = isset($data['complex_script']) ? $data['complex_script'] : null;
-        $this->container['double_strike_through'] = isset($data['double_strike_through']) ? $data['double_strike_through'] : null;
-        $this->container['emboss'] = isset($data['emboss']) ? $data['emboss'] : null;
-        $this->container['engrave'] = isset($data['engrave']) ? $data['engrave'] : null;
-        $this->container['hidden'] = isset($data['hidden']) ? $data['hidden'] : null;
-        $this->container['highlight_color'] = isset($data['highlight_color']) ? $data['highlight_color'] : null;
-        $this->container['italic'] = isset($data['italic']) ? $data['italic'] : null;
-        $this->container['italic_bi'] = isset($data['italic_bi']) ? $data['italic_bi'] : null;
-        $this->container['kerning'] = isset($data['kerning']) ? $data['kerning'] : null;
-        $this->container['locale_id'] = isset($data['locale_id']) ? $data['locale_id'] : null;
-        $this->container['locale_id_bi'] = isset($data['locale_id_bi']) ? $data['locale_id_bi'] : null;
-        $this->container['locale_id_far_east'] = isset($data['locale_id_far_east']) ? $data['locale_id_far_east'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['name_ascii'] = isset($data['name_ascii']) ? $data['name_ascii'] : null;
         $this->container['name_bi'] = isset($data['name_bi']) ? $data['name_bi'] : null;
         $this->container['name_far_east'] = isset($data['name_far_east']) ? $data['name_far_east'] : null;
         $this->container['name_other'] = isset($data['name_other']) ? $data['name_other'] : null;
-        $this->container['no_proofing'] = isset($data['no_proofing']) ? $data['no_proofing'] : null;
-        $this->container['outline'] = isset($data['outline']) ? $data['outline'] : null;
-        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
-        $this->container['scaling'] = isset($data['scaling']) ? $data['scaling'] : null;
-        $this->container['shadow'] = isset($data['shadow']) ? $data['shadow'] : null;
         $this->container['size'] = isset($data['size']) ? $data['size'] : null;
         $this->container['size_bi'] = isset($data['size_bi']) ? $data['size_bi'] : null;
-        $this->container['small_caps'] = isset($data['small_caps']) ? $data['small_caps'] : null;
-        $this->container['spacing'] = isset($data['spacing']) ? $data['spacing'] : null;
+        $this->container['bold'] = isset($data['bold']) ? $data['bold'] : null;
+        $this->container['bold_bi'] = isset($data['bold_bi']) ? $data['bold_bi'] : null;
+        $this->container['italic'] = isset($data['italic']) ? $data['italic'] : null;
+        $this->container['italic_bi'] = isset($data['italic_bi']) ? $data['italic_bi'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['strike_through'] = isset($data['strike_through']) ? $data['strike_through'] : null;
-        $this->container['style_identifier'] = isset($data['style_identifier']) ? $data['style_identifier'] : null;
-        $this->container['style_name'] = isset($data['style_name']) ? $data['style_name'] : null;
-        $this->container['subscript'] = isset($data['subscript']) ? $data['subscript'] : null;
+        $this->container['double_strike_through'] = isset($data['double_strike_through']) ? $data['double_strike_through'] : null;
+        $this->container['shadow'] = isset($data['shadow']) ? $data['shadow'] : null;
+        $this->container['outline'] = isset($data['outline']) ? $data['outline'] : null;
+        $this->container['emboss'] = isset($data['emboss']) ? $data['emboss'] : null;
+        $this->container['engrave'] = isset($data['engrave']) ? $data['engrave'] : null;
         $this->container['superscript'] = isset($data['superscript']) ? $data['superscript'] : null;
-        $this->container['text_effect'] = isset($data['text_effect']) ? $data['text_effect'] : null;
+        $this->container['subscript'] = isset($data['subscript']) ? $data['subscript'] : null;
+        $this->container['small_caps'] = isset($data['small_caps']) ? $data['small_caps'] : null;
+        $this->container['all_caps'] = isset($data['all_caps']) ? $data['all_caps'] : null;
+        $this->container['hidden'] = isset($data['hidden']) ? $data['hidden'] : null;
         $this->container['underline'] = isset($data['underline']) ? $data['underline'] : null;
         $this->container['underline_color'] = isset($data['underline_color']) ? $data['underline_color'] : null;
+        $this->container['scaling'] = isset($data['scaling']) ? $data['scaling'] : null;
+        $this->container['spacing'] = isset($data['spacing']) ? $data['spacing'] : null;
+        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
+        $this->container['kerning'] = isset($data['kerning']) ? $data['kerning'] : null;
+        $this->container['highlight_color'] = isset($data['highlight_color']) ? $data['highlight_color'] : null;
+        $this->container['text_effect'] = isset($data['text_effect']) ? $data['text_effect'] : null;
+        $this->container['bidi'] = isset($data['bidi']) ? $data['bidi'] : null;
+        $this->container['complex_script'] = isset($data['complex_script']) ? $data['complex_script'] : null;
+        $this->container['no_proofing'] = isset($data['no_proofing']) ? $data['no_proofing'] : null;
+        $this->container['locale_id'] = isset($data['locale_id']) ? $data['locale_id'] : null;
+        $this->container['locale_id_bi'] = isset($data['locale_id_bi']) ? $data['locale_id_bi'] : null;
+        $this->container['locale_id_far_east'] = isset($data['locale_id_far_east']) ? $data['locale_id_far_east'] : null;
+        $this->container['border'] = isset($data['border']) ? $data['border'] : null;
+        $this->container['style_name'] = isset($data['style_name']) ? $data['style_name'] : null;
+        $this->container['style_identifier'] = isset($data['style_identifier']) ? $data['style_identifier'] : null;
     }
 
     /*
@@ -1245,10 +1245,10 @@ class Font extends LinkElement
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
+        $allowedValues = $this->getUnderlineAllowableValues();
+        if (!in_array($this->container['underline'], $allowedValues)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'style_identifier', must be one of '%s'",
+                "invalid value for 'underline', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -1261,10 +1261,10 @@ class Font extends LinkElement
             );
         }
 
-        $allowedValues = $this->getUnderlineAllowableValues();
-        if (!in_array($this->container['underline'], $allowedValues)) {
+        $allowedValues = $this->getStyleIdentifierAllowableValues();
+        if (!in_array($this->container['style_identifier'], $allowedValues)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'underline', must be one of '%s'",
+                "invalid value for 'style_identifier', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -1284,453 +1284,21 @@ class Font extends LinkElement
             return false;
         }
 
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
+        $allowedValues = $this->getUnderlineAllowableValues();
+        if (!in_array($this->container['underline'], $allowedValues)) {
             return false;
         }
         $allowedValues = $this->getTextEffectAllowableValues();
         if (!in_array($this->container['text_effect'], $allowedValues)) {
             return false;
         }
-        $allowedValues = $this->getUnderlineAllowableValues();
-        if (!in_array($this->container['underline'], $allowedValues)) {
+        $allowedValues = $this->getStyleIdentifierAllowableValues();
+        if (!in_array($this->container['style_identifier'], $allowedValues)) {
             return false;
         }
         return true;
     }
 
-
-    /*
-     * Gets all_caps
-     *
-     * @return bool
-     */
-    public function getAllCaps()
-    {
-        return $this->container['all_caps'];
-    }
-
-    /*
-     * Sets all_caps
-     *
-     * @param bool $all_caps True if the font is formatted as all capital letters.
-     *
-     * @return $this
-     */
-    public function setAllCaps($all_caps)
-    {
-        $this->container['all_caps'] = $all_caps;
-
-        return $this;
-    }
-
-    /*
-     * Gets bidi
-     *
-     * @return bool
-     */
-    public function getBidi()
-    {
-        return $this->container['bidi'];
-    }
-
-    /*
-     * Sets bidi
-     *
-     * @param bool $bidi Specifies whether the contents of this run shall have right-to-left characteristics.
-     *
-     * @return $this
-     */
-    public function setBidi($bidi)
-    {
-        $this->container['bidi'] = $bidi;
-
-        return $this;
-    }
-
-    /*
-     * Gets bold
-     *
-     * @return bool
-     */
-    public function getBold()
-    {
-        return $this->container['bold'];
-    }
-
-    /*
-     * Sets bold
-     *
-     * @param bool $bold True if the font is formatted as bold.
-     *
-     * @return $this
-     */
-    public function setBold($bold)
-    {
-        $this->container['bold'] = $bold;
-
-        return $this;
-    }
-
-    /*
-     * Gets bold_bi
-     *
-     * @return bool
-     */
-    public function getBoldBi()
-    {
-        return $this->container['bold_bi'];
-    }
-
-    /*
-     * Sets bold_bi
-     *
-     * @param bool $bold_bi True if the right-to-left text is formatted as bold.
-     *
-     * @return $this
-     */
-    public function setBoldBi($bold_bi)
-    {
-        $this->container['bold_bi'] = $bold_bi;
-
-        return $this;
-    }
-
-    /*
-     * Gets border
-     *
-     * @return \Aspose\Words\Model\Border
-     */
-    public function getBorder()
-    {
-        return $this->container['border'];
-    }
-
-    /*
-     * Sets border
-     *
-     * @param \Aspose\Words\Model\Border $border Border object that specifies border for the font.
-     *
-     * @return $this
-     */
-    public function setBorder($border)
-    {
-        $this->container['border'] = $border;
-
-        return $this;
-    }
-
-    /*
-     * Gets color
-     *
-     * @return \Aspose\Words\Model\XmlColor
-     */
-    public function getColor()
-    {
-        return $this->container['color'];
-    }
-
-    /*
-     * Sets color
-     *
-     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the color of the font.
-     *
-     * @return $this
-     */
-    public function setColor($color)
-    {
-        $this->container['color'] = $color;
-
-        return $this;
-    }
-
-    /*
-     * Gets complex_script
-     *
-     * @return bool
-     */
-    public function getComplexScript()
-    {
-        return $this->container['complex_script'];
-    }
-
-    /*
-     * Sets complex_script
-     *
-     * @param bool $complex_script Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.
-     *
-     * @return $this
-     */
-    public function setComplexScript($complex_script)
-    {
-        $this->container['complex_script'] = $complex_script;
-
-        return $this;
-    }
-
-    /*
-     * Gets double_strike_through
-     *
-     * @return bool
-     */
-    public function getDoubleStrikeThrough()
-    {
-        return $this->container['double_strike_through'];
-    }
-
-    /*
-     * Sets double_strike_through
-     *
-     * @param bool $double_strike_through True if the font is formatted as double strikethrough text.
-     *
-     * @return $this
-     */
-    public function setDoubleStrikeThrough($double_strike_through)
-    {
-        $this->container['double_strike_through'] = $double_strike_through;
-
-        return $this;
-    }
-
-    /*
-     * Gets emboss
-     *
-     * @return bool
-     */
-    public function getEmboss()
-    {
-        return $this->container['emboss'];
-    }
-
-    /*
-     * Sets emboss
-     *
-     * @param bool $emboss True if the font is formatted as embossed.
-     *
-     * @return $this
-     */
-    public function setEmboss($emboss)
-    {
-        $this->container['emboss'] = $emboss;
-
-        return $this;
-    }
-
-    /*
-     * Gets engrave
-     *
-     * @return bool
-     */
-    public function getEngrave()
-    {
-        return $this->container['engrave'];
-    }
-
-    /*
-     * Sets engrave
-     *
-     * @param bool $engrave True if the font is formatted as engraved.
-     *
-     * @return $this
-     */
-    public function setEngrave($engrave)
-    {
-        $this->container['engrave'] = $engrave;
-
-        return $this;
-    }
-
-    /*
-     * Gets hidden
-     *
-     * @return bool
-     */
-    public function getHidden()
-    {
-        return $this->container['hidden'];
-    }
-
-    /*
-     * Sets hidden
-     *
-     * @param bool $hidden True if the font is formatted as hidden text.
-     *
-     * @return $this
-     */
-    public function setHidden($hidden)
-    {
-        $this->container['hidden'] = $hidden;
-
-        return $this;
-    }
-
-    /*
-     * Gets highlight_color
-     *
-     * @return \Aspose\Words\Model\XmlColor
-     */
-    public function getHighlightColor()
-    {
-        return $this->container['highlight_color'];
-    }
-
-    /*
-     * Sets highlight_color
-     *
-     * @param \Aspose\Words\Model\XmlColor $highlight_color Gets or sets the highlight (marker) color.
-     *
-     * @return $this
-     */
-    public function setHighlightColor($highlight_color)
-    {
-        $this->container['highlight_color'] = $highlight_color;
-
-        return $this;
-    }
-
-    /*
-     * Gets italic
-     *
-     * @return bool
-     */
-    public function getItalic()
-    {
-        return $this->container['italic'];
-    }
-
-    /*
-     * Sets italic
-     *
-     * @param bool $italic True if the font is formatted as italic.
-     *
-     * @return $this
-     */
-    public function setItalic($italic)
-    {
-        $this->container['italic'] = $italic;
-
-        return $this;
-    }
-
-    /*
-     * Gets italic_bi
-     *
-     * @return bool
-     */
-    public function getItalicBi()
-    {
-        return $this->container['italic_bi'];
-    }
-
-    /*
-     * Sets italic_bi
-     *
-     * @param bool $italic_bi True if the right-to-left text is formatted as italic.
-     *
-     * @return $this
-     */
-    public function setItalicBi($italic_bi)
-    {
-        $this->container['italic_bi'] = $italic_bi;
-
-        return $this;
-    }
-
-    /*
-     * Gets kerning
-     *
-     * @return double
-     */
-    public function getKerning()
-    {
-        return $this->container['kerning'];
-    }
-
-    /*
-     * Sets kerning
-     *
-     * @param double $kerning Gets or sets the font size at which kerning starts.
-     *
-     * @return $this
-     */
-    public function setKerning($kerning)
-    {
-        $this->container['kerning'] = $kerning;
-
-        return $this;
-    }
-
-    /*
-     * Gets locale_id
-     *
-     * @return int
-     */
-    public function getLocaleId()
-    {
-        return $this->container['locale_id'];
-    }
-
-    /*
-     * Sets locale_id
-     *
-     * @param int $locale_id Gets or sets the locale identifier (language) of the formatted characters.
-     *
-     * @return $this
-     */
-    public function setLocaleId($locale_id)
-    {
-        $this->container['locale_id'] = $locale_id;
-
-        return $this;
-    }
-
-    /*
-     * Gets locale_id_bi
-     *
-     * @return int
-     */
-    public function getLocaleIdBi()
-    {
-        return $this->container['locale_id_bi'];
-    }
-
-    /*
-     * Sets locale_id_bi
-     *
-     * @param int $locale_id_bi Gets or sets the locale identifier (language) of the formatted right-to-left characters.
-     *
-     * @return $this
-     */
-    public function setLocaleIdBi($locale_id_bi)
-    {
-        $this->container['locale_id_bi'] = $locale_id_bi;
-
-        return $this;
-    }
-
-    /*
-     * Gets locale_id_far_east
-     *
-     * @return int
-     */
-    public function getLocaleIdFarEast()
-    {
-        return $this->container['locale_id_far_east'];
-    }
-
-    /*
-     * Sets locale_id_far_east
-     *
-     * @param int $locale_id_far_east Gets or sets the locale identifier (language) of the formatted Asian characters.
-     *
-     * @return $this
-     */
-    public function setLocaleIdFarEast($locale_id_far_east)
-    {
-        $this->container['locale_id_far_east'] = $locale_id_far_east;
-
-        return $this;
-    }
 
     /*
      * Gets name
@@ -1853,126 +1421,6 @@ class Font extends LinkElement
     }
 
     /*
-     * Gets no_proofing
-     *
-     * @return bool
-     */
-    public function getNoProofing()
-    {
-        return $this->container['no_proofing'];
-    }
-
-    /*
-     * Sets no_proofing
-     *
-     * @param bool $no_proofing True when the formatted characters are not to be spell checked.
-     *
-     * @return $this
-     */
-    public function setNoProofing($no_proofing)
-    {
-        $this->container['no_proofing'] = $no_proofing;
-
-        return $this;
-    }
-
-    /*
-     * Gets outline
-     *
-     * @return bool
-     */
-    public function getOutline()
-    {
-        return $this->container['outline'];
-    }
-
-    /*
-     * Sets outline
-     *
-     * @param bool $outline True if the font is formatted as outline.
-     *
-     * @return $this
-     */
-    public function setOutline($outline)
-    {
-        $this->container['outline'] = $outline;
-
-        return $this;
-    }
-
-    /*
-     * Gets position
-     *
-     * @return double
-     */
-    public function getPosition()
-    {
-        return $this->container['position'];
-    }
-
-    /*
-     * Sets position
-     *
-     * @param double $position Gets or sets the position of text (in points) relative to the base line. A positive number raises the text, and a negative number lowers it.
-     *
-     * @return $this
-     */
-    public function setPosition($position)
-    {
-        $this->container['position'] = $position;
-
-        return $this;
-    }
-
-    /*
-     * Gets scaling
-     *
-     * @return int
-     */
-    public function getScaling()
-    {
-        return $this->container['scaling'];
-    }
-
-    /*
-     * Sets scaling
-     *
-     * @param int $scaling Gets or sets character width scaling in percent.
-     *
-     * @return $this
-     */
-    public function setScaling($scaling)
-    {
-        $this->container['scaling'] = $scaling;
-
-        return $this;
-    }
-
-    /*
-     * Gets shadow
-     *
-     * @return bool
-     */
-    public function getShadow()
-    {
-        return $this->container['shadow'];
-    }
-
-    /*
-     * Sets shadow
-     *
-     * @param bool $shadow True if the font is formatted as shadowed.
-     *
-     * @return $this
-     */
-    public function setShadow($shadow)
-    {
-        $this->container['shadow'] = $shadow;
-
-        return $this;
-    }
-
-    /*
      * Gets size
      *
      * @return double
@@ -2021,49 +1469,121 @@ class Font extends LinkElement
     }
 
     /*
-     * Gets small_caps
+     * Gets bold
      *
      * @return bool
      */
-    public function getSmallCaps()
+    public function getBold()
     {
-        return $this->container['small_caps'];
+        return $this->container['bold'];
     }
 
     /*
-     * Sets small_caps
+     * Sets bold
      *
-     * @param bool $small_caps True if the font is formatted as small capital letters.
+     * @param bool $bold True if the font is formatted as bold.
      *
      * @return $this
      */
-    public function setSmallCaps($small_caps)
+    public function setBold($bold)
     {
-        $this->container['small_caps'] = $small_caps;
+        $this->container['bold'] = $bold;
 
         return $this;
     }
 
     /*
-     * Gets spacing
+     * Gets bold_bi
      *
-     * @return double
+     * @return bool
      */
-    public function getSpacing()
+    public function getBoldBi()
     {
-        return $this->container['spacing'];
+        return $this->container['bold_bi'];
     }
 
     /*
-     * Sets spacing
+     * Sets bold_bi
      *
-     * @param double $spacing Returns or sets the spacing (in points) between characters.
+     * @param bool $bold_bi True if the right-to-left text is formatted as bold.
      *
      * @return $this
      */
-    public function setSpacing($spacing)
+    public function setBoldBi($bold_bi)
     {
-        $this->container['spacing'] = $spacing;
+        $this->container['bold_bi'] = $bold_bi;
+
+        return $this;
+    }
+
+    /*
+     * Gets italic
+     *
+     * @return bool
+     */
+    public function getItalic()
+    {
+        return $this->container['italic'];
+    }
+
+    /*
+     * Sets italic
+     *
+     * @param bool $italic True if the font is formatted as italic.
+     *
+     * @return $this
+     */
+    public function setItalic($italic)
+    {
+        $this->container['italic'] = $italic;
+
+        return $this;
+    }
+
+    /*
+     * Gets italic_bi
+     *
+     * @return bool
+     */
+    public function getItalicBi()
+    {
+        return $this->container['italic_bi'];
+    }
+
+    /*
+     * Sets italic_bi
+     *
+     * @param bool $italic_bi True if the right-to-left text is formatted as italic.
+     *
+     * @return $this
+     */
+    public function setItalicBi($italic_bi)
+    {
+        $this->container['italic_bi'] = $italic_bi;
+
+        return $this;
+    }
+
+    /*
+     * Gets color
+     *
+     * @return \Aspose\Words\Model\XmlColor
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /*
+     * Sets color
+     *
+     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the color of the font.
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
 
         return $this;
     }
@@ -2093,78 +1613,121 @@ class Font extends LinkElement
     }
 
     /*
-     * Gets style_identifier
-     *
-     * @return string
-     */
-    public function getStyleIdentifier()
-    {
-        return $this->container['style_identifier'];
-    }
-
-    /*
-     * Sets style_identifier
-     *
-     * @param string $style_identifier Gets or sets the locale independent style identifier of the character style applied to this formatting.
-     *
-     * @return $this
-     */
-    public function setStyleIdentifier($style_identifier)
-    {
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if ((!is_numeric($style_identifier) && !in_array($style_identifier, $allowedValues)) || (is_numeric($style_identifier) && !in_array($allowedValues[$style_identifier], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'style_identifier', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['style_identifier'] = $style_identifier;
-
-        return $this;
-    }
-
-    /*
-     * Gets style_name
-     *
-     * @return string
-     */
-    public function getStyleName()
-    {
-        return $this->container['style_name'];
-    }
-
-    /*
-     * Sets style_name
-     *
-     * @param string $style_name Gets or sets the name of the character style applied to this formatting.
-     *
-     * @return $this
-     */
-    public function setStyleName($style_name)
-    {
-        $this->container['style_name'] = $style_name;
-
-        return $this;
-    }
-
-    /*
-     * Gets subscript
+     * Gets double_strike_through
      *
      * @return bool
      */
-    public function getSubscript()
+    public function getDoubleStrikeThrough()
     {
-        return $this->container['subscript'];
+        return $this->container['double_strike_through'];
     }
 
     /*
-     * Sets subscript
+     * Sets double_strike_through
      *
-     * @param bool $subscript True if the font is formatted as subscript.
+     * @param bool $double_strike_through True if the font is formatted as double strikethrough text.
      *
      * @return $this
      */
-    public function setSubscript($subscript)
+    public function setDoubleStrikeThrough($double_strike_through)
     {
-        $this->container['subscript'] = $subscript;
+        $this->container['double_strike_through'] = $double_strike_through;
+
+        return $this;
+    }
+
+    /*
+     * Gets shadow
+     *
+     * @return bool
+     */
+    public function getShadow()
+    {
+        return $this->container['shadow'];
+    }
+
+    /*
+     * Sets shadow
+     *
+     * @param bool $shadow True if the font is formatted as shadowed.
+     *
+     * @return $this
+     */
+    public function setShadow($shadow)
+    {
+        $this->container['shadow'] = $shadow;
+
+        return $this;
+    }
+
+    /*
+     * Gets outline
+     *
+     * @return bool
+     */
+    public function getOutline()
+    {
+        return $this->container['outline'];
+    }
+
+    /*
+     * Sets outline
+     *
+     * @param bool $outline True if the font is formatted as outline.
+     *
+     * @return $this
+     */
+    public function setOutline($outline)
+    {
+        $this->container['outline'] = $outline;
+
+        return $this;
+    }
+
+    /*
+     * Gets emboss
+     *
+     * @return bool
+     */
+    public function getEmboss()
+    {
+        return $this->container['emboss'];
+    }
+
+    /*
+     * Sets emboss
+     *
+     * @param bool $emboss True if the font is formatted as embossed.
+     *
+     * @return $this
+     */
+    public function setEmboss($emboss)
+    {
+        $this->container['emboss'] = $emboss;
+
+        return $this;
+    }
+
+    /*
+     * Gets engrave
+     *
+     * @return bool
+     */
+    public function getEngrave()
+    {
+        return $this->container['engrave'];
+    }
+
+    /*
+     * Sets engrave
+     *
+     * @param bool $engrave True if the font is formatted as engraved.
+     *
+     * @return $this
+     */
+    public function setEngrave($engrave)
+    {
+        $this->container['engrave'] = $engrave;
 
         return $this;
     }
@@ -2194,30 +1757,97 @@ class Font extends LinkElement
     }
 
     /*
-     * Gets text_effect
+     * Gets subscript
      *
-     * @return string
+     * @return bool
      */
-    public function getTextEffect()
+    public function getSubscript()
     {
-        return $this->container['text_effect'];
+        return $this->container['subscript'];
     }
 
     /*
-     * Sets text_effect
+     * Sets subscript
      *
-     * @param string $text_effect Gets or sets the font animation effect.
+     * @param bool $subscript True if the font is formatted as subscript.
      *
      * @return $this
      */
-    public function setTextEffect($text_effect)
+    public function setSubscript($subscript)
     {
-        $allowedValues = $this->getTextEffectAllowableValues();
-        if ((!is_numeric($text_effect) && !in_array($text_effect, $allowedValues)) || (is_numeric($text_effect) && !in_array($allowedValues[$text_effect], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'text_effect', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['text_effect'] = $text_effect;
+        $this->container['subscript'] = $subscript;
+
+        return $this;
+    }
+
+    /*
+     * Gets small_caps
+     *
+     * @return bool
+     */
+    public function getSmallCaps()
+    {
+        return $this->container['small_caps'];
+    }
+
+    /*
+     * Sets small_caps
+     *
+     * @param bool $small_caps True if the font is formatted as small capital letters.
+     *
+     * @return $this
+     */
+    public function setSmallCaps($small_caps)
+    {
+        $this->container['small_caps'] = $small_caps;
+
+        return $this;
+    }
+
+    /*
+     * Gets all_caps
+     *
+     * @return bool
+     */
+    public function getAllCaps()
+    {
+        return $this->container['all_caps'];
+    }
+
+    /*
+     * Sets all_caps
+     *
+     * @param bool $all_caps True if the font is formatted as all capital letters.
+     *
+     * @return $this
+     */
+    public function setAllCaps($all_caps)
+    {
+        $this->container['all_caps'] = $all_caps;
+
+        return $this;
+    }
+
+    /*
+     * Gets hidden
+     *
+     * @return bool
+     */
+    public function getHidden()
+    {
+        return $this->container['hidden'];
+    }
+
+    /*
+     * Sets hidden
+     *
+     * @param bool $hidden True if the font is formatted as hidden text.
+     *
+     * @return $this
+     */
+    public function setHidden($hidden)
+    {
+        $this->container['hidden'] = $hidden;
 
         return $this;
     }
@@ -2271,6 +1901,376 @@ class Font extends LinkElement
     public function setUnderlineColor($underline_color)
     {
         $this->container['underline_color'] = $underline_color;
+
+        return $this;
+    }
+
+    /*
+     * Gets scaling
+     *
+     * @return int
+     */
+    public function getScaling()
+    {
+        return $this->container['scaling'];
+    }
+
+    /*
+     * Sets scaling
+     *
+     * @param int $scaling Gets or sets character width scaling in percent.
+     *
+     * @return $this
+     */
+    public function setScaling($scaling)
+    {
+        $this->container['scaling'] = $scaling;
+
+        return $this;
+    }
+
+    /*
+     * Gets spacing
+     *
+     * @return double
+     */
+    public function getSpacing()
+    {
+        return $this->container['spacing'];
+    }
+
+    /*
+     * Sets spacing
+     *
+     * @param double $spacing Returns or sets the spacing (in points) between characters.
+     *
+     * @return $this
+     */
+    public function setSpacing($spacing)
+    {
+        $this->container['spacing'] = $spacing;
+
+        return $this;
+    }
+
+    /*
+     * Gets position
+     *
+     * @return double
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /*
+     * Sets position
+     *
+     * @param double $position Gets or sets the position of text (in points) relative to the base line. A positive number raises the text, and a negative number lowers it.
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
+
+        return $this;
+    }
+
+    /*
+     * Gets kerning
+     *
+     * @return double
+     */
+    public function getKerning()
+    {
+        return $this->container['kerning'];
+    }
+
+    /*
+     * Sets kerning
+     *
+     * @param double $kerning Gets or sets the font size at which kerning starts.
+     *
+     * @return $this
+     */
+    public function setKerning($kerning)
+    {
+        $this->container['kerning'] = $kerning;
+
+        return $this;
+    }
+
+    /*
+     * Gets highlight_color
+     *
+     * @return \Aspose\Words\Model\XmlColor
+     */
+    public function getHighlightColor()
+    {
+        return $this->container['highlight_color'];
+    }
+
+    /*
+     * Sets highlight_color
+     *
+     * @param \Aspose\Words\Model\XmlColor $highlight_color Gets or sets the highlight (marker) color.
+     *
+     * @return $this
+     */
+    public function setHighlightColor($highlight_color)
+    {
+        $this->container['highlight_color'] = $highlight_color;
+
+        return $this;
+    }
+
+    /*
+     * Gets text_effect
+     *
+     * @return string
+     */
+    public function getTextEffect()
+    {
+        return $this->container['text_effect'];
+    }
+
+    /*
+     * Sets text_effect
+     *
+     * @param string $text_effect Gets or sets the font animation effect.
+     *
+     * @return $this
+     */
+    public function setTextEffect($text_effect)
+    {
+        $allowedValues = $this->getTextEffectAllowableValues();
+        if ((!is_numeric($text_effect) && !in_array($text_effect, $allowedValues)) || (is_numeric($text_effect) && !in_array($allowedValues[$text_effect], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'text_effect', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['text_effect'] = $text_effect;
+
+        return $this;
+    }
+
+    /*
+     * Gets bidi
+     *
+     * @return bool
+     */
+    public function getBidi()
+    {
+        return $this->container['bidi'];
+    }
+
+    /*
+     * Sets bidi
+     *
+     * @param bool $bidi Specifies whether the contents of this run shall have right-to-left characteristics.
+     *
+     * @return $this
+     */
+    public function setBidi($bidi)
+    {
+        $this->container['bidi'] = $bidi;
+
+        return $this;
+    }
+
+    /*
+     * Gets complex_script
+     *
+     * @return bool
+     */
+    public function getComplexScript()
+    {
+        return $this->container['complex_script'];
+    }
+
+    /*
+     * Sets complex_script
+     *
+     * @param bool $complex_script Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.
+     *
+     * @return $this
+     */
+    public function setComplexScript($complex_script)
+    {
+        $this->container['complex_script'] = $complex_script;
+
+        return $this;
+    }
+
+    /*
+     * Gets no_proofing
+     *
+     * @return bool
+     */
+    public function getNoProofing()
+    {
+        return $this->container['no_proofing'];
+    }
+
+    /*
+     * Sets no_proofing
+     *
+     * @param bool $no_proofing True when the formatted characters are not to be spell checked.
+     *
+     * @return $this
+     */
+    public function setNoProofing($no_proofing)
+    {
+        $this->container['no_proofing'] = $no_proofing;
+
+        return $this;
+    }
+
+    /*
+     * Gets locale_id
+     *
+     * @return int
+     */
+    public function getLocaleId()
+    {
+        return $this->container['locale_id'];
+    }
+
+    /*
+     * Sets locale_id
+     *
+     * @param int $locale_id Gets or sets the locale identifier (language) of the formatted characters.
+     *
+     * @return $this
+     */
+    public function setLocaleId($locale_id)
+    {
+        $this->container['locale_id'] = $locale_id;
+
+        return $this;
+    }
+
+    /*
+     * Gets locale_id_bi
+     *
+     * @return int
+     */
+    public function getLocaleIdBi()
+    {
+        return $this->container['locale_id_bi'];
+    }
+
+    /*
+     * Sets locale_id_bi
+     *
+     * @param int $locale_id_bi Gets or sets the locale identifier (language) of the formatted right-to-left characters.
+     *
+     * @return $this
+     */
+    public function setLocaleIdBi($locale_id_bi)
+    {
+        $this->container['locale_id_bi'] = $locale_id_bi;
+
+        return $this;
+    }
+
+    /*
+     * Gets locale_id_far_east
+     *
+     * @return int
+     */
+    public function getLocaleIdFarEast()
+    {
+        return $this->container['locale_id_far_east'];
+    }
+
+    /*
+     * Sets locale_id_far_east
+     *
+     * @param int $locale_id_far_east Gets or sets the locale identifier (language) of the formatted Asian characters.
+     *
+     * @return $this
+     */
+    public function setLocaleIdFarEast($locale_id_far_east)
+    {
+        $this->container['locale_id_far_east'] = $locale_id_far_east;
+
+        return $this;
+    }
+
+    /*
+     * Gets border
+     *
+     * @return \Aspose\Words\Model\Border
+     */
+    public function getBorder()
+    {
+        return $this->container['border'];
+    }
+
+    /*
+     * Sets border
+     *
+     * @param \Aspose\Words\Model\Border $border Border object that specifies border for the font.
+     *
+     * @return $this
+     */
+    public function setBorder($border)
+    {
+        $this->container['border'] = $border;
+
+        return $this;
+    }
+
+    /*
+     * Gets style_name
+     *
+     * @return string
+     */
+    public function getStyleName()
+    {
+        return $this->container['style_name'];
+    }
+
+    /*
+     * Sets style_name
+     *
+     * @param string $style_name Gets or sets the name of the character style applied to this formatting.
+     *
+     * @return $this
+     */
+    public function setStyleName($style_name)
+    {
+        $this->container['style_name'] = $style_name;
+
+        return $this;
+    }
+
+    /*
+     * Gets style_identifier
+     *
+     * @return string
+     */
+    public function getStyleIdentifier()
+    {
+        return $this->container['style_identifier'];
+    }
+
+    /*
+     * Sets style_identifier
+     *
+     * @param string $style_identifier Gets or sets the locale independent style identifier of the character style applied to this formatting.
+     *
+     * @return $this
+     */
+    public function setStyleIdentifier($style_identifier)
+    {
+        $allowedValues = $this->getStyleIdentifierAllowableValues();
+        if ((!is_numeric($style_identifier) && !in_array($style_identifier, $allowedValues)) || (is_numeric($style_identifier) && !in_array($allowedValues[$style_identifier], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'style_identifier', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['style_identifier'] = $style_identifier;
 
         return $this;
     }

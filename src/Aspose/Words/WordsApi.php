@@ -25387,10 +25387,6 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling postDocumentExecuteMailMerge');
         }
-        // verify the required parameter 'with_regions' is set
-        if ($request->with_regions === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $with_regions when calling postDocumentExecuteMailMerge');
-        }
 
         $resourcePath = '/words/{name}/executeMailMerge';
         $formParams = [];
@@ -25405,16 +25401,6 @@ class WordsApi
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
-        // query params
-        if ($request->with_regions !== null) {
-            $localName = lcfirst('WithRegions');
-            $localValue = is_bool($request->with_regions) ? ($request->with_regions ? 'true' : 'false') : $request->with_regions;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
         // query params
         if ($request->cleanup !== null) {
             $localName = lcfirst('Cleanup');
@@ -25489,6 +25475,16 @@ class WordsApi
         if ($request->use_whole_paragraph_as_region !== null) {
             $localName = lcfirst('UseWholeParagraphAsRegion');
             $localValue = is_bool($request->use_whole_paragraph_as_region) ? ($request->use_whole_paragraph_as_region ? 'true' : 'false') : $request->use_whole_paragraph_as_region;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->with_regions !== null) {
+            $localName = lcfirst('WithRegions');
+            $localValue = is_bool($request->with_regions) ? ($request->with_regions ? 'true' : 'false') : $request->with_regions;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {

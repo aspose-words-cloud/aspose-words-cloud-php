@@ -35,36 +35,36 @@ class PutExecuteMailMergeOnlineRequest
     /*
      * Initializes a new instance of the PutExecuteMailMergeOnlineRequest class.
      *  
-     * @param \SplFileObject $data File with mailmerge data
      * @param \SplFileObject $template File with template
-     * @param string $cleanup Clean up options.
+     * @param \SplFileObject $data File with mailmerge data
      * @param bool $with_regions With regions flag.
+     * @param string $cleanup Clean up options.
      */
-    public function __construct($data, $template, $cleanup = null, $with_regions = null)             
+    public function __construct($template, $data, $with_regions = null, $cleanup = null)             
     {
-        $this->data = $data;
         $this->template = $template;
-        $this->cleanup = $cleanup;
+        $this->data = $data;
         $this->with_regions = $with_regions;
+        $this->cleanup = $cleanup;
     }
 
-    /*
-     * File with mailmerge data
-     */
-    public $data;
-	
     /*
      * File with template
      */
     public $template;
 	
     /*
-     * Clean up options.
+     * File with mailmerge data
      */
-    public $cleanup;
+    public $data;
 	
     /*
      * With regions flag.
      */
     public $with_regions;
+	
+    /*
+     * Clean up options.
+     */
+    public $cleanup;
 }

@@ -35,38 +35,33 @@ class UpdateTableCellFormatRequest
     /*
      * Initializes a new instance of the UpdateTableCellFormatRequest class.
      *  
-     * @param int $index Object's index
      * @param string $name The document name.
      * @param string $table_row_path Path to table row.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param int $index Object's index
      * @param string $folder Original document folder.
-     * @param \Aspose\Words\Model\TableCellFormat $format The properties.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $storage File storage, which have to be used.
+     * @param \Aspose\Words\Model\TableCellFormat $format The properties.
      */
-    public function __construct($index, $name, $table_row_path, $dest_file_name = null, $folder = null, $format = null, $load_encoding = null, $password = null, $revision_author = null, $revision_date_time = null, $storage = null)             
+    public function __construct($name, $table_row_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $format = null)             
     {
-        $this->index = $index;
         $this->name = $name;
         $this->table_row_path = $table_row_path;
-        $this->dest_file_name = $dest_file_name;
+        $this->index = $index;
         $this->folder = $folder;
-        $this->format = $format;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->storage = $storage;
+        $this->format = $format;
     }
 
-    /*
-     * Object's index
-     */
-    public $index;
-	
     /*
      * The document name.
      */
@@ -78,9 +73,9 @@ class UpdateTableCellFormatRequest
     public $table_row_path;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Object's index
      */
-    public $dest_file_name;
+    public $index;
 	
     /*
      * Original document folder.
@@ -88,9 +83,9 @@ class UpdateTableCellFormatRequest
     public $folder;
 	
     /*
-     * The properties.
+     * File storage, which have to be used.
      */
-    public $format;
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -103,6 +98,11 @@ class UpdateTableCellFormatRequest
     public $password;
 	
     /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public $dest_file_name;
+	
+    /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
     public $revision_author;
@@ -113,7 +113,7 @@ class UpdateTableCellFormatRequest
     public $revision_date_time;
 	
     /*
-     * File storage, which have to be used.
+     * The properties.
      */
-    public $storage;
+    public $format;
 }

@@ -35,17 +35,22 @@ class PutCreateDocumentRequest
     /*
      * Initializes a new instance of the PutCreateDocumentRequest class.
      *  
+     * @param string $storage File storage, which have to be used.
      * @param string $file_name The file name.
      * @param string $folder The document folder.
-     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($file_name = null, $folder = null, $storage = null)             
+    public function __construct($storage = null, $file_name = null, $folder = null)             
     {
+        $this->storage = $storage;
         $this->file_name = $file_name;
         $this->folder = $folder;
-        $this->storage = $storage;
     }
 
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
+	
     /*
      * The file name.
      */
@@ -55,9 +60,4 @@ class PutCreateDocumentRequest
      * The document folder.
      */
     public $folder;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
 }

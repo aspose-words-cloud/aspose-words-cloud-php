@@ -36,30 +36,30 @@ class PostSplitDocumentRequest
      * Initializes a new instance of the PostSplitDocumentRequest class.
      *  
      * @param string $name Original document name.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $folder Original document folder.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
-     * @param string $format Format to split.
-     * @param int $from Start page.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $storage File storage, which have to be used.
+     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $format Format to split.
+     * @param int $from Start page.
      * @param int $to End page.
      * @param bool $zip_output ZipOutput or not.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $dest_file_name = null, $folder = null, $fonts_location = null, $format = null, $from = null, $load_encoding = null, $password = null, $storage = null, $to = null, $zip_output = null)             
+    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $format = null, $from = null, $to = null, $zip_output = null, $fonts_location = null)             
     {
         $this->name = $name;
-        $this->dest_file_name = $dest_file_name;
         $this->folder = $folder;
-        $this->fonts_location = $fonts_location;
-        $this->format = $format;
-        $this->from = $from;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->storage = $storage;
+        $this->dest_file_name = $dest_file_name;
+        $this->format = $format;
+        $this->from = $from;
         $this->to = $to;
         $this->zip_output = $zip_output;
+        $this->fonts_location = $fonts_location;
     }
 
     /*
@@ -68,29 +68,14 @@ class PostSplitDocumentRequest
     public $name;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public $dest_file_name;
-	
-    /*
      * Original document folder.
      */
     public $folder;
 	
     /*
-     * Folder in filestorage with custom fonts.
+     * File storage, which have to be used.
      */
-    public $fonts_location;
-	
-    /*
-     * Format to split.
-     */
-    public $format;
-	
-    /*
-     * Start page.
-     */
-    public $from;
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -103,9 +88,19 @@ class PostSplitDocumentRequest
     public $password;
 	
     /*
-     * File storage, which have to be used.
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public $storage;
+    public $dest_file_name;
+	
+    /*
+     * Format to split.
+     */
+    public $format;
+	
+    /*
+     * Start page.
+     */
+    public $from;
 	
     /*
      * End page.
@@ -116,4 +111,9 @@ class PostSplitDocumentRequest
      * ZipOutput or not.
      */
     public $zip_output;
+	
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public $fonts_location;
 }

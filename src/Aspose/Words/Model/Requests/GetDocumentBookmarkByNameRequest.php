@@ -35,37 +35,42 @@ class GetDocumentBookmarkByNameRequest
     /*
      * Initializes a new instance of the GetDocumentBookmarkByNameRequest class.
      *  
-     * @param string $bookmark_name The bookmark name.
      * @param string $name The document name.
+     * @param string $bookmark_name The bookmark name.
      * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($bookmark_name, $name, $folder = null, $load_encoding = null, $password = null, $storage = null)             
+    public function __construct($name, $bookmark_name, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
-        $this->bookmark_name = $bookmark_name;
         $this->name = $name;
+        $this->bookmark_name = $bookmark_name;
         $this->folder = $folder;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->storage = $storage;
     }
 
-    /*
-     * The bookmark name.
-     */
-    public $bookmark_name;
-	
     /*
      * The document name.
      */
     public $name;
 	
     /*
+     * The bookmark name.
+     */
+    public $bookmark_name;
+	
+    /*
      * Original document folder.
      */
     public $folder;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -76,9 +81,4 @@ class GetDocumentBookmarkByNameRequest
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
 }

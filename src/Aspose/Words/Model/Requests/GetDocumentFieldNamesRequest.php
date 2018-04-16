@@ -37,18 +37,18 @@ class GetDocumentFieldNamesRequest
      *  
      * @param string $name The document name.
      * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $storage File storage, which have to be used.
      * @param bool $use_non_merge_fields If true, result includes \"mustache\" field names.
      */
-    public function __construct($name, $folder = null, $load_encoding = null, $password = null, $storage = null, $use_non_merge_fields = null)             
+    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $use_non_merge_fields = null)             
     {
         $this->name = $name;
         $this->folder = $folder;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->storage = $storage;
         $this->use_non_merge_fields = $use_non_merge_fields;
     }
 
@@ -63,6 +63,11 @@ class GetDocumentFieldNamesRequest
     public $folder;
 	
     /*
+     * File storage, which have to be used.
+     */
+    public $storage;
+	
+    /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
@@ -71,11 +76,6 @@ class GetDocumentFieldNamesRequest
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
 	
     /*
      * If true, result includes \"mustache\" field names.

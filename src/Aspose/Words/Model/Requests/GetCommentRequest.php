@@ -35,37 +35,42 @@ class GetCommentRequest
     /*
      * Initializes a new instance of the GetCommentRequest class.
      *  
-     * @param int $comment_index Comment index
      * @param string $name The file name.
+     * @param int $comment_index Comment index
      * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($comment_index, $name, $folder = null, $load_encoding = null, $password = null, $storage = null)             
+    public function __construct($name, $comment_index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
-        $this->comment_index = $comment_index;
         $this->name = $name;
+        $this->comment_index = $comment_index;
         $this->folder = $folder;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->storage = $storage;
     }
 
-    /*
-     * Comment index
-     */
-    public $comment_index;
-	
     /*
      * The file name.
      */
     public $name;
 	
     /*
+     * Comment index
+     */
+    public $comment_index;
+	
+    /*
      * Original document folder.
      */
     public $folder;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -76,9 +81,4 @@ class GetCommentRequest
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
 }

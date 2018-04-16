@@ -35,37 +35,42 @@ class GetDocumentHyperlinkByIndexRequest
     /*
      * Initializes a new instance of the GetDocumentHyperlinkByIndexRequest class.
      *  
-     * @param int $hyperlink_index The hyperlink index.
      * @param string $name The document name.
+     * @param int $hyperlink_index The hyperlink index.
      * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($hyperlink_index, $name, $folder = null, $load_encoding = null, $password = null, $storage = null)             
+    public function __construct($name, $hyperlink_index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
-        $this->hyperlink_index = $hyperlink_index;
         $this->name = $name;
+        $this->hyperlink_index = $hyperlink_index;
         $this->folder = $folder;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->storage = $storage;
     }
 
-    /*
-     * The hyperlink index.
-     */
-    public $hyperlink_index;
-	
     /*
      * The document name.
      */
     public $name;
 	
     /*
+     * The hyperlink index.
+     */
+    public $hyperlink_index;
+	
+    /*
      * Original document folder.
      */
     public $folder;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -76,9 +81,4 @@ class GetDocumentHyperlinkByIndexRequest
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
 }

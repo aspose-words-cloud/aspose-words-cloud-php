@@ -274,9 +274,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -284,9 +284,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -314,9 +314,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -580,13 +580,13 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling createOrUpdateDocumentProperty');
         }
-        // verify the required parameter 'property' is set
-        if ($request->property === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $property when calling createOrUpdateDocumentProperty');
-        }
         // verify the required parameter 'property_name' is set
         if ($request->property_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $property_name when calling createOrUpdateDocumentProperty');
+        }
+        // verify the required parameter 'property' is set
+        if ($request->property === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $property when calling createOrUpdateDocumentProperty');
         }
 
         $resourcePath = '/words/{name}/documentProperties/{propertyName}';
@@ -608,9 +608,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -618,9 +618,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -648,6 +648,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -661,16 +671,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -937,10 +937,6 @@ class WordsApi
      */
     protected function deleteBorderRequest(Requests\deleteBorderRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteBorder');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteBorder');
@@ -948,6 +944,10 @@ class WordsApi
         // verify the required parameter 'node_path' is set
         if ($request->node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling deleteBorder');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteBorder');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/borders/{index}';
@@ -958,11 +958,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -972,11 +967,16 @@ class WordsApi
             $localName = lcfirst('NodePath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->node_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -984,9 +984,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1014,6 +1014,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -1027,16 +1037,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1324,9 +1324,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1334,9 +1334,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1364,6 +1364,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -1377,16 +1387,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1646,13 +1646,13 @@ class WordsApi
      */
     protected function deleteCommentRequest(Requests\deleteCommentRequest $request)
     {
-        // verify the required parameter 'comment_index' is set
-        if ($request->comment_index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling deleteComment');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteComment');
+        }
+        // verify the required parameter 'comment_index' is set
+        if ($request->comment_index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling deleteComment');
         }
 
         $resourcePath = '/words/{name}/comments/{commentIndex}';
@@ -1663,20 +1663,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->comment_index !== null) {
-            $localName = lcfirst('CommentIndex');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->comment_index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->comment_index !== null) {
+            $localName = lcfirst('CommentIndex');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->comment_index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1684,9 +1684,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1714,6 +1714,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -1727,16 +1737,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -2015,9 +2015,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -2025,9 +2025,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -2055,6 +2055,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -2068,16 +2078,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -2365,9 +2365,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -2375,9 +2375,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -2405,6 +2405,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -2418,16 +2428,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -2706,9 +2706,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -2716,9 +2716,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -2746,6 +2746,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -2759,16 +2769,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3028,13 +3028,13 @@ class WordsApi
      */
     protected function deleteDrawingObjectRequest(Requests\deleteDrawingObjectRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteDrawingObject');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteDrawingObject');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteDrawingObject');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}';
@@ -3045,20 +3045,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3066,9 +3066,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3086,9 +3086,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3096,9 +3096,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3126,9 +3126,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3388,13 +3388,13 @@ class WordsApi
      */
     protected function deleteFieldRequest(Requests\deleteFieldRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteField');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteField');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
@@ -3405,20 +3405,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3426,9 +3426,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3446,9 +3446,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3456,9 +3456,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3486,9 +3486,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3767,9 +3767,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3777,9 +3777,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3797,9 +3797,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3807,9 +3807,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3837,9 +3837,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4099,13 +4099,13 @@ class WordsApi
      */
     protected function deleteFootnoteRequest(Requests\deleteFootnoteRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFootnote');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteFootnote');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFootnote');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
@@ -4116,20 +4116,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4137,9 +4137,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4157,9 +4157,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4167,9 +4167,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4197,9 +4197,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4459,13 +4459,13 @@ class WordsApi
      */
     protected function deleteFormFieldRequest(Requests\deleteFormFieldRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFormField');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteFormField');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFormField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/formfields/{index}';
@@ -4476,20 +4476,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4497,9 +4497,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4517,9 +4517,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4527,9 +4527,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4557,9 +4557,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4819,13 +4819,13 @@ class WordsApi
      */
     protected function deleteHeaderFooterRequest(Requests\deleteHeaderFooterRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteHeaderFooter');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteHeaderFooter');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteHeaderFooter');
         }
 
         $resourcePath = '/words/{name}/{sectionPath}/headersfooters/{index}';
@@ -4836,20 +4836,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4857,9 +4857,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4880,6 +4880,16 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -4910,16 +4920,6 @@ class WordsApi
         if ($request->section_path !== null) {
             $localName = lcfirst('SectionPath');
             $localValue = is_bool($request->section_path) ? ($request->section_path ? 'true' : 'false') : $request->section_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5198,16 +5198,6 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
@@ -5218,9 +5208,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->headers_footers_types !== null) {
-            $localName = lcfirst('HeadersFootersTypes');
-            $localValue = is_bool($request->headers_footers_types) ? ($request->headers_footers_types ? 'true' : 'false') : $request->headers_footers_types;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5241,6 +5231,16 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5278,9 +5278,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->headers_footers_types !== null) {
+            $localName = lcfirst('HeadersFootersTypes');
+            $localValue = is_bool($request->headers_footers_types) ? ($request->headers_footers_types ? 'true' : 'false') : $request->headers_footers_types;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5540,13 +5540,13 @@ class WordsApi
      */
     protected function deleteOfficeMathObjectRequest(Requests\deleteOfficeMathObjectRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteOfficeMathObject');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteOfficeMathObject');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteOfficeMathObject');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/OfficeMathObjects/{index}';
@@ -5557,20 +5557,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5578,9 +5578,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5598,9 +5598,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5608,9 +5608,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5638,9 +5638,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5900,13 +5900,13 @@ class WordsApi
      */
     protected function deleteParagraphRequest(Requests\deleteParagraphRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteParagraph');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteParagraph');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteParagraph');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}';
@@ -5917,20 +5917,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5938,9 +5938,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5958,9 +5958,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5968,9 +5968,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -5998,9 +5998,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -6260,10 +6260,6 @@ class WordsApi
      */
     protected function deleteRunRequest(Requests\deleteRunRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteRun');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteRun');
@@ -6271,6 +6267,10 @@ class WordsApi
         // verify the required parameter 'paragraph_path' is set
         if ($request->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling deleteRun');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteRun');
         }
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}';
@@ -6281,11 +6281,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -6295,11 +6290,16 @@ class WordsApi
             $localName = lcfirst('ParagraphPath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->paragraph_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -6307,9 +6307,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -6337,6 +6337,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -6350,16 +6360,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -6619,13 +6619,13 @@ class WordsApi
      */
     protected function deleteTableRequest(Requests\deleteTableRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTable');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteTable');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTable');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/tables/{index}';
@@ -6636,20 +6636,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -6657,9 +6657,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -6677,9 +6677,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -6687,9 +6687,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -6717,9 +6717,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -6979,10 +6979,6 @@ class WordsApi
      */
     protected function deleteTableCellRequest(Requests\deleteTableCellRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableCell');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteTableCell');
@@ -6990,6 +6986,10 @@ class WordsApi
         // verify the required parameter 'table_row_path' is set
         if ($request->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling deleteTableCell');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableCell');
         }
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}';
@@ -7000,11 +7000,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -7014,11 +7009,16 @@ class WordsApi
             $localName = lcfirst('TableRowPath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->table_row_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -7026,9 +7026,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -7056,6 +7056,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -7069,16 +7079,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -7338,10 +7338,6 @@ class WordsApi
      */
     protected function deleteTableRowRequest(Requests\deleteTableRowRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableRow');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteTableRow');
@@ -7349,6 +7345,10 @@ class WordsApi
         // verify the required parameter 'table_path' is set
         if ($request->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling deleteTableRow');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableRow');
         }
 
         $resourcePath = '/words/{name}/{tablePath}/rows/{index}';
@@ -7359,11 +7359,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -7373,11 +7368,16 @@ class WordsApi
             $localName = lcfirst('TablePath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->table_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -7385,9 +7385,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -7415,6 +7415,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -7428,16 +7438,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -7720,9 +7720,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -7730,9 +7730,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -7760,9 +7760,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -8029,10 +8029,6 @@ class WordsApi
      */
     protected function getBorderRequest(Requests\getBorderRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getBorder');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getBorder');
@@ -8040,6 +8036,10 @@ class WordsApi
         // verify the required parameter 'node_path' is set
         if ($request->node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getBorder');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getBorder');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/borders/{index}';
@@ -8050,11 +8050,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -8064,11 +8059,26 @@ class WordsApi
             $localName = lcfirst('NodePath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->node_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -8089,16 +8099,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -8396,6 +8396,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -8409,16 +8419,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -8678,13 +8678,13 @@ class WordsApi
      */
     protected function getCommentRequest(Requests\getCommentRequest $request)
     {
-        // verify the required parameter 'comment_index' is set
-        if ($request->comment_index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling getComment');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getComment');
+        }
+        // verify the required parameter 'comment_index' is set
+        if ($request->comment_index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling getComment');
         }
 
         $resourcePath = '/words/{name}/comments/{commentIndex}';
@@ -8695,20 +8695,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->comment_index !== null) {
-            $localName = lcfirst('CommentIndex');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->comment_index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->comment_index !== null) {
+            $localName = lcfirst('CommentIndex');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->comment_index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -8729,16 +8739,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -9027,6 +9027,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -9040,16 +9050,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -9338,6 +9338,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -9351,16 +9361,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -9620,13 +9620,13 @@ class WordsApi
      */
     protected function getDocumentBookmarkByNameRequest(Requests\getDocumentBookmarkByNameRequest $request)
     {
-        // verify the required parameter 'bookmark_name' is set
-        if ($request->bookmark_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $bookmark_name when calling getDocumentBookmarkByName');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentBookmarkByName');
+        }
+        // verify the required parameter 'bookmark_name' is set
+        if ($request->bookmark_name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $bookmark_name when calling getDocumentBookmarkByName');
         }
 
         $resourcePath = '/words/{name}/bookmarks/{bookmarkName}';
@@ -9637,20 +9637,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->bookmark_name !== null) {
-            $localName = lcfirst('BookmarkName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->bookmark_name), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->bookmark_name !== null) {
+            $localName = lcfirst('BookmarkName');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->bookmark_name), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -9671,16 +9681,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -9969,6 +9969,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -9982,16 +9992,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -10251,13 +10251,13 @@ class WordsApi
      */
     protected function getDocumentDrawingObjectByIndexRequest(Requests\getDocumentDrawingObjectByIndexRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectByIndex');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentDrawingObjectByIndex');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectByIndex');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}';
@@ -10268,20 +10268,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -10299,16 +10309,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -10319,9 +10319,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -10581,13 +10581,13 @@ class WordsApi
      */
     protected function getDocumentDrawingObjectImageDataRequest(Requests\getDocumentDrawingObjectImageDataRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectImageData');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentDrawingObjectImageData');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectImageData');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}/imageData';
@@ -10598,20 +10598,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -10629,16 +10639,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -10649,9 +10649,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -10911,13 +10911,13 @@ class WordsApi
      */
     protected function getDocumentDrawingObjectOleDataRequest(Requests\getDocumentDrawingObjectOleDataRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectOleData');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentDrawingObjectOleData');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectOleData');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}/oleData';
@@ -10928,20 +10928,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -10959,16 +10969,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -10979,9 +10979,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -11270,9 +11270,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->load_encoding !== null) {
-            $localName = lcfirst('LoadEncoding');
-            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -11280,9 +11280,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -11300,9 +11300,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -11591,6 +11591,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -11604,16 +11614,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -11883,13 +11883,13 @@ class WordsApi
      */
     protected function getDocumentHyperlinkByIndexRequest(Requests\getDocumentHyperlinkByIndexRequest $request)
     {
-        // verify the required parameter 'hyperlink_index' is set
-        if ($request->hyperlink_index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $hyperlink_index when calling getDocumentHyperlinkByIndex');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentHyperlinkByIndex');
+        }
+        // verify the required parameter 'hyperlink_index' is set
+        if ($request->hyperlink_index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $hyperlink_index when calling getDocumentHyperlinkByIndex');
         }
 
         $resourcePath = '/words/{name}/hyperlinks/{hyperlinkIndex}';
@@ -11900,20 +11900,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->hyperlink_index !== null) {
-            $localName = lcfirst('HyperlinkIndex');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->hyperlink_index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->hyperlink_index !== null) {
+            $localName = lcfirst('HyperlinkIndex');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->hyperlink_index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -11934,16 +11944,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -12232,6 +12232,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -12245,16 +12255,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -12514,13 +12514,13 @@ class WordsApi
      */
     protected function getDocumentParagraphRequest(Requests\getDocumentParagraphRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentParagraph');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentParagraph');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentParagraph');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}';
@@ -12531,20 +12531,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -12562,16 +12572,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -12582,9 +12582,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -12844,10 +12844,6 @@ class WordsApi
      */
     protected function getDocumentParagraphRunRequest(Requests\getDocumentParagraphRunRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentParagraphRun');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentParagraphRun');
@@ -12855,6 +12851,10 @@ class WordsApi
         // verify the required parameter 'paragraph_path' is set
         if ($request->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling getDocumentParagraphRun');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentParagraphRun');
         }
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}';
@@ -12865,11 +12865,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -12879,11 +12874,26 @@ class WordsApi
             $localName = lcfirst('ParagraphPath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->paragraph_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -12904,16 +12914,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -13173,10 +13173,6 @@ class WordsApi
      */
     protected function getDocumentParagraphRunFontRequest(Requests\getDocumentParagraphRunFontRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentParagraphRunFont');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentParagraphRunFont');
@@ -13184,6 +13180,10 @@ class WordsApi
         // verify the required parameter 'paragraph_path' is set
         if ($request->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling getDocumentParagraphRunFont');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentParagraphRunFont');
         }
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}/font';
@@ -13194,11 +13194,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -13208,11 +13203,26 @@ class WordsApi
             $localName = lcfirst('ParagraphPath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->paragraph_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -13233,16 +13243,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -13540,6 +13540,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -13553,16 +13563,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -13851,9 +13851,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->load_encoding !== null) {
-            $localName = lcfirst('LoadEncoding');
-            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -13861,9 +13861,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -13881,9 +13881,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -14172,6 +14172,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -14185,16 +14195,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -14492,6 +14492,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -14505,16 +14515,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -14803,6 +14803,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -14816,16 +14826,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -15114,29 +15114,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->include_comments !== null) {
-            $localName = lcfirst('IncludeComments');
-            $localValue = is_bool($request->include_comments) ? ($request->include_comments ? 'true' : 'false') : $request->include_comments;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->include_footnotes !== null) {
-            $localName = lcfirst('IncludeFootnotes');
-            $localValue = is_bool($request->include_footnotes) ? ($request->include_footnotes ? 'true' : 'false') : $request->include_footnotes;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->include_text_in_shapes !== null) {
-            $localName = lcfirst('IncludeTextInShapes');
-            $localValue = is_bool($request->include_text_in_shapes) ? ($request->include_text_in_shapes ? 'true' : 'false') : $request->include_text_in_shapes;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -15164,9 +15144,29 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->include_comments !== null) {
+            $localName = lcfirst('IncludeComments');
+            $localValue = is_bool($request->include_comments) ? ($request->include_comments ? 'true' : 'false') : $request->include_comments;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->include_footnotes !== null) {
+            $localName = lcfirst('IncludeFootnotes');
+            $localValue = is_bool($request->include_footnotes) ? ($request->include_footnotes ? 'true' : 'false') : $request->include_footnotes;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->include_text_in_shapes !== null) {
+            $localName = lcfirst('IncludeTextInShapes');
+            $localValue = is_bool($request->include_text_in_shapes) ? ($request->include_text_in_shapes ? 'true' : 'false') : $request->include_text_in_shapes;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -15455,6 +15455,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -15468,16 +15478,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -15737,13 +15737,13 @@ class WordsApi
      */
     protected function getDocumentWithFormatRequest(Requests\getDocumentWithFormatRequest $request)
     {
-        // verify the required parameter 'format' is set
-        if ($request->format === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $format when calling getDocumentWithFormat');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentWithFormat');
+        }
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling getDocumentWithFormat');
         }
 
         $resourcePath = '/words/{name}';
@@ -15780,9 +15780,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -15800,16 +15800,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->out_path !== null) {
-            $localName = lcfirst('OutPath');
-            $localValue = is_bool($request->out_path) ? ($request->out_path ? 'true' : 'false') : $request->out_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -15820,9 +15810,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->out_path !== null) {
+            $localName = lcfirst('OutPath');
+            $localValue = is_bool($request->out_path) ? ($request->out_path ? 'true' : 'false') : $request->out_path;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -16082,13 +16082,13 @@ class WordsApi
      */
     protected function getFieldRequest(Requests\getFieldRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getField');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getField');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
@@ -16099,20 +16099,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -16130,16 +16140,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -16150,9 +16150,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -16441,9 +16441,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->load_encoding !== null) {
-            $localName = lcfirst('LoadEncoding');
-            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -16451,9 +16451,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -16471,9 +16471,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -16733,13 +16733,13 @@ class WordsApi
      */
     protected function getFootnoteRequest(Requests\getFootnoteRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getFootnote');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getFootnote');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getFootnote');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
@@ -16750,20 +16750,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -16781,16 +16791,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -16801,9 +16801,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -17092,9 +17092,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->load_encoding !== null) {
-            $localName = lcfirst('LoadEncoding');
-            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -17102,9 +17102,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -17122,9 +17122,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -17384,13 +17384,13 @@ class WordsApi
      */
     protected function getFormFieldRequest(Requests\getFormFieldRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getFormField');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getFormField');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getFormField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/formfields/{index}';
@@ -17401,20 +17401,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -17432,16 +17442,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -17452,9 +17452,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -17743,9 +17743,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->load_encoding !== null) {
-            $localName = lcfirst('LoadEncoding');
-            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -17753,9 +17753,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -17773,9 +17773,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -18035,13 +18035,13 @@ class WordsApi
      */
     protected function getHeaderFooterRequest(Requests\getHeaderFooterRequest $request)
     {
-        // verify the required parameter 'header_footer_index' is set
-        if ($request->header_footer_index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $header_footer_index when calling getHeaderFooter');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getHeaderFooter');
+        }
+        // verify the required parameter 'header_footer_index' is set
+        if ($request->header_footer_index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $header_footer_index when calling getHeaderFooter');
         }
 
         $resourcePath = '/words/{name}/headersfooters/{headerFooterIndex}';
@@ -18052,20 +18052,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->header_footer_index !== null) {
-            $localName = lcfirst('HeaderFooterIndex');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->header_footer_index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->header_footer_index !== null) {
+            $localName = lcfirst('HeaderFooterIndex');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->header_footer_index), $resourcePath);
+        }
 
         // query params
-        if ($request->filter_by_type !== null) {
-            $localName = lcfirst('FilterByType');
-            $localValue = is_bool($request->filter_by_type) ? ($request->filter_by_type ? 'true' : 'false') : $request->filter_by_type;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -18073,9 +18073,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -18103,9 +18103,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->filter_by_type !== null) {
+            $localName = lcfirst('FilterByType');
+            $localValue = is_bool($request->filter_by_type) ? ($request->filter_by_type ? 'true' : 'false') : $request->filter_by_type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -18365,13 +18365,13 @@ class WordsApi
      */
     protected function getHeaderFooterOfSectionRequest(Requests\getHeaderFooterOfSectionRequest $request)
     {
-        // verify the required parameter 'header_footer_index' is set
-        if ($request->header_footer_index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $header_footer_index when calling getHeaderFooterOfSection');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getHeaderFooterOfSection');
+        }
+        // verify the required parameter 'header_footer_index' is set
+        if ($request->header_footer_index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $header_footer_index when calling getHeaderFooterOfSection');
         }
         // verify the required parameter 'section_index' is set
         if ($request->section_index === null) {
@@ -18386,14 +18386,14 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->header_footer_index !== null) {
-            $localName = lcfirst('HeaderFooterIndex');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->header_footer_index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->header_footer_index !== null) {
+            $localName = lcfirst('HeaderFooterIndex');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->header_footer_index), $resourcePath);
         }
         // path params
         if ($request->section_index !== null) {
@@ -18402,9 +18402,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->filter_by_type !== null) {
-            $localName = lcfirst('FilterByType');
-            $localValue = is_bool($request->filter_by_type) ? ($request->filter_by_type ? 'true' : 'false') : $request->filter_by_type;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -18412,9 +18412,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -18442,9 +18442,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->filter_by_type !== null) {
+            $localName = lcfirst('FilterByType');
+            $localValue = is_bool($request->filter_by_type) ? ($request->filter_by_type ? 'true' : 'false') : $request->filter_by_type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -18723,9 +18723,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->filter_by_type !== null) {
-            $localName = lcfirst('FilterByType');
-            $localValue = is_bool($request->filter_by_type) ? ($request->filter_by_type ? 'true' : 'false') : $request->filter_by_type;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -18733,9 +18733,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -18773,9 +18773,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->filter_by_type !== null) {
+            $localName = lcfirst('FilterByType');
+            $localValue = is_bool($request->filter_by_type) ? ($request->filter_by_type ? 'true' : 'false') : $request->filter_by_type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -19035,13 +19035,13 @@ class WordsApi
      */
     protected function getOfficeMathObjectRequest(Requests\getOfficeMathObjectRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getOfficeMathObject');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getOfficeMathObject');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getOfficeMathObject');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/OfficeMathObjects/{index}';
@@ -19052,20 +19052,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -19083,16 +19093,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -19103,9 +19103,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -19394,9 +19394,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->load_encoding !== null) {
-            $localName = lcfirst('LoadEncoding');
-            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -19404,9 +19404,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -19424,9 +19424,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -19724,6 +19724,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -19737,16 +19747,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -20044,6 +20044,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -20057,16 +20067,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -20355,6 +20355,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -20368,16 +20378,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -20637,13 +20637,13 @@ class WordsApi
      */
     protected function getTableRequest(Requests\getTableRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTable');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTable');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTable');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/tables/{index}';
@@ -20654,20 +20654,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -20685,16 +20695,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -20705,9 +20705,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -20967,10 +20967,6 @@ class WordsApi
      */
     protected function getTableCellRequest(Requests\getTableCellRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCell');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTableCell');
@@ -20978,6 +20974,10 @@ class WordsApi
         // verify the required parameter 'table_row_path' is set
         if ($request->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling getTableCell');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCell');
         }
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}';
@@ -20988,11 +20988,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -21002,11 +20997,26 @@ class WordsApi
             $localName = lcfirst('TableRowPath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->table_row_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -21027,16 +21037,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -21296,10 +21296,6 @@ class WordsApi
      */
     protected function getTableCellFormatRequest(Requests\getTableCellFormatRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCellFormat');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTableCellFormat');
@@ -21307,6 +21303,10 @@ class WordsApi
         // verify the required parameter 'table_row_path' is set
         if ($request->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling getTableCellFormat');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCellFormat');
         }
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}/cellformat';
@@ -21317,11 +21317,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -21331,11 +21326,26 @@ class WordsApi
             $localName = lcfirst('TableRowPath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->table_row_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -21356,16 +21366,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -21625,13 +21625,13 @@ class WordsApi
      */
     protected function getTablePropertiesRequest(Requests\getTablePropertiesRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableProperties');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTableProperties');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableProperties');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/tables/{index}/properties';
@@ -21642,20 +21642,30 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -21673,16 +21683,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -21693,9 +21693,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -21955,10 +21955,6 @@ class WordsApi
      */
     protected function getTableRowRequest(Requests\getTableRowRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableRow');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTableRow');
@@ -21966,6 +21962,10 @@ class WordsApi
         // verify the required parameter 'table_path' is set
         if ($request->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling getTableRow');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableRow');
         }
 
         $resourcePath = '/words/{name}/{tablePath}/rows/{index}';
@@ -21976,11 +21976,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -21990,11 +21985,26 @@ class WordsApi
             $localName = lcfirst('TablePath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->table_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22015,16 +22025,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22284,10 +22284,6 @@ class WordsApi
      */
     protected function getTableRowFormatRequest(Requests\getTableRowFormatRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableRowFormat');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTableRowFormat');
@@ -22295,6 +22291,10 @@ class WordsApi
         // verify the required parameter 'table_path' is set
         if ($request->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling getTableRowFormat');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableRowFormat');
         }
 
         $resourcePath = '/words/{name}/{tablePath}/rows/{index}/rowformat';
@@ -22305,11 +22305,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -22319,11 +22314,26 @@ class WordsApi
             $localName = lcfirst('TablePath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->table_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22344,16 +22354,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22642,9 +22642,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->load_encoding !== null) {
-            $localName = lcfirst('LoadEncoding');
-            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22652,9 +22652,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22672,9 +22672,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22953,9 +22953,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22963,9 +22963,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22983,9 +22983,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -22993,9 +22993,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -23023,9 +23023,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -23320,9 +23320,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -23330,9 +23330,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -23360,6 +23360,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -23373,16 +23383,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -23677,9 +23677,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -23687,9 +23687,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -23717,6 +23717,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -23730,16 +23740,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -24006,13 +24006,13 @@ class WordsApi
      */
     protected function postAppendDocumentRequest(Requests\postAppendDocumentRequest $request)
     {
-        // verify the required parameter 'document_list' is set
-        if ($request->document_list === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $document_list when calling postAppendDocument');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling postAppendDocument');
+        }
+        // verify the required parameter 'document_list' is set
+        if ($request->document_list === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $document_list when calling postAppendDocument');
         }
 
         $resourcePath = '/words/{name}/appendDocument';
@@ -24029,9 +24029,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -24039,9 +24039,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -24069,6 +24069,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -24082,16 +24092,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -24381,9 +24381,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -24391,9 +24391,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -24421,9 +24421,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -24690,17 +24690,17 @@ class WordsApi
      */
     protected function postCommentRequest(Requests\postCommentRequest $request)
     {
-        // verify the required parameter 'comment' is set
-        if ($request->comment === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $comment when calling postComment');
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling postComment');
         }
         // verify the required parameter 'comment_index' is set
         if ($request->comment_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling postComment');
         }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling postComment');
+        // verify the required parameter 'comment' is set
+        if ($request->comment === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $comment when calling postComment');
         }
 
         $resourcePath = '/words/{name}/comments/{commentIndex}';
@@ -24711,20 +24711,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->comment_index !== null) {
-            $localName = lcfirst('CommentIndex');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->comment_index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->comment_index !== null) {
+            $localName = lcfirst('CommentIndex');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->comment_index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -24732,9 +24732,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -24762,6 +24762,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -24775,16 +24785,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -25051,13 +25051,13 @@ class WordsApi
      */
     protected function postCompareDocumentRequest(Requests\postCompareDocumentRequest $request)
     {
-        // verify the required parameter 'compare_data' is set
-        if ($request->compare_data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $compare_data when calling postCompareDocument');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling postCompareDocument');
+        }
+        // verify the required parameter 'compare_data' is set
+        if ($request->compare_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $compare_data when calling postCompareDocument');
         }
 
         $resourcePath = '/words/{name}/compareDocument';
@@ -25074,9 +25074,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -25084,9 +25084,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -25114,9 +25114,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -25402,59 +25402,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->cleanup !== null) {
-            $localName = lcfirst('Cleanup');
-            $localValue = is_bool($request->cleanup) ? ($request->cleanup ? 'true' : 'false') : $request->cleanup;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->load_encoding !== null) {
-            $localName = lcfirst('LoadEncoding');
-            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->mail_merge_data_file !== null) {
-            $localName = lcfirst('MailMergeDataFile');
-            $localValue = is_bool($request->mail_merge_data_file) ? ($request->mail_merge_data_file ? 'true' : 'false') : $request->mail_merge_data_file;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -25472,9 +25422,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->use_whole_paragraph_as_region !== null) {
-            $localName = lcfirst('UseWholeParagraphAsRegion');
-            $localValue = is_bool($request->use_whole_paragraph_as_region) ? ($request->use_whole_paragraph_as_region ? 'true' : 'false') : $request->use_whole_paragraph_as_region;
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -25485,6 +25445,46 @@ class WordsApi
         if ($request->with_regions !== null) {
             $localName = lcfirst('WithRegions');
             $localValue = is_bool($request->with_regions) ? ($request->with_regions ? 'true' : 'false') : $request->with_regions;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->mail_merge_data_file !== null) {
+            $localName = lcfirst('MailMergeDataFile');
+            $localValue = is_bool($request->mail_merge_data_file) ? ($request->mail_merge_data_file ? 'true' : 'false') : $request->mail_merge_data_file;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->cleanup !== null) {
+            $localName = lcfirst('Cleanup');
+            $localValue = is_bool($request->cleanup) ? ($request->cleanup ? 'true' : 'false') : $request->cleanup;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->use_whole_paragraph_as_region !== null) {
+            $localName = lcfirst('UseWholeParagraphAsRegion');
+            $localValue = is_bool($request->use_whole_paragraph_as_region) ? ($request->use_whole_paragraph_as_region ? 'true' : 'false') : $request->use_whole_paragraph_as_region;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -25748,21 +25748,21 @@ class WordsApi
      */
     protected function postDocumentParagraphRunFontRequest(Requests\postDocumentParagraphRunFontRequest $request)
     {
-        // verify the required parameter 'font_dto' is set
-        if ($request->font_dto === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $font_dto when calling postDocumentParagraphRunFont');
-        }
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling postDocumentParagraphRunFont');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling postDocumentParagraphRunFont');
         }
+        // verify the required parameter 'font_dto' is set
+        if ($request->font_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $font_dto when calling postDocumentParagraphRunFont');
+        }
         // verify the required parameter 'paragraph_path' is set
         if ($request->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling postDocumentParagraphRunFont');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling postDocumentParagraphRunFont');
         }
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}/font';
@@ -25773,11 +25773,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -25787,11 +25782,16 @@ class WordsApi
             $localName = lcfirst('ParagraphPath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->paragraph_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -25799,9 +25799,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -25829,6 +25829,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -25842,16 +25852,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26141,16 +26141,6 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
@@ -26161,9 +26151,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26191,9 +26181,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26460,6 +26460,10 @@ class WordsApi
      */
     protected function postDrawingObjectRequest(Requests\postDrawingObjectRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling postDrawingObject');
+        }
         // verify the required parameter 'drawing_object' is set
         if ($request->drawing_object === null) {
             throw new \InvalidArgumentException('Missing the required parameter $drawing_object when calling postDrawingObject');
@@ -26472,10 +26476,6 @@ class WordsApi
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling postDrawingObject');
         }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling postDrawingObject');
-        }
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}';
         $formParams = [];
@@ -26485,20 +26485,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26506,9 +26506,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26526,9 +26526,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26536,9 +26536,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26566,9 +26566,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26841,13 +26841,13 @@ class WordsApi
      */
     protected function postExecuteTemplateRequest(Requests\postExecuteTemplateRequest $request)
     {
-        // verify the required parameter 'data' is set
-        if ($request->data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $data when calling postExecuteTemplate');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling postExecuteTemplate');
+        }
+        // verify the required parameter 'data' is set
+        if ($request->data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $data when calling postExecuteTemplate');
         }
 
         $resourcePath = '/words/{name}/executeTemplate';
@@ -26864,29 +26864,19 @@ class WordsApi
         }
 
         // query params
-        if ($request->cleanup !== null) {
-            $localName = lcfirst('Cleanup');
-            $localValue = is_bool($request->cleanup) ? ($request->cleanup ? 'true' : 'false') : $request->cleanup;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26914,9 +26904,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->cleanup !== null) {
+            $localName = lcfirst('Cleanup');
+            $localValue = is_bool($request->cleanup) ? ($request->cleanup ? 'true' : 'false') : $request->cleanup;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -26937,6 +26927,16 @@ class WordsApi
         if ($request->with_regions !== null) {
             $localName = lcfirst('WithRegions');
             $localValue = is_bool($request->with_regions) ? ($request->with_regions ? 'true' : 'false') : $request->with_regions;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27200,6 +27200,10 @@ class WordsApi
      */
     protected function postFieldRequest(Requests\postFieldRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling postField');
+        }
         // verify the required parameter 'field' is set
         if ($request->field === null) {
             throw new \InvalidArgumentException('Missing the required parameter $field when calling postField');
@@ -27207,10 +27211,6 @@ class WordsApi
         // verify the required parameter 'index' is set
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling postField');
-        }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling postField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
@@ -27221,20 +27221,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27242,9 +27242,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27262,9 +27262,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27272,9 +27272,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27302,9 +27302,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27571,6 +27571,10 @@ class WordsApi
      */
     protected function postFootnoteRequest(Requests\postFootnoteRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling postFootnote');
+        }
         // verify the required parameter 'footnote_dto' is set
         if ($request->footnote_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling postFootnote');
@@ -27578,10 +27582,6 @@ class WordsApi
         // verify the required parameter 'index' is set
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling postFootnote');
-        }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling postFootnote');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
@@ -27592,20 +27592,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27613,9 +27613,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27633,9 +27633,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27643,9 +27643,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27673,9 +27673,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27942,6 +27942,10 @@ class WordsApi
      */
     protected function postFormFieldRequest(Requests\postFormFieldRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling postFormField');
+        }
         // verify the required parameter 'form_field' is set
         if ($request->form_field === null) {
             throw new \InvalidArgumentException('Missing the required parameter $form_field when calling postFormField');
@@ -27949,10 +27953,6 @@ class WordsApi
         // verify the required parameter 'index' is set
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling postFormField');
-        }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling postFormField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/formfields/{index}';
@@ -27963,20 +27963,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -27984,9 +27984,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -28004,9 +28004,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -28014,9 +28014,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -28044,9 +28044,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -28332,16 +28332,6 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
@@ -28352,9 +28342,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->image !== null) {
-            $localName = lcfirst('Image');
-            $localValue = is_bool($request->image) ? ($request->image ? 'true' : 'false') : $request->image;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -28375,6 +28365,16 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -28412,9 +28412,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->image !== null) {
+            $localName = lcfirst('Image');
+            $localValue = is_bool($request->image) ? ($request->image ? 'true' : 'false') : $request->image;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -28706,9 +28706,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -28716,9 +28716,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -28746,6 +28746,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -28759,16 +28769,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -29058,9 +29058,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -29068,9 +29068,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -29098,6 +29098,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -29111,16 +29121,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -29693,9 +29693,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -29703,9 +29703,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -29733,6 +29733,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -29746,16 +29756,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -30022,21 +30022,21 @@ class WordsApi
      */
     protected function postRunRequest(Requests\postRunRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling postRun');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling postRun');
+        }
+        // verify the required parameter 'run' is set
+        if ($request->run === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $run when calling postRun');
         }
         // verify the required parameter 'paragraph_path' is set
         if ($request->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling postRun');
         }
-        // verify the required parameter 'run' is set
-        if ($request->run === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $run when calling postRun');
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling postRun');
         }
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}';
@@ -30047,11 +30047,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -30061,11 +30056,16 @@ class WordsApi
             $localName = lcfirst('ParagraphPath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->paragraph_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -30073,9 +30073,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -30103,6 +30103,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -30116,16 +30126,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -30411,16 +30411,6 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
@@ -30431,29 +30421,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->format !== null) {
-            $localName = lcfirst('Format');
-            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->from !== null) {
-            $localName = lcfirst('From');
-            $localValue = is_bool($request->from) ? ($request->from ? 'true' : 'false') : $request->from;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -30481,9 +30451,29 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->format !== null) {
+            $localName = lcfirst('Format');
+            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->from !== null) {
+            $localName = lcfirst('From');
+            $localValue = is_bool($request->from) ? ($request->from ? 'true' : 'false') : $request->from;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -30504,6 +30494,16 @@ class WordsApi
         if ($request->zip_output !== null) {
             $localName = lcfirst('ZipOutput');
             $localValue = is_bool($request->zip_output) ? ($request->zip_output ? 'true' : 'false') : $request->zip_output;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -30763,6 +30763,10 @@ class WordsApi
      */
     protected function postUpdateDocumentBookmarkRequest(Requests\postUpdateDocumentBookmarkRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling postUpdateDocumentBookmark');
+        }
         // verify the required parameter 'bookmark_data' is set
         if ($request->bookmark_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_data when calling postUpdateDocumentBookmark');
@@ -30770,10 +30774,6 @@ class WordsApi
         // verify the required parameter 'bookmark_name' is set
         if ($request->bookmark_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_name when calling postUpdateDocumentBookmark');
-        }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling postUpdateDocumentBookmark');
         }
 
         $resourcePath = '/words/{name}/bookmarks/{bookmarkName}';
@@ -30784,20 +30784,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->bookmark_name !== null) {
-            $localName = lcfirst('BookmarkName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->bookmark_name), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->bookmark_name !== null) {
+            $localName = lcfirst('BookmarkName');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->bookmark_name), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -30805,9 +30805,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -30835,6 +30835,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -30848,16 +30858,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -31143,9 +31143,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -31153,9 +31153,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -31183,9 +31183,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -31445,13 +31445,13 @@ class WordsApi
      */
     protected function putCommentRequest(Requests\putCommentRequest $request)
     {
-        // verify the required parameter 'comment' is set
-        if ($request->comment === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $comment when calling putComment');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling putComment');
+        }
+        // verify the required parameter 'comment' is set
+        if ($request->comment === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $comment when calling putComment');
         }
 
         $resourcePath = '/words/{name}/comments';
@@ -31468,9 +31468,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -31478,9 +31478,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -31508,6 +31508,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -31521,16 +31531,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -31825,9 +31825,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -31845,9 +31845,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -32126,6 +32126,16 @@ class WordsApi
     
 
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->file_name !== null) {
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
@@ -32139,16 +32149,6 @@ class WordsApi
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -32716,36 +32716,6 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->dml_effects_rendering_mode !== null) {
-            $localName = lcfirst('DmlEffectsRenderingMode');
-            $localValue = is_bool($request->dml_effects_rendering_mode) ? ($request->dml_effects_rendering_mode ? 'true' : 'false') : $request->dml_effects_rendering_mode;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->dml_rendering_mode !== null) {
-            $localName = lcfirst('DmlRenderingMode');
-            $localValue = is_bool($request->dml_rendering_mode) ? ($request->dml_rendering_mode ? 'true' : 'false') : $request->dml_rendering_mode;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
@@ -32756,9 +32726,69 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->result_file !== null) {
+            $localName = lcfirst('ResultFile');
+            $localValue = is_bool($request->result_file) ? ($request->result_file ? 'true' : 'false') : $request->result_file;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->use_anti_aliasing !== null) {
+            $localName = lcfirst('UseAntiAliasing');
+            $localValue = is_bool($request->use_anti_aliasing) ? ($request->use_anti_aliasing ? 'true' : 'false') : $request->use_anti_aliasing;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->use_high_quality_rendering !== null) {
+            $localName = lcfirst('UseHighQualityRendering');
+            $localValue = is_bool($request->use_high_quality_rendering) ? ($request->use_high_quality_rendering ? 'true' : 'false') : $request->use_high_quality_rendering;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -32789,16 +32819,6 @@ class WordsApi
         if ($request->image_contrast !== null) {
             $localName = lcfirst('ImageContrast');
             $localValue = is_bool($request->image_contrast) ? ($request->image_contrast ? 'true' : 'false') : $request->image_contrast;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->load_encoding !== null) {
-            $localName = lcfirst('LoadEncoding');
-            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -32846,16 +32866,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->pixel_format !== null) {
             $localName = lcfirst('PixelFormat');
             $localValue = is_bool($request->pixel_format) ? ($request->pixel_format ? 'true' : 'false') : $request->pixel_format;
@@ -32876,39 +32886,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->result_file !== null) {
-            $localName = lcfirst('ResultFile');
-            $localValue = is_bool($request->result_file) ? ($request->result_file ? 'true' : 'false') : $request->result_file;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->scale !== null) {
             $localName = lcfirst('Scale');
             $localValue = is_bool($request->scale) ? ($request->scale ? 'true' : 'false') : $request->scale;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->tiff_binarization_method !== null) {
-            $localName = lcfirst('TiffBinarizationMethod');
-            $localValue = is_bool($request->tiff_binarization_method) ? ($request->tiff_binarization_method ? 'true' : 'false') : $request->tiff_binarization_method;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -32926,9 +32906,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->use_anti_aliasing !== null) {
-            $localName = lcfirst('UseAntiAliasing');
-            $localValue = is_bool($request->use_anti_aliasing) ? ($request->use_anti_aliasing ? 'true' : 'false') : $request->use_anti_aliasing;
+        if ($request->dml_rendering_mode !== null) {
+            $localName = lcfirst('DmlRenderingMode');
+            $localValue = is_bool($request->dml_rendering_mode) ? ($request->dml_rendering_mode ? 'true' : 'false') : $request->dml_rendering_mode;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -32936,9 +32916,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->use_high_quality_rendering !== null) {
-            $localName = lcfirst('UseHighQualityRendering');
-            $localValue = is_bool($request->use_high_quality_rendering) ? ($request->use_high_quality_rendering ? 'true' : 'false') : $request->use_high_quality_rendering;
+        if ($request->dml_effects_rendering_mode !== null) {
+            $localName = lcfirst('DmlEffectsRenderingMode');
+            $localValue = is_bool($request->dml_effects_rendering_mode) ? ($request->dml_effects_rendering_mode ? 'true' : 'false') : $request->dml_effects_rendering_mode;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->tiff_binarization_method !== null) {
+            $localName = lcfirst('TiffBinarizationMethod');
+            $localValue = is_bool($request->tiff_binarization_method) ? ($request->tiff_binarization_method ? 'true' : 'false') : $request->tiff_binarization_method;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -32949,6 +32939,16 @@ class WordsApi
         if ($request->zip_output !== null) {
             $localName = lcfirst('ZipOutput');
             $localValue = is_bool($request->zip_output) ? ($request->zip_output ? 'true' : 'false') : $request->zip_output;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -33215,6 +33215,10 @@ class WordsApi
      */
     protected function putDrawingObjectRequest(Requests\putDrawingObjectRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling putDrawingObject');
+        }
         // verify the required parameter 'drawing_object' is set
         if ($request->drawing_object === null) {
             throw new \InvalidArgumentException('Missing the required parameter $drawing_object when calling putDrawingObject');
@@ -33222,10 +33226,6 @@ class WordsApi
         // verify the required parameter 'image_file' is set
         if ($request->image_file === null) {
             throw new \InvalidArgumentException('Missing the required parameter $image_file when calling putDrawingObject');
-        }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling putDrawingObject');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects';
@@ -33242,9 +33242,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -33252,9 +33252,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -33272,9 +33272,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -33282,9 +33282,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -33312,9 +33312,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -33587,13 +33587,13 @@ class WordsApi
      */
     protected function putExecuteMailMergeOnlineRequest(Requests\putExecuteMailMergeOnlineRequest $request)
     {
-        // verify the required parameter 'data' is set
-        if ($request->data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $data when calling putExecuteMailMergeOnline');
-        }
         // verify the required parameter 'template' is set
         if ($request->template === null) {
             throw new \InvalidArgumentException('Missing the required parameter $template when calling putExecuteMailMergeOnline');
+        }
+        // verify the required parameter 'data' is set
+        if ($request->data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $data when calling putExecuteMailMergeOnline');
         }
 
         $resourcePath = '/words/executeMailMerge';
@@ -33605,9 +33605,9 @@ class WordsApi
     
 
         // query params
-        if ($request->cleanup !== null) {
-            $localName = lcfirst('Cleanup');
-            $localValue = is_bool($request->cleanup) ? ($request->cleanup ? 'true' : 'false') : $request->cleanup;
+        if ($request->with_regions !== null) {
+            $localName = lcfirst('WithRegions');
+            $localValue = is_bool($request->with_regions) ? ($request->with_regions ? 'true' : 'false') : $request->with_regions;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -33615,9 +33615,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->with_regions !== null) {
-            $localName = lcfirst('WithRegions');
-            $localValue = is_bool($request->with_regions) ? ($request->with_regions ? 'true' : 'false') : $request->with_regions;
+        if ($request->cleanup !== null) {
+            $localName = lcfirst('Cleanup');
+            $localValue = is_bool($request->cleanup) ? ($request->cleanup ? 'true' : 'false') : $request->cleanup;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -33629,15 +33629,6 @@ class WordsApi
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
         // form params
-        if ($request->data !== null) {
-            $multipart = true;
-            $filename = ObjectSerializer::toFormValue($request->data);
-            $handle = fopen($filename, "rb");
-            $fsize = filesize($filename);
-            $contents = fread($handle, $fsize);
-            $formParams['data'] = $contents;
-        }
-        // form params
         if ($request->template !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->template);
@@ -33645,6 +33636,15 @@ class WordsApi
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
             $formParams['template'] = $contents;
+        }
+        // form params
+        if ($request->data !== null) {
+            $multipart = true;
+            $filename = ObjectSerializer::toFormValue($request->data);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['data'] = $contents;
         }
         // body params
         $_tempBody = null;
@@ -33895,13 +33895,13 @@ class WordsApi
      */
     protected function putExecuteTemplateOnlineRequest(Requests\putExecuteTemplateOnlineRequest $request)
     {
-        // verify the required parameter 'data' is set
-        if ($request->data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $data when calling putExecuteTemplateOnline');
-        }
         // verify the required parameter 'template' is set
         if ($request->template === null) {
             throw new \InvalidArgumentException('Missing the required parameter $template when calling putExecuteTemplateOnline');
+        }
+        // verify the required parameter 'data' is set
+        if ($request->data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $data when calling putExecuteTemplateOnline');
         }
 
         $resourcePath = '/words/executeTemplate';
@@ -33947,15 +33947,6 @@ class WordsApi
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
         // form params
-        if ($request->data !== null) {
-            $multipart = true;
-            $filename = ObjectSerializer::toFormValue($request->data);
-            $handle = fopen($filename, "rb");
-            $fsize = filesize($filename);
-            $contents = fread($handle, $fsize);
-            $formParams['data'] = $contents;
-        }
-        // form params
         if ($request->template !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->template);
@@ -33963,6 +33954,15 @@ class WordsApi
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
             $formParams['template'] = $contents;
+        }
+        // form params
+        if ($request->data !== null) {
+            $multipart = true;
+            $filename = ObjectSerializer::toFormValue($request->data);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['data'] = $contents;
         }
         // body params
         $_tempBody = null;
@@ -34213,13 +34213,13 @@ class WordsApi
      */
     protected function putFieldRequest(Requests\putFieldRequest $request)
     {
-        // verify the required parameter 'field' is set
-        if ($request->field === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $field when calling putField');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling putField');
+        }
+        // verify the required parameter 'field' is set
+        if ($request->field === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $field when calling putField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/fields';
@@ -34236,16 +34236,6 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
@@ -34256,9 +34246,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->insert_before_node !== null) {
-            $localName = lcfirst('InsertBeforeNode');
-            $localValue = is_bool($request->insert_before_node) ? ($request->insert_before_node ? 'true' : 'false') : $request->insert_before_node;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -34276,9 +34266,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -34286,9 +34276,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -34316,9 +34306,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->insert_before_node !== null) {
+            $localName = lcfirst('InsertBeforeNode');
+            $localValue = is_bool($request->insert_before_node) ? ($request->insert_before_node ? 'true' : 'false') : $request->insert_before_node;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -34585,13 +34585,13 @@ class WordsApi
      */
     protected function putFootnoteRequest(Requests\putFootnoteRequest $request)
     {
-        // verify the required parameter 'footnote_dto' is set
-        if ($request->footnote_dto === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling putFootnote');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling putFootnote');
+        }
+        // verify the required parameter 'footnote_dto' is set
+        if ($request->footnote_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling putFootnote');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/footnotes';
@@ -34608,9 +34608,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -34618,9 +34618,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -34638,9 +34638,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -34648,9 +34648,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -34678,9 +34678,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -34947,13 +34947,13 @@ class WordsApi
      */
     protected function putFormFieldRequest(Requests\putFormFieldRequest $request)
     {
-        // verify the required parameter 'form_field' is set
-        if ($request->form_field === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $form_field when calling putFormField');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling putFormField');
+        }
+        // verify the required parameter 'form_field' is set
+        if ($request->form_field === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $form_field when calling putFormField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/formfields';
@@ -34970,16 +34970,6 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
@@ -34990,9 +34980,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->insert_before_node !== null) {
-            $localName = lcfirst('InsertBeforeNode');
-            $localValue = is_bool($request->insert_before_node) ? ($request->insert_before_node ? 'true' : 'false') : $request->insert_before_node;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35010,9 +35000,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35020,9 +35010,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35050,9 +35040,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->insert_before_node !== null) {
+            $localName = lcfirst('InsertBeforeNode');
+            $localValue = is_bool($request->insert_before_node) ? ($request->insert_before_node ? 'true' : 'false') : $request->insert_before_node;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35319,13 +35319,13 @@ class WordsApi
      */
     protected function putHeaderFooterRequest(Requests\putHeaderFooterRequest $request)
     {
-        // verify the required parameter 'header_footer_type' is set
-        if ($request->header_footer_type === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $header_footer_type when calling putHeaderFooter');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling putHeaderFooter');
+        }
+        // verify the required parameter 'header_footer_type' is set
+        if ($request->header_footer_type === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $header_footer_type when calling putHeaderFooter');
         }
 
         $resourcePath = '/words/{name}/{sectionPath}/headersfooters';
@@ -35342,9 +35342,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35352,9 +35352,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35375,6 +35375,16 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35405,16 +35415,6 @@ class WordsApi
         if ($request->section_path !== null) {
             $localName = lcfirst('SectionPath');
             $localValue = is_bool($request->section_path) ? ($request->section_path ? 'true' : 'false') : $request->section_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35704,16 +35704,6 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
@@ -35724,9 +35714,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->insert_before_node !== null) {
-            $localName = lcfirst('InsertBeforeNode');
-            $localValue = is_bool($request->insert_before_node) ? ($request->insert_before_node ? 'true' : 'false') : $request->insert_before_node;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35744,9 +35734,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35754,9 +35744,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -35784,9 +35774,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->insert_before_node !== null) {
+            $localName = lcfirst('InsertBeforeNode');
+            $localValue = is_bool($request->insert_before_node) ? ($request->insert_before_node ? 'true' : 'false') : $request->insert_before_node;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -36076,9 +36076,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -36086,9 +36086,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -36116,9 +36116,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -36417,16 +36417,6 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
@@ -36437,9 +36427,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->insert_before_node !== null) {
-            $localName = lcfirst('InsertBeforeNode');
-            $localValue = is_bool($request->insert_before_node) ? ($request->insert_before_node ? 'true' : 'false') : $request->insert_before_node;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -36467,6 +36457,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -36487,9 +36487,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->insert_before_node !== null) {
+            $localName = lcfirst('InsertBeforeNode');
+            $localValue = is_bool($request->insert_before_node) ? ($request->insert_before_node ? 'true' : 'false') : $request->insert_before_node;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -36775,9 +36775,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -36785,9 +36785,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -36815,9 +36815,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -37077,6 +37077,10 @@ class WordsApi
      */
     protected function renderDrawingObjectRequest(Requests\renderDrawingObjectRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling renderDrawingObject');
+        }
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderDrawingObject');
@@ -37084,10 +37088,6 @@ class WordsApi
         // verify the required parameter 'index' is set
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderDrawingObject');
-        }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling renderDrawingObject');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}/render';
@@ -37098,14 +37098,14 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
@@ -37129,9 +37129,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -37149,16 +37149,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -37169,9 +37159,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -37431,6 +37431,10 @@ class WordsApi
      */
     protected function renderMathObjectRequest(Requests\renderMathObjectRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling renderMathObject');
+        }
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderMathObject');
@@ -37438,10 +37442,6 @@ class WordsApi
         // verify the required parameter 'index' is set
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderMathObject');
-        }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling renderMathObject');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/OfficeMathObjects/{index}/render';
@@ -37452,14 +37452,14 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
@@ -37483,9 +37483,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -37503,16 +37503,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -37523,9 +37513,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -37785,10 +37785,6 @@ class WordsApi
      */
     protected function renderPageRequest(Requests\renderPageRequest $request)
     {
-        // verify the required parameter 'format' is set
-        if ($request->format === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $format when calling renderPage');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling renderPage');
@@ -37796,6 +37792,10 @@ class WordsApi
         // verify the required parameter 'page_index' is set
         if ($request->page_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $page_index when calling renderPage');
+        }
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling renderPage');
         }
 
         $resourcePath = '/words/{name}/pages/{pageIndex}/render';
@@ -37837,9 +37837,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -37867,9 +37867,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -38129,6 +38129,10 @@ class WordsApi
      */
     protected function renderParagraphRequest(Requests\renderParagraphRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling renderParagraph');
+        }
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderParagraph');
@@ -38136,10 +38140,6 @@ class WordsApi
         // verify the required parameter 'index' is set
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderParagraph');
-        }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling renderParagraph');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/render';
@@ -38150,14 +38150,14 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
@@ -38181,9 +38181,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -38201,16 +38201,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -38221,9 +38211,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -38483,6 +38483,10 @@ class WordsApi
      */
     protected function renderTableRequest(Requests\renderTableRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling renderTable');
+        }
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderTable');
@@ -38490,10 +38494,6 @@ class WordsApi
         // verify the required parameter 'index' is set
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderTable');
-        }
-        // verify the required parameter 'name' is set
-        if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling renderTable');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/tables/{index}/render';
@@ -38504,14 +38504,14 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
         }
 
         // query params
@@ -38535,9 +38535,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->fonts_location !== null) {
-            $localName = lcfirst('FontsLocation');
-            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -38555,16 +38555,6 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
@@ -38575,9 +38565,19 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($request->fonts_location) ? ($request->fonts_location ? 'true' : 'false') : $request->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -39142,6 +39142,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
             $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
@@ -39155,16 +39165,6 @@ class WordsApi
         if ($request->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -39424,21 +39424,21 @@ class WordsApi
      */
     protected function updateBorderRequest(Requests\updateBorderRequest $request)
     {
-        // verify the required parameter 'border_properties' is set
-        if ($request->border_properties === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $border_properties when calling updateBorder');
-        }
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling updateBorder');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateBorder');
         }
+        // verify the required parameter 'border_properties' is set
+        if ($request->border_properties === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $border_properties when calling updateBorder');
+        }
         // verify the required parameter 'node_path' is set
         if ($request->node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling updateBorder');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling updateBorder');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/borders/{index}';
@@ -39449,11 +39449,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -39463,11 +39458,16 @@ class WordsApi
             $localName = lcfirst('NodePath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->node_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -39475,9 +39475,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -39505,6 +39505,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -39518,16 +39528,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -39798,13 +39798,13 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateSectionPageSetup');
         }
-        // verify the required parameter 'page_setup' is set
-        if ($request->page_setup === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $page_setup when calling updateSectionPageSetup');
-        }
         // verify the required parameter 'section_index' is set
         if ($request->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling updateSectionPageSetup');
+        }
+        // verify the required parameter 'page_setup' is set
+        if ($request->page_setup === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $page_setup when calling updateSectionPageSetup');
         }
 
         $resourcePath = '/words/{name}/sections/{sectionIndex}/pageSetup';
@@ -39826,9 +39826,9 @@ class WordsApi
         }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -39836,9 +39836,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -39866,6 +39866,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -39879,16 +39889,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40155,10 +40155,6 @@ class WordsApi
      */
     protected function updateTableCellFormatRequest(Requests\updateTableCellFormatRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableCellFormat');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableCellFormat');
@@ -40166,6 +40162,10 @@ class WordsApi
         // verify the required parameter 'table_row_path' is set
         if ($request->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling updateTableCellFormat');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableCellFormat');
         }
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}/cellformat';
@@ -40176,11 +40176,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -40190,11 +40185,16 @@ class WordsApi
             $localName = lcfirst('TableRowPath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->table_row_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40202,9 +40202,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40232,6 +40232,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -40245,16 +40255,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40521,13 +40521,13 @@ class WordsApi
      */
     protected function updateTablePropertiesRequest(Requests\updateTablePropertiesRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableProperties');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableProperties');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableProperties');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/tables/{index}/properties';
@@ -40538,20 +40538,20 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40559,9 +40559,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40579,9 +40579,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->node_path !== null) {
-            $localName = lcfirst('NodePath');
-            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40589,9 +40589,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->password !== null) {
-            $localName = lcfirst('Password');
-            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40619,9 +40619,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $localValue = is_bool($request->node_path) ? ($request->node_path ? 'true' : 'false') : $request->node_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40888,10 +40888,6 @@ class WordsApi
      */
     protected function updateTableRowFormatRequest(Requests\updateTableRowFormatRequest $request)
     {
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableRowFormat');
-        }
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableRowFormat');
@@ -40899,6 +40895,10 @@ class WordsApi
         // verify the required parameter 'table_path' is set
         if ($request->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling updateTableRowFormat');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableRowFormat');
         }
 
         $resourcePath = '/words/{name}/{tablePath}/rows/{index}/rowformat';
@@ -40909,11 +40909,6 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
-        }
-        // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
@@ -40923,11 +40918,16 @@ class WordsApi
             $localName = lcfirst('TablePath');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->table_path), $resourcePath);
         }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('Index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
 
         // query params
-        if ($request->dest_file_name !== null) {
-            $localName = lcfirst('DestFileName');
-            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40935,9 +40935,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -40965,6 +40965,16 @@ class WordsApi
             }
         }
         // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->revision_author !== null) {
             $localName = lcfirst('RevisionAuthor');
             $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
@@ -40978,16 +40988,6 @@ class WordsApi
         if ($request->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {

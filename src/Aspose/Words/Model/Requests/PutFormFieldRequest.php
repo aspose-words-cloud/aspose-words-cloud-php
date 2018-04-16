@@ -35,47 +35,42 @@ class PutFormFieldRequest
     /*
      * Initializes a new instance of the PutFormFieldRequest class.
      *  
-     * @param \Aspose\Words\Model\FormField $form_field From field data.
      * @param string $name The document name.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param \Aspose\Words\Model\FormField $form_field From field data.
      * @param string $folder Original document folder.
-     * @param string $insert_before_node Form field will be inserted before node with index.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $node_path Path to node that contains collection of formfields.
      * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $storage File storage, which have to be used.
+     * @param string $node_path Path to node that contains collection of formfields.
+     * @param string $insert_before_node Form field will be inserted before node with index.
      */
-    public function __construct($form_field, $name, $dest_file_name = null, $folder = null, $insert_before_node = null, $load_encoding = null, $node_path = null, $password = null, $revision_author = null, $revision_date_time = null, $storage = null)             
+    public function __construct($name, $form_field, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $node_path = null, $insert_before_node = null)             
     {
-        $this->form_field = $form_field;
         $this->name = $name;
-        $this->dest_file_name = $dest_file_name;
+        $this->form_field = $form_field;
         $this->folder = $folder;
-        $this->insert_before_node = $insert_before_node;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
-        $this->node_path = $node_path;
         $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->storage = $storage;
+        $this->node_path = $node_path;
+        $this->insert_before_node = $insert_before_node;
     }
 
-    /*
-     * From field data.
-     */
-    public $form_field;
-	
     /*
      * The document name.
      */
     public $name;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * From field data.
      */
-    public $dest_file_name;
+    public $form_field;
 	
     /*
      * Original document folder.
@@ -83,9 +78,9 @@ class PutFormFieldRequest
     public $folder;
 	
     /*
-     * Form field will be inserted before node with index.
+     * File storage, which have to be used.
      */
-    public $insert_before_node;
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,14 +88,14 @@ class PutFormFieldRequest
     public $load_encoding;
 	
     /*
-     * Path to node that contains collection of formfields.
-     */
-    public $node_path;
-	
-    /*
      * Password for opening an encrypted document.
      */
     public $password;
+	
+    /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public $dest_file_name;
 	
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
@@ -113,7 +108,12 @@ class PutFormFieldRequest
     public $revision_date_time;
 	
     /*
-     * File storage, which have to be used.
+     * Path to node that contains collection of formfields.
      */
-    public $storage;
+    public $node_path;
+	
+    /*
+     * Form field will be inserted before node with index.
+     */
+    public $insert_before_node;
 }

@@ -36,28 +36,28 @@ class UpdateSectionPageSetupRequest
      * Initializes a new instance of the UpdateSectionPageSetupRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\PageSetup $page_setup Page setup properties dto
      * @param int $section_index Section index
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param \Aspose\Words\Model\PageSetup $page_setup Page setup properties dto
      * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($name, $page_setup, $section_index, $dest_file_name = null, $folder = null, $load_encoding = null, $password = null, $revision_author = null, $revision_date_time = null, $storage = null)             
+    public function __construct($name, $section_index, $page_setup, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
     {
         $this->name = $name;
-        $this->page_setup = $page_setup;
         $this->section_index = $section_index;
-        $this->dest_file_name = $dest_file_name;
+        $this->page_setup = $page_setup;
         $this->folder = $folder;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->storage = $storage;
     }
 
     /*
@@ -66,24 +66,24 @@ class UpdateSectionPageSetupRequest
     public $name;
 	
     /*
-     * Page setup properties dto
-     */
-    public $page_setup;
-	
-    /*
      * Section index
      */
     public $section_index;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Page setup properties dto
      */
-    public $dest_file_name;
+    public $page_setup;
 	
     /*
      * Original document folder.
      */
     public $folder;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -96,6 +96,11 @@ class UpdateSectionPageSetupRequest
     public $password;
 	
     /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public $dest_file_name;
+	
+    /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
     public $revision_author;
@@ -104,9 +109,4 @@ class UpdateSectionPageSetupRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
 }

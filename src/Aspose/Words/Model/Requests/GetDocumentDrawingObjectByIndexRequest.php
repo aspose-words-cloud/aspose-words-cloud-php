@@ -35,34 +35,34 @@ class GetDocumentDrawingObjectByIndexRequest
     /*
      * Initializes a new instance of the GetDocumentDrawingObjectByIndexRequest class.
      *  
-     * @param int $index Object's index
      * @param string $name The document name.
+     * @param int $index Object's index
      * @param string $folder Original document folder.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $node_path Path to node, which contains collection of drawing objects.
-     * @param string $password Password for opening an encrypted document.
      * @param string $storage File storage, which have to be used.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $node_path Path to node, which contains collection of drawing objects.
      */
-    public function __construct($index, $name, $folder = null, $load_encoding = null, $node_path = null, $password = null, $storage = null)             
+    public function __construct($name, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null)             
     {
-        $this->index = $index;
         $this->name = $name;
+        $this->index = $index;
         $this->folder = $folder;
-        $this->load_encoding = $load_encoding;
-        $this->node_path = $node_path;
-        $this->password = $password;
         $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->node_path = $node_path;
     }
 
-    /*
-     * Object's index
-     */
-    public $index;
-	
     /*
      * The document name.
      */
     public $name;
+	
+    /*
+     * Object's index
+     */
+    public $index;
 	
     /*
      * Original document folder.
@@ -70,14 +70,14 @@ class GetDocumentDrawingObjectByIndexRequest
     public $folder;
 	
     /*
+     * File storage, which have to be used.
+     */
+    public $storage;
+	
+    /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
-    /*
-     * Path to node, which contains collection of drawing objects.
-     */
-    public $node_path;
 	
     /*
      * Password for opening an encrypted document.
@@ -85,7 +85,7 @@ class GetDocumentDrawingObjectByIndexRequest
     public $password;
 	
     /*
-     * File storage, which have to be used.
+     * Path to node, which contains collection of drawing objects.
      */
-    public $storage;
+    public $node_path;
 }

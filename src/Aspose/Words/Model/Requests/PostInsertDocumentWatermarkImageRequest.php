@@ -36,30 +36,30 @@ class PostInsertDocumentWatermarkImageRequest
      * Initializes a new instance of the PostInsertDocumentWatermarkImageRequest class.
      *  
      * @param string $name The document name.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $folder Original document folder.
-     * @param string $image The image file server full name. If the name is empty the image is expected in request content.
      * @param \SplFileObject $image_file File with image
+     * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      * @param double $rotation_angle The watermark rotation angle.
-     * @param string $storage File storage, which have to be used.
+     * @param string $image The image file server full name. If the name is empty the image is expected in request content.
      */
-    public function __construct($name, $dest_file_name = null, $folder = null, $image = null, $image_file = null, $load_encoding = null, $password = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $storage = null)             
+    public function __construct($name, $image_file = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)             
     {
         $this->name = $name;
-        $this->dest_file_name = $dest_file_name;
-        $this->folder = $folder;
-        $this->image = $image;
         $this->image_file = $image_file;
+        $this->folder = $folder;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
         $this->rotation_angle = $rotation_angle;
-        $this->storage = $storage;
+        $this->image = $image;
     }
 
     /*
@@ -68,9 +68,9 @@ class PostInsertDocumentWatermarkImageRequest
     public $name;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * File with image
      */
-    public $dest_file_name;
+    public $image_file;
 	
     /*
      * Original document folder.
@@ -78,14 +78,9 @@ class PostInsertDocumentWatermarkImageRequest
     public $folder;
 	
     /*
-     * The image file server full name. If the name is empty the image is expected in request content.
+     * File storage, which have to be used.
      */
-    public $image;
-	
-    /*
-     * File with image
-     */
-    public $image_file;
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -96,6 +91,11 @@ class PostInsertDocumentWatermarkImageRequest
      * Password for opening an encrypted document.
      */
     public $password;
+	
+    /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public $dest_file_name;
 	
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
@@ -113,7 +113,7 @@ class PostInsertDocumentWatermarkImageRequest
     public $rotation_angle;
 	
     /*
-     * File storage, which have to be used.
+     * The image file server full name. If the name is empty the image is expected in request content.
      */
-    public $storage;
+    public $image;
 }

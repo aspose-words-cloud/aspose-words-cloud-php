@@ -35,30 +35,25 @@ class GetTableCellFormatRequest
     /*
      * Initializes a new instance of the GetTableCellFormatRequest class.
      *  
-     * @param int $index Object's index
      * @param string $name The document name.
      * @param string $table_row_path Path to table row.
+     * @param int $index Object's index
      * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $storage File storage, which have to be used.
      */
-    public function __construct($index, $name, $table_row_path, $folder = null, $load_encoding = null, $password = null, $storage = null)             
+    public function __construct($name, $table_row_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
-        $this->index = $index;
         $this->name = $name;
         $this->table_row_path = $table_row_path;
+        $this->index = $index;
         $this->folder = $folder;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->storage = $storage;
     }
 
-    /*
-     * Object's index
-     */
-    public $index;
-	
     /*
      * The document name.
      */
@@ -70,9 +65,19 @@ class GetTableCellFormatRequest
     public $table_row_path;
 	
     /*
+     * Object's index
+     */
+    public $index;
+	
+    /*
      * Original document folder.
      */
     public $folder;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -83,9 +88,4 @@ class GetTableCellFormatRequest
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * File storage, which have to be used.
-     */
-    public $storage;
 }

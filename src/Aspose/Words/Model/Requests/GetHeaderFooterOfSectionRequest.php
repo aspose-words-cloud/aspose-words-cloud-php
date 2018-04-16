@@ -35,36 +35,36 @@ class GetHeaderFooterOfSectionRequest
     /*
      * Initializes a new instance of the GetHeaderFooterOfSectionRequest class.
      *  
-     * @param int $header_footer_index Header/footer index.
      * @param string $name The document name.
+     * @param int $header_footer_index Header/footer index.
      * @param int $section_index Section index.
-     * @param string $filter_by_type List of types of headers and footers.
      * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $storage File storage, which have to be used.
+     * @param string $filter_by_type List of types of headers and footers.
      */
-    public function __construct($header_footer_index, $name, $section_index, $filter_by_type = null, $folder = null, $load_encoding = null, $password = null, $storage = null)             
+    public function __construct($name, $header_footer_index, $section_index, $folder = null, $storage = null, $load_encoding = null, $password = null, $filter_by_type = null)             
     {
-        $this->header_footer_index = $header_footer_index;
         $this->name = $name;
+        $this->header_footer_index = $header_footer_index;
         $this->section_index = $section_index;
-        $this->filter_by_type = $filter_by_type;
         $this->folder = $folder;
+        $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->storage = $storage;
+        $this->filter_by_type = $filter_by_type;
     }
 
-    /*
-     * Header/footer index.
-     */
-    public $header_footer_index;
-	
     /*
      * The document name.
      */
     public $name;
+	
+    /*
+     * Header/footer index.
+     */
+    public $header_footer_index;
 	
     /*
      * Section index.
@@ -72,14 +72,14 @@ class GetHeaderFooterOfSectionRequest
     public $section_index;
 	
     /*
-     * List of types of headers and footers.
-     */
-    public $filter_by_type;
-	
-    /*
      * Original document folder.
      */
     public $folder;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -92,7 +92,7 @@ class GetHeaderFooterOfSectionRequest
     public $password;
 	
     /*
-     * File storage, which have to be used.
+     * List of types of headers and footers.
      */
-    public $storage;
+    public $filter_by_type;
 }

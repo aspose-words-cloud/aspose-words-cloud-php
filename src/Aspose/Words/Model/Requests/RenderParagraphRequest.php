@@ -35,29 +35,34 @@ class RenderParagraphRequest
     /*
      * Initializes a new instance of the RenderParagraphRequest class.
      *  
+     * @param string $name The file name.
      * @param string $format The destination format.
      * @param int $index Object's index
-     * @param string $name The file name.
      * @param string $folder Original document folder.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $node_path Path to node, which contains paragraphs.
-     * @param string $password Password for opening an encrypted document.
      * @param string $storage File storage, which have to be used.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $node_path Path to node, which contains paragraphs.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($format, $index, $name, $folder = null, $fonts_location = null, $load_encoding = null, $node_path = null, $password = null, $storage = null)             
+    public function __construct($name, $format, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null, $fonts_location = null)             
     {
+        $this->name = $name;
         $this->format = $format;
         $this->index = $index;
-        $this->name = $name;
         $this->folder = $folder;
-        $this->fonts_location = $fonts_location;
-        $this->load_encoding = $load_encoding;
-        $this->node_path = $node_path;
-        $this->password = $password;
         $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->node_path = $node_path;
+        $this->fonts_location = $fonts_location;
     }
 
+    /*
+     * The file name.
+     */
+    public $name;
+	
     /*
      * The destination format.
      */
@@ -69,19 +74,14 @@ class RenderParagraphRequest
     public $index;
 	
     /*
-     * The file name.
-     */
-    public $name;
-	
-    /*
      * Original document folder.
      */
     public $folder;
 	
     /*
-     * Folder in filestorage with custom fonts.
+     * File storage, which have to be used.
      */
-    public $fonts_location;
+    public $storage;
 	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -89,17 +89,17 @@ class RenderParagraphRequest
     public $load_encoding;
 	
     /*
-     * Path to node, which contains paragraphs.
-     */
-    public $node_path;
-	
-    /*
      * Password for opening an encrypted document.
      */
     public $password;
 	
     /*
-     * File storage, which have to be used.
+     * Path to node, which contains paragraphs.
      */
-    public $storage;
+    public $node_path;
+	
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public $fonts_location;
 }

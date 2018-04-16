@@ -49,9 +49,9 @@ class ExecuteMailMergeTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . $localName;
         $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
 
-        $request = new Requests\PostDocumentExecuteMailMergeRequest($remoteName, false, $data, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\PostDocumentExecuteMailMergeRequest($remoteName, $data, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $destName);
+            null, null, false, $destName);
 
         $result = $this->words->postDocumentExecuteMailMerge($request);
         Assert::assertEquals(200, json_decode($result, true)["Code"]);

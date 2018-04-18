@@ -39,13 +39,15 @@ class PutExecuteMailMergeOnlineRequest
      * @param \SplFileObject $data File with mailmerge data
      * @param bool $with_regions With regions flag.
      * @param string $cleanup Clean up options.
+     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead.
      */
-    public function __construct($template, $data, $with_regions = null, $cleanup = null)             
+    public function __construct($template, $data, $with_regions = null, $cleanup = null, $document_file_name = null)             
     {
         $this->template = $template;
         $this->data = $data;
         $this->with_regions = $with_regions;
         $this->cleanup = $cleanup;
+        $this->document_file_name = $document_file_name;
     }
 
     /*
@@ -67,4 +69,9 @@ class PutExecuteMailMergeOnlineRequest
      * Clean up options.
      */
     public $cleanup;
+	
+    /*
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead.
+     */
+    public $document_file_name;
 }

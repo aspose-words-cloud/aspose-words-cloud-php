@@ -40,14 +40,16 @@ class PutExecuteTemplateOnlineRequest
      * @param string $cleanup Clean up options.
      * @param bool $use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
      * @param bool $with_regions Merge with regions or not. True by default
+     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
      */
-    public function __construct($template, $data, $cleanup = null, $use_whole_paragraph_as_region = null, $with_regions = null)             
+    public function __construct($template, $data, $cleanup = null, $use_whole_paragraph_as_region = null, $with_regions = null, $document_file_name = null)             
     {
         $this->template = $template;
         $this->data = $data;
         $this->cleanup = $cleanup;
         $this->use_whole_paragraph_as_region = $use_whole_paragraph_as_region;
         $this->with_regions = $with_regions;
+        $this->document_file_name = $document_file_name;
     }
 
     /*
@@ -74,4 +76,9 @@ class PutExecuteTemplateOnlineRequest
      * Merge with regions or not. True by default
      */
     public $with_regions;
+	
+    /*
+     * This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
+     */
+    public $document_file_name;
 }

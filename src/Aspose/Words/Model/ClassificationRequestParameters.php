@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ClassificationRequest.php">
+ * <copyright company="Aspose" file="ClassificationRequestParameters.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * ClassificationRequest
+ * ClassificationRequestParameters
  */
 
 namespace Aspose\Words\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * ClassificationRequest
+ * ClassificationRequestParameters
  *
  * @description This request should be send to REST api: PUT http://api.aspose.com/v1.1/words/classify
  */
-class ClassificationRequest implements ArrayAccess
+class ClassificationRequestParameters implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ClassificationRequest implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ClassificationRequest";
+    protected static $swaggerModelName = "ClassificationRequestParameters";
 
     /*
      * Array of property to type mappings. Used for (de)serialization

@@ -35,7 +35,7 @@ class ClassifyRequest
     /*
      * Initializes a new instance of the ClassifyRequest class.
      *  
-     * @param \Aspose\Words\Model\ClassificationRequest $request with request.
+     * @param \Aspose\Words\Model\ClassificationRequestParameters $request Classification request parameters.
      */
     public function __construct($request)             
     {
@@ -43,7 +43,7 @@ class ClassifyRequest
     }
 
     /*
-     * with request.
+     * Classification request parameters.
      */
     public $request;
 }

@@ -52,6 +52,7 @@ abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
          */
         $this->config->setAppKey($creds["AppKey"]);
         $this->config->setAppSid($creds["AppSid"]);
+        $this->config->setHost($creds["BaseUrl"]);
         $this->storage->apiClient->apiKey = $this->config->getAppKey();
         $this->storage->apiClient->appSid = $this->config->getAppSid();
         $this->storage->apiClient->apiServer = $this->config->getHost() . "/v1.1/";

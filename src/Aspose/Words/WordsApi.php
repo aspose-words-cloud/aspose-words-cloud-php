@@ -32108,9 +32108,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->document_file_name !== null) {
-            $localName = lcfirst('DocumentFileName');
-            $localValue = is_bool($request->document_file_name) ? ($request->document_file_name ? 'true' : 'false') : $request->document_file_name;
+        if ($request->out_path !== null) {
+            $localName = lcfirst('OutPath');
+            $localValue = is_bool($request->out_path) ? ($request->out_path ? 'true' : 'false') : $request->out_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -32118,9 +32118,9 @@ class WordsApi
             }
         }
         // query params
-        if ($request->out_path !== null) {
-            $localName = lcfirst('OutPath');
-            $localValue = is_bool($request->out_path) ? ($request->out_path ? 'true' : 'false') : $request->out_path;
+        if ($request->document_file_name !== null) {
+            $localName = lcfirst('DocumentFileName');
+            $localValue = is_bool($request->document_file_name) ? ($request->document_file_name ? 'true' : 'false') : $request->document_file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {

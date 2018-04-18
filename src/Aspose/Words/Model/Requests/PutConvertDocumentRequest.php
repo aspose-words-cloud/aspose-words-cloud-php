@@ -38,17 +38,17 @@ class PutConvertDocumentRequest
      * @param \SplFileObject $document Converting document
      * @param string $format Format to convert.
      * @param string $storage File storage, which have to be used.
-     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"sourceFilename\" will be used instead.
      * @param string $out_path Path for saving operation result to the local storage.
+     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"sourceFilename\" will be used instead.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $format, $storage = null, $document_file_name = null, $out_path = null, $fonts_location = null)             
+    public function __construct($document, $format, $storage = null, $out_path = null, $document_file_name = null, $fonts_location = null)             
     {
         $this->document = $document;
         $this->format = $format;
         $this->storage = $storage;
-        $this->document_file_name = $document_file_name;
         $this->out_path = $out_path;
+        $this->document_file_name = $document_file_name;
         $this->fonts_location = $fonts_location;
     }
 
@@ -68,14 +68,14 @@ class PutConvertDocumentRequest
     public $storage;
 	
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"sourceFilename\" will be used instead.
-     */
-    public $document_file_name;
-	
-    /*
      * Path for saving operation result to the local storage.
      */
     public $out_path;
+	
+    /*
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"sourceFilename\" will be used instead.
+     */
+    public $document_file_name;
 	
     /*
      * Folder in filestorage with custom fonts.

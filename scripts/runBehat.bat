@@ -1,0 +1,1 @@
+docker run -v %cd%:/PHP -v %cd%/Settings/servercreds.json:/servercreds.json -v %cd%/TestData:/TestData -w="/PHP" --rm php:7.2.2 vendor/bin/behat --config=behat.yml --append-snippets

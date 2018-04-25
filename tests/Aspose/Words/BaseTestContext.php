@@ -29,7 +29,7 @@ namespace BaseTest;
 use Aspose\Storage\StorageApi;
 use Aspose\Words\Configuration;
 use Aspose\Words\WordsApi;
-abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
+class BaseTestContext extends \PHPUnit_Framework_TestCase
 {
     protected $words;
 

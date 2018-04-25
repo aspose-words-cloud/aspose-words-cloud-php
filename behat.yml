@@ -1,0 +1,8 @@
+# behat.yml
+default:
+    autoload:
+        '': %paths.base%
+    suites:
+        api_features:
+            paths: [bdd/features]
+            contexts: [bdd\FeatureContext]

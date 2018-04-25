@@ -40,9 +40,12 @@ class ClassificationTests extends \BaseTest\BaseTestContext
      */
     public function testClassify()
     {
-	$parameters = new ClassificationRequestParameters();
-	$parameters->setText("Try text classification");
-	$parameters->setBestClassesCount(3);
+        /*
+         * move initialization into constructor
+         */
+        $parameters = new ClassificationRequestParameters();
+	    $parameters->setText("Try text classification");
+	    $parameters->setBestClassesCount(3);
         $request = new Requests\ClassifyRequest($parameters);
 
         $result = $this->words->classify($request);

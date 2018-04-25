@@ -576,9 +576,9 @@ class WordsApi
      */
     protected function classifyRequest(Requests\classifyRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling classify');
+        // verify the required parameter 'parameters' is set
+        if ($request->parameters === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $parameters when calling classify');
         }
 
         $resourcePath = '/words/classify';
@@ -595,11 +595,11 @@ class WordsApi
 
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->parameters)) {
+            if (is_string($request->parameters)) {
+                $_tempBody = "\"" . $request->parameters . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->parameters;
             }
         }
 

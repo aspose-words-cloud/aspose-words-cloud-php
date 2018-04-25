@@ -35,15 +35,15 @@ class ClassifyRequest
     /*
      * Initializes a new instance of the ClassifyRequest class.
      *  
-     * @param \Aspose\Words\Model\ClassificationRequestParameters $request Classification request parameters.
+     * @param \Aspose\Words\Model\ClassificationRequestParameters $parameters Classification request parameters.
      */
-    public function __construct($request)             
+    public function __construct($parameters)             
     {
-        $this->request = $request;
+        $this->parameters = $parameters;
     }
 
     /*
      * Classification request parameters.
      */
-    public $request;
+    public $parameters;
 }

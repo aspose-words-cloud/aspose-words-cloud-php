@@ -35,20 +35,37 @@ class ClassificationTests extends \BaseTest\BaseTestContext
     /**
      * Test case for classify
      *
-     * Text classification
+     * Raw text classification
      *
      */
     public function testClassify()
     {
-        /*
-         * move initialization into constructor
-         */
-        $parameters = new ClassificationRequestParameters();
-	    $parameters->setText("Try text classification");
-	    $parameters->setBestClassesCount(3);
+        $parameters = new ClassificationRequestParameters(array("text" => "Try text classification", "best_classes_count" => 3));
         $request = new Requests\ClassifyRequest($parameters);
 
         $result = $this->words->classify($request);
+        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+    }
+	
+	/**
+     * Test case for classifyDocument
+     *
+     * Classify document
+     *
+     */
+    public function testDocumentClassification()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "Source.docx";
+        $subfolder = "Common";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+
+        $request = new Requests\ClassifyDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
+
+        $result = $this->words->classifyDocument($request);
         Assert::assertEquals(200, json_decode($result, true)["Code"]);
     }
 }

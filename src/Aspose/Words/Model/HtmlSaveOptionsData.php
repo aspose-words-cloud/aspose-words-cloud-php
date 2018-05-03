@@ -68,7 +68,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_images_as_base64' => 'bool',
         'export_language_information' => 'bool',
         'export_list_labels' => 'string',
-        'export_metafile_as_raster' => 'bool',
         'export_original_url_for_linked_images' => 'bool',
         'export_page_margins' => 'bool',
         'export_page_setup' => 'bool',
@@ -113,7 +112,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_images_as_base64' => null,
         'export_language_information' => null,
         'export_list_labels' => null,
-        'export_metafile_as_raster' => null,
         'export_original_url_for_linked_images' => null,
         'export_page_margins' => null,
         'export_page_setup' => null,
@@ -179,7 +177,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_images_as_base64' => 'ExportImagesAsBase64',
         'export_language_information' => 'ExportLanguageInformation',
         'export_list_labels' => 'ExportListLabels',
-        'export_metafile_as_raster' => 'ExportMetafileAsRaster',
         'export_original_url_for_linked_images' => 'ExportOriginalUrlForLinkedImages',
         'export_page_margins' => 'ExportPageMargins',
         'export_page_setup' => 'ExportPageSetup',
@@ -224,7 +221,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_images_as_base64' => 'setExportImagesAsBase64',
         'export_language_information' => 'setExportLanguageInformation',
         'export_list_labels' => 'setExportListLabels',
-        'export_metafile_as_raster' => 'setExportMetafileAsRaster',
         'export_original_url_for_linked_images' => 'setExportOriginalUrlForLinkedImages',
         'export_page_margins' => 'setExportPageMargins',
         'export_page_setup' => 'setExportPageSetup',
@@ -269,7 +265,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_images_as_base64' => 'getExportImagesAsBase64',
         'export_language_information' => 'getExportLanguageInformation',
         'export_list_labels' => 'getExportListLabels',
-        'export_metafile_as_raster' => 'getExportMetafileAsRaster',
         'export_original_url_for_linked_images' => 'getExportOriginalUrlForLinkedImages',
         'export_page_margins' => 'getExportPageMargins',
         'export_page_setup' => 'getExportPageSetup',
@@ -396,7 +391,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_images_as_base64'] = isset($data['export_images_as_base64']) ? $data['export_images_as_base64'] : null;
         $this->container['export_language_information'] = isset($data['export_language_information']) ? $data['export_language_information'] : null;
         $this->container['export_list_labels'] = isset($data['export_list_labels']) ? $data['export_list_labels'] : null;
-        $this->container['export_metafile_as_raster'] = isset($data['export_metafile_as_raster']) ? $data['export_metafile_as_raster'] : null;
         $this->container['export_original_url_for_linked_images'] = isset($data['export_original_url_for_linked_images']) ? $data['export_original_url_for_linked_images'] : null;
         $this->container['export_page_margins'] = isset($data['export_page_margins']) ? $data['export_page_margins'] : null;
         $this->container['export_page_setup'] = isset($data['export_page_setup']) ? $data['export_page_setup'] : null;
@@ -805,30 +799,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportListLabels($export_list_labels)
     {
         $this->container['export_list_labels'] = $export_list_labels;
-
-        return $this;
-    }
-
-    /*
-     * Gets export_metafile_as_raster
-     *
-     * @return bool
-     */
-    public function getExportMetafileAsRaster()
-    {
-        return $this->container['export_metafile_as_raster'];
-    }
-
-    /*
-     * Sets export_metafile_as_raster
-     *
-     * @param bool $export_metafile_as_raster Specifies whether to convert metafiles into raster images when exporting.  Deprecated - use the MetafileFormat property instead
-     *
-     * @return $this
-     */
-    public function setExportMetafileAsRaster($export_metafile_as_raster)
-    {
-        $this->container['export_metafile_as_raster'] = $export_metafile_as_raster;
 
         return $this;
     }

@@ -576,9 +576,9 @@ class WordsApi
      */
     protected function classifyRequest(Requests\classifyRequest $request)
     {
-        // verify the required parameter 'parameters' is set
-        if ($request->parameters === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $parameters when calling classify');
+        // verify the required parameter 'text' is set
+        if ($request->text === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $text when calling classify');
         }
 
         $resourcePath = '/words/classify';
@@ -589,17 +589,27 @@ class WordsApi
         $multipart = false;
     
 
+        // query params
+        if ($request->best_classes_count !== null) {
+            $localName = lcfirst('BestClassesCount');
+            $localValue = is_bool($request->best_classes_count) ? ($request->best_classes_count ? 'true' : 'false') : $request->best_classes_count;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
         // body params
         $_tempBody = null;
-        if (isset($request->parameters)) {
-            if (is_string($request->parameters)) {
-                $_tempBody = "\"" . $request->parameters . "\"";   
+        if (isset($request->text)) {
+            if (is_string($request->text)) {
+                $_tempBody = "\"" . $request->text . "\"";   
             } else {
-                $_tempBody = $request->parameters;
+                $_tempBody = $request->text;
             }
         }
 

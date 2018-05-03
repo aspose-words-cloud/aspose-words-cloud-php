@@ -35,15 +35,22 @@ class ClassifyRequest
     /*
      * Initializes a new instance of the ClassifyRequest class.
      *  
-     * @param \Aspose\Words\Model\ClassificationRequestParameters $parameters Classification request parameters.
+     * @param string $text Text to classify.
+     * @param string $best_classes_count Count of the best classes to return.
      */
-    public function __construct($parameters)             
+    public function __construct($text, $best_classes_count = null)             
     {
-        $this->parameters = $parameters;
+        $this->text = $text;
+        $this->best_classes_count = $best_classes_count;
     }
 
     /*
-     * Classification request parameters.
+     * Text to classify.
      */
-    public $parameters;
+    public $text;
+	
+    /*
+     * Count of the best classes to return.
+     */
+    public $best_classes_count;
 }

@@ -27,7 +27,6 @@
 */
 include_once($_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php");
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\ClassificationRequestParameters;
 use PHPUnit\Framework\Assert;
 
 class ClassificationTests extends \BaseTest\BaseTestContext
@@ -40,8 +39,7 @@ class ClassificationTests extends \BaseTest\BaseTestContext
      */
     public function testClassify()
     {
-        $parameters = new ClassificationRequestParameters(array("text" => "Try text classification", "best_classes_count" => 3));
-        $request = new Requests\ClassifyRequest($parameters);
+        $request = new Requests\ClassifyRequest("Try text classification", "3");
 
         $result = $this->words->classify($request);
         Assert::assertEquals(200, json_decode($result, true)["Code"]);

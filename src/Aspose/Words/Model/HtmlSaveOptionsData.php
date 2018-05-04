@@ -84,6 +84,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'image_resolution' => 'int',
         'images_folder' => 'string',
         'images_folder_alias' => 'string',
+        'metafile_format' => 'string',
         'office_math_output_mode' => 'string',
         'pretty_format' => 'bool',
         'resource_folder' => 'string',
@@ -128,6 +129,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'image_resolution' => 'int32',
         'images_folder' => null,
         'images_folder_alias' => null,
+        'metafile_format' => null,
         'office_math_output_mode' => null,
         'pretty_format' => null,
         'resource_folder' => null,
@@ -193,6 +195,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'image_resolution' => 'ImageResolution',
         'images_folder' => 'ImagesFolder',
         'images_folder_alias' => 'ImagesFolderAlias',
+        'metafile_format' => 'MetafileFormat',
         'office_math_output_mode' => 'OfficeMathOutputMode',
         'pretty_format' => 'PrettyFormat',
         'resource_folder' => 'ResourceFolder',
@@ -237,6 +240,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'image_resolution' => 'setImageResolution',
         'images_folder' => 'setImagesFolder',
         'images_folder_alias' => 'setImagesFolderAlias',
+        'metafile_format' => 'setMetafileFormat',
         'office_math_output_mode' => 'setOfficeMathOutputMode',
         'pretty_format' => 'setPrettyFormat',
         'resource_folder' => 'setResourceFolder',
@@ -281,6 +285,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'image_resolution' => 'getImageResolution',
         'images_folder' => 'getImagesFolder',
         'images_folder_alias' => 'getImagesFolderAlias',
+        'metafile_format' => 'getMetafileFormat',
         'office_math_output_mode' => 'getOfficeMathOutputMode',
         'pretty_format' => 'getPrettyFormat',
         'resource_folder' => 'getResourceFolder',
@@ -332,6 +337,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
 
     const HTML_VERSION_XHTML = 'Xhtml';
     const HTML_VERSION_HTML5 = 'Html5';
+    const METAFILE_FORMAT_PNG = 'Png';
+    const METAFILE_FORMAT_SVG = 'Svg';
+    const METAFILE_FORMAT_EMF_OR_WMF = 'EmfOrWmf';
     const OFFICE_MATH_OUTPUT_MODE_IMAGE = 'Image';
     const OFFICE_MATH_OUTPUT_MODE_MATH_ML = 'MathML';
     const OFFICE_MATH_OUTPUT_MODE_TEXT = 'Text';
@@ -348,6 +356,20 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return [
             self::HTML_VERSION_XHTML,
             self::HTML_VERSION_HTML5,
+        ];
+    }
+    
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getMetafileFormatAllowableValues()
+    {
+        return [
+            self::METAFILE_FORMAT_PNG,
+            self::METAFILE_FORMAT_SVG,
+            self::METAFILE_FORMAT_EMF_OR_WMF,
         ];
     }
     
@@ -407,6 +429,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['image_resolution'] = isset($data['image_resolution']) ? $data['image_resolution'] : null;
         $this->container['images_folder'] = isset($data['images_folder']) ? $data['images_folder'] : null;
         $this->container['images_folder_alias'] = isset($data['images_folder_alias']) ? $data['images_folder_alias'] : null;
+        $this->container['metafile_format'] = isset($data['metafile_format']) ? $data['metafile_format'] : null;
         $this->container['office_math_output_mode'] = isset($data['office_math_output_mode']) ? $data['office_math_output_mode'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
         $this->container['resource_folder'] = isset($data['resource_folder']) ? $data['resource_folder'] : null;
@@ -428,6 +451,14 @@ class HtmlSaveOptionsData extends SaveOptionsData
         if (!in_array($this->container['html_version'], $allowedValues)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'html_version', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getMetafileFormatAllowableValues();
+        if (!in_array($this->container['metafile_format'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'metafile_format', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -457,6 +488,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
 
         $allowedValues = $this->getHtmlVersionAllowableValues();
         if (!in_array($this->container['html_version'], $allowedValues)) {
+            return false;
+        }
+        $allowedValues = $this->getMetafileFormatAllowableValues();
+        if (!in_array($this->container['metafile_format'], $allowedValues)) {
             return false;
         }
         $allowedValues = $this->getOfficeMathOutputModeAllowableValues();
@@ -1188,6 +1223,35 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setImagesFolderAlias($images_folder_alias)
     {
         $this->container['images_folder_alias'] = $images_folder_alias;
+
+        return $this;
+    }
+
+    /*
+     * Gets metafile_format
+     *
+     * @return string
+     */
+    public function getMetafileFormat()
+    {
+        return $this->container['metafile_format'];
+    }
+
+    /*
+     * Sets metafile_format
+     *
+     * @param string $metafile_format Specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.  Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
+     *
+     * @return $this
+     */
+    public function setMetafileFormat($metafile_format)
+    {
+        $allowedValues = $this->getMetafileFormatAllowableValues();
+        if ((!is_numeric($metafile_format) && !in_array($metafile_format, $allowedValues)) || (is_numeric($metafile_format) && !in_array($allowedValues[$metafile_format], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'metafile_format', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['metafile_format'] = $metafile_format;
 
         return $this;
     }

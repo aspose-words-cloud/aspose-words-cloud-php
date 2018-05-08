@@ -10,7 +10,7 @@ def runtests(dockerImageVersion)
                 }
             }
             
-            def testImage = docker.build("asposewordsphp:${env.BUILD_ID}", "./docker/${dockerImageVersion}")
+            def testImage = docker.build("asposewordsphp:${dockerImageVersion}", "./docker/${dockerImageVersion}")
             
             testImage.inside {
                 stage('build'){

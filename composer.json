@@ -26,7 +26,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.2",
-		"aspose/storage-sdk-php": "1.0.*",
+		"aspose/storage-sdk-php": "18.*",
         "friendsofphp/php-cs-fixer": "2.10.*"
     },
     "require-dev": {

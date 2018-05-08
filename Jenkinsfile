@@ -46,10 +46,6 @@ def runtests(dockerImageVersion)
 }
 
 node('billing-qa-ubuntu-16.04.4') {
-    
-    parallel ( failFast: false,
-        PhpLatest: { runtests("latest") },
-		Php56: { runtests("5.6") },
-    )    
-   
+    runtests("latest")
+	runtests("5.6")          
 }

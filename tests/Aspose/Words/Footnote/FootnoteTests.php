@@ -47,7 +47,8 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetFootnoteRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null,"");
@@ -70,7 +71,8 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetFootnotesRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
             null, null, null, "");
@@ -94,7 +96,8 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\DeleteFootnoteRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
@@ -120,7 +123,8 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $footNote = new Footnote(array("text" => "new text is here"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostFootnoteRequest($remoteName, $footNote, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
@@ -145,7 +149,8 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $footnote = new Footnote(array("footnote_type" => Footnote::FOOTNOTE_TYPE_ENDNOTE, "text" => "test endnote"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Footnote/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PutFootnoteRequest($remoteName, $footnote, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,

@@ -46,7 +46,8 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetDocumentDrawingObjectByIndexRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, "sections/0");
@@ -70,7 +71,8 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetDocumentDrawingObjectImageDataRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, "sections/0");
@@ -94,7 +96,8 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Drawing/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetDocumentDrawingObjectOleDataRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, "sections/0");
@@ -117,7 +120,8 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetDocumentDrawingObjectsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
             null, null, null, "sections/0");
@@ -141,7 +145,8 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $data = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostDrawingObjectRequest($remoteName, "{\"Left\": 0}", $data, 0, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
@@ -166,7 +171,8 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $image = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PutDrawingObjectRequest($remoteName, "{\"Left\": 0}", $image, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
@@ -192,7 +198,8 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $format = "png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\RenderDrawingObjectRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, "sections/0");
@@ -217,7 +224,8 @@ class DrawingTests extends \BaseTest\BaseTestContext
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $file = str_replace("\\", "/", $file);
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\DeleteDrawingObjectRequest($remoteName,
             $objectIndex, $folder=self::$baseTestPath . $subfolder,

@@ -59,7 +59,8 @@ class ClassificationTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\ClassifyDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 

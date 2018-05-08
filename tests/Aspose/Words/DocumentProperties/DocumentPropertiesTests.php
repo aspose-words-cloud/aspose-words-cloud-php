@@ -48,7 +48,8 @@ class DocumentPropertiesTests extends \BaseTest\BaseTestContext
         $property = new DocumentProperty(array("name" => "Author", "value" => "Imran Anwar"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\CreateOrUpdateDocumentPropertyRequest($remoteName, $propertyName, $property, $folder=self::$baseTestPath . $subfolder);
 
@@ -72,7 +73,8 @@ class DocumentPropertiesTests extends \BaseTest\BaseTestContext
         $destName = self::$baseTestOut . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\DeleteDocumentPropertyRequest($remoteName, $propertyName, $folder=self::$baseTestPath . $subfolder, null, null, null, $destName);
 
@@ -94,7 +96,8 @@ class DocumentPropertiesTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetDocumentPropertiesRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
@@ -117,7 +120,8 @@ class DocumentPropertiesTests extends \BaseTest\BaseTestContext
         $propertyName = "Author";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetDocumentPropertyRequest($remoteName, $propertyName, $folder=self::$baseTestPath . $subfolder);
 

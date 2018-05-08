@@ -49,7 +49,8 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
         $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => $destName));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostDocumentSaveAsRequest($remoteName, $saveOptions, $folder=self::$baseTestPath . $subfolder);
 
@@ -73,7 +74,8 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
         $saveOptions = new SaveOptionsData(array("save_format" => "docx", "file_name" => $destName));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Conversion/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostDocumentSaveAsRequest($remoteName, $saveOptions, $folder=self::$baseTestPath . $subfolder);
 
@@ -114,7 +116,8 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
         $body = new TiffSaveOptionsData(array("file_name" => "abc.tiff", "save_format" => "tiff"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PutDocumentSaveAsTiffRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName);

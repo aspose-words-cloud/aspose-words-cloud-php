@@ -46,7 +46,8 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetDocumentProtectionRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
@@ -70,7 +71,8 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $body = new ProtectionRequest(array("new_password" => "123"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PutProtectDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName);
@@ -94,7 +96,8 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $body = new ProtectionRequest(array("new_password" => ""));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostChangeDocumentProtectionRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);
 
@@ -117,7 +120,8 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $body = new ProtectionRequest(array("password" => "aspose"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentProtection/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\DeleteUnprotectDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);
 

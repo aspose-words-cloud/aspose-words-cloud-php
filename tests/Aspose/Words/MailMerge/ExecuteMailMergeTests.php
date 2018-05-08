@@ -47,7 +47,8 @@ class ExecuteMailMergeTests extends \BaseTest\BaseTestContext
         $data = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . "SampleMailMergeTemplateData.txt");
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostDocumentExecuteMailMergeRequest($remoteName, $data, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,

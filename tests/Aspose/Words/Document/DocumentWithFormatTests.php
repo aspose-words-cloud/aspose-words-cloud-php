@@ -46,7 +46,8 @@ class DocumentWithFormatTests extends \BaseTest\BaseTestContext
         $format = "text";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetDocumentWithFormatRequest($remoteName, $format, $folder=self::$baseTestPath . $subfolder);
 

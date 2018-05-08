@@ -49,7 +49,8 @@ class SplitDocumentToFormatTests extends \BaseTest\BaseTestContext
         $to = 2;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostSplitDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder, null,
             null, null, $destName,

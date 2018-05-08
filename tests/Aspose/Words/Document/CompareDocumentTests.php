@@ -51,9 +51,11 @@ class CompareDocumentTests extends \BaseTest\BaseTestContext
         $compareData = new CompareData(array("author" => "author", "comparing_with_document" => $fullName2, "date_time" => new \DateTime("now")));
 
         $file1 = realpath(__DIR__ . '/../../../..') . '/TestData/CompareDocument/' . $localName1;
-        $this->storage->PutCreate($Path=$fullName1, $versionId = null, $storage = null, $file1);
+        $putRequest1 = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName1, $file1);
+        $this->storage->PutCreate($putRequest1);
         $file2 = realpath(__DIR__ . '/../../../..') . '/TestData/CompareDocument/' . $localName2;
-        $this->storage->PutCreate($Path=$fullName2, $versionId = null, $storage = null, $file2);
+        $putRequest2 = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName2, $file2);
+        $this->storage->PutCreate($putRequest2);
 
 
         $request = new Requests\PostCompareDocumentRequest($remoteName1, $compareData, $folder=self::$baseTestPath . $subfolder,

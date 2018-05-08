@@ -47,7 +47,8 @@ class FieldTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
             null, null, null, "sections/0");
@@ -71,7 +72,8 @@ class FieldTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\GetFieldRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, "sections/0/paragraphs/0");
@@ -97,7 +99,8 @@ class FieldTests extends \BaseTest\BaseTestContext
         $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostFieldRequest($remoteName, $body, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName,
@@ -115,14 +118,15 @@ class FieldTests extends \BaseTest\BaseTestContext
      */
     public function testPutField()
     {
-        $localName = "SampleWordDocument.docx";
+        $localName = "GetField.docx";
         $remoteName = "TestPutField.docx";
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PutFieldRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
@@ -146,7 +150,8 @@ class FieldTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostUpdateDocumentFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
@@ -171,7 +176,8 @@ class FieldTests extends \BaseTest\BaseTestContext
         $body = new PageNumber(array("alignment" => "center", "format" => "{PAGE} of {NUMPAGES}"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostInsertPageNumbersRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName);
@@ -195,7 +201,8 @@ class FieldTests extends \BaseTest\BaseTestContext
         $fieldIndex = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\DeleteFieldRequest($remoteName,
             $fieldIndex, $folder=self::$baseTestPath . $subfolder,
@@ -220,7 +227,8 @@ class FieldTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\DeleteFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,

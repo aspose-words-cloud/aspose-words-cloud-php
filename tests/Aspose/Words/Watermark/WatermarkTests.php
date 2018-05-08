@@ -46,7 +46,8 @@ class WatermarkTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\DeleteDocumentWatermarkRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
@@ -71,7 +72,8 @@ class WatermarkTests extends \BaseTest\BaseTestContext
         $image = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostInsertDocumentWatermarkImageRequest($remoteName, $image, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName,
@@ -97,7 +99,8 @@ class WatermarkTests extends \BaseTest\BaseTestContext
         $body = new WatermarkText(array("text" => "This is the text", "rotation_angle" => 90));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostInsertDocumentWatermarkTextRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
             null, null, null,

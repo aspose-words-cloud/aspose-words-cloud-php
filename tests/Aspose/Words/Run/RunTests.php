@@ -47,7 +47,8 @@ class RunTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Run/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\DeleteRunRequest($remoteName, "paragraphs/1", $index, $folder=self::$baseTestPath . $subfolder);
 
@@ -71,7 +72,8 @@ class RunTests extends \BaseTest\BaseTestContext
         $run = new Run(array("text" => "Run with text"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Run/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PostRunRequest($remoteName, $run, "paragraphs/1", $index, $folder=self::$baseTestPath . $subfolder);
 
@@ -94,7 +96,8 @@ class RunTests extends \BaseTest\BaseTestContext
         $run = new Run(array("text" => "run with text"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Run/' . $localName;
-        $this->storage->PutCreate($Path=$fullName, $versionId = null, $storage = null, $file);
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
 
         $request = new Requests\PutRunRequest($remoteName, "paragraphs/1", $run, $folder=self::$baseTestPath . $subfolder);
 

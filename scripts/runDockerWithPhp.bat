@@ -1,0 +1,1 @@
+docker run -v %cd%:/app -w="/app" --rm -it asposewordsphp:latest bash

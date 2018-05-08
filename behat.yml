@@ -1,8 +1,13 @@
 # behat.yml
 default:
     autoload:
-        '': %paths.base%
+        '': %paths.base%/features/bootstrap/
     suites:
-        api_features:
-            paths: [bdd/features]
-            contexts: [bdd\FeatureContext]
+        default:
+          contexts: 
+            - AlternateDocumentContext
+            - PutConvertContext
+            - SaveAsContext
+            - PostExecuteTemplateContext
+            - PutExecuteTemplateContext
+            - PutExecuteMailMergeContext

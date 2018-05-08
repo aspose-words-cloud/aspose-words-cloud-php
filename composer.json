@@ -36,6 +36,7 @@
     },
 	"autoload": {
         "psr-0": {
+            "" : "tests/",
             "Aspose": "src/",
             "BaseTest": "tests/"
         }

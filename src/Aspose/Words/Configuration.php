@@ -365,7 +365,7 @@ class Configuration
         return $this->host;
     }
 	
-	/*
+    /*
      * Sets the base_path
      *
      * @param string $base_path api version

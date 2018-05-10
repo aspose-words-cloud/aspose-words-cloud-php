@@ -33,6 +33,17 @@ namespace Aspose\Words\Model\Requests;
 class PostLoadWebDocumentRequest
 {
     /*
+     * Parameters of loading.
+     */
+    public $data;
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public $storage;
+    
+	
+    /*
      * Initializes a new instance of the PostLoadWebDocumentRequest class.
      *  
      * @param \Aspose\Words\Model\LoadWebDocumentData $data Parameters of loading.
@@ -47,10 +58,34 @@ class PostLoadWebDocumentRequest
     /*
      * Parameters of loading.
      */
-    public $data;
+    public function get_data()
+    {
+        return $this->data;
+    }
+
+    /*
+     * Parameters of loading.
+     */
+    public function set_data($value)
+    {
+        $this->data = $value;
+        return $this;
+    }
 	
     /*
      * File storage, which have to be used.
      */
-    public $storage;
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * File storage, which have to be used.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
 }

@@ -33,28 +33,6 @@ namespace Aspose\Words\Model\Requests;
 class GetTableRequest
 {
     /*
-     * Initializes a new instance of the GetTableRequest class.
-     *  
-     * @param string $name The document name.
-     * @param int $index Object's index
-     * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $node_path Path to node, which contains tables.
-     */
-    public function __construct($name, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null)             
-    {
-        $this->name = $name;
-        $this->index = $index;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->node_path = $node_path;
-    }
-
-    /*
      * The document name.
      */
     public $name;
@@ -88,4 +66,146 @@ class GetTableRequest
      * Path to node, which contains tables.
      */
     public $node_path;
+    
+	
+    /*
+     * Initializes a new instance of the GetTableRequest class.
+     *  
+     * @param string $name The document name.
+     * @param int $index Object's index
+     * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $node_path Path to node, which contains tables.
+     */
+    public function __construct($name, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null)             
+    {
+        $this->name = $name;
+        $this->index = $index;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->node_path = $node_path;
+    }
+
+    /*
+     * The document name.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The document name.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Object's index
+     */
+    public function get_index()
+    {
+        return $this->index;
+    }
+
+    /*
+     * Object's index
+     */
+    public function set_index($value)
+    {
+        $this->index = $value;
+        return $this;
+    }
+	
+    /*
+     * Original document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * Original document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * File storage, which have to be used.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function get_load_encoding()
+    {
+        return $this->load_encoding;
+    }
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function set_load_encoding($value)
+    {
+        $this->load_encoding = $value;
+        return $this;
+    }
+	
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function get_password()
+    {
+        return $this->password;
+    }
+
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function set_password($value)
+    {
+        $this->password = $value;
+        return $this;
+    }
+	
+    /*
+     * Path to node, which contains tables.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to node, which contains tables.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
+        return $this;
+    }
 }

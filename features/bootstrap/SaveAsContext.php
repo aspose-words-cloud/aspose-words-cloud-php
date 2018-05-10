@@ -6,24 +6,26 @@
  * Time: 15:08
  */
 
-use Behat\Behat\Context\Context;
-
-class SaveAsContext implements Context
+use PHPUnit\Framework\Assert;
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/StorageSteps.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/WordDocumentSteps.php");
+class SaveAsContext extends BaseTest\BaseContext
 {
+    use StorageSteps, WordDocumentSteps;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->request = new \Aspose\Words\Model\Requests\PostDocumentSaveAsRequest("", new \Aspose\Words\Model\SaveOptionsData());
+    }
+
     /**
      * @Given /^I have specified save format (.*) document to be converted$/
      */
     public function iHaveSpecifiedSaveFormatDocumentToBeConverted($DestFormat)
     {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
-    }
-
-    /**
-     * @Given /^I have specified destFileName (.*)$/
-     */
-    public function iHaveSpecifiedDestFileName($OutPath)
-    {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
+        $this->request->get_save_options_data()->setSaveFormat($DestFormat);
     }
 
     /**
@@ -31,23 +33,7 @@ class SaveAsContext implements Context
      */
     public function iExecuteConversionFromStoragePOSTSaveAs()
     {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
-    }
-
-    /**
-     * @Then /^document (.*) is existed on storage in (.*) folder$/
-     */
-    public function documentIsExistedOnStorageInFolder($OutPath, $SubFolder)
-    {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
-    }
-
-    /**
-     * @Given /^I have specified encoding (.*)$/
-     */
-    public function iHaveSpecifiedEncoding($LoadEncoding)
-    {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
+        $this->response = $this->context->get_api()->postDocumentSaveAs($this->request);
     }
 
     /**
@@ -55,6 +41,18 @@ class SaveAsContext implements Context
      */
     public function symbolsAreEncodedProperly()
     {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
+        $textItems = $this->context->
+        get_api()->getDocumentTextItems(
+            new \Aspose\Words\Model\Requests\GetDocumentTextItemsRequest("TableDocumentDoc.doc",
+                $this->BaseRemoteFolder() . "DocumentActions/ConvertDocument/out/saveas"));
+        Assert::assertEquals("строка", $textItems->getTextItems()->getList()[0]->getText(), "Wrong conversion");
+    }
+
+    /**
+     * @Given /^I have specified destFileName (.*)$/
+     */
+    public function iHaveSpecifiedDestFileName($OutPath)
+    {
+        $this->request->get_save_options_data()->setFileName($OutPath);
     }
 }

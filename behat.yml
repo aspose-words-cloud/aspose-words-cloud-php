@@ -3,11 +3,21 @@ default:
     autoload:
         '': %paths.base%/features/bootstrap/
     suites:
-        default:
+        alternate:
           contexts: 
             - AlternateDocumentContext
+        putconvert:
+          contexts:
             - PutConvertContext
+        saveas:
+          contexts:
             - SaveAsContext
+        posttemplate:
+          contexts:
             - PostExecuteTemplateContext
+        puttemplate:
+          contexts:
             - PutExecuteTemplateContext
+        putmailmerge:
+          contexts:
             - PutExecuteMailMergeContext

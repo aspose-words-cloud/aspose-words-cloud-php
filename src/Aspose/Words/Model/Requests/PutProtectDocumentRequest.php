@@ -33,28 +33,6 @@ namespace Aspose\Words\Model\Requests;
 class PutProtectDocumentRequest
 {
     /*
-     * Initializes a new instance of the PutProtectDocumentRequest class.
-     *  
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\ProtectionRequest $protection_request with protection settings.
-     * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function __construct($name, $protection_request, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
-    {
-        $this->name = $name;
-        $this->protection_request = $protection_request;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
-    }
-
-    /*
      * The document name.
      */
     public $name;
@@ -88,4 +66,146 @@ class PutProtectDocumentRequest
      * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
+    
+	
+    /*
+     * Initializes a new instance of the PutProtectDocumentRequest class.
+     *  
+     * @param string $name The document name.
+     * @param \Aspose\Words\Model\ProtectionRequest $protection_request with protection settings.
+     * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public function __construct($name, $protection_request, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    {
+        $this->name = $name;
+        $this->protection_request = $protection_request;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
+    }
+
+    /*
+     * The document name.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The document name.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * with protection settings.
+     */
+    public function get_protection_request()
+    {
+        return $this->protection_request;
+    }
+
+    /*
+     * with protection settings.
+     */
+    public function set_protection_request($value)
+    {
+        $this->protection_request = $value;
+        return $this;
+    }
+	
+    /*
+     * Original document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * Original document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * File storage, which have to be used.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function get_load_encoding()
+    {
+        return $this->load_encoding;
+    }
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function set_load_encoding($value)
+    {
+        $this->load_encoding = $value;
+        return $this;
+    }
+	
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function get_password()
+    {
+        return $this->password;
+    }
+
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function set_password($value)
+    {
+        $this->password = $value;
+        return $this;
+    }
+	
+    /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public function get_dest_file_name()
+    {
+        return $this->dest_file_name;
+    }
+
+    /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public function set_dest_file_name($value)
+    {
+        $this->dest_file_name = $value;
+        return $this;
+    }
 }

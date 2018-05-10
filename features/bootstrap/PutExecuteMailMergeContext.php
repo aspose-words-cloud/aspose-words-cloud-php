@@ -5,17 +5,17 @@
  * Date: 02.05.2018
  * Time: 15:25
  */
-
-use Behat\Behat\Context\Context;
-
-class PutExecuteMailMergeContext implements Context
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyMailMergeParametersSteps.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/PutExecuteSteps.php");
+class PutExecuteMailMergeContext extends BaseTest\BaseContext
 {
-    /**
-     * @Given /^I have specified a template file (.*) in request$/
-     */
-    public function iHaveSpecifiedATemplateFileInRequest($TemplateName)
+    use SpecifyMailMergeParametersSteps, PutExecuteSteps;
+
+    public function __construct()
     {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
+        parent::__construct();
+        $this->request = new \Aspose\Words\Model\Requests\PutExecuteMailMergeOnlineRequest("", "");
     }
 
     /**
@@ -23,6 +23,6 @@ class PutExecuteMailMergeContext implements Context
      */
     public function iExecuteMailMergeOnline()
     {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
+        $this->context->get_api()->putExecuteMailMergeOnline($this->request);
     }
 }

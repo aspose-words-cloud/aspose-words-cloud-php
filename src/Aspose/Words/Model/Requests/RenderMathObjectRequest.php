@@ -33,32 +33,6 @@ namespace Aspose\Words\Model\Requests;
 class RenderMathObjectRequest
 {
     /*
-     * Initializes a new instance of the RenderMathObjectRequest class.
-     *  
-     * @param string $name The file name.
-     * @param string $format The destination format.
-     * @param int $index Object's index
-     * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $node_path Path to node, which contains office math objects.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
-     */
-    public function __construct($name, $format, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null, $fonts_location = null)             
-    {
-        $this->name = $name;
-        $this->format = $format;
-        $this->index = $index;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->node_path = $node_path;
-        $this->fonts_location = $fonts_location;
-    }
-
-    /*
      * The file name.
      */
     public $name;
@@ -102,4 +76,184 @@ class RenderMathObjectRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
+    
+	
+    /*
+     * Initializes a new instance of the RenderMathObjectRequest class.
+     *  
+     * @param string $name The file name.
+     * @param string $format The destination format.
+     * @param int $index Object's index
+     * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $node_path Path to node, which contains office math objects.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
+     */
+    public function __construct($name, $format, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null, $fonts_location = null)             
+    {
+        $this->name = $name;
+        $this->format = $format;
+        $this->index = $index;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->node_path = $node_path;
+        $this->fonts_location = $fonts_location;
+    }
+
+    /*
+     * The file name.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The file name.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * The destination format.
+     */
+    public function get_format()
+    {
+        return $this->format;
+    }
+
+    /*
+     * The destination format.
+     */
+    public function set_format($value)
+    {
+        $this->format = $value;
+        return $this;
+    }
+	
+    /*
+     * Object's index
+     */
+    public function get_index()
+    {
+        return $this->index;
+    }
+
+    /*
+     * Object's index
+     */
+    public function set_index($value)
+    {
+        $this->index = $value;
+        return $this;
+    }
+	
+    /*
+     * Original document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * Original document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * File storage, which have to be used.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function get_load_encoding()
+    {
+        return $this->load_encoding;
+    }
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function set_load_encoding($value)
+    {
+        $this->load_encoding = $value;
+        return $this;
+    }
+	
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function get_password()
+    {
+        return $this->password;
+    }
+
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function set_password($value)
+    {
+        $this->password = $value;
+        return $this;
+    }
+	
+    /*
+     * Path to node, which contains office math objects.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to node, which contains office math objects.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
+        return $this;
+    }
+	
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function get_fonts_location()
+    {
+        return $this->fonts_location;
+    }
+
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function set_fonts_location($value)
+    {
+        $this->fonts_location = $value;
+        return $this;
+    }
 }

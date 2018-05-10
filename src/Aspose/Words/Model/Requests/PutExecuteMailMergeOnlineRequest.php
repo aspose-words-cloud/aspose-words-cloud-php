@@ -33,22 +33,6 @@ namespace Aspose\Words\Model\Requests;
 class PutExecuteMailMergeOnlineRequest
 {
     /*
-     * Initializes a new instance of the PutExecuteMailMergeOnlineRequest class.
-     *  
-     * @param \SplFileObject $template File with template
-     * @param \SplFileObject $data File with mailmerge data
-     * @param bool $with_regions With regions flag.
-     * @param string $cleanup Clean up options.
-     */
-    public function __construct($template, $data, $with_regions = null, $cleanup = null)             
-    {
-        $this->template = $template;
-        $this->data = $data;
-        $this->with_regions = $with_regions;
-        $this->cleanup = $cleanup;
-    }
-
-    /*
      * File with template
      */
     public $template;
@@ -67,4 +51,89 @@ class PutExecuteMailMergeOnlineRequest
      * Clean up options.
      */
     public $cleanup;
+    
+	
+    /*
+     * Initializes a new instance of the PutExecuteMailMergeOnlineRequest class.
+     *  
+     * @param \SplFileObject $template File with template
+     * @param \SplFileObject $data File with mailmerge data
+     * @param bool $with_regions With regions flag.
+     * @param string $cleanup Clean up options.
+     */
+    public function __construct($template, $data, $with_regions = null, $cleanup = null)             
+    {
+        $this->template = $template;
+        $this->data = $data;
+        $this->with_regions = $with_regions;
+        $this->cleanup = $cleanup;
+    }
+
+    /*
+     * File with template
+     */
+    public function get_template()
+    {
+        return $this->template;
+    }
+
+    /*
+     * File with template
+     */
+    public function set_template($value)
+    {
+        $this->template = $value;
+        return $this;
+    }
+	
+    /*
+     * File with mailmerge data
+     */
+    public function get_data()
+    {
+        return $this->data;
+    }
+
+    /*
+     * File with mailmerge data
+     */
+    public function set_data($value)
+    {
+        $this->data = $value;
+        return $this;
+    }
+	
+    /*
+     * With regions flag.
+     */
+    public function get_with_regions()
+    {
+        return $this->with_regions;
+    }
+
+    /*
+     * With regions flag.
+     */
+    public function set_with_regions($value)
+    {
+        $this->with_regions = $value;
+        return $this;
+    }
+	
+    /*
+     * Clean up options.
+     */
+    public function get_cleanup()
+    {
+        return $this->cleanup;
+    }
+
+    /*
+     * Clean up options.
+     */
+    public function set_cleanup($value)
+    {
+        $this->cleanup = $value;
+        return $this;
+    }
 }

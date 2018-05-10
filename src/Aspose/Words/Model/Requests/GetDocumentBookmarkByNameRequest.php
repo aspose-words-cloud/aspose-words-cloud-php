@@ -33,26 +33,6 @@ namespace Aspose\Words\Model\Requests;
 class GetDocumentBookmarkByNameRequest
 {
     /*
-     * Initializes a new instance of the GetDocumentBookmarkByNameRequest class.
-     *  
-     * @param string $name The document name.
-     * @param string $bookmark_name The bookmark name.
-     * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     */
-    public function __construct($name, $bookmark_name, $folder = null, $storage = null, $load_encoding = null, $password = null)             
-    {
-        $this->name = $name;
-        $this->bookmark_name = $bookmark_name;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-    }
-
-    /*
      * The document name.
      */
     public $name;
@@ -81,4 +61,127 @@ class GetDocumentBookmarkByNameRequest
      * Password for opening an encrypted document.
      */
     public $password;
+    
+	
+    /*
+     * Initializes a new instance of the GetDocumentBookmarkByNameRequest class.
+     *  
+     * @param string $name The document name.
+     * @param string $bookmark_name The bookmark name.
+     * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     */
+    public function __construct($name, $bookmark_name, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    {
+        $this->name = $name;
+        $this->bookmark_name = $bookmark_name;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+    }
+
+    /*
+     * The document name.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The document name.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * The bookmark name.
+     */
+    public function get_bookmark_name()
+    {
+        return $this->bookmark_name;
+    }
+
+    /*
+     * The bookmark name.
+     */
+    public function set_bookmark_name($value)
+    {
+        $this->bookmark_name = $value;
+        return $this;
+    }
+	
+    /*
+     * Original document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * Original document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * File storage, which have to be used.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function get_load_encoding()
+    {
+        return $this->load_encoding;
+    }
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function set_load_encoding($value)
+    {
+        $this->load_encoding = $value;
+        return $this;
+    }
+	
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function get_password()
+    {
+        return $this->password;
+    }
+
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function set_password($value)
+    {
+        $this->password = $value;
+        return $this;
+    }
 }

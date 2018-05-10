@@ -33,24 +33,6 @@ namespace Aspose\Words\Model\Requests;
 class PutConvertDocumentRequest
 {
     /*
-     * Initializes a new instance of the PutConvertDocumentRequest class.
-     *  
-     * @param \SplFileObject $document Converting document
-     * @param string $format Format to convert.
-     * @param string $storage File storage, which have to be used.
-     * @param string $out_path Path for saving operation result to the local storage.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
-     */
-    public function __construct($document, $format, $storage = null, $out_path = null, $fonts_location = null)             
-    {
-        $this->document = $document;
-        $this->format = $format;
-        $this->storage = $storage;
-        $this->out_path = $out_path;
-        $this->fonts_location = $fonts_location;
-    }
-
-    /*
      * Converting document
      */
     public $document;
@@ -74,4 +56,108 @@ class PutConvertDocumentRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
+    
+	
+    /*
+     * Initializes a new instance of the PutConvertDocumentRequest class.
+     *  
+     * @param \SplFileObject $document Converting document
+     * @param string $format Format to convert.
+     * @param string $storage File storage, which have to be used.
+     * @param string $out_path Path for saving operation result to the local storage.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
+     */
+    public function __construct($document, $format, $storage = null, $out_path = null, $fonts_location = null)             
+    {
+        $this->document = $document;
+        $this->format = $format;
+        $this->storage = $storage;
+        $this->out_path = $out_path;
+        $this->fonts_location = $fonts_location;
+    }
+
+    /*
+     * Converting document
+     */
+    public function get_document()
+    {
+        return $this->document;
+    }
+
+    /*
+     * Converting document
+     */
+    public function set_document($value)
+    {
+        $this->document = $value;
+        return $this;
+    }
+	
+    /*
+     * Format to convert.
+     */
+    public function get_format()
+    {
+        return $this->format;
+    }
+
+    /*
+     * Format to convert.
+     */
+    public function set_format($value)
+    {
+        $this->format = $value;
+        return $this;
+    }
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * File storage, which have to be used.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * Path for saving operation result to the local storage.
+     */
+    public function get_out_path()
+    {
+        return $this->out_path;
+    }
+
+    /*
+     * Path for saving operation result to the local storage.
+     */
+    public function set_out_path($value)
+    {
+        $this->out_path = $value;
+        return $this;
+    }
+	
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function get_fonts_location()
+    {
+        return $this->fonts_location;
+    }
+
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function set_fonts_location($value)
+    {
+        $this->fonts_location = $value;
+        return $this;
+    }
 }

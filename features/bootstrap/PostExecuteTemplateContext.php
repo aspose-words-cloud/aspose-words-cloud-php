@@ -5,33 +5,33 @@
  * Date: 02.05.2018
  * Time: 15:24
  */
-
-use Behat\Behat\Context\Context;
-
-class PostExecuteTemplateContext implements Context
+use PHPUnit\Framework\Assert;
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/ModifyDocumentRequestSteps.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyMailMergeParametersSteps.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/PostExecuteSteps.php");
+class PostExecuteTemplateContext extends BaseTest\BaseContext
 {
+    const testFolder = "DocumentActions/MailMerge/";
+    use ModifyDocumentRequestSteps, SpecifyMailMergeParametersSteps, PostExecuteSteps;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->request = new \Aspose\Words\Model\Requests\PostExecuteTemplateRequest("", "");
+
+    }
+
     /**
      * @Given /^I have specified a template file name (.*) in storage$/
      */
     public function iHaveSpecifiedATemplateFileNameInStorage($TemplateName)
     {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
-    }
-
-    /**
-     * @Given /^I have specified a body (.*)$/
-     */
-    public function iHaveSpecifiedABody($Body)
-    {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
-    }
-
-    /**
-     * @Given /^I have specified a destFileName (.*)$/
-     */
-    public function iHaveSpecifiedADestFileName($DestinationFileName)
-    {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
+        $fullName = $this->BaseRemoteFolder() . self::testFolder . $TemplateName;
+        $file = realpath(__DIR__ . '/../..') . '/TestData/' . self::testFolder . $TemplateName;
+        $putRequest = new \Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->context->get_storage()->PutCreate($putRequest);
+        $this->request->set_name($TemplateName)->set_folder(trim($this->BaseRemoteFolder() . self::testFolder, "/"));
     }
 
     /**
@@ -39,23 +39,7 @@ class PostExecuteTemplateContext implements Context
      */
     public function iExecuteTemplate()
     {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
-    }
-
-    /**
-     * @Given /^I have specified withRegions (.*)$/
-     */
-    public function iHaveSpecifiedWithRegions($UseRegions)
-    {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
-    }
-
-    /**
-     * @Given /^I have specified useWholeParagraphAsRegion (.*)$/
-     */
-    public function iHaveSpecifiedUseWholeParagraphAsRegion($UseWholeParagraphAsRegion)
-    {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
+        $this->context->get_api()->postExecuteTemplate($this->request);
     }
 
     /**
@@ -63,6 +47,13 @@ class PostExecuteTemplateContext implements Context
      */
     public function imageShouldBeRendered()
     {
-        throw new \Behat\Behat\Tester\Exception\PendingException();
+        $imagesResponse = $this->context->get_api()->getDrawingObjects(
+            new \Aspose\Words\Model\Requests\GetDocumentDrawingObjectsRequest(
+                "ExecuteTemplateWithImagesResult.doc",
+                $this->BaseRemoteFolder() . "DocumentActions/MailMerge"
+            )
+        );
+
+        Assert::assertEquals(true, count($imagesResponse->getDrawingObjects()->getList()) > 0, "Error has occurred while image rendering");
     }
 }

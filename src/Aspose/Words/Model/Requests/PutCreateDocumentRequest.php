@@ -33,6 +33,22 @@ namespace Aspose\Words\Model\Requests;
 class PutCreateDocumentRequest
 {
     /*
+     * File storage, which have to be used.
+     */
+    public $storage;
+	
+    /*
+     * The file name.
+     */
+    public $file_name;
+	
+    /*
+     * The document folder.
+     */
+    public $folder;
+    
+	
+    /*
      * Initializes a new instance of the PutCreateDocumentRequest class.
      *  
      * @param string $storage File storage, which have to be used.
@@ -49,15 +65,51 @@ class PutCreateDocumentRequest
     /*
      * File storage, which have to be used.
      */
-    public $storage;
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * File storage, which have to be used.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
 	
     /*
      * The file name.
      */
-    public $file_name;
+    public function get_file_name()
+    {
+        return $this->file_name;
+    }
+
+    /*
+     * The file name.
+     */
+    public function set_file_name($value)
+    {
+        $this->file_name = $value;
+        return $this;
+    }
 	
     /*
      * The document folder.
      */
-    public $folder;
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
 }

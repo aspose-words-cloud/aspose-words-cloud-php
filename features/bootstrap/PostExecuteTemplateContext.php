@@ -1,20 +1,48 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: EkimovYN
- * Date: 02.05.2018
- * Time: 15:24
- */
+/*
+* --------------------------------------------------------------------------------------------------------------------
+* <copyright company="Aspose" file="PostExecuteTemplateContext.php">
+*   Copyright (c) 2018 Aspose.Words for Cloud
+* </copyright>
+* <summary>
+*   Permission is hereby granted, free of charge, to any person obtaining a copy
+*  of this software and associated documentation files (the "Software"), to deal
+*  in the Software without restriction, including without limitation the rights
+*  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*  copies of the Software, and to permit persons to whom the Software is
+*  furnished to do so, subject to the following conditions:
+*
+*  The above copyright notice and this permission notice shall be included in all
+*  copies or substantial portions of the Software.
+*
+*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+*  SOFTWARE.
+* </summary>
+* --------------------------------------------------------------------------------------------------------------------
+*/
+
 use PHPUnit\Framework\Assert;
-include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php");
-include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/ModifyDocumentRequestSteps.php");
-include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyMailMergeParametersSteps.php");
-include_once($_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/PostExecuteSteps.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/ModifyDocumentRequestSteps.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyMailMergeParametersSteps.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/PostExecuteSteps.php";
+
+/*
+ * Steps for post execute template operation
+ */
 class PostExecuteTemplateContext extends BaseTest\BaseContext
 {
-    const testFolder = "DocumentActions/MailMerge/";
+    const TESTFOLDER = "DocumentActions/MailMerge/";
     use ModifyDocumentRequestSteps, SpecifyMailMergeParametersSteps, PostExecuteSteps;
 
+    /*
+     * ctor
+     */
     public function __construct()
     {
         parent::__construct();
@@ -23,19 +51,27 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
     }
 
     /**
-     * @Given /^I have specified a template file name (.*) in storage$/
+     * Step for specifying template name
+     *
+     * @param string $TemplateName name of template
+     *
+     * @Given  /^I have specified a template file name (.*) in storage$/
+     * @return void
      */
     public function iHaveSpecifiedATemplateFileNameInStorage($TemplateName)
     {
-        $fullName = $this->BaseRemoteFolder() . self::testFolder . $TemplateName;
-        $file = realpath(__DIR__ . '/../..') . '/TestData/' . self::testFolder . $TemplateName;
+        $fullName = $this->BaseRemoteFolder() . self::TESTFOLDER . $TemplateName;
+        $file = realpath(__DIR__ . '/../..') . '/TestData/' . self::TESTFOLDER . $TemplateName;
         $putRequest = new \Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->context->get_storage()->PutCreate($putRequest);
-        $this->request->set_name($TemplateName)->set_folder(trim($this->BaseRemoteFolder() . self::testFolder, "/"));
+        $this->request->set_name($TemplateName)->set_folder(trim($this->BaseRemoteFolder() . self::TESTFOLDER, "/"));
     }
 
     /**
-     * @When /^I execute template$/
+     * Step for executing template
+     *
+     * @When   /^I execute template$/
+     * @return void
      */
     public function iExecuteTemplate()
     {
@@ -43,7 +79,10 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
     }
 
     /**
-     * @Given /^image should be rendered$/
+     * Step for image rendering assertion
+     *
+     * @Given  /^image should be rendered$/
+     * @return void
      */
     public function imageShouldBeRendered()
     {

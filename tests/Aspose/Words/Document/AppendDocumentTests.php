@@ -25,7 +25,7 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-include_once($_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
 use Aspose\Words\Model\DocumentEntryList;
 use Aspose\Words\Model\DocumentEntry;
 use Aspose\Words\Model\Requests;

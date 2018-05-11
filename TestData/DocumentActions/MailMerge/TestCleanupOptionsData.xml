@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Item>
+		<Caption>Caption1</Caption>
+		<Data>Data portion 1</Data>
+	</Item>
+	<Item>
+		<Caption>Caption2</Caption>
+		<Data>Data portion 2</Data>
+	</Item>
+</Items>

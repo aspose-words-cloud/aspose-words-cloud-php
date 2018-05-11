@@ -29,7 +29,7 @@ namespace BaseTest;
 use Aspose\Storage\Api\StorageApi;
 use Aspose\Words\Configuration;
 use Aspose\Words\WordsApi;
-abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
+class BaseTestContext extends \PHPUnit_Framework_TestCase
 {
     protected $words;
 
@@ -37,7 +37,8 @@ abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
 
     protected $config;
     protected static $baseTestPath = "Temp/SdkTests/TestData/";
-    protected static $baseTestOut = "TestOut/";
+    public static $baseTestOut = "TestOut/";
+    public static $baseRemoteFolder = "Temp/SdkTests/php/";
 
     /**
      * Setup before running each test case
@@ -55,5 +56,21 @@ abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
         $this->words = new WordsApi(null, $this->config);
         $this->storage = new StorageApi();
         $this->storage->getConfig()->setAppKey($creds["AppKey"])->setAppSid($creds["AppSid"])->setHost($creds["BaseUrl"]);
+    }
+
+    /*
+     * Returns api instance
+     */
+    public function get_api()
+    {
+        return $this->words;
+    }
+
+    /*
+     * Returns storage instance
+     */
+    public function get_storage()
+    {
+        return $this->storage;
     }
 }

@@ -34,26 +34,6 @@ namespace Aspose\Words\Model\Requests;
 class PutExecuteTemplateOnlineRequest
 {
     /*
-     * Initializes a new instance of the PutExecuteTemplateOnlineRequest class.
-     *  
-     * @param \SplFileObject $template File with template
-     * @param \SplFileObject $data File with mailmerge data
-     * @param string $cleanup Clean up options.
-     * @param bool $use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
-     * @param bool $with_regions Merge with regions or not. True by default
-     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
-     */
-    public function __construct($template, $data, $cleanup = null, $use_whole_paragraph_as_region = null, $with_regions = null, $document_file_name = null)             
-    {
-        $this->template = $template;
-        $this->data = $data;
-        $this->cleanup = $cleanup;
-        $this->use_whole_paragraph_as_region = $use_whole_paragraph_as_region;
-        $this->with_regions = $with_regions;
-        $this->document_file_name = $document_file_name;
-    }
-
-    /*
      * File with template
      */
     public $template;
@@ -82,4 +62,127 @@ class PutExecuteTemplateOnlineRequest
      * This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
      */
     public $document_file_name;
+    
+	
+    /*
+     * Initializes a new instance of the PutExecuteTemplateOnlineRequest class.
+     *  
+     * @param \SplFileObject $template File with template
+     * @param \SplFileObject $data File with mailmerge data
+     * @param string $cleanup Clean up options.
+     * @param bool $use_whole_paragraph_as_region Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
+     * @param bool $with_regions Merge with regions or not. True by default
+     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
+     */
+    public function __construct($template, $data, $cleanup = null, $use_whole_paragraph_as_region = null, $with_regions = null, $document_file_name = null)             
+    {
+        $this->template = $template;
+        $this->data = $data;
+        $this->cleanup = $cleanup;
+        $this->use_whole_paragraph_as_region = $use_whole_paragraph_as_region;
+        $this->with_regions = $with_regions;
+        $this->document_file_name = $document_file_name;
+    }
+
+    /*
+     * File with template
+     */
+    public function get_template()
+    {
+        return $this->template;
+    }
+
+    /*
+     * File with template
+     */
+    public function set_template($value)
+    {
+        $this->template = $value;
+        return $this;
+    }
+	
+    /*
+     * File with mailmerge data
+     */
+    public function get_data()
+    {
+        return $this->data;
+    }
+
+    /*
+     * File with mailmerge data
+     */
+    public function set_data($value)
+    {
+        $this->data = $value;
+        return $this;
+    }
+	
+    /*
+     * Clean up options.
+     */
+    public function get_cleanup()
+    {
+        return $this->cleanup;
+    }
+
+    /*
+     * Clean up options.
+     */
+    public function set_cleanup($value)
+    {
+        $this->cleanup = $value;
+        return $this;
+    }
+	
+    /*
+     * Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
+     */
+    public function get_use_whole_paragraph_as_region()
+    {
+        return $this->use_whole_paragraph_as_region;
+    }
+
+    /*
+     * Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
+     */
+    public function set_use_whole_paragraph_as_region($value)
+    {
+        $this->use_whole_paragraph_as_region = $value;
+        return $this;
+    }
+	
+    /*
+     * Merge with regions or not. True by default
+     */
+    public function get_with_regions()
+    {
+        return $this->with_regions;
+    }
+
+    /*
+     * Merge with regions or not. True by default
+     */
+    public function set_with_regions($value)
+    {
+        $this->with_regions = $value;
+        return $this;
+    }
+	
+    /*
+     * This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
+     */
+    public function get_document_file_name()
+    {
+        return $this->document_file_name;
+    }
+
+    /*
+     * This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
+     */
+    public function set_document_file_name($value)
+    {
+        $this->document_file_name = $value;
+        return $this;
+    }
 }

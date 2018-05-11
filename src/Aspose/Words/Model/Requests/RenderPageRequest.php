@@ -34,30 +34,6 @@ namespace Aspose\Words\Model\Requests;
 class RenderPageRequest
 {
     /*
-     * Initializes a new instance of the RenderPageRequest class.
-     *  
-     * @param string $name The file name.
-     * @param int $page_index Comment index
-     * @param string $format The destination format.
-     * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
-     */
-    public function __construct($name, $page_index, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)             
-    {
-        $this->name = $name;
-        $this->page_index = $page_index;
-        $this->format = $format;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->fonts_location = $fonts_location;
-    }
-
-    /*
      * The file name.
      */
     public $name;
@@ -96,4 +72,165 @@ class RenderPageRequest
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
+    
+	
+    /*
+     * Initializes a new instance of the RenderPageRequest class.
+     *  
+     * @param string $name The file name.
+     * @param int $page_index Comment index
+     * @param string $format The destination format.
+     * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
+     */
+    public function __construct($name, $page_index, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)             
+    {
+        $this->name = $name;
+        $this->page_index = $page_index;
+        $this->format = $format;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->fonts_location = $fonts_location;
+    }
+
+    /*
+     * The file name.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The file name.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Comment index
+     */
+    public function get_page_index()
+    {
+        return $this->page_index;
+    }
+
+    /*
+     * Comment index
+     */
+    public function set_page_index($value)
+    {
+        $this->page_index = $value;
+        return $this;
+    }
+	
+    /*
+     * The destination format.
+     */
+    public function get_format()
+    {
+        return $this->format;
+    }
+
+    /*
+     * The destination format.
+     */
+    public function set_format($value)
+    {
+        $this->format = $value;
+        return $this;
+    }
+	
+    /*
+     * Original document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * Original document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * File storage, which have to be used.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function get_load_encoding()
+    {
+        return $this->load_encoding;
+    }
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function set_load_encoding($value)
+    {
+        $this->load_encoding = $value;
+        return $this;
+    }
+	
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function get_password()
+    {
+        return $this->password;
+    }
+
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function set_password($value)
+    {
+        $this->password = $value;
+        return $this;
+    }
+	
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function get_fonts_location()
+    {
+        return $this->fonts_location;
+    }
+
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function set_fonts_location($value)
+    {
+        $this->fonts_location = $value;
+        return $this;
+    }
 }

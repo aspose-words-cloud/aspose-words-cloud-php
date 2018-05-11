@@ -34,6 +34,17 @@ namespace Aspose\Words\Model\Requests;
 class PutDocumentFieldNamesRequest
 {
     /*
+     * File with template
+     */
+    public $template;
+	
+    /*
+     * Use non merge fields or not.
+     */
+    public $use_non_merge_fields;
+    
+	
+    /*
      * Initializes a new instance of the PutDocumentFieldNamesRequest class.
      *  
      * @param \SplFileObject $template File with template
@@ -48,10 +59,34 @@ class PutDocumentFieldNamesRequest
     /*
      * File with template
      */
-    public $template;
+    public function get_template()
+    {
+        return $this->template;
+    }
+
+    /*
+     * File with template
+     */
+    public function set_template($value)
+    {
+        $this->template = $value;
+        return $this;
+    }
 	
     /*
      * Use non merge fields or not.
      */
-    public $use_non_merge_fields;
+    public function get_use_non_merge_fields()
+    {
+        return $this->use_non_merge_fields;
+    }
+
+    /*
+     * Use non merge fields or not.
+     */
+    public function set_use_non_merge_fields($value)
+    {
+        $this->use_non_merge_fields = $value;
+        return $this;
+    }
 }

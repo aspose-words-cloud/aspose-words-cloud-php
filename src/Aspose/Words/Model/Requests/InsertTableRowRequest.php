@@ -34,34 +34,6 @@ namespace Aspose\Words\Model\Requests;
 class InsertTableRowRequest
 {
     /*
-     * Initializes a new instance of the InsertTableRowRequest class.
-     *  
-     * @param string $name The document name.
-     * @param string $table_path Path to table.
-     * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     * @param string $revision_date_time The date and time to use for revisions.
-     * @param \Aspose\Words\Model\TableRowInsert $row Table row parameters/
-     */
-    public function __construct($name, $table_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $row = null)             
-    {
-        $this->name = $name;
-        $this->table_path = $table_path;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
-        $this->revision_author = $revision_author;
-        $this->revision_date_time = $revision_date_time;
-        $this->row = $row;
-    }
-
-    /*
      * The document name.
      */
     public $name;
@@ -110,4 +82,203 @@ class InsertTableRowRequest
      * Table row parameters/
      */
     public $row;
+    
+	
+    /*
+     * Initializes a new instance of the InsertTableRowRequest class.
+     *  
+     * @param string $name The document name.
+     * @param string $table_path Path to table.
+     * @param string $folder Original document folder.
+     * @param string $storage File storage, which have to be used.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     * @param string $revision_date_time The date and time to use for revisions.
+     * @param \Aspose\Words\Model\TableRowInsert $row Table row parameters/
+     */
+    public function __construct($name, $table_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $row = null)             
+    {
+        $this->name = $name;
+        $this->table_path = $table_path;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
+        $this->revision_author = $revision_author;
+        $this->revision_date_time = $revision_date_time;
+        $this->row = $row;
+    }
+
+    /*
+     * The document name.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The document name.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Path to table.
+     */
+    public function get_table_path()
+    {
+        return $this->table_path;
+    }
+
+    /*
+     * Path to table.
+     */
+    public function set_table_path($value)
+    {
+        $this->table_path = $value;
+        return $this;
+    }
+	
+    /*
+     * Original document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * Original document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * File storage, which have to be used.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * File storage, which have to be used.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function get_load_encoding()
+    {
+        return $this->load_encoding;
+    }
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function set_load_encoding($value)
+    {
+        $this->load_encoding = $value;
+        return $this;
+    }
+	
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function get_password()
+    {
+        return $this->password;
+    }
+
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function set_password($value)
+    {
+        $this->password = $value;
+        return $this;
+    }
+	
+    /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public function get_dest_file_name()
+    {
+        return $this->dest_file_name;
+    }
+
+    /*
+     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public function set_dest_file_name($value)
+    {
+        $this->dest_file_name = $value;
+        return $this;
+    }
+	
+    /*
+     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     */
+    public function get_revision_author()
+    {
+        return $this->revision_author;
+    }
+
+    /*
+     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     */
+    public function set_revision_author($value)
+    {
+        $this->revision_author = $value;
+        return $this;
+    }
+	
+    /*
+     * The date and time to use for revisions.
+     */
+    public function get_revision_date_time()
+    {
+        return $this->revision_date_time;
+    }
+
+    /*
+     * The date and time to use for revisions.
+     */
+    public function set_revision_date_time($value)
+    {
+        $this->revision_date_time = $value;
+        return $this;
+    }
+	
+    /*
+     * Table row parameters/
+     */
+    public function get_row()
+    {
+        return $this->row;
+    }
+
+    /*
+     * Table row parameters/
+     */
+    public function set_row($value)
+    {
+        $this->row = $value;
+        return $this;
+    }
 }

@@ -34,6 +34,17 @@ namespace Aspose\Words\Model\Requests;
 class ClassifyRequest
 {
     /*
+     * Text to classify.
+     */
+    public $text;
+	
+    /*
+     * Count of the best classes to return.
+     */
+    public $best_classes_count;
+    
+	
+    /*
      * Initializes a new instance of the ClassifyRequest class.
      *  
      * @param string $text Text to classify.
@@ -48,10 +59,34 @@ class ClassifyRequest
     /*
      * Text to classify.
      */
-    public $text;
+    public function get_text()
+    {
+        return $this->text;
+    }
+
+    /*
+     * Text to classify.
+     */
+    public function set_text($value)
+    {
+        $this->text = $value;
+        return $this;
+    }
 	
     /*
      * Count of the best classes to return.
      */
-    public $best_classes_count;
+    public function get_best_classes_count()
+    {
+        return $this->best_classes_count;
+    }
+
+    /*
+     * Count of the best classes to return.
+     */
+    public function set_best_classes_count($value)
+    {
+        $this->best_classes_count = $value;
+        return $this;
+    }
 }

@@ -8,7 +8,7 @@ Scenario Outline: Execute Template With Custom Output
 	And I have specified a body <Body>
 	And I have specified a destFileName <DestinationFileName>
 	When I execute template	
-    Then document <DestinationFileName> is existed on storage in DocumentActions/MailMerge/ folder
+    Then document <DestinationFileName> is existed on storage in DocumentActions/MailMerge/ folder	
 
 	Examples: 
 	| TemplateName            | Body                        | DestinationFileName  |
@@ -21,7 +21,7 @@ Scenario Outline: Execute Template With Regions
 	And I have specified a destFileName <DestinationFileName>
 	And I have specified withRegions <UseRegions>
 	When I execute template
-	Then document <DestinationFileName> is existed on storage in DocumentActions/MailMerge/ folder
+	Then document <DestinationFileName> is existed on storage in DocumentActions/MailMerge/ folder	
 
 	Examples: 
 	| TemplateName            | Body                        | DestinationFileName  | UseRegions |
@@ -36,7 +36,7 @@ Scenario Outline: Execute Template With Regions And Not UseWholeParagraphAsRegio
 	And I have specified withRegions <UseRegions>
 	And I have specified useWholeParagraphAsRegion <UseWholeParagraphAsRegion>
 	When I execute template
-	Then document <DestinationFileName> is existed on storage in DocumentActions/MailMerge/ folder
+	Then document <DestinationFileName> is existed on storage in DocumentActions/MailMerge/ folder	
 
 	Examples: 
 	| TemplateName            | Body                        | DestinationFileName  | UseRegions | UseWholeParagraphAsRegion |

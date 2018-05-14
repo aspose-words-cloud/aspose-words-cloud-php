@@ -28,17 +28,16 @@
 
 use Aspose\Words\Model\Requests;
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/FileResultSteps.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyFormatOutputPathSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/StorageSteps.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyFormatOutputPathSteps.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/FileResultSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/WordDocumentSteps.php";
-
 /*
  * Steps for getting document with format
  */
 class AlternateDocumentContext extends BaseTest\BaseContext
 {
-    use FileResultSteps, SpecifyFormatOutputPathSteps, StorageSteps, WordDocumentSteps;
+    use StorageSteps, SpecifyFormatOutputPathSteps, FileResultSteps, WordDocumentSteps;
 
     /*
      * ctor

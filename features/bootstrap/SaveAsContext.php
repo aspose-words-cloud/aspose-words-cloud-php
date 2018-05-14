@@ -29,14 +29,14 @@
 use PHPUnit\Framework\Assert;
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/StorageSteps.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyFormatOutputPathSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/WordDocumentSteps.php";
-
 /*
  * Class with steps for saveas operation
  */
 class SaveAsContext extends BaseTest\BaseContext
 {
-    use StorageSteps, WordDocumentSteps;
+    use StorageSteps, SpecifyFormatOutputPathSteps, WordDocumentSteps;
 
     /*
      * ctor

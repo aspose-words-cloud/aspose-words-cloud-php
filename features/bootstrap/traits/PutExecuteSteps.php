@@ -36,12 +36,12 @@ trait PutExecuteSteps
      *
      * @param string $TemplateName file name
      *
-     * @Given  /^I have specified a template file (.*) in request$/ @PutExecuteTemplate||@PutExecuteMailMerge
+     * @Given  /^I have specified a template file (.*) in request$/
      * @return void
      */
     public function iHaveSpecifiedATemplateFileInRequest($TemplateName)
     {
-        $template = realpath(__DIR__ . '/../../..') . '/TestData/' . self::TESTFOLDER . $TemplateName;
+        $template = realpath(__DIR__ . '/../../..') . '/TestData/' . self::MailMergeFolder . $TemplateName;
         $this->request->set_template($template);
     }
 
@@ -50,12 +50,12 @@ trait PutExecuteSteps
      *
      * @param string $Body file with data
      *
-     * @Given  /^I have specified a body (.*)$/ @PutExecuteTemplate||@PutExecuteMailMerge
+     * @Given  /^I have specified a body (.*)$/
      * @return void
      */
     public function iHaveSpecifiedABody($Body)
     {
-        $data = realpath(__DIR__ . '/../../..') . '/TestData/' . self::TESTFOLDER . $Body;
+        $data = realpath(__DIR__ . '/../../..') . '/TestData/' . self::MailMergeFolder . $Body;
         $this->request->set_data($data);
     }
 }

@@ -28,16 +28,15 @@
 
 use Aspose\Words\Model\Requests;
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/AlternateDocumentContext.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/StorageSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyFormatOutputPathSteps.php";
-
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/FileResultSteps.php";
 /*
  * Class with steps for put convert operation
  */
 class PutConvertContext extends BaseTest\BaseContext
 {
-    use StorageSteps, SpecifyFormatOutputPathSteps;
+    use StorageSteps, SpecifyFormatOutputPathSteps, FileResultSteps;
 
     /*
      * ctor

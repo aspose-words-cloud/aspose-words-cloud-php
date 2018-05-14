@@ -27,16 +27,15 @@
 */
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyMailMergeParametersSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/PutExecuteSteps.php";
-
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyMailMergeParametersSteps.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/FileResultSteps.php";
 /*
  * Class with steps for put execute template operation
  */
 class PutExecuteTemplateContext extends BaseTest\BaseContext
 {
-    use SpecifyMailMergeParametersSteps, PutExecuteSteps;
-
+    use PutExecuteSteps, SpecifyMailMergeParametersSteps, FileResultSteps;
     /*
      * ctor
      */
@@ -54,6 +53,6 @@ class PutExecuteTemplateContext extends BaseTest\BaseContext
      */
     public function iExecuteTemplateOnline()
     {
-        $this->context->get_api()->putExecuteTemplateOnline($this->request);
+        $this->response = $this->context->get_api()->putExecuteTemplateOnline($this->request);
     }
 }

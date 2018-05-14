@@ -31,31 +31,5 @@
  */
 trait PostExecuteSteps
 {
-    /**
-     * Step for specifying template file
-     *
-     * @param string $TemplateName file name
-     *
-     * @Given  /^I have specified a template file (.*) in request$/
-     * @return void
-     */
-    public function iHaveSpecifiedATemplateFileInRequest($TemplateName)
-    {
-        $template = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::TESTFOLDER . $TemplateName);
-        $this->request->set_name($template);
-    }
 
-    /**
-     * Step for specifying body
-     *
-     * @param string $Body file with data
-     *
-     * @Given  /^I have specified a body (.*)$/
-     * @return void
-     */
-    public function iHaveSpecifiedABody($Body)
-    {
-        $data = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::TESTFOLDER . $Body);
-        $this->request->set_data($data);
-    }
 }

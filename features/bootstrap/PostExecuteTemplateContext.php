@@ -28,17 +28,16 @@
 
 use PHPUnit\Framework\Assert;
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/PostExecuteSteps.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/StorageSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/ModifyDocumentRequestSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyMailMergeParametersSteps.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/PostExecuteSteps.php";
-
 /*
  * Steps for post execute template operation
  */
 class PostExecuteTemplateContext extends BaseTest\BaseContext
 {
-    const TESTFOLDER = "DocumentActions/MailMerge/";
-    use ModifyDocumentRequestSteps, SpecifyMailMergeParametersSteps, PostExecuteSteps;
+    use PostExecuteSteps, StorageSteps, ModifyDocumentRequestSteps, SpecifyMailMergeParametersSteps;
 
     /*
      * ctor
@@ -51,6 +50,34 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
     }
 
     /**
+     * Step for specifying template file
+     *
+     * @param string $TemplateName file name
+     *
+     * @Given  /^I have specified a template file (.*) in request$/
+     * @return void
+     */
+    public function iHaveSpecifiedATemplateFileInRequest($TemplateName)
+    {
+        $template = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::MailMergeFolder . $TemplateName);
+        $this->request->set_name($template);
+    }
+
+    /**
+     * Step for specifying body
+     *
+     * @param string $Body file with data
+     *
+     * @Given  /^I have specified a body (.*)$/
+     * @return void
+     */
+    public function iHaveSpecifiedABody($Body)
+    {
+        $data = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::MailMergeFolder . $Body);
+        $this->request->set_data($data);
+    }
+
+    /**
      * Step for specifying template name
      *
      * @param string $TemplateName name of template
@@ -60,11 +87,11 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
      */
     public function iHaveSpecifiedATemplateFileNameInStorage($TemplateName)
     {
-        $fullName = $this->BaseRemoteFolder() . self::TESTFOLDER . $TemplateName;
-        $file = realpath(__DIR__ . '/../..') . '/TestData/' . self::TESTFOLDER . $TemplateName;
+        $fullName = $this->BaseRemoteFolder() . self::MailMergeFolder . $TemplateName;
+        $file = realpath(__DIR__ . '/../..') . '/TestData/' . self::MailMergeFolder . $TemplateName;
         $putRequest = new \Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->context->get_storage()->PutCreate($putRequest);
-        $this->request->set_name($TemplateName)->set_folder(trim($this->BaseRemoteFolder() . self::TESTFOLDER, "/"));
+        $this->request->set_name($TemplateName)->set_folder(trim($this->BaseRemoteFolder() . self::MailMergeFolder, "/"));
     }
 
     /**
@@ -86,10 +113,11 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
      */
     public function imageShouldBeRendered()
     {
-        $imagesResponse = $this->context->get_api()->getDrawingObjects(
+        $imagesResponse = $this->context->get_api()->getDocumentDrawingObjects(
             new \Aspose\Words\Model\Requests\GetDocumentDrawingObjectsRequest(
                 "ExecuteTemplateWithImagesResult.doc",
-                $this->BaseRemoteFolder() . "DocumentActions/MailMerge"
+                $this->BaseRemoteFolder() . "DocumentActions/MailMerge",
+                null, null, null, ''
             )
         );
 

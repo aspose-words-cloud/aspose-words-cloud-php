@@ -17,7 +17,7 @@ def runtests(dockerImageVersion)
                     sh "php composer.phar update --no-interaction"
 					sh "mkdir testReports"
 					try {
-						sh "php -dmemory_limit=1G ./vendor/bin/phpcs --report=checkstyle --report-file=testReports/codeStyleErrors ./src || exit 0"   
+						sh "php -dmemory_limit=1G ./vendor/bin/phpcs --report=checkstyle --report-file=testReports/codeStyleErrors ./src ./features/bootstrap || exit 0"
 					} finally {
 						checkstyle pattern: 'testReports/codeStyleErrors'
 					}					
@@ -33,9 +33,9 @@ def runtests(dockerImageVersion)
             
                 stage('bdd-tests'){
 					try {
-						//sh "npm run gulp cucumber"
+						sh "vendor/bin/behat --config=behat.yml --format=junit --out=testReports/bdd"
 					} finally {
-						//cucumber 'reports/**.json'
+						junit 'testReports/bdd/*.xml'
 					}
                 }
             }        

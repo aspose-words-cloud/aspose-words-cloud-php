@@ -1,6 +1,5 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteDocumentPropertyRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud

@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FootnoteCollection.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud

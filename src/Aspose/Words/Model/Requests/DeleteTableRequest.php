@@ -1,6 +1,5 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteTableRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud

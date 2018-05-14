@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HtmlSaveOptionsData.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud

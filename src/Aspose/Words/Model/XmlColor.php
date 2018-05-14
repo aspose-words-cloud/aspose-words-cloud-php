@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="XmlColor.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud

@@ -1,6 +1,5 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableCellRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud

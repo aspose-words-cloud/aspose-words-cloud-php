@@ -1,5 +1,4 @@
 FROM php:5.6
+COPY config/php.ini /usr/local/lib/
 RUN apt-get update
-ENV TZ=UTC
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt install zip unzip

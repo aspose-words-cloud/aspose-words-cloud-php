@@ -143,7 +143,7 @@ class Configuration
     public function __construct()
     {
         $this->tempFolderPath = sys_get_temp_dir();
-		date_default_timezone_set('UTC');
+        date_default_timezone_set('UTC');
     }
     
     /*

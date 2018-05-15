@@ -14,7 +14,6 @@ def runtests(dockerImageVersion)
             
             testImage.inside {
                 stage('build'){
-					sh "php composer.phar self-update"
                     sh "php composer.phar update --no-interaction"
 					sh "mkdir testReports"
 					try {

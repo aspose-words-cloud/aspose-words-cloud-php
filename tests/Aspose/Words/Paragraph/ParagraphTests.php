@@ -145,7 +145,7 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Field/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 

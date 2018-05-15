@@ -119,7 +119,7 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $body = new ProtectionRequest(array("password" => "aspose"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentProtection/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/DocumentProtection/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 

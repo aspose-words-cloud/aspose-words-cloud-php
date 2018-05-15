@@ -46,7 +46,7 @@ class RunTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Run/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Runs/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -71,7 +71,7 @@ class RunTests extends \BaseTest\BaseTestContext
         $index = 0;
         $run = new Run(array("text" => "Run with text"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Run/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Runs/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -95,7 +95,7 @@ class RunTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $run = new Run(array("text" => "run with text"));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Run/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Runs/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 

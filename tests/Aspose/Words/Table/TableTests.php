@@ -53,7 +53,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 1;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -79,7 +79,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -103,7 +103,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -127,7 +127,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -150,7 +150,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/Table";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -174,7 +174,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 1;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -199,7 +199,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -223,7 +223,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -247,7 +247,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 1;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -272,7 +272,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -296,7 +296,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -319,7 +319,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/Table";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -344,7 +344,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $tableDto = new TableInsert(array("columns_count" => 3, "rows_count" => 5));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -370,7 +370,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $cell = new TableCellInsert();
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -396,7 +396,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $row = new TableRowInsert(array("columns_count" => 5));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -423,7 +423,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 0;
         $format = "png";
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -455,7 +455,7 @@ class TableTests extends \BaseTest\BaseTestContext
             "wrap_text" => true
         ));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -493,7 +493,7 @@ class TableTests extends \BaseTest\BaseTestContext
             "top_padding" => 6
         ));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -526,7 +526,7 @@ class TableTests extends \BaseTest\BaseTestContext
             "height_rule" => TableRowFormat::HEIGHT_RULE_AUTO
         ));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -552,7 +552,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -576,7 +576,7 @@ class TableTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/TableBorders";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -609,7 +609,7 @@ class TableTests extends \BaseTest\BaseTestContext
             "shadow" => true
         ));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Table/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 

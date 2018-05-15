@@ -45,7 +45,7 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MathObject/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -71,7 +71,7 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MathObject/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -95,7 +95,7 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentElements/MathObject";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MathObject/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -121,7 +121,7 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $index = 0;
         $format = "png";
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MathObject/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 

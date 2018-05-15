@@ -73,7 +73,7 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
         $destName = self::$baseTestOut . "TestPostDocumentSaveAsFromPdfToDoc.docx";
         $saveOptions = new SaveOptionsData(array("save_format" => "docx", "file_name" => $destName));
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Conversion/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/ConvertDocument/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -92,7 +92,7 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
     public function testPutConvertDocument()
     {
         $format = "pdf";
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/ConvertDocument/' . "test_uploadfile.docx";
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/ConvertDocument/' . "test_uploadfile.docx";
 
         $request = new Requests\PutConvertDocumentRequest($file, $format);
 

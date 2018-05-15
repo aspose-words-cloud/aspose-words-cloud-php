@@ -44,9 +44,9 @@ class ExecuteTemplateTests extends \BaseTest\BaseTestContext
         $subfolder = "DocumentActions/MailMerge";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
-        $data = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . "TestExecuteTemplateData.txt");
+        $data = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "TestExecuteTemplateData.txt");
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
@@ -66,8 +66,8 @@ class ExecuteTemplateTests extends \BaseTest\BaseTestContext
      */
     public function testPutExecuteTemplateOnline()
     {
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . "SampleExecuteTemplate.docx";
-        $data = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . "SampleExecuteTemplateData.txt";
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleExecuteTemplate.docx";
+        $data = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleExecuteTemplateData.txt";
         $request = new Requests\PutExecuteTemplateOnlineRequest($file, $data);
 
         $result = $this->words->putExecuteTemplateOnline($request);

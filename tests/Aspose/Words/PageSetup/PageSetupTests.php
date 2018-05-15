@@ -101,7 +101,7 @@ class PageSetupTests extends \BaseTest\BaseTestContext
         $pageNumber = 1;
         $format = "png";
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Text/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Text/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 

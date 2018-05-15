@@ -41,7 +41,7 @@ trait PutExecuteSteps
      */
     public function iHaveSpecifiedATemplateFileInRequest($TemplateName)
     {
-        $template = realpath(__DIR__ . '/../../..') . '/TestData/' . self::MailMergeFolder . $TemplateName;
+        $template = realpath(__DIR__ . '/../../..') . '/TestData/' . self::MAILMERGEFOLDER . $TemplateName;
         $this->request->set_template($template);
     }
 
@@ -55,7 +55,7 @@ trait PutExecuteSteps
      */
     public function iHaveSpecifiedABody($Body)
     {
-        $data = realpath(__DIR__ . '/../../..') . '/TestData/' . self::MailMergeFolder . $Body;
+        $data = realpath(__DIR__ . '/../../..') . '/TestData/' . self::MAILMERGEFOLDER . $Body;
         $this->request->set_data($data);
     }
 }

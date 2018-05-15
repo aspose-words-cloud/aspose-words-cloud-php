@@ -62,7 +62,7 @@ class MailMergeFieldTests extends \BaseTest\BaseTestContext
      */
     public function testPutDocumentFieldNames()
     {
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/MailMerge/' . "SampleExecuteTemplate.docx";
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleExecuteTemplate.docx";
         $request = new Requests\PutDocumentFieldNamesRequest($file, true);
 
         $result = $this->words->putDocumentFieldNames($request);

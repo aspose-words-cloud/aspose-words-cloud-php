@@ -50,10 +50,10 @@ class CompareDocumentTests extends \BaseTest\BaseTestContext
         $destName = self::$baseTestOut . "TestCompareDocumentOut.doc";
         $compareData = new CompareData(array("author" => "author", "comparing_with_document" => $fullName2, "date_time" => new \DateTime("now")));
 
-        $file1 = realpath(__DIR__ . '/../../../..') . '/TestData/CompareDocument/' . $localName1;
+        $file1 = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/CompareDocument/' . $localName1;
         $putRequest1 = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName1, $file1);
         $this->storage->PutCreate($putRequest1);
-        $file2 = realpath(__DIR__ . '/../../../..') . '/TestData/CompareDocument/' . $localName2;
+        $file2 = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/CompareDocument/' . $localName2;
         $putRequest2 = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName2, $file2);
         $this->storage->PutCreate($putRequest2);
 

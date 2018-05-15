@@ -59,7 +59,7 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
      */
     public function iHaveSpecifiedATemplateFileInRequest($TemplateName)
     {
-        $template = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::MailMergeFolder . $TemplateName);
+        $template = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::MAILMERGEFOLDER . $TemplateName);
         $this->request->set_name($template);
     }
 
@@ -73,7 +73,7 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
      */
     public function iHaveSpecifiedABody($Body)
     {
-        $data = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::MailMergeFolder . $Body);
+        $data = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::MAILMERGEFOLDER . $Body);
         $this->request->set_data($data);
     }
 
@@ -87,11 +87,11 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
      */
     public function iHaveSpecifiedATemplateFileNameInStorage($TemplateName)
     {
-        $fullName = $this->BaseRemoteFolder() . self::MailMergeFolder . $TemplateName;
-        $file = realpath(__DIR__ . '/../..') . '/TestData/' . self::MailMergeFolder . $TemplateName;
+        $fullName = $this->BaseRemoteFolder() . self::MAILMERGEFOLDER . $TemplateName;
+        $file = realpath(__DIR__ . '/../..') . '/TestData/' . self::MAILMERGEFOLDER . $TemplateName;
         $putRequest = new \Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->context->get_storage()->PutCreate($putRequest);
-        $this->request->set_name($TemplateName)->set_folder(trim($this->BaseRemoteFolder() . self::MailMergeFolder, "/"));
+        $this->request->set_name($TemplateName)->set_folder(trim($this->BaseRemoteFolder() . self::MAILMERGEFOLDER, "/"));
     }
 
     /**

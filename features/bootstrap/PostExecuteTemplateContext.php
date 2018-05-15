@@ -28,7 +28,6 @@
 
 use PHPUnit\Framework\Assert;
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/BaseContext.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/PostExecuteSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/StorageSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/ModifyDocumentRequestSteps.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyMailMergeParametersSteps.php";
@@ -37,7 +36,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "features/bootstrap/traits/SpecifyMailM
  */
 class PostExecuteTemplateContext extends BaseTest\BaseContext
 {
-    use PostExecuteSteps, StorageSteps, ModifyDocumentRequestSteps, SpecifyMailMergeParametersSteps;
+    use StorageSteps, ModifyDocumentRequestSteps, SpecifyMailMergeParametersSteps;
 
     /*
      * ctor
@@ -59,7 +58,7 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
      */
     public function iHaveSpecifiedATemplateFileInRequest($TemplateName)
     {
-        $template = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::MAILMERGEFOLDER . $TemplateName);
+        $template = realpath(__DIR__ . '/../..') . '/TestData/' . self::MAILMERGEFOLDER . $TemplateName;
         $this->request->set_name($template);
     }
 
@@ -73,7 +72,7 @@ class PostExecuteTemplateContext extends BaseTest\BaseContext
      */
     public function iHaveSpecifiedABody($Body)
     {
-        $data = file_get_contents(realpath(__DIR__ . '/../../..') . '/TestData/' . self::MAILMERGEFOLDER . $Body);
+        $data = file_get_contents(realpath(__DIR__ . '/../..') . '/TestData/' . self::MAILMERGEFOLDER . $Body);
         $this->request->set_data($data);
     }
 

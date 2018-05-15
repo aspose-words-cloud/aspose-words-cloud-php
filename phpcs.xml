@@ -6,6 +6,7 @@
 		<exclude name="PEAR.Commenting.FileComment.WrongStyle"/>
 		<exclude name="PEAR.Commenting.ClassComment.WrongStyle"/>
 		<exclude name="PEAR.Commenting.FunctionComment.WrongStyle"/>
+		<exclude name="PEAR.Commenting.FunctionComment.SpacingAfterParamName"/>
         <exclude name="PEAR.Commenting.FileComment.MissingVersion"/>
         <exclude name="PEAR.Commenting.FileComment.MissingAuthorTag"/>
         <exclude name="PEAR.Commenting.FileComment.MissingLicenseTag"/>
@@ -34,5 +35,11 @@
 	<rule ref="Internal.LineEndings.Mixed">
 		<severity>0</severity>
 	</rule>
+	<!-- All PHP files MUST use the Unix LF (linefeed) line ending. -->
+	 <rule ref="Generic.Files.LineEndings">
+	  <properties>
+	   <property name="eolChar" value="\n"/>
+	  </properties>
+	 </rule>
 
 </ruleset>

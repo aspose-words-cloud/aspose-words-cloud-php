@@ -70,6 +70,7 @@ class WordsApi
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
         $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->_requestToken();
     }
 
     /*
@@ -369,8 +370,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -652,8 +651,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -973,8 +970,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -1334,8 +1329,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -1693,8 +1686,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -2043,8 +2034,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -2393,8 +2382,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -2734,8 +2721,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -3084,8 +3069,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -3425,8 +3408,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -3785,8 +3766,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -4145,8 +4124,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -4496,8 +4473,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -4856,8 +4831,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -5216,8 +5189,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -5576,8 +5547,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -5937,8 +5906,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -6297,8 +6264,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -6657,8 +6622,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -7016,8 +6979,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -7376,8 +7337,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -7735,8 +7694,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -8094,8 +8051,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -8426,8 +8381,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -8755,8 +8708,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -9075,8 +9026,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -9395,8 +9344,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -9706,8 +9653,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -10017,8 +9962,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -10337,8 +10280,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -10648,8 +10589,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -10978,8 +10917,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -11308,8 +11245,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -11638,8 +11573,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -11959,8 +11892,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -12280,8 +12211,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -12600,8 +12529,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -12911,8 +12838,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -13241,8 +13166,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -13570,8 +13493,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -13899,8 +13820,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -14219,8 +14138,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -14540,8 +14457,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -14851,8 +14766,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -15171,8 +15084,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -15482,8 +15393,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -15823,8 +15732,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -16134,8 +16041,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -16479,8 +16384,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -16809,8 +16712,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -17130,8 +17031,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -17460,8 +17359,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -17781,8 +17678,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -18111,8 +18006,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -18432,8 +18325,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -18762,8 +18653,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -19101,8 +18990,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -19432,8 +19319,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -19762,8 +19647,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -20083,8 +19966,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -20403,8 +20284,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -20723,8 +20602,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -21034,8 +20911,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -21364,8 +21239,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -21693,8 +21566,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -22022,8 +21893,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -22352,8 +22221,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -22681,8 +22548,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -23010,8 +22875,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -23331,8 +23194,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -23689,8 +23550,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -24046,8 +23905,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -24403,8 +24260,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -24755,8 +24610,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -25087,8 +24940,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -25448,8 +25299,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -25780,8 +25629,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -26145,8 +25992,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -26515,8 +26360,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -26857,8 +26700,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -27238,8 +27079,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -27597,8 +27436,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -27968,8 +27805,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -28339,8 +28174,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -28710,8 +28543,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -29080,8 +28911,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -29432,8 +29261,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -29784,8 +29611,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -30067,8 +29892,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -30419,8 +30242,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -30789,8 +30610,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -31160,8 +30979,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -31521,8 +31338,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -31842,8 +31657,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -32194,8 +32007,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -32523,8 +32334,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -32815,8 +32624,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -33100,8 +32907,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -33622,8 +33427,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -33994,8 +33797,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -34312,8 +34113,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -34640,8 +34439,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -35012,8 +34809,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -35374,8 +35169,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -35746,8 +35539,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -36108,8 +35899,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -36480,8 +36269,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -36812,8 +36599,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -37183,8 +36968,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -37504,8 +37287,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -37858,8 +37639,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -38212,8 +37991,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -38556,8 +38333,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -38910,8 +38685,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -39264,8 +39037,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -39526,8 +39297,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -39851,8 +39620,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -40221,8 +39988,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -40582,8 +40347,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -40948,8 +40711,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -41315,8 +41076,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -41681,8 +41440,6 @@ class WordsApi
                 $httpBody = $formParams["data"];
             }
         }
-    
-        $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();

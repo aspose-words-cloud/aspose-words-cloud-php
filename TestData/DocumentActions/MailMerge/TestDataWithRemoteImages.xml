@@ -2,10 +2,10 @@
 <Items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Item>
 		<Caption>This is the first caption !!!</Caption>
-		<Img>http://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Nagasakibomb.jpg/300px-Nagasakibomb.jpg</Img>
+		<Img>https://www.google.ru/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png</Img>
 	</Item>
 	<Item>
 		<Caption>This is the second caption !!!</Caption>
-		<Img>http://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Fat_man.jpg/150px-Fat_man.jpg</Img>
+		<Img>https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png</Img>
 	</Item>
 </Items>

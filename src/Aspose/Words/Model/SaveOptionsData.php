@@ -62,6 +62,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'string',
         'dml_effects_rendering_mode' => 'string',
         'zip_output' => 'bool',
+        'update_last_saved_time_property' => 'bool',
         'update_sdt_content' => 'bool',
         'update_fields' => 'bool'
     ];
@@ -78,6 +79,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => null,
         'dml_effects_rendering_mode' => null,
         'zip_output' => null,
+        'update_last_saved_time_property' => null,
         'update_sdt_content' => null,
         'update_fields' => null
     ];
@@ -115,6 +117,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'DmlRenderingMode',
         'dml_effects_rendering_mode' => 'DmlEffectsRenderingMode',
         'zip_output' => 'ZipOutput',
+        'update_last_saved_time_property' => 'UpdateLastSavedTimeProperty',
         'update_sdt_content' => 'UpdateSdtContent',
         'update_fields' => 'UpdateFields'
     ];
@@ -131,6 +134,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'setDmlRenderingMode',
         'dml_effects_rendering_mode' => 'setDmlEffectsRenderingMode',
         'zip_output' => 'setZipOutput',
+        'update_last_saved_time_property' => 'setUpdateLastSavedTimeProperty',
         'update_sdt_content' => 'setUpdateSdtContent',
         'update_fields' => 'setUpdateFields'
     ];
@@ -147,6 +151,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'getDmlRenderingMode',
         'dml_effects_rendering_mode' => 'getDmlEffectsRenderingMode',
         'zip_output' => 'getZipOutput',
+        'update_last_saved_time_property' => 'getUpdateLastSavedTimeProperty',
         'update_sdt_content' => 'getUpdateSdtContent',
         'update_fields' => 'getUpdateFields'
     ];
@@ -217,6 +222,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
         $this->container['dml_effects_rendering_mode'] = isset($data['dml_effects_rendering_mode']) ? $data['dml_effects_rendering_mode'] : null;
         $this->container['zip_output'] = isset($data['zip_output']) ? $data['zip_output'] : null;
+        $this->container['update_last_saved_time_property'] = isset($data['update_last_saved_time_property']) ? $data['update_last_saved_time_property'] : null;
         $this->container['update_sdt_content'] = isset($data['update_sdt_content']) ? $data['update_sdt_content'] : null;
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
 
@@ -390,6 +396,30 @@ class SaveOptionsData implements ArrayAccess
     public function setZipOutput($zip_output)
     {
         $this->container['zip_output'] = $zip_output;
+
+        return $this;
+    }
+
+    /*
+     * Gets update_last_saved_time_property
+     *
+     * @return bool
+     */
+    public function getUpdateLastSavedTimeProperty()
+    {
+        return $this->container['update_last_saved_time_property'];
+    }
+
+    /*
+     * Sets update_last_saved_time_property
+     *
+     * @param bool $update_last_saved_time_property Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+     *
+     * @return $this
+     */
+    public function setUpdateLastSavedTimeProperty($update_last_saved_time_property)
+    {
+        $this->container['update_last_saved_time_property'] = $update_last_saved_time_property;
 
         return $this;
     }

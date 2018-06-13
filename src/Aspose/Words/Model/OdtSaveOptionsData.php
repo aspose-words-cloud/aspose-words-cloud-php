@@ -55,6 +55,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     protected static $swaggerTypes = [
         'is_strict_schema11' => 'bool',
+        'measure_unit' => 'string',
         'pretty_format' => 'bool'
     ];
 
@@ -65,6 +66,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     protected static $swaggerFormats = [
         'is_strict_schema11' => null,
+        'measure_unit' => null,
         'pretty_format' => null
     ];
 
@@ -96,6 +98,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     protected static $attributeMap = [
         'is_strict_schema11' => 'IsStrictSchema11',
+        'measure_unit' => 'MeasureUnit',
         'pretty_format' => 'PrettyFormat'
     ];
 
@@ -106,6 +109,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     protected static $setters = [
         'is_strict_schema11' => 'setIsStrictSchema11',
+        'measure_unit' => 'setMeasureUnit',
         'pretty_format' => 'setPrettyFormat'
     ];
 
@@ -116,6 +120,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     protected static $getters = [
         'is_strict_schema11' => 'getIsStrictSchema11',
+        'measure_unit' => 'getMeasureUnit',
         'pretty_format' => 'getPrettyFormat'
     ];
 
@@ -160,8 +165,23 @@ class OdtSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const MEASURE_UNIT_CENTIMETERS = 'Centimeters';
+    const MEASURE_UNIT_INCHES = 'Inches';
     
 
+    
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getMeasureUnitAllowableValues()
+    {
+        return [
+            self::MEASURE_UNIT_CENTIMETERS,
+            self::MEASURE_UNIT_INCHES,
+        ];
+    }
     
 
 
@@ -176,6 +196,7 @@ class OdtSaveOptionsData extends SaveOptionsData
         parent::__construct($data);
 
         $this->container['is_strict_schema11'] = isset($data['is_strict_schema11']) ? $data['is_strict_schema11'] : null;
+        $this->container['measure_unit'] = isset($data['measure_unit']) ? $data['measure_unit'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
     }
 
@@ -187,6 +208,14 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
+        $allowedValues = $this->getMeasureUnitAllowableValues();
+        if (!in_array($this->container['measure_unit'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'measure_unit', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -203,6 +232,10 @@ class OdtSaveOptionsData extends SaveOptionsData
             return false;
         }
 
+        $allowedValues = $this->getMeasureUnitAllowableValues();
+        if (!in_array($this->container['measure_unit'], $allowedValues)) {
+            return false;
+        }
         return true;
     }
 
@@ -227,6 +260,35 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function setIsStrictSchema11($is_strict_schema11)
     {
         $this->container['is_strict_schema11'] = $is_strict_schema11;
+
+        return $this;
+    }
+
+    /*
+     * Gets measure_unit
+     *
+     * @return string
+     */
+    public function getMeasureUnit()
+    {
+        return $this->container['measure_unit'];
+    }
+
+    /*
+     * Sets measure_unit
+     *
+     * @param string $measure_unit Allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
+     *
+     * @return $this
+     */
+    public function setMeasureUnit($measure_unit)
+    {
+        $allowedValues = $this->getMeasureUnitAllowableValues();
+        if ((!is_numeric($measure_unit) && !in_array($measure_unit, $allowedValues)) || (is_numeric($measure_unit) && !in_array($allowedValues[$measure_unit], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'measure_unit', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['measure_unit'] = $measure_unit;
 
         return $this;
     }

@@ -19,7 +19,7 @@ def runtests(dockerImageVersion)
             
             testImage.inside {
                 stage('build'){
-                    sh "php composer.phar update --no-interaction"
+                    sh "php composer.phar install --no-interaction"
 					sh "mkdir testReports"
 					try {
 						sh "php -dmemory_limit=1G ./vendor/bin/phpcs --report=checkstyle --report-file=testReports/codeStyleErrors ./src ./features/bootstrap || exit 0"

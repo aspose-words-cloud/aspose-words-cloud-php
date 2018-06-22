@@ -38,8 +38,33 @@ node('billing-qa-ubuntu-16.04.4') {
 	    	withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
 	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-php testPackage"
 	    	}
-	    }
-	
+	    }	   
+		    			                
+    } finally {                       
+        deleteDir()
+    }
+}
+
+stage('wait for publishing'){
+	timeout(time:1, unit:'DAYS') {
+		input message:'Is packet already pablished to https://packagist.org/packages/aspose/words-sdk-php?'
+	}
+}
+
+node('billing-qa-ubuntu-16.04.4') {         
+    try {	
+        stage('checkout again'){
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-php.git/']]])
+            withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+				sh 'mkdir -p Settings'
+                sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"https://auckland-words-cloud-staging.dynabic.com\\"}" > Settings/servercreds.json'
+            }
+            		
+			sh "git config user.email \"jenkins.aspose@gmail.com\""
+			sh "git config user.name \"jenkins\""
+			
+        }              	
+		    
 	    stage('add reference to new package'){	    	
 			def testImage = docker.build("asposewordsphp:latest", "./docker/latest")
             

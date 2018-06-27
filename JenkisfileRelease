@@ -2,13 +2,13 @@ parameters {
     string(name: 'Version', description: 'new version number')			
 }
 	
-//stage('test in master'){
-//	build job: 'words-sdk-php', 
-//	   parameters: [
-//		string(name: 'branch', value: 'master'), 
-//		string(name: 'testServerUrl', value: 'https://api.aspose.cloud')						
-//	   ]
-//}   
+stage('test in master'){
+	build job: 'words-sdk-php', 
+	   parameters: [
+		string(name: 'branch', value: 'master'), 
+		string(name: 'testServerUrl', value: 'https://api.aspose.cloud')						
+	   ]
+}   
 
 node('billing-qa-ubuntu-16.04.4') {         
     try {	
@@ -75,7 +75,7 @@ node('billing-qa-ubuntu-16.04.4') {
 	    	sh "git diff --name-status"
 			sh "git ls-files --others --exclude-standard"
 			sh "git add -A"
-	    	sh 'git commit -am "new version of package added to repository" || exit 0'
+	    	sh 'git commit -am "new version of package referenced for tests" || exit 0'
 	    	withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
 	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-php testPackage"
 	    	}

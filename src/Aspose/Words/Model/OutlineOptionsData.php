@@ -58,6 +58,7 @@ class OutlineOptionsData implements ArrayAccess
     protected static $swaggerTypes = [
         'bookmarks_outline_levels' => '\Aspose\Words\Model\BookmarksOutlineLevelData[]',
         'default_bookmarks_outline_level' => 'int',
+        'create_missing_outline_levels' => 'bool',
         'expanded_outline_levels' => 'int',
         'headings_outline_levels' => 'int'
     ];
@@ -70,6 +71,7 @@ class OutlineOptionsData implements ArrayAccess
     protected static $swaggerFormats = [
         'bookmarks_outline_levels' => null,
         'default_bookmarks_outline_level' => 'int32',
+        'create_missing_outline_levels' => null,
         'expanded_outline_levels' => 'int32',
         'headings_outline_levels' => 'int32'
     ];
@@ -103,6 +105,7 @@ class OutlineOptionsData implements ArrayAccess
     protected static $attributeMap = [
         'bookmarks_outline_levels' => 'BookmarksOutlineLevels',
         'default_bookmarks_outline_level' => 'DefaultBookmarksOutlineLevel',
+        'create_missing_outline_levels' => 'CreateMissingOutlineLevels',
         'expanded_outline_levels' => 'ExpandedOutlineLevels',
         'headings_outline_levels' => 'HeadingsOutlineLevels'
     ];
@@ -115,6 +118,7 @@ class OutlineOptionsData implements ArrayAccess
     protected static $setters = [
         'bookmarks_outline_levels' => 'setBookmarksOutlineLevels',
         'default_bookmarks_outline_level' => 'setDefaultBookmarksOutlineLevel',
+        'create_missing_outline_levels' => 'setCreateMissingOutlineLevels',
         'expanded_outline_levels' => 'setExpandedOutlineLevels',
         'headings_outline_levels' => 'setHeadingsOutlineLevels'
     ];
@@ -127,6 +131,7 @@ class OutlineOptionsData implements ArrayAccess
     protected static $getters = [
         'bookmarks_outline_levels' => 'getBookmarksOutlineLevels',
         'default_bookmarks_outline_level' => 'getDefaultBookmarksOutlineLevel',
+        'create_missing_outline_levels' => 'getCreateMissingOutlineLevels',
         'expanded_outline_levels' => 'getExpandedOutlineLevels',
         'headings_outline_levels' => 'getHeadingsOutlineLevels'
     ];
@@ -193,6 +198,7 @@ class OutlineOptionsData implements ArrayAccess
     {
         $this->container['bookmarks_outline_levels'] = isset($data['bookmarks_outline_levels']) ? $data['bookmarks_outline_levels'] : null;
         $this->container['default_bookmarks_outline_level'] = isset($data['default_bookmarks_outline_level']) ? $data['default_bookmarks_outline_level'] : null;
+        $this->container['create_missing_outline_levels'] = isset($data['create_missing_outline_levels']) ? $data['create_missing_outline_levels'] : null;
         $this->container['expanded_outline_levels'] = isset($data['expanded_outline_levels']) ? $data['expanded_outline_levels'] : null;
         $this->container['headings_outline_levels'] = isset($data['headings_outline_levels']) ? $data['headings_outline_levels'] : null;
     }
@@ -266,6 +272,30 @@ class OutlineOptionsData implements ArrayAccess
     public function setDefaultBookmarksOutlineLevel($default_bookmarks_outline_level)
     {
         $this->container['default_bookmarks_outline_level'] = $default_bookmarks_outline_level;
+
+        return $this;
+    }
+
+    /*
+     * Gets create_missing_outline_levels
+     *
+     * @return bool
+     */
+    public function getCreateMissingOutlineLevels()
+    {
+        return $this->container['create_missing_outline_levels'];
+    }
+
+    /*
+     * Sets create_missing_outline_levels
+     *
+     * @param bool $create_missing_outline_levels Gets or sets a value determining whether or not to create missing outline levels     when the document is exported.     Default value for this property is false.
+     *
+     * @return $this
+     */
+    public function setCreateMissingOutlineLevels($create_missing_outline_levels)
+    {
+        $this->container['create_missing_outline_levels'] = $create_missing_outline_levels;
 
         return $this;
     }

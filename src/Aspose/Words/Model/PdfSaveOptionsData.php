@@ -62,6 +62,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'downsample_options' => '\Aspose\Words\Model\DownsampleOptionsData',
         'embed_full_fonts' => 'bool',
         'encryption_details' => '\Aspose\Words\Model\PdfEncryptionDetailsData',
+        'escape_uri' => 'bool',
         'export_document_structure' => 'bool',
         'font_embedding_mode' => 'string',
         'image_color_space_export_mode' => 'string',
@@ -92,6 +93,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'downsample_options' => null,
         'embed_full_fonts' => null,
         'encryption_details' => null,
+        'escape_uri' => null,
         'export_document_structure' => null,
         'font_embedding_mode' => null,
         'image_color_space_export_mode' => null,
@@ -143,6 +145,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'downsample_options' => 'DownsampleOptions',
         'embed_full_fonts' => 'EmbedFullFonts',
         'encryption_details' => 'EncryptionDetails',
+        'escape_uri' => 'EscapeUri',
         'export_document_structure' => 'ExportDocumentStructure',
         'font_embedding_mode' => 'FontEmbeddingMode',
         'image_color_space_export_mode' => 'ImageColorSpaceExportMode',
@@ -173,6 +176,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'downsample_options' => 'setDownsampleOptions',
         'embed_full_fonts' => 'setEmbedFullFonts',
         'encryption_details' => 'setEncryptionDetails',
+        'escape_uri' => 'setEscapeUri',
         'export_document_structure' => 'setExportDocumentStructure',
         'font_embedding_mode' => 'setFontEmbeddingMode',
         'image_color_space_export_mode' => 'setImageColorSpaceExportMode',
@@ -203,6 +207,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'downsample_options' => 'getDownsampleOptions',
         'embed_full_fonts' => 'getEmbedFullFonts',
         'encryption_details' => 'getEncryptionDetails',
+        'escape_uri' => 'getEscapeUri',
         'export_document_structure' => 'getExportDocumentStructure',
         'font_embedding_mode' => 'getFontEmbeddingMode',
         'image_color_space_export_mode' => 'getImageColorSpaceExportMode',
@@ -283,6 +288,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['downsample_options'] = isset($data['downsample_options']) ? $data['downsample_options'] : null;
         $this->container['embed_full_fonts'] = isset($data['embed_full_fonts']) ? $data['embed_full_fonts'] : null;
         $this->container['encryption_details'] = isset($data['encryption_details']) ? $data['encryption_details'] : null;
+        $this->container['escape_uri'] = isset($data['escape_uri']) ? $data['escape_uri'] : null;
         $this->container['export_document_structure'] = isset($data['export_document_structure']) ? $data['export_document_structure'] : null;
         $this->container['font_embedding_mode'] = isset($data['font_embedding_mode']) ? $data['font_embedding_mode'] : null;
         $this->container['image_color_space_export_mode'] = isset($data['image_color_space_export_mode']) ? $data['image_color_space_export_mode'] : null;
@@ -515,6 +521,30 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setEncryptionDetails($encryption_details)
     {
         $this->container['encryption_details'] = $encryption_details;
+
+        return $this;
+    }
+
+    /*
+     * Gets escape_uri
+     *
+     * @return bool
+     */
+    public function getEscapeUri()
+    {
+        return $this->container['escape_uri'];
+    }
+
+    /*
+     * Sets escape_uri
+     *
+     * @param bool $escape_uri A flag specifying whether URI should be escaped before writing.
+     *
+     * @return $this
+     */
+    public function setEscapeUri($escape_uri)
+    {
+        $this->container['escape_uri'] = $escape_uri;
 
         return $this;
     }

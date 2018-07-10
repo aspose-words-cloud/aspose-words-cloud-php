@@ -57,6 +57,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'emf_plus_dual_rendering_mode' => 'string',
+        'emulate_raster_operations' => 'bool',
         'rendering_mode' => 'string',
         'use_emf_embedded_to_wmf' => 'bool'
     ];
@@ -68,6 +69,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'emf_plus_dual_rendering_mode' => null,
+        'emulate_raster_operations' => null,
         'rendering_mode' => null,
         'use_emf_embedded_to_wmf' => null
     ];
@@ -100,6 +102,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     protected static $attributeMap = [
         'emf_plus_dual_rendering_mode' => 'EmfPlusDualRenderingMode',
+        'emulate_raster_operations' => 'EmulateRasterOperations',
         'rendering_mode' => 'RenderingMode',
         'use_emf_embedded_to_wmf' => 'UseEmfEmbeddedToWmf'
     ];
@@ -111,6 +114,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     protected static $setters = [
         'emf_plus_dual_rendering_mode' => 'setEmfPlusDualRenderingMode',
+        'emulate_raster_operations' => 'setEmulateRasterOperations',
         'rendering_mode' => 'setRenderingMode',
         'use_emf_embedded_to_wmf' => 'setUseEmfEmbeddedToWmf'
     ];
@@ -122,6 +126,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     protected static $getters = [
         'emf_plus_dual_rendering_mode' => 'getEmfPlusDualRenderingMode',
+        'emulate_raster_operations' => 'getEmulateRasterOperations',
         'rendering_mode' => 'getRenderingMode',
         'use_emf_embedded_to_wmf' => 'getUseEmfEmbeddedToWmf'
     ];
@@ -187,6 +192,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['emf_plus_dual_rendering_mode'] = isset($data['emf_plus_dual_rendering_mode']) ? $data['emf_plus_dual_rendering_mode'] : null;
+        $this->container['emulate_raster_operations'] = isset($data['emulate_raster_operations']) ? $data['emulate_raster_operations'] : null;
         $this->container['rendering_mode'] = isset($data['rendering_mode']) ? $data['rendering_mode'] : null;
         $this->container['use_emf_embedded_to_wmf'] = isset($data['use_emf_embedded_to_wmf']) ? $data['use_emf_embedded_to_wmf'] : null;
     }
@@ -236,6 +242,30 @@ class MetafileRenderingOptionsData implements ArrayAccess
     public function setEmfPlusDualRenderingMode($emf_plus_dual_rendering_mode)
     {
         $this->container['emf_plus_dual_rendering_mode'] = $emf_plus_dual_rendering_mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets emulate_raster_operations
+     *
+     * @return bool
+     */
+    public function getEmulateRasterOperations()
+    {
+        return $this->container['emulate_raster_operations'];
+    }
+
+    /*
+     * Sets emulate_raster_operations
+     *
+     * @param bool $emulate_raster_operations Gets or sets a value determining whether or not the raster operations should be emulated.
+     *
+     * @return $this
+     */
+    public function setEmulateRasterOperations($emulate_raster_operations)
+    {
+        $this->container['emulate_raster_operations'] = $emulate_raster_operations;
 
         return $this;
     }

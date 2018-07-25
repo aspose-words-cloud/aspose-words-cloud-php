@@ -44,4 +44,18 @@ class FontTests extends \BaseTest\BaseTestContext
         $result = $this->words->resetCache($request);
         Assert::assertEquals(200, json_decode($result, true)["Code"]);
     }
+	
+	/**
+     * Test case for getAvailableFontsRequest         
+     * 
+	 * Gets the list of fonts, available for document processing
+	 *
+     */
+    public function testGetAvailableFonts()
+    {
+        $request = new Requests\GetAvailableFontsRequest();
+
+        $result = $this->words->getAvailableFonts($request);
+        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+    }
 }

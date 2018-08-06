@@ -924,6 +924,16 @@ class WordsApi
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
         }
+        // query params
+        if ($request->taxonomy !== null) {
+            $localName = lcfirst('Taxonomy');
+            $localValue = is_bool($request->taxonomy) ? ($request->taxonomy ? 'true' : 'false') : $request->taxonomy;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);

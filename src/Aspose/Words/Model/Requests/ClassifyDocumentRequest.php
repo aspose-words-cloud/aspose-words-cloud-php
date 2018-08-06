@@ -62,6 +62,11 @@ class ClassifyDocumentRequest
      * Count of the best classes to return.
      */
     public $best_classes_count;
+	
+    /*
+     * Taxonomy to use for classification return.
+     */
+    public $taxonomy;
     
 	
     /*
@@ -73,8 +78,9 @@ class ClassifyDocumentRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $best_classes_count Count of the best classes to return.
+     * @param string $taxonomy Taxonomy to use for classification return.
      */
-    public function __construct($document_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $best_classes_count = null)             
+    public function __construct($document_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $best_classes_count = null, $taxonomy = null)             
     {
         $this->document_name = $document_name;
         $this->folder = $folder;
@@ -82,6 +88,7 @@ class ClassifyDocumentRequest
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->best_classes_count = $best_classes_count;
+        $this->taxonomy = $taxonomy;
     }
 
     /*
@@ -183,6 +190,23 @@ class ClassifyDocumentRequest
     public function set_best_classes_count($value)
     {
         $this->best_classes_count = $value;
+        return $this;
+    }
+	
+    /*
+     * Taxonomy to use for classification return.
+     */
+    public function get_taxonomy()
+    {
+        return $this->taxonomy;
+    }
+
+    /*
+     * Taxonomy to use for classification return.
+     */
+    public function set_taxonomy($value)
+    {
+        $this->taxonomy = $value;
         return $this;
     }
 }

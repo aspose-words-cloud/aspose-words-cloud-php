@@ -67,4 +67,29 @@ class ClassificationTests extends \BaseTest\BaseTestContext
         $result = $this->words->classifyDocument($request);
         Assert::assertEquals(200, json_decode($result, true)["Code"]);
     }
+	
+	/**
+     * Test case for classifyDocument
+     *
+     * Classify document with taxonomy "documents"
+     *
+     */
+    public function testClassificationTaxonomyDocuments()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "Source.docx";
+        $subfolder = "Common";
+		$taxonomy = "documents";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
+
+        $request = new Requests\ClassifyDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
+        $request->set_taxonomy($taxonomy);
+        
+        $result = $this->words->classifyDocument($request);
+        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+    }
 }

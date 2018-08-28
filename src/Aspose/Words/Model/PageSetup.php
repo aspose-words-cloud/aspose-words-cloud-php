@@ -363,7 +363,6 @@ class PageSetup extends LinkElement
     const PAGE_NUMBER_STYLE_THAI_CARDINAL_TEXT = 'ThaiCardinalText';
     const PAGE_NUMBER_STYLE_VIET_CARDINAL_TEXT = 'VietCardinalText';
     const PAGE_NUMBER_STYLE_NUMBER_IN_DASH = 'NumberInDash';
-    const PAGE_NUMBER_STYLE_NUM_IN_DASH = 'NumInDash';
     const PAGE_NUMBER_STYLE_LOWERCASE_RUSSIAN = 'LowercaseRussian';
     const PAGE_NUMBER_STYLE_UPPERCASE_RUSSIAN = 'UppercaseRussian';
     const PAGE_NUMBER_STYLE_NONE = 'None';
@@ -517,7 +516,6 @@ class PageSetup extends LinkElement
             self::PAGE_NUMBER_STYLE_THAI_CARDINAL_TEXT,
             self::PAGE_NUMBER_STYLE_VIET_CARDINAL_TEXT,
             self::PAGE_NUMBER_STYLE_NUMBER_IN_DASH,
-            self::PAGE_NUMBER_STYLE_NUM_IN_DASH,
             self::PAGE_NUMBER_STYLE_LOWERCASE_RUSSIAN,
             self::PAGE_NUMBER_STYLE_UPPERCASE_RUSSIAN,
             self::PAGE_NUMBER_STYLE_NONE,

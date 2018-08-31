@@ -59,6 +59,7 @@ class OutlineOptionsData implements ArrayAccess
         'bookmarks_outline_levels' => '\Aspose\Words\Model\BookmarksOutlineLevelData[]',
         'default_bookmarks_outline_level' => 'int',
         'create_missing_outline_levels' => 'bool',
+        'create_outlines_for_headings_in_tables' => 'bool',
         'expanded_outline_levels' => 'int',
         'headings_outline_levels' => 'int'
     ];
@@ -72,6 +73,7 @@ class OutlineOptionsData implements ArrayAccess
         'bookmarks_outline_levels' => null,
         'default_bookmarks_outline_level' => 'int32',
         'create_missing_outline_levels' => null,
+        'create_outlines_for_headings_in_tables' => null,
         'expanded_outline_levels' => 'int32',
         'headings_outline_levels' => 'int32'
     ];
@@ -106,6 +108,7 @@ class OutlineOptionsData implements ArrayAccess
         'bookmarks_outline_levels' => 'BookmarksOutlineLevels',
         'default_bookmarks_outline_level' => 'DefaultBookmarksOutlineLevel',
         'create_missing_outline_levels' => 'CreateMissingOutlineLevels',
+        'create_outlines_for_headings_in_tables' => 'CreateOutlinesForHeadingsInTables',
         'expanded_outline_levels' => 'ExpandedOutlineLevels',
         'headings_outline_levels' => 'HeadingsOutlineLevels'
     ];
@@ -119,6 +122,7 @@ class OutlineOptionsData implements ArrayAccess
         'bookmarks_outline_levels' => 'setBookmarksOutlineLevels',
         'default_bookmarks_outline_level' => 'setDefaultBookmarksOutlineLevel',
         'create_missing_outline_levels' => 'setCreateMissingOutlineLevels',
+        'create_outlines_for_headings_in_tables' => 'setCreateOutlinesForHeadingsInTables',
         'expanded_outline_levels' => 'setExpandedOutlineLevels',
         'headings_outline_levels' => 'setHeadingsOutlineLevels'
     ];
@@ -132,6 +136,7 @@ class OutlineOptionsData implements ArrayAccess
         'bookmarks_outline_levels' => 'getBookmarksOutlineLevels',
         'default_bookmarks_outline_level' => 'getDefaultBookmarksOutlineLevel',
         'create_missing_outline_levels' => 'getCreateMissingOutlineLevels',
+        'create_outlines_for_headings_in_tables' => 'getCreateOutlinesForHeadingsInTables',
         'expanded_outline_levels' => 'getExpandedOutlineLevels',
         'headings_outline_levels' => 'getHeadingsOutlineLevels'
     ];
@@ -199,6 +204,7 @@ class OutlineOptionsData implements ArrayAccess
         $this->container['bookmarks_outline_levels'] = isset($data['bookmarks_outline_levels']) ? $data['bookmarks_outline_levels'] : null;
         $this->container['default_bookmarks_outline_level'] = isset($data['default_bookmarks_outline_level']) ? $data['default_bookmarks_outline_level'] : null;
         $this->container['create_missing_outline_levels'] = isset($data['create_missing_outline_levels']) ? $data['create_missing_outline_levels'] : null;
+        $this->container['create_outlines_for_headings_in_tables'] = isset($data['create_outlines_for_headings_in_tables']) ? $data['create_outlines_for_headings_in_tables'] : null;
         $this->container['expanded_outline_levels'] = isset($data['expanded_outline_levels']) ? $data['expanded_outline_levels'] : null;
         $this->container['headings_outline_levels'] = isset($data['headings_outline_levels']) ? $data['headings_outline_levels'] : null;
     }
@@ -296,6 +302,30 @@ class OutlineOptionsData implements ArrayAccess
     public function setCreateMissingOutlineLevels($create_missing_outline_levels)
     {
         $this->container['create_missing_outline_levels'] = $create_missing_outline_levels;
+
+        return $this;
+    }
+
+    /*
+     * Gets create_outlines_for_headings_in_tables
+     *
+     * @return bool
+     */
+    public function getCreateOutlinesForHeadingsInTables()
+    {
+        return $this->container['create_outlines_for_headings_in_tables'];
+    }
+
+    /*
+     * Sets create_outlines_for_headings_in_tables
+     *
+     * @param bool $create_outlines_for_headings_in_tables Specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.
+     *
+     * @return $this
+     */
+    public function setCreateOutlinesForHeadingsInTables($create_outlines_for_headings_in_tables)
+    {
+        $this->container['create_outlines_for_headings_in_tables'] = $create_outlines_for_headings_in_tables;
 
         return $this;
     }

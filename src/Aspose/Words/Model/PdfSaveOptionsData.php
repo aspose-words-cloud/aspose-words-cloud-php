@@ -65,6 +65,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'escape_uri' => 'bool',
         'export_document_structure' => 'bool',
         'font_embedding_mode' => 'string',
+        'header_footer_bookmarks_export_mode' => 'string',
         'image_color_space_export_mode' => 'string',
         'image_compression' => 'string',
         'open_hyperlinks_in_new_window' => 'bool',
@@ -96,6 +97,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'escape_uri' => null,
         'export_document_structure' => null,
         'font_embedding_mode' => null,
+        'header_footer_bookmarks_export_mode' => null,
         'image_color_space_export_mode' => null,
         'image_compression' => null,
         'open_hyperlinks_in_new_window' => null,
@@ -148,6 +150,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'escape_uri' => 'EscapeUri',
         'export_document_structure' => 'ExportDocumentStructure',
         'font_embedding_mode' => 'FontEmbeddingMode',
+        'header_footer_bookmarks_export_mode' => 'HeaderFooterBookmarksExportMode',
         'image_color_space_export_mode' => 'ImageColorSpaceExportMode',
         'image_compression' => 'ImageCompression',
         'open_hyperlinks_in_new_window' => 'OpenHyperlinksInNewWindow',
@@ -179,6 +182,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'escape_uri' => 'setEscapeUri',
         'export_document_structure' => 'setExportDocumentStructure',
         'font_embedding_mode' => 'setFontEmbeddingMode',
+        'header_footer_bookmarks_export_mode' => 'setHeaderFooterBookmarksExportMode',
         'image_color_space_export_mode' => 'setImageColorSpaceExportMode',
         'image_compression' => 'setImageCompression',
         'open_hyperlinks_in_new_window' => 'setOpenHyperlinksInNewWindow',
@@ -210,6 +214,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'escape_uri' => 'getEscapeUri',
         'export_document_structure' => 'getExportDocumentStructure',
         'font_embedding_mode' => 'getFontEmbeddingMode',
+        'header_footer_bookmarks_export_mode' => 'getHeaderFooterBookmarksExportMode',
         'image_color_space_export_mode' => 'getImageColorSpaceExportMode',
         'image_compression' => 'getImageCompression',
         'open_hyperlinks_in_new_window' => 'getOpenHyperlinksInNewWindow',
@@ -265,8 +270,25 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_NONE = 'None';
+    const HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_FIRST = 'First';
+    const HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_ALL = 'All';
     
 
+    
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getHeaderFooterBookmarksExportModeAllowableValues()
+    {
+        return [
+            self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_NONE,
+            self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_FIRST,
+            self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_ALL,
+        ];
+    }
     
 
 
@@ -291,6 +313,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['escape_uri'] = isset($data['escape_uri']) ? $data['escape_uri'] : null;
         $this->container['export_document_structure'] = isset($data['export_document_structure']) ? $data['export_document_structure'] : null;
         $this->container['font_embedding_mode'] = isset($data['font_embedding_mode']) ? $data['font_embedding_mode'] : null;
+        $this->container['header_footer_bookmarks_export_mode'] = isset($data['header_footer_bookmarks_export_mode']) ? $data['header_footer_bookmarks_export_mode'] : null;
         $this->container['image_color_space_export_mode'] = isset($data['image_color_space_export_mode']) ? $data['image_color_space_export_mode'] : null;
         $this->container['image_compression'] = isset($data['image_compression']) ? $data['image_compression'] : null;
         $this->container['open_hyperlinks_in_new_window'] = isset($data['open_hyperlinks_in_new_window']) ? $data['open_hyperlinks_in_new_window'] : null;
@@ -314,6 +337,14 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     {
         $invalidProperties = parent::listInvalidProperties();
 
+        $allowedValues = $this->getHeaderFooterBookmarksExportModeAllowableValues();
+        if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'header_footer_bookmarks_export_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -329,6 +360,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
             return false;
         }
 
+        $allowedValues = $this->getHeaderFooterBookmarksExportModeAllowableValues();
+        if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValues)) {
+            return false;
+        }
         return true;
     }
 
@@ -593,6 +628,35 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setFontEmbeddingMode($font_embedding_mode)
     {
         $this->container['font_embedding_mode'] = $font_embedding_mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets header_footer_bookmarks_export_mode
+     *
+     * @return string
+     */
+    public function getHeaderFooterBookmarksExportMode()
+    {
+        return $this->container['header_footer_bookmarks_export_mode'];
+    }
+
+    /*
+     * Sets header_footer_bookmarks_export_mode
+     *
+     * @param string $header_footer_bookmarks_export_mode Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
+     *
+     * @return $this
+     */
+    public function setHeaderFooterBookmarksExportMode($header_footer_bookmarks_export_mode)
+    {
+        $allowedValues = $this->getHeaderFooterBookmarksExportModeAllowableValues();
+        if ((!is_numeric($header_footer_bookmarks_export_mode) && !in_array($header_footer_bookmarks_export_mode, $allowedValues)) || (is_numeric($header_footer_bookmarks_export_mode) && !in_array($allowedValues[$header_footer_bookmarks_export_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'header_footer_bookmarks_export_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['header_footer_bookmarks_export_mode'] = $header_footer_bookmarks_export_mode;
 
         return $this;
     }

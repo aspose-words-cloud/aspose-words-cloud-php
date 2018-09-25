@@ -65,6 +65,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'page_margins' => 'double',
         'resources_folder' => 'string',
         'resources_folder_alias' => 'string',
+        'save_font_face_css_separately' => 'bool',
         'show_page_border' => 'bool'
     ];
 
@@ -85,6 +86,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'page_margins' => 'double',
         'resources_folder' => null,
         'resources_folder_alias' => null,
+        'save_font_face_css_separately' => null,
         'show_page_border' => null
     ];
 
@@ -126,6 +128,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'page_margins' => 'PageMargins',
         'resources_folder' => 'ResourcesFolder',
         'resources_folder_alias' => 'ResourcesFolderAlias',
+        'save_font_face_css_separately' => 'SaveFontFaceCssSeparately',
         'show_page_border' => 'ShowPageBorder'
     ];
 
@@ -146,6 +149,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'page_margins' => 'setPageMargins',
         'resources_folder' => 'setResourcesFolder',
         'resources_folder_alias' => 'setResourcesFolderAlias',
+        'save_font_face_css_separately' => 'setSaveFontFaceCssSeparately',
         'show_page_border' => 'setShowPageBorder'
     ];
 
@@ -166,6 +170,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'page_margins' => 'getPageMargins',
         'resources_folder' => 'getResourcesFolder',
         'resources_folder_alias' => 'getResourcesFolderAlias',
+        'save_font_face_css_separately' => 'getSaveFontFaceCssSeparately',
         'show_page_border' => 'getShowPageBorder'
     ];
 
@@ -236,6 +241,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['page_margins'] = isset($data['page_margins']) ? $data['page_margins'] : null;
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
+        $this->container['save_font_face_css_separately'] = isset($data['save_font_face_css_separately']) ? $data['save_font_face_css_separately'] : null;
         $this->container['show_page_border'] = isset($data['show_page_border']) ? $data['show_page_border'] : null;
     }
 
@@ -527,6 +533,30 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setResourcesFolderAlias($resources_folder_alias)
     {
         $this->container['resources_folder_alias'] = $resources_folder_alias;
+
+        return $this;
+    }
+
+    /*
+     * Gets save_font_face_css_separately
+     *
+     * @return bool
+     */
+    public function getSaveFontFaceCssSeparately()
+    {
+        return $this->container['save_font_face_css_separately'];
+    }
+
+    /*
+     * Sets save_font_face_css_separately
+     *
+     * @param bool $save_font_face_css_separately Flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
+     *
+     * @return $this
+     */
+    public function setSaveFontFaceCssSeparately($save_font_face_css_separately)
+    {
+        $this->container['save_font_face_css_separately'] = $save_font_face_css_separately;
 
         return $this;
     }

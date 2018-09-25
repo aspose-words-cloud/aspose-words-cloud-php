@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="MhtmlSaveOptionsData.php">
+ * <copyright company="Aspose" file="ParagraphFormatResponse.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * MhtmlSaveOptionsData
+ * ParagraphFormatResponse
  */
 
 namespace Aspose\Words\Model;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * MhtmlSaveOptionsData
+ * ParagraphFormatResponse
  *
- * @description Container class for mhtml save options.
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/format
  */
-class MhtmlSaveOptionsData extends HtmlSaveOptionsData 
+class ParagraphFormatResponse extends AsposeResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
      *
      * @var string
      */
-    protected static $swaggerModelName = "MhtmlSaveOptionsData";
+    protected static $swaggerModelName = "ParagraphFormatResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'export_cid_urls_for_mhtml_resources' => 'bool'
+        'paragraph_format' => '\Aspose\Words\Model\ParagraphFormat'
     ];
 
     /*
@@ -63,7 +63,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'export_cid_urls_for_mhtml_resources' => null
+        'paragraph_format' => null
     ];
 
     /*
@@ -93,7 +93,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'export_cid_urls_for_mhtml_resources' => 'ExportCidUrlsForMhtmlResources'
+        'paragraph_format' => 'ParagraphFormat'
     ];
 
     /*
@@ -102,7 +102,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'export_cid_urls_for_mhtml_resources' => 'setExportCidUrlsForMhtmlResources'
+        'paragraph_format' => 'setParagraphFormat'
     ];
 
     /*
@@ -111,7 +111,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'export_cid_urls_for_mhtml_resources' => 'getExportCidUrlsForMhtmlResources'
+        'paragraph_format' => 'getParagraphFormat'
     ];
 
     /*
@@ -170,7 +170,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
     {
         parent::__construct($data);
 
-        $this->container['export_cid_urls_for_mhtml_resources'] = isset($data['export_cid_urls_for_mhtml_resources']) ? $data['export_cid_urls_for_mhtml_resources'] : null;
+        $this->container['paragraph_format'] = isset($data['paragraph_format']) ? $data['paragraph_format'] : null;
     }
 
     /*
@@ -202,25 +202,25 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
 
 
     /*
-     * Gets export_cid_urls_for_mhtml_resources
+     * Gets paragraph_format
      *
-     * @return bool
+     * @return \Aspose\Words\Model\ParagraphFormat
      */
-    public function getExportCidUrlsForMhtmlResources()
+    public function getParagraphFormat()
     {
-        return $this->container['export_cid_urls_for_mhtml_resources'];
+        return $this->container['paragraph_format'];
     }
 
     /*
-     * Sets export_cid_urls_for_mhtml_resources
+     * Sets paragraph_format
      *
-     * @param bool $export_cid_urls_for_mhtml_resources Specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.
+     * @param \Aspose\Words\Model\ParagraphFormat $paragraph_format Represents all the formatting for a paragraph.
      *
      * @return $this
      */
-    public function setExportCidUrlsForMhtmlResources($export_cid_urls_for_mhtml_resources)
+    public function setParagraphFormat($paragraph_format)
     {
-        $this->container['export_cid_urls_for_mhtml_resources'] = $export_cid_urls_for_mhtml_resources;
+        $this->container['paragraph_format'] = $paragraph_format;
 
         return $this;
     }

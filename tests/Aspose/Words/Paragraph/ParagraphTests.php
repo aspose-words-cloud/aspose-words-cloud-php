@@ -257,4 +257,55 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $result = $this->words->renderParagraph($request);
         Assert::assertNotNull($result, "Error occurred while paragraph rendering");
     }
+
+    /**
+     * Test case for getParagraphFormat
+     *
+     * Get format of paragraph.
+     *
+     */
+    public function testGetParagraphFormat()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "testGetParagraphFormat.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
+
+        $request = new Requests\GetDocumentParagraphFormatRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder);
+
+        $result = $this->words->getDocumentParagraphFormat($request);
+        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+    }
+
+    /**
+     * Test case for updateParagraphFormat
+     *
+     * Update format of paragraph.
+     *
+     */
+    public function testUpdateParagraphFormat()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "testUpdateParagraphFormat.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+        $body = new ParagraphFormat(array(
+            "alignment" => "Right",           
+        ));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
+        $this->storage->PutCreate($putRequest);
+
+        $request = new Requests\PostDocumentParagraphFormatRequest($remoteName, $index, $body, $folder=self::$baseTestPath . $subfolder);
+
+        $result = $this->words->postDocumentParagraphFormat($request);
+        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+    }
 }

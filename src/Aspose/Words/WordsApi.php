@@ -133,7 +133,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -452,7 +452,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -733,7 +733,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -1062,7 +1062,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -1421,7 +1421,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -1778,7 +1778,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -2126,7 +2126,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -2474,7 +2474,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -2813,7 +2813,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -3161,7 +3161,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -3500,7 +3500,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -3858,7 +3858,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -4216,7 +4216,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -4565,7 +4565,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -4923,7 +4923,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -5281,7 +5281,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -5639,7 +5639,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -5998,7 +5998,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -6356,7 +6356,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -6714,7 +6714,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -7071,7 +7071,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -7429,7 +7429,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -7786,7 +7786,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -8143,7 +8143,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -8473,7 +8473,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -8743,7 +8743,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -9070,7 +9070,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -9388,7 +9388,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -9706,7 +9706,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -10015,7 +10015,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -10324,7 +10324,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -10642,7 +10642,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -10951,7 +10951,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -11279,7 +11279,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -11607,7 +11607,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -11935,7 +11935,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -12254,7 +12254,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -12573,7 +12573,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -12891,7 +12891,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -13200,7 +13200,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -13528,7 +13528,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -13856,7 +13856,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -14183,7 +14183,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -14510,7 +14510,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -14828,7 +14828,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -15147,7 +15147,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -15456,7 +15456,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -15774,7 +15774,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -16083,7 +16083,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -16422,7 +16422,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -16731,7 +16731,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -17074,7 +17074,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -17402,7 +17402,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -17721,7 +17721,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -18049,7 +18049,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -18368,7 +18368,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -18696,7 +18696,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -19015,7 +19015,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -19343,7 +19343,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -19680,7 +19680,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -20009,7 +20009,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -20337,7 +20337,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -20656,7 +20656,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -20974,7 +20974,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -21292,7 +21292,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -21601,7 +21601,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -21929,7 +21929,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -22256,7 +22256,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -22583,7 +22583,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -22911,7 +22911,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -23238,7 +23238,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -23565,7 +23565,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -23884,7 +23884,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -24240,7 +24240,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -24595,7 +24595,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -24950,7 +24950,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -25300,7 +25300,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -25630,7 +25630,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -25989,7 +25989,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -26319,7 +26319,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -26682,7 +26682,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -27050,7 +27050,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -27418,7 +27418,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -27758,7 +27758,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -28137,7 +28137,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -28494,7 +28494,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -28863,7 +28863,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -29232,7 +29232,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -29601,7 +29601,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -29969,7 +29969,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -30319,7 +30319,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -30669,7 +30669,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -30950,7 +30950,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -31300,7 +31300,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -31668,7 +31668,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -32037,7 +32037,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -32396,7 +32396,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -32715,7 +32715,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -33065,7 +33065,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -33392,7 +33392,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -33682,7 +33682,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -33965,7 +33965,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -34485,7 +34485,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -34855,7 +34855,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -35171,7 +35171,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -35497,7 +35497,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -35867,7 +35867,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -36227,7 +36227,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -36597,7 +36597,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -36957,7 +36957,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -37327,7 +37327,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -37657,7 +37657,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -38026,7 +38026,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -38345,7 +38345,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -38697,7 +38697,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -39049,7 +39049,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -39391,7 +39391,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -39743,7 +39743,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -40095,7 +40095,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -40355,7 +40355,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -40678,7 +40678,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -41046,7 +41046,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -41405,7 +41405,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -41769,7 +41769,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -42134,7 +42134,7 @@ class WordsApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -42524,7 +42524,7 @@ class WordsApi
     }
   
     /*
-     * Refresh token
+     * Refresh token. OBSOLETE WILL BE REMOVED SOON
      */
     private function _refreshToken() 
     {

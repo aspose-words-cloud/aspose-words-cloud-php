@@ -28,6 +28,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\ParagraphInsert;
+use Aspose\Words\Model\ParagraphFormat;
 use Aspose\Words\Model\Font;
 use PHPUnit\Framework\Assert;
 
@@ -276,7 +277,8 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
-        $request = new Requests\GetDocumentParagraphFormatRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\GetDocumentParagraphFormatRequest($remoteName, $index, self::$baseTestPath . $subfolder,
+                NULL, NULL, NULL, "");
 
         $result = $this->words->getDocumentParagraphFormat($request);
         Assert::assertEquals(200, json_decode($result, true)["Code"]);

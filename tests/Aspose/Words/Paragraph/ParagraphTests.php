@@ -264,10 +264,10 @@ class ParagraphTests extends \BaseTest\BaseTestContext
      * Get format of paragraph.
      *
      */
-    public function testGetParagraphFormat()
+    public function testGetDocumentParagraphFormat()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "testGetParagraphFormat.docx";
+        $remoteName = "testGetDocumentParagraphFormat.docx";
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -288,10 +288,10 @@ class ParagraphTests extends \BaseTest\BaseTestContext
      * Update format of paragraph.
      *
      */
-    public function testUpdateParagraphFormat()
+    public function testPostDocumentParagraphFormat()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "testUpdateParagraphFormat.docx";
+        $remoteName = "testPostDocumentParagraphFormat.docx";
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -303,7 +303,7 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->storage->PutCreate($putRequest);
 
-        $request = new Requests\PostDocumentParagraphFormatRequest($remoteName, $index, $body, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\PostDocumentParagraphFormatRequest($remoteName, $body, "", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->postDocumentParagraphFormat($request);
         Assert::assertEquals(200, json_decode($result, true)["Code"]);

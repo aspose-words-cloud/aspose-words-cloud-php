@@ -54,6 +54,7 @@ class TextSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'add_bidi_marks' => 'bool',
         'encoding' => 'string',
         'export_headers_footers' => 'bool',
         'force_page_breaks' => 'bool',
@@ -68,6 +69,7 @@ class TextSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'add_bidi_marks' => null,
         'encoding' => null,
         'export_headers_footers' => null,
         'force_page_breaks' => null,
@@ -103,6 +105,7 @@ class TextSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
+        'add_bidi_marks' => 'AddBidiMarks',
         'encoding' => 'Encoding',
         'export_headers_footers' => 'ExportHeadersFooters',
         'force_page_breaks' => 'ForcePageBreaks',
@@ -117,6 +120,7 @@ class TextSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
+        'add_bidi_marks' => 'setAddBidiMarks',
         'encoding' => 'setEncoding',
         'export_headers_footers' => 'setExportHeadersFooters',
         'force_page_breaks' => 'setForcePageBreaks',
@@ -131,6 +135,7 @@ class TextSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
+        'add_bidi_marks' => 'getAddBidiMarks',
         'encoding' => 'getEncoding',
         'export_headers_footers' => 'getExportHeadersFooters',
         'force_page_breaks' => 'getForcePageBreaks',
@@ -195,6 +200,7 @@ class TextSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
 
+        $this->container['add_bidi_marks'] = isset($data['add_bidi_marks']) ? $data['add_bidi_marks'] : null;
         $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
         $this->container['export_headers_footers'] = isset($data['export_headers_footers']) ? $data['export_headers_footers'] : null;
         $this->container['force_page_breaks'] = isset($data['force_page_breaks']) ? $data['force_page_breaks'] : null;
@@ -230,6 +236,30 @@ class TextSaveOptionsData extends SaveOptionsData
         return true;
     }
 
+
+    /*
+     * Gets add_bidi_marks
+     *
+     * @return bool
+     */
+    public function getAddBidiMarks()
+    {
+        return $this->container['add_bidi_marks'];
+    }
+
+    /*
+     * Sets add_bidi_marks
+     *
+     * @param bool $add_bidi_marks Specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
+     *
+     * @return $this
+     */
+    public function setAddBidiMarks($add_bidi_marks)
+    {
+        $this->container['add_bidi_marks'] = $add_bidi_marks;
+
+        return $this;
+    }
 
     /*
      * Gets encoding

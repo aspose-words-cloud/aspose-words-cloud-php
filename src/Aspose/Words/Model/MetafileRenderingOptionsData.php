@@ -59,7 +59,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'string',
         'emulate_raster_operations' => 'bool',
         'rendering_mode' => 'string',
-        'use_emf_embedded_to_wmf' => 'bool'
+        'use_emf_embedded_to_wmf' => 'bool',
+        'scale_wmf_fonts_to_metafile_size' => 'bool'
     ];
 
     /*
@@ -71,7 +72,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => null,
         'emulate_raster_operations' => null,
         'rendering_mode' => null,
-        'use_emf_embedded_to_wmf' => null
+        'use_emf_embedded_to_wmf' => null,
+        'scale_wmf_fonts_to_metafile_size' => null
     ];
 
     /*
@@ -104,7 +106,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'EmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'EmulateRasterOperations',
         'rendering_mode' => 'RenderingMode',
-        'use_emf_embedded_to_wmf' => 'UseEmfEmbeddedToWmf'
+        'use_emf_embedded_to_wmf' => 'UseEmfEmbeddedToWmf',
+        'scale_wmf_fonts_to_metafile_size' => 'ScaleWmfFontsToMetafileSize'
     ];
 
     /*
@@ -116,7 +119,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'setEmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'setEmulateRasterOperations',
         'rendering_mode' => 'setRenderingMode',
-        'use_emf_embedded_to_wmf' => 'setUseEmfEmbeddedToWmf'
+        'use_emf_embedded_to_wmf' => 'setUseEmfEmbeddedToWmf',
+        'scale_wmf_fonts_to_metafile_size' => 'setScaleWmfFontsToMetafileSize'
     ];
 
     /*
@@ -128,7 +132,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'getEmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'getEmulateRasterOperations',
         'rendering_mode' => 'getRenderingMode',
-        'use_emf_embedded_to_wmf' => 'getUseEmfEmbeddedToWmf'
+        'use_emf_embedded_to_wmf' => 'getUseEmfEmbeddedToWmf',
+        'scale_wmf_fonts_to_metafile_size' => 'getScaleWmfFontsToMetafileSize'
     ];
 
     /*
@@ -195,6 +200,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         $this->container['emulate_raster_operations'] = isset($data['emulate_raster_operations']) ? $data['emulate_raster_operations'] : null;
         $this->container['rendering_mode'] = isset($data['rendering_mode']) ? $data['rendering_mode'] : null;
         $this->container['use_emf_embedded_to_wmf'] = isset($data['use_emf_embedded_to_wmf']) ? $data['use_emf_embedded_to_wmf'] : null;
+        $this->container['scale_wmf_fonts_to_metafile_size'] = isset($data['scale_wmf_fonts_to_metafile_size']) ? $data['scale_wmf_fonts_to_metafile_size'] : null;
     }
 
     /*
@@ -314,6 +320,30 @@ class MetafileRenderingOptionsData implements ArrayAccess
     public function setUseEmfEmbeddedToWmf($use_emf_embedded_to_wmf)
     {
         $this->container['use_emf_embedded_to_wmf'] = $use_emf_embedded_to_wmf;
+
+        return $this;
+    }
+
+    /*
+     * Gets scale_wmf_fonts_to_metafile_size
+     *
+     * @return bool
+     */
+    public function getScaleWmfFontsToMetafileSize()
+    {
+        return $this->container['scale_wmf_fonts_to_metafile_size'];
+    }
+
+    /*
+     * Sets scale_wmf_fonts_to_metafile_size
+     *
+     * @param bool $scale_wmf_fonts_to_metafile_size Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page.
+     *
+     * @return $this
+     */
+    public function setScaleWmfFontsToMetafileSize($scale_wmf_fonts_to_metafile_size)
+    {
+        $this->container['scale_wmf_fonts_to_metafile_size'] = $scale_wmf_fonts_to_metafile_size;
 
         return $this;
     }

@@ -88,7 +88,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'string',
         'office_math_output_mode' => 'string',
         'pretty_format' => 'bool',
-        'resolve_font_names' => 'bool',
         'resource_folder' => 'string',
         'resource_folder_alias' => 'string',
         'scale_image_to_shape_size' => 'bool',
@@ -135,7 +134,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => null,
         'office_math_output_mode' => null,
         'pretty_format' => null,
-        'resolve_font_names' => null,
         'resource_folder' => null,
         'resource_folder_alias' => null,
         'scale_image_to_shape_size' => null,
@@ -203,7 +201,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'MetafileFormat',
         'office_math_output_mode' => 'OfficeMathOutputMode',
         'pretty_format' => 'PrettyFormat',
-        'resolve_font_names' => 'ResolveFontNames',
         'resource_folder' => 'ResourceFolder',
         'resource_folder_alias' => 'ResourceFolderAlias',
         'scale_image_to_shape_size' => 'ScaleImageToShapeSize',
@@ -250,7 +247,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'setMetafileFormat',
         'office_math_output_mode' => 'setOfficeMathOutputMode',
         'pretty_format' => 'setPrettyFormat',
-        'resolve_font_names' => 'setResolveFontNames',
         'resource_folder' => 'setResourceFolder',
         'resource_folder_alias' => 'setResourceFolderAlias',
         'scale_image_to_shape_size' => 'setScaleImageToShapeSize',
@@ -297,7 +293,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'getMetafileFormat',
         'office_math_output_mode' => 'getOfficeMathOutputMode',
         'pretty_format' => 'getPrettyFormat',
-        'resolve_font_names' => 'getResolveFontNames',
         'resource_folder' => 'getResourceFolder',
         'resource_folder_alias' => 'getResourceFolderAlias',
         'scale_image_to_shape_size' => 'getScaleImageToShapeSize',
@@ -443,7 +438,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['metafile_format'] = isset($data['metafile_format']) ? $data['metafile_format'] : null;
         $this->container['office_math_output_mode'] = isset($data['office_math_output_mode']) ? $data['office_math_output_mode'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
-        $this->container['resolve_font_names'] = isset($data['resolve_font_names']) ? $data['resolve_font_names'] : null;
         $this->container['resource_folder'] = isset($data['resource_folder']) ? $data['resource_folder'] : null;
         $this->container['resource_folder_alias'] = isset($data['resource_folder_alias']) ? $data['resource_folder_alias'] : null;
         $this->container['scale_image_to_shape_size'] = isset($data['scale_image_to_shape_size']) ? $data['scale_image_to_shape_size'] : null;
@@ -1341,30 +1335,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setPrettyFormat($pretty_format)
     {
         $this->container['pretty_format'] = $pretty_format;
-
-        return $this;
-    }
-
-    /*
-     * Gets resolve_font_names
-     *
-     * @return bool
-     */
-    public function getResolveFontNames()
-    {
-        return $this->container['resolve_font_names'];
-    }
-
-    /*
-     * Sets resolve_font_names
-     *
-     * @param bool $resolve_font_names A new option HtmlSaveOptions.ResolveFontNames has been added that affects writing of font names to HTML-based formats. By default this option is set to false and, as before, Aspose.Words writes font names as specified in the source document, ignoring Document.FontSettings. If this option is set to true, Aspose.Words resolves all font names before writing them to HTML. That is, it checks availability of each font using Document.FontSettings and substitutes unavailable fonts if needed.
-     *
-     * @return $this
-     */
-    public function setResolveFontNames($resolve_font_names)
-    {
-        $this->container['resolve_font_names'] = $resolve_font_names;
 
         return $this;
     }

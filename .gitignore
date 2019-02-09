@@ -115,3 +115,5 @@ vendor/*
 testReports/*
 /Settings/servercreds.json
 /nbproject/private/
+Examples/vendor/*
+Examples/composer.lock

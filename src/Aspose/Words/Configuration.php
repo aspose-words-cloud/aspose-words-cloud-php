@@ -135,7 +135,7 @@ class Configuration
      * Version of Aspose.Words Cloud API
      *
      */
-    protected $clientVersion = '18.9';
+    protected $clientVersion = '19.2';
 
     /*
      * Constructor

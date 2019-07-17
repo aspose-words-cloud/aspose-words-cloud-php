@@ -84,9 +84,11 @@ class ApiException extends Exception
         parent::__construct($message, $code);
         $this->responseHeaders = $responseHeaders;
         $this->responseBody = $responseBody;
-        $errorObject =  json_decode($responseBody);
-        $this->requestId = $errorObject->RequestId;
-        $this->responseError = $this->__generateApiError($errorObject->Error);
+        if ($responseBody !== NULL){
+            $errorObject =  json_decode($responseBody);
+            $this->requestId = $errorObject->RequestId;
+            $this->responseError = $this->__generateApiError($errorObject->Error);
+        }
     }
 
     /**

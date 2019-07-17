@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Response for the request of the document&#39;s statistical data
  */
-class StatDataResponse extends AsposeResponse 
+class StatDataResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

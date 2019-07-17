@@ -44,7 +44,7 @@ class GetDocumentStatisticsRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -59,7 +59,7 @@ class GetDocumentStatisticsRequest
     public $password;
 	
     /*
-     * Support including/excluding comments from the WordCount. Default value is \"true\".
+     * Support including/excluding comments from the WordCount. Default value is \"false\".
      */
     public $include_comments;
 	
@@ -79,10 +79,10 @@ class GetDocumentStatisticsRequest
      *  
      * @param string $name The document name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param bool $include_comments Support including/excluding comments from the WordCount. Default value is \"true\".
+     * @param bool $include_comments Support including/excluding comments from the WordCount. Default value is \"false\".
      * @param bool $include_footnotes Support including/excluding footnotes from the WordCount. Default value is \"false\".
      * @param bool $include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is \"false\"
      */
@@ -133,7 +133,7 @@ class GetDocumentStatisticsRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -141,7 +141,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -184,7 +184,7 @@ class GetDocumentStatisticsRequest
     }
 	
     /*
-     * Support including/excluding comments from the WordCount. Default value is \"true\".
+     * Support including/excluding comments from the WordCount. Default value is \"false\".
      */
     public function get_include_comments()
     {
@@ -192,7 +192,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * Support including/excluding comments from the WordCount. Default value is \"true\".
+     * Support including/excluding comments from the WordCount. Default value is \"false\".
      */
     public function set_include_comments($value)
     {

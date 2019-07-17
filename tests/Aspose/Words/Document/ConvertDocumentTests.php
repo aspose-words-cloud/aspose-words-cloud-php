@@ -49,13 +49,12 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
         $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => $destName));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostDocumentSaveAsRequest($remoteName, $saveOptions, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\SaveAsRequest($remoteName, $saveOptions, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->postDocumentSaveAs($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->saveAs($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -75,12 +74,12 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/ConvertDocument/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostDocumentSaveAsRequest($remoteName, $saveOptions, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\SaveAsRequest($remoteName, $saveOptions, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->postDocumentSaveAs($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->saveAs($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -94,10 +93,10 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
         $format = "pdf";
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/ConvertDocument/' . "test_uploadfile.docx";
 
-        $request = new Requests\PutConvertDocumentRequest($file, $format);
+        $request = new Requests\ConvertDocumentRequest($file, $format);
 
-        $result = $this->words->putConvertDocument($request);
-        Assert::assertNotNull($result, "Error occured while converting document");
+        $result = $this->words->convertDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -117,12 +116,12 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutDocumentSaveAsTiffRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\SaveAsTiffRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName);
 
-        $result = $this->words->putDocumentSaveAsTiff($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->saveAsTiff($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

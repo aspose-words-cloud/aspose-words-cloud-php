@@ -54,15 +54,14 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 1;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteTableRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteTableRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
         $result = $this->words->deleteTable($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -80,13 +79,12 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\DeleteTableCellRequest($remoteName, "sections/0/tables/2/rows/0", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->deleteTableCell($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -104,13 +102,12 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\DeleteTableRowRequest($remoteName, "tables/1", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->deleteTableRow($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -128,13 +125,12 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetBorderRequest($remoteName, "tables/1/rows/0/cells/0/", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getBorder($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -151,13 +147,12 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetBordersRequest($remoteName, "tables/1/rows/0/cells/0/", $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getBorders($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -175,14 +170,13 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 1;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetTableRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\GetTableRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getTable($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -200,13 +194,12 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetTableCellRequest($remoteName, "sections/0/tables/2/rows/0", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getTableCell($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -224,13 +217,12 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetTableCellFormatRequest($remoteName, "sections/0/tables/2/rows/0", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getTableCellFormat($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -248,14 +240,13 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 1;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetTablePropertiesRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\GetTablePropertiesRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getTableProperties($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -273,13 +264,12 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetTableRowRequest($remoteName, "tables/1", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getTableRow($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -297,13 +287,12 @@ class TableTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetTableRowFormatRequest($remoteName, "sections/0/tables/2", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getTableRowFormat($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -320,14 +309,13 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetTablesRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\GetTablesRequest($remoteName, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getTables($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -345,15 +333,14 @@ class TableTests extends \BaseTest\BaseTestContext
         $tableDto = new TableInsert(array("columns_count" => 3, "rows_count" => 5));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\InsertTableRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertTableRequest($remoteName, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $tableDto, "");
+            null, null, $tableDto);
 
         $result = $this->words->insertTable($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -371,15 +358,14 @@ class TableTests extends \BaseTest\BaseTestContext
         $cell = new TableCellInsert();
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\InsertTableCellRequest($remoteName, "sections/0/tables/2/rows/0", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null, $cell);
 
         $result = $this->words->insertTableCell($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -397,15 +383,14 @@ class TableTests extends \BaseTest\BaseTestContext
         $row = new TableRowInsert(array("columns_count" => 5));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\InsertTableRowRequest($remoteName, "sections/0/tables/2", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null, $row);
 
         $result = $this->words->insertTableRow($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -424,14 +409,13 @@ class TableTests extends \BaseTest\BaseTestContext
         $format = "png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\RenderTableRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\RenderTableRequest($remoteName, $format, $index, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->renderTable($request);
-        Assert::assertNotNull($result, "Error occurred while table rendering");
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -456,15 +440,14 @@ class TableTests extends \BaseTest\BaseTestContext
         ));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\UpdateTableCellFormatRequest($remoteName, $nodePath, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null, $format);
 
         $result = $this->words->updateTableCellFormat($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -494,15 +477,14 @@ class TableTests extends \BaseTest\BaseTestContext
         ));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateTablePropertiesRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateTablePropertiesRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $props, "");
+            null, null, $props);
 
         $result = $this->words->updateTableProperties($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -527,15 +509,14 @@ class TableTests extends \BaseTest\BaseTestContext
         ));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\UpdateTableRowFormatRequest($remoteName, $nodePath, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null, $format);
 
         $result = $this->words->updateTableRowFormat($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -554,13 +535,13 @@ class TableTests extends \BaseTest\BaseTestContext
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\DeleteBorderRequest($remoteName, "tables/1/rows/0/cells/0/", 0, self::$baseTestPath . $subfolder,
             null, null, null, $destName);
 
         $result = $this->words->deleteBorder($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -577,13 +558,12 @@ class TableTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\DeleteBordersRequest($remoteName, "tables/1/rows/0/cells/0/", $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->deleteBorders($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -610,12 +590,11 @@ class TableTests extends \BaseTest\BaseTestContext
         ));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\UpdateBorderRequest($remoteName, $border, $nodePath, $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->updateBorder($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

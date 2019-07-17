@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Response for the request of data about protection
  */
-class ProtectionDataResponse extends AsposeResponse 
+class ProtectionDataResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

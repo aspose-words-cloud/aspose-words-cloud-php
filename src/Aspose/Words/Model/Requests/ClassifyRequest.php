@@ -39,7 +39,7 @@ class ClassifyRequest
     public $text;
 	
     /*
-     * Count of the best classes to return.
+     * Number of the best classes to return.
      */
     public $best_classes_count;
     
@@ -48,7 +48,7 @@ class ClassifyRequest
      * Initializes a new instance of the ClassifyRequest class.
      *  
      * @param string $text Text to classify.
-     * @param string $best_classes_count Count of the best classes to return.
+     * @param string $best_classes_count Number of the best classes to return.
      */
     public function __construct($text, $best_classes_count = null)             
     {
@@ -74,7 +74,7 @@ class ClassifyRequest
     }
 	
     /*
-     * Count of the best classes to return.
+     * Number of the best classes to return.
      */
     public function get_best_classes_count()
     {
@@ -82,7 +82,7 @@ class ClassifyRequest
     }
 
     /*
-     * Count of the best classes to return.
+     * Number of the best classes to return.
      */
     public function set_best_classes_count($value)
     {

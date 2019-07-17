@@ -51,14 +51,13 @@ class AppendDocumentTests extends BaseTest\BaseTestContext
         $body->setDocumentEntries(array($docEntry));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostAppendDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\AppendDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName,
             null, null);
 
-        $result = $this->words->postAppendDocument($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->appendDocument($request);
+        Assert::isTrue(json_decode($result, true)["Document"] !== NULL);
     }
 }

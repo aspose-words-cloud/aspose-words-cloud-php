@@ -34,7 +34,7 @@ namespace Aspose\Words\Model\Requests;
 class RenderParagraphRequest
 {
     /*
-     * The file name.
+     * The document name.
      */
     public $name;
 	
@@ -44,9 +44,14 @@ class RenderParagraphRequest
     public $format;
 	
     /*
-     * Object's index
+     * Object index.
      */
     public $index;
+	
+    /*
+     * Path to the node, which contains paragraphs.
+     */
+    public $node_path;
 	
     /*
      * Original document folder.
@@ -54,7 +59,7 @@ class RenderParagraphRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -69,11 +74,6 @@ class RenderParagraphRequest
     public $password;
 	
     /*
-     * Path to node, which contains paragraphs.
-     */
-    public $node_path;
-	
-    /*
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
@@ -82,31 +82,31 @@ class RenderParagraphRequest
     /*
      * Initializes a new instance of the RenderParagraphRequest class.
      *  
-     * @param string $name The file name.
+     * @param string $name The document name.
      * @param string $format The destination format.
-     * @param int $index Object's index
+     * @param int $index Object index.
+     * @param string $node_path Path to the node, which contains paragraphs.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $node_path Path to node, which contains paragraphs.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $format, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null, $fonts_location = null)             
+    public function __construct($name, $format, $index, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)             
     {
         $this->name = $name;
         $this->format = $format;
         $this->index = $index;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->node_path = $node_path;
         $this->fonts_location = $fonts_location;
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function get_name()
     {
@@ -114,7 +114,7 @@ class RenderParagraphRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function set_name($value)
     {
@@ -140,7 +140,7 @@ class RenderParagraphRequest
     }
 	
     /*
-     * Object's index
+     * Object index.
      */
     public function get_index()
     {
@@ -148,11 +148,28 @@ class RenderParagraphRequest
     }
 
     /*
-     * Object's index
+     * Object index.
      */
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+	
+    /*
+     * Path to the node, which contains paragraphs.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node, which contains paragraphs.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 	
@@ -174,7 +191,7 @@ class RenderParagraphRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -182,7 +199,7 @@ class RenderParagraphRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -221,23 +238,6 @@ class RenderParagraphRequest
     public function set_password($value)
     {
         $this->password = $value;
-        return $this;
-    }
-	
-    /*
-     * Path to node, which contains paragraphs.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to node, which contains paragraphs.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
         return $this;
     }
 	

@@ -42,7 +42,7 @@ class FontTests extends \BaseTest\BaseTestContext
         $request = new Requests\ResetCacheRequest();
 
         $result = $this->words->resetCache($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 	
 	/**
@@ -56,6 +56,6 @@ class FontTests extends \BaseTest\BaseTestContext
         $request = new Requests\GetAvailableFontsRequest();
 
         $result = $this->words->getAvailableFonts($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

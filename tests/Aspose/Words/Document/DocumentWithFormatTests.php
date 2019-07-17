@@ -46,12 +46,11 @@ class DocumentWithFormatTests extends \BaseTest\BaseTestContext
         $format = "text";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetDocumentWithFormatRequest($remoteName, $format, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getDocumentWithFormat($request);
-        Assert::assertNotNull($result, "Conversion failed");
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

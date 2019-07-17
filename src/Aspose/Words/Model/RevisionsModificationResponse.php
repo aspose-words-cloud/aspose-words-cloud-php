@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description response of the modification operations for the revisions collection (now these are acceptAll and rejectAll)
  */
-class RevisionsModificationResponse extends AsposeResponse 
+class RevisionsModificationResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

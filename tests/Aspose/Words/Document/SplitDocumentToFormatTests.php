@@ -49,14 +49,13 @@ class SplitDocumentToFormatTests extends \BaseTest\BaseTestContext
         $to = 2;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostSplitDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder, null,
+        $request = new Requests\SplitDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder, null,
             null, null, $destName,
             $format, $from, $to);
 
-        $result = $this->words->postSplitDocument($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->splitDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

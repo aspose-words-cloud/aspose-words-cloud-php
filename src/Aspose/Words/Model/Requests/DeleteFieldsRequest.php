@@ -34,9 +34,14 @@ namespace Aspose\Words\Model\Requests;
 class DeleteFieldsRequest
 {
     /*
-     * The file name.
+     * The document name.
      */
     public $name;
+	
+    /*
+     * Path to the node, which contains collection of fields.
+     */
+    public $node_path;
 	
     /*
      * Original document folder.
@@ -44,7 +49,7 @@ class DeleteFieldsRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -59,7 +64,7 @@ class DeleteFieldsRequest
     public $password;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
 	
@@ -72,29 +77,25 @@ class DeleteFieldsRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-	
-    /*
-     * Path to node, which contains collection of fields.
-     */
-    public $node_path;
     
 	
     /*
      * Initializes a new instance of the DeleteFieldsRequest class.
      *  
-     * @param string $name The file name.
+     * @param string $name The document name.
+     * @param string $node_path Path to the node, which contains collection of fields.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $node_path Path to node, which contains collection of fields.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $node_path = null)             
+    public function __construct($name, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
     {
         $this->name = $name;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -102,11 +103,10 @@ class DeleteFieldsRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->node_path = $node_path;
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function get_name()
     {
@@ -114,11 +114,28 @@ class DeleteFieldsRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function set_name($value)
     {
         $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Path to the node, which contains collection of fields.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node, which contains collection of fields.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 	
@@ -140,7 +157,7 @@ class DeleteFieldsRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -148,7 +165,7 @@ class DeleteFieldsRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -191,7 +208,7 @@ class DeleteFieldsRequest
     }
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function get_dest_file_name()
     {
@@ -199,7 +216,7 @@ class DeleteFieldsRequest
     }
 
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function set_dest_file_name($value)
     {
@@ -238,23 +255,6 @@ class DeleteFieldsRequest
     public function set_revision_date_time($value)
     {
         $this->revision_date_time = $value;
-        return $this;
-    }
-	
-    /*
-     * Path to node, which contains collection of fields.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to node, which contains collection of fields.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
         return $this;
     }
 }

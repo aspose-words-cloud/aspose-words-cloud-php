@@ -26,6 +26,7 @@
 * --------------------------------------------------------------------------------------------------------------------
 */
 namespace BaseTest;
+use Aspose\Words\Model\Requests;
 use Aspose\Storage\Api\StorageApi;
 use Aspose\Words\Configuration;
 use Aspose\Words\WordsApi;
@@ -38,7 +39,7 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
     protected $config;
     protected static $baseTestPath = "Temp/SdkTests/TestData/";
     public static $baseTestOut = "TestOut/";
-    public static $baseRemoteFolder = "Temp/SdkTests/php/";
+    public static $baseRemoteFolder = "Temp/SdkTests/TestData";
 
     /**
      * Setup before running each test case
@@ -54,8 +55,11 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
         $this->config->setAppSid($creds["AppSid"]);
         $this->config->setHost($creds["BaseUrl"]);
         $this->words = new WordsApi(null, $this->config);
-        $this->storage = new StorageApi();
-        $this->storage->getConfig()->setAppKey($creds["AppKey"])->setAppSid($creds["AppSid"])->setHost($creds["BaseUrl"]);
+    }
+
+    public function uploadFile($file, $path){
+        $request = new Requests\UploadFileRequest($file, $path);
+        $result = $this->words->uploadFile($request);
     }
 
     /*

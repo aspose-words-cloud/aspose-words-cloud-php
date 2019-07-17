@@ -47,15 +47,14 @@ class ExecuteMailMergeTests extends \BaseTest\BaseTestContext
         $data = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleMailMergeTemplateData.txt");
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostDocumentExecuteMailMergeRequest($remoteName, $data, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\ExecuteMailMergeRequest($remoteName, $data, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null, false, $destName);
 
-        $result = $this->words->postDocumentExecuteMailMerge($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->executeMailMerge($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -68,9 +67,9 @@ class ExecuteMailMergeTests extends \BaseTest\BaseTestContext
     {
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleMailMergeTemplate.docx";
         $data = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleMailMergeTemplateData.txt";
-        $request = new Requests\PutExecuteMailMergeOnlineRequest($file, $data);
+        $request = new Requests\ExecuteMailMergeOnlineRequest($file, $data);
 
-        $result = $this->words->putExecuteMailMergeOnline($request);
+        $result = $this->words->executeMailMergeOnline($request);
         Assert::assertNotNull($result, "Error occurred while executing mail merge");
     }
 }

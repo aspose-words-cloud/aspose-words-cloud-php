@@ -47,14 +47,13 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetFootnoteRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null,"");
+        $request = new Requests\GetFootnoteRequest($remoteName, $index,"", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getFootnote($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -71,14 +70,13 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetFootnotesRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\GetFootnotesRequest($remoteName, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getFootnotes($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -96,15 +94,14 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteFootnoteRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteFootnoteRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
         $result = $this->words->deleteFootnote($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -123,15 +120,14 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $footNote = new Footnote(array("text" => "new text is here"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostFootnoteRequest($remoteName, $footNote, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateFootnoteRequest($remoteName, $footNote, $index, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
-        $result = $this->words->postFootnote($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->updateFootnote($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -149,14 +145,13 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $footnote = new Footnote(array("footnote_type" => Footnote::FOOTNOTE_TYPE_ENDNOTE, "text" => "test endnote"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutFootnoteRequest($remoteName, $footnote, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertFootnoteRequest($remoteName, $footnote, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
-        $result = $this->words->putFootnote($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->insertFootnote($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

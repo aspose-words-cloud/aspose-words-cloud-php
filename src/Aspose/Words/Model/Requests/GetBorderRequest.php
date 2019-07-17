@@ -39,12 +39,12 @@ class GetBorderRequest
     public $name;
 	
     /*
-     * Path to node with border(node should be cell or row).
+     * Path to the node with border(node should be cell or row).
      */
     public $node_path;
 	
     /*
-     * Object's index
+     * Object index.
      */
     public $index;
 	
@@ -54,7 +54,7 @@ class GetBorderRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -73,10 +73,10 @@ class GetBorderRequest
      * Initializes a new instance of the GetBorderRequest class.
      *  
      * @param string $name The document name.
-     * @param string $node_path Path to node with border(node should be cell or row).
-     * @param int $index Object's index
+     * @param string $node_path Path to the node with border(node should be cell or row).
+     * @param int $index Object index.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
@@ -109,7 +109,7 @@ class GetBorderRequest
     }
 	
     /*
-     * Path to node with border(node should be cell or row).
+     * Path to the node with border(node should be cell or row).
      */
     public function get_node_path()
     {
@@ -117,7 +117,7 @@ class GetBorderRequest
     }
 
     /*
-     * Path to node with border(node should be cell or row).
+     * Path to the node with border(node should be cell or row).
      */
     public function set_node_path($value)
     {
@@ -126,7 +126,7 @@ class GetBorderRequest
     }
 	
     /*
-     * Object's index
+     * Object index.
      */
     public function get_index()
     {
@@ -134,7 +134,7 @@ class GetBorderRequest
     }
 
     /*
-     * Object's index
+     * Object index.
      */
     public function set_index($value)
     {
@@ -160,7 +160,7 @@ class GetBorderRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -168,7 +168,7 @@ class GetBorderRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {

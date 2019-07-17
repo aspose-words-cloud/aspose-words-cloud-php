@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .
  */
-class HyperlinkResponse extends AsposeResponse 
+class HyperlinkResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

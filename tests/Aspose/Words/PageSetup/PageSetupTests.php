@@ -47,13 +47,12 @@ class PageSetupTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetSectionPageSetupRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getSectionPageSetup($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -77,13 +76,12 @@ class PageSetupTests extends \BaseTest\BaseTestContext
         ));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\UpdateSectionPageSetupRequest($remoteName, $index, $body, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->updateSectionPageSetup($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -102,12 +100,11 @@ class PageSetupTests extends \BaseTest\BaseTestContext
         $format = "png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Text/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\RenderPageRequest($remoteName, $pageNumber, $format, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->renderPage($request);
-        Assert::assertNotNull($result, "Error occurred while page rendering");
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

@@ -34,7 +34,7 @@ namespace Aspose\Words\Model\Requests;
 class GetDocumentRequest
 {
     /*
-     * The file name.
+     * The document name.
      */
     public $document_name;
 	
@@ -44,7 +44,7 @@ class GetDocumentRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -62,9 +62,9 @@ class GetDocumentRequest
     /*
      * Initializes a new instance of the GetDocumentRequest class.
      *  
-     * @param string $document_name The file name.
+     * @param string $document_name The document name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
@@ -78,7 +78,7 @@ class GetDocumentRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function get_document_name()
     {
@@ -86,7 +86,7 @@ class GetDocumentRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function set_document_name($value)
     {
@@ -112,7 +112,7 @@ class GetDocumentRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -120,7 +120,7 @@ class GetDocumentRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {

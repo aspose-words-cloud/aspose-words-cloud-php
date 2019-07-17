@@ -39,12 +39,12 @@ class DeleteBorderRequest
     public $name;
 	
     /*
-     * Path to node with border(node should be cell or row).
+     * Path to the node with border(node should be cell or row).
      */
     public $node_path;
 	
     /*
-     * Object's index
+     * Object index.
      */
     public $index;
 	
@@ -54,7 +54,7 @@ class DeleteBorderRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -69,7 +69,7 @@ class DeleteBorderRequest
     public $password;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
 	
@@ -88,13 +88,13 @@ class DeleteBorderRequest
      * Initializes a new instance of the DeleteBorderRequest class.
      *  
      * @param string $name The document name.
-     * @param string $node_path Path to node with border(node should be cell or row).
-     * @param int $index Object's index
+     * @param string $node_path Path to the node with border(node should be cell or row).
+     * @param int $index Object index.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
@@ -130,7 +130,7 @@ class DeleteBorderRequest
     }
 	
     /*
-     * Path to node with border(node should be cell or row).
+     * Path to the node with border(node should be cell or row).
      */
     public function get_node_path()
     {
@@ -138,7 +138,7 @@ class DeleteBorderRequest
     }
 
     /*
-     * Path to node with border(node should be cell or row).
+     * Path to the node with border(node should be cell or row).
      */
     public function set_node_path($value)
     {
@@ -147,7 +147,7 @@ class DeleteBorderRequest
     }
 	
     /*
-     * Object's index
+     * Object index.
      */
     public function get_index()
     {
@@ -155,7 +155,7 @@ class DeleteBorderRequest
     }
 
     /*
-     * Object's index
+     * Object index.
      */
     public function set_index($value)
     {
@@ -181,7 +181,7 @@ class DeleteBorderRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -189,7 +189,7 @@ class DeleteBorderRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -232,7 +232,7 @@ class DeleteBorderRequest
     }
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function get_dest_file_name()
     {
@@ -240,7 +240,7 @@ class DeleteBorderRequest
     }
 
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function set_dest_file_name($value)
     {

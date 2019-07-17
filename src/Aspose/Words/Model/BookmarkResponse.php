@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  GET bookmarks/{bookmarkName}.
  */
-class BookmarkResponse extends AsposeResponse 
+class BookmarkResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

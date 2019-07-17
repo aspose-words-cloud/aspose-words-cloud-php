@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Response for \&quot;drawingObjects/n\&quot; resource.
  */
-class DrawingObjectResponse extends AsposeResponse 
+class DrawingObjectResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

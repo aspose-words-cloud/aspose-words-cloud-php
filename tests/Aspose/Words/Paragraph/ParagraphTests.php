@@ -49,15 +49,14 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteParagraphRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteParagraphRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
         $result = $this->words->deleteParagraph($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -75,14 +74,13 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentParagraphRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\GetParagraphRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
-        $result = $this->words->getDocumentParagraph($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->getParagraph($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -100,13 +98,12 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentParagraphRunRequest($remoteName, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\GetRunRequest($remoteName, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->getDocumentParagraphRun($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->getRun($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -125,12 +122,12 @@ class ParagraphTests extends \BaseTest\BaseTestContext
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentParagraphRunFontRequest($remoteName, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\GetRunFontRequest($remoteName, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->getDocumentParagraphRunFont($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->getRunFont($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -147,13 +144,12 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentParagraphRunsRequest($remoteName, "sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\GetRunsRequest($remoteName, "sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->getDocumentParagraphRuns($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->getRuns($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -170,14 +166,13 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentParagraphsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0");
+        $request = new Requests\GetParagraphsRequest($remoteName, "sections/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
-        $result = $this->words->getDocumentParagraphs($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->getParagraphs($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -197,14 +192,13 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $fontDto = new Font(array("bold" => true));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostDocumentParagraphRunFontRequest($remoteName, $fontDto, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateRunFontRequest($remoteName, $fontDto, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName);
 
-        $result = $this->words->postDocumentParagraphRunFont($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->updateRunFont($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -222,15 +216,14 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $paragraph = new ParagraphInsert(array("text" => "This is a new paragraph for your document"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutParagraphRequest($remoteName, $paragraph, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertParagraphRequest($remoteName, $paragraph, "sections/0", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "sections/0");
+            null, null);
 
-        $result = $this->words->putParagraph($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->insertParagraph($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -249,14 +242,13 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $format = "png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\RenderParagraphRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\RenderParagraphRequest($remoteName, $format, $index, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->renderParagraph($request);
-        Assert::assertNotNull($result, "Error occurred while paragraph rendering");
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -274,14 +266,13 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentParagraphFormatRequest($remoteName, $index, self::$baseTestPath . $subfolder,
-                NULL, NULL, NULL, "");
+        $request = new Requests\GetParagraphFormatRequest($remoteName, $index, "", self::$baseTestPath . $subfolder,
+                NULL, NULL, NULL);
 
-        $result = $this->words->getDocumentParagraphFormat($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->getParagraphFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -302,12 +293,11 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         ));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostDocumentParagraphFormatRequest($remoteName, $body, "", $index, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\UpdateParagraphFormatRequest($remoteName, $body, "", $index, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->postDocumentParagraphFormat($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->updateParagraphFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

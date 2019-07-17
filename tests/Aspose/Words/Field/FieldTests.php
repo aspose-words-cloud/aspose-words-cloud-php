@@ -47,14 +47,13 @@ class FieldTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0");
+        $request = new Requests\GetFieldsRequest($remoteName, "sections/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getFields($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -72,14 +71,13 @@ class FieldTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetFieldRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0/paragraphs/0");
+        $request = new Requests\GetFieldRequest($remoteName, $index, "sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getField($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -99,15 +97,14 @@ class FieldTests extends \BaseTest\BaseTestContext
         $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostFieldRequest($remoteName, $body, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateFieldRequest($remoteName, $body, $index, "sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName,
-            null, null, "sections/0/paragraphs/0");
+            null, null);
 
-        $result = $this->words->postField($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->updateField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -125,15 +122,14 @@ class FieldTests extends \BaseTest\BaseTestContext
         $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutFieldRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertFieldRequest($remoteName, $body, "sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "sections/0/paragraphs/0");
+            null, null);
 
-        $result = $this->words->putField($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->insertField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -150,14 +146,12 @@ class FieldTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostUpdateDocumentFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\UpdateFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->postUpdateDocumentFields($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
-
+        $result = $this->words->updateFields($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -177,13 +171,13 @@ class FieldTests extends \BaseTest\BaseTestContext
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostInsertPageNumbersRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertPageNumbersRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName);
 
-        $result = $this->words->postInsertPageNumbers($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->insertPageNumbers($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -201,16 +195,15 @@ class FieldTests extends \BaseTest\BaseTestContext
         $fieldIndex = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\DeleteFieldRequest($remoteName,
-            $fieldIndex, $folder=self::$baseTestPath . $subfolder,
+            $fieldIndex,"sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null,"sections/0/paragraphs/0");
+            null, null);
 
         $result = $this->words->deleteField($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -227,14 +220,13 @@ class FieldTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteFieldsRequest($remoteName, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
         $result = $this->words->deleteFields($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

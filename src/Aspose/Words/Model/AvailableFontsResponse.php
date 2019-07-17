@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description The list of fonts, available for document processing
  */
-class AvailableFontsResponse extends AsposeResponse 
+class AvailableFontsResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

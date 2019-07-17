@@ -34,12 +34,12 @@ namespace Aspose\Words\Model\Requests;
 class GetCommentRequest
 {
     /*
-     * The file name.
+     * The document name.
      */
     public $name;
 	
     /*
-     * Comment index
+     * The comment index.
      */
     public $comment_index;
 	
@@ -49,7 +49,7 @@ class GetCommentRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -67,10 +67,10 @@ class GetCommentRequest
     /*
      * Initializes a new instance of the GetCommentRequest class.
      *  
-     * @param string $name The file name.
-     * @param int $comment_index Comment index
+     * @param string $name The document name.
+     * @param int $comment_index The comment index.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
@@ -85,7 +85,7 @@ class GetCommentRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function get_name()
     {
@@ -93,7 +93,7 @@ class GetCommentRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function set_name($value)
     {
@@ -102,7 +102,7 @@ class GetCommentRequest
     }
 	
     /*
-     * Comment index
+     * The comment index.
      */
     public function get_comment_index()
     {
@@ -110,7 +110,7 @@ class GetCommentRequest
     }
 
     /*
-     * Comment index
+     * The comment index.
      */
     public function set_comment_index($value)
     {
@@ -136,7 +136,7 @@ class GetCommentRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -144,7 +144,7 @@ class GetCommentRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {

@@ -53,9 +53,9 @@ class LoadWebDocumentTests extends \BaseTest\BaseTestContext
 
         $body = new LoadWebDocumentData(array("loading_document_url" => "http://google.com", "save_options" => $saveOptions));
 
-        $request = new Requests\PostLoadWebDocumentRequest($body);
+        $request = new Requests\LoadWebDocumentRequest($body);
 
-        $result = $this->words->postLoadWebDocument($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->loadWebDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

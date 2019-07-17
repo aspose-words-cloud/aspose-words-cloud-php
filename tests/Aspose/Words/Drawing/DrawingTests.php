@@ -46,14 +46,13 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentDrawingObjectByIndexRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0");
+        $request = new Requests\GetDocumentDrawingObjectByIndexRequest($remoteName, $index, $node_path='sections/0', $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getDocumentDrawingObjectByIndex($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -71,14 +70,13 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentDrawingObjectImageDataRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0");
+        $request = new Requests\GetDocumentDrawingObjectImageDataRequest($remoteName, $index, $node_path = "sections/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getDocumentDrawingObjectImageData($request);
-        Assert::assertNotNull($result, "Error has occurred while getting image data");
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -96,14 +94,13 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/DrawingObjects/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentDrawingObjectOleDataRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0");
+        $request = new Requests\GetDocumentDrawingObjectOleDataRequest($remoteName, $index, $node_path = "sections/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getDocumentDrawingObjectOleData($request);
-        Assert::assertNotNull($result, "Error has occurred while getting ole data");
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -120,14 +117,13 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentDrawingObjectsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0");
+        $request = new Requests\GetDocumentDrawingObjectsRequest($remoteName, $node_path = "sections/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getDocumentDrawingObjects($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -145,15 +141,14 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $data = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostDrawingObjectRequest($remoteName, "{\"Left\": 0}", $data, 0, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateDrawingObjectRequest($remoteName, "{\"Left\": 0}", $data, 0,$node_path = "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
-        $result = $this->words->postDrawingObject($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->updateDrawingObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -171,15 +166,14 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $image = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutDrawingObjectRequest($remoteName, "{\"Left\": 0}", $image, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertDrawingObjectRequest($remoteName, "{\"Left\": 0}", $image, $node_path = "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
-        $result = $this->words->putDrawingObject($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->insertDrawingObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -198,11 +192,10 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $format = "png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\RenderDrawingObjectRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0");
+        $request = new Requests\RenderDrawingObjectRequest($remoteName, $format, $index,$node_path = "sections/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->renderDrawingObject($request);
         Assert::assertNotNull($result, "Error occurred while drawing object rendering");
@@ -224,15 +217,14 @@ class DrawingTests extends \BaseTest\BaseTestContext
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $file = str_replace("\\", "/", $file);
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\DeleteDrawingObjectRequest($remoteName,
-            $objectIndex, $folder=self::$baseTestPath . $subfolder,
+            $objectIndex, $node_path = "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
         $result = $this->words->deleteDrawingObject($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

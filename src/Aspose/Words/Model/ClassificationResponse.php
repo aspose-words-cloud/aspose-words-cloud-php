@@ -35,9 +35,9 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ClassificationResponse
  *
- * @description This response should be returned by the service when handling: PUT http://api.aspose.com/v1.1/words/classify
+ * @description This response should be returned by the service when handling: PUT http://api.aspose.com/v4.0/words/classify
  */
-class ClassificationResponse extends AsposeResponse 
+class ClassificationResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

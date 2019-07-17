@@ -44,7 +44,7 @@ class GetDocumentFieldNamesRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -69,7 +69,7 @@ class GetDocumentFieldNamesRequest
      *  
      * @param string $name The document name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param bool $use_non_merge_fields If true, result includes \"mustache\" field names.
@@ -119,7 +119,7 @@ class GetDocumentFieldNamesRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -127,7 +127,7 @@ class GetDocumentFieldNamesRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {

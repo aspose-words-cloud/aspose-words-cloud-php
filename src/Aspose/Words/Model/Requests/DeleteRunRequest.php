@@ -34,7 +34,7 @@ namespace Aspose\Words\Model\Requests;
 class DeleteRunRequest
 {
     /*
-     * The file name.
+     * The document name.
      */
     public $name;
 	
@@ -44,7 +44,7 @@ class DeleteRunRequest
     public $paragraph_path;
 	
     /*
-     * Object's index
+     * Object index.
      */
     public $index;
 	
@@ -54,7 +54,7 @@ class DeleteRunRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -69,7 +69,7 @@ class DeleteRunRequest
     public $password;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
 	
@@ -87,14 +87,14 @@ class DeleteRunRequest
     /*
      * Initializes a new instance of the DeleteRunRequest class.
      *  
-     * @param string $name The file name.
+     * @param string $name The document name.
      * @param string $paragraph_path Path to parent paragraph.
-     * @param int $index Object's index
+     * @param int $index Object index.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
@@ -113,7 +113,7 @@ class DeleteRunRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function get_name()
     {
@@ -121,7 +121,7 @@ class DeleteRunRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function set_name($value)
     {
@@ -147,7 +147,7 @@ class DeleteRunRequest
     }
 	
     /*
-     * Object's index
+     * Object index.
      */
     public function get_index()
     {
@@ -155,7 +155,7 @@ class DeleteRunRequest
     }
 
     /*
-     * Object's index
+     * Object index.
      */
     public function set_index($value)
     {
@@ -181,7 +181,7 @@ class DeleteRunRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -189,7 +189,7 @@ class DeleteRunRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -232,7 +232,7 @@ class DeleteRunRequest
     }
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function get_dest_file_name()
     {
@@ -240,7 +240,7 @@ class DeleteRunRequest
     }
 
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function set_dest_file_name($value)
     {

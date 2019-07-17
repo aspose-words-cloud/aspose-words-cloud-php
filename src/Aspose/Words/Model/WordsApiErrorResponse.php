@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Response for Api error
  */
-class WordsApiErrorResponse extends AsposeResponse 
+class WordsApiErrorResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -54,7 +54,7 @@ class WordsApiErrorResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'message' => 'string'
+        'error' => '\Aspose\Words\Model\ApiError'
     ];
 
     /*
@@ -63,7 +63,7 @@ class WordsApiErrorResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'message' => null
+        'error' => null
     ];
 
     /*
@@ -93,7 +93,7 @@ class WordsApiErrorResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'Message'
+        'error' => 'Error'
     ];
 
     /*
@@ -102,7 +102,7 @@ class WordsApiErrorResponse extends AsposeResponse
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage'
+        'error' => 'setError'
     ];
 
     /*
@@ -111,7 +111,7 @@ class WordsApiErrorResponse extends AsposeResponse
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage'
+        'error' => 'getError'
     ];
 
     /*
@@ -170,7 +170,7 @@ class WordsApiErrorResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
     }
 
     /*
@@ -202,25 +202,25 @@ class WordsApiErrorResponse extends AsposeResponse
 
 
     /*
-     * Gets message
+     * Gets error
      *
-     * @return string
+     * @return \Aspose\Words\Model\ApiError
      */
-    public function getMessage()
+    public function getError()
     {
-        return $this->container['message'];
+        return $this->container['error'];
     }
 
     /*
-     * Sets message
+     * Sets error
      *
-     * @param string $message Error message.
+     * @param \Aspose\Words\Model\ApiError $error Error.
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setError($error)
     {
-        $this->container['message'] = $message;
+        $this->container['error'] = $error;
 
         return $this;
     }

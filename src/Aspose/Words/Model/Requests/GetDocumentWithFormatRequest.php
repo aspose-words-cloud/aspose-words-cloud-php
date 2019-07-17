@@ -34,7 +34,7 @@ namespace Aspose\Words\Model\Requests;
 class GetDocumentWithFormatRequest
 {
     /*
-     * The file name.
+     * The document name.
      */
     public $name;
 	
@@ -49,7 +49,7 @@ class GetDocumentWithFormatRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -64,7 +64,7 @@ class GetDocumentWithFormatRequest
     public $password;
 	
     /*
-     * Path to save result
+     * Path to save the result
      */
     public $out_path;
 	
@@ -77,13 +77,13 @@ class GetDocumentWithFormatRequest
     /*
      * Initializes a new instance of the GetDocumentWithFormatRequest class.
      *  
-     * @param string $name The file name.
+     * @param string $name The document name.
      * @param string $format The destination format.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $out_path Path to save result
+     * @param string $out_path Path to save the result
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
     public function __construct($name, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $out_path = null, $fonts_location = null)             
@@ -99,7 +99,7 @@ class GetDocumentWithFormatRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function get_name()
     {
@@ -107,7 +107,7 @@ class GetDocumentWithFormatRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function set_name($value)
     {
@@ -150,7 +150,7 @@ class GetDocumentWithFormatRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -158,7 +158,7 @@ class GetDocumentWithFormatRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -201,7 +201,7 @@ class GetDocumentWithFormatRequest
     }
 	
     /*
-     * Path to save result
+     * Path to save the result
      */
     public function get_out_path()
     {
@@ -209,7 +209,7 @@ class GetDocumentWithFormatRequest
     }
 
     /*
-     * Path to save result
+     * Path to save the result
      */
     public function set_out_path($value)
     {

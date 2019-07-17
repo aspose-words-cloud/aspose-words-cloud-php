@@ -47,12 +47,12 @@ class BookmarkTests extends BaseTest\BaseTestContext
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentBookmarkByNameRequest($remoteName, $bookmarkName, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\GetBookmarkByNameRequest($remoteName, $bookmarkName, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->getDocumentBookmarkByName($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->getBookmarkByName($request);
+        Assert::greaterThan(0, count(json_decode($result, true)['Bookmark']));
     }
 
     /**
@@ -67,15 +67,14 @@ class BookmarkTests extends BaseTest\BaseTestContext
         $remoteName = "TestGetDocumentBookmarks.docx";
         $subfolder = "DocumentElements/Bookmarks";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
 
-        $request = new Requests\GetDocumentBookmarksRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
+        $this->uploadFile($file, $fullName);
 
-        $result = $this->words->getDocumentBookmarks($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $request = new Requests\GetBookmarksRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
+
+        $result = $this->words->getBookmarks($request);
+        Assert::isFalse(json_decode($result, true) == NULL);
 
     }
 
@@ -96,14 +95,13 @@ class BookmarkTests extends BaseTest\BaseTestContext
         $body = new BookmarkData(array("name" => $bookmarkName, "text" => "This will be the text for Aspose"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostUpdateDocumentBookmarkRequest($remoteName, $body, $bookmarkName, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateBookmarkRequest($remoteName, $body, $bookmarkName, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName);
 
-        $result = $this->words->postUpdateDocumentBookmark($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->updateBookmark($request);
+        Assert::isTrue(json_decode($result, true)["Bookmark"] !== NULL);
 
     }
 }

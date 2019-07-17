@@ -42,7 +42,7 @@ class ClassificationTests extends \BaseTest\BaseTestContext
         $request = new Requests\ClassifyRequest("Try text classification", "3");
 
         $result = $this->words->classify($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 	
 	/**
@@ -59,13 +59,12 @@ class ClassificationTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\ClassifyDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->classifyDocument($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 	
 	/**
@@ -83,13 +82,12 @@ class ClassificationTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\ClassifyDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
         $request->set_taxonomy($taxonomy);
         
         $result = $this->words->classifyDocument($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

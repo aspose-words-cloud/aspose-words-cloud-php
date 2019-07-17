@@ -56,15 +56,14 @@ class FormFieldTests extends \BaseTest\BaseTestContext
         ));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostFormFieldRequest($remoteName, $body, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateFormFieldRequest($remoteName, $body, $index, "sections/0", $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName,
-            null, null, "sections/0");
+            null, null);
 
-        $result = $this->words->postFormField($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->updateFormField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -91,15 +90,14 @@ class FormFieldTests extends \BaseTest\BaseTestContext
         ));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutFormFieldRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertFormFieldRequest($remoteName, $body, "sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName,
-            null, null, "sections/0/paragraphs/0");
+            null, null);
 
-        $result = $this->words->putFormField($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->insertFormField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -117,14 +115,13 @@ class FormFieldTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteFormFieldRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, null, null, null, "sections/0");
+        $request = new Requests\DeleteFormFieldRequest($remoteName, $index, "sections/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null, null, null);
 
         $result = $this->words->deleteFormField($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -142,14 +139,13 @@ class FormFieldTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetFormFieldRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0");
+        $request = new Requests\GetFormFieldRequest($remoteName, $index, "sections/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getFormField($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -166,13 +162,12 @@ class FormFieldTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetFormFieldsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "sections/0");
+        $request = new Requests\GetFormFieldsRequest($remoteName, "sections/0", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getFormFields($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

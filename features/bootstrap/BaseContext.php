@@ -35,7 +35,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php
  */
 class BaseContext implements Context
 {
-    const MAILMERGEFOLDER = "DocumentActions/MailMerge/";
+    const MAILMERGEFOLDER = "/DocumentActions/MailMerge/";
 
     public $request;
     public $context;

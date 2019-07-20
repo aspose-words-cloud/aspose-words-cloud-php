@@ -43218,7 +43218,8 @@ class WordsApi
      */
     private function _requestToken() 
     {
-        $requestUrl = $this->config->getHost() . "/connect/token";
+        $requestUrl = "https://api-qa.aspose.cloud/connect/token";
+        // $requestUrl = $this->config->getHost() . "/connect/token";
         $params = array(
             "grant_type"=>'client_credentials',
             "client_id" => $this->config->getAppSid(),
@@ -43228,8 +43229,7 @@ class WordsApi
         foreach ($params as $paramName => $paramValue) {
             $multipartContents[] = [
                 'name' => $paramName,
-                'contents' => $paramValue,
-                'filename' => basename($filename)
+                'contents' => $paramValue
             ];
         }
         // for HTTP post (form)

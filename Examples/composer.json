@@ -1,6 +1,5 @@
 {
     "require": {
         "aspose/words-sdk-php": "dev-master",
-        "aspose/storage-sdk-php": "dev-master"
     }
 }

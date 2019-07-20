@@ -41,7 +41,7 @@ class PutExecuteMailMergeContext extends BaseTest\BaseContext
     public function __construct()
     {
         parent::__construct();
-        $this->request = new \Aspose\Words\Model\Requests\PutExecuteMailMergeOnlineRequest("", "");
+        $this->request = new \Aspose\Words\Model\Requests\ExecuteMailMergeOnlineRequest("", "");
     }
 
     /**
@@ -52,6 +52,6 @@ class PutExecuteMailMergeContext extends BaseTest\BaseContext
      */
     public function iExecuteMailMergeOnline()
     {
-        $this->response = $this->context->get_api()->putExecuteMailMergeOnline($this->request);
+        $this->response = $this->context->get_api()->executeMailMergeOnline($this->request);
     }
 }

@@ -45,8 +45,8 @@ trait StorageSteps
     {
         $fullName = $this->BaseRemoteFolder() . $SubFolder . $DocName;
         $file = realpath(__DIR__ . '/../../..') . '/TestData/DocumentActions/ConvertDocument/' . $DocName;
-        $putRequest = new \Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->context->get_storage()->PutCreate($putRequest);
+        $putRequest = new \Aspose\Words\Model\Requests\UploadFileRequest($file, $fullName);
+        $this->context->get_api()->uploadfile($putRequest);
     }
 
     /**
@@ -65,8 +65,9 @@ trait StorageSteps
             $remotePath = $this->BaseRemoteOut() . $OutPath;
         }
 
-        $existRequest = new \Aspose\Storage\Model\Requests\GetIsExistRequest($remotePath);
-        $response = $this->context->get_storage()->getIsExist($existRequest);
+        $existRequest = new \Aspose\Words\Model\Requests\DownloadFileRequest($remotePath);
+        $response = $this->context->get_api()->downloadFile($existRequest);
+        echo($response);
         if ($response instanceof \Aspose\Storage\Model\FileExistResponse) {
             Assert::assertEquals(true, $response->getFileExist()->getIsExist(), "File doesn't exist at $remotePath");
         }
@@ -88,7 +89,7 @@ trait StorageSteps
             $remotePath = $this->BaseRemoteOut() . $OutPath;
         }
 
-        $deleteRequest = new \Aspose\Storage\Model\Requests\DeleteFileRequest($remotePath);
-        $this->context->get_storage()->deleteFile($deleteRequest);
+        $deleteRequest = new \Aspose\Words\Model\Requests\DeleteFileRequest($remotePath);
+        $this->context->get_api()->deleteFile($deleteRequest);
     }
 }

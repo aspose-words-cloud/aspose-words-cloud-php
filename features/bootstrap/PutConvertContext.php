@@ -44,7 +44,7 @@ class PutConvertContext extends BaseTest\BaseContext
     public function __construct()
     {
         parent::__construct();
-        $this->request = new Requests\PutConvertDocumentRequest("", "");
+        $this->request = new Requests\ConvertDocumentRequest("", "");
     }
 
     /**
@@ -69,6 +69,6 @@ class PutConvertContext extends BaseTest\BaseContext
      */
     public function iExecuteConversionPUTConvert()
     {
-        $this->response = $this->context->get_api()->putConvertDocument($this->request);
+        $this->response = $this->context->get_api()->convertDocument($this->request);
     }
 }

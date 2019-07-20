@@ -34,8 +34,6 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
 {
     protected $words;
 
-    protected $storage;
-
     protected $config;
     protected static $baseTestPath = "Temp/SdkTests/TestData/";
     public static $baseTestOut = "TestOut/";
@@ -70,11 +68,4 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
         return $this->words;
     }
 
-    /*
-     * Returns storage instance
-     */
-    public function get_storage()
-    {
-        return $this->storage;
-    }
 }

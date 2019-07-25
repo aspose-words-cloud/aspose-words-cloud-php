@@ -68,7 +68,7 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
         return $this->words;
     }
 
-    private function getGUID(){
+    protected function getGUID(){
         if (function_exists('com_create_guid')){
             return com_create_guid();
         }

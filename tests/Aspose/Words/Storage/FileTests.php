@@ -1,7 +1,7 @@
 <?php
 /*
 * --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="RunTests.php">
+* <copyright company="Aspose" file="FileTests.php">
 *   Copyright (c) 2017 Aspose.Words for Cloud
 * </copyright>
 * <summary>
@@ -34,30 +34,8 @@ use PHPUnit\Framework\Assert;
 class FileTests extends \BaseTest\BaseTestContext
 {
     public $testFolder = 'Temp/SdkTests/TestData';
-    private function getGUID(){
-        if (function_exists('com_create_guid')){
-            return com_create_guid();
-        }
-        else {
-            mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
-            $charid = strtoupper(md5(uniqid(rand(), true)));
-            $hyphen = chr(45);// "-"
-            $uuid = chr(123)// "{"
-                .substr($charid, 0, 8).$hyphen
-                .substr($charid, 8, 4).$hyphen
-                .substr($charid,12, 4).$hyphen
-                .substr($charid,16, 4).$hyphen
-                .substr($charid,20,12)
-                .chr(125);// "}"
-            return $uuid;
-        }
-    }
-
     /**
-     * Test case for deleteRun
-     *
-     * Removes run from document..
-     *
+     * Test case for uploadFile
      */
     public function testUploadFile()
     {
@@ -71,6 +49,9 @@ class FileTests extends \BaseTest\BaseTestContext
         Assert::isTrue(count(json_decode($result)->Uploaded) == 1, "File was not uploaded");
     }
 
+    /**
+     * Test case for copyFile
+     */
     public function testCopyFile()
     {
         $localName = "test_multi_pages.docx";
@@ -87,6 +68,9 @@ class FileTests extends \BaseTest\BaseTestContext
         Assert::greaterThan(0, strlen($result), "Should return non-empty result");
     }
 
+    /**
+     * Test case for moveFile
+     */
     public function testMoveFile()
     {
         $localName = "test_multi_pages.docx";
@@ -108,6 +92,9 @@ class FileTests extends \BaseTest\BaseTestContext
         }
     }
 
+    /**
+     * Test case for deleteFile
+     */
     public function testDeleteFile() {
         $localName = "test_multi_pages.docx";
         $remoteName = "TestDeleteFile.docx";
@@ -119,6 +106,9 @@ class FileTests extends \BaseTest\BaseTestContext
         $response = $this->words->deleteFile($request);
     }
 
+    /**
+     * Test case for downloadFile
+     */
     public function testDownloadFile() {
         $localName = "test_multi_pages.docx";
         $remoteName = "TestDownloadFile.docx";

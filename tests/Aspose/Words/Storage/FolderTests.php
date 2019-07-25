@@ -1,7 +1,7 @@
 <?php
 /*
 * --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="RunTests.php">
+* <copyright company="Aspose" file="FolderTests.php">
 *   Copyright (c) 2017 Aspose.Words for Cloud
 * </copyright>
 * <summary>
@@ -34,30 +34,8 @@ use PHPUnit\Framework\Assert;
 class FolderTests extends \BaseTest\BaseTestContext
 {
     public $testFolder = 'Temp/SdkTests/TestData/Storage';
-    private function getGUID(){
-        if (function_exists('com_create_guid')){
-            return com_create_guid();
-        }
-        else {
-            mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
-            $charid = strtoupper(md5(uniqid(rand(), true)));
-            $hyphen = chr(45);// "-"
-            $uuid = chr(123)// "{"
-                .substr($charid, 0, 8).$hyphen
-                .substr($charid, 8, 4).$hyphen
-                .substr($charid,12, 4).$hyphen
-                .substr($charid,16, 4).$hyphen
-                .substr($charid,20,12)
-                .chr(125);// "}"
-            return $uuid;
-        }
-    }
-
     /**
-     * Test case for deleteRun
-     *
-     * Removes run from document..
-     *
+     * Test case for createFolder
      */
     public function testCreateFolder()
     {
@@ -68,6 +46,9 @@ class FolderTests extends \BaseTest\BaseTestContext
         echo $result;
     }
 
+    /**
+     * Test case for deleteFolder
+     */
     public function testDeleteFolder()
     {
         $folderGUID = $this->getGUID();
@@ -78,6 +59,9 @@ class FolderTests extends \BaseTest\BaseTestContext
         $response = $this->words->deleteFolder($request);
     }
 
+    /**
+     * Test case for getFilesList
+     */
     public function testGetFilesList()
     {
         $request = new Requests\GetFilesListRequest($this->testFolder);
@@ -85,6 +69,9 @@ class FolderTests extends \BaseTest\BaseTestContext
         Assert::greaterThan(0, strlen($response), "Answer should not be empty");
     }
 
+    /**
+     * Test case for copyFolder
+     */
     public function testCopyFolder(){
         $folderGUID = $this->getGUID();
         $folderPathSrc = $this->$testFolder . '/TestCopyFolderSrc' . $folderGUID;
@@ -100,6 +87,9 @@ class FolderTests extends \BaseTest\BaseTestContext
         $response = $this->words->getFilesList($request);
     }
 
+    /**
+     * Test case for moveFolder
+     */
     public function testMoveFolder(){
         $folderGUID = $this->getGUID();
         $folderPathSrc = $this->$testFolder . '/TestMoveFolderSrc' . $folderGUID;

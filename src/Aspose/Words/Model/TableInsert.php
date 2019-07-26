@@ -56,7 +56,7 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'postion' => '\Aspose\Words\Model\DocumentPosition',
+        'position' => '\Aspose\Words\Model\DocumentPosition',
         'columns_count' => 'int',
         'rows_count' => 'int'
     ];
@@ -67,7 +67,7 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'postion' => null,
+        'position' => null,
         'columns_count' => 'int32',
         'rows_count' => 'int32'
     ];
@@ -99,7 +99,7 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'postion' => 'Postion',
+        'position' => 'Position',
         'columns_count' => 'ColumnsCount',
         'rows_count' => 'RowsCount'
     ];
@@ -110,7 +110,7 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'postion' => 'setPostion',
+        'position' => 'setPosition',
         'columns_count' => 'setColumnsCount',
         'rows_count' => 'setRowsCount'
     ];
@@ -121,7 +121,7 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'postion' => 'getPostion',
+        'position' => 'getPosition',
         'columns_count' => 'getColumnsCount',
         'rows_count' => 'getRowsCount'
     ];
@@ -186,7 +186,7 @@ class TableInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['postion'] = isset($data['postion']) ? $data['postion'] : null;
+        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
         $this->container['columns_count'] = isset($data['columns_count']) ? $data['columns_count'] : null;
         $this->container['rows_count'] = isset($data['rows_count']) ? $data['rows_count'] : null;
     }
@@ -229,25 +229,25 @@ class TableInsert implements ArrayAccess
 
 
     /*
-     * Gets postion
+     * Gets position
      *
      * @return \Aspose\Words\Model\DocumentPosition
      */
-    public function getPostion()
+    public function getPosition()
     {
-        return $this->container['postion'];
+        return $this->container['position'];
     }
 
     /*
-     * Sets postion
+     * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $postion Table will be inserted before specified position.
+     * @param \Aspose\Words\Model\DocumentPosition $position Table will be inserted before specified position.
      *
      * @return $this
      */
-    public function setPostion($postion)
+    public function setPosition($position)
     {
-        $this->container['postion'] = $postion;
+        $this->container['position'] = $position;
 
         return $this;
     }

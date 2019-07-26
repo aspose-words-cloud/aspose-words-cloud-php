@@ -35,9 +35,9 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FootnotesResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/footnotes
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/footnotes
  */
-class FootnotesResponse extends AsposeResponse 
+class FootnotesResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

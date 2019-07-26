@@ -44,13 +44,12 @@ class DocumentTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getDocument($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -63,9 +62,9 @@ class DocumentTests extends \BaseTest\BaseTestContext
     {
         $remoteName = "TestPutCreateDocument.doc";
         $subfolder = "DocumentActions/Document";
-        $request = new Requests\PutCreateDocumentRequest(null, $remoteName,  $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\CreateDocumentRequest(null, $remoteName,  $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->putCreateDocument($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->createDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

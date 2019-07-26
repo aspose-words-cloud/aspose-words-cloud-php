@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  GET documentProperties/{propertyName}.
  */
-class DocumentPropertyResponse extends AsposeResponse 
+class DocumentPropertyResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

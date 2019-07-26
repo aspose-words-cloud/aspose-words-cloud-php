@@ -29,6 +29,7 @@
 namespace Aspose\Words;
 
 use \Exception;
+use \Aspose\Words\Model\ApiError;
 
 /**
  * ApiException class for exception
@@ -58,6 +59,19 @@ class ApiException extends Exception
     protected $responseObject;
 
     /**
+     * The error object
+     * 
+     * @var $responseError
+     */
+    protected $responseError;
+
+    /**
+     * The request ID;
+     * @var $requestId
+     */
+    protected $requestId;
+
+    /**
      * Constructor
      *
      * @param string        $message         Error message
@@ -70,6 +84,11 @@ class ApiException extends Exception
         parent::__construct($message, $code);
         $this->responseHeaders = $responseHeaders;
         $this->responseBody = $responseBody;
+        if ($responseBody !== NULL){
+            $errorObject =  json_decode($responseBody);
+            $this->requestId = $errorObject->RequestId;
+            $this->responseError = $this->__generateApiError($errorObject->Error);
+        }
     }
 
     /**
@@ -112,5 +131,46 @@ class ApiException extends Exception
     public function getResponseObject()
     {
         return $this->responseObject;
+    }
+
+    /**
+     * Gets the deserialized error object (during deserialization)
+     * 
+     * @return ApiError the deserialized error object
+     */
+    public function getResponseError(){
+        return $this->responseError;
+    }
+
+    /**
+     * Gets the deserialized request Id (during deserialization)
+     * 
+     * @return string the deserialized request id
+     */
+    public function getRequestId(){
+        return $this->requestId;
+    }
+
+    private function __from_camel_case($input) {
+        preg_match_all('!([A-Z][A-Z0-9]*(?=$|[A-Z][a-z0-9])|[A-Za-z][a-z0-9]+)!', $input, $matches);
+        $ret = $matches[0];
+        foreach ($ret as &$match) {
+          $match = $match == strtoupper($match) ? strtolower($match) : lcfirst($match);
+        }
+        return implode('_', $ret);
+      }
+
+    private function __generateApiError($body){
+        $errorTransformed = [];
+        foreach ($body as $key => $value) {
+            $key = $this->__from_camel_case($key);
+            if ($key == 'inner_error') {
+                $errorTransformed[$key] = $this->__generateApiError($value);
+            } else {
+                $errorTransformed[$key] = $value;
+            }
+        }
+        $error = new ApiError($errorTransformed);
+        return $error;
     }
 }

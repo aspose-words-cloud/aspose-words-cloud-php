@@ -39,12 +39,17 @@ class GetHeaderFootersRequest
     public $name;
 	
     /*
+     * Path to parent section.
+     */
+    public $section_path;
+	
+    /*
      * Original document folder.
      */
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -59,11 +64,6 @@ class GetHeaderFootersRequest
     public $password;
 	
     /*
-     * Path to parent section.
-     */
-    public $section_path;
-	
-    /*
      * List of types of headers and footers.
      */
     public $filter_by_type;
@@ -73,21 +73,21 @@ class GetHeaderFootersRequest
      * Initializes a new instance of the GetHeaderFootersRequest class.
      *  
      * @param string $name The document name.
+     * @param string $section_path Path to parent section.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $section_path Path to parent section.
      * @param string $filter_by_type List of types of headers and footers.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $section_path = null, $filter_by_type = null)             
+    public function __construct($name, $section_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $filter_by_type = null)             
     {
         $this->name = $name;
+        $this->section_path = $section_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->section_path = $section_path;
         $this->filter_by_type = $filter_by_type;
     }
 
@@ -109,6 +109,23 @@ class GetHeaderFootersRequest
     }
 	
     /*
+     * Path to parent section.
+     */
+    public function get_section_path()
+    {
+        return $this->section_path;
+    }
+
+    /*
+     * Path to parent section.
+     */
+    public function set_section_path($value)
+    {
+        $this->section_path = $value;
+        return $this;
+    }
+	
+    /*
      * Original document folder.
      */
     public function get_folder()
@@ -126,7 +143,7 @@ class GetHeaderFootersRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -134,7 +151,7 @@ class GetHeaderFootersRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -173,23 +190,6 @@ class GetHeaderFootersRequest
     public function set_password($value)
     {
         $this->password = $value;
-        return $this;
-    }
-	
-    /*
-     * Path to parent section.
-     */
-    public function get_section_path()
-    {
-        return $this->section_path;
-    }
-
-    /*
-     * Path to parent section.
-     */
-    public function set_section_path($value)
-    {
-        $this->section_path = $value;
         return $this;
     }
 	

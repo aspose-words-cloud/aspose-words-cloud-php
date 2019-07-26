@@ -44,7 +44,7 @@ class ClassifyDocumentRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -74,7 +74,7 @@ class ClassifyDocumentRequest
      *  
      * @param string $document_name The document name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $best_classes_count Count of the best classes to return.
@@ -126,7 +126,7 @@ class ClassifyDocumentRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -134,7 +134,7 @@ class ClassifyDocumentRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {

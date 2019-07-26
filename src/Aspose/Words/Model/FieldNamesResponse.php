@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.
  */
-class FieldNamesResponse extends AsposeResponse 
+class FieldNamesResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

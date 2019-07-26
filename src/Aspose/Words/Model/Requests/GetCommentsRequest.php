@@ -34,7 +34,7 @@ namespace Aspose\Words\Model\Requests;
 class GetCommentsRequest
 {
     /*
-     * The file name.
+     * The document name.
      */
     public $name;
 	
@@ -44,7 +44,7 @@ class GetCommentsRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -62,9 +62,9 @@ class GetCommentsRequest
     /*
      * Initializes a new instance of the GetCommentsRequest class.
      *  
-     * @param string $name The file name.
+     * @param string $name The document name.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
@@ -78,7 +78,7 @@ class GetCommentsRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function get_name()
     {
@@ -86,7 +86,7 @@ class GetCommentsRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function set_name($value)
     {
@@ -112,7 +112,7 @@ class GetCommentsRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -120,7 +120,7 @@ class GetCommentsRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {

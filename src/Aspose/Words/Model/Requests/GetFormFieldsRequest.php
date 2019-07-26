@@ -34,9 +34,14 @@ namespace Aspose\Words\Model\Requests;
 class GetFormFieldsRequest
 {
     /*
-     * The file name.
+     * The document name.
      */
     public $name;
+	
+    /*
+     * Path to the node containing collection of form fields.
+     */
+    public $node_path;
 	
     /*
      * Original document folder.
@@ -44,7 +49,7 @@ class GetFormFieldsRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -57,35 +62,30 @@ class GetFormFieldsRequest
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * Path to node containing collection of form fields.
-     */
-    public $node_path;
     
 	
     /*
      * Initializes a new instance of the GetFormFieldsRequest class.
      *  
-     * @param string $name The file name.
+     * @param string $name The document name.
+     * @param string $node_path Path to the node containing collection of form fields.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $node_path Path to node containing collection of form fields.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null)             
+    public function __construct($name, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
         $this->name = $name;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->node_path = $node_path;
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function get_name()
     {
@@ -93,11 +93,28 @@ class GetFormFieldsRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function set_name($value)
     {
         $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Path to the node containing collection of form fields.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node containing collection of form fields.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 	
@@ -119,7 +136,7 @@ class GetFormFieldsRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -127,7 +144,7 @@ class GetFormFieldsRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -166,23 +183,6 @@ class GetFormFieldsRequest
     public function set_password($value)
     {
         $this->password = $value;
-        return $this;
-    }
-	
-    /*
-     * Path to node containing collection of form fields.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to node containing collection of form fields.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
         return $this;
     }
 }

@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  POST /{name}/split .
  */
-class SplitDocumentResponse extends AsposeResponse 
+class SplitDocumentResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

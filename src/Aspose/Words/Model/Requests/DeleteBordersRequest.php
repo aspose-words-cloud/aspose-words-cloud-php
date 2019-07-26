@@ -39,7 +39,7 @@ class DeleteBordersRequest
     public $name;
 	
     /*
-     * Path to node with borders(node should be cell or row).
+     * Path to the node with borders(node should be cell or row).
      */
     public $node_path;
 	
@@ -49,7 +49,7 @@ class DeleteBordersRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -64,7 +64,7 @@ class DeleteBordersRequest
     public $password;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
 	
@@ -83,12 +83,12 @@ class DeleteBordersRequest
      * Initializes a new instance of the DeleteBordersRequest class.
      *  
      * @param string $name The document name.
-     * @param string $node_path Path to node with borders(node should be cell or row).
+     * @param string $node_path Path to the node with borders(node should be cell or row).
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
@@ -123,7 +123,7 @@ class DeleteBordersRequest
     }
 	
     /*
-     * Path to node with borders(node should be cell or row).
+     * Path to the node with borders(node should be cell or row).
      */
     public function get_node_path()
     {
@@ -131,7 +131,7 @@ class DeleteBordersRequest
     }
 
     /*
-     * Path to node with borders(node should be cell or row).
+     * Path to the node with borders(node should be cell or row).
      */
     public function set_node_path($value)
     {
@@ -157,7 +157,7 @@ class DeleteBordersRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -165,7 +165,7 @@ class DeleteBordersRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -208,7 +208,7 @@ class DeleteBordersRequest
     }
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function get_dest_file_name()
     {
@@ -216,7 +216,7 @@ class DeleteBordersRequest
     }
 
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function set_dest_file_name($value)
     {

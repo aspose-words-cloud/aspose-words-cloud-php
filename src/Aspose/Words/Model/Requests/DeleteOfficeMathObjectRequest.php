@@ -34,14 +34,19 @@ namespace Aspose\Words\Model\Requests;
 class DeleteOfficeMathObjectRequest
 {
     /*
-     * The file name.
+     * The document name.
      */
     public $name;
 	
     /*
-     * Object's index
+     * Object index.
      */
     public $index;
+	
+    /*
+     * Path to the node, which contains collection of OfficeMath objects.
+     */
+    public $node_path;
 	
     /*
      * Original document folder.
@@ -49,7 +54,7 @@ class DeleteOfficeMathObjectRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -64,7 +69,7 @@ class DeleteOfficeMathObjectRequest
     public $password;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
 	
@@ -77,31 +82,27 @@ class DeleteOfficeMathObjectRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-	
-    /*
-     * Path to node, which contains collection of OfficeMath objects.
-     */
-    public $node_path;
     
 	
     /*
      * Initializes a new instance of the DeleteOfficeMathObjectRequest class.
      *  
-     * @param string $name The file name.
-     * @param int $index Object's index
+     * @param string $name The document name.
+     * @param int $index Object index.
+     * @param string $node_path Path to the node, which contains collection of OfficeMath objects.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $node_path Path to node, which contains collection of OfficeMath objects.
      */
-    public function __construct($name, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $node_path = null)             
+    public function __construct($name, $index, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
     {
         $this->name = $name;
         $this->index = $index;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -109,11 +110,10 @@ class DeleteOfficeMathObjectRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->node_path = $node_path;
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function get_name()
     {
@@ -121,7 +121,7 @@ class DeleteOfficeMathObjectRequest
     }
 
     /*
-     * The file name.
+     * The document name.
      */
     public function set_name($value)
     {
@@ -130,7 +130,7 @@ class DeleteOfficeMathObjectRequest
     }
 	
     /*
-     * Object's index
+     * Object index.
      */
     public function get_index()
     {
@@ -138,11 +138,28 @@ class DeleteOfficeMathObjectRequest
     }
 
     /*
-     * Object's index
+     * Object index.
      */
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+	
+    /*
+     * Path to the node, which contains collection of OfficeMath objects.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node, which contains collection of OfficeMath objects.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 	
@@ -164,7 +181,7 @@ class DeleteOfficeMathObjectRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -172,7 +189,7 @@ class DeleteOfficeMathObjectRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -215,7 +232,7 @@ class DeleteOfficeMathObjectRequest
     }
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function get_dest_file_name()
     {
@@ -223,7 +240,7 @@ class DeleteOfficeMathObjectRequest
     }
 
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function set_dest_file_name($value)
     {
@@ -262,23 +279,6 @@ class DeleteOfficeMathObjectRequest
     public function set_revision_date_time($value)
     {
         $this->revision_date_time = $value;
-        return $this;
-    }
-	
-    /*
-     * Path to node, which contains collection of OfficeMath objects.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to node, which contains collection of OfficeMath objects.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
         return $this;
     }
 }

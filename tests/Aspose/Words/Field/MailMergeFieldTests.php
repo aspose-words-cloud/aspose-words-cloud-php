@@ -45,13 +45,12 @@ class MailMergeFieldTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetDocumentFieldNamesRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getDocumentFieldNames($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -63,9 +62,9 @@ class MailMergeFieldTests extends \BaseTest\BaseTestContext
     public function testPutDocumentFieldNames()
     {
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleExecuteTemplate.docx";
-        $request = new Requests\PutDocumentFieldNamesRequest($file, true);
+        $request = new Requests\GetDocumentFieldNamesOnlineRequest($file, true);
 
-        $result = $this->words->putDocumentFieldNames($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->getDocumentFieldNamesOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

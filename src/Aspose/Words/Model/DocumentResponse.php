@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents the response with document description.
  */
-class DocumentResponse extends AsposeResponse 
+class DocumentResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

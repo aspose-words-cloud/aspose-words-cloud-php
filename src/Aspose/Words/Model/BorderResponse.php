@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET {nodeWithBorders}/borders.
  */
-class BorderResponse extends AsposeResponse 
+class BorderResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

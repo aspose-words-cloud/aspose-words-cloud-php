@@ -49,7 +49,7 @@ class GetDocumentHyperlinkByIndexRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -70,7 +70,7 @@ class GetDocumentHyperlinkByIndexRequest
      * @param string $name The document name.
      * @param int $hyperlink_index The hyperlink index.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
@@ -136,7 +136,7 @@ class GetDocumentHyperlinkByIndexRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -144,7 +144,7 @@ class GetDocumentHyperlinkByIndexRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {

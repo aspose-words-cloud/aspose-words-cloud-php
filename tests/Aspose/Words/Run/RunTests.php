@@ -47,13 +47,12 @@ class RunTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Runs/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\DeleteRunRequest($remoteName, "paragraphs/1", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->deleteRun($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -72,13 +71,12 @@ class RunTests extends \BaseTest\BaseTestContext
         $run = new Run(array("text" => "Run with text"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Runs/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostRunRequest($remoteName, $run, "paragraphs/1", $index, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\UpdateRunRequest($remoteName, $run, "paragraphs/1", $index, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->postRun($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->updateRun($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -96,12 +94,11 @@ class RunTests extends \BaseTest\BaseTestContext
         $run = new Run(array("text" => "run with text"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Runs/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutRunRequest($remoteName, "paragraphs/1", $run, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\InsertRunRequest($remoteName, "paragraphs/1", $run, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->putRun($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->insertRun($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

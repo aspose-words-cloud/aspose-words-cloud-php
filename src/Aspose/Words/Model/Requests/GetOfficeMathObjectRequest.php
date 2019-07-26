@@ -39,9 +39,14 @@ class GetOfficeMathObjectRequest
     public $name;
 	
     /*
-     * Object's index
+     * Object index.
      */
     public $index;
+	
+    /*
+     * Path to the node, which contains collection of OfficeMath objects.
+     */
+    public $node_path;
 	
     /*
      * Original document folder.
@@ -49,7 +54,7 @@ class GetOfficeMathObjectRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -62,33 +67,28 @@ class GetOfficeMathObjectRequest
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * Path to node, which contains collection of OfficeMath objects.
-     */
-    public $node_path;
     
 	
     /*
      * Initializes a new instance of the GetOfficeMathObjectRequest class.
      *  
      * @param string $name The document name.
-     * @param int $index Object's index
+     * @param int $index Object index.
+     * @param string $node_path Path to the node, which contains collection of OfficeMath objects.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $node_path Path to node, which contains collection of OfficeMath objects.
      */
-    public function __construct($name, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $node_path = null)             
+    public function __construct($name, $index, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
         $this->name = $name;
         $this->index = $index;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->node_path = $node_path;
     }
 
     /*
@@ -109,7 +109,7 @@ class GetOfficeMathObjectRequest
     }
 	
     /*
-     * Object's index
+     * Object index.
      */
     public function get_index()
     {
@@ -117,11 +117,28 @@ class GetOfficeMathObjectRequest
     }
 
     /*
-     * Object's index
+     * Object index.
      */
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+	
+    /*
+     * Path to the node, which contains collection of OfficeMath objects.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node, which contains collection of OfficeMath objects.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 	
@@ -143,7 +160,7 @@ class GetOfficeMathObjectRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -151,7 +168,7 @@ class GetOfficeMathObjectRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -190,23 +207,6 @@ class GetOfficeMathObjectRequest
     public function set_password($value)
     {
         $this->password = $value;
-        return $this;
-    }
-	
-    /*
-     * Path to node, which contains collection of OfficeMath objects.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to node, which contains collection of OfficeMath objects.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
         return $this;
     }
 }

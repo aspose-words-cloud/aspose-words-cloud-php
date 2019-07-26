@@ -39,12 +39,17 @@ class DeleteHeadersFootersRequest
     public $name;
 	
     /*
+     * Path to parent section.
+     */
+    public $section_path;
+	
+    /*
      * Original document folder.
      */
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -59,7 +64,7 @@ class DeleteHeadersFootersRequest
     public $password;
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
 	
@@ -74,11 +79,6 @@ class DeleteHeadersFootersRequest
     public $revision_date_time;
 	
     /*
-     * Path to parent section.
-     */
-    public $section_path;
-	
-    /*
      * List of types of headers and footers.
      */
     public $headers_footers_types;
@@ -88,19 +88,20 @@ class DeleteHeadersFootersRequest
      * Initializes a new instance of the DeleteHeadersFootersRequest class.
      *  
      * @param string $name The document name.
+     * @param string $section_path Path to parent section.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $section_path Path to parent section.
      * @param string $headers_footers_types List of types of headers and footers.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $section_path = null, $headers_footers_types = null)             
+    public function __construct($name, $section_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $headers_footers_types = null)             
     {
         $this->name = $name;
+        $this->section_path = $section_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -108,7 +109,6 @@ class DeleteHeadersFootersRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->section_path = $section_path;
         $this->headers_footers_types = $headers_footers_types;
     }
 
@@ -130,6 +130,23 @@ class DeleteHeadersFootersRequest
     }
 	
     /*
+     * Path to parent section.
+     */
+    public function get_section_path()
+    {
+        return $this->section_path;
+    }
+
+    /*
+     * Path to parent section.
+     */
+    public function set_section_path($value)
+    {
+        $this->section_path = $value;
+        return $this;
+    }
+	
+    /*
      * Original document folder.
      */
     public function get_folder()
@@ -147,7 +164,7 @@ class DeleteHeadersFootersRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -155,7 +172,7 @@ class DeleteHeadersFootersRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {
@@ -198,7 +215,7 @@ class DeleteHeadersFootersRequest
     }
 	
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function get_dest_file_name()
     {
@@ -206,7 +223,7 @@ class DeleteHeadersFootersRequest
     }
 
     /*
-     * Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public function set_dest_file_name($value)
     {
@@ -245,23 +262,6 @@ class DeleteHeadersFootersRequest
     public function set_revision_date_time($value)
     {
         $this->revision_date_time = $value;
-        return $this;
-    }
-	
-    /*
-     * Path to parent section.
-     */
-    public function get_section_path()
-    {
-        return $this->section_path;
-    }
-
-    /*
-     * Path to parent section.
-     */
-    public function set_section_path($value)
-    {
-        $this->section_path = $value;
         return $this;
     }
 	

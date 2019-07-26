@@ -44,7 +44,7 @@ class GetTableCellFormatRequest
     public $table_row_path;
 	
     /*
-     * Object's index
+     * Object index.
      */
     public $index;
 	
@@ -54,7 +54,7 @@ class GetTableCellFormatRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -74,9 +74,9 @@ class GetTableCellFormatRequest
      *  
      * @param string $name The document name.
      * @param string $table_row_path Path to table row.
-     * @param int $index Object's index
+     * @param int $index Object index.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
@@ -126,7 +126,7 @@ class GetTableCellFormatRequest
     }
 	
     /*
-     * Object's index
+     * Object index.
      */
     public function get_index()
     {
@@ -134,7 +134,7 @@ class GetTableCellFormatRequest
     }
 
     /*
-     * Object's index
+     * Object index.
      */
     public function set_index($value)
     {
@@ -160,7 +160,7 @@ class GetTableCellFormatRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -168,7 +168,7 @@ class GetTableCellFormatRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {

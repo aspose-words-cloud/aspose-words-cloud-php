@@ -47,13 +47,12 @@ class CommentTests extends BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\DeleteCommentRequest($remoteName, 0, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->deleteComment($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -71,13 +70,12 @@ class CommentTests extends BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetCommentRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getComment($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -94,13 +92,12 @@ class CommentTests extends BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetCommentsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getComments($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -123,13 +120,12 @@ class CommentTests extends BaseTest\BaseTestContext
             "author" => "Imran Anwar", "text" => "A new Comment"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostCommentRequest($remoteName, $index, $body, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\UpdateCommentRequest($remoteName, $index, $body, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->postComment($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->updateComment($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -155,12 +151,11 @@ class CommentTests extends BaseTest\BaseTestContext
         ));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutCommentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\InsertCommentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->putComment($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->insertComment($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Save response.
  */
-class SaveResponse extends AsposeResponse 
+class SaveResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

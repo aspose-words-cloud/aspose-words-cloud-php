@@ -54,7 +54,7 @@ class GetHeaderFooterOfSectionRequest
     public $folder;
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public $storage;
 	
@@ -81,7 +81,7 @@ class GetHeaderFooterOfSectionRequest
      * @param int $header_footer_index Header/footer index.
      * @param int $section_index Section index.
      * @param string $folder Original document folder.
-     * @param string $storage File storage, which have to be used.
+     * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $filter_by_type List of types of headers and footers.
@@ -167,7 +167,7 @@ class GetHeaderFooterOfSectionRequest
     }
 	
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function get_storage()
     {
@@ -175,7 +175,7 @@ class GetHeaderFooterOfSectionRequest
     }
 
     /*
-     * File storage, which have to be used.
+     * Original document storage.
      */
     public function set_storage($value)
     {

@@ -47,15 +47,14 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $footerType = HeaderFooter::TYPE_FOOTER_EVEN;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/HeaderFooters/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutHeaderFooterRequest($remoteName, $footerType, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertHeaderFooterRequest($remoteName, $footerType, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
-        $result = $this->words->putHeaderFooter($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->insertHeaderFooter($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -73,13 +72,12 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/HeaderFooters/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetHeaderFooterRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getHeaderFooter($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -98,13 +96,12 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $sectionIndex = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/HeaderFooters/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetHeaderFooterOfSectionRequest($remoteName, $index, $sectionIndex, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getHeaderFooterOfSection($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -121,14 +118,13 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/HeaderFooters/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetHeaderFootersRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\GetHeaderFootersRequest($remoteName, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getHeaderFooters($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -146,14 +142,13 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/HeaderFooters/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteHeaderFooterRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, null, null, null, "");
+        $request = new Requests\DeleteHeaderFooterRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null, null, null);
 
         $result = $this->words->deleteHeaderFooter($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -170,14 +165,13 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/HeaderFooters/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteHeadersFootersRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteHeadersFootersRequest($remoteName, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null, null,
-            null, "");
+            null);
 
         $result = $this->words->deleteHeadersFooters($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

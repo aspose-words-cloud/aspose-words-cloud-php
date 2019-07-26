@@ -46,13 +46,12 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetDocumentProtectionRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getDocumentProtection($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -71,14 +70,13 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $body = new ProtectionRequest(array("new_password" => "123"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PutProtectDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\ProtectDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName);
 
-        $result = $this->words->putProtectDocument($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->protectDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -96,13 +94,12 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $body = new ProtectionRequest(array("new_password" => ""));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\PostChangeDocumentProtectionRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\ProtectDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->postChangeDocumentProtection($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->protectDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -120,12 +117,11 @@ class DocumentProtectionTests extends \BaseTest\BaseTestContext
         $body = new ProtectionRequest(array("password" => "aspose"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/DocumentProtection/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteUnprotectDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\UnprotectDocumentRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->deleteUnprotectDocument($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->unprotectDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

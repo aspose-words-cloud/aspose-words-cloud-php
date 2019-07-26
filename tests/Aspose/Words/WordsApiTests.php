@@ -48,27 +48,11 @@ class WordsApiTests extends BaseTestContext
         }
         catch (ApiException $exception)
         {
-            Assert::assertEquals(400, $exception->getCode());
-            Assert::assertContains("Error while loading file 'noFileWithThisName.docx' from storage:", $exception->getMessage());
+            $errorObject = $exception->getResponseError();
+            Assert::assertNotNull($errorObject);
+            Assert::assertNotNull($errorObject->getInnerError());
+            Assert::equalTo(404, $exception->getCode());
         }
-    }
-
-    public function testAuthenticationTokenRefreshing()
-    {
-        $this->markTestSkipped("Ignored because we use local server to test this feature (access token is expired in 1s)");
-        $this->words->getConfig()->setDebug(true);
-
-        $request = new Requests\ResetCacheRequest();
-
-        $result = $this->words->resetCache($request);
-        ob_start();
-
-        usleep(20000);
-
-        $result = $this->words->resetCache($request);
-        $contents = ob_get_contents();
-        ob_get_clean();
-        Assert::assertContains("grant_type=refresh_token", $contents, "Refresh token hasn't been used");
     }
 
     public function testApiCoverage()
@@ -77,8 +61,8 @@ class WordsApiTests extends BaseTestContext
             "DocumentStatisticsTests", "DocumentTests", "DocumentWithFormatTests", "LoadWebDocumentTests", "RevisionsTests",
             "SplitDocumentToFormatTests", "DocumentPropertiesTests", "DocumentProtectionTests", "DrawingTests",
             "FieldTests", "FormFieldTests", "MailMergeFieldTests", "FontTests", "FootnoteTests", "HeaderFooterTests",
-            "HyperlinkTests", "MacrosTests", "ExecuteMailMergeTests", "ExecuteTemplateTests", "MathObjectTests",
-            "PageSetupTests", "ParagraphTests", "RunTests", "SectionsTests", "TableTests", "TextTests", "WatermarkTests");
+            "HyperlinkTests", "MacrosTests", "ExecuteMailMergeTests", "MathObjectTests",
+            "PageSetupTests", "ParagraphTests", "RunTests", "SectionsTests", "TableTests", "TextTests", "WatermarkTests", "FileTests", "FolderTests");
 
         $apiClass = new \ReflectionClass('Aspose\Words\WordsApi');
         $testMethods = [];

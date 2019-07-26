@@ -45,13 +45,12 @@ class RevisionsTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\AcceptAllRevisionsRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->acceptAllRevisions($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -69,13 +68,12 @@ class RevisionsTests extends \BaseTest\BaseTestContext
         $destName = self::$baseTestOut . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
         $request = new Requests\RejectAllRevisionsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName);
 
         $result = $this->words->rejectAllRevisions($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

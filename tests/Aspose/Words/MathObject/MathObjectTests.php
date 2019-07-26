@@ -46,15 +46,14 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteOfficeMathObjectRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteOfficeMathObjectRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, "");
+            null, null);
 
         $result = $this->words->deleteOfficeMathObject($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -72,14 +71,13 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetOfficeMathObjectRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\GetOfficeMathObjectRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getOfficeMathObject($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -96,14 +94,13 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetOfficeMathObjectsRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\GetOfficeMathObjectsRequest($remoteName, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->getOfficeMathObjects($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /**
@@ -122,13 +119,12 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $format = "png";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\RenderMathObjectRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, "");
+        $request = new Requests\RenderMathObjectRequest($remoteName, $format, $index, "", $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
 
         $result = $this->words->renderMathObject($request);
-        Assert::assertNotNull($result, "Error occurred while math object rendering");
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

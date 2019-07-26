@@ -15,14 +15,6 @@ default:
         contexts:
           - SaveAsContext
         paths: [%paths.base%/features/conversion/saveAs.feature]
-      posttemplate:
-        contexts:
-          - PostExecuteTemplateContext
-        paths: [%paths.base%/features/mailMerge/postExecuteTemplate.feature]
-      puttemplate:
-        contexts:
-          - PutExecuteTemplateContext
-        paths: [%paths.base%/features/mailMerge/putExecuteTemplate.feature]
       putmailmerge:
         contexts:
           - PutExecuteMailMergeContext

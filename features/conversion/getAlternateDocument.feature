@@ -12,14 +12,14 @@ Scenario Outline: Conversion of stored document
 	And attachment's format is <DestFormat>
 
 	Examples: 
-	| DocName           | DestFormat | SubFolder 						|
-	| TableDocument.doc | pdf        | DocumentActions/ConvertDocument/	|
-	| test_doc.docx     | pdf        | DocumentActions/ConvertDocument/	|
-	| test_doc.docx     | png        | DocumentActions/ConvertDocument/	|
-	| test_doc.docx     | html       | DocumentActions/ConvertDocument/	|
-	| TableDocument.doc | html       | DocumentActions/ConvertDocument/	|
-	| TableDocument.doc | txt        | DocumentActions/ConvertDocument/	|
-	| TableDocument.doc | htmlfixed  | DocumentActions/ConvertDocument/	|
+	| DocName           | DestFormat | SubFolder 						    |
+	| TableDocument.doc | pdf        | /DocumentActions/ConvertDocument/	|
+	| test_doc.docx     | pdf        | /DocumentActions/ConvertDocument/	|
+	| test_doc.docx     | png        | /DocumentActions/ConvertDocument/	|
+	| test_doc.docx     | html       | /DocumentActions/ConvertDocument/	|
+	| TableDocument.doc | html       | /DocumentActions/ConvertDocument/	|
+	| TableDocument.doc | txt        | /DocumentActions/ConvertDocument/	|
+	| TableDocument.doc | htmlfixed  | /DocumentActions/ConvertDocument/	|
 
 @ConversionOfStoredDoc
 Scenario Outline: Conversion of stored document and save to storage
@@ -32,10 +32,10 @@ Scenario Outline: Conversion of stored document and save to storage
 
 	Examples: 
 	| DocName           | DestFormat | OutPath                              | SubFolder 						|
-	| TableDocument.doc | pdf        | getalternate/TableDocument.pdf       | DocumentActions/ConvertDocument/	|
-	| test_doc.docx     | pdf        | getalternate/test_doc.pdf            | DocumentActions/ConvertDocument/	|
-	| test_doc.docx     | png        | getalternate/test_doc.png            | DocumentActions/ConvertDocument/	|
-	| test_doc.docx     | html       | getalternate/test_doc.html           | DocumentActions/ConvertDocument/	|
-	| TableDocument.doc | html       | getalternate/TableDocument.html      | DocumentActions/ConvertDocument/	|
-	| TableDocument.doc | txt        | getalternate/TableDocument.txt       | DocumentActions/ConvertDocument/	|
-	| TableDocument.doc | htmlfixed  | getalternate/TableDocument.htmlfixed | DocumentActions/ConvertDocument/	|
+	| TableDocument.doc | pdf        | getalternate/TableDocument.pdf       | /DocumentActions/ConvertDocument/	|
+	| test_doc.docx     | pdf        | getalternate/test_doc.pdf            | /DocumentActions/ConvertDocument/	|
+	| test_doc.docx     | png        | getalternate/test_doc.png            | /DocumentActions/ConvertDocument/	|
+	| test_doc.docx     | html       | getalternate/test_doc.html           | /DocumentActions/ConvertDocument/	|
+	| TableDocument.doc | html       | getalternate/TableDocument.html      | /DocumentActions/ConvertDocument/	|
+	| TableDocument.doc | txt        | getalternate/TableDocument.txt       | /DocumentActions/ConvertDocument/	|
+	| TableDocument.doc | htmlfixed  | getalternate/TableDocument.htmlfixed | /DocumentActions/ConvertDocument/	|

@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Response for \&quot;Replace text\&quot; action.
  */
-class ReplaceTextResponse extends AsposeResponse 
+class ReplaceTextResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

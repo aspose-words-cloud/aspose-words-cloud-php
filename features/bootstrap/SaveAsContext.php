@@ -44,7 +44,7 @@ class SaveAsContext extends BaseTest\BaseContext
     public function __construct()
     {
         parent::__construct();
-        $this->request = new \Aspose\Words\Model\Requests\PostDocumentSaveAsRequest("", new \Aspose\Words\Model\SaveOptionsData());
+        $this->request = new \Aspose\Words\Model\Requests\SaveAsRequest("", new \Aspose\Words\Model\SaveOptionsData());
     }
 
     /**
@@ -68,7 +68,7 @@ class SaveAsContext extends BaseTest\BaseContext
      */
     public function iExecuteConversionFromStoragePOSTSaveAs()
     {
-        $this->response = $this->context->get_api()->postDocumentSaveAs($this->request);
+        $this->response = $this->context->get_api()->saveAs($this->request);
     }
 
     /**
@@ -79,14 +79,15 @@ class SaveAsContext extends BaseTest\BaseContext
      */
     public function symbolsAreEncodedProperly()
     {
-        $textItems = $this->context
-            ->get_api()->getDocumentTextItems(
-                new \Aspose\Words\Model\Requests\GetDocumentTextItemsRequest(
-                    "TableDocumentDoc.doc",
-                    $this->BaseRemoteFolder() . "DocumentActions/ConvertDocument/out/saveas"
+        $textItems = json_decode($this->context
+            ->get_api()->getRun(
+                new \Aspose\Words\Model\Requests\GetRunRequest(
+                    "TableDocument.doc", "paragraphs/0", 0,
+                    $this->BaseRemoteFolder() . "/DocumentActions/ConvertDocument/out/saveas"
                 )
-            );
-        Assert::assertEquals("строка", $textItems->getTextItems()->getList()[0]->getText(), "Wrong conversion");
+            ));
+        
+        Assert::assertEquals("строка", $textItems->Run->Text, "Wrong conversion");
     }
 
     /**

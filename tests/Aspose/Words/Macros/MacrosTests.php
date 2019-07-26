@@ -45,12 +45,11 @@ class MacrosTests extends \BaseTest\BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
-        $this->storage->PutCreate($putRequest);
+        $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteDocumentMacrosRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\DeleteMacrosRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
-        $result = $this->words->deleteDocumentMacros($request);
-        Assert::assertEquals(200, json_decode($result, true)["Code"]);
+        $result = $this->words->deleteMacros($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

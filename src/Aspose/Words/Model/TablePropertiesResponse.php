@@ -35,9 +35,9 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TablePropertiesResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/tables/{0}/properties
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}/properties
  */
-class TablePropertiesResponse extends AsposeResponse 
+class TablePropertiesResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 

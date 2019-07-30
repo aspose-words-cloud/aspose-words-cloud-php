@@ -1,0 +1,203 @@
+stages:
+  - build
+  - tests_5.6
+  - tests_latest
+  - tag_version
+  - merge-to-testPackage
+  - publishing
+  - retest-5.6
+  - retest-latest
+
+build: 
+  stage: build
+  script: 
+    - 'docker run -v $PWD/:/opt/project -w="/opt/project" composer /bin/bash -c "composer install --no-interaction; chmod 777 -R vendor/"'
+  tags:
+  - awcloud-linux
+
+
+unit-tests-latest:
+  stage: tests_latest
+  before_script:
+    - 'docker run -v $PWD/:/opt/project -w="/opt/project" composer /bin/bash -c "composer install --no-interaction; chmod 777 -R vendor/"'
+  script:
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - 'docker run -v $PWD:/PHP -v $PWD/Settings/servercreds.json:/servercreds.json -v $PWD/TestData:/TestData -w="/PHP" --rm php:latest /bin/bash -c "vendor/bin/phpunit -c phpunit.xml; chmod 777 -R vendor/ testReports/"'
+  artifacts:
+    paths:
+      - 'testReports/logfile.xml'
+  tags:
+    - awcloud-linux
+
+bdd-tests-latest:
+  stage: tests_latest
+  before_script:
+    - 'docker run -v $PWD/:/opt/project -w="/opt/project" composer /bin/bash -c "composer install --no-interaction; chmod 777 -R vendor/"'
+  script:
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - mkdir -p testReports/bdd
+    - chmod 777 -R testReports/
+    - 'docker run -v $PWD:/PHP -v $PWD/Settings/servercreds.json:/servercreds.json -v $PWD/TestData:/TestData -w="/PHP" --rm php:latest /bin/bash -c "vendor/bin/behat --config=behat.yml --format=junit --out=testReports/bdd; chmod 777 -R vendor/ testReports/"'
+  artifacts:
+    paths:
+      - 'testReports/bdd/*.xml'
+  tags:
+    - awcloud-linux
+
+unit-tests-5.6:
+  stage: tests_5.6
+  before_script:
+    - 'docker run -v $PWD/:/opt/project -w="/opt/project" composer /bin/bash -c "composer install --no-interaction; chmod 777 -R vendor/"'
+  script:
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - 'docker run -v $PWD:/PHP -v $PWD/Settings/servercreds.json:/servercreds.json -v $PWD/TestData:/TestData -w="/PHP" --rm php:5.6 /bin/bash -c "vendor/bin/phpunit -c phpunit.xml; chmod 777 -R vendor/ testReports/"'
+  artifacts:
+    paths:
+      - 'testReports/logfile.xml'
+  tags:
+    - awcloud-linux
+
+bdd-tests-5.6:
+  stage: tests_5.6
+  before_script:
+    - 'docker run -v $PWD/:/opt/project -w="/opt/project" composer /bin/bash -c "composer install --no-interaction; chmod 777 -R vendor/"'
+  script:
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - mkdir -p testReports/bdd
+    - chmod 777 -R testReports/
+    - 'docker run -v $PWD:/PHP -v $PWD/Settings/servercreds.json:/servercreds.json -v $PWD/TestData:/TestData -w="/PHP" --rm php:5.6 /bin/bash -c "vendor/bin/behat --config=behat.yml --format=junit --out=testReports/bdd; chmod 777 -R vendor/ testReports/"'
+  artifacts:
+    paths:
+      - 'testReports/bdd/*.xml'
+  tags:
+    - awcloud-linux
+
+merge-to-testPackage:
+  stage: merge-to-testPackage
+  before_script:
+    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-php.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
+  script: 
+    - git checkout master
+    - 'git remote set-url origin $env:ORIGIN'
+    - git checkout testPackage
+    - git reset --hard origin/testPackage
+    - git merge --no-ff --allow-unrelated-histories origin/master -m "Merged test for publishing"
+    - git diff --name-status
+    - git push
+  only: 
+    - master
+  tags: 
+    - awcloud
+  when: manual
+
+publish_package:
+  stage: publishing
+  only: 
+    - testPackage
+  before_script:
+    - ORIGIN='https://'$GIT_CI_USER':'$GIT_CI_PASS'@git.auckland.dynabic.com/words-cloud/words-cloud-php.git'
+  script:
+    - docker build -f ./docker/latest/Dockerfile -t asposewordsphp:latest .
+    - docker run -v $PWD/:/app -w="/app" asposewordsphp:latest /bin/bash -c "php composer.phar install && php composer.phar update aspose/words-sdk-php --no-interaction; chmod 777 -R vendor/"
+    - git checkout testPackage
+    - git pull
+    - git diff --name-status
+    - git ls-files --others --exclude-standard
+    - git add -A
+    - git commit -am "new version of package referenced for tests [ci skip]"
+    - git push $ORIGIN testPackage
+  tags:
+    - awcloud-linux
+
+
+unit-retest-5.6:
+  stage: retest-5.6
+  before_script:
+    - 'docker run -v $PWD/:/opt/project -w="/opt/project" composer /bin/bash -c "composer install --no-interaction; chmod 777 -R vendor/"'
+  script:
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - docker run -v $PWD:/PHP -v $PWD/Settings/servercreds.json:/servercreds.json -v $PWD/TestData:/TestData -w="/PHP" --rm php:5.6 /bin/bash -c "vendor/bin/phpunit -c phpunit.xml; chmod 777 -R vendor/ testReports/"
+  artifacts:
+    paths:
+      - 'testReports/logfile.xml'
+  tags:
+    - awcloud-linux
+  only:
+    - testPackage
+  when: manual
+
+bdd-retest-5.6:
+  stage: retest-5.6
+  before_script:
+    - 'docker run -v $PWD/:/opt/project -w="/opt/project" composer /bin/bash -c "composer install --no-interaction; chmod 777 -R vendor/"'
+  script:
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - mkdir -p testReports/bdd
+    - chmod 777 -R testReports/
+    - 'docker run -v $PWD:/PHP -v $PWD/Settings/servercreds.json:/servercreds.json -v $PWD/TestData:/TestData -w="/PHP" --rm php:5.6 /bin/bash -c "vendor/bin/behat --config=behat.yml --format=junit --out=testReports/bdd; chmod 777 -R vendor/ testReports/"'
+  artifacts:
+    paths:
+      - 'testReports/bdd/*.xml'
+  tags:
+    - awcloud-linux
+  only:
+    - testPackage
+  when: manual
+
+unit-retest-latest:
+  stage: retest-latest
+  before_script:
+    - 'docker run -v $PWD/:/opt/project -w="/opt/project" composer /bin/bash -c "composer install --no-interaction; chmod 777 -R vendor/"'
+  script:
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - docker run -v $PWD:/PHP -v $PWD/Settings/servercreds.json:/servercreds.json -v $PWD/TestData:/TestData -w="/PHP" --rm php:latest /bin/bash -c "vendor/bin/phpunit -c phpunit.xml; chmod 777 -R vendor/ testReports/"
+  artifacts:
+    paths:
+      - 'testReports/logfile.xml'
+  tags:
+    - awcloud-linux
+  only:
+    - testPackage
+  when: manual
+
+bdd-retest-latest:
+  stage: retest-latest
+  before_script:
+    - 'docker run -v $PWD/:/opt/project -w="/opt/project" composer /bin/bash -c "composer install --no-interaction; chmod 777 -R vendor/"'
+  script:
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - mkdir -p testReports/bdd
+    - chmod 777 -R testReports/
+    - 'docker run -v $PWD:/PHP -v $PWD/Settings/servercreds.json:/servercreds.json -v $PWD/TestData:/TestData -w="/PHP" --rm php:latest /bin/bash -c "vendor/bin/behat --config=behat.yml --format=junit --out=testReports/bdd; chmod 777 -R vendor/ testReports/"'
+  artifacts:
+    paths:
+      - 'testReports/bdd/*.xml'
+  tags:
+    - awcloud-linux
+  only:
+    - testPackage
+  when: manual
+
+add version tag:
+  stage: tag_version
+  only:
+    - master
+  before_script:
+    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-php.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
+    - $env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")
+  script: 
+    - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION' | exit 0
+    - git push $env:ORIGIN $env:SDK_VERSION 
+  tags:
+    - awcloud
+
+
+

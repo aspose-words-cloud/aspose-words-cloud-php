@@ -33,14 +33,13 @@ use PHPUnit\Framework\Assert;
 
 class FolderTests extends \BaseTest\BaseTestContext
 {
-    public $testFolder = 'Temp/SdkTests/TestData/Storage';
     /**
      * Test case for createFolder
      */
     public function testCreateFolder()
     {
         $folderGUID = $this->getGUID();
-        $folderPath = $this->$testFolder . '/TestCreateFolder' . $folderGUID;
+        $folderPath = 'Temp/SdkTests/TestData/Storage/TestCreateFolder' . $folderGUID;
         $request = new Requests\CreateFolderRequest($folderPath);
         $result = $this->words->createFolder($request);
         echo $result;
@@ -52,7 +51,7 @@ class FolderTests extends \BaseTest\BaseTestContext
     public function testDeleteFolder()
     {
         $folderGUID = $this->getGUID();
-        $folderPath = $this->$testFolder . '/TestCreateFolder' . $folderGUID;
+        $folderPath = 'Temp/SdkTests/TestData/Storage/TestCreateFolder' . $folderGUID;
         $request = new Requests\CreateFolderRequest($folderPath);
         $this->words->createFolder($request);
         $request = new Requests\DeleteFolderRequest($folderPath);
@@ -64,7 +63,7 @@ class FolderTests extends \BaseTest\BaseTestContext
      */
     public function testGetFilesList()
     {
-        $request = new Requests\GetFilesListRequest($this->testFolder);
+        $request = new Requests\GetFilesListRequest('Temp/SdkTests/TestData/Storage');
         $response = $this->words->getFilesList($request);
         Assert::greaterThan(0, strlen($response), "Answer should not be empty");
     }
@@ -74,8 +73,8 @@ class FolderTests extends \BaseTest\BaseTestContext
      */
     public function testCopyFolder(){
         $folderGUID = $this->getGUID();
-        $folderPathSrc = $this->$testFolder . '/TestCopyFolderSrc' . $folderGUID;
-        $folderPathDst = $this->$testFolder . '/TestCopyFolderDst' . $folderGUID;
+        $folderPathSrc = 'Temp/SdkTests/TestData/Storage/TestCopyFolderSrc' . $folderGUID;
+        $folderPathDst = 'Temp/SdkTests/TestData/Storage/TestCopyFolderDst' . $folderGUID;
 
         $request = new Requests\CreateFolderRequest($folderPathSrc);
         $this->words->createFolder($request);
@@ -83,7 +82,7 @@ class FolderTests extends \BaseTest\BaseTestContext
         $request = new Requests\CopyFolderRequest($folderPathDst, $folderPathSrc);
         $this->words->copyFolder($request);
 
-        $request = new Requests\GetFilesListRequest($this->testFolder);
+        $request = new Requests\GetFilesListRequest('Temp/SdkTests/TestData/Storage');
         $response = $this->words->getFilesList($request);
     }
 
@@ -92,8 +91,8 @@ class FolderTests extends \BaseTest\BaseTestContext
      */
     public function testMoveFolder(){
         $folderGUID = $this->getGUID();
-        $folderPathSrc = $this->$testFolder . '/TestMoveFolderSrc' . $folderGUID;
-        $folderPathDst = $this->$testFolder . '/TestMoveFolderDst' . $folderGUID;
+        $folderPathSrc = 'Temp/SdkTests/TestData/Storage/TestMoveFolderSrc' . $folderGUID;
+        $folderPathDst = 'Temp/SdkTests/TestData/Storage/TestMoveFolderDst' . $folderGUID;
 
         $request = new Requests\CreateFolderRequest($folderPathSrc);
         $this->words->createFolder($request);
@@ -101,7 +100,7 @@ class FolderTests extends \BaseTest\BaseTestContext
         $request = new Requests\MoveFolderRequest($folderPathDst, $folderPathSrc);
         $this->words->moveFolder($request);
 
-        $request = new Requests\GetFilesListRequest($this->testFolder);
+        $request = new Requests\GetFilesListRequest('Temp/SdkTests/TestData/Storage');
         $response = $this->words->getFilesList($request);
     }
 }

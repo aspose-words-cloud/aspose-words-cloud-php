@@ -76,6 +76,20 @@ bdd-tests-5.6:
   tags:
     - awcloud-linux
 
+add version tag:
+  stage: tag_version
+  only:
+    - master
+  before_script:
+    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-php.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
+    - $env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")
+  script: 
+    - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION'
+    - git push $env:ORIGIN $env:SDK_VERSION 
+  tags:
+    - awcloud
+  when: manual
+
 merge-to-testPackage:
   stage: merge-to-testPackage
   before_script:
@@ -185,19 +199,3 @@ bdd-retest-latest:
   only:
     - testPackage
   when: manual
-
-add version tag:
-  stage: tag_version
-  only:
-    - master
-  before_script:
-    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-php.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
-    - $env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")
-  script: 
-    - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION' | exit 0
-    - git push $env:ORIGIN $env:SDK_VERSION 
-  tags:
-    - awcloud
-
-
-

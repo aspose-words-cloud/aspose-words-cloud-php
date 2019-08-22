@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * RunLink
  *
- * @description Run link element
+ * @description Run link element.
  */
 class RunLink extends NodeLink 
 {
@@ -214,7 +214,7 @@ class RunLink extends NodeLink
     /*
      * Sets text
      *
-     * @param string $text Run's text
+     * @param string $text Gets or sets run's text.
      *
      * @return $this
      */

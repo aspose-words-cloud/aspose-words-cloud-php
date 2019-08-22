@@ -220,7 +220,7 @@ class TableRow extends NodeLink
     /*
      * Sets row_format
      *
-     * @param \Aspose\Words\Model\TableRowFormat $row_format Provides access to the formatting properties of the row.
+     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets provides access to the formatting properties of the row.
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class TableRow extends NodeLink
     /*
      * Sets table_cell_list
      *
-     * @param \Aspose\Words\Model\TableCell[] $table_cell_list Collection of table's rows.
+     * @param \Aspose\Words\Model\TableCell[] $table_cell_list Gets or sets collection of table's rows.
      *
      * @return $this
      */

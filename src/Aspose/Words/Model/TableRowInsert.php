@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableRowInsert
  *
- * @description Table row element
+ * @description Table row element.
  */
 class TableRowInsert implements ArrayAccess
 {
@@ -229,7 +229,7 @@ class TableRowInsert implements ArrayAccess
     /*
      * Sets insert_after
      *
-     * @param int $insert_after Table row will be inserted after row with specified 0-based index.
+     * @param int $insert_after Gets or sets table row will be inserted after row with specified 0-based index.
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class TableRowInsert implements ArrayAccess
     /*
      * Sets columns_count
      *
-     * @param int $columns_count Count of columns. Default is 1.
+     * @param int $columns_count Gets or sets count of columns. Default is 1.
      *
      * @return $this
      */

@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentProtectionRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -162,3 +162,4 @@ class GetDocumentProtectionRequest
         return $this;
     }
 }
+/*

@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PclSaveOptionsData
  *
- * @description Container class for pcl save options
+ * @description Container class for pcl save options.
  */
 class PclSaveOptionsData extends FixedPageSaveOptionsData 
 {
@@ -220,7 +220,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets falllback_font_name
      *
-     * @param string $falllback_font_name Name of the font that will be used if no expected font is found in printer and built-in fonts collections.
+     * @param string $falllback_font_name Gets or sets name of the font that will be used if no expected font is found in printer and built-in fonts collections.
      *
      * @return $this
      */

@@ -214,7 +214,7 @@ class DrawingObjectCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\LinkElement[] $list Collection of DrawingObjects links
+     * @param \Aspose\Words\Model\LinkElement[] $list Gets or sets collection of DrawingObjects links.
      *
      * @return $this
      */

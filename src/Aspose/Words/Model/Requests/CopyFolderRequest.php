@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CopyFolderRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -138,3 +138,4 @@ class CopyFolderRequest
         return $this;
     }
 }
+/*

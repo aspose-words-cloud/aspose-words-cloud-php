@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HeaderFooter
  *
- * @description Section element
+ * @description Section element.
  */
 class HeaderFooter extends HeaderFooterLink 
 {
@@ -220,7 +220,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets drawing_objects
      *
-     * @param \Aspose\Words\Model\LinkElement $drawing_objects Link to DrawingObjects resource
+     * @param \Aspose\Words\Model\LinkElement $drawing_objects Gets or sets link to DrawingObjects resource.
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs Link to Paragraphs resource
+     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets link to Paragraphs resource.
      *
      * @return $this
      */

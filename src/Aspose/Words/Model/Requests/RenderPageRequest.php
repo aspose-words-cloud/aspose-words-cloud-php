@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RenderPageRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -39,7 +39,7 @@ class RenderPageRequest
     public $name;
 	
     /*
-     * Comment index
+     * Comment index.
      */
     public $page_index;
 	
@@ -78,7 +78,7 @@ class RenderPageRequest
      * Initializes a new instance of the RenderPageRequest class.
      *  
      * @param string $name The document name.
-     * @param int $page_index Comment index
+     * @param int $page_index Comment index.
      * @param string $format The destination format.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -116,7 +116,7 @@ class RenderPageRequest
     }
 	
     /*
-     * Comment index
+     * Comment index.
      */
     public function get_page_index()
     {
@@ -124,7 +124,7 @@ class RenderPageRequest
     }
 
     /*
-     * Comment index
+     * Comment index.
      */
     public function set_page_index($value)
     {
@@ -234,3 +234,4 @@ class RenderPageRequest
         return $this;
     }
 }
+/*

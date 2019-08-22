@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SaveOptionsData
  *
- * @description base container class for save options data
+ * @description base container class for save options data.
  */
 class SaveOptionsData implements ArrayAccess
 {
@@ -269,7 +269,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets color_mode
      *
-     * @param string $color_mode Gets or sets a value determining how colors are rendered. { Normal | Grayscale}
+     * @param string $color_mode Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
      *
      * @return $this
      */
@@ -293,7 +293,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets save_format
      *
-     * @param string $save_format format of save
+     * @param string $save_format Gets or sets format of save.
      *
      * @return $this
      */
@@ -317,7 +317,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets file_name
      *
-     * @param string $file_name name of destination file
+     * @param string $file_name Gets or sets name of destination file.
      *
      * @return $this
      */
@@ -341,7 +341,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets dml_rendering_mode
      *
-     * @param string $dml_rendering_mode Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }
+     * @param string $dml_rendering_mode Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
      *
      * @return $this
      */
@@ -365,7 +365,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets dml_effects_rendering_mode
      *
-     * @param string $dml_effects_rendering_mode Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }
+     * @param string $dml_effects_rendering_mode Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
      *
      * @return $this
      */
@@ -389,7 +389,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets zip_output
      *
-     * @param bool $zip_output Controls zip output or not. Default value is false.
+     * @param bool $zip_output Gets or sets controls zip output or not. Default value is false.
      *
      * @return $this
      */
@@ -461,7 +461,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets update_fields
      *
-     * @param bool $update_fields Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
+     * @param bool $update_fields Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
      *
      * @return $this
      */

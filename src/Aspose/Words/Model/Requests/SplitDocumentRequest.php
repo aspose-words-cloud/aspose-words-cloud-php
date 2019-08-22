@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SplitDocumentRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -306,3 +306,4 @@ class SplitDocumentRequest
         return $this;
     }
 }
+/*

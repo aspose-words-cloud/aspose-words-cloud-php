@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HtmlFixedSaveOptionsData
  *
- * @description container class for fixed html save options
+ * @description container class for fixed html save options.
  */
 class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData 
 {
@@ -286,7 +286,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets css_class_names_prefix
      *
-     * @param string $css_class_names_prefix Specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
+     * @param string $css_class_names_prefix Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets encoding
      *
-     * @param string $encoding Encoding.
+     * @param string $encoding Gets or sets encoding.
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_embedded_css
      *
-     * @param bool $export_embedded_css Specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
+     * @param bool $export_embedded_css Gets or sets specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_embedded_fonts
      *
-     * @param bool $export_embedded_fonts Specifies whether fonts should be embedded into Html document in Base64 format.
+     * @param bool $export_embedded_fonts Gets or sets specifies whether fonts should be embedded into Html document in Base64 format.
      *
      * @return $this
      */
@@ -382,7 +382,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_embedded_images
      *
-     * @param bool $export_embedded_images Specifies whether images should be embedded into Html document in Base64 format.
+     * @param bool $export_embedded_images Gets or sets specifies whether images should be embedded into Html document in Base64 format.
      *
      * @return $this
      */
@@ -430,7 +430,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets font_format
      *
-     * @param string $font_format Specifies export format of fonts
+     * @param string $font_format Gets or sets specifies export format of fonts.
      *
      * @return $this
      */
@@ -454,7 +454,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets page_horizontal_alignment
      *
-     * @param string $page_horizontal_alignment Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
+     * @param string $page_horizontal_alignment Gets or sets specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
      *
      * @return $this
      */
@@ -478,7 +478,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets page_margins
      *
-     * @param double $page_margins Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
+     * @param double $page_margins Gets or sets specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
      *
      * @return $this
      */
@@ -502,7 +502,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resources_folder
      *
-     * @param string $resources_folder Specifies the physical folder where resources are saved when exporting a document
+     * @param string $resources_folder Gets or sets specifies the physical folder where resources are saved when exporting a document.
      *
      * @return $this
      */
@@ -526,7 +526,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resources_folder_alias
      *
-     * @param string $resources_folder_alias Specifies the name of the folder used to construct resource URIs
+     * @param string $resources_folder_alias Gets or sets specifies the name of the folder used to construct resource URIs.
      *
      * @return $this
      */
@@ -550,7 +550,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets save_font_face_css_separately
      *
-     * @param bool $save_font_face_css_separately Flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
+     * @param bool $save_font_face_css_separately Gets or sets flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
      *
      * @return $this
      */
@@ -574,7 +574,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets show_page_border
      *
-     * @param bool $show_page_border Specifies whether border around pages should be shown.
+     * @param bool $show_page_border Gets or sets specifies whether border around pages should be shown.
      *
      * @return $this
      */

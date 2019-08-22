@@ -214,7 +214,7 @@ class DocumentResponse extends WordsResponse
     /*
      * Sets document
      *
-     * @param \Aspose\Words\Model\Document $document Document description.
+     * @param \Aspose\Words\Model\Document $document Gets or sets document description.
      *
      * @return $this
      */

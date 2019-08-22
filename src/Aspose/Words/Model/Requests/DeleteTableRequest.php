@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteTableRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -39,14 +39,14 @@ class DeleteTableRequest
     public $name;
 	
     /*
-     * Object index.
-     */
-    public $index;
-	
-    /*
      * Path to the node, which contains tables.
      */
     public $node_path;
+	
+    /*
+     * Object index.
+     */
+    public $index;
 	
     /*
      * Original document folder.
@@ -88,8 +88,8 @@ class DeleteTableRequest
      * Initializes a new instance of the DeleteTableRequest class.
      *  
      * @param string $name The document name.
-     * @param int $index Object index.
      * @param string $node_path Path to the node, which contains tables.
+     * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -98,11 +98,11 @@ class DeleteTableRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $index, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
+    public function __construct($name, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
     {
         $this->name = $name;
-        $this->index = $index;
         $this->node_path = $node_path;
+        $this->index = $index;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -130,23 +130,6 @@ class DeleteTableRequest
     }
 	
     /*
-     * Object index.
-     */
-    public function get_index()
-    {
-        return $this->index;
-    }
-
-    /*
-     * Object index.
-     */
-    public function set_index($value)
-    {
-        $this->index = $value;
-        return $this;
-    }
-	
-    /*
      * Path to the node, which contains tables.
      */
     public function get_node_path()
@@ -160,6 +143,23 @@ class DeleteTableRequest
     public function set_node_path($value)
     {
         $this->node_path = $value;
+        return $this;
+    }
+	
+    /*
+     * Object index.
+     */
+    public function get_index()
+    {
+        return $this->index;
+    }
+
+    /*
+     * Object index.
+     */
+    public function set_index($value)
+    {
+        $this->index = $value;
         return $this;
     }
 	
@@ -282,3 +282,4 @@ class DeleteTableRequest
         return $this;
     }
 }
+/*

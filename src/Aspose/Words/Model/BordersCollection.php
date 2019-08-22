@@ -214,7 +214,7 @@ class BordersCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\Border[] $list Collection of comments
+     * @param \Aspose\Words\Model\Border[] $list Gets or sets collection of comments.
      *
      * @return $this
      */

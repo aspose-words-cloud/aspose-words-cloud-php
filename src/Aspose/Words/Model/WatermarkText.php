@@ -229,7 +229,7 @@ class WatermarkText implements ArrayAccess
     /*
      * Sets text
      *
-     * @param string $text The watermark text.
+     * @param string $text Gets or sets the watermark text.
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class WatermarkText implements ArrayAccess
     /*
      * Sets rotation_angle
      *
-     * @param double $rotation_angle The watermark rotation angle.
+     * @param double $rotation_angle Gets or sets the watermark rotation angle.
      *
      * @return $this
      */

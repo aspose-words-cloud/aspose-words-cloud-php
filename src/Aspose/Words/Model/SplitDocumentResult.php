@@ -229,7 +229,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Sets source_document
      *
-     * @param \Aspose\Words\Model\FileLink $source_document Linkt to the source document.
+     * @param \Aspose\Words\Model\FileLink $source_document Gets or sets linkt to the source document.
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Sets pages
      *
-     * @param \Aspose\Words\Model\FileLink[] $pages Array of pages.
+     * @param \Aspose\Words\Model\FileLink[] $pages Gets or sets array of pages.
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Sets zipped_pages
      *
-     * @param \Aspose\Words\Model\FileLink $zipped_pages Link to the file archive with pages.
+     * @param \Aspose\Words\Model\FileLink $zipped_pages Gets or sets link to the file archive with pages.
      *
      * @return $this
      */

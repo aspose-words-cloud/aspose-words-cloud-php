@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * XmlColor
  *
- * @description Utility class for  serialization
+ * @description Utility class for  serialization.
  */
 class XmlColor implements ArrayAccess
 {
@@ -229,7 +229,7 @@ class XmlColor implements ArrayAccess
     /*
      * Sets web
      *
-     * @param string $web HTML string color representation
+     * @param string $web Gets or sets hTML string color representation.
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class XmlColor implements ArrayAccess
     /*
      * Sets alpha
      *
-     * @param int $alpha Alpha component of color structure
+     * @param int $alpha Gets or sets alpha component of color structure.
      *
      * @return $this
      */

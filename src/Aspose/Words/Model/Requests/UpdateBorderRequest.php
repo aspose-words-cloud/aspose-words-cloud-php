@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateBorderRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -39,7 +39,7 @@ class UpdateBorderRequest
     public $name;
 	
     /*
-     * Border properties
+     * Border properties.
      */
     public $border_properties;
 	
@@ -93,7 +93,7 @@ class UpdateBorderRequest
      * Initializes a new instance of the UpdateBorderRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\Border $border_properties Border properties
+     * @param \Aspose\Words\Model\Border $border_properties Border properties.
      * @param string $node_path Path to the node with border(node should be cell or row).
      * @param int $index Object index.
      * @param string $folder Original document folder.
@@ -137,7 +137,7 @@ class UpdateBorderRequest
     }
 	
     /*
-     * Border properties
+     * Border properties.
      */
     public function get_border_properties()
     {
@@ -145,7 +145,7 @@ class UpdateBorderRequest
     }
 
     /*
-     * Border properties
+     * Border properties.
      */
     public function set_border_properties($value)
     {
@@ -306,3 +306,4 @@ class UpdateBorderRequest
         return $this;
     }
 }
+/*

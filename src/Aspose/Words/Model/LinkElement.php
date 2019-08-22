@@ -221,7 +221,7 @@ class LinkElement implements ArrayAccess
     /*
      * Sets link
      *
-     * @param \Aspose\Words\Model\WordsApiLink $link Link to the document.
+     * @param \Aspose\Words\Model\WordsApiLink $link Gets or sets link to the document.
      *
      * @return $this
      */

@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteCommentRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -39,7 +39,7 @@ class DeleteCommentRequest
     public $name;
 	
     /*
-     * The comment index
+     * The comment index.
      */
     public $comment_index;
 	
@@ -83,7 +83,7 @@ class DeleteCommentRequest
      * Initializes a new instance of the DeleteCommentRequest class.
      *  
      * @param string $name The document name.
-     * @param int $comment_index The comment index
+     * @param int $comment_index The comment index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -123,7 +123,7 @@ class DeleteCommentRequest
     }
 	
     /*
-     * The comment index
+     * The comment index.
      */
     public function get_comment_index()
     {
@@ -131,7 +131,7 @@ class DeleteCommentRequest
     }
 
     /*
-     * The comment index
+     * The comment index.
      */
     public function set_comment_index($value)
     {
@@ -258,3 +258,4 @@ class DeleteCommentRequest
         return $this;
     }
 }
+/*

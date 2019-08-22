@@ -214,7 +214,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
     /*
      * Sets export_cid_urls_for_mhtml_resources
      *
-     * @param bool $export_cid_urls_for_mhtml_resources Specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.
+     * @param bool $export_cid_urls_for_mhtml_resources Gets or sets specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.
      *
      * @return $this
      */

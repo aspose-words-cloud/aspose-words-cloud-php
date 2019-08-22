@@ -214,7 +214,7 @@ class DrawingObjectResponse extends WordsResponse
     /*
      * Sets drawing_object
      *
-     * @param \Aspose\Words\Model\DrawingObject $drawing_object Drawing object.
+     * @param \Aspose\Words\Model\DrawingObject $drawing_object Gets or sets drawing object.
      *
      * @return $this
      */

@@ -261,7 +261,7 @@ class TableRowFormat extends LinkElement
     /*
      * Sets allow_break_across_pages
      *
-     * @param bool $allow_break_across_pages True if the text in a table row is allowed to split across a page break.
+     * @param bool $allow_break_across_pages Gets or sets true if the text in a table row is allowed to split across a page break.
      *
      * @return $this
      */
@@ -285,7 +285,7 @@ class TableRowFormat extends LinkElement
     /*
      * Sets heading_format
      *
-     * @param bool $heading_format True if the row is repeated as a table heading on every page when the table spans more than one page.
+     * @param bool $heading_format Gets or sets true if the row is repeated as a table heading on every page when the table spans more than one page.
      *
      * @return $this
      */

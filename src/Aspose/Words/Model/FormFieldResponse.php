@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FormFieldResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/formfields/{1}
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/formfields/{1}.
  */
 class FormFieldResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class FormFieldResponse extends WordsResponse
     /*
      * Sets form_field
      *
-     * @param \Aspose\Words\Model\FormField $form_field Field information
+     * @param \Aspose\Words\Model\FormField $form_field Gets or sets field information.
      *
      * @return $this
      */

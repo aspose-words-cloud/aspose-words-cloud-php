@@ -217,7 +217,7 @@ class DocumentEntryList implements ArrayAccess
     /*
      * Sets document_entries
      *
-     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries List of documents.
+     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries Gets or sets list of documents.
      *
      * @return $this
      */

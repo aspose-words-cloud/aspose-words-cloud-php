@@ -214,7 +214,7 @@ class FieldNamesResponse extends WordsResponse
     /*
      * Sets field_names
      *
-     * @param \Aspose\Words\Model\FieldNames $field_names Collection of mail merge fields.
+     * @param \Aspose\Words\Model\FieldNames $field_names Gets or sets collection of mail merge fields.
      *
      * @return $this
      */

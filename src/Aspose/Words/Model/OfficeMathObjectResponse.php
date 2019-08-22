@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * OfficeMathObjectResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/officeMathObjects/0
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/officeMathObjects/0.
  */
 class OfficeMathObjectResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class OfficeMathObjectResponse extends WordsResponse
     /*
      * Sets office_math_object
      *
-     * @param \Aspose\Words\Model\OfficeMathObject $office_math_object OfficeMathObject information
+     * @param \Aspose\Words\Model\OfficeMathObject $office_math_object Gets or sets officeMathObject information.
      *
      * @return $this
      */

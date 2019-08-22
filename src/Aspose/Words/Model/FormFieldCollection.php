@@ -214,7 +214,7 @@ class FormFieldCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\FormField[] $list Collection of formfields
+     * @param \Aspose\Words\Model\FormField[] $list Gets or sets collection of formfields.
      *
      * @return $this
      */

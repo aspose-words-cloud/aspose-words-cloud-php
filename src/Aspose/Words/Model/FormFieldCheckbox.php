@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FormFieldCheckbox
  *
- * @description FormField checkbox element
+ * @description FormField checkbox element.
  */
 class FormFieldCheckbox extends FormField 
 {

@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Font
  *
- * @description Font element
+ * @description Font element.
  */
 class Font extends LinkElement 
 {
@@ -1313,7 +1313,7 @@ class Font extends LinkElement
     /*
      * Sets all_caps
      *
-     * @param bool $all_caps True if the font is formatted as all capital letters.
+     * @param bool $all_caps Gets or sets true if the font is formatted as all capital letters.
      *
      * @return $this
      */
@@ -1337,7 +1337,7 @@ class Font extends LinkElement
     /*
      * Sets bidi
      *
-     * @param bool $bidi Specifies whether the contents of this run shall have right-to-left characteristics.
+     * @param bool $bidi Gets or sets specifies whether the contents of this run shall have right-to-left characteristics.
      *
      * @return $this
      */
@@ -1361,7 +1361,7 @@ class Font extends LinkElement
     /*
      * Sets bold
      *
-     * @param bool $bold True if the font is formatted as bold.
+     * @param bool $bold Gets or sets true if the font is formatted as bold.
      *
      * @return $this
      */
@@ -1385,7 +1385,7 @@ class Font extends LinkElement
     /*
      * Sets bold_bi
      *
-     * @param bool $bold_bi True if the right-to-left text is formatted as bold.
+     * @param bool $bold_bi Gets or sets true if the right-to-left text is formatted as bold.
      *
      * @return $this
      */
@@ -1409,7 +1409,7 @@ class Font extends LinkElement
     /*
      * Sets border
      *
-     * @param \Aspose\Words\Model\Border $border Border object that specifies border for the font.
+     * @param \Aspose\Words\Model\Border $border Gets or sets border object that specifies border for the font.
      *
      * @return $this
      */
@@ -1457,7 +1457,7 @@ class Font extends LinkElement
     /*
      * Sets complex_script
      *
-     * @param bool $complex_script Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.
+     * @param bool $complex_script Gets or sets specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.
      *
      * @return $this
      */
@@ -1481,7 +1481,7 @@ class Font extends LinkElement
     /*
      * Sets double_strike_through
      *
-     * @param bool $double_strike_through True if the font is formatted as double strikethrough text.
+     * @param bool $double_strike_through Gets or sets true if the font is formatted as double strikethrough text.
      *
      * @return $this
      */
@@ -1505,7 +1505,7 @@ class Font extends LinkElement
     /*
      * Sets emboss
      *
-     * @param bool $emboss True if the font is formatted as embossed.
+     * @param bool $emboss Gets or sets true if the font is formatted as embossed.
      *
      * @return $this
      */
@@ -1529,7 +1529,7 @@ class Font extends LinkElement
     /*
      * Sets engrave
      *
-     * @param bool $engrave True if the font is formatted as engraved.
+     * @param bool $engrave Gets or sets true if the font is formatted as engraved.
      *
      * @return $this
      */
@@ -1553,7 +1553,7 @@ class Font extends LinkElement
     /*
      * Sets hidden
      *
-     * @param bool $hidden True if the font is formatted as hidden text.
+     * @param bool $hidden Gets or sets true if the font is formatted as hidden text.
      *
      * @return $this
      */
@@ -1601,7 +1601,7 @@ class Font extends LinkElement
     /*
      * Sets italic
      *
-     * @param bool $italic True if the font is formatted as italic.
+     * @param bool $italic Gets or sets true if the font is formatted as italic.
      *
      * @return $this
      */
@@ -1625,7 +1625,7 @@ class Font extends LinkElement
     /*
      * Sets italic_bi
      *
-     * @param bool $italic_bi True if the right-to-left text is formatted as italic.
+     * @param bool $italic_bi Gets or sets true if the right-to-left text is formatted as italic.
      *
      * @return $this
      */
@@ -1745,7 +1745,7 @@ class Font extends LinkElement
     /*
      * Sets name
      *
-     * @param string $name Gets or sets the name of the font
+     * @param string $name Gets or sets the name of the font.
      *
      * @return $this
      */
@@ -1769,7 +1769,7 @@ class Font extends LinkElement
     /*
      * Sets name_ascii
      *
-     * @param string $name_ascii Returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).
+     * @param string $name_ascii Gets or sets returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).
      *
      * @return $this
      */
@@ -1793,7 +1793,7 @@ class Font extends LinkElement
     /*
      * Sets name_bi
      *
-     * @param string $name_bi Returns or sets the name of the font in a right-to-left language document.
+     * @param string $name_bi Gets or sets returns or sets the name of the font in a right-to-left language document.
      *
      * @return $this
      */
@@ -1817,7 +1817,7 @@ class Font extends LinkElement
     /*
      * Sets name_far_east
      *
-     * @param string $name_far_east Returns or sets an East Asian font name.
+     * @param string $name_far_east Gets or sets returns or sets an East Asian font name.
      *
      * @return $this
      */
@@ -1841,7 +1841,7 @@ class Font extends LinkElement
     /*
      * Sets name_other
      *
-     * @param string $name_other Returns or sets the font used for characters with character codes from 128 through 255.
+     * @param string $name_other Gets or sets returns or sets the font used for characters with character codes from 128 through 255.
      *
      * @return $this
      */
@@ -1865,7 +1865,7 @@ class Font extends LinkElement
     /*
      * Sets no_proofing
      *
-     * @param bool $no_proofing True when the formatted characters are not to be spell checked.
+     * @param bool $no_proofing Gets or sets true when the formatted characters are not to be spell checked.
      *
      * @return $this
      */
@@ -1889,7 +1889,7 @@ class Font extends LinkElement
     /*
      * Sets outline
      *
-     * @param bool $outline True if the font is formatted as outline.
+     * @param bool $outline Gets or sets true if the font is formatted as outline.
      *
      * @return $this
      */
@@ -1961,7 +1961,7 @@ class Font extends LinkElement
     /*
      * Sets shadow
      *
-     * @param bool $shadow True if the font is formatted as shadowed.
+     * @param bool $shadow Gets or sets true if the font is formatted as shadowed.
      *
      * @return $this
      */
@@ -2033,7 +2033,7 @@ class Font extends LinkElement
     /*
      * Sets small_caps
      *
-     * @param bool $small_caps True if the font is formatted as small capital letters.
+     * @param bool $small_caps Gets or sets true if the font is formatted as small capital letters.
      *
      * @return $this
      */
@@ -2057,7 +2057,7 @@ class Font extends LinkElement
     /*
      * Sets spacing
      *
-     * @param double $spacing Returns or sets the spacing (in points) between characters.
+     * @param double $spacing Gets or sets returns or sets the spacing (in points) between characters.
      *
      * @return $this
      */
@@ -2081,7 +2081,7 @@ class Font extends LinkElement
     /*
      * Sets strike_through
      *
-     * @param bool $strike_through True if the font is formatted as strikethrough text.
+     * @param bool $strike_through Gets or sets true if the font is formatted as strikethrough text.
      *
      * @return $this
      */
@@ -2158,7 +2158,7 @@ class Font extends LinkElement
     /*
      * Sets subscript
      *
-     * @param bool $subscript True if the font is formatted as subscript.
+     * @param bool $subscript Gets or sets true if the font is formatted as subscript.
      *
      * @return $this
      */
@@ -2182,7 +2182,7 @@ class Font extends LinkElement
     /*
      * Sets superscript
      *
-     * @param bool $superscript True if the font is formatted as superscript.
+     * @param bool $superscript Gets or sets true if the font is formatted as superscript.
      *
      * @return $this
      */

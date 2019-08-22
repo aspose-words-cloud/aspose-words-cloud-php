@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertWatermarkTextRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -258,3 +258,4 @@ class InsertWatermarkTextRequest
         return $this;
     }
 }
+/*

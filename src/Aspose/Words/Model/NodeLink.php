@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * NodeLink
  *
- * @description Reference to node
+ * @description Reference to node.
  */
 class NodeLink extends LinkElement 
 {
@@ -214,7 +214,7 @@ class NodeLink extends LinkElement
     /*
      * Sets node_id
      *
-     * @param string $node_id Node id
+     * @param string $node_id Gets or sets node id.
      *
      * @return $this
      */

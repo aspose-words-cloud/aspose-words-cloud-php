@@ -214,7 +214,7 @@ class OfficeMathObjectsCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\OfficeMathObject[] $list Collection of OfficeMath objects.
+     * @param \Aspose\Words\Model\OfficeMathObject[] $list Gets or sets collection of OfficeMath objects.
      *
      * @return $this
      */

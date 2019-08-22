@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * WordsApiErrorResponse
  *
- * @description Response for Api error
+ * @description Response for Api error.
  */
 class WordsApiErrorResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class WordsApiErrorResponse extends WordsResponse
     /*
      * Sets error
      *
-     * @param \Aspose\Words\Model\ApiError $error Error.
+     * @param \Aspose\Words\Model\ApiError $error Gets or sets error.
      *
      * @return $this
      */

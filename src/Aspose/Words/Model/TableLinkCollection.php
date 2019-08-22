@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableLinkCollection
  *
- * @description Collection of links to tables
+ * @description Collection of links to tables.
  */
 class TableLinkCollection extends LinkElement 
 {
@@ -214,7 +214,7 @@ class TableLinkCollection extends LinkElement
     /*
      * Sets table_link_list
      *
-     * @param \Aspose\Words\Model\TableLink[] $table_link_list Collection of table's links
+     * @param \Aspose\Words\Model\TableLink[] $table_link_list Gets or sets collection of table's links.
      *
      * @return $this
      */

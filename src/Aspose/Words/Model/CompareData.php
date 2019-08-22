@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * CompareData
  *
- * @description Container class for compare documents
+ * @description Container class for compare documents.
  */
 class CompareData implements ArrayAccess
 {
@@ -229,7 +229,7 @@ class CompareData implements ArrayAccess
     /*
      * Sets comparing_with_document
      *
-     * @param string $comparing_with_document Path to document to compare at the server.
+     * @param string $comparing_with_document Gets or sets path to document to compare at the server.
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class CompareData implements ArrayAccess
     /*
      * Sets author
      *
-     * @param string $author Initials of the author to use for revisions.
+     * @param string $author Gets or sets initials of the author to use for revisions.
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class CompareData implements ArrayAccess
     /*
      * Sets date_time
      *
-     * @param \DateTime $date_time The date and time to use for revisions.
+     * @param \DateTime $date_time Gets or sets the date and time to use for revisions.
      *
      * @return $this
      */

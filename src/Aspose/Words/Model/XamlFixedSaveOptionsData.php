@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * XamlFixedSaveOptionsData
  *
- * @description container class for xaml fixed save options
+ * @description container class for xaml fixed save options.
  */
 class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData 
 {
@@ -220,7 +220,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resources_folder
      *
-     * @param string $resources_folder Specifies the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format. Default is null.
+     * @param string $resources_folder Gets or sets specifies the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format. Default is null.
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resources_folder_alias
      *
-     * @param string $resources_folder_alias Specifies the name of the folder used to construct image URIs written into an fixed page Xaml document. Default is null.
+     * @param string $resources_folder_alias Gets or sets specifies the name of the folder used to construct image URIs written into an fixed page Xaml document. Default is null.
      *
      * @return $this
      */

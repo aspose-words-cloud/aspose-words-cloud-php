@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ParagraphFormatResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/format
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/format.
  */
 class ParagraphFormatResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class ParagraphFormatResponse extends WordsResponse
     /*
      * Sets paragraph_format
      *
-     * @param \Aspose\Words\Model\ParagraphFormat $paragraph_format Represents all the formatting for a paragraph.
+     * @param \Aspose\Words\Model\ParagraphFormat $paragraph_format Gets or sets represents all the formatting for a paragraph.
      *
      * @return $this
      */

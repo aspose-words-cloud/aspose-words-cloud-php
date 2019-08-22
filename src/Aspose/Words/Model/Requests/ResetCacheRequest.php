@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ResetCacheRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -34,3 +34,4 @@ namespace Aspose\Words\Model\Requests;
 class ResetCacheRequest
 {
 }
+/*

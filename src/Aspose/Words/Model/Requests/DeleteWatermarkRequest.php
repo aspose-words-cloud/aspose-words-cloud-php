@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteWatermarkRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -234,3 +234,4 @@ class DeleteWatermarkRequest
         return $this;
     }
 }
+/*

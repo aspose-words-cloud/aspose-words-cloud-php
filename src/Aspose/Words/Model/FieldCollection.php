@@ -214,7 +214,7 @@ class FieldCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\Field[] $list Collection of fields
+     * @param \Aspose\Words\Model\Field[] $list Gets or sets collection of fields.
      *
      * @return $this
      */

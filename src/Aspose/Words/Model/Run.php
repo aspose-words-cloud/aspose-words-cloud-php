@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Run
  *
- * @description Run element
+ * @description Run element.
  */
 class Run extends RunLink 
 {

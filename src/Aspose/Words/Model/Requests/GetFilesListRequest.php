@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetFilesListRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -90,3 +90,4 @@ class GetFilesListRequest
         return $this;
     }
 }
+/*

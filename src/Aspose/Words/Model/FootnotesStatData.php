@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FootnotesStatData
  *
- * @description Container for the footnotes statistical data
+ * @description Container for the footnotes statistical data.
  */
 class FootnotesStatData implements ArrayAccess
 {
@@ -235,7 +235,7 @@ class FootnotesStatData implements ArrayAccess
     /*
      * Sets word_count
      *
-     * @param int $word_count Total count of words in footnotes
+     * @param int $word_count Gets or sets total count of words in footnotes.
      *
      * @return $this
      */
@@ -259,7 +259,7 @@ class FootnotesStatData implements ArrayAccess
     /*
      * Sets paragraph_count
      *
-     * @param int $paragraph_count Total count of paragraphs in footnotes
+     * @param int $paragraph_count Gets or sets total count of paragraphs in footnotes.
      *
      * @return $this
      */

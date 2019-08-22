@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -79,7 +79,7 @@ class InsertTableRequest
     public $revision_date_time;
 	
     /*
-     * Table parameters/
+     * Table parameters/.
      */
     public $table;
     
@@ -96,7 +96,7 @@ class InsertTableRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param \Aspose\Words\Model\TableInsert $table Table parameters/
+     * @param \Aspose\Words\Model\TableInsert $table Table parameters/.
      */
     public function __construct($name, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $table = null)             
     {
@@ -266,7 +266,7 @@ class InsertTableRequest
     }
 	
     /*
-     * Table parameters/
+     * Table parameters/.
      */
     public function get_table()
     {
@@ -274,7 +274,7 @@ class InsertTableRequest
     }
 
     /*
-     * Table parameters/
+     * Table parameters/.
      */
     public function set_table($value)
     {
@@ -282,3 +282,4 @@ class InsertTableRequest
         return $this;
     }
 }
+/*

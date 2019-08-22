@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ParagraphLinkCollection
  *
- * @description Collection of links to paragraphs
+ * @description Collection of links to paragraphs.
  */
 class ParagraphLinkCollection extends LinkElement 
 {
@@ -214,7 +214,7 @@ class ParagraphLinkCollection extends LinkElement
     /*
      * Sets paragraph_link_list
      *
-     * @param \Aspose\Words\Model\ParagraphLink[] $paragraph_link_list Collection of paragraph's links
+     * @param \Aspose\Words\Model\ParagraphLink[] $paragraph_link_list Gets or sets collection of paragraph's links.
      *
      * @return $this
      */

@@ -762,7 +762,7 @@ class PageSetup extends LinkElement
     /*
      * Sets bidi
      *
-     * @param bool $bidi Specifies that this section contains bidirectional (complex scripts) text.
+     * @param bool $bidi Gets or sets specifies that this section contains bidirectional (complex scripts) text.
      *
      * @return $this
      */
@@ -786,7 +786,7 @@ class PageSetup extends LinkElement
     /*
      * Sets border_always_in_front
      *
-     * @param bool $border_always_in_front Specifies where the page border is positioned relative to intersecting texts and objects.
+     * @param bool $border_always_in_front Gets or sets specifies where the page border is positioned relative to intersecting texts and objects.
      *
      * @return $this
      */
@@ -810,7 +810,7 @@ class PageSetup extends LinkElement
     /*
      * Sets border_applies_to
      *
-     * @param string $border_applies_to Specifies which pages the page border is printed on.
+     * @param string $border_applies_to Gets or sets specifies which pages the page border is printed on.
      *
      * @return $this
      */
@@ -868,7 +868,7 @@ class PageSetup extends LinkElement
     /*
      * Sets bottom_margin
      *
-     * @param double $bottom_margin Returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.
+     * @param double $bottom_margin Gets or sets returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.
      *
      * @return $this
      */
@@ -892,7 +892,7 @@ class PageSetup extends LinkElement
     /*
      * Sets different_first_page_header_footer
      *
-     * @param bool $different_first_page_header_footer True if a different header or footer is used on the first page.
+     * @param bool $different_first_page_header_footer Gets or sets true if a different header or footer is used on the first page.
      *
      * @return $this
      */
@@ -940,7 +940,7 @@ class PageSetup extends LinkElement
     /*
      * Sets footer_distance
      *
-     * @param double $footer_distance Returns or sets the distance (in points) between the footer and the bottom of the page.
+     * @param double $footer_distance Gets or sets returns or sets the distance (in points) between the footer and the bottom of the page.
      *
      * @return $this
      */
@@ -988,7 +988,7 @@ class PageSetup extends LinkElement
     /*
      * Sets header_distance
      *
-     * @param double $header_distance Returns or sets the distance (in points) between the header and the top of the page.
+     * @param double $header_distance Gets or sets returns or sets the distance (in points) between the header and the top of the page.
      *
      * @return $this
      */
@@ -1012,7 +1012,7 @@ class PageSetup extends LinkElement
     /*
      * Sets left_margin
      *
-     * @param double $left_margin Returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.
+     * @param double $left_margin Gets or sets returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.
      *
      * @return $this
      */
@@ -1036,7 +1036,7 @@ class PageSetup extends LinkElement
     /*
      * Sets line_number_count_by
      *
-     * @param int $line_number_count_by Returns or sets the numeric increment for line numbers.
+     * @param int $line_number_count_by Gets or sets returns or sets the numeric increment for line numbers.
      *
      * @return $this
      */
@@ -1137,7 +1137,7 @@ class PageSetup extends LinkElement
     /*
      * Sets orientation
      *
-     * @param string $orientation Returns or sets the orientation of the page.
+     * @param string $orientation Gets or sets returns or sets the orientation of the page.
      *
      * @return $this
      */
@@ -1190,7 +1190,7 @@ class PageSetup extends LinkElement
     /*
      * Sets page_height
      *
-     * @param double $page_height Returns or sets the height of the page in points.
+     * @param double $page_height Gets or sets returns or sets the height of the page in points.
      *
      * @return $this
      */
@@ -1267,7 +1267,7 @@ class PageSetup extends LinkElement
     /*
      * Sets page_width
      *
-     * @param double $page_width Returns or sets the width of the page in points.
+     * @param double $page_width Gets or sets returns or sets the width of the page in points.
      *
      * @return $this
      */
@@ -1291,7 +1291,7 @@ class PageSetup extends LinkElement
     /*
      * Sets paper_size
      *
-     * @param string $paper_size Returns or sets the paper size.
+     * @param string $paper_size Gets or sets returns or sets the paper size.
      *
      * @return $this
      */
@@ -1320,7 +1320,7 @@ class PageSetup extends LinkElement
     /*
      * Sets restart_page_numbering
      *
-     * @param bool $restart_page_numbering True if page numbering restarts at the beginning of the section.
+     * @param bool $restart_page_numbering Gets or sets true if page numbering restarts at the beginning of the section.
      *
      * @return $this
      */
@@ -1344,7 +1344,7 @@ class PageSetup extends LinkElement
     /*
      * Sets right_margin
      *
-     * @param double $right_margin Returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.
+     * @param double $right_margin Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.
      *
      * @return $this
      */
@@ -1392,7 +1392,7 @@ class PageSetup extends LinkElement
     /*
      * Sets section_start
      *
-     * @param string $section_start Returns or sets the type of section break for the specified object.
+     * @param string $section_start Gets or sets returns or sets the type of section break for the specified object.
      *
      * @return $this
      */
@@ -1421,7 +1421,7 @@ class PageSetup extends LinkElement
     /*
      * Sets suppress_endnotes
      *
-     * @param bool $suppress_endnotes True if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.
+     * @param bool $suppress_endnotes Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.
      *
      * @return $this
      */
@@ -1445,7 +1445,7 @@ class PageSetup extends LinkElement
     /*
      * Sets top_margin
      *
-     * @param double $top_margin Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.
+     * @param double $top_margin Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.
      *
      * @return $this
      */
@@ -1469,7 +1469,7 @@ class PageSetup extends LinkElement
     /*
      * Sets vertical_alignment
      *
-     * @param string $vertical_alignment Returns or sets the vertical alignment of text on each page in a document or section.
+     * @param string $vertical_alignment Gets or sets returns or sets the vertical alignment of text on each page in a document or section.
      *
      * @return $this
      */

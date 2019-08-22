@@ -214,7 +214,7 @@ class BookmarksResponse extends WordsResponse
     /*
      * Sets bookmarks
      *
-     * @param \Aspose\Words\Model\Bookmarks $bookmarks Bookmarks which are contained in document.
+     * @param \Aspose\Words\Model\Bookmarks $bookmarks Gets or sets bookmarks which are contained in document.
      *
      * @return $this
      */

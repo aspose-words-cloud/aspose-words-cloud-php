@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * WordMLSaveOptionsData
  *
- * @description container class for wml save options
+ * @description container class for wml save options.
  */
 class WordMLSaveOptionsData extends SaveOptionsData 
 {
@@ -214,7 +214,7 @@ class WordMLSaveOptionsData extends SaveOptionsData
     /*
      * Sets pretty_format
      *
-     * @param bool $pretty_format Specifies whether or not use pretty formats output
+     * @param bool $pretty_format Gets or sets specifies whether or not use pretty formats output.
      *
      * @return $this
      */

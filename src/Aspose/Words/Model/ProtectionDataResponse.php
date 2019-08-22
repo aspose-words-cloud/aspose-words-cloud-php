@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ProtectionDataResponse
  *
- * @description Response for the request of data about protection
+ * @description Response for the request of data about protection.
  */
 class ProtectionDataResponse extends WordsResponse 
 {
@@ -220,7 +220,7 @@ class ProtectionDataResponse extends WordsResponse
     /*
      * Sets document_link
      *
-     * @param \Aspose\Words\Model\FileLink $document_link Link to the document
+     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets link to the document.
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class ProtectionDataResponse extends WordsResponse
     /*
      * Sets protection_data
      *
-     * @param \Aspose\Words\Model\ProtectionData $protection_data Protection's data of the document
+     * @param \Aspose\Words\Model\ProtectionData $protection_data Gets or sets protection's data of the document.
      *
      * @return $this
      */

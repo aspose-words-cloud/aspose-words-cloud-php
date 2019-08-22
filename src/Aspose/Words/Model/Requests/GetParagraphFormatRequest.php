@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetParagraphFormatRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -39,14 +39,14 @@ class GetParagraphFormatRequest
     public $name;
 	
     /*
-     * Object index.
-     */
-    public $index;
-	
-    /*
      * Path to the node which contains paragraphs.
      */
     public $node_path;
+	
+    /*
+     * Object index.
+     */
+    public $index;
 	
     /*
      * Original document folder.
@@ -73,18 +73,18 @@ class GetParagraphFormatRequest
      * Initializes a new instance of the GetParagraphFormatRequest class.
      *  
      * @param string $name The document name.
-     * @param int $index Object index.
      * @param string $node_path Path to the node which contains paragraphs.
+     * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $index, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($name, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
         $this->name = $name;
-        $this->index = $index;
         $this->node_path = $node_path;
+        $this->index = $index;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -109,23 +109,6 @@ class GetParagraphFormatRequest
     }
 	
     /*
-     * Object index.
-     */
-    public function get_index()
-    {
-        return $this->index;
-    }
-
-    /*
-     * Object index.
-     */
-    public function set_index($value)
-    {
-        $this->index = $value;
-        return $this;
-    }
-	
-    /*
      * Path to the node which contains paragraphs.
      */
     public function get_node_path()
@@ -139,6 +122,23 @@ class GetParagraphFormatRequest
     public function set_node_path($value)
     {
         $this->node_path = $value;
+        return $this;
+    }
+	
+    /*
+     * Object index.
+     */
+    public function get_index()
+    {
+        return $this->index;
+    }
+
+    /*
+     * Object index.
+     */
+    public function set_index($value)
+    {
+        $this->index = $value;
         return $this;
     }
 	
@@ -210,3 +210,4 @@ class GetParagraphFormatRequest
         return $this;
     }
 }
+/*

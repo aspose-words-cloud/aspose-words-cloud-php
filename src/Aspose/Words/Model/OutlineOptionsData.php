@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * OutlineOptionsData
  *
- * @description container class for outline options
+ * @description container class for outline options.
  */
 class OutlineOptionsData implements ArrayAccess
 {
@@ -247,7 +247,7 @@ class OutlineOptionsData implements ArrayAccess
     /*
      * Sets bookmarks_outline_levels
      *
-     * @param \Aspose\Words\Model\BookmarksOutlineLevelData[] $bookmarks_outline_levels Allows to specify individual bookmarks outline level
+     * @param \Aspose\Words\Model\BookmarksOutlineLevelData[] $bookmarks_outline_levels Gets or sets allows to specify individual bookmarks outline level.
      *
      * @return $this
      */
@@ -271,7 +271,7 @@ class OutlineOptionsData implements ArrayAccess
     /*
      * Sets default_bookmarks_outline_level
      *
-     * @param int $default_bookmarks_outline_level Specifies the default level in the document outline at which to display Word bookmarks
+     * @param int $default_bookmarks_outline_level Gets or sets specifies the default level in the document outline at which to display Word bookmarks.
      *
      * @return $this
      */
@@ -319,7 +319,7 @@ class OutlineOptionsData implements ArrayAccess
     /*
      * Sets create_outlines_for_headings_in_tables
      *
-     * @param bool $create_outlines_for_headings_in_tables Specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.
+     * @param bool $create_outlines_for_headings_in_tables Gets or sets specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.
      *
      * @return $this
      */
@@ -343,7 +343,7 @@ class OutlineOptionsData implements ArrayAccess
     /*
      * Sets expanded_outline_levels
      *
-     * @param int $expanded_outline_levels Specifies how many levels in the document outline to show expanded when the file is viewed
+     * @param int $expanded_outline_levels Gets or sets specifies how many levels in the document outline to show expanded when the file is viewed.
      *
      * @return $this
      */
@@ -367,7 +367,7 @@ class OutlineOptionsData implements ArrayAccess
     /*
      * Sets headings_outline_levels
      *
-     * @param int $headings_outline_levels Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline
+     * @param int $headings_outline_levels Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
      *
      * @return $this
      */

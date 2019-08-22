@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableRowFormatResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}/rows/{1}/rowformat
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}/rows/{1}/rowformat.
  */
 class TableRowFormatResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class TableRowFormatResponse extends WordsResponse
     /*
      * Sets row_format
      *
-     * @param \Aspose\Words\Model\TableRowFormat $row_format Table.
+     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets table.
      *
      * @return $this
      */

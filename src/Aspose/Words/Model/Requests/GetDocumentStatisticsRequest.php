@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentStatisticsRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -69,7 +69,7 @@ class GetDocumentStatisticsRequest
     public $include_footnotes;
 	
     /*
-     * Support including/excluding shape's text from the WordCount. Default value is \"false\"
+     * Support including/excluding shape's text from the WordCount. Default value is \"false\".
      */
     public $include_text_in_shapes;
     
@@ -84,7 +84,7 @@ class GetDocumentStatisticsRequest
      * @param string $password Password for opening an encrypted document.
      * @param bool $include_comments Support including/excluding comments from the WordCount. Default value is \"false\".
      * @param bool $include_footnotes Support including/excluding footnotes from the WordCount. Default value is \"false\".
-     * @param bool $include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is \"false\"
+     * @param bool $include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is \"false\".
      */
     public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)             
     {
@@ -218,7 +218,7 @@ class GetDocumentStatisticsRequest
     }
 	
     /*
-     * Support including/excluding shape's text from the WordCount. Default value is \"false\"
+     * Support including/excluding shape's text from the WordCount. Default value is \"false\".
      */
     public function get_include_text_in_shapes()
     {
@@ -226,7 +226,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * Support including/excluding shape's text from the WordCount. Default value is \"false\"
+     * Support including/excluding shape's text from the WordCount. Default value is \"false\".
      */
     public function set_include_text_in_shapes($value)
     {
@@ -234,3 +234,4 @@ class GetDocumentStatisticsRequest
         return $this;
     }
 }
+/*

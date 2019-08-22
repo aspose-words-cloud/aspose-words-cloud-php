@@ -214,7 +214,7 @@ class HyperlinkResponse extends WordsResponse
     /*
      * Sets hyperlink
      *
-     * @param \Aspose\Words\Model\Hyperlink $hyperlink Hyperlink.
+     * @param \Aspose\Words\Model\Hyperlink $hyperlink Gets or sets hyperlink.
      *
      * @return $this
      */

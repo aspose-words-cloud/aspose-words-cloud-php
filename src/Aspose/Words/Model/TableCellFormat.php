@@ -402,7 +402,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets bottom_padding
      *
-     * @param double $bottom_padding Returns or sets the amount of space (in points) to add below the contents of cell.
+     * @param double $bottom_padding Gets or sets returns or sets the amount of space (in points) to add below the contents of cell.
      *
      * @return $this
      */
@@ -426,7 +426,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets fit_text
      *
-     * @param bool $fit_text If true, fits text in the cell, compressing each paragraph to the width of the cell.
+     * @param bool $fit_text Gets or sets if true, fits text in the cell, compressing each paragraph to the width of the cell.
      *
      * @return $this
      */
@@ -450,7 +450,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets horizontal_merge
      *
-     * @param string $horizontal_merge Specifies how the cell is merged horizontally with other cells in the row.
+     * @param string $horizontal_merge Gets or sets specifies how the cell is merged horizontally with other cells in the row.
      *
      * @return $this
      */
@@ -479,7 +479,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets left_padding
      *
-     * @param double $left_padding Returns or sets the amount of space (in points) to add to the left of the contents of cell.
+     * @param double $left_padding Gets or sets returns or sets the amount of space (in points) to add to the left of the contents of cell.
      *
      * @return $this
      */
@@ -503,7 +503,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets orientation
      *
-     * @param string $orientation Returns or sets the orientation of text in a table cell.
+     * @param string $orientation Gets or sets returns or sets the orientation of text in a table cell.
      *
      * @return $this
      */
@@ -532,7 +532,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets preferred_width
      *
-     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Returns or sets the preferred width of the cell.
+     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets returns or sets the preferred width of the cell.
      *
      * @return $this
      */
@@ -556,7 +556,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets right_padding
      *
-     * @param double $right_padding Returns or sets the amount of space (in points) to add to the right of the contents of cell.
+     * @param double $right_padding Gets or sets returns or sets the amount of space (in points) to add to the right of the contents of cell.
      *
      * @return $this
      */
@@ -580,7 +580,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets top_padding
      *
-     * @param double $top_padding Returns or sets the amount of space (in points) to add above the contents of cell.
+     * @param double $top_padding Gets or sets returns or sets the amount of space (in points) to add above the contents of cell.
      *
      * @return $this
      */
@@ -604,7 +604,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets vertical_alignment
      *
-     * @param string $vertical_alignment Returns or sets the vertical alignment of text in the cell.
+     * @param string $vertical_alignment Gets or sets returns or sets the vertical alignment of text in the cell.
      *
      * @return $this
      */
@@ -633,7 +633,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets vertical_merge
      *
-     * @param string $vertical_merge Specifies how the cell is merged with other cells vertically.
+     * @param string $vertical_merge Gets or sets specifies how the cell is merged with other cells vertically.
      *
      * @return $this
      */
@@ -662,7 +662,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets width
      *
-     * @param double $width Gets the width of the cell in points.
+     * @param double $width Gets or sets the width of the cell in points.
      *
      * @return $this
      */
@@ -686,7 +686,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets wrap_text
      *
-     * @param bool $wrap_text If true, wrap text for the cell.
+     * @param bool $wrap_text Gets or sets if true, wrap text for the cell.
      *
      * @return $this
      */

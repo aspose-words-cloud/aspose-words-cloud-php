@@ -214,7 +214,7 @@ class CommentsCollection extends LinkElement
     /*
      * Sets comment_list
      *
-     * @param \Aspose\Words\Model\Comment[] $comment_list Collection of comments
+     * @param \Aspose\Words\Model\Comment[] $comment_list Gets or sets collection of comments.
      *
      * @return $this
      */

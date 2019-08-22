@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteMacrosRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -234,3 +234,4 @@ class DeleteMacrosRequest
         return $this;
     }
 }
+/*

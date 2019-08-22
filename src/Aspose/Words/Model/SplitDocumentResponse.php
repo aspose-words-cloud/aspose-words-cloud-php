@@ -214,7 +214,7 @@ class SplitDocumentResponse extends WordsResponse
     /*
      * Sets split_result
      *
-     * @param \Aspose\Words\Model\SplitDocumentResult $split_result Resylt of splitting document.
+     * @param \Aspose\Words\Model\SplitDocumentResult $split_result Gets or sets resylt of splitting document.
      *
      * @return $this
      */

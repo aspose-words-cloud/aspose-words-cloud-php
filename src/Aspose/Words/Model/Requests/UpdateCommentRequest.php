@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateCommentRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -39,7 +39,7 @@ class UpdateCommentRequest
     public $name;
 	
     /*
-     * The comment index
+     * The comment index.
      */
     public $comment_index;
 	
@@ -88,7 +88,7 @@ class UpdateCommentRequest
      * Initializes a new instance of the UpdateCommentRequest class.
      *  
      * @param string $name The document name.
-     * @param int $comment_index The comment index
+     * @param int $comment_index The comment index.
      * @param \Aspose\Words\Model\Comment $comment The comment data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -130,7 +130,7 @@ class UpdateCommentRequest
     }
 	
     /*
-     * The comment index
+     * The comment index.
      */
     public function get_comment_index()
     {
@@ -138,7 +138,7 @@ class UpdateCommentRequest
     }
 
     /*
-     * The comment index
+     * The comment index.
      */
     public function set_comment_index($value)
     {
@@ -282,3 +282,4 @@ class UpdateCommentRequest
         return $this;
     }
 }
+/*

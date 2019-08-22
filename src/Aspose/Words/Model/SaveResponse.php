@@ -214,7 +214,7 @@ class SaveResponse extends WordsResponse
     /*
      * Sets save_result
      *
-     * @param \Aspose\Words\Model\SaveResult $save_result Save result.
+     * @param \Aspose\Words\Model\SaveResult $save_result Gets or sets save result.
      *
      * @return $this
      */

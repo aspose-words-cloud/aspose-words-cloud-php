@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SectionLinkCollection
  *
- * @description Collection of links to sections
+ * @description Collection of links to sections.
  */
 class SectionLinkCollection extends LinkElement 
 {
@@ -214,7 +214,7 @@ class SectionLinkCollection extends LinkElement
     /*
      * Sets section_link_list
      *
-     * @param \Aspose\Words\Model\SectionLink[] $section_link_list Collection of section's links
+     * @param \Aspose\Words\Model\SectionLink[] $section_link_list Gets or sets collection of section's links.
      *
      * @return $this
      */

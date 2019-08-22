@@ -214,7 +214,7 @@ class SearchResultsCollection extends LinkElement
     /*
      * Sets results_list
      *
-     * @param \Aspose\Words\Model\SearchResult[] $results_list Collection of comments
+     * @param \Aspose\Words\Model\SearchResult[] $results_list Gets or sets collection of comments.
      *
      * @return $this
      */

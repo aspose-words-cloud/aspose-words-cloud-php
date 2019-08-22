@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertFieldRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -306,3 +306,4 @@ class InsertFieldRequest
         return $this;
     }
 }
+/*

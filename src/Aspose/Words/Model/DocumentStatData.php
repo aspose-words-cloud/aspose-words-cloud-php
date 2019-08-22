@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DocumentStatData
  *
- * @description Container for the document&#39;s statistical data
+ * @description Container for the document&#39;s statistical data.
  */
 class DocumentStatData implements ArrayAccess
 {
@@ -259,7 +259,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets word_count
      *
-     * @param int $word_count Total count of words in the document
+     * @param int $word_count Gets or sets total count of words in the document.
      *
      * @return $this
      */
@@ -283,7 +283,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets paragraph_count
      *
-     * @param int $paragraph_count Total count of paragraphs in the document
+     * @param int $paragraph_count Gets or sets total count of paragraphs in the document.
      *
      * @return $this
      */
@@ -307,7 +307,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets page_count
      *
-     * @param int $page_count Total count of pages in the document
+     * @param int $page_count Gets or sets total count of pages in the document.
      *
      * @return $this
      */
@@ -331,7 +331,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets footnotes_stat_data
      *
-     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Detailed statistics of footnotes
+     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets detailed statistics of footnotes.
      *
      * @return $this
      */
@@ -355,7 +355,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets page_stat_data
      *
-     * @param \Aspose\Words\Model\PageStatData[] $page_stat_data Detailed statistics of all pages
+     * @param \Aspose\Words\Model\PageStatData[] $page_stat_data Gets or sets detailed statistics of all pages.
      *
      * @return $this
      */

@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ClassificationResponse
  *
- * @description This response should be returned by the service when handling: PUT http://api.aspose.com/v4.0/words/classify
+ * @description This response should be returned by the service when handling: PUT http://api.aspose.com/v4.0/words/classify.
  */
 class ClassificationResponse extends WordsResponse 
 {
@@ -226,7 +226,7 @@ class ClassificationResponse extends WordsResponse
     /*
      * Sets best_class_name
      *
-     * @param string $best_class_name Best class name.
+     * @param string $best_class_name Gets or sets best class name.
      *
      * @return $this
      */
@@ -250,7 +250,7 @@ class ClassificationResponse extends WordsResponse
     /*
      * Sets best_class_probability
      *
-     * @param double $best_class_probability Best class probability.
+     * @param double $best_class_probability Gets or sets best class probability.
      *
      * @return $this
      */
@@ -274,7 +274,7 @@ class ClassificationResponse extends WordsResponse
     /*
      * Sets best_results
      *
-     * @param \Aspose\Words\Model\ClassificationResult[] $best_results Array of best classes results.
+     * @param \Aspose\Words\Model\ClassificationResult[] $best_results Gets or sets array of best classes results.
      *
      * @return $this
      */

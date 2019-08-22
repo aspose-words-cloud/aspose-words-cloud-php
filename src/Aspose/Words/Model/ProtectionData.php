@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ProtectionData
  *
- * @description Container for the data about protection of the document
+ * @description Container for the data about protection of the document.
  */
 class ProtectionData implements ArrayAccess
 {
@@ -217,7 +217,7 @@ class ProtectionData implements ArrayAccess
     /*
      * Sets protection_type
      *
-     * @param string $protection_type Type of the protection
+     * @param string $protection_type Gets or sets type of the protection.
      *
      * @return $this
      */

@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PageStatData
  *
- * @description Container for the page&#39;s statistical data
+ * @description Container for the page&#39;s statistical data.
  */
 class PageStatData implements ArrayAccess
 {
@@ -253,7 +253,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets page_number
      *
-     * @param int $page_number Page number
+     * @param int $page_number Gets or sets page number.
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets word_count
      *
-     * @param int $word_count Total count of words in the page
+     * @param int $word_count Gets or sets total count of words in the page.
      *
      * @return $this
      */
@@ -301,7 +301,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets paragraph_count
      *
-     * @param int $paragraph_count Total count of paragraphs in the page
+     * @param int $paragraph_count Gets or sets total count of paragraphs in the page.
      *
      * @return $this
      */
@@ -325,7 +325,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets footnotes_stat_data
      *
-     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Detailed statistics of footnotes
+     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets detailed statistics of footnotes.
      *
      * @return $this
      */

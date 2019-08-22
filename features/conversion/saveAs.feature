@@ -13,14 +13,14 @@ Scenario Outline: Convert document form storage and save to storage
 	
 	Examples: 
 	| DocName                  | DestFormat | OutPath                                     | SubFolder 						    |
-	| TableDocument.doc        | pdf        | out/saveas/TableDocumentPdf.pdf             | /DocumentActions/ConvertDocument/    |
-	| test_doc.docx            | pdf        | out/saveas/test_docPdf.pdf                  | /DocumentActions/ConvertDocument/    |
-	| test_doc.docx            | png        | out/saveas/test_docPng.pdf                  | /DocumentActions/ConvertDocument/	|
-	| test_doc.docx            | html       | out/saveas/test_docHtml.html                | /DocumentActions/ConvertDocument/	|
-	| TableDocument.doc        | html       | out/saveas/TableDocumentHtml.html           | /DocumentActions/ConvertDocument/	|
-	| TableDocument.doc        | txt        | out/saveas/TableDocumentTxt.txt             | /DocumentActions/ConvertDocument/	|
-	| TableDocument.doc        | htmlfixed  | out/saveas/TableDocumentHtmlfixed.htmlfixed | /DocumentActions/ConvertDocument/	|
-	| TestEncodingDocument.txt | doc        | out/saveas/TableDocumentDoc.doc             | /DocumentActions/ConvertDocument/	|
+	| TableDocument.doc        | pdf        | out/saveas/TableDocumentPdf.pdf             | DocumentActions/ConvertDocument/    |
+	| test_doc.docx            | pdf        | out/saveas/test_docPdf.pdf                  | DocumentActions/ConvertDocument/    |
+	| test_doc.docx            | png        | out/saveas/test_docPng.pdf                  | DocumentActions/ConvertDocument/	|
+	| test_doc.docx            | html       | out/saveas/test_docHtml.html                | DocumentActions/ConvertDocument/	|
+	| TableDocument.doc        | html       | out/saveas/TableDocumentHtml.html           | DocumentActions/ConvertDocument/	|
+	| TableDocument.doc        | txt        | out/saveas/TableDocumentTxt.txt             | DocumentActions/ConvertDocument/	|
+	| TableDocument.doc        | htmlfixed  | out/saveas/TableDocumentHtmlfixed.htmlfixed | DocumentActions/ConvertDocument/	|
+	| TestEncodingDocument.txt | doc        | out/saveas/TableDocumentDoc.doc             | DocumentActions/ConvertDocument/	|
 
 
 @saveAs
@@ -35,8 +35,8 @@ Scenario Outline: Convert document with specified encoding form storage and save
 	And symbols are encoded properly
 	
 	Examples: 
-	| DocName                  | DestFormat | OutPath                         | LoadEncoding | SubFolder 						    |
-	| TestEncodingDocument.txt | doc        | out/saveas/TableDocument.doc | utf-16       | /DocumentActions/ConvertDocument/	|
+	| DocName                  | DestFormat | OutPath                         | LoadEncoding | SubFolder 						|
+	| TestEncodingDocument.txt | doc        | out/saveas/TableDocumentDoc.doc | utf-16       | DocumentActions/ConvertDocument/	|
 
 @saveAs
 Scenario Outline: Convert pdf document to word and save to storage
@@ -49,6 +49,6 @@ Scenario Outline: Convert pdf document to word and save to storage
 
 	Examples: 
 	| DocName                  | DestFormat | OutPath                                  | SubFolder 				    		|
-	| awesome_table_in_pdf.pdf | docx       | out/saveas/awesome_table_in_pdfDocx.docx | /DocumentActions/ConvertDocument/	|
-	| Delivery.pdf             | docx       | out/saveas/DeliveryDocx.docx             | /DocumentActions/ConvertDocument/	|
-	| 45.pdf                   | docx       | out/saveas/45Docx.docx                   | /DocumentActions/ConvertDocument/	|
+	| awesome_table_in_pdf.pdf | docx       | out/saveas/awesome_table_in_pdfDocx.docx | DocumentActions/ConvertDocument/	|
+	| Delivery.pdf             | docx       | out/saveas/DeliveryDocx.docx             | DocumentActions/ConvertDocument/	|
+	| 45.pdf                   | docx       | out/saveas/45Docx.docx                   | DocumentActions/ConvertDocument/	|

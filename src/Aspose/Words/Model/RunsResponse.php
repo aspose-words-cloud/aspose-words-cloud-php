@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * RunsResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{paragraphPath}/runs
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{paragraphPath}/runs.
  */
 class RunsResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class RunsResponse extends WordsResponse
     /*
      * Sets runs
      *
-     * @param \Aspose\Words\Model\Runs $runs Collection of runs.
+     * @param \Aspose\Words\Model\Runs $runs Gets or sets collection of runs.
      *
      * @return $this
      */

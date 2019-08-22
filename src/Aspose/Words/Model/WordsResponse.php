@@ -221,7 +221,7 @@ class WordsResponse implements ArrayAccess
     /*
      * Sets request_id
      *
-     * @param string $request_id Request Id.
+     * @param string $request_id Gets or sets request Id.
      *
      * @return $this
      */

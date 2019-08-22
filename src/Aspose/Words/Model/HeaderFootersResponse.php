@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HeaderFootersResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/headersfooters
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/headersfooters.
  */
 class HeaderFootersResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class HeaderFootersResponse extends WordsResponse
     /*
      * Sets header_footers
      *
-     * @param \Aspose\Words\Model\HeaderFooterLinkCollection $header_footers Collection of headers/footers
+     * @param \Aspose\Words\Model\HeaderFooterLinkCollection $header_footers Gets or sets collection of headers/footers.
      *
      * @return $this
      */

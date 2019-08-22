@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RenderTableRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -44,14 +44,14 @@ class RenderTableRequest
     public $format;
 	
     /*
-     * Object index.
-     */
-    public $index;
-	
-    /*
      * Path to the node, which contains tables.
      */
     public $node_path;
+	
+    /*
+     * Object index.
+     */
+    public $index;
 	
     /*
      * Original document folder.
@@ -84,20 +84,20 @@ class RenderTableRequest
      *  
      * @param string $name The document name.
      * @param string $format The destination format.
-     * @param int $index Object index.
      * @param string $node_path Path to the node, which contains tables.
+     * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $format, $index, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)             
+    public function __construct($name, $format, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)             
     {
         $this->name = $name;
         $this->format = $format;
-        $this->index = $index;
         $this->node_path = $node_path;
+        $this->index = $index;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -140,23 +140,6 @@ class RenderTableRequest
     }
 	
     /*
-     * Object index.
-     */
-    public function get_index()
-    {
-        return $this->index;
-    }
-
-    /*
-     * Object index.
-     */
-    public function set_index($value)
-    {
-        $this->index = $value;
-        return $this;
-    }
-	
-    /*
      * Path to the node, which contains tables.
      */
     public function get_node_path()
@@ -170,6 +153,23 @@ class RenderTableRequest
     public function set_node_path($value)
     {
         $this->node_path = $value;
+        return $this;
+    }
+	
+    /*
+     * Object index.
+     */
+    public function get_index()
+    {
+        return $this->index;
+    }
+
+    /*
+     * Object index.
+     */
+    public function set_index($value)
+    {
+        $this->index = $value;
         return $this;
     }
 	
@@ -258,3 +258,4 @@ class RenderTableRequest
         return $this;
     }
 }
+/*

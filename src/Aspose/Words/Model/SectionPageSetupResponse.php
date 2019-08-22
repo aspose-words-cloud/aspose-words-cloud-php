@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SectionPageSetupResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/sections/{0}/PageSetup
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/sections/{0}/PageSetup.
  */
 class SectionPageSetupResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class SectionPageSetupResponse extends WordsResponse
     /*
      * Sets page_setup
      *
-     * @param \Aspose\Words\Model\PageSetup $page_setup Section
+     * @param \Aspose\Words\Model\PageSetup $page_setup Gets or sets section.
      *
      * @return $this
      */

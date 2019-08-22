@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FormFieldDropDown
  *
- * @description FormField dropdownlist element
+ * @description FormField dropdownlist element.
  */
 class FormFieldDropDown extends FormField 
 {
@@ -220,7 +220,7 @@ class FormFieldDropDown extends FormField
     /*
      * Sets drop_down_items
      *
-     * @param string[] $drop_down_items Provides access to the items of a dropdown form field.
+     * @param string[] $drop_down_items Gets or sets provides access to the items of a dropdown form field.
      *
      * @return $this
      */

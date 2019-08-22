@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FieldLink
  *
- * @description Field link
+ * @description Field link.
  */
 class FieldLink extends NodeLink 
 {
@@ -214,7 +214,7 @@ class FieldLink extends NodeLink
     /*
      * Sets field_code
      *
-     * @param string $field_code Field code
+     * @param string $field_code Gets or sets field code.
      *
      * @return $this
      */

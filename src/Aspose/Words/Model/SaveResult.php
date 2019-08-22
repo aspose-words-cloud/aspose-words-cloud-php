@@ -229,7 +229,7 @@ class SaveResult implements ArrayAccess
     /*
      * Sets source_document
      *
-     * @param \Aspose\Words\Model\FileLink $source_document Link to source document.
+     * @param \Aspose\Words\Model\FileLink $source_document Gets or sets link to source document.
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class SaveResult implements ArrayAccess
     /*
      * Sets dest_document
      *
-     * @param \Aspose\Words\Model\FileLink $dest_document Link to destination document.
+     * @param \Aspose\Words\Model\FileLink $dest_document Gets or sets link to destination document.
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class SaveResult implements ArrayAccess
     /*
      * Sets additional_items
      *
-     * @param \Aspose\Words\Model\FileLink[] $additional_items Links to additional items (css, images etc).
+     * @param \Aspose\Words\Model\FileLink[] $additional_items Gets or sets links to additional items (css, images etc).
      *
      * @return $this
      */

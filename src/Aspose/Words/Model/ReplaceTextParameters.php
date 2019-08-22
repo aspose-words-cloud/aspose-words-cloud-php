@@ -259,7 +259,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets old_value
      *
-     * @param string $old_value Old text value (or regex pattern ) to replace.
+     * @param string $old_value Gets or sets old text value (or regex pattern ) to replace.
      *
      * @return $this
      */
@@ -283,7 +283,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets new_value
      *
-     * @param string $new_value New text value to replace by.
+     * @param string $new_value Gets or sets new text value to replace by.
      *
      * @return $this
      */
@@ -307,7 +307,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets is_match_case
      *
-     * @param bool $is_match_case Flag, true means the search is case-sensitive; false means the search is not case-sensitive.
+     * @param bool $is_match_case Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
      *
      * @return $this
      */
@@ -331,7 +331,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets is_match_whole_word
      *
-     * @param bool $is_match_whole_word Flag, means that only whole word matched are replaced.
+     * @param bool $is_match_whole_word Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
      *
      * @return $this
      */
@@ -355,7 +355,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets is_old_value_regex
      *
-     * @param bool $is_old_value_regex Flag, means that  contains regex expression.
+     * @param bool $is_old_value_regex Gets or sets a value indicating whether flag, means that  contains regex expression.
      *
      * @return $this
      */

@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FootnoteResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/footnote/0
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/footnote/0.
  */
 class FootnoteResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class FootnoteResponse extends WordsResponse
     /*
      * Sets footnote
      *
-     * @param \Aspose\Words\Model\Footnote $footnote Footnote information
+     * @param \Aspose\Words\Model\Footnote $footnote Gets or sets footnote information.
      *
      * @return $this
      */

@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RejectAllRevisionsRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -186,3 +186,4 @@ class RejectAllRevisionsRequest
         return $this;
     }
 }
+/*

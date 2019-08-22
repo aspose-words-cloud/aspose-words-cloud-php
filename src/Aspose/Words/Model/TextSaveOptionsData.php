@@ -56,7 +56,7 @@ class TextSaveOptionsData extends SaveOptionsData
     protected static $swaggerTypes = [
         'add_bidi_marks' => 'bool',
         'encoding' => 'string',
-        'export_headers_footers' => 'bool',
+        'export_headers_footers_mode' => 'int',
         'force_page_breaks' => 'bool',
         'paragraph_break' => 'string',
         'preserve_table_layout' => 'bool',
@@ -71,7 +71,7 @@ class TextSaveOptionsData extends SaveOptionsData
     protected static $swaggerFormats = [
         'add_bidi_marks' => null,
         'encoding' => null,
-        'export_headers_footers' => null,
+        'export_headers_footers_mode' => 'int32',
         'force_page_breaks' => null,
         'paragraph_break' => null,
         'preserve_table_layout' => null,
@@ -107,7 +107,7 @@ class TextSaveOptionsData extends SaveOptionsData
     protected static $attributeMap = [
         'add_bidi_marks' => 'AddBidiMarks',
         'encoding' => 'Encoding',
-        'export_headers_footers' => 'ExportHeadersFooters',
+        'export_headers_footers_mode' => 'ExportHeadersFootersMode',
         'force_page_breaks' => 'ForcePageBreaks',
         'paragraph_break' => 'ParagraphBreak',
         'preserve_table_layout' => 'PreserveTableLayout',
@@ -122,7 +122,7 @@ class TextSaveOptionsData extends SaveOptionsData
     protected static $setters = [
         'add_bidi_marks' => 'setAddBidiMarks',
         'encoding' => 'setEncoding',
-        'export_headers_footers' => 'setExportHeadersFooters',
+        'export_headers_footers_mode' => 'setExportHeadersFootersMode',
         'force_page_breaks' => 'setForcePageBreaks',
         'paragraph_break' => 'setParagraphBreak',
         'preserve_table_layout' => 'setPreserveTableLayout',
@@ -137,7 +137,7 @@ class TextSaveOptionsData extends SaveOptionsData
     protected static $getters = [
         'add_bidi_marks' => 'getAddBidiMarks',
         'encoding' => 'getEncoding',
-        'export_headers_footers' => 'getExportHeadersFooters',
+        'export_headers_footers_mode' => 'getExportHeadersFootersMode',
         'force_page_breaks' => 'getForcePageBreaks',
         'paragraph_break' => 'getParagraphBreak',
         'preserve_table_layout' => 'getPreserveTableLayout',
@@ -202,7 +202,7 @@ class TextSaveOptionsData extends SaveOptionsData
 
         $this->container['add_bidi_marks'] = isset($data['add_bidi_marks']) ? $data['add_bidi_marks'] : null;
         $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
-        $this->container['export_headers_footers'] = isset($data['export_headers_footers']) ? $data['export_headers_footers'] : null;
+        $this->container['export_headers_footers_mode'] = isset($data['export_headers_footers_mode']) ? $data['export_headers_footers_mode'] : null;
         $this->container['force_page_breaks'] = isset($data['force_page_breaks']) ? $data['force_page_breaks'] : null;
         $this->container['paragraph_break'] = isset($data['paragraph_break']) ? $data['paragraph_break'] : null;
         $this->container['preserve_table_layout'] = isset($data['preserve_table_layout']) ? $data['preserve_table_layout'] : null;
@@ -250,7 +250,7 @@ class TextSaveOptionsData extends SaveOptionsData
     /*
      * Sets add_bidi_marks
      *
-     * @param bool $add_bidi_marks Specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
+     * @param bool $add_bidi_marks Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
      *
      * @return $this
      */
@@ -274,7 +274,7 @@ class TextSaveOptionsData extends SaveOptionsData
     /*
      * Sets encoding
      *
-     * @param string $encoding Specifies the encoding to use when exporting in plain text format
+     * @param string $encoding Gets or sets specifies the encoding to use when exporting in plain text format.
      *
      * @return $this
      */
@@ -286,25 +286,25 @@ class TextSaveOptionsData extends SaveOptionsData
     }
 
     /*
-     * Gets export_headers_footers
+     * Gets export_headers_footers_mode
      *
-     * @return bool
+     * @return int
      */
-    public function getExportHeadersFooters()
+    public function getExportHeadersFootersMode()
     {
-        return $this->container['export_headers_footers'];
+        return $this->container['export_headers_footers_mode'];
     }
 
     /*
-     * Sets export_headers_footers
+     * Sets export_headers_footers_mode
      *
-     * @param bool $export_headers_footers Specifies whether to output headers and footers when exporting in plain text format
+     * @param int $export_headers_footers_mode Gets or sets specifies whether to output headers and footers when exporting in plain text format.
      *
      * @return $this
      */
-    public function setExportHeadersFooters($export_headers_footers)
+    public function setExportHeadersFootersMode($export_headers_footers_mode)
     {
-        $this->container['export_headers_footers'] = $export_headers_footers;
+        $this->container['export_headers_footers_mode'] = $export_headers_footers_mode;
 
         return $this;
     }
@@ -322,7 +322,7 @@ class TextSaveOptionsData extends SaveOptionsData
     /*
      * Sets force_page_breaks
      *
-     * @param bool $force_page_breaks Allows to specify whether the page breaks should be preserved during export. The default value is false.
+     * @param bool $force_page_breaks Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class TextSaveOptionsData extends SaveOptionsData
     /*
      * Sets paragraph_break
      *
-     * @param string $paragraph_break Specifies the string to use as a paragraph break when exporting in plain text format
+     * @param string $paragraph_break Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class TextSaveOptionsData extends SaveOptionsData
     /*
      * Sets preserve_table_layout
      *
-     * @param bool $preserve_table_layout Specifies whether the program should attempt to preserve layout of tables when saving in the plain text format
+     * @param bool $preserve_table_layout Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class TextSaveOptionsData extends SaveOptionsData
     /*
      * Sets simplify_list_labels
      *
-     * @param bool $simplify_list_labels Specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text
+     * @param bool $simplify_list_labels Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
      *
      * @return $this
      */

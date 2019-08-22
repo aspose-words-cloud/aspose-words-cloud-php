@@ -214,7 +214,7 @@ class Bookmarks extends LinkElement
     /*
      * Sets bookmark_list
      *
-     * @param \Aspose\Words\Model\Bookmark[] $bookmark_list Array of bookmarks.
+     * @param \Aspose\Words\Model\Bookmark[] $bookmark_list Gets or sets array of bookmarks.
      *
      * @return $this
      */

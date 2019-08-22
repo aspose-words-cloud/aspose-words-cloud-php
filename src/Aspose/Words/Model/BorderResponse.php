@@ -214,7 +214,7 @@ class BorderResponse extends WordsResponse
     /*
      * Sets border
      *
-     * @param \Aspose\Words\Model\Border $border Table.
+     * @param \Aspose\Words\Model\Border $border Gets or sets table.
      *
      * @return $this
      */

@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveAsTiffRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -666,3 +666,4 @@ class SaveAsTiffRequest
         return $this;
     }
 }
+/*

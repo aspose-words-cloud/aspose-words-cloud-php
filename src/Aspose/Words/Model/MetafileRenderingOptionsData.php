@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * MetafileRenderingOptionsData
  *
- * @description container class for options of metafile rendering
+ * @description container class for options of metafile rendering.
  */
 class MetafileRenderingOptionsData implements ArrayAccess
 {
@@ -235,7 +235,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
     /*
      * Sets emf_plus_dual_rendering_mode
      *
-     * @param string $emf_plus_dual_rendering_mode Determines how EMF+ Dual metafiles should be rendered
+     * @param string $emf_plus_dual_rendering_mode Gets or sets determines how EMF+ Dual metafiles should be rendered.
      *
      * @return $this
      */
@@ -283,7 +283,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
     /*
      * Sets rendering_mode
      *
-     * @param string $rendering_mode Determines how metafile images should be rendered
+     * @param string $rendering_mode Gets or sets determines how metafile images should be rendered.
      *
      * @return $this
      */
@@ -307,7 +307,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
     /*
      * Sets use_emf_embedded_to_wmf
      *
-     * @param bool $use_emf_embedded_to_wmf Determines how WMF metafiles with embedded EMF metafiles should be rendered
+     * @param bool $use_emf_embedded_to_wmf Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.
      *
      * @return $this
      */

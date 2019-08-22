@@ -214,7 +214,7 @@ class Runs extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\Run[] $list Collection of fields
+     * @param \Aspose\Words\Model\Run[] $list Gets or sets collection of fields.
      *
      * @return $this
      */

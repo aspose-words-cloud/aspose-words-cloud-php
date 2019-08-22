@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FormFieldTextInput
  *
- * @description FormField text input element
+ * @description FormField text input element.
  */
 class FormFieldTextInput extends FormField 
 {
@@ -267,7 +267,7 @@ class FormFieldTextInput extends FormField
     /*
      * Sets max_length
      *
-     * @param int $max_length Maximum length for the text field. Zero when the length is not limited.
+     * @param int $max_length Gets or sets maximum length for the text field. Zero when the length is not limited.
      *
      * @return $this
      */
@@ -315,7 +315,7 @@ class FormFieldTextInput extends FormField
     /*
      * Sets text_input_format
      *
-     * @param string $text_input_format Returns or sets the text formatting for a text form field.
+     * @param string $text_input_format Gets or sets returns or sets the text formatting for a text form field.
      *
      * @return $this
      */

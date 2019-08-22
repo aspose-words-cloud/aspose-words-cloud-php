@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ParagraphFormat
  *
- * @description Paragraph format element
+ * @description Paragraph format element.
  */
 class ParagraphFormat extends LinkElement 
 {
@@ -1423,7 +1423,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets keep_together
      *
-     * @param bool $keep_together True if all lines in the paragraph are to remain on the same page.
+     * @param bool $keep_together Gets or sets true if all lines in the paragraph are to remain on the same page.
      *
      * @return $this
      */
@@ -1447,7 +1447,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets keep_with_next
      *
-     * @param bool $keep_with_next True if the paragraph is to remains on the same page as the paragraph that follows it.
+     * @param bool $keep_with_next Gets or sets true if the paragraph is to remains on the same page as the paragraph that follows it.
      *
      * @return $this
      */
@@ -1572,7 +1572,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets no_space_between_paragraphs_of_same_style
      *
-     * @param bool $no_space_between_paragraphs_of_same_style When true,  and  will be ignored between the paragraphs of the same style.
+     * @param bool $no_space_between_paragraphs_of_same_style Gets or sets when true,  and  will be ignored between the paragraphs of the same style.
      *
      * @return $this
      */
@@ -1596,7 +1596,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets outline_level
      *
-     * @param string $outline_level Specifies the outline level of the paragraph in the document.
+     * @param string $outline_level Gets or sets specifies the outline level of the paragraph in the document.
      *
      * @return $this
      */
@@ -1625,7 +1625,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets page_break_before
      *
-     * @param bool $page_break_before True if a page break is forced before the paragraph.
+     * @param bool $page_break_before Gets or sets true if a page break is forced before the paragraph.
      *
      * @return $this
      */
@@ -1697,7 +1697,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets space_after_auto
      *
-     * @param bool $space_after_auto True if the amount of spacing after the paragraph is set automatically.
+     * @param bool $space_after_auto Gets or sets true if the amount of spacing after the paragraph is set automatically.
      *
      * @return $this
      */
@@ -1745,7 +1745,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets space_before_auto
      *
-     * @param bool $space_before_auto True if the amount of spacing before the paragraph is set automatically.
+     * @param bool $space_before_auto Gets or sets true if the amount of spacing before the paragraph is set automatically.
      *
      * @return $this
      */
@@ -1822,7 +1822,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets suppress_auto_hyphens
      *
-     * @param bool $suppress_auto_hyphens Specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.
+     * @param bool $suppress_auto_hyphens Gets or sets specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.
      *
      * @return $this
      */
@@ -1846,7 +1846,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets suppress_line_numbers
      *
-     * @param bool $suppress_line_numbers Specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.
+     * @param bool $suppress_line_numbers Gets or sets specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.
      *
      * @return $this
      */
@@ -1870,7 +1870,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets widow_control
      *
-     * @param bool $widow_control True if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.
+     * @param bool $widow_control Gets or sets true if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.
      *
      * @return $this
      */

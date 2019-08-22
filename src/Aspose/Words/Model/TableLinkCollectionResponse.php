@@ -214,7 +214,7 @@ class TableLinkCollectionResponse extends WordsResponse
     /*
      * Sets tables
      *
-     * @param \Aspose\Words\Model\TableLinkCollection $tables Collection of tables.
+     * @param \Aspose\Words\Model\TableLinkCollection $tables Gets or sets collection of tables.
      *
      * @return $this
      */

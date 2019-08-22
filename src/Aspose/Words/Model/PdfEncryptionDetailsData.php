@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PdfEncryptionDetailsData
  *
- * @description container class for details of encryption
+ * @description container class for details of encryption.
  */
 class PdfEncryptionDetailsData implements ArrayAccess
 {
@@ -235,7 +235,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
     /*
      * Sets encryption_algorithm
      *
-     * @param string $encryption_algorithm Specifies the encryption algorithm to use
+     * @param string $encryption_algorithm Gets or sets specifies the encryption algorithm to use.
      *
      * @return $this
      */
@@ -259,7 +259,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
     /*
      * Sets owner_password
      *
-     * @param string $owner_password Specifies the owner password for the encrypted PDF document
+     * @param string $owner_password Gets or sets specifies the owner password for the encrypted PDF document.
      *
      * @return $this
      */
@@ -283,7 +283,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
     /*
      * Sets permissions
      *
-     * @param string $permissions Specifies the operations that are allowed to a user on an encrypted PDF document
+     * @param string $permissions Gets or sets specifies the operations that are allowed to a user on an encrypted PDF document.
      *
      * @return $this
      */
@@ -307,7 +307,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
     /*
      * Sets user_password
      *
-     * @param string $user_password Specifies the user password required for opening the encrypted PDF document
+     * @param string $user_password Gets or sets specifies the user password required for opening the encrypted PDF document.
      *
      * @return $this
      */

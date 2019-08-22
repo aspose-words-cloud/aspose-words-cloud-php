@@ -258,7 +258,7 @@ class PreferredWidth implements ArrayAccess
     /*
      * Sets type
      *
-     * @param string $type Gets the unit of measure used for this preferred width value.
+     * @param string $type Gets or sets the unit of measure used for this preferred width value.
      *
      * @return $this
      */

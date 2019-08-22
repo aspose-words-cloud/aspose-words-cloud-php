@@ -1160,7 +1160,7 @@ class TableProperties extends LinkElement
     /*
      * Sets alignment
      *
-     * @param string $alignment Specifies how an inline table is aligned in the document.
+     * @param string $alignment Gets or sets specifies how an inline table is aligned in the document.
      *
      * @return $this
      */
@@ -1189,7 +1189,7 @@ class TableProperties extends LinkElement
     /*
      * Sets allow_auto_fit
      *
-     * @param bool $allow_auto_fit Allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.
+     * @param bool $allow_auto_fit Gets or sets allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.
      *
      * @return $this
      */
@@ -1333,7 +1333,7 @@ class TableProperties extends LinkElement
     /*
      * Sets preferred_width
      *
-     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets the table preferred width.  Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
+     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
      *
      * @return $this
      */
@@ -1463,7 +1463,7 @@ class TableProperties extends LinkElement
     /*
      * Sets text_wrapping
      *
-     * @param string $text_wrapping Get or sets TextWrapping  for table.
+     * @param string $text_wrapping Gets or sets get or sets TextWrapping  for table.
      *
      * @return $this
      */

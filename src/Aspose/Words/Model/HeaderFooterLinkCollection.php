@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HeaderFooterLinkCollection
  *
- * @description Collection of links to header/footers
+ * @description Collection of links to header/footers.
  */
 class HeaderFooterLinkCollection extends LinkElement 
 {
@@ -214,7 +214,7 @@ class HeaderFooterLinkCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\HeaderFooterLink[] $list Collection of section's links
+     * @param \Aspose\Words\Model\HeaderFooterLink[] $list Gets or sets collection of section's links.
      *
      * @return $this
      */

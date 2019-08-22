@@ -223,7 +223,7 @@ class DocumentPosition implements ArrayAccess
     /*
      * Sets node
      *
-     * @param \Aspose\Words\Model\NodeLink $node Link to  node.
+     * @param \Aspose\Words\Model\NodeLink $node Gets or sets link to  node.
      *
      * @return $this
      */
@@ -247,7 +247,7 @@ class DocumentPosition implements ArrayAccess
     /*
      * Sets offset
      *
-     * @param int $offset Offset into the node.
+     * @param int $offset Gets or sets offset into the node.
      *
      * @return $this
      */

@@ -214,7 +214,7 @@ class DrawingObjectsResponse extends WordsResponse
     /*
      * Sets drawing_objects
      *
-     * @param \Aspose\Words\Model\DrawingObjectCollection $drawing_objects Collection of drawing objects.
+     * @param \Aspose\Words\Model\DrawingObjectCollection $drawing_objects Gets or sets collection of drawing objects.
      *
      * @return $this
      */

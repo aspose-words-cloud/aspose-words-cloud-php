@@ -214,7 +214,7 @@ class DocumentPropertyResponse extends WordsResponse
     /*
      * Sets document_property
      *
-     * @param \Aspose\Words\Model\DocumentProperty $document_property Document property.
+     * @param \Aspose\Words\Model\DocumentProperty $document_property Gets or sets document property.
      *
      * @return $this
      */

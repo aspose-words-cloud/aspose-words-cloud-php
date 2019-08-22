@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * RtfSaveOptionsData
  *
- * @description container class for rtf save options
+ * @description container class for rtf save options.
  */
 class RtfSaveOptionsData extends SaveOptionsData 
 {
@@ -226,7 +226,7 @@ class RtfSaveOptionsData extends SaveOptionsData
     /*
      * Sets export_compact_size
      *
-     * @param bool $export_compact_size Allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly
+     * @param bool $export_compact_size Gets or sets allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly.
      *
      * @return $this
      */
@@ -250,7 +250,7 @@ class RtfSaveOptionsData extends SaveOptionsData
     /*
      * Sets export_images_for_old_readers
      *
-     * @param bool $export_images_for_old_readers Specifies whether the keywords for \"old readers\" are written to RTF or not
+     * @param bool $export_images_for_old_readers Gets or sets specifies whether the keywords for \"old readers\" are written to RTF or not.
      *
      * @return $this
      */
@@ -274,7 +274,7 @@ class RtfSaveOptionsData extends SaveOptionsData
     /*
      * Sets pretty_format
      *
-     * @param bool $pretty_format Specifies whether or not use pretty formats output
+     * @param bool $pretty_format Gets or sets specifies whether or not use pretty formats output.
      *
      * @return $this
      */

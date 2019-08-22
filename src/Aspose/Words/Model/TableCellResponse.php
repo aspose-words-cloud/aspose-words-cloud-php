@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableCellResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}.
  */
 class TableCellResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class TableCellResponse extends WordsResponse
     /*
      * Sets cell
      *
-     * @param \Aspose\Words\Model\TableCell $cell Table cell.
+     * @param \Aspose\Words\Model\TableCell $cell Gets or sets table cell.
      *
      * @return $this
      */

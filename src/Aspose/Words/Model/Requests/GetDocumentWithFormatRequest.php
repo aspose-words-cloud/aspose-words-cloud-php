@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentWithFormatRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -64,7 +64,7 @@ class GetDocumentWithFormatRequest
     public $password;
 	
     /*
-     * Path to save the result
+     * Path to save the result.
      */
     public $out_path;
 	
@@ -83,7 +83,7 @@ class GetDocumentWithFormatRequest
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $out_path Path to save the result
+     * @param string $out_path Path to save the result.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
     public function __construct($name, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $out_path = null, $fonts_location = null)             
@@ -201,7 +201,7 @@ class GetDocumentWithFormatRequest
     }
 	
     /*
-     * Path to save the result
+     * Path to save the result.
      */
     public function get_out_path()
     {
@@ -209,7 +209,7 @@ class GetDocumentWithFormatRequest
     }
 
     /*
-     * Path to save the result
+     * Path to save the result.
      */
     public function set_out_path($value)
     {
@@ -234,3 +234,4 @@ class GetDocumentWithFormatRequest
         return $this;
     }
 }
+/*

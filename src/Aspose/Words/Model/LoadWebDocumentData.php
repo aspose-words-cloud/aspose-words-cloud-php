@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * LoadWebDocumentData
  *
- * @description Contains data for load web document
+ * @description Contains data for load web document.
  */
 class LoadWebDocumentData implements ArrayAccess
 {
@@ -223,7 +223,7 @@ class LoadWebDocumentData implements ArrayAccess
     /*
      * Sets loading_document_url
      *
-     * @param string $loading_document_url Web document url
+     * @param string $loading_document_url Gets or sets web document url.
      *
      * @return $this
      */
@@ -247,7 +247,7 @@ class LoadWebDocumentData implements ArrayAccess
     /*
      * Sets save_options
      *
-     * @param \Aspose\Words\Model\SaveOptionsData $save_options Save options
+     * @param \Aspose\Words\Model\SaveOptionsData $save_options Gets or sets save options.
      *
      * @return $this
      */

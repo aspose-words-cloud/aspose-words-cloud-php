@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Paragraph
  *
- * @description Paragraph element
+ * @description Paragraph element.
  */
 class Paragraph extends NodeLink 
 {
@@ -214,7 +214,7 @@ class Paragraph extends NodeLink
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Child nodes
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets child nodes.
      *
      * @return $this
      */

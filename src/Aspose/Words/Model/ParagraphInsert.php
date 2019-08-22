@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ParagraphInsert
  *
- * @description Paragraph element
+ * @description Paragraph element.
  */
 class ParagraphInsert implements ArrayAccess
 {
@@ -217,7 +217,7 @@ class ParagraphInsert implements ArrayAccess
     /*
      * Sets text
      *
-     * @param string $text Paragraph's text
+     * @param string $text Gets or sets paragraph's text.
      *
      * @return $this
      */

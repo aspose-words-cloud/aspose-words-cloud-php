@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateRunFontRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -39,7 +39,7 @@ class UpdateRunFontRequest
     public $name;
 	
     /*
-     * Font dto object
+     * Font dto object.
      */
     public $font_dto;
 	
@@ -93,7 +93,7 @@ class UpdateRunFontRequest
      * Initializes a new instance of the UpdateRunFontRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\Font $font_dto Font dto object
+     * @param \Aspose\Words\Model\Font $font_dto Font dto object.
      * @param string $paragraph_path Path to parent paragraph.
      * @param int $index Object index.
      * @param string $folder Original document folder.
@@ -137,7 +137,7 @@ class UpdateRunFontRequest
     }
 	
     /*
-     * Font dto object
+     * Font dto object.
      */
     public function get_font_dto()
     {
@@ -145,7 +145,7 @@ class UpdateRunFontRequest
     }
 
     /*
-     * Font dto object
+     * Font dto object.
      */
     public function set_font_dto($value)
     {
@@ -306,3 +306,4 @@ class UpdateRunFontRequest
         return $this;
     }
 }
+/*

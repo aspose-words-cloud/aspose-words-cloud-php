@@ -214,7 +214,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
     /*
      * Sets epub_navigation_map_level
      *
-     * @param int $epub_navigation_map_level Specifies the maximum level of headings populated to the navigation map when exporting
+     * @param int $epub_navigation_map_level Gets or sets specifies the maximum level of headings populated to the navigation map when exporting.
      *
      * @return $this
      */

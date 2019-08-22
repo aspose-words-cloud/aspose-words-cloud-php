@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ModificationOperationResult
  *
- * @description result of the operation which modifies the original document and saves the result
+ * @description result of the operation which modifies the original document and saves the result.
  */
 class ModificationOperationResult implements ArrayAccess
 {
@@ -223,7 +223,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Sets source
      *
-     * @param \Aspose\Words\Model\FileLink $source Link to the source document (source for the modification operation)
+     * @param \Aspose\Words\Model\FileLink $source Gets or sets link to the source document (source for the modification operation).
      *
      * @return $this
      */
@@ -247,7 +247,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Sets dest
      *
-     * @param \Aspose\Words\Model\FileLink $dest Link to the dest document (result of the modification operation)
+     * @param \Aspose\Words\Model\FileLink $dest Gets or sets link to the dest document (result of the modification operation).
      *
      * @return $this
      */

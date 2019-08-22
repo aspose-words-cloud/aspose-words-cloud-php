@@ -223,7 +223,7 @@ class DocumentEntry implements ArrayAccess
     /*
      * Sets href
      *
-     * @param string $href Path to document to append at the server.
+     * @param string $href Gets or sets path to document to append at the server.
      *
      * @return $this
      */
@@ -247,7 +247,7 @@ class DocumentEntry implements ArrayAccess
     /*
      * Sets import_format_mode
      *
-     * @param string $import_format_mode Defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.
+     * @param string $import_format_mode Gets or sets defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.
      *
      * @return $this
      */

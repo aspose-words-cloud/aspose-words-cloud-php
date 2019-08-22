@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Field
  *
- * @description Field
+ * @description Field.
  */
 class Field extends FieldLink 
 {
@@ -244,7 +244,7 @@ class Field extends FieldLink
     /*
      * Sets result
      *
-     * @param string $result Field result
+     * @param string $result Gets or sets field result.
      *
      * @return $this
      */

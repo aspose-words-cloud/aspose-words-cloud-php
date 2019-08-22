@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ImageSaveOptionsData
  *
- * @description Container abstract class for image save options
+ * @description Container abstract class for image save options.
  */
 class ImageSaveOptionsData extends FixedPageSaveOptionsData 
 {
@@ -286,7 +286,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets graphics_quality_options
      *
-     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options Allows to specify additional System.Drawing.Graphics quality options.
+     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options Gets or sets allows to specify additional System.Drawing.Graphics quality options.
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets image_brightness
      *
-     * @param double $image_brightness Brightness of image
+     * @param double $image_brightness Gets or sets brightness of image.
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets image_color_mode
      *
-     * @param string $image_color_mode Color mode of image
+     * @param string $image_color_mode Gets or sets color mode of image.
      *
      * @return $this
      */
@@ -382,7 +382,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets image_contrast
      *
-     * @param double $image_contrast Contrast of image
+     * @param double $image_contrast Gets or sets contrast of image.
      *
      * @return $this
      */
@@ -406,7 +406,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets paper_color
      *
-     * @param string $paper_color Background (paper) color of image
+     * @param string $paper_color Gets or sets background (paper) color of image.
      *
      * @return $this
      */
@@ -430,7 +430,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets pixel_format
      *
-     * @param string $pixel_format Pixel format of image
+     * @param string $pixel_format Gets or sets pixel format of image.
      *
      * @return $this
      */
@@ -454,7 +454,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resolution
      *
-     * @param double $resolution Sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+     * @param double $resolution Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
      *
      * @return $this
      */
@@ -478,7 +478,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets scale
      *
-     * @param double $scale Zoom factor of image
+     * @param double $scale Gets or sets zoom factor of image.
      *
      * @return $this
      */
@@ -502,7 +502,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets use_anti_aliasing
      *
-     * @param bool $use_anti_aliasing Determine whether or not to use anti-aliasing for rendering
+     * @param bool $use_anti_aliasing Gets or sets determine whether or not to use anti-aliasing for rendering.
      *
      * @return $this
      */
@@ -550,7 +550,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets use_high_quality_rendering
      *
-     * @param bool $use_high_quality_rendering Determine whether or not to use high quality (i.e. slow) rendering algorithms
+     * @param bool $use_high_quality_rendering Gets or sets determine whether or not to use high quality (i.e. slow) rendering algorithms.
      *
      * @return $this
      */

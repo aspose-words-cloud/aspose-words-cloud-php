@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ProtectionRequest
  *
- * @description Request on changing of protection
+ * @description Request on changing of protection.
  */
 class ProtectionRequest implements ArrayAccess
 {
@@ -229,7 +229,7 @@ class ProtectionRequest implements ArrayAccess
     /*
      * Sets password
      *
-     * @param string $password Current password
+     * @param string $password Gets or sets current password.
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class ProtectionRequest implements ArrayAccess
     /*
      * Sets new_password
      *
-     * @param string $new_password New password
+     * @param string $new_password Gets or sets new password.
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class ProtectionRequest implements ArrayAccess
     /*
      * Sets protection_type
      *
-     * @param string $protection_type New type of protection
+     * @param string $protection_type Gets or sets new type of protection.
      *
      * @return $this
      */

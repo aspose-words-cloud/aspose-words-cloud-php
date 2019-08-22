@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ParagraphLink
  *
- * @description Paragraph link element
+ * @description Paragraph link element.
  */
 class ParagraphLink extends NodeLink 
 {
@@ -214,7 +214,7 @@ class ParagraphLink extends NodeLink
     /*
      * Sets text
      *
-     * @param string $text Paragraph's text
+     * @param string $text Gets or sets paragraph's text.
      *
      * @return $this
      */

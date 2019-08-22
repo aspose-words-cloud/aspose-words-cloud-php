@@ -247,7 +247,7 @@ class PageNumber implements ArrayAccess
     /*
      * Sets format
      *
-     * @param string $format Page number format, e.g. \"{PAGE} of {NUMPAGES}\".
+     * @param string $format Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".
      *
      * @return $this
      */
@@ -271,7 +271,7 @@ class PageNumber implements ArrayAccess
     /*
      * Sets alignment
      *
-     * @param string $alignment Text alignment, possible values are left, right, center or justify.
+     * @param string $alignment Gets or sets text alignment, possible values are left, right, center or justify.
      *
      * @return $this
      */
@@ -295,7 +295,7 @@ class PageNumber implements ArrayAccess
     /*
      * Sets is_top
      *
-     * @param bool $is_top If true the page number is added at the top of the page, else at the bottom.
+     * @param bool $is_top Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.
      *
      * @return $this
      */
@@ -319,7 +319,7 @@ class PageNumber implements ArrayAccess
     /*
      * Sets set_page_number_on_first_page
      *
-     * @param bool $set_page_number_on_first_page If true the page number is added on first page too.
+     * @param bool $set_page_number_on_first_page Gets or sets a value indicating whether if true the page number is added on first page too.
      *
      * @return $this
      */

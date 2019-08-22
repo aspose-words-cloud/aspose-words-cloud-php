@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Section
  *
- * @description Section element
+ * @description Section element.
  */
 class Section extends LinkElement 
 {
@@ -238,7 +238,7 @@ class Section extends LinkElement
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Child nodes.
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets child nodes.
      *
      * @return $this
      */
@@ -262,7 +262,7 @@ class Section extends LinkElement
     /*
      * Sets header_footers
      *
-     * @param \Aspose\Words\Model\LinkElement $header_footers Link to HeaderFooters resource
+     * @param \Aspose\Words\Model\LinkElement $header_footers Gets or sets link to HeaderFooters resource.
      *
      * @return $this
      */
@@ -286,7 +286,7 @@ class Section extends LinkElement
     /*
      * Sets page_setup
      *
-     * @param \Aspose\Words\Model\LinkElement $page_setup Link to PageSetup resource
+     * @param \Aspose\Words\Model\LinkElement $page_setup Gets or sets link to PageSetup resource.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class Section extends LinkElement
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs Link to Paragraphs resource
+     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets link to Paragraphs resource.
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class Section extends LinkElement
     /*
      * Sets tables
      *
-     * @param \Aspose\Words\Model\LinkElement $tables Link to Tables resource
+     * @param \Aspose\Words\Model\LinkElement $tables Gets or sets link to Tables resource.
      *
      * @return $this
      */

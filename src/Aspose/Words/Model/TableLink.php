@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableLink
  *
- * @description Table link element
+ * @description Table link element.
  */
 class TableLink extends NodeLink 
 {

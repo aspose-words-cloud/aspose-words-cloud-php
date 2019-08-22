@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * XamlFlowSaveOptionsData
  *
- * @description container class for xaml flow save options
+ * @description container class for xaml flow save options.
  */
 class XamlFlowSaveOptionsData extends SaveOptionsData 
 {
@@ -220,7 +220,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
     /*
      * Sets images_folder
      *
-     * @param string $images_folder Specifies the physical folder where images are saved when exporting
+     * @param string $images_folder Gets or sets specifies the physical folder where images are saved when exporting.
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
     /*
      * Sets images_folder_alias
      *
-     * @param string $images_folder_alias Specifies the name of the folder used to construct image URIs
+     * @param string $images_folder_alias Gets or sets specifies the name of the folder used to construct image URIs.
      *
      * @return $this
      */

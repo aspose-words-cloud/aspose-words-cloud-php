@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HeaderFooterLink
  *
- * @description HeaderFooter link element
+ * @description HeaderFooter link element.
  */
 class HeaderFooterLink extends LinkElement 
 {
@@ -249,7 +249,7 @@ class HeaderFooterLink extends LinkElement
     /*
      * Sets type
      *
-     * @param string $type Paragraph's text
+     * @param string $type Gets or sets paragraph's text.
      *
      * @return $this
      */

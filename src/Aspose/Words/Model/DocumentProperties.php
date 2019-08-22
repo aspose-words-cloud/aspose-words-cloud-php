@@ -214,7 +214,7 @@ class DocumentProperties extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\DocumentProperty[] $list Collection of document properties.
+     * @param \Aspose\Words\Model\DocumentProperty[] $list Gets or sets collection of document properties.
      *
      * @return $this
      */

@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * AvailableFontsResponse
  *
- * @description The list of fonts, available for document processing
+ * @description The list of fonts, available for document processing.
  */
 class AvailableFontsResponse extends WordsResponse 
 {
@@ -226,7 +226,7 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Sets additional_fonts
      *
-     * @param \Aspose\Words\Model\FontInfo[] $additional_fonts The list of addititional fonts, provided by aspose team
+     * @param \Aspose\Words\Model\FontInfo[] $additional_fonts Gets or sets the list of addititional fonts, provided by aspose team.
      *
      * @return $this
      */
@@ -250,7 +250,7 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Sets custom_fonts
      *
-     * @param \Aspose\Words\Model\FontInfo[] $custom_fonts Custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request
+     * @param \Aspose\Words\Model\FontInfo[] $custom_fonts Gets or sets custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request.
      *
      * @return $this
      */
@@ -274,7 +274,7 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Sets system_fonts
      *
-     * @param \Aspose\Words\Model\FontInfo[] $system_fonts The list of system fonts, availiable on the server
+     * @param \Aspose\Words\Model\FontInfo[] $system_fonts Gets or sets the list of system fonts, availiable on the server.
      *
      * @return $this
      */

@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetSectionPageSetupRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -39,7 +39,7 @@ class GetSectionPageSetupRequest
     public $name;
 	
     /*
-     * Section index
+     * Section index.
      */
     public $section_index;
 	
@@ -68,7 +68,7 @@ class GetSectionPageSetupRequest
      * Initializes a new instance of the GetSectionPageSetupRequest class.
      *  
      * @param string $name The document name.
-     * @param int $section_index Section index
+     * @param int $section_index Section index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -102,7 +102,7 @@ class GetSectionPageSetupRequest
     }
 	
     /*
-     * Section index
+     * Section index.
      */
     public function get_section_index()
     {
@@ -110,7 +110,7 @@ class GetSectionPageSetupRequest
     }
 
     /*
-     * Section index
+     * Section index.
      */
     public function set_section_index($value)
     {
@@ -186,3 +186,4 @@ class GetSectionPageSetupRequest
         return $this;
     }
 }
+/*

@@ -265,7 +265,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Content of footnote.
+     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets content of footnote.
      *
      * @return $this
      */
@@ -289,7 +289,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets footnote_type
      *
-     * @param string $footnote_type Returns a value that specifies whether this is a footnote or endnote.
+     * @param string $footnote_type Gets or sets returns a value that specifies whether this is a footnote or endnote.
      *
      * @return $this
      */
@@ -318,7 +318,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets link to comment range start node.
      *
      * @return $this
      */
@@ -342,7 +342,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets reference_mark
      *
-     * @param string $reference_mark Gets/sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
+     * @param string $reference_mark Gets or sets /sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
      *
      * @return $this
      */
@@ -366,7 +366,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets text
      *
-     * @param string $text This is a convenience property that allows to easily get or set text of the footnote.
+     * @param string $text Gets or sets this is a convenience property that allows to easily get or set text of the footnote.
      *
      * @return $this
      */

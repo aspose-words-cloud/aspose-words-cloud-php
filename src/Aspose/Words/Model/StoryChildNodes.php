@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * StoryChildNodes
  *
- * @description Child nodes of  or
+ * @description Child nodes of  or .
  */
 class StoryChildNodes implements ArrayAccess
 {
@@ -217,7 +217,7 @@ class StoryChildNodes implements ArrayAccess
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Child nodes.
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets child nodes.
      *
      * @return $this
      */

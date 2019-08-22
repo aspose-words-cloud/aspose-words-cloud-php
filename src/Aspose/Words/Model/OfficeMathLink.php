@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * OfficeMathLink
  *
- * @description OfficeMath object link element
+ * @description OfficeMath object link element.
  */
 class OfficeMathLink extends NodeLink 
 {

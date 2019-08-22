@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetRunRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -210,3 +210,4 @@ class GetRunRequest
         return $this;
     }
 }
+/*

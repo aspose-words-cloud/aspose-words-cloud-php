@@ -226,7 +226,7 @@ class DocumentProperty extends LinkElement
     /*
      * Sets built_in
      *
-     * @param bool $built_in Flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
+     * @param bool $built_in Gets or sets a value indicating whether flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
      *
      * @return $this
      */
@@ -250,7 +250,7 @@ class DocumentProperty extends LinkElement
     /*
      * Sets name
      *
-     * @param string $name Name of the document property.
+     * @param string $name Gets or sets name of the document property.
      *
      * @return $this
      */
@@ -274,7 +274,7 @@ class DocumentProperty extends LinkElement
     /*
      * Sets value
      *
-     * @param string $value string value of the document property.
+     * @param string $value Gets or sets string value of the document property.
      *
      * @return $this
      */

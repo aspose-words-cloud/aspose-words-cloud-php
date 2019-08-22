@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SectionLinkCollectionResponse
  *
- * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/sections
+ * @description This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/sections.
  */
 class SectionLinkCollectionResponse extends WordsResponse 
 {
@@ -214,7 +214,7 @@ class SectionLinkCollectionResponse extends WordsResponse
     /*
      * Sets sections
      *
-     * @param \Aspose\Words\Model\SectionLinkCollection $sections Collection of sections
+     * @param \Aspose\Words\Model\SectionLinkCollection $sections Gets or sets collection of sections.
      *
      * @return $this
      */

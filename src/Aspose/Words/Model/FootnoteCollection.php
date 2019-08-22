@@ -214,7 +214,7 @@ class FootnoteCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\Footnote[] $list Collection of foonotes links
+     * @param \Aspose\Words\Model\Footnote[] $list Gets or sets collection of foonotes links.
      *
      * @return $this
      */

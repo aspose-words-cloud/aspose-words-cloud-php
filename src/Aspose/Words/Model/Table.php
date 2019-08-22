@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Table
  *
- * @description Table element
+ * @description Table element.
  */
 class Table extends NodeLink 
 {
@@ -220,7 +220,7 @@ class Table extends NodeLink
     /*
      * Sets table_properties
      *
-     * @param \Aspose\Words\Model\TableProperties $table_properties Table properties.
+     * @param \Aspose\Words\Model\TableProperties $table_properties Gets or sets table properties.
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class Table extends NodeLink
     /*
      * Sets table_row_list
      *
-     * @param \Aspose\Words\Model\TableRow[] $table_row_list Collection of table's rows.
+     * @param \Aspose\Words\Model\TableRow[] $table_row_list Gets or sets collection of table's rows.
      *
      * @return $this
      */

@@ -241,7 +241,7 @@ class ApiError implements ArrayAccess
     /*
      * Sets code
      *
-     * @param string $code Api error code.
+     * @param string $code Gets or sets api error code.
      *
      * @return $this
      */
@@ -265,7 +265,7 @@ class ApiError implements ArrayAccess
     /*
      * Sets message
      *
-     * @param string $message Error message.
+     * @param string $message Gets or sets error message.
      *
      * @return $this
      */
@@ -289,7 +289,7 @@ class ApiError implements ArrayAccess
     /*
      * Sets description
      *
-     * @param string $description Error description.
+     * @param string $description Gets or sets error description.
      *
      * @return $this
      */
@@ -313,7 +313,7 @@ class ApiError implements ArrayAccess
     /*
      * Sets date_time
      *
-     * @param \DateTime $date_time Server datetime.
+     * @param \DateTime $date_time Gets or sets server datetime.
      *
      * @return $this
      */
@@ -337,7 +337,7 @@ class ApiError implements ArrayAccess
     /*
      * Sets inner_error
      *
-     * @param \Aspose\Words\Model\ApiError $inner_error Inner error.
+     * @param \Aspose\Words\Model\ApiError $inner_error Gets or sets inner error.
      *
      * @return $this
      */

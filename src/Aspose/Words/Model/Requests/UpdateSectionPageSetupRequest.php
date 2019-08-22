@@ -1,5 +1,5 @@
 <?php
-/**
+*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateSectionPageSetupRequest.php">
  *   Copyright (c) 2018 Aspose.Words for Cloud
@@ -39,12 +39,12 @@ class UpdateSectionPageSetupRequest
     public $name;
 	
     /*
-     * Section index
+     * Section index.
      */
     public $section_index;
 	
     /*
-     * Page setup properties dto
+     * Page setup properties dto.
      */
     public $page_setup;
 	
@@ -88,8 +88,8 @@ class UpdateSectionPageSetupRequest
      * Initializes a new instance of the UpdateSectionPageSetupRequest class.
      *  
      * @param string $name The document name.
-     * @param int $section_index Section index
-     * @param \Aspose\Words\Model\PageSetup $page_setup Page setup properties dto
+     * @param int $section_index Section index.
+     * @param \Aspose\Words\Model\PageSetup $page_setup Page setup properties dto.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -130,7 +130,7 @@ class UpdateSectionPageSetupRequest
     }
 	
     /*
-     * Section index
+     * Section index.
      */
     public function get_section_index()
     {
@@ -138,7 +138,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * Section index
+     * Section index.
      */
     public function set_section_index($value)
     {
@@ -147,7 +147,7 @@ class UpdateSectionPageSetupRequest
     }
 	
     /*
-     * Page setup properties dto
+     * Page setup properties dto.
      */
     public function get_page_setup()
     {
@@ -155,7 +155,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * Page setup properties dto
+     * Page setup properties dto.
      */
     public function set_page_setup($value)
     {
@@ -282,3 +282,4 @@ class UpdateSectionPageSetupRequest
         return $this;
     }
 }
+/*

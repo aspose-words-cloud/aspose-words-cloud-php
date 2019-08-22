@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DocSaveOptionsData
  *
- * @description container class for doc/dot save options
+ * @description container class for doc/dot save options.
  */
 class DocSaveOptionsData extends SaveOptionsData 
 {
@@ -220,7 +220,7 @@ class DocSaveOptionsData extends SaveOptionsData
     /*
      * Sets password
      *
-     * @param string $password Password
+     * @param string $password Gets or sets password.
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class DocSaveOptionsData extends SaveOptionsData
     /*
      * Sets save_routing_slip
      *
-     * @param bool $save_routing_slip Determine whether or not save RoutingSlip data saved to output document
+     * @param bool $save_routing_slip Gets or sets determine whether or not save RoutingSlip data saved to output document.
      *
      * @return $this
      */

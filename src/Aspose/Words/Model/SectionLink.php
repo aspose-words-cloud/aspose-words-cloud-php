@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SectionLink
  *
- * @description Section link element
+ * @description Section link element.
  */
 class SectionLink extends LinkElement 
 {

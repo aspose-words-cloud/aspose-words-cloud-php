@@ -39,7 +39,7 @@ class SaveAsRangeRequest
     public $name;
 	
     /*
-     * The range start identifier.
+     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public $range_start_identifier;
 	
@@ -72,27 +72,21 @@ class SaveAsRangeRequest
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public $dest_file_name;
     
 	
     /*
      * Initializes a new instance of the SaveAsRangeRequest class.
      *  
      * @param string $name The document.
-     * @param string $range_start_identifier The range start identifier.
+     * @param string $range_start_identifier The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
      * @param \Aspose\Words\Model\RangeDocument $document_parameters Parameters of a new document.
      * @param string $range_end_identifier The range end identifier.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $range_start_identifier, $document_parameters, $range_end_identifier, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    public function __construct($name, $range_start_identifier, $document_parameters, $range_end_identifier, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
         $this->name = $name;
         $this->range_start_identifier = $range_start_identifier;
@@ -102,7 +96,6 @@ class SaveAsRangeRequest
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
     }
 
     /*
@@ -123,7 +116,7 @@ class SaveAsRangeRequest
     }
 	
     /*
-     * The range start identifier.
+     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public function get_range_start_identifier()
     {
@@ -131,7 +124,7 @@ class SaveAsRangeRequest
     }
 
     /*
-     * The range start identifier.
+     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public function set_range_start_identifier($value)
     {
@@ -238,23 +231,6 @@ class SaveAsRangeRequest
     public function set_password($value)
     {
         $this->password = $value;
-        return $this;
-    }
-	
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function get_dest_file_name()
-    {
-        return $this->dest_file_name;
-    }
-
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function set_dest_file_name($value)
-    {
-        $this->dest_file_name = $value;
         return $this;
     }
 }

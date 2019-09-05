@@ -64,16 +64,6 @@ class SaveAsTiffRequest
     public $password;
 	
     /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public $dest_file_name;
-	
-    /*
-     * The resulting file name.
-     */
-    public $result_file;
-	
-    /*
      * Use antialiasing flag.
      */
     public $use_anti_aliasing;
@@ -173,8 +163,6 @@ class SaveAsTiffRequest
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $result_file The resulting file name.
      * @param bool $use_anti_aliasing Use antialiasing flag.
      * @param bool $use_high_quality_rendering Use high quality flag.
      * @param double $image_brightness Brightness for the generated images.
@@ -194,7 +182,7 @@ class SaveAsTiffRequest
      * @param bool $zip_output Optional. A value determining zip output or not.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $save_options, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $result_file = null, $use_anti_aliasing = null, $use_high_quality_rendering = null, $image_brightness = null, $image_color_mode = null, $image_contrast = null, $numeral_format = null, $page_count = null, $page_index = null, $paper_color = null, $pixel_format = null, $resolution = null, $scale = null, $tiff_compression = null, $dml_rendering_mode = null, $dml_effects_rendering_mode = null, $tiff_binarization_method = null, $zip_output = null, $fonts_location = null)             
+    public function __construct($name, $save_options, $folder = null, $storage = null, $load_encoding = null, $password = null, $use_anti_aliasing = null, $use_high_quality_rendering = null, $image_brightness = null, $image_color_mode = null, $image_contrast = null, $numeral_format = null, $page_count = null, $page_index = null, $paper_color = null, $pixel_format = null, $resolution = null, $scale = null, $tiff_compression = null, $dml_rendering_mode = null, $dml_effects_rendering_mode = null, $tiff_binarization_method = null, $zip_output = null, $fonts_location = null)             
     {
         $this->name = $name;
         $this->save_options = $save_options;
@@ -202,8 +190,6 @@ class SaveAsTiffRequest
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
-        $this->result_file = $result_file;
         $this->use_anti_aliasing = $use_anti_aliasing;
         $this->use_high_quality_rendering = $use_high_quality_rendering;
         $this->image_brightness = $image_brightness;
@@ -323,40 +309,6 @@ class SaveAsTiffRequest
     public function set_password($value)
     {
         $this->password = $value;
-        return $this;
-    }
-	
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function get_dest_file_name()
-    {
-        return $this->dest_file_name;
-    }
-
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function set_dest_file_name($value)
-    {
-        $this->dest_file_name = $value;
-        return $this;
-    }
-	
-    /*
-     * The resulting file name.
-     */
-    public function get_result_file()
-    {
-        return $this->result_file;
-    }
-
-    /*
-     * The resulting file name.
-     */
-    public function set_result_file($value)
-    {
-        $this->result_file = $value;
         return $this;
     }
 	

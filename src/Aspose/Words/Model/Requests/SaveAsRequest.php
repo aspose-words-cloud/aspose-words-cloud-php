@@ -64,11 +64,6 @@ class SaveAsRequest
     public $password;
 	
     /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public $dest_file_name;
-	
-    /*
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
@@ -83,10 +78,9 @@ class SaveAsRequest
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $save_options_data, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $fonts_location = null)             
+    public function __construct($name, $save_options_data, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)             
     {
         $this->name = $name;
         $this->save_options_data = $save_options_data;
@@ -94,7 +88,6 @@ class SaveAsRequest
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
         $this->fonts_location = $fonts_location;
     }
 
@@ -197,23 +190,6 @@ class SaveAsRequest
     public function set_password($value)
     {
         $this->password = $value;
-        return $this;
-    }
-	
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function get_dest_file_name()
-    {
-        return $this->dest_file_name;
-    }
-
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function set_dest_file_name($value)
-    {
-        $this->dest_file_name = $value;
         return $this;
     }
 	

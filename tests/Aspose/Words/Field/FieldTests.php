@@ -25,13 +25,13 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\Field;
 use Aspose\Words\Model\PageNumber;
 use PHPUnit\Framework\Assert;
 
-class FieldTests extends \BaseTest\BaseTestContext
+class FieldTests extends BaseTestContext
 {
     /**
      * Test case for getFields
@@ -57,6 +57,29 @@ class FieldTests extends \BaseTest\BaseTestContext
     }
 
     /**
+     * Test case for getFieldsWithoutNodePath
+     *
+     * Get fields from document..
+     *
+     */
+    public function testGetFieldsWithoutNodePath()
+    {
+        $localName = "GetField.docx";
+        $remoteName = "TestGetFieldsWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Field";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetFieldsWithoutNodePathRequest($remoteName,$folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getFieldsWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for getField
      *
      * Get field from document..
@@ -73,7 +96,7 @@ class FieldTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetFieldRequest($remoteName, $index, "sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\GetFieldRequest($remoteName,"sections/0/paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getField($request);
@@ -81,15 +104,39 @@ class FieldTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for postField
+     * Test case for getFieldWithoutNodePath
+     *
+     * Get field from document..
+     *
+     */
+    public function testGetFieldWithoutNodePath()
+    {
+        $localName = "GetField.docx";
+        $remoteName = "TestGetFieldWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Field";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetFieldWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getFieldWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for updateField
      *
      * Updates field's properties, returns updated field's data..
      *
      */
-    public function testPostField()
+    public function testUpdateField()
     {
         $localName = "GetField.docx";
-        $remoteName = "TestPostField.docx";
+        $remoteName = "TestUpdateField.docx";
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -99,7 +146,7 @@ class FieldTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateFieldRequest($remoteName, $body, $index, "sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateFieldRequest($remoteName, $body, "sections/0/paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName,
             null, null);
 
@@ -108,15 +155,15 @@ class FieldTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for putField
+     * Test case for insertField
      *
      * Adds field to document, returns inserted field's data..
      *
      */
-    public function testPutField()
+    public function testInsertField()
     {
         $localName = "GetField.docx";
-        $remoteName = "TestPutField.docx";
+        $remoteName = "TestInsertField.docx";
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
@@ -133,7 +180,32 @@ class FieldTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for postUpdateDocumentFields
+     * Test case for insertFieldWithoutNodePath
+     *
+     * Adds field to document, returns inserted field's data..
+     *
+     */
+    public function testInsertFieldWithoutNodePath()
+    {
+        $localName = "GetField.docx";
+        $remoteName = "TestInsertFieldWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Field";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\InsertFieldWithoutNodePathRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->insertFieldWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for updateFields
      *
      * Update (reevaluate) fields in document..
      *
@@ -141,7 +213,7 @@ class FieldTests extends \BaseTest\BaseTestContext
     public function testPostUpdateDocumentFields()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostUpdateDocumentFields.docx";
+        $remoteName = "TestUpdateFields.docx";
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
@@ -155,22 +227,21 @@ class FieldTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for postInsertPageNumbers
+     * Test case for insertPageNumbers
      *
      * Insert document page numbers..
      *
      */
-    public function testPostInsertPageNumbers()
+    public function testInsertPageNumbers()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostInsertPageNumbers.docx";
+        $remoteName = "TestInsertPageNumbers.docx";
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
         $body = new PageNumber(array("alignment" => "center", "format" => "{PAGE} of {NUMPAGES}"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->uploadFile($file, $fullName);
 
         $request = new Requests\InsertPageNumbersRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
@@ -197,12 +268,38 @@ class FieldTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteFieldRequest($remoteName,
-            $fieldIndex,"sections/0/paragraphs/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteFieldRequest($remoteName,"sections/0/paragraphs/0", 
+            $fieldIndex,$folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
         $result = $this->words->deleteField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteFieldWithoutNodePath
+     *
+     * Delete field from document..
+     *
+     */
+    public function testDeleteFieldWithoutNodePath()
+    {
+        $localName = "GetField.docx";
+        $remoteName = "TestDeleteFieldWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Field";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $fieldIndex = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteFieldWithoutNodePathRequest($remoteName,
+            $fieldIndex,$folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->deleteFieldWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -227,6 +324,30 @@ class FieldTests extends \BaseTest\BaseTestContext
             null, null);
 
         $result = $this->words->deleteFields($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteFieldsWithoutNodePath
+     *
+     * Remove fields from section paragraph..
+     *
+     */
+    public function testDeleteFieldsWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestDeleteDocumentFieldsWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Field";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteFieldsWithoutNodePathRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->deleteFieldsWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

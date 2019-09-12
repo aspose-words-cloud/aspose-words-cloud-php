@@ -25,11 +25,12 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
+
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
-class BookmarkTests extends BaseTest\BaseTestContext
+class BookmarkTests extends BaseTestContext
 {
     /**
      * Test case for getDocumentBookmarkByName
@@ -46,7 +47,6 @@ class BookmarkTests extends BaseTest\BaseTestContext
         $bookmarkName = "aspose";
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetBookmarkByNameRequest($remoteName, $bookmarkName, $folder=self::$baseTestPath . $subfolder);

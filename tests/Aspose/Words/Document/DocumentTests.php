@@ -25,10 +25,10 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
-class DocumentTests extends \BaseTest\BaseTestContext
+class DocumentTests extends BaseTestContext
 {
     /**
      * Test case for getDocument
@@ -49,22 +49,6 @@ class DocumentTests extends \BaseTest\BaseTestContext
         $request = new Requests\GetDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getDocument($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
-    }
-
-    /**
-     * Test case for putCreateDocument
-     *
-     * Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\".
-     *
-     */
-    public function testPutCreateDocument()
-    {
-        $remoteName = "TestPutCreateDocument.doc";
-        $subfolder = "DocumentActions/Document";
-        $request = new Requests\CreateDocumentRequest(null, $remoteName,  $folder=self::$baseTestPath . $subfolder);
-
-        $result = $this->words->createDocument($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

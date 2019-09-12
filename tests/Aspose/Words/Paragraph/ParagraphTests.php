@@ -25,14 +25,14 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\ParagraphInsert;
 use Aspose\Words\Model\ParagraphFormat;
 use Aspose\Words\Model\Font;
 use PHPUnit\Framework\Assert;
 
-class ParagraphTests extends \BaseTest\BaseTestContext
+class ParagraphTests extends BaseTestContext
 {
     /**
      * Test case for deleteParagraph
@@ -51,7 +51,7 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteParagraphRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteParagraphRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
@@ -60,15 +60,15 @@ class ParagraphTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for getDocumentParagraph
+     * Test case for deleteParagraphWithoutNodePath
      *
-     * This resource represents one of the paragraphs contained in the document..
+     * Remove paragraph from section..
      *
      */
-    public function testGetDocumentParagraph()
+    public function testDeleteParagraphWithoutNodePath()
     {
-        $localName = "test_multi_pages.docx";
-        $remoteName = "TestGetDocumentParagraph.docx";
+        $localName = "test_doc.docx";
+        $remoteName = "TestDeleteParagraphWithoutNodePath.docx";
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -76,7 +76,32 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetParagraphRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteParagraphWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->deleteParagraphWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getParagraph
+     *
+     * This resource represents one of the paragraphs contained in the document..
+     *
+     */
+    public function testGetParagraph()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestGetParagraph.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetParagraphRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getParagraph($request);
@@ -84,15 +109,40 @@ class ParagraphTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for getDocumentParagraphRun
+     * Test case for getParagraphWithoutNodePath
+     *
+     * This resource represents one of the paragraphs contained in the document..
+     *
+     */
+    public function testGetParagraphWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestGetParagraphWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetParagraphWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getParagraphWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    
+    /**
+     * Test case for getRun
      *
      * This resource represents run of text contained in the document..
      *
      */
-    public function testGetDocumentParagraphRun()
+    public function testGetRun()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestGetDocumentParagraphRun.docx";
+        $remoteName = "TestGetRun.docx";
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -112,16 +162,15 @@ class ParagraphTests extends \BaseTest\BaseTestContext
      * This resource represents font of run..
      *
      */
-    public function testGetDocumentParagraphRunFont()
+    public function testGetRunFont()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestGetDocumentParagraphRunFont.docx";
+        $remoteName = "TestGetRunFont.docx";
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetRunFontRequest($remoteName, "paragraphs/0", $index, $folder=self::$baseTestPath . $subfolder);
@@ -131,12 +180,12 @@ class ParagraphTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for getDocumentParagraphRuns
+     * Test case for getRuns
      *
      * This resource represents collection of runs in the paragraph..
      *
      */
-    public function testGetDocumentParagraphRuns()
+    public function testGetRuns()
     {
         $localName = "GetField.docx";
         $remoteName = "TestGetDocumentParagraphRuns.docx";
@@ -153,12 +202,12 @@ class ParagraphTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for getDocumentParagraphs
+     * Test case for getParagraphs
      *
      * Return a list of paragraphs that are contained in the document..
      *
      */
-    public function testGetDocumentParagraphs()
+    public function testGetParagraphs()
     {
         $localName = "test_multi_pages.docx";
         $remoteName = "TestGetDocumentParagraphs.docx";
@@ -176,15 +225,39 @@ class ParagraphTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for postDocumentParagraphRunFont
+     * Test case for getParagraphsWithoutNodePath
+     *
+     * Return a list of paragraphs that are contained in the document..
+     *
+     */
+    public function testGetParagraphsWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestGetDocumentParagraphsWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetParagraphsWithoutNodePathRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getParagraphsWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+
+    /**
+     * Test case for updateRunFont
      *
      * Updates font properties, returns updated font data..
      *
      */
-    public function testPostDocumentParagraphRunFont()
+    public function testUpdateRunFont()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostDocumentParagraphRunFont.docx";
+        $remoteName = "TestUpdateRunFont.docx";
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -202,15 +275,15 @@ class ParagraphTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for putParagraph
+     * Test case for insertParagraph
      *
      * Adds paragraph to document, returns added paragraph's data..
      *
      */
-    public function testPutParagraph()
+    public function testInsertParagraph()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPutParagraph.docx";
+        $remoteName = "TestInsertParagraph.docx";
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $paragraph = new ParagraphInsert(array("text" => "This is a new paragraph for your document"));
@@ -244,10 +317,35 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\RenderParagraphRequest($remoteName, $format, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\RenderParagraphRequest($remoteName, $format, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->renderParagraph($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for renderParagraphWithoutNodePath
+     *
+     * Renders paragraph to specified format..
+     *
+     */
+    public function testRenderParagraphWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestRenderParagraphWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+        $format = "png";
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\RenderParagraphWithoutNodePathRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->renderParagraphWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -257,10 +355,10 @@ class ParagraphTests extends \BaseTest\BaseTestContext
      * Get format of paragraph.
      *
      */
-    public function testGetDocumentParagraphFormat()
+    public function testGetParagraphFormat()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "testGetDocumentParagraphFormat.docx";
+        $remoteName = "testGetParagraphFormat.docx";
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -268,10 +366,34 @@ class ParagraphTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetParagraphFormatRequest($remoteName, $index, "", self::$baseTestPath . $subfolder,
+        $request = new Requests\GetParagraphFormatRequest($remoteName, "", $index, self::$baseTestPath . $subfolder,
                 NULL, NULL, NULL);
 
         $result = $this->words->getParagraphFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getParagraphFormatWithoutNodePath
+     *
+     * Get format of paragraph.
+     *
+     */
+    public function testGetParagraphFormatWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "testGetParagraphFormatWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetParagraphFormatWithoutNodePathRequest($remoteName, $index, self::$baseTestPath . $subfolder,
+                NULL, NULL, NULL);
+
+        $result = $this->words->getParagraphFormatWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -281,10 +403,10 @@ class ParagraphTests extends \BaseTest\BaseTestContext
      * Update format of paragraph.
      *
      */
-    public function testPostDocumentParagraphFormat()
+    public function testUpdateParagraphFormat()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "testPostDocumentParagraphFormat.docx";
+        $remoteName = "testUpdateParagraphFormat.docx";
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;

@@ -25,12 +25,12 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\CompareData;
 use PHPUnit\Framework\Assert;
 
-class CompareDocumentTests extends \BaseTest\BaseTestContext
+class CompareDocumentTests extends BaseTestContext
 {
     /**
      * Test case for postCompareDocument

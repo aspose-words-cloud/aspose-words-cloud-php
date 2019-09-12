@@ -25,11 +25,11 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-include_once($_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php");
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
-class ClassificationTests extends \BaseTest\BaseTestContext
+class ClassificationTests extends BaseTestContext
 {
     /**
      * Test case for classify

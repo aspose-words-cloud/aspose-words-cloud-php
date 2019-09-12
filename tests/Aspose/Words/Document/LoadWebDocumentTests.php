@@ -25,13 +25,13 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\SaveOptionsData;
 use Aspose\Words\Model\LoadWebDocumentData;
 use PHPUnit\Framework\Assert;
 
-class LoadWebDocumentTests extends \BaseTest\BaseTestContext
+class LoadWebDocumentTests extends BaseTestContext
 {
     /**
      * Test case for postLoadWebDocument

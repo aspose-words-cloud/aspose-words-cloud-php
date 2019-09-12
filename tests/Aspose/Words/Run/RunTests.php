@@ -25,12 +25,12 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\Run;
 use PHPUnit\Framework\Assert;
 
-class RunTests extends \BaseTest\BaseTestContext
+class RunTests extends BaseTestContext
 {
     /**
      * Test case for deleteRun

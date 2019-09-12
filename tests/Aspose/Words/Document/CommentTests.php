@@ -25,13 +25,13 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\NodeLink;
 use Aspose\Words\Model\DocumentPosition;
 use Aspose\Words\Model\Comment;
 use PHPUnit\Framework\Assert;
-class CommentTests extends BaseTest\BaseTestContext
+class CommentTests extends BaseTestContext
 {
     /**
      * Test case for deleteComment

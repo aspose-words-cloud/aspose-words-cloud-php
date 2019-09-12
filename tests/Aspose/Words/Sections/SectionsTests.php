@@ -25,11 +25,11 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
-class SectionsTests extends \BaseTest\BaseTestContext
+class SectionsTests extends BaseTestContext
 {
     /**
      * Test case for getSection

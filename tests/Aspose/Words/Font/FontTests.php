@@ -25,11 +25,11 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
-class FontTests extends \BaseTest\BaseTestContext
+class FontTests extends BaseTestContext
 {
     /**
      * Test case for resetCache

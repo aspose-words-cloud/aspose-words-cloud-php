@@ -25,13 +25,13 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\Run;
 use Aspose\Words;
 use PHPUnit\Framework\Assert;
 
-class FileTests extends \BaseTest\BaseTestContext
+class FileTests extends BaseTestContext
 {
     public $testFolder = 'Temp/SdkTests/TestData';
     /**

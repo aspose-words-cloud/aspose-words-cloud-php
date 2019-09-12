@@ -25,12 +25,12 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\WatermarkText;
 use PHPUnit\Framework\Assert;
 
-class WatermarkTests extends \BaseTest\BaseTestContext
+class WatermarkTests extends BaseTestContext
 {
     /**
      * Test case for deleteDocumentWatermark

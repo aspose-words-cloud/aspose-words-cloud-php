@@ -25,12 +25,12 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\ReplaceTextParameters;
 use PHPUnit\Framework\Assert;
 
-class TextTests extends \BaseTest\BaseTestContext
+class TextTests extends BaseTestContext
 {
     /**
      * Test case for postReplaceText

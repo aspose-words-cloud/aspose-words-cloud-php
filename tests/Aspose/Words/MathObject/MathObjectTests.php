@@ -25,11 +25,11 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
-class MathObjectTests extends \BaseTest\BaseTestContext
+class MathObjectTests extends BaseTestContext
 {
     /**
      * Test case for deleteOfficeMathObject
@@ -48,11 +48,36 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteOfficeMathObjectRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteOfficeMathObjectRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
         $result = $this->words->deleteOfficeMathObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteOfficeMathObjectWithoutNodePath
+     *
+     * Removes OfficeMath object from document..
+     *
+     */
+    public function testDeleteOfficeMathObjectWithoutNodePath()
+    {
+        $localName = "MathObjects.docx";
+        $remoteName = "TestDeleteOfficeMathObjectWithoutNodePath.docx";
+        $subfolder = "DocumentElements/MathObject";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteOfficeMathObjectWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->deleteOfficeMathObjectWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -73,10 +98,34 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetOfficeMathObjectRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\GetOfficeMathObjectRequest($remoteName, "", $index,$folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getOfficeMathObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getOfficeMathObjectWithoutNodePath
+     *
+     * Read OfficeMath object by index..
+     *
+     */
+    public function testGetOfficeMathObjectWithoutNodePath()
+    {
+        $localName = "MathObjects.docx";
+        $remoteName = "TestGetOfficeMathObjectWithoutNodePath.docx";
+        $subfolder = "DocumentElements/MathObject";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetOfficeMathObjectWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getOfficeMathObjectWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -104,6 +153,29 @@ class MathObjectTests extends \BaseTest\BaseTestContext
     }
 
     /**
+     * Test case for getOfficeMathObjectsWithoutNodePath
+     *
+     * Get OfficeMath objects from document..
+     *
+     */
+    public function testGetOfficeMathObjectsWithoutNodePath()
+    {
+        $localName = "MathObjects.docx";
+        $remoteName = "TestGetOfficeMathObjectsWithoutNodePath.docx";
+        $subfolder = "DocumentElements/MathObject";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetOfficeMathObjectsWithoutNodePathRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getOfficeMathObjectsWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for renderMathObject
      *
      * Renders math object to specified format..
@@ -121,10 +193,35 @@ class MathObjectTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\RenderMathObjectRequest($remoteName, $format, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\RenderMathObjectRequest($remoteName, $format, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->renderMathObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for renderMathObjectWithoutNodePath
+     *
+     * Renders math object to specified format..
+     *
+     */
+    public function testRenderMathObjectWithoutNodePath()
+    {
+        $localName = "MathObjects.docx";
+        $remoteName = "TestRenderMathObjectWithoutNodePath.docx";
+        $subfolder = "DocumentElements/MathObject";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+        $format = "png";
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/MathObjects/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\RenderMathObjectWithoutNodePathRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->renderMathObjectWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

@@ -55,6 +55,7 @@ class DocSaveOptionsData extends SaveOptionsData
      */
     protected static $swaggerTypes = [
         'password' => 'string',
+        'save_picture_bullet' => 'bool',
         'save_routing_slip' => 'bool'
     ];
 
@@ -65,6 +66,7 @@ class DocSaveOptionsData extends SaveOptionsData
      */
     protected static $swaggerFormats = [
         'password' => null,
+        'save_picture_bullet' => null,
         'save_routing_slip' => null
     ];
 
@@ -96,6 +98,7 @@ class DocSaveOptionsData extends SaveOptionsData
      */
     protected static $attributeMap = [
         'password' => 'Password',
+        'save_picture_bullet' => 'SavePictureBullet',
         'save_routing_slip' => 'SaveRoutingSlip'
     ];
 
@@ -106,6 +109,7 @@ class DocSaveOptionsData extends SaveOptionsData
      */
     protected static $setters = [
         'password' => 'setPassword',
+        'save_picture_bullet' => 'setSavePictureBullet',
         'save_routing_slip' => 'setSaveRoutingSlip'
     ];
 
@@ -116,6 +120,7 @@ class DocSaveOptionsData extends SaveOptionsData
      */
     protected static $getters = [
         'password' => 'getPassword',
+        'save_picture_bullet' => 'getSavePictureBullet',
         'save_routing_slip' => 'getSaveRoutingSlip'
     ];
 
@@ -176,6 +181,7 @@ class DocSaveOptionsData extends SaveOptionsData
         parent::__construct($data);
 
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['save_picture_bullet'] = isset($data['save_picture_bullet']) ? $data['save_picture_bullet'] : null;
         $this->container['save_routing_slip'] = isset($data['save_routing_slip']) ? $data['save_routing_slip'] : null;
     }
 
@@ -227,6 +233,30 @@ class DocSaveOptionsData extends SaveOptionsData
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /*
+     * Gets save_picture_bullet
+     *
+     * @return bool
+     */
+    public function getSavePictureBullet()
+    {
+        return $this->container['save_picture_bullet'];
+    }
+
+    /*
+     * Sets save_picture_bullet
+     *
+     * @param bool $save_picture_bullet Gets or sets When false, PictureBullet data is not saved to output document. Default value is true.
+     *
+     * @return $this
+     */
+    public function setSavePictureBullet($save_picture_bullet)
+    {
+        $this->container['save_picture_bullet'] = $save_picture_bullet;
 
         return $this;
     }

@@ -54,6 +54,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'threshold_for_floyd_steinberg_dithering' => 'int',
         'tiff_binarization_method' => 'string',
         'tiff_compression' => 'string'
     ];
@@ -64,6 +65,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'threshold_for_floyd_steinberg_dithering' => 'byte',
         'tiff_binarization_method' => null,
         'tiff_compression' => null
     ];
@@ -95,6 +97,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
+        'threshold_for_floyd_steinberg_dithering' => 'ThresholdForFloydSteinbergDithering',
         'tiff_binarization_method' => 'TiffBinarizationMethod',
         'tiff_compression' => 'TiffCompression'
     ];
@@ -105,6 +108,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
+        'threshold_for_floyd_steinberg_dithering' => 'setThresholdForFloydSteinbergDithering',
         'tiff_binarization_method' => 'setTiffBinarizationMethod',
         'tiff_compression' => 'setTiffCompression'
     ];
@@ -115,6 +119,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
+        'threshold_for_floyd_steinberg_dithering' => 'getThresholdForFloydSteinbergDithering',
         'tiff_binarization_method' => 'getTiffBinarizationMethod',
         'tiff_compression' => 'getTiffCompression'
     ];
@@ -175,6 +180,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     {
         parent::__construct($data);
 
+        $this->container['threshold_for_floyd_steinberg_dithering'] = isset($data['threshold_for_floyd_steinberg_dithering']) ? $data['threshold_for_floyd_steinberg_dithering'] : null;
         $this->container['tiff_binarization_method'] = isset($data['tiff_binarization_method']) ? $data['tiff_binarization_method'] : null;
         $this->container['tiff_compression'] = isset($data['tiff_compression']) ? $data['tiff_compression'] : null;
     }
@@ -206,6 +212,30 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
         return true;
     }
 
+
+    /*
+     * Gets threshold_for_floyd_steinberg_dithering
+     *
+     * @return int
+     */
+    public function getThresholdForFloydSteinbergDithering()
+    {
+        return $this->container['threshold_for_floyd_steinberg_dithering'];
+    }
+
+    /*
+     * Sets threshold_for_floyd_steinberg_dithering
+     *
+     * @param int $threshold_for_floyd_steinberg_dithering Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. Default value is 128.
+     *
+     * @return $this
+     */
+    public function setThresholdForFloydSteinbergDithering($threshold_for_floyd_steinberg_dithering)
+    {
+        $this->container['threshold_for_floyd_steinberg_dithering'] = $threshold_for_floyd_steinberg_dithering;
+
+        return $this;
+    }
 
     /*
      * Gets tiff_binarization_method

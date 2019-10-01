@@ -56,7 +56,7 @@ class TextSaveOptionsData extends SaveOptionsData
     protected static $swaggerTypes = [
         'add_bidi_marks' => 'bool',
         'encoding' => 'string',
-        'export_headers_footers_mode' => 'int',
+        'export_headers_footers_mode' => 'string',
         'force_page_breaks' => 'bool',
         'paragraph_break' => 'string',
         'preserve_table_layout' => 'bool',
@@ -71,7 +71,7 @@ class TextSaveOptionsData extends SaveOptionsData
     protected static $swaggerFormats = [
         'add_bidi_marks' => null,
         'encoding' => null,
-        'export_headers_footers_mode' => 'int32',
+        'export_headers_footers_mode' => null,
         'force_page_breaks' => null,
         'paragraph_break' => null,
         'preserve_table_layout' => null,
@@ -185,8 +185,25 @@ class TextSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const EXPORT_HEADERS_FOOTERS_MODE_NONE = 'None';
+    const EXPORT_HEADERS_FOOTERS_MODE_PRIMARY_ONLY = 'PrimaryOnly';
+    const EXPORT_HEADERS_FOOTERS_MODE_ALL_AT_END = 'AllAtEnd';
     
 
+    
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getExportHeadersFootersModeAllowableValues()
+    {
+        return [
+            self::EXPORT_HEADERS_FOOTERS_MODE_NONE,
+            self::EXPORT_HEADERS_FOOTERS_MODE_PRIMARY_ONLY,
+            self::EXPORT_HEADERS_FOOTERS_MODE_ALL_AT_END,
+        ];
+    }
     
 
 
@@ -218,6 +235,14 @@ class TextSaveOptionsData extends SaveOptionsData
     {
         $invalidProperties = parent::listInvalidProperties();
 
+        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
+        if (!in_array($this->container['export_headers_footers_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'export_headers_footers_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -233,6 +258,10 @@ class TextSaveOptionsData extends SaveOptionsData
             return false;
         }
 
+        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
+        if (!in_array($this->container['export_headers_footers_mode'], $allowedValues)) {
+            return false;
+        }
         return true;
     }
 
@@ -288,7 +317,7 @@ class TextSaveOptionsData extends SaveOptionsData
     /*
      * Gets export_headers_footers_mode
      *
-     * @return int
+     * @return string
      */
     public function getExportHeadersFootersMode()
     {
@@ -298,12 +327,17 @@ class TextSaveOptionsData extends SaveOptionsData
     /*
      * Sets export_headers_footers_mode
      *
-     * @param int $export_headers_footers_mode Gets or sets specifies whether to output headers and footers when exporting in plain text format.
+     * @param string $export_headers_footers_mode Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.
      *
      * @return $this
      */
     public function setExportHeadersFootersMode($export_headers_footers_mode)
     {
+        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
+        if ((!is_numeric($export_headers_footers_mode) && !in_array($export_headers_footers_mode, $allowedValues)) || (is_numeric($export_headers_footers_mode) && !in_array($allowedValues[$export_headers_footers_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'export_headers_footers_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
         $this->container['export_headers_footers_mode'] = $export_headers_footers_mode;
 
         return $this;

@@ -36,7 +36,7 @@
 	"autoload": {
         "psr-0": {
             "Aspose": "src/",
-            "BaseTest": "tests/"
+            "Aspose\\Tests\\": "tests/"
         }
     }
 }

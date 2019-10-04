@@ -1,8 +1,8 @@
 <?php
 /*
 * --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="MathObjectTests.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+* <copyright company="Aspose" file="RangeTests.php">
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,9 +34,8 @@ use PHPUnit\Framework\Assert;
 class RangeTests extends BaseTestContext
 {
     /**
-     * Test case for getRangeText
      *
-     * Removes OfficeMath object from document..
+     * Test for getting the text from range.
      *
      */
     public function testGetRangeText()
@@ -60,9 +59,8 @@ class RangeTests extends BaseTestContext
     }
 
     /**
-     * Test case for removeRange
      *
-     * Removes OfficeMath object from document..
+     * Test for removing the text for range.
      *
      */
     public function testRemoveRange()
@@ -85,9 +83,8 @@ class RangeTests extends BaseTestContext
     }
 
     /**
-     * Test case for saveAsRange
-     *
-     * Removes OfficeMath object from document..
+     * 
+     * Test for saving a range as a new document.
      *
      */
     public function testSaveAsRange()
@@ -112,9 +109,8 @@ class RangeTests extends BaseTestContext
     }
 
     /**
-     * Test case for replaceWithText
      *
-     * Removes OfficeMath object from document..
+     * Test for replacing text in range
      *
      */
     public function testReplaceWithText()

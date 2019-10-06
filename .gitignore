@@ -117,3 +117,4 @@ testReports/*
 /nbproject/private/
 Examples/vendor/*
 Examples/composer.lock
+composer.lock

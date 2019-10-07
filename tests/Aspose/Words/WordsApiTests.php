@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="Aspose\Words\ApiTest.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,11 +26,9 @@
 * --------------------------------------------------------------------------------------------------------------------
 */
 
-namespace Aspose\Words\Test;
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\ApiException;
 use Aspose\Words\Model\Requests;
-use BaseTest\BaseTestContext;
 use PHPUnit\Framework\Assert;
 
 class WordsApiTests extends BaseTestContext
@@ -62,13 +60,12 @@ class WordsApiTests extends BaseTestContext
             "SplitDocumentToFormatTests", "DocumentPropertiesTests", "DocumentProtectionTests", "DrawingTests",
             "FieldTests", "FormFieldTests", "MailMergeFieldTests", "FontTests", "FootnoteTests", "HeaderFooterTests",
             "HyperlinkTests", "MacrosTests", "ExecuteMailMergeTests", "MathObjectTests",
-            "PageSetupTests", "ParagraphTests", "RunTests", "SectionsTests", "TableTests", "TextTests", "WatermarkTests", "FileTests", "FolderTests");
-
+            "PageSetupTests", "ParagraphTests", "RunTests", "SectionsTests", "TableTests", "TextTests", "WatermarkTests", "FileTests", "FolderTests", "RangeTests");
         $apiClass = new \ReflectionClass('Aspose\Words\WordsApi');
         $testMethods = [];
         foreach ($classarr as $cls)
         {
-            $refClass = new \ReflectionClass($cls);
+            $refClass = new \ReflectionClass('Aspose\Tests\\'.$cls);
             array_push($testMethods, $refClass->getMethods());
         }
 

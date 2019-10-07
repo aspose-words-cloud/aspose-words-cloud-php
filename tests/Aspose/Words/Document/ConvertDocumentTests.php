@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="ConvertDocumentTests.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,13 +25,13 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\SaveOptionsData;
 use Aspose\Words\Model\TiffSaveOptionsData;
 use PHPUnit\Framework\Assert;
 use Aspose\Words\ApiException;
-class ConvertDocumentTests extends \BaseTest\BaseTestContext
+class ConvertDocumentTests extends BaseTestContext
 {
     /**
      * Test case for postDocumentSaveAs
@@ -65,7 +65,6 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
      */
     public function testPostDocumentSaveAsFromPdfToDoc()
     {
-        $this->markTestSkipped("Ignored at this reease because of API issues");
         $localName = "45.pdf";
         $remoteName = "TestPostDocumentSaveAsFromPdfToDoc.docx";
         $subfolder = "DocumentActions/ConvertDocument";
@@ -74,7 +73,6 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
         $saveOptions = new SaveOptionsData(array("save_format" => "docx", "file_name" => $destName));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/ConvertDocument/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->uploadFile($file, $fullName);
 
         $request = new Requests\SaveAsRequest($remoteName, $saveOptions, $folder=self::$baseTestPath . $subfolder);
@@ -116,7 +114,6 @@ class ConvertDocumentTests extends \BaseTest\BaseTestContext
         $body = new TiffSaveOptionsData(array("file_name" => "abc.tiff", "save_format" => "tiff"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->uploadFile($file, $fullName);
 
         $request = new Requests\SaveAsTiffRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,

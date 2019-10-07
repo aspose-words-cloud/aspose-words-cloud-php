@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="HeaderFooterTests.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,12 +25,12 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\HeaderFooter;
 use PHPUnit\Framework\Assert;
 
-class HeaderFooterTests extends \BaseTest\BaseTestContext
+class HeaderFooterTests extends BaseTestContext
 {
     /**
      * Test case for putHeaderFooter
@@ -144,7 +144,7 @@ class HeaderFooterTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/HeaderFooters/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteHeaderFooterRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteHeaderFooterRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null, null, null);
 
         $result = $this->words->deleteHeaderFooter($request);

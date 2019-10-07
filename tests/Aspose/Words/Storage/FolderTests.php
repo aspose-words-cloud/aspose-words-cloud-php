@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="FolderTests.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,21 +25,22 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\Run;
 use Aspose\Words;
 use PHPUnit\Framework\Assert;
 
-class FolderTests extends \BaseTest\BaseTestContext
+class FolderTests extends BaseTestContext
 {
+    public $testFolder = 'Temp/SdkTests/TestData/Storage';
     /**
      * Test case for createFolder
      */
     public function testCreateFolder()
     {
         $folderGUID = $this->getGUID();
-        $folderPath = 'Temp/SdkTests/TestData/Storage/TestCreateFolder' . $folderGUID;
+        $folderPath = $this->$testFolder . '/TestCreateFolder' . $folderGUID;
         $request = new Requests\CreateFolderRequest($folderPath);
         $result = $this->words->createFolder($request);
         echo $result;
@@ -51,7 +52,7 @@ class FolderTests extends \BaseTest\BaseTestContext
     public function testDeleteFolder()
     {
         $folderGUID = $this->getGUID();
-        $folderPath = 'Temp/SdkTests/TestData/Storage/TestCreateFolder' . $folderGUID;
+        $folderPath = $this->$testFolder . '/TestCreateFolder' . $folderGUID;
         $request = new Requests\CreateFolderRequest($folderPath);
         $this->words->createFolder($request);
         $request = new Requests\DeleteFolderRequest($folderPath);
@@ -63,7 +64,7 @@ class FolderTests extends \BaseTest\BaseTestContext
      */
     public function testGetFilesList()
     {
-        $request = new Requests\GetFilesListRequest('Temp/SdkTests/TestData/Storage');
+        $request = new Requests\GetFilesListRequest($this->testFolder);
         $response = $this->words->getFilesList($request);
         Assert::greaterThan(0, strlen($response), "Answer should not be empty");
     }
@@ -73,8 +74,8 @@ class FolderTests extends \BaseTest\BaseTestContext
      */
     public function testCopyFolder(){
         $folderGUID = $this->getGUID();
-        $folderPathSrc = 'Temp/SdkTests/TestData/Storage/TestCopyFolderSrc' . $folderGUID;
-        $folderPathDst = 'Temp/SdkTests/TestData/Storage/TestCopyFolderDst' . $folderGUID;
+        $folderPathSrc = $this->$testFolder . '/TestCopyFolderSrc' . $folderGUID;
+        $folderPathDst = $this->$testFolder . '/TestCopyFolderDst' . $folderGUID;
 
         $request = new Requests\CreateFolderRequest($folderPathSrc);
         $this->words->createFolder($request);
@@ -82,7 +83,7 @@ class FolderTests extends \BaseTest\BaseTestContext
         $request = new Requests\CopyFolderRequest($folderPathDst, $folderPathSrc);
         $this->words->copyFolder($request);
 
-        $request = new Requests\GetFilesListRequest('Temp/SdkTests/TestData/Storage');
+        $request = new Requests\GetFilesListRequest($this->testFolder);
         $response = $this->words->getFilesList($request);
     }
 
@@ -91,8 +92,8 @@ class FolderTests extends \BaseTest\BaseTestContext
      */
     public function testMoveFolder(){
         $folderGUID = $this->getGUID();
-        $folderPathSrc = 'Temp/SdkTests/TestData/Storage/TestMoveFolderSrc' . $folderGUID;
-        $folderPathDst = 'Temp/SdkTests/TestData/Storage/TestMoveFolderDst' . $folderGUID;
+        $folderPathSrc = $this->$testFolder . '/TestMoveFolderSrc' . $folderGUID;
+        $folderPathDst = $this->$testFolder . '/TestMoveFolderDst' . $folderGUID;
 
         $request = new Requests\CreateFolderRequest($folderPathSrc);
         $this->words->createFolder($request);
@@ -100,7 +101,7 @@ class FolderTests extends \BaseTest\BaseTestContext
         $request = new Requests\MoveFolderRequest($folderPathDst, $folderPathSrc);
         $this->words->moveFolder($request);
 
-        $request = new Requests\GetFilesListRequest('Temp/SdkTests/TestData/Storage');
+        $request = new Requests\GetFilesListRequest($this->testFolder);
         $response = $this->words->getFilesList($request);
     }
 }

@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="TableTests.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,7 +25,7 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\TableInsert;
 use Aspose\Words\Model\TableRowInsert;
@@ -37,7 +37,7 @@ use Aspose\Words\Model\Border;
 use Aspose\Words\Model\XmlColor;
 use PHPUnit\Framework\Assert;
 
-class TableTests extends \BaseTest\BaseTestContext
+class TableTests extends BaseTestContext
 {
     /**
      * Test case for deleteTable
@@ -56,11 +56,36 @@ class TableTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteTableRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteTableRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
         $result = $this->words->deleteTable($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteTableWithoutNodePath
+     *
+     * Delete a table..
+     *
+     */
+    public function testDeleteTableWithoutNodePath()
+    {
+        $localName = "TablesGet.docx";
+        $remoteName = "TestDeleteTableWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Table";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 1;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteTableWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->deleteTableWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -172,10 +197,34 @@ class TableTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetTableRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\GetTableRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getTable($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getTableWithoutNodePath
+     *
+     * Return a table..
+     *
+     */
+    public function testGetTableWithoutNodePath()
+    {
+        $localName = "TablesGet.docx";
+        $remoteName = "TestGetTableWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Table";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 1;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetTableWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getTableWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -242,10 +291,34 @@ class TableTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetTablePropertiesRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\GetTablePropertiesRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getTableProperties($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getTablePropertiesWithoutNodePath
+     *
+     * Return a table properties..
+     *
+     */
+    public function testGetTablePropertiesWithoutNodePath()
+    {
+        $localName = "TablesGet.docx";
+        $remoteName = "TestGetTablePropertiesWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Table";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 1;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetTablePropertiesWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getTablePropertiesWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -319,6 +392,29 @@ class TableTests extends \BaseTest\BaseTestContext
     }
 
     /**
+     * Test case for getTablesWithoutNodePath
+     *
+     * Return a list of tables that are contained in the document..
+     *
+     */
+    public function testGetTablesWithoutNodePath()
+    {
+        $localName = "TablesGet.docx";
+        $remoteName = "TestGetTablesWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Table";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetTablesWithoutNodePathRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getTablesWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for insertTable
      *
      * Adds table to document, returns added table's data..
@@ -340,6 +436,31 @@ class TableTests extends \BaseTest\BaseTestContext
             null, null, $tableDto);
 
         $result = $this->words->insertTable($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for insertTableWithoutNodePath
+     *
+     * Adds table to document, returns added table's data..
+     *
+     */
+    public function testInsertTableWithoutNodePath()
+    {
+        $localName = "TablesGet.docx";
+        $remoteName = "TestInsertTableWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Table";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $tableDto = new TableInsert(array("columns_count" => 3, "rows_count" => 5));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\InsertTableWithoutNodePathRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null, $tableDto);
+
+        $result = $this->words->insertTableWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -411,10 +532,35 @@ class TableTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\RenderTableRequest($remoteName, $format, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\RenderTableRequest($remoteName, $format, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->renderTable($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for renderTableWithoutNodePath
+     *
+     * Renders table to specified format..
+     *
+     */
+    public function testRenderTableWithoutNodePath()
+    {
+        $localName = "TablesGet.docx";
+        $remoteName = "TestRenderTableWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Table";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+        $format = "png";
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\RenderTableWithoutNodePathRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->renderTableWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -479,11 +625,48 @@ class TableTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateTablePropertiesRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateTablePropertiesRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null, $props);
 
         $result = $this->words->updateTableProperties($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for updateTablePropertiesWithoutNodePath
+     *
+     * Updates a table properties..
+     *
+     */
+    public function testUpdateTablePropertiesWithoutNodePath()
+    {
+        $localName = "TablesGet.docx";
+        $remoteName = "TestUpdateTablePropertiesWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Table";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 1;
+        $props = new TableProperties(array(
+            "alignment" => TableProperties::ALIGNMENT_RIGHT,
+            "allow_auto_fit" => false,
+            "bidi" => true,
+            "bottom_padding" => 1,
+            "cell_spacing" => 2,
+            "left_indent" => 3,
+            "left_padding" => 4,
+            "right_padding" => 5,
+            "style_options" => TableProperties::STYLE_OPTIONS_COLUMN_BANDS,
+            "top_padding" => 6
+        ));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\UpdateTablePropertiesWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null, $props);
+
+        $result = $this->words->updateTablePropertiesWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -534,7 +717,6 @@ class TableTests extends \BaseTest\BaseTestContext
         $destName = self::$baseTestOut . $remoteName;
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
-        $putRequest = new Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file);
         $this->uploadFile($file, $fullName);
 
         $request = new Requests\DeleteBorderRequest($remoteName, "tables/1/rows/0/cells/0/", 0, self::$baseTestPath . $subfolder,

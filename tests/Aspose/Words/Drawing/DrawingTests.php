@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="DrawingTests.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,11 +25,11 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
-class DrawingTests extends \BaseTest\BaseTestContext
+class DrawingTests extends BaseTestContext
 {
     /**
      * Test case for getDocumentDrawingObjectByIndex
@@ -48,10 +48,34 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentDrawingObjectByIndexRequest($remoteName, $index, $node_path='sections/0', $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\GetDocumentDrawingObjectByIndexRequest($remoteName,'sections/0', $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getDocumentDrawingObjectByIndex($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getDocumentDrawingObjectByIndexWithoutNodePath
+     *
+     * Read document drawing object common info by its index or convert to format specified..
+     *
+     */
+    public function testGetDocumentDrawingObjectByIndexWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestGetDocumentDrawingObjectByIndexWithoutNodePath.docx";
+        $subfolder = "DocumentElements/DrawingObjects";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetDocumentDrawingObjectByIndexWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->GetDocumentDrawingObjectByIndexWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -72,10 +96,34 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentDrawingObjectImageDataRequest($remoteName, $index, $node_path = "sections/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\GetDocumentDrawingObjectImageDataRequest($remoteName,"sections/0", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getDocumentDrawingObjectImageData($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getDocumentDrawingObjectImageDataWithoutNodePath
+     *
+     * Read drawing object image data..
+     *
+     */
+    public function testGetDocumentDrawingObjectImageDataWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestGetDocumentDrawingObjectImageDataWithoutNodePath.docx";
+        $subfolder = "DocumentElements/DrawingObjects";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetDocumentDrawingObjectImageDataWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getDocumentDrawingObjectImageDataWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -96,10 +144,34 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/DrawingObjects/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetDocumentDrawingObjectOleDataRequest($remoteName, $index, $node_path = "sections/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\GetDocumentDrawingObjectOleDataRequest($remoteName,"sections/0", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getDocumentDrawingObjectOleData($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getDocumentDrawingObjectOleDataWithoutNodePath
+     *
+     * Get drawing object OLE data..
+     *
+     */
+    public function testGetDocumentDrawingObjectOleDataWithoutNodePath()
+    {
+        $localName = "sample_EmbeddedOLE.docx";
+        $remoteName = "TestGetDocumentDrawingObjectOleDataWithoutNodePath.docx";
+        $subfolder = "DocumentElements/DrawingObjects";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/DrawingObjects/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetDocumentDrawingObjectOleDataWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getDocumentDrawingObjectOleDataWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -127,15 +199,39 @@ class DrawingTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for postDrawingObject
+     * Test case for getDocumentDrawingObjectsWithoutNodePath
+     *
+     * Read document drawing objects common info..
+     *
+     */
+    public function testGetDocumentDrawingObjectsWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestGetDocumentDrawingObjectsWithoutNodePath.docx";
+        $subfolder = "DocumentElements/DrawingObjects";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetDocumentDrawingObjectsWithoutNodePathRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getDocumentDrawingObjectsWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+
+    /**
+     * Test case for updateDrawingObject
      *
      * Updates drawing object, returns updated  drawing object's data..
      *
      */
-    public function testPostDrawingObject()
+    public function testUpdateDrawingObject()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostDrawingObject.docx";
+        $remoteName = "TestUpdateDrawingObject.docx";
         $subfolder = "DocumentElements/DrawingObjects";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $data = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
@@ -143,7 +239,7 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateDrawingObjectRequest($remoteName, "{\"Left\": 0}", $data, 0,$node_path = "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateDrawingObjectRequest($remoteName, "{\"Left\": 0}", $data,"", 0, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
@@ -152,15 +248,40 @@ class DrawingTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for putDrawingObject
+     * Test case for updateDrawingObjectWithoutNodePath
+     *
+     * Updates drawing object, returns updated  drawing object's data..
+     *
+     */
+    public function testUpdateDrawingObjectWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestUpdateDrawingObjectWithoutNodePath.docx";
+        $subfolder = "DocumentElements/DrawingObjects";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $data = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\UpdateDrawingObjectWithoutNodePathRequest($remoteName, "{\"Left\": 0}", $data, 0, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->updateDrawingObjectWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for insertDrawingObject
      *
      * Adds  drawing object to document, returns added  drawing object's data..
      *
      */
-    public function testPutDrawingObject()
+    public function testInsertDrawingObject()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPutDrawingObject.docx";
+        $remoteName = "TestInsertDrawingObject.docx";
         $subfolder = "DocumentElements/DrawingObjects";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $image = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
@@ -168,11 +289,36 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\InsertDrawingObjectRequest($remoteName, "{\"Left\": 0}", $image, $node_path = "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertDrawingObjectRequest($remoteName, "{\"Left\": 0}", $image, "", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
         $result = $this->words->insertDrawingObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for insertDrawingObjectWithoutNodePath
+     *
+     * Adds  drawing object to document, returns added  drawing object's data..
+     *
+     */
+    public function testInsertDrawingObjectWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestInsertDrawingObjectWithoutNodePath.docx";
+        $subfolder = "DocumentElements/DrawingObjects";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $image = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . "aspose-cloud.png";
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\InsertDrawingObjectWithoutNodePathRequest($remoteName, "{\"Left\": 0}", $image, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->insertDrawingObjectWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -194,10 +340,35 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\RenderDrawingObjectRequest($remoteName, $format, $index,$node_path = "sections/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\RenderDrawingObjectRequest($remoteName, $format,"sections/0", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->renderDrawingObject($request);
+        Assert::assertNotNull($result, "Error occurred while drawing object rendering");
+    }
+
+     /**
+     * Test case for renderDrawingObjectWithoutNodePath
+     *
+     * Renders drawing object to specified format..
+     *
+     */
+    public function testRenderDrawingObjectWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestRenderDrawingObjectWithoutNodePath.docx";
+        $subfolder = "DocumentElements/DrawingObjects";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+        $format = "png";
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\RenderDrawingObjectWithoutNodePathRequest($remoteName, $format, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->renderDrawingObjectWithoutNodePath($request);
         Assert::assertNotNull($result, "Error occurred while drawing object rendering");
     }
 
@@ -219,12 +390,39 @@ class DrawingTests extends \BaseTest\BaseTestContext
         $file = str_replace("\\", "/", $file);
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteDrawingObjectRequest($remoteName,
-            $objectIndex, $node_path = "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteDrawingObjectRequest($remoteName, "",
+            $objectIndex, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
         $result = $this->words->deleteDrawingObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteDrawingObjectWithoutNodePath
+     *
+     * Removes drawing object from document..
+     *
+     */
+    public function testDeleteDrawingObjectWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestDeleteDrawingObjectWithoutNodePath.docx";
+        $subfolder = "DocumentElements/DrawingObjects";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $objectIndex = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $file = str_replace("\\", "/", $file);
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteDrawingObjectWithoutNodePathRequest($remoteName,
+            $objectIndex, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->deleteDrawingObjectWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

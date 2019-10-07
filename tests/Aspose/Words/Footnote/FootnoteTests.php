@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="FootnoteTests.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,12 +25,12 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\Footnote;
 use PHPUnit\Framework\Assert;
 
-class FootnoteTests extends \BaseTest\BaseTestContext
+class FootnoteTests extends BaseTestContext
 {
     /**
      * Test case for getFootnote
@@ -49,10 +49,34 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetFootnoteRequest($remoteName, $index,"", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\GetFootnoteRequest($remoteName,"", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getFootnote($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getFootnoteWithoutNodePath
+     *
+     * Read footnote by index..
+     *
+     */
+    public function testGetFootnoteWithoutNodePath()
+    {
+        $localName = "Footnote.doc";
+        $remoteName = "TestGetFootnoteWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Footnote";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetFootnoteWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getFootnoteWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -80,6 +104,29 @@ class FootnoteTests extends \BaseTest\BaseTestContext
     }
 
     /**
+     * Test case for getFootnotesWithoutNodePath
+     *
+     * Get footnotes from document..
+     *
+     */
+    public function testGetFootnotesWithoutNodePath()
+    {
+        $localName = "Footnote.doc";
+        $remoteName = "TestGetFootnotesWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Footnote";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetFootnotesWithoutNodePathRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getFootnotesWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for deleteFootnote
      *
      * Removes footnote from document..
@@ -96,7 +143,7 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteFootnoteRequest($remoteName, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteFootnoteRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
@@ -105,15 +152,40 @@ class FootnoteTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for postFootnote
+     * Test case for deleteFootnoteWithoutNodePath
+     *
+     * Removes footnote from document..
+     *
+     */
+    public function testDeleteFootnoteWithoutNodePath()
+    {
+        $localName = "Footnote.doc";
+        $remoteName = "TestDeleteFootnoteWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Footnote";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteFootnoteWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->deleteFootnoteWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for updateFootnote
      *
      * Updates footnote's properties, returns updated run's data..
      *
      */
-    public function testPostFootnote()
+    public function testUpdateFootnote()
     {
         $localName = "Footnote.doc";
-        $remoteName = "TestPostFootnote.docx";
+        $remoteName = "TestUpdateFootnote.docx";
         $subfolder = "DocumentElements/Footnote";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -122,7 +194,7 @@ class FootnoteTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateFootnoteRequest($remoteName, $footNote, $index, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateFootnoteRequest($remoteName, $footNote, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
@@ -131,15 +203,41 @@ class FootnoteTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for putFootnote
+     * Test case for updateFootnoteWithoutNodePath
+     *
+     * Updates footnote's properties, returns updated run's data..
+     *
+     */
+    public function testUpdateFootnoteWithoutNodePath()
+    {
+        $localName = "Footnote.doc";
+        $remoteName = "TestUpdateFootnoteWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Footnote";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+        $footNote = new Footnote(array("text" => "new text is here"));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\UpdateFootnoteWithoutNodePathRequest($remoteName, $footNote, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->updateFootnoteWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for insertFootnote
      *
      * Adds footnote to document, returns added footnote's data..
      *
      */
-    public function testPutFootnote()
+    public function testInsertFootnote()
     {
         $localName = "Footnote.doc";
-        $remoteName = "TestPutFootnote.docx";
+        $remoteName = "TestInsertFootnote.docx";
         $subfolder = "DocumentElements/Footnote";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $footnote = new Footnote(array("footnote_type" => Footnote::FOOTNOTE_TYPE_ENDNOTE, "text" => "test endnote"));
@@ -152,6 +250,31 @@ class FootnoteTests extends \BaseTest\BaseTestContext
             null, null);
 
         $result = $this->words->insertFootnote($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for insertFootnoteWithoutNodePath
+     *
+     * Adds footnote to document, returns added footnote's data..
+     *
+     */
+    public function testInsertFootnoteWithoutNodePath()
+    {
+        $localName = "Footnote.doc";
+        $remoteName = "TestInsertFootnoteWithoutNodePath.docx";
+        $subfolder = "DocumentElements/Footnote";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $footnote = new Footnote(array("footnote_type" => Footnote::FOOTNOTE_TYPE_ENDNOTE, "text" => "test endnote"));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\InsertFootnoteWithoutNodePathRequest($remoteName, $footnote, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->insertFootnoteWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

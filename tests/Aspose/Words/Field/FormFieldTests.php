@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="FormFieldTests.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,23 +25,23 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\FormFieldTextInput;
 use PHPUnit\Framework\Assert;
 
-class FormFieldTests extends \BaseTest\BaseTestContext
+class FormFieldTests extends BaseTestContext
 {
     /**
-     * Test case for postFormField
+     * Test case for updateFormField
      *
      * Updates properties of form field, returns updated form field..
      *
      */
-    public function testPostFormField()
+    public function testUpdateFormField()
     {
         $localName = "FormFilled.docx";
-        $remoteName = "TestPostFormField.docx";
+        $remoteName = "TestUpdateFormField.docx";
         $subfolder = "DocumentElements/FormField";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -58,7 +58,7 @@ class FormFieldTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateFormFieldRequest($remoteName, $body, $index, "sections/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateFormFieldRequest($remoteName, $body, "sections/0", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, $destName,
             null, null);
 
@@ -67,15 +67,49 @@ class FormFieldTests extends \BaseTest\BaseTestContext
     }
 
     /**
-     * Test case for putFormField
+     * Test case for updateFormFieldWithoutNodePath
+     *
+     * Updates properties of form field, returns updated form field..
+     *
+     */
+    public function testUpdateFormFieldWithoutNodePath()
+    {
+        $localName = "FormFilled.docx";
+        $remoteName = "TestUpdateFormFieldWithoutNodePath.docx";
+        $subfolder = "DocumentElements/FormField";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+        $destName = self::$baseTestOut . $remoteName;
+        $body = new FormFieldTextInput(array(
+            "name" => "FullName",
+            "enabled" => true,
+            "calculate_on_exit" => true,
+            "status_text" => "",
+            "text_input_type" => FormFieldTextInput::TEXT_INPUT_TYPE_REGULAR,
+            "text_input_default" => ""
+        ));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\UpdateFormFieldWithoutNodePathRequest($remoteName, $body, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, $destName,
+            null, null);
+
+        $result = $this->words->updateFormFieldWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for insertFormField
      *
      * Adds form field to paragraph, returns added form field's data..
      *
      */
-    public function testPutFormField()
+    public function testInsertFormField()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPutFormField.docx";
+        $remoteName = "TestInsertFormField.docx";
         $subfolder = "DocumentElements/FormField";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
@@ -101,6 +135,40 @@ class FormFieldTests extends \BaseTest\BaseTestContext
     }
 
     /**
+     * Test case for insertFormFieldWithoutNodePath
+     *
+     * Adds form field to paragraph, returns added form field's data..
+     *
+     */
+    public function testInsertFormFieldWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestInsertFormFieldWithoutNodePath.docx";
+        $subfolder = "DocumentElements/FormField";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $destName = self::$baseTestOut . $remoteName;
+        $body = new FormFieldTextInput(array(
+            "name" => "FullName",
+            "enabled" => true,
+            "calculate_on_exit" => true,
+            "status_text" => "",
+            "text_input_type" => FormFieldTextInput::TEXT_INPUT_TYPE_REGULAR,
+            "text_input_default" => "123",
+            "text_input_format" => "UPPERCASE"
+        ));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\InsertFormFieldWithoutNodePathRequest($remoteName, $body, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, $destName,
+            null, null);
+
+        $result = $this->words->insertFormFieldWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for deleteFormField
      *
      * Removes form field from document..
@@ -117,10 +185,34 @@ class FormFieldTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteFormFieldRequest($remoteName, $index, "sections/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteFormFieldRequest($remoteName, "sections/0", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null, null, null);
 
         $result = $this->words->deleteFormField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteFormFieldWithoutNodePath
+     *
+     * Removes form field from document..
+     *
+     */
+    public function testDeleteFormFieldWithoutNodePath()
+    {
+        $localName = "FormFilled.docx";
+        $remoteName = "TestDeleteFormFieldWithoutNodePath.docx";
+        $subfolder = "DocumentElements/FormField";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteFormFieldWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null, null, null);
+
+        $result = $this->words->deleteFormFieldWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -141,10 +233,34 @@ class FormFieldTests extends \BaseTest\BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetFormFieldRequest($remoteName, $index, "sections/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\GetFormFieldRequest($remoteName,"sections/0", $index,  $folder=self::$baseTestPath . $subfolder,
             null, null, null);
 
         $result = $this->words->getFormField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getFormFieldWithoutNodePath
+     *
+     * Returns representation of an one of the form field..
+     *
+     */
+    public function testGetFormFieldWithoutNodePath()
+    {
+        $localName = "FormFilled.docx";
+        $remoteName = "TestGetFormFieldWithoutNodePath.docx";
+        $subfolder = "DocumentElements/FormField";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetFormFieldWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getFormFieldWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -168,6 +284,29 @@ class FormFieldTests extends \BaseTest\BaseTestContext
             null, null, null);
 
         $result = $this->words->getFormFields($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getFormFieldsWithoutNodePath
+     *
+     * Get form fields from document..
+     *
+     */
+    public function testGetFormFieldsWithoutNodePath()
+    {
+        $localName = "FormFilled.docx";
+        $remoteName = "TestGetFormFieldsWithoutNodePath.docx";
+        $subfolder = "DocumentElements/FormField";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/FormFields/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetFormFieldsWithoutNodePathRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getFormFieldsWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

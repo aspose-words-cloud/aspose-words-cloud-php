@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="AppendDocumentTests.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,13 +25,13 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
+namespace Aspose\Tests;
 use Aspose\Words\Model\DocumentEntryList;
 use Aspose\Words\Model\DocumentEntry;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
-class AppendDocumentTests extends BaseTest\BaseTestContext
+class AppendDocumentTests extends BaseTestContext
 {
     /**
      * Test case for postAppendDocument

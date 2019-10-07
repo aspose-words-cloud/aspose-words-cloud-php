@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="BaseTestContext.php">
-*   Copyright (c) 2017 Aspose.Words for Cloud
+*   Copyright (c) 2019 Aspose.Words for Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,7 +25,8 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-namespace BaseTest;
+namespace Aspose\Tests;
+
 use Aspose\Words\Model\Requests;
 use Aspose\Storage\Api\StorageApi;
 use Aspose\Words\Configuration;

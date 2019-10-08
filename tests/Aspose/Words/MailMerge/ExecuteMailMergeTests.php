@@ -32,15 +32,15 @@ use PHPUnit\Framework\Assert;
 class ExecuteMailMergeTests extends BaseTestContext
 {
     /**
-     * Test case for postDocumentExecuteMailMerge
+     * Test case for executeMailMerge
      *
      * Execute document mail merge operation..
      *
      */
-    public function testPostDocumentExecuteMailMerge()
+    public function testExecuteMailMerge()
     {
         $localName = "SampleMailMergeTemplate.docx";
-        $remoteName = "TestPostDocumentExecuteMailMerge.docx";
+        $remoteName = "TestExecuteMailMerge.docx";
         $subfolder = "DocumentActions/MailMerge";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
@@ -58,12 +58,12 @@ class ExecuteMailMergeTests extends BaseTestContext
     }
 
     /**
-     * Test case for putExecuteMailMergeOnline
+     * Test case for executeMailMergeOnline
      *
      * Execute document mail merge online..
      *
      */
-    public function testPutExecuteMailMergeOnline()
+    public function testExecuteMailMergeOnline()
     {
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleMailMergeTemplate.docx";
         $data = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleMailMergeTemplateData.txt";

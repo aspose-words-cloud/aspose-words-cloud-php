@@ -51,7 +51,7 @@ class ClassificationTests extends BaseTestContext
      * Classify document
      *
      */
-    public function testDocumentClassification()
+    public function testClassifyDocument()
     {
         $localName = "test_multi_pages.docx";
         $remoteName = "Source.docx";

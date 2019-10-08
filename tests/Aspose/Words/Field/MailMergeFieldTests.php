@@ -54,12 +54,12 @@ class MailMergeFieldTests extends BaseTestContext
     }
 
     /**
-     * Test case for putDocumentFieldNames
+     * Test case for getDocumentFieldNamesOnline
      *
      * Read document field names..
      *
      */
-    public function testPutDocumentFieldNames()
+    public function testGetDocumentFieldNamesOnline()
     {
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/MailMerge/' . "SampleExecuteTemplate.docx";
         $request = new Requests\GetDocumentFieldNamesOnlineRequest($file, true);

@@ -32,15 +32,15 @@ use PHPUnit\Framework\Assert;
 class SplitDocumentToFormatTests extends BaseTestContext
 {
     /**
-     * Test case for postSplitDocument
+     * Test case for splitDocument
      *
      * Split document..
      *
      */
-    public function testPostSplitDocument()
+    public function testSplitDocument()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostSplitDocument.docx";
+        $remoteName = "TestSplitDocument.docx";
         $subfolder = "DocumentActions/SplitDocument";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . "TestPostSplitDocument.text";

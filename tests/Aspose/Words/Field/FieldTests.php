@@ -210,7 +210,7 @@ class FieldTests extends BaseTestContext
      * Update (reevaluate) fields in document..
      *
      */
-    public function testPostUpdateDocumentFields()
+    public function testUpdateFields()
     {
         $localName = "test_multi_pages.docx";
         $remoteName = "TestUpdateFields.docx";

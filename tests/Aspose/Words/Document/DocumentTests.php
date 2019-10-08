@@ -51,4 +51,18 @@ class DocumentTests extends BaseTestContext
         $result = $this->words->getDocument($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
+
+    /**
+    * Test case for createDocument
+    *
+    * Create an empty document
+    */
+    public function testCreateDocument()
+    {
+        $remoteName = "TestCreateDocument.docx";
+        $subfolder = "DocumentActions/Document";
+
+        $request = new Requests\CreateDocumentRequest(NULL, $remoteName, $folder=self::$baseTestPath . $subfolder);
+        $response = $this->words->createDocument($request);
+    }
 }

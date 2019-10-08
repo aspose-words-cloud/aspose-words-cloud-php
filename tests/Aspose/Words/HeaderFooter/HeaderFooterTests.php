@@ -33,15 +33,15 @@ use PHPUnit\Framework\Assert;
 class HeaderFooterTests extends BaseTestContext
 {
     /**
-     * Test case for putHeaderFooter
+     * Test case for insertHeaderFooter
      *
      * Insert to document header or footer..
      *
      */
-    public function testPutHeaderFooter()
+    public function testInsertHeaderFooter()
     {
         $localName = "HeadersFooters.doc";
-        $remoteName = "TestPutHeaderFooter.docx";
+        $remoteName = "TestInsertHeaderFooter.docx";
         $subfolder = "DocumentElements/HeaderFooter";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $footerType = HeaderFooter::TYPE_FOOTER_EVEN;

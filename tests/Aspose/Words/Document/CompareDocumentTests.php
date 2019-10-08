@@ -33,17 +33,17 @@ use PHPUnit\Framework\Assert;
 class CompareDocumentTests extends BaseTestContext
 {
     /**
-     * Test case for postCompareDocument
+     * Test case for compareDocument
      *
      * Compare document with original document..
      *
      */
-    public function testPostCompareDocument()
+    public function testCompareDocument()
     {
         $localName1 = "compareTestDoc1.doc";
         $localName2 = "compareTestDoc2.doc";
-        $remoteName1 = "TestPostCompareDocument1.doc";
-        $remoteName2 = "TestPostCompareDocument2.doc";
+        $remoteName1 = "TestCompareDocument1.doc";
+        $remoteName2 = "TestCompareDocument2.doc";
         $subfolder = "DocumentActions/CompareDocument";
         $fullName1 = self::$baseTestPath . $subfolder . "/" . $remoteName1;
         $fullName2 = self::$baseTestPath . $subfolder . "/" . $remoteName2;

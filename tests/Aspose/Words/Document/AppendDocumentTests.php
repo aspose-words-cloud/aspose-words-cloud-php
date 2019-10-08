@@ -34,15 +34,15 @@ use PHPUnit\Framework\Assert;
 class AppendDocumentTests extends BaseTestContext
 {
     /**
-     * Test case for postAppendDocument
+     * Test case for appendDocument
      *
      * Append documents to original document..
      *
      */
-    public function testPostAppendDocument()
+    public function testAppendDocument()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostAppendDocument.docx";
+        $remoteName = "TestAppendDocument.docx";
         $subfolder = "DocumentActions/AppendDocument";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;

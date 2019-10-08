@@ -55,15 +55,15 @@ class DocumentProtectionTests extends BaseTestContext
     }
 
     /**
-     * Test case for putProtectDocument
+     * Test case for protectDocument
      *
      * Protect document..
      *
      */
-    public function testPutProtectDocument()
+    public function testProtectDocument()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPutProtectDocument.docx";
+        $remoteName = "TestProtectDocument.docx";
         $subfolder = "DocumentActions/Protection";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
@@ -103,15 +103,15 @@ class DocumentProtectionTests extends BaseTestContext
     }
 
     /**
-     * Test case for deleteUnprotectDocument
+     * Test case for unprotectDocument
      *
      * Unprotect document..
      *
      */
-    public function testDeleteUnprotectDocument()
+    public function testUnprotectDocument()
     {
         $localName = "SampleProtectedBlankWordDocument.docx";
-        $remoteName = "TestDeleteUnprotectDocument.docx";
+        $remoteName = "TestUnprotectDocument.docx";
         $subfolder = "DocumentActions/Protection";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $body = new ProtectionRequest(array("password" => "aspose"));

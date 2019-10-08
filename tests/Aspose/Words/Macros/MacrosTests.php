@@ -32,15 +32,15 @@ use PHPUnit\Framework\Assert;
 class MacrosTests extends BaseTestContext
 {
     /**
-     * Test case for deleteDocumentMacros
+     * Test case for deleteMacros
      *
      * Remove macros from document..
      *
      */
-    public function testDeleteDocumentMacros()
+    public function testDeleteMacros()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestDeleteDocumentMacros.docx";
+        $remoteName = "TestDeleteMacros.docx";
         $subfolder = "DocumentElements/Macros";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 

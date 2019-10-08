@@ -34,15 +34,15 @@ use Aspose\Words\ApiException;
 class ConvertDocumentTests extends BaseTestContext
 {
     /**
-     * Test case for postDocumentSaveAs
+     * Test case for saveAs
      *
      * Convert document to destination format with detailed settings and save result to storage..
      *
      */
-    public function testPostDocumentSaveAs()
+    public function testSaveAs()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostDocumentSaveAs.docx";
+        $remoteName = "TestSaveAs.docx";
         $subfolder = "DocumentActions/ConvertDocument";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . "TestPostDocumentSaveAs.pdf";
@@ -58,12 +58,12 @@ class ConvertDocumentTests extends BaseTestContext
     }
 
     /**
-     * Test case for postDocumentSaveAsFromPdfToDoc
+     * Test case for SaveAsFromPdfToDoc
      *
      * Convert document to destination format with detailed settings and save result to storage..
      *
      */
-    public function testPostDocumentSaveAsFromPdfToDoc()
+    public function testSaveAsFromPdfToDoc()
     {
         $localName = "45.pdf";
         $remoteName = "TestPostDocumentSaveAsFromPdfToDoc.docx";
@@ -82,12 +82,12 @@ class ConvertDocumentTests extends BaseTestContext
     }
 
     /**
-     * Test case for putConvertDocument
+     * Test case for convertDocument
      *
      * Convert document from request content to format specified..
      *
      */
-    public function testPutConvertDocument()
+    public function testConvertDocument()
     {
         $format = "pdf";
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/ConvertDocument/' . "test_uploadfile.docx";
@@ -99,12 +99,12 @@ class ConvertDocumentTests extends BaseTestContext
     }
 
     /**
-     * Test case for putDocumentSaveAsTiff
+     * Test case for saveAsTiff
      *
      * Convert document to tiff with detailed settings and save result to storage..
      *
      */
-    public function testPutDocumentSaveAsTiff()
+    public function testSaveAsTiff()
     {
         $localName = "test_multi_pages.docx";
         $remoteName = "TestPutDocumentSaveAsTiff.docx";

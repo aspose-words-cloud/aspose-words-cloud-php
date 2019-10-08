@@ -56,15 +56,15 @@ class RunTests extends BaseTestContext
     }
 
     /**
-     * Test case for postRun
+     * Test case for updateRun
      *
      * Updates run's properties, returns updated run's data..
      *
      */
-    public function testPostRun()
+    public function testUpdateRun()
     {
         $localName = "Run.doc";
-        $remoteName = "TestPostRun.docx";
+        $remoteName = "TestUpdateRun.docx";
         $subfolder = "DocumentElements/Run";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
@@ -80,15 +80,15 @@ class RunTests extends BaseTestContext
     }
 
     /**
-     * Test case for putRun
+     * Test case for insertRun
      *
      * Adds run to document, returns added paragraph's data..
      *
      */
-    public function testPutRun()
+    public function testInsertRun()
     {
         $localName = "Run.doc";
-        $remoteName = "TestPutRun.docx";
+        $remoteName = "TestInsertRun.docx";
         $subfolder = "DocumentElements/Run";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $run = new Run(array("text" => "run with text"));

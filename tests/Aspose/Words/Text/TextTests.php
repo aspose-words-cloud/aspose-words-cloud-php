@@ -33,15 +33,15 @@ use PHPUnit\Framework\Assert;
 class TextTests extends BaseTestContext
 {
     /**
-     * Test case for postReplaceText
+     * Test case for replaceText
      *
      * Replace document text..
      *
      */
-    public function testPostReplaceText()
+    public function testReplaceText()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostReplaceText.docx";
+        $remoteName = "TestReplaceText.docx";
         $subfolder = "DocumentActions/Text";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;

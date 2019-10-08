@@ -34,12 +34,12 @@ use PHPUnit\Framework\Assert;
 class LoadWebDocumentTests extends BaseTestContext
 {
     /**
-     * Test case for postLoadWebDocument
+     * Test case for loadWebDocument
      *
      * Loads new document from web into the file with any supported format of data..
      *
      */
-    public function testPostLoadWebDocument()
+    public function testLoadWebDocument()
     {
         $saveOptions = new SaveOptionsData(array(
             "file_name" => "google.doc",

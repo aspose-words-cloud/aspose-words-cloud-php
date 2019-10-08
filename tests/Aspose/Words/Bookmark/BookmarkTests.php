@@ -33,15 +33,15 @@ use PHPUnit\Framework\Assert;
 class BookmarkTests extends BaseTestContext
 {
     /**
-     * Test case for getDocumentBookmarkByName
+     * Test case for getBookmarkByName
      *
      * Read document bookmark data by its name..
      *
      */
-    public function testGetDocumentBookmarkByName()
+    public function testGetBookmarkByName()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestGetDocumentBookmarkByName.docx";
+        $remoteName = "TestGetBookmarkByName.docx";
         $subfolder = "DocumentElements/Bookmarks";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $bookmarkName = "aspose";
@@ -56,15 +56,15 @@ class BookmarkTests extends BaseTestContext
     }
 
     /**
-     * Test case for getDocumentBookmarks
+     * Test case for getBookmarks
      *
      * Read document bookmarks common info..
      *
      */
-    public function testGetDocumentBookmarks()
+    public function testGetBookmarks()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestGetDocumentBookmarks.docx";
+        $remoteName = "TestGetBookmarks.docx";
         $subfolder = "DocumentElements/Bookmarks";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
@@ -79,15 +79,15 @@ class BookmarkTests extends BaseTestContext
     }
 
     /**
-     * Test case for postUpdateDocumentBookmark
+     * Test case for updateBookmark
      *
      * Update document bookmark..
      *
      */
-    public function testPostUpdateDocumentBookmark()
+    public function testUpdateBookmark()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostUpdateDocumentBookmark.docx";
+        $remoteName = "TestUpdateBookmark.docx";
         $subfolder = "DocumentElements/Bookmarks";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;

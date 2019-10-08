@@ -33,15 +33,15 @@ use PHPUnit\Framework\Assert;
 class WatermarkTests extends BaseTestContext
 {
     /**
-     * Test case for deleteDocumentWatermark
+     * Test case for deleteWatermark
      *
      * Delete watermark (for deleting last watermark from the document)..
      *
      */
-    public function testDeleteDocumentWatermark()
+    public function testDeleteWatermark()
     {
         $localName = "test_doc.docx";
-        $remoteName = "TestDeleteDocumentWatermark.docx";
+        $remoteName = "TestDeleteWatermark.docx";
         $subfolder = "DocumentActions/Watermark";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
@@ -55,15 +55,15 @@ class WatermarkTests extends BaseTestContext
     }
 
     /**
-     * Test case for postInsertDocumentWatermarkImage
+     * Test case for insertWatermarkImage
      *
      * Insert document watermark image..
      *
      */
-    public function testPostInsertDocumentWatermarkImage()
+    public function testInsertWatermarkImage()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostInsertDocumentWatermarkImage.docx";
+        $remoteName = "TestInsertWatermarkImage.docx";
         $subfolder = "DocumentActions/Watermark";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;
@@ -82,15 +82,15 @@ class WatermarkTests extends BaseTestContext
     }
 
     /**
-     * Test case for postInsertDocumentWatermarkText
+     * Test case for insertWatermarkText
      *
      * Insert document watermark text..
      *
      */
-    public function testPostInsertDocumentWatermarkText()
+    public function testInsertWatermarkText()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostInsertDocumentWatermarkText.docx";
+        $remoteName = "TestInsertWatermarkText.docx";
         $subfolder = "DocumentActions/Watermark";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $destName = self::$baseTestOut . $remoteName;

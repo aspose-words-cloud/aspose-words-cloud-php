@@ -101,19 +101,19 @@ class CommentTests extends BaseTestContext
     }
 
     /**
-     * Test case for postComment
+     * Test case for updateComment
      *
      * Updates the comment, returns updated comment's data..
      *
      */
-    public function testPostComment()
+    public function testUpdateComment()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPostComment.docx";
+        $remoteName = "TestUpdateComment.docx";
         $subfolder = "DocumentElements/Comments";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
-        $nodeLink = new NodeLink(array("node_id" => "0.0.3"));
+        $nodeLink = new NodeLink(array("node_id" => "0.3.0.3"));
         $documentPosition = new DocumentPosition(array("node" => $nodeLink, "offset" => 0));
         $body = new Comment(array("range_start" => $documentPosition,
             "range_end" => $documentPosition,"initial" => "IA",
@@ -129,18 +129,18 @@ class CommentTests extends BaseTestContext
     }
 
     /**
-     * Test case for putComment
+     * Test case for insertComment
      *
      * Adds comment to document, returns inserted comment's data..
      *
      */
-    public function testPutComment()
+    public function testInsertComment()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "TestPutComment.docx";
+        $remoteName = "TestInsertComment.docx";
         $subfolder = "DocumentElements/Comments";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $nodeLink = new NodeLink(array("node_id" => "0.0.3"));
+        $nodeLink = new NodeLink(array("node_id" => "0.3.0.3"));
         $documentPosition = new DocumentPosition(array("node" => $nodeLink, "offset" => 0));
         $body = new Comment(array(
             "range_start" => $documentPosition,

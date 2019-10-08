@@ -40,8 +40,8 @@ class RangeTests extends BaseTestContext
      */
     public function testGetRangeText()
     {
-        $rangeStart = 'id0.0';
-        $rangeEnd = 'id0.1';
+        $rangeStart = 'id0.0.0';
+        $rangeEnd = 'id0.0.1';
         $expectedText = 'This is HEADER ';
 
         $localName = "RangeGet.doc";
@@ -65,8 +65,8 @@ class RangeTests extends BaseTestContext
      */
     public function testRemoveRange()
     {
-        $rangeStart = 'id0.0';
-        $rangeEnd = 'id0.1';
+        $rangeStart = 'id0.0.0';
+        $rangeEnd = 'id0.0.1';
 
         $localName = "RangeGet.doc";
         $remoteName = "TestRemoveRange.doc";
@@ -89,8 +89,8 @@ class RangeTests extends BaseTestContext
      */
     public function testSaveAsRange()
     {
-        $rangeStart = 'id0.0';
-        $rangeEnd = 'id0.1';
+        $rangeStart = 'id0.0.0';
+        $rangeEnd = 'id0.0.1';
         $newDocName = self::$baseTestPath . '/NewDoc.docx';
         $rangeDoc = new RangeDocument(["document_name" => $newDocName]);
 
@@ -115,8 +115,8 @@ class RangeTests extends BaseTestContext
      */
     public function testReplaceWithText()
     {
-        $rangeStart = 'id0.0';
-        $rangeEnd = 'id0.1';
+        $rangeStart = 'id0.0.0';
+        $rangeEnd = 'id0.0.1';
         $newText = 'Replace header';
         $replacement  = new ReplaceRange(["text" => $newText]);
 

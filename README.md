@@ -50,7 +50,7 @@ $result = $words->postDocumentSaveAs($request);
 Please put your credentials into [Configuration](src/Aspose/Words/Configuration.php).
 
 ## Dependencies
-- PHP 5.6 or later
+- PHP 7.1 or later
 - referenced packages (see [here](composer.json) for more details)
 
 ## Comparison with Old generation SDK

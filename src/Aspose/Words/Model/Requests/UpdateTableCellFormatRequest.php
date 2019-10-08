@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateTableCellFormatRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
@@ -306,4 +306,3 @@ class UpdateTableCellFormatRequest
         return $this;
     }
 }
-/*

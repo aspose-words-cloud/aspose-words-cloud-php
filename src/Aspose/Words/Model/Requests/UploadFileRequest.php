@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UploadFileRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud

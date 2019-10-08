@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ClassifyRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
@@ -90,4 +90,3 @@ class ClassifyRequest
         return $this;
     }
 }
-/*

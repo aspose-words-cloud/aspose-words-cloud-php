@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateDrawingObjectRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
@@ -330,4 +330,3 @@ class UpdateDrawingObjectRequest
         return $this;
     }
 }
-/*

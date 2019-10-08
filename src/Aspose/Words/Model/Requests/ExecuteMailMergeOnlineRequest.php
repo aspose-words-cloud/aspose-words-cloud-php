@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ExecuteMailMergeOnlineRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
@@ -162,4 +162,3 @@ class ExecuteMailMergeOnlineRequest
         return $this;
     }
 }
-/*

@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentFieldNamesRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
@@ -186,4 +186,3 @@ class GetDocumentFieldNamesRequest
         return $this;
     }
 }
-/*

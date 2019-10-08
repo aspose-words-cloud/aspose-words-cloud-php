@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MoveFolderRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
@@ -138,4 +138,3 @@ class MoveFolderRequest
         return $this;
     }
 }
-/*

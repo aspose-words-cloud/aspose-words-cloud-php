@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentWithFormatRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
@@ -234,4 +234,3 @@ class GetDocumentWithFormatRequest
         return $this;
     }
 }
-/*

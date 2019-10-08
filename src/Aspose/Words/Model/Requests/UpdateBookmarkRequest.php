@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateBookmarkRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
@@ -282,4 +282,3 @@ class UpdateBookmarkRequest
         return $this;
     }
 }
-/*

@@ -1,5 +1,5 @@
 <?php
-*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetFootnoteWithoutNodePathRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
@@ -186,4 +186,3 @@ class GetFootnoteWithoutNodePathRequest
         return $this;
     }
 }
-/*

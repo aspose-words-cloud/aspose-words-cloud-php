@@ -82,11 +82,10 @@ class WordsApiTests extends BaseTestContext
         $errorList = "";
         foreach ($methods as $method)
         {
-            echo("Chekcing method ". $method. "\n");
             try {
                 $test = $testMethods[$method];
                 if ($test == NULL)
-                    throw new \ReflectionException("Lost test");
+                    throw new \ReflectionException("Missed test");
             }
             catch (\ReflectionException $e)
             {

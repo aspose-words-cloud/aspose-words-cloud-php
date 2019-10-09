@@ -4,6 +4,7 @@ stages:
   - tests_latest
   - tag_version
   - merge-to-testPackage
+  - release
   - publishing
   - retest-5.6
   - retest-latest
@@ -79,10 +80,11 @@ bdd-tests-5.6:
 add version tag:
   stage: tag_version
   only:
-    - master
+    - release
   before_script:
     - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-php.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
-    - $env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")
+    - '$jsonString = ( New-Object System.Net.WebClient ).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")'
+    - '$env:SDK_VERSION = ( ( ConvertFrom-Json -InputObject $jsonString ).info.version | Select-String -Pattern "^\d+\.\d+" ).Matches[0].Value'
   script: 
     - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION'
     - git push $env:ORIGIN $env:SDK_VERSION 
@@ -111,7 +113,7 @@ merge-to-testPackage:
 publish_package:
   stage: publishing
   only: 
-    - testPackage
+    - release
   before_script:
     - ORIGIN='https://'$GIT_CI_USER':'$GIT_CI_PASS'@git.auckland.dynabic.com/words-cloud/words-cloud-php.git'
   script:
@@ -142,7 +144,7 @@ unit-retest-5.6:
   tags:
     - awcloud-linux
   only:
-    - testPackage
+    - release
   when: manual
 
 bdd-retest-5.6:
@@ -161,7 +163,7 @@ bdd-retest-5.6:
   tags:
     - awcloud-linux
   only:
-    - testPackage
+    - release
   when: manual
 
 unit-retest-latest:
@@ -178,7 +180,7 @@ unit-retest-latest:
   tags:
     - awcloud-linux
   only:
-    - testPackage
+    - release
   when: manual
 
 bdd-retest-latest:
@@ -197,5 +199,23 @@ bdd-retest-latest:
   tags:
     - awcloud-linux
   only:
-    - testPackage
+    - release
+  when: manual
+
+create_release:
+  stage: release
+  only:
+    - master
+  before_script:
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-php.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+  script: 
+    - git checkout master
+    - 'git remote set-url origin $env:ORIGIN'
+    - git checkout release
+    - git reset --hard origin/release
+    - git merge --no-ff --allow-unrelated-histories origin/master
+    - git diff --name-status
+    - git push
+  tags:
+    - awcloud
   when: manual

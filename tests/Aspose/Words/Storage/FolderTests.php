@@ -33,14 +33,15 @@ use PHPUnit\Framework\Assert;
 
 class FolderTests extends BaseTestContext
 {
-    public $testFolder = 'Temp/SdkTests/TestData/Storage';
+    public $testFolder = "asdasdas";
     /**
      * Test case for createFolder
      */
     public function testCreateFolder()
     {
+        $subfolder = 'Temp/SdkTests/TestData/Storage';
         $folderGUID = $this->getGUID();
-        $folderPath = $this->$testFolder . '/TestCreateFolder' . $folderGUID;
+        $folderPath = $subfolder . '/TestCreateFolder' . $folderGUID;
         $request = new Requests\CreateFolderRequest($folderPath);
         $result = $this->words->createFolder($request);
         echo $result;
@@ -51,8 +52,9 @@ class FolderTests extends BaseTestContext
      */
     public function testDeleteFolder()
     {
+        $subfolder = 'Temp/SdkTests/TestData/Storage';
         $folderGUID = $this->getGUID();
-        $folderPath = $this->$testFolder . '/TestCreateFolder' . $folderGUID;
+        $folderPath = $subfolder . '/TestCreateFolder' . $folderGUID;
         $request = new Requests\CreateFolderRequest($folderPath);
         $this->words->createFolder($request);
         $request = new Requests\DeleteFolderRequest($folderPath);
@@ -64,6 +66,7 @@ class FolderTests extends BaseTestContext
      */
     public function testGetFilesList()
     {
+        $subfolder = 'Temp/SdkTests/TestData/Storage';
         $request = new Requests\GetFilesListRequest($this->testFolder);
         $response = $this->words->getFilesList($request);
         Assert::greaterThan(0, strlen($response), "Answer should not be empty");
@@ -73,9 +76,10 @@ class FolderTests extends BaseTestContext
      * Test case for copyFolder
      */
     public function testCopyFolder(){
+        $subfolder = 'Temp/SdkTests/TestData/Storage';
         $folderGUID = $this->getGUID();
-        $folderPathSrc = $this->$testFolder . '/TestCopyFolderSrc' . $folderGUID;
-        $folderPathDst = $this->$testFolder . '/TestCopyFolderDst' . $folderGUID;
+        $folderPathSrc = $subfolder . '/TestCopyFolderSrc' . $folderGUID;
+        $folderPathDst = $subfolder . '/TestCopyFolderDst' . $folderGUID;
 
         $request = new Requests\CreateFolderRequest($folderPathSrc);
         $this->words->createFolder($request);
@@ -91,9 +95,10 @@ class FolderTests extends BaseTestContext
      * Test case for moveFolder
      */
     public function testMoveFolder(){
+        $subfolder = 'Temp/SdkTests/TestData/Storage';
         $folderGUID = $this->getGUID();
-        $folderPathSrc = $this->$testFolder . '/TestMoveFolderSrc' . $folderGUID;
-        $folderPathDst = $this->$testFolder . '/TestMoveFolderDst' . $folderGUID;
+        $folderPathSrc = $subfolder . '/TestMoveFolderSrc' . $folderGUID;
+        $folderPathDst = $subfolder . '/TestMoveFolderDst' . $folderGUID;
 
         $request = new Requests\CreateFolderRequest($folderPathSrc);
         $this->words->createFolder($request);

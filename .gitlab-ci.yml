@@ -2,10 +2,10 @@ stages:
   - build
   - tests_5.6
   - tests_latest
+  - release
   - tag_version
   - merge-to-testPackage
-  - release
-  - publishing
+  - publish-test
   - retest-5.6
   - retest-latest
 
@@ -97,23 +97,23 @@ merge-to-testPackage:
   before_script:
     - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-php.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
   script: 
-    - git checkout master
+    - git checkout release
     - 'git remote set-url origin $env:ORIGIN'
     - git checkout testPackage
     - git reset --hard origin/testPackage
-    - git merge --no-ff --allow-unrelated-histories origin/master -m "Merged test for publishing"
+    - git merge --no-ff --allow-unrelated-histories origin/release -m "Merged for testing published package"
     - git diff --name-status
     - git push
   only: 
-    - master
+    - release
   tags: 
     - awcloud
   when: manual
 
-publish_package:
-  stage: publishing
+publish_test:
+  stage: publish-test
   only: 
-    - release
+    - testPackage
   before_script:
     - ORIGIN='https://'$GIT_CI_USER':'$GIT_CI_PASS'@git.auckland.dynabic.com/words-cloud/words-cloud-php.git'
   script:
@@ -144,7 +144,7 @@ unit-retest-5.6:
   tags:
     - awcloud-linux
   only:
-    - release
+    - testPackage
   when: manual
 
 bdd-retest-5.6:
@@ -163,7 +163,7 @@ bdd-retest-5.6:
   tags:
     - awcloud-linux
   only:
-    - release
+    - testPacakge
   when: manual
 
 unit-retest-latest:
@@ -180,7 +180,7 @@ unit-retest-latest:
   tags:
     - awcloud-linux
   only:
-    - release
+    - testPackage
   when: manual
 
 bdd-retest-latest:
@@ -199,7 +199,7 @@ bdd-retest-latest:
   tags:
     - awcloud-linux
   only:
-    - release
+    - testPackage
   when: manual
 
 create_release:

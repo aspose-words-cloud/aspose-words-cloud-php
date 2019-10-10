@@ -55,33 +55,42 @@ class WordsApiTests extends BaseTestContext
 
     public function testApiCoverage()
     {
-        $classarr = array("BookmarkTests", "AppendDocumentTests", "CommentTests", "CompareDocumentTests", "ConvertDocumentTests",
+        $classarr = array("BookmarkTests", "AppendDocumentTests", "CommentTests", "CompareDocumentTests", "ConvertDocumentTests", "ClassificationTests",
             "DocumentStatisticsTests", "DocumentTests", "DocumentWithFormatTests", "LoadWebDocumentTests", "RevisionsTests",
             "SplitDocumentToFormatTests", "DocumentPropertiesTests", "DocumentProtectionTests", "DrawingTests",
             "FieldTests", "FormFieldTests", "MailMergeFieldTests", "FontTests", "FootnoteTests", "HeaderFooterTests",
             "HyperlinkTests", "MacrosTests", "ExecuteMailMergeTests", "MathObjectTests",
             "PageSetupTests", "ParagraphTests", "RunTests", "SectionsTests", "TableTests", "TextTests", "WatermarkTests", "FileTests", "FolderTests", "RangeTests");
         $apiClass = new \ReflectionClass('Aspose\Words\WordsApi');
-        $testMethods = [];
+        $testMethods = array();
         foreach ($classarr as $cls)
         {
             $refClass = new \ReflectionClass('Aspose\Tests\\'.$cls);
-            array_push($testMethods, $refClass->getMethods());
+            $methods = array_merge($testMethods, array_filter($refClass->getMethods(), function($elem) {
+                return $elem->class != "PHPUnit_Framework_TestCase" && 
+                    $elem->class != "PHPUnit_Framework_Assert" && 
+                    $elem->class != "Aspose\Tests\BaseTestContext";
+            }));
+
+            foreach($methods as $testMethod){
+                $testMethods[str_replace('test', '', strtolower($testMethod->name))] = $testMethod;
+            }
         }
-
-        $methods = $apiClass->getMethods(\ReflectionMethod::IS_PROTECTED);
+        $methods = array_map(function($elem) {
+            return strtolower(str_replace('Request', '', $elem->name));
+        }, $apiClass->getMethods(\ReflectionMethod::IS_PROTECTED));
         $errorList = "";
-
         foreach ($methods as $method)
         {
-            $methodName = "";
             try {
-                $methodName = str_replace("Request", '', $method->getName());
-                $test = $testMethods["test" . $methodName];
+                $test = $testMethods[$method];
+                if ($test == NULL)
+                    throw new \ReflectionException("Missed test");
             }
             catch (\ReflectionException $e)
             {
-                $errorList = $errorList . $methodName . "\n";
+                echo('error: '.$method."\n");
+                $errorList = $errorList . $method . "\n";
             }
             unset($method);
         }

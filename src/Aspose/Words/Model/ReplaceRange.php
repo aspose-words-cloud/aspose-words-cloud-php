@@ -56,7 +56,8 @@ class ReplaceRange implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'text' => 'string'
+        'text' => 'string',
+        'text_type' => 'string'
     ];
 
     /*
@@ -65,7 +66,8 @@ class ReplaceRange implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'text' => null
+        'text' => null,
+        'text_type' => null
     ];
 
     /*
@@ -95,7 +97,8 @@ class ReplaceRange implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'Text'
+        'text' => 'Text',
+        'text_type' => 'TextType'
     ];
 
     /*
@@ -104,7 +107,8 @@ class ReplaceRange implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText'
+        'text' => 'setText',
+        'text_type' => 'setTextType'
     ];
 
     /*
@@ -113,7 +117,8 @@ class ReplaceRange implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText'
+        'text' => 'getText',
+        'text_type' => 'getTextType'
     ];
 
     /*
@@ -157,8 +162,23 @@ class ReplaceRange implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const TEXT_TYPE_TEXT = 'Text';
+    const TEXT_TYPE_HTML = 'Html';
     
 
+    
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTextTypeAllowableValues()
+    {
+        return [
+            self::TEXT_TYPE_TEXT,
+            self::TEXT_TYPE_HTML,
+        ];
+    }
     
 
     /*
@@ -177,6 +197,7 @@ class ReplaceRange implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['text_type'] = isset($data['text_type']) ? $data['text_type'] : null;
     }
 
     /*
@@ -187,6 +208,14 @@ class ReplaceRange implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getTextTypeAllowableValues();
+        if (!in_array($this->container['text_type'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'text_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -200,6 +229,10 @@ class ReplaceRange implements ArrayAccess
     public function valid()
     {
 
+        $allowedValues = $this->getTextTypeAllowableValues();
+        if (!in_array($this->container['text_type'], $allowedValues)) {
+            return false;
+        }
         return true;
     }
 
@@ -224,6 +257,35 @@ class ReplaceRange implements ArrayAccess
     public function setText($text)
     {
         $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /*
+     * Gets text_type
+     *
+     * @return string
+     */
+    public function getTextType()
+    {
+        return $this->container['text_type'];
+    }
+
+    /*
+     * Sets text_type
+     *
+     * @param string $text_type Gets or sets range's text type.
+     *
+     * @return $this
+     */
+    public function setTextType($text_type)
+    {
+        $allowedValues = $this->getTextTypeAllowableValues();
+        if ((!is_numeric($text_type) && !in_array($text_type, $allowedValues)) || (is_numeric($text_type) && !in_array($allowedValues[$text_type], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'text_type', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['text_type'] = $text_type;
 
         return $this;
     }

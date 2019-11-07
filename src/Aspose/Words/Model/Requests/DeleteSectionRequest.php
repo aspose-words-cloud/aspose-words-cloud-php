@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="SaveAsRangeRequest.php">
+ * <copyright company="Aspose" file="DeleteSectionRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -29,29 +29,19 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for saveAsRange operation.
+ * Request model for deleteSection operation.
  */
-class SaveAsRangeRequest
+class DeleteSectionRequest
 {
     /*
-     * The document.
+     * The document name.
      */
     public $name;
 	
     /*
-     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * Section index.
      */
-    public $range_start_identifier;
-	
-    /*
-     * Parameters of a new document.
-     */
-    public $document_parameters;
-	
-    /*
-     * The range end identifier.
-     */
-    public $range_end_identifier;
+    public $section_index;
 	
     /*
      * Original document folder.
@@ -72,34 +62,51 @@ class SaveAsRangeRequest
      * Password for opening an encrypted document.
      */
     public $password;
+	
+    /*
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public $dest_file_name;
+	
+    /*
+     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     */
+    public $revision_author;
+	
+    /*
+     * The date and time to use for revisions.
+     */
+    public $revision_date_time;
     
 	
     /*
-     * Initializes a new instance of the SaveAsRangeRequest class.
+     * Initializes a new instance of the DeleteSectionRequest class.
      *  
-     * @param string $name The document.
-     * @param string $range_start_identifier The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
-     * @param \Aspose\Words\Model\RangeDocument $document_parameters Parameters of a new document.
-     * @param string $range_end_identifier The range end identifier.
+     * @param string $name The document name.
+     * @param int $section_index Section index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $range_start_identifier, $document_parameters, $range_end_identifier, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($name, $section_index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
     {
         $this->name = $name;
-        $this->range_start_identifier = $range_start_identifier;
-        $this->document_parameters = $document_parameters;
-        $this->range_end_identifier = $range_end_identifier;
+        $this->section_index = $section_index;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
+        $this->revision_author = $revision_author;
+        $this->revision_date_time = $revision_date_time;
     }
 
     /*
-     * The document.
+     * The document name.
      */
     public function get_name()
     {
@@ -107,7 +114,7 @@ class SaveAsRangeRequest
     }
 
     /*
-     * The document.
+     * The document name.
      */
     public function set_name($value)
     {
@@ -116,53 +123,19 @@ class SaveAsRangeRequest
     }
 	
     /*
-     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * Section index.
      */
-    public function get_range_start_identifier()
+    public function get_section_index()
     {
-        return $this->range_start_identifier;
+        return $this->section_index;
     }
 
     /*
-     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * Section index.
      */
-    public function set_range_start_identifier($value)
+    public function set_section_index($value)
     {
-        $this->range_start_identifier = $value;
-        return $this;
-    }
-	
-    /*
-     * Parameters of a new document.
-     */
-    public function get_document_parameters()
-    {
-        return $this->document_parameters;
-    }
-
-    /*
-     * Parameters of a new document.
-     */
-    public function set_document_parameters($value)
-    {
-        $this->document_parameters = $value;
-        return $this;
-    }
-	
-    /*
-     * The range end identifier.
-     */
-    public function get_range_end_identifier()
-    {
-        return $this->range_end_identifier;
-    }
-
-    /*
-     * The range end identifier.
-     */
-    public function set_range_end_identifier($value)
-    {
-        $this->range_end_identifier = $value;
+        $this->section_index = $value;
         return $this;
     }
 	
@@ -231,6 +204,57 @@ class SaveAsRangeRequest
     public function set_password($value)
     {
         $this->password = $value;
+        return $this;
+    }
+	
+    /*
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public function get_dest_file_name()
+    {
+        return $this->dest_file_name;
+    }
+
+    /*
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public function set_dest_file_name($value)
+    {
+        $this->dest_file_name = $value;
+        return $this;
+    }
+	
+    /*
+     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     */
+    public function get_revision_author()
+    {
+        return $this->revision_author;
+    }
+
+    /*
+     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     */
+    public function set_revision_author($value)
+    {
+        $this->revision_author = $value;
+        return $this;
+    }
+	
+    /*
+     * The date and time to use for revisions.
+     */
+    public function get_revision_date_time()
+    {
+        return $this->revision_date_time;
+    }
+
+    /*
+     * The date and time to use for revisions.
+     */
+    public function set_revision_date_time($value)
+    {
+        $this->revision_date_time = $value;
         return $this;
     }
 }

@@ -39,7 +39,7 @@ class ReplaceWithTextRequest
     public $name;
 	
     /*
-     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public $range_start_identifier;
 	
@@ -83,7 +83,7 @@ class ReplaceWithTextRequest
      * Initializes a new instance of the ReplaceWithTextRequest class.
      *  
      * @param string $name The document.
-     * @param string $range_start_identifier The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * @param string $range_start_identifier The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
      * @param \Aspose\Words\Model\ReplaceRange $range_text Model with text for replacement.
      * @param string $range_end_identifier The range end identifier.
      * @param string $folder Original document folder.
@@ -123,7 +123,7 @@ class ReplaceWithTextRequest
     }
 	
     /*
-     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public function get_range_start_identifier()
     {
@@ -131,7 +131,7 @@ class ReplaceWithTextRequest
     }
 
     /*
-     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public function set_range_start_identifier($value)
     {

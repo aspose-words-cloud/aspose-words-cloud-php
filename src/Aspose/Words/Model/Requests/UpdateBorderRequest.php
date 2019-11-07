@@ -44,7 +44,7 @@ class UpdateBorderRequest
     public $border_properties;
 	
     /*
-     * Path to the node with border(node should be cell or row).
+     * Path to the node with border(node should be paragraph, cell or row).
      */
     public $node_path;
 	
@@ -94,7 +94,7 @@ class UpdateBorderRequest
      *  
      * @param string $name The document name.
      * @param \Aspose\Words\Model\Border $border_properties Border properties.
-     * @param string $node_path Path to the node with border(node should be cell or row).
+     * @param string $node_path Path to the node with border(node should be paragraph, cell or row).
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -154,7 +154,7 @@ class UpdateBorderRequest
     }
 	
     /*
-     * Path to the node with border(node should be cell or row).
+     * Path to the node with border(node should be paragraph, cell or row).
      */
     public function get_node_path()
     {
@@ -162,7 +162,7 @@ class UpdateBorderRequest
     }
 
     /*
-     * Path to the node with border(node should be cell or row).
+     * Path to the node with border(node should be paragraph, cell or row).
      */
     public function set_node_path($value)
     {

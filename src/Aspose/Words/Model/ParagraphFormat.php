@@ -60,6 +60,7 @@ class ParagraphFormat extends LinkElement
         'bidi' => 'bool',
         'drop_cap_position' => 'string',
         'first_line_indent' => 'double',
+        'is_list_item' => 'bool',
         'keep_together' => 'bool',
         'keep_with_next' => 'bool',
         'left_indent' => 'double',
@@ -93,6 +94,7 @@ class ParagraphFormat extends LinkElement
         'bidi' => null,
         'drop_cap_position' => null,
         'first_line_indent' => 'double',
+        'is_list_item' => null,
         'keep_together' => null,
         'keep_with_next' => null,
         'left_indent' => 'double',
@@ -147,6 +149,7 @@ class ParagraphFormat extends LinkElement
         'bidi' => 'Bidi',
         'drop_cap_position' => 'DropCapPosition',
         'first_line_indent' => 'FirstLineIndent',
+        'is_list_item' => 'IsListItem',
         'keep_together' => 'KeepTogether',
         'keep_with_next' => 'KeepWithNext',
         'left_indent' => 'LeftIndent',
@@ -180,6 +183,7 @@ class ParagraphFormat extends LinkElement
         'bidi' => 'setBidi',
         'drop_cap_position' => 'setDropCapPosition',
         'first_line_indent' => 'setFirstLineIndent',
+        'is_list_item' => 'setIsListItem',
         'keep_together' => 'setKeepTogether',
         'keep_with_next' => 'setKeepWithNext',
         'left_indent' => 'setLeftIndent',
@@ -213,6 +217,7 @@ class ParagraphFormat extends LinkElement
         'bidi' => 'getBidi',
         'drop_cap_position' => 'getDropCapPosition',
         'first_line_indent' => 'getFirstLineIndent',
+        'is_list_item' => 'getIsListItem',
         'keep_together' => 'getKeepTogether',
         'keep_with_next' => 'getKeepWithNext',
         'left_indent' => 'getLeftIndent',
@@ -1147,6 +1152,7 @@ class ParagraphFormat extends LinkElement
         $this->container['bidi'] = isset($data['bidi']) ? $data['bidi'] : null;
         $this->container['drop_cap_position'] = isset($data['drop_cap_position']) ? $data['drop_cap_position'] : null;
         $this->container['first_line_indent'] = isset($data['first_line_indent']) ? $data['first_line_indent'] : null;
+        $this->container['is_list_item'] = isset($data['is_list_item']) ? $data['is_list_item'] : null;
         $this->container['keep_together'] = isset($data['keep_together']) ? $data['keep_together'] : null;
         $this->container['keep_with_next'] = isset($data['keep_with_next']) ? $data['keep_with_next'] : null;
         $this->container['left_indent'] = isset($data['left_indent']) ? $data['left_indent'] : null;
@@ -1406,6 +1412,30 @@ class ParagraphFormat extends LinkElement
     public function setFirstLineIndent($first_line_indent)
     {
         $this->container['first_line_indent'] = $first_line_indent;
+
+        return $this;
+    }
+
+    /*
+     * Gets is_list_item
+     *
+     * @return bool
+     */
+    public function getIsListItem()
+    {
+        return $this->container['is_list_item'];
+    }
+
+    /*
+     * Sets is_list_item
+     *
+     * @param bool $is_list_item Gets or sets True when the paragraph is an item in a bulleted or numbered list.
+     *
+     * @return $this
+     */
+    public function setIsListItem($is_list_item)
+    {
+        $this->container['is_list_item'] = $is_list_item;
 
         return $this;
     }

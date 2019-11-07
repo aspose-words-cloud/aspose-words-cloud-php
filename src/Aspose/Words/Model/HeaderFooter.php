@@ -54,6 +54,7 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'child_nodes' => '\Aspose\Words\Model\NodeLink[]',
         'drawing_objects' => '\Aspose\Words\Model\LinkElement',
         'paragraphs' => '\Aspose\Words\Model\LinkElement'
     ];
@@ -64,6 +65,7 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'child_nodes' => null,
         'drawing_objects' => null,
         'paragraphs' => null
     ];
@@ -95,6 +97,7 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $attributeMap = [
+        'child_nodes' => 'ChildNodes',
         'drawing_objects' => 'DrawingObjects',
         'paragraphs' => 'Paragraphs'
     ];
@@ -105,6 +108,7 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $setters = [
+        'child_nodes' => 'setChildNodes',
         'drawing_objects' => 'setDrawingObjects',
         'paragraphs' => 'setParagraphs'
     ];
@@ -115,6 +119,7 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $getters = [
+        'child_nodes' => 'getChildNodes',
         'drawing_objects' => 'getDrawingObjects',
         'paragraphs' => 'getParagraphs'
     ];
@@ -175,6 +180,7 @@ class HeaderFooter extends HeaderFooterLink
     {
         parent::__construct($data);
 
+        $this->container['child_nodes'] = isset($data['child_nodes']) ? $data['child_nodes'] : null;
         $this->container['drawing_objects'] = isset($data['drawing_objects']) ? $data['drawing_objects'] : null;
         $this->container['paragraphs'] = isset($data['paragraphs']) ? $data['paragraphs'] : null;
     }
@@ -206,6 +212,30 @@ class HeaderFooter extends HeaderFooterLink
         return true;
     }
 
+
+    /*
+     * Gets child_nodes
+     *
+     * @return \Aspose\Words\Model\NodeLink[]
+     */
+    public function getChildNodes()
+    {
+        return $this->container['child_nodes'];
+    }
+
+    /*
+     * Sets child_nodes
+     *
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets child nodes.
+     *
+     * @return $this
+     */
+    public function setChildNodes($child_nodes)
+    {
+        $this->container['child_nodes'] = $child_nodes;
+
+        return $this;
+    }
 
     /*
      * Gets drawing_objects

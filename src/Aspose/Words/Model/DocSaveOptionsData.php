@@ -54,6 +54,7 @@ class DocSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'always_compress_metafiles' => 'bool',
         'password' => 'string',
         'save_picture_bullet' => 'bool',
         'save_routing_slip' => 'bool'
@@ -65,6 +66,7 @@ class DocSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'always_compress_metafiles' => null,
         'password' => null,
         'save_picture_bullet' => null,
         'save_routing_slip' => null
@@ -97,6 +99,7 @@ class DocSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
+        'always_compress_metafiles' => 'AlwaysCompressMetafiles',
         'password' => 'Password',
         'save_picture_bullet' => 'SavePictureBullet',
         'save_routing_slip' => 'SaveRoutingSlip'
@@ -108,6 +111,7 @@ class DocSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
+        'always_compress_metafiles' => 'setAlwaysCompressMetafiles',
         'password' => 'setPassword',
         'save_picture_bullet' => 'setSavePictureBullet',
         'save_routing_slip' => 'setSaveRoutingSlip'
@@ -119,6 +123,7 @@ class DocSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
+        'always_compress_metafiles' => 'getAlwaysCompressMetafiles',
         'password' => 'getPassword',
         'save_picture_bullet' => 'getSavePictureBullet',
         'save_routing_slip' => 'getSaveRoutingSlip'
@@ -180,6 +185,7 @@ class DocSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
 
+        $this->container['always_compress_metafiles'] = isset($data['always_compress_metafiles']) ? $data['always_compress_metafiles'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['save_picture_bullet'] = isset($data['save_picture_bullet']) ? $data['save_picture_bullet'] : null;
         $this->container['save_routing_slip'] = isset($data['save_routing_slip']) ? $data['save_routing_slip'] : null;
@@ -212,6 +218,30 @@ class DocSaveOptionsData extends SaveOptionsData
         return true;
     }
 
+
+    /*
+     * Gets always_compress_metafiles
+     *
+     * @return bool
+     */
+    public function getAlwaysCompressMetafiles()
+    {
+        return $this->container['always_compress_metafiles'];
+    }
+
+    /*
+     * Sets always_compress_metafiles
+     *
+     * @param bool $always_compress_metafiles Gets or sets When false, small metafiles are not compressed for performance reason. Default value is true, all metafiles are compressed regardless of its size.
+     *
+     * @return $this
+     */
+    public function setAlwaysCompressMetafiles($always_compress_metafiles)
+    {
+        $this->container['always_compress_metafiles'] = $always_compress_metafiles;
+
+        return $this;
+    }
 
     /*
      * Gets password

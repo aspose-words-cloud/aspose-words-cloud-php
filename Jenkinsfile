@@ -24,7 +24,6 @@ def runtests(dockerImageVersion)
 					try {
 						sh "php -dmemory_limit=1G ./vendor/bin/phpcs --report=checkstyle --report-file=testReports/codeStyleErrors ./src ./features/bootstrap || exit 0"
 					} finally {
-						checkstyle pattern: 'testReports/codeStyleErrors'
 					}					
                 }
             

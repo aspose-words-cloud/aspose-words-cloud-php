@@ -29,6 +29,8 @@ def runtests(dockerImageVersion)
             
                 stage('tests'){   
 					try {
+                        sh "php composer.phar install --no-interaction"
+                        sh "php composer.phar dump-autoload -o"
 						sh "php vendor/bin/phpunit -c phpunit.xml"
 					} finally {
 						junit 'testReports/logfile.xml'

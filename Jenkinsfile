@@ -1,6 +1,6 @@
 parameters {
         string(name: 'branch', defaultValue: 'master', description: 'branch to test')		
-		string(name: 'testServerUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'server url')		
+		string(name: 'testServerUrl', defaultValue: 'https://api-qa.aspose.cloud/', description: 'server url')		
 }
 
 def runtests(dockerImageVersion)

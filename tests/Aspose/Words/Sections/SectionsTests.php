@@ -75,4 +75,24 @@ class SectionsTests extends BaseTestContext
         $result = $this->words->getSections($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
+
+    /**
+     * Test case for deleteSection
+     * 
+     * Delete a section from document
+     */
+    public function testDeleteSection() {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestDeleteSection.docx";
+        $subfolder = "DocumentElements/Section";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteSectionRequest($remoteName, 0, $self::$baseTestPath . $subfolder);
+
+        $result = $this->words->deleteSection($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
 }

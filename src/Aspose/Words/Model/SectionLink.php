@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Section link element.
  */
-class SectionLink extends LinkElement 
+class SectionLink extends NodeLink 
 {
     const DISCRIMINATOR = null;
 

@@ -1,95 +1,21 @@
 parameters {
     string(name: 'Version', description: 'new version number')			
 }
-	
-stage('test in master'){
-	build job: 'words-sdk-php', 
-	   parameters: [
-		string(name: 'branch', value: 'master'), 
-		string(name: 'testServerUrl', value: 'https://api.aspose.cloud')						
-	   ]
-}   
 
-node('billing-qa-ubuntu-16.04.4') {         
+node('words-linux') {         
     try {	
-        stage('add version tag'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-php.git/']]])
-            withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-				sh 'mkdir -p Settings'
-                sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"https://auckland-words-cloud-staging.dynabic.com\\"}" > Settings/servercreds.json'
-            }
-            		
-			sh "git config user.email \"jenkins.aspose@gmail.com\""
-			sh "git config user.name \"jenkins\""
-			sh "git tag -a ${Version} -m 'version ${Version}' | exit 0"
-			
-			withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-php ${Version}"
-	    	}			
-        }              	
-	
-	    stage('Merge master to testPackage'){			
-	    	sh "git checkout --merge testPackage"
-	    	sh "git reset --hard origin/testPackage"
-	    	sh "git merge --no-ff --allow-unrelated-histories origin/master"
-	    	sh "git diff --name-status"			
-	    	sh 'git commit -am "Merged master branch to testPackage" || exit 0'
-	    	
-	    	withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-php testPackage"
-	    	}
-	    }	   
-		    			                
+        stage('6:add version tag'){
+			checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-php.git']]])
+						
+				sh "git config user.email \"jenkins.aspose@gmail.com\""
+				sh "git config user.name \"jenkins\""
+				sh "git tag -a ${version} -m 'version ${version}' | exit 0"
+				
+				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+					sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-php.git ${version}"
+				}
+        }           
     } finally {                       
         deleteDir()
     }
 }
-
-stage('wait for publishing'){
-	timeout(time:1, unit:'DAYS') {
-		input message:'Is packet already pablished to https://packagist.org/packages/aspose/words-sdk-php?'
-	}
-}
-
-node('billing-qa-ubuntu-16.04.4') {         
-    try {	
-        stage('checkout again'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-php.git/']]])
-           
-		    sh "git checkout --merge testPackage"
-	    	sh "git reset --hard origin/testPackage"
-			
-			sh "git config user.email \"jenkins.aspose@gmail.com\""
-			sh "git config user.name \"jenkins\""
-			
-        }              	
-		    
-	    stage('add reference to new package'){	    	
-			def testImage = docker.build("asposewordsphp:latest", "./docker/latest")
-            
-            testImage.inside {         
-				sh "php composer.phar install"
-                sh "php composer.phar update aspose/words-sdk-php --no-interaction"						              
-			}
-	    	
-	    	sh "git diff --name-status"
-			sh "git ls-files --others --exclude-standard"
-			sh "git add -A"
-	    	sh 'git commit -am "new version of package referenced for tests" || exit 0'
-	    	withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-php testPackage"
-	    	}
-	    }
-		    			                
-    } finally {                       
-        deleteDir()
-    }
-}
-
-stage('test published package'){
-	build job: 'words-sdk-php', 
-	   parameters: [
-		string(name: 'branch', value: 'testPackage'), 
-		string(name: 'testServerUrl', value: 'https://api.aspose.cloud')						
-	   ]
-}   

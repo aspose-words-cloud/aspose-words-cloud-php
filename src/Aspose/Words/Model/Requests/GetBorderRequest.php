@@ -39,7 +39,7 @@ class GetBorderRequest
     public $name;
 	
     /*
-     * Path to the node with border(node should be cell or row).
+     * Path to the node with border(node should be paragraph, cell or row).
      */
     public $node_path;
 	
@@ -73,7 +73,7 @@ class GetBorderRequest
      * Initializes a new instance of the GetBorderRequest class.
      *  
      * @param string $name The document name.
-     * @param string $node_path Path to the node with border(node should be cell or row).
+     * @param string $node_path Path to the node with border(node should be paragraph, cell or row).
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -109,7 +109,7 @@ class GetBorderRequest
     }
 	
     /*
-     * Path to the node with border(node should be cell or row).
+     * Path to the node with border(node should be paragraph, cell or row).
      */
     public function get_node_path()
     {
@@ -117,7 +117,7 @@ class GetBorderRequest
     }
 
     /*
-     * Path to the node with border(node should be cell or row).
+     * Path to the node with border(node should be paragraph, cell or row).
      */
     public function set_node_path($value)
     {

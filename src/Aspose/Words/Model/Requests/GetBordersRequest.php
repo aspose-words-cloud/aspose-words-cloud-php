@@ -39,7 +39,7 @@ class GetBordersRequest
     public $name;
 	
     /*
-     * Path to the node with borders (node should be cell or row).
+     * Path to the node with borders (node should be paragraph, cell or row).
      */
     public $node_path;
 	
@@ -68,7 +68,7 @@ class GetBordersRequest
      * Initializes a new instance of the GetBordersRequest class.
      *  
      * @param string $name The document name.
-     * @param string $node_path Path to the node with borders (node should be cell or row).
+     * @param string $node_path Path to the node with borders (node should be paragraph, cell or row).
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -102,7 +102,7 @@ class GetBordersRequest
     }
 	
     /*
-     * Path to the node with borders (node should be cell or row).
+     * Path to the node with borders (node should be paragraph, cell or row).
      */
     public function get_node_path()
     {
@@ -110,7 +110,7 @@ class GetBordersRequest
     }
 
     /*
-     * Path to the node with borders (node should be cell or row).
+     * Path to the node with borders (node should be paragraph, cell or row).
      */
     public function set_node_path($value)
     {

@@ -13868,12 +13868,12 @@ class WordsApi
      */
     protected function executeMailMergeRequest(Requests\executeMailMergeRequest $request)
     {
-        // verify the required parameter 'template' is set
-        if ($request->template === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $template when calling executeMailMerge');
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling executeMailMerge');
         }
 
-        $resourcePath = '/words/{template}/MailMerge';
+        $resourcePath = '/words/{name}/MailMerge';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -13881,9 +13881,9 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->template !== null) {
-            $localName = lcfirst('Template');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->template), $resourcePath);
+        if ($request->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
         // query params

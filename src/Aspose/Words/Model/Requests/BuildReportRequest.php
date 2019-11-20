@@ -39,7 +39,7 @@ class BuildReportRequest
     public $template;
 	
     /*
-     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      */
     public $data;
 	
@@ -78,8 +78,8 @@ class BuildReportRequest
      * Initializes a new instance of the BuildReportRequest class.
      *  
      * @param string $template The document name of the template.
-     * @param string $data A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
-     * @param map[string,string] $report_engine_settings An object providing settings of report engine.
+     * @param string $data A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+     * @param string $report_engine_settings An object providing settings of report engine.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -116,7 +116,7 @@ class BuildReportRequest
     }
 	
     /*
-     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      */
     public function get_data()
     {
@@ -124,7 +124,7 @@ class BuildReportRequest
     }
 
     /*
-     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      */
     public function set_data($value)
     {

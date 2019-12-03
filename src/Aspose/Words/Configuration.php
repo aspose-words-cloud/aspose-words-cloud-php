@@ -94,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.aspose.cloud';
+    protected $host = 'https://api.aspose.cloud/';
 	
     /*
      * Version of API to use, possible values are v4.0
@@ -134,7 +134,7 @@ class Configuration
      * Version of Aspose.Words Cloud API
      *
      */
-    protected $clientVersion = '19.10.0';
+    protected $clientVersion = '19.11';
 
     /*
      * Constructor
@@ -288,7 +288,7 @@ class Configuration
 
     /*
      * Gets the refresh token for OAuth
-     *
+     *  
      * @return string refresh token for OAuth
      */
     public function getRefreshToken()
@@ -352,6 +352,9 @@ class Configuration
     public function setHost($host)
     {
         $this->host = $host;
+        if (substr($this->host[$length], -1) !== '/') {
+            $this->host = $this->host . '/';
+        }
         return $this;
     }
 
@@ -508,7 +511,7 @@ class Configuration
         $report  = 'PHP SDK (Aspose\Words) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 19.10.0' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 19.11.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

@@ -90,7 +90,7 @@ class SectionsTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteSectionRequest($remoteName, 0, $self::$baseTestPath . $subfolder);
+        $request = new Requests\DeleteSectionRequest($remoteName, 0, self::$baseTestPath . $subfolder);
 
         $result = $this->words->deleteSection($request);
         Assert::isTrue(json_decode($result, true) !== NULL);

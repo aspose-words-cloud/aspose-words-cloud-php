@@ -94,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.aspose.cloud/';
+    protected $host = 'https://api.aspose.cloud';
 	
     /*
      * Version of API to use, possible values are v4.0
@@ -134,7 +134,7 @@ class Configuration
      * Version of Aspose.Words Cloud API
      *
      */
-    protected $clientVersion = '19.11';
+    protected $clientVersion = '19.2';
 
     /*
      * Constructor
@@ -288,7 +288,7 @@ class Configuration
 
     /*
      * Gets the refresh token for OAuth
-     *  
+     *
      * @return string refresh token for OAuth
      */
     public function getRefreshToken()

@@ -38,7 +38,7 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
     protected $config;
     protected static $baseTestPath = "Temp/SdkTests/TestData/";
     public static $baseTestOut = "TestOut/";
-    public static $baseRemoteFolder = "Temp/SdkTests/TestData";
+    public static $baseRemoteFolder = "Temp/SdkTests/TestData/";
 
     /**
      * Setup before running each test case

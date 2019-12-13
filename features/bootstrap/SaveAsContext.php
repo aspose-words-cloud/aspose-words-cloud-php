@@ -82,7 +82,7 @@ class SaveAsContext extends BaseTest\BaseContext
         $textItems = json_decode($this->context
             ->get_api()->getRun(
                 new \Aspose\Words\Model\Requests\GetRunRequest(
-                    "TableDocument.doc", "paragraphs/0", 0,
+                    "TableDocumentDoc.doc", "paragraphs/0", 0,
                     $this->BaseRemoteFolder() . "/DocumentActions/ConvertDocument/out/saveas"
                 )
             ));

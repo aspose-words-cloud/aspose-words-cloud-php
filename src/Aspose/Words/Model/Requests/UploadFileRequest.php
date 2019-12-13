@@ -36,7 +36,7 @@ class UploadFileRequest
     /*
      * File to upload
      */
-    public $file_content;
+    public $file;
 	
     /*
      * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.
@@ -52,13 +52,13 @@ class UploadFileRequest
     /*
      * Initializes a new instance of the UploadFileRequest class.
      *  
-     * @param \SplFileObject $file_content File to upload
+     * @param \SplFileObject $file File to upload
      * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.
      * @param string $storage_name Storage name
      */
-    public function __construct($file_content, $path, $storage_name = null)             
+    public function __construct($file, $path, $storage_name = null)             
     {
-        $this->file_content = $file_content;
+        $this->file = $file;
         $this->path = $path;
         $this->storage_name = $storage_name;
     }
@@ -66,17 +66,17 @@ class UploadFileRequest
     /*
      * File to upload
      */
-    public function get_file_content()
+    public function get_file()
     {
-        return $this->file_content;
+        return $this->file;
     }
 
     /*
      * File to upload
      */
-    public function set_file_content($value)
+    public function set_file($value)
     {
-        $this->file_content = $value;
+        $this->file = $value;
         return $this;
     }
 	

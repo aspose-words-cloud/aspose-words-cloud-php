@@ -57394,9 +57394,9 @@ class WordsApi
      */
     protected function uploadFileRequest(Requests\uploadFileRequest $request)
     {
-        // verify the required parameter 'file_content' is set
-        if ($request->file_content === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_content when calling uploadFile');
+        // verify the required parameter 'file' is set
+        if ($request->file === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file when calling uploadFile');
         }
         // verify the required parameter 'path' is set
         if ($request->path === null) {
@@ -57431,13 +57431,13 @@ class WordsApi
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
         // form params
-        if ($request->file_content !== null) {
+        if ($request->file !== null) {
             $multipart = true; 
-            $filename = ObjectSerializer::toFormValue($request->file_content);
+            $filename = ObjectSerializer::toFormValue($request->file);
             $handle = fopen($filename, "rb");
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
-            $formParams['file_content'] = $contents;
+            $formParams['file'] = $contents;
         }
         // body params
         $_tempBody = null;

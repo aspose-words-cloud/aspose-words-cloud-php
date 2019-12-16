@@ -57,7 +57,7 @@ class ErrorDetails implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'request_id' => 'string',
-        'error_date_time' => '\DateTime'
+        'date' => '\DateTime'
     ];
 
     /*
@@ -67,7 +67,7 @@ class ErrorDetails implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'request_id' => null,
-        'error_date_time' => 'date-time'
+        'date' => 'date-time'
     ];
 
     /*
@@ -98,7 +98,7 @@ class ErrorDetails implements ArrayAccess
      */
     protected static $attributeMap = [
         'request_id' => 'RequestId',
-        'error_date_time' => 'ErrorDateTime'
+        'date' => 'Date'
     ];
 
     /*
@@ -108,7 +108,7 @@ class ErrorDetails implements ArrayAccess
      */
     protected static $setters = [
         'request_id' => 'setRequestId',
-        'error_date_time' => 'setErrorDateTime'
+        'date' => 'setDate'
     ];
 
     /*
@@ -118,7 +118,7 @@ class ErrorDetails implements ArrayAccess
      */
     protected static $getters = [
         'request_id' => 'getRequestId',
-        'error_date_time' => 'getErrorDateTime'
+        'date' => 'getDate'
     ];
 
     /*
@@ -182,7 +182,7 @@ class ErrorDetails implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
-        $this->container['error_date_time'] = isset($data['error_date_time']) ? $data['error_date_time'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
     }
 
     /*
@@ -194,8 +194,8 @@ class ErrorDetails implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['error_date_time'] === null) {
-            $invalidProperties[] = "'error_date_time' can't be null";
+        if ($this->container['date'] === null) {
+            $invalidProperties[] = "'date' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,7 +209,7 @@ class ErrorDetails implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['error_date_time'] === null) {
+        if ($this->container['date'] === null) {
             return false;
         }
         return true;
@@ -229,7 +229,7 @@ class ErrorDetails implements ArrayAccess
     /*
      * Sets request_id
      *
-     * @param string $request_id The request id.
+     * @param string $request_id The request id
      *
      * @return $this
      */
@@ -241,25 +241,25 @@ class ErrorDetails implements ArrayAccess
     }
 
     /*
-     * Gets error_date_time
+     * Gets date
      *
      * @return \DateTime
      */
-    public function getErrorDateTime()
+    public function getDate()
     {
-        return $this->container['error_date_time'];
+        return $this->container['date'];
     }
 
     /*
-     * Sets error_date_time
+     * Sets date
      *
-     * @param \DateTime $error_date_time Error datetime.
+     * @param \DateTime $date Date
      *
      * @return $this
      */
-    public function setErrorDateTime($error_date_time)
+    public function setDate($date)
     {
-        $this->container['error_date_time'] = $error_date_time;
+        $this->container['date'] = $date;
 
         return $this;
     }

@@ -3629,12 +3629,12 @@ class WordsApi
         if ($request->node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling deleteBorder');
         }
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteBorder');
+        // verify the required parameter 'border_type' is set
+        if ($request->border_type === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $border_type when calling deleteBorder');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/borders/{index}';
+        $resourcePath = '/words/{name}/{nodePath}/borders/{borderType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3652,9 +3652,9 @@ class WordsApi
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->node_path), $resourcePath);
         }
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        if ($request->border_type !== null) {
+            $localName = lcfirst('BorderType');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->border_type), $resourcePath);
         }
 
         // query params
@@ -14810,12 +14810,12 @@ class WordsApi
         if ($request->node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getBorder');
         }
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling getBorder');
+        // verify the required parameter 'border_type' is set
+        if ($request->border_type === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $border_type when calling getBorder');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/borders/{index}';
+        $resourcePath = '/words/{name}/{nodePath}/borders/{borderType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -14833,9 +14833,9 @@ class WordsApi
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->node_path), $resourcePath);
         }
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        if ($request->border_type !== null) {
+            $localName = lcfirst('BorderType');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->border_type), $resourcePath);
         }
 
         // query params
@@ -50861,12 +50861,12 @@ class WordsApi
         if ($request->node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling updateBorder');
         }
-        // verify the required parameter 'index' is set
-        if ($request->index === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $index when calling updateBorder');
+        // verify the required parameter 'border_type' is set
+        if ($request->border_type === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $border_type when calling updateBorder');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/borders/{index}';
+        $resourcePath = '/words/{name}/{nodePath}/borders/{borderType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -50884,9 +50884,9 @@ class WordsApi
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->node_path), $resourcePath);
         }
         // path params
-        if ($request->index !== null) {
-            $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        if ($request->border_type !== null) {
+            $localName = lcfirst('BorderType');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->border_type), $resourcePath);
         }
 
         // query params
@@ -57394,9 +57394,9 @@ class WordsApi
      */
     protected function uploadFileRequest(Requests\uploadFileRequest $request)
     {
-        // verify the required parameter 'file' is set
-        if ($request->file === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file when calling uploadFile');
+        // verify the required parameter 'file_content' is set
+        if ($request->file_content === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file_content when calling uploadFile');
         }
         // verify the required parameter 'path' is set
         if ($request->path === null) {
@@ -57431,13 +57431,13 @@ class WordsApi
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
         // form params
-        if ($request->file !== null) {
+        if ($request->file_content !== null) {
             $multipart = true; 
-            $filename = ObjectSerializer::toFormValue($request->file);
+            $filename = ObjectSerializer::toFormValue($request->file_content);
             $handle = fopen($filename, "rb");
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
-            $formParams['file'] = $contents;
+            $formParams['file_content'] = $contents;
         }
         // body params
         $_tempBody = null;

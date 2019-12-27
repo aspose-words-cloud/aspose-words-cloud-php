@@ -44,9 +44,9 @@ class GetBorderRequest
     public $node_path;
 	
     /*
-     * Object index.
+     * Border type.
      */
-    public $index;
+    public $border_type;
 	
     /*
      * Original document folder.
@@ -74,17 +74,17 @@ class GetBorderRequest
      *  
      * @param string $name The document name.
      * @param string $node_path Path to the node with border(node should be paragraph, cell or row).
-     * @param int $index Object index.
+     * @param string $border_type Border type.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($name, $node_path, $border_type, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
         $this->name = $name;
         $this->node_path = $node_path;
-        $this->index = $index;
+        $this->border_type = $border_type;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -126,19 +126,19 @@ class GetBorderRequest
     }
 	
     /*
-     * Object index.
+     * Border type.
      */
-    public function get_index()
+    public function get_border_type()
     {
-        return $this->index;
+        return $this->border_type;
     }
 
     /*
-     * Object index.
+     * Border type.
      */
-    public function set_index($value)
+    public function set_border_type($value)
     {
-        $this->index = $value;
+        $this->border_type = $value;
         return $this;
     }
 	

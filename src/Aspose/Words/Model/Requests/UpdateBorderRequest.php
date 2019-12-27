@@ -49,9 +49,9 @@ class UpdateBorderRequest
     public $node_path;
 	
     /*
-     * Object index.
+     * Border type.
      */
-    public $index;
+    public $border_type;
 	
     /*
      * Original document folder.
@@ -95,7 +95,7 @@ class UpdateBorderRequest
      * @param string $name The document name.
      * @param \Aspose\Words\Model\Border $border_properties Border properties.
      * @param string $node_path Path to the node with border(node should be paragraph, cell or row).
-     * @param int $index Object index.
+     * @param string $border_type Border type.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -104,12 +104,12 @@ class UpdateBorderRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $border_properties, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
+    public function __construct($name, $border_properties, $node_path, $border_type, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
     {
         $this->name = $name;
         $this->border_properties = $border_properties;
         $this->node_path = $node_path;
-        $this->index = $index;
+        $this->border_type = $border_type;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -171,19 +171,19 @@ class UpdateBorderRequest
     }
 	
     /*
-     * Object index.
+     * Border type.
      */
-    public function get_index()
+    public function get_border_type()
     {
-        return $this->index;
+        return $this->border_type;
     }
 
     /*
-     * Object index.
+     * Border type.
      */
-    public function set_index($value)
+    public function set_border_type($value)
     {
-        $this->index = $value;
+        $this->border_type = $value;
         return $this;
     }
 	

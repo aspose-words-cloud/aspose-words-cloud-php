@@ -93,7 +93,7 @@ class RevisionsModificationResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'result' => 'Result'
+        'result' => 'result'
     ];
 
     /*

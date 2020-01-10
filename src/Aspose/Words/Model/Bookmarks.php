@@ -93,7 +93,7 @@ class Bookmarks extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'bookmark_list' => 'BookmarkList'
+        'bookmark_list' => 'bookmarkList'
     ];
 
     /*

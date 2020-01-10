@@ -93,7 +93,7 @@ class SaveResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'save_result' => 'SaveResult'
+        'save_result' => 'saveResult'
     ];
 
     /*

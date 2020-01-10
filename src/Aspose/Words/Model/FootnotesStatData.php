@@ -97,8 +97,8 @@ class FootnotesStatData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'word_count' => 'WordCount',
-        'paragraph_count' => 'ParagraphCount'
+        'word_count' => 'wordCount',
+        'paragraph_count' => 'paragraphCount'
     ];
 
     /*

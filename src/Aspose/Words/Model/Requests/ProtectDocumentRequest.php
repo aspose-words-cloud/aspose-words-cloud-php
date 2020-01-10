@@ -39,7 +39,7 @@ class ProtectDocumentRequest
     public $name;
 	
     /*
-     * with protection settings.
+     * ProtectionRequest with protection settings.
      */
     public $protection_request;
 	
@@ -73,7 +73,7 @@ class ProtectDocumentRequest
      * Initializes a new instance of the ProtectDocumentRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\ProtectionRequest $protection_request with protection settings.
+     * @param \Aspose\Words\Model\ProtectionRequest $protection_request ProtectionRequest with protection settings.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -109,7 +109,7 @@ class ProtectDocumentRequest
     }
 	
     /*
-     * with protection settings.
+     * ProtectionRequest with protection settings.
      */
     public function get_protection_request()
     {
@@ -117,7 +117,7 @@ class ProtectDocumentRequest
     }
 
     /*
-     * with protection settings.
+     * ProtectionRequest with protection settings.
      */
     public function set_protection_request($value)
     {

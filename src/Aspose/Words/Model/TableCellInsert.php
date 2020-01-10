@@ -95,7 +95,7 @@ class TableCellInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'insert_after' => 'InsertAfter'
+        'insert_after' => 'insertAfter'
     ];
 
     /*

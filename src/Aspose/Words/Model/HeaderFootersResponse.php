@@ -93,7 +93,7 @@ class HeaderFootersResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'header_footers' => 'HeaderFooters'
+        'header_footers' => 'headerFooters'
     ];
 
     /*

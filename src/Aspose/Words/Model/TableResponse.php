@@ -93,7 +93,7 @@ class TableResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'table' => 'Table'
+        'table' => 'table'
     ];
 
     /*

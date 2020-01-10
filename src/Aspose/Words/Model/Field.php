@@ -95,8 +95,8 @@ class Field extends FieldLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'locale_id' => 'LocaleId',
-        'result' => 'Result'
+        'locale_id' => 'localeId',
+        'result' => 'result'
     ];
 
     /*

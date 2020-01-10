@@ -93,7 +93,7 @@ class SearchResultsCollection extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'results_list' => 'ResultsList'
+        'results_list' => 'resultsList'
     ];
 
     /*

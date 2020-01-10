@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Hyperlinks
  *
- * @description Collection of .
+ * @description Collection of Hyperlink.
  */
 class Hyperlinks extends LinkElement 
 {
@@ -93,7 +93,7 @@ class Hyperlinks extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'hyperlink_list' => 'HyperlinkList'
+        'hyperlink_list' => 'hyperlinkList'
     ];
 
     /*
@@ -214,7 +214,7 @@ class Hyperlinks extends LinkElement
     /*
      * Sets hyperlink_list
      *
-     * @param \Aspose\Words\Model\Hyperlink[] $hyperlink_list Gets or sets array of .
+     * @param \Aspose\Words\Model\Hyperlink[] $hyperlink_list Gets or sets array of Hyperlink.
      *
      * @return $this
      */

@@ -97,9 +97,9 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_strict_schema11' => 'IsStrictSchema11',
-        'measure_unit' => 'MeasureUnit',
-        'pretty_format' => 'PrettyFormat'
+        'is_strict_schema11' => 'isStrictSchema11',
+        'measure_unit' => 'measureUnit',
+        'pretty_format' => 'prettyFormat'
     ];
 
     /*

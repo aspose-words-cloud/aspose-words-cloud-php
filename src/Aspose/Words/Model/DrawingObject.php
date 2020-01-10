@@ -111,16 +111,16 @@ class DrawingObject extends DrawingObjectLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'height' => 'Height',
-        'image_data_link' => 'ImageDataLink',
-        'left' => 'Left',
-        'ole_data_link' => 'OleDataLink',
-        'relative_horizontal_position' => 'RelativeHorizontalPosition',
-        'relative_vertical_position' => 'RelativeVerticalPosition',
-        'render_links' => 'RenderLinks',
-        'top' => 'Top',
-        'width' => 'Width',
-        'wrap_type' => 'WrapType'
+        'height' => 'height',
+        'image_data_link' => 'imageDataLink',
+        'left' => 'left',
+        'ole_data_link' => 'oleDataLink',
+        'relative_horizontal_position' => 'relativeHorizontalPosition',
+        'relative_vertical_position' => 'relativeVerticalPosition',
+        'render_links' => 'renderLinks',
+        'top' => 'top',
+        'width' => 'width',
+        'wrap_type' => 'wrapType'
     ];
 
     /*
@@ -541,7 +541,7 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Sets render_links
      *
-     * @param \Aspose\Words\Model\WordsApiLink[] $render_links Gets or sets a list of links that originate from this .
+     * @param \Aspose\Words\Model\WordsApiLink[] $render_links Gets or sets a list of links that originate from this DrawingObjectDto.
      *
      * @return $this
      */

@@ -97,8 +97,8 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'Text',
-        'rotation_angle' => 'RotationAngle'
+        'text' => 'text',
+        'rotation_angle' => 'rotationAngle'
     ];
 
     /*

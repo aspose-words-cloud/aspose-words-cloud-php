@@ -97,8 +97,8 @@ class BookmarkData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'text' => 'Text'
+        'name' => 'name',
+        'text' => 'text'
     ];
 
     /*

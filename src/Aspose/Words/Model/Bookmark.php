@@ -95,8 +95,8 @@ class Bookmark extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'text' => 'Text'
+        'name' => 'name',
+        'text' => 'text'
     ];
 
     /*

@@ -97,9 +97,9 @@ class ClassificationResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'best_class_name' => 'BestClassName',
-        'best_class_probability' => 'BestClassProbability',
-        'best_results' => 'BestResults'
+        'best_class_name' => 'bestClassName',
+        'best_class_probability' => 'bestClassProbability',
+        'best_results' => 'bestResults'
     ];
 
     /*

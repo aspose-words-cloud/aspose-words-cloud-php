@@ -97,8 +97,8 @@ class DocumentPosition implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'node' => 'Node',
-        'offset' => 'Offset'
+        'node' => 'node',
+        'offset' => 'offset'
     ];
 
     /*

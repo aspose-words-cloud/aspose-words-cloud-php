@@ -97,9 +97,9 @@ class DocumentProperty extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'built_in' => 'BuiltIn',
-        'name' => 'Name',
-        'value' => 'Value'
+        'built_in' => 'builtIn',
+        'name' => 'name',
+        'value' => 'value'
     ];
 
     /*

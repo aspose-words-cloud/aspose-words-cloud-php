@@ -95,7 +95,7 @@ class ProtectionData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'protection_type' => 'ProtectionType'
+        'protection_type' => 'protectionType'
     ];
 
     /*

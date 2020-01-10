@@ -97,8 +97,8 @@ class ClassificationResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'class_name' => 'ClassName',
-        'class_probability' => 'ClassProbability'
+        'class_name' => 'className',
+        'class_probability' => 'classProbability'
     ];
 
     /*

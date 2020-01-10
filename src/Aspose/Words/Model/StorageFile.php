@@ -103,11 +103,11 @@ class StorageFile implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'is_folder' => 'IsFolder',
-        'modified_date' => 'ModifiedDate',
-        'size' => 'Size',
-        'path' => 'Path'
+        'name' => 'name',
+        'is_folder' => 'isFolder',
+        'modified_date' => 'modifiedDate',
+        'size' => 'size',
+        'path' => 'path'
     ];
 
     /*
@@ -301,7 +301,7 @@ class StorageFile implements ArrayAccess
     /*
      * Sets modified_date
      *
-     * @param \DateTime $modified_date File or folder last modified .
+     * @param \DateTime $modified_date File or folder last modified DateTime.
      *
      * @return $this
      */

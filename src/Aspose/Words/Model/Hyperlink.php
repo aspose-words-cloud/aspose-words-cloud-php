@@ -95,8 +95,8 @@ class Hyperlink extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'display_text' => 'DisplayText',
-        'value' => 'Value'
+        'display_text' => 'displayText',
+        'value' => 'value'
     ];
 
     /*

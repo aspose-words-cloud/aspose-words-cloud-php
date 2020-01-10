@@ -93,7 +93,7 @@ class TableLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'table_link_list' => 'TableLinkList'
+        'table_link_list' => 'tableLinkList'
     ];
 
     /*

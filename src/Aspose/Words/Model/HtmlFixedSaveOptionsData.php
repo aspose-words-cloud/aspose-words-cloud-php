@@ -117,19 +117,19 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'css_class_names_prefix' => 'CssClassNamesPrefix',
-        'encoding' => 'Encoding',
-        'export_embedded_css' => 'ExportEmbeddedCss',
-        'export_embedded_fonts' => 'ExportEmbeddedFonts',
-        'export_embedded_images' => 'ExportEmbeddedImages',
-        'export_form_fields' => 'ExportFormFields',
-        'font_format' => 'FontFormat',
-        'page_horizontal_alignment' => 'PageHorizontalAlignment',
-        'page_margins' => 'PageMargins',
-        'resources_folder' => 'ResourcesFolder',
-        'resources_folder_alias' => 'ResourcesFolderAlias',
-        'save_font_face_css_separately' => 'SaveFontFaceCssSeparately',
-        'show_page_border' => 'ShowPageBorder'
+        'css_class_names_prefix' => 'cssClassNamesPrefix',
+        'encoding' => 'encoding',
+        'export_embedded_css' => 'exportEmbeddedCss',
+        'export_embedded_fonts' => 'exportEmbeddedFonts',
+        'export_embedded_images' => 'exportEmbeddedImages',
+        'export_form_fields' => 'exportFormFields',
+        'font_format' => 'fontFormat',
+        'page_horizontal_alignment' => 'pageHorizontalAlignment',
+        'page_margins' => 'pageMargins',
+        'resources_folder' => 'resourcesFolder',
+        'resources_folder_alias' => 'resourcesFolderAlias',
+        'save_font_face_css_separately' => 'saveFontFaceCssSeparately',
+        'show_page_border' => 'showPageBorder'
     ];
 
     /*

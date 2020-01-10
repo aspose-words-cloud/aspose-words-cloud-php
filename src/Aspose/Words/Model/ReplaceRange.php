@@ -97,8 +97,8 @@ class ReplaceRange implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'Text',
-        'text_type' => 'TextType'
+        'text' => 'text',
+        'text_type' => 'textType'
     ];
 
     /*

@@ -93,7 +93,7 @@ class ParagraphLinkCollectionResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'paragraphs' => 'Paragraphs'
+        'paragraphs' => 'paragraphs'
     ];
 
     /*

@@ -95,8 +95,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'images_folder' => 'ImagesFolder',
-        'images_folder_alias' => 'ImagesFolderAlias'
+        'images_folder' => 'imagesFolder',
+        'images_folder_alias' => 'imagesFolderAlias'
     ];
 
     /*

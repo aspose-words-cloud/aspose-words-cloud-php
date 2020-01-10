@@ -103,12 +103,12 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'export_embedded_images' => 'ExportEmbeddedImages',
-        'fit_to_view_port' => 'FitToViewPort',
-        'resources_folder' => 'ResourcesFolder',
-        'resources_folder_alias' => 'ResourcesFolderAlias',
-        'show_page_border' => 'ShowPageBorder',
-        'text_output_mode' => 'TextOutputMode'
+        'export_embedded_images' => 'exportEmbeddedImages',
+        'fit_to_view_port' => 'fitToViewPort',
+        'resources_folder' => 'resourcesFolder',
+        'resources_folder_alias' => 'resourcesFolderAlias',
+        'show_page_border' => 'showPageBorder',
+        'text_output_mode' => 'textOutputMode'
     ];
 
     /*

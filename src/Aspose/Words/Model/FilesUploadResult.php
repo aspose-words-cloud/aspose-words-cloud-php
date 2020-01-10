@@ -97,8 +97,8 @@ class FilesUploadResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'uploaded' => 'Uploaded',
-        'errors' => 'Errors'
+        'uploaded' => 'uploaded',
+        'errors' => 'errors'
     ];
 
     /*

@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * XmlColor
  *
- * @description Utility class for  serialization.
+ * @description Utility class for Color serialization.
  */
 class XmlColor implements ArrayAccess
 {
@@ -97,8 +97,8 @@ class XmlColor implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'web' => 'Web',
-        'alpha' => 'Alpha'
+        'web' => 'web',
+        'alpha' => 'alpha'
     ];
 
     /*

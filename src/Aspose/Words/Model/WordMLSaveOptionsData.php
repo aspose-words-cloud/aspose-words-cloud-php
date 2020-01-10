@@ -93,7 +93,7 @@ class WordMLSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'pretty_format' => 'PrettyFormat'
+        'pretty_format' => 'prettyFormat'
     ];
 
     /*

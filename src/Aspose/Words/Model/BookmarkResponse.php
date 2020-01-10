@@ -93,7 +93,7 @@ class BookmarkResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'bookmark' => 'Bookmark'
+        'bookmark' => 'bookmark'
     ];
 
     /*

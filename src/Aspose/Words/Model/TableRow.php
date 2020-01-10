@@ -95,8 +95,8 @@ class TableRow extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'row_format' => 'RowFormat',
-        'table_cell_list' => 'TableCellList'
+        'row_format' => 'rowFormat',
+        'table_cell_list' => 'tableCellList'
     ];
 
     /*

@@ -97,9 +97,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'compliance' => 'Compliance',
-        'password' => 'Password',
-        'pretty_format' => 'PrettyFormat'
+        'compliance' => 'compliance',
+        'password' => 'password',
+        'pretty_format' => 'prettyFormat'
     ];
 
     /*

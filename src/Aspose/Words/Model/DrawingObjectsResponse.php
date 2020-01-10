@@ -93,7 +93,7 @@ class DrawingObjectsResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'drawing_objects' => 'DrawingObjects'
+        'drawing_objects' => 'drawingObjects'
     ];
 
     /*

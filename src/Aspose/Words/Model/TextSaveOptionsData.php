@@ -105,13 +105,13 @@ class TextSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'add_bidi_marks' => 'AddBidiMarks',
-        'encoding' => 'Encoding',
-        'export_headers_footers_mode' => 'ExportHeadersFootersMode',
-        'force_page_breaks' => 'ForcePageBreaks',
-        'paragraph_break' => 'ParagraphBreak',
-        'preserve_table_layout' => 'PreserveTableLayout',
-        'simplify_list_labels' => 'SimplifyListLabels'
+        'add_bidi_marks' => 'addBidiMarks',
+        'encoding' => 'encoding',
+        'export_headers_footers_mode' => 'exportHeadersFootersMode',
+        'force_page_breaks' => 'forcePageBreaks',
+        'paragraph_break' => 'paragraphBreak',
+        'preserve_table_layout' => 'preserveTableLayout',
+        'simplify_list_labels' => 'simplifyListLabels'
     ];
 
     /*

@@ -95,7 +95,7 @@ class FilesList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'Value'
+        'value' => 'value'
     ];
 
     /*
@@ -217,7 +217,7 @@ class FilesList implements ArrayAccess
     /*
      * Sets value
      *
-     * @param \Aspose\Words\Model\StorageFile[] $value Files and folders contained by folder .
+     * @param \Aspose\Words\Model\StorageFile[] $value Files and folders contained by folder StorageFile.
      *
      * @return $this
      */

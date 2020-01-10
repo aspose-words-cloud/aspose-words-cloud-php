@@ -97,9 +97,9 @@ class RtfSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'export_compact_size' => 'ExportCompactSize',
-        'export_images_for_old_readers' => 'ExportImagesForOldReaders',
-        'pretty_format' => 'PrettyFormat'
+        'export_compact_size' => 'exportCompactSize',
+        'export_images_for_old_readers' => 'exportImagesForOldReaders',
+        'pretty_format' => 'prettyFormat'
     ];
 
     /*

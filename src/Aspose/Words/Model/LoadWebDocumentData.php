@@ -97,8 +97,8 @@ class LoadWebDocumentData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'loading_document_url' => 'LoadingDocumentUrl',
-        'save_options' => 'SaveOptions'
+        'loading_document_url' => 'loadingDocumentUrl',
+        'save_options' => 'saveOptions'
     ];
 
     /*

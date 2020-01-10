@@ -93,7 +93,7 @@ class RangeTextResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'Text'
+        'text' => 'text'
     ];
 
     /*

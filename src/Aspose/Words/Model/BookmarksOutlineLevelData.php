@@ -97,8 +97,8 @@ class BookmarksOutlineLevelData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'bookmarks_outline_level' => 'BookmarksOutlineLevel'
+        'name' => 'name',
+        'bookmarks_outline_level' => 'bookmarksOutlineLevel'
     ];
 
     /*

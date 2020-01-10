@@ -101,11 +101,11 @@ class Footnote extends FootnoteLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'footnote_type' => 'FootnoteType',
-        'position' => 'Position',
-        'reference_mark' => 'ReferenceMark',
-        'text' => 'Text'
+        'content' => 'content',
+        'footnote_type' => 'footnoteType',
+        'position' => 'position',
+        'reference_mark' => 'referenceMark',
+        'text' => 'text'
     ];
 
     /*
@@ -342,7 +342,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets reference_mark
      *
-     * @param string $reference_mark Gets or sets /sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
+     * @param string $reference_mark Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
      *
      * @return $this
      */

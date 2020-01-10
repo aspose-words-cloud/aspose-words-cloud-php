@@ -261,7 +261,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling acceptAllRevisions');
         }
 
-        $resourcePath = '/words/{name}/revisions/acceptAll';
+        $resourcePath = '/words/{Name}/revisions/acceptAll';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -585,7 +585,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $document_list when calling appendDocument');
         }
 
-        $resourcePath = '/words/{name}/appendDocument';
+        $resourcePath = '/words/{Name}/appendDocument';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1214,7 +1214,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $document_name when calling classifyDocument');
         }
 
-        $resourcePath = '/words/{documentName}/classify';
+        $resourcePath = '/words/{DocumentName}/classify';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1548,7 +1548,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $compare_data when calling compareDocument');
         }
 
-        $resourcePath = '/words/{name}/compareDocument';
+        $resourcePath = '/words/{Name}/compareDocument';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2165,7 +2165,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $src_path when calling copyFile');
         }
 
-        $resourcePath = '/words/storage/file/copy/{srcPath}';
+        $resourcePath = '/words/storage/file/copy/{SrcPath}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2437,7 +2437,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $src_path when calling copyFolder');
         }
 
-        $resourcePath = '/words/storage/folder/copy/{srcPath}';
+        $resourcePath = '/words/storage/folder/copy/{SrcPath}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2986,7 +2986,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $path when calling createFolder');
         }
 
-        $resourcePath = '/words/storage/folder/{path}';
+        $resourcePath = '/words/storage/folder/{Path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3274,7 +3274,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $property when calling createOrUpdateDocumentProperty');
         }
 
-        $resourcePath = '/words/{name}/documentProperties/{propertyName}';
+        $resourcePath = '/words/{Name}/documentProperties/{PropertyName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3634,7 +3634,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling deleteBorder');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/borders/{borderType}';
+        $resourcePath = '/words/{Name}/{NodePath}/borders/{BorderType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3988,7 +3988,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling deleteBorders');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/borders';
+        $resourcePath = '/words/{Name}/{NodePath}/borders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4295,7 +4295,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling deleteComment');
         }
 
-        $resourcePath = '/words/{name}/comments/{commentIndex}';
+        $resourcePath = '/words/{Name}/comments/{CommentIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4602,7 +4602,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $property_name when calling deleteDocumentProperty');
         }
 
-        $resourcePath = '/words/{name}/documentProperties/{propertyName}';
+        $resourcePath = '/words/{Name}/documentProperties/{PropertyName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4913,7 +4913,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteDrawingObject');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/drawingObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -5225,7 +5225,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteDrawingObjectWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/drawingObjects/{index}';
+        $resourcePath = '/words/{Name}/drawingObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -5536,7 +5536,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteField');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/fields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -5848,7 +5848,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFieldWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/fields/{index}';
+        $resourcePath = '/words/{Name}/fields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -6155,7 +6155,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling deleteFields');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/fields';
+        $resourcePath = '/words/{Name}/{NodePath}/fields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -6458,7 +6458,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteFieldsWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/fields';
+        $resourcePath = '/words/{Name}/fields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -6756,7 +6756,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $path when calling deleteFile');
         }
 
-        $resourcePath = '/words/storage/file/{path}';
+        $resourcePath = '/words/storage/file/{Path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -7004,7 +7004,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $path when calling deleteFolder');
         }
 
-        $resourcePath = '/words/storage/folder/{path}';
+        $resourcePath = '/words/storage/folder/{Path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -7260,7 +7260,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFootnote');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/footnotes/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -7572,7 +7572,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFootnoteWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/footnotes/{index}';
+        $resourcePath = '/words/{Name}/footnotes/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -7883,7 +7883,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFormField');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/formfields/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/formfields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -8195,7 +8195,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFormFieldWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/formfields/{index}';
+        $resourcePath = '/words/{Name}/formfields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -8506,7 +8506,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteHeaderFooter');
         }
 
-        $resourcePath = '/words/{name}/{sectionPath}/headersfooters/{index}';
+        $resourcePath = '/words/{Name}/{SectionPath}/headersfooters/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -8818,7 +8818,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $section_path when calling deleteHeadersFooters');
         }
 
-        $resourcePath = '/words/{name}/{sectionPath}/headersfooters';
+        $resourcePath = '/words/{Name}/{SectionPath}/headersfooters';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -9131,7 +9131,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteMacros');
         }
 
-        $resourcePath = '/words/{name}/macros';
+        $resourcePath = '/words/{Name}/macros';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -9437,7 +9437,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteOfficeMathObject');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/OfficeMathObjects/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/OfficeMathObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -9749,7 +9749,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteOfficeMathObjectWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/OfficeMathObjects/{index}';
+        $resourcePath = '/words/{Name}/OfficeMathObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -10060,7 +10060,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteParagraph');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/paragraphs/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -10372,7 +10372,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteParagraphWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/paragraphs/{index}';
+        $resourcePath = '/words/{Name}/paragraphs/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -10683,7 +10683,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteRun');
         }
 
-        $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}';
+        $resourcePath = '/words/{Name}/{ParagraphPath}/runs/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -10995,7 +10995,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling deleteSection');
         }
 
-        $resourcePath = '/words/{name}/sections/{sectionIndex}';
+        $resourcePath = '/words/{Name}/sections/{SectionIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -11306,7 +11306,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTable');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/tables/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/tables/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -11622,7 +11622,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableCell');
         }
 
-        $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}';
+        $resourcePath = '/words/{Name}/{TableRowPath}/cells/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -11938,7 +11938,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableRow');
         }
 
-        $resourcePath = '/words/{name}/{tablePath}/rows/{index}';
+        $resourcePath = '/words/{Name}/{TablePath}/rows/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -12250,7 +12250,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/tables/{index}';
+        $resourcePath = '/words/{Name}/tables/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -12595,7 +12595,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteWatermark');
         }
 
-        $resourcePath = '/words/{name}/watermarks/deleteLast';
+        $resourcePath = '/words/{Name}/watermarks/deleteLast';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -12935,7 +12935,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $path when calling downloadFile');
         }
 
-        $resourcePath = '/words/storage/file/{path}';
+        $resourcePath = '/words/storage/file/{Path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -13225,7 +13225,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling executeMailMerge');
         }
 
-        $resourcePath = '/words/{name}/MailMerge';
+        $resourcePath = '/words/{Name}/MailMerge';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -14182,7 +14182,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_name when calling getBookmarkByName');
         }
 
-        $resourcePath = '/words/{name}/bookmarks/{bookmarkName}';
+        $resourcePath = '/words/{Name}/bookmarks/{BookmarkName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -14497,7 +14497,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getBookmarks');
         }
 
-        $resourcePath = '/words/{name}/bookmarks';
+        $resourcePath = '/words/{Name}/bookmarks';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -14815,7 +14815,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling getBorder');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/borders/{borderType}';
+        $resourcePath = '/words/{Name}/{NodePath}/borders/{BorderType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -15139,7 +15139,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getBorders');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/borders';
+        $resourcePath = '/words/{Name}/{NodePath}/borders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -15458,7 +15458,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling getComment');
         }
 
-        $resourcePath = '/words/{name}/comments/{commentIndex}';
+        $resourcePath = '/words/{Name}/comments/{CommentIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -15773,7 +15773,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getComments');
         }
 
-        $resourcePath = '/words/{name}/comments';
+        $resourcePath = '/words/{Name}/comments';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -16083,7 +16083,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $document_name when calling getDocument');
         }
 
-        $resourcePath = '/words/{documentName}';
+        $resourcePath = '/words/{DocumentName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -16401,7 +16401,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectByIndex');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/drawingObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -16725,7 +16725,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectByIndexWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/drawingObjects/{index}';
+        $resourcePath = '/words/{Name}/drawingObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -17048,7 +17048,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectImageData');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}/imageData';
+        $resourcePath = '/words/{Name}/{NodePath}/drawingObjects/{Index}/imageData';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -17372,7 +17372,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectImageDataWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/drawingObjects/{index}/imageData';
+        $resourcePath = '/words/{Name}/drawingObjects/{Index}/imageData';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -17695,7 +17695,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectOleData');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}/oleData';
+        $resourcePath = '/words/{Name}/{NodePath}/drawingObjects/{Index}/oleData';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -18019,7 +18019,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectOleDataWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/drawingObjects/{index}/oleData';
+        $resourcePath = '/words/{Name}/drawingObjects/{Index}/oleData';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -18338,7 +18338,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getDocumentDrawingObjects');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/drawingObjects';
+        $resourcePath = '/words/{Name}/{NodePath}/drawingObjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -18653,7 +18653,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentDrawingObjectsWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/drawingObjects';
+        $resourcePath = '/words/{Name}/drawingObjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -18963,7 +18963,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentFieldNames');
         }
 
-        $resourcePath = '/words/{name}/mailMerge/FieldNames';
+        $resourcePath = '/words/{Name}/mailMerge/FieldNames';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -19571,7 +19571,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $hyperlink_index when calling getDocumentHyperlinkByIndex');
         }
 
-        $resourcePath = '/words/{name}/hyperlinks/{hyperlinkIndex}';
+        $resourcePath = '/words/{Name}/hyperlinks/{HyperlinkIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -19886,7 +19886,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentHyperlinks');
         }
 
-        $resourcePath = '/words/{name}/hyperlinks';
+        $resourcePath = '/words/{Name}/hyperlinks';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -20196,7 +20196,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentProperties');
         }
 
-        $resourcePath = '/words/{name}/documentProperties';
+        $resourcePath = '/words/{Name}/documentProperties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -20510,7 +20510,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $property_name when calling getDocumentProperty');
         }
 
-        $resourcePath = '/words/{name}/documentProperties/{propertyName}';
+        $resourcePath = '/words/{Name}/documentProperties/{PropertyName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -20825,7 +20825,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentProtection');
         }
 
-        $resourcePath = '/words/{name}/protection';
+        $resourcePath = '/words/{Name}/protection';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -21135,7 +21135,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentStatistics');
         }
 
-        $resourcePath = '/words/{name}/statistics';
+        $resourcePath = '/words/{Name}/statistics';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -21479,7 +21479,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $format when calling getDocumentWithFormat');
         }
 
-        $resourcePath = '/words/{name}';
+        $resourcePath = '/words/{Name}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -21827,7 +21827,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getField');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/fields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -22151,7 +22151,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getFieldWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/fields/{index}';
+        $resourcePath = '/words/{Name}/fields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -22470,7 +22470,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getFields');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/fields';
+        $resourcePath = '/words/{Name}/{NodePath}/fields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -22785,7 +22785,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getFieldsWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/fields';
+        $resourcePath = '/words/{Name}/fields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -23095,7 +23095,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $path when calling getFilesList');
         }
 
-        $resourcePath = '/words/storage/folder/{path}';
+        $resourcePath = '/words/storage/folder/{Path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -23383,7 +23383,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getFootnote');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/footnotes/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -23707,7 +23707,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getFootnoteWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/footnotes/{index}';
+        $resourcePath = '/words/{Name}/footnotes/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -24026,7 +24026,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getFootnotes');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/footnotes';
+        $resourcePath = '/words/{Name}/{NodePath}/footnotes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -24341,7 +24341,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getFootnotesWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/footnotes';
+        $resourcePath = '/words/{Name}/footnotes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -24659,7 +24659,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getFormField');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/formfields/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/formfields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -24983,7 +24983,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getFormFieldWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/formfields/{index}';
+        $resourcePath = '/words/{Name}/formfields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -25302,7 +25302,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getFormFields');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/formfields';
+        $resourcePath = '/words/{Name}/{NodePath}/formfields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -25617,7 +25617,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getFormFieldsWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/formfields';
+        $resourcePath = '/words/{Name}/formfields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -25931,7 +25931,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $header_footer_index when calling getHeaderFooter');
         }
 
-        $resourcePath = '/words/{name}/headersfooters/{headerFooterIndex}';
+        $resourcePath = '/words/{Name}/headersfooters/{HeaderFooterIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -26264,7 +26264,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling getHeaderFooterOfSection');
         }
 
-        $resourcePath = '/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}';
+        $resourcePath = '/words/{Name}/sections/{SectionIndex}/headersfooters/{HeaderFooterIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -26598,7 +26598,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $section_path when calling getHeaderFooters');
         }
 
-        $resourcePath = '/words/{name}/{sectionPath}/headersfooters';
+        $resourcePath = '/words/{Name}/{SectionPath}/headersfooters';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -26931,7 +26931,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getOfficeMathObject');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/OfficeMathObjects/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/OfficeMathObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -27255,7 +27255,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getOfficeMathObjectWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/OfficeMathObjects/{index}';
+        $resourcePath = '/words/{Name}/OfficeMathObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -27574,7 +27574,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getOfficeMathObjects');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/OfficeMathObjects';
+        $resourcePath = '/words/{Name}/{NodePath}/OfficeMathObjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -27889,7 +27889,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getOfficeMathObjectsWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/OfficeMathObjects';
+        $resourcePath = '/words/{Name}/OfficeMathObjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -28207,7 +28207,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraph');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/paragraphs/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -28535,7 +28535,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphFormat');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/format';
+        $resourcePath = '/words/{Name}/{NodePath}/paragraphs/{Index}/format';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -28859,7 +28859,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphFormatWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/paragraphs/{index}/format';
+        $resourcePath = '/words/{Name}/paragraphs/{Index}/format';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -29178,7 +29178,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/paragraphs/{index}';
+        $resourcePath = '/words/{Name}/paragraphs/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -29497,7 +29497,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getParagraphs');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/paragraphs';
+        $resourcePath = '/words/{Name}/{NodePath}/paragraphs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -29812,7 +29812,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getParagraphsWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/paragraphs';
+        $resourcePath = '/words/{Name}/paragraphs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -30130,7 +30130,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling getRangeText');
         }
 
-        $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
+        $resourcePath = '/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -30458,7 +30458,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getRun');
         }
 
-        $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}';
+        $resourcePath = '/words/{Name}/{ParagraphPath}/runs/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -30786,7 +30786,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getRunFont');
         }
 
-        $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}/font';
+        $resourcePath = '/words/{Name}/{ParagraphPath}/runs/{Index}/font';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -31110,7 +31110,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling getRuns');
         }
 
-        $resourcePath = '/words/{name}/{paragraphPath}/runs';
+        $resourcePath = '/words/{Name}/{ParagraphPath}/runs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -31429,7 +31429,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling getSection');
         }
 
-        $resourcePath = '/words/{name}/sections/{sectionIndex}';
+        $resourcePath = '/words/{Name}/sections/{SectionIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -31748,7 +31748,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling getSectionPageSetup');
         }
 
-        $resourcePath = '/words/{name}/sections/{sectionIndex}/pageSetup';
+        $resourcePath = '/words/{Name}/sections/{SectionIndex}/pageSetup';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -32063,7 +32063,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getSections');
         }
 
-        $resourcePath = '/words/{name}/sections';
+        $resourcePath = '/words/{Name}/sections';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -32381,7 +32381,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTable');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/tables/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/tables/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -32709,7 +32709,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCell');
         }
 
-        $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}';
+        $resourcePath = '/words/{Name}/{TableRowPath}/cells/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -33037,7 +33037,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCellFormat');
         }
 
-        $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}/cellformat';
+        $resourcePath = '/words/{Name}/{TableRowPath}/cells/{Index}/cellformat';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -33365,7 +33365,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableProperties');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/tables/{index}/properties';
+        $resourcePath = '/words/{Name}/{NodePath}/tables/{Index}/properties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -33689,7 +33689,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTablePropertiesWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/tables/{index}/properties';
+        $resourcePath = '/words/{Name}/tables/{Index}/properties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -34012,7 +34012,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableRow');
         }
 
-        $resourcePath = '/words/{name}/{tablePath}/rows/{index}';
+        $resourcePath = '/words/{Name}/{TablePath}/rows/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -34340,7 +34340,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableRowFormat');
         }
 
-        $resourcePath = '/words/{name}/{tablePath}/rows/{index}/rowformat';
+        $resourcePath = '/words/{Name}/{TablePath}/rows/{Index}/rowformat';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -34664,7 +34664,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/tables/{index}';
+        $resourcePath = '/words/{Name}/tables/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -34983,7 +34983,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling getTables');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/tables';
+        $resourcePath = '/words/{Name}/{NodePath}/tables';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -35298,7 +35298,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTablesWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/tables';
+        $resourcePath = '/words/{Name}/tables';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -35612,7 +35612,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $comment when calling insertComment');
         }
 
-        $resourcePath = '/words/{name}/comments';
+        $resourcePath = '/words/{Name}/comments';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -35971,7 +35971,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling insertDrawingObject');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/drawingObjects';
+        $resourcePath = '/words/{Name}/{NodePath}/drawingObjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -36338,7 +36338,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $image_file when calling insertDrawingObjectWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/drawingObjects';
+        $resourcePath = '/words/{Name}/drawingObjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -36700,7 +36700,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling insertField');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/fields';
+        $resourcePath = '/words/{Name}/{NodePath}/fields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -37066,7 +37066,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $field when calling insertFieldWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/fields';
+        $resourcePath = '/words/{Name}/fields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -37431,7 +37431,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling insertFootnote');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/footnotes';
+        $resourcePath = '/words/{Name}/{NodePath}/footnotes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -37787,7 +37787,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling insertFootnoteWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/footnotes';
+        $resourcePath = '/words/{Name}/footnotes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -38142,7 +38142,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling insertFormField');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/formfields';
+        $resourcePath = '/words/{Name}/{NodePath}/formfields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -38508,7 +38508,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $form_field when calling insertFormFieldWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/formfields';
+        $resourcePath = '/words/{Name}/formfields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -38873,7 +38873,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $section_path when calling insertHeaderFooter');
         }
 
-        $resourcePath = '/words/{name}/{sectionPath}/headersfooters';
+        $resourcePath = '/words/{Name}/{SectionPath}/headersfooters';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -39229,7 +39229,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $page_number when calling insertPageNumbers');
         }
 
-        $resourcePath = '/words/{name}/PageNumbers';
+        $resourcePath = '/words/{Name}/PageNumbers';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -39584,7 +39584,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling insertParagraph');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/paragraphs';
+        $resourcePath = '/words/{Name}/{NodePath}/paragraphs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -39954,7 +39954,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $run when calling insertRun');
         }
 
-        $resourcePath = '/words/{name}/{paragraphPath}/runs';
+        $resourcePath = '/words/{Name}/{ParagraphPath}/runs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -40315,12 +40315,16 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTable');
         }
+        // verify the required parameter 'table' is set
+        if ($request->table === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $table when calling insertTable');
+        }
         // verify the required parameter 'node_path' is set
         if ($request->node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling insertTable');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/tables';
+        $resourcePath = '/words/{Name}/{NodePath}/tables';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -40671,12 +40675,16 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableCell');
         }
+        // verify the required parameter 'cell' is set
+        if ($request->cell === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $cell when calling insertTableCell');
+        }
         // verify the required parameter 'table_row_path' is set
         if ($request->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling insertTableCell');
         }
 
-        $resourcePath = '/words/{name}/{tableRowPath}/cells';
+        $resourcePath = '/words/{Name}/{TableRowPath}/cells';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -41027,12 +41035,16 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableRow');
         }
+        // verify the required parameter 'row' is set
+        if ($request->row === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $row when calling insertTableRow');
+        }
         // verify the required parameter 'table_path' is set
         if ($request->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling insertTableRow');
         }
 
-        $resourcePath = '/words/{name}/{tablePath}/rows';
+        $resourcePath = '/words/{Name}/{TablePath}/rows';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -41383,8 +41395,12 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableWithoutNodePath');
         }
+        // verify the required parameter 'table' is set
+        if ($request->table === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $table when calling insertTableWithoutNodePath');
+        }
 
-        $resourcePath = '/words/{name}/tables';
+        $resourcePath = '/words/{Name}/tables';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -41731,7 +41747,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertWatermarkImage');
         }
 
-        $resourcePath = '/words/{name}/watermarks/images';
+        $resourcePath = '/words/{Name}/watermarks/images';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -42104,7 +42120,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $watermark_text when calling insertWatermarkText');
         }
 
-        $resourcePath = '/words/{name}/watermarks/texts';
+        $resourcePath = '/words/{Name}/watermarks/texts';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -42695,7 +42711,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $src_path when calling moveFile');
         }
 
-        $resourcePath = '/words/storage/file/move/{srcPath}';
+        $resourcePath = '/words/storage/file/move/{SrcPath}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -42967,7 +42983,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $src_path when calling moveFolder');
         }
 
-        $resourcePath = '/words/storage/folder/move/{srcPath}';
+        $resourcePath = '/words/storage/folder/move/{SrcPath}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -43271,7 +43287,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $protection_request when calling protectDocument');
         }
 
-        $resourcePath = '/words/{name}/protection';
+        $resourcePath = '/words/{Name}/protection';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -43598,7 +43614,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling rejectAllRevisions');
         }
 
-        $resourcePath = '/words/{name}/revisions/rejectAll';
+        $resourcePath = '/words/{Name}/revisions/rejectAll';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -43926,7 +43942,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling removeRange');
         }
 
-        $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
+        $resourcePath = '/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -44268,7 +44284,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderDrawingObject');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}/render';
+        $resourcePath = '/words/{Name}/{NodePath}/drawingObjects/{Index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -44616,7 +44632,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderDrawingObjectWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/drawingObjects/{index}/render';
+        $resourcePath = '/words/{Name}/drawingObjects/{Index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -44963,7 +44979,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderMathObject');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/OfficeMathObjects/{index}/render';
+        $resourcePath = '/words/{Name}/{NodePath}/OfficeMathObjects/{Index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -45311,7 +45327,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderMathObjectWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/OfficeMathObjects/{index}/render';
+        $resourcePath = '/words/{Name}/OfficeMathObjects/{Index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -45654,7 +45670,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderPage');
         }
 
-        $resourcePath = '/words/{name}/pages/{pageIndex}/render';
+        $resourcePath = '/words/{Name}/pages/{PageIndex}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -46001,7 +46017,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderParagraph');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/render';
+        $resourcePath = '/words/{Name}/{NodePath}/paragraphs/{Index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -46349,7 +46365,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderParagraphWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/paragraphs/{index}/render';
+        $resourcePath = '/words/{Name}/paragraphs/{Index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -46696,7 +46712,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderTable');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/tables/{index}/render';
+        $resourcePath = '/words/{Name}/{NodePath}/tables/{Index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -47044,7 +47060,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderTableWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/tables/{index}/render';
+        $resourcePath = '/words/{Name}/tables/{Index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -47383,7 +47399,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $replace_text when calling replaceText');
         }
 
-        $resourcePath = '/words/{name}/replaceText';
+        $resourcePath = '/words/{Name}/replaceText';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -47742,7 +47758,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling replaceWithText');
         }
 
-        $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
+        $resourcePath = '/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -48302,7 +48318,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $save_options_data when calling saveAs');
         }
 
-        $resourcePath = '/words/{name}/saveAs';
+        $resourcePath = '/words/{Name}/saveAs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -48641,7 +48657,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling saveAsRange');
         }
 
-        $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs';
+        $resourcePath = '/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}/SaveAs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -48972,7 +48988,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $save_options when calling saveAsTiff');
         }
 
-        $resourcePath = '/words/{name}/saveAs/tiff';
+        $resourcePath = '/words/{Name}/saveAs/tiff';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -49473,7 +49489,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $pattern when calling search');
         }
 
-        $resourcePath = '/words/{name}/search';
+        $resourcePath = '/words/{Name}/search';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -49793,7 +49809,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling splitDocument');
         }
 
-        $resourcePath = '/words/{name}/split';
+        $resourcePath = '/words/{Name}/split';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -50167,7 +50183,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $protection_request when calling unprotectDocument');
         }
 
-        $resourcePath = '/words/{name}/protection';
+        $resourcePath = '/words/{Name}/protection';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -50502,7 +50518,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_name when calling updateBookmark');
         }
 
-        $resourcePath = '/words/{name}/bookmarks/{bookmarkName}';
+        $resourcePath = '/words/{Name}/bookmarks/{BookmarkName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -50866,7 +50882,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling updateBorder');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/borders/{borderType}';
+        $resourcePath = '/words/{Name}/{NodePath}/borders/{BorderType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -51231,7 +51247,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $comment when calling updateComment');
         }
 
-        $resourcePath = '/words/{name}/comments/{commentIndex}';
+        $resourcePath = '/words/{Name}/comments/{CommentIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -51599,7 +51615,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateDrawingObject');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/drawingObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -51975,7 +51991,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateDrawingObjectWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/drawingObjects/{index}';
+        $resourcePath = '/words/{Name}/drawingObjects/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -52346,7 +52362,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateField');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/fields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -52703,7 +52719,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateFields');
         }
 
-        $resourcePath = '/words/{name}/updateFields';
+        $resourcePath = '/words/{Name}/updateFields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -53035,7 +53051,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFootnote');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/footnotes/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -53400,7 +53416,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFootnoteWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/footnotes/{index}';
+        $resourcePath = '/words/{Name}/footnotes/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -53764,7 +53780,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFormField');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/formfields/{index}';
+        $resourcePath = '/words/{Name}/{NodePath}/formfields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -54129,7 +54145,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFormFieldWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/formfields/{index}';
+        $resourcePath = '/words/{Name}/formfields/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -54493,7 +54509,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateParagraphFormat');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/format';
+        $resourcePath = '/words/{Name}/{NodePath}/paragraphs/{Index}/format';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -54862,7 +54878,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRun');
         }
 
-        $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}';
+        $resourcePath = '/words/{Name}/{ParagraphPath}/runs/{Index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -55231,7 +55247,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRunFont');
         }
 
-        $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}/font';
+        $resourcePath = '/words/{Name}/{ParagraphPath}/runs/{Index}/font';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -55596,7 +55612,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $page_setup when calling updateSectionPageSetup');
         }
 
-        $resourcePath = '/words/{name}/sections/{sectionIndex}/pageSetup';
+        $resourcePath = '/words/{Name}/sections/{SectionIndex}/pageSetup';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -55947,6 +55963,10 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableCellFormat');
         }
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableCellFormat');
+        }
         // verify the required parameter 'table_row_path' is set
         if ($request->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling updateTableCellFormat');
@@ -55956,7 +55976,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableCellFormat');
         }
 
-        $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}/cellformat';
+        $resourcePath = '/words/{Name}/{TableRowPath}/cells/{Index}/cellformat';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -56312,6 +56332,10 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableProperties');
         }
+        // verify the required parameter 'properties' is set
+        if ($request->properties === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $properties when calling updateTableProperties');
+        }
         // verify the required parameter 'node_path' is set
         if ($request->node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling updateTableProperties');
@@ -56321,7 +56345,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableProperties');
         }
 
-        $resourcePath = '/words/{name}/{nodePath}/tables/{index}/properties';
+        $resourcePath = '/words/{Name}/{NodePath}/tables/{Index}/properties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -56677,12 +56701,16 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTablePropertiesWithoutNodePath');
         }
+        // verify the required parameter 'properties' is set
+        if ($request->properties === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $properties when calling updateTablePropertiesWithoutNodePath');
+        }
         // verify the required parameter 'index' is set
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTablePropertiesWithoutNodePath');
         }
 
-        $resourcePath = '/words/{name}/tables/{index}/properties';
+        $resourcePath = '/words/{Name}/tables/{Index}/properties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -57033,6 +57061,10 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableRowFormat');
         }
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableRowFormat');
+        }
         // verify the required parameter 'table_path' is set
         if ($request->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling updateTableRowFormat');
@@ -57042,7 +57074,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableRowFormat');
         }
 
-        $resourcePath = '/words/{name}/{tablePath}/rows/{index}/rowformat';
+        $resourcePath = '/words/{Name}/{TablePath}/rows/{Index}/rowformat';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -57403,7 +57435,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $path when calling uploadFile');
         }
 
-        $resourcePath = '/words/storage/file/{path}';
+        $resourcePath = '/words/storage/file/{Path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -93,7 +93,7 @@ class FootnotesResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'footnotes' => 'Footnotes'
+        'footnotes' => 'footnotes'
     ];
 
     /*

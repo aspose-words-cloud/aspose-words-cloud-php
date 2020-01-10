@@ -99,10 +99,10 @@ class DocSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'always_compress_metafiles' => 'AlwaysCompressMetafiles',
-        'password' => 'Password',
-        'save_picture_bullet' => 'SavePictureBullet',
-        'save_routing_slip' => 'SaveRoutingSlip'
+        'always_compress_metafiles' => 'alwaysCompressMetafiles',
+        'password' => 'password',
+        'save_picture_bullet' => 'savePictureBullet',
+        'save_routing_slip' => 'saveRoutingSlip'
     ];
 
     /*

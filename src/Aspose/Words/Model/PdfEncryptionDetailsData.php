@@ -101,10 +101,10 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'encryption_algorithm' => 'EncryptionAlgorithm',
-        'owner_password' => 'OwnerPassword',
-        'permissions' => 'Permissions',
-        'user_password' => 'UserPassword'
+        'encryption_algorithm' => 'encryptionAlgorithm',
+        'owner_password' => 'ownerPassword',
+        'permissions' => 'permissions',
+        'user_password' => 'userPassword'
     ];
 
     /*

@@ -93,7 +93,7 @@ class HeaderFooterLink extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'Type'
+        'type' => 'type'
     ];
 
     /*

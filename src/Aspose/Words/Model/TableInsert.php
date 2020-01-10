@@ -99,9 +99,9 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'position' => 'Position',
-        'columns_count' => 'ColumnsCount',
-        'rows_count' => 'RowsCount'
+        'position' => 'position',
+        'columns_count' => 'columnsCount',
+        'rows_count' => 'rowsCount'
     ];
 
     /*

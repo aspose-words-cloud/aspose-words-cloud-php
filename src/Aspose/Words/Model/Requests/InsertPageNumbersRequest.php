@@ -39,7 +39,7 @@ class InsertPageNumbersRequest
     public $name;
 	
     /*
-     * with the page numbers settings.
+     * PageNumber with the page numbers settings.
      */
     public $page_number;
 	
@@ -83,7 +83,7 @@ class InsertPageNumbersRequest
      * Initializes a new instance of the InsertPageNumbersRequest class.
      *  
      * @param string $name A document name.
-     * @param \Aspose\Words\Model\PageNumber $page_number with the page numbers settings.
+     * @param \Aspose\Words\Model\PageNumber $page_number PageNumber with the page numbers settings.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -123,7 +123,7 @@ class InsertPageNumbersRequest
     }
 	
     /*
-     * with the page numbers settings.
+     * PageNumber with the page numbers settings.
      */
     public function get_page_number()
     {
@@ -131,7 +131,7 @@ class InsertPageNumbersRequest
     }
 
     /*
-     * with the page numbers settings.
+     * PageNumber with the page numbers settings.
      */
     public function set_page_number($value)
     {

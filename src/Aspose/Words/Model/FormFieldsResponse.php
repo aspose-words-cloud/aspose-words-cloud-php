@@ -93,7 +93,7 @@ class FormFieldsResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'form_fields' => 'FormFields'
+        'form_fields' => 'formFields'
     ];
 
     /*

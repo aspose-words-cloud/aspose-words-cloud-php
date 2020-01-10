@@ -101,10 +101,10 @@ class PageStatData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'page_number' => 'PageNumber',
-        'word_count' => 'WordCount',
-        'paragraph_count' => 'ParagraphCount',
-        'footnotes_stat_data' => 'FootnotesStatData'
+        'page_number' => 'pageNumber',
+        'word_count' => 'wordCount',
+        'paragraph_count' => 'paragraphCount',
+        'footnotes_stat_data' => 'footnotesStatData'
     ];
 
     /*

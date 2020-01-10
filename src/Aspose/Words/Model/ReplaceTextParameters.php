@@ -103,11 +103,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'old_value' => 'OldValue',
-        'new_value' => 'NewValue',
-        'is_match_case' => 'IsMatchCase',
-        'is_match_whole_word' => 'IsMatchWholeWord',
-        'is_old_value_regex' => 'IsOldValueRegex'
+        'old_value' => 'oldValue',
+        'new_value' => 'newValue',
+        'is_match_case' => 'isMatchCase',
+        'is_match_whole_word' => 'isMatchWholeWord',
+        'is_old_value_regex' => 'isOldValueRegex'
     ];
 
     /*
@@ -259,7 +259,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets old_value
      *
-     * @param string $old_value Gets or sets old text value (or regex pattern ) to replace.
+     * @param string $old_value Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
      *
      * @return $this
      */
@@ -355,7 +355,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets is_old_value_regex
      *
-     * @param bool $is_old_value_regex Gets or sets a value indicating whether flag, means that  contains regex expression.
+     * @param bool $is_old_value_regex Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
      *
      * @return $this
      */

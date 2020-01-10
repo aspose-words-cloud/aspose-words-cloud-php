@@ -143,32 +143,32 @@ class ParagraphFormat extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'add_space_between_far_east_and_alpha' => 'AddSpaceBetweenFarEastAndAlpha',
-        'add_space_between_far_east_and_digit' => 'AddSpaceBetweenFarEastAndDigit',
-        'alignment' => 'Alignment',
-        'bidi' => 'Bidi',
-        'drop_cap_position' => 'DropCapPosition',
-        'first_line_indent' => 'FirstLineIndent',
-        'is_list_item' => 'IsListItem',
-        'keep_together' => 'KeepTogether',
-        'keep_with_next' => 'KeepWithNext',
-        'left_indent' => 'LeftIndent',
-        'line_spacing' => 'LineSpacing',
-        'line_spacing_rule' => 'LineSpacingRule',
-        'lines_to_drop' => 'LinesToDrop',
-        'no_space_between_paragraphs_of_same_style' => 'NoSpaceBetweenParagraphsOfSameStyle',
-        'outline_level' => 'OutlineLevel',
-        'page_break_before' => 'PageBreakBefore',
-        'right_indent' => 'RightIndent',
-        'space_after' => 'SpaceAfter',
-        'space_after_auto' => 'SpaceAfterAuto',
-        'space_before' => 'SpaceBefore',
-        'space_before_auto' => 'SpaceBeforeAuto',
-        'style_identifier' => 'StyleIdentifier',
-        'style_name' => 'StyleName',
-        'suppress_auto_hyphens' => 'SuppressAutoHyphens',
-        'suppress_line_numbers' => 'SuppressLineNumbers',
-        'widow_control' => 'WidowControl'
+        'add_space_between_far_east_and_alpha' => 'addSpaceBetweenFarEastAndAlpha',
+        'add_space_between_far_east_and_digit' => 'addSpaceBetweenFarEastAndDigit',
+        'alignment' => 'alignment',
+        'bidi' => 'bidi',
+        'drop_cap_position' => 'dropCapPosition',
+        'first_line_indent' => 'firstLineIndent',
+        'is_list_item' => 'isListItem',
+        'keep_together' => 'keepTogether',
+        'keep_with_next' => 'keepWithNext',
+        'left_indent' => 'leftIndent',
+        'line_spacing' => 'lineSpacing',
+        'line_spacing_rule' => 'lineSpacingRule',
+        'lines_to_drop' => 'linesToDrop',
+        'no_space_between_paragraphs_of_same_style' => 'noSpaceBetweenParagraphsOfSameStyle',
+        'outline_level' => 'outlineLevel',
+        'page_break_before' => 'pageBreakBefore',
+        'right_indent' => 'rightIndent',
+        'space_after' => 'spaceAfter',
+        'space_after_auto' => 'spaceAfterAuto',
+        'space_before' => 'spaceBefore',
+        'space_before_auto' => 'spaceBeforeAuto',
+        'style_identifier' => 'styleIdentifier',
+        'style_name' => 'styleName',
+        'suppress_auto_hyphens' => 'suppressAutoHyphens',
+        'suppress_line_numbers' => 'suppressLineNumbers',
+        'widow_control' => 'widowControl'
     ];
 
     /*
@@ -1602,7 +1602,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets no_space_between_paragraphs_of_same_style
      *
-     * @param bool $no_space_between_paragraphs_of_same_style Gets or sets when true,  and  will be ignored between the paragraphs of the same style.
+     * @param bool $no_space_between_paragraphs_of_same_style Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.
      *
      * @return $this
      */

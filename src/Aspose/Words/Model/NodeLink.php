@@ -93,7 +93,7 @@ class NodeLink extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'node_id' => 'NodeId'
+        'node_id' => 'nodeId'
     ];
 
     /*

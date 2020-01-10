@@ -93,7 +93,7 @@ class SectionPageSetupResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'page_setup' => 'PageSetup'
+        'page_setup' => 'pageSetup'
     ];
 
     /*

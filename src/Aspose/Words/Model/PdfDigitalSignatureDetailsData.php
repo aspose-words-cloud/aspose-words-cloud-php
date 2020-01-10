@@ -103,11 +103,11 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'certificate_filename' => 'CertificateFilename',
-        'hash_algorithm' => 'HashAlgorithm',
-        'location' => 'Location',
-        'reason' => 'Reason',
-        'signature_date' => 'SignatureDate'
+        'certificate_filename' => 'certificateFilename',
+        'hash_algorithm' => 'hashAlgorithm',
+        'location' => 'location',
+        'reason' => 'reason',
+        'signature_date' => 'signatureDate'
     ];
 
     /*

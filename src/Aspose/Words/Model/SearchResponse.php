@@ -95,8 +95,8 @@ class SearchResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'searching_pattern' => 'SearchingPattern',
-        'search_results' => 'SearchResults'
+        'searching_pattern' => 'searchingPattern',
+        'search_results' => 'searchResults'
     ];
 
     /*

@@ -99,10 +99,10 @@ class OfficeMathObject extends OfficeMathLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'display_type' => 'DisplayType',
-        'justification' => 'Justification',
-        'math_object_type' => 'MathObjectType'
+        'content' => 'content',
+        'display_type' => 'displayType',
+        'justification' => 'justification',
+        'math_object_type' => 'mathObjectType'
     ];
 
     /*

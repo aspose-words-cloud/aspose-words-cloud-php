@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * StoryChildNodes
  *
- * @description Child nodes of  or .
+ * @description Child nodes of Story or InlineStory.
  */
 class StoryChildNodes implements ArrayAccess
 {
@@ -95,7 +95,7 @@ class StoryChildNodes implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'child_nodes' => 'ChildNodes'
+        'child_nodes' => 'childNodes'
     ];
 
     /*

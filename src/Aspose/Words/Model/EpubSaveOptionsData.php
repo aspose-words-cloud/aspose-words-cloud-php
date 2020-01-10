@@ -93,7 +93,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'epub_navigation_map_level' => 'EpubNavigationMapLevel'
+        'epub_navigation_map_level' => 'epubNavigationMapLevel'
     ];
 
     /*

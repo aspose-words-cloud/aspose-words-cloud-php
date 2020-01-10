@@ -93,7 +93,7 @@ class SectionLinkCollectionResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'sections' => 'Sections'
+        'sections' => 'sections'
     ];
 
     /*

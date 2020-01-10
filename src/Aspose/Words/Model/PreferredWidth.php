@@ -97,8 +97,8 @@ class PreferredWidth implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'Type',
-        'value' => 'Value'
+        'type' => 'type',
+        'value' => 'value'
     ];
 
     /*
@@ -287,7 +287,7 @@ class PreferredWidth implements ArrayAccess
     /*
      * Sets value
      *
-     * @param double $value Gets or sets the preferred width value. The unit of measure is specified in the  property.
+     * @param double $value Gets or sets the preferred width value. The unit of measure is specified in the Type property.
      *
      * @return $this
      */

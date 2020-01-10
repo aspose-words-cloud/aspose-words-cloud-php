@@ -97,8 +97,8 @@ class DocumentEntry implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'href' => 'Href',
-        'import_format_mode' => 'ImportFormatMode'
+        'href' => 'href',
+        'import_format_mode' => 'importFormatMode'
     ];
 
     /*

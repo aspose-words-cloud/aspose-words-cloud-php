@@ -101,10 +101,10 @@ class Link implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'href' => 'href',
-        'rel' => 'rel',
-        'type' => 'type',
-        'title' => 'title'
+        'href' => 'Href',
+        'rel' => 'Rel',
+        'type' => 'Type',
+        'title' => 'Title'
     ];
 
     /*

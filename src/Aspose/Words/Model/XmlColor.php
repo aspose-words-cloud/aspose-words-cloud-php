@@ -97,8 +97,8 @@ class XmlColor implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'web' => 'web',
-        'alpha' => 'alpha'
+        'web' => 'Web',
+        'alpha' => 'Alpha'
     ];
 
     /*

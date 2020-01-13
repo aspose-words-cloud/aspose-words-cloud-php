@@ -93,7 +93,7 @@ class TableRowFormatResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'row_format' => 'rowFormat'
+        'row_format' => 'RowFormat'
     ];
 
     /*

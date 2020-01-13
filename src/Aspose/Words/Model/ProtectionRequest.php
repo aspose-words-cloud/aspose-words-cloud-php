@@ -99,9 +99,9 @@ class ProtectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'password' => 'password',
-        'new_password' => 'newPassword',
-        'protection_type' => 'protectionType'
+        'password' => 'Password',
+        'new_password' => 'NewPassword',
+        'protection_type' => 'ProtectionType'
     ];
 
     /*

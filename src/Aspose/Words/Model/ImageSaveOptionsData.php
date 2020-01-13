@@ -117,19 +117,19 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'graphics_quality_options' => 'graphicsQualityOptions',
-        'horizontal_resolution' => 'horizontalResolution',
-        'image_brightness' => 'imageBrightness',
-        'image_color_mode' => 'imageColorMode',
-        'image_contrast' => 'imageContrast',
-        'paper_color' => 'paperColor',
-        'pixel_format' => 'pixelFormat',
-        'resolution' => 'resolution',
-        'scale' => 'scale',
-        'use_anti_aliasing' => 'useAntiAliasing',
-        'use_gdi_emf_renderer' => 'useGdiEmfRenderer',
-        'use_high_quality_rendering' => 'useHighQualityRendering',
-        'vertical_resolution' => 'verticalResolution'
+        'graphics_quality_options' => 'GraphicsQualityOptions',
+        'horizontal_resolution' => 'HorizontalResolution',
+        'image_brightness' => 'ImageBrightness',
+        'image_color_mode' => 'ImageColorMode',
+        'image_contrast' => 'ImageContrast',
+        'paper_color' => 'PaperColor',
+        'pixel_format' => 'PixelFormat',
+        'resolution' => 'Resolution',
+        'scale' => 'Scale',
+        'use_anti_aliasing' => 'UseAntiAliasing',
+        'use_gdi_emf_renderer' => 'UseGdiEmfRenderer',
+        'use_high_quality_rendering' => 'UseHighQualityRendering',
+        'vertical_resolution' => 'VerticalResolution'
     ];
 
     /*

@@ -99,10 +99,10 @@ class TableRowFormat extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'allow_break_across_pages' => 'allowBreakAcrossPages',
-        'heading_format' => 'headingFormat',
-        'height' => 'height',
-        'height_rule' => 'heightRule'
+        'allow_break_across_pages' => 'AllowBreakAcrossPages',
+        'heading_format' => 'HeadingFormat',
+        'height' => 'Height',
+        'height_rule' => 'HeightRule'
     ];
 
     /*

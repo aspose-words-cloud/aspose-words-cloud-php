@@ -97,8 +97,8 @@ class ModificationOperationResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'source' => 'source',
-        'dest' => 'dest'
+        'source' => 'Source',
+        'dest' => 'Dest'
     ];
 
     /*

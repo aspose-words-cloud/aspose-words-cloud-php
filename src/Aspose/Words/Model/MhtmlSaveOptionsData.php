@@ -93,7 +93,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'export_cid_urls_for_mhtml_resources' => 'exportCidUrlsForMhtmlResources'
+        'export_cid_urls_for_mhtml_resources' => 'ExportCidUrlsForMhtmlResources'
     ];
 
     /*

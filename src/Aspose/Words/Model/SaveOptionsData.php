@@ -111,15 +111,15 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'color_mode' => 'colorMode',
-        'save_format' => 'saveFormat',
-        'file_name' => 'fileName',
-        'dml_rendering_mode' => 'dmlRenderingMode',
-        'dml_effects_rendering_mode' => 'dmlEffectsRenderingMode',
-        'zip_output' => 'zipOutput',
-        'update_last_saved_time_property' => 'updateLastSavedTimeProperty',
-        'update_sdt_content' => 'updateSdtContent',
-        'update_fields' => 'updateFields'
+        'color_mode' => 'ColorMode',
+        'save_format' => 'SaveFormat',
+        'file_name' => 'FileName',
+        'dml_rendering_mode' => 'DmlRenderingMode',
+        'dml_effects_rendering_mode' => 'DmlEffectsRenderingMode',
+        'zip_output' => 'ZipOutput',
+        'update_last_saved_time_property' => 'UpdateLastSavedTimeProperty',
+        'update_sdt_content' => 'UpdateSdtContent',
+        'update_fields' => 'UpdateFields'
     ];
 
     /*

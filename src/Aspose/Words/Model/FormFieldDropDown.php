@@ -95,8 +95,8 @@ class FormFieldDropDown extends FormField
      * @var string[]
      */
     protected static $attributeMap = [
-        'drop_down_items' => 'dropDownItems',
-        'drop_down_selected_index' => 'dropDownSelectedIndex'
+        'drop_down_items' => 'DropDownItems',
+        'drop_down_selected_index' => 'DropDownSelectedIndex'
     ];
 
     /*

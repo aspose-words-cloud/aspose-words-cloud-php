@@ -101,10 +101,10 @@ class FontInfo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'font_family_name' => 'fontFamilyName',
-        'full_font_name' => 'fullFontName',
-        'version' => 'version',
-        'file_path' => 'filePath'
+        'font_family_name' => 'FontFamilyName',
+        'full_font_name' => 'FullFontName',
+        'version' => 'Version',
+        'file_path' => 'FilePath'
     ];
 
     /*

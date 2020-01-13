@@ -93,7 +93,7 @@ class CommentsCollection extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'comment_list' => 'commentList'
+        'comment_list' => 'CommentList'
     ];
 
     /*

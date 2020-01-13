@@ -93,7 +93,7 @@ class FormFieldCollection extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'list' => 'list'
+        'list' => 'List'
     ];
 
     /*

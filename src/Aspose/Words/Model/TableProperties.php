@@ -119,20 +119,20 @@ class TableProperties extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'alignment' => 'alignment',
-        'allow_auto_fit' => 'allowAutoFit',
-        'bidi' => 'bidi',
-        'bottom_padding' => 'bottomPadding',
-        'cell_spacing' => 'cellSpacing',
-        'left_indent' => 'leftIndent',
-        'left_padding' => 'leftPadding',
-        'preferred_width' => 'preferredWidth',
-        'right_padding' => 'rightPadding',
-        'style_identifier' => 'styleIdentifier',
-        'style_name' => 'styleName',
-        'style_options' => 'styleOptions',
-        'text_wrapping' => 'textWrapping',
-        'top_padding' => 'topPadding'
+        'alignment' => 'Alignment',
+        'allow_auto_fit' => 'AllowAutoFit',
+        'bidi' => 'Bidi',
+        'bottom_padding' => 'BottomPadding',
+        'cell_spacing' => 'CellSpacing',
+        'left_indent' => 'LeftIndent',
+        'left_padding' => 'LeftPadding',
+        'preferred_width' => 'PreferredWidth',
+        'right_padding' => 'RightPadding',
+        'style_identifier' => 'StyleIdentifier',
+        'style_name' => 'StyleName',
+        'style_options' => 'StyleOptions',
+        'text_wrapping' => 'TextWrapping',
+        'top_padding' => 'TopPadding'
     ];
 
     /*

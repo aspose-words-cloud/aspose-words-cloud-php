@@ -103,11 +103,11 @@ class StorageFile implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'is_folder' => 'isFolder',
-        'modified_date' => 'modifiedDate',
-        'size' => 'size',
-        'path' => 'path'
+        'name' => 'Name',
+        'is_folder' => 'IsFolder',
+        'modified_date' => 'ModifiedDate',
+        'size' => 'Size',
+        'path' => 'Path'
     ];
 
     /*

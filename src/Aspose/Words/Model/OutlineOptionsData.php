@@ -105,12 +105,12 @@ class OutlineOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bookmarks_outline_levels' => 'bookmarksOutlineLevels',
-        'default_bookmarks_outline_level' => 'defaultBookmarksOutlineLevel',
-        'create_missing_outline_levels' => 'createMissingOutlineLevels',
-        'create_outlines_for_headings_in_tables' => 'createOutlinesForHeadingsInTables',
-        'expanded_outline_levels' => 'expandedOutlineLevels',
-        'headings_outline_levels' => 'headingsOutlineLevels'
+        'bookmarks_outline_levels' => 'BookmarksOutlineLevels',
+        'default_bookmarks_outline_level' => 'DefaultBookmarksOutlineLevel',
+        'create_missing_outline_levels' => 'CreateMissingOutlineLevels',
+        'create_outlines_for_headings_in_tables' => 'CreateOutlinesForHeadingsInTables',
+        'expanded_outline_levels' => 'ExpandedOutlineLevels',
+        'headings_outline_levels' => 'HeadingsOutlineLevels'
     ];
 
     /*

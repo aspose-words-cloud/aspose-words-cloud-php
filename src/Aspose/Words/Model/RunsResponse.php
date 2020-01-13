@@ -93,7 +93,7 @@ class RunsResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'runs' => 'runs'
+        'runs' => 'Runs'
     ];
 
     /*

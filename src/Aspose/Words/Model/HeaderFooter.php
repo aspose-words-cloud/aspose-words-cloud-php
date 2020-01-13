@@ -97,9 +97,9 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'child_nodes' => 'childNodes',
-        'drawing_objects' => 'drawingObjects',
-        'paragraphs' => 'paragraphs'
+        'child_nodes' => 'ChildNodes',
+        'drawing_objects' => 'DrawingObjects',
+        'paragraphs' => 'Paragraphs'
     ];
 
     /*

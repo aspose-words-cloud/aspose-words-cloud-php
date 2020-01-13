@@ -101,11 +101,11 @@ class Footnote extends FootnoteLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'content',
-        'footnote_type' => 'footnoteType',
-        'position' => 'position',
-        'reference_mark' => 'referenceMark',
-        'text' => 'text'
+        'content' => 'Content',
+        'footnote_type' => 'FootnoteType',
+        'position' => 'Position',
+        'reference_mark' => 'ReferenceMark',
+        'text' => 'Text'
     ];
 
     /*

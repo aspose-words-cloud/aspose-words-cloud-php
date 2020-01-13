@@ -103,11 +103,11 @@ class StringFormatData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'alignment' => 'alignment',
-        'format_flags' => 'formatFlags',
-        'hotkey_prefix' => 'hotkeyPrefix',
-        'line_alignment' => 'lineAlignment',
-        'trimming' => 'trimming'
+        'alignment' => 'Alignment',
+        'format_flags' => 'FormatFlags',
+        'hotkey_prefix' => 'HotkeyPrefix',
+        'line_alignment' => 'LineAlignment',
+        'trimming' => 'Trimming'
     ];
 
     /*

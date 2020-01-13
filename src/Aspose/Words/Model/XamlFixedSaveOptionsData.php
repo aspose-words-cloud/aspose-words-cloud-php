@@ -95,8 +95,8 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'resources_folder' => 'resourcesFolder',
-        'resources_folder_alias' => 'resourcesFolderAlias'
+        'resources_folder' => 'ResourcesFolder',
+        'resources_folder_alias' => 'ResourcesFolderAlias'
     ];
 
     /*

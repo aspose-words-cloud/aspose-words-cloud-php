@@ -95,7 +95,7 @@ class StoryChildNodes implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'child_nodes' => 'childNodes'
+        'child_nodes' => 'ChildNodes'
     ];
 
     /*

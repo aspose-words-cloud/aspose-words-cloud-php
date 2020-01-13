@@ -103,11 +103,11 @@ class ApiError implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'description' => 'description',
-        'date_time' => 'dateTime',
-        'inner_error' => 'innerError'
+        'code' => 'Code',
+        'message' => 'Message',
+        'description' => 'Description',
+        'date_time' => 'DateTime',
+        'inner_error' => 'InnerError'
     ];
 
     /*

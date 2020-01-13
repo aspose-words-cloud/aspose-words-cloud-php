@@ -93,7 +93,7 @@ class ParagraphFormatResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'paragraph_format' => 'paragraphFormat'
+        'paragraph_format' => 'ParagraphFormat'
     ];
 
     /*

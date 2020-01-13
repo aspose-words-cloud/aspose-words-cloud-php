@@ -97,9 +97,9 @@ class AvailableFontsResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'additional_fonts' => 'additionalFonts',
-        'custom_fonts' => 'customFonts',
-        'system_fonts' => 'systemFonts'
+        'additional_fonts' => 'AdditionalFonts',
+        'custom_fonts' => 'CustomFonts',
+        'system_fonts' => 'SystemFonts'
     ];
 
     /*

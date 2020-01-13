@@ -93,7 +93,7 @@ class ParagraphLink extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'text'
+        'text' => 'Text'
     ];
 
     /*

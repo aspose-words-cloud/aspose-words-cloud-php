@@ -93,7 +93,7 @@ class Hyperlinks extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'hyperlink_list' => 'hyperlinkList'
+        'hyperlink_list' => 'HyperlinkList'
     ];
 
     /*

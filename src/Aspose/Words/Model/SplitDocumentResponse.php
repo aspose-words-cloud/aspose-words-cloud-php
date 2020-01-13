@@ -93,7 +93,7 @@ class SplitDocumentResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'split_result' => 'splitResult'
+        'split_result' => 'SplitResult'
     ];
 
     /*

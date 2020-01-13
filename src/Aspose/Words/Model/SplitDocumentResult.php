@@ -99,9 +99,9 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_document' => 'sourceDocument',
-        'pages' => 'pages',
-        'zipped_pages' => 'zippedPages'
+        'source_document' => 'SourceDocument',
+        'pages' => 'Pages',
+        'zipped_pages' => 'ZippedPages'
     ];
 
     /*

@@ -103,12 +103,12 @@ class Border extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'border_type' => 'borderType',
-        'color' => 'color',
-        'distance_from_text' => 'distanceFromText',
-        'line_style' => 'lineStyle',
-        'line_width' => 'lineWidth',
-        'shadow' => 'shadow'
+        'border_type' => 'BorderType',
+        'color' => 'Color',
+        'distance_from_text' => 'DistanceFromText',
+        'line_style' => 'LineStyle',
+        'line_width' => 'LineWidth',
+        'shadow' => 'Shadow'
     ];
 
     /*

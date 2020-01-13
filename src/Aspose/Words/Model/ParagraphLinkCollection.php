@@ -93,7 +93,7 @@ class ParagraphLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'paragraph_link_list' => 'paragraphLinkList'
+        'paragraph_link_list' => 'ParagraphLinkList'
     ];
 
     /*

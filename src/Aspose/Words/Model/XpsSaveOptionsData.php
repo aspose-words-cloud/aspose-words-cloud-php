@@ -99,10 +99,10 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'bookmarks_outline_level' => 'bookmarksOutlineLevel',
-        'headings_outline_levels' => 'headingsOutlineLevels',
-        'outline_options' => 'outlineOptions',
-        'use_book_fold_printing_settings' => 'useBookFoldPrintingSettings'
+        'bookmarks_outline_level' => 'BookmarksOutlineLevel',
+        'headings_outline_levels' => 'HeadingsOutlineLevels',
+        'outline_options' => 'OutlineOptions',
+        'use_book_fold_printing_settings' => 'UseBookFoldPrintingSettings'
     ];
 
     /*

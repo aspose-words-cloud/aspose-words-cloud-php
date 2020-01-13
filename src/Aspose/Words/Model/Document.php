@@ -105,12 +105,12 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => 'links',
-        'file_name' => 'fileName',
-        'source_format' => 'sourceFormat',
-        'is_encrypted' => 'isEncrypted',
-        'is_signed' => 'isSigned',
-        'document_properties' => 'documentProperties'
+        'links' => 'Links',
+        'file_name' => 'FileName',
+        'source_format' => 'SourceFormat',
+        'is_encrypted' => 'IsEncrypted',
+        'is_signed' => 'IsSigned',
+        'document_properties' => 'DocumentProperties'
     ];
 
     /*

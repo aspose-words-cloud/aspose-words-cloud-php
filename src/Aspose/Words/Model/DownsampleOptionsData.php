@@ -99,9 +99,9 @@ class DownsampleOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'downsample_images' => 'downsampleImages',
-        'resolution' => 'resolution',
-        'resolution_threshold' => 'resolutionThreshold'
+        'downsample_images' => 'DownsampleImages',
+        'resolution' => 'Resolution',
+        'resolution_threshold' => 'ResolutionThreshold'
     ];
 
     /*

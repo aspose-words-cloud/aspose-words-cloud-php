@@ -99,9 +99,9 @@ class CompareData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'comparing_with_document' => 'comparingWithDocument',
-        'author' => 'author',
-        'date_time' => 'dateTime'
+        'comparing_with_document' => 'ComparingWithDocument',
+        'author' => 'Author',
+        'date_time' => 'DateTime'
     ];
 
     /*

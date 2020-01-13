@@ -95,8 +95,8 @@ class ReplaceTextResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_link' => 'documentLink',
-        'matches' => 'matches'
+        'document_link' => 'DocumentLink',
+        'matches' => 'Matches'
     ];
 
     /*

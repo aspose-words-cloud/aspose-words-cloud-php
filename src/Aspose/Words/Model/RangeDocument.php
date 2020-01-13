@@ -95,7 +95,7 @@ class RangeDocument implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_name' => 'documentName'
+        'document_name' => 'DocumentName'
     ];
 
     /*

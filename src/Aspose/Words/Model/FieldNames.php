@@ -93,7 +93,7 @@ class FieldNames extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'names' => 'names'
+        'names' => 'Names'
     ];
 
     /*

@@ -97,8 +97,8 @@ class TableRowInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'insert_after' => 'insertAfter',
-        'columns_count' => 'columnsCount'
+        'insert_after' => 'InsertAfter',
+        'columns_count' => 'ColumnsCount'
     ];
 
     /*

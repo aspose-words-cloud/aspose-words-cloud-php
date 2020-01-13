@@ -103,11 +103,11 @@ class DocumentStatData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'word_count' => 'wordCount',
-        'paragraph_count' => 'paragraphCount',
-        'page_count' => 'pageCount',
-        'footnotes_stat_data' => 'footnotesStatData',
-        'page_stat_data' => 'pageStatData'
+        'word_count' => 'WordCount',
+        'paragraph_count' => 'ParagraphCount',
+        'page_count' => 'PageCount',
+        'footnotes_stat_data' => 'FootnotesStatData',
+        'page_stat_data' => 'PageStatData'
     ];
 
     /*

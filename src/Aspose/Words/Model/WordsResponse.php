@@ -95,7 +95,7 @@ class WordsResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'request_id' => 'requestId'
+        'request_id' => 'RequestId'
     ];
 
     /*

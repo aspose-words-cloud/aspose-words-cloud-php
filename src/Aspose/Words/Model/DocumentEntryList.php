@@ -95,7 +95,7 @@ class DocumentEntryList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_entries' => 'documentEntries'
+        'document_entries' => 'DocumentEntries'
     ];
 
     /*

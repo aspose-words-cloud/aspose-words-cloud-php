@@ -93,7 +93,7 @@ class FontResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'font' => 'font'
+        'font' => 'Font'
     ];
 
     /*

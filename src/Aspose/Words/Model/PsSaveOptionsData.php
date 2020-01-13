@@ -93,7 +93,7 @@ class PsSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'use_book_fold_printing_settings' => 'useBookFoldPrintingSettings'
+        'use_book_fold_printing_settings' => 'UseBookFoldPrintingSettings'
     ];
 
     /*

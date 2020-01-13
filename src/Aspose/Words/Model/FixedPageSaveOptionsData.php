@@ -103,12 +103,12 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'jpeg_quality' => 'jpegQuality',
-        'metafile_rendering_options' => 'metafileRenderingOptions',
-        'numeral_format' => 'numeralFormat',
-        'optimize_output' => 'optimizeOutput',
-        'page_count' => 'pageCount',
-        'page_index' => 'pageIndex'
+        'jpeg_quality' => 'JpegQuality',
+        'metafile_rendering_options' => 'MetafileRenderingOptions',
+        'numeral_format' => 'NumeralFormat',
+        'optimize_output' => 'OptimizeOutput',
+        'page_count' => 'PageCount',
+        'page_index' => 'PageIndex'
     ];
 
     /*

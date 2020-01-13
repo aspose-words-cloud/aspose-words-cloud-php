@@ -95,8 +95,8 @@ class ProtectionDataResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_link' => 'documentLink',
-        'protection_data' => 'protectionData'
+        'document_link' => 'DocumentLink',
+        'protection_data' => 'ProtectionData'
     ];
 
     /*

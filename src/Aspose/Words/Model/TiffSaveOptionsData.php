@@ -97,9 +97,9 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'threshold_for_floyd_steinberg_dithering' => 'thresholdForFloydSteinbergDithering',
-        'tiff_binarization_method' => 'tiffBinarizationMethod',
-        'tiff_compression' => 'tiffCompression'
+        'threshold_for_floyd_steinberg_dithering' => 'ThresholdForFloydSteinbergDithering',
+        'tiff_binarization_method' => 'TiffBinarizationMethod',
+        'tiff_compression' => 'TiffCompression'
     ];
 
     /*

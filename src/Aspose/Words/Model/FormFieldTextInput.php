@@ -99,10 +99,10 @@ class FormFieldTextInput extends FormField
      * @var string[]
      */
     protected static $attributeMap = [
-        'max_length' => 'maxLength',
-        'text_input_default' => 'textInputDefault',
-        'text_input_format' => 'textInputFormat',
-        'text_input_type' => 'textInputType'
+        'max_length' => 'MaxLength',
+        'text_input_default' => 'TextInputDefault',
+        'text_input_format' => 'TextInputFormat',
+        'text_input_type' => 'TextInputType'
     ];
 
     /*

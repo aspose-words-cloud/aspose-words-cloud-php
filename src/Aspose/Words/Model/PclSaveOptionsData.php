@@ -95,8 +95,8 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'falllback_font_name' => 'falllbackFontName',
-        'rasterize_transformed_elements' => 'rasterizeTransformedElements'
+        'falllback_font_name' => 'FalllbackFontName',
+        'rasterize_transformed_elements' => 'RasterizeTransformedElements'
     ];
 
     /*

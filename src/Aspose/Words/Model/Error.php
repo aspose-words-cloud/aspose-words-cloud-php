@@ -101,10 +101,10 @@ class Error implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'description' => 'description',
-        'inner_error' => 'innerError'
+        'code' => 'Code',
+        'message' => 'Message',
+        'description' => 'Description',
+        'inner_error' => 'InnerError'
     ];
 
     /*

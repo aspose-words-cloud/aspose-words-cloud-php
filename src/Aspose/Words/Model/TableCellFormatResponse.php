@@ -93,7 +93,7 @@ class TableCellFormatResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'cell_format' => 'cellFormat'
+        'cell_format' => 'CellFormat'
     ];
 
     /*

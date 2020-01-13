@@ -95,8 +95,8 @@ class Table extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'table_properties' => 'tableProperties',
-        'table_row_list' => 'tableRowList'
+        'table_properties' => 'TableProperties',
+        'table_row_list' => 'TableRowList'
     ];
 
     /*

@@ -101,11 +101,11 @@ class Section extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'child_nodes' => 'childNodes',
-        'header_footers' => 'headerFooters',
-        'page_setup' => 'pageSetup',
-        'paragraphs' => 'paragraphs',
-        'tables' => 'tables'
+        'child_nodes' => 'ChildNodes',
+        'header_footers' => 'HeaderFooters',
+        'page_setup' => 'PageSetup',
+        'paragraphs' => 'Paragraphs',
+        'tables' => 'Tables'
     ];
 
     /*

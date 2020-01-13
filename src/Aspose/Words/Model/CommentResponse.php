@@ -93,7 +93,7 @@ class CommentResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'comment' => 'comment'
+        'comment' => 'Comment'
     ];
 
     /*

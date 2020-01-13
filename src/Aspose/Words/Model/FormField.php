@@ -109,15 +109,15 @@ class FormField extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'calculate_on_exit' => 'calculateOnExit',
-        'enabled' => 'enabled',
-        'entry_macro' => 'entryMacro',
-        'exit_macro' => 'exitMacro',
-        'help_text' => 'helpText',
-        'name' => 'name',
-        'own_help' => 'ownHelp',
-        'own_status' => 'ownStatus',
-        'status_text' => 'statusText'
+        'calculate_on_exit' => 'CalculateOnExit',
+        'enabled' => 'Enabled',
+        'entry_macro' => 'EntryMacro',
+        'exit_macro' => 'ExitMacro',
+        'help_text' => 'HelpText',
+        'name' => 'Name',
+        'own_help' => 'OwnHelp',
+        'own_status' => 'OwnStatus',
+        'status_text' => 'StatusText'
     ];
 
     /*

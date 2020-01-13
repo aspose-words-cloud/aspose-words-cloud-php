@@ -93,7 +93,7 @@ class HyperlinksResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'hyperlinks' => 'hyperlinks'
+        'hyperlinks' => 'Hyperlinks'
     ];
 
     /*

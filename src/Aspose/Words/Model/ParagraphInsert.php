@@ -95,7 +95,7 @@ class ParagraphInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'text'
+        'text' => 'Text'
     ];
 
     /*

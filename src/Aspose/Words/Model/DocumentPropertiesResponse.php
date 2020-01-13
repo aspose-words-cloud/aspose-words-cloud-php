@@ -93,7 +93,7 @@ class DocumentPropertiesResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_properties' => 'documentProperties'
+        'document_properties' => 'DocumentProperties'
     ];
 
     /*

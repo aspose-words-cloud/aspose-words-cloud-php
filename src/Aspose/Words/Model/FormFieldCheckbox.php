@@ -97,9 +97,9 @@ class FormFieldCheckbox extends FormField
      * @var string[]
      */
     protected static $attributeMap = [
-        'check_box_size' => 'checkBoxSize',
-        'checked' => 'checked',
-        'is_check_box_exact_size' => 'isCheckBoxExactSize'
+        'check_box_size' => 'CheckBoxSize',
+        'checked' => 'Checked',
+        'is_check_box_exact_size' => 'IsCheckBoxExactSize'
     ];
 
     /*

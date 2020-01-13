@@ -93,7 +93,7 @@ class WordsApiErrorResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'error' => 'error'
+        'error' => 'Error'
     ];
 
     /*

@@ -93,7 +93,7 @@ class FieldLink extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'field_code' => 'fieldCode'
+        'field_code' => 'FieldCode'
     ];
 
     /*

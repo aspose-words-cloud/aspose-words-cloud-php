@@ -93,7 +93,7 @@ class BordersResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'borders' => 'borders'
+        'borders' => 'Borders'
     ];
 
     /*

@@ -105,13 +105,13 @@ class Comment extends CommentLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'author' => 'author',
-        'content' => 'content',
-        'date_time' => 'dateTime',
-        'initial' => 'initial',
-        'range_end' => 'rangeEnd',
-        'range_start' => 'rangeStart',
-        'text' => 'text'
+        'author' => 'Author',
+        'content' => 'Content',
+        'date_time' => 'DateTime',
+        'initial' => 'Initial',
+        'range_end' => 'RangeEnd',
+        'range_start' => 'RangeStart',
+        'text' => 'Text'
     ];
 
     /*

@@ -93,7 +93,7 @@ class SectionLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'section_link_list' => 'sectionLinkList'
+        'section_link_list' => 'SectionLinkList'
     ];
 
     /*

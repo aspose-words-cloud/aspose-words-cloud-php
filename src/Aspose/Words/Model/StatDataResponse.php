@@ -95,8 +95,8 @@ class StatDataResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_link' => 'documentLink',
-        'stat_data' => 'statData'
+        'document_link' => 'DocumentLink',
+        'stat_data' => 'StatData'
     ];
 
     /*

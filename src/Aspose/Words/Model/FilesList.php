@@ -95,7 +95,7 @@ class FilesList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'value' => 'Value'
     ];
 
     /*

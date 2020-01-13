@@ -97,8 +97,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'range_start' => 'rangeStart',
-        'range_end' => 'rangeEnd'
+        'range_start' => 'RangeStart',
+        'range_end' => 'RangeEnd'
     ];
 
     /*

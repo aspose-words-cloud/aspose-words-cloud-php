@@ -93,7 +93,7 @@ class OfficeMathObjectsResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'office_math_objects' => 'officeMathObjects'
+        'office_math_objects' => 'OfficeMathObjects'
     ];
 
     /*

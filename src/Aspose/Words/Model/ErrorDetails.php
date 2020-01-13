@@ -97,8 +97,8 @@ class ErrorDetails implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'request_id' => 'requestId',
-        'error_date_time' => 'errorDateTime'
+        'request_id' => 'RequestId',
+        'error_date_time' => 'ErrorDateTime'
     ];
 
     /*

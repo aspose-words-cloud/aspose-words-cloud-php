@@ -99,9 +99,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_document' => 'sourceDocument',
-        'dest_document' => 'destDocument',
-        'additional_items' => 'additionalItems'
+        'source_document' => 'SourceDocument',
+        'dest_document' => 'DestDocument',
+        'additional_items' => 'AdditionalItems'
     ];
 
     /*

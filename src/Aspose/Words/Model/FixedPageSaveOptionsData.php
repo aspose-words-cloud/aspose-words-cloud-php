@@ -54,6 +54,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'color_mode' => 'string',
         'jpeg_quality' => 'int',
         'metafile_rendering_options' => '\Aspose\Words\Model\MetafileRenderingOptionsData',
         'numeral_format' => 'string',
@@ -68,6 +69,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'color_mode' => null,
         'jpeg_quality' => 'int32',
         'metafile_rendering_options' => null,
         'numeral_format' => null,
@@ -103,6 +105,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
+        'color_mode' => 'ColorMode',
         'jpeg_quality' => 'JpegQuality',
         'metafile_rendering_options' => 'MetafileRenderingOptions',
         'numeral_format' => 'NumeralFormat',
@@ -117,6 +120,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
+        'color_mode' => 'setColorMode',
         'jpeg_quality' => 'setJpegQuality',
         'metafile_rendering_options' => 'setMetafileRenderingOptions',
         'numeral_format' => 'setNumeralFormat',
@@ -131,6 +135,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
+        'color_mode' => 'getColorMode',
         'jpeg_quality' => 'getJpegQuality',
         'metafile_rendering_options' => 'getMetafileRenderingOptions',
         'numeral_format' => 'getNumeralFormat',
@@ -195,6 +200,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
 
+        $this->container['color_mode'] = isset($data['color_mode']) ? $data['color_mode'] : null;
         $this->container['jpeg_quality'] = isset($data['jpeg_quality']) ? $data['jpeg_quality'] : null;
         $this->container['metafile_rendering_options'] = isset($data['metafile_rendering_options']) ? $data['metafile_rendering_options'] : null;
         $this->container['numeral_format'] = isset($data['numeral_format']) ? $data['numeral_format'] : null;
@@ -230,6 +236,30 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return true;
     }
 
+
+    /*
+     * Gets color_mode
+     *
+     * @return string
+     */
+    public function getColorMode()
+    {
+        return $this->container['color_mode'];
+    }
+
+    /*
+     * Sets color_mode
+     *
+     * @param string $color_mode Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
+     *
+     * @return $this
+     */
+    public function setColorMode($color_mode)
+    {
+        $this->container['color_mode'] = $color_mode;
+
+        return $this;
+    }
 
     /*
      * Gets jpeg_quality

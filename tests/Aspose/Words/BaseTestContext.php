@@ -31,6 +31,8 @@ use Aspose\Words\Model\Requests;
 use Aspose\Storage\Api\StorageApi;
 use Aspose\Words\Configuration;
 use Aspose\Words\WordsApi;
+use SplFileObject;
+
 class BaseTestContext extends \PHPUnit_Framework_TestCase
 {
     protected $words;
@@ -52,12 +54,11 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
          */
         $this->config->setAppKey($creds["AppKey"]);
         $this->config->setAppSid($creds["AppSid"]);
-        $this->config->setHost($creds["BaseUrl"]);
         $this->words = new WordsApi(null, $this->config);
     }
 
     public function uploadFile($file, $path){
-        $request = new Requests\UploadFileRequest($file, $path);
+        $request = new Requests\UploadFileRequest(new SplFileObject($file), $path);
         $result = $this->words->uploadFile($request);
     }
 

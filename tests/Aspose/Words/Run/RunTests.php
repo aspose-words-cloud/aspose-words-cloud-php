@@ -25,7 +25,9 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-namespace Aspose\Tests;
+namespace Aspose\Tests\Words\Run;
+
+use Aspose\Tests\Words\BaseTestContext;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\Run;
 use PHPUnit\Framework\Assert;

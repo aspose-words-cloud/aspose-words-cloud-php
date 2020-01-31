@@ -25,8 +25,9 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-namespace Aspose\Tests;
+namespace Aspose\Tests\Words\Bookmark;
 
+use Aspose\Tests\Words\BaseTestContext;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;

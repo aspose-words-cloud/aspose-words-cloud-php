@@ -25,7 +25,9 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-namespace Aspose\Tests;
+namespace Aspose\Tests\Words\Document;
+
+use Aspose\Tests\Words\BaseTestContext;
 use Aspose\Words\Model\DocumentEntryList;
 use Aspose\Words\Model\DocumentEntry;
 use Aspose\Words\Model\Requests;

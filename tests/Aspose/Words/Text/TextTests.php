@@ -25,7 +25,9 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-namespace Aspose\Tests;
+namespace Aspose\Tests\Words\Text;
+
+use Aspose\Tests\Words\BaseTestContext;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\ReplaceTextParameters;
 use PHPUnit\Framework\Assert;

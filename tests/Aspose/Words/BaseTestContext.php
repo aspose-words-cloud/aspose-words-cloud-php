@@ -25,7 +25,7 @@
 * </summary>
 * --------------------------------------------------------------------------------------------------------------------
 */
-namespace Aspose\Tests;
+namespace Aspose\Tests\Words;
 
 use Aspose\Words\Model\Requests;
 use Aspose\Storage\Api\StorageApi;

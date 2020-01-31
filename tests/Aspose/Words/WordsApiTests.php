@@ -26,7 +26,7 @@
 * --------------------------------------------------------------------------------------------------------------------
 */
 
-namespace Aspose\Tests;
+namespace Aspose\Tests\Words;
 use Aspose\Words\ApiException;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;

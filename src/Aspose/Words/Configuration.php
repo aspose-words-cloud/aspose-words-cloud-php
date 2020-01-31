@@ -94,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.aspose.cloud';
+    protected $host = 'https://api.aspose.cloud/';
 	
     /*
      * Version of API to use, possible values are v4.0
@@ -352,7 +352,7 @@ class Configuration
     public function setHost($host)
     {
         $this->host = $host;
-        if (substr($this->host[$length], -1) !== '/') {
+        if (substr($this->host, -1) !== '/') {
             $this->host = $this->host . '/';
         }
         return $this;

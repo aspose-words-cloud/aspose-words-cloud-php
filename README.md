@@ -41,9 +41,11 @@ require_once('vendor/autoload.php');
 $config = new Configuration();
 $config->setAppKey('AppKey')->setAppSid('AppSid');
 $words = new WordsApi(null, $config);
+$upload_request = new Requests\UploadFileRequest($file, 'fileStoredInCloud.doc');
+$upload_result = $words->uploadFile($upload_request);
 $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => 'destination.pdf'));
-$request = new Requests\PostDocumentSaveAsRequest('fileStoredInCloud.doc', $saveOptions);
-$result = $words->postDocumentSaveAs($request);
+$request = new Requests\SaveAsRequest('fileStoredInCloud.doc', $saveOptions);
+$result = $words->saveAs($request);
 ```
       
 [Tests](tests/Aspose/Words) contain various examples of using the SDK.

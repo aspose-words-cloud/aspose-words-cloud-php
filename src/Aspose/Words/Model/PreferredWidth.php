@@ -165,9 +165,7 @@ class PreferredWidth implements ArrayAccess
     const TYPE_AUTO = 'Auto';
     const TYPE_PERCENT = 'Percent';
     const TYPE_POINTS = 'Points';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -176,12 +174,10 @@ class PreferredWidth implements ArrayAccess
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_AUTO,
-            self::TYPE_PERCENT,
-            self::TYPE_POINTS,
+            self::TYPE_AUTOself::TYPE_PERCENT,
+self::TYPE_POINTS,
         ];
     }
-    
 
     /*
      * Associative array for storing property values
@@ -211,9 +207,6 @@ class PreferredWidth implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
         $allowedValues = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -234,9 +227,6 @@ class PreferredWidth implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['type'] === null) {
-            return false;
-        }
         $allowedValues = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowedValues)) {
             return false;
@@ -367,5 +357,3 @@ class PreferredWidth implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

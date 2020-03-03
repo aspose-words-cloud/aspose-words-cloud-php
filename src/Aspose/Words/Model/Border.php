@@ -216,9 +216,7 @@ class Border extends LinkElement
     const LINE_STYLE_ENGRAVE3_D = 'Engrave3D';
     const LINE_STYLE_OUTSET = 'Outset';
     const LINE_STYLE_INSET = 'Inset';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -227,18 +225,16 @@ class Border extends LinkElement
     public function getBorderTypeAllowableValues()
     {
         return [
-            self::BORDER_TYPE_BOTTOM,
-            self::BORDER_TYPE_LEFT,
-            self::BORDER_TYPE_RIGHT,
-            self::BORDER_TYPE_TOP,
-            self::BORDER_TYPE_HORIZONTAL,
-            self::BORDER_TYPE_VERTICAL,
-            self::BORDER_TYPE_DIAGONAL_DOWN,
-            self::BORDER_TYPE_DIAGONAL_UP,
-            self::BORDER_TYPE_NONE,
+            self::BORDER_TYPE_BOTTOMself::BORDER_TYPE_LEFT,
+self::BORDER_TYPE_RIGHT,
+self::BORDER_TYPE_TOP,
+self::BORDER_TYPE_HORIZONTAL,
+self::BORDER_TYPE_VERTICAL,
+self::BORDER_TYPE_DIAGONAL_DOWN,
+self::BORDER_TYPE_DIAGONAL_UP,
+self::BORDER_TYPE_NONE,
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -247,36 +243,34 @@ class Border extends LinkElement
     public function getLineStyleAllowableValues()
     {
         return [
-            self::LINE_STYLE_NONE,
-            self::LINE_STYLE_SINGLE,
-            self::LINE_STYLE_THICK,
-            self::LINE_STYLE_DOUBLE,
-            self::LINE_STYLE_HAIRLINE,
-            self::LINE_STYLE_DOT,
-            self::LINE_STYLE_DASH_LARGE_GAP,
-            self::LINE_STYLE_DOT_DASH,
-            self::LINE_STYLE_DOT_DOT_DASH,
-            self::LINE_STYLE_TRIPLE,
-            self::LINE_STYLE_THIN_THICK_SMALL_GAP,
-            self::LINE_STYLE_THICK_THIN_SMALL_GAP,
-            self::LINE_STYLE_THIN_THICK_THIN_SMALL_GAP,
-            self::LINE_STYLE_THIN_THICK_MEDIUM_GAP,
-            self::LINE_STYLE_THICK_THIN_MEDIUM_GAP,
-            self::LINE_STYLE_THIN_THICK_THIN_MEDIUM_GAP,
-            self::LINE_STYLE_THIN_THICK_LARGE_GAP,
-            self::LINE_STYLE_THICK_THIN_LARGE_GAP,
-            self::LINE_STYLE_THIN_THICK_THIN_LARGE_GAP,
-            self::LINE_STYLE_WAVE,
-            self::LINE_STYLE_DOUBLE_WAVE,
-            self::LINE_STYLE_DASH_SMALL_GAP,
-            self::LINE_STYLE_DASH_DOT_STROKER,
-            self::LINE_STYLE_EMBOSS3_D,
-            self::LINE_STYLE_ENGRAVE3_D,
-            self::LINE_STYLE_OUTSET,
-            self::LINE_STYLE_INSET,
+            self::LINE_STYLE_NONEself::LINE_STYLE_SINGLE,
+self::LINE_STYLE_THICK,
+self::LINE_STYLE_DOUBLE,
+self::LINE_STYLE_HAIRLINE,
+self::LINE_STYLE_DOT,
+self::LINE_STYLE_DASH_LARGE_GAP,
+self::LINE_STYLE_DOT_DASH,
+self::LINE_STYLE_DOT_DOT_DASH,
+self::LINE_STYLE_TRIPLE,
+self::LINE_STYLE_THIN_THICK_SMALL_GAP,
+self::LINE_STYLE_THICK_THIN_SMALL_GAP,
+self::LINE_STYLE_THIN_THICK_THIN_SMALL_GAP,
+self::LINE_STYLE_THIN_THICK_MEDIUM_GAP,
+self::LINE_STYLE_THICK_THIN_MEDIUM_GAP,
+self::LINE_STYLE_THIN_THICK_THIN_MEDIUM_GAP,
+self::LINE_STYLE_THIN_THICK_LARGE_GAP,
+self::LINE_STYLE_THICK_THIN_LARGE_GAP,
+self::LINE_STYLE_THIN_THICK_THIN_LARGE_GAP,
+self::LINE_STYLE_WAVE,
+self::LINE_STYLE_DOUBLE_WAVE,
+self::LINE_STYLE_DASH_SMALL_GAP,
+self::LINE_STYLE_DASH_DOT_STROKER,
+self::LINE_STYLE_EMBOSS3_D,
+self::LINE_STYLE_ENGRAVE3_D,
+self::LINE_STYLE_OUTSET,
+self::LINE_STYLE_INSET,
         ];
     }
-    
 
 
     /*
@@ -391,7 +385,7 @@ class Border extends LinkElement
     /*
      * Sets color
      *
-     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the border color.
+     * @param \Aspose\Words\Model\XmlColor $color color
      *
      * @return $this
      */
@@ -572,5 +566,3 @@ class Border extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -30125,10 +30125,6 @@ class WordsApi
         if ($request->range_start_identifier === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_start_identifier when calling getRangeText');
         }
-        // verify the required parameter 'range_end_identifier' is set
-        if ($request->range_end_identifier === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling getRangeText');
-        }
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
         $formParams = [];
@@ -43937,10 +43933,6 @@ class WordsApi
         if ($request->range_start_identifier === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_start_identifier when calling removeRange');
         }
-        // verify the required parameter 'range_end_identifier' is set
-        if ($request->range_end_identifier === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling removeRange');
-        }
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
         $formParams = [];
@@ -47753,10 +47745,6 @@ class WordsApi
         if ($request->range_text === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_text when calling replaceWithText');
         }
-        // verify the required parameter 'range_end_identifier' is set
-        if ($request->range_end_identifier === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling replaceWithText');
-        }
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
         $formParams = [];
@@ -48651,10 +48639,6 @@ class WordsApi
         // verify the required parameter 'document_parameters' is set
         if ($request->document_parameters === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document_parameters when calling saveAsRange');
-        }
-        // verify the required parameter 'range_end_identifier' is set
-        if ($request->range_end_identifier === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling saveAsRange');
         }
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs';

@@ -160,9 +160,7 @@ class Field extends FieldLink
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -324,5 +322,3 @@ class Field extends FieldLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

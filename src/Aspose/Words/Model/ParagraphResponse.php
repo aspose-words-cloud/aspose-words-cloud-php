@@ -155,9 +155,7 @@ class ParagraphResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class ParagraphResponse extends WordsResponse
     /*
      * Sets paragraph
      *
-     * @param \Aspose\Words\Model\Paragraph $paragraph Gets or sets paragraph.
+     * @param \Aspose\Words\Model\Paragraph $paragraph paragraph
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class ParagraphResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

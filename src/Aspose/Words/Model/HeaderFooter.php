@@ -165,9 +165,7 @@ class HeaderFooter extends HeaderFooterLink
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -250,7 +248,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets drawing_objects
      *
-     * @param \Aspose\Words\Model\LinkElement $drawing_objects Gets or sets link to DrawingObjects resource.
+     * @param \Aspose\Words\Model\LinkElement $drawing_objects drawing_objects
      *
      * @return $this
      */
@@ -274,7 +272,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets link to Paragraphs resource.
+     * @param \Aspose\Words\Model\LinkElement $paragraphs paragraphs
      *
      * @return $this
      */
@@ -354,5 +352,3 @@ class HeaderFooter extends HeaderFooterLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

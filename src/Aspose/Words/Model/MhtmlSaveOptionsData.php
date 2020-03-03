@@ -155,9 +155,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -294,5 +292,3 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

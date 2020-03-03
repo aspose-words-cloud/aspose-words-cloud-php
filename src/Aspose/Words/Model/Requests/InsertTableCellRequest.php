@@ -39,11 +39,6 @@ class InsertTableCellRequest
     public $name;
 	
     /*
-     * Table cell parameters/.
-     */
-    public $cell;
-	
-    /*
      * Path to table row.
      */
     public $table_row_path;
@@ -82,13 +77,17 @@ class InsertTableCellRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
+	
+    /*
+     * Table cell parameters/.
+     */
+    public $cell;
     
 	
     /*
      * Initializes a new instance of the InsertTableCellRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\TableCellInsert $cell Table cell parameters/.
      * @param string $table_row_path Path to table row.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -97,11 +96,11 @@ class InsertTableCellRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
+     * @param \Aspose\Words\Model\TableCellInsert $cell Table cell parameters/.
      */
-    public function __construct($name, $cell, $table_row_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
+    public function __construct($name, $table_row_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $cell)             
     {
         $this->name = $name;
-        $this->cell = $cell;
         $this->table_row_path = $table_row_path;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -110,6 +109,7 @@ class InsertTableCellRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
+        $this->cell = $cell;
     }
 
     /*
@@ -126,23 +126,6 @@ class InsertTableCellRequest
     public function set_name($value)
     {
         $this->name = $value;
-        return $this;
-    }
-	
-    /*
-     * Table cell parameters/.
-     */
-    public function get_cell()
-    {
-        return $this->cell;
-    }
-
-    /*
-     * Table cell parameters/.
-     */
-    public function set_cell($value)
-    {
-        $this->cell = $value;
         return $this;
     }
 	
@@ -279,6 +262,23 @@ class InsertTableCellRequest
     public function set_revision_date_time($value)
     {
         $this->revision_date_time = $value;
+        return $this;
+    }
+	
+    /*
+     * Table cell parameters/.
+     */
+    public function get_cell()
+    {
+        return $this->cell;
+    }
+
+    /*
+     * Table cell parameters/.
+     */
+    public function set_cell($value)
+    {
+        $this->cell = $value;
         return $this;
     }
 }

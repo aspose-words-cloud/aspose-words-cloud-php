@@ -155,9 +155,7 @@ class HeaderFootersResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class HeaderFootersResponse extends WordsResponse
     /*
      * Sets header_footers
      *
-     * @param \Aspose\Words\Model\HeaderFooterLinkCollection $header_footers Gets or sets collection of headers/footers.
+     * @param \Aspose\Words\Model\HeaderFooterLinkCollection $header_footers header_footers
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class HeaderFootersResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

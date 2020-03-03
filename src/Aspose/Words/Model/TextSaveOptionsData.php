@@ -188,9 +188,7 @@ class TextSaveOptionsData extends SaveOptionsData
     const EXPORT_HEADERS_FOOTERS_MODE_NONE = 'None';
     const EXPORT_HEADERS_FOOTERS_MODE_PRIMARY_ONLY = 'PrimaryOnly';
     const EXPORT_HEADERS_FOOTERS_MODE_ALL_AT_END = 'AllAtEnd';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -199,12 +197,10 @@ class TextSaveOptionsData extends SaveOptionsData
     public function getExportHeadersFootersModeAllowableValues()
     {
         return [
-            self::EXPORT_HEADERS_FOOTERS_MODE_NONE,
-            self::EXPORT_HEADERS_FOOTERS_MODE_PRIMARY_ONLY,
-            self::EXPORT_HEADERS_FOOTERS_MODE_ALL_AT_END,
+            self::EXPORT_HEADERS_FOOTERS_MODE_NONEself::EXPORT_HEADERS_FOOTERS_MODE_PRIMARY_ONLY,
+self::EXPORT_HEADERS_FOOTERS_MODE_ALL_AT_END,
         ];
     }
-    
 
 
     /*
@@ -508,5 +504,3 @@ class TextSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -165,9 +165,7 @@ class FormFieldCheckbox extends FormField
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -354,5 +352,3 @@ class FormFieldCheckbox extends FormField
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

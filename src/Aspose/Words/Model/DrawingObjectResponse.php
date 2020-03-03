@@ -155,9 +155,7 @@ class DrawingObjectResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class DrawingObjectResponse extends WordsResponse
     /*
      * Sets drawing_object
      *
-     * @param \Aspose\Words\Model\DrawingObject $drawing_object Gets or sets drawing object.
+     * @param \Aspose\Words\Model\DrawingObject $drawing_object drawing_object
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class DrawingObjectResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -155,9 +155,7 @@ class TablePropertiesResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class TablePropertiesResponse extends WordsResponse
     /*
      * Sets properties
      *
-     * @param \Aspose\Words\Model\TableProperties $properties Gets or sets table.
+     * @param \Aspose\Words\Model\TableProperties $properties properties
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class TablePropertiesResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

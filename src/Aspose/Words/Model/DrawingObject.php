@@ -225,9 +225,7 @@ class DrawingObject extends DrawingObjectLink
     const WRAP_TYPE_NONE = 'None';
     const WRAP_TYPE_TIGHT = 'Tight';
     const WRAP_TYPE_THROUGH = 'Through';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -236,18 +234,16 @@ class DrawingObject extends DrawingObjectLink
     public function getRelativeHorizontalPositionAllowableValues()
     {
         return [
-            self::RELATIVE_HORIZONTAL_POSITION_MARGIN,
-            self::RELATIVE_HORIZONTAL_POSITION_PAGE,
-            self::RELATIVE_HORIZONTAL_POSITION_COLUMN,
-            self::RELATIVE_HORIZONTAL_POSITION__DEFAULT,
-            self::RELATIVE_HORIZONTAL_POSITION_CHARACTER,
-            self::RELATIVE_HORIZONTAL_POSITION_LEFT_MARGIN,
-            self::RELATIVE_HORIZONTAL_POSITION_RIGHT_MARGIN,
-            self::RELATIVE_HORIZONTAL_POSITION_INSIDE_MARGIN,
-            self::RELATIVE_HORIZONTAL_POSITION_OUTSIDE_MARGIN,
+            self::RELATIVE_HORIZONTAL_POSITION_MARGINself::RELATIVE_HORIZONTAL_POSITION_PAGE,
+self::RELATIVE_HORIZONTAL_POSITION_COLUMN,
+self::RELATIVE_HORIZONTAL_POSITION__DEFAULT,
+self::RELATIVE_HORIZONTAL_POSITION_CHARACTER,
+self::RELATIVE_HORIZONTAL_POSITION_LEFT_MARGIN,
+self::RELATIVE_HORIZONTAL_POSITION_RIGHT_MARGIN,
+self::RELATIVE_HORIZONTAL_POSITION_INSIDE_MARGIN,
+self::RELATIVE_HORIZONTAL_POSITION_OUTSIDE_MARGIN,
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -256,19 +252,17 @@ class DrawingObject extends DrawingObjectLink
     public function getRelativeVerticalPositionAllowableValues()
     {
         return [
-            self::RELATIVE_VERTICAL_POSITION_MARGIN,
-            self::RELATIVE_VERTICAL_POSITION_TABLE_DEFAULT,
-            self::RELATIVE_VERTICAL_POSITION_PAGE,
-            self::RELATIVE_VERTICAL_POSITION_PARAGRAPH,
-            self::RELATIVE_VERTICAL_POSITION_TEXT_FRAME_DEFAULT,
-            self::RELATIVE_VERTICAL_POSITION_LINE,
-            self::RELATIVE_VERTICAL_POSITION_TOP_MARGIN,
-            self::RELATIVE_VERTICAL_POSITION_BOTTOM_MARGIN,
-            self::RELATIVE_VERTICAL_POSITION_INSIDE_MARGIN,
-            self::RELATIVE_VERTICAL_POSITION_OUTSIDE_MARGIN,
+            self::RELATIVE_VERTICAL_POSITION_MARGINself::RELATIVE_VERTICAL_POSITION_TABLE_DEFAULT,
+self::RELATIVE_VERTICAL_POSITION_PAGE,
+self::RELATIVE_VERTICAL_POSITION_PARAGRAPH,
+self::RELATIVE_VERTICAL_POSITION_TEXT_FRAME_DEFAULT,
+self::RELATIVE_VERTICAL_POSITION_LINE,
+self::RELATIVE_VERTICAL_POSITION_TOP_MARGIN,
+self::RELATIVE_VERTICAL_POSITION_BOTTOM_MARGIN,
+self::RELATIVE_VERTICAL_POSITION_INSIDE_MARGIN,
+self::RELATIVE_VERTICAL_POSITION_OUTSIDE_MARGIN,
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -277,15 +271,13 @@ class DrawingObject extends DrawingObjectLink
     public function getWrapTypeAllowableValues()
     {
         return [
-            self::WRAP_TYPE_INLINE,
-            self::WRAP_TYPE_TOP_BOTTOM,
-            self::WRAP_TYPE_SQUARE,
-            self::WRAP_TYPE_NONE,
-            self::WRAP_TYPE_TIGHT,
-            self::WRAP_TYPE_THROUGH,
+            self::WRAP_TYPE_INLINEself::WRAP_TYPE_TOP_BOTTOM,
+self::WRAP_TYPE_SQUARE,
+self::WRAP_TYPE_NONE,
+self::WRAP_TYPE_TIGHT,
+self::WRAP_TYPE_THROUGH,
         ];
     }
-    
 
 
     /*
@@ -411,7 +403,7 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Sets image_data_link
      *
-     * @param \Aspose\Words\Model\WordsApiLink $image_data_link Gets or sets link to image data. Can be null if shape does not have an image.
+     * @param \Aspose\Words\Model\WordsApiLink $image_data_link image_data_link
      *
      * @return $this
      */
@@ -459,7 +451,7 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Sets ole_data_link
      *
-     * @param \Aspose\Words\Model\WordsApiLink $ole_data_link Gets or sets link to ole object. Can be null if shape does not have ole data.
+     * @param \Aspose\Words\Model\WordsApiLink $ole_data_link ole_data_link
      *
      * @return $this
      */
@@ -698,5 +690,3 @@ class DrawingObject extends DrawingObjectLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

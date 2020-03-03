@@ -160,9 +160,7 @@ class SearchResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -244,7 +242,7 @@ class SearchResponse extends WordsResponse
     /*
      * Sets search_results
      *
-     * @param \Aspose\Words\Model\SearchResultsCollection $search_results Gets or sets collection of search results.
+     * @param \Aspose\Words\Model\SearchResultsCollection $search_results search_results
      *
      * @return $this
      */
@@ -324,5 +322,3 @@ class SearchResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

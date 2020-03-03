@@ -155,9 +155,7 @@ class BookmarkResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class BookmarkResponse extends WordsResponse
     /*
      * Sets bookmark
      *
-     * @param \Aspose\Words\Model\Bookmark $bookmark Gets or sets bookmark.
+     * @param \Aspose\Words\Model\Bookmark $bookmark bookmark
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class BookmarkResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

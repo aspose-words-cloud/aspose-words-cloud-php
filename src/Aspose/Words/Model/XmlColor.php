@@ -162,9 +162,7 @@ class XmlColor implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -194,9 +192,6 @@ class XmlColor implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['alpha'] === null) {
-            $invalidProperties[] = "'alpha' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,9 +204,6 @@ class XmlColor implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['alpha'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -333,5 +325,3 @@ class XmlColor implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

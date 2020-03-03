@@ -39,7 +39,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class HtmlSaveOptionsData extends SaveOptionsData 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -353,9 +353,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     const OFFICE_MATH_OUTPUT_MODE_IMAGE = 'Image';
     const OFFICE_MATH_OUTPUT_MODE_MATH_ML = 'MathML';
     const OFFICE_MATH_OUTPUT_MODE_TEXT = 'Text';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -364,11 +362,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function getHtmlVersionAllowableValues()
     {
         return [
-            self::HTML_VERSION_XHTML,
-            self::HTML_VERSION_HTML5,
+            self::HTML_VERSION_XHTMLself::HTML_VERSION_HTML5,
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -377,12 +373,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function getMetafileFormatAllowableValues()
     {
         return [
-            self::METAFILE_FORMAT_PNG,
-            self::METAFILE_FORMAT_SVG,
-            self::METAFILE_FORMAT_EMF_OR_WMF,
+            self::METAFILE_FORMAT_PNGself::METAFILE_FORMAT_SVG,
+self::METAFILE_FORMAT_EMF_OR_WMF,
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -391,12 +385,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function getOfficeMathOutputModeAllowableValues()
     {
         return [
-            self::OFFICE_MATH_OUTPUT_MODE_IMAGE,
-            self::OFFICE_MATH_OUTPUT_MODE_MATH_ML,
-            self::OFFICE_MATH_OUTPUT_MODE_TEXT,
+            self::OFFICE_MATH_OUTPUT_MODE_IMAGEself::OFFICE_MATH_OUTPUT_MODE_MATH_ML,
+self::OFFICE_MATH_OUTPUT_MODE_TEXT,
         ];
     }
-    
 
 
     /*
@@ -448,6 +440,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['resource_folder_alias'] = isset($data['resource_folder_alias']) ? $data['resource_folder_alias'] : null;
         $this->container['scale_image_to_shape_size'] = isset($data['scale_image_to_shape_size']) ? $data['scale_image_to_shape_size'] : null;
         $this->container['table_width_output_mode'] = isset($data['table_width_output_mode']) ? $data['table_width_output_mode'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -1534,5 +1530,3 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

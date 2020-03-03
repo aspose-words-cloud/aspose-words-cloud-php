@@ -172,9 +172,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -387,5 +385,3 @@ class PdfEncryptionDetailsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -173,9 +173,7 @@ class TableRowFormat extends LinkElement
     const HEIGHT_RULE_AT_LEAST = 'AtLeast';
     const HEIGHT_RULE_EXACTLY = 'Exactly';
     const HEIGHT_RULE_AUTO = 'Auto';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -184,12 +182,10 @@ class TableRowFormat extends LinkElement
     public function getHeightRuleAllowableValues()
     {
         return [
-            self::HEIGHT_RULE_AT_LEAST,
-            self::HEIGHT_RULE_EXACTLY,
-            self::HEIGHT_RULE_AUTO,
+            self::HEIGHT_RULE_AT_LEASTself::HEIGHT_RULE_EXACTLY,
+self::HEIGHT_RULE_AUTO,
         ];
     }
-    
 
 
     /*
@@ -418,5 +414,3 @@ class TableRowFormat extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

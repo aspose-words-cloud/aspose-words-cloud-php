@@ -162,9 +162,7 @@ class FootnotesStatData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -194,12 +192,6 @@ class FootnotesStatData implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['word_count'] === null) {
-            $invalidProperties[] = "'word_count' can't be null";
-        }
-        if ($this->container['paragraph_count'] === null) {
-            $invalidProperties[] = "'paragraph_count' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -212,12 +204,6 @@ class FootnotesStatData implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['word_count'] === null) {
-            return false;
-        }
-        if ($this->container['paragraph_count'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -339,5 +325,3 @@ class FootnotesStatData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

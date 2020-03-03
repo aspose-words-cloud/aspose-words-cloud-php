@@ -162,9 +162,7 @@ class ErrorDetails implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -194,9 +192,6 @@ class ErrorDetails implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['error_date_time'] === null) {
-            $invalidProperties[] = "'error_date_time' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,9 +204,6 @@ class ErrorDetails implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['error_date_time'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -333,5 +325,3 @@ class ErrorDetails implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

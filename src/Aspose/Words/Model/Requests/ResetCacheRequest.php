@@ -33,4 +33,14 @@ namespace Aspose\Words\Model\Requests;
  */
 class ResetCacheRequest
 {
+    
+	
+    /*
+     * Initializes a new instance of the ResetCacheRequest class.
+     *  
+     */
+    public function __construct()             
+    {
+    }
+
 }

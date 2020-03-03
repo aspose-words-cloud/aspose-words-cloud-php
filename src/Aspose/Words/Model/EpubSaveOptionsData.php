@@ -155,9 +155,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -294,5 +292,3 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

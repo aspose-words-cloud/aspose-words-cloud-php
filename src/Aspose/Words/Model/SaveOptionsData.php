@@ -41,7 +41,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class SaveOptionsData implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -56,7 +56,6 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'color_mode' => 'string',
         'save_format' => 'string',
         'file_name' => 'string',
         'dml_rendering_mode' => 'string',
@@ -73,7 +72,6 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'color_mode' => null,
         'save_format' => null,
         'file_name' => null,
         'dml_rendering_mode' => null,
@@ -111,7 +109,6 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'color_mode' => 'ColorMode',
         'save_format' => 'SaveFormat',
         'file_name' => 'FileName',
         'dml_rendering_mode' => 'DmlRenderingMode',
@@ -128,7 +125,6 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'color_mode' => 'setColorMode',
         'save_format' => 'setSaveFormat',
         'file_name' => 'setFileName',
         'dml_rendering_mode' => 'setDmlRenderingMode',
@@ -145,7 +141,6 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'color_mode' => 'getColorMode',
         'save_format' => 'getSaveFormat',
         'file_name' => 'getFileName',
         'dml_rendering_mode' => 'getDmlRenderingMode',
@@ -197,9 +192,7 @@ class SaveOptionsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -216,7 +209,6 @@ class SaveOptionsData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['color_mode'] = isset($data['color_mode']) ? $data['color_mode'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
         $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
@@ -227,7 +219,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
 
         // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
         $this->container[$discriminator] = static::$swaggerModelName;
     }
 
@@ -255,30 +247,6 @@ class SaveOptionsData implements ArrayAccess
         return true;
     }
 
-
-    /*
-     * Gets color_mode
-     *
-     * @return string
-     */
-    public function getColorMode()
-    {
-        return $this->container['color_mode'];
-    }
-
-    /*
-     * Sets color_mode
-     *
-     * @param string $color_mode Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
-     *
-     * @return $this
-     */
-    public function setColorMode($color_mode)
-    {
-        $this->container['color_mode'] = $color_mode;
-
-        return $this;
-    }
 
     /*
      * Gets save_format
@@ -541,5 +509,3 @@ class SaveOptionsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

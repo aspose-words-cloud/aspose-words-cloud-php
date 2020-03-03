@@ -162,9 +162,7 @@ class DocumentPosition implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -223,7 +221,7 @@ class DocumentPosition implements ArrayAccess
     /*
      * Sets node
      *
-     * @param \Aspose\Words\Model\NodeLink $node Gets or sets link to  node.
+     * @param \Aspose\Words\Model\NodeLink $node node
      *
      * @return $this
      */
@@ -327,5 +325,3 @@ class DocumentPosition implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

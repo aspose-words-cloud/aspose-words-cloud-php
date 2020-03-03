@@ -54,7 +54,6 @@ class Run extends RunLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        
     ];
 
     /*
@@ -63,7 +62,6 @@ class Run extends RunLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        
     ];
 
     /*
@@ -93,7 +91,6 @@ class Run extends RunLink
      * @var string[]
      */
     protected static $attributeMap = [
-        
     ];
 
     /*
@@ -102,7 +99,6 @@ class Run extends RunLink
      * @var string[]
      */
     protected static $setters = [
-        
     ];
 
     /*
@@ -111,7 +107,6 @@ class Run extends RunLink
      * @var string[]
      */
     protected static $getters = [
-        
     ];
 
     /*
@@ -155,9 +150,7 @@ class Run extends RunLink
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -269,5 +262,3 @@ class Run extends RunLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

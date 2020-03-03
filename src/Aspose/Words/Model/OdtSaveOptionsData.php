@@ -167,9 +167,7 @@ class OdtSaveOptionsData extends SaveOptionsData
 
     const MEASURE_UNIT_CENTIMETERS = 'Centimeters';
     const MEASURE_UNIT_INCHES = 'Inches';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -178,11 +176,9 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function getMeasureUnitAllowableValues()
     {
         return [
-            self::MEASURE_UNIT_CENTIMETERS,
-            self::MEASURE_UNIT_INCHES,
+            self::MEASURE_UNIT_CENTIMETERSself::MEASURE_UNIT_INCHES,
         ];
     }
-    
 
 
     /*
@@ -386,5 +382,3 @@ class OdtSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

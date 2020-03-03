@@ -180,9 +180,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -444,5 +442,3 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

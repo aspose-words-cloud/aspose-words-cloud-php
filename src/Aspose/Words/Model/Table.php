@@ -160,9 +160,7 @@ class Table extends NodeLink
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -220,7 +218,7 @@ class Table extends NodeLink
     /*
      * Sets table_properties
      *
-     * @param \Aspose\Words\Model\TableProperties $table_properties Gets or sets table properties.
+     * @param \Aspose\Words\Model\TableProperties $table_properties table_properties
      *
      * @return $this
      */
@@ -324,5 +322,3 @@ class Table extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

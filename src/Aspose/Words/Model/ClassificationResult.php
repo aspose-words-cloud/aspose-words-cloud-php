@@ -162,9 +162,7 @@ class ClassificationResult implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -194,9 +192,6 @@ class ClassificationResult implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['class_probability'] === null) {
-            $invalidProperties[] = "'class_probability' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,9 +204,6 @@ class ClassificationResult implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['class_probability'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -333,5 +325,3 @@ class ClassificationResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -39,7 +39,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class HeaderFooterLink extends LinkElement 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -161,9 +161,7 @@ class HeaderFooterLink extends LinkElement
     const TYPE_FOOTER_PRIMARY = 'FooterPrimary';
     const TYPE_HEADER_FIRST = 'HeaderFirst';
     const TYPE_FOOTER_FIRST = 'FooterFirst';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -172,15 +170,13 @@ class HeaderFooterLink extends LinkElement
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_HEADER_EVEN,
-            self::TYPE_HEADER_PRIMARY,
-            self::TYPE_FOOTER_EVEN,
-            self::TYPE_FOOTER_PRIMARY,
-            self::TYPE_HEADER_FIRST,
-            self::TYPE_FOOTER_FIRST,
+            self::TYPE_HEADER_EVENself::TYPE_HEADER_PRIMARY,
+self::TYPE_FOOTER_EVEN,
+self::TYPE_FOOTER_PRIMARY,
+self::TYPE_HEADER_FIRST,
+self::TYPE_FOOTER_FIRST,
         ];
     }
-    
 
 
     /*
@@ -194,6 +190,10 @@ class HeaderFooterLink extends LinkElement
         parent::__construct($data);
 
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -334,5 +334,3 @@ class HeaderFooterLink extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

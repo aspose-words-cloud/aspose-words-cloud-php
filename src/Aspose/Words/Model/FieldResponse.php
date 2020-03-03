@@ -155,9 +155,7 @@ class FieldResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class FieldResponse extends WordsResponse
     /*
      * Sets field
      *
-     * @param \Aspose\Words\Model\Field $field Gets or sets field information.
+     * @param \Aspose\Words\Model\Field $field field
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class FieldResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

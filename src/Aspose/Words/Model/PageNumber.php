@@ -172,9 +172,7 @@ class PageNumber implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -206,12 +204,6 @@ class PageNumber implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['is_top'] === null) {
-            $invalidProperties[] = "'is_top' can't be null";
-        }
-        if ($this->container['set_page_number_on_first_page'] === null) {
-            $invalidProperties[] = "'set_page_number_on_first_page' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -224,12 +216,6 @@ class PageNumber implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['is_top'] === null) {
-            return false;
-        }
-        if ($this->container['set_page_number_on_first_page'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -399,5 +385,3 @@ class PageNumber implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

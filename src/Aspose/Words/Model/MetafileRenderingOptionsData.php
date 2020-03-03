@@ -177,9 +177,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -417,5 +415,3 @@ class MetafileRenderingOptionsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

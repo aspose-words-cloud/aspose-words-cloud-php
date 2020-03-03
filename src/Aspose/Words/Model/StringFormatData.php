@@ -201,9 +201,7 @@ class StringFormatData implements ArrayAccess
     const TRIMMING_ELLIPSIS_CHARACTER = 'EllipsisCharacter';
     const TRIMMING_ELLIPSIS_WORD = 'EllipsisWord';
     const TRIMMING_ELLIPSIS_PATH = 'EllipsisPath';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -212,12 +210,10 @@ class StringFormatData implements ArrayAccess
     public function getAlignmentAllowableValues()
     {
         return [
-            self::ALIGNMENT_NEAR,
-            self::ALIGNMENT_CENTER,
-            self::ALIGNMENT_FAR,
+            self::ALIGNMENT_NEARself::ALIGNMENT_CENTER,
+self::ALIGNMENT_FAR,
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -226,18 +222,16 @@ class StringFormatData implements ArrayAccess
     public function getFormatFlagsAllowableValues()
     {
         return [
-            self::FORMAT_FLAGS_DIRECTION_RIGHT_TO_LEFT,
-            self::FORMAT_FLAGS_DIRECTION_VERTICAL,
-            self::FORMAT_FLAGS_FIT_BLACK_BOX,
-            self::FORMAT_FLAGS_DISPLAY_FORMAT_CONTROL,
-            self::FORMAT_FLAGS_NO_FONT_FALLBACK,
-            self::FORMAT_FLAGS_MEASURE_TRAILING_SPACES,
-            self::FORMAT_FLAGS_NO_WRAP,
-            self::FORMAT_FLAGS_LINE_LIMIT,
-            self::FORMAT_FLAGS_NO_CLIP,
+            self::FORMAT_FLAGS_DIRECTION_RIGHT_TO_LEFTself::FORMAT_FLAGS_DIRECTION_VERTICAL,
+self::FORMAT_FLAGS_FIT_BLACK_BOX,
+self::FORMAT_FLAGS_DISPLAY_FORMAT_CONTROL,
+self::FORMAT_FLAGS_NO_FONT_FALLBACK,
+self::FORMAT_FLAGS_MEASURE_TRAILING_SPACES,
+self::FORMAT_FLAGS_NO_WRAP,
+self::FORMAT_FLAGS_LINE_LIMIT,
+self::FORMAT_FLAGS_NO_CLIP,
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -246,12 +240,10 @@ class StringFormatData implements ArrayAccess
     public function getHotkeyPrefixAllowableValues()
     {
         return [
-            self::HOTKEY_PREFIX_NONE,
-            self::HOTKEY_PREFIX_SHOW,
-            self::HOTKEY_PREFIX_HIDE,
+            self::HOTKEY_PREFIX_NONEself::HOTKEY_PREFIX_SHOW,
+self::HOTKEY_PREFIX_HIDE,
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -260,12 +252,10 @@ class StringFormatData implements ArrayAccess
     public function getLineAlignmentAllowableValues()
     {
         return [
-            self::LINE_ALIGNMENT_NEAR,
-            self::LINE_ALIGNMENT_CENTER,
-            self::LINE_ALIGNMENT_FAR,
+            self::LINE_ALIGNMENT_NEARself::LINE_ALIGNMENT_CENTER,
+self::LINE_ALIGNMENT_FAR,
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -274,15 +264,13 @@ class StringFormatData implements ArrayAccess
     public function getTrimmingAllowableValues()
     {
         return [
-            self::TRIMMING_NONE,
-            self::TRIMMING_CHARACTER,
-            self::TRIMMING_WORD,
-            self::TRIMMING_ELLIPSIS_CHARACTER,
-            self::TRIMMING_ELLIPSIS_WORD,
-            self::TRIMMING_ELLIPSIS_PATH,
+            self::TRIMMING_NONEself::TRIMMING_CHARACTER,
+self::TRIMMING_WORD,
+self::TRIMMING_ELLIPSIS_CHARACTER,
+self::TRIMMING_ELLIPSIS_WORD,
+self::TRIMMING_ELLIPSIS_PATH,
         ];
     }
-    
 
     /*
      * Associative array for storing property values
@@ -605,5 +593,3 @@ class StringFormatData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

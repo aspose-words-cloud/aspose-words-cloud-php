@@ -39,7 +39,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class OfficeMathLink extends NodeLink 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -54,7 +54,6 @@ class OfficeMathLink extends NodeLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        
     ];
 
     /*
@@ -63,7 +62,6 @@ class OfficeMathLink extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        
     ];
 
     /*
@@ -93,7 +91,6 @@ class OfficeMathLink extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        
     ];
 
     /*
@@ -102,7 +99,6 @@ class OfficeMathLink extends NodeLink
      * @var string[]
      */
     protected static $setters = [
-        
     ];
 
     /*
@@ -111,7 +107,6 @@ class OfficeMathLink extends NodeLink
      * @var string[]
      */
     protected static $getters = [
-        
     ];
 
     /*
@@ -155,9 +150,7 @@ class OfficeMathLink extends NodeLink
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -170,6 +163,10 @@ class OfficeMathLink extends NodeLink
     {
         parent::__construct($data);
 
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -269,5 +266,3 @@ class OfficeMathLink extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

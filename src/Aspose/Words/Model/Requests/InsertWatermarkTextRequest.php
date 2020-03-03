@@ -39,7 +39,7 @@ class InsertWatermarkTextRequest
     public $name;
 	
     /*
-     * WatermarkText with the watermark data.
+     * WatermarkText with the watermark data.             
      */
     public $watermark_text;
 	
@@ -83,7 +83,7 @@ class InsertWatermarkTextRequest
      * Initializes a new instance of the InsertWatermarkTextRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\WatermarkText $watermark_text WatermarkText with the watermark data.
+     * @param \Aspose\Words\Model\WatermarkText $watermark_text WatermarkText with the watermark data.             
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -123,7 +123,7 @@ class InsertWatermarkTextRequest
     }
 	
     /*
-     * WatermarkText with the watermark data.
+     * WatermarkText with the watermark data.             
      */
     public function get_watermark_text()
     {
@@ -131,7 +131,7 @@ class InsertWatermarkTextRequest
     }
 
     /*
-     * WatermarkText with the watermark data.
+     * WatermarkText with the watermark data.             
      */
     public function set_watermark_text($value)
     {

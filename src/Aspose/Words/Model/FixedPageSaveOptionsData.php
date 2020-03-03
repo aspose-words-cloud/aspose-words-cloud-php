@@ -39,7 +39,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class FixedPageSaveOptionsData extends SaveOptionsData 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -54,6 +54,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'color_mode' => 'string',
         'jpeg_quality' => 'int',
         'metafile_rendering_options' => '\Aspose\Words\Model\MetafileRenderingOptionsData',
         'numeral_format' => 'string',
@@ -68,6 +69,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'color_mode' => null,
         'jpeg_quality' => 'int32',
         'metafile_rendering_options' => null,
         'numeral_format' => null,
@@ -103,6 +105,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
+        'color_mode' => 'ColorMode',
         'jpeg_quality' => 'JpegQuality',
         'metafile_rendering_options' => 'MetafileRenderingOptions',
         'numeral_format' => 'NumeralFormat',
@@ -117,6 +120,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
+        'color_mode' => 'setColorMode',
         'jpeg_quality' => 'setJpegQuality',
         'metafile_rendering_options' => 'setMetafileRenderingOptions',
         'numeral_format' => 'setNumeralFormat',
@@ -131,6 +135,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
+        'color_mode' => 'getColorMode',
         'jpeg_quality' => 'getJpegQuality',
         'metafile_rendering_options' => 'getMetafileRenderingOptions',
         'numeral_format' => 'getNumeralFormat',
@@ -180,9 +185,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -195,12 +198,17 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
 
+        $this->container['color_mode'] = isset($data['color_mode']) ? $data['color_mode'] : null;
         $this->container['jpeg_quality'] = isset($data['jpeg_quality']) ? $data['jpeg_quality'] : null;
         $this->container['metafile_rendering_options'] = isset($data['metafile_rendering_options']) ? $data['metafile_rendering_options'] : null;
         $this->container['numeral_format'] = isset($data['numeral_format']) ? $data['numeral_format'] : null;
         $this->container['optimize_output'] = isset($data['optimize_output']) ? $data['optimize_output'] : null;
         $this->container['page_count'] = isset($data['page_count']) ? $data['page_count'] : null;
         $this->container['page_index'] = isset($data['page_index']) ? $data['page_index'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -230,6 +238,30 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return true;
     }
 
+
+    /*
+     * Gets color_mode
+     *
+     * @return string
+     */
+    public function getColorMode()
+    {
+        return $this->container['color_mode'];
+    }
+
+    /*
+     * Sets color_mode
+     *
+     * @param string $color_mode Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
+     *
+     * @return $this
+     */
+    public function setColorMode($color_mode)
+    {
+        $this->container['color_mode'] = $color_mode;
+
+        return $this;
+    }
 
     /*
      * Gets jpeg_quality
@@ -268,7 +300,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets metafile_rendering_options
      *
-     * @param \Aspose\Words\Model\MetafileRenderingOptionsData $metafile_rendering_options Gets or sets allows to specify metafile rendering options.
+     * @param \Aspose\Words\Model\MetafileRenderingOptionsData $metafile_rendering_options metafile_rendering_options
      *
      * @return $this
      */
@@ -444,5 +476,3 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

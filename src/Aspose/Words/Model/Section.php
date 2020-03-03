@@ -175,9 +175,7 @@ class Section extends LinkElement
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -262,7 +260,7 @@ class Section extends LinkElement
     /*
      * Sets header_footers
      *
-     * @param \Aspose\Words\Model\LinkElement $header_footers Gets or sets link to HeaderFooters resource.
+     * @param \Aspose\Words\Model\LinkElement $header_footers header_footers
      *
      * @return $this
      */
@@ -286,7 +284,7 @@ class Section extends LinkElement
     /*
      * Sets page_setup
      *
-     * @param \Aspose\Words\Model\LinkElement $page_setup Gets or sets link to PageSetup resource.
+     * @param \Aspose\Words\Model\LinkElement $page_setup page_setup
      *
      * @return $this
      */
@@ -310,7 +308,7 @@ class Section extends LinkElement
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets link to Paragraphs resource.
+     * @param \Aspose\Words\Model\LinkElement $paragraphs paragraphs
      *
      * @return $this
      */
@@ -334,7 +332,7 @@ class Section extends LinkElement
     /*
      * Sets tables
      *
-     * @param \Aspose\Words\Model\LinkElement $tables Gets or sets link to Tables resource.
+     * @param \Aspose\Words\Model\LinkElement $tables tables
      *
      * @return $this
      */
@@ -414,5 +412,3 @@ class Section extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

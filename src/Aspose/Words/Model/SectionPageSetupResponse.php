@@ -155,9 +155,7 @@ class SectionPageSetupResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class SectionPageSetupResponse extends WordsResponse
     /*
      * Sets page_setup
      *
-     * @param \Aspose\Words\Model\PageSetup $page_setup Gets or sets section.
+     * @param \Aspose\Words\Model\PageSetup $page_setup page_setup
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class SectionPageSetupResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

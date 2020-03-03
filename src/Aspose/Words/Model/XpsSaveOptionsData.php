@@ -170,9 +170,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -280,7 +278,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets outline_options
      *
-     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets allows to specify outline options.
+     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options outline_options
      *
      * @return $this
      */
@@ -384,5 +382,3 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

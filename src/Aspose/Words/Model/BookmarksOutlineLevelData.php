@@ -162,9 +162,7 @@ class BookmarksOutlineLevelData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -194,9 +192,6 @@ class BookmarksOutlineLevelData implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['bookmarks_outline_level'] === null) {
-            $invalidProperties[] = "'bookmarks_outline_level' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,9 +204,6 @@ class BookmarksOutlineLevelData implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['bookmarks_outline_level'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -333,5 +325,3 @@ class BookmarksOutlineLevelData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

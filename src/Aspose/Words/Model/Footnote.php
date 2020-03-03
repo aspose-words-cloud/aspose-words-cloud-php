@@ -177,9 +177,7 @@ class Footnote extends FootnoteLink
 
     const FOOTNOTE_TYPE_FOOTNOTE = 'Footnote';
     const FOOTNOTE_TYPE_ENDNOTE = 'Endnote';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -188,11 +186,9 @@ class Footnote extends FootnoteLink
     public function getFootnoteTypeAllowableValues()
     {
         return [
-            self::FOOTNOTE_TYPE_FOOTNOTE,
-            self::FOOTNOTE_TYPE_ENDNOTE,
+            self::FOOTNOTE_TYPE_FOOTNOTEself::FOOTNOTE_TYPE_ENDNOTE,
         ];
     }
-    
 
 
     /*
@@ -265,7 +261,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets content of footnote.
+     * @param \Aspose\Words\Model\StoryChildNodes $content content
      *
      * @return $this
      */
@@ -318,7 +314,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $position position
      *
      * @return $this
      */
@@ -446,5 +442,3 @@ class Footnote extends FootnoteLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

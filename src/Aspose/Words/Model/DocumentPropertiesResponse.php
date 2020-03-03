@@ -155,9 +155,7 @@ class DocumentPropertiesResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class DocumentPropertiesResponse extends WordsResponse
     /*
      * Sets document_properties
      *
-     * @param \Aspose\Words\Model\DocumentProperties $document_properties Gets or sets collection of document properties.
+     * @param \Aspose\Words\Model\DocumentProperties $document_properties document_properties
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class DocumentPropertiesResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

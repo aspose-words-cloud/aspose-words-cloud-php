@@ -160,9 +160,7 @@ class FormFieldDropDown extends FormField
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -324,5 +322,3 @@ class FormFieldDropDown extends FormField
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

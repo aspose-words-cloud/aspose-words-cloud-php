@@ -155,9 +155,7 @@ class BorderResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class BorderResponse extends WordsResponse
     /*
      * Sets border
      *
-     * @param \Aspose\Words\Model\Border $border Gets or sets table.
+     * @param \Aspose\Words\Model\Border $border border
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class BorderResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

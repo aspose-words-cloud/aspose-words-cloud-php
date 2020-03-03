@@ -39,7 +39,7 @@ class UploadFileRequest
     public $file_content;
 	
     /*
-     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.
+     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
      */
     public $path;
 	
@@ -53,7 +53,7 @@ class UploadFileRequest
      * Initializes a new instance of the UploadFileRequest class.
      *  
      * @param \SplFileObject $file_content File to upload
-     * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.
+     * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
      * @param string $storage_name Storage name
      */
     public function __construct($file_content, $path, $storage_name = null)             
@@ -81,7 +81,7 @@ class UploadFileRequest
     }
 	
     /*
-     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.
+     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
      */
     public function get_path()
     {
@@ -89,7 +89,7 @@ class UploadFileRequest
     }
 
     /*
-     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.
+     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
      */
     public function set_path($value)
     {

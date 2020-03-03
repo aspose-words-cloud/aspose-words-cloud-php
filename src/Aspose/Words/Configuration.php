@@ -114,7 +114,7 @@ class Configuration
      *
      * @var bool
      */
-    protected $debug = false;
+    protected $debug = true;
 
     /*
      * Debug file location (log to STDOUT by default)

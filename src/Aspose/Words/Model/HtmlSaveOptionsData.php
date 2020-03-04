@@ -362,7 +362,8 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function getHtmlVersionAllowableValues()
     {
         return [
-            self::HTML_VERSION_XHTMLself::HTML_VERSION_HTML5,
+            self::HTML_VERSION_XHTML,
+            self::HTML_VERSION_HTML5
         ];
     }
     /*
@@ -373,8 +374,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function getMetafileFormatAllowableValues()
     {
         return [
-            self::METAFILE_FORMAT_PNGself::METAFILE_FORMAT_SVG,
-self::METAFILE_FORMAT_EMF_OR_WMF,
+            self::METAFILE_FORMAT_PNG,
+            self::METAFILE_FORMAT_SVG,
+            self::METAFILE_FORMAT_EMF_OR_WMF
         ];
     }
     /*
@@ -385,8 +387,9 @@ self::METAFILE_FORMAT_EMF_OR_WMF,
     public function getOfficeMathOutputModeAllowableValues()
     {
         return [
-            self::OFFICE_MATH_OUTPUT_MODE_IMAGEself::OFFICE_MATH_OUTPUT_MODE_MATH_ML,
-self::OFFICE_MATH_OUTPUT_MODE_TEXT,
+            self::OFFICE_MATH_OUTPUT_MODE_IMAGE,
+            self::OFFICE_MATH_OUTPUT_MODE_MATH_ML,
+            self::OFFICE_MATH_OUTPUT_MODE_TEXT
         ];
     }
 

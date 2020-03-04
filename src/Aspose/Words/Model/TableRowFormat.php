@@ -182,8 +182,9 @@ class TableRowFormat extends LinkElement
     public function getHeightRuleAllowableValues()
     {
         return [
-            self::HEIGHT_RULE_AT_LEASTself::HEIGHT_RULE_EXACTLY,
-self::HEIGHT_RULE_AUTO,
+            self::HEIGHT_RULE_AT_LEAST,
+            self::HEIGHT_RULE_EXACTLY,
+            self::HEIGHT_RULE_AUTO
         ];
     }
 

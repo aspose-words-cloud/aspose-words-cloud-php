@@ -185,11 +185,12 @@ class FormFieldTextInput extends FormField
     public function getTextInputTypeAllowableValues()
     {
         return [
-            self::TEXT_INPUT_TYPE_REGULARself::TEXT_INPUT_TYPE_NUMBER,
-self::TEXT_INPUT_TYPE_DATE,
-self::TEXT_INPUT_TYPE_CURRENT_DATE,
-self::TEXT_INPUT_TYPE_CURRENT_TIME,
-self::TEXT_INPUT_TYPE_CALCULATED,
+            self::TEXT_INPUT_TYPE_REGULAR,
+            self::TEXT_INPUT_TYPE_NUMBER,
+            self::TEXT_INPUT_TYPE_DATE,
+            self::TEXT_INPUT_TYPE_CURRENT_DATE,
+            self::TEXT_INPUT_TYPE_CURRENT_TIME,
+            self::TEXT_INPUT_TYPE_CALCULATED
         ];
     }
 

@@ -282,8 +282,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function getHeaderFooterBookmarksExportModeAllowableValues()
     {
         return [
-            self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_NONEself::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_FIRST,
-self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_ALL,
+            self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_NONE,
+            self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_FIRST,
+            self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_ALL
         ];
     }
 

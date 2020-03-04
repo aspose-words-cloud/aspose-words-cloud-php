@@ -217,7 +217,8 @@ class OfficeMathObject extends OfficeMathLink
     public function getDisplayTypeAllowableValues()
     {
         return [
-            self::DISPLAY_TYPE_DISPLAYself::DISPLAY_TYPE_INLINE,
+            self::DISPLAY_TYPE_DISPLAY,
+            self::DISPLAY_TYPE_INLINE
         ];
     }
     /*
@@ -228,11 +229,12 @@ class OfficeMathObject extends OfficeMathLink
     public function getJustificationAllowableValues()
     {
         return [
-            self::JUSTIFICATION_CENTER_GROUPself::JUSTIFICATION__DEFAULT,
-self::JUSTIFICATION_CENTER,
-self::JUSTIFICATION_LEFT,
-self::JUSTIFICATION_RIGHT,
-self::JUSTIFICATION_INLINE,
+            self::JUSTIFICATION_CENTER_GROUP,
+            self::JUSTIFICATION__DEFAULT,
+            self::JUSTIFICATION_CENTER,
+            self::JUSTIFICATION_LEFT,
+            self::JUSTIFICATION_RIGHT,
+            self::JUSTIFICATION_INLINE
         ];
     }
     /*
@@ -243,35 +245,36 @@ self::JUSTIFICATION_INLINE,
     public function getMathObjectTypeAllowableValues()
     {
         return [
-            self::MATH_OBJECT_TYPE_O_MATHself::MATH_OBJECT_TYPE_O_MATH_PARA,
-self::MATH_OBJECT_TYPE_ACCENT,
-self::MATH_OBJECT_TYPE_BAR,
-self::MATH_OBJECT_TYPE_BORDER_BOX,
-self::MATH_OBJECT_TYPE_BOX,
-self::MATH_OBJECT_TYPE_DELIMITER,
-self::MATH_OBJECT_TYPE_DEGREE,
-self::MATH_OBJECT_TYPE_ARGUMENT,
-self::MATH_OBJECT_TYPE__ARRAY,
-self::MATH_OBJECT_TYPE_FRACTION,
-self::MATH_OBJECT_TYPE_DENOMINATOR,
-self::MATH_OBJECT_TYPE_NUMERATOR,
-self::MATH_OBJECT_TYPE__FUNCTION,
-self::MATH_OBJECT_TYPE_FUNCTION_NAME,
-self::MATH_OBJECT_TYPE_GROUP_CHARACTER,
-self::MATH_OBJECT_TYPE_LIMIT,
-self::MATH_OBJECT_TYPE_LOWER_LIMIT,
-self::MATH_OBJECT_TYPE_UPPER_LIMIT,
-self::MATH_OBJECT_TYPE_MATRIX,
-self::MATH_OBJECT_TYPE_MATRIX_ROW,
-self::MATH_OBJECT_TYPE_N_ARY,
-self::MATH_OBJECT_TYPE_PHANTOM,
-self::MATH_OBJECT_TYPE_RADICAL,
-self::MATH_OBJECT_TYPE_SUBSCRIPT_PART,
-self::MATH_OBJECT_TYPE_SUPERSCRIPT_PART,
-self::MATH_OBJECT_TYPE_PRE_SUB_SUPERSCRIPT,
-self::MATH_OBJECT_TYPE_SUBSCRIPT,
-self::MATH_OBJECT_TYPE_SUB_SUPERSCRIPT,
-self::MATH_OBJECT_TYPE_SUPERCRIPT,
+            self::MATH_OBJECT_TYPE_O_MATH,
+            self::MATH_OBJECT_TYPE_O_MATH_PARA,
+            self::MATH_OBJECT_TYPE_ACCENT,
+            self::MATH_OBJECT_TYPE_BAR,
+            self::MATH_OBJECT_TYPE_BORDER_BOX,
+            self::MATH_OBJECT_TYPE_BOX,
+            self::MATH_OBJECT_TYPE_DELIMITER,
+            self::MATH_OBJECT_TYPE_DEGREE,
+            self::MATH_OBJECT_TYPE_ARGUMENT,
+            self::MATH_OBJECT_TYPE__ARRAY,
+            self::MATH_OBJECT_TYPE_FRACTION,
+            self::MATH_OBJECT_TYPE_DENOMINATOR,
+            self::MATH_OBJECT_TYPE_NUMERATOR,
+            self::MATH_OBJECT_TYPE__FUNCTION,
+            self::MATH_OBJECT_TYPE_FUNCTION_NAME,
+            self::MATH_OBJECT_TYPE_GROUP_CHARACTER,
+            self::MATH_OBJECT_TYPE_LIMIT,
+            self::MATH_OBJECT_TYPE_LOWER_LIMIT,
+            self::MATH_OBJECT_TYPE_UPPER_LIMIT,
+            self::MATH_OBJECT_TYPE_MATRIX,
+            self::MATH_OBJECT_TYPE_MATRIX_ROW,
+            self::MATH_OBJECT_TYPE_N_ARY,
+            self::MATH_OBJECT_TYPE_PHANTOM,
+            self::MATH_OBJECT_TYPE_RADICAL,
+            self::MATH_OBJECT_TYPE_SUBSCRIPT_PART,
+            self::MATH_OBJECT_TYPE_SUPERSCRIPT_PART,
+            self::MATH_OBJECT_TYPE_PRE_SUB_SUPERSCRIPT,
+            self::MATH_OBJECT_TYPE_SUBSCRIPT,
+            self::MATH_OBJECT_TYPE_SUB_SUPERSCRIPT,
+            self::MATH_OBJECT_TYPE_SUPERCRIPT
         ];
     }
 

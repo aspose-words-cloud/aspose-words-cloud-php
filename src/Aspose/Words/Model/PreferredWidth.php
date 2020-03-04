@@ -174,8 +174,9 @@ class PreferredWidth implements ArrayAccess
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_AUTOself::TYPE_PERCENT,
-self::TYPE_POINTS,
+            self::TYPE_AUTO,
+            self::TYPE_PERCENT,
+            self::TYPE_POINTS
         ];
     }
 

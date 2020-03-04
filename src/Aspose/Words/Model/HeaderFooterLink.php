@@ -170,11 +170,12 @@ class HeaderFooterLink extends LinkElement
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_HEADER_EVENself::TYPE_HEADER_PRIMARY,
-self::TYPE_FOOTER_EVEN,
-self::TYPE_FOOTER_PRIMARY,
-self::TYPE_HEADER_FIRST,
-self::TYPE_FOOTER_FIRST,
+            self::TYPE_HEADER_EVEN,
+            self::TYPE_HEADER_PRIMARY,
+            self::TYPE_FOOTER_EVEN,
+            self::TYPE_FOOTER_PRIMARY,
+            self::TYPE_HEADER_FIRST,
+            self::TYPE_FOOTER_FIRST
         ];
     }
 

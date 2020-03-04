@@ -186,7 +186,8 @@ class Footnote extends FootnoteLink
     public function getFootnoteTypeAllowableValues()
     {
         return [
-            self::FOOTNOTE_TYPE_FOOTNOTEself::FOOTNOTE_TYPE_ENDNOTE,
+            self::FOOTNOTE_TYPE_FOOTNOTE,
+            self::FOOTNOTE_TYPE_ENDNOTE
         ];
     }
 

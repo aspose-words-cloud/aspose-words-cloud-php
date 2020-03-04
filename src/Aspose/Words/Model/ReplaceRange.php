@@ -173,7 +173,8 @@ class ReplaceRange implements ArrayAccess
     public function getTextTypeAllowableValues()
     {
         return [
-            self::TEXT_TYPE_TEXTself::TEXT_TYPE_HTML,
+            self::TEXT_TYPE_TEXT,
+            self::TEXT_TYPE_HTML
         ];
     }
 

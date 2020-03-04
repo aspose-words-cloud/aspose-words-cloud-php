@@ -176,7 +176,8 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function getMeasureUnitAllowableValues()
     {
         return [
-            self::MEASURE_UNIT_CENTIMETERSself::MEASURE_UNIT_INCHES,
+            self::MEASURE_UNIT_CENTIMETERS,
+            self::MEASURE_UNIT_INCHES
         ];
     }
 

@@ -220,7 +220,8 @@ class GraphicsQualityOptionsData implements ArrayAccess
     public function getCompositingModeAllowableValues()
     {
         return [
-            self::COMPOSITING_MODE_SOURCE_OVERself::COMPOSITING_MODE_SOURCE_COPY,
+            self::COMPOSITING_MODE_SOURCE_OVER,
+            self::COMPOSITING_MODE_SOURCE_COPY
         ];
     }
     /*
@@ -231,11 +232,12 @@ class GraphicsQualityOptionsData implements ArrayAccess
     public function getCompositingQualityAllowableValues()
     {
         return [
-            self::COMPOSITING_QUALITY__DEFAULTself::COMPOSITING_QUALITY_HIGH_SPEED,
-self::COMPOSITING_QUALITY_HIGH_QUALITY,
-self::COMPOSITING_QUALITY_GAMMA_CORRECTED,
-self::COMPOSITING_QUALITY_ASSUME_LINEAR,
-self::COMPOSITING_QUALITY_INVALID,
+            self::COMPOSITING_QUALITY__DEFAULT,
+            self::COMPOSITING_QUALITY_HIGH_SPEED,
+            self::COMPOSITING_QUALITY_HIGH_QUALITY,
+            self::COMPOSITING_QUALITY_GAMMA_CORRECTED,
+            self::COMPOSITING_QUALITY_ASSUME_LINEAR,
+            self::COMPOSITING_QUALITY_INVALID
         ];
     }
     /*
@@ -246,14 +248,15 @@ self::COMPOSITING_QUALITY_INVALID,
     public function getInterpolationModeAllowableValues()
     {
         return [
-            self::INTERPOLATION_MODE__DEFAULTself::INTERPOLATION_MODE_LOW,
-self::INTERPOLATION_MODE_HIGH,
-self::INTERPOLATION_MODE_BILINEAR,
-self::INTERPOLATION_MODE_BICUBIC,
-self::INTERPOLATION_MODE_NEAREST_NEIGHBOR,
-self::INTERPOLATION_MODE_HIGH_QUALITY_BILINEAR,
-self::INTERPOLATION_MODE_HIGH_QUALITY_BICUBIC,
-self::INTERPOLATION_MODE_INVALID,
+            self::INTERPOLATION_MODE__DEFAULT,
+            self::INTERPOLATION_MODE_LOW,
+            self::INTERPOLATION_MODE_HIGH,
+            self::INTERPOLATION_MODE_BILINEAR,
+            self::INTERPOLATION_MODE_BICUBIC,
+            self::INTERPOLATION_MODE_NEAREST_NEIGHBOR,
+            self::INTERPOLATION_MODE_HIGH_QUALITY_BILINEAR,
+            self::INTERPOLATION_MODE_HIGH_QUALITY_BICUBIC,
+            self::INTERPOLATION_MODE_INVALID
         ];
     }
     /*
@@ -264,11 +267,12 @@ self::INTERPOLATION_MODE_INVALID,
     public function getSmoothingModeAllowableValues()
     {
         return [
-            self::SMOOTHING_MODE__DEFAULTself::SMOOTHING_MODE_HIGH_SPEED,
-self::SMOOTHING_MODE_HIGH_QUALITY,
-self::SMOOTHING_MODE_NONE,
-self::SMOOTHING_MODE_ANTI_ALIAS,
-self::SMOOTHING_MODE_INVALID,
+            self::SMOOTHING_MODE__DEFAULT,
+            self::SMOOTHING_MODE_HIGH_SPEED,
+            self::SMOOTHING_MODE_HIGH_QUALITY,
+            self::SMOOTHING_MODE_NONE,
+            self::SMOOTHING_MODE_ANTI_ALIAS,
+            self::SMOOTHING_MODE_INVALID
         ];
     }
     /*
@@ -279,11 +283,12 @@ self::SMOOTHING_MODE_INVALID,
     public function getTextRenderingHintAllowableValues()
     {
         return [
-            self::TEXT_RENDERING_HINT_SYSTEM_DEFAULTself::TEXT_RENDERING_HINT_SINGLE_BIT_PER_PIXEL_GRID_FIT,
-self::TEXT_RENDERING_HINT_SINGLE_BIT_PER_PIXEL,
-self::TEXT_RENDERING_HINT_ANTI_ALIAS_GRID_FIT,
-self::TEXT_RENDERING_HINT_ANTI_ALIAS,
-self::TEXT_RENDERING_HINT_CLEAR_TYPE_GRID_FIT,
+            self::TEXT_RENDERING_HINT_SYSTEM_DEFAULT,
+            self::TEXT_RENDERING_HINT_SINGLE_BIT_PER_PIXEL_GRID_FIT,
+            self::TEXT_RENDERING_HINT_SINGLE_BIT_PER_PIXEL,
+            self::TEXT_RENDERING_HINT_ANTI_ALIAS_GRID_FIT,
+            self::TEXT_RENDERING_HINT_ANTI_ALIAS,
+            self::TEXT_RENDERING_HINT_CLEAR_TYPE_GRID_FIT
         ];
     }
 

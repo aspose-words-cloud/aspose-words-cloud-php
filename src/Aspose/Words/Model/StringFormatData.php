@@ -210,8 +210,9 @@ class StringFormatData implements ArrayAccess
     public function getAlignmentAllowableValues()
     {
         return [
-            self::ALIGNMENT_NEARself::ALIGNMENT_CENTER,
-self::ALIGNMENT_FAR,
+            self::ALIGNMENT_NEAR,
+            self::ALIGNMENT_CENTER,
+            self::ALIGNMENT_FAR
         ];
     }
     /*
@@ -222,14 +223,15 @@ self::ALIGNMENT_FAR,
     public function getFormatFlagsAllowableValues()
     {
         return [
-            self::FORMAT_FLAGS_DIRECTION_RIGHT_TO_LEFTself::FORMAT_FLAGS_DIRECTION_VERTICAL,
-self::FORMAT_FLAGS_FIT_BLACK_BOX,
-self::FORMAT_FLAGS_DISPLAY_FORMAT_CONTROL,
-self::FORMAT_FLAGS_NO_FONT_FALLBACK,
-self::FORMAT_FLAGS_MEASURE_TRAILING_SPACES,
-self::FORMAT_FLAGS_NO_WRAP,
-self::FORMAT_FLAGS_LINE_LIMIT,
-self::FORMAT_FLAGS_NO_CLIP,
+            self::FORMAT_FLAGS_DIRECTION_RIGHT_TO_LEFT,
+            self::FORMAT_FLAGS_DIRECTION_VERTICAL,
+            self::FORMAT_FLAGS_FIT_BLACK_BOX,
+            self::FORMAT_FLAGS_DISPLAY_FORMAT_CONTROL,
+            self::FORMAT_FLAGS_NO_FONT_FALLBACK,
+            self::FORMAT_FLAGS_MEASURE_TRAILING_SPACES,
+            self::FORMAT_FLAGS_NO_WRAP,
+            self::FORMAT_FLAGS_LINE_LIMIT,
+            self::FORMAT_FLAGS_NO_CLIP
         ];
     }
     /*
@@ -240,8 +242,9 @@ self::FORMAT_FLAGS_NO_CLIP,
     public function getHotkeyPrefixAllowableValues()
     {
         return [
-            self::HOTKEY_PREFIX_NONEself::HOTKEY_PREFIX_SHOW,
-self::HOTKEY_PREFIX_HIDE,
+            self::HOTKEY_PREFIX_NONE,
+            self::HOTKEY_PREFIX_SHOW,
+            self::HOTKEY_PREFIX_HIDE
         ];
     }
     /*
@@ -252,8 +255,9 @@ self::HOTKEY_PREFIX_HIDE,
     public function getLineAlignmentAllowableValues()
     {
         return [
-            self::LINE_ALIGNMENT_NEARself::LINE_ALIGNMENT_CENTER,
-self::LINE_ALIGNMENT_FAR,
+            self::LINE_ALIGNMENT_NEAR,
+            self::LINE_ALIGNMENT_CENTER,
+            self::LINE_ALIGNMENT_FAR
         ];
     }
     /*
@@ -264,11 +268,12 @@ self::LINE_ALIGNMENT_FAR,
     public function getTrimmingAllowableValues()
     {
         return [
-            self::TRIMMING_NONEself::TRIMMING_CHARACTER,
-self::TRIMMING_WORD,
-self::TRIMMING_ELLIPSIS_CHARACTER,
-self::TRIMMING_ELLIPSIS_WORD,
-self::TRIMMING_ELLIPSIS_PATH,
+            self::TRIMMING_NONE,
+            self::TRIMMING_CHARACTER,
+            self::TRIMMING_WORD,
+            self::TRIMMING_ELLIPSIS_CHARACTER,
+            self::TRIMMING_ELLIPSIS_WORD,
+            self::TRIMMING_ELLIPSIS_PATH
         ];
     }
 

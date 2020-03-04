@@ -234,8 +234,9 @@ class TableCellFormat extends LinkElement
     public function getHorizontalMergeAllowableValues()
     {
         return [
-            self::HORIZONTAL_MERGE_NONEself::HORIZONTAL_MERGE_FIRST,
-self::HORIZONTAL_MERGE_PREVIOUS,
+            self::HORIZONTAL_MERGE_NONE,
+            self::HORIZONTAL_MERGE_FIRST,
+            self::HORIZONTAL_MERGE_PREVIOUS
         ];
     }
     /*
@@ -246,11 +247,12 @@ self::HORIZONTAL_MERGE_PREVIOUS,
     public function getOrientationAllowableValues()
     {
         return [
-            self::ORIENTATION_HORIZONTALself::ORIENTATION_DOWNWARD,
-self::ORIENTATION_UPWARD,
-self::ORIENTATION_HORIZONTAL_ROTATED_FAR_EAST,
-self::ORIENTATION_VERTICAL_FAR_EAST,
-self::ORIENTATION_VERTICAL_ROTATED_FAR_EAST,
+            self::ORIENTATION_HORIZONTAL,
+            self::ORIENTATION_DOWNWARD,
+            self::ORIENTATION_UPWARD,
+            self::ORIENTATION_HORIZONTAL_ROTATED_FAR_EAST,
+            self::ORIENTATION_VERTICAL_FAR_EAST,
+            self::ORIENTATION_VERTICAL_ROTATED_FAR_EAST
         ];
     }
     /*
@@ -261,8 +263,9 @@ self::ORIENTATION_VERTICAL_ROTATED_FAR_EAST,
     public function getVerticalAlignmentAllowableValues()
     {
         return [
-            self::VERTICAL_ALIGNMENT_TOPself::VERTICAL_ALIGNMENT_CENTER,
-self::VERTICAL_ALIGNMENT_BOTTOM,
+            self::VERTICAL_ALIGNMENT_TOP,
+            self::VERTICAL_ALIGNMENT_CENTER,
+            self::VERTICAL_ALIGNMENT_BOTTOM
         ];
     }
     /*
@@ -273,8 +276,9 @@ self::VERTICAL_ALIGNMENT_BOTTOM,
     public function getVerticalMergeAllowableValues()
     {
         return [
-            self::VERTICAL_MERGE_NONEself::VERTICAL_MERGE_FIRST,
-self::VERTICAL_MERGE_PREVIOUS,
+            self::VERTICAL_MERGE_NONE,
+            self::VERTICAL_MERGE_FIRST,
+            self::VERTICAL_MERGE_PREVIOUS
         ];
     }
 

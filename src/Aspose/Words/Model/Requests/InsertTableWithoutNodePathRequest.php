@@ -39,6 +39,11 @@ class InsertTableWithoutNodePathRequest
     public $name;
 	
     /*
+     * Table parameters/.
+     */
+    public $table;
+	
+    /*
      * Original document folder.
      */
     public $folder;
@@ -72,17 +77,13 @@ class InsertTableWithoutNodePathRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-	
-    /*
-     * Table parameters/.
-     */
-    public $table;
     
 	
     /*
      * Initializes a new instance of the InsertTableWithoutNodePathRequest class.
      *  
      * @param string $name The document name.
+     * @param \Aspose\Words\Model\TableInsert $table Table parameters/.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -90,11 +91,11 @@ class InsertTableWithoutNodePathRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param \Aspose\Words\Model\TableInsert $table Table parameters/.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $table)             
+    public function __construct($name, $table, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
     {
         $this->name = $name;
+        $this->table = $table;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -102,7 +103,6 @@ class InsertTableWithoutNodePathRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->table = $table;
     }
 
     /*
@@ -119,6 +119,23 @@ class InsertTableWithoutNodePathRequest
     public function set_name($value)
     {
         $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Table parameters/.
+     */
+    public function get_table()
+    {
+        return $this->table;
+    }
+
+    /*
+     * Table parameters/.
+     */
+    public function set_table($value)
+    {
+        $this->table = $value;
         return $this;
     }
 	
@@ -238,23 +255,6 @@ class InsertTableWithoutNodePathRequest
     public function set_revision_date_time($value)
     {
         $this->revision_date_time = $value;
-        return $this;
-    }
-	
-    /*
-     * Table parameters/.
-     */
-    public function get_table()
-    {
-        return $this->table;
-    }
-
-    /*
-     * Table parameters/.
-     */
-    public function set_table($value)
-    {
-        $this->table = $value;
         return $this;
     }
 }

@@ -194,9 +194,6 @@ class XmlColor implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['alpha'] === null) {
-            $invalidProperties[] = "'alpha' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,9 +206,6 @@ class XmlColor implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['alpha'] === null) {
-            return false;
-        }
         return true;
     }
 

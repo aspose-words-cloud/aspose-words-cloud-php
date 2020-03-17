@@ -56,7 +56,8 @@ class RtfSaveOptionsData extends SaveOptionsData
     protected static $swaggerTypes = [
         'export_compact_size' => 'bool',
         'export_images_for_old_readers' => 'bool',
-        'pretty_format' => 'bool'
+        'pretty_format' => 'bool',
+        'save_images_as_wmf' => 'bool'
     ];
 
     /*
@@ -67,7 +68,8 @@ class RtfSaveOptionsData extends SaveOptionsData
     protected static $swaggerFormats = [
         'export_compact_size' => null,
         'export_images_for_old_readers' => null,
-        'pretty_format' => null
+        'pretty_format' => null,
+        'save_images_as_wmf' => null
     ];
 
     /*
@@ -99,7 +101,8 @@ class RtfSaveOptionsData extends SaveOptionsData
     protected static $attributeMap = [
         'export_compact_size' => 'ExportCompactSize',
         'export_images_for_old_readers' => 'ExportImagesForOldReaders',
-        'pretty_format' => 'PrettyFormat'
+        'pretty_format' => 'PrettyFormat',
+        'save_images_as_wmf' => 'SaveImagesAsWmf'
     ];
 
     /*
@@ -110,7 +113,8 @@ class RtfSaveOptionsData extends SaveOptionsData
     protected static $setters = [
         'export_compact_size' => 'setExportCompactSize',
         'export_images_for_old_readers' => 'setExportImagesForOldReaders',
-        'pretty_format' => 'setPrettyFormat'
+        'pretty_format' => 'setPrettyFormat',
+        'save_images_as_wmf' => 'setSaveImagesAsWmf'
     ];
 
     /*
@@ -121,7 +125,8 @@ class RtfSaveOptionsData extends SaveOptionsData
     protected static $getters = [
         'export_compact_size' => 'getExportCompactSize',
         'export_images_for_old_readers' => 'getExportImagesForOldReaders',
-        'pretty_format' => 'getPrettyFormat'
+        'pretty_format' => 'getPrettyFormat',
+        'save_images_as_wmf' => 'getSaveImagesAsWmf'
     ];
 
     /*
@@ -183,6 +188,7 @@ class RtfSaveOptionsData extends SaveOptionsData
         $this->container['export_compact_size'] = isset($data['export_compact_size']) ? $data['export_compact_size'] : null;
         $this->container['export_images_for_old_readers'] = isset($data['export_images_for_old_readers']) ? $data['export_images_for_old_readers'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
+        $this->container['save_images_as_wmf'] = isset($data['save_images_as_wmf']) ? $data['save_images_as_wmf'] : null;
     }
 
     /*
@@ -281,6 +287,30 @@ class RtfSaveOptionsData extends SaveOptionsData
     public function setPrettyFormat($pretty_format)
     {
         $this->container['pretty_format'] = $pretty_format;
+
+        return $this;
+    }
+
+    /*
+     * Gets save_images_as_wmf
+     *
+     * @return bool
+     */
+    public function getSaveImagesAsWmf()
+    {
+        return $this->container['save_images_as_wmf'];
+    }
+
+    /*
+     * Sets save_images_as_wmf
+     *
+     * @param bool $save_images_as_wmf Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.
+     *
+     * @return $this
+     */
+    public function setSaveImagesAsWmf($save_images_as_wmf)
+    {
+        $this->container['save_images_as_wmf'] = $save_images_as_wmf;
 
         return $this;
     }

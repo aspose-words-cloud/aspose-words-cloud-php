@@ -61,15 +61,15 @@ class WordsApi
 
     /*
      * Initialize a new instance of WordsApi
-     * @param ClientInterface   $client client for calling api
-     * @param Configuration   $config configuration info
-     * @param HeaderSelector   $selector class for header selection
+     * @param string   $appSid client app sid
+     * @param string   $appKey app key
+     * @param string   $baseUrl base url for requests
      */
-    public function __construct(ClientInterface $client = null, Configuration $config = null, HeaderSelector $selector = null)
+    public function __construct(string $appSid, string $appKey, string $baseUrl)
     {
-        $this->client = $client ?: new Client();
-        $this->config = $config ?: new Configuration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->client = new Client();
+        $this->config = new Configuration($appSid, $appKey, $baseUrl);
+        $this->headerSelector = new HeaderSelector();
         $this->_requestToken();
     }
 

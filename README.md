@@ -14,19 +14,19 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
 ## How to use the SDK?
-The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution](https://packagist.org/packages/aspose/words-sdk-php) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/wordscloud/Available+SDKs).
+The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution](https://packagist.org/packages/aspose/aspose-words-cloud) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/wordscloud/Available+SDKs).
 
 ### Prerequisites
 
-To use Aspose Words for Cloud PHP SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
+To use Aspose Words Cloud PHP SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
 
 ### Installation
 
 #### Via Composer:
-*words-sdk-php* is available on Packagist as the
-[`words-sdk-php`](https://packagist.org/packages/aspose/words-sdk-php) package. Run the following command:
+*aspose-words-cloud* is available on Packagist as the
+[`aspose-words-cloud`](https://packagist.org/packages/aspose/aspose-words-cloud) package. Run the following command:
 ```bash
-composer require aspose/words-sdk-php
+composer require aspose/aspose-words-cloud
 ```
 
 To use the SDK, use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
@@ -38,9 +38,7 @@ require_once('vendor/autoload.php');
 ### Sample usage
 
 ```php
-$config = new Configuration();
-$config->setAppKey('AppKey')->setAppSid('AppSid');
-$words = new WordsApi(null, $config);
+$this->words = new WordsApi($creds["AppSid"], $creds["AppKey"], null);
 $upload_request = new Requests\UploadFileRequest($file, 'fileStoredInCloud.doc');
 $upload_result = $words->uploadFile($upload_request);
 $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => 'destination.pdf'));
@@ -49,7 +47,6 @@ $result = $words->saveAs($request);
 ```
       
 [Tests](tests/Aspose/Words) contain various examples of using the SDK.
-Please put your credentials into [Configuration](src/Aspose/Words/Configuration.php).
 
 ## Dependencies
 - PHP 7.1 or later

@@ -36,177 +36,165 @@ class UnprotectDocumentRequest
     /*
      * The document name.
      */
-    public $name;
-	
+    public $;
     /*
      * ProtectionRequest with protection settings.
      */
-    public $protection_request;
-	
+    public $;
     /*
      * Original document folder.
      */
-    public $folder;
-	
+    public $;
     /*
      * Original document storage.
      */
-    public $storage;
-	
+    public $;
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $load_encoding;
-	
+    public $;
     /*
      * Password for opening an encrypted document.
      */
-    public $password;
-	
+    public $;
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public $dest_file_name;
+    public $;
     
 	
     /*
      * Initializes a new instance of the UnprotectDocumentRequest class.
      *  
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\ProtectionRequest $protection_request ProtectionRequest with protection settings.
-     * @param string $folder Original document folder.
-     * @param string $storage Original document storage.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param  $ The document name.
+     * @param  $ ProtectionRequest with protection settings.
+     * @param  $ Original document folder.
+     * @param  $ Original document storage.
+     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param  $ Password for opening an encrypted document.
+     * @param  $ Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $protection_request, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    public function __construct($$$ = null$ = null$ = null$ = null$ = null)             
     {
-        $this->name = $name;
-        $this->protection_request = $protection_request;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * The document name.
      */
-    public function get_name()
+    public function get_()
     {
-        return $this->name;
+        return $this->;
     }
 
     /*
      * The document name.
      */
-    public function set_name($value)
+    public function set_($value)
     {
-        $this->name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * ProtectionRequest with protection settings.
      */
-    public function get_protection_request()
+    public function get_()
     {
-        return $this->protection_request;
+        return $this->;
     }
 
     /*
      * ProtectionRequest with protection settings.
      */
-    public function set_protection_request($value)
+    public function set_($value)
     {
-        $this->protection_request = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document folder.
      */
-    public function get_folder()
+    public function get_()
     {
-        return $this->folder;
+        return $this->;
     }
 
     /*
      * Original document folder.
      */
-    public function set_folder($value)
+    public function set_($value)
     {
-        $this->folder = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_load_encoding()
+    public function get_()
     {
-        return $this->load_encoding;
+        return $this->;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_load_encoding($value)
+    public function set_($value)
     {
-        $this->load_encoding = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_password()
+    public function get_()
     {
-        return $this->password;
+        return $this->;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_password($value)
+    public function set_($value)
     {
-        $this->password = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function get_dest_file_name()
+    public function get_()
     {
-        return $this->dest_file_name;
+        return $this->;
     }
 
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function set_dest_file_name($value)
+    public function set_($value)
     {
-        $this->dest_file_name = $value;
+        $this-> = $value;
         return $this;
     }
 }

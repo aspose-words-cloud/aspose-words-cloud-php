@@ -36,153 +36,143 @@ class ConvertDocumentRequest
     /*
      * Converting document
      */
-    public $document;
-	
+    public $;
     /*
      * Format to convert.
      */
-    public $format;
-	
+    public $;
     /*
      * Original document storage.
      */
-    public $storage;
-	
+    public $;
     /*
      * Path for saving operation result to the local storage.
      */
-    public $out_path;
-	
+    public $;
     /*
      * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
      */
-    public $file_name_field_value;
-	
+    public $;
     /*
      * Folder in filestorage with custom fonts.
      */
-    public $fonts_location;
+    public $;
     
 	
     /*
      * Initializes a new instance of the ConvertDocumentRequest class.
      *  
-     * @param \SplFileObject $document Converting document
-     * @param string $format Format to convert.
-     * @param string $storage Original document storage.
-     * @param string $out_path Path for saving operation result to the local storage.
-     * @param string $file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
-     * @param string $fonts_location Folder in filestorage with custom fonts.
+     * @param  $ Converting document
+     * @param  $ Format to convert.
+     * @param  $ Original document storage.
+     * @param  $ Path for saving operation result to the local storage.
+     * @param  $ This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
+     * @param  $ Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $format, $storage = null, $out_path = null, $file_name_field_value = null, $fonts_location = null)             
+    public function __construct($$$ = null$ = null$ = null$ = null)             
     {
-        $this->document = $document;
-        $this->format = $format;
-        $this->storage = $storage;
-        $this->out_path = $out_path;
-        $this->file_name_field_value = $file_name_field_value;
-        $this->fonts_location = $fonts_location;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * Converting document
      */
-    public function get_document()
+    public function get_()
     {
-        return $this->document;
+        return $this->;
     }
 
     /*
      * Converting document
      */
-    public function set_document($value)
+    public function set_($value)
     {
-        $this->document = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Format to convert.
      */
-    public function get_format()
+    public function get_()
     {
-        return $this->format;
+        return $this->;
     }
 
     /*
      * Format to convert.
      */
-    public function set_format($value)
+    public function set_($value)
     {
-        $this->format = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Path for saving operation result to the local storage.
      */
-    public function get_out_path()
+    public function get_()
     {
-        return $this->out_path;
+        return $this->;
     }
 
     /*
      * Path for saving operation result to the local storage.
      */
-    public function set_out_path($value)
+    public function set_($value)
     {
-        $this->out_path = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
      */
-    public function get_file_name_field_value()
+    public function get_()
     {
-        return $this->file_name_field_value;
+        return $this->;
     }
 
     /*
      * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
      */
-    public function set_file_name_field_value($value)
+    public function set_($value)
     {
-        $this->file_name_field_value = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Folder in filestorage with custom fonts.
      */
-    public function get_fonts_location()
+    public function get_()
     {
-        return $this->fonts_location;
+        return $this->;
     }
 
     /*
      * Folder in filestorage with custom fonts.
      */
-    public function set_fonts_location($value)
+    public function set_($value)
     {
-        $this->fonts_location = $value;
+        $this-> = $value;
         return $this;
     }
 }

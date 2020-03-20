@@ -36,129 +36,121 @@ class ExecuteMailMergeOnlineRequest
     /*
      * File with template
      */
-    public $template;
-	
+    public $;
     /*
      * File with mailmerge data
      */
-    public $data;
-	
+    public $;
     /*
      * With regions flag.
      */
-    public $with_regions;
-	
+    public $;
     /*
      * Clean up options.
      */
-    public $cleanup;
-	
+    public $;
     /*
      * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
      */
-    public $document_file_name;
+    public $;
     
 	
     /*
      * Initializes a new instance of the ExecuteMailMergeOnlineRequest class.
      *  
-     * @param \SplFileObject $template File with template
-     * @param \SplFileObject $data File with mailmerge data
-     * @param bool $with_regions With regions flag.
-     * @param string $cleanup Clean up options.
-     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
+     * @param  $ File with template
+     * @param  $ File with mailmerge data
+     * @param  $ With regions flag.
+     * @param  $ Clean up options.
+     * @param  $ This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
      */
-    public function __construct($template, $data, $with_regions = null, $cleanup = null, $document_file_name = null)             
+    public function __construct($$$ = null$ = null$ = null)             
     {
-        $this->template = $template;
-        $this->data = $data;
-        $this->with_regions = $with_regions;
-        $this->cleanup = $cleanup;
-        $this->document_file_name = $document_file_name;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * File with template
      */
-    public function get_template()
+    public function get_()
     {
-        return $this->template;
+        return $this->;
     }
 
     /*
      * File with template
      */
-    public function set_template($value)
+    public function set_($value)
     {
-        $this->template = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * File with mailmerge data
      */
-    public function get_data()
+    public function get_()
     {
-        return $this->data;
+        return $this->;
     }
 
     /*
      * File with mailmerge data
      */
-    public function set_data($value)
+    public function set_($value)
     {
-        $this->data = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * With regions flag.
      */
-    public function get_with_regions()
+    public function get_()
     {
-        return $this->with_regions;
+        return $this->;
     }
 
     /*
      * With regions flag.
      */
-    public function set_with_regions($value)
+    public function set_($value)
     {
-        $this->with_regions = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Clean up options.
      */
-    public function get_cleanup()
+    public function get_()
     {
-        return $this->cleanup;
+        return $this->;
     }
 
     /*
      * Clean up options.
      */
-    public function set_cleanup($value)
+    public function set_($value)
     {
-        $this->cleanup = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
      */
-    public function get_document_file_name()
+    public function get_()
     {
-        return $this->document_file_name;
+        return $this->;
     }
 
     /*
      * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
      */
-    public function set_document_file_name($value)
+    public function set_($value)
     {
-        $this->document_file_name = $value;
+        $this-> = $value;
         return $this;
     }
 }

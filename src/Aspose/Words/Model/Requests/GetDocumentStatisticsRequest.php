@@ -36,201 +36,187 @@ class GetDocumentStatisticsRequest
     /*
      * The document name.
      */
-    public $name;
-	
+    public $;
     /*
      * Original document folder.
      */
-    public $folder;
-	
+    public $;
     /*
      * Original document storage.
      */
-    public $storage;
-	
+    public $;
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $load_encoding;
-	
+    public $;
     /*
      * Password for opening an encrypted document.
      */
-    public $password;
-	
+    public $;
     /*
      * Support including/excluding comments from the WordCount. Default value is "false".
      */
-    public $include_comments;
-	
+    public $;
     /*
      * Support including/excluding footnotes from the WordCount. Default value is "false".
      */
-    public $include_footnotes;
-	
+    public $;
     /*
      * Support including/excluding shape's text from the WordCount. Default value is "false".
      */
-    public $include_text_in_shapes;
+    public $;
     
 	
     /*
      * Initializes a new instance of the GetDocumentStatisticsRequest class.
      *  
-     * @param string $name The document name.
-     * @param string $folder Original document folder.
-     * @param string $storage Original document storage.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param bool $include_comments Support including/excluding comments from the WordCount. Default value is "false".
-     * @param bool $include_footnotes Support including/excluding footnotes from the WordCount. Default value is "false".
-     * @param bool $include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is "false".
+     * @param  $ The document name.
+     * @param  $ Original document folder.
+     * @param  $ Original document storage.
+     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param  $ Password for opening an encrypted document.
+     * @param  $ Support including/excluding comments from the WordCount. Default value is "false".
+     * @param  $ Support including/excluding footnotes from the WordCount. Default value is "false".
+     * @param  $ Support including/excluding shape's text from the WordCount. Default value is "false".
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)             
+    public function __construct($$ = null$ = null$ = null$ = null$ = null$ = null$ = null)             
     {
-        $this->name = $name;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->include_comments = $include_comments;
-        $this->include_footnotes = $include_footnotes;
-        $this->include_text_in_shapes = $include_text_in_shapes;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * The document name.
      */
-    public function get_name()
+    public function get_()
     {
-        return $this->name;
+        return $this->;
     }
 
     /*
      * The document name.
      */
-    public function set_name($value)
+    public function set_($value)
     {
-        $this->name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document folder.
      */
-    public function get_folder()
+    public function get_()
     {
-        return $this->folder;
+        return $this->;
     }
 
     /*
      * Original document folder.
      */
-    public function set_folder($value)
+    public function set_($value)
     {
-        $this->folder = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_load_encoding()
+    public function get_()
     {
-        return $this->load_encoding;
+        return $this->;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_load_encoding($value)
+    public function set_($value)
     {
-        $this->load_encoding = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_password()
+    public function get_()
     {
-        return $this->password;
+        return $this->;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_password($value)
+    public function set_($value)
     {
-        $this->password = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Support including/excluding comments from the WordCount. Default value is "false".
      */
-    public function get_include_comments()
+    public function get_()
     {
-        return $this->include_comments;
+        return $this->;
     }
 
     /*
      * Support including/excluding comments from the WordCount. Default value is "false".
      */
-    public function set_include_comments($value)
+    public function set_($value)
     {
-        $this->include_comments = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Support including/excluding footnotes from the WordCount. Default value is "false".
      */
-    public function get_include_footnotes()
+    public function get_()
     {
-        return $this->include_footnotes;
+        return $this->;
     }
 
     /*
      * Support including/excluding footnotes from the WordCount. Default value is "false".
      */
-    public function set_include_footnotes($value)
+    public function set_($value)
     {
-        $this->include_footnotes = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Support including/excluding shape's text from the WordCount. Default value is "false".
      */
-    public function get_include_text_in_shapes()
+    public function get_()
     {
-        return $this->include_text_in_shapes;
+        return $this->;
     }
 
     /*
      * Support including/excluding shape's text from the WordCount. Default value is "false".
      */
-    public function set_include_text_in_shapes($value)
+    public function set_($value)
     {
-        $this->include_text_in_shapes = $value;
+        $this-> = $value;
         return $this;
     }
 }

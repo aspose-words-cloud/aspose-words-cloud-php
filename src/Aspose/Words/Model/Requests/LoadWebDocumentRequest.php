@@ -36,57 +36,55 @@ class LoadWebDocumentRequest
     /*
      * Parameters of loading.
      */
-    public $data;
-	
+    public $;
     /*
      * Original document storage.
      */
-    public $storage;
+    public $;
     
 	
     /*
      * Initializes a new instance of the LoadWebDocumentRequest class.
      *  
-     * @param \Aspose\Words\Model\LoadWebDocumentData $data Parameters of loading.
-     * @param string $storage Original document storage.
+     * @param  $ Parameters of loading.
+     * @param  $ Original document storage.
      */
-    public function __construct($data, $storage = null)             
+    public function __construct($$ = null)             
     {
-        $this->data = $data;
-        $this->storage = $storage;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * Parameters of loading.
      */
-    public function get_data()
+    public function get_()
     {
-        return $this->data;
+        return $this->;
     }
 
     /*
      * Parameters of loading.
      */
-    public function set_data($value)
+    public function set_($value)
     {
-        $this->data = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
 }

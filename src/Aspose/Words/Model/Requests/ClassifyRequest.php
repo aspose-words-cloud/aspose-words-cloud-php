@@ -36,57 +36,55 @@ class ClassifyRequest
     /*
      * Text to classify.
      */
-    public $text;
-	
+    public $;
     /*
      * Number of the best classes to return.
      */
-    public $best_classes_count;
+    public $;
     
 	
     /*
      * Initializes a new instance of the ClassifyRequest class.
      *  
-     * @param string $text Text to classify.
-     * @param string $best_classes_count Number of the best classes to return.
+     * @param  $ Text to classify.
+     * @param  $ Number of the best classes to return.
      */
-    public function __construct($text, $best_classes_count = null)             
+    public function __construct($$ = null)             
     {
-        $this->text = $text;
-        $this->best_classes_count = $best_classes_count;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * Text to classify.
      */
-    public function get_text()
+    public function get_()
     {
-        return $this->text;
+        return $this->;
     }
 
     /*
      * Text to classify.
      */
-    public function set_text($value)
+    public function set_($value)
     {
-        $this->text = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Number of the best classes to return.
      */
-    public function get_best_classes_count()
+    public function get_()
     {
-        return $this->best_classes_count;
+        return $this->;
     }
 
     /*
      * Number of the best classes to return.
      */
-    public function set_best_classes_count($value)
+    public function set_($value)
     {
-        $this->best_classes_count = $value;
+        $this-> = $value;
         return $this;
     }
 }

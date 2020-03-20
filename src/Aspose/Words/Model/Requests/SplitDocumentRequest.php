@@ -36,273 +36,253 @@ class SplitDocumentRequest
     /*
      * Original document name.
      */
-    public $name;
-	
+    public $;
     /*
      * Original document folder.
      */
-    public $folder;
-	
+    public $;
     /*
      * Original document storage.
      */
-    public $storage;
-	
+    public $;
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $load_encoding;
-	
+    public $;
     /*
      * Password for opening an encrypted document.
      */
-    public $password;
-	
+    public $;
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public $dest_file_name;
-	
+    public $;
     /*
      * Format to split.
      */
-    public $format;
-	
+    public $;
     /*
      * Start page.
      */
-    public $from;
-	
+    public $;
     /*
      * End page.
      */
-    public $to;
-	
+    public $;
     /*
      * ZipOutput or not.
      */
-    public $zip_output;
-	
+    public $;
     /*
      * Folder in filestorage with custom fonts.
      */
-    public $fonts_location;
+    public $;
     
 	
     /*
      * Initializes a new instance of the SplitDocumentRequest class.
      *  
-     * @param string $name Original document name.
-     * @param string $folder Original document folder.
-     * @param string $storage Original document storage.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $format Format to split.
-     * @param int $from Start page.
-     * @param int $to End page.
-     * @param bool $zip_output ZipOutput or not.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
+     * @param  $ Original document name.
+     * @param  $ Original document folder.
+     * @param  $ Original document storage.
+     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param  $ Password for opening an encrypted document.
+     * @param  $ Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param  $ Format to split.
+     * @param  $ Start page.
+     * @param  $ End page.
+     * @param  $ ZipOutput or not.
+     * @param  $ Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $format = null, $from = null, $to = null, $zip_output = null, $fonts_location = null)             
+    public function __construct($$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null)             
     {
-        $this->name = $name;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
-        $this->format = $format;
-        $this->from = $from;
-        $this->to = $to;
-        $this->zip_output = $zip_output;
-        $this->fonts_location = $fonts_location;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * Original document name.
      */
-    public function get_name()
+    public function get_()
     {
-        return $this->name;
+        return $this->;
     }
 
     /*
      * Original document name.
      */
-    public function set_name($value)
+    public function set_($value)
     {
-        $this->name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document folder.
      */
-    public function get_folder()
+    public function get_()
     {
-        return $this->folder;
+        return $this->;
     }
 
     /*
      * Original document folder.
      */
-    public function set_folder($value)
+    public function set_($value)
     {
-        $this->folder = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_load_encoding()
+    public function get_()
     {
-        return $this->load_encoding;
+        return $this->;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_load_encoding($value)
+    public function set_($value)
     {
-        $this->load_encoding = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_password()
+    public function get_()
     {
-        return $this->password;
+        return $this->;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_password($value)
+    public function set_($value)
     {
-        $this->password = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function get_dest_file_name()
+    public function get_()
     {
-        return $this->dest_file_name;
+        return $this->;
     }
 
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function set_dest_file_name($value)
+    public function set_($value)
     {
-        $this->dest_file_name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Format to split.
      */
-    public function get_format()
+    public function get_()
     {
-        return $this->format;
+        return $this->;
     }
 
     /*
      * Format to split.
      */
-    public function set_format($value)
+    public function set_($value)
     {
-        $this->format = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Start page.
      */
-    public function get_from()
+    public function get_()
     {
-        return $this->from;
+        return $this->;
     }
 
     /*
      * Start page.
      */
-    public function set_from($value)
+    public function set_($value)
     {
-        $this->from = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * End page.
      */
-    public function get_to()
+    public function get_()
     {
-        return $this->to;
+        return $this->;
     }
 
     /*
      * End page.
      */
-    public function set_to($value)
+    public function set_($value)
     {
-        $this->to = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * ZipOutput or not.
      */
-    public function get_zip_output()
+    public function get_()
     {
-        return $this->zip_output;
+        return $this->;
     }
 
     /*
      * ZipOutput or not.
      */
-    public function set_zip_output($value)
+    public function set_($value)
     {
-        $this->zip_output = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Folder in filestorage with custom fonts.
      */
-    public function get_fonts_location()
+    public function get_()
     {
-        return $this->fonts_location;
+        return $this->;
     }
 
     /*
      * Folder in filestorage with custom fonts.
      */
-    public function set_fonts_location($value)
+    public function set_($value)
     {
-        $this->fonts_location = $value;
+        $this-> = $value;
         return $this;
     }
 }

@@ -36,273 +36,253 @@ class InsertRunRequest
     /*
      * The document name.
      */
-    public $name;
-	
+    public $;
     /*
      * Path to parent paragraph.
      */
-    public $paragraph_path;
-	
+    public $;
     /*
      * Run data.
      */
-    public $run;
-	
+    public $;
     /*
      * Original document folder.
      */
-    public $folder;
-	
+    public $;
     /*
      * Original document storage.
      */
-    public $storage;
-	
+    public $;
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $load_encoding;
-	
+    public $;
     /*
      * Password for opening an encrypted document.
      */
-    public $password;
-	
+    public $;
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public $dest_file_name;
-	
+    public $;
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public $revision_author;
-	
+    public $;
     /*
      * The date and time to use for revisions.
      */
-    public $revision_date_time;
-	
+    public $;
     /*
      * Paragraph will be inserted before node with index.
      */
-    public $insert_before_node;
+    public $;
     
 	
     /*
      * Initializes a new instance of the InsertRunRequest class.
      *  
-     * @param string $name The document name.
-     * @param string $paragraph_path Path to parent paragraph.
-     * @param \Aspose\Words\Model\Run $run Run data.
-     * @param string $folder Original document folder.
-     * @param string $storage Original document storage.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $insert_before_node Paragraph will be inserted before node with index.
+     * @param  $ The document name.
+     * @param  $ Path to parent paragraph.
+     * @param  $ Run data.
+     * @param  $ Original document folder.
+     * @param  $ Original document storage.
+     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param  $ Password for opening an encrypted document.
+     * @param  $ Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param  $ Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     * @param  $ The date and time to use for revisions.
+     * @param  $ Paragraph will be inserted before node with index.
      */
-    public function __construct($name, $paragraph_path, $run, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)             
+    public function __construct($$$$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null)             
     {
-        $this->name = $name;
-        $this->paragraph_path = $paragraph_path;
-        $this->run = $run;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
-        $this->revision_author = $revision_author;
-        $this->revision_date_time = $revision_date_time;
-        $this->insert_before_node = $insert_before_node;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * The document name.
      */
-    public function get_name()
+    public function get_()
     {
-        return $this->name;
+        return $this->;
     }
 
     /*
      * The document name.
      */
-    public function set_name($value)
+    public function set_($value)
     {
-        $this->name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Path to parent paragraph.
      */
-    public function get_paragraph_path()
+    public function get_()
     {
-        return $this->paragraph_path;
+        return $this->;
     }
 
     /*
      * Path to parent paragraph.
      */
-    public function set_paragraph_path($value)
+    public function set_($value)
     {
-        $this->paragraph_path = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Run data.
      */
-    public function get_run()
+    public function get_()
     {
-        return $this->run;
+        return $this->;
     }
 
     /*
      * Run data.
      */
-    public function set_run($value)
+    public function set_($value)
     {
-        $this->run = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document folder.
      */
-    public function get_folder()
+    public function get_()
     {
-        return $this->folder;
+        return $this->;
     }
 
     /*
      * Original document folder.
      */
-    public function set_folder($value)
+    public function set_($value)
     {
-        $this->folder = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_load_encoding()
+    public function get_()
     {
-        return $this->load_encoding;
+        return $this->;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_load_encoding($value)
+    public function set_($value)
     {
-        $this->load_encoding = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_password()
+    public function get_()
     {
-        return $this->password;
+        return $this->;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_password($value)
+    public function set_($value)
     {
-        $this->password = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function get_dest_file_name()
+    public function get_()
     {
-        return $this->dest_file_name;
+        return $this->;
     }
 
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function set_dest_file_name($value)
+    public function set_($value)
     {
-        $this->dest_file_name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public function get_revision_author()
+    public function get_()
     {
-        return $this->revision_author;
+        return $this->;
     }
 
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public function set_revision_author($value)
+    public function set_($value)
     {
-        $this->revision_author = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The date and time to use for revisions.
      */
-    public function get_revision_date_time()
+    public function get_()
     {
-        return $this->revision_date_time;
+        return $this->;
     }
 
     /*
      * The date and time to use for revisions.
      */
-    public function set_revision_date_time($value)
+    public function set_($value)
     {
-        $this->revision_date_time = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Paragraph will be inserted before node with index.
      */
-    public function get_insert_before_node()
+    public function get_()
     {
-        return $this->insert_before_node;
+        return $this->;
     }
 
     /*
      * Paragraph will be inserted before node with index.
      */
-    public function set_insert_before_node($value)
+    public function set_($value)
     {
-        $this->insert_before_node = $value;
+        $this-> = $value;
         return $this;
     }
 }

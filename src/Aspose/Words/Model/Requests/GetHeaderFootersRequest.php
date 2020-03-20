@@ -36,177 +36,165 @@ class GetHeaderFootersRequest
     /*
      * The document name.
      */
-    public $name;
-	
+    public $;
     /*
      * Path to parent section.
      */
-    public $section_path;
-	
+    public $;
     /*
      * Original document folder.
      */
-    public $folder;
-	
+    public $;
     /*
      * Original document storage.
      */
-    public $storage;
-	
+    public $;
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $load_encoding;
-	
+    public $;
     /*
      * Password for opening an encrypted document.
      */
-    public $password;
-	
+    public $;
     /*
      * List of types of headers and footers.
      */
-    public $filter_by_type;
+    public $;
     
 	
     /*
      * Initializes a new instance of the GetHeaderFootersRequest class.
      *  
-     * @param string $name The document name.
-     * @param string $section_path Path to parent section.
-     * @param string $folder Original document folder.
-     * @param string $storage Original document storage.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $filter_by_type List of types of headers and footers.
+     * @param  $ The document name.
+     * @param  $ Path to parent section.
+     * @param  $ Original document folder.
+     * @param  $ Original document storage.
+     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param  $ Password for opening an encrypted document.
+     * @param  $ List of types of headers and footers.
      */
-    public function __construct($name, $section_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $filter_by_type = null)             
+    public function __construct($$$ = null$ = null$ = null$ = null$ = null)             
     {
-        $this->name = $name;
-        $this->section_path = $section_path;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->filter_by_type = $filter_by_type;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * The document name.
      */
-    public function get_name()
+    public function get_()
     {
-        return $this->name;
+        return $this->;
     }
 
     /*
      * The document name.
      */
-    public function set_name($value)
+    public function set_($value)
     {
-        $this->name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Path to parent section.
      */
-    public function get_section_path()
+    public function get_()
     {
-        return $this->section_path;
+        return $this->;
     }
 
     /*
      * Path to parent section.
      */
-    public function set_section_path($value)
+    public function set_($value)
     {
-        $this->section_path = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document folder.
      */
-    public function get_folder()
+    public function get_()
     {
-        return $this->folder;
+        return $this->;
     }
 
     /*
      * Original document folder.
      */
-    public function set_folder($value)
+    public function set_($value)
     {
-        $this->folder = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_load_encoding()
+    public function get_()
     {
-        return $this->load_encoding;
+        return $this->;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_load_encoding($value)
+    public function set_($value)
     {
-        $this->load_encoding = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_password()
+    public function get_()
     {
-        return $this->password;
+        return $this->;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_password($value)
+    public function set_($value)
     {
-        $this->password = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * List of types of headers and footers.
      */
-    public function get_filter_by_type()
+    public function get_()
     {
-        return $this->filter_by_type;
+        return $this->;
     }
 
     /*
      * List of types of headers and footers.
      */
-    public function set_filter_by_type($value)
+    public function set_($value)
     {
-        $this->filter_by_type = $value;
+        $this-> = $value;
         return $this;
     }
 }

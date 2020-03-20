@@ -36,585 +36,539 @@ class SaveAsTiffRequest
     /*
      * The document name.
      */
-    public $name;
-	
+    public $;
     /*
      * Tiff save options.
      */
-    public $save_options;
-	
+    public $;
     /*
      * Original document folder.
      */
-    public $folder;
-	
+    public $;
     /*
      * Original document storage.
      */
-    public $storage;
-	
+    public $;
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $load_encoding;
-	
+    public $;
     /*
      * Password for opening an encrypted document.
      */
-    public $password;
-	
+    public $;
     /*
      * Use antialiasing flag.
      */
-    public $use_anti_aliasing;
-	
+    public $;
     /*
      * Use high quality flag.
      */
-    public $use_high_quality_rendering;
-	
+    public $;
     /*
      * Brightness for the generated images.
      */
-    public $image_brightness;
-	
+    public $;
     /*
      * Color mode for the generated images.
      */
-    public $image_color_mode;
-	
+    public $;
     /*
      * The contrast for the generated images.
      */
-    public $image_contrast;
-	
+    public $;
     /*
      * The images numeral format.
      */
-    public $numeral_format;
-	
+    public $;
     /*
      * Number of pages to render.
      */
-    public $page_count;
-	
+    public $;
     /*
      * Page index to start rendering.
      */
-    public $page_index;
-	
+    public $;
     /*
      * Background image color.
      */
-    public $paper_color;
-	
+    public $;
     /*
      * The pixel format of generated images.
      */
-    public $pixel_format;
-	
+    public $;
     /*
      * The resolution of generated images.
      */
-    public $resolution;
-	
+    public $;
     /*
      * Zoom factor for generated images.
      */
-    public $scale;
-	
+    public $;
     /*
      * The compression tipe.
      */
-    public $tiff_compression;
-	
+    public $;
     /*
      * Optional, default is Fallback.
      */
-    public $dml_rendering_mode;
-	
+    public $;
     /*
      * Optional, default is Simplified.
      */
-    public $dml_effects_rendering_mode;
-	
+    public $;
     /*
      * Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
      */
-    public $tiff_binarization_method;
-	
+    public $;
     /*
      * Optional. A value determining zip output or not.
      */
-    public $zip_output;
-	
+    public $;
     /*
      * Folder in filestorage with custom fonts.
      */
-    public $fonts_location;
+    public $;
     
 	
     /*
      * Initializes a new instance of the SaveAsTiffRequest class.
      *  
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\TiffSaveOptionsData $save_options Tiff save options.
-     * @param string $folder Original document folder.
-     * @param string $storage Original document storage.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param bool $use_anti_aliasing Use antialiasing flag.
-     * @param bool $use_high_quality_rendering Use high quality flag.
-     * @param double $image_brightness Brightness for the generated images.
-     * @param string $image_color_mode Color mode for the generated images.
-     * @param double $image_contrast The contrast for the generated images.
-     * @param string $numeral_format The images numeral format.
-     * @param int $page_count Number of pages to render.
-     * @param int $page_index Page index to start rendering.
-     * @param string $paper_color Background image color.
-     * @param string $pixel_format The pixel format of generated images.
-     * @param double $resolution The resolution of generated images.
-     * @param double $scale Zoom factor for generated images.
-     * @param string $tiff_compression The compression tipe.
-     * @param string $dml_rendering_mode Optional, default is Fallback.
-     * @param string $dml_effects_rendering_mode Optional, default is Simplified.
-     * @param string $tiff_binarization_method Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
-     * @param bool $zip_output Optional. A value determining zip output or not.
-     * @param string $fonts_location Folder in filestorage with custom fonts.
+     * @param  $ The document name.
+     * @param  $ Tiff save options.
+     * @param  $ Original document folder.
+     * @param  $ Original document storage.
+     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param  $ Password for opening an encrypted document.
+     * @param  $ Use antialiasing flag.
+     * @param  $ Use high quality flag.
+     * @param  $ Brightness for the generated images.
+     * @param  $ Color mode for the generated images.
+     * @param  $ The contrast for the generated images.
+     * @param  $ The images numeral format.
+     * @param  $ Number of pages to render.
+     * @param  $ Page index to start rendering.
+     * @param  $ Background image color.
+     * @param  $ The pixel format of generated images.
+     * @param  $ The resolution of generated images.
+     * @param  $ Zoom factor for generated images.
+     * @param  $ The compression tipe.
+     * @param  $ Optional, default is Fallback.
+     * @param  $ Optional, default is Simplified.
+     * @param  $ Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
+     * @param  $ Optional. A value determining zip output or not.
+     * @param  $ Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $save_options, $folder = null, $storage = null, $load_encoding = null, $password = null, $use_anti_aliasing = null, $use_high_quality_rendering = null, $image_brightness = null, $image_color_mode = null, $image_contrast = null, $numeral_format = null, $page_count = null, $page_index = null, $paper_color = null, $pixel_format = null, $resolution = null, $scale = null, $tiff_compression = null, $dml_rendering_mode = null, $dml_effects_rendering_mode = null, $tiff_binarization_method = null, $zip_output = null, $fonts_location = null)             
+    public function __construct($$$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null)             
     {
-        $this->name = $name;
-        $this->save_options = $save_options;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->use_anti_aliasing = $use_anti_aliasing;
-        $this->use_high_quality_rendering = $use_high_quality_rendering;
-        $this->image_brightness = $image_brightness;
-        $this->image_color_mode = $image_color_mode;
-        $this->image_contrast = $image_contrast;
-        $this->numeral_format = $numeral_format;
-        $this->page_count = $page_count;
-        $this->page_index = $page_index;
-        $this->paper_color = $paper_color;
-        $this->pixel_format = $pixel_format;
-        $this->resolution = $resolution;
-        $this->scale = $scale;
-        $this->tiff_compression = $tiff_compression;
-        $this->dml_rendering_mode = $dml_rendering_mode;
-        $this->dml_effects_rendering_mode = $dml_effects_rendering_mode;
-        $this->tiff_binarization_method = $tiff_binarization_method;
-        $this->zip_output = $zip_output;
-        $this->fonts_location = $fonts_location;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * The document name.
      */
-    public function get_name()
+    public function get_()
     {
-        return $this->name;
+        return $this->;
     }
 
     /*
      * The document name.
      */
-    public function set_name($value)
+    public function set_($value)
     {
-        $this->name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Tiff save options.
      */
-    public function get_save_options()
+    public function get_()
     {
-        return $this->save_options;
+        return $this->;
     }
 
     /*
      * Tiff save options.
      */
-    public function set_save_options($value)
+    public function set_($value)
     {
-        $this->save_options = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document folder.
      */
-    public function get_folder()
+    public function get_()
     {
-        return $this->folder;
+        return $this->;
     }
 
     /*
      * Original document folder.
      */
-    public function set_folder($value)
+    public function set_($value)
     {
-        $this->folder = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_load_encoding()
+    public function get_()
     {
-        return $this->load_encoding;
+        return $this->;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_load_encoding($value)
+    public function set_($value)
     {
-        $this->load_encoding = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_password()
+    public function get_()
     {
-        return $this->password;
+        return $this->;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_password($value)
+    public function set_($value)
     {
-        $this->password = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Use antialiasing flag.
      */
-    public function get_use_anti_aliasing()
+    public function get_()
     {
-        return $this->use_anti_aliasing;
+        return $this->;
     }
 
     /*
      * Use antialiasing flag.
      */
-    public function set_use_anti_aliasing($value)
+    public function set_($value)
     {
-        $this->use_anti_aliasing = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Use high quality flag.
      */
-    public function get_use_high_quality_rendering()
+    public function get_()
     {
-        return $this->use_high_quality_rendering;
+        return $this->;
     }
 
     /*
      * Use high quality flag.
      */
-    public function set_use_high_quality_rendering($value)
+    public function set_($value)
     {
-        $this->use_high_quality_rendering = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Brightness for the generated images.
      */
-    public function get_image_brightness()
+    public function get_()
     {
-        return $this->image_brightness;
+        return $this->;
     }
 
     /*
      * Brightness for the generated images.
      */
-    public function set_image_brightness($value)
+    public function set_($value)
     {
-        $this->image_brightness = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Color mode for the generated images.
      */
-    public function get_image_color_mode()
+    public function get_()
     {
-        return $this->image_color_mode;
+        return $this->;
     }
 
     /*
      * Color mode for the generated images.
      */
-    public function set_image_color_mode($value)
+    public function set_($value)
     {
-        $this->image_color_mode = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The contrast for the generated images.
      */
-    public function get_image_contrast()
+    public function get_()
     {
-        return $this->image_contrast;
+        return $this->;
     }
 
     /*
      * The contrast for the generated images.
      */
-    public function set_image_contrast($value)
+    public function set_($value)
     {
-        $this->image_contrast = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The images numeral format.
      */
-    public function get_numeral_format()
+    public function get_()
     {
-        return $this->numeral_format;
+        return $this->;
     }
 
     /*
      * The images numeral format.
      */
-    public function set_numeral_format($value)
+    public function set_($value)
     {
-        $this->numeral_format = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Number of pages to render.
      */
-    public function get_page_count()
+    public function get_()
     {
-        return $this->page_count;
+        return $this->;
     }
 
     /*
      * Number of pages to render.
      */
-    public function set_page_count($value)
+    public function set_($value)
     {
-        $this->page_count = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Page index to start rendering.
      */
-    public function get_page_index()
+    public function get_()
     {
-        return $this->page_index;
+        return $this->;
     }
 
     /*
      * Page index to start rendering.
      */
-    public function set_page_index($value)
+    public function set_($value)
     {
-        $this->page_index = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Background image color.
      */
-    public function get_paper_color()
+    public function get_()
     {
-        return $this->paper_color;
+        return $this->;
     }
 
     /*
      * Background image color.
      */
-    public function set_paper_color($value)
+    public function set_($value)
     {
-        $this->paper_color = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The pixel format of generated images.
      */
-    public function get_pixel_format()
+    public function get_()
     {
-        return $this->pixel_format;
+        return $this->;
     }
 
     /*
      * The pixel format of generated images.
      */
-    public function set_pixel_format($value)
+    public function set_($value)
     {
-        $this->pixel_format = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The resolution of generated images.
      */
-    public function get_resolution()
+    public function get_()
     {
-        return $this->resolution;
+        return $this->;
     }
 
     /*
      * The resolution of generated images.
      */
-    public function set_resolution($value)
+    public function set_($value)
     {
-        $this->resolution = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Zoom factor for generated images.
      */
-    public function get_scale()
+    public function get_()
     {
-        return $this->scale;
+        return $this->;
     }
 
     /*
      * Zoom factor for generated images.
      */
-    public function set_scale($value)
+    public function set_($value)
     {
-        $this->scale = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The compression tipe.
      */
-    public function get_tiff_compression()
+    public function get_()
     {
-        return $this->tiff_compression;
+        return $this->;
     }
 
     /*
      * The compression tipe.
      */
-    public function set_tiff_compression($value)
+    public function set_($value)
     {
-        $this->tiff_compression = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Optional, default is Fallback.
      */
-    public function get_dml_rendering_mode()
+    public function get_()
     {
-        return $this->dml_rendering_mode;
+        return $this->;
     }
 
     /*
      * Optional, default is Fallback.
      */
-    public function set_dml_rendering_mode($value)
+    public function set_($value)
     {
-        $this->dml_rendering_mode = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Optional, default is Simplified.
      */
-    public function get_dml_effects_rendering_mode()
+    public function get_()
     {
-        return $this->dml_effects_rendering_mode;
+        return $this->;
     }
 
     /*
      * Optional, default is Simplified.
      */
-    public function set_dml_effects_rendering_mode($value)
+    public function set_($value)
     {
-        $this->dml_effects_rendering_mode = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
      */
-    public function get_tiff_binarization_method()
+    public function get_()
     {
-        return $this->tiff_binarization_method;
+        return $this->;
     }
 
     /*
      * Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
      */
-    public function set_tiff_binarization_method($value)
+    public function set_($value)
     {
-        $this->tiff_binarization_method = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Optional. A value determining zip output or not.
      */
-    public function get_zip_output()
+    public function get_()
     {
-        return $this->zip_output;
+        return $this->;
     }
 
     /*
      * Optional. A value determining zip output or not.
      */
-    public function set_zip_output($value)
+    public function set_($value)
     {
-        $this->zip_output = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Folder in filestorage with custom fonts.
      */
-    public function get_fonts_location()
+    public function get_()
     {
-        return $this->fonts_location;
+        return $this->;
     }
 
     /*
      * Folder in filestorage with custom fonts.
      */
-    public function set_fonts_location($value)
+    public function set_($value)
     {
-        $this->fonts_location = $value;
+        $this-> = $value;
         return $this;
     }
 }

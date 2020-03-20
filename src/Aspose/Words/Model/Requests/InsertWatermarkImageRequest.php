@@ -36,273 +36,253 @@ class InsertWatermarkImageRequest
     /*
      * The document name.
      */
-    public $name;
-	
+    public $;
     /*
      * File with image
      */
-    public $image_file;
-	
+    public $;
     /*
      * Original document folder.
      */
-    public $folder;
-	
+    public $;
     /*
      * Original document storage.
      */
-    public $storage;
-	
+    public $;
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $load_encoding;
-	
+    public $;
     /*
      * Password for opening an encrypted document.
      */
-    public $password;
-	
+    public $;
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public $dest_file_name;
-	
+    public $;
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public $revision_author;
-	
+    public $;
     /*
      * The date and time to use for revisions.
      */
-    public $revision_date_time;
-	
+    public $;
     /*
      * The watermark rotation angle.
      */
-    public $rotation_angle;
-	
+    public $;
     /*
      * The image file server full name. If the name is empty the image is expected in request content.
      */
-    public $image;
+    public $;
     
 	
     /*
      * Initializes a new instance of the InsertWatermarkImageRequest class.
      *  
-     * @param string $name The document name.
-     * @param \SplFileObject $image_file File with image
-     * @param string $folder Original document folder.
-     * @param string $storage Original document storage.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     * @param string $revision_date_time The date and time to use for revisions.
-     * @param double $rotation_angle The watermark rotation angle.
-     * @param string $image The image file server full name. If the name is empty the image is expected in request content.
+     * @param  $ The document name.
+     * @param  $ File with image
+     * @param  $ Original document folder.
+     * @param  $ Original document storage.
+     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param  $ Password for opening an encrypted document.
+     * @param  $ Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param  $ Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     * @param  $ The date and time to use for revisions.
+     * @param  $ The watermark rotation angle.
+     * @param  $ The image file server full name. If the name is empty the image is expected in request content.
      */
-    public function __construct($name, $image_file = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)             
+    public function __construct($$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null)             
     {
-        $this->name = $name;
-        $this->image_file = $image_file;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
-        $this->revision_author = $revision_author;
-        $this->revision_date_time = $revision_date_time;
-        $this->rotation_angle = $rotation_angle;
-        $this->image = $image;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * The document name.
      */
-    public function get_name()
+    public function get_()
     {
-        return $this->name;
+        return $this->;
     }
 
     /*
      * The document name.
      */
-    public function set_name($value)
+    public function set_($value)
     {
-        $this->name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * File with image
      */
-    public function get_image_file()
+    public function get_()
     {
-        return $this->image_file;
+        return $this->;
     }
 
     /*
      * File with image
      */
-    public function set_image_file($value)
+    public function set_($value)
     {
-        $this->image_file = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document folder.
      */
-    public function get_folder()
+    public function get_()
     {
-        return $this->folder;
+        return $this->;
     }
 
     /*
      * Original document folder.
      */
-    public function set_folder($value)
+    public function set_($value)
     {
-        $this->folder = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_load_encoding()
+    public function get_()
     {
-        return $this->load_encoding;
+        return $this->;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_load_encoding($value)
+    public function set_($value)
     {
-        $this->load_encoding = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_password()
+    public function get_()
     {
-        return $this->password;
+        return $this->;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_password($value)
+    public function set_($value)
     {
-        $this->password = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function get_dest_file_name()
+    public function get_()
     {
-        return $this->dest_file_name;
+        return $this->;
     }
 
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function set_dest_file_name($value)
+    public function set_($value)
     {
-        $this->dest_file_name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public function get_revision_author()
+    public function get_()
     {
-        return $this->revision_author;
+        return $this->;
     }
 
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public function set_revision_author($value)
+    public function set_($value)
     {
-        $this->revision_author = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The date and time to use for revisions.
      */
-    public function get_revision_date_time()
+    public function get_()
     {
-        return $this->revision_date_time;
+        return $this->;
     }
 
     /*
      * The date and time to use for revisions.
      */
-    public function set_revision_date_time($value)
+    public function set_($value)
     {
-        $this->revision_date_time = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The watermark rotation angle.
      */
-    public function get_rotation_angle()
+    public function get_()
     {
-        return $this->rotation_angle;
+        return $this->;
     }
 
     /*
      * The watermark rotation angle.
      */
-    public function set_rotation_angle($value)
+    public function set_($value)
     {
-        $this->rotation_angle = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The image file server full name. If the name is empty the image is expected in request content.
      */
-    public function get_image()
+    public function get_()
     {
-        return $this->image;
+        return $this->;
     }
 
     /*
      * The image file server full name. If the name is empty the image is expected in request content.
      */
-    public function set_image($value)
+    public function set_($value)
     {
-        $this->image = $value;
+        $this-> = $value;
         return $this;
     }
 }

@@ -36,105 +36,99 @@ class CopyFolderRequest
     /*
      * Destination folder path e.g. '/dst'
      */
-    public $dest_path;
-	
+    public $;
     /*
      * Source folder path e.g. /Folder1
      */
-    public $src_path;
-	
+    public $;
     /*
      * Source storage name
      */
-    public $src_storage_name;
-	
+    public $;
     /*
      * Destination storage name
      */
-    public $dest_storage_name;
+    public $;
     
 	
     /*
      * Initializes a new instance of the CopyFolderRequest class.
      *  
-     * @param string $dest_path Destination folder path e.g. '/dst'
-     * @param string $src_path Source folder path e.g. /Folder1
-     * @param string $src_storage_name Source storage name
-     * @param string $dest_storage_name Destination storage name
+     * @param  $ Destination folder path e.g. '/dst'
+     * @param  $ Source folder path e.g. /Folder1
+     * @param  $ Source storage name
+     * @param  $ Destination storage name
      */
-    public function __construct($dest_path, $src_path, $src_storage_name = null, $dest_storage_name = null)             
+    public function __construct($$$ = null$ = null)             
     {
-        $this->dest_path = $dest_path;
-        $this->src_path = $src_path;
-        $this->src_storage_name = $src_storage_name;
-        $this->dest_storage_name = $dest_storage_name;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * Destination folder path e.g. '/dst'
      */
-    public function get_dest_path()
+    public function get_()
     {
-        return $this->dest_path;
+        return $this->;
     }
 
     /*
      * Destination folder path e.g. '/dst'
      */
-    public function set_dest_path($value)
+    public function set_($value)
     {
-        $this->dest_path = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Source folder path e.g. /Folder1
      */
-    public function get_src_path()
+    public function get_()
     {
-        return $this->src_path;
+        return $this->;
     }
 
     /*
      * Source folder path e.g. /Folder1
      */
-    public function set_src_path($value)
+    public function set_($value)
     {
-        $this->src_path = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Source storage name
      */
-    public function get_src_storage_name()
+    public function get_()
     {
-        return $this->src_storage_name;
+        return $this->;
     }
 
     /*
      * Source storage name
      */
-    public function set_src_storage_name($value)
+    public function set_($value)
     {
-        $this->src_storage_name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * Destination storage name
      */
-    public function get_dest_storage_name()
+    public function get_()
     {
-        return $this->dest_storage_name;
+        return $this->;
     }
 
     /*
      * Destination storage name
      */
-    public function set_dest_storage_name($value)
+    public function set_($value)
     {
-        $this->dest_storage_name = $value;
+        $this-> = $value;
         return $this;
     }
 }

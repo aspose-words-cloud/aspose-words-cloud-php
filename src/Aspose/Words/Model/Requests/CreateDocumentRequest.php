@@ -36,81 +36,77 @@ class CreateDocumentRequest
     /*
      * Original document storage.
      */
-    public $storage;
-	
+    public $;
     /*
      * The document name.
      */
-    public $file_name;
-	
+    public $;
     /*
      * The document folder.
      */
-    public $folder;
+    public $;
     
 	
     /*
      * Initializes a new instance of the CreateDocumentRequest class.
      *  
-     * @param string $storage Original document storage.
-     * @param string $file_name The document name.
-     * @param string $folder The document folder.
+     * @param  $ Original document storage.
+     * @param  $ The document name.
+     * @param  $ The document folder.
      */
-    public function __construct($storage = null, $file_name = null, $folder = null)             
+    public function __construct($ = null$ = null$ = null)             
     {
-        $this->storage = $storage;
-        $this->file_name = $file_name;
-        $this->folder = $folder;
+        $this-> = $;
+        $this-> = $;
+        $this-> = $;
     }
 
     /*
      * Original document storage.
      */
-    public function get_storage()
+    public function get_()
     {
-        return $this->storage;
+        return $this->;
     }
 
     /*
      * Original document storage.
      */
-    public function set_storage($value)
+    public function set_($value)
     {
-        $this->storage = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The document name.
      */
-    public function get_file_name()
+    public function get_()
     {
-        return $this->file_name;
+        return $this->;
     }
 
     /*
      * The document name.
      */
-    public function set_file_name($value)
+    public function set_($value)
     {
-        $this->file_name = $value;
+        $this-> = $value;
         return $this;
     }
-	
     /*
      * The document folder.
      */
-    public function get_folder()
+    public function get_()
     {
-        return $this->folder;
+        return $this->;
     }
 
     /*
      * The document folder.
      */
-    public function set_folder($value)
+    public function set_($value)
     {
-        $this->folder = $value;
+        $this-> = $value;
         return $this;
     }
 }

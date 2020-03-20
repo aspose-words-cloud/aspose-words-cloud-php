@@ -36,55 +36,57 @@ class CreateFolderRequest
     /*
      * Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
      */
-    public $;
+    public $path;
+	
     /*
      * Storage name
      */
-    public $;
+    public $storage_name;
     
 	
     /*
      * Initializes a new instance of the CreateFolderRequest class.
      *  
-     * @param  $ Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
-     * @param  $ Storage name
+     * @param string $path Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
+     * @param string $storage_name Storage name
      */
-    public function __construct($$ = null)             
+    public function __construct($path, $storage_name = null)             
     {
-        $this-> = $;
-        $this-> = $;
+        $this->path = $path;
+        $this->storage_name = $storage_name;
     }
 
     /*
      * Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
      */
-    public function get_()
+    public function get_path()
     {
-        return $this->;
+        return $this->path;
     }
 
     /*
      * Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
      */
-    public function set_($value)
+    public function set_path($value)
     {
-        $this-> = $value;
+        $this->path = $value;
         return $this;
     }
+	
     /*
      * Storage name
      */
-    public function get_()
+    public function get_storage_name()
     {
-        return $this->;
+        return $this->storage_name;
     }
 
     /*
      * Storage name
      */
-    public function set_($value)
+    public function set_storage_name($value)
     {
-        $this-> = $value;
+        $this->storage_name = $value;
         return $this;
     }
 }

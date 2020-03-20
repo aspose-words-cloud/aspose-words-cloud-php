@@ -36,77 +36,81 @@ class DeleteFileRequest
     /*
      * Path of the file including file name and extension e.g. /Folder1/file.ext
      */
-    public $;
+    public $path;
+	
     /*
      * Storage name
      */
-    public $;
+    public $storage_name;
+	
     /*
      * File version ID to delete
      */
-    public $;
+    public $version_id;
     
 	
     /*
      * Initializes a new instance of the DeleteFileRequest class.
      *  
-     * @param  $ Path of the file including file name and extension e.g. /Folder1/file.ext
-     * @param  $ Storage name
-     * @param  $ File version ID to delete
+     * @param string $path Path of the file including file name and extension e.g. /Folder1/file.ext
+     * @param string $storage_name Storage name
+     * @param string $version_id File version ID to delete
      */
-    public function __construct($$ = null$ = null)             
+    public function __construct($path, $storage_name = null, $version_id = null)             
     {
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
+        $this->path = $path;
+        $this->storage_name = $storage_name;
+        $this->version_id = $version_id;
     }
 
     /*
      * Path of the file including file name and extension e.g. /Folder1/file.ext
      */
-    public function get_()
+    public function get_path()
     {
-        return $this->;
+        return $this->path;
     }
 
     /*
      * Path of the file including file name and extension e.g. /Folder1/file.ext
      */
-    public function set_($value)
+    public function set_path($value)
     {
-        $this-> = $value;
+        $this->path = $value;
         return $this;
     }
+	
     /*
      * Storage name
      */
-    public function get_()
+    public function get_storage_name()
     {
-        return $this->;
+        return $this->storage_name;
     }
 
     /*
      * Storage name
      */
-    public function set_($value)
+    public function set_storage_name($value)
     {
-        $this-> = $value;
+        $this->storage_name = $value;
         return $this;
     }
+	
     /*
      * File version ID to delete
      */
-    public function get_()
+    public function get_version_id()
     {
-        return $this->;
+        return $this->version_id;
     }
 
     /*
      * File version ID to delete
      */
-    public function set_($value)
+    public function set_version_id($value)
     {
-        $this-> = $value;
+        $this->version_id = $value;
         return $this;
     }
 }

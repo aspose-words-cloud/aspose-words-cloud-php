@@ -36,165 +36,177 @@ class GetTableRowFormatRequest
     /*
      * The document name.
      */
-    public $;
+    public $name;
+	
     /*
      * Path to table.
      */
-    public $;
+    public $table_path;
+	
     /*
      * Object index.
      */
-    public $;
+    public $index;
+	
     /*
      * Original document folder.
      */
-    public $;
+    public $folder;
+	
     /*
      * Original document storage.
      */
-    public $;
+    public $storage;
+	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $;
+    public $load_encoding;
+	
     /*
      * Password for opening an encrypted document.
      */
-    public $;
+    public $password;
     
 	
     /*
      * Initializes a new instance of the GetTableRowFormatRequest class.
      *  
-     * @param  $ The document name.
-     * @param  $ Path to table.
-     * @param  $ Object index.
-     * @param  $ Original document folder.
-     * @param  $ Original document storage.
-     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param  $ Password for opening an encrypted document.
+     * @param string $name The document name.
+     * @param string $table_path Path to table.
+     * @param int $index Object index.
+     * @param string $folder Original document folder.
+     * @param string $storage Original document storage.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($$$$ = null$ = null$ = null$ = null)             
+    public function __construct($name, $table_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
+        $this->name = $name;
+        $this->table_path = $table_path;
+        $this->index = $index;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
     }
 
     /*
      * The document name.
      */
-    public function get_()
+    public function get_name()
     {
-        return $this->;
+        return $this->name;
     }
 
     /*
      * The document name.
      */
-    public function set_($value)
+    public function set_name($value)
     {
-        $this-> = $value;
+        $this->name = $value;
         return $this;
     }
+	
     /*
      * Path to table.
      */
-    public function get_()
+    public function get_table_path()
     {
-        return $this->;
+        return $this->table_path;
     }
 
     /*
      * Path to table.
      */
-    public function set_($value)
+    public function set_table_path($value)
     {
-        $this-> = $value;
+        $this->table_path = $value;
         return $this;
     }
+	
     /*
      * Object index.
      */
-    public function get_()
+    public function get_index()
     {
-        return $this->;
+        return $this->index;
     }
 
     /*
      * Object index.
      */
-    public function set_($value)
+    public function set_index($value)
     {
-        $this-> = $value;
+        $this->index = $value;
         return $this;
     }
+	
     /*
      * Original document folder.
      */
-    public function get_()
+    public function get_folder()
     {
-        return $this->;
+        return $this->folder;
     }
 
     /*
      * Original document folder.
      */
-    public function set_($value)
+    public function set_folder($value)
     {
-        $this-> = $value;
+        $this->folder = $value;
         return $this;
     }
+	
     /*
      * Original document storage.
      */
-    public function get_()
+    public function get_storage()
     {
-        return $this->;
+        return $this->storage;
     }
 
     /*
      * Original document storage.
      */
-    public function set_($value)
+    public function set_storage($value)
     {
-        $this-> = $value;
+        $this->storage = $value;
         return $this;
     }
+	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_()
+    public function get_load_encoding()
     {
-        return $this->;
+        return $this->load_encoding;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_($value)
+    public function set_load_encoding($value)
     {
-        $this-> = $value;
+        $this->load_encoding = $value;
         return $this;
     }
+	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_()
+    public function get_password()
     {
-        return $this->;
+        return $this->password;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_($value)
+    public function set_password($value)
     {
-        $this-> = $value;
+        $this->password = $value;
         return $this;
     }
 }

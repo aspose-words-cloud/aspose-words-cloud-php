@@ -36,77 +36,81 @@ class DeleteFolderRequest
     /*
      * Folder path e.g. /Folder1s
      */
-    public $;
+    public $path;
+	
     /*
      * Storage name
      */
-    public $;
+    public $storage_name;
+	
     /*
      * Enable to delete folders, subfolders and files
      */
-    public $;
+    public $recursive;
     
 	
     /*
      * Initializes a new instance of the DeleteFolderRequest class.
      *  
-     * @param  $ Folder path e.g. /Folder1s
-     * @param  $ Storage name
-     * @param  $ Enable to delete folders, subfolders and files
+     * @param string $path Folder path e.g. /Folder1s
+     * @param string $storage_name Storage name
+     * @param bool $recursive Enable to delete folders, subfolders and files
      */
-    public function __construct($$ = null$ = null)             
+    public function __construct($path, $storage_name = null, $recursive = null)             
     {
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
+        $this->path = $path;
+        $this->storage_name = $storage_name;
+        $this->recursive = $recursive;
     }
 
     /*
      * Folder path e.g. /Folder1s
      */
-    public function get_()
+    public function get_path()
     {
-        return $this->;
+        return $this->path;
     }
 
     /*
      * Folder path e.g. /Folder1s
      */
-    public function set_($value)
+    public function set_path($value)
     {
-        $this-> = $value;
+        $this->path = $value;
         return $this;
     }
+	
     /*
      * Storage name
      */
-    public function get_()
+    public function get_storage_name()
     {
-        return $this->;
+        return $this->storage_name;
     }
 
     /*
      * Storage name
      */
-    public function set_($value)
+    public function set_storage_name($value)
     {
-        $this-> = $value;
+        $this->storage_name = $value;
         return $this;
     }
+	
     /*
      * Enable to delete folders, subfolders and files
      */
-    public function get_()
+    public function get_recursive()
     {
-        return $this->;
+        return $this->recursive;
     }
 
     /*
      * Enable to delete folders, subfolders and files
      */
-    public function set_($value)
+    public function set_recursive($value)
     {
-        $this-> = $value;
+        $this->recursive = $value;
         return $this;
     }
 }

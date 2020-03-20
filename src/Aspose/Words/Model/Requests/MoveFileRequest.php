@@ -36,121 +36,129 @@ class MoveFileRequest
     /*
      * Destination file path e.g. '/dest.ext'
      */
-    public $;
+    public $dest_path;
+	
     /*
      * Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
      */
-    public $;
+    public $src_path;
+	
     /*
      * Source storage name
      */
-    public $;
+    public $src_storage_name;
+	
     /*
      * Destination storage name
      */
-    public $;
+    public $dest_storage_name;
+	
     /*
      * File version ID to move
      */
-    public $;
+    public $version_id;
     
 	
     /*
      * Initializes a new instance of the MoveFileRequest class.
      *  
-     * @param  $ Destination file path e.g. '/dest.ext'
-     * @param  $ Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
-     * @param  $ Source storage name
-     * @param  $ Destination storage name
-     * @param  $ File version ID to move
+     * @param string $dest_path Destination file path e.g. '/dest.ext'
+     * @param string $src_path Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
+     * @param string $src_storage_name Source storage name
+     * @param string $dest_storage_name Destination storage name
+     * @param string $version_id File version ID to move
      */
-    public function __construct($$$ = null$ = null$ = null)             
+    public function __construct($dest_path, $src_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)             
     {
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
+        $this->dest_path = $dest_path;
+        $this->src_path = $src_path;
+        $this->src_storage_name = $src_storage_name;
+        $this->dest_storage_name = $dest_storage_name;
+        $this->version_id = $version_id;
     }
 
     /*
      * Destination file path e.g. '/dest.ext'
      */
-    public function get_()
+    public function get_dest_path()
     {
-        return $this->;
+        return $this->dest_path;
     }
 
     /*
      * Destination file path e.g. '/dest.ext'
      */
-    public function set_($value)
+    public function set_dest_path($value)
     {
-        $this-> = $value;
+        $this->dest_path = $value;
         return $this;
     }
+	
     /*
      * Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
      */
-    public function get_()
+    public function get_src_path()
     {
-        return $this->;
+        return $this->src_path;
     }
 
     /*
      * Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
      */
-    public function set_($value)
+    public function set_src_path($value)
     {
-        $this-> = $value;
+        $this->src_path = $value;
         return $this;
     }
+	
     /*
      * Source storage name
      */
-    public function get_()
+    public function get_src_storage_name()
     {
-        return $this->;
+        return $this->src_storage_name;
     }
 
     /*
      * Source storage name
      */
-    public function set_($value)
+    public function set_src_storage_name($value)
     {
-        $this-> = $value;
+        $this->src_storage_name = $value;
         return $this;
     }
+	
     /*
      * Destination storage name
      */
-    public function get_()
+    public function get_dest_storage_name()
     {
-        return $this->;
+        return $this->dest_storage_name;
     }
 
     /*
      * Destination storage name
      */
-    public function set_($value)
+    public function set_dest_storage_name($value)
     {
-        $this-> = $value;
+        $this->dest_storage_name = $value;
         return $this;
     }
+	
     /*
      * File version ID to move
      */
-    public function get_()
+    public function get_version_id()
     {
-        return $this->;
+        return $this->version_id;
     }
 
     /*
      * File version ID to move
      */
-    public function set_($value)
+    public function set_version_id($value)
     {
-        $this-> = $value;
+        $this->version_id = $value;
         return $this;
     }
 }

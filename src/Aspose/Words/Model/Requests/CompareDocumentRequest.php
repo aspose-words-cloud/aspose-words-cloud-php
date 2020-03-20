@@ -36,165 +36,177 @@ class CompareDocumentRequest
     /*
      * Original document name.
      */
-    public $;
+    public $name;
+	
     /*
      * CompareData with a document to compare.
      */
-    public $;
+    public $compare_data;
+	
     /*
      * Original document folder.
      */
-    public $;
+    public $folder;
+	
     /*
      * Original document storage.
      */
-    public $;
+    public $storage;
+	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $;
+    public $load_encoding;
+	
     /*
      * Password for opening an encrypted document.
      */
-    public $;
+    public $password;
+	
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public $;
+    public $dest_file_name;
     
 	
     /*
      * Initializes a new instance of the CompareDocumentRequest class.
      *  
-     * @param  $ Original document name.
-     * @param  $ CompareData with a document to compare.
-     * @param  $ Original document folder.
-     * @param  $ Original document storage.
-     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param  $ Password for opening an encrypted document.
-     * @param  $ Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $name Original document name.
+     * @param \Aspose\Words\Model\CompareData $compare_data CompareData with a document to compare.
+     * @param string $folder Original document folder.
+     * @param string $storage Original document storage.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($$$ = null$ = null$ = null$ = null$ = null)             
+    public function __construct($name, $compare_data, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
     {
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
+        $this->name = $name;
+        $this->compare_data = $compare_data;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
     }
 
     /*
      * Original document name.
      */
-    public function get_()
+    public function get_name()
     {
-        return $this->;
+        return $this->name;
     }
 
     /*
      * Original document name.
      */
-    public function set_($value)
+    public function set_name($value)
     {
-        $this-> = $value;
+        $this->name = $value;
         return $this;
     }
+	
     /*
      * CompareData with a document to compare.
      */
-    public function get_()
+    public function get_compare_data()
     {
-        return $this->;
+        return $this->compare_data;
     }
 
     /*
      * CompareData with a document to compare.
      */
-    public function set_($value)
+    public function set_compare_data($value)
     {
-        $this-> = $value;
+        $this->compare_data = $value;
         return $this;
     }
+	
     /*
      * Original document folder.
      */
-    public function get_()
+    public function get_folder()
     {
-        return $this->;
+        return $this->folder;
     }
 
     /*
      * Original document folder.
      */
-    public function set_($value)
+    public function set_folder($value)
     {
-        $this-> = $value;
+        $this->folder = $value;
         return $this;
     }
+	
     /*
      * Original document storage.
      */
-    public function get_()
+    public function get_storage()
     {
-        return $this->;
+        return $this->storage;
     }
 
     /*
      * Original document storage.
      */
-    public function set_($value)
+    public function set_storage($value)
     {
-        $this-> = $value;
+        $this->storage = $value;
         return $this;
     }
+	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_()
+    public function get_load_encoding()
     {
-        return $this->;
+        return $this->load_encoding;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_($value)
+    public function set_load_encoding($value)
     {
-        $this-> = $value;
+        $this->load_encoding = $value;
         return $this;
     }
+	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_()
+    public function get_password()
     {
-        return $this->;
+        return $this->password;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_($value)
+    public function set_password($value)
     {
-        $this-> = $value;
+        $this->password = $value;
         return $this;
     }
+	
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function get_()
+    public function get_dest_file_name()
     {
-        return $this->;
+        return $this->dest_file_name;
     }
 
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function set_($value)
+    public function set_dest_file_name($value)
     {
-        $this-> = $value;
+        $this->dest_file_name = $value;
         return $this;
     }
 }

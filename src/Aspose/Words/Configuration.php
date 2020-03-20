@@ -134,23 +134,15 @@ class Configuration
      * Version of Aspose.Words Cloud API
      *
      */
-    protected $clientVersion = '20.3';
+    protected $clientVersion = '19.12';
 
     /*
      * Constructor
-	 * @param string   $appSid client app sid
-     * @param string   $appKey app key
-     * @param string   $baseUrl base url for requests
      */
-    public function __construct(string $appSid, string $appKey, string $baseUrl)
+    public function __construct()
     {
         $this->tempFolderPath = sys_get_temp_dir();
         date_default_timezone_set('UTC');
-		if ($baseUrl != null) {
-            $this->setHost($baseUrl);
-		}
-		$this->setAppSid($appSid);
-		$this->setAppKey($appKey);
     }
     
     /*
@@ -491,7 +483,7 @@ class Configuration
     public static function getDefaultConfiguration()
     {
         if (self::$_defaultConfiguration === null) {
-            self::$_defaultConfiguration = new Configuration('', '', '');
+            self::$_defaultConfiguration = new Configuration();
         }
 
         return self::$_defaultConfiguration;

@@ -36,55 +36,57 @@ class GetDocumentFieldNamesOnlineRequest
     /*
      * File with template
      */
-    public $;
+    public $template;
+	
     /*
      * Use non merge fields or not.
      */
-    public $;
+    public $use_non_merge_fields;
     
 	
     /*
      * Initializes a new instance of the GetDocumentFieldNamesOnlineRequest class.
      *  
-     * @param  $ File with template
-     * @param  $ Use non merge fields or not.
+     * @param \SplFileObject $template File with template
+     * @param bool $use_non_merge_fields Use non merge fields or not.
      */
-    public function __construct($$ = null)             
+    public function __construct($template, $use_non_merge_fields = null)             
     {
-        $this-> = $;
-        $this-> = $;
+        $this->template = $template;
+        $this->use_non_merge_fields = $use_non_merge_fields;
     }
 
     /*
      * File with template
      */
-    public function get_()
+    public function get_template()
     {
-        return $this->;
+        return $this->template;
     }
 
     /*
      * File with template
      */
-    public function set_($value)
+    public function set_template($value)
     {
-        $this-> = $value;
+        $this->template = $value;
         return $this;
     }
+	
     /*
      * Use non merge fields or not.
      */
-    public function get_()
+    public function get_use_non_merge_fields()
     {
-        return $this->;
+        return $this->use_non_merge_fields;
     }
 
     /*
      * Use non merge fields or not.
      */
-    public function set_($value)
+    public function set_use_non_merge_fields($value)
     {
-        $this-> = $value;
+        $this->use_non_merge_fields = $value;
         return $this;
     }
 }

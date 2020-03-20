@@ -36,33 +36,33 @@ class GetAvailableFontsRequest
     /*
      * Folder in filestorage with custom fonts.
      */
-    public $;
+    public $fonts_location;
     
 	
     /*
      * Initializes a new instance of the GetAvailableFontsRequest class.
      *  
-     * @param  $ Folder in filestorage with custom fonts.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($ = null)             
+    public function __construct($fonts_location = null)             
     {
-        $this-> = $;
+        $this->fonts_location = $fonts_location;
     }
 
     /*
      * Folder in filestorage with custom fonts.
      */
-    public function get_()
+    public function get_fonts_location()
     {
-        return $this->;
+        return $this->fonts_location;
     }
 
     /*
      * Folder in filestorage with custom fonts.
      */
-    public function set_($value)
+    public function set_fonts_location($value)
     {
-        $this-> = $value;
+        $this->fonts_location = $value;
         return $this;
     }
 }

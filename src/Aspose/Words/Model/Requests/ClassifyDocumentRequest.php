@@ -36,165 +36,177 @@ class ClassifyDocumentRequest
     /*
      * The document name.
      */
-    public $;
+    public $document_name;
+	
     /*
      * Original document folder.
      */
-    public $;
+    public $folder;
+	
     /*
      * Original document storage.
      */
-    public $;
+    public $storage;
+	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $;
+    public $load_encoding;
+	
     /*
      * Password for opening an encrypted document.
      */
-    public $;
+    public $password;
+	
     /*
      * Count of the best classes to return.
      */
-    public $;
+    public $best_classes_count;
+	
     /*
      * Taxonomy to use for classification return.
      */
-    public $;
+    public $taxonomy;
     
 	
     /*
      * Initializes a new instance of the ClassifyDocumentRequest class.
      *  
-     * @param  $ The document name.
-     * @param  $ Original document folder.
-     * @param  $ Original document storage.
-     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param  $ Password for opening an encrypted document.
-     * @param  $ Count of the best classes to return.
-     * @param  $ Taxonomy to use for classification return.
+     * @param string $document_name The document name.
+     * @param string $folder Original document folder.
+     * @param string $storage Original document storage.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $best_classes_count Count of the best classes to return.
+     * @param string $taxonomy Taxonomy to use for classification return.
      */
-    public function __construct($$ = null$ = null$ = null$ = null$ = null$ = null)             
+    public function __construct($document_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $best_classes_count = null, $taxonomy = null)             
     {
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
+        $this->document_name = $document_name;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->best_classes_count = $best_classes_count;
+        $this->taxonomy = $taxonomy;
     }
 
     /*
      * The document name.
      */
-    public function get_()
+    public function get_document_name()
     {
-        return $this->;
+        return $this->document_name;
     }
 
     /*
      * The document name.
      */
-    public function set_($value)
+    public function set_document_name($value)
     {
-        $this-> = $value;
+        $this->document_name = $value;
         return $this;
     }
+	
     /*
      * Original document folder.
      */
-    public function get_()
+    public function get_folder()
     {
-        return $this->;
+        return $this->folder;
     }
 
     /*
      * Original document folder.
      */
-    public function set_($value)
+    public function set_folder($value)
     {
-        $this-> = $value;
+        $this->folder = $value;
         return $this;
     }
+	
     /*
      * Original document storage.
      */
-    public function get_()
+    public function get_storage()
     {
-        return $this->;
+        return $this->storage;
     }
 
     /*
      * Original document storage.
      */
-    public function set_($value)
+    public function set_storage($value)
     {
-        $this-> = $value;
+        $this->storage = $value;
         return $this;
     }
+	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_()
+    public function get_load_encoding()
     {
-        return $this->;
+        return $this->load_encoding;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_($value)
+    public function set_load_encoding($value)
     {
-        $this-> = $value;
+        $this->load_encoding = $value;
         return $this;
     }
+	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_()
+    public function get_password()
     {
-        return $this->;
+        return $this->password;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_($value)
+    public function set_password($value)
     {
-        $this-> = $value;
+        $this->password = $value;
         return $this;
     }
+	
     /*
      * Count of the best classes to return.
      */
-    public function get_()
+    public function get_best_classes_count()
     {
-        return $this->;
+        return $this->best_classes_count;
     }
 
     /*
      * Count of the best classes to return.
      */
-    public function set_($value)
+    public function set_best_classes_count($value)
     {
-        $this-> = $value;
+        $this->best_classes_count = $value;
         return $this;
     }
+	
     /*
      * Taxonomy to use for classification return.
      */
-    public function get_()
+    public function get_taxonomy()
     {
-        return $this->;
+        return $this->taxonomy;
     }
 
     /*
      * Taxonomy to use for classification return.
      */
-    public function set_($value)
+    public function set_taxonomy($value)
     {
-        $this-> = $value;
+        $this->taxonomy = $value;
         return $this;
     }
 }

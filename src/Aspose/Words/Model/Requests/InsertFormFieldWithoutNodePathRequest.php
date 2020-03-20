@@ -36,231 +36,249 @@ class InsertFormFieldWithoutNodePathRequest
     /*
      * The document name.
      */
-    public $;
+    public $name;
+	
     /*
      * From field data.
      */
-    public $;
+    public $form_field;
+	
     /*
      * Original document folder.
      */
-    public $;
+    public $folder;
+	
     /*
      * Original document storage.
      */
-    public $;
+    public $storage;
+	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $;
+    public $load_encoding;
+	
     /*
      * Password for opening an encrypted document.
      */
-    public $;
+    public $password;
+	
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public $;
+    public $dest_file_name;
+	
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public $;
+    public $revision_author;
+	
     /*
      * The date and time to use for revisions.
      */
-    public $;
+    public $revision_date_time;
+	
     /*
      * Form field will be inserted before node with index.
      */
-    public $;
+    public $insert_before_node;
     
 	
     /*
      * Initializes a new instance of the InsertFormFieldWithoutNodePathRequest class.
      *  
-     * @param  $ The document name.
-     * @param  $ From field data.
-     * @param  $ Original document folder.
-     * @param  $ Original document storage.
-     * @param  $ Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param  $ Password for opening an encrypted document.
-     * @param  $ Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param  $ Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     * @param  $ The date and time to use for revisions.
-     * @param  $ Form field will be inserted before node with index.
+     * @param string $name The document name.
+     * @param \Aspose\Words\Model\FormField $form_field From field data.
+     * @param string $folder Original document folder.
+     * @param string $storage Original document storage.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     * @param string $revision_date_time The date and time to use for revisions.
+     * @param string $insert_before_node Form field will be inserted before node with index.
      */
-    public function __construct($$$ = null$ = null$ = null$ = null$ = null$ = null$ = null$ = null)             
+    public function __construct($name, $form_field, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)             
     {
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
-        $this-> = $;
+        $this->name = $name;
+        $this->form_field = $form_field;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
+        $this->revision_author = $revision_author;
+        $this->revision_date_time = $revision_date_time;
+        $this->insert_before_node = $insert_before_node;
     }
 
     /*
      * The document name.
      */
-    public function get_()
+    public function get_name()
     {
-        return $this->;
+        return $this->name;
     }
 
     /*
      * The document name.
      */
-    public function set_($value)
+    public function set_name($value)
     {
-        $this-> = $value;
+        $this->name = $value;
         return $this;
     }
+	
     /*
      * From field data.
      */
-    public function get_()
+    public function get_form_field()
     {
-        return $this->;
+        return $this->form_field;
     }
 
     /*
      * From field data.
      */
-    public function set_($value)
+    public function set_form_field($value)
     {
-        $this-> = $value;
+        $this->form_field = $value;
         return $this;
     }
+	
     /*
      * Original document folder.
      */
-    public function get_()
+    public function get_folder()
     {
-        return $this->;
+        return $this->folder;
     }
 
     /*
      * Original document folder.
      */
-    public function set_($value)
+    public function set_folder($value)
     {
-        $this-> = $value;
+        $this->folder = $value;
         return $this;
     }
+	
     /*
      * Original document storage.
      */
-    public function get_()
+    public function get_storage()
     {
-        return $this->;
+        return $this->storage;
     }
 
     /*
      * Original document storage.
      */
-    public function set_($value)
+    public function set_storage($value)
     {
-        $this-> = $value;
+        $this->storage = $value;
         return $this;
     }
+	
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_()
+    public function get_load_encoding()
     {
-        return $this->;
+        return $this->load_encoding;
     }
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_($value)
+    public function set_load_encoding($value)
     {
-        $this-> = $value;
+        $this->load_encoding = $value;
         return $this;
     }
+	
     /*
      * Password for opening an encrypted document.
      */
-    public function get_()
+    public function get_password()
     {
-        return $this->;
+        return $this->password;
     }
 
     /*
      * Password for opening an encrypted document.
      */
-    public function set_($value)
+    public function set_password($value)
     {
-        $this-> = $value;
+        $this->password = $value;
         return $this;
     }
+	
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function get_()
+    public function get_dest_file_name()
     {
-        return $this->;
+        return $this->dest_file_name;
     }
 
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function set_($value)
+    public function set_dest_file_name($value)
     {
-        $this-> = $value;
+        $this->dest_file_name = $value;
         return $this;
     }
+	
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public function get_()
+    public function get_revision_author()
     {
-        return $this->;
+        return $this->revision_author;
     }
 
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public function set_($value)
+    public function set_revision_author($value)
     {
-        $this-> = $value;
+        $this->revision_author = $value;
         return $this;
     }
+	
     /*
      * The date and time to use for revisions.
      */
-    public function get_()
+    public function get_revision_date_time()
     {
-        return $this->;
+        return $this->revision_date_time;
     }
 
     /*
      * The date and time to use for revisions.
      */
-    public function set_($value)
+    public function set_revision_date_time($value)
     {
-        $this-> = $value;
+        $this->revision_date_time = $value;
         return $this;
     }
+	
     /*
      * Form field will be inserted before node with index.
      */
-    public function get_()
+    public function get_insert_before_node()
     {
-        return $this->;
+        return $this->insert_before_node;
     }
 
     /*
      * Form field will be inserted before node with index.
      */
-    public function set_($value)
+    public function set_insert_before_node($value)
     {
-        $this-> = $value;
+        $this->insert_before_node = $value;
         return $this;
     }
 }

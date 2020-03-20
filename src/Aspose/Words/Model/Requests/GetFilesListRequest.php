@@ -36,55 +36,57 @@ class GetFilesListRequest
     /*
      * Folder path e.g. /Folder1
      */
-    public $;
+    public $path;
+	
     /*
      * Storage name
      */
-    public $;
+    public $storage_name;
     
 	
     /*
      * Initializes a new instance of the GetFilesListRequest class.
      *  
-     * @param  $ Folder path e.g. /Folder1
-     * @param  $ Storage name
+     * @param string $path Folder path e.g. /Folder1
+     * @param string $storage_name Storage name
      */
-    public function __construct($$ = null)             
+    public function __construct($path, $storage_name = null)             
     {
-        $this-> = $;
-        $this-> = $;
+        $this->path = $path;
+        $this->storage_name = $storage_name;
     }
 
     /*
      * Folder path e.g. /Folder1
      */
-    public function get_()
+    public function get_path()
     {
-        return $this->;
+        return $this->path;
     }
 
     /*
      * Folder path e.g. /Folder1
      */
-    public function set_($value)
+    public function set_path($value)
     {
-        $this-> = $value;
+        $this->path = $value;
         return $this;
     }
+	
     /*
      * Storage name
      */
-    public function get_()
+    public function get_storage_name()
     {
-        return $this->;
+        return $this->storage_name;
     }
 
     /*
      * Storage name
      */
-    public function set_($value)
+    public function set_storage_name($value)
     {
-        $this-> = $value;
+        $this->storage_name = $value;
         return $this;
     }
 }

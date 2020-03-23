@@ -45,15 +45,12 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->config = new Configuration();
         $creds = \GuzzleHttp\json_decode(file_get_contents(realpath(__DIR__  . '/../../..' . "/Settings/servercreds.json")), true);
         /*
          * To run with your own credentials please, replace parameter in methods 'setAppKey' and 'setAppSid' accordingly to your's AppSid and AppKey
          */
-        $this->config->setAppKey($creds["AppKey"]);
-        $this->config->setAppSid($creds["AppSid"]);
-        $this->config->setHost($creds["BaseUrl"]);
-        $this->words = new WordsApi(null, $this->config);
+		 
+        $this->words = new WordsApi($creds["AppSid"], $creds["AppKey"], $creds["BaseUrl"]);
     }
 
     public function uploadFile($file, $path){

@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ClassificationResponse
  *
- * @description This response should be returned by the service when handling: PUT http://api.aspose.com/v4.0/words/classify.
+ * @description This response should be returned by the service when handling: PUT https://api.aspose.cloud/v4.0/words/classify.
  */
 class ClassificationResponse extends WordsResponse 
 {

@@ -155,9 +155,7 @@ class TableLinkCollectionResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class TableLinkCollectionResponse extends WordsResponse
     /*
      * Sets tables
      *
-     * @param \Aspose\Words\Model\TableLinkCollection $tables Gets or sets collection of tables.
+     * @param \Aspose\Words\Model\TableLinkCollection $tables tables
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class TableLinkCollectionResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -225,9 +225,7 @@ class TableCellFormat extends LinkElement
     const VERTICAL_MERGE_NONE = 'None';
     const VERTICAL_MERGE_FIRST = 'First';
     const VERTICAL_MERGE_PREVIOUS = 'Previous';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -238,10 +236,9 @@ class TableCellFormat extends LinkElement
         return [
             self::HORIZONTAL_MERGE_NONE,
             self::HORIZONTAL_MERGE_FIRST,
-            self::HORIZONTAL_MERGE_PREVIOUS,
+            self::HORIZONTAL_MERGE_PREVIOUS
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -255,10 +252,9 @@ class TableCellFormat extends LinkElement
             self::ORIENTATION_UPWARD,
             self::ORIENTATION_HORIZONTAL_ROTATED_FAR_EAST,
             self::ORIENTATION_VERTICAL_FAR_EAST,
-            self::ORIENTATION_VERTICAL_ROTATED_FAR_EAST,
+            self::ORIENTATION_VERTICAL_ROTATED_FAR_EAST
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -269,10 +265,9 @@ class TableCellFormat extends LinkElement
         return [
             self::VERTICAL_ALIGNMENT_TOP,
             self::VERTICAL_ALIGNMENT_CENTER,
-            self::VERTICAL_ALIGNMENT_BOTTOM,
+            self::VERTICAL_ALIGNMENT_BOTTOM
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -283,10 +278,9 @@ class TableCellFormat extends LinkElement
         return [
             self::VERTICAL_MERGE_NONE,
             self::VERTICAL_MERGE_FIRST,
-            self::VERTICAL_MERGE_PREVIOUS,
+            self::VERTICAL_MERGE_PREVIOUS
         ];
     }
-    
 
 
     /*
@@ -532,7 +526,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets preferred_width
      *
-     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets returns or sets the preferred width of the cell.
+     * @param \Aspose\Words\Model\PreferredWidth $preferred_width preferred_width
      *
      * @return $this
      */
@@ -766,5 +760,3 @@ class TableCellFormat extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PageStatData
  *
- * @description Container for the page&#39;s statistical data.
+ * @description Container for the page&#x27;s statistical data.
  */
 class PageStatData implements ArrayAccess
 {
@@ -172,9 +172,7 @@ class PageStatData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -206,15 +204,6 @@ class PageStatData implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['page_number'] === null) {
-            $invalidProperties[] = "'page_number' can't be null";
-        }
-        if ($this->container['word_count'] === null) {
-            $invalidProperties[] = "'word_count' can't be null";
-        }
-        if ($this->container['paragraph_count'] === null) {
-            $invalidProperties[] = "'paragraph_count' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -227,15 +216,6 @@ class PageStatData implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['page_number'] === null) {
-            return false;
-        }
-        if ($this->container['word_count'] === null) {
-            return false;
-        }
-        if ($this->container['paragraph_count'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -325,7 +305,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets footnotes_stat_data
      *
-     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets detailed statistics of footnotes.
+     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data footnotes_stat_data
      *
      * @return $this
      */
@@ -405,5 +385,3 @@ class PageStatData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

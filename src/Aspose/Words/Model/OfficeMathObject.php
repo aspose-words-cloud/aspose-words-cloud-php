@@ -208,9 +208,7 @@ class OfficeMathObject extends OfficeMathLink
     const MATH_OBJECT_TYPE_SUBSCRIPT = 'Subscript';
     const MATH_OBJECT_TYPE_SUB_SUPERSCRIPT = 'SubSuperscript';
     const MATH_OBJECT_TYPE_SUPERCRIPT = 'Supercript';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -220,10 +218,9 @@ class OfficeMathObject extends OfficeMathLink
     {
         return [
             self::DISPLAY_TYPE_DISPLAY,
-            self::DISPLAY_TYPE_INLINE,
+            self::DISPLAY_TYPE_INLINE
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -237,10 +234,9 @@ class OfficeMathObject extends OfficeMathLink
             self::JUSTIFICATION_CENTER,
             self::JUSTIFICATION_LEFT,
             self::JUSTIFICATION_RIGHT,
-            self::JUSTIFICATION_INLINE,
+            self::JUSTIFICATION_INLINE
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -278,10 +274,9 @@ class OfficeMathObject extends OfficeMathLink
             self::MATH_OBJECT_TYPE_PRE_SUB_SUPERSCRIPT,
             self::MATH_OBJECT_TYPE_SUBSCRIPT,
             self::MATH_OBJECT_TYPE_SUB_SUPERSCRIPT,
-            self::MATH_OBJECT_TYPE_SUPERCRIPT,
+            self::MATH_OBJECT_TYPE_SUPERCRIPT
         ];
     }
-    
 
 
     /*
@@ -377,7 +372,7 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets content of footnote.
+     * @param \Aspose\Words\Model\StoryChildNodes $content content
      *
      * @return $this
      */
@@ -544,5 +539,3 @@ class OfficeMathObject extends OfficeMathLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

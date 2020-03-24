@@ -155,9 +155,7 @@ class ParagraphLinkCollectionResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class ParagraphLinkCollectionResponse extends WordsResponse
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\ParagraphLinkCollection $paragraphs Gets or sets collection of paragraphs.
+     * @param \Aspose\Words\Model\ParagraphLinkCollection $paragraphs paragraphs
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class ParagraphLinkCollectionResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

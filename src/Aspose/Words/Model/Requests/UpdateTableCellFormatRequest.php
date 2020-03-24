@@ -39,6 +39,11 @@ class UpdateTableCellFormatRequest
     public $name;
 	
     /*
+     * The properties.
+     */
+    public $format;
+	
+    /*
      * Path to table row.
      */
     public $table_row_path;
@@ -82,17 +87,13 @@ class UpdateTableCellFormatRequest
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-	
-    /*
-     * The properties.
-     */
-    public $format;
     
 	
     /*
      * Initializes a new instance of the UpdateTableCellFormatRequest class.
      *  
      * @param string $name The document name.
+     * @param \Aspose\Words\Model\TableCellFormat $format The properties.
      * @param string $table_row_path Path to table row.
      * @param int $index Object index.
      * @param string $folder Original document folder.
@@ -102,11 +103,11 @@ class UpdateTableCellFormatRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param \Aspose\Words\Model\TableCellFormat $format The properties.
      */
-    public function __construct($name, $table_row_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $format = null)             
+    public function __construct($name, $format, $table_row_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
     {
         $this->name = $name;
+        $this->format = $format;
         $this->table_row_path = $table_row_path;
         $this->index = $index;
         $this->folder = $folder;
@@ -116,7 +117,6 @@ class UpdateTableCellFormatRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->format = $format;
     }
 
     /*
@@ -133,6 +133,23 @@ class UpdateTableCellFormatRequest
     public function set_name($value)
     {
         $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * The properties.
+     */
+    public function get_format()
+    {
+        return $this->format;
+    }
+
+    /*
+     * The properties.
+     */
+    public function set_format($value)
+    {
+        $this->format = $value;
         return $this;
     }
 	
@@ -286,23 +303,6 @@ class UpdateTableCellFormatRequest
     public function set_revision_date_time($value)
     {
         $this->revision_date_time = $value;
-        return $this;
-    }
-	
-    /*
-     * The properties.
-     */
-    public function get_format()
-    {
-        return $this->format;
-    }
-
-    /*
-     * The properties.
-     */
-    public function set_format($value)
-    {
-        $this->format = $value;
         return $this;
     }
 }

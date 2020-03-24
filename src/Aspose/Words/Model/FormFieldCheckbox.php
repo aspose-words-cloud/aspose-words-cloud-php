@@ -165,9 +165,7 @@ class FormFieldCheckbox extends FormField
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -226,7 +224,7 @@ class FormFieldCheckbox extends FormField
     /*
      * Sets check_box_size
      *
-     * @param double $check_box_size Gets or sets the size of the checkbox in points. Has effect only when  is true.
+     * @param double $check_box_size Gets or sets the size of the checkbox in points. Has effect only when IsCheckBoxExactSize is true.
      *
      * @return $this
      */
@@ -354,5 +352,3 @@ class FormFieldCheckbox extends FormField
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

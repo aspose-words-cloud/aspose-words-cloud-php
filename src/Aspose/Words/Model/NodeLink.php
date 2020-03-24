@@ -39,7 +39,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class NodeLink extends LinkElement 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -155,9 +155,7 @@ class NodeLink extends LinkElement
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -171,6 +169,10 @@ class NodeLink extends LinkElement
         parent::__construct($data);
 
         $this->container['node_id'] = isset($data['node_id']) ? $data['node_id'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -294,5 +296,3 @@ class NodeLink extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

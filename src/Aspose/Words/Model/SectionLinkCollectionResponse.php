@@ -155,9 +155,7 @@ class SectionLinkCollectionResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class SectionLinkCollectionResponse extends WordsResponse
     /*
      * Sets sections
      *
-     * @param \Aspose\Words\Model\SectionLinkCollection $sections Gets or sets collection of sections.
+     * @param \Aspose\Words\Model\SectionLinkCollection $sections sections
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class SectionLinkCollectionResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

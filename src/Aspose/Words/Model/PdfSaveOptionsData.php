@@ -273,9 +273,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     const HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_NONE = 'None';
     const HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_FIRST = 'First';
     const HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_ALL = 'All';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -286,10 +284,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return [
             self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_NONE,
             self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_FIRST,
-            self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_ALL,
+            self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_ALL
         ];
     }
-    
 
 
     /*
@@ -429,7 +426,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets custom_properties_export
      *
-     * @param string $custom_properties_export Gets or sets a value determining the way  are exported to PDF file. Default value is .
+     * @param string $custom_properties_export Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file. Default value is None.
      *
      * @return $this
      */
@@ -453,7 +450,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets digital_signature_details
      *
-     * @param \Aspose\Words\Model\PdfDigitalSignatureDetailsData $digital_signature_details Gets or sets specifies the details for signing the output PDF document.
+     * @param \Aspose\Words\Model\PdfDigitalSignatureDetailsData $digital_signature_details digital_signature_details
      *
      * @return $this
      */
@@ -501,7 +498,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets downsample_options
      *
-     * @param \Aspose\Words\Model\DownsampleOptionsData $downsample_options Gets or sets allows to specify downsample options.
+     * @param \Aspose\Words\Model\DownsampleOptionsData $downsample_options downsample_options
      *
      * @return $this
      */
@@ -549,7 +546,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets encryption_details
      *
-     * @param \Aspose\Words\Model\PdfEncryptionDetailsData $encryption_details Gets or sets specifies the details for encrypting the output PDF document.
+     * @param \Aspose\Words\Model\PdfEncryptionDetailsData $encryption_details encryption_details
      *
      * @return $this
      */
@@ -746,7 +743,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets outline_options
      *
-     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets allows to specify outline options.
+     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options outline_options
      *
      * @return $this
      */
@@ -1018,5 +1015,3 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

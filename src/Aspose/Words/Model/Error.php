@@ -172,9 +172,7 @@ class Error implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -307,7 +305,7 @@ class Error implements ArrayAccess
     /*
      * Sets inner_error
      *
-     * @param \Aspose\Words\Model\ErrorDetails $inner_error Inner Error
+     * @param \Aspose\Words\Model\ErrorDetails $inner_error inner_error
      *
      * @return $this
      */
@@ -387,5 +385,3 @@ class Error implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

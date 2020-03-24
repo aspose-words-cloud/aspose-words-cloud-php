@@ -162,9 +162,7 @@ class SearchResult implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -223,7 +221,7 @@ class SearchResult implements ArrayAccess
     /*
      * Sets range_start
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets link to result range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_start range_start
      *
      * @return $this
      */
@@ -247,7 +245,7 @@ class SearchResult implements ArrayAccess
     /*
      * Sets range_end
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets link to result range end node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_end range_end
      *
      * @return $this
      */
@@ -327,5 +325,3 @@ class SearchResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

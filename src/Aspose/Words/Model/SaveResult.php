@@ -167,9 +167,7 @@ class SaveResult implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -229,7 +227,7 @@ class SaveResult implements ArrayAccess
     /*
      * Sets source_document
      *
-     * @param \Aspose\Words\Model\FileLink $source_document Gets or sets link to source document.
+     * @param \Aspose\Words\Model\FileLink $source_document source_document
      *
      * @return $this
      */
@@ -253,7 +251,7 @@ class SaveResult implements ArrayAccess
     /*
      * Sets dest_document
      *
-     * @param \Aspose\Words\Model\FileLink $dest_document Gets or sets link to destination document.
+     * @param \Aspose\Words\Model\FileLink $dest_document dest_document
      *
      * @return $this
      */
@@ -357,5 +355,3 @@ class SaveResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

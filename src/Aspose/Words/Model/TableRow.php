@@ -160,9 +160,7 @@ class TableRow extends NodeLink
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -220,7 +218,7 @@ class TableRow extends NodeLink
     /*
      * Sets row_format
      *
-     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets provides access to the formatting properties of the row.
+     * @param \Aspose\Words\Model\TableRowFormat $row_format row_format
      *
      * @return $this
      */
@@ -324,5 +322,3 @@ class TableRow extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

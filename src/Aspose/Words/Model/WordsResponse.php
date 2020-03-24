@@ -41,7 +41,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class WordsResponse implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -157,9 +157,7 @@ class WordsResponse implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -179,7 +177,7 @@ class WordsResponse implements ArrayAccess
         $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
 
         // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
         $this->container[$discriminator] = static::$swaggerModelName;
     }
 
@@ -301,5 +299,3 @@ class WordsResponse implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -39,7 +39,7 @@ class SaveAsRangeRequest
     public $name;
 	
     /*
-     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public $range_start_identifier;
 	
@@ -78,7 +78,7 @@ class SaveAsRangeRequest
      * Initializes a new instance of the SaveAsRangeRequest class.
      *  
      * @param string $name The document.
-     * @param string $range_start_identifier The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * @param string $range_start_identifier The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
      * @param \Aspose\Words\Model\RangeDocument $document_parameters Parameters of a new document.
      * @param string $range_end_identifier The range end identifier.
      * @param string $folder Original document folder.
@@ -86,7 +86,7 @@ class SaveAsRangeRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $range_start_identifier, $document_parameters, $range_end_identifier, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($name, $range_start_identifier, $document_parameters, $range_end_identifier = null, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
         $this->name = $name;
         $this->range_start_identifier = $range_start_identifier;
@@ -116,7 +116,7 @@ class SaveAsRangeRequest
     }
 	
     /*
-     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public function get_range_start_identifier()
     {
@@ -124,7 +124,7 @@ class SaveAsRangeRequest
     }
 
     /*
-     * The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public function set_range_start_identifier($value)
     {

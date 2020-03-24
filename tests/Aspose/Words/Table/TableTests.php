@@ -431,9 +431,9 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\InsertTableRequest($remoteName, "", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertTableRequest($remoteName, $tableDto,"", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $tableDto);
+            null, null);
 
         $result = $this->words->insertTable($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -456,9 +456,9 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\InsertTableWithoutNodePathRequest($remoteName, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertTableWithoutNodePathRequest($remoteName, $tableDto, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $tableDto);
+            null, null);
 
         $result = $this->words->insertTableWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -481,9 +481,9 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\InsertTableCellRequest($remoteName, "sections/0/tables/2/rows/0", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertTableCellRequest($remoteName, $cell, "sections/0/tables/2/rows/0", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $cell);
+            null, null);
 
         $result = $this->words->insertTableCell($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -506,9 +506,9 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\InsertTableRowRequest($remoteName, "sections/0/tables/2", $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\InsertTableRowRequest($remoteName, $row, "sections/0/tables/2", $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $row);
+            null, null);
 
         $result = $this->words->insertTableRow($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -588,9 +588,9 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateTableCellFormatRequest($remoteName, $nodePath, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateTableCellFormatRequest($remoteName, $format, $nodePath, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $format);
+            null, null);
 
         $result = $this->words->updateTableCellFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -625,9 +625,9 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateTablePropertiesRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateTablePropertiesRequest($remoteName, $props, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $props);
+            null, null);
 
         $result = $this->words->updateTableProperties($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -662,9 +662,9 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateTablePropertiesWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateTablePropertiesWithoutNodePathRequest($remoteName, $props, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $props);
+            null, null);
 
         $result = $this->words->updateTablePropertiesWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -694,9 +694,9 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\UpdateTableRowFormatRequest($remoteName, $nodePath, $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateTableRowFormatRequest($remoteName, $format, $nodePath, $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
-            null, null, $format);
+            null, null);
 
         $result = $this->words->updateTableRowFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);

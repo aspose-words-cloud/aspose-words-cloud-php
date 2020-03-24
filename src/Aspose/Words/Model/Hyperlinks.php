@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Hyperlinks
  *
- * @description Collection of .
+ * @description Collection of Hyperlink.
  */
 class Hyperlinks extends LinkElement 
 {
@@ -155,9 +155,7 @@ class Hyperlinks extends LinkElement
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class Hyperlinks extends LinkElement
     /*
      * Sets hyperlink_list
      *
-     * @param \Aspose\Words\Model\Hyperlink[] $hyperlink_list Gets or sets array of .
+     * @param \Aspose\Words\Model\Hyperlink[] $hyperlink_list Gets or sets array of Hyperlink.
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class Hyperlinks extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -167,9 +167,7 @@ class SplitDocumentResult implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -229,7 +227,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Sets source_document
      *
-     * @param \Aspose\Words\Model\FileLink $source_document Gets or sets linkt to the source document.
+     * @param \Aspose\Words\Model\FileLink $source_document source_document
      *
      * @return $this
      */
@@ -277,7 +275,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Sets zipped_pages
      *
-     * @param \Aspose\Words\Model\FileLink $zipped_pages Gets or sets link to the file archive with pages.
+     * @param \Aspose\Words\Model\FileLink $zipped_pages zipped_pages
      *
      * @return $this
      */
@@ -357,5 +355,3 @@ class SplitDocumentResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

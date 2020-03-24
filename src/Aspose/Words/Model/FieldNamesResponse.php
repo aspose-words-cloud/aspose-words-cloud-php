@@ -155,9 +155,7 @@ class FieldNamesResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class FieldNamesResponse extends WordsResponse
     /*
      * Sets field_names
      *
-     * @param \Aspose\Words\Model\FieldNames $field_names Gets or sets collection of mail merge fields.
+     * @param \Aspose\Words\Model\FieldNames $field_names field_names
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class FieldNamesResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

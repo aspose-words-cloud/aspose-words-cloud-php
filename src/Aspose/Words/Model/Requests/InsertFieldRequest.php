@@ -84,7 +84,7 @@ class InsertFieldRequest
     public $revision_date_time;
 	
     /*
-     * Field will be inserted before node with id=\"nodeId\".
+     * Field will be inserted before node with id="nodeId".
      */
     public $insert_before_node;
     
@@ -102,7 +102,7 @@ class InsertFieldRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $insert_before_node Field will be inserted before node with id=\"nodeId\".
+     * @param string $insert_before_node Field will be inserted before node with id="nodeId".
      */
     public function __construct($name, $field, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)             
     {
@@ -290,7 +290,7 @@ class InsertFieldRequest
     }
 	
     /*
-     * Field will be inserted before node with id=\"nodeId\".
+     * Field will be inserted before node with id="nodeId".
      */
     public function get_insert_before_node()
     {
@@ -298,7 +298,7 @@ class InsertFieldRequest
     }
 
     /*
-     * Field will be inserted before node with id=\"nodeId\".
+     * Field will be inserted before node with id="nodeId".
      */
     public function set_insert_before_node($value)
     {

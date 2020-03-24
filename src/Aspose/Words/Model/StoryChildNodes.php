@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * StoryChildNodes
  *
- * @description Child nodes of  or .
+ * @description Child nodes of Story or InlineStory.
  */
 class StoryChildNodes implements ArrayAccess
 {
@@ -157,9 +157,7 @@ class StoryChildNodes implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -297,5 +295,3 @@ class StoryChildNodes implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

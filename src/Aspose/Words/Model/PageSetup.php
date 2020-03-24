@@ -393,9 +393,7 @@ class PageSetup extends LinkElement
     const VERTICAL_ALIGNMENT_CENTER = 'Center';
     const VERTICAL_ALIGNMENT_JUSTIFY = 'Justify';
     const VERTICAL_ALIGNMENT_BOTTOM = 'Bottom';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -406,10 +404,9 @@ class PageSetup extends LinkElement
         return [
             self::BORDER_APPLIES_TO_ALL_PAGES,
             self::BORDER_APPLIES_TO_FIRST_PAGE,
-            self::BORDER_APPLIES_TO_OTHER_PAGES,
+            self::BORDER_APPLIES_TO_OTHER_PAGES
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -419,10 +416,9 @@ class PageSetup extends LinkElement
     {
         return [
             self::BORDER_DISTANCE_FROM_TEXT,
-            self::BORDER_DISTANCE_FROM_PAGE_EDGE,
+            self::BORDER_DISTANCE_FROM_PAGE_EDGE
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -433,10 +429,9 @@ class PageSetup extends LinkElement
         return [
             self::LINE_NUMBER_RESTART_MODE_RESTART_PAGE,
             self::LINE_NUMBER_RESTART_MODE_RESTART_SECTION,
-            self::LINE_NUMBER_RESTART_MODE_CONTINUOUS,
+            self::LINE_NUMBER_RESTART_MODE_CONTINUOUS
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -446,10 +441,9 @@ class PageSetup extends LinkElement
     {
         return [
             self::ORIENTATION_PORTRAIT,
-            self::ORIENTATION_LANDSCAPE,
+            self::ORIENTATION_LANDSCAPE
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -519,10 +513,9 @@ class PageSetup extends LinkElement
             self::PAGE_NUMBER_STYLE_LOWERCASE_RUSSIAN,
             self::PAGE_NUMBER_STYLE_UPPERCASE_RUSSIAN,
             self::PAGE_NUMBER_STYLE_NONE,
-            self::PAGE_NUMBER_STYLE_CUSTOM,
+            self::PAGE_NUMBER_STYLE_CUSTOM
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -547,10 +540,9 @@ class PageSetup extends LinkElement
             self::PAPER_SIZE_TABLOID,
             self::PAPER_SIZE_PAPER10X14,
             self::PAPER_SIZE_PAPER11X17,
-            self::PAPER_SIZE_CUSTOM,
+            self::PAPER_SIZE_CUSTOM
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -563,10 +555,9 @@ class PageSetup extends LinkElement
             self::SECTION_START_NEW_COLUMN,
             self::SECTION_START_NEW_PAGE,
             self::SECTION_START_EVEN_PAGE,
-            self::SECTION_START_ODD_PAGE,
+            self::SECTION_START_ODD_PAGE
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -578,10 +569,9 @@ class PageSetup extends LinkElement
             self::VERTICAL_ALIGNMENT_TOP,
             self::VERTICAL_ALIGNMENT_CENTER,
             self::VERTICAL_ALIGNMENT_JUSTIFY,
-            self::VERTICAL_ALIGNMENT_BOTTOM,
+            self::VERTICAL_ALIGNMENT_BOTTOM
         ];
     }
-    
 
 
     /*
@@ -1421,7 +1411,7 @@ class PageSetup extends LinkElement
     /*
      * Sets suppress_endnotes
      *
-     * @param bool $suppress_endnotes Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.
+     * @param bool $suppress_endnotes Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.
      *
      * @return $this
      */
@@ -1554,5 +1544,3 @@ class PageSetup extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

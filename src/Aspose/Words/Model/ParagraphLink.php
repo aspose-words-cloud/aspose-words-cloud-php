@@ -155,9 +155,7 @@ class ParagraphLink extends NodeLink
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -294,5 +292,3 @@ class ParagraphLink extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

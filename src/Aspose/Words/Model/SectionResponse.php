@@ -155,9 +155,7 @@ class SectionResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class SectionResponse extends WordsResponse
     /*
      * Sets section
      *
-     * @param \Aspose\Words\Model\Section $section Gets or sets section.
+     * @param \Aspose\Words\Model\Section $section section
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class SectionResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

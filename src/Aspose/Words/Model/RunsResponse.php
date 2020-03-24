@@ -155,9 +155,7 @@ class RunsResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class RunsResponse extends WordsResponse
     /*
      * Sets runs
      *
-     * @param \Aspose\Words\Model\Runs $runs Gets or sets collection of runs.
+     * @param \Aspose\Words\Model\Runs $runs runs
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class RunsResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

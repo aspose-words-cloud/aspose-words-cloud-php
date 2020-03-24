@@ -39,7 +39,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class FixedPageSaveOptionsData extends SaveOptionsData 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -185,9 +185,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -207,6 +205,10 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         $this->container['optimize_output'] = isset($data['optimize_output']) ? $data['optimize_output'] : null;
         $this->container['page_count'] = isset($data['page_count']) ? $data['page_count'] : null;
         $this->container['page_index'] = isset($data['page_index']) ? $data['page_index'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -298,7 +300,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets metafile_rendering_options
      *
-     * @param \Aspose\Words\Model\MetafileRenderingOptionsData $metafile_rendering_options Gets or sets allows to specify metafile rendering options.
+     * @param \Aspose\Words\Model\MetafileRenderingOptionsData $metafile_rendering_options metafile_rendering_options
      *
      * @return $this
      */
@@ -474,5 +476,3 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

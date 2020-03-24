@@ -30133,10 +30133,6 @@ class WordsApi
         if ($request->range_start_identifier === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_start_identifier when calling getRangeText');
         }
-        // verify the required parameter 'range_end_identifier' is set
-        if ($request->range_end_identifier === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling getRangeText');
-        }
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
         $formParams = [];
@@ -40323,6 +40319,10 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTable');
         }
+        // verify the required parameter 'table' is set
+        if ($request->table === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $table when calling insertTable');
+        }
         // verify the required parameter 'node_path' is set
         if ($request->node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $node_path when calling insertTable');
@@ -40678,6 +40678,10 @@ class WordsApi
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableCell');
+        }
+        // verify the required parameter 'cell' is set
+        if ($request->cell === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $cell when calling insertTableCell');
         }
         // verify the required parameter 'table_row_path' is set
         if ($request->table_row_path === null) {
@@ -41035,6 +41039,10 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableRow');
         }
+        // verify the required parameter 'row' is set
+        if ($request->row === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $row when calling insertTableRow');
+        }
         // verify the required parameter 'table_path' is set
         if ($request->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling insertTableRow');
@@ -41390,6 +41398,10 @@ class WordsApi
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableWithoutNodePath');
+        }
+        // verify the required parameter 'table' is set
+        if ($request->table === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $table when calling insertTableWithoutNodePath');
         }
 
         $resourcePath = '/words/{name}/tables';
@@ -43928,10 +43940,6 @@ class WordsApi
         // verify the required parameter 'range_start_identifier' is set
         if ($request->range_start_identifier === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_start_identifier when calling removeRange');
-        }
-        // verify the required parameter 'range_end_identifier' is set
-        if ($request->range_end_identifier === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling removeRange');
         }
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
@@ -47745,10 +47753,6 @@ class WordsApi
         if ($request->range_text === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_text when calling replaceWithText');
         }
-        // verify the required parameter 'range_end_identifier' is set
-        if ($request->range_end_identifier === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling replaceWithText');
-        }
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
         $formParams = [];
@@ -48643,10 +48647,6 @@ class WordsApi
         // verify the required parameter 'document_parameters' is set
         if ($request->document_parameters === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document_parameters when calling saveAsRange');
-        }
-        // verify the required parameter 'range_end_identifier' is set
-        if ($request->range_end_identifier === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $range_end_identifier when calling saveAsRange');
         }
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs';
@@ -55955,6 +55955,10 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableCellFormat');
         }
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableCellFormat');
+        }
         // verify the required parameter 'table_row_path' is set
         if ($request->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling updateTableCellFormat');
@@ -56319,6 +56323,10 @@ class WordsApi
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableProperties');
+        }
+        // verify the required parameter 'properties' is set
+        if ($request->properties === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $properties when calling updateTableProperties');
         }
         // verify the required parameter 'node_path' is set
         if ($request->node_path === null) {
@@ -56685,6 +56693,10 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTablePropertiesWithoutNodePath');
         }
+        // verify the required parameter 'properties' is set
+        if ($request->properties === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $properties when calling updateTablePropertiesWithoutNodePath');
+        }
         // verify the required parameter 'index' is set
         if ($request->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTablePropertiesWithoutNodePath');
@@ -57040,6 +57052,10 @@ class WordsApi
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableRowFormat');
+        }
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableRowFormat');
         }
         // verify the required parameter 'table_path' is set
         if ($request->table_path === null) {

@@ -185,9 +185,7 @@ class Comment extends CommentLink
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -274,7 +272,7 @@ class Comment extends CommentLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets content of comment.
+     * @param \Aspose\Words\Model\StoryChildNodes $content content
      *
      * @return $this
      */
@@ -346,7 +344,7 @@ class Comment extends CommentLink
     /*
      * Sets range_end
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets link to comment range end node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_end range_end
      *
      * @return $this
      */
@@ -370,7 +368,7 @@ class Comment extends CommentLink
     /*
      * Sets range_start
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_start range_start
      *
      * @return $this
      */
@@ -474,5 +472,3 @@ class Comment extends CommentLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -160,9 +160,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -324,5 +322,3 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

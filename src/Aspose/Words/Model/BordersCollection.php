@@ -155,9 +155,7 @@ class BordersCollection extends LinkElement
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -294,5 +292,3 @@ class BordersCollection extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

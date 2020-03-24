@@ -177,9 +177,7 @@ class StorageFile implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -212,12 +210,6 @@ class StorageFile implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['is_folder'] === null) {
-            $invalidProperties[] = "'is_folder' can't be null";
-        }
-        if ($this->container['size'] === null) {
-            $invalidProperties[] = "'size' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -230,12 +222,6 @@ class StorageFile implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['is_folder'] === null) {
-            return false;
-        }
-        if ($this->container['size'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -301,7 +287,7 @@ class StorageFile implements ArrayAccess
     /*
      * Sets modified_date
      *
-     * @param \DateTime $modified_date File or folder last modified .
+     * @param \DateTime $modified_date File or folder last modified DateTime.
      *
      * @return $this
      */
@@ -429,5 +415,3 @@ class StorageFile implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -41,7 +41,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class SaveOptionsData implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -192,9 +192,7 @@ class SaveOptionsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -221,7 +219,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
 
         // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
         $this->container[$discriminator] = static::$swaggerModelName;
     }
 
@@ -407,7 +405,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets update_sdt_content
      *
-     * @param bool $update_sdt_content Gets or sets value determining whether content of  is updated before saving.
+     * @param bool $update_sdt_content Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
      *
      * @return $this
      */
@@ -511,5 +509,3 @@ class SaveOptionsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

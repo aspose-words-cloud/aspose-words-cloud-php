@@ -157,9 +157,7 @@ class FilesList implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -217,7 +215,7 @@ class FilesList implements ArrayAccess
     /*
      * Sets value
      *
-     * @param \Aspose\Words\Model\StorageFile[] $value Files and folders contained by folder .
+     * @param \Aspose\Words\Model\StorageFile[] $value Files and folders contained by folder StorageFile.
      *
      * @return $this
      */
@@ -297,5 +295,3 @@ class FilesList implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

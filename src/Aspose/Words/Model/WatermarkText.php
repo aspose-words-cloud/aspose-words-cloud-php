@@ -162,9 +162,7 @@ class WatermarkText implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -194,9 +192,6 @@ class WatermarkText implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['rotation_angle'] === null) {
-            $invalidProperties[] = "'rotation_angle' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,9 +204,6 @@ class WatermarkText implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['rotation_angle'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -333,5 +325,3 @@ class WatermarkText implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

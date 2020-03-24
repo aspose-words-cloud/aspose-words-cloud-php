@@ -165,9 +165,7 @@ class DocumentProperty extends LinkElement
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -354,5 +352,3 @@ class DocumentProperty extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

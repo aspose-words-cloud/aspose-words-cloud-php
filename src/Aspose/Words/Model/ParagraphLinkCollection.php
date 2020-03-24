@@ -155,9 +155,7 @@ class ParagraphLinkCollection extends LinkElement
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -294,5 +292,3 @@ class ParagraphLinkCollection extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

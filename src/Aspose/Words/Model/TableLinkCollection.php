@@ -155,9 +155,7 @@ class TableLinkCollection extends LinkElement
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -294,5 +292,3 @@ class TableLinkCollection extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

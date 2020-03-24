@@ -216,9 +216,7 @@ class Border extends LinkElement
     const LINE_STYLE_ENGRAVE3_D = 'Engrave3D';
     const LINE_STYLE_OUTSET = 'Outset';
     const LINE_STYLE_INSET = 'Inset';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -235,10 +233,9 @@ class Border extends LinkElement
             self::BORDER_TYPE_VERTICAL,
             self::BORDER_TYPE_DIAGONAL_DOWN,
             self::BORDER_TYPE_DIAGONAL_UP,
-            self::BORDER_TYPE_NONE,
+            self::BORDER_TYPE_NONE
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -273,10 +270,9 @@ class Border extends LinkElement
             self::LINE_STYLE_EMBOSS3_D,
             self::LINE_STYLE_ENGRAVE3_D,
             self::LINE_STYLE_OUTSET,
-            self::LINE_STYLE_INSET,
+            self::LINE_STYLE_INSET
         ];
     }
-    
 
 
     /*
@@ -391,7 +387,7 @@ class Border extends LinkElement
     /*
      * Sets color
      *
-     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the border color.
+     * @param \Aspose\Words\Model\XmlColor $color color
      *
      * @return $this
      */
@@ -572,5 +568,3 @@ class Border extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

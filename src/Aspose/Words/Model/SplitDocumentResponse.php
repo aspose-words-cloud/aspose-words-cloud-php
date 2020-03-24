@@ -155,9 +155,7 @@ class SplitDocumentResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class SplitDocumentResponse extends WordsResponse
     /*
      * Sets split_result
      *
-     * @param \Aspose\Words\Model\SplitDocumentResult $split_result Gets or sets resylt of splitting document.
+     * @param \Aspose\Words\Model\SplitDocumentResult $split_result split_result
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class SplitDocumentResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

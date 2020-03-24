@@ -39,7 +39,7 @@ class UpdateBookmarkRequest
     public $name;
 	
     /*
-     * with new bookmark data.
+     * BookmarkData with new bookmark data.
      */
     public $bookmark_data;
 	
@@ -88,7 +88,7 @@ class UpdateBookmarkRequest
      * Initializes a new instance of the UpdateBookmarkRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\BookmarkData $bookmark_data with new bookmark data.
+     * @param \Aspose\Words\Model\BookmarkData $bookmark_data BookmarkData with new bookmark data.
      * @param string $bookmark_name The bookmark name.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -130,7 +130,7 @@ class UpdateBookmarkRequest
     }
 	
     /*
-     * with new bookmark data.
+     * BookmarkData with new bookmark data.
      */
     public function get_bookmark_data()
     {
@@ -138,7 +138,7 @@ class UpdateBookmarkRequest
     }
 
     /*
-     * with new bookmark data.
+     * BookmarkData with new bookmark data.
      */
     public function set_bookmark_data($value)
     {

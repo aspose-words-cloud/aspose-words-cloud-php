@@ -155,9 +155,7 @@ class FootnoteResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class FootnoteResponse extends WordsResponse
     /*
      * Sets footnote
      *
-     * @param \Aspose\Words\Model\Footnote $footnote Gets or sets footnote information.
+     * @param \Aspose\Words\Model\Footnote $footnote footnote
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class FootnoteResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

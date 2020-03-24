@@ -155,9 +155,7 @@ class WordsApiErrorResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class WordsApiErrorResponse extends WordsResponse
     /*
      * Sets error
      *
-     * @param \Aspose\Words\Model\ApiError $error Gets or sets error.
+     * @param \Aspose\Words\Model\ApiError $error error
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class WordsApiErrorResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -68,11 +68,11 @@ class WordsApi
     public function __construct(string $appSid, string $appKey, string $baseUrl)
     {
         if (!isset($appSid) || trim($appSid) === '') {
-            throw new ApiException('appSid could not be an empty string.')
+            throw new ApiException('appSid could not be an empty string.');
         }
         
         if (!isset($appKey) || trim($appKey) === '') {
-            throw new ApiException('appKey could not be an empty string.')
+            throw new ApiException('appKey could not be an empty string.');
         }
         
         $this->client = new Client();

@@ -57,7 +57,7 @@ class ReportEngineSettings implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'data_source_type' => 'string',
-        'report_build_options' => 'string',
+        'report_build_options' => '\Aspose\Words\Model\ReportBuildOptions[]',
         'data_source_name' => 'string',
         'csv_data_load_options' => '\Aspose\Words\Model\CsvDataLoadOptions'
     ];
@@ -175,10 +175,6 @@ class ReportEngineSettings implements ArrayAccess
     const DATA_SOURCE_TYPE_XML = 'Xml';
     const DATA_SOURCE_TYPE_JSON = 'Json';
     const DATA_SOURCE_TYPE_CSV = 'Csv';
-    const REPORT_BUILD_OPTIONS_NONE = 'None';
-    const REPORT_BUILD_OPTIONS_ALLOW_MISSING_MEMBERS = 'AllowMissingMembers';
-    const REPORT_BUILD_OPTIONS_REMOVE_EMPTY_PARAGRAPHS = 'RemoveEmptyParagraphs';
-    const REPORT_BUILD_OPTIONS_INLINE_ERROR_MESSAGES = 'InlineErrorMessages';
 
     /*
      * Gets allowable values of the enum
@@ -191,20 +187,6 @@ class ReportEngineSettings implements ArrayAccess
             self::DATA_SOURCE_TYPE_XML,
             self::DATA_SOURCE_TYPE_JSON,
             self::DATA_SOURCE_TYPE_CSV
-        ];
-    }
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getReportBuildOptionsAllowableValues()
-    {
-        return [
-            self::REPORT_BUILD_OPTIONS_NONE,
-            self::REPORT_BUILD_OPTIONS_ALLOW_MISSING_MEMBERS,
-            self::REPORT_BUILD_OPTIONS_REMOVE_EMPTY_PARAGRAPHS,
-            self::REPORT_BUILD_OPTIONS_INLINE_ERROR_MESSAGES
         ];
     }
 
@@ -246,14 +228,6 @@ class ReportEngineSettings implements ArrayAccess
             );
         }
 
-        $allowedValues = $this->getReportBuildOptionsAllowableValues();
-        if (!in_array($this->container['report_build_options'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'report_build_options', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -268,10 +242,6 @@ class ReportEngineSettings implements ArrayAccess
 
         $allowedValues = $this->getDataSourceTypeAllowableValues();
         if (!in_array($this->container['data_source_type'], $allowedValues)) {
-            return false;
-        }
-        $allowedValues = $this->getReportBuildOptionsAllowableValues();
-        if (!in_array($this->container['report_build_options'], $allowedValues)) {
             return false;
         }
         return true;
@@ -310,7 +280,7 @@ class ReportEngineSettings implements ArrayAccess
     /*
      * Gets report_build_options
      *
-     * @return string
+     * @return \Aspose\Words\Model\ReportBuildOptions[]
      */
     public function getReportBuildOptions()
     {
@@ -320,17 +290,12 @@ class ReportEngineSettings implements ArrayAccess
     /*
      * Sets report_build_options
      *
-     * @param string $report_build_options Gets or sets type of options to build report.
+     * @param \Aspose\Words\Model\ReportBuildOptions[] $report_build_options Gets or sets type of options to build report.
      *
      * @return $this
      */
     public function setReportBuildOptions($report_build_options)
     {
-        $allowedValues = $this->getReportBuildOptionsAllowableValues();
-        if ((!is_numeric($report_build_options) && !in_array($report_build_options, $allowedValues)) || (is_numeric($report_build_options) && !in_array($allowedValues[$report_build_options], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'report_build_options', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
         $this->container['report_build_options'] = $report_build_options;
 
         return $this;

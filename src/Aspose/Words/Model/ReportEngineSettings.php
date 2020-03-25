@@ -179,9 +179,7 @@ class ReportEngineSettings implements ArrayAccess
     const REPORT_BUILD_OPTIONS_ALLOW_MISSING_MEMBERS = 'AllowMissingMembers';
     const REPORT_BUILD_OPTIONS_REMOVE_EMPTY_PARAGRAPHS = 'RemoveEmptyParagraphs';
     const REPORT_BUILD_OPTIONS_INLINE_ERROR_MESSAGES = 'InlineErrorMessages';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -192,10 +190,9 @@ class ReportEngineSettings implements ArrayAccess
         return [
             self::DATA_SOURCE_TYPE_XML,
             self::DATA_SOURCE_TYPE_JSON,
-            self::DATA_SOURCE_TYPE_CSV,
+            self::DATA_SOURCE_TYPE_CSV
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -207,10 +204,9 @@ class ReportEngineSettings implements ArrayAccess
             self::REPORT_BUILD_OPTIONS_NONE,
             self::REPORT_BUILD_OPTIONS_ALLOW_MISSING_MEMBERS,
             self::REPORT_BUILD_OPTIONS_REMOVE_EMPTY_PARAGRAPHS,
-            self::REPORT_BUILD_OPTIONS_INLINE_ERROR_MESSAGES,
+            self::REPORT_BUILD_OPTIONS_INLINE_ERROR_MESSAGES
         ];
     }
-    
 
     /*
      * Associative array for storing property values
@@ -242,9 +238,6 @@ class ReportEngineSettings implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['data_source_type'] === null) {
-            $invalidProperties[] = "'data_source_type' can't be null";
-        }
         $allowedValues = $this->getDataSourceTypeAllowableValues();
         if (!in_array($this->container['data_source_type'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -253,9 +246,6 @@ class ReportEngineSettings implements ArrayAccess
             );
         }
 
-        if ($this->container['report_build_options'] === null) {
-            $invalidProperties[] = "'report_build_options' can't be null";
-        }
         $allowedValues = $this->getReportBuildOptionsAllowableValues();
         if (!in_array($this->container['report_build_options'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -276,14 +266,8 @@ class ReportEngineSettings implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['data_source_type'] === null) {
-            return false;
-        }
         $allowedValues = $this->getDataSourceTypeAllowableValues();
         if (!in_array($this->container['data_source_type'], $allowedValues)) {
-            return false;
-        }
-        if ($this->container['report_build_options'] === null) {
             return false;
         }
         $allowedValues = $this->getReportBuildOptionsAllowableValues();
@@ -389,7 +373,7 @@ class ReportEngineSettings implements ArrayAccess
     /*
      * Sets csv_data_load_options
      *
-     * @param \Aspose\Words\Model\CsvDataLoadOptions $csv_data_load_options Gets or sets options for parsing CSV data.
+     * @param \Aspose\Words\Model\CsvDataLoadOptions $csv_data_load_options csv_data_load_options
      *
      * @return $this
      */
@@ -469,5 +453,3 @@ class ReportEngineSettings implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

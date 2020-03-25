@@ -39,17 +39,17 @@ class BuildReportOnlineRequest
     public $template;
 	
     /*
-     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
      */
     public $data;
 	
     /*
-     * An object providing settings of report engine.
+     * An object providing a settings of report engine.
      */
     public $report_engine_settings;
 	
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"template\" will be used instead.
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
      */
     public $document_file_name;
     
@@ -58,9 +58,9 @@ class BuildReportOnlineRequest
      * Initializes a new instance of the BuildReportOnlineRequest class.
      *  
      * @param \SplFileObject $template File with template
-     * @param string $data A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
-     * @param map[string,string] $report_engine_settings An object providing settings of report engine.
-     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"template\" will be used instead.
+     * @param string $data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
+     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
      */
     public function __construct($template, $data, $report_engine_settings, $document_file_name = null)             
     {
@@ -88,7 +88,7 @@ class BuildReportOnlineRequest
     }
 	
     /*
-     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
      */
     public function get_data()
     {
@@ -96,7 +96,7 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
      */
     public function set_data($value)
     {
@@ -105,7 +105,7 @@ class BuildReportOnlineRequest
     }
 	
     /*
-     * An object providing settings of report engine.
+     * An object providing a settings of report engine.
      */
     public function get_report_engine_settings()
     {
@@ -113,7 +113,7 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * An object providing settings of report engine.
+     * An object providing a settings of report engine.
      */
     public function set_report_engine_settings($value)
     {
@@ -122,7 +122,7 @@ class BuildReportOnlineRequest
     }
 	
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"template\" will be used instead.
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
      */
     public function get_document_file_name()
     {
@@ -130,7 +130,7 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"template\" will be used instead.
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
      */
     public function set_document_file_name($value)
     {

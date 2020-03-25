@@ -37,6 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * CsvDataLoadOptions
  *
+ * @description Represents options for parsing CSV data.
  */
 class CsvDataLoadOptions implements ArrayAccess
 {
@@ -171,9 +172,7 @@ class CsvDataLoadOptions implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -205,18 +204,6 @@ class CsvDataLoadOptions implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['has_headers'] === null) {
-            $invalidProperties[] = "'has_headers' can't be null";
-        }
-        if ($this->container['delimiter'] === null) {
-            $invalidProperties[] = "'delimiter' can't be null";
-        }
-        if ($this->container['quote_char'] === null) {
-            $invalidProperties[] = "'quote_char' can't be null";
-        }
-        if ($this->container['comment_char'] === null) {
-            $invalidProperties[] = "'comment_char' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -229,18 +216,6 @@ class CsvDataLoadOptions implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['has_headers'] === null) {
-            return false;
-        }
-        if ($this->container['delimiter'] === null) {
-            return false;
-        }
-        if ($this->container['quote_char'] === null) {
-            return false;
-        }
-        if ($this->container['comment_char'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -258,7 +233,7 @@ class CsvDataLoadOptions implements ArrayAccess
     /*
      * Sets has_headers
      *
-     * @param bool $has_headers has_headers
+     * @param bool $has_headers Gets or sets a value indicating whether the first record of CSV data contains column names.
      *
      * @return $this
      */
@@ -282,7 +257,7 @@ class CsvDataLoadOptions implements ArrayAccess
     /*
      * Sets delimiter
      *
-     * @param string $delimiter delimiter
+     * @param string $delimiter Gets or sets the character to be used as a column delimiter.
      *
      * @return $this
      */
@@ -306,7 +281,7 @@ class CsvDataLoadOptions implements ArrayAccess
     /*
      * Sets quote_char
      *
-     * @param string $quote_char quote_char
+     * @param string $quote_char Gets or sets the character that is used to quote field values.
      *
      * @return $this
      */
@@ -330,7 +305,7 @@ class CsvDataLoadOptions implements ArrayAccess
     /*
      * Sets comment_char
      *
-     * @param string $comment_char comment_char
+     * @param string $comment_char Gets or sets the character that is used to comment lines of CSV data.
      *
      * @return $this
      */
@@ -410,5 +385,3 @@ class CsvDataLoadOptions implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

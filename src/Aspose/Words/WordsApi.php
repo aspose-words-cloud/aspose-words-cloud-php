@@ -935,9 +935,9 @@ class WordsApi
      */
     protected function buildReportRequest(Requests\buildReportRequest $request)
     {
-        // verify the required parameter 'template' is set
-        if ($request->template === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $template when calling buildReport');
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling buildReport');
         }
         // verify the required parameter 'data' is set
         if ($request->data === null) {
@@ -948,7 +948,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $report_engine_settings when calling buildReport');
         }
 
-        $resourcePath = '/words/{template}/buildReport';
+        $resourcePath = '/words/{name}/buildReport';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -956,9 +956,9 @@ class WordsApi
         $multipart = false;
     
         // path params
-        if ($request->template !== null) {
-            $localName = lcfirst('Template');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->template), $resourcePath);
+        if ($request->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
         // query params

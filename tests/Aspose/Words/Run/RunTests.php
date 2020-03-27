@@ -68,7 +68,7 @@ class RunTests extends BaseTestContext
         $subfolder = "DocumentElements/Run";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
-        $run = new Run(array("text" => "Run with text"));
+        $run = new RunUpdate(array("text" => "Run with text"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Runs/' . $localName;
         $this->uploadFile($file, $fullName);
@@ -91,7 +91,7 @@ class RunTests extends BaseTestContext
         $remoteName = "TestInsertRun.docx";
         $subfolder = "DocumentElements/Run";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $run = new Run(array("text" => "run with text"));
+        $run = new RunInsert(array("text" => "run with text"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Runs/' . $localName;
         $this->uploadFile($file, $fullName);

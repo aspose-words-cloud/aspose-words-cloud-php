@@ -45,7 +45,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $subfolder = "DocumentElements/DocumentProperties";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $propertyName = "AsposeAuthor";
-        $property = new DocumentProperty(array("name" => "Author", "value" => "Imran Anwar"));
+        $property = new DocumentPropertyCreateOrUpdate(array("value" => "Imran Anwar"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);

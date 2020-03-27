@@ -115,7 +115,7 @@ class CommentTests extends BaseTestContext
         $index = 0;
         $nodeLink = new NodeLink(array("node_id" => "0.3.0.3"));
         $documentPosition = new DocumentPosition(array("node" => $nodeLink, "offset" => 0));
-        $body = new Comment(array("range_start" => $documentPosition,
+        $body = new CommentUpdate(array("range_start" => $documentPosition,
             "range_end" => $documentPosition,"initial" => "IA",
             "author" => "Imran Anwar", "text" => "A new Comment"));
 
@@ -142,7 +142,7 @@ class CommentTests extends BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $nodeLink = new NodeLink(array("node_id" => "0.3.0.3"));
         $documentPosition = new DocumentPosition(array("node" => $nodeLink, "offset" => 0));
-        $body = new Comment(array(
+        $body = new CommentInsert(array(
             "range_start" => $documentPosition,
             "range_end" => $documentPosition,
             "initial" => "IA",

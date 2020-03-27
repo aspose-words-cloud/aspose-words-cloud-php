@@ -189,7 +189,7 @@ class FootnoteTests extends BaseTestContext
         $subfolder = "DocumentElements/Footnote";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
-        $footNote = new Footnote(array("text" => "new text is here"));
+        $footNote = new FootnoteUpdate(array("text" => "new text is here"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
         $this->uploadFile($file, $fullName);
@@ -215,7 +215,7 @@ class FootnoteTests extends BaseTestContext
         $subfolder = "DocumentElements/Footnote";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
-        $footNote = new Footnote(array("text" => "new text is here"));
+        $footNote = new FootnoteUpdate(array("text" => "new text is here"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
         $this->uploadFile($file, $fullName);
@@ -240,7 +240,7 @@ class FootnoteTests extends BaseTestContext
         $remoteName = "TestInsertFootnote.docx";
         $subfolder = "DocumentElements/Footnote";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $footnote = new Footnote(array("footnote_type" => Footnote::FOOTNOTE_TYPE_ENDNOTE, "text" => "test endnote"));
+        $footnote = new FootnoteInsert(array("footnote_type" => FootnoteInsert::FOOTNOTE_TYPE_ENDNOTE, "text" => "test endnote"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
         $this->uploadFile($file, $fullName);
@@ -265,7 +265,7 @@ class FootnoteTests extends BaseTestContext
         $remoteName = "TestInsertFootnoteWithoutNodePath.docx";
         $subfolder = "DocumentElements/Footnote";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $footnote = new Footnote(array("footnote_type" => Footnote::FOOTNOTE_TYPE_ENDNOTE, "text" => "test endnote"));
+        $footnote = new FootnoteInsert(array("footnote_type" => FootnoteInsert::FOOTNOTE_TYPE_ENDNOTE, "text" => "test endnote"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Footnotes/' . $localName;
         $this->uploadFile($file, $fullName);

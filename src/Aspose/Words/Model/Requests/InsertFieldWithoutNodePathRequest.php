@@ -88,7 +88,7 @@ class InsertFieldWithoutNodePathRequest
      * Initializes a new instance of the InsertFieldWithoutNodePathRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\Field $field Field data.
+     * @param \Aspose\Words\Model\FieldInsert $field Field data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

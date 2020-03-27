@@ -93,7 +93,7 @@ class InsertFieldRequest
      * Initializes a new instance of the InsertFieldRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\Field $field Field data.
+     * @param \Aspose\Words\Model\FieldInsert $field Field data.
      * @param string $node_path Path to the node, which contains collection of fields.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.

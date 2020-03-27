@@ -27,7 +27,7 @@
 */
 namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\DocumentProperty;
+use Aspose\Words\Model\DocumentPropertyCreateOrUpdate;
 use PHPUnit\Framework\Assert;
 
 class DocumentPropertiesTests extends BaseTestContext

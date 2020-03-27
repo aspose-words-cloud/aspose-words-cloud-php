@@ -27,7 +27,8 @@
 */
 namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\Run;
+use Aspose\Words\Model\RunInsert;
+use Aspose\Words\Model\RunUpdate;
 use PHPUnit\Framework\Assert;
 
 class RunTests extends BaseTestContext

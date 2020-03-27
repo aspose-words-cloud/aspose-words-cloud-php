@@ -27,7 +27,8 @@
 */
 namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\Footnote;
+use Aspose\Words\Model\FootnoteInsert;
+use Aspose\Words\Model\FootnoteUpdate;
 use PHPUnit\Framework\Assert;
 
 class FootnoteTests extends BaseTestContext

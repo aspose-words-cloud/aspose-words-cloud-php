@@ -27,7 +27,8 @@
 */
 namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\Field;
+use Aspose\Words\Model\FieldInsert;
+use Aspose\Words\Model\FieldUpdate;
 use Aspose\Words\Model\PageNumber;
 use PHPUnit\Framework\Assert;
 

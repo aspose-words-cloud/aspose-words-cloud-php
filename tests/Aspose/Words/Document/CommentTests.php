@@ -29,7 +29,8 @@ namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\NodeLink;
 use Aspose\Words\Model\DocumentPosition;
-use Aspose\Words\Model\Comment;
+use Aspose\Words\Model\CommentInsert;
+use Aspose\Words\Model\CommentUpdate;
 use PHPUnit\Framework\Assert;
 class CommentTests extends BaseTestContext
 {

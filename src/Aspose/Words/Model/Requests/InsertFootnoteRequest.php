@@ -88,7 +88,7 @@ class InsertFootnoteRequest
      * Initializes a new instance of the InsertFootnoteRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\Footnote $footnote_dto Footnote data.
+     * @param \Aspose\Words\Model\FootnoteInsert $footnote_dto Footnote data.
      * @param string $node_path Path to the node, which contains collection of footnotes.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.

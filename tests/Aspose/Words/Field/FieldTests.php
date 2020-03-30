@@ -27,7 +27,8 @@
 */
 namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\Field;
+use Aspose\Words\Model\FieldInsert;
+use Aspose\Words\Model\FieldUpdate;
 use Aspose\Words\Model\PageNumber;
 use PHPUnit\Framework\Assert;
 
@@ -141,7 +142,7 @@ class FieldTests extends BaseTestContext
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
         $destName = self::$baseTestOut . $remoteName;
-        $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
+        $body = new FieldUpdate(array("field_code" => "{ NUMPAGES }"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
         $this->uploadFile($file, $fullName);
@@ -166,7 +167,7 @@ class FieldTests extends BaseTestContext
         $remoteName = "TestInsertField.docx";
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
+        $body = new FieldInsert(array("field_code" => "{ NUMPAGES }"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
         $this->uploadFile($file, $fullName);
@@ -191,7 +192,7 @@ class FieldTests extends BaseTestContext
         $remoteName = "TestInsertFieldWithoutNodePath.docx";
         $subfolder = "DocumentElements/Field";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $body = new Field(array("result" => 3, "field_code" => "{ NUMPAGES }", "node_id" => "0.0.3"));
+        $body = new FieldInsert(array("field_code" => "{ NUMPAGES }"));
 
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Fields/' . $localName;
         $this->uploadFile($file, $fullName);

@@ -93,7 +93,7 @@ class UpdateFootnoteRequest
      * Initializes a new instance of the UpdateFootnoteRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\Footnote $footnote_dto Footnote data.
+     * @param \Aspose\Words\Model\FootnoteUpdate $footnote_dto Footnote data.
      * @param string $node_path Path to the node, which contains collection of footnotes.
      * @param int $index Object index.
      * @param string $folder Original document folder.

@@ -89,7 +89,7 @@ class UpdateCommentRequest
      *  
      * @param string $name The document name.
      * @param int $comment_index The comment index.
-     * @param \Aspose\Words\Model\Comment $comment The comment data.
+     * @param \Aspose\Words\Model\CommentUpdate $comment The comment data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

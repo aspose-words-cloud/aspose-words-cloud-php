@@ -83,7 +83,7 @@ class InsertFootnoteWithoutNodePathRequest
      * Initializes a new instance of the InsertFootnoteWithoutNodePathRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\Footnote $footnote_dto Footnote data.
+     * @param \Aspose\Words\Model\FootnoteInsert $footnote_dto Footnote data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

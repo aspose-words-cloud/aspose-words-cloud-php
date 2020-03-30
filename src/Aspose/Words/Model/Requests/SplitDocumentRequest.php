@@ -39,6 +39,11 @@ class SplitDocumentRequest
     public $name;
 	
     /*
+     * Format to split.
+     */
+    public $format;
+	
+    /*
      * Original document folder.
      */
     public $folder;
@@ -62,11 +67,6 @@ class SplitDocumentRequest
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
-	
-    /*
-     * Format to split.
-     */
-    public $format;
 	
     /*
      * Start page.
@@ -93,26 +93,26 @@ class SplitDocumentRequest
      * Initializes a new instance of the SplitDocumentRequest class.
      *  
      * @param string $name Original document name.
+     * @param string $format Format to split.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $format Format to split.
      * @param int $from Start page.
      * @param int $to End page.
      * @param bool $zip_output ZipOutput or not.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $format = null, $from = null, $to = null, $zip_output = null, $fonts_location = null)             
+    public function __construct($name, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $from = null, $to = null, $zip_output = null, $fonts_location = null)             
     {
         $this->name = $name;
+        $this->format = $format;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->dest_file_name = $dest_file_name;
-        $this->format = $format;
         $this->from = $from;
         $this->to = $to;
         $this->zip_output = $zip_output;
@@ -133,6 +133,23 @@ class SplitDocumentRequest
     public function set_name($value)
     {
         $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Format to split.
+     */
+    public function get_format()
+    {
+        return $this->format;
+    }
+
+    /*
+     * Format to split.
+     */
+    public function set_format($value)
+    {
+        $this->format = $value;
         return $this;
     }
 	
@@ -218,23 +235,6 @@ class SplitDocumentRequest
     public function set_dest_file_name($value)
     {
         $this->dest_file_name = $value;
-        return $this;
-    }
-	
-    /*
-     * Format to split.
-     */
-    public function get_format()
-    {
-        return $this->format;
-    }
-
-    /*
-     * Format to split.
-     */
-    public function set_format($value)
-    {
-        $this->format = $value;
         return $this;
     }
 	

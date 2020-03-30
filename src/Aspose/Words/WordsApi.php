@@ -1707,7 +1707,7 @@ class WordsApi
     /*
      * Operation convertDocument
      *
-     * Converts document from the request's content to the specified format .
+     * Converts document from the request's content to the specified format.
      *
      * @param Requests\convertDocumentRequest $request is a request object for operation
      *
@@ -1730,7 +1730,7 @@ class WordsApi
     /*
      * Operation convertDocumentWithHttpInfo
      *
-     * Converts document from the request's content to the specified format .
+     * Converts document from the request's content to the specified format.
      *
      * @param Requests\convertDocumentRequest $request is a request object for operation
      *
@@ -1796,7 +1796,7 @@ class WordsApi
     /*
      * Operation convertDocumentAsync
      *
-     * Converts document from the request's content to the specified format .
+     * Converts document from the request's content to the specified format.
      *
      * @param Requests\convertDocumentRequest $request is a request object for operation
      *
@@ -1816,7 +1816,7 @@ class WordsApi
     /*
      * Operation convertDocumentAsyncWithHttpInfo
      *
-     * Converts document from the request's content to the specified format .
+     * Converts document from the request's content to the specified format.
      *
      * @param Requests\convertDocumentRequest $request is a request object for operation
      *
@@ -49800,6 +49800,10 @@ class WordsApi
         if ($request->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling splitDocument');
         }
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling splitDocument');
+        }
 
         $resourcePath = '/words/{name}/split';
         $formParams = [];
@@ -49814,6 +49818,16 @@ class WordsApi
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
+        // query params
+        if ($request->format !== null) {
+            $localName = lcfirst('Format');
+            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
         // query params
         if ($request->folder !== null) {
             $localName = lcfirst('Folder');
@@ -49858,16 +49872,6 @@ class WordsApi
         if ($request->dest_file_name !== null) {
             $localName = lcfirst('DestFileName');
             $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->format !== null) {
-            $localName = lcfirst('Format');
-            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {

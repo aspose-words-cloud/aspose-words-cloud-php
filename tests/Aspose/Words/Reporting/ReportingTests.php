@@ -43,8 +43,8 @@ class ReportingTests extends BaseTestContext
     {
         $localName = "ReportTemplate.docx";
         $settings = new ReportEngineSettings(array("data_source_type" => "Json"));
-        $template = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportTemplate.docx'
-        $dataJson = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportData.json')
+        $template = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportTemplate.docx';
+        $dataJson = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportData.json');
         $request = new Requests\BuildReportOnlineRequest($template, $dataJson, $settings);
 
         $result = $this->words->buildReportOnline($request);
@@ -60,8 +60,8 @@ class ReportingTests extends BaseTestContext
     public function testBuildReport()
     {
         $remoteName = 'TestBuildReport.docx';
-        $template = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportTemplate.docx'
-        $dataJson = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportData.json')
+        $template = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportTemplate.docx';
+        $dataJson = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportData.json');
         $fullName = self::$baseTestPath . "DocumentActions/Reporting/" . $remoteName;
         $this->uploadFile($template, $fullName);
 

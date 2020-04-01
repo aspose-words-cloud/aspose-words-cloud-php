@@ -27,8 +27,7 @@
 */
 namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\SaveOptionsData;
-use Aspose\Words\Model\TiffSaveOptionsData;
+use Aspose\Words\Model\ReportEngineSettings;
 use PHPUnit\Framework\Assert;
 use Aspose\Words\ApiException;
 class ReportingTests extends BaseTestContext

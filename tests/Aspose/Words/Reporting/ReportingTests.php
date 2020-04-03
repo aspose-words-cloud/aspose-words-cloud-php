@@ -41,7 +41,7 @@ class ReportingTests extends BaseTestContext
     public function testBuildReportOnline()
     {
         $localName = "ReportTemplate.docx";
-        $settings = new ReportEngineSettings(array("data_source_type" => "Json"));
+        $settings = new ReportEngineSettings(array("data_source_type" => "Json", "data_source_name" => "persons"));
         $template = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportTemplate.docx';
         $dataJson = file_get_contents(realpath(__DIR__ . '/../../../..') . '/TestData/DocumentActions/Reporting/' . 'ReportData.json');
         $request = new Requests\BuildReportOnlineRequest($template, $dataJson, $settings);

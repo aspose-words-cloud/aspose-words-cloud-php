@@ -155,9 +155,7 @@ class ParagraphFormatResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class ParagraphFormatResponse extends WordsResponse
     /*
      * Sets paragraph_format
      *
-     * @param \Aspose\Words\Model\ParagraphFormat $paragraph_format Gets or sets represents all the formatting for a paragraph.
+     * @param \Aspose\Words\Model\ParagraphFormat $paragraph_format paragraph_format
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class ParagraphFormatResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

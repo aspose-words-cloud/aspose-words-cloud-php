@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * StatDataResponse
  *
- * @description Response for the request of the document&#39;s statistical data.
+ * @description Response for the request of the document&#x27;s statistical data.
  */
 class StatDataResponse extends WordsResponse 
 {
@@ -160,9 +160,7 @@ class StatDataResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -220,7 +218,7 @@ class StatDataResponse extends WordsResponse
     /*
      * Sets document_link
      *
-     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets link to the document.
+     * @param \Aspose\Words\Model\FileLink $document_link document_link
      *
      * @return $this
      */
@@ -244,7 +242,7 @@ class StatDataResponse extends WordsResponse
     /*
      * Sets stat_data
      *
-     * @param \Aspose\Words\Model\DocumentStatData $stat_data Gets or sets statistical data of the document.
+     * @param \Aspose\Words\Model\DocumentStatData $stat_data stat_data
      *
      * @return $this
      */
@@ -324,5 +322,3 @@ class StatDataResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

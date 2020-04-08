@@ -59,7 +59,7 @@ class GetDocumentFieldNamesRequest
     public $password;
 	
     /*
-     * If true, result includes \"mustache\" field names.
+     * If true, result includes "mustache" field names.
      */
     public $use_non_merge_fields;
     
@@ -72,7 +72,7 @@ class GetDocumentFieldNamesRequest
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param bool $use_non_merge_fields If true, result includes \"mustache\" field names.
+     * @param bool $use_non_merge_fields If true, result includes "mustache" field names.
      */
     public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $use_non_merge_fields = null)             
     {
@@ -170,7 +170,7 @@ class GetDocumentFieldNamesRequest
     }
 	
     /*
-     * If true, result includes \"mustache\" field names.
+     * If true, result includes "mustache" field names.
      */
     public function get_use_non_merge_fields()
     {
@@ -178,7 +178,7 @@ class GetDocumentFieldNamesRequest
     }
 
     /*
-     * If true, result includes \"mustache\" field names.
+     * If true, result includes "mustache" field names.
      */
     public function set_use_non_merge_fields($value)
     {

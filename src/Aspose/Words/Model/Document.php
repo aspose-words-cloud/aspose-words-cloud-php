@@ -203,9 +203,7 @@ class Document implements ArrayAccess
     const SOURCE_FORMAT_XPS = 'Xps';
     const SOURCE_FORMAT_TIFF = 'Tiff';
     const SOURCE_FORMAT_SVG = 'Svg';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -234,10 +232,9 @@ class Document implements ArrayAccess
             self::SOURCE_FORMAT_PDF,
             self::SOURCE_FORMAT_XPS,
             self::SOURCE_FORMAT_TIFF,
-            self::SOURCE_FORMAT_SVG,
+            self::SOURCE_FORMAT_SVG
         ];
     }
-    
 
     /*
      * Associative array for storing property values
@@ -271,9 +268,6 @@ class Document implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['source_format'] === null) {
-            $invalidProperties[] = "'source_format' can't be null";
-        }
         $allowedValues = $this->getSourceFormatAllowableValues();
         if (!in_array($this->container['source_format'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -282,12 +276,6 @@ class Document implements ArrayAccess
             );
         }
 
-        if ($this->container['is_encrypted'] === null) {
-            $invalidProperties[] = "'is_encrypted' can't be null";
-        }
-        if ($this->container['is_signed'] === null) {
-            $invalidProperties[] = "'is_signed' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -300,17 +288,8 @@ class Document implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['source_format'] === null) {
-            return false;
-        }
         $allowedValues = $this->getSourceFormatAllowableValues();
         if (!in_array($this->container['source_format'], $allowedValues)) {
-            return false;
-        }
-        if ($this->container['is_encrypted'] === null) {
-            return false;
-        }
-        if ($this->container['is_signed'] === null) {
             return false;
         }
         return true;
@@ -455,7 +434,7 @@ class Document implements ArrayAccess
     /*
      * Sets document_properties
      *
-     * @param \Aspose\Words\Model\DocumentProperties $document_properties Gets or sets returns document properties.
+     * @param \Aspose\Words\Model\DocumentProperties $document_properties document_properties
      *
      * @return $this
      */
@@ -535,5 +514,3 @@ class Document implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

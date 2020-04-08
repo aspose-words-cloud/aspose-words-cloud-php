@@ -170,9 +170,7 @@ class RtfSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -384,5 +382,3 @@ class RtfSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -167,9 +167,7 @@ class TableInsert implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -200,12 +198,6 @@ class TableInsert implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['columns_count'] === null) {
-            $invalidProperties[] = "'columns_count' can't be null";
-        }
-        if ($this->container['rows_count'] === null) {
-            $invalidProperties[] = "'rows_count' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -218,12 +210,6 @@ class TableInsert implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['columns_count'] === null) {
-            return false;
-        }
-        if ($this->container['rows_count'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -241,7 +227,7 @@ class TableInsert implements ArrayAccess
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets table will be inserted before specified position.
+     * @param \Aspose\Words\Model\DocumentPosition $position position
      *
      * @return $this
      */
@@ -369,5 +355,3 @@ class TableInsert implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

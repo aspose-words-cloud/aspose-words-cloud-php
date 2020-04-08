@@ -177,9 +177,7 @@ class ReplaceTextParameters implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -212,15 +210,6 @@ class ReplaceTextParameters implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['is_match_case'] === null) {
-            $invalidProperties[] = "'is_match_case' can't be null";
-        }
-        if ($this->container['is_match_whole_word'] === null) {
-            $invalidProperties[] = "'is_match_whole_word' can't be null";
-        }
-        if ($this->container['is_old_value_regex'] === null) {
-            $invalidProperties[] = "'is_old_value_regex' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -233,15 +222,6 @@ class ReplaceTextParameters implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['is_match_case'] === null) {
-            return false;
-        }
-        if ($this->container['is_match_whole_word'] === null) {
-            return false;
-        }
-        if ($this->container['is_old_value_regex'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -259,7 +239,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets old_value
      *
-     * @param string $old_value Gets or sets old text value (or regex pattern ) to replace.
+     * @param string $old_value Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
      *
      * @return $this
      */
@@ -355,7 +335,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets is_old_value_regex
      *
-     * @param bool $is_old_value_regex Gets or sets a value indicating whether flag, means that  contains regex expression.
+     * @param bool $is_old_value_regex Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
      *
      * @return $this
      */
@@ -435,5 +415,3 @@ class ReplaceTextParameters implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -58,7 +58,8 @@ class CompareData implements ArrayAccess
     protected static $swaggerTypes = [
         'comparing_with_document' => 'string',
         'author' => 'string',
-        'date_time' => '\DateTime'
+        'date_time' => '\DateTime',
+        'compare_options' => '\Aspose\Words\Model\CompareOptions'
     ];
 
     /*
@@ -69,7 +70,8 @@ class CompareData implements ArrayAccess
     protected static $swaggerFormats = [
         'comparing_with_document' => null,
         'author' => null,
-        'date_time' => 'date-time'
+        'date_time' => 'date-time',
+        'compare_options' => null
     ];
 
     /*
@@ -101,7 +103,8 @@ class CompareData implements ArrayAccess
     protected static $attributeMap = [
         'comparing_with_document' => 'ComparingWithDocument',
         'author' => 'Author',
-        'date_time' => 'DateTime'
+        'date_time' => 'DateTime',
+        'compare_options' => 'CompareOptions'
     ];
 
     /*
@@ -112,7 +115,8 @@ class CompareData implements ArrayAccess
     protected static $setters = [
         'comparing_with_document' => 'setComparingWithDocument',
         'author' => 'setAuthor',
-        'date_time' => 'setDateTime'
+        'date_time' => 'setDateTime',
+        'compare_options' => 'setCompareOptions'
     ];
 
     /*
@@ -123,7 +127,8 @@ class CompareData implements ArrayAccess
     protected static $getters = [
         'comparing_with_document' => 'getComparingWithDocument',
         'author' => 'getAuthor',
-        'date_time' => 'getDateTime'
+        'date_time' => 'getDateTime',
+        'compare_options' => 'getCompareOptions'
     ];
 
     /*
@@ -167,9 +172,7 @@ class CompareData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -189,6 +192,7 @@ class CompareData implements ArrayAccess
         $this->container['comparing_with_document'] = isset($data['comparing_with_document']) ? $data['comparing_with_document'] : null;
         $this->container['author'] = isset($data['author']) ? $data['author'] : null;
         $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
+        $this->container['compare_options'] = isset($data['compare_options']) ? $data['compare_options'] : null;
     }
 
     /*
@@ -287,6 +291,30 @@ class CompareData implements ArrayAccess
 
         return $this;
     }
+
+    /*
+     * Gets compare_options
+     *
+     * @return \Aspose\Words\Model\CompareOptions
+     */
+    public function getCompareOptions()
+    {
+        return $this->container['compare_options'];
+    }
+
+    /*
+     * Sets compare_options
+     *
+     * @param \Aspose\Words\Model\CompareOptions $compare_options compare_options
+     *
+     * @return $this
+     */
+    public function setCompareOptions($compare_options)
+    {
+        $this->container['compare_options'] = $compare_options;
+
+        return $this;
+    }
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -357,5 +385,3 @@ class CompareData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

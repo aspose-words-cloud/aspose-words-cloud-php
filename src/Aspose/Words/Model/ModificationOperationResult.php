@@ -162,9 +162,7 @@ class ModificationOperationResult implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -223,7 +221,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Sets source
      *
-     * @param \Aspose\Words\Model\FileLink $source Gets or sets link to the source document (source for the modification operation).
+     * @param \Aspose\Words\Model\FileLink $source source
      *
      * @return $this
      */
@@ -247,7 +245,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Sets dest
      *
-     * @param \Aspose\Words\Model\FileLink $dest Gets or sets link to the dest document (result of the modification operation).
+     * @param \Aspose\Words\Model\FileLink $dest dest
      *
      * @return $this
      */
@@ -327,5 +325,3 @@ class ModificationOperationResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

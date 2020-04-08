@@ -176,9 +176,7 @@ class FormFieldTextInput extends FormField
     const TEXT_INPUT_TYPE_CURRENT_DATE = 'CurrentDate';
     const TEXT_INPUT_TYPE_CURRENT_TIME = 'CurrentTime';
     const TEXT_INPUT_TYPE_CALCULATED = 'Calculated';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -192,10 +190,9 @@ class FormFieldTextInput extends FormField
             self::TEXT_INPUT_TYPE_DATE,
             self::TEXT_INPUT_TYPE_CURRENT_DATE,
             self::TEXT_INPUT_TYPE_CURRENT_TIME,
-            self::TEXT_INPUT_TYPE_CALCULATED,
+            self::TEXT_INPUT_TYPE_CALCULATED
         ];
     }
-    
 
 
     /*
@@ -424,5 +421,3 @@ class FormFieldTextInput extends FormField
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

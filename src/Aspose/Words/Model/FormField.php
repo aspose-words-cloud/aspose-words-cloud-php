@@ -39,7 +39,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class FormField extends NodeLink 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -195,9 +195,7 @@ class FormField extends NodeLink
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -219,6 +217,10 @@ class FormField extends NodeLink
         $this->container['own_help'] = isset($data['own_help']) ? $data['own_help'] : null;
         $this->container['own_status'] = isset($data['own_status']) ? $data['own_status'] : null;
         $this->container['status_text'] = isset($data['status_text']) ? $data['status_text'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -534,5 +536,3 @@ class FormField extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

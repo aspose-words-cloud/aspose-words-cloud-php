@@ -678,9 +678,7 @@ class ParagraphFormat extends LinkElement
     const STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6 = 'ListTable7ColorfulAccent6';
     const STYLE_IDENTIFIER_USER = 'User';
     const STYLE_IDENTIFIER_NIL = 'Nil';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -697,10 +695,9 @@ class ParagraphFormat extends LinkElement
             self::ALIGNMENT_ARABIC_MEDIUM_KASHIDA,
             self::ALIGNMENT_ARABIC_HIGH_KASHIDA,
             self::ALIGNMENT_ARABIC_LOW_KASHIDA,
-            self::ALIGNMENT_THAI_DISTRIBUTED,
+            self::ALIGNMENT_THAI_DISTRIBUTED
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -711,10 +708,9 @@ class ParagraphFormat extends LinkElement
         return [
             self::DROP_CAP_POSITION_NONE,
             self::DROP_CAP_POSITION_NORMAL,
-            self::DROP_CAP_POSITION_MARGIN,
+            self::DROP_CAP_POSITION_MARGIN
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -725,10 +721,9 @@ class ParagraphFormat extends LinkElement
         return [
             self::LINE_SPACING_RULE_AT_LEAST,
             self::LINE_SPACING_RULE_EXACTLY,
-            self::LINE_SPACING_RULE_MULTIPLE,
+            self::LINE_SPACING_RULE_MULTIPLE
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -746,10 +741,9 @@ class ParagraphFormat extends LinkElement
             self::OUTLINE_LEVEL_LEVEL7,
             self::OUTLINE_LEVEL_LEVEL8,
             self::OUTLINE_LEVEL_LEVEL9,
-            self::OUTLINE_LEVEL_BODY_TEXT,
+            self::OUTLINE_LEVEL_BODY_TEXT
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -1130,10 +1124,9 @@ class ParagraphFormat extends LinkElement
             self::STYLE_IDENTIFIER_LIST_TABLE6_COLORFUL_ACCENT6,
             self::STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6,
             self::STYLE_IDENTIFIER_USER,
-            self::STYLE_IDENTIFIER_NIL,
+            self::STYLE_IDENTIFIER_NIL
         ];
     }
-    
 
 
     /*
@@ -1602,7 +1595,7 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets no_space_between_paragraphs_of_same_style
      *
-     * @param bool $no_space_between_paragraphs_of_same_style Gets or sets when true,  and  will be ignored between the paragraphs of the same style.
+     * @param bool $no_space_between_paragraphs_of_same_style Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.
      *
      * @return $this
      */
@@ -1980,5 +1973,3 @@ class ParagraphFormat extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

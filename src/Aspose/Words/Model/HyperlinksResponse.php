@@ -155,9 +155,7 @@ class HyperlinksResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class HyperlinksResponse extends WordsResponse
     /*
      * Sets hyperlinks
      *
-     * @param \Aspose\Words\Model\Hyperlinks $hyperlinks Gets or sets collection of hyperlinks.
+     * @param \Aspose\Words\Model\Hyperlinks $hyperlinks hyperlinks
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class HyperlinksResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -51,9 +51,9 @@ class SplitDocumentToFormatTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\SplitDocumentRequest($remoteName, $folder=self::$baseTestPath . $subfolder, null,
+        $request = new Requests\SplitDocumentRequest($remoteName, $format, $folder=self::$baseTestPath . $subfolder, null,
             null, null, $destName,
-            $format, $from, $to);
+            $from, $to);
 
         $result = $this->words->splitDocument($request);
         Assert::isTrue(json_decode($result, true) !== NULL);

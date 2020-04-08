@@ -160,9 +160,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -324,5 +322,3 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

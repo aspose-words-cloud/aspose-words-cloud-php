@@ -155,9 +155,7 @@ class FontResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class FontResponse extends WordsResponse
     /*
      * Sets font
      *
-     * @param \Aspose\Words\Model\Font $font Gets or sets font.
+     * @param \Aspose\Words\Model\Font $font font
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class FontResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

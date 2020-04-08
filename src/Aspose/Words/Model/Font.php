@@ -748,9 +748,7 @@ class Font extends LinkElement
     const UNDERLINE_DASH_LONG = 'DashLong';
     const UNDERLINE_WAVY_DOUBLE = 'WavyDouble';
     const UNDERLINE_DASH_LONG_HEAVY = 'DashLongHeavy';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -1131,10 +1129,9 @@ class Font extends LinkElement
             self::STYLE_IDENTIFIER_LIST_TABLE6_COLORFUL_ACCENT6,
             self::STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6,
             self::STYLE_IDENTIFIER_USER,
-            self::STYLE_IDENTIFIER_NIL,
+            self::STYLE_IDENTIFIER_NIL
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -1149,10 +1146,9 @@ class Font extends LinkElement
             self::TEXT_EFFECT_SPARKLE_TEXT,
             self::TEXT_EFFECT_MARCHING_BLACK_ANTS,
             self::TEXT_EFFECT_MARCHING_RED_ANTS,
-            self::TEXT_EFFECT_SHIMMER,
+            self::TEXT_EFFECT_SHIMMER
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -1178,10 +1174,9 @@ class Font extends LinkElement
             self::UNDERLINE_WAVY_HEAVY,
             self::UNDERLINE_DASH_LONG,
             self::UNDERLINE_WAVY_DOUBLE,
-            self::UNDERLINE_DASH_LONG_HEAVY,
+            self::UNDERLINE_DASH_LONG_HEAVY
         ];
     }
-    
 
 
     /*
@@ -1409,7 +1404,7 @@ class Font extends LinkElement
     /*
      * Sets border
      *
-     * @param \Aspose\Words\Model\Border $border Gets or sets border object that specifies border for the font.
+     * @param \Aspose\Words\Model\Border $border border
      *
      * @return $this
      */
@@ -1433,7 +1428,7 @@ class Font extends LinkElement
     /*
      * Sets color
      *
-     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the color of the font.
+     * @param \Aspose\Words\Model\XmlColor $color color
      *
      * @return $this
      */
@@ -1577,7 +1572,7 @@ class Font extends LinkElement
     /*
      * Sets highlight_color
      *
-     * @param \Aspose\Words\Model\XmlColor $highlight_color Gets or sets the highlight (marker) color.
+     * @param \Aspose\Words\Model\XmlColor $highlight_color highlight_color
      *
      * @return $this
      */
@@ -2264,7 +2259,7 @@ class Font extends LinkElement
     /*
      * Sets underline_color
      *
-     * @param \Aspose\Words\Model\XmlColor $underline_color Gets or sets the color of the underline applied to the font.
+     * @param \Aspose\Words\Model\XmlColor $underline_color underline_color
      *
      * @return $this
      */
@@ -2344,5 +2339,3 @@ class Font extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

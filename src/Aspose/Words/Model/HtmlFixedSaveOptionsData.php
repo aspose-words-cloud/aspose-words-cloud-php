@@ -215,9 +215,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -654,5 +652,3 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

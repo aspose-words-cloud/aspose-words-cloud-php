@@ -160,9 +160,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -324,5 +322,3 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

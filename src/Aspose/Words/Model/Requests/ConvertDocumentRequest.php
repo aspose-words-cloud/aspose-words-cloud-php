@@ -54,7 +54,7 @@ class ConvertDocumentRequest
     public $out_path;
 	
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead.
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
      */
     public $file_name_field_value;
 	
@@ -71,7 +71,7 @@ class ConvertDocumentRequest
      * @param string $format Format to convert.
      * @param string $storage Original document storage.
      * @param string $out_path Path for saving operation result to the local storage.
-     * @param string $file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead.
+     * @param string $file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
     public function __construct($document, $format, $storage = null, $out_path = null, $file_name_field_value = null, $fonts_location = null)             
@@ -153,7 +153,7 @@ class ConvertDocumentRequest
     }
 	
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead.
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
      */
     public function get_file_name_field_value()
     {
@@ -161,7 +161,7 @@ class ConvertDocumentRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead.
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
      */
     public function set_file_name_field_value($value)
     {

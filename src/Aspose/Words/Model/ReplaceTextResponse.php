@@ -160,9 +160,7 @@ class ReplaceTextResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -220,7 +218,7 @@ class ReplaceTextResponse extends WordsResponse
     /*
      * Sets document_link
      *
-     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets link to the document.
+     * @param \Aspose\Words\Model\FileLink $document_link document_link
      *
      * @return $this
      */
@@ -324,5 +322,3 @@ class ReplaceTextResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

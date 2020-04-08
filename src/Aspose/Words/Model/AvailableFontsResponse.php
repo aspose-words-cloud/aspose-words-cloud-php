@@ -165,9 +165,7 @@ class AvailableFontsResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -354,5 +352,3 @@ class AvailableFontsResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

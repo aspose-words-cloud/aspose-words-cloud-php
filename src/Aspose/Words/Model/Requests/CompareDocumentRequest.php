@@ -39,7 +39,7 @@ class CompareDocumentRequest
     public $name;
 	
     /*
-     * with a document to compare.
+     * CompareData with a document to compare.
      */
     public $compare_data;
 	
@@ -73,7 +73,7 @@ class CompareDocumentRequest
      * Initializes a new instance of the CompareDocumentRequest class.
      *  
      * @param string $name Original document name.
-     * @param \Aspose\Words\Model\CompareData $compare_data with a document to compare.
+     * @param \Aspose\Words\Model\CompareData $compare_data CompareData with a document to compare.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -109,7 +109,7 @@ class CompareDocumentRequest
     }
 	
     /*
-     * with a document to compare.
+     * CompareData with a document to compare.
      */
     public function get_compare_data()
     {
@@ -117,7 +117,7 @@ class CompareDocumentRequest
     }
 
     /*
-     * with a document to compare.
+     * CompareData with a document to compare.
      */
     public function set_compare_data($value)
     {

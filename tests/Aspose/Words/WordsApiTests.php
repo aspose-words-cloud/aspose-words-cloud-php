@@ -29,7 +29,10 @@
 namespace Aspose\Tests;
 use Aspose\Words\ApiException;
 use Aspose\Words\Model\Requests;
+use Aspose\Words\WordsApi;
 use PHPUnit\Framework\Assert;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\RequestException;
 
 class WordsApiTests extends BaseTestContext
 {
@@ -50,6 +53,20 @@ class WordsApiTests extends BaseTestContext
             Assert::assertNotNull($errorObject);
             Assert::assertNotNull($errorObject->getInnerError());
             Assert::equalTo(404, $exception->getCode());
+        }
+    }
+    
+    /*
+     * Test case for checking bad appSid
+     */
+    public function testHandleBadAppSid()
+    {
+        try{
+            $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
+        }
+        catch (RequestException $e)
+        {
+            Assert::equalTo(400, $e->getCode());
         }
     }
 

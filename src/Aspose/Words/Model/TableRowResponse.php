@@ -155,9 +155,7 @@ class TableRowResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class TableRowResponse extends WordsResponse
     /*
      * Sets row
      *
-     * @param \Aspose\Words\Model\TableRow $row Gets or sets table row.
+     * @param \Aspose\Words\Model\TableRow $row row
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class TableRowResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

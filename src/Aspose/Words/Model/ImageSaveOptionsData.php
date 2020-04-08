@@ -39,7 +39,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class ImageSaveOptionsData extends FixedPageSaveOptionsData 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -215,9 +215,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -243,6 +241,10 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['use_gdi_emf_renderer'] = isset($data['use_gdi_emf_renderer']) ? $data['use_gdi_emf_renderer'] : null;
         $this->container['use_high_quality_rendering'] = isset($data['use_high_quality_rendering']) ? $data['use_high_quality_rendering'] : null;
         $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -286,7 +288,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets graphics_quality_options
      *
-     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options Gets or sets allows to specify additional System.Drawing.Graphics quality options.
+     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options graphics_quality_options
      *
      * @return $this
      */
@@ -654,5 +656,3 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

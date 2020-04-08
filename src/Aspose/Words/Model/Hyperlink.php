@@ -160,9 +160,7 @@ class Hyperlink extends LinkElement
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -324,5 +322,3 @@ class Hyperlink extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

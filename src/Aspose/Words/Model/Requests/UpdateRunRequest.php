@@ -93,7 +93,7 @@ class UpdateRunRequest
      * Initializes a new instance of the UpdateRunRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\Run $run Run data.
+     * @param \Aspose\Words\Model\RunUpdate $run Run data.
      * @param string $paragraph_path Path to parent paragraph.
      * @param int $index Object index.
      * @param string $folder Original document folder.

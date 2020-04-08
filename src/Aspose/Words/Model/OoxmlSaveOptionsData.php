@@ -165,9 +165,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -354,5 +352,3 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

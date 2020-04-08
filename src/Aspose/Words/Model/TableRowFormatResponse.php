@@ -155,9 +155,7 @@ class TableRowFormatResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class TableRowFormatResponse extends WordsResponse
     /*
      * Sets row_format
      *
-     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets table.
+     * @param \Aspose\Words\Model\TableRowFormat $row_format row_format
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class TableRowFormatResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

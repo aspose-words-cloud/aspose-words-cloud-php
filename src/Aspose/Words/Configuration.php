@@ -134,7 +134,7 @@ class Configuration
      * Version of Aspose.Words Cloud API
      *
      */
-    protected $clientVersion = '20.3';
+    protected $clientVersion = '20.4';
 
     /*
      * Constructor
@@ -146,7 +146,7 @@ class Configuration
     {
         $this->tempFolderPath = sys_get_temp_dir();
         date_default_timezone_set('UTC');
-		if ($baseUrl != null) {
+		if (isset($baseUrl) && trim($baseUrl) != '') {
             $this->setHost($baseUrl);
 		}
 		$this->setAppSid($appSid);
@@ -360,7 +360,7 @@ class Configuration
     public function setHost($host)
     {
         $this->host = $host;
-        if (substr($this->host[$length], -1) !== '/') {
+        if (substr($this->host, -1) !== '/') {
             $this->host = $this->host . '/';
         }
         return $this;

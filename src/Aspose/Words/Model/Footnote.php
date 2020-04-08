@@ -177,9 +177,7 @@ class Footnote extends FootnoteLink
 
     const FOOTNOTE_TYPE_FOOTNOTE = 'Footnote';
     const FOOTNOTE_TYPE_ENDNOTE = 'Endnote';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -189,10 +187,9 @@ class Footnote extends FootnoteLink
     {
         return [
             self::FOOTNOTE_TYPE_FOOTNOTE,
-            self::FOOTNOTE_TYPE_ENDNOTE,
+            self::FOOTNOTE_TYPE_ENDNOTE
         ];
     }
-    
 
 
     /*
@@ -265,7 +262,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets content of footnote.
+     * @param \Aspose\Words\Model\StoryChildNodes $content content
      *
      * @return $this
      */
@@ -318,7 +315,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $position position
      *
      * @return $this
      */
@@ -342,7 +339,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets reference_mark
      *
-     * @param string $reference_mark Gets or sets /sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
+     * @param string $reference_mark Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
      *
      * @return $this
      */
@@ -446,5 +443,3 @@ class Footnote extends FootnoteLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

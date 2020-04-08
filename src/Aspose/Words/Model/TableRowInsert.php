@@ -162,9 +162,7 @@ class TableRowInsert implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -194,9 +192,6 @@ class TableRowInsert implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['columns_count'] === null) {
-            $invalidProperties[] = "'columns_count' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,9 +204,6 @@ class TableRowInsert implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['columns_count'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -333,5 +325,3 @@ class TableRowInsert implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

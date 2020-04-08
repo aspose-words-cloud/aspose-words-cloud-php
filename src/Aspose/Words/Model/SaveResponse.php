@@ -155,9 +155,7 @@ class SaveResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class SaveResponse extends WordsResponse
     /*
      * Sets save_result
      *
-     * @param \Aspose\Words\Model\SaveResult $save_result Gets or sets save result.
+     * @param \Aspose\Words\Model\SaveResult $save_result save_result
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class SaveResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

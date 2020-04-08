@@ -155,9 +155,7 @@ class OfficeMathObjectResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class OfficeMathObjectResponse extends WordsResponse
     /*
      * Sets office_math_object
      *
-     * @param \Aspose\Words\Model\OfficeMathObject $office_math_object Gets or sets officeMathObject information.
+     * @param \Aspose\Words\Model\OfficeMathObject $office_math_object office_math_object
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class OfficeMathObjectResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

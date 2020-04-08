@@ -89,7 +89,7 @@ class CreateOrUpdateDocumentPropertyRequest
      *  
      * @param string $name The document name.
      * @param string $property_name The property name.
-     * @param \Aspose\Words\Model\DocumentProperty $property The property with new value.
+     * @param \Aspose\Words\Model\DocumentPropertyCreateOrUpdate $property The property with new value.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

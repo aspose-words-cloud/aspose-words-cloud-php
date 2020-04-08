@@ -39,7 +39,7 @@ class ReplaceTextRequest
     public $name;
 	
     /*
-     * with the replace operation settings.
+     * ReplaceTextResponse with the replace operation settings.
      */
     public $replace_text;
 	
@@ -83,7 +83,7 @@ class ReplaceTextRequest
      * Initializes a new instance of the ReplaceTextRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\ReplaceTextParameters $replace_text with the replace operation settings.
+     * @param \Aspose\Words\Model\ReplaceTextParameters $replace_text ReplaceTextResponse with the replace operation settings.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -123,7 +123,7 @@ class ReplaceTextRequest
     }
 	
     /*
-     * with the replace operation settings.
+     * ReplaceTextResponse with the replace operation settings.
      */
     public function get_replace_text()
     {
@@ -131,7 +131,7 @@ class ReplaceTextRequest
     }
 
     /*
-     * with the replace operation settings.
+     * ReplaceTextResponse with the replace operation settings.
      */
     public function set_replace_text($value)
     {

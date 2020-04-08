@@ -162,9 +162,7 @@ class LoadWebDocumentData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -247,7 +245,7 @@ class LoadWebDocumentData implements ArrayAccess
     /*
      * Sets save_options
      *
-     * @param \Aspose\Words\Model\SaveOptionsData $save_options Gets or sets save options.
+     * @param \Aspose\Words\Model\SaveOptionsData $save_options save_options
      *
      * @return $this
      */
@@ -327,5 +325,3 @@ class LoadWebDocumentData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

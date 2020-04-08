@@ -177,9 +177,7 @@ class ApiError implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -337,7 +335,7 @@ class ApiError implements ArrayAccess
     /*
      * Sets inner_error
      *
-     * @param \Aspose\Words\Model\ApiError $inner_error Gets or sets inner error.
+     * @param \Aspose\Words\Model\ApiError $inner_error inner_error
      *
      * @return $this
      */
@@ -417,5 +415,3 @@ class ApiError implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

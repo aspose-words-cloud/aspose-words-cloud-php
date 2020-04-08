@@ -37,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * XmlColor
  *
- * @description Utility class for  serialization.
+ * @description Utility class for Color serialization.
  */
 class XmlColor implements ArrayAccess
 {
@@ -162,9 +162,7 @@ class XmlColor implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
     /*
      * Associative array for storing property values
@@ -327,5 +325,3 @@ class XmlColor implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

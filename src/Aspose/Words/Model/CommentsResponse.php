@@ -155,9 +155,7 @@ class CommentsResponse extends WordsResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -214,7 +212,7 @@ class CommentsResponse extends WordsResponse
     /*
      * Sets comments
      *
-     * @param \Aspose\Words\Model\CommentsCollection $comments Gets or sets collection of comments.
+     * @param \Aspose\Words\Model\CommentsCollection $comments comments
      *
      * @return $this
      */
@@ -294,5 +292,3 @@ class CommentsResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

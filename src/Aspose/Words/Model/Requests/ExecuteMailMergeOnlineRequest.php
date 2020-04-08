@@ -54,7 +54,7 @@ class ExecuteMailMergeOnlineRequest
     public $cleanup;
 	
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead.
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead.
      */
     public $document_file_name;
     
@@ -66,7 +66,7 @@ class ExecuteMailMergeOnlineRequest
      * @param \SplFileObject $data File with mailmerge data
      * @param bool $with_regions With regions flag.
      * @param string $cleanup Clean up options.
-     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead.
+     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead.
      */
     public function __construct($template, $data, $with_regions = null, $cleanup = null, $document_file_name = null)             
     {
@@ -146,7 +146,7 @@ class ExecuteMailMergeOnlineRequest
     }
 	
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead.
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead.
      */
     public function get_document_file_name()
     {
@@ -154,7 +154,7 @@ class ExecuteMailMergeOnlineRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead.
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead.
      */
     public function set_document_file_name($value)
     {

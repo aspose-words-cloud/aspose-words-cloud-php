@@ -608,9 +608,7 @@ class TableProperties extends LinkElement
     const TEXT_WRAPPING__DEFAULT = 'Default';
     const TEXT_WRAPPING_NONE = 'None';
     const TEXT_WRAPPING_AROUND = 'Around';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -621,10 +619,9 @@ class TableProperties extends LinkElement
         return [
             self::ALIGNMENT_LEFT,
             self::ALIGNMENT_CENTER,
-            self::ALIGNMENT_RIGHT,
+            self::ALIGNMENT_RIGHT
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -1005,10 +1002,9 @@ class TableProperties extends LinkElement
             self::STYLE_IDENTIFIER_LIST_TABLE6_COLORFUL_ACCENT6,
             self::STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6,
             self::STYLE_IDENTIFIER_USER,
-            self::STYLE_IDENTIFIER_NIL,
+            self::STYLE_IDENTIFIER_NIL
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -1025,10 +1021,9 @@ class TableProperties extends LinkElement
             self::STYLE_OPTIONS_ROW_BANDS,
             self::STYLE_OPTIONS__DEFAULT,
             self::STYLE_OPTIONS_COLUMN_BANDS,
-            self::STYLE_OPTIONS_DEFAULT2003,
+            self::STYLE_OPTIONS_DEFAULT2003
         ];
     }
-    
     /*
      * Gets allowable values of the enum
      *
@@ -1039,10 +1034,9 @@ class TableProperties extends LinkElement
         return [
             self::TEXT_WRAPPING__DEFAULT,
             self::TEXT_WRAPPING_NONE,
-            self::TEXT_WRAPPING_AROUND,
+            self::TEXT_WRAPPING_AROUND
         ];
     }
-    
 
 
     /*
@@ -1333,7 +1327,7 @@ class TableProperties extends LinkElement
     /*
      * Sets preferred_width
      *
-     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
+     * @param \Aspose\Words\Model\PreferredWidth $preferred_width preferred_width
      *
      * @return $this
      */
@@ -1463,7 +1457,7 @@ class TableProperties extends LinkElement
     /*
      * Sets text_wrapping
      *
-     * @param string $text_wrapping Gets or sets get or sets TextWrapping  for table.
+     * @param string $text_wrapping Gets or sets get or sets TextWrapping for table.
      *
      * @return $this
      */
@@ -1572,5 +1566,3 @@ class TableProperties extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

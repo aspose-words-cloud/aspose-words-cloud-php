@@ -165,9 +165,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -354,5 +352,3 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -164,9 +164,7 @@ class ReplaceRange implements ArrayAccess
 
     const TEXT_TYPE_TEXT = 'Text';
     const TEXT_TYPE_HTML = 'Html';
-    
 
-    
     /*
      * Gets allowable values of the enum
      *
@@ -176,10 +174,9 @@ class ReplaceRange implements ArrayAccess
     {
         return [
             self::TEXT_TYPE_TEXT,
-            self::TEXT_TYPE_HTML,
+            self::TEXT_TYPE_HTML
         ];
     }
-    
 
     /*
      * Associative array for storing property values
@@ -359,5 +356,3 @@ class ReplaceRange implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

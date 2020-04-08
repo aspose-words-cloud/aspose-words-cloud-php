@@ -54,7 +54,6 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        
     ];
 
     /*
@@ -63,7 +62,6 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        
     ];
 
     /*
@@ -93,7 +91,6 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        
     ];
 
     /*
@@ -102,7 +99,6 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        
     ];
 
     /*
@@ -111,7 +107,6 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        
     ];
 
     /*
@@ -155,9 +150,7 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
         return self::$swaggerModelName;
     }
 
-    
 
-    
 
 
     /*
@@ -269,5 +262,3 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

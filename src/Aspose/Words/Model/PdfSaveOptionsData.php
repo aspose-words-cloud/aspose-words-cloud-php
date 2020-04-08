@@ -68,7 +68,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'header_footer_bookmarks_export_mode' => 'string',
         'image_color_space_export_mode' => 'string',
         'image_compression' => 'string',
-        'interpolate_images' => 'bool',
         'open_hyperlinks_in_new_window' => 'bool',
         'outline_options' => '\Aspose\Words\Model\OutlineOptionsData',
         'page_mode' => 'string',
@@ -101,7 +100,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'header_footer_bookmarks_export_mode' => null,
         'image_color_space_export_mode' => null,
         'image_compression' => null,
-        'interpolate_images' => null,
         'open_hyperlinks_in_new_window' => null,
         'outline_options' => null,
         'page_mode' => null,
@@ -155,7 +153,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'header_footer_bookmarks_export_mode' => 'HeaderFooterBookmarksExportMode',
         'image_color_space_export_mode' => 'ImageColorSpaceExportMode',
         'image_compression' => 'ImageCompression',
-        'interpolate_images' => 'InterpolateImages',
         'open_hyperlinks_in_new_window' => 'OpenHyperlinksInNewWindow',
         'outline_options' => 'OutlineOptions',
         'page_mode' => 'PageMode',
@@ -188,7 +185,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'header_footer_bookmarks_export_mode' => 'setHeaderFooterBookmarksExportMode',
         'image_color_space_export_mode' => 'setImageColorSpaceExportMode',
         'image_compression' => 'setImageCompression',
-        'interpolate_images' => 'setInterpolateImages',
         'open_hyperlinks_in_new_window' => 'setOpenHyperlinksInNewWindow',
         'outline_options' => 'setOutlineOptions',
         'page_mode' => 'setPageMode',
@@ -221,7 +217,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'header_footer_bookmarks_export_mode' => 'getHeaderFooterBookmarksExportMode',
         'image_color_space_export_mode' => 'getImageColorSpaceExportMode',
         'image_compression' => 'getImageCompression',
-        'interpolate_images' => 'getInterpolateImages',
         'open_hyperlinks_in_new_window' => 'getOpenHyperlinksInNewWindow',
         'outline_options' => 'getOutlineOptions',
         'page_mode' => 'getPageMode',
@@ -318,7 +313,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['header_footer_bookmarks_export_mode'] = isset($data['header_footer_bookmarks_export_mode']) ? $data['header_footer_bookmarks_export_mode'] : null;
         $this->container['image_color_space_export_mode'] = isset($data['image_color_space_export_mode']) ? $data['image_color_space_export_mode'] : null;
         $this->container['image_compression'] = isset($data['image_compression']) ? $data['image_compression'] : null;
-        $this->container['interpolate_images'] = isset($data['interpolate_images']) ? $data['interpolate_images'] : null;
         $this->container['open_hyperlinks_in_new_window'] = isset($data['open_hyperlinks_in_new_window']) ? $data['open_hyperlinks_in_new_window'] : null;
         $this->container['outline_options'] = isset($data['outline_options']) ? $data['outline_options'] : null;
         $this->container['page_mode'] = isset($data['page_mode']) ? $data['page_mode'] : null;
@@ -708,30 +702,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setImageCompression($image_compression)
     {
         $this->container['image_compression'] = $image_compression;
-
-        return $this;
-    }
-
-    /*
-     * Gets interpolate_images
-     *
-     * @return bool
-     */
-    public function getInterpolateImages()
-    {
-        return $this->container['interpolate_images'];
-    }
-
-    /*
-     * Sets interpolate_images
-     *
-     * @param bool $interpolate_images Gets or sets a flag indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behaviour of reader is used instead.
-     *
-     * @return $this
-     */
-    public function setInterpolateImages($interpolate_images)
-    {
-        $this->container['interpolate_images'] = $interpolate_images;
 
         return $this;
     }

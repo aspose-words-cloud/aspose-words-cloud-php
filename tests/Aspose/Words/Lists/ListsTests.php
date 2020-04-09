@@ -77,7 +77,7 @@ class ListsTests extends BaseTestContext
      * Test for updating list
      *
      */
-    public function testUpdatingList()
+    public function testUpdateList()
     {
         $localName = "ListsGet.doc";
         $remoteName = "testUpdateList.doc";
@@ -97,7 +97,7 @@ class ListsTests extends BaseTestContext
      * Test for updating list level
      *
      */
-    public function testUpdatingListLevel()
+    public function testUpdateListLevel()
     {
         $localName = "ListsGet.doc";
         $remoteName = "testUpdateListLevel.doc";

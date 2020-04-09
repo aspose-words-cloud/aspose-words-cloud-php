@@ -49,7 +49,7 @@ class ListsTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Lists/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetListsRequest($remoteName);
+        $request = new Requests\GetListsRequest($remoteName, self::$baseTestPath . $subfolder);
         $result = $this->words->getLists($request);
     }
 
@@ -68,7 +68,7 @@ class ListsTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/Lists/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetListRequest($remoteName, 1);
+        $request = new Requests\GetListRequest($remoteName, 1, self::$baseTestPath . $subfolder);
         $result = $this->words->getList($request);
     }
     
@@ -88,7 +88,7 @@ class ListsTests extends BaseTestContext
         $this->uploadFile($file, $fullName);
 
         $data = new ListUpdate(array("is_restart_at_each_section" => true));
-        $request = new Requests\UpdateListRequest($remoteName, $data, 1);
+        $request = new Requests\UpdateListRequest($remoteName, $data, 1, self::$baseTestPath . $subfolder);
         $result = $this->words->updateList($request);
     }
     
@@ -108,7 +108,7 @@ class ListsTests extends BaseTestContext
         $this->uploadFile($file, $fullName);
 
         $data = new ListLevelUpdate(array("alignment" => "Right"));
-        $request = new Requests\UpdateListLevelRequest($remoteName, $data, 1, 1);
+        $request = new Requests\UpdateListLevelRequest($remoteName, $data, 1, 1, self::$baseTestPath . $subfolder);
         $result = $this->words->updateListLevel($request);
     }
     
@@ -128,7 +128,7 @@ class ListsTests extends BaseTestContext
         $this->uploadFile($file, $fullName);
 
         $data = new ListInsert(array("template" => "OutlineLegal"));
-        $request = new Requests\InsertListRequest($remoteName, $data);
+        $request = new Requests\InsertListRequest($remoteName, $data, self::$baseTestPath . $subfolder);
         $result = $this->words->insertList($request);
     }
 }

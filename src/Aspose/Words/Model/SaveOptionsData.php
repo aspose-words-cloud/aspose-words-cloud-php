@@ -63,7 +63,9 @@ class SaveOptionsData implements ArrayAccess
         'zip_output' => 'bool',
         'update_last_saved_time_property' => 'bool',
         'update_sdt_content' => 'bool',
-        'update_fields' => 'bool'
+        'update_fields' => 'bool',
+        'dml3_d_effects_rendering_mode' => 'string',
+        'update_last_printed_property' => 'bool'
     ];
 
     /*
@@ -79,7 +81,9 @@ class SaveOptionsData implements ArrayAccess
         'zip_output' => null,
         'update_last_saved_time_property' => null,
         'update_sdt_content' => null,
-        'update_fields' => null
+        'update_fields' => null,
+        'dml3_d_effects_rendering_mode' => null,
+        'update_last_printed_property' => null
     ];
 
     /*
@@ -116,7 +120,9 @@ class SaveOptionsData implements ArrayAccess
         'zip_output' => 'ZipOutput',
         'update_last_saved_time_property' => 'UpdateLastSavedTimeProperty',
         'update_sdt_content' => 'UpdateSdtContent',
-        'update_fields' => 'UpdateFields'
+        'update_fields' => 'UpdateFields',
+        'dml3_d_effects_rendering_mode' => 'Dml3DEffectsRenderingMode',
+        'update_last_printed_property' => 'UpdateLastPrintedProperty'
     ];
 
     /*
@@ -132,7 +138,9 @@ class SaveOptionsData implements ArrayAccess
         'zip_output' => 'setZipOutput',
         'update_last_saved_time_property' => 'setUpdateLastSavedTimeProperty',
         'update_sdt_content' => 'setUpdateSdtContent',
-        'update_fields' => 'setUpdateFields'
+        'update_fields' => 'setUpdateFields',
+        'dml3_d_effects_rendering_mode' => 'setDml3DEffectsRenderingMode',
+        'update_last_printed_property' => 'setUpdateLastPrintedProperty'
     ];
 
     /*
@@ -148,7 +156,9 @@ class SaveOptionsData implements ArrayAccess
         'zip_output' => 'getZipOutput',
         'update_last_saved_time_property' => 'getUpdateLastSavedTimeProperty',
         'update_sdt_content' => 'getUpdateSdtContent',
-        'update_fields' => 'getUpdateFields'
+        'update_fields' => 'getUpdateFields',
+        'dml3_d_effects_rendering_mode' => 'getDml3DEffectsRenderingMode',
+        'update_last_printed_property' => 'getUpdateLastPrintedProperty'
     ];
 
     /*
@@ -192,7 +202,21 @@ class SaveOptionsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const DML3_D_EFFECTS_RENDERING_MODE_BASIC = 'Basic';
+    const DML3_D_EFFECTS_RENDERING_MODE_ADVANCED = 'Advanced';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDml3DEffectsRenderingModeAllowableValues()
+    {
+        return [
+            self::DML3_D_EFFECTS_RENDERING_MODE_BASIC,
+            self::DML3_D_EFFECTS_RENDERING_MODE_ADVANCED
+        ];
+    }
 
     /*
      * Associative array for storing property values
@@ -217,6 +241,8 @@ class SaveOptionsData implements ArrayAccess
         $this->container['update_last_saved_time_property'] = isset($data['update_last_saved_time_property']) ? $data['update_last_saved_time_property'] : null;
         $this->container['update_sdt_content'] = isset($data['update_sdt_content']) ? $data['update_sdt_content'] : null;
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
+        $this->container['dml3_d_effects_rendering_mode'] = isset($data['dml3_d_effects_rendering_mode']) ? $data['dml3_d_effects_rendering_mode'] : null;
+        $this->container['update_last_printed_property'] = isset($data['update_last_printed_property']) ? $data['update_last_printed_property'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
@@ -232,6 +258,14 @@ class SaveOptionsData implements ArrayAccess
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getDml3DEffectsRenderingModeAllowableValues();
+        if (!in_array($this->container['dml3_d_effects_rendering_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'dml3_d_effects_rendering_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -244,6 +278,10 @@ class SaveOptionsData implements ArrayAccess
     public function valid()
     {
 
+        $allowedValues = $this->getDml3DEffectsRenderingModeAllowableValues();
+        if (!in_array($this->container['dml3_d_effects_rendering_mode'], $allowedValues)) {
+            return false;
+        }
         return true;
     }
 
@@ -436,6 +474,59 @@ class SaveOptionsData implements ArrayAccess
     public function setUpdateFields($update_fields)
     {
         $this->container['update_fields'] = $update_fields;
+
+        return $this;
+    }
+
+    /*
+     * Gets dml3_d_effects_rendering_mode
+     *
+     * @return string
+     */
+    public function getDml3DEffectsRenderingMode()
+    {
+        return $this->container['dml3_d_effects_rendering_mode'];
+    }
+
+    /*
+     * Sets dml3_d_effects_rendering_mode
+     *
+     * @param string $dml3_d_effects_rendering_mode Gets or sets a value determining how 3D effects are rendered.
+     *
+     * @return $this
+     */
+    public function setDml3DEffectsRenderingMode($dml3_d_effects_rendering_mode)
+    {
+        $allowedValues = $this->getDml3DEffectsRenderingModeAllowableValues();
+        if ((!is_numeric($dml3_d_effects_rendering_mode) && !in_array($dml3_d_effects_rendering_mode, $allowedValues)) || (is_numeric($dml3_d_effects_rendering_mode) && !in_array($allowedValues[$dml3_d_effects_rendering_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'dml3_d_effects_rendering_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['dml3_d_effects_rendering_mode'] = $dml3_d_effects_rendering_mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets update_last_printed_property
+     *
+     * @return bool
+     */
+    public function getUpdateLastPrintedProperty()
+    {
+        return $this->container['update_last_printed_property'];
+    }
+
+    /*
+     * Sets update_last_printed_property
+     *
+     * @param bool $update_last_printed_property Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
+     *
+     * @return $this
+     */
+    public function setUpdateLastPrintedProperty($update_last_printed_property)
+    {
+        $this->container['update_last_printed_property'] = $update_last_printed_property;
 
         return $this;
     }

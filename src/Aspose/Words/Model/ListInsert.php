@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="OdtSaveOptionsData.php">
+ * <copyright company="Aspose" file="ListInsert.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,20 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * OdtSaveOptionsData
+ * ListInsert
  */
 
 namespace Aspose\Words\Model;
+
+use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * OdtSaveOptionsData
+ * ListInsert
  *
- * @description container class for odt/ott save options.
+ * @description Insert document to document list.
  */
-class OdtSaveOptionsData extends SaveOptionsData 
+class ListInsert implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +48,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      *
      * @var string
      */
-    protected static $swaggerModelName = "OdtSaveOptionsData";
+    protected static $swaggerModelName = "ListInsert";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,10 +56,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_strict_schema11' => 'bool',
-        'measure_unit' => 'string',
-        'password' => 'string',
-        'pretty_format' => 'bool'
+        'template' => 'string'
     ];
 
     /*
@@ -66,10 +65,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_strict_schema11' => null,
-        'measure_unit' => null,
-        'password' => null,
-        'pretty_format' => null
+        'template' => null
     ];
 
     /*
@@ -79,7 +75,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -89,7 +85,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -99,10 +95,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_strict_schema11' => 'IsStrictSchema11',
-        'measure_unit' => 'MeasureUnit',
-        'password' => 'Password',
-        'pretty_format' => 'PrettyFormat'
+        'template' => 'Template'
     ];
 
     /*
@@ -111,10 +104,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'is_strict_schema11' => 'setIsStrictSchema11',
-        'measure_unit' => 'setMeasureUnit',
-        'password' => 'setPassword',
-        'pretty_format' => 'setPrettyFormat'
+        'template' => 'setTemplate'
     ];
 
     /*
@@ -123,10 +113,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'is_strict_schema11' => 'getIsStrictSchema11',
-        'measure_unit' => 'getMeasureUnit',
-        'password' => 'getPassword',
-        'pretty_format' => 'getPrettyFormat'
+        'template' => 'getTemplate'
     ];
 
     /*
@@ -137,7 +124,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -147,7 +134,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -157,7 +144,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -170,22 +157,68 @@ class OdtSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    const MEASURE_UNIT_CENTIMETERS = 'Centimeters';
-    const MEASURE_UNIT_INCHES = 'Inches';
+    const TEMPLATE_BULLET_DEFAULT = 'BulletDefault';
+    const TEMPLATE_BULLET_DISK = 'BulletDisk';
+    const TEMPLATE_BULLET_CIRCLE = 'BulletCircle';
+    const TEMPLATE_BULLET_SQUARE = 'BulletSquare';
+    const TEMPLATE_BULLET_DIAMONDS = 'BulletDiamonds';
+    const TEMPLATE_BULLET_ARROW_HEAD = 'BulletArrowHead';
+    const TEMPLATE_BULLET_TICK = 'BulletTick';
+    const TEMPLATE_NUMBER_DEFAULT = 'NumberDefault';
+    const TEMPLATE_NUMBER_ARABIC_DOT = 'NumberArabicDot';
+    const TEMPLATE_NUMBER_ARABIC_PARENTHESIS = 'NumberArabicParenthesis';
+    const TEMPLATE_NUMBER_UPPERCASE_ROMAN_DOT = 'NumberUppercaseRomanDot';
+    const TEMPLATE_NUMBER_UPPERCASE_LETTER_DOT = 'NumberUppercaseLetterDot';
+    const TEMPLATE_NUMBER_LOWERCASE_LETTER_PARENTHESIS = 'NumberLowercaseLetterParenthesis';
+    const TEMPLATE_NUMBER_LOWERCASE_LETTER_DOT = 'NumberLowercaseLetterDot';
+    const TEMPLATE_NUMBER_LOWERCASE_ROMAN_DOT = 'NumberLowercaseRomanDot';
+    const TEMPLATE_OUTLINE_NUMBERS = 'OutlineNumbers';
+    const TEMPLATE_OUTLINE_LEGAL = 'OutlineLegal';
+    const TEMPLATE_OUTLINE_BULLETS = 'OutlineBullets';
+    const TEMPLATE_OUTLINE_HEADINGS_ARTICLE_SECTION = 'OutlineHeadingsArticleSection';
+    const TEMPLATE_OUTLINE_HEADINGS_LEGAL = 'OutlineHeadingsLegal';
+    const TEMPLATE_OUTLINE_HEADINGS_NUMBERS = 'OutlineHeadingsNumbers';
+    const TEMPLATE_OUTLINE_HEADINGS_CHAPTER = 'OutlineHeadingsChapter';
 
     /*
      * Gets allowable values of the enum
      *
      * @return string[]
      */
-    public function getMeasureUnitAllowableValues()
+    public function getTemplateAllowableValues()
     {
         return [
-            self::MEASURE_UNIT_CENTIMETERS,
-            self::MEASURE_UNIT_INCHES
+            self::TEMPLATE_BULLET_DEFAULT,
+            self::TEMPLATE_BULLET_DISK,
+            self::TEMPLATE_BULLET_CIRCLE,
+            self::TEMPLATE_BULLET_SQUARE,
+            self::TEMPLATE_BULLET_DIAMONDS,
+            self::TEMPLATE_BULLET_ARROW_HEAD,
+            self::TEMPLATE_BULLET_TICK,
+            self::TEMPLATE_NUMBER_DEFAULT,
+            self::TEMPLATE_NUMBER_ARABIC_DOT,
+            self::TEMPLATE_NUMBER_ARABIC_PARENTHESIS,
+            self::TEMPLATE_NUMBER_UPPERCASE_ROMAN_DOT,
+            self::TEMPLATE_NUMBER_UPPERCASE_LETTER_DOT,
+            self::TEMPLATE_NUMBER_LOWERCASE_LETTER_PARENTHESIS,
+            self::TEMPLATE_NUMBER_LOWERCASE_LETTER_DOT,
+            self::TEMPLATE_NUMBER_LOWERCASE_ROMAN_DOT,
+            self::TEMPLATE_OUTLINE_NUMBERS,
+            self::TEMPLATE_OUTLINE_LEGAL,
+            self::TEMPLATE_OUTLINE_BULLETS,
+            self::TEMPLATE_OUTLINE_HEADINGS_ARTICLE_SECTION,
+            self::TEMPLATE_OUTLINE_HEADINGS_LEGAL,
+            self::TEMPLATE_OUTLINE_HEADINGS_NUMBERS,
+            self::TEMPLATE_OUTLINE_HEADINGS_CHAPTER
         ];
     }
 
+    /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /*
      * Constructor
@@ -195,12 +228,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
-        $this->container['is_strict_schema11'] = isset($data['is_strict_schema11']) ? $data['is_strict_schema11'] : null;
-        $this->container['measure_unit'] = isset($data['measure_unit']) ? $data['measure_unit'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
+        $this->container['template'] = isset($data['template']) ? $data['template'] : null;
     }
 
     /*
@@ -210,12 +238,12 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if (!in_array($this->container['measure_unit'], $allowedValues)) {
+        $allowedValues = $this->getTemplateAllowableValues();
+        if (!in_array($this->container['template'], $allowedValues)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'measure_unit', must be one of '%s'",
+                "invalid value for 'template', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -231,12 +259,9 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
 
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if (!in_array($this->container['measure_unit'], $allowedValues)) {
+        $allowedValues = $this->getTemplateAllowableValues();
+        if (!in_array($this->container['template'], $allowedValues)) {
             return false;
         }
         return true;
@@ -244,102 +269,30 @@ class OdtSaveOptionsData extends SaveOptionsData
 
 
     /*
-     * Gets is_strict_schema11
-     *
-     * @return bool
-     */
-    public function getIsStrictSchema11()
-    {
-        return $this->container['is_strict_schema11'];
-    }
-
-    /*
-     * Sets is_strict_schema11
-     *
-     * @param bool $is_strict_schema11 Gets or sets specifies whether export should correspond to ODT specification 1.1 strictly.
-     *
-     * @return $this
-     */
-    public function setIsStrictSchema11($is_strict_schema11)
-    {
-        $this->container['is_strict_schema11'] = $is_strict_schema11;
-
-        return $this;
-    }
-
-    /*
-     * Gets measure_unit
+     * Gets template
      *
      * @return string
      */
-    public function getMeasureUnit()
+    public function getTemplate()
     {
-        return $this->container['measure_unit'];
+        return $this->container['template'];
     }
 
     /*
-     * Sets measure_unit
+     * Sets template
      *
-     * @param string $measure_unit Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
+     * @param string $template Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
      *
      * @return $this
      */
-    public function setMeasureUnit($measure_unit)
+    public function setTemplate($template)
     {
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if ((!is_numeric($measure_unit) && !in_array($measure_unit, $allowedValues)) || (is_numeric($measure_unit) && !in_array($allowedValues[$measure_unit], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'measure_unit', must be one of '%s'", implode("', '", $allowedValues)));
+        $allowedValues = $this->getTemplateAllowableValues();
+        if ((!is_numeric($template) && !in_array($template, $allowedValues)) || (is_numeric($template) && !in_array($allowedValues[$template], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'template', must be one of '%s'", implode("', '", $allowedValues)));
         }
 			
-        $this->container['measure_unit'] = $measure_unit;
-
-        return $this;
-    }
-
-    /*
-     * Gets password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->container['password'];
-    }
-
-    /*
-     * Sets password
-     *
-     * @param string $password Gets or sets a password to encrypt document.
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->container['password'] = $password;
-
-        return $this;
-    }
-
-    /*
-     * Gets pretty_format
-     *
-     * @return bool
-     */
-    public function getPrettyFormat()
-    {
-        return $this->container['pretty_format'];
-    }
-
-    /*
-     * Sets pretty_format
-     *
-     * @param bool $pretty_format Gets or sets specifies whether or not use pretty formats output.
-     *
-     * @return $this
-     */
-    public function setPrettyFormat($pretty_format)
-    {
-        $this->container['pretty_format'] = $pretty_format;
+        $this->container['template'] = $template;
 
         return $this;
     }

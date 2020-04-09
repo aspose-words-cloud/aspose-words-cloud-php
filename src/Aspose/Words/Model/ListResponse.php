@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="OdtSaveOptionsData.php">
+ * <copyright company="Aspose" file="ListResponse.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * OdtSaveOptionsData
+ * ListResponse
  */
 
 namespace Aspose\Words\Model;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * OdtSaveOptionsData
+ * ListResponse
  *
- * @description container class for odt/ott save options.
+ * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/lists/{n}.
  */
-class OdtSaveOptionsData extends SaveOptionsData 
+class ListResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      *
      * @var string
      */
-    protected static $swaggerModelName = "OdtSaveOptionsData";
+    protected static $swaggerModelName = "ListResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,10 +54,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_strict_schema11' => 'bool',
-        'measure_unit' => 'string',
-        'password' => 'string',
-        'pretty_format' => 'bool'
+        'list' => '\Aspose\Words\Model\ListInfo'
     ];
 
     /*
@@ -66,10 +63,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_strict_schema11' => null,
-        'measure_unit' => null,
-        'password' => null,
-        'pretty_format' => null
+        'list' => null
     ];
 
     /*
@@ -99,10 +93,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_strict_schema11' => 'IsStrictSchema11',
-        'measure_unit' => 'MeasureUnit',
-        'password' => 'Password',
-        'pretty_format' => 'PrettyFormat'
+        'list' => 'List'
     ];
 
     /*
@@ -111,10 +102,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'is_strict_schema11' => 'setIsStrictSchema11',
-        'measure_unit' => 'setMeasureUnit',
-        'password' => 'setPassword',
-        'pretty_format' => 'setPrettyFormat'
+        'list' => 'setList'
     ];
 
     /*
@@ -123,10 +111,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'is_strict_schema11' => 'getIsStrictSchema11',
-        'measure_unit' => 'getMeasureUnit',
-        'password' => 'getPassword',
-        'pretty_format' => 'getPrettyFormat'
+        'list' => 'getList'
     ];
 
     /*
@@ -170,21 +155,7 @@ class OdtSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    const MEASURE_UNIT_CENTIMETERS = 'Centimeters';
-    const MEASURE_UNIT_INCHES = 'Inches';
 
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getMeasureUnitAllowableValues()
-    {
-        return [
-            self::MEASURE_UNIT_CENTIMETERS,
-            self::MEASURE_UNIT_INCHES
-        ];
-    }
 
 
     /*
@@ -197,10 +168,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
 
-        $this->container['is_strict_schema11'] = isset($data['is_strict_schema11']) ? $data['is_strict_schema11'] : null;
-        $this->container['measure_unit'] = isset($data['measure_unit']) ? $data['measure_unit'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
+        $this->container['list'] = isset($data['list']) ? $data['list'] : null;
     }
 
     /*
@@ -211,14 +179,6 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if (!in_array($this->container['measure_unit'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'measure_unit', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -235,111 +195,30 @@ class OdtSaveOptionsData extends SaveOptionsData
             return false;
         }
 
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if (!in_array($this->container['measure_unit'], $allowedValues)) {
-            return false;
-        }
         return true;
     }
 
 
     /*
-     * Gets is_strict_schema11
+     * Gets list
      *
-     * @return bool
+     * @return \Aspose\Words\Model\ListInfo
      */
-    public function getIsStrictSchema11()
+    public function getList()
     {
-        return $this->container['is_strict_schema11'];
+        return $this->container['list'];
     }
 
     /*
-     * Sets is_strict_schema11
+     * Sets list
      *
-     * @param bool $is_strict_schema11 Gets or sets specifies whether export should correspond to ODT specification 1.1 strictly.
+     * @param \Aspose\Words\Model\ListInfo $list list
      *
      * @return $this
      */
-    public function setIsStrictSchema11($is_strict_schema11)
+    public function setList($list)
     {
-        $this->container['is_strict_schema11'] = $is_strict_schema11;
-
-        return $this;
-    }
-
-    /*
-     * Gets measure_unit
-     *
-     * @return string
-     */
-    public function getMeasureUnit()
-    {
-        return $this->container['measure_unit'];
-    }
-
-    /*
-     * Sets measure_unit
-     *
-     * @param string $measure_unit Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
-     *
-     * @return $this
-     */
-    public function setMeasureUnit($measure_unit)
-    {
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if ((!is_numeric($measure_unit) && !in_array($measure_unit, $allowedValues)) || (is_numeric($measure_unit) && !in_array($allowedValues[$measure_unit], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'measure_unit', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['measure_unit'] = $measure_unit;
-
-        return $this;
-    }
-
-    /*
-     * Gets password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->container['password'];
-    }
-
-    /*
-     * Sets password
-     *
-     * @param string $password Gets or sets a password to encrypt document.
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->container['password'] = $password;
-
-        return $this;
-    }
-
-    /*
-     * Gets pretty_format
-     *
-     * @return bool
-     */
-    public function getPrettyFormat()
-    {
-        return $this->container['pretty_format'];
-    }
-
-    /*
-     * Sets pretty_format
-     *
-     * @param bool $pretty_format Gets or sets specifies whether or not use pretty formats output.
-     *
-     * @return $this
-     */
-    public function setPrettyFormat($pretty_format)
-    {
-        $this->container['pretty_format'] = $pretty_format;
+        $this->container['list'] = $list;
 
         return $this;
     }

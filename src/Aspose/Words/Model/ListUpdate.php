@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="OdtSaveOptionsData.php">
+ * <copyright company="Aspose" file="ListUpdate.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,20 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * OdtSaveOptionsData
+ * ListUpdate
  */
 
 namespace Aspose\Words\Model;
+
+use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * OdtSaveOptionsData
+ * ListUpdate
  *
- * @description container class for odt/ott save options.
+ * @description Update document properties if document list.
  */
-class OdtSaveOptionsData extends SaveOptionsData 
+class ListUpdate implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +48,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      *
      * @var string
      */
-    protected static $swaggerModelName = "OdtSaveOptionsData";
+    protected static $swaggerModelName = "ListUpdate";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,10 +56,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_strict_schema11' => 'bool',
-        'measure_unit' => 'string',
-        'password' => 'string',
-        'pretty_format' => 'bool'
+        'is_restart_at_each_section' => 'bool'
     ];
 
     /*
@@ -66,10 +65,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_strict_schema11' => null,
-        'measure_unit' => null,
-        'password' => null,
-        'pretty_format' => null
+        'is_restart_at_each_section' => null
     ];
 
     /*
@@ -79,7 +75,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -89,7 +85,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -99,10 +95,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_strict_schema11' => 'IsStrictSchema11',
-        'measure_unit' => 'MeasureUnit',
-        'password' => 'Password',
-        'pretty_format' => 'PrettyFormat'
+        'is_restart_at_each_section' => 'IsRestartAtEachSection'
     ];
 
     /*
@@ -111,10 +104,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'is_strict_schema11' => 'setIsStrictSchema11',
-        'measure_unit' => 'setMeasureUnit',
-        'password' => 'setPassword',
-        'pretty_format' => 'setPrettyFormat'
+        'is_restart_at_each_section' => 'setIsRestartAtEachSection'
     ];
 
     /*
@@ -123,10 +113,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'is_strict_schema11' => 'getIsStrictSchema11',
-        'measure_unit' => 'getMeasureUnit',
-        'password' => 'getPassword',
-        'pretty_format' => 'getPrettyFormat'
+        'is_restart_at_each_section' => 'getIsRestartAtEachSection'
     ];
 
     /*
@@ -137,7 +124,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -147,7 +134,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -157,7 +144,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -170,22 +157,14 @@ class OdtSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    const MEASURE_UNIT_CENTIMETERS = 'Centimeters';
-    const MEASURE_UNIT_INCHES = 'Inches';
+
 
     /*
-     * Gets allowable values of the enum
+     * Associative array for storing property values
      *
-     * @return string[]
+     * @var mixed[]
      */
-    public function getMeasureUnitAllowableValues()
-    {
-        return [
-            self::MEASURE_UNIT_CENTIMETERS,
-            self::MEASURE_UNIT_INCHES
-        ];
-    }
-
+    protected $container = [];
 
     /*
      * Constructor
@@ -195,12 +174,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
-        $this->container['is_strict_schema11'] = isset($data['is_strict_schema11']) ? $data['is_strict_schema11'] : null;
-        $this->container['measure_unit'] = isset($data['measure_unit']) ? $data['measure_unit'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
+        $this->container['is_restart_at_each_section'] = isset($data['is_restart_at_each_section']) ? $data['is_restart_at_each_section'] : null;
     }
 
     /*
@@ -210,15 +184,7 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
-
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if (!in_array($this->container['measure_unit'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'measure_unit', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = [];
 
         return $invalidProperties;
     }
@@ -231,115 +197,31 @@ class OdtSaveOptionsData extends SaveOptionsData
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
 
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if (!in_array($this->container['measure_unit'], $allowedValues)) {
-            return false;
-        }
         return true;
     }
 
 
     /*
-     * Gets is_strict_schema11
+     * Gets is_restart_at_each_section
      *
      * @return bool
      */
-    public function getIsStrictSchema11()
+    public function getIsRestartAtEachSection()
     {
-        return $this->container['is_strict_schema11'];
+        return $this->container['is_restart_at_each_section'];
     }
 
     /*
-     * Sets is_strict_schema11
+     * Sets is_restart_at_each_section
      *
-     * @param bool $is_strict_schema11 Gets or sets specifies whether export should correspond to ODT specification 1.1 strictly.
+     * @param bool $is_restart_at_each_section Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
      *
      * @return $this
      */
-    public function setIsStrictSchema11($is_strict_schema11)
+    public function setIsRestartAtEachSection($is_restart_at_each_section)
     {
-        $this->container['is_strict_schema11'] = $is_strict_schema11;
-
-        return $this;
-    }
-
-    /*
-     * Gets measure_unit
-     *
-     * @return string
-     */
-    public function getMeasureUnit()
-    {
-        return $this->container['measure_unit'];
-    }
-
-    /*
-     * Sets measure_unit
-     *
-     * @param string $measure_unit Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
-     *
-     * @return $this
-     */
-    public function setMeasureUnit($measure_unit)
-    {
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if ((!is_numeric($measure_unit) && !in_array($measure_unit, $allowedValues)) || (is_numeric($measure_unit) && !in_array($allowedValues[$measure_unit], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'measure_unit', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['measure_unit'] = $measure_unit;
-
-        return $this;
-    }
-
-    /*
-     * Gets password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->container['password'];
-    }
-
-    /*
-     * Sets password
-     *
-     * @param string $password Gets or sets a password to encrypt document.
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->container['password'] = $password;
-
-        return $this;
-    }
-
-    /*
-     * Gets pretty_format
-     *
-     * @return bool
-     */
-    public function getPrettyFormat()
-    {
-        return $this->container['pretty_format'];
-    }
-
-    /*
-     * Sets pretty_format
-     *
-     * @param bool $pretty_format Gets or sets specifies whether or not use pretty formats output.
-     *
-     * @return $this
-     */
-    public function setPrettyFormat($pretty_format)
-    {
-        $this->container['pretty_format'] = $pretty_format;
+        $this->container['is_restart_at_each_section'] = $is_restart_at_each_section;
 
         return $this;
     }

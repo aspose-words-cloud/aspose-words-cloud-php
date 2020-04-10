@@ -56,6 +56,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     protected static $swaggerTypes = [
         'is_strict_schema11' => 'bool',
         'measure_unit' => 'string',
+        'password' => 'string',
         'pretty_format' => 'bool'
     ];
 
@@ -67,6 +68,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     protected static $swaggerFormats = [
         'is_strict_schema11' => null,
         'measure_unit' => null,
+        'password' => null,
         'pretty_format' => null
     ];
 
@@ -99,6 +101,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     protected static $attributeMap = [
         'is_strict_schema11' => 'IsStrictSchema11',
         'measure_unit' => 'MeasureUnit',
+        'password' => 'Password',
         'pretty_format' => 'PrettyFormat'
     ];
 
@@ -110,6 +113,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     protected static $setters = [
         'is_strict_schema11' => 'setIsStrictSchema11',
         'measure_unit' => 'setMeasureUnit',
+        'password' => 'setPassword',
         'pretty_format' => 'setPrettyFormat'
     ];
 
@@ -121,6 +125,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     protected static $getters = [
         'is_strict_schema11' => 'getIsStrictSchema11',
         'measure_unit' => 'getMeasureUnit',
+        'password' => 'getPassword',
         'pretty_format' => 'getPrettyFormat'
     ];
 
@@ -194,6 +199,7 @@ class OdtSaveOptionsData extends SaveOptionsData
 
         $this->container['is_strict_schema11'] = isset($data['is_strict_schema11']) ? $data['is_strict_schema11'] : null;
         $this->container['measure_unit'] = isset($data['measure_unit']) ? $data['measure_unit'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
     }
 
@@ -286,6 +292,30 @@ class OdtSaveOptionsData extends SaveOptionsData
         }
 			
         $this->container['measure_unit'] = $measure_unit;
+
+        return $this;
+    }
+
+    /*
+     * Gets password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /*
+     * Sets password
+     *
+     * @param string $password Gets or sets a password to encrypt document.
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->container['password'] = $password;
 
         return $this;
     }

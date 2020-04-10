@@ -66,7 +66,8 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'resources_folder' => 'string',
         'resources_folder_alias' => 'string',
         'save_font_face_css_separately' => 'bool',
-        'show_page_border' => 'bool'
+        'show_page_border' => 'bool',
+        'use_target_machine_fonts' => 'bool'
     ];
 
     /*
@@ -87,7 +88,8 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'resources_folder' => null,
         'resources_folder_alias' => null,
         'save_font_face_css_separately' => null,
-        'show_page_border' => null
+        'show_page_border' => null,
+        'use_target_machine_fonts' => null
     ];
 
     /*
@@ -129,7 +131,8 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'resources_folder' => 'ResourcesFolder',
         'resources_folder_alias' => 'ResourcesFolderAlias',
         'save_font_face_css_separately' => 'SaveFontFaceCssSeparately',
-        'show_page_border' => 'ShowPageBorder'
+        'show_page_border' => 'ShowPageBorder',
+        'use_target_machine_fonts' => 'UseTargetMachineFonts'
     ];
 
     /*
@@ -150,7 +153,8 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'resources_folder' => 'setResourcesFolder',
         'resources_folder_alias' => 'setResourcesFolderAlias',
         'save_font_face_css_separately' => 'setSaveFontFaceCssSeparately',
-        'show_page_border' => 'setShowPageBorder'
+        'show_page_border' => 'setShowPageBorder',
+        'use_target_machine_fonts' => 'setUseTargetMachineFonts'
     ];
 
     /*
@@ -171,7 +175,8 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'resources_folder' => 'getResourcesFolder',
         'resources_folder_alias' => 'getResourcesFolderAlias',
         'save_font_face_css_separately' => 'getSaveFontFaceCssSeparately',
-        'show_page_border' => 'getShowPageBorder'
+        'show_page_border' => 'getShowPageBorder',
+        'use_target_machine_fonts' => 'getUseTargetMachineFonts'
     ];
 
     /*
@@ -241,6 +246,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
         $this->container['save_font_face_css_separately'] = isset($data['save_font_face_css_separately']) ? $data['save_font_face_css_separately'] : null;
         $this->container['show_page_border'] = isset($data['show_page_border']) ? $data['show_page_border'] : null;
+        $this->container['use_target_machine_fonts'] = isset($data['use_target_machine_fonts']) ? $data['use_target_machine_fonts'] : null;
     }
 
     /*
@@ -579,6 +585,30 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setShowPageBorder($show_page_border)
     {
         $this->container['show_page_border'] = $show_page_border;
+
+        return $this;
+    }
+
+    /*
+     * Gets use_target_machine_fonts
+     *
+     * @return bool
+     */
+    public function getUseTargetMachineFonts()
+    {
+        return $this->container['use_target_machine_fonts'];
+    }
+
+    /*
+     * Sets use_target_machine_fonts
+     *
+     * @param bool $use_target_machine_fonts Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false.
+     *
+     * @return $this
+     */
+    public function setUseTargetMachineFonts($use_target_machine_fonts)
+    {
+        $this->container['use_target_machine_fonts'] = $use_target_machine_fonts;
 
         return $this;
     }

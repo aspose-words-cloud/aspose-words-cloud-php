@@ -56,7 +56,7 @@ class Lists implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list_collection' => '\Aspose\Words\Model\ListInfo[]'
+        'list_info' => '\Aspose\Words\Model\ListInfo[]'
     ];
 
     /*
@@ -65,7 +65,7 @@ class Lists implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list_collection' => null
+        'list_info' => null
     ];
 
     /*
@@ -95,7 +95,7 @@ class Lists implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'list_collection' => 'ListCollection'
+        'list_info' => 'ListInfo'
     ];
 
     /*
@@ -104,7 +104,7 @@ class Lists implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'list_collection' => 'setListCollection'
+        'list_info' => 'setListInfo'
     ];
 
     /*
@@ -113,7 +113,7 @@ class Lists implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'list_collection' => 'getListCollection'
+        'list_info' => 'getListInfo'
     ];
 
     /*
@@ -174,7 +174,7 @@ class Lists implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['list_collection'] = isset($data['list_collection']) ? $data['list_collection'] : null;
+        $this->container['list_info'] = isset($data['list_info']) ? $data['list_info'] : null;
     }
 
     /*
@@ -203,25 +203,25 @@ class Lists implements ArrayAccess
 
 
     /*
-     * Gets list_collection
+     * Gets list_info
      *
      * @return \Aspose\Words\Model\ListInfo[]
      */
-    public function getListCollection()
+    public function getListInfo()
     {
-        return $this->container['list_collection'];
+        return $this->container['list_info'];
     }
 
     /*
-     * Sets list_collection
+     * Sets list_info
      *
-     * @param \Aspose\Words\Model\ListInfo[] $list_collection Gets or sets array of document lists.
+     * @param \Aspose\Words\Model\ListInfo[] $list_info Gets or sets array of document lists.
      *
      * @return $this
      */
-    public function setListCollection($list_collection)
+    public function setListInfo($list_info)
     {
-        $this->container['list_collection'] = $list_collection;
+        $this->container['list_info'] = $list_info;
 
         return $this;
     }

@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ListInfo.php">
+ * <copyright company="Aspose" file="ListLevels.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * ListInfo
+ * ListLevels
  */
 
 namespace Aspose\Words\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * ListInfo
+ * ListLevels
  *
  * @description Represents a single document list.
  */
-class ListInfo implements ArrayAccess
+class ListLevels implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ListInfo implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ListInfo";
+    protected static $swaggerModelName = "ListLevels";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -56,13 +56,7 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list_id' => 'int',
-        'is_multi_level' => 'bool',
-        'is_restart_at_each_section' => 'bool',
-        'is_list_style_definition' => 'bool',
-        'is_list_style_reference' => 'bool',
-        'style' => '\Aspose\Words\Model\Style',
-        'list_levels' => '\Aspose\Words\Model\ListLevels'
+        'list_level' => '\Aspose\Words\Model\ListLevel[]'
     ];
 
     /*
@@ -71,13 +65,7 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list_id' => 'int32',
-        'is_multi_level' => null,
-        'is_restart_at_each_section' => null,
-        'is_list_style_definition' => null,
-        'is_list_style_reference' => null,
-        'style' => null,
-        'list_levels' => null
+        'list_level' => null
     ];
 
     /*
@@ -107,13 +95,7 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'list_id' => 'ListId',
-        'is_multi_level' => 'IsMultiLevel',
-        'is_restart_at_each_section' => 'IsRestartAtEachSection',
-        'is_list_style_definition' => 'IsListStyleDefinition',
-        'is_list_style_reference' => 'IsListStyleReference',
-        'style' => 'Style',
-        'list_levels' => 'ListLevels'
+        'list_level' => 'ListLevel'
     ];
 
     /*
@@ -122,13 +104,7 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'list_id' => 'setListId',
-        'is_multi_level' => 'setIsMultiLevel',
-        'is_restart_at_each_section' => 'setIsRestartAtEachSection',
-        'is_list_style_definition' => 'setIsListStyleDefinition',
-        'is_list_style_reference' => 'setIsListStyleReference',
-        'style' => 'setStyle',
-        'list_levels' => 'setListLevels'
+        'list_level' => 'setListLevel'
     ];
 
     /*
@@ -137,13 +113,7 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'list_id' => 'getListId',
-        'is_multi_level' => 'getIsMultiLevel',
-        'is_restart_at_each_section' => 'getIsRestartAtEachSection',
-        'is_list_style_definition' => 'getIsListStyleDefinition',
-        'is_list_style_reference' => 'getIsListStyleReference',
-        'style' => 'getStyle',
-        'list_levels' => 'getListLevels'
+        'list_level' => 'getListLevel'
     ];
 
     /*
@@ -204,13 +174,7 @@ class ListInfo implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
-        $this->container['is_multi_level'] = isset($data['is_multi_level']) ? $data['is_multi_level'] : null;
-        $this->container['is_restart_at_each_section'] = isset($data['is_restart_at_each_section']) ? $data['is_restart_at_each_section'] : null;
-        $this->container['is_list_style_definition'] = isset($data['is_list_style_definition']) ? $data['is_list_style_definition'] : null;
-        $this->container['is_list_style_reference'] = isset($data['is_list_style_reference']) ? $data['is_list_style_reference'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
-        $this->container['list_levels'] = isset($data['list_levels']) ? $data['list_levels'] : null;
+        $this->container['list_level'] = isset($data['list_level']) ? $data['list_level'] : null;
     }
 
     /*
@@ -239,169 +203,25 @@ class ListInfo implements ArrayAccess
 
 
     /*
-     * Gets list_id
+     * Gets list_level
      *
-     * @return int
+     * @return \Aspose\Words\Model\ListLevel[]
      */
-    public function getListId()
+    public function getListLevel()
     {
-        return $this->container['list_id'];
+        return $this->container['list_level'];
     }
 
     /*
-     * Sets list_id
+     * Sets list_level
      *
-     * @param int $list_id Gets or sets the unique identifier of the list.
+     * @param \Aspose\Words\Model\ListLevel[] $list_level Gets or sets the collection of list levels for this list.
      *
      * @return $this
      */
-    public function setListId($list_id)
+    public function setListLevel($list_level)
     {
-        $this->container['list_id'] = $list_id;
-
-        return $this;
-    }
-
-    /*
-     * Gets is_multi_level
-     *
-     * @return bool
-     */
-    public function getIsMultiLevel()
-    {
-        return $this->container['is_multi_level'];
-    }
-
-    /*
-     * Sets is_multi_level
-     *
-     * @param bool $is_multi_level Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.
-     *
-     * @return $this
-     */
-    public function setIsMultiLevel($is_multi_level)
-    {
-        $this->container['is_multi_level'] = $is_multi_level;
-
-        return $this;
-    }
-
-    /*
-     * Gets is_restart_at_each_section
-     *
-     * @return bool
-     */
-    public function getIsRestartAtEachSection()
-    {
-        return $this->container['is_restart_at_each_section'];
-    }
-
-    /*
-     * Sets is_restart_at_each_section
-     *
-     * @param bool $is_restart_at_each_section Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
-     *
-     * @return $this
-     */
-    public function setIsRestartAtEachSection($is_restart_at_each_section)
-    {
-        $this->container['is_restart_at_each_section'] = $is_restart_at_each_section;
-
-        return $this;
-    }
-
-    /*
-     * Gets is_list_style_definition
-     *
-     * @return bool
-     */
-    public function getIsListStyleDefinition()
-    {
-        return $this->container['is_list_style_definition'];
-    }
-
-    /*
-     * Sets is_list_style_definition
-     *
-     * @param bool $is_list_style_definition Gets or sets a value indicating whether returns true if this list is a definition of a list style.
-     *
-     * @return $this
-     */
-    public function setIsListStyleDefinition($is_list_style_definition)
-    {
-        $this->container['is_list_style_definition'] = $is_list_style_definition;
-
-        return $this;
-    }
-
-    /*
-     * Gets is_list_style_reference
-     *
-     * @return bool
-     */
-    public function getIsListStyleReference()
-    {
-        return $this->container['is_list_style_reference'];
-    }
-
-    /*
-     * Sets is_list_style_reference
-     *
-     * @param bool $is_list_style_reference Gets or sets a value indicating whether returns true if this list is a reference to a list style.
-     *
-     * @return $this
-     */
-    public function setIsListStyleReference($is_list_style_reference)
-    {
-        $this->container['is_list_style_reference'] = $is_list_style_reference;
-
-        return $this;
-    }
-
-    /*
-     * Gets style
-     *
-     * @return \Aspose\Words\Model\Style
-     */
-    public function getStyle()
-    {
-        return $this->container['style'];
-    }
-
-    /*
-     * Sets style
-     *
-     * @param \Aspose\Words\Model\Style $style style
-     *
-     * @return $this
-     */
-    public function setStyle($style)
-    {
-        $this->container['style'] = $style;
-
-        return $this;
-    }
-
-    /*
-     * Gets list_levels
-     *
-     * @return \Aspose\Words\Model\ListLevels
-     */
-    public function getListLevels()
-    {
-        return $this->container['list_levels'];
-    }
-
-    /*
-     * Sets list_levels
-     *
-     * @param \Aspose\Words\Model\ListLevels $list_levels list_levels
-     *
-     * @return $this
-     */
-    public function setListLevels($list_levels)
-    {
-        $this->container['list_levels'] = $list_levels;
+        $this->container['list_level'] = $list_level;
 
         return $this;
     }

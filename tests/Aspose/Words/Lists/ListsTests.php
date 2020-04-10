@@ -46,7 +46,7 @@ class ListsTests extends BaseTestContext
         $subfolder = "DocumentElements/Lists";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Lists/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Lists/' . $localName;
         $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetListsRequest($remoteName, self::$baseTestPath . $subfolder);
@@ -65,7 +65,7 @@ class ListsTests extends BaseTestContext
         $subfolder = "Lists";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Lists/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Lists/' . $localName;
         $this->uploadFile($file, $fullName);
 
         $request = new Requests\GetListRequest($remoteName, 1, self::$baseTestPath . $subfolder);
@@ -84,7 +84,7 @@ class ListsTests extends BaseTestContext
         $subfolder = "Lists";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Lists/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Lists/' . $localName;
         $this->uploadFile($file, $fullName);
 
         $data = new ListUpdate(array("is_restart_at_each_section" => true));
@@ -104,7 +104,7 @@ class ListsTests extends BaseTestContext
         $subfolder = "Lists";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Lists/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Lists/' . $localName;
         $this->uploadFile($file, $fullName);
 
         $data = new ListLevelUpdate(array("alignment" => "Right"));
@@ -124,7 +124,7 @@ class ListsTests extends BaseTestContext
         $subfolder = "Lists";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Lists/' . $localName;
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Lists/' . $localName;
         $this->uploadFile($file, $fullName);
 
         $data = new ListInsert(array("template" => "OutlineLegal"));

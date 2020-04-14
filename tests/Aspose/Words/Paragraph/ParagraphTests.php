@@ -448,6 +448,29 @@ class ParagraphTests extends BaseTestContext
     }
     
     /**
+     * Test case for getParagraphListFormatWithoutNodePath
+     *
+     * This resource represents one of the list format of the paragraphs contained in the document..
+     *
+     */
+    public function testGetParagraphListFormatWithoutNodePath()
+    {
+        $fileName = "ParagraphGetListFormat.doc";
+        $subfolder = "DocumentElements/ParagraphListFormat";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $fileName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/ParagraphListFormat/' . $fileName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetParagraphListFormatWithoutNodePathRequest($fileName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getParagraphListFormatWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+    
+    /**
      * Test case for updateParagraphListFormat
      *
      * This resource should update the list format of the paragraphs contained in the document..

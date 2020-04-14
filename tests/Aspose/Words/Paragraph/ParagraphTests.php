@@ -29,6 +29,7 @@ namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\ParagraphInsert;
 use Aspose\Words\Model\ParagraphFormat;
+use Aspose\Words\Model\ListFormatUpdate;
 use Aspose\Words\Model\Font;
 use PHPUnit\Framework\Assert;
 
@@ -420,6 +421,99 @@ class ParagraphTests extends BaseTestContext
         $request = new Requests\UpdateParagraphFormatRequest($remoteName, $body, "", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->updateParagraphFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+    
+    /**
+     * Test case for getParagraphListFormat
+     *
+     * This resource represents one of the list format of the paragraphs contained in the document..
+     *
+     */
+    public function testGetParagraphListFormat()
+    {
+        $fileName = "ParagraphGetListFormat.doc";
+        $subfolder = "DocumentElements/ParagraphListFormat";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $fileName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/ParagraphListFormat/' . $fileName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetParagraphListFormatRequest($fileName, "", $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getParagraphListFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+    
+    /**
+     * Test case for getParagraphListFormatWithoutNodePath
+     *
+     * This resource represents one of the list format of the paragraphs contained in the document..
+     *
+     */
+    public function testGetParagraphListFormatWithoutNodePath()
+    {
+        $fileName = "ParagraphGetListFormat.doc";
+        $subfolder = "DocumentElements/ParagraphListFormat";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $fileName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/ParagraphListFormat/' . $fileName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetParagraphListFormatWithoutNodePathRequest($fileName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getParagraphListFormatWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+    
+    /**
+     * Test case for updateParagraphListFormat
+     *
+     * This resource should update the list format of the paragraphs contained in the document..
+     *
+     */
+    public function testUpdateParagraphListFormat()
+    {
+        $fileName = "ParagraphUpdateListFormat.doc";
+        $subfolder = "DocumentElements/ParagraphListFormat";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $fileName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/ParagraphListFormat/' . $fileName;
+        $this->uploadFile($file, $fullName);
+
+        $dto = new ListFormatUpdate(array("list_id" => 2));
+        $request = new Requests\UpdateParagraphListFormatRequest($fileName, $dto, "", $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null, null, null);
+
+        $result = $this->words->updateParagraphListFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+    
+    /**
+     * Test case for deleteParagraphListFormat
+     *
+     * This resource should delete the list format of the paragraphs contained in the document..
+     *
+     */
+    public function testDeleteParagraphListFormat()
+    {
+        $fileName = "ParagraphDeleteListFormat.doc";
+        $subfolder = "DocumentElements/ParagraphListFormat";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $fileName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/ParagraphListFormat/' . $fileName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteParagraphListFormatRequest($fileName, "", $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null, null, null);
+
+        $result = $this->words->deleteParagraphListFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

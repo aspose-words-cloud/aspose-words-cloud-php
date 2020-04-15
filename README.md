@@ -24,7 +24,7 @@ To use Aspose Words Cloud PHP SDK you need to register an account with [Aspose C
 
 #### Via Composer:
 *aspose-words-cloud* is available on Packagist as the
-[`aspose-words-cloud`](https://packagist.org/packages/aspose/aspose-words-cloud) package. Run the following command:
+[`aspose-words-cloud`](https://packagist.org/packages/aspose-cloud/aspose-words-cloud) package. Run the following command:
 ```bash
 composer require aspose/aspose-words-cloud
 ```

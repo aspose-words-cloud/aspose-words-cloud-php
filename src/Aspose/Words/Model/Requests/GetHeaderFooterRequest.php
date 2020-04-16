@@ -210,3 +210,4 @@ class GetHeaderFooterRequest
         return $this;
     }
 }
+}

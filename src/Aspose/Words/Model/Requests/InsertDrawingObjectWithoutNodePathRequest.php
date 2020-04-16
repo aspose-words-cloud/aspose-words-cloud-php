@@ -282,3 +282,4 @@ class InsertDrawingObjectWithoutNodePathRequest
         return $this;
     }
 }
+}

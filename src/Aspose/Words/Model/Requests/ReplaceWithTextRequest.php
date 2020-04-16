@@ -258,3 +258,4 @@ class ReplaceWithTextRequest
         return $this;
     }
 }
+}

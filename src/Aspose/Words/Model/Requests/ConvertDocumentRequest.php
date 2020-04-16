@@ -186,3 +186,4 @@ class ConvertDocumentRequest
         return $this;
     }
 }
+}

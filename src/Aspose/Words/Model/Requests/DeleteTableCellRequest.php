@@ -282,3 +282,4 @@ class DeleteTableCellRequest
         return $this;
     }
 }
+}

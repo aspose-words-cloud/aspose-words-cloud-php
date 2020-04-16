@@ -306,3 +306,4 @@ class InsertParagraphRequest
         return $this;
     }
 }
+}

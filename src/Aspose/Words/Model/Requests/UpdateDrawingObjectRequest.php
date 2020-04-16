@@ -330,3 +330,4 @@ class UpdateDrawingObjectRequest
         return $this;
     }
 }
+}

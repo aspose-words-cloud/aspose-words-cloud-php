@@ -282,3 +282,4 @@ class DeleteBorderRequest
         return $this;
     }
 }
+}

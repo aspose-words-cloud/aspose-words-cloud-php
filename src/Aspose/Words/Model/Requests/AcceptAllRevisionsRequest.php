@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AcceptAllRevisionsRequest.php">
@@ -187,4 +185,5 @@ class AcceptAllRevisionsRequest
         $this->dest_file_name = $value;
         return $this;
     }
+}
 }

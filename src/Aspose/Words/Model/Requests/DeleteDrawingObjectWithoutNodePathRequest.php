@@ -258,3 +258,4 @@ class DeleteDrawingObjectWithoutNodePathRequest
         return $this;
     }
 }
+}

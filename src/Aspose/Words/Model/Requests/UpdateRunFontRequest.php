@@ -306,3 +306,4 @@ class UpdateRunFontRequest
         return $this;
     }
 }
+}

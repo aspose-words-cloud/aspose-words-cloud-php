@@ -306,3 +306,4 @@ class SplitDocumentRequest
         return $this;
     }
 }
+}

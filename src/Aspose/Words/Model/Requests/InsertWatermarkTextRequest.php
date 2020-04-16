@@ -258,3 +258,4 @@ class InsertWatermarkTextRequest
         return $this;
     }
 }
+}

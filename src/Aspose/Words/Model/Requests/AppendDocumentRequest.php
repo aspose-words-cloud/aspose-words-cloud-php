@@ -258,3 +258,4 @@ class AppendDocumentRequest
         return $this;
     }
 }
+}

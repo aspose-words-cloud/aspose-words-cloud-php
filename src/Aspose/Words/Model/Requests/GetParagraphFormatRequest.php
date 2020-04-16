@@ -210,3 +210,4 @@ class GetParagraphFormatRequest
         return $this;
     }
 }
+}

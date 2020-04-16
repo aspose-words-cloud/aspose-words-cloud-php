@@ -138,3 +138,4 @@ class MoveFolderRequest
         return $this;
     }
 }
+}

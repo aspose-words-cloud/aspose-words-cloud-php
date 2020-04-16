@@ -186,3 +186,4 @@ class GetDocumentFieldNamesRequest
         return $this;
     }
 }
+}

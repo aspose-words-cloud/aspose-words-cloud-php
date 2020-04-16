@@ -282,3 +282,4 @@ class DeleteParagraphListFormatRequest
         return $this;
     }
 }
+}

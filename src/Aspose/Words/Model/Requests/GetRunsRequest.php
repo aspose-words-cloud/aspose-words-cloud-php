@@ -186,3 +186,4 @@ class GetRunsRequest
         return $this;
     }
 }
+}

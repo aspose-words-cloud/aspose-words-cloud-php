@@ -162,3 +162,4 @@ class MoveFileRequest
         return $this;
     }
 }
+}

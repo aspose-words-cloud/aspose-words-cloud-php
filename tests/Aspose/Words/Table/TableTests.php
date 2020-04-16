@@ -152,7 +152,7 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetBorderRequest($remoteName, "tables/1/rows/0/cells/0/", $index, $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\GetBorderRequest($remoteName, "tables/1/rows/0/cells/0", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getBorder($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -174,7 +174,7 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\GetBordersRequest($remoteName, "tables/1/rows/0/cells/0/", $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\GetBordersRequest($remoteName, "tables/1/rows/0/cells/0", $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getBorders($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -719,7 +719,7 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteBorderRequest($remoteName, "tables/1/rows/0/cells/0/", 0, self::$baseTestPath . $subfolder,
+        $request = new Requests\DeleteBorderRequest($remoteName, "tables/1/rows/0/cells/0", "left", self::$baseTestPath . $subfolder,
             null, null, null, $destName);
 
         $result = $this->words->deleteBorder($request);
@@ -742,7 +742,7 @@ class TableTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Tables/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteBordersRequest($remoteName, "tables/1/rows/0/cells/0/", $folder=self::$baseTestPath . $subfolder);
+        $request = new Requests\DeleteBordersRequest($remoteName, "tables/1/rows/0/cells/0", $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->deleteBorders($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
@@ -760,8 +760,8 @@ class TableTests extends BaseTestContext
         $remoteName = "TestUpdateBorder.docx";
         $subfolder = "DocumentElements/Table";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $nodePath = "tables/1/rows/0/cells/0/";
-        $index = 0;
+        $nodePath = "tables/1/rows/0/cells/0";
+        $index = "left";
         $border = new Border(array(
             "border_type" => Border::BORDER_TYPE_LEFT,
             "color" => new XmlColor(array("alpha" => 2)),

@@ -47,7 +47,7 @@ class ObjectSerializer
         if (is_scalar($data) || null === $data) {
             return $data;
         } elseif ($data instanceof \DateTime) {
-            return ($format === 'date') ? $data->format('Y-m-d') : $data->format(\DateTime::ATOM);
+            return ($format === 'date') ? $data->format('Y-m-d') : $data->format(\DateTime::ISO8601);
         } elseif (is_array($data)) {
             foreach ($data as $property => $value) {
                 $data[$property] = self::sanitizeForSerialization($value);
@@ -104,7 +104,7 @@ class ObjectSerializer
      */
     public static function toPathValue($value)
     {
-        return rawurlencode(self::toString($value));
+        return implode("/", array_map("rawurlencode", explode("/", self::toString($value))));
     }
 
     /*
@@ -169,13 +169,7 @@ class ObjectSerializer
      */
     public static function toString($value)
     {
-        $match = preg_match("/^[1-9][0-9]*$/", $value);
-        if ($match != 0 && date(\DATE_ATOM, $match[0]) instanceof \DateTime) { // datetime in ISO8601 format
-            $datetime = preg_match("/^[1-9][0-9]*$/", $value)[0];
-            return date(\DATE_ATOM, $datetime);
-        } else {
-            return $value;
-        }
+		return $value;
     }
 
     /*
@@ -251,7 +245,7 @@ class ObjectSerializer
             // be interpreted as a missing field/value. Let's handle
             // this graceful.
             if (!empty($data)) {
-                return new \DateTime(date(\DATE_ATOM, preg_match("/^[1-9][0-9]*$/", $data)[0]));
+                return \DateTime::createFromFormat(\DateTime::ISO8601, $data);
             } else {
                 return null;
             }

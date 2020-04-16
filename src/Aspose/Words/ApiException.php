@@ -86,8 +86,12 @@ class ApiException extends Exception
         $this->responseBody = $responseBody;
         if ($responseBody !== NULL){
             $errorObject =  json_decode($responseBody);
-            $this->requestId = $errorObject->RequestId;
-            $this->responseError = $this->__generateApiError($errorObject->Error);
+			if($errorObject != NULL){
+                if(property_exists($errorObject, 'RequestId')) {
+                    $this->requestId = $errorObject->RequestId;
+                }
+				$this->responseError = $this->__generateApiError($errorObject->Error);
+			}
         }
     }
 

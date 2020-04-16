@@ -65,7 +65,7 @@ class ReportingTests extends BaseTestContext
         $this->uploadFile($template, $fullName);
 
         $settings = new ReportEngineSettings(array("data_source_type" => "Json", "report_build_options" => ["AllowMissingMembers", "RemoveEmptyParagraphs"]));
-        $request = new Requests\BuildReportRequest($remoteName, $dataJson, $settings);
+        $request = new Requests\BuildReportRequest($remoteName, $dataJson, $settings, self::$baseTestPath . "DocumentActions/Reporting");
         $this->words->buildReport($request);
     }
 }

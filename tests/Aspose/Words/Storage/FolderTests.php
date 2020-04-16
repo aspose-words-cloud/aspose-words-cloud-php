@@ -33,7 +33,6 @@ use PHPUnit\Framework\Assert;
 
 class FolderTests extends BaseTestContext
 {
-    public $testFolder = "asdasdas";
     /**
      * Test case for createFolder
      */
@@ -67,7 +66,7 @@ class FolderTests extends BaseTestContext
     public function testGetFilesList()
     {
         $subfolder = 'Temp/SdkTests/TestData/Storage';
-        $request = new Requests\GetFilesListRequest($this->testFolder);
+        $request = new Requests\GetFilesListRequest($subfolder);
         $response = $this->words->getFilesList($request);
         Assert::greaterThan(0, strlen($response), "Answer should not be empty");
     }
@@ -87,7 +86,7 @@ class FolderTests extends BaseTestContext
         $request = new Requests\CopyFolderRequest($folderPathDst, $folderPathSrc);
         $this->words->copyFolder($request);
 
-        $request = new Requests\GetFilesListRequest($this->testFolder);
+        $request = new Requests\GetFilesListRequest($folderPathDst);
         $response = $this->words->getFilesList($request);
     }
 
@@ -106,7 +105,7 @@ class FolderTests extends BaseTestContext
         $request = new Requests\MoveFolderRequest($folderPathDst, $folderPathSrc);
         $this->words->moveFolder($request);
 
-        $request = new Requests\GetFilesListRequest($this->testFolder);
+        $request = new Requests\GetFilesListRequest($folderPathDst);
         $response = $this->words->getFilesList($request);
     }
 }

@@ -42,7 +42,7 @@ class ListsTests extends BaseTestContext
     public function testGetLists()
     {
         $localName = "ListsGet.doc";
-        $remoteName = "testGetLists.doc";
+        $remoteName = "TestGetLists.doc";
         $subfolder = "DocumentElements/Lists";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
 

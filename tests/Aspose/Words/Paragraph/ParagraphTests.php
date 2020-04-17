@@ -432,8 +432,6 @@ class ParagraphTests extends BaseTestContext
      */
     public function testDeleteParagraphListFormat()
     {
-        $this->markTestSkipped('No paragraph list format API in dockered version.');
-
         $localName = "test_doc.docx";
         $remoteName = "TestDeleteParagraphListFormat.docx";
         $subfolder = "DocumentElements/Paragraph";
@@ -459,8 +457,6 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetParagraphListFormat()
     {
-        $this->markTestSkipped('No paragraph list format API in dockered version.');
-
         $localName = "test_doc.docx";
         $remoteName = "TestGetParagraphListFormat.docx";
         $subfolder = "DocumentElements/Paragraph";
@@ -486,8 +482,6 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetParagraphListFormatWithoutNodePath()
     {
-        $this->markTestSkipped('No paragraph list format API in dockered version.');
-
         $localName = "test_doc.docx";
         $remoteName = "TestGetParagraphListFormatWithoutNodePath.docx";
         $subfolder = "DocumentElements/Paragraph";
@@ -513,8 +507,6 @@ class ParagraphTests extends BaseTestContext
      */
     public function testUpdateParagraphListFormat()
     {
-        $this->markTestSkipped('No paragraph list format API in dockered version.');
-
         $localName = "test_doc.docx";
         $remoteName = "TestUpdateParagraphListFormat.docx";
         $subfolder = "DocumentElements/Paragraph";
@@ -526,11 +518,11 @@ class ParagraphTests extends BaseTestContext
 
         $dto = new ListFormatUpdate(array("ListId" => 2, "ListLevelNumber" => 1));
 
-        $request = new Requests\UpdaeParagraphListFormatRequest($remoteName, $dto, "", $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\updateParagraphListFormatRequest($remoteName, $dto, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 
-        $result = $this->words->updaeParagraphListFormat($request);
+        $result = $this->words->updateParagraphListFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

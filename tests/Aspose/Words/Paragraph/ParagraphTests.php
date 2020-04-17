@@ -518,7 +518,7 @@ class ParagraphTests extends BaseTestContext
 
         $dto = new ListFormatUpdate(array("ListId" => 2, "ListLevelNumber" => 1));
 
-        $request = new Requests\updateParagraphListFormatRequest($remoteName, $dto, "", $index, $folder=self::$baseTestPath . $subfolder,
+        $request = new Requests\UpdateParagraphListFormatRequest($remoteName, $dto, "", $index, $folder=self::$baseTestPath . $subfolder,
             null, null, null, null,
             null, null);
 

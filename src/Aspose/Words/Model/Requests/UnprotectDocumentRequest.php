@@ -210,3 +210,4 @@ class UnprotectDocumentRequest
         return $this;
     }
 }
+}

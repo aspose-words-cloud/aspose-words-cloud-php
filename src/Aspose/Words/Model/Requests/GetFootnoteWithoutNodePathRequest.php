@@ -186,3 +186,4 @@ class GetFootnoteWithoutNodePathRequest
         return $this;
     }
 }
+}

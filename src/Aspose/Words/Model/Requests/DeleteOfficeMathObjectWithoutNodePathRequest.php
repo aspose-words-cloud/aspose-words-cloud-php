@@ -258,3 +258,4 @@ class DeleteOfficeMathObjectWithoutNodePathRequest
         return $this;
     }
 }
+}

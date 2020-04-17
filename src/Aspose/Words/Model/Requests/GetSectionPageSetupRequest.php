@@ -186,3 +186,4 @@ class GetSectionPageSetupRequest
         return $this;
     }
 }
+}

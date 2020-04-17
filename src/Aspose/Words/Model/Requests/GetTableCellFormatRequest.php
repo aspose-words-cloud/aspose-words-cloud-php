@@ -210,3 +210,4 @@ class GetTableCellFormatRequest
         return $this;
     }
 }
+}

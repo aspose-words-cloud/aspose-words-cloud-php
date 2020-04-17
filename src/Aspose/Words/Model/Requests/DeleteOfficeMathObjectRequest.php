@@ -282,3 +282,4 @@ class DeleteOfficeMathObjectRequest
         return $this;
     }
 }
+}

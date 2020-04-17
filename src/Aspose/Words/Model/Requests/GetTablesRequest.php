@@ -186,3 +186,4 @@ class GetTablesRequest
         return $this;
     }
 }
+}

@@ -186,3 +186,4 @@ class GetParagraphFormatWithoutNodePathRequest
         return $this;
     }
 }
+}

@@ -162,3 +162,4 @@ class GetDocumentRequest
         return $this;
     }
 }
+}

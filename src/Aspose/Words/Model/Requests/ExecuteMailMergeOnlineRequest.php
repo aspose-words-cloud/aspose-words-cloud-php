@@ -162,3 +162,4 @@ class ExecuteMailMergeOnlineRequest
         return $this;
     }
 }
+}

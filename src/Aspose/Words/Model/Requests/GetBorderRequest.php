@@ -210,3 +210,4 @@ class GetBorderRequest
         return $this;
     }
 }
+}

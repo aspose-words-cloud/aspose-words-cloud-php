@@ -234,3 +234,4 @@ class DeleteFieldsWithoutNodePathRequest
         return $this;
     }
 }
+}

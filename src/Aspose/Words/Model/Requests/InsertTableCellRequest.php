@@ -282,3 +282,4 @@ class InsertTableCellRequest
         return $this;
     }
 }
+}

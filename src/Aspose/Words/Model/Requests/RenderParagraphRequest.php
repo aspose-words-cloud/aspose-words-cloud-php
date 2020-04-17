@@ -258,3 +258,4 @@ class RenderParagraphRequest
         return $this;
     }
 }
+}

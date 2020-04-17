@@ -210,4 +210,3 @@ class GetRunRequest
         return $this;
     }
 }
-}

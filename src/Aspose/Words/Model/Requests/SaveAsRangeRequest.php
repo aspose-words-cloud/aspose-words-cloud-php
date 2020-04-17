@@ -234,4 +234,3 @@ class SaveAsRangeRequest
         return $this;
     }
 }
-}

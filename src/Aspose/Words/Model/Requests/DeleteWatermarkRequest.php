@@ -234,4 +234,3 @@ class DeleteWatermarkRequest
         return $this;
     }
 }
-}

@@ -210,4 +210,3 @@ class GetFieldRequest
         return $this;
     }
 }
-}

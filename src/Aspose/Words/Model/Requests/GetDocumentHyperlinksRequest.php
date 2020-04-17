@@ -162,4 +162,3 @@ class GetDocumentHyperlinksRequest
         return $this;
     }
 }
-}

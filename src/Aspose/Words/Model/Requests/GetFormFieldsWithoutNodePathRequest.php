@@ -162,4 +162,3 @@ class GetFormFieldsWithoutNodePathRequest
         return $this;
     }
 }
-}

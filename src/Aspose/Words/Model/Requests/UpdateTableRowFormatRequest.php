@@ -306,4 +306,3 @@ class UpdateTableRowFormatRequest
         return $this;
     }
 }
-}

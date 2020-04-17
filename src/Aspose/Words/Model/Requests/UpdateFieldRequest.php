@@ -306,4 +306,3 @@ class UpdateFieldRequest
         return $this;
     }
 }
-}

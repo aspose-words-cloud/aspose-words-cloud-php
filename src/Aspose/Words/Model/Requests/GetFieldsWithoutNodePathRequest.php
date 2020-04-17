@@ -162,4 +162,3 @@ class GetFieldsWithoutNodePathRequest
         return $this;
     }
 }
-}

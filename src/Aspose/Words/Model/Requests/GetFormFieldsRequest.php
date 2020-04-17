@@ -186,4 +186,3 @@ class GetFormFieldsRequest
         return $this;
     }
 }
-}

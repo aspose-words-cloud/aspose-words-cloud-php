@@ -306,4 +306,3 @@ class InsertWatermarkImageRequest
         return $this;
     }
 }
-}

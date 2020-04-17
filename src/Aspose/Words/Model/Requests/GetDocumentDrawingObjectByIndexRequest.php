@@ -210,4 +210,3 @@ class GetDocumentDrawingObjectByIndexRequest
         return $this;
     }
 }
-}

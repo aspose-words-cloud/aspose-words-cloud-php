@@ -306,4 +306,3 @@ class UpdateParagraphFormatRequest
         return $this;
     }
 }
-}

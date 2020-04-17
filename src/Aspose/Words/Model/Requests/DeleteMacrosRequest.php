@@ -234,4 +234,3 @@ class DeleteMacrosRequest
         return $this;
     }
 }
-}

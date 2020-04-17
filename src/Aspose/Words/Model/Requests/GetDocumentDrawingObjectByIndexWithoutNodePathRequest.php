@@ -186,4 +186,3 @@ class GetDocumentDrawingObjectByIndexWithoutNodePathRequest
         return $this;
     }
 }
-}

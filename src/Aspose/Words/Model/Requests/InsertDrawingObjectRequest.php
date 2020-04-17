@@ -306,4 +306,3 @@ class InsertDrawingObjectRequest
         return $this;
     }
 }
-}

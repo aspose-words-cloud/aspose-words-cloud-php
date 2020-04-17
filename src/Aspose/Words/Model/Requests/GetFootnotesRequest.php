@@ -186,4 +186,3 @@ class GetFootnotesRequest
         return $this;
     }
 }
-}

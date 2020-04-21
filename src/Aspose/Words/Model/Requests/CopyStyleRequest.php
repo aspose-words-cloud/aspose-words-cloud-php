@@ -258,4 +258,3 @@ class CopyStyleRequest
         return $this;
     }
 }
-}

@@ -258,4 +258,3 @@ class DeleteParagraphWithoutNodePathRequest
         return $this;
     }
 }
-}

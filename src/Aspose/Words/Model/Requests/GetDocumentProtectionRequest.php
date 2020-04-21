@@ -162,4 +162,3 @@ class GetDocumentProtectionRequest
         return $this;
     }
 }
-}

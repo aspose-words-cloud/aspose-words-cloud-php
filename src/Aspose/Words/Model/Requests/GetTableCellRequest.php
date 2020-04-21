@@ -210,4 +210,3 @@ class GetTableCellRequest
         return $this;
     }
 }
-}

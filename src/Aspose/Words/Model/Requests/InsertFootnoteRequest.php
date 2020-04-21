@@ -282,4 +282,3 @@ class InsertFootnoteRequest
         return $this;
     }
 }
-}

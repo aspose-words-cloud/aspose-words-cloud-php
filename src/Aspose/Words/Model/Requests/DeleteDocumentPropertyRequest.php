@@ -258,4 +258,3 @@ class DeleteDocumentPropertyRequest
         return $this;
     }
 }
-}

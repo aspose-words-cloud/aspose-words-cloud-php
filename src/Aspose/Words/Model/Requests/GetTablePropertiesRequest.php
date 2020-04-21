@@ -210,4 +210,3 @@ class GetTablePropertiesRequest
         return $this;
     }
 }
-}

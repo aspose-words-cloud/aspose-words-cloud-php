@@ -210,4 +210,3 @@ class GetRunFontRequest
         return $this;
     }
 }
-}

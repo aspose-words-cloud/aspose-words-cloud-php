@@ -210,4 +210,3 @@ class ClassifyDocumentRequest
         return $this;
     }
 }
-}

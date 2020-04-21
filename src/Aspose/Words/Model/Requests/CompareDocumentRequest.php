@@ -210,4 +210,3 @@ class CompareDocumentRequest
         return $this;
     }
 }
-}

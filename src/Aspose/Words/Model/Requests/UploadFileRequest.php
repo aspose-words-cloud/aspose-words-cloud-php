@@ -113,5 +113,4 @@ class UploadFileRequest
         $this->storage_name = $value;
         return $this;
     }
-}
 

@@ -306,4 +306,3 @@ class InsertRunRequest
         return $this;
     }
 }
-}

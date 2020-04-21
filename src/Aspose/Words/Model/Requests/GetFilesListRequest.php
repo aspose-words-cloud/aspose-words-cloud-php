@@ -90,4 +90,3 @@ class GetFilesListRequest
         return $this;
     }
 }
-}

@@ -258,4 +258,3 @@ class InsertPageNumbersRequest
         return $this;
     }
 }
-}

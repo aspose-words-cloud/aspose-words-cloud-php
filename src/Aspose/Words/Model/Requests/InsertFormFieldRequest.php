@@ -306,4 +306,3 @@ class InsertFormFieldRequest
         return $this;
     }
 }
-}

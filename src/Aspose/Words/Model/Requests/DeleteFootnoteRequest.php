@@ -282,4 +282,3 @@ class DeleteFootnoteRequest
         return $this;
     }
 }
-}

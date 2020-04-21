@@ -282,4 +282,3 @@ class DeleteRunRequest
         return $this;
     }
 }
-}

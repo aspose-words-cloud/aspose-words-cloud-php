@@ -234,4 +234,3 @@ class RenderDrawingObjectWithoutNodePathRequest
         return $this;
     }
 }
-}

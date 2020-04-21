@@ -186,4 +186,3 @@ class GetDocumentHyperlinkByIndexRequest
         return $this;
     }
 }
-}

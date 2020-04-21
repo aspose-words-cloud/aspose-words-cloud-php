@@ -282,4 +282,3 @@ class UpdateCommentRequest
         return $this;
     }
 }
-}

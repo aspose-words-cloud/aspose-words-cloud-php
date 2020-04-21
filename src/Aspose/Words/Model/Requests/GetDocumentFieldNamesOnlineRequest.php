@@ -90,4 +90,3 @@ class GetDocumentFieldNamesOnlineRequest
         return $this;
     }
 }
-}

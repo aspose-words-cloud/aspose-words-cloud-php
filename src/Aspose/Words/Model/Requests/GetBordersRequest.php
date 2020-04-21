@@ -186,4 +186,3 @@ class GetBordersRequest
         return $this;
     }
 }
-}

@@ -282,4 +282,3 @@ class InsertFormFieldWithoutNodePathRequest
         return $this;
     }
 }
-}

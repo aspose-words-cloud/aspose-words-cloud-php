@@ -258,4 +258,3 @@ class DeleteCommentRequest
         return $this;
     }
 }
-}

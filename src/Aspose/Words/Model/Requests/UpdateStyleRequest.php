@@ -282,3 +282,4 @@ class UpdateStyleRequest
         return $this;
     }
 }
+}

@@ -210,3 +210,4 @@ class GetOfficeMathObjectRequest
         return $this;
     }
 }
+}

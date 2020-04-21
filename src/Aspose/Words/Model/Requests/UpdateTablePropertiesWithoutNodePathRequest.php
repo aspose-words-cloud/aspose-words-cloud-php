@@ -282,3 +282,4 @@ class UpdateTablePropertiesWithoutNodePathRequest
         return $this;
     }
 }
+}

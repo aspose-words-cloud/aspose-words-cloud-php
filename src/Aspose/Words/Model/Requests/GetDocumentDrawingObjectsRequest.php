@@ -186,3 +186,4 @@ class GetDocumentDrawingObjectsRequest
         return $this;
     }
 }
+}

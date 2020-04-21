@@ -186,3 +186,4 @@ class GetParagraphsRequest
         return $this;
     }
 }
+}

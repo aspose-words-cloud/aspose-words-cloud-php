@@ -258,3 +258,4 @@ class DeleteFieldsRequest
         return $this;
     }
 }
+}

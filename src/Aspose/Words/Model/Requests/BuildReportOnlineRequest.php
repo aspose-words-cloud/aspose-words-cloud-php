@@ -138,3 +138,4 @@ class BuildReportOnlineRequest
         return $this;
     }
 }
+}

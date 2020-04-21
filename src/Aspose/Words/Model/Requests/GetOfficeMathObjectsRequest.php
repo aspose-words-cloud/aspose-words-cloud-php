@@ -186,3 +186,4 @@ class GetOfficeMathObjectsRequest
         return $this;
     }
 }
+}

@@ -282,3 +282,4 @@ class DeleteTableRequest
         return $this;
     }
 }
+}

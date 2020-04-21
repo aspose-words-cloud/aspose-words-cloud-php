@@ -258,3 +258,4 @@ class InsertStyleRequest
         return $this;
     }
 }
+}

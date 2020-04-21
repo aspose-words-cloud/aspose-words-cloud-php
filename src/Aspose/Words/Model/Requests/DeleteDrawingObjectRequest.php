@@ -282,3 +282,4 @@ class DeleteDrawingObjectRequest
         return $this;
     }
 }
+}

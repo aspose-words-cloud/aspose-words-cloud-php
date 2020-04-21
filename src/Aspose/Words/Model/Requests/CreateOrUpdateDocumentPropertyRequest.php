@@ -282,3 +282,4 @@ class CreateOrUpdateDocumentPropertyRequest
         return $this;
     }
 }
+}

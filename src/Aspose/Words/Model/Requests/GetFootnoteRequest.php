@@ -210,3 +210,4 @@ class GetFootnoteRequest
         return $this;
     }
 }
+}

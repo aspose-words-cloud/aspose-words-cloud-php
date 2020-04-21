@@ -258,3 +258,4 @@ class InsertListRequest
         return $this;
     }
 }
+}

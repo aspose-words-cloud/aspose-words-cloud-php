@@ -306,3 +306,4 @@ class ExecuteMailMergeRequest
         return $this;
     }
 }
+}

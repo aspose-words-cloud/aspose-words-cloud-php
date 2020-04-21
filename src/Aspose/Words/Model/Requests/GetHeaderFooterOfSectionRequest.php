@@ -234,3 +234,4 @@ class GetHeaderFooterOfSectionRequest
         return $this;
     }
 }
+}

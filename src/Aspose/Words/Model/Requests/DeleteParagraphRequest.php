@@ -282,3 +282,4 @@ class DeleteParagraphRequest
         return $this;
     }
 }
+}

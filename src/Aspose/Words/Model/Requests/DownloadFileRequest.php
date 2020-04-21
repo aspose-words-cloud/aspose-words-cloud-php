@@ -114,3 +114,4 @@ class DownloadFileRequest
         return $this;
     }
 }
+}

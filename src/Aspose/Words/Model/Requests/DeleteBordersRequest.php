@@ -258,3 +258,4 @@ class DeleteBordersRequest
         return $this;
     }
 }
+}

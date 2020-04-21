@@ -186,3 +186,4 @@ class AcceptAllRevisionsRequest
         return $this;
     }
 }
+}

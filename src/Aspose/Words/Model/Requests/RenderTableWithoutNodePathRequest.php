@@ -234,3 +234,4 @@ class RenderTableWithoutNodePathRequest
         return $this;
     }
 }
+}

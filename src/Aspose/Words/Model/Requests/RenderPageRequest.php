@@ -234,3 +234,4 @@ class RenderPageRequest
         return $this;
     }
 }
+}

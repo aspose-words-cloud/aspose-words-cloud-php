@@ -282,3 +282,4 @@ class UpdateSectionPageSetupRequest
         return $this;
     }
 }
+}

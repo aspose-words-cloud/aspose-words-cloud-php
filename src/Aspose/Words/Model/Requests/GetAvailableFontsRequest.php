@@ -66,3 +66,4 @@ class GetAvailableFontsRequest
         return $this;
     }
 }
+}

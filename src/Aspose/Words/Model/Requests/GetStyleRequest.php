@@ -186,3 +186,4 @@ class GetStyleRequest
         return $this;
     }
 }
+}

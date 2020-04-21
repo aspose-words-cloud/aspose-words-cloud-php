@@ -306,3 +306,4 @@ class UpdateTablePropertiesRequest
         return $this;
     }
 }
+}

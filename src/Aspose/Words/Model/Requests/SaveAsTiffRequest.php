@@ -618,3 +618,4 @@ class SaveAsTiffRequest
         return $this;
     }
 }
+}

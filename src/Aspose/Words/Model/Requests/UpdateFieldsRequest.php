@@ -186,3 +186,4 @@ class UpdateFieldsRequest
         return $this;
     }
 }
+}

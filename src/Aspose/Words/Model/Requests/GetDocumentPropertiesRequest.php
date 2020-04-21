@@ -162,3 +162,4 @@ class GetDocumentPropertiesRequest
         return $this;
     }
 }
+}

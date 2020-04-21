@@ -186,3 +186,4 @@ class GetDocumentDrawingObjectImageDataWithoutNodePathRequest
         return $this;
     }
 }
+}

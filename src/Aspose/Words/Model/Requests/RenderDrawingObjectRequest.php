@@ -258,3 +258,4 @@ class RenderDrawingObjectRequest
         return $this;
     }
 }
+}

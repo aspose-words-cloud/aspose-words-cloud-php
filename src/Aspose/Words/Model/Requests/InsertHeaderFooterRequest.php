@@ -282,3 +282,4 @@ class InsertHeaderFooterRequest
         return $this;
     }
 }
+}

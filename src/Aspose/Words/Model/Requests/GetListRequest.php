@@ -186,3 +186,4 @@ class GetListRequest
         return $this;
     }
 }
+}

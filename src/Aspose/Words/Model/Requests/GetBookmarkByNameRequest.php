@@ -186,3 +186,4 @@ class GetBookmarkByNameRequest
         return $this;
     }
 }
+}

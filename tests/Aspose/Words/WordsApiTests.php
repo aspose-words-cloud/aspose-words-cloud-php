@@ -77,7 +77,8 @@ class WordsApiTests extends BaseTestContext
             "SplitDocumentToFormatTests", "DocumentPropertiesTests", "DocumentProtectionTests", "DrawingTests",
             "FieldTests", "FormFieldTests", "MailMergeFieldTests", "FontTests", "FootnoteTests", "HeaderFooterTests",
             "HyperlinkTests", "MacrosTests", "ExecuteMailMergeTests", "MathObjectTests",
-            "PageSetupTests", "ParagraphTests", "RunTests", "SectionsTests", "TableTests", "TextTests", "WatermarkTests", "FileTests", "FolderTests", "RangeTests", "ReportingTests", "ListsTests");
+            "PageSetupTests", "ParagraphTests", "RunTests", "SectionsTests", "TableTests", "TextTests", 
+            "WatermarkTests", "FileTests", "FolderTests", "RangeTests", "ReportingTests", "ListsTests", "StylesTests");
         $apiClass = new \ReflectionClass('Aspose\Words\WordsApi');
         $testMethods = array();
         foreach ($classarr as $cls)

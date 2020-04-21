@@ -3247,6 +3247,361 @@ class WordsApi
     }
 
     /*
+     * Operation copyStyle
+     *
+     * Copy and insert new style to document, returns copied style.
+     *
+     * @param Requests\copyStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StyleResponse
+     */
+    public function copyStyle(Requests\copyStyleRequest $request)
+    {
+        try {
+             list($response) = $this->copyStyleWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->copyStyleWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation copyStyleWithHttpInfo
+     *
+     * Copy and insert new style to document, returns copied style.
+     *
+     * @param Requests\copyStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function copyStyleWithHttpInfo(Requests\copyStyleRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StyleResponse';
+        $request = $this->copyStyleRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation copyStyleAsync
+     *
+     * Copy and insert new style to document, returns copied style.
+     *
+     * @param Requests\copyStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function copyStyleAsync(Requests\copyStyleRequest $request) 
+    {
+        return $this->copyStyleAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation copyStyleAsyncWithHttpInfo
+     *
+     * Copy and insert new style to document, returns copied style.
+     *
+     * @param Requests\copyStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function copyStyleAsyncWithHttpInfo(Requests\copyStyleRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StyleResponse';
+        $request = $this->copyStyleRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_refreshToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'copyStyle'
+     *
+     * @param Requests\copyStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function copyStyleRequest(Requests\copyStyleRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling copyStyle');
+        }
+        // verify the required parameter 'style_copy' is set
+        if ($request->style_copy === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $style_copy when calling copyStyle');
+        }
+
+        $resourcePath = '/words/{name}/styles/copy';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+		$filename = null;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+		
+		// remove empty path parameters
+		$resourcePath = str_replace("//", "/", $resourcePath);
+
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->revision_author !== null) {
+            $localName = lcfirst('RevisionAuthor');
+            $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->revision_date_time !== null) {
+            $localName = lcfirst('RevisionDateTime');
+            $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        if (isset($request->style_copy)) {
+            if (is_string($request->style_copy)) {
+                $_tempBody = "\"" . $request->style_copy . "\"";   
+            } else {
+                $_tempBody = $request->style_copy;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue,
+                        'filename' => isset($filename) ? basename($filename) : null
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'POST',
+            $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('POST', $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /*
      * Operation createDocument
      *
      * Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\".
@@ -34909,6 +35264,643 @@ class WordsApi
     }
 
     /*
+     * Operation getStyle
+     *
+     * This resource represents one of the styles contained in the document.
+     *
+     * @param Requests\getStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StyleResponse
+     */
+    public function getStyle(Requests\getStyleRequest $request)
+    {
+        try {
+             list($response) = $this->getStyleWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getStyleWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation getStyleWithHttpInfo
+     *
+     * This resource represents one of the styles contained in the document.
+     *
+     * @param Requests\getStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStyleWithHttpInfo(Requests\getStyleRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StyleResponse';
+        $request = $this->getStyleRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getStyleAsync
+     *
+     * This resource represents one of the styles contained in the document.
+     *
+     * @param Requests\getStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStyleAsync(Requests\getStyleRequest $request) 
+    {
+        return $this->getStyleAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getStyleAsyncWithHttpInfo
+     *
+     * This resource represents one of the styles contained in the document.
+     *
+     * @param Requests\getStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStyleAsyncWithHttpInfo(Requests\getStyleRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StyleResponse';
+        $request = $this->getStyleRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_refreshToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'getStyle'
+     *
+     * @param Requests\getStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getStyleRequest(Requests\getStyleRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getStyle');
+        }
+        // verify the required parameter 'style_name' is set
+        if ($request->style_name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $style_name when calling getStyle');
+        }
+
+        $resourcePath = '/words/{name}/styles/{styleName}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+		$filename = null;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->style_name !== null) {
+            $localName = lcfirst('StyleName');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->style_name), $resourcePath);
+        }
+		
+		// remove empty path parameters
+		$resourcePath = str_replace("//", "/", $resourcePath);
+
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue,
+                        'filename' => isset($filename) ? basename($filename) : null
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'GET',
+            $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /*
+     * Operation getStyles
+     *
+     * Returns a list of styles that are contained in the document.
+     *
+     * @param Requests\getStylesRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StylesResponse
+     */
+    public function getStyles(Requests\getStylesRequest $request)
+    {
+        try {
+             list($response) = $this->getStylesWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getStylesWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation getStylesWithHttpInfo
+     *
+     * Returns a list of styles that are contained in the document.
+     *
+     * @param Requests\getStylesRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StylesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStylesWithHttpInfo(Requests\getStylesRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StylesResponse';
+        $request = $this->getStylesRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StylesResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getStylesAsync
+     *
+     * Returns a list of styles that are contained in the document.
+     *
+     * @param Requests\getStylesRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStylesAsync(Requests\getStylesRequest $request) 
+    {
+        return $this->getStylesAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getStylesAsyncWithHttpInfo
+     *
+     * Returns a list of styles that are contained in the document.
+     *
+     * @param Requests\getStylesRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStylesAsyncWithHttpInfo(Requests\getStylesRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StylesResponse';
+        $request = $this->getStylesRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_refreshToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'getStyles'
+     *
+     * @param Requests\getStylesRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getStylesRequest(Requests\getStylesRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getStyles');
+        }
+
+        $resourcePath = '/words/{name}/styles';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+		$filename = null;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+		
+		// remove empty path parameters
+		$resourcePath = str_replace("//", "/", $resourcePath);
+
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue,
+                        'filename' => isset($filename) ? basename($filename) : null
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'GET',
+            $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /*
      * Operation getTable
      *
      * Returns a table.
@@ -43224,6 +44216,361 @@ class WordsApi
                 $_tempBody = "\"" . $request->run . "\"";   
             } else {
                 $_tempBody = $request->run;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue,
+                        'filename' => isset($filename) ? basename($filename) : null
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'POST',
+            $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('POST', $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /*
+     * Operation insertStyle
+     *
+     * Adds style to document, returns added style.
+     *
+     * @param Requests\insertStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StyleResponse
+     */
+    public function insertStyle(Requests\insertStyleRequest $request)
+    {
+        try {
+             list($response) = $this->insertStyleWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->insertStyleWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation insertStyleWithHttpInfo
+     *
+     * Adds style to document, returns added style.
+     *
+     * @param Requests\insertStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function insertStyleWithHttpInfo(Requests\insertStyleRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StyleResponse';
+        $request = $this->insertStyleRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation insertStyleAsync
+     *
+     * Adds style to document, returns added style.
+     *
+     * @param Requests\insertStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function insertStyleAsync(Requests\insertStyleRequest $request) 
+    {
+        return $this->insertStyleAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation insertStyleAsyncWithHttpInfo
+     *
+     * Adds style to document, returns added style.
+     *
+     * @param Requests\insertStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function insertStyleAsyncWithHttpInfo(Requests\insertStyleRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StyleResponse';
+        $request = $this->insertStyleRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_refreshToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'insertStyle'
+     *
+     * @param Requests\insertStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function insertStyleRequest(Requests\insertStyleRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling insertStyle');
+        }
+        // verify the required parameter 'style_insert' is set
+        if ($request->style_insert === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $style_insert when calling insertStyle');
+        }
+
+        $resourcePath = '/words/{name}/styles/insert';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+		$filename = null;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+		
+		// remove empty path parameters
+		$resourcePath = str_replace("//", "/", $resourcePath);
+
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->revision_author !== null) {
+            $localName = lcfirst('RevisionAuthor');
+            $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->revision_date_time !== null) {
+            $localName = lcfirst('RevisionDateTime');
+            $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        if (isset($request->style_insert)) {
+            if (is_string($request->style_insert)) {
+                $_tempBody = "\"" . $request->style_insert . "\"";   
+            } else {
+                $_tempBody = $request->style_insert;
             }
         }
 
@@ -60154,6 +61501,370 @@ class WordsApi
                 $_tempBody = "\"" . $request->page_setup . "\"";   
             } else {
                 $_tempBody = $request->page_setup;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue,
+                        'filename' => isset($filename) ? basename($filename) : null
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /*
+     * Operation updateStyle
+     *
+     * Updates style properties, returns updated style.
+     *
+     * @param Requests\updateStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StyleResponse
+     */
+    public function updateStyle(Requests\updateStyleRequest $request)
+    {
+        try {
+             list($response) = $this->updateStyleWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->updateStyleWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation updateStyleWithHttpInfo
+     *
+     * Updates style properties, returns updated style.
+     *
+     * @param Requests\updateStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateStyleWithHttpInfo(Requests\updateStyleRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StyleResponse';
+        $request = $this->updateStyleRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation updateStyleAsync
+     *
+     * Updates style properties, returns updated style.
+     *
+     * @param Requests\updateStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateStyleAsync(Requests\updateStyleRequest $request) 
+    {
+        return $this->updateStyleAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation updateStyleAsyncWithHttpInfo
+     *
+     * Updates style properties, returns updated style.
+     *
+     * @param Requests\updateStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateStyleAsyncWithHttpInfo(Requests\updateStyleRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StyleResponse';
+        $request = $this->updateStyleRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_refreshToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'updateStyle'
+     *
+     * @param Requests\updateStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function updateStyleRequest(Requests\updateStyleRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling updateStyle');
+        }
+        // verify the required parameter 'style_update' is set
+        if ($request->style_update === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $style_update when calling updateStyle');
+        }
+        // verify the required parameter 'style_name' is set
+        if ($request->style_name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $style_name when calling updateStyle');
+        }
+
+        $resourcePath = '/words/{name}/styles/{styleName}/update';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+		$filename = null;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->style_name !== null) {
+            $localName = lcfirst('StyleName');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->style_name), $resourcePath);
+        }
+		
+		// remove empty path parameters
+		$resourcePath = str_replace("//", "/", $resourcePath);
+
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($request->load_encoding) ? ($request->load_encoding ? 'true' : 'false') : $request->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($request->password) ? ($request->password ? 'true' : 'false') : $request->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($request->dest_file_name) ? ($request->dest_file_name ? 'true' : 'false') : $request->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->revision_author !== null) {
+            $localName = lcfirst('RevisionAuthor');
+            $localValue = is_bool($request->revision_author) ? ($request->revision_author ? 'true' : 'false') : $request->revision_author;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->revision_date_time !== null) {
+            $localName = lcfirst('RevisionDateTime');
+            $localValue = is_bool($request->revision_date_time) ? ($request->revision_date_time ? 'true' : 'false') : $request->revision_date_time;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        if (isset($request->style_update)) {
+            if (is_string($request->style_update)) {
+                $_tempBody = "\"" . $request->style_update . "\"";   
+            } else {
+                $_tempBody = $request->style_update;
             }
         }
 

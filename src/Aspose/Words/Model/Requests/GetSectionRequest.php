@@ -186,4 +186,3 @@ class GetSectionRequest
         return $this;
     }
 }
-}

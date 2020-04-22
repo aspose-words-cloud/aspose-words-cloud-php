@@ -258,4 +258,3 @@ class InsertFootnoteWithoutNodePathRequest
         return $this;
     }
 }
-}

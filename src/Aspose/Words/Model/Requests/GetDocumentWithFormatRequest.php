@@ -234,4 +234,3 @@ class GetDocumentWithFormatRequest
         return $this;
     }
 }
-}

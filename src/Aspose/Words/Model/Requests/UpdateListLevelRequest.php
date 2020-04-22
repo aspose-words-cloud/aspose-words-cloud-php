@@ -306,4 +306,3 @@ class UpdateListLevelRequest
         return $this;
     }
 }
-}

@@ -282,4 +282,3 @@ class UpdateListRequest
         return $this;
     }
 }
-}

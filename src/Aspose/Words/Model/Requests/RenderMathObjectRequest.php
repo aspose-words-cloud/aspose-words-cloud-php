@@ -258,4 +258,3 @@ class RenderMathObjectRequest
         return $this;
     }
 }
-}

@@ -138,4 +138,3 @@ class CopyFolderRequest
         return $this;
     }
 }
-}

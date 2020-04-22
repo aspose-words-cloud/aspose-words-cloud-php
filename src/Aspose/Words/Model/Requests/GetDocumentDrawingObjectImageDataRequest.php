@@ -210,4 +210,3 @@ class GetDocumentDrawingObjectImageDataRequest
         return $this;
     }
 }
-}

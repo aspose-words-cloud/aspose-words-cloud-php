@@ -282,4 +282,3 @@ class UpdateFootnoteWithoutNodePathRequest
         return $this;
     }
 }
-}

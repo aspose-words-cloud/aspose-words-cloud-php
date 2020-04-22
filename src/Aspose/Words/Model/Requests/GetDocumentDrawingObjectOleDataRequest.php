@@ -210,4 +210,3 @@ class GetDocumentDrawingObjectOleDataRequest
         return $this;
     }
 }
-}

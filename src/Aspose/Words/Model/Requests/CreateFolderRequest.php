@@ -90,4 +90,3 @@ class CreateFolderRequest
         return $this;
     }
 }
-}

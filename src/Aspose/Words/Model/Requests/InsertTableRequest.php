@@ -282,4 +282,3 @@ class InsertTableRequest
         return $this;
     }
 }
-}

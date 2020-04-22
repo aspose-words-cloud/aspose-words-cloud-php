@@ -162,4 +162,3 @@ class GetListsRequest
         return $this;
     }
 }
-}

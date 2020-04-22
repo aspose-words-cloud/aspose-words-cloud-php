@@ -306,4 +306,3 @@ class UpdateBorderRequest
         return $this;
     }
 }
-}

@@ -90,4 +90,3 @@ class ClassifyRequest
         return $this;
     }
 }
-}

@@ -114,4 +114,3 @@ class DeleteFolderRequest
         return $this;
     }
 }
-}

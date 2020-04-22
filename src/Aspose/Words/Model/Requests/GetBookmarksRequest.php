@@ -162,4 +162,3 @@ class GetBookmarksRequest
         return $this;
     }
 }
-}

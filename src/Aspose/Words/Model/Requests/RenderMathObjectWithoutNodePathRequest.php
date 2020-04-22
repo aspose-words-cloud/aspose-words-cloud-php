@@ -234,4 +234,3 @@ class RenderMathObjectWithoutNodePathRequest
         return $this;
     }
 }
-}

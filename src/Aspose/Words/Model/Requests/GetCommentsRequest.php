@@ -162,4 +162,3 @@ class GetCommentsRequest
         return $this;
     }
 }
-}

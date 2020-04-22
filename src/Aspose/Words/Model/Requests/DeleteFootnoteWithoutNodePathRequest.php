@@ -258,4 +258,3 @@ class DeleteFootnoteWithoutNodePathRequest
         return $this;
     }
 }
-}

@@ -306,4 +306,3 @@ class UpdateFootnoteRequest
         return $this;
     }
 }
-}

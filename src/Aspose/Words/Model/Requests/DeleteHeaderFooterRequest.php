@@ -282,4 +282,3 @@ class DeleteHeaderFooterRequest
         return $this;
     }
 }
-}

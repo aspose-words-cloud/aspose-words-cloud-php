@@ -282,4 +282,3 @@ class UpdateBookmarkRequest
         return $this;
     }
 }
-}

@@ -234,4 +234,3 @@ class RenderParagraphWithoutNodePathRequest
         return $this;
     }
 }
-}

@@ -234,4 +234,3 @@ class RemoveRangeRequest
         return $this;
     }
 }
-}

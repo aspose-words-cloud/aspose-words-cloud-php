@@ -234,4 +234,3 @@ class GetDocumentStatisticsRequest
         return $this;
     }
 }
-}

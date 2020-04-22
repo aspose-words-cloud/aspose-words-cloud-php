@@ -258,4 +258,3 @@ class InsertCommentRequest
         return $this;
     }
 }
-}

@@ -258,4 +258,3 @@ class DeleteSectionRequest
         return $this;
     }
 }
-}

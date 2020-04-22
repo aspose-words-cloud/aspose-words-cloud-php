@@ -258,4 +258,3 @@ class DeleteTableWithoutNodePathRequest
         return $this;
     }
 }
-}

@@ -210,4 +210,3 @@ class GetRangeTextRequest
         return $this;
     }
 }
-}

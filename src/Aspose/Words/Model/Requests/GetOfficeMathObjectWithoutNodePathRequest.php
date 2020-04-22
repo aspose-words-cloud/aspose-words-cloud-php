@@ -186,4 +186,3 @@ class GetOfficeMathObjectWithoutNodePathRequest
         return $this;
     }
 }
-}

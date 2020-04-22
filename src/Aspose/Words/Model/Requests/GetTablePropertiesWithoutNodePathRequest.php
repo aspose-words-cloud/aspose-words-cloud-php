@@ -186,4 +186,3 @@ class GetTablePropertiesWithoutNodePathRequest
         return $this;
     }
 }
-}

@@ -258,4 +258,3 @@ class RenderTableRequest
         return $this;
     }
 }
-}

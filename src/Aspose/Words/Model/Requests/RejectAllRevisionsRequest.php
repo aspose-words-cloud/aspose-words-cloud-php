@@ -186,4 +186,3 @@ class RejectAllRevisionsRequest
         return $this;
     }
 }
-}

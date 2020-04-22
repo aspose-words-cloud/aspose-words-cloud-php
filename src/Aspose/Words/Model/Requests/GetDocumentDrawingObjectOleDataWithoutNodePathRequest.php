@@ -186,4 +186,3 @@ class GetDocumentDrawingObjectOleDataWithoutNodePathRequest
         return $this;
     }
 }
-}

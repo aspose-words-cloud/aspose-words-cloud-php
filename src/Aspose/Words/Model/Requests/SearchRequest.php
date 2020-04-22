@@ -186,4 +186,3 @@ class SearchRequest
         return $this;
     }
 }
-}

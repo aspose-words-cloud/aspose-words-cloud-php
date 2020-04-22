@@ -162,4 +162,3 @@ class GetParagraphsWithoutNodePathRequest
         return $this;
     }
 }
-}

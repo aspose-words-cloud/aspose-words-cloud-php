@@ -306,4 +306,3 @@ class UpdateRunRequest
         return $this;
     }
 }
-}

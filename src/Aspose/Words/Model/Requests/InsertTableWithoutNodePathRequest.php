@@ -258,4 +258,3 @@ class InsertTableWithoutNodePathRequest
         return $this;
     }
 }
-}

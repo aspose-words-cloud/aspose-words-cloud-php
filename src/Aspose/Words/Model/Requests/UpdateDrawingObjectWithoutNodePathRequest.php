@@ -306,4 +306,3 @@ class UpdateDrawingObjectWithoutNodePathRequest
         return $this;
     }
 }
-}

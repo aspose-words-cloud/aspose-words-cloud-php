@@ -91,12 +91,14 @@ class WordsApiTests extends BaseTestContext
             }));
 
             foreach($methods as $testMethod){
-                $testMethods[str_replace('test', '', strtolower($testMethod->name))] = $testMethod;
+                $testMethods[substr(strtolower($testMethod->name), 4)] = $testMethod;
             }
         }
+
         $methods = array_map(function($elem) {
             return strtolower(str_replace('Request', '', $elem->name));
         }, $apiClass->getMethods(\ReflectionMethod::IS_PROTECTED));
+
         $errorList = "";
         foreach ($methods as $method)
         {

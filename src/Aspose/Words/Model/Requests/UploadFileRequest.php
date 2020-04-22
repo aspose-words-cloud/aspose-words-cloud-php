@@ -114,4 +114,3 @@ class UploadFileRequest
         return $this;
     }
 }
-

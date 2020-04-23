@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ApplyStyleToDocmentElementRequest.php">
+ * <copyright company="Aspose" file="ApplyStyleToDocumentElementRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -29,9 +29,9 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for applyStyleToDocmentElement operation.
+ * Request model for applyStyleToDocumentElement operation.
  */
-class ApplyStyleToDocmentElementRequest
+class ApplyStyleToDocumentElementRequest
 {
     /*
      * The document name.
@@ -85,7 +85,7 @@ class ApplyStyleToDocmentElementRequest
     
 	
     /*
-     * Initializes a new instance of the ApplyStyleToDocmentElementRequest class.
+     * Initializes a new instance of the ApplyStyleToDocumentElementRequest class.
      *  
      * @param string $name The document name.
      * @param \Aspose\Words\Model\StyleApply $style_apply Style to apply.

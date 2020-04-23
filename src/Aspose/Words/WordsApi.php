@@ -770,43 +770,43 @@ class WordsApi
     }
 
     /*
-     * Operation applyStyleToDocmentElement
+     * Operation applyStyleToDocumentElement
      *
      * Apply style to document node.
      *
-     * @param Requests\applyStyleToDocmentElementRequest $request is a request object for operation
+     * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Words\Model\WordsResponse
      */
-    public function applyStyleToDocmentElement(Requests\applyStyleToDocmentElementRequest $request)
+    public function applyStyleToDocumentElement(Requests\applyStyleToDocumentElementRequest $request)
     {
         try {
-             list($response) = $this->applyStyleToDocmentElementWithHttpInfo($request);
+             list($response) = $this->applyStyleToDocumentElementWithHttpInfo($request);
              return $response;
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->applyStyleToDocmentElementWithHttpInfo($request);
+             list($response) = $this->applyStyleToDocumentElementWithHttpInfo($request);
              return $response;
         } 
     }
 
     /*
-     * Operation applyStyleToDocmentElementWithHttpInfo
+     * Operation applyStyleToDocumentElementWithHttpInfo
      *
      * Apply style to document node.
      *
-     * @param Requests\applyStyleToDocmentElementRequest $request is a request object for operation
+     * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Words\Model\WordsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function applyStyleToDocmentElementWithHttpInfo(Requests\applyStyleToDocmentElementRequest $request)
+    public function applyStyleToDocumentElementWithHttpInfo(Requests\applyStyleToDocumentElementRequest $request)
     {
         $returnType = '\Aspose\Words\Model\WordsResponse';
-        $request = $this->applyStyleToDocmentElementRequest($request);
+        $request = $this->applyStyleToDocumentElementRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -859,18 +859,18 @@ class WordsApi
     }
 
     /*
-     * Operation applyStyleToDocmentElementAsync
+     * Operation applyStyleToDocumentElementAsync
      *
      * Apply style to document node.
      *
-     * @param Requests\applyStyleToDocmentElementRequest $request is a request object for operation
+     * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function applyStyleToDocmentElementAsync(Requests\applyStyleToDocmentElementRequest $request) 
+    public function applyStyleToDocumentElementAsync(Requests\applyStyleToDocumentElementRequest $request) 
     {
-        return $this->applyStyleToDocmentElementAsyncWithHttpInfo($request)
+        return $this->applyStyleToDocumentElementAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -879,19 +879,19 @@ class WordsApi
     }
 
     /*
-     * Operation applyStyleToDocmentElementAsyncWithHttpInfo
+     * Operation applyStyleToDocumentElementAsyncWithHttpInfo
      *
      * Apply style to document node.
      *
-     * @param Requests\applyStyleToDocmentElementRequest $request is a request object for operation
+     * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function applyStyleToDocmentElementAsyncWithHttpInfo(Requests\applyStyleToDocmentElementRequest $request) 
+    public function applyStyleToDocumentElementAsyncWithHttpInfo(Requests\applyStyleToDocumentElementRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\WordsResponse';
-        $request = $this->applyStyleToDocmentElementRequest($request);
+        $request = $this->applyStyleToDocumentElementRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -934,26 +934,26 @@ class WordsApi
     }
 
     /*
-     * Create request for operation 'applyStyleToDocmentElement'
+     * Create request for operation 'applyStyleToDocumentElement'
      *
-     * @param Requests\applyStyleToDocmentElementRequest $request is a request object for operation
+     * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function applyStyleToDocmentElementRequest(Requests\applyStyleToDocmentElementRequest $request)
+    protected function applyStyleToDocumentElementRequest(Requests\applyStyleToDocumentElementRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling applyStyleToDocmentElement');
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling applyStyleToDocumentElement');
         }
         // verify the required parameter 'style_apply' is set
         if ($request->style_apply === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $style_apply when calling applyStyleToDocmentElement');
+            throw new \InvalidArgumentException('Missing the required parameter $style_apply when calling applyStyleToDocumentElement');
         }
         // verify the required parameter 'styled_node_path' is set
         if ($request->styled_node_path === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $styled_node_path when calling applyStyleToDocmentElement');
+            throw new \InvalidArgumentException('Missing the required parameter $styled_node_path when calling applyStyleToDocumentElement');
         }
 
         $resourcePath = '/words/{name}/{styledNodePath}/style';

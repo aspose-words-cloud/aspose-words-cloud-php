@@ -30,8 +30,6 @@
  */
 
 namespace Aspose\Words\Model;
-
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
@@ -39,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents an array of document lists.
  */
-class Lists implements ArrayAccess
+class Lists extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -75,7 +73,7 @@ class Lists implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -85,7 +83,7 @@ class Lists implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -124,7 +122,7 @@ class Lists implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -134,7 +132,7 @@ class Lists implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -144,7 +142,7 @@ class Lists implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -159,12 +157,6 @@ class Lists implements ArrayAccess
 
 
 
-    /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /*
      * Constructor
@@ -174,6 +166,8 @@ class Lists implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['list_info'] = isset($data['list_info']) ? $data['list_info'] : null;
     }
 
@@ -184,7 +178,7 @@ class Lists implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -197,6 +191,9 @@ class Lists implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
         return true;
     }

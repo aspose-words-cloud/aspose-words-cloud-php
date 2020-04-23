@@ -30,8 +30,6 @@
  */
 
 namespace Aspose\Words\Model;
-
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
@@ -39,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a document list levels.
  */
-class ListLevel implements ArrayAccess
+class ListLevel extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -56,18 +54,18 @@ class ListLevel implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'start_at' => 'int',
-        'number_style' => 'string',
-        'number_format' => 'string',
         'alignment' => 'string',
-        'is_legal' => 'bool',
-        'restart_after_level' => 'int',
-        'trailing_character' => 'string',
         'font' => '\Aspose\Words\Model\Font',
-        'tab_position' => 'double',
+        'is_legal' => 'bool',
+        'linked_style' => '\Aspose\Words\Model\Style',
+        'number_format' => 'string',
         'number_position' => 'double',
+        'number_style' => 'string',
+        'restart_after_level' => 'int',
+        'start_at' => 'int',
+        'tab_position' => 'double',
         'text_position' => 'double',
-        'linked_style' => '\Aspose\Words\Model\Style'
+        'trailing_character' => 'string'
     ];
 
     /*
@@ -76,18 +74,18 @@ class ListLevel implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'start_at' => 'int32',
-        'number_style' => null,
-        'number_format' => null,
         'alignment' => null,
-        'is_legal' => null,
-        'restart_after_level' => 'int32',
-        'trailing_character' => null,
         'font' => null,
-        'tab_position' => 'double',
+        'is_legal' => null,
+        'linked_style' => null,
+        'number_format' => null,
         'number_position' => 'double',
+        'number_style' => null,
+        'restart_after_level' => 'int32',
+        'start_at' => 'int32',
+        'tab_position' => 'double',
         'text_position' => 'double',
-        'linked_style' => null
+        'trailing_character' => null
     ];
 
     /*
@@ -97,7 +95,7 @@ class ListLevel implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -107,7 +105,7 @@ class ListLevel implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -117,18 +115,18 @@ class ListLevel implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'start_at' => 'StartAt',
-        'number_style' => 'NumberStyle',
-        'number_format' => 'NumberFormat',
         'alignment' => 'Alignment',
-        'is_legal' => 'IsLegal',
-        'restart_after_level' => 'RestartAfterLevel',
-        'trailing_character' => 'TrailingCharacter',
         'font' => 'Font',
-        'tab_position' => 'TabPosition',
+        'is_legal' => 'IsLegal',
+        'linked_style' => 'LinkedStyle',
+        'number_format' => 'NumberFormat',
         'number_position' => 'NumberPosition',
+        'number_style' => 'NumberStyle',
+        'restart_after_level' => 'RestartAfterLevel',
+        'start_at' => 'StartAt',
+        'tab_position' => 'TabPosition',
         'text_position' => 'TextPosition',
-        'linked_style' => 'LinkedStyle'
+        'trailing_character' => 'TrailingCharacter'
     ];
 
     /*
@@ -137,18 +135,18 @@ class ListLevel implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'start_at' => 'setStartAt',
-        'number_style' => 'setNumberStyle',
-        'number_format' => 'setNumberFormat',
         'alignment' => 'setAlignment',
-        'is_legal' => 'setIsLegal',
-        'restart_after_level' => 'setRestartAfterLevel',
-        'trailing_character' => 'setTrailingCharacter',
         'font' => 'setFont',
-        'tab_position' => 'setTabPosition',
+        'is_legal' => 'setIsLegal',
+        'linked_style' => 'setLinkedStyle',
+        'number_format' => 'setNumberFormat',
         'number_position' => 'setNumberPosition',
+        'number_style' => 'setNumberStyle',
+        'restart_after_level' => 'setRestartAfterLevel',
+        'start_at' => 'setStartAt',
+        'tab_position' => 'setTabPosition',
         'text_position' => 'setTextPosition',
-        'linked_style' => 'setLinkedStyle'
+        'trailing_character' => 'setTrailingCharacter'
     ];
 
     /*
@@ -157,18 +155,18 @@ class ListLevel implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'start_at' => 'getStartAt',
-        'number_style' => 'getNumberStyle',
-        'number_format' => 'getNumberFormat',
         'alignment' => 'getAlignment',
-        'is_legal' => 'getIsLegal',
-        'restart_after_level' => 'getRestartAfterLevel',
-        'trailing_character' => 'getTrailingCharacter',
         'font' => 'getFont',
-        'tab_position' => 'getTabPosition',
+        'is_legal' => 'getIsLegal',
+        'linked_style' => 'getLinkedStyle',
+        'number_format' => 'getNumberFormat',
         'number_position' => 'getNumberPosition',
+        'number_style' => 'getNumberStyle',
+        'restart_after_level' => 'getRestartAfterLevel',
+        'start_at' => 'getStartAt',
+        'tab_position' => 'getTabPosition',
         'text_position' => 'getTextPosition',
-        'linked_style' => 'getLinkedStyle'
+        'trailing_character' => 'getTrailingCharacter'
     ];
 
     /*
@@ -179,7 +177,7 @@ class ListLevel implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -189,7 +187,7 @@ class ListLevel implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -199,7 +197,7 @@ class ListLevel implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -212,6 +210,9 @@ class ListLevel implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const ALIGNMENT_LEFT = 'Left';
+    const ALIGNMENT_CENTER = 'Center';
+    const ALIGNMENT_RIGHT = 'Right';
     const NUMBER_STYLE_ARABIC = 'Arabic';
     const NUMBER_STYLE_UPPERCASE_ROMAN = 'UppercaseRoman';
     const NUMBER_STYLE_LOWERCASE_ROMAN = 'LowercaseRoman';
@@ -274,13 +275,23 @@ class ListLevel implements ArrayAccess
     const NUMBER_STYLE_UPPERCASE_RUSSIAN = 'UppercaseRussian';
     const NUMBER_STYLE_NONE = 'None';
     const NUMBER_STYLE_CUSTOM = 'Custom';
-    const ALIGNMENT_LEFT = 'Left';
-    const ALIGNMENT_CENTER = 'Center';
-    const ALIGNMENT_RIGHT = 'Right';
     const TRAILING_CHARACTER_TAB = 'Tab';
     const TRAILING_CHARACTER_SPACE = 'Space';
     const TRAILING_CHARACTER_NOTHING = 'Nothing';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAlignmentAllowableValues()
+    {
+        return [
+            self::ALIGNMENT_LEFT,
+            self::ALIGNMENT_CENTER,
+            self::ALIGNMENT_RIGHT
+        ];
+    }
     /*
      * Gets allowable values of the enum
      *
@@ -358,19 +369,6 @@ class ListLevel implements ArrayAccess
      *
      * @return string[]
      */
-    public function getAlignmentAllowableValues()
-    {
-        return [
-            self::ALIGNMENT_LEFT,
-            self::ALIGNMENT_CENTER,
-            self::ALIGNMENT_RIGHT
-        ];
-    }
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
     public function getTrailingCharacterAllowableValues()
     {
         return [
@@ -380,12 +378,6 @@ class ListLevel implements ArrayAccess
         ];
     }
 
-    /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /*
      * Constructor
@@ -395,18 +387,20 @@ class ListLevel implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
-        $this->container['number_style'] = isset($data['number_style']) ? $data['number_style'] : null;
-        $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
+        parent::__construct($data);
+
         $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
-        $this->container['is_legal'] = isset($data['is_legal']) ? $data['is_legal'] : null;
-        $this->container['restart_after_level'] = isset($data['restart_after_level']) ? $data['restart_after_level'] : null;
-        $this->container['trailing_character'] = isset($data['trailing_character']) ? $data['trailing_character'] : null;
         $this->container['font'] = isset($data['font']) ? $data['font'] : null;
-        $this->container['tab_position'] = isset($data['tab_position']) ? $data['tab_position'] : null;
-        $this->container['number_position'] = isset($data['number_position']) ? $data['number_position'] : null;
-        $this->container['text_position'] = isset($data['text_position']) ? $data['text_position'] : null;
+        $this->container['is_legal'] = isset($data['is_legal']) ? $data['is_legal'] : null;
         $this->container['linked_style'] = isset($data['linked_style']) ? $data['linked_style'] : null;
+        $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
+        $this->container['number_position'] = isset($data['number_position']) ? $data['number_position'] : null;
+        $this->container['number_style'] = isset($data['number_style']) ? $data['number_style'] : null;
+        $this->container['restart_after_level'] = isset($data['restart_after_level']) ? $data['restart_after_level'] : null;
+        $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
+        $this->container['tab_position'] = isset($data['tab_position']) ? $data['tab_position'] : null;
+        $this->container['text_position'] = isset($data['text_position']) ? $data['text_position'] : null;
+        $this->container['trailing_character'] = isset($data['trailing_character']) ? $data['trailing_character'] : null;
     }
 
     /*
@@ -416,20 +410,20 @@ class ListLevel implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getNumberStyleAllowableValues();
-        if (!in_array($this->container['number_style'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'number_style', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         $allowedValues = $this->getAlignmentAllowableValues();
         if (!in_array($this->container['alignment'], $allowedValues)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'alignment', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getNumberStyleAllowableValues();
+        if (!in_array($this->container['number_style'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'number_style', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -453,13 +447,16 @@ class ListLevel implements ArrayAccess
      */
     public function valid()
     {
-
-        $allowedValues = $this->getNumberStyleAllowableValues();
-        if (!in_array($this->container['number_style'], $allowedValues)) {
+        if (!parent::valid()) {
             return false;
         }
+
         $allowedValues = $this->getAlignmentAllowableValues();
         if (!in_array($this->container['alignment'], $allowedValues)) {
+            return false;
+        }
+        $allowedValues = $this->getNumberStyleAllowableValues();
+        if (!in_array($this->container['number_style'], $allowedValues)) {
             return false;
         }
         $allowedValues = $this->getTrailingCharacterAllowableValues();
@@ -471,25 +468,150 @@ class ListLevel implements ArrayAccess
 
 
     /*
-     * Gets start_at
+     * Gets alignment
      *
-     * @return int
+     * @return string
      */
-    public function getStartAt()
+    public function getAlignment()
     {
-        return $this->container['start_at'];
+        return $this->container['alignment'];
     }
 
     /*
-     * Sets start_at
+     * Sets alignment
      *
-     * @param int $start_at Gets or sets returns or sets the starting number for this list level.
+     * @param string $alignment Gets or sets the justification of the actual number of the list item.
      *
      * @return $this
      */
-    public function setStartAt($start_at)
+    public function setAlignment($alignment)
     {
-        $this->container['start_at'] = $start_at;
+        $allowedValues = $this->getAlignmentAllowableValues();
+        if ((!is_numeric($alignment) && !in_array($alignment, $allowedValues)) || (is_numeric($alignment) && !in_array($allowedValues[$alignment], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'alignment', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['alignment'] = $alignment;
+
+        return $this;
+    }
+
+    /*
+     * Gets font
+     *
+     * @return \Aspose\Words\Model\Font
+     */
+    public function getFont()
+    {
+        return $this->container['font'];
+    }
+
+    /*
+     * Sets font
+     *
+     * @param \Aspose\Words\Model\Font $font font
+     *
+     * @return $this
+     */
+    public function setFont($font)
+    {
+        $this->container['font'] = $font;
+
+        return $this;
+    }
+
+    /*
+     * Gets is_legal
+     *
+     * @return bool
+     */
+    public function getIsLegal()
+    {
+        return $this->container['is_legal'];
+    }
+
+    /*
+     * Sets is_legal
+     *
+     * @param bool $is_legal Gets or sets a value indicating whether true if the level turns all inherited numbers to Arabic, false if it preserves their number style.
+     *
+     * @return $this
+     */
+    public function setIsLegal($is_legal)
+    {
+        $this->container['is_legal'] = $is_legal;
+
+        return $this;
+    }
+
+    /*
+     * Gets linked_style
+     *
+     * @return \Aspose\Words\Model\Style
+     */
+    public function getLinkedStyle()
+    {
+        return $this->container['linked_style'];
+    }
+
+    /*
+     * Sets linked_style
+     *
+     * @param \Aspose\Words\Model\Style $linked_style linked_style
+     *
+     * @return $this
+     */
+    public function setLinkedStyle($linked_style)
+    {
+        $this->container['linked_style'] = $linked_style;
+
+        return $this;
+    }
+
+    /*
+     * Gets number_format
+     *
+     * @return string
+     */
+    public function getNumberFormat()
+    {
+        return $this->container['number_format'];
+    }
+
+    /*
+     * Sets number_format
+     *
+     * @param string $number_format Gets or sets returns or sets the number format for the list level.
+     *
+     * @return $this
+     */
+    public function setNumberFormat($number_format)
+    {
+        $this->container['number_format'] = $number_format;
+
+        return $this;
+    }
+
+    /*
+     * Gets number_position
+     *
+     * @return double
+     */
+    public function getNumberPosition()
+    {
+        return $this->container['number_position'];
+    }
+
+    /*
+     * Sets number_position
+     *
+     * @param double $number_position Gets or sets returns or sets the position (in points) of the number or bullet for the list level.
+     *
+     * @return $this
+     */
+    public function setNumberPosition($number_position)
+    {
+        $this->container['number_position'] = $number_position;
 
         return $this;
     }
@@ -524,83 +646,6 @@ class ListLevel implements ArrayAccess
     }
 
     /*
-     * Gets number_format
-     *
-     * @return string
-     */
-    public function getNumberFormat()
-    {
-        return $this->container['number_format'];
-    }
-
-    /*
-     * Sets number_format
-     *
-     * @param string $number_format Gets or sets returns or sets the number format for the list level.
-     *
-     * @return $this
-     */
-    public function setNumberFormat($number_format)
-    {
-        $this->container['number_format'] = $number_format;
-
-        return $this;
-    }
-
-    /*
-     * Gets alignment
-     *
-     * @return string
-     */
-    public function getAlignment()
-    {
-        return $this->container['alignment'];
-    }
-
-    /*
-     * Sets alignment
-     *
-     * @param string $alignment Gets or sets the justification of the actual number of the list item.
-     *
-     * @return $this
-     */
-    public function setAlignment($alignment)
-    {
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if ((!is_numeric($alignment) && !in_array($alignment, $allowedValues)) || (is_numeric($alignment) && !in_array($allowedValues[$alignment], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'alignment', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['alignment'] = $alignment;
-
-        return $this;
-    }
-
-    /*
-     * Gets is_legal
-     *
-     * @return bool
-     */
-    public function getIsLegal()
-    {
-        return $this->container['is_legal'];
-    }
-
-    /*
-     * Sets is_legal
-     *
-     * @param bool $is_legal Gets or sets a value indicating whether true if the level turns all inherited numbers to Arabic, false if it preserves their number style.
-     *
-     * @return $this
-     */
-    public function setIsLegal($is_legal)
-    {
-        $this->container['is_legal'] = $is_legal;
-
-        return $this;
-    }
-
-    /*
      * Gets restart_after_level
      *
      * @return int
@@ -625,54 +670,25 @@ class ListLevel implements ArrayAccess
     }
 
     /*
-     * Gets trailing_character
+     * Gets start_at
      *
-     * @return string
+     * @return int
      */
-    public function getTrailingCharacter()
+    public function getStartAt()
     {
-        return $this->container['trailing_character'];
+        return $this->container['start_at'];
     }
 
     /*
-     * Sets trailing_character
+     * Sets start_at
      *
-     * @param string $trailing_character Gets or sets returns or sets the character inserted after the number for the list level.
+     * @param int $start_at Gets or sets returns or sets the starting number for this list level.
      *
      * @return $this
      */
-    public function setTrailingCharacter($trailing_character)
+    public function setStartAt($start_at)
     {
-        $allowedValues = $this->getTrailingCharacterAllowableValues();
-        if ((!is_numeric($trailing_character) && !in_array($trailing_character, $allowedValues)) || (is_numeric($trailing_character) && !in_array($allowedValues[$trailing_character], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'trailing_character', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['trailing_character'] = $trailing_character;
-
-        return $this;
-    }
-
-    /*
-     * Gets font
-     *
-     * @return \Aspose\Words\Model\Font
-     */
-    public function getFont()
-    {
-        return $this->container['font'];
-    }
-
-    /*
-     * Sets font
-     *
-     * @param \Aspose\Words\Model\Font $font font
-     *
-     * @return $this
-     */
-    public function setFont($font)
-    {
-        $this->container['font'] = $font;
+        $this->container['start_at'] = $start_at;
 
         return $this;
     }
@@ -702,30 +718,6 @@ class ListLevel implements ArrayAccess
     }
 
     /*
-     * Gets number_position
-     *
-     * @return double
-     */
-    public function getNumberPosition()
-    {
-        return $this->container['number_position'];
-    }
-
-    /*
-     * Sets number_position
-     *
-     * @param double $number_position Gets or sets returns or sets the position (in points) of the number or bullet for the list level.
-     *
-     * @return $this
-     */
-    public function setNumberPosition($number_position)
-    {
-        $this->container['number_position'] = $number_position;
-
-        return $this;
-    }
-
-    /*
      * Gets text_position
      *
      * @return double
@@ -750,25 +742,30 @@ class ListLevel implements ArrayAccess
     }
 
     /*
-     * Gets linked_style
+     * Gets trailing_character
      *
-     * @return \Aspose\Words\Model\Style
+     * @return string
      */
-    public function getLinkedStyle()
+    public function getTrailingCharacter()
     {
-        return $this->container['linked_style'];
+        return $this->container['trailing_character'];
     }
 
     /*
-     * Sets linked_style
+     * Sets trailing_character
      *
-     * @param \Aspose\Words\Model\Style $linked_style linked_style
+     * @param string $trailing_character Gets or sets returns or sets the character inserted after the number for the list level.
      *
      * @return $this
      */
-    public function setLinkedStyle($linked_style)
+    public function setTrailingCharacter($trailing_character)
     {
-        $this->container['linked_style'] = $linked_style;
+        $allowedValues = $this->getTrailingCharacterAllowableValues();
+        if ((!is_numeric($trailing_character) && !in_array($trailing_character, $allowedValues)) || (is_numeric($trailing_character) && !in_array($allowedValues[$trailing_character], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'trailing_character', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['trailing_character'] = $trailing_character;
 
         return $this;
     }

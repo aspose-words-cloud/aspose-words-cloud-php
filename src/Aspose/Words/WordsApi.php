@@ -59537,7 +59537,7 @@ class WordsApi
             throw new \InvalidArgumentException('Missing the required parameter $list_level when calling updateListLevel');
         }
 
-        $resourcePath = '/words/{name}/lists/{listId}/{listLevel}';
+        $resourcePath = '/words/{name}/lists/{listId}/listLevels/{listLevel}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -30,8 +30,6 @@
  */
 
 namespace Aspose\Words\Model;
-
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
@@ -39,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a single document list.
  */
-class ListInfo implements ArrayAccess
+class ListInfo extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -56,13 +54,13 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list_id' => 'int',
-        'is_multi_level' => 'bool',
-        'is_restart_at_each_section' => 'bool',
         'is_list_style_definition' => 'bool',
         'is_list_style_reference' => 'bool',
-        'style' => '\Aspose\Words\Model\Style',
-        'list_levels' => '\Aspose\Words\Model\ListLevels'
+        'is_multi_level' => 'bool',
+        'is_restart_at_each_section' => 'bool',
+        'list_id' => 'int',
+        'list_levels' => '\Aspose\Words\Model\ListLevels',
+        'style' => '\Aspose\Words\Model\Style'
     ];
 
     /*
@@ -71,13 +69,13 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list_id' => 'int32',
-        'is_multi_level' => null,
-        'is_restart_at_each_section' => null,
         'is_list_style_definition' => null,
         'is_list_style_reference' => null,
-        'style' => null,
-        'list_levels' => null
+        'is_multi_level' => null,
+        'is_restart_at_each_section' => null,
+        'list_id' => 'int32',
+        'list_levels' => null,
+        'style' => null
     ];
 
     /*
@@ -87,7 +85,7 @@ class ListInfo implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -97,7 +95,7 @@ class ListInfo implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -107,13 +105,13 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'list_id' => 'ListId',
-        'is_multi_level' => 'IsMultiLevel',
-        'is_restart_at_each_section' => 'IsRestartAtEachSection',
         'is_list_style_definition' => 'IsListStyleDefinition',
         'is_list_style_reference' => 'IsListStyleReference',
-        'style' => 'Style',
-        'list_levels' => 'ListLevels'
+        'is_multi_level' => 'IsMultiLevel',
+        'is_restart_at_each_section' => 'IsRestartAtEachSection',
+        'list_id' => 'ListId',
+        'list_levels' => 'ListLevels',
+        'style' => 'Style'
     ];
 
     /*
@@ -122,13 +120,13 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'list_id' => 'setListId',
-        'is_multi_level' => 'setIsMultiLevel',
-        'is_restart_at_each_section' => 'setIsRestartAtEachSection',
         'is_list_style_definition' => 'setIsListStyleDefinition',
         'is_list_style_reference' => 'setIsListStyleReference',
-        'style' => 'setStyle',
-        'list_levels' => 'setListLevels'
+        'is_multi_level' => 'setIsMultiLevel',
+        'is_restart_at_each_section' => 'setIsRestartAtEachSection',
+        'list_id' => 'setListId',
+        'list_levels' => 'setListLevels',
+        'style' => 'setStyle'
     ];
 
     /*
@@ -137,13 +135,13 @@ class ListInfo implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'list_id' => 'getListId',
-        'is_multi_level' => 'getIsMultiLevel',
-        'is_restart_at_each_section' => 'getIsRestartAtEachSection',
         'is_list_style_definition' => 'getIsListStyleDefinition',
         'is_list_style_reference' => 'getIsListStyleReference',
-        'style' => 'getStyle',
-        'list_levels' => 'getListLevels'
+        'is_multi_level' => 'getIsMultiLevel',
+        'is_restart_at_each_section' => 'getIsRestartAtEachSection',
+        'list_id' => 'getListId',
+        'list_levels' => 'getListLevels',
+        'style' => 'getStyle'
     ];
 
     /*
@@ -154,7 +152,7 @@ class ListInfo implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -164,7 +162,7 @@ class ListInfo implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -174,7 +172,7 @@ class ListInfo implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -189,12 +187,6 @@ class ListInfo implements ArrayAccess
 
 
 
-    /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /*
      * Constructor
@@ -204,13 +196,15 @@ class ListInfo implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
-        $this->container['is_multi_level'] = isset($data['is_multi_level']) ? $data['is_multi_level'] : null;
-        $this->container['is_restart_at_each_section'] = isset($data['is_restart_at_each_section']) ? $data['is_restart_at_each_section'] : null;
+        parent::__construct($data);
+
         $this->container['is_list_style_definition'] = isset($data['is_list_style_definition']) ? $data['is_list_style_definition'] : null;
         $this->container['is_list_style_reference'] = isset($data['is_list_style_reference']) ? $data['is_list_style_reference'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['is_multi_level'] = isset($data['is_multi_level']) ? $data['is_multi_level'] : null;
+        $this->container['is_restart_at_each_section'] = isset($data['is_restart_at_each_section']) ? $data['is_restart_at_each_section'] : null;
+        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
         $this->container['list_levels'] = isset($data['list_levels']) ? $data['list_levels'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
     }
 
     /*
@@ -220,7 +214,7 @@ class ListInfo implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -233,31 +227,58 @@ class ListInfo implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
         return true;
     }
 
 
     /*
-     * Gets list_id
+     * Gets is_list_style_definition
      *
-     * @return int
+     * @return bool
      */
-    public function getListId()
+    public function getIsListStyleDefinition()
     {
-        return $this->container['list_id'];
+        return $this->container['is_list_style_definition'];
     }
 
     /*
-     * Sets list_id
+     * Sets is_list_style_definition
      *
-     * @param int $list_id Gets or sets the unique identifier of the list.
+     * @param bool $is_list_style_definition Gets or sets a value indicating whether returns true if this list is a definition of a list style.
      *
      * @return $this
      */
-    public function setListId($list_id)
+    public function setIsListStyleDefinition($is_list_style_definition)
     {
-        $this->container['list_id'] = $list_id;
+        $this->container['is_list_style_definition'] = $is_list_style_definition;
+
+        return $this;
+    }
+
+    /*
+     * Gets is_list_style_reference
+     *
+     * @return bool
+     */
+    public function getIsListStyleReference()
+    {
+        return $this->container['is_list_style_reference'];
+    }
+
+    /*
+     * Sets is_list_style_reference
+     *
+     * @param bool $is_list_style_reference Gets or sets a value indicating whether returns true if this list is a reference to a list style.
+     *
+     * @return $this
+     */
+    public function setIsListStyleReference($is_list_style_reference)
+    {
+        $this->container['is_list_style_reference'] = $is_list_style_reference;
 
         return $this;
     }
@@ -311,73 +332,25 @@ class ListInfo implements ArrayAccess
     }
 
     /*
-     * Gets is_list_style_definition
+     * Gets list_id
      *
-     * @return bool
+     * @return int
      */
-    public function getIsListStyleDefinition()
+    public function getListId()
     {
-        return $this->container['is_list_style_definition'];
+        return $this->container['list_id'];
     }
 
     /*
-     * Sets is_list_style_definition
+     * Sets list_id
      *
-     * @param bool $is_list_style_definition Gets or sets a value indicating whether returns true if this list is a definition of a list style.
+     * @param int $list_id Gets or sets the unique identifier of the list.
      *
      * @return $this
      */
-    public function setIsListStyleDefinition($is_list_style_definition)
+    public function setListId($list_id)
     {
-        $this->container['is_list_style_definition'] = $is_list_style_definition;
-
-        return $this;
-    }
-
-    /*
-     * Gets is_list_style_reference
-     *
-     * @return bool
-     */
-    public function getIsListStyleReference()
-    {
-        return $this->container['is_list_style_reference'];
-    }
-
-    /*
-     * Sets is_list_style_reference
-     *
-     * @param bool $is_list_style_reference Gets or sets a value indicating whether returns true if this list is a reference to a list style.
-     *
-     * @return $this
-     */
-    public function setIsListStyleReference($is_list_style_reference)
-    {
-        $this->container['is_list_style_reference'] = $is_list_style_reference;
-
-        return $this;
-    }
-
-    /*
-     * Gets style
-     *
-     * @return \Aspose\Words\Model\Style
-     */
-    public function getStyle()
-    {
-        return $this->container['style'];
-    }
-
-    /*
-     * Sets style
-     *
-     * @param \Aspose\Words\Model\Style $style style
-     *
-     * @return $this
-     */
-    public function setStyle($style)
-    {
-        $this->container['style'] = $style;
+        $this->container['list_id'] = $list_id;
 
         return $this;
     }
@@ -402,6 +375,30 @@ class ListInfo implements ArrayAccess
     public function setListLevels($list_levels)
     {
         $this->container['list_levels'] = $list_levels;
+
+        return $this;
+    }
+
+    /*
+     * Gets style
+     *
+     * @return \Aspose\Words\Model\Style
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /*
+     * Sets style
+     *
+     * @param \Aspose\Words\Model\Style $style style
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
 
         return $this;
     }

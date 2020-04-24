@@ -30,6 +30,7 @@ use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\StyleUpdate;
 use Aspose\Words\Model\StyleCopy;
 use Aspose\Words\Model\StyleInsert;
+use Aspose\Words\Model\StyleApply;
 use PHPUnit\Framework\Assert;
 
 class StylesTests extends BaseTestContext
@@ -130,5 +131,44 @@ class StylesTests extends BaseTestContext
         $data = new StyleCopy(array("style_name" => "Heading 1"));
         $request = new Requests\CopyStyleRequest($remoteName, $data, self::$baseTestPath . $subfolder);
         $result = $this->words->copyStyle($request);
+    }
+    
+    /**
+     *
+     * Test for getting style from document element
+     *
+     */
+    public function testGetStyleFromDocumentElement()
+    {
+        $localName = "GetStyles.docx";
+        $remoteName = "testGetStyleFromDocumentElement.docx";
+        $subfolder = "Styles";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Styles/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetStyleFromDocumentElementRequest($remoteName, "paragraphs/1/paragraphFormat", self::$baseTestPath . $subfolder);
+        $result = $this->words->getStyleFromDocumentElement($request);
+    }
+    
+    /**
+     *
+     * Test for applying style to document element
+     *
+     */
+    public function testApplyStyleToDocumentElement()
+    {
+        $localName = "GetStyles.docx";
+        $remoteName = "testApplyStyleToDocumentElement.docx";
+        $subfolder = "Styles";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Styles/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $data = new StyleApply(array("style_name" => "Heading 1"));
+        $request = new Requests\ApplyStyleToDocumentElementRequest($remoteName, $data, "paragraphs/1/paragraphFormat", self::$baseTestPath . $subfolder);
+        $result = $this->words->applyStyleToDocumentElement($request);
     }
 }

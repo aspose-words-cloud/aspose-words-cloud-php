@@ -772,7 +772,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElement
      *
-     * Apply style to document node.
+     * Apply a style to the document node.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -795,7 +795,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElementWithHttpInfo
      *
-     * Apply style to document node.
+     * Apply a style to the document node.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -861,7 +861,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElementAsync
      *
-     * Apply style to document node.
+     * Apply a style to the document node.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -881,7 +881,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElementAsyncWithHttpInfo
      *
-     * Apply style to document node.
+     * Apply a style to the document node.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -3613,7 +3613,7 @@ class WordsApi
     /*
      * Operation copyStyle
      *
-     * Copy and insert new style to document, returns copied style.
+     * Copy and insert a new style to the document, returns an copied style.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -3636,7 +3636,7 @@ class WordsApi
     /*
      * Operation copyStyleWithHttpInfo
      *
-     * Copy and insert new style to document, returns copied style.
+     * Copy and insert a new style to the document, returns an copied style.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -3702,7 +3702,7 @@ class WordsApi
     /*
      * Operation copyStyleAsync
      *
-     * Copy and insert new style to document, returns copied style.
+     * Copy and insert a new style to the document, returns an copied style.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -3722,7 +3722,7 @@ class WordsApi
     /*
      * Operation copyStyleAsyncWithHttpInfo
      *
-     * Copy and insert new style to document, returns copied style.
+     * Copy and insert a new style to the document, returns an copied style.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -35953,7 +35953,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElement
      *
-     * Gets style from document node.
+     * Gets a style from the document node.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -35976,7 +35976,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElementWithHttpInfo
      *
-     * Gets style from document node.
+     * Gets a style from the document node.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -36042,7 +36042,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElementAsync
      *
-     * Gets style from document node.
+     * Gets a style from the document node.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -36062,7 +36062,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElementAsyncWithHttpInfo
      *
-     * Gets style from document node.
+     * Gets a style from the document node.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -36276,7 +36276,7 @@ class WordsApi
     /*
      * Operation getStyles
      *
-     * Returns a list of styles that are contained in the document.
+     * Returns a list of styles contained in the document.
      *
      * @param Requests\getStylesRequest $request is a request object for operation
      *
@@ -36299,7 +36299,7 @@ class WordsApi
     /*
      * Operation getStylesWithHttpInfo
      *
-     * Returns a list of styles that are contained in the document.
+     * Returns a list of styles contained in the document.
      *
      * @param Requests\getStylesRequest $request is a request object for operation
      *
@@ -36365,7 +36365,7 @@ class WordsApi
     /*
      * Operation getStylesAsync
      *
-     * Returns a list of styles that are contained in the document.
+     * Returns a list of styles contained in the document.
      *
      * @param Requests\getStylesRequest $request is a request object for operation
      *
@@ -36385,7 +36385,7 @@ class WordsApi
     /*
      * Operation getStylesAsyncWithHttpInfo
      *
-     * Returns a list of styles that are contained in the document.
+     * Returns a list of styles contained in the document.
      *
      * @param Requests\getStylesRequest $request is a request object for operation
      *
@@ -44980,7 +44980,7 @@ class WordsApi
     /*
      * Operation insertStyle
      *
-     * Adds style to document, returns added style.
+     * Adds a style to the document, returns an added style.
      *
      * @param Requests\insertStyleRequest $request is a request object for operation
      *
@@ -45003,7 +45003,7 @@ class WordsApi
     /*
      * Operation insertStyleWithHttpInfo
      *
-     * Adds style to document, returns added style.
+     * Adds a style to the document, returns an added style.
      *
      * @param Requests\insertStyleRequest $request is a request object for operation
      *
@@ -45069,7 +45069,7 @@ class WordsApi
     /*
      * Operation insertStyleAsync
      *
-     * Adds style to document, returns added style.
+     * Adds a style to the document, returns an added style.
      *
      * @param Requests\insertStyleRequest $request is a request object for operation
      *
@@ -45089,7 +45089,7 @@ class WordsApi
     /*
      * Operation insertStyleAsyncWithHttpInfo
      *
-     * Adds style to document, returns added style.
+     * Adds a style to the document, returns an added style.
      *
      * @param Requests\insertStyleRequest $request is a request object for operation
      *
@@ -62265,7 +62265,7 @@ class WordsApi
     /*
      * Operation updateStyle
      *
-     * Updates style properties, returns updated style.
+     * Updates a style properties, returns an updated style.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -62288,7 +62288,7 @@ class WordsApi
     /*
      * Operation updateStyleWithHttpInfo
      *
-     * Updates style properties, returns updated style.
+     * Updates a style properties, returns an updated style.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -62354,7 +62354,7 @@ class WordsApi
     /*
      * Operation updateStyleAsync
      *
-     * Updates style properties, returns updated style.
+     * Updates a style properties, returns an updated style.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -62374,7 +62374,7 @@ class WordsApi
     /*
      * Operation updateStyleAsyncWithHttpInfo
      *
-     * Updates style properties, returns updated style.
+     * Updates a style properties, returns an updated style.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *

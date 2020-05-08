@@ -54,7 +54,7 @@ class Styles extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'style' => '\Aspose\Words\Model\Style[]'
+        'style_list' => '\Aspose\Words\Model\Style[]'
     ];
 
     /*
@@ -63,7 +63,7 @@ class Styles extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'style' => null
+        'style_list' => null
     ];
 
     /*
@@ -93,7 +93,7 @@ class Styles extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'style' => 'Style'
+        'style_list' => 'StyleList'
     ];
 
     /*
@@ -102,7 +102,7 @@ class Styles extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'style' => 'setStyle'
+        'style_list' => 'setStyleList'
     ];
 
     /*
@@ -111,7 +111,7 @@ class Styles extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'style' => 'getStyle'
+        'style_list' => 'getStyleList'
     ];
 
     /*
@@ -168,7 +168,7 @@ class Styles extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['style_list'] = isset($data['style_list']) ? $data['style_list'] : null;
     }
 
     /*
@@ -200,25 +200,25 @@ class Styles extends LinkElement
 
 
     /*
-     * Gets style
+     * Gets style_list
      *
      * @return \Aspose\Words\Model\Style[]
      */
-    public function getStyle()
+    public function getStyleList()
     {
-        return $this->container['style'];
+        return $this->container['style_list'];
     }
 
     /*
-     * Sets style
+     * Sets style_list
      *
-     * @param \Aspose\Words\Model\Style[] $style Gets or sets array of document styles.
+     * @param \Aspose\Words\Model\Style[] $style_list Gets or sets array of document styles.
      *
      * @return $this
      */
-    public function setStyle($style)
+    public function setStyleList($style_list)
     {
-        $this->container['style'] = $style;
+        $this->container['style_list'] = $style_list;
 
         return $this;
     }

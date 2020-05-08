@@ -34,7 +34,7 @@ namespace Aspose\Words\Model\Requests;
 class BuildReportRequest
 {
     /*
-     * The document name.
+     * The template name.
      */
     public $name;
 	
@@ -77,7 +77,7 @@ class BuildReportRequest
     /*
      * Initializes a new instance of the BuildReportRequest class.
      *  
-     * @param string $name The document name.
+     * @param string $name The template name.
      * @param string $data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
      * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
      * @param string $folder Original document folder.
@@ -99,7 +99,7 @@ class BuildReportRequest
     }
 
     /*
-     * The document name.
+     * The template name.
      */
     public function get_name()
     {
@@ -107,7 +107,7 @@ class BuildReportRequest
     }
 
     /*
-     * The document name.
+     * The template name.
      */
     public function set_name($value)
     {

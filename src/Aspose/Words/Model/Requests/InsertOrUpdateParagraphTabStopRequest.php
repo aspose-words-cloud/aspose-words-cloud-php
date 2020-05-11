@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteTabStopsRequest.php">
+ * <copyright company="Aspose" file="InsertOrUpdateParagraphTabStopRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -29,9 +29,9 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for deleteTabStops operation.
+ * Request model for insertOrUpdateParagraphTabStop operation.
  */
-class DeleteTabStopsRequest
+class InsertOrUpdateParagraphTabStopRequest
 {
     /*
      * The document name.
@@ -42,6 +42,11 @@ class DeleteTabStopsRequest
      * Path to the node which contains paragraph.
      */
     public $node_path;
+	
+    /*
+     * Paragraph tab stop.
+     */
+    public $dto;
 	
     /*
      * Object index.
@@ -75,10 +80,11 @@ class DeleteTabStopsRequest
     
 	
     /*
-     * Initializes a new instance of the DeleteTabStopsRequest class.
+     * Initializes a new instance of the InsertOrUpdateParagraphTabStopRequest class.
      *  
      * @param string $name The document name.
      * @param string $node_path Path to the node which contains paragraph.
+     * @param \Aspose\Words\Model\TabStopInsert $dto Paragraph tab stop.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -86,10 +92,11 @@ class DeleteTabStopsRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    public function __construct($name, $node_path, $dto, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
     {
         $this->name = $name;
         $this->node_path = $node_path;
+        $this->dto = $dto;
         $this->index = $index;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -129,6 +136,23 @@ class DeleteTabStopsRequest
     public function set_node_path($value)
     {
         $this->node_path = $value;
+        return $this;
+    }
+	
+    /*
+     * Paragraph tab stop.
+     */
+    public function get_dto()
+    {
+        return $this->dto;
+    }
+
+    /*
+     * Paragraph tab stop.
+     */
+    public function set_dto($value)
+    {
+        $this->dto = $value;
         return $this;
     }
 	

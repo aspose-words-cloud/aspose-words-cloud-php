@@ -71,6 +71,7 @@ class ParagraphFormat extends LinkElement
         'outline_level' => 'string',
         'page_break_before' => 'bool',
         'right_indent' => 'double',
+        'shading' => '\Aspose\Words\Model\Shading',
         'space_after' => 'double',
         'space_after_auto' => 'bool',
         'space_before' => 'double',
@@ -105,6 +106,7 @@ class ParagraphFormat extends LinkElement
         'outline_level' => null,
         'page_break_before' => null,
         'right_indent' => 'double',
+        'shading' => null,
         'space_after' => 'double',
         'space_after_auto' => null,
         'space_before' => 'double',
@@ -160,6 +162,7 @@ class ParagraphFormat extends LinkElement
         'outline_level' => 'OutlineLevel',
         'page_break_before' => 'PageBreakBefore',
         'right_indent' => 'RightIndent',
+        'shading' => 'Shading',
         'space_after' => 'SpaceAfter',
         'space_after_auto' => 'SpaceAfterAuto',
         'space_before' => 'SpaceBefore',
@@ -194,6 +197,7 @@ class ParagraphFormat extends LinkElement
         'outline_level' => 'setOutlineLevel',
         'page_break_before' => 'setPageBreakBefore',
         'right_indent' => 'setRightIndent',
+        'shading' => 'setShading',
         'space_after' => 'setSpaceAfter',
         'space_after_auto' => 'setSpaceAfterAuto',
         'space_before' => 'setSpaceBefore',
@@ -228,6 +232,7 @@ class ParagraphFormat extends LinkElement
         'outline_level' => 'getOutlineLevel',
         'page_break_before' => 'getPageBreakBefore',
         'right_indent' => 'getRightIndent',
+        'shading' => 'getShading',
         'space_after' => 'getSpaceAfter',
         'space_after_auto' => 'getSpaceAfterAuto',
         'space_before' => 'getSpaceBefore',
@@ -1156,6 +1161,7 @@ class ParagraphFormat extends LinkElement
         $this->container['outline_level'] = isset($data['outline_level']) ? $data['outline_level'] : null;
         $this->container['page_break_before'] = isset($data['page_break_before']) ? $data['page_break_before'] : null;
         $this->container['right_indent'] = isset($data['right_indent']) ? $data['right_indent'] : null;
+        $this->container['shading'] = isset($data['shading']) ? $data['shading'] : null;
         $this->container['space_after'] = isset($data['space_after']) ? $data['space_after'] : null;
         $this->container['space_after_auto'] = isset($data['space_after_auto']) ? $data['space_after_auto'] : null;
         $this->container['space_before'] = isset($data['space_before']) ? $data['space_before'] : null;
@@ -1679,6 +1685,30 @@ class ParagraphFormat extends LinkElement
     public function setRightIndent($right_indent)
     {
         $this->container['right_indent'] = $right_indent;
+
+        return $this;
+    }
+
+    /*
+     * Gets shading
+     *
+     * @return \Aspose\Words\Model\Shading
+     */
+    public function getShading()
+    {
+        return $this->container['shading'];
+    }
+
+    /*
+     * Sets shading
+     *
+     * @param \Aspose\Words\Model\Shading $shading shading
+     *
+     * @return $this
+     */
+    public function setShading($shading)
+    {
+        $this->container['shading'] = $shading;
 
         return $this;
     }

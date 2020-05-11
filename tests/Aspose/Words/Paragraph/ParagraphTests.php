@@ -32,6 +32,8 @@ use Aspose\Words\Model\ParagraphFormat;
 use Aspose\Words\Model\ListFormatUpdate;
 use Aspose\Words\Model\Font;
 use PHPUnit\Framework\Assert;
+use Aspose\Words\Model\TabStopInsert;
+use Aspose\Words\Model\TabStopBase;
 
 class ParagraphTests extends BaseTestContext
 {
@@ -523,6 +525,111 @@ class ParagraphTests extends BaseTestContext
             null, null);
 
         $result = $this->words->updateParagraphListFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for getParagraphTabStops
+     *
+     * Get paragraph tab stops.
+     *
+     */
+    public function testGetParagraphTabStops()
+    {
+        $localName = "ParagraphTabStops.docx";
+        $remoteName = "TestGetParagraphTabStops.docx";
+        $subfolder = "DocumentElements/Paragraphs";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Paragraphs/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetParagraphTabStopsRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->getParagraphTabStops($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for insertOrUpdateParagraphTabStop
+     *
+     * Insert / update paragraph tab stop.
+     *
+     */
+    public function testInsertOrUpdateParagraphTabStop()
+    {
+        $localName = "ParagraphTabStops.docx";
+        $remoteName = "TestInsertOrUpdateParagraphTabStops.docx";
+        $subfolder = "DocumentElements/Paragraphs";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Paragraphs/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $dto = new TabStopInsert(array (
+            'alignment' => TabStopBase::ALIGNMENT_LEFT,
+            'leader' => TabStopBase::LEADER_NONE,
+            'position' => 72
+        ));
+        $request = new Requests\InsertOrUpdateParagraphTabStopRequest($remoteName, "", $dto, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->insertOrUpdateParagraphTabStop($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteAllParagraphTabStops
+     *
+     * Delete all paragraph tab stops.
+     *
+     */
+    public function testDeleteAllParagraphTabStops()
+    {
+        $localName = "ParagraphTabStops.docx";
+        $remoteName = "TestGetParagraphTabStops.docx";
+        $subfolder = "DocumentElements/Paragraphs";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Paragraphs/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteAllParagraphTabStopsRequest($remoteName, "", $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->deleteAllParagraphTabStops($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteParagraphTabStop
+     *
+     * Delete a paragraph tab stop.
+     *
+     */
+    public function testDeleteParagraphTabStop()
+    {
+        $localName = "ParagraphTabStops.docx";
+        $remoteName = "TestGetParagraphTabStops.docx";
+        $subfolder = "DocumentElements/Paragraphs";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Paragraphs/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteParagraphTabStopRequest($remoteName, "", 72, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->deleteParagraphTabStop($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

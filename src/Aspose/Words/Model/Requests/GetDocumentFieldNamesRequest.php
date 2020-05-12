@@ -34,7 +34,7 @@ namespace Aspose\Words\Model\Requests;
 class GetDocumentFieldNamesRequest
 {
     /*
-     * The document name.
+     * The template name.
      */
     public $name;
 	
@@ -67,7 +67,7 @@ class GetDocumentFieldNamesRequest
     /*
      * Initializes a new instance of the GetDocumentFieldNamesRequest class.
      *  
-     * @param string $name The document name.
+     * @param string $name The template name.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -85,7 +85,7 @@ class GetDocumentFieldNamesRequest
     }
 
     /*
-     * The document name.
+     * The template name.
      */
     public function get_name()
     {
@@ -93,7 +93,7 @@ class GetDocumentFieldNamesRequest
     }
 
     /*
-     * The document name.
+     * The template name.
      */
     public function set_name($value)
     {

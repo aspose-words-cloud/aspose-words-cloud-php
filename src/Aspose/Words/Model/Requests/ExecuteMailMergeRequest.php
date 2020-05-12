@@ -34,7 +34,7 @@ namespace Aspose\Words\Model\Requests;
 class ExecuteMailMergeRequest
 {
     /*
-     * The document name.
+     * The template name.
      */
     public $name;
 	
@@ -92,7 +92,7 @@ class ExecuteMailMergeRequest
     /*
      * Initializes a new instance of the ExecuteMailMergeRequest class.
      *  
-     * @param string $name The document name.
+     * @param string $name The template name.
      * @param string $data Mail merge data
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -120,7 +120,7 @@ class ExecuteMailMergeRequest
     }
 
     /*
-     * The document name.
+     * The template name.
      */
     public function get_name()
     {
@@ -128,7 +128,7 @@ class ExecuteMailMergeRequest
     }
 
     /*
-     * The document name.
+     * The template name.
      */
     public function set_name($value)
     {

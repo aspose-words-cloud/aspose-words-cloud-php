@@ -44,7 +44,7 @@ class ApplyStyleToDocumentElementRequest
     public $style_apply;
 	
     /*
-     * The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * Path to the node of IStyledDocumentElement.
      */
     public $styled_node_path;
 	
@@ -89,7 +89,7 @@ class ApplyStyleToDocumentElementRequest
      *  
      * @param string $name The document name.
      * @param \Aspose\Words\Model\StyleApply $style_apply Style to apply.
-     * @param string $styled_node_path The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * @param string $styled_node_path Path to the node of IStyledDocumentElement.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -147,7 +147,7 @@ class ApplyStyleToDocumentElementRequest
     }
 	
     /*
-     * The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * Path to the node of IStyledDocumentElement.
      */
     public function get_styled_node_path()
     {
@@ -155,7 +155,7 @@ class ApplyStyleToDocumentElementRequest
     }
 
     /*
-     * The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * Path to the node of IStyledDocumentElement.
      */
     public function set_styled_node_path($value)
     {

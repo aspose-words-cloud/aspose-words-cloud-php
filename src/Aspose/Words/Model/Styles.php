@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="StylesResponse.php">
+ * <copyright company="Aspose" file="Styles.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * StylesResponse
+ * Styles
  */
 
 namespace Aspose\Words\Model;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * StylesResponse
+ * Styles
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/styles.
+ * @description Represents an array of styles list.
  */
-class StylesResponse extends WordsResponse 
+class Styles extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class StylesResponse extends WordsResponse
      *
      * @var string
      */
-    protected static $swaggerModelName = "StylesResponse";
+    protected static $swaggerModelName = "Styles";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class StylesResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'styles' => '\Aspose\Words\Model\Styles'
+        'style_list' => '\Aspose\Words\Model\Style[]'
     ];
 
     /*
@@ -63,7 +63,7 @@ class StylesResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'styles' => null
+        'style_list' => null
     ];
 
     /*
@@ -93,7 +93,7 @@ class StylesResponse extends WordsResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'styles' => 'Styles'
+        'style_list' => 'StyleList'
     ];
 
     /*
@@ -102,7 +102,7 @@ class StylesResponse extends WordsResponse
      * @var string[]
      */
     protected static $setters = [
-        'styles' => 'setStyles'
+        'style_list' => 'setStyleList'
     ];
 
     /*
@@ -111,7 +111,7 @@ class StylesResponse extends WordsResponse
      * @var string[]
      */
     protected static $getters = [
-        'styles' => 'getStyles'
+        'style_list' => 'getStyleList'
     ];
 
     /*
@@ -168,7 +168,7 @@ class StylesResponse extends WordsResponse
     {
         parent::__construct($data);
 
-        $this->container['styles'] = isset($data['styles']) ? $data['styles'] : null;
+        $this->container['style_list'] = isset($data['style_list']) ? $data['style_list'] : null;
     }
 
     /*
@@ -200,25 +200,25 @@ class StylesResponse extends WordsResponse
 
 
     /*
-     * Gets styles
+     * Gets style_list
      *
-     * @return \Aspose\Words\Model\Styles
+     * @return \Aspose\Words\Model\Style[]
      */
-    public function getStyles()
+    public function getStyleList()
     {
-        return $this->container['styles'];
+        return $this->container['style_list'];
     }
 
     /*
-     * Sets styles
+     * Sets style_list
      *
-     * @param \Aspose\Words\Model\Styles $styles styles
+     * @param \Aspose\Words\Model\Style[] $style_list Gets or sets array of document styles.
      *
      * @return $this
      */
-    public function setStyles($styles)
+    public function setStyleList($style_list)
     {
-        $this->container['styles'] = $styles;
+        $this->container['style_list'] = $style_list;
 
         return $this;
     }

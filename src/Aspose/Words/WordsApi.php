@@ -772,7 +772,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElement
      *
-     * Apply a style to the document node.
+     * Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -795,7 +795,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElementWithHttpInfo
      *
-     * Apply a style to the document node.
+     * Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -861,7 +861,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElementAsync
      *
-     * Apply a style to the document node.
+     * Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -881,7 +881,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElementAsyncWithHttpInfo
      *
-     * Apply a style to the document node.
+     * Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -3613,7 +3613,7 @@ class WordsApi
     /*
      * Operation copyStyle
      *
-     * Copy and insert a new style to the document, returns a copied style.
+     * Copy and insert a new style to the document, returns an copied style.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -3636,7 +3636,7 @@ class WordsApi
     /*
      * Operation copyStyleWithHttpInfo
      *
-     * Copy and insert a new style to the document, returns a copied style.
+     * Copy and insert a new style to the document, returns an copied style.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -3702,7 +3702,7 @@ class WordsApi
     /*
      * Operation copyStyleAsync
      *
-     * Copy and insert a new style to the document, returns a copied style.
+     * Copy and insert a new style to the document, returns an copied style.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -3722,7 +3722,7 @@ class WordsApi
     /*
      * Operation copyStyleAsyncWithHttpInfo
      *
-     * Copy and insert a new style to the document, returns a copied style.
+     * Copy and insert a new style to the document, returns an copied style.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -36983,7 +36983,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElement
      *
-     * Gets a style from the document node.
+     * Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -37006,7 +37006,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElementWithHttpInfo
      *
-     * Gets a style from the document node.
+     * Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -37072,7 +37072,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElementAsync
      *
-     * Gets a style from the document node.
+     * Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -37092,7 +37092,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElementAsyncWithHttpInfo
      *
-     * Gets a style from the document node.
+     * Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -63648,7 +63648,7 @@ class WordsApi
     /*
      * Operation updateStyle
      *
-     * Updates style properties, returns an updated style.
+     * Updates a style properties, returns an updated style.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -63671,7 +63671,7 @@ class WordsApi
     /*
      * Operation updateStyleWithHttpInfo
      *
-     * Updates style properties, returns an updated style.
+     * Updates a style properties, returns an updated style.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -63737,7 +63737,7 @@ class WordsApi
     /*
      * Operation updateStyleAsync
      *
-     * Updates style properties, returns an updated style.
+     * Updates a style properties, returns an updated style.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -63757,7 +63757,7 @@ class WordsApi
     /*
      * Operation updateStyleAsyncWithHttpInfo
      *
-     * Updates style properties, returns an updated style.
+     * Updates a style properties, returns an updated style.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *

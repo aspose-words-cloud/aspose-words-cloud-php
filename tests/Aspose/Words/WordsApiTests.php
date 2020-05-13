@@ -77,7 +77,8 @@ class WordsApiTests extends BaseTestContext
             "SplitDocumentToFormatTests", "DocumentPropertiesTests", "DocumentProtectionTests", "DrawingTests",
             "FieldTests", "FormFieldTests", "MailMergeFieldTests", "FontTests", "FootnoteTests", "HeaderFooterTests",
             "HyperlinkTests", "MacrosTests", "ExecuteMailMergeTests", "MathObjectTests",
-            "PageSetupTests", "ParagraphTests", "RunTests", "SectionsTests", "TableTests", "TextTests", "WatermarkTests", "FileTests", "FolderTests", "RangeTests");
+            "PageSetupTests", "ParagraphTests", "RunTests", "SectionsTests", "TableTests", "TextTests", 
+            "WatermarkTests", "FileTests", "FolderTests", "RangeTests", "ReportingTests", "ListsTests", "StylesTests");
         $apiClass = new \ReflectionClass('Aspose\Words\WordsApi');
         $testMethods = array();
         foreach ($classarr as $cls)
@@ -90,12 +91,14 @@ class WordsApiTests extends BaseTestContext
             }));
 
             foreach($methods as $testMethod){
-                $testMethods[str_replace('test', '', strtolower($testMethod->name))] = $testMethod;
+                $testMethods[substr(strtolower($testMethod->name), 4)] = $testMethod;
             }
         }
+
         $methods = array_map(function($elem) {
             return strtolower(str_replace('Request', '', $elem->name));
         }, $apiClass->getMethods(\ReflectionMethod::IS_PROTECTED));
+
         $errorList = "";
         foreach ($methods as $method)
         {

@@ -54,7 +54,7 @@ class StylesResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'styles' => '\Aspose\Words\Model\Styles'
+        'styles' => '\Aspose\Words\Model\Style[]'
     ];
 
     /*
@@ -202,7 +202,7 @@ class StylesResponse extends WordsResponse
     /*
      * Gets styles
      *
-     * @return \Aspose\Words\Model\Styles
+     * @return \Aspose\Words\Model\Style[]
      */
     public function getStyles()
     {
@@ -212,7 +212,7 @@ class StylesResponse extends WordsResponse
     /*
      * Sets styles
      *
-     * @param \Aspose\Words\Model\Styles $styles styles
+     * @param \Aspose\Words\Model\Style[] $styles Gets or sets styles which are contained in document.
      *
      * @return $this
      */

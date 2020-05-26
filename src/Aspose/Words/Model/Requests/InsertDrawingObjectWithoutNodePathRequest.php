@@ -39,7 +39,7 @@ class InsertDrawingObjectWithoutNodePathRequest
     public $name;
 	
     /*
-     * Drawing object parameters
+     * Drawing object parameters.
      */
     public $drawing_object;
 	
@@ -88,7 +88,7 @@ class InsertDrawingObjectWithoutNodePathRequest
      * Initializes a new instance of the InsertDrawingObjectWithoutNodePathRequest class.
      *  
      * @param string $name The document name.
-     * @param string $drawing_object Drawing object parameters
+     * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
      * @param \SplFileObject $image_file File with image
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -130,7 +130,7 @@ class InsertDrawingObjectWithoutNodePathRequest
     }
 	
     /*
-     * Drawing object parameters
+     * Drawing object parameters.
      */
     public function get_drawing_object()
     {
@@ -138,7 +138,7 @@ class InsertDrawingObjectWithoutNodePathRequest
     }
 
     /*
-     * Drawing object parameters
+     * Drawing object parameters.
      */
     public function set_drawing_object($value)
     {

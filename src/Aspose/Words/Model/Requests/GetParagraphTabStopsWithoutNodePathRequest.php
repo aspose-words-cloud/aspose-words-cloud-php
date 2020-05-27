@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="InsertOrUpdateParagraphTabStopRequest.php">
+ * <copyright company="Aspose" file="GetParagraphTabStopsWithoutNodePathRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -29,24 +29,14 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for insertOrUpdateParagraphTabStop operation.
+ * Request model for getParagraphTabStopsWithoutNodePath operation.
  */
-class InsertOrUpdateParagraphTabStopRequest
+class GetParagraphTabStopsWithoutNodePathRequest
 {
     /*
      * The document name.
      */
     public $name;
-	
-    /*
-     * Paragraph tab stop.
-     */
-    public $dto;
-	
-    /*
-     * Path to the node which contains paragraph.
-     */
-    public $node_path;
 	
     /*
      * Object index.
@@ -72,37 +62,26 @@ class InsertOrUpdateParagraphTabStopRequest
      * Password for opening an encrypted document.
      */
     public $password;
-	
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public $dest_file_name;
     
 	
     /*
-     * Initializes a new instance of the InsertOrUpdateParagraphTabStopRequest class.
+     * Initializes a new instance of the GetParagraphTabStopsWithoutNodePathRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\TabStopInsert $dto Paragraph tab stop.
-     * @param string $node_path Path to the node which contains paragraph.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $dto, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    public function __construct($name, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
     {
         $this->name = $name;
-        $this->dto = $dto;
-        $this->node_path = $node_path;
         $this->index = $index;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
     }
 
     /*
@@ -119,40 +98,6 @@ class InsertOrUpdateParagraphTabStopRequest
     public function set_name($value)
     {
         $this->name = $value;
-        return $this;
-    }
-	
-    /*
-     * Paragraph tab stop.
-     */
-    public function get_dto()
-    {
-        return $this->dto;
-    }
-
-    /*
-     * Paragraph tab stop.
-     */
-    public function set_dto($value)
-    {
-        $this->dto = $value;
-        return $this;
-    }
-	
-    /*
-     * Path to the node which contains paragraph.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node which contains paragraph.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
         return $this;
     }
 	
@@ -238,23 +183,6 @@ class InsertOrUpdateParagraphTabStopRequest
     public function set_password($value)
     {
         $this->password = $value;
-        return $this;
-    }
-	
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function get_dest_file_name()
-    {
-        return $this->dest_file_name;
-    }
-
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function set_dest_file_name($value)
-    {
-        $this->dest_file_name = $value;
         return $this;
     }
 }

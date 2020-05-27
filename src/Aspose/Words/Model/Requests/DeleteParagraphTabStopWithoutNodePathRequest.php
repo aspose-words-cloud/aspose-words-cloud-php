@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="InsertOrUpdateParagraphTabStopRequest.php">
+ * <copyright company="Aspose" file="DeleteParagraphTabStopWithoutNodePathRequest.php">
  *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -29,9 +29,9 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for insertOrUpdateParagraphTabStop operation.
+ * Request model for deleteParagraphTabStopWithoutNodePath operation.
  */
-class InsertOrUpdateParagraphTabStopRequest
+class DeleteParagraphTabStopWithoutNodePathRequest
 {
     /*
      * The document name.
@@ -39,14 +39,9 @@ class InsertOrUpdateParagraphTabStopRequest
     public $name;
 	
     /*
-     * Paragraph tab stop.
+     * a tab stop position to remove.
      */
-    public $dto;
-	
-    /*
-     * Path to the node which contains paragraph.
-     */
-    public $node_path;
+    public $position;
 	
     /*
      * Object index.
@@ -80,11 +75,10 @@ class InsertOrUpdateParagraphTabStopRequest
     
 	
     /*
-     * Initializes a new instance of the InsertOrUpdateParagraphTabStopRequest class.
+     * Initializes a new instance of the DeleteParagraphTabStopWithoutNodePathRequest class.
      *  
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\TabStopInsert $dto Paragraph tab stop.
-     * @param string $node_path Path to the node which contains paragraph.
+     * @param double $position a tab stop position to remove.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -92,11 +86,10 @@ class InsertOrUpdateParagraphTabStopRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $dto, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    public function __construct($name, $position, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
     {
         $this->name = $name;
-        $this->dto = $dto;
-        $this->node_path = $node_path;
+        $this->position = $position;
         $this->index = $index;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -123,36 +116,19 @@ class InsertOrUpdateParagraphTabStopRequest
     }
 	
     /*
-     * Paragraph tab stop.
+     * a tab stop position to remove.
      */
-    public function get_dto()
+    public function get_position()
     {
-        return $this->dto;
+        return $this->position;
     }
 
     /*
-     * Paragraph tab stop.
+     * a tab stop position to remove.
      */
-    public function set_dto($value)
+    public function set_position($value)
     {
-        $this->dto = $value;
-        return $this;
-    }
-	
-    /*
-     * Path to the node which contains paragraph.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node which contains paragraph.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
+        $this->position = $value;
         return $this;
     }
 	

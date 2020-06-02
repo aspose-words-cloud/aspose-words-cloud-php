@@ -38,12 +38,21 @@ require_once('vendor/autoload.php');
 ### Sample usage
 
 ```php
-$this->words = new WordsApi($creds["AppSid"], $creds["AppKey"], null);
-$upload_request = new Requests\UploadFileRequest($file, 'fileStoredInCloud.doc');
-$upload_result = $words->uploadFile($upload_request);
-$saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => 'destination.pdf'));
-$request = new Requests\SaveAsRequest('fileStoredInCloud.doc', $saveOptions);
-$result = $words->saveAs($request);
+        // Start README example
+
+        // init api ($baseUrl is optional, the default value is https://api.aspose.cloud )
+        $api = new WordsApi($appSid, $appKey, $baseUrl);
+
+        // upload file to cloud
+        $upload_request = new Requests\UploadFileRequest($localFilePath, 'fileStoredInCloud.doc');
+        //$upload_result = $words->uploadFile($upload_request);
+
+        // save as pdf file
+        $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => 'destination.pdf'));
+        $request = new Requests\SaveAsRequest('fileStoredInCloud.doc', $saveOptions);
+        //$result = $words->saveAs($request);
+
+        // End README example
 ```
       
 [Tests](tests/Aspose/Words) contain various examples of using the SDK.
@@ -80,4 +89,3 @@ Your feedback is very important to us. Please feel free to contact us using our 
 We generate our SDKs in different languages so you may check if yours is available in our [list](https://github.com/aspose-words-cloud).
  
 If you don't find your language in the list, feel free to request it from us, or use raw REST API requests as you can find it [here](https://products.aspose.cloud/words/curl).
-

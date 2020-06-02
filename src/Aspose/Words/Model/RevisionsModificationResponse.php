@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RevisionsModificationResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * RevisionsModificationResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description response of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
  */
-class RevisionsModificationResponse extends WordsResponse 
+class RevisionsModificationResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class RevisionsModificationResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'result' => null
+        'result' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class RevisionsModificationResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class RevisionsModificationResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['result'] = isset($data['result']) ? $data['result'] : null;
     }
 
@@ -179,7 +174,6 @@ class RevisionsModificationResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class RevisionsModificationResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets result
      *
@@ -212,16 +205,16 @@ class RevisionsModificationResponse extends WordsResponse
     /*
      * Sets result
      *
-     * @param \Aspose\Words\Model\ModificationOperationResult $result result
+     * @param \Aspose\Words\Model\ModificationOperationResult $result Gets or sets result of the modification operations for the revisions collection.
      *
      * @return $this
      */
     public function setResult($result)
     {
         $this->container['result'] = $result;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class RevisionsModificationResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

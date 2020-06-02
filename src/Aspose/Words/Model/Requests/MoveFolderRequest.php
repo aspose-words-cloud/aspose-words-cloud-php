@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MoveFolderRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -34,35 +34,34 @@ namespace Aspose\Words\Model\Requests;
 class MoveFolderRequest
 {
     /*
-     * Destination folder path to move to e.g '/dst'
+     * Destination folder path to move to e.g '/dst'.
      */
     public $dest_path;
-	
+
     /*
-     * Source folder path e.g. /Folder1
+     * Source folder path e.g. /Folder1.
      */
     public $src_path;
-	
+
     /*
-     * Source storage name
+     * Source storage name.
      */
     public $src_storage_name;
-	
+
     /*
-     * Destination storage name
+     * Destination storage name.
      */
     public $dest_storage_name;
-    
-	
+
     /*
      * Initializes a new instance of the MoveFolderRequest class.
-     *  
-     * @param string $dest_path Destination folder path to move to e.g '/dst'
-     * @param string $src_path Source folder path e.g. /Folder1
-     * @param string $src_storage_name Source storage name
-     * @param string $dest_storage_name Destination storage name
+     *
+     * @param string $dest_path Destination folder path to move to e.g '/dst'.
+     * @param string $src_path Source folder path e.g. /Folder1.
+     * @param string $src_storage_name Source storage name.
+     * @param string $dest_storage_name Destination storage name.
      */
-    public function __construct($dest_path, $src_path, $src_storage_name = null, $dest_storage_name = null)             
+    public function __construct($dest_path, $src_path, $src_storage_name = null, $dest_storage_name = null)
     {
         $this->dest_path = $dest_path;
         $this->src_path = $src_path;
@@ -71,7 +70,7 @@ class MoveFolderRequest
     }
 
     /*
-     * Destination folder path to move to e.g '/dst'
+     * Destination folder path to move to e.g '/dst'.
      */
     public function get_dest_path()
     {
@@ -79,16 +78,16 @@ class MoveFolderRequest
     }
 
     /*
-     * Destination folder path to move to e.g '/dst'
+     * Destination folder path to move to e.g '/dst'.
      */
     public function set_dest_path($value)
     {
         $this->dest_path = $value;
         return $this;
     }
-	
+
     /*
-     * Source folder path e.g. /Folder1
+     * Source folder path e.g. /Folder1.
      */
     public function get_src_path()
     {
@@ -96,16 +95,16 @@ class MoveFolderRequest
     }
 
     /*
-     * Source folder path e.g. /Folder1
+     * Source folder path e.g. /Folder1.
      */
     public function set_src_path($value)
     {
         $this->src_path = $value;
         return $this;
     }
-	
+
     /*
-     * Source storage name
+     * Source storage name.
      */
     public function get_src_storage_name()
     {
@@ -113,16 +112,16 @@ class MoveFolderRequest
     }
 
     /*
-     * Source storage name
+     * Source storage name.
      */
     public function set_src_storage_name($value)
     {
         $this->src_storage_name = $value;
         return $this;
     }
-	
+
     /*
-     * Destination storage name
+     * Destination storage name.
      */
     public function get_dest_storage_name()
     {
@@ -130,7 +129,7 @@ class MoveFolderRequest
     }
 
     /*
-     * Destination storage name
+     * Destination storage name.
      */
     public function set_dest_storage_name($value)
     {

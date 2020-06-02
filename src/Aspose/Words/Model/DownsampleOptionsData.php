@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DownsampleOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * DownsampleOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -67,9 +63,9 @@ class DownsampleOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'downsample_images' => null,
-        'resolution' => 'int32',
-        'resolution_threshold' => 'int32'
+        'downsample_images' => 'null',
+        'resolution' => 'null',
+        'resolution_threshold' => 'null'
     ];
 
     /*
@@ -209,10 +205,8 @@ class DownsampleOptionsData implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets downsample_images
@@ -234,7 +228,6 @@ class DownsampleOptionsData implements ArrayAccess
     public function setDownsampleImages($downsample_images)
     {
         $this->container['downsample_images'] = $downsample_images;
-
         return $this;
     }
 
@@ -258,7 +251,6 @@ class DownsampleOptionsData implements ArrayAccess
     public function setResolution($resolution)
     {
         $this->container['resolution'] = $resolution;
-
         return $this;
     }
 
@@ -282,9 +274,9 @@ class DownsampleOptionsData implements ArrayAccess
     public function setResolutionThreshold($resolution_threshold)
     {
         $this->container['resolution_threshold'] = $resolution_threshold;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -355,3 +347,4 @@ class DownsampleOptionsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

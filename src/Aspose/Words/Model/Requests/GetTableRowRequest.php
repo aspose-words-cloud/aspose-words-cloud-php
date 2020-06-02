@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetTableRowRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,41 +37,40 @@ class GetTableRowRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Path to table.
      */
     public $table_path;
-	
+
     /*
      * Object index.
      */
     public $index;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-    
-	
+
     /*
      * Initializes a new instance of the GetTableRowRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param string $table_path Path to table.
      * @param int $index Object index.
@@ -80,7 +79,7 @@ class GetTableRowRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $table_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($name, $table_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)
     {
         $this->name = $name;
         $this->table_path = $table_path;
@@ -107,7 +106,7 @@ class GetTableRowRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Path to table.
      */
@@ -124,7 +123,7 @@ class GetTableRowRequest
         $this->table_path = $value;
         return $this;
     }
-	
+
     /*
      * Object index.
      */
@@ -141,7 +140,7 @@ class GetTableRowRequest
         $this->index = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -158,7 +157,7 @@ class GetTableRowRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -175,7 +174,7 @@ class GetTableRowRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -192,7 +191,7 @@ class GetTableRowRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */

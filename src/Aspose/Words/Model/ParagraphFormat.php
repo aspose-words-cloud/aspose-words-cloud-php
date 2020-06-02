@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ParagraphFormat.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ParagraphFormat
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Paragraph format element.
  */
-class ParagraphFormat extends LinkElement 
+class ParagraphFormat extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -89,33 +86,33 @@ class ParagraphFormat extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'add_space_between_far_east_and_alpha' => null,
-        'add_space_between_far_east_and_digit' => null,
-        'alignment' => null,
-        'bidi' => null,
-        'drop_cap_position' => null,
-        'first_line_indent' => 'double',
-        'is_list_item' => null,
-        'keep_together' => null,
-        'keep_with_next' => null,
-        'left_indent' => 'double',
-        'line_spacing' => 'double',
-        'line_spacing_rule' => null,
-        'lines_to_drop' => 'int32',
-        'no_space_between_paragraphs_of_same_style' => null,
-        'outline_level' => null,
-        'page_break_before' => null,
-        'right_indent' => 'double',
-        'shading' => null,
-        'space_after' => 'double',
-        'space_after_auto' => null,
-        'space_before' => 'double',
-        'space_before_auto' => null,
-        'style_identifier' => null,
-        'style_name' => null,
-        'suppress_auto_hyphens' => null,
-        'suppress_line_numbers' => null,
-        'widow_control' => null
+        'add_space_between_far_east_and_alpha' => 'null',
+        'add_space_between_far_east_and_digit' => 'null',
+        'alignment' => 'null',
+        'bidi' => 'null',
+        'drop_cap_position' => 'null',
+        'first_line_indent' => 'null',
+        'is_list_item' => 'null',
+        'keep_together' => 'null',
+        'keep_with_next' => 'null',
+        'left_indent' => 'null',
+        'line_spacing' => 'null',
+        'line_spacing_rule' => 'null',
+        'lines_to_drop' => 'null',
+        'no_space_between_paragraphs_of_same_style' => 'null',
+        'outline_level' => 'null',
+        'page_break_before' => 'null',
+        'right_indent' => 'null',
+        'shading' => 'null',
+        'space_after' => 'null',
+        'space_after_auto' => 'null',
+        'space_before' => 'null',
+        'space_before_auto' => 'null',
+        'style_identifier' => 'null',
+        'style_name' => 'null',
+        'suppress_auto_hyphens' => 'null',
+        'suppress_line_numbers' => 'null',
+        'widow_control' => 'null'
     ];
 
     /*
@@ -357,7 +354,7 @@ class ParagraphFormat extends LinkElement
     const STYLE_IDENTIFIER_TABLE_OF_AUTHORITIES = 'TableOfAuthorities';
     const STYLE_IDENTIFIER_MACRO = 'Macro';
     const STYLE_IDENTIFIER_TOA_HEADING = 'ToaHeading';
-    const STYLE_IDENTIFIER__LIST = 'List';
+    const STYLE_IDENTIFIER_LIST = 'List';
     const STYLE_IDENTIFIER_LIST_BULLET = 'ListBullet';
     const STYLE_IDENTIFIER_LIST_NUMBER = 'ListNumber';
     const STYLE_IDENTIFIER_LIST2 = 'List2';
@@ -804,7 +801,7 @@ class ParagraphFormat extends LinkElement
             self::STYLE_IDENTIFIER_TABLE_OF_AUTHORITIES,
             self::STYLE_IDENTIFIER_MACRO,
             self::STYLE_IDENTIFIER_TOA_HEADING,
-            self::STYLE_IDENTIFIER__LIST,
+            self::STYLE_IDENTIFIER_LIST,
             self::STYLE_IDENTIFIER_LIST_BULLET,
             self::STYLE_IDENTIFIER_LIST_NUMBER,
             self::STYLE_IDENTIFIER_LIST2,
@@ -1133,7 +1130,6 @@ class ParagraphFormat extends LinkElement
         ];
     }
 
-
     /*
      * Constructor
      *
@@ -1143,7 +1139,6 @@ class ParagraphFormat extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['add_space_between_far_east_and_alpha'] = isset($data['add_space_between_far_east_and_alpha']) ? $data['add_space_between_far_east_and_alpha'] : null;
         $this->container['add_space_between_far_east_and_digit'] = isset($data['add_space_between_far_east_and_digit']) ? $data['add_space_between_far_east_and_digit'] : null;
         $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
@@ -1181,7 +1176,6 @@ class ParagraphFormat extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         $allowedValues = $this->getAlignmentAllowableValues();
         if (!in_array($this->container['alignment'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -1222,6 +1216,7 @@ class ParagraphFormat extends LinkElement
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -1241,25 +1236,30 @@ class ParagraphFormat extends LinkElement
         if (!in_array($this->container['alignment'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getDropCapPositionAllowableValues();
         if (!in_array($this->container['drop_cap_position'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getLineSpacingRuleAllowableValues();
         if (!in_array($this->container['line_spacing_rule'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getOutlineLevelAllowableValues();
         if (!in_array($this->container['outline_level'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getStyleIdentifierAllowableValues();
         if (!in_array($this->container['style_identifier'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets add_space_between_far_east_and_alpha
@@ -1281,7 +1281,6 @@ class ParagraphFormat extends LinkElement
     public function setAddSpaceBetweenFarEastAndAlpha($add_space_between_far_east_and_alpha)
     {
         $this->container['add_space_between_far_east_and_alpha'] = $add_space_between_far_east_and_alpha;
-
         return $this;
     }
 
@@ -1305,7 +1304,6 @@ class ParagraphFormat extends LinkElement
     public function setAddSpaceBetweenFarEastAndDigit($add_space_between_far_east_and_digit)
     {
         $this->container['add_space_between_far_east_and_digit'] = $add_space_between_far_east_and_digit;
-
         return $this;
     }
 
@@ -1332,9 +1330,7 @@ class ParagraphFormat extends LinkElement
         if ((!is_numeric($alignment) && !in_array($alignment, $allowedValues)) || (is_numeric($alignment) && !in_array($allowedValues[$alignment], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'alignment', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['alignment'] = $alignment;
-
         return $this;
     }
 
@@ -1358,7 +1354,6 @@ class ParagraphFormat extends LinkElement
     public function setBidi($bidi)
     {
         $this->container['bidi'] = $bidi;
-
         return $this;
     }
 
@@ -1385,9 +1380,7 @@ class ParagraphFormat extends LinkElement
         if ((!is_numeric($drop_cap_position) && !in_array($drop_cap_position, $allowedValues)) || (is_numeric($drop_cap_position) && !in_array($allowedValues[$drop_cap_position], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'drop_cap_position', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['drop_cap_position'] = $drop_cap_position;
-
         return $this;
     }
 
@@ -1411,7 +1404,6 @@ class ParagraphFormat extends LinkElement
     public function setFirstLineIndent($first_line_indent)
     {
         $this->container['first_line_indent'] = $first_line_indent;
-
         return $this;
     }
 
@@ -1435,7 +1427,6 @@ class ParagraphFormat extends LinkElement
     public function setIsListItem($is_list_item)
     {
         $this->container['is_list_item'] = $is_list_item;
-
         return $this;
     }
 
@@ -1459,7 +1450,6 @@ class ParagraphFormat extends LinkElement
     public function setKeepTogether($keep_together)
     {
         $this->container['keep_together'] = $keep_together;
-
         return $this;
     }
 
@@ -1483,7 +1473,6 @@ class ParagraphFormat extends LinkElement
     public function setKeepWithNext($keep_with_next)
     {
         $this->container['keep_with_next'] = $keep_with_next;
-
         return $this;
     }
 
@@ -1507,7 +1496,6 @@ class ParagraphFormat extends LinkElement
     public function setLeftIndent($left_indent)
     {
         $this->container['left_indent'] = $left_indent;
-
         return $this;
     }
 
@@ -1531,7 +1519,6 @@ class ParagraphFormat extends LinkElement
     public function setLineSpacing($line_spacing)
     {
         $this->container['line_spacing'] = $line_spacing;
-
         return $this;
     }
 
@@ -1558,9 +1545,7 @@ class ParagraphFormat extends LinkElement
         if ((!is_numeric($line_spacing_rule) && !in_array($line_spacing_rule, $allowedValues)) || (is_numeric($line_spacing_rule) && !in_array($allowedValues[$line_spacing_rule], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'line_spacing_rule', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['line_spacing_rule'] = $line_spacing_rule;
-
         return $this;
     }
 
@@ -1584,7 +1569,6 @@ class ParagraphFormat extends LinkElement
     public function setLinesToDrop($lines_to_drop)
     {
         $this->container['lines_to_drop'] = $lines_to_drop;
-
         return $this;
     }
 
@@ -1608,7 +1592,6 @@ class ParagraphFormat extends LinkElement
     public function setNoSpaceBetweenParagraphsOfSameStyle($no_space_between_paragraphs_of_same_style)
     {
         $this->container['no_space_between_paragraphs_of_same_style'] = $no_space_between_paragraphs_of_same_style;
-
         return $this;
     }
 
@@ -1635,9 +1618,7 @@ class ParagraphFormat extends LinkElement
         if ((!is_numeric($outline_level) && !in_array($outline_level, $allowedValues)) || (is_numeric($outline_level) && !in_array($allowedValues[$outline_level], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'outline_level', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['outline_level'] = $outline_level;
-
         return $this;
     }
 
@@ -1661,7 +1642,6 @@ class ParagraphFormat extends LinkElement
     public function setPageBreakBefore($page_break_before)
     {
         $this->container['page_break_before'] = $page_break_before;
-
         return $this;
     }
 
@@ -1685,7 +1665,6 @@ class ParagraphFormat extends LinkElement
     public function setRightIndent($right_indent)
     {
         $this->container['right_indent'] = $right_indent;
-
         return $this;
     }
 
@@ -1702,14 +1681,13 @@ class ParagraphFormat extends LinkElement
     /*
      * Sets shading
      *
-     * @param \Aspose\Words\Model\Shading $shading shading
+     * @param \Aspose\Words\Model\Shading $shading Gets or sets a Shading object that refers to the shading formatting for the paragraph.
      *
      * @return $this
      */
     public function setShading($shading)
     {
         $this->container['shading'] = $shading;
-
         return $this;
     }
 
@@ -1733,7 +1711,6 @@ class ParagraphFormat extends LinkElement
     public function setSpaceAfter($space_after)
     {
         $this->container['space_after'] = $space_after;
-
         return $this;
     }
 
@@ -1757,7 +1734,6 @@ class ParagraphFormat extends LinkElement
     public function setSpaceAfterAuto($space_after_auto)
     {
         $this->container['space_after_auto'] = $space_after_auto;
-
         return $this;
     }
 
@@ -1781,7 +1757,6 @@ class ParagraphFormat extends LinkElement
     public function setSpaceBefore($space_before)
     {
         $this->container['space_before'] = $space_before;
-
         return $this;
     }
 
@@ -1805,7 +1780,6 @@ class ParagraphFormat extends LinkElement
     public function setSpaceBeforeAuto($space_before_auto)
     {
         $this->container['space_before_auto'] = $space_before_auto;
-
         return $this;
     }
 
@@ -1832,9 +1806,7 @@ class ParagraphFormat extends LinkElement
         if ((!is_numeric($style_identifier) && !in_array($style_identifier, $allowedValues)) || (is_numeric($style_identifier) && !in_array($allowedValues[$style_identifier], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'style_identifier', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['style_identifier'] = $style_identifier;
-
         return $this;
     }
 
@@ -1858,7 +1830,6 @@ class ParagraphFormat extends LinkElement
     public function setStyleName($style_name)
     {
         $this->container['style_name'] = $style_name;
-
         return $this;
     }
 
@@ -1882,7 +1853,6 @@ class ParagraphFormat extends LinkElement
     public function setSuppressAutoHyphens($suppress_auto_hyphens)
     {
         $this->container['suppress_auto_hyphens'] = $suppress_auto_hyphens;
-
         return $this;
     }
 
@@ -1906,7 +1876,6 @@ class ParagraphFormat extends LinkElement
     public function setSuppressLineNumbers($suppress_line_numbers)
     {
         $this->container['suppress_line_numbers'] = $suppress_line_numbers;
-
         return $this;
     }
 
@@ -1930,9 +1899,9 @@ class ParagraphFormat extends LinkElement
     public function setWidowControl($widow_control)
     {
         $this->container['widow_control'] = $widow_control;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -2003,3 +1972,4 @@ class ParagraphFormat extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

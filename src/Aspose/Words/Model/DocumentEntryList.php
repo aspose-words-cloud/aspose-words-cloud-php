@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentEntryList.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * DocumentEntryList
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -65,7 +61,7 @@ class DocumentEntryList implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'document_entries' => null
+        'document_entries' => 'null'
     ];
 
     /*
@@ -197,10 +193,8 @@ class DocumentEntryList implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets document_entries
@@ -222,9 +216,9 @@ class DocumentEntryList implements ArrayAccess
     public function setDocumentEntries($document_entries)
     {
         $this->container['document_entries'] = $document_entries;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -295,3 +289,4 @@ class DocumentEntryList implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

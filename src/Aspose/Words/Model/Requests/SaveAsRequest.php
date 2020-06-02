@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveAsRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,41 +37,40 @@ class SaveAsRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Save options.
      */
     public $save_options_data;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
-    
-	
+
     /*
      * Initializes a new instance of the SaveAsRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param \Aspose\Words\Model\SaveOptionsData $save_options_data Save options.
      * @param string $folder Original document folder.
@@ -80,7 +79,7 @@ class SaveAsRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $save_options_data, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)             
+    public function __construct($name, $save_options_data, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)
     {
         $this->name = $name;
         $this->save_options_data = $save_options_data;
@@ -107,7 +106,7 @@ class SaveAsRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Save options.
      */
@@ -124,7 +123,7 @@ class SaveAsRequest
         $this->save_options_data = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -141,7 +140,7 @@ class SaveAsRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -158,7 +157,7 @@ class SaveAsRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -175,7 +174,7 @@ class SaveAsRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -192,7 +191,7 @@ class SaveAsRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Folder in filestorage with custom fonts.
      */

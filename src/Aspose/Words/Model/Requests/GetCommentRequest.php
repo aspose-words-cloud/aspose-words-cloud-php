@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetCommentRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,36 +37,35 @@ class GetCommentRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * The comment index.
      */
     public $comment_index;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-    
-	
+
     /*
      * Initializes a new instance of the GetCommentRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param int $comment_index The comment index.
      * @param string $folder Original document folder.
@@ -74,7 +73,7 @@ class GetCommentRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $comment_index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($name, $comment_index, $folder = null, $storage = null, $load_encoding = null, $password = null)
     {
         $this->name = $name;
         $this->comment_index = $comment_index;
@@ -100,7 +99,7 @@ class GetCommentRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * The comment index.
      */
@@ -117,7 +116,7 @@ class GetCommentRequest
         $this->comment_index = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -134,7 +133,7 @@ class GetCommentRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -151,7 +150,7 @@ class GetCommentRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -168,7 +167,7 @@ class GetCommentRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentStatisticsRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,46 +37,45 @@ class GetDocumentStatisticsRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Support including/excluding comments from the WordCount. Default value is "false".
      */
     public $include_comments;
-	
+
     /*
      * Support including/excluding footnotes from the WordCount. Default value is "false".
      */
     public $include_footnotes;
-	
+
     /*
      * Support including/excluding shape's text from the WordCount. Default value is "false".
      */
     public $include_text_in_shapes;
-    
-	
+
     /*
      * Initializes a new instance of the GetDocumentStatisticsRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -86,7 +85,7 @@ class GetDocumentStatisticsRequest
      * @param bool $include_footnotes Support including/excluding footnotes from the WordCount. Default value is "false".
      * @param bool $include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is "false".
      */
-    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)             
+    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)
     {
         $this->name = $name;
         $this->folder = $folder;
@@ -114,7 +113,7 @@ class GetDocumentStatisticsRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -131,7 +130,7 @@ class GetDocumentStatisticsRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -148,7 +147,7 @@ class GetDocumentStatisticsRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -165,7 +164,7 @@ class GetDocumentStatisticsRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -182,7 +181,7 @@ class GetDocumentStatisticsRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Support including/excluding comments from the WordCount. Default value is "false".
      */
@@ -199,7 +198,7 @@ class GetDocumentStatisticsRequest
         $this->include_comments = $value;
         return $this;
     }
-	
+
     /*
      * Support including/excluding footnotes from the WordCount. Default value is "false".
      */
@@ -216,7 +215,7 @@ class GetDocumentStatisticsRequest
         $this->include_footnotes = $value;
         return $this;
     }
-	
+
     /*
      * Support including/excluding shape's text from the WordCount. Default value is "false".
      */

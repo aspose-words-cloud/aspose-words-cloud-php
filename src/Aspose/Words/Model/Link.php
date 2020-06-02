@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Link.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * Link
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -41,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class Link implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -58,8 +54,8 @@ class Link implements ArrayAccess
     protected static $swaggerTypes = [
         'href' => 'string',
         'rel' => 'string',
-        'type' => 'string',
-        'title' => 'string'
+        'title' => 'string',
+        'type' => 'string'
     ];
 
     /*
@@ -68,10 +64,10 @@ class Link implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'href' => null,
-        'rel' => null,
-        'type' => null,
-        'title' => null
+        'href' => 'null',
+        'rel' => 'null',
+        'title' => 'null',
+        'type' => 'null'
     ];
 
     /*
@@ -103,8 +99,8 @@ class Link implements ArrayAccess
     protected static $attributeMap = [
         'href' => 'Href',
         'rel' => 'Rel',
-        'type' => 'Type',
-        'title' => 'Title'
+        'title' => 'Title',
+        'type' => 'Type'
     ];
 
     /*
@@ -115,8 +111,8 @@ class Link implements ArrayAccess
     protected static $setters = [
         'href' => 'setHref',
         'rel' => 'setRel',
-        'type' => 'setType',
-        'title' => 'setTitle'
+        'title' => 'setTitle',
+        'type' => 'setType'
     ];
 
     /*
@@ -127,8 +123,8 @@ class Link implements ArrayAccess
     protected static $getters = [
         'href' => 'getHref',
         'rel' => 'getRel',
-        'type' => 'getType',
-        'title' => 'getTitle'
+        'title' => 'getTitle',
+        'type' => 'getType'
     ];
 
     /*
@@ -191,12 +187,8 @@ class Link implements ArrayAccess
     {
         $this->container['href'] = isset($data['href']) ? $data['href'] : null;
         $this->container['rel'] = isset($data['rel']) ? $data['rel'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /*
@@ -219,10 +211,8 @@ class Link implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets href
@@ -237,14 +227,13 @@ class Link implements ArrayAccess
     /*
      * Sets href
      *
-     * @param string $href Gets or sets the \"href\" attribute contains the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.
+     * @param string $href Gets or sets the "href" attribute contains the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.
      *
      * @return $this
      */
     public function setHref($href)
     {
         $this->container['href'] = $href;
-
         return $this;
     }
 
@@ -261,38 +250,13 @@ class Link implements ArrayAccess
     /*
      * Sets rel
      *
-     * @param string $rel Gets or sets atom:link elements MAY have a \"rel\" attribute that indicates the link relation type.  If the \"rel\" attribute is not present, the link element MUST be interpreted as if the link relation type is \"alternate\".
+     * @param string $rel Gets or sets atom:link elements MAY have a "rel" attribute that indicates the link relation type.  If the "rel" attribute is not present, the link element MUST be interpreted as if the link relation type is "alternate".
      *
      * @return $this
      */
     public function setRel($rel)
     {
         $this->container['rel'] = $rel;
-
-        return $this;
-    }
-
-    /*
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /*
-     * Sets type
-     *
-     * @param string $type Gets or sets on the link element, the \"type\" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced.  Note that the type attribute does not override the actual media type returned with the representation.
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
         return $this;
     }
 
@@ -309,16 +273,39 @@ class Link implements ArrayAccess
     /*
      * Sets title
      *
-     * @param string $title Gets or sets the \"title\" attribute conveys human-readable information about the link.  The content of the \"title\" attribute is Language-Sensitive.
+     * @param string $title Gets or sets the "title" attribute conveys human-readable information about the link.  The content of the "title" attribute is Language-Sensitive.
      *
      * @return $this
      */
     public function setTitle($title)
     {
         $this->container['title'] = $title;
-
         return $this;
     }
+
+    /*
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /*
+     * Sets type
+     *
+     * @param string $type Gets or sets on the link element, the "type" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced.  Note that the type attribute does not override the actual media type returned with the representation.
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -389,3 +376,4 @@ class Link implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

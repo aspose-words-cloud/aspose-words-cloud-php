@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StyleInsert.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * StyleInsert
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -66,8 +62,8 @@ class StyleInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'style_name' => null,
-        'style_type' => null
+        'style_name' => 'null',
+        'style_type' => 'null'
     ];
 
     /*
@@ -165,7 +161,7 @@ class StyleInsert implements ArrayAccess
     const STYLE_TYPE_PARAGRAPH = 'Paragraph';
     const STYLE_TYPE_CHARACTER = 'Character';
     const STYLE_TYPE_TABLE = 'Table';
-    const STYLE_TYPE__LIST = 'List';
+    const STYLE_TYPE_LIST = 'List';
 
     /*
      * Gets allowable values of the enum
@@ -178,7 +174,7 @@ class StyleInsert implements ArrayAccess
             self::STYLE_TYPE_PARAGRAPH,
             self::STYLE_TYPE_CHARACTER,
             self::STYLE_TYPE_TABLE,
-            self::STYLE_TYPE__LIST
+            self::STYLE_TYPE_LIST
         ];
     }
 
@@ -218,6 +214,7 @@ class StyleInsert implements ArrayAccess
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -229,14 +226,14 @@ class StyleInsert implements ArrayAccess
      */
     public function valid()
     {
-
         $allowedValues = $this->getStyleTypeAllowableValues();
         if (!in_array($this->container['style_type'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets style_name
@@ -258,7 +255,6 @@ class StyleInsert implements ArrayAccess
     public function setStyleName($style_name)
     {
         $this->container['style_name'] = $style_name;
-
         return $this;
     }
 
@@ -285,11 +281,10 @@ class StyleInsert implements ArrayAccess
         if ((!is_numeric($style_type) && !in_array($style_type, $allowedValues)) || (is_numeric($style_type) && !in_array($allowedValues[$style_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'style_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['style_type'] = $style_type;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -360,3 +355,4 @@ class StyleInsert implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

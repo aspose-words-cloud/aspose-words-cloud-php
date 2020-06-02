@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StringFormatData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * StringFormatData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -69,11 +65,11 @@ class StringFormatData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'alignment' => null,
-        'format_flags' => null,
-        'hotkey_prefix' => null,
-        'line_alignment' => null,
-        'trimming' => null
+        'alignment' => 'null',
+        'format_flags' => 'null',
+        'hotkey_prefix' => 'null',
+        'line_alignment' => 'null',
+        'trimming' => 'null'
     ];
 
     /*
@@ -348,6 +344,7 @@ class StringFormatData implements ArrayAccess
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -359,30 +356,34 @@ class StringFormatData implements ArrayAccess
      */
     public function valid()
     {
-
         $allowedValues = $this->getAlignmentAllowableValues();
         if (!in_array($this->container['alignment'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getFormatFlagsAllowableValues();
         if (!in_array($this->container['format_flags'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getHotkeyPrefixAllowableValues();
         if (!in_array($this->container['hotkey_prefix'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getLineAlignmentAllowableValues();
         if (!in_array($this->container['line_alignment'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getTrimmingAllowableValues();
         if (!in_array($this->container['trimming'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets alignment
@@ -407,9 +408,7 @@ class StringFormatData implements ArrayAccess
         if ((!is_numeric($alignment) && !in_array($alignment, $allowedValues)) || (is_numeric($alignment) && !in_array($allowedValues[$alignment], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'alignment', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['alignment'] = $alignment;
-
         return $this;
     }
 
@@ -436,9 +435,7 @@ class StringFormatData implements ArrayAccess
         if ((!is_numeric($format_flags) && !in_array($format_flags, $allowedValues)) || (is_numeric($format_flags) && !in_array($allowedValues[$format_flags], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'format_flags', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['format_flags'] = $format_flags;
-
         return $this;
     }
 
@@ -465,9 +462,7 @@ class StringFormatData implements ArrayAccess
         if ((!is_numeric($hotkey_prefix) && !in_array($hotkey_prefix, $allowedValues)) || (is_numeric($hotkey_prefix) && !in_array($allowedValues[$hotkey_prefix], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'hotkey_prefix', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['hotkey_prefix'] = $hotkey_prefix;
-
         return $this;
     }
 
@@ -494,9 +489,7 @@ class StringFormatData implements ArrayAccess
         if ((!is_numeric($line_alignment) && !in_array($line_alignment, $allowedValues)) || (is_numeric($line_alignment) && !in_array($allowedValues[$line_alignment], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'line_alignment', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['line_alignment'] = $line_alignment;
-
         return $this;
     }
 
@@ -523,11 +516,10 @@ class StringFormatData implements ArrayAccess
         if ((!is_numeric($trimming) && !in_array($trimming, $allowedValues)) || (is_numeric($trimming) && !in_array($allowedValues[$trimming], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'trimming', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['trimming'] = $trimming;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -598,3 +590,4 @@ class StringFormatData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

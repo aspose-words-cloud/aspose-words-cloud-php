@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WordsResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * WordsResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -41,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class WordsResponse implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -65,7 +61,7 @@ class WordsResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'request_id' => null
+        'request_id' => 'null'
     ];
 
     /*
@@ -175,10 +171,6 @@ class WordsResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -201,10 +193,8 @@ class WordsResponse implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets request_id
@@ -226,9 +216,9 @@ class WordsResponse implements ArrayAccess
     public function setRequestId($request_id)
     {
         $this->container['request_id'] = $request_id;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -299,3 +289,4 @@ class WordsResponse implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

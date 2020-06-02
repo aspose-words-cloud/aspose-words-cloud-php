@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentPosition.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * DocumentPosition
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -66,8 +62,8 @@ class DocumentPosition implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'node' => null,
-        'offset' => 'int32'
+        'node' => 'null',
+        'offset' => 'null'
     ];
 
     /*
@@ -203,10 +199,8 @@ class DocumentPosition implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets node
@@ -221,14 +215,13 @@ class DocumentPosition implements ArrayAccess
     /*
      * Sets node
      *
-     * @param \Aspose\Words\Model\NodeLink $node node
+     * @param \Aspose\Words\Model\NodeLink $node Gets or sets link to  node.
      *
      * @return $this
      */
     public function setNode($node)
     {
         $this->container['node'] = $node;
-
         return $this;
     }
 
@@ -252,9 +245,9 @@ class DocumentPosition implements ArrayAccess
     public function setOffset($offset)
     {
         $this->container['offset'] = $offset;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -325,3 +318,4 @@ class DocumentPosition implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

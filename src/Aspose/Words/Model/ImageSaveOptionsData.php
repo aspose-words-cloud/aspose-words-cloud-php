@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ImageSaveOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ImageSaveOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,9 +34,9 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container abstract class for image save options.
  */
-class ImageSaveOptionsData extends FixedPageSaveOptionsData 
+class ImageSaveOptionsData extends FixedPageSaveOptionsData
 {
-    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -75,19 +72,19 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'graphics_quality_options' => null,
-        'horizontal_resolution' => 'double',
-        'image_brightness' => 'double',
-        'image_color_mode' => null,
-        'image_contrast' => 'double',
-        'paper_color' => null,
-        'pixel_format' => null,
-        'resolution' => 'double',
-        'scale' => 'double',
-        'use_anti_aliasing' => null,
-        'use_gdi_emf_renderer' => null,
-        'use_high_quality_rendering' => null,
-        'vertical_resolution' => 'double'
+        'graphics_quality_options' => 'null',
+        'horizontal_resolution' => 'null',
+        'image_brightness' => 'null',
+        'image_color_mode' => 'null',
+        'image_contrast' => 'null',
+        'paper_color' => 'null',
+        'pixel_format' => 'null',
+        'resolution' => 'null',
+        'scale' => 'null',
+        'use_anti_aliasing' => 'null',
+        'use_gdi_emf_renderer' => 'null',
+        'use_high_quality_rendering' => 'null',
+        'vertical_resolution' => 'null'
     ];
 
     /*
@@ -217,7 +214,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
 
 
 
-
     /*
      * Constructor
      *
@@ -227,7 +223,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['graphics_quality_options'] = isset($data['graphics_quality_options']) ? $data['graphics_quality_options'] : null;
         $this->container['horizontal_resolution'] = isset($data['horizontal_resolution']) ? $data['horizontal_resolution'] : null;
         $this->container['image_brightness'] = isset($data['image_brightness']) ? $data['image_brightness'] : null;
@@ -241,10 +236,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['use_gdi_emf_renderer'] = isset($data['use_gdi_emf_renderer']) ? $data['use_gdi_emf_renderer'] : null;
         $this->container['use_high_quality_rendering'] = isset($data['use_high_quality_rendering']) ? $data['use_high_quality_rendering'] : null;
         $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -255,7 +246,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -274,7 +264,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return true;
     }
 
-
     /*
      * Gets graphics_quality_options
      *
@@ -288,14 +277,13 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets graphics_quality_options
      *
-     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options graphics_quality_options
+     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options Gets or sets allows to specify additional System.Drawing.Graphics quality options.
      *
      * @return $this
      */
     public function setGraphicsQualityOptions($graphics_quality_options)
     {
         $this->container['graphics_quality_options'] = $graphics_quality_options;
-
         return $this;
     }
 
@@ -312,14 +300,13 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets horizontal_resolution
      *
-     * @param double $horizontal_resolution Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+     * @param double $horizontal_resolution Gets or sets the horizontal resolution for the generated images, in dots per inch. This property has effect only when saving to raster image formats. The default value is 96.
      *
      * @return $this
      */
     public function setHorizontalResolution($horizontal_resolution)
     {
         $this->container['horizontal_resolution'] = $horizontal_resolution;
-
         return $this;
     }
 
@@ -343,7 +330,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setImageBrightness($image_brightness)
     {
         $this->container['image_brightness'] = $image_brightness;
-
         return $this;
     }
 
@@ -367,7 +353,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setImageColorMode($image_color_mode)
     {
         $this->container['image_color_mode'] = $image_color_mode;
-
         return $this;
     }
 
@@ -391,7 +376,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setImageContrast($image_contrast)
     {
         $this->container['image_contrast'] = $image_contrast;
-
         return $this;
     }
 
@@ -415,7 +399,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setPaperColor($paper_color)
     {
         $this->container['paper_color'] = $paper_color;
-
         return $this;
     }
 
@@ -439,7 +422,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setPixelFormat($pixel_format)
     {
         $this->container['pixel_format'] = $pixel_format;
-
         return $this;
     }
 
@@ -456,14 +438,13 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resolution
      *
-     * @param double $resolution Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+     * @param double $resolution Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch. This property has effect only when saving to raster image formats. The default value is 96.
      *
      * @return $this
      */
     public function setResolution($resolution)
     {
         $this->container['resolution'] = $resolution;
-
         return $this;
     }
 
@@ -487,7 +468,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setScale($scale)
     {
         $this->container['scale'] = $scale;
-
         return $this;
     }
 
@@ -511,7 +491,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseAntiAliasing($use_anti_aliasing)
     {
         $this->container['use_anti_aliasing'] = $use_anti_aliasing;
-
         return $this;
     }
 
@@ -535,7 +514,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseGdiEmfRenderer($use_gdi_emf_renderer)
     {
         $this->container['use_gdi_emf_renderer'] = $use_gdi_emf_renderer;
-
         return $this;
     }
 
@@ -559,7 +537,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseHighQualityRendering($use_high_quality_rendering)
     {
         $this->container['use_high_quality_rendering'] = $use_high_quality_rendering;
-
         return $this;
     }
 
@@ -576,16 +553,16 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets vertical_resolution
      *
-     * @param double $vertical_resolution Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+     * @param double $vertical_resolution Gets or sets the vertical resolution for the generated images, in dots per inch. This property has effect only when saving to raster image formats. The default value is 96.
      *
      * @return $this
      */
     public function setVerticalResolution($vertical_resolution)
     {
         $this->container['vertical_resolution'] = $vertical_resolution;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -656,3 +633,4 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

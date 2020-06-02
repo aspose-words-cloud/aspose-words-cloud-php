@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WordsApiErrorResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * WordsApiErrorResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Response for Api error.
  */
-class WordsApiErrorResponse extends WordsResponse 
+class WordsApiErrorResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class WordsApiErrorResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'error' => null
+        'error' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class WordsApiErrorResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class WordsApiErrorResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
     }
 
@@ -179,7 +174,6 @@ class WordsApiErrorResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class WordsApiErrorResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets error
      *
@@ -212,16 +205,16 @@ class WordsApiErrorResponse extends WordsResponse
     /*
      * Sets error
      *
-     * @param \Aspose\Words\Model\ApiError $error error
+     * @param \Aspose\Words\Model\ApiError $error Gets or sets error.
      *
      * @return $this
      */
     public function setError($error)
     {
         $this->container['error'] = $error;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class WordsApiErrorResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

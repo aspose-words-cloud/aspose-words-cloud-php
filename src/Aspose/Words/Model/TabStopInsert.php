@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TabStopInsert.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * TabStopInsert
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description A DTO to Insert / replace a tab stop.
  */
-class TabStopInsert extends TabStopBase 
+class TabStopInsert extends TabStopBase
 {
     const DISCRIMINATOR = null;
 
@@ -152,7 +149,6 @@ class TabStopInsert extends TabStopBase
 
 
 
-
     /*
      * Constructor
      *
@@ -162,7 +158,6 @@ class TabStopInsert extends TabStopBase
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
     }
 
     /*
@@ -173,7 +168,6 @@ class TabStopInsert extends TabStopBase
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -191,6 +185,7 @@ class TabStopInsert extends TabStopBase
 
         return true;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.
@@ -262,3 +257,4 @@ class TabStopInsert extends TabStopBase
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

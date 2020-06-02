@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ApiError.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ApiError
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -57,10 +53,10 @@ class ApiError implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'code' => 'string',
-        'message' => 'string',
-        'description' => 'string',
         'date_time' => '\DateTime',
-        'inner_error' => '\Aspose\Words\Model\ApiError'
+        'description' => 'string',
+        'inner_error' => '\Aspose\Words\Model\ApiError',
+        'message' => 'string'
     ];
 
     /*
@@ -69,11 +65,11 @@ class ApiError implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'code' => null,
-        'message' => null,
-        'description' => null,
-        'date_time' => 'date-time',
-        'inner_error' => null
+        'code' => 'null',
+        'date_time' => 'null',
+        'description' => 'null',
+        'inner_error' => 'null',
+        'message' => 'null'
     ];
 
     /*
@@ -104,10 +100,10 @@ class ApiError implements ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'Code',
-        'message' => 'Message',
-        'description' => 'Description',
         'date_time' => 'DateTime',
-        'inner_error' => 'InnerError'
+        'description' => 'Description',
+        'inner_error' => 'InnerError',
+        'message' => 'Message'
     ];
 
     /*
@@ -117,10 +113,10 @@ class ApiError implements ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
-        'message' => 'setMessage',
-        'description' => 'setDescription',
         'date_time' => 'setDateTime',
-        'inner_error' => 'setInnerError'
+        'description' => 'setDescription',
+        'inner_error' => 'setInnerError',
+        'message' => 'setMessage'
     ];
 
     /*
@@ -130,10 +126,10 @@ class ApiError implements ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
-        'message' => 'getMessage',
-        'description' => 'getDescription',
         'date_time' => 'getDateTime',
-        'inner_error' => 'getInnerError'
+        'description' => 'getDescription',
+        'inner_error' => 'getInnerError',
+        'message' => 'getMessage'
     ];
 
     /*
@@ -195,10 +191,10 @@ class ApiError implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['inner_error'] = isset($data['inner_error']) ? $data['inner_error'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
     /*
@@ -221,10 +217,8 @@ class ApiError implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets code
@@ -246,55 +240,6 @@ class ApiError implements ArrayAccess
     public function setCode($code)
     {
         $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /*
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /*
-     * Sets message
-     *
-     * @param string $message Gets or sets error message.
-     *
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /*
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /*
-     * Sets description
-     *
-     * @param string $description Gets or sets error description.
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
         return $this;
     }
 
@@ -318,7 +263,29 @@ class ApiError implements ArrayAccess
     public function setDateTime($date_time)
     {
         $this->container['date_time'] = $date_time;
+        return $this;
+    }
 
+    /*
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /*
+     * Sets description
+     *
+     * @param string $description Gets or sets error description.
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
         return $this;
     }
 
@@ -335,16 +302,39 @@ class ApiError implements ArrayAccess
     /*
      * Sets inner_error
      *
-     * @param \Aspose\Words\Model\ApiError $inner_error inner_error
+     * @param \Aspose\Words\Model\ApiError $inner_error Gets or sets inner error.
      *
      * @return $this
      */
     public function setInnerError($inner_error)
     {
         $this->container['inner_error'] = $inner_error;
-
         return $this;
     }
+
+    /*
+     * Gets message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /*
+     * Sets message
+     *
+     * @param string $message Gets or sets error message.
+     *
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -415,3 +405,4 @@ class ApiError implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

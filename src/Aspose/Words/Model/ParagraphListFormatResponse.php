@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ParagraphListFormatResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ParagraphListFormatResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/listFormat.
  */
-class ParagraphListFormatResponse extends WordsResponse 
+class ParagraphListFormatResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class ParagraphListFormatResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list_format' => null
+        'list_format' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class ParagraphListFormatResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class ParagraphListFormatResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['list_format'] = isset($data['list_format']) ? $data['list_format'] : null;
     }
 
@@ -179,7 +174,6 @@ class ParagraphListFormatResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class ParagraphListFormatResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets list_format
      *
@@ -212,16 +205,16 @@ class ParagraphListFormatResponse extends WordsResponse
     /*
      * Sets list_format
      *
-     * @param \Aspose\Words\Model\ListFormat $list_format list_format
+     * @param \Aspose\Words\Model\ListFormat $list_format Gets or sets the list format for a paragraph.
      *
      * @return $this
      */
     public function setListFormat($list_format)
     {
         $this->container['list_format'] = $list_format;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class ParagraphListFormatResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SplitDocumentResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SplitDocumentResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  POST /{name}/split .
  */
-class SplitDocumentResponse extends WordsResponse 
+class SplitDocumentResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class SplitDocumentResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'split_result' => null
+        'split_result' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class SplitDocumentResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class SplitDocumentResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['split_result'] = isset($data['split_result']) ? $data['split_result'] : null;
     }
 
@@ -179,7 +174,6 @@ class SplitDocumentResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class SplitDocumentResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets split_result
      *
@@ -212,16 +205,16 @@ class SplitDocumentResponse extends WordsResponse
     /*
      * Sets split_result
      *
-     * @param \Aspose\Words\Model\SplitDocumentResult $split_result split_result
+     * @param \Aspose\Words\Model\SplitDocumentResult $split_result Gets or sets resylt of splitting document.
      *
      * @return $this
      */
     public function setSplitResult($split_result)
     {
         $this->container['split_result'] = $split_result;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class SplitDocumentResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

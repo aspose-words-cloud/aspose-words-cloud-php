@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OutlineOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * OutlineOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -57,9 +53,9 @@ class OutlineOptionsData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'bookmarks_outline_levels' => '\Aspose\Words\Model\BookmarksOutlineLevelData[]',
-        'default_bookmarks_outline_level' => 'int',
         'create_missing_outline_levels' => 'bool',
         'create_outlines_for_headings_in_tables' => 'bool',
+        'default_bookmarks_outline_level' => 'int',
         'expanded_outline_levels' => 'int',
         'headings_outline_levels' => 'int'
     ];
@@ -70,12 +66,12 @@ class OutlineOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'bookmarks_outline_levels' => null,
-        'default_bookmarks_outline_level' => 'int32',
-        'create_missing_outline_levels' => null,
-        'create_outlines_for_headings_in_tables' => null,
-        'expanded_outline_levels' => 'int32',
-        'headings_outline_levels' => 'int32'
+        'bookmarks_outline_levels' => 'null',
+        'create_missing_outline_levels' => 'null',
+        'create_outlines_for_headings_in_tables' => 'null',
+        'default_bookmarks_outline_level' => 'null',
+        'expanded_outline_levels' => 'null',
+        'headings_outline_levels' => 'null'
     ];
 
     /*
@@ -106,9 +102,9 @@ class OutlineOptionsData implements ArrayAccess
      */
     protected static $attributeMap = [
         'bookmarks_outline_levels' => 'BookmarksOutlineLevels',
-        'default_bookmarks_outline_level' => 'DefaultBookmarksOutlineLevel',
         'create_missing_outline_levels' => 'CreateMissingOutlineLevels',
         'create_outlines_for_headings_in_tables' => 'CreateOutlinesForHeadingsInTables',
+        'default_bookmarks_outline_level' => 'DefaultBookmarksOutlineLevel',
         'expanded_outline_levels' => 'ExpandedOutlineLevels',
         'headings_outline_levels' => 'HeadingsOutlineLevels'
     ];
@@ -120,9 +116,9 @@ class OutlineOptionsData implements ArrayAccess
      */
     protected static $setters = [
         'bookmarks_outline_levels' => 'setBookmarksOutlineLevels',
-        'default_bookmarks_outline_level' => 'setDefaultBookmarksOutlineLevel',
         'create_missing_outline_levels' => 'setCreateMissingOutlineLevels',
         'create_outlines_for_headings_in_tables' => 'setCreateOutlinesForHeadingsInTables',
+        'default_bookmarks_outline_level' => 'setDefaultBookmarksOutlineLevel',
         'expanded_outline_levels' => 'setExpandedOutlineLevels',
         'headings_outline_levels' => 'setHeadingsOutlineLevels'
     ];
@@ -134,9 +130,9 @@ class OutlineOptionsData implements ArrayAccess
      */
     protected static $getters = [
         'bookmarks_outline_levels' => 'getBookmarksOutlineLevels',
-        'default_bookmarks_outline_level' => 'getDefaultBookmarksOutlineLevel',
         'create_missing_outline_levels' => 'getCreateMissingOutlineLevels',
         'create_outlines_for_headings_in_tables' => 'getCreateOutlinesForHeadingsInTables',
+        'default_bookmarks_outline_level' => 'getDefaultBookmarksOutlineLevel',
         'expanded_outline_levels' => 'getExpandedOutlineLevels',
         'headings_outline_levels' => 'getHeadingsOutlineLevels'
     ];
@@ -200,9 +196,9 @@ class OutlineOptionsData implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['bookmarks_outline_levels'] = isset($data['bookmarks_outline_levels']) ? $data['bookmarks_outline_levels'] : null;
-        $this->container['default_bookmarks_outline_level'] = isset($data['default_bookmarks_outline_level']) ? $data['default_bookmarks_outline_level'] : null;
         $this->container['create_missing_outline_levels'] = isset($data['create_missing_outline_levels']) ? $data['create_missing_outline_levels'] : null;
         $this->container['create_outlines_for_headings_in_tables'] = isset($data['create_outlines_for_headings_in_tables']) ? $data['create_outlines_for_headings_in_tables'] : null;
+        $this->container['default_bookmarks_outline_level'] = isset($data['default_bookmarks_outline_level']) ? $data['default_bookmarks_outline_level'] : null;
         $this->container['expanded_outline_levels'] = isset($data['expanded_outline_levels']) ? $data['expanded_outline_levels'] : null;
         $this->container['headings_outline_levels'] = isset($data['headings_outline_levels']) ? $data['headings_outline_levels'] : null;
     }
@@ -227,10 +223,8 @@ class OutlineOptionsData implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets bookmarks_outline_levels
@@ -252,7 +246,52 @@ class OutlineOptionsData implements ArrayAccess
     public function setBookmarksOutlineLevels($bookmarks_outline_levels)
     {
         $this->container['bookmarks_outline_levels'] = $bookmarks_outline_levels;
+        return $this;
+    }
 
+    /*
+     * Gets create_missing_outline_levels
+     *
+     * @return bool
+     */
+    public function getCreateMissingOutlineLevels()
+    {
+        return $this->container['create_missing_outline_levels'];
+    }
+
+    /*
+     * Sets create_missing_outline_levels
+     *
+     * @param bool $create_missing_outline_levels Gets or sets a value determining whether or not to create missing outline levels when the document is exported. Default value for this property is false.
+     *
+     * @return $this
+     */
+    public function setCreateMissingOutlineLevels($create_missing_outline_levels)
+    {
+        $this->container['create_missing_outline_levels'] = $create_missing_outline_levels;
+        return $this;
+    }
+
+    /*
+     * Gets create_outlines_for_headings_in_tables
+     *
+     * @return bool
+     */
+    public function getCreateOutlinesForHeadingsInTables()
+    {
+        return $this->container['create_outlines_for_headings_in_tables'];
+    }
+
+    /*
+     * Sets create_outlines_for_headings_in_tables
+     *
+     * @param bool $create_outlines_for_headings_in_tables Gets or sets specifies whether or not to create outlines for headings (paragraphs formatted with the Heading styles) inside tables.
+     *
+     * @return $this
+     */
+    public function setCreateOutlinesForHeadingsInTables($create_outlines_for_headings_in_tables)
+    {
+        $this->container['create_outlines_for_headings_in_tables'] = $create_outlines_for_headings_in_tables;
         return $this;
     }
 
@@ -276,55 +315,6 @@ class OutlineOptionsData implements ArrayAccess
     public function setDefaultBookmarksOutlineLevel($default_bookmarks_outline_level)
     {
         $this->container['default_bookmarks_outline_level'] = $default_bookmarks_outline_level;
-
-        return $this;
-    }
-
-    /*
-     * Gets create_missing_outline_levels
-     *
-     * @return bool
-     */
-    public function getCreateMissingOutlineLevels()
-    {
-        return $this->container['create_missing_outline_levels'];
-    }
-
-    /*
-     * Sets create_missing_outline_levels
-     *
-     * @param bool $create_missing_outline_levels Gets or sets a value determining whether or not to create missing outline levels     when the document is exported.     Default value for this property is false.
-     *
-     * @return $this
-     */
-    public function setCreateMissingOutlineLevels($create_missing_outline_levels)
-    {
-        $this->container['create_missing_outline_levels'] = $create_missing_outline_levels;
-
-        return $this;
-    }
-
-    /*
-     * Gets create_outlines_for_headings_in_tables
-     *
-     * @return bool
-     */
-    public function getCreateOutlinesForHeadingsInTables()
-    {
-        return $this->container['create_outlines_for_headings_in_tables'];
-    }
-
-    /*
-     * Sets create_outlines_for_headings_in_tables
-     *
-     * @param bool $create_outlines_for_headings_in_tables Gets or sets specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.
-     *
-     * @return $this
-     */
-    public function setCreateOutlinesForHeadingsInTables($create_outlines_for_headings_in_tables)
-    {
-        $this->container['create_outlines_for_headings_in_tables'] = $create_outlines_for_headings_in_tables;
-
         return $this;
     }
 
@@ -348,7 +338,6 @@ class OutlineOptionsData implements ArrayAccess
     public function setExpandedOutlineLevels($expanded_outline_levels)
     {
         $this->container['expanded_outline_levels'] = $expanded_outline_levels;
-
         return $this;
     }
 
@@ -372,9 +361,9 @@ class OutlineOptionsData implements ArrayAccess
     public function setHeadingsOutlineLevels($headings_outline_levels)
     {
         $this->container['headings_outline_levels'] = $headings_outline_levels;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -445,3 +434,4 @@ class OutlineOptionsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

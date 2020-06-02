@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StorageFile.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,17 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * StorageFile
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
  * StorageFile
  *
- * @description File or folder information
+ * @description File or folder information.
  */
 class StorageFile implements ArrayAccess
 {
@@ -56,11 +52,11 @@ class StorageFile implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
         'is_folder' => 'bool',
         'modified_date' => '\DateTime',
-        'size' => 'int',
-        'path' => 'string'
+        'name' => 'string',
+        'path' => 'string',
+        'size' => 'int'
     ];
 
     /*
@@ -69,11 +65,11 @@ class StorageFile implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-        'is_folder' => null,
-        'modified_date' => 'date-time',
-        'size' => 'int64',
-        'path' => null
+        'is_folder' => 'null',
+        'modified_date' => 'null',
+        'name' => 'null',
+        'path' => 'null',
+        'size' => 'null'
     ];
 
     /*
@@ -103,11 +99,11 @@ class StorageFile implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
         'is_folder' => 'IsFolder',
         'modified_date' => 'ModifiedDate',
-        'size' => 'Size',
-        'path' => 'Path'
+        'name' => 'Name',
+        'path' => 'Path',
+        'size' => 'Size'
     ];
 
     /*
@@ -116,11 +112,11 @@ class StorageFile implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'is_folder' => 'setIsFolder',
         'modified_date' => 'setModifiedDate',
-        'size' => 'setSize',
-        'path' => 'setPath'
+        'name' => 'setName',
+        'path' => 'setPath',
+        'size' => 'setSize'
     ];
 
     /*
@@ -129,11 +125,11 @@ class StorageFile implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'is_folder' => 'getIsFolder',
         'modified_date' => 'getModifiedDate',
-        'size' => 'getSize',
-        'path' => 'getPath'
+        'name' => 'getName',
+        'path' => 'getPath',
+        'size' => 'getSize'
     ];
 
     /*
@@ -194,11 +190,11 @@ class StorageFile implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['is_folder'] = isset($data['is_folder']) ? $data['is_folder'] : null;
         $this->container['modified_date'] = isset($data['modified_date']) ? $data['modified_date'] : null;
-        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['path'] = isset($data['path']) ? $data['path'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
     }
 
     /*
@@ -221,33 +217,7 @@ class StorageFile implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /*
-     * Sets name
-     *
-     * @param string $name File or folder name.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
     }
 
     /*
@@ -270,7 +240,6 @@ class StorageFile implements ArrayAccess
     public function setIsFolder($is_folder)
     {
         $this->container['is_folder'] = $is_folder;
-
         return $this;
     }
 
@@ -294,31 +263,29 @@ class StorageFile implements ArrayAccess
     public function setModifiedDate($modified_date)
     {
         $this->container['modified_date'] = $modified_date;
-
         return $this;
     }
 
     /*
-     * Gets size
+     * Gets name
      *
-     * @return int
+     * @return string
      */
-    public function getSize()
+    public function getName()
     {
-        return $this->container['size'];
+        return $this->container['name'];
     }
 
     /*
-     * Sets size
+     * Sets name
      *
-     * @param int $size File or folder size.
+     * @param string $name File or folder name.
      *
      * @return $this
      */
-    public function setSize($size)
+    public function setName($name)
     {
-        $this->container['size'] = $size;
-
+        $this->container['name'] = $name;
         return $this;
     }
 
@@ -342,9 +309,32 @@ class StorageFile implements ArrayAccess
     public function setPath($path)
     {
         $this->container['path'] = $path;
-
         return $this;
     }
+
+    /*
+     * Gets size
+     *
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->container['size'];
+    }
+
+    /*
+     * Sets size
+     *
+     * @param int $size File or folder size.
+     *
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        $this->container['size'] = $size;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -415,3 +405,4 @@ class StorageFile implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,11 +1,11 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ApiException.php">
- *  Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words;
@@ -86,12 +86,12 @@ class ApiException extends Exception
         $this->responseBody = $responseBody;
         if ($responseBody !== NULL){
             $errorObject =  json_decode($responseBody);
-			if($errorObject != NULL){
+            if($errorObject != NULL){
                 if(property_exists($errorObject, 'RequestId')) {
                     $this->requestId = $errorObject->RequestId;
                 }
-				$this->responseError = $this->__generateApiError($errorObject->Error);
-			}
+                $this->responseError = $this->__generateApiError($errorObject->Error);
+            }
         }
     }
 

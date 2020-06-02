@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HeaderFooter.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * HeaderFooter
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Section element.
  */
-class HeaderFooter extends HeaderFooterLink 
+class HeaderFooter extends HeaderFooterLink
 {
     const DISCRIMINATOR = null;
 
@@ -65,9 +62,9 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'child_nodes' => null,
-        'drawing_objects' => null,
-        'paragraphs' => null
+        'child_nodes' => 'null',
+        'drawing_objects' => 'null',
+        'paragraphs' => 'null'
     ];
 
     /*
@@ -167,7 +164,6 @@ class HeaderFooter extends HeaderFooterLink
 
 
 
-
     /*
      * Constructor
      *
@@ -177,7 +173,6 @@ class HeaderFooter extends HeaderFooterLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['child_nodes'] = isset($data['child_nodes']) ? $data['child_nodes'] : null;
         $this->container['drawing_objects'] = isset($data['drawing_objects']) ? $data['drawing_objects'] : null;
         $this->container['paragraphs'] = isset($data['paragraphs']) ? $data['paragraphs'] : null;
@@ -191,7 +186,6 @@ class HeaderFooter extends HeaderFooterLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -209,7 +203,6 @@ class HeaderFooter extends HeaderFooterLink
 
         return true;
     }
-
 
     /*
      * Gets child_nodes
@@ -231,7 +224,6 @@ class HeaderFooter extends HeaderFooterLink
     public function setChildNodes($child_nodes)
     {
         $this->container['child_nodes'] = $child_nodes;
-
         return $this;
     }
 
@@ -248,14 +240,13 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets drawing_objects
      *
-     * @param \Aspose\Words\Model\LinkElement $drawing_objects drawing_objects
+     * @param \Aspose\Words\Model\LinkElement $drawing_objects Gets or sets link to DrawingObjects resource.
      *
      * @return $this
      */
     public function setDrawingObjects($drawing_objects)
     {
         $this->container['drawing_objects'] = $drawing_objects;
-
         return $this;
     }
 
@@ -272,16 +263,16 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs paragraphs
+     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets link to Paragraphs resource.
      *
      * @return $this
      */
     public function setParagraphs($paragraphs)
     {
         $this->container['paragraphs'] = $paragraphs;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -352,3 +343,4 @@ class HeaderFooter extends HeaderFooterLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

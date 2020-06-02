@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PdfEncryptionDetailsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * PdfEncryptionDetailsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -68,10 +64,10 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'encryption_algorithm' => null,
-        'owner_password' => null,
-        'permissions' => null,
-        'user_password' => null
+        'encryption_algorithm' => 'null',
+        'owner_password' => 'null',
+        'permissions' => 'null',
+        'user_password' => 'null'
     ];
 
     /*
@@ -215,10 +211,8 @@ class PdfEncryptionDetailsData implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets encryption_algorithm
@@ -240,7 +234,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
     public function setEncryptionAlgorithm($encryption_algorithm)
     {
         $this->container['encryption_algorithm'] = $encryption_algorithm;
-
         return $this;
     }
 
@@ -264,7 +257,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
     public function setOwnerPassword($owner_password)
     {
         $this->container['owner_password'] = $owner_password;
-
         return $this;
     }
 
@@ -288,7 +280,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
     public function setPermissions($permissions)
     {
         $this->container['permissions'] = $permissions;
-
         return $this;
     }
 
@@ -312,9 +303,9 @@ class PdfEncryptionDetailsData implements ArrayAccess
     public function setUserPassword($user_password)
     {
         $this->container['user_password'] = $user_password;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -385,3 +376,4 @@ class PdfEncryptionDetailsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

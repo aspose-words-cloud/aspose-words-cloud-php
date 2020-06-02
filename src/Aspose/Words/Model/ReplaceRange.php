@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReplaceRange.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ReplaceRange
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -66,8 +62,8 @@ class ReplaceRange implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'text' => null,
-        'text_type' => null
+        'text' => 'null',
+        'text_type' => 'null'
     ];
 
     /*
@@ -214,6 +210,7 @@ class ReplaceRange implements ArrayAccess
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -225,14 +222,14 @@ class ReplaceRange implements ArrayAccess
      */
     public function valid()
     {
-
         $allowedValues = $this->getTextTypeAllowableValues();
         if (!in_array($this->container['text_type'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets text
@@ -254,7 +251,6 @@ class ReplaceRange implements ArrayAccess
     public function setText($text)
     {
         $this->container['text'] = $text;
-
         return $this;
     }
 
@@ -281,11 +277,10 @@ class ReplaceRange implements ArrayAccess
         if ((!is_numeric($text_type) && !in_array($text_type, $allowedValues)) || (is_numeric($text_type) && !in_array($allowedValues[$text_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'text_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['text_type'] = $text_type;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -356,3 +351,4 @@ class ReplaceRange implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

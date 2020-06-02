@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FontInfo.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * FontInfo
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,10 +52,10 @@ class FontInfo implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'file_path' => 'string',
         'font_family_name' => 'string',
         'full_font_name' => 'string',
-        'version' => 'string',
-        'file_path' => 'string'
+        'version' => 'string'
     ];
 
     /*
@@ -68,10 +64,10 @@ class FontInfo implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'font_family_name' => null,
-        'full_font_name' => null,
-        'version' => null,
-        'file_path' => null
+        'file_path' => 'null',
+        'font_family_name' => 'null',
+        'full_font_name' => 'null',
+        'version' => 'null'
     ];
 
     /*
@@ -101,10 +97,10 @@ class FontInfo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'file_path' => 'FilePath',
         'font_family_name' => 'FontFamilyName',
         'full_font_name' => 'FullFontName',
-        'version' => 'Version',
-        'file_path' => 'FilePath'
+        'version' => 'Version'
     ];
 
     /*
@@ -113,10 +109,10 @@ class FontInfo implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'file_path' => 'setFilePath',
         'font_family_name' => 'setFontFamilyName',
         'full_font_name' => 'setFullFontName',
-        'version' => 'setVersion',
-        'file_path' => 'setFilePath'
+        'version' => 'setVersion'
     ];
 
     /*
@@ -125,10 +121,10 @@ class FontInfo implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'file_path' => 'getFilePath',
         'font_family_name' => 'getFontFamilyName',
         'full_font_name' => 'getFullFontName',
-        'version' => 'getVersion',
-        'file_path' => 'getFilePath'
+        'version' => 'getVersion'
     ];
 
     /*
@@ -189,10 +185,10 @@ class FontInfo implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['file_path'] = isset($data['file_path']) ? $data['file_path'] : null;
         $this->container['font_family_name'] = isset($data['font_family_name']) ? $data['font_family_name'] : null;
         $this->container['full_font_name'] = isset($data['full_font_name']) ? $data['full_font_name'] : null;
         $this->container['version'] = isset($data['version']) ? $data['version'] : null;
-        $this->container['file_path'] = isset($data['file_path']) ? $data['file_path'] : null;
     }
 
     /*
@@ -215,10 +211,31 @@ class FontInfo implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
 
+    /*
+     * Gets file_path
+     *
+     * @return string
+     */
+    public function getFilePath()
+    {
+        return $this->container['file_path'];
+    }
+
+    /*
+     * Sets file_path
+     *
+     * @param string $file_path Gets or sets path to the font file if any.
+     *
+     * @return $this
+     */
+    public function setFilePath($file_path)
+    {
+        $this->container['file_path'] = $file_path;
+        return $this;
+    }
 
     /*
      * Gets font_family_name
@@ -240,7 +257,6 @@ class FontInfo implements ArrayAccess
     public function setFontFamilyName($font_family_name)
     {
         $this->container['font_family_name'] = $font_family_name;
-
         return $this;
     }
 
@@ -264,7 +280,6 @@ class FontInfo implements ArrayAccess
     public function setFullFontName($full_font_name)
     {
         $this->container['full_font_name'] = $full_font_name;
-
         return $this;
     }
 
@@ -288,33 +303,9 @@ class FontInfo implements ArrayAccess
     public function setVersion($version)
     {
         $this->container['version'] = $version;
-
         return $this;
     }
 
-    /*
-     * Gets file_path
-     *
-     * @return string
-     */
-    public function getFilePath()
-    {
-        return $this->container['file_path'];
-    }
-
-    /*
-     * Sets file_path
-     *
-     * @param string $file_path Gets or sets path to the font file if any.
-     *
-     * @return $this
-     */
-    public function setFilePath($file_path)
-    {
-        $this->container['file_path'] = $file_path;
-
-        return $this;
-    }
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -385,3 +376,4 @@ class FontInfo implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

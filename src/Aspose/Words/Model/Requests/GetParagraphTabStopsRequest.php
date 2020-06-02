@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetParagraphTabStopsRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,41 +37,40 @@ class GetParagraphTabStopsRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Path to the node which contains paragraph.
      */
     public $node_path;
-	
+
     /*
      * Object index.
      */
     public $index;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-    
-	
+
     /*
      * Initializes a new instance of the GetParagraphTabStopsRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param string $node_path Path to the node which contains paragraph.
      * @param int $index Object index.
@@ -80,7 +79,7 @@ class GetParagraphTabStopsRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($name, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)
     {
         $this->name = $name;
         $this->node_path = $node_path;
@@ -107,7 +106,7 @@ class GetParagraphTabStopsRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Path to the node which contains paragraph.
      */
@@ -124,7 +123,7 @@ class GetParagraphTabStopsRequest
         $this->node_path = $value;
         return $this;
     }
-	
+
     /*
      * Object index.
      */
@@ -141,7 +140,7 @@ class GetParagraphTabStopsRequest
         $this->index = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -158,7 +157,7 @@ class GetParagraphTabStopsRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -175,7 +174,7 @@ class GetParagraphTabStopsRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -192,7 +191,7 @@ class GetParagraphTabStopsRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */

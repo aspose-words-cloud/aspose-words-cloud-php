@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CommentLink.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * CommentLink
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,9 +34,9 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Comment link.
  */
-class CommentLink extends LinkElement 
+class CommentLink extends LinkElement
 {
-    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -152,7 +149,6 @@ class CommentLink extends LinkElement
 
 
 
-
     /*
      * Constructor
      *
@@ -162,11 +158,6 @@ class CommentLink extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -177,7 +168,6 @@ class CommentLink extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -195,6 +185,7 @@ class CommentLink extends LinkElement
 
         return true;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.
@@ -266,3 +257,4 @@ class CommentLink extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

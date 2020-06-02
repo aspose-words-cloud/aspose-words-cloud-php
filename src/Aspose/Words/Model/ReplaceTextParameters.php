@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReplaceTextParameters.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ReplaceTextParameters
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,11 +52,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'old_value' => 'string',
-        'new_value' => 'string',
         'is_match_case' => 'bool',
         'is_match_whole_word' => 'bool',
-        'is_old_value_regex' => 'bool'
+        'is_old_value_regex' => 'bool',
+        'new_value' => 'string',
+        'old_value' => 'string'
     ];
 
     /*
@@ -69,11 +65,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'old_value' => null,
-        'new_value' => null,
-        'is_match_case' => null,
-        'is_match_whole_word' => null,
-        'is_old_value_regex' => null
+        'is_match_case' => 'null',
+        'is_match_whole_word' => 'null',
+        'is_old_value_regex' => 'null',
+        'new_value' => 'null',
+        'old_value' => 'null'
     ];
 
     /*
@@ -103,11 +99,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'old_value' => 'OldValue',
-        'new_value' => 'NewValue',
         'is_match_case' => 'IsMatchCase',
         'is_match_whole_word' => 'IsMatchWholeWord',
-        'is_old_value_regex' => 'IsOldValueRegex'
+        'is_old_value_regex' => 'IsOldValueRegex',
+        'new_value' => 'NewValue',
+        'old_value' => 'OldValue'
     ];
 
     /*
@@ -116,11 +112,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'old_value' => 'setOldValue',
-        'new_value' => 'setNewValue',
         'is_match_case' => 'setIsMatchCase',
         'is_match_whole_word' => 'setIsMatchWholeWord',
-        'is_old_value_regex' => 'setIsOldValueRegex'
+        'is_old_value_regex' => 'setIsOldValueRegex',
+        'new_value' => 'setNewValue',
+        'old_value' => 'setOldValue'
     ];
 
     /*
@@ -129,11 +125,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'old_value' => 'getOldValue',
-        'new_value' => 'getNewValue',
         'is_match_case' => 'getIsMatchCase',
         'is_match_whole_word' => 'getIsMatchWholeWord',
-        'is_old_value_regex' => 'getIsOldValueRegex'
+        'is_old_value_regex' => 'getIsOldValueRegex',
+        'new_value' => 'getNewValue',
+        'old_value' => 'getOldValue'
     ];
 
     /*
@@ -194,11 +190,11 @@ class ReplaceTextParameters implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['old_value'] = isset($data['old_value']) ? $data['old_value'] : null;
-        $this->container['new_value'] = isset($data['new_value']) ? $data['new_value'] : null;
         $this->container['is_match_case'] = isset($data['is_match_case']) ? $data['is_match_case'] : null;
         $this->container['is_match_whole_word'] = isset($data['is_match_whole_word']) ? $data['is_match_whole_word'] : null;
         $this->container['is_old_value_regex'] = isset($data['is_old_value_regex']) ? $data['is_old_value_regex'] : null;
+        $this->container['new_value'] = isset($data['new_value']) ? $data['new_value'] : null;
+        $this->container['old_value'] = isset($data['old_value']) ? $data['old_value'] : null;
     }
 
     /*
@@ -221,57 +217,7 @@ class ReplaceTextParameters implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets old_value
-     *
-     * @return string
-     */
-    public function getOldValue()
-    {
-        return $this->container['old_value'];
-    }
-
-    /*
-     * Sets old_value
-     *
-     * @param string $old_value Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
-     *
-     * @return $this
-     */
-    public function setOldValue($old_value)
-    {
-        $this->container['old_value'] = $old_value;
-
-        return $this;
-    }
-
-    /*
-     * Gets new_value
-     *
-     * @return string
-     */
-    public function getNewValue()
-    {
-        return $this->container['new_value'];
-    }
-
-    /*
-     * Sets new_value
-     *
-     * @param string $new_value Gets or sets new text value to replace by.
-     *
-     * @return $this
-     */
-    public function setNewValue($new_value)
-    {
-        $this->container['new_value'] = $new_value;
-
-        return $this;
     }
 
     /*
@@ -294,7 +240,6 @@ class ReplaceTextParameters implements ArrayAccess
     public function setIsMatchCase($is_match_case)
     {
         $this->container['is_match_case'] = $is_match_case;
-
         return $this;
     }
 
@@ -318,7 +263,6 @@ class ReplaceTextParameters implements ArrayAccess
     public function setIsMatchWholeWord($is_match_whole_word)
     {
         $this->container['is_match_whole_word'] = $is_match_whole_word;
-
         return $this;
     }
 
@@ -342,9 +286,55 @@ class ReplaceTextParameters implements ArrayAccess
     public function setIsOldValueRegex($is_old_value_regex)
     {
         $this->container['is_old_value_regex'] = $is_old_value_regex;
-
         return $this;
     }
+
+    /*
+     * Gets new_value
+     *
+     * @return string
+     */
+    public function getNewValue()
+    {
+        return $this->container['new_value'];
+    }
+
+    /*
+     * Sets new_value
+     *
+     * @param string $new_value Gets or sets new text value to replace by.
+     *
+     * @return $this
+     */
+    public function setNewValue($new_value)
+    {
+        $this->container['new_value'] = $new_value;
+        return $this;
+    }
+
+    /*
+     * Gets old_value
+     *
+     * @return string
+     */
+    public function getOldValue()
+    {
+        return $this->container['old_value'];
+    }
+
+    /*
+     * Sets old_value
+     *
+     * @param string $old_value Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
+     *
+     * @return $this
+     */
+    public function setOldValue($old_value)
+    {
+        $this->container['old_value'] = $old_value;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -415,3 +405,4 @@ class ReplaceTextParameters implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

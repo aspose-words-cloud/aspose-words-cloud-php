@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MetafileRenderingOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * MetafileRenderingOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -59,8 +55,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'string',
         'emulate_raster_operations' => 'bool',
         'rendering_mode' => 'string',
-        'use_emf_embedded_to_wmf' => 'bool',
-        'scale_wmf_fonts_to_metafile_size' => 'bool'
+        'scale_wmf_fonts_to_metafile_size' => 'bool',
+        'use_emf_embedded_to_wmf' => 'bool'
     ];
 
     /*
@@ -69,11 +65,11 @@ class MetafileRenderingOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'emf_plus_dual_rendering_mode' => null,
-        'emulate_raster_operations' => null,
-        'rendering_mode' => null,
-        'use_emf_embedded_to_wmf' => null,
-        'scale_wmf_fonts_to_metafile_size' => null
+        'emf_plus_dual_rendering_mode' => 'null',
+        'emulate_raster_operations' => 'null',
+        'rendering_mode' => 'null',
+        'scale_wmf_fonts_to_metafile_size' => 'null',
+        'use_emf_embedded_to_wmf' => 'null'
     ];
 
     /*
@@ -106,8 +102,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'EmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'EmulateRasterOperations',
         'rendering_mode' => 'RenderingMode',
-        'use_emf_embedded_to_wmf' => 'UseEmfEmbeddedToWmf',
-        'scale_wmf_fonts_to_metafile_size' => 'ScaleWmfFontsToMetafileSize'
+        'scale_wmf_fonts_to_metafile_size' => 'ScaleWmfFontsToMetafileSize',
+        'use_emf_embedded_to_wmf' => 'UseEmfEmbeddedToWmf'
     ];
 
     /*
@@ -119,8 +115,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'setEmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'setEmulateRasterOperations',
         'rendering_mode' => 'setRenderingMode',
-        'use_emf_embedded_to_wmf' => 'setUseEmfEmbeddedToWmf',
-        'scale_wmf_fonts_to_metafile_size' => 'setScaleWmfFontsToMetafileSize'
+        'scale_wmf_fonts_to_metafile_size' => 'setScaleWmfFontsToMetafileSize',
+        'use_emf_embedded_to_wmf' => 'setUseEmfEmbeddedToWmf'
     ];
 
     /*
@@ -132,8 +128,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'getEmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'getEmulateRasterOperations',
         'rendering_mode' => 'getRenderingMode',
-        'use_emf_embedded_to_wmf' => 'getUseEmfEmbeddedToWmf',
-        'scale_wmf_fonts_to_metafile_size' => 'getScaleWmfFontsToMetafileSize'
+        'scale_wmf_fonts_to_metafile_size' => 'getScaleWmfFontsToMetafileSize',
+        'use_emf_embedded_to_wmf' => 'getUseEmfEmbeddedToWmf'
     ];
 
     /*
@@ -197,8 +193,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
         $this->container['emf_plus_dual_rendering_mode'] = isset($data['emf_plus_dual_rendering_mode']) ? $data['emf_plus_dual_rendering_mode'] : null;
         $this->container['emulate_raster_operations'] = isset($data['emulate_raster_operations']) ? $data['emulate_raster_operations'] : null;
         $this->container['rendering_mode'] = isset($data['rendering_mode']) ? $data['rendering_mode'] : null;
-        $this->container['use_emf_embedded_to_wmf'] = isset($data['use_emf_embedded_to_wmf']) ? $data['use_emf_embedded_to_wmf'] : null;
         $this->container['scale_wmf_fonts_to_metafile_size'] = isset($data['scale_wmf_fonts_to_metafile_size']) ? $data['scale_wmf_fonts_to_metafile_size'] : null;
+        $this->container['use_emf_embedded_to_wmf'] = isset($data['use_emf_embedded_to_wmf']) ? $data['use_emf_embedded_to_wmf'] : null;
     }
 
     /*
@@ -221,10 +217,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets emf_plus_dual_rendering_mode
@@ -246,7 +240,6 @@ class MetafileRenderingOptionsData implements ArrayAccess
     public function setEmfPlusDualRenderingMode($emf_plus_dual_rendering_mode)
     {
         $this->container['emf_plus_dual_rendering_mode'] = $emf_plus_dual_rendering_mode;
-
         return $this;
     }
 
@@ -270,7 +263,6 @@ class MetafileRenderingOptionsData implements ArrayAccess
     public function setEmulateRasterOperations($emulate_raster_operations)
     {
         $this->container['emulate_raster_operations'] = $emulate_raster_operations;
-
         return $this;
     }
 
@@ -294,31 +286,6 @@ class MetafileRenderingOptionsData implements ArrayAccess
     public function setRenderingMode($rendering_mode)
     {
         $this->container['rendering_mode'] = $rendering_mode;
-
-        return $this;
-    }
-
-    /*
-     * Gets use_emf_embedded_to_wmf
-     *
-     * @return bool
-     */
-    public function getUseEmfEmbeddedToWmf()
-    {
-        return $this->container['use_emf_embedded_to_wmf'];
-    }
-
-    /*
-     * Sets use_emf_embedded_to_wmf
-     *
-     * @param bool $use_emf_embedded_to_wmf Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.
-     *
-     * @return $this
-     */
-    public function setUseEmfEmbeddedToWmf($use_emf_embedded_to_wmf)
-    {
-        $this->container['use_emf_embedded_to_wmf'] = $use_emf_embedded_to_wmf;
-
         return $this;
     }
 
@@ -342,9 +309,32 @@ class MetafileRenderingOptionsData implements ArrayAccess
     public function setScaleWmfFontsToMetafileSize($scale_wmf_fonts_to_metafile_size)
     {
         $this->container['scale_wmf_fonts_to_metafile_size'] = $scale_wmf_fonts_to_metafile_size;
-
         return $this;
     }
+
+    /*
+     * Gets use_emf_embedded_to_wmf
+     *
+     * @return bool
+     */
+    public function getUseEmfEmbeddedToWmf()
+    {
+        return $this->container['use_emf_embedded_to_wmf'];
+    }
+
+    /*
+     * Sets use_emf_embedded_to_wmf
+     *
+     * @param bool $use_emf_embedded_to_wmf Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.
+     *
+     * @return $this
+     */
+    public function setUseEmfEmbeddedToWmf($use_emf_embedded_to_wmf)
+    {
+        $this->container['use_emf_embedded_to_wmf'] = $use_emf_embedded_to_wmf;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -415,3 +405,4 @@ class MetafileRenderingOptionsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

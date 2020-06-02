@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OoxmlSaveOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * OoxmlSaveOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for docx/docm/dotx/dotm/flatopc save options.
  */
-class OoxmlSaveOptionsData extends SaveOptionsData 
+class OoxmlSaveOptionsData extends SaveOptionsData
 {
     const DISCRIMINATOR = null;
 
@@ -55,7 +52,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      */
     protected static $swaggerTypes = [
         'compliance' => 'string',
-        'compression_level' => 'string',
         'password' => 'string',
         'pretty_format' => 'bool'
     ];
@@ -66,10 +62,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'compliance' => null,
-        'compression_level' => null,
-        'password' => null,
-        'pretty_format' => null
+        'compliance' => 'null',
+        'password' => 'null',
+        'pretty_format' => 'null'
     ];
 
     /*
@@ -100,7 +95,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      */
     protected static $attributeMap = [
         'compliance' => 'Compliance',
-        'compression_level' => 'CompressionLevel',
         'password' => 'Password',
         'pretty_format' => 'PrettyFormat'
     ];
@@ -112,7 +106,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      */
     protected static $setters = [
         'compliance' => 'setCompliance',
-        'compression_level' => 'setCompressionLevel',
         'password' => 'setPassword',
         'pretty_format' => 'setPrettyFormat'
     ];
@@ -124,7 +117,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      */
     protected static $getters = [
         'compliance' => 'getCompliance',
-        'compression_level' => 'getCompressionLevel',
         'password' => 'getPassword',
         'pretty_format' => 'getPrettyFormat'
     ];
@@ -170,25 +162,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    const COMPRESSION_LEVEL_NORMAL = 'Normal';
-    const COMPRESSION_LEVEL_MAXIMUM = 'Maximum';
-    const COMPRESSION_LEVEL_FAST = 'Fast';
-    const COMPRESSION_LEVEL_SUPER_FAST = 'SuperFast';
-
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getCompressionLevelAllowableValues()
-    {
-        return [
-            self::COMPRESSION_LEVEL_NORMAL,
-            self::COMPRESSION_LEVEL_MAXIMUM,
-            self::COMPRESSION_LEVEL_FAST,
-            self::COMPRESSION_LEVEL_SUPER_FAST
-        ];
-    }
 
 
     /*
@@ -200,9 +173,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
-        $this->container['compression_level'] = isset($data['compression_level']) ? $data['compression_level'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
     }
@@ -215,15 +186,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
-        $allowedValues = $this->getCompressionLevelAllowableValues();
-        if (!in_array($this->container['compression_level'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'compression_level', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -239,13 +201,8 @@ class OoxmlSaveOptionsData extends SaveOptionsData
             return false;
         }
 
-        $allowedValues = $this->getCompressionLevelAllowableValues();
-        if (!in_array($this->container['compression_level'], $allowedValues)) {
-            return false;
-        }
         return true;
     }
-
 
     /*
      * Gets compliance
@@ -267,36 +224,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function setCompliance($compliance)
     {
         $this->container['compliance'] = $compliance;
-
-        return $this;
-    }
-
-    /*
-     * Gets compression_level
-     *
-     * @return string
-     */
-    public function getCompressionLevel()
-    {
-        return $this->container['compression_level'];
-    }
-
-    /*
-     * Sets compression_level
-     *
-     * @param string $compression_level Gets or sets compression level.
-     *
-     * @return $this
-     */
-    public function setCompressionLevel($compression_level)
-    {
-        $allowedValues = $this->getCompressionLevelAllowableValues();
-        if ((!is_numeric($compression_level) && !in_array($compression_level, $allowedValues)) || (is_numeric($compression_level) && !in_array($allowedValues[$compression_level], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'compression_level', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['compression_level'] = $compression_level;
-
         return $this;
     }
 
@@ -320,7 +247,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function setPassword($password)
     {
         $this->container['password'] = $password;
-
         return $this;
     }
 
@@ -344,9 +270,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function setPrettyFormat($pretty_format)
     {
         $this->container['pretty_format'] = $pretty_format;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -417,3 +343,4 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

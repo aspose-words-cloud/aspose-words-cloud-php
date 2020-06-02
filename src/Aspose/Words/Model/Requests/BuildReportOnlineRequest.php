@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BuildReportOnlineRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -34,35 +34,34 @@ namespace Aspose\Words\Model\Requests;
 class BuildReportOnlineRequest
 {
     /*
-     * File with template
+     * File with template.
      */
     public $template;
-	
+
     /*
-     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      */
     public $data;
-	
+
     /*
      * An object providing a settings of report engine.
      */
     public $report_engine_settings;
-	
+
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
      */
     public $document_file_name;
-    
-	
+
     /*
      * Initializes a new instance of the BuildReportOnlineRequest class.
-     *  
-     * @param \SplFileObject $template File with template
-     * @param string $data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     *
+     * @param \SplFileObject $template File with template.
+     * @param string $data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
-     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
+     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
      */
-    public function __construct($template, $data, $report_engine_settings, $document_file_name = null)             
+    public function __construct($template, $data, $report_engine_settings, $document_file_name = null)
     {
         $this->template = $template;
         $this->data = $data;
@@ -71,7 +70,7 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * File with template
+     * File with template.
      */
     public function get_template()
     {
@@ -79,16 +78,16 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * File with template
+     * File with template.
      */
     public function set_template($value)
     {
         $this->template = $value;
         return $this;
     }
-	
+
     /*
-     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      */
     public function get_data()
     {
@@ -96,14 +95,14 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
+     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      */
     public function set_data($value)
     {
         $this->data = $value;
         return $this;
     }
-	
+
     /*
      * An object providing a settings of report engine.
      */
@@ -120,9 +119,9 @@ class BuildReportOnlineRequest
         $this->report_engine_settings = $value;
         return $this;
     }
-	
+
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
      */
     public function get_document_file_name()
     {
@@ -130,7 +129,7 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
+     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
      */
     public function set_document_file_name($value)
     {

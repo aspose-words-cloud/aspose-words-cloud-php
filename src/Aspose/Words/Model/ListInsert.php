@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListInsert.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ListInsert
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -65,7 +61,7 @@ class ListInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'template' => null
+        'template' => 'null'
     ];
 
     /*
@@ -248,6 +244,7 @@ class ListInsert implements ArrayAccess
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -259,14 +256,14 @@ class ListInsert implements ArrayAccess
      */
     public function valid()
     {
-
         $allowedValues = $this->getTemplateAllowableValues();
         if (!in_array($this->container['template'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets template
@@ -291,11 +288,10 @@ class ListInsert implements ArrayAccess
         if ((!is_numeric($template) && !in_array($template, $allowedValues)) || (is_numeric($template) && !in_array($allowedValues[$template], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'template', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['template'] = $template;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -366,3 +362,4 @@ class ListInsert implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

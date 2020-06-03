@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FormFieldCheckbox.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * FormFieldCheckbox
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description FormField checkbox element.
  */
-class FormFieldCheckbox extends FormField 
+class FormFieldCheckbox extends FormField
 {
     const DISCRIMINATOR = null;
 
@@ -65,9 +62,9 @@ class FormFieldCheckbox extends FormField
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'check_box_size' => 'double',
-        'checked' => null,
-        'is_check_box_exact_size' => null
+        'check_box_size' => 'null',
+        'checked' => 'null',
+        'is_check_box_exact_size' => 'null'
     ];
 
     /*
@@ -167,7 +164,6 @@ class FormFieldCheckbox extends FormField
 
 
 
-
     /*
      * Constructor
      *
@@ -177,7 +173,6 @@ class FormFieldCheckbox extends FormField
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['check_box_size'] = isset($data['check_box_size']) ? $data['check_box_size'] : null;
         $this->container['checked'] = isset($data['checked']) ? $data['checked'] : null;
         $this->container['is_check_box_exact_size'] = isset($data['is_check_box_exact_size']) ? $data['is_check_box_exact_size'] : null;
@@ -191,7 +186,6 @@ class FormFieldCheckbox extends FormField
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -209,7 +203,6 @@ class FormFieldCheckbox extends FormField
 
         return true;
     }
-
 
     /*
      * Gets check_box_size
@@ -231,7 +224,6 @@ class FormFieldCheckbox extends FormField
     public function setCheckBoxSize($check_box_size)
     {
         $this->container['check_box_size'] = $check_box_size;
-
         return $this;
     }
 
@@ -255,7 +247,6 @@ class FormFieldCheckbox extends FormField
     public function setChecked($checked)
     {
         $this->container['checked'] = $checked;
-
         return $this;
     }
 
@@ -279,9 +270,9 @@ class FormFieldCheckbox extends FormField
     public function setIsCheckBoxExactSize($is_check_box_exact_size)
     {
         $this->container['is_check_box_exact_size'] = $is_check_box_exact_size;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -352,3 +343,4 @@ class FormFieldCheckbox extends FormField
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

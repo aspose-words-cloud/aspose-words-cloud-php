@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GraphicsQualityOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * GraphicsQualityOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -70,12 +66,12 @@ class GraphicsQualityOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'compositing_mode' => null,
-        'compositing_quality' => null,
-        'interpolation_mode' => null,
-        'smoothing_mode' => null,
-        'string_format' => null,
-        'text_rendering_hint' => null
+        'compositing_mode' => 'null',
+        'compositing_quality' => 'null',
+        'interpolation_mode' => 'null',
+        'smoothing_mode' => 'null',
+        'string_format' => 'null',
+        'text_rendering_hint' => 'null'
     ];
 
     /*
@@ -184,13 +180,13 @@ class GraphicsQualityOptionsData implements ArrayAccess
 
     const COMPOSITING_MODE_SOURCE_OVER = 'SourceOver';
     const COMPOSITING_MODE_SOURCE_COPY = 'SourceCopy';
-    const COMPOSITING_QUALITY__DEFAULT = 'Default';
+    const COMPOSITING_QUALITY_DEFAULT = 'Default';
     const COMPOSITING_QUALITY_HIGH_SPEED = 'HighSpeed';
     const COMPOSITING_QUALITY_HIGH_QUALITY = 'HighQuality';
     const COMPOSITING_QUALITY_GAMMA_CORRECTED = 'GammaCorrected';
     const COMPOSITING_QUALITY_ASSUME_LINEAR = 'AssumeLinear';
     const COMPOSITING_QUALITY_INVALID = 'Invalid';
-    const INTERPOLATION_MODE__DEFAULT = 'Default';
+    const INTERPOLATION_MODE_DEFAULT = 'Default';
     const INTERPOLATION_MODE_LOW = 'Low';
     const INTERPOLATION_MODE_HIGH = 'High';
     const INTERPOLATION_MODE_BILINEAR = 'Bilinear';
@@ -199,7 +195,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
     const INTERPOLATION_MODE_HIGH_QUALITY_BILINEAR = 'HighQualityBilinear';
     const INTERPOLATION_MODE_HIGH_QUALITY_BICUBIC = 'HighQualityBicubic';
     const INTERPOLATION_MODE_INVALID = 'Invalid';
-    const SMOOTHING_MODE__DEFAULT = 'Default';
+    const SMOOTHING_MODE_DEFAULT = 'Default';
     const SMOOTHING_MODE_HIGH_SPEED = 'HighSpeed';
     const SMOOTHING_MODE_HIGH_QUALITY = 'HighQuality';
     const SMOOTHING_MODE_NONE = 'None';
@@ -232,7 +228,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
     public function getCompositingQualityAllowableValues()
     {
         return [
-            self::COMPOSITING_QUALITY__DEFAULT,
+            self::COMPOSITING_QUALITY_DEFAULT,
             self::COMPOSITING_QUALITY_HIGH_SPEED,
             self::COMPOSITING_QUALITY_HIGH_QUALITY,
             self::COMPOSITING_QUALITY_GAMMA_CORRECTED,
@@ -248,7 +244,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
     public function getInterpolationModeAllowableValues()
     {
         return [
-            self::INTERPOLATION_MODE__DEFAULT,
+            self::INTERPOLATION_MODE_DEFAULT,
             self::INTERPOLATION_MODE_LOW,
             self::INTERPOLATION_MODE_HIGH,
             self::INTERPOLATION_MODE_BILINEAR,
@@ -267,7 +263,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
     public function getSmoothingModeAllowableValues()
     {
         return [
-            self::SMOOTHING_MODE__DEFAULT,
+            self::SMOOTHING_MODE_DEFAULT,
             self::SMOOTHING_MODE_HIGH_SPEED,
             self::SMOOTHING_MODE_HIGH_QUALITY,
             self::SMOOTHING_MODE_NONE,
@@ -364,6 +360,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -375,30 +372,34 @@ class GraphicsQualityOptionsData implements ArrayAccess
      */
     public function valid()
     {
-
         $allowedValues = $this->getCompositingModeAllowableValues();
         if (!in_array($this->container['compositing_mode'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getCompositingQualityAllowableValues();
         if (!in_array($this->container['compositing_quality'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getInterpolationModeAllowableValues();
         if (!in_array($this->container['interpolation_mode'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getSmoothingModeAllowableValues();
         if (!in_array($this->container['smoothing_mode'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getTextRenderingHintAllowableValues();
         if (!in_array($this->container['text_rendering_hint'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets compositing_mode
@@ -423,9 +424,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
         if ((!is_numeric($compositing_mode) && !in_array($compositing_mode, $allowedValues)) || (is_numeric($compositing_mode) && !in_array($allowedValues[$compositing_mode], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'compositing_mode', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['compositing_mode'] = $compositing_mode;
-
         return $this;
     }
 
@@ -452,9 +451,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
         if ((!is_numeric($compositing_quality) && !in_array($compositing_quality, $allowedValues)) || (is_numeric($compositing_quality) && !in_array($allowedValues[$compositing_quality], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'compositing_quality', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['compositing_quality'] = $compositing_quality;
-
         return $this;
     }
 
@@ -481,9 +478,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
         if ((!is_numeric($interpolation_mode) && !in_array($interpolation_mode, $allowedValues)) || (is_numeric($interpolation_mode) && !in_array($allowedValues[$interpolation_mode], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'interpolation_mode', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['interpolation_mode'] = $interpolation_mode;
-
         return $this;
     }
 
@@ -510,9 +505,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
         if ((!is_numeric($smoothing_mode) && !in_array($smoothing_mode, $allowedValues)) || (is_numeric($smoothing_mode) && !in_array($allowedValues[$smoothing_mode], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'smoothing_mode', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['smoothing_mode'] = $smoothing_mode;
-
         return $this;
     }
 
@@ -529,14 +522,13 @@ class GraphicsQualityOptionsData implements ArrayAccess
     /*
      * Sets string_format
      *
-     * @param \Aspose\Words\Model\StringFormatData $string_format string_format
+     * @param \Aspose\Words\Model\StringFormatData $string_format Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.
      *
      * @return $this
      */
     public function setStringFormat($string_format)
     {
         $this->container['string_format'] = $string_format;
-
         return $this;
     }
 
@@ -563,11 +555,10 @@ class GraphicsQualityOptionsData implements ArrayAccess
         if ((!is_numeric($text_rendering_hint) && !in_array($text_rendering_hint, $allowedValues)) || (is_numeric($text_rendering_hint) && !in_array($allowedValues[$text_rendering_hint], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'text_rendering_hint', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['text_rendering_hint'] = $text_rendering_hint;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -638,3 +629,4 @@ class GraphicsQualityOptionsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

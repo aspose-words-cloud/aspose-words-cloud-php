@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BookmarksResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * BookmarksResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  GET bookmarks.
  */
-class BookmarksResponse extends WordsResponse 
+class BookmarksResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class BookmarksResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'bookmarks' => null
+        'bookmarks' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class BookmarksResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class BookmarksResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['bookmarks'] = isset($data['bookmarks']) ? $data['bookmarks'] : null;
     }
 
@@ -179,7 +174,6 @@ class BookmarksResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class BookmarksResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets bookmarks
      *
@@ -212,16 +205,16 @@ class BookmarksResponse extends WordsResponse
     /*
      * Sets bookmarks
      *
-     * @param \Aspose\Words\Model\Bookmarks $bookmarks bookmarks
+     * @param \Aspose\Words\Model\Bookmarks $bookmarks Gets or sets bookmarks which are contained in document.
      *
      * @return $this
      */
     public function setBookmarks($bookmarks)
     {
         $this->container['bookmarks'] = $bookmarks;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class BookmarksResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

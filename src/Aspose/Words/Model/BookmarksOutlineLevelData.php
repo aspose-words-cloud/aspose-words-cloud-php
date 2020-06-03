@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BookmarksOutlineLevelData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * BookmarksOutlineLevelData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,8 +52,8 @@ class BookmarksOutlineLevelData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'bookmarks_outline_level' => 'int'
+        'bookmarks_outline_level' => 'int',
+        'name' => 'string'
     ];
 
     /*
@@ -66,8 +62,8 @@ class BookmarksOutlineLevelData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-        'bookmarks_outline_level' => 'int32'
+        'bookmarks_outline_level' => 'null',
+        'name' => 'null'
     ];
 
     /*
@@ -97,8 +93,8 @@ class BookmarksOutlineLevelData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'bookmarks_outline_level' => 'BookmarksOutlineLevel'
+        'bookmarks_outline_level' => 'BookmarksOutlineLevel',
+        'name' => 'Name'
     ];
 
     /*
@@ -107,8 +103,8 @@ class BookmarksOutlineLevelData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'bookmarks_outline_level' => 'setBookmarksOutlineLevel'
+        'bookmarks_outline_level' => 'setBookmarksOutlineLevel',
+        'name' => 'setName'
     ];
 
     /*
@@ -117,8 +113,8 @@ class BookmarksOutlineLevelData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'bookmarks_outline_level' => 'getBookmarksOutlineLevel'
+        'bookmarks_outline_level' => 'getBookmarksOutlineLevel',
+        'name' => 'getName'
     ];
 
     /*
@@ -179,8 +175,8 @@ class BookmarksOutlineLevelData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['bookmarks_outline_level'] = isset($data['bookmarks_outline_level']) ? $data['bookmarks_outline_level'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /*
@@ -203,33 +199,7 @@ class BookmarksOutlineLevelData implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /*
-     * Sets name
-     *
-     * @param string $name Gets or sets specify the bookmark's name.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
     }
 
     /*
@@ -252,9 +222,32 @@ class BookmarksOutlineLevelData implements ArrayAccess
     public function setBookmarksOutlineLevel($bookmarks_outline_level)
     {
         $this->container['bookmarks_outline_level'] = $bookmarks_outline_level;
-
         return $this;
     }
+
+    /*
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /*
+     * Sets name
+     *
+     * @param string $name Gets or sets specify the bookmark's name.
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -325,3 +318,4 @@ class BookmarksOutlineLevelData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

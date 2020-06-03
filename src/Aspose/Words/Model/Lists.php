@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Lists.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * Lists
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents an array of document lists.
  */
-class Lists extends LinkElement 
+class Lists extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class Lists extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list_info' => null
+        'list_info' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class Lists extends LinkElement
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class Lists extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['list_info'] = isset($data['list_info']) ? $data['list_info'] : null;
     }
 
@@ -179,7 +174,6 @@ class Lists extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -197,7 +191,6 @@ class Lists extends LinkElement
 
         return true;
     }
-
 
     /*
      * Gets list_info
@@ -219,9 +212,9 @@ class Lists extends LinkElement
     public function setListInfo($list_info)
     {
         $this->container['list_info'] = $list_info;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class Lists extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

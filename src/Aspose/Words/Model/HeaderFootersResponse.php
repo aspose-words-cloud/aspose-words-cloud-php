@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HeaderFootersResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * HeaderFootersResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters.
  */
-class HeaderFootersResponse extends WordsResponse 
+class HeaderFootersResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class HeaderFootersResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'header_footers' => null
+        'header_footers' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class HeaderFootersResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class HeaderFootersResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['header_footers'] = isset($data['header_footers']) ? $data['header_footers'] : null;
     }
 
@@ -179,7 +174,6 @@ class HeaderFootersResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class HeaderFootersResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets header_footers
      *
@@ -212,16 +205,16 @@ class HeaderFootersResponse extends WordsResponse
     /*
      * Sets header_footers
      *
-     * @param \Aspose\Words\Model\HeaderFooterLinkCollection $header_footers header_footers
+     * @param \Aspose\Words\Model\HeaderFooterLinkCollection $header_footers Gets or sets collection of headers/footers.
      *
      * @return $this
      */
     public function setHeaderFooters($header_footers)
     {
         $this->container['header_footers'] = $header_footers;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class HeaderFootersResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

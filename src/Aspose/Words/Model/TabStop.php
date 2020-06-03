@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TabStop.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * TabStop
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Paragraph format tab stop.
  */
-class TabStop extends TabStopBase 
+class TabStop extends TabStopBase
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class TabStop extends TabStopBase
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_clear' => null
+        'is_clear' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class TabStop extends TabStopBase
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class TabStop extends TabStopBase
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['is_clear'] = isset($data['is_clear']) ? $data['is_clear'] : null;
     }
 
@@ -179,7 +174,6 @@ class TabStop extends TabStopBase
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -197,7 +191,6 @@ class TabStop extends TabStopBase
 
         return true;
     }
-
 
     /*
      * Gets is_clear
@@ -219,9 +212,9 @@ class TabStop extends TabStopBase
     public function setIsClear($is_clear)
     {
         $this->container['is_clear'] = $is_clear;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class TabStop extends TabStopBase
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

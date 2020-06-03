@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DrawingObjectInsert.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * DrawingObjectInsert
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,13 +52,13 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'height' => 'double',
+        'left' => 'double',
         'position' => '\Aspose\Words\Model\DocumentPosition',
         'relative_horizontal_position' => 'string',
-        'left' => 'double',
         'relative_vertical_position' => 'string',
         'top' => 'double',
         'width' => 'double',
-        'height' => 'double',
         'wrap_type' => 'string'
     ];
 
@@ -72,14 +68,14 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'position' => null,
-        'relative_horizontal_position' => null,
-        'left' => 'double',
-        'relative_vertical_position' => null,
-        'top' => 'double',
-        'width' => 'double',
-        'height' => 'double',
-        'wrap_type' => null
+        'height' => 'null',
+        'left' => 'null',
+        'position' => 'null',
+        'relative_horizontal_position' => 'null',
+        'relative_vertical_position' => 'null',
+        'top' => 'null',
+        'width' => 'null',
+        'wrap_type' => 'null'
     ];
 
     /*
@@ -109,13 +105,13 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'height' => 'Height',
+        'left' => 'Left',
         'position' => 'Position',
         'relative_horizontal_position' => 'RelativeHorizontalPosition',
-        'left' => 'Left',
         'relative_vertical_position' => 'RelativeVerticalPosition',
         'top' => 'Top',
         'width' => 'Width',
-        'height' => 'Height',
         'wrap_type' => 'WrapType'
     ];
 
@@ -125,13 +121,13 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'height' => 'setHeight',
+        'left' => 'setLeft',
         'position' => 'setPosition',
         'relative_horizontal_position' => 'setRelativeHorizontalPosition',
-        'left' => 'setLeft',
         'relative_vertical_position' => 'setRelativeVerticalPosition',
         'top' => 'setTop',
         'width' => 'setWidth',
-        'height' => 'setHeight',
         'wrap_type' => 'setWrapType'
     ];
 
@@ -141,13 +137,13 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'height' => 'getHeight',
+        'left' => 'getLeft',
         'position' => 'getPosition',
         'relative_horizontal_position' => 'getRelativeHorizontalPosition',
-        'left' => 'getLeft',
         'relative_vertical_position' => 'getRelativeVerticalPosition',
         'top' => 'getTop',
         'width' => 'getWidth',
-        'height' => 'getHeight',
         'wrap_type' => 'getWrapType'
     ];
 
@@ -195,7 +191,7 @@ class DrawingObjectInsert implements ArrayAccess
     const RELATIVE_HORIZONTAL_POSITION_MARGIN = 'Margin';
     const RELATIVE_HORIZONTAL_POSITION_PAGE = 'Page';
     const RELATIVE_HORIZONTAL_POSITION_COLUMN = 'Column';
-    const RELATIVE_HORIZONTAL_POSITION__DEFAULT = 'Default';
+    const RELATIVE_HORIZONTAL_POSITION_DEFAULT = 'Default';
     const RELATIVE_HORIZONTAL_POSITION_CHARACTER = 'Character';
     const RELATIVE_HORIZONTAL_POSITION_LEFT_MARGIN = 'LeftMargin';
     const RELATIVE_HORIZONTAL_POSITION_RIGHT_MARGIN = 'RightMargin';
@@ -229,7 +225,7 @@ class DrawingObjectInsert implements ArrayAccess
             self::RELATIVE_HORIZONTAL_POSITION_MARGIN,
             self::RELATIVE_HORIZONTAL_POSITION_PAGE,
             self::RELATIVE_HORIZONTAL_POSITION_COLUMN,
-            self::RELATIVE_HORIZONTAL_POSITION__DEFAULT,
+            self::RELATIVE_HORIZONTAL_POSITION_DEFAULT,
             self::RELATIVE_HORIZONTAL_POSITION_CHARACTER,
             self::RELATIVE_HORIZONTAL_POSITION_LEFT_MARGIN,
             self::RELATIVE_HORIZONTAL_POSITION_RIGHT_MARGIN,
@@ -289,13 +285,13 @@ class DrawingObjectInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
+        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
         $this->container['relative_horizontal_position'] = isset($data['relative_horizontal_position']) ? $data['relative_horizontal_position'] : null;
-        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
         $this->container['relative_vertical_position'] = isset($data['relative_vertical_position']) ? $data['relative_vertical_position'] : null;
         $this->container['top'] = isset($data['top']) ? $data['top'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['wrap_type'] = isset($data['wrap_type']) ? $data['wrap_type'] : null;
     }
 
@@ -332,6 +328,7 @@ class DrawingObjectInsert implements ArrayAccess
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -343,22 +340,70 @@ class DrawingObjectInsert implements ArrayAccess
      */
     public function valid()
     {
-
         $allowedValues = $this->getRelativeHorizontalPositionAllowableValues();
         if (!in_array($this->container['relative_horizontal_position'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getRelativeVerticalPositionAllowableValues();
         if (!in_array($this->container['relative_vertical_position'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getWrapTypeAllowableValues();
         if (!in_array($this->container['wrap_type'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
 
+    /*
+     * Gets height
+     *
+     * @return double
+     */
+    public function getHeight()
+    {
+        return $this->container['height'];
+    }
+
+    /*
+     * Sets height
+     *
+     * @param double $height Gets or sets height of the drawing object in points.
+     *
+     * @return $this
+     */
+    public function setHeight($height)
+    {
+        $this->container['height'] = $height;
+        return $this;
+    }
+
+    /*
+     * Gets left
+     *
+     * @return double
+     */
+    public function getLeft()
+    {
+        return $this->container['left'];
+    }
+
+    /*
+     * Sets left
+     *
+     * @param double $left Gets or sets distance in points from the origin to the left side of the image.
+     *
+     * @return $this
+     */
+    public function setLeft($left)
+    {
+        $this->container['left'] = $left;
+        return $this;
+    }
 
     /*
      * Gets position
@@ -373,14 +418,13 @@ class DrawingObjectInsert implements ArrayAccess
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position position
+     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets drawing object will be inserted before specified position.
      *
      * @return $this
      */
     public function setPosition($position)
     {
         $this->container['position'] = $position;
-
         return $this;
     }
 
@@ -407,33 +451,7 @@ class DrawingObjectInsert implements ArrayAccess
         if ((!is_numeric($relative_horizontal_position) && !in_array($relative_horizontal_position, $allowedValues)) || (is_numeric($relative_horizontal_position) && !in_array($allowedValues[$relative_horizontal_position], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'relative_horizontal_position', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['relative_horizontal_position'] = $relative_horizontal_position;
-
-        return $this;
-    }
-
-    /*
-     * Gets left
-     *
-     * @return double
-     */
-    public function getLeft()
-    {
-        return $this->container['left'];
-    }
-
-    /*
-     * Sets left
-     *
-     * @param double $left Gets or sets distance in points from the origin to the left side of the image.
-     *
-     * @return $this
-     */
-    public function setLeft($left)
-    {
-        $this->container['left'] = $left;
-
         return $this;
     }
 
@@ -460,9 +478,7 @@ class DrawingObjectInsert implements ArrayAccess
         if ((!is_numeric($relative_vertical_position) && !in_array($relative_vertical_position, $allowedValues)) || (is_numeric($relative_vertical_position) && !in_array($allowedValues[$relative_vertical_position], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'relative_vertical_position', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['relative_vertical_position'] = $relative_vertical_position;
-
         return $this;
     }
 
@@ -486,7 +502,6 @@ class DrawingObjectInsert implements ArrayAccess
     public function setTop($top)
     {
         $this->container['top'] = $top;
-
         return $this;
     }
 
@@ -510,31 +525,6 @@ class DrawingObjectInsert implements ArrayAccess
     public function setWidth($width)
     {
         $this->container['width'] = $width;
-
-        return $this;
-    }
-
-    /*
-     * Gets height
-     *
-     * @return double
-     */
-    public function getHeight()
-    {
-        return $this->container['height'];
-    }
-
-    /*
-     * Sets height
-     *
-     * @param double $height Gets or sets height of the drawing object in points.
-     *
-     * @return $this
-     */
-    public function setHeight($height)
-    {
-        $this->container['height'] = $height;
-
         return $this;
     }
 
@@ -561,11 +551,10 @@ class DrawingObjectInsert implements ArrayAccess
         if ((!is_numeric($wrap_type) && !in_array($wrap_type, $allowedValues)) || (is_numeric($wrap_type) && !in_array($allowedValues[$wrap_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'wrap_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['wrap_type'] = $wrap_type;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -636,3 +625,4 @@ class DrawingObjectInsert implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

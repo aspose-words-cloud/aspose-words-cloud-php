@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveResult.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SaveResult
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,9 +52,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'source_document' => '\Aspose\Words\Model\FileLink',
+        'additional_items' => '\Aspose\Words\Model\FileLink[]',
         'dest_document' => '\Aspose\Words\Model\FileLink',
-        'additional_items' => '\Aspose\Words\Model\FileLink[]'
+        'source_document' => '\Aspose\Words\Model\FileLink'
     ];
 
     /*
@@ -67,9 +63,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'source_document' => null,
-        'dest_document' => null,
-        'additional_items' => null
+        'additional_items' => 'null',
+        'dest_document' => 'null',
+        'source_document' => 'null'
     ];
 
     /*
@@ -99,9 +95,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_document' => 'SourceDocument',
+        'additional_items' => 'AdditionalItems',
         'dest_document' => 'DestDocument',
-        'additional_items' => 'AdditionalItems'
+        'source_document' => 'SourceDocument'
     ];
 
     /*
@@ -110,9 +106,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'source_document' => 'setSourceDocument',
+        'additional_items' => 'setAdditionalItems',
         'dest_document' => 'setDestDocument',
-        'additional_items' => 'setAdditionalItems'
+        'source_document' => 'setSourceDocument'
     ];
 
     /*
@@ -121,9 +117,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'source_document' => 'getSourceDocument',
+        'additional_items' => 'getAdditionalItems',
         'dest_document' => 'getDestDocument',
-        'additional_items' => 'getAdditionalItems'
+        'source_document' => 'getSourceDocument'
     ];
 
     /*
@@ -184,9 +180,9 @@ class SaveResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['source_document'] = isset($data['source_document']) ? $data['source_document'] : null;
-        $this->container['dest_document'] = isset($data['dest_document']) ? $data['dest_document'] : null;
         $this->container['additional_items'] = isset($data['additional_items']) ? $data['additional_items'] : null;
+        $this->container['dest_document'] = isset($data['dest_document']) ? $data['dest_document'] : null;
+        $this->container['source_document'] = isset($data['source_document']) ? $data['source_document'] : null;
     }
 
     /*
@@ -209,57 +205,7 @@ class SaveResult implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets source_document
-     *
-     * @return \Aspose\Words\Model\FileLink
-     */
-    public function getSourceDocument()
-    {
-        return $this->container['source_document'];
-    }
-
-    /*
-     * Sets source_document
-     *
-     * @param \Aspose\Words\Model\FileLink $source_document source_document
-     *
-     * @return $this
-     */
-    public function setSourceDocument($source_document)
-    {
-        $this->container['source_document'] = $source_document;
-
-        return $this;
-    }
-
-    /*
-     * Gets dest_document
-     *
-     * @return \Aspose\Words\Model\FileLink
-     */
-    public function getDestDocument()
-    {
-        return $this->container['dest_document'];
-    }
-
-    /*
-     * Sets dest_document
-     *
-     * @param \Aspose\Words\Model\FileLink $dest_document dest_document
-     *
-     * @return $this
-     */
-    public function setDestDocument($dest_document)
-    {
-        $this->container['dest_document'] = $dest_document;
-
-        return $this;
     }
 
     /*
@@ -282,9 +228,55 @@ class SaveResult implements ArrayAccess
     public function setAdditionalItems($additional_items)
     {
         $this->container['additional_items'] = $additional_items;
-
         return $this;
     }
+
+    /*
+     * Gets dest_document
+     *
+     * @return \Aspose\Words\Model\FileLink
+     */
+    public function getDestDocument()
+    {
+        return $this->container['dest_document'];
+    }
+
+    /*
+     * Sets dest_document
+     *
+     * @param \Aspose\Words\Model\FileLink $dest_document Gets or sets link to destination document.
+     *
+     * @return $this
+     */
+    public function setDestDocument($dest_document)
+    {
+        $this->container['dest_document'] = $dest_document;
+        return $this;
+    }
+
+    /*
+     * Gets source_document
+     *
+     * @return \Aspose\Words\Model\FileLink
+     */
+    public function getSourceDocument()
+    {
+        return $this->container['source_document'];
+    }
+
+    /*
+     * Sets source_document
+     *
+     * @param \Aspose\Words\Model\FileLink $source_document Gets or sets link to source document.
+     *
+     * @return $this
+     */
+    public function setSourceDocument($source_document)
+    {
+        $this->container['source_document'] = $source_document;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -355,3 +347,4 @@ class SaveResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetAvailableFontsRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -33,14 +33,35 @@ namespace Aspose\Words\Model\Requests;
  */
 class GetAvailableFontsRequest
 {
-    
-	
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public $fonts_location;
+
     /*
      * Initializes a new instance of the GetAvailableFontsRequest class.
-     *  
+     *
+     * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct()             
+    public function __construct($fonts_location = null)
     {
+        $this->fonts_location = $fonts_location;
     }
 
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function get_fonts_location()
+    {
+        return $this->fonts_location;
+    }
+
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function set_fonts_location($value)
+    {
+        $this->fonts_location = $value;
+        return $this;
+    }
 }

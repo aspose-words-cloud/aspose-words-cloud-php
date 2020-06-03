@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HeaderFooterLink.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * HeaderFooterLink
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,9 +34,9 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description HeaderFooter link element.
  */
-class HeaderFooterLink extends LinkElement 
+class HeaderFooterLink extends LinkElement
 {
-    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -63,7 +60,7 @@ class HeaderFooterLink extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'type' => null
+        'type' => 'null'
     ];
 
     /*
@@ -179,7 +176,6 @@ class HeaderFooterLink extends LinkElement
         ];
     }
 
-
     /*
      * Constructor
      *
@@ -189,12 +185,7 @@ class HeaderFooterLink extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -205,7 +196,6 @@ class HeaderFooterLink extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         $allowedValues = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -213,6 +203,7 @@ class HeaderFooterLink extends LinkElement
                 implode("', '", $allowedValues)
             );
         }
+
 
         return $invalidProperties;
     }
@@ -233,9 +224,10 @@ class HeaderFooterLink extends LinkElement
         if (!in_array($this->container['type'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets type
@@ -260,11 +252,10 @@ class HeaderFooterLink extends LinkElement
         if ((!is_numeric($type) && !in_array($type, $allowedValues)) || (is_numeric($type) && !in_array($allowedValues[$type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'type', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['type'] = $type;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -335,3 +326,4 @@ class HeaderFooterLink extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

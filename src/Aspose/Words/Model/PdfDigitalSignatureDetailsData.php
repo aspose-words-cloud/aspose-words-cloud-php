@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PdfDigitalSignatureDetailsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * PdfDigitalSignatureDetailsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -69,11 +65,11 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'certificate_filename' => null,
-        'hash_algorithm' => null,
-        'location' => null,
-        'reason' => null,
-        'signature_date' => 'date-time'
+        'certificate_filename' => 'null',
+        'hash_algorithm' => 'null',
+        'location' => 'null',
+        'reason' => 'null',
+        'signature_date' => 'null'
     ];
 
     /*
@@ -221,10 +217,8 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets certificate_filename
@@ -246,7 +240,6 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     public function setCertificateFilename($certificate_filename)
     {
         $this->container['certificate_filename'] = $certificate_filename;
-
         return $this;
     }
 
@@ -270,7 +263,6 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     public function setHashAlgorithm($hash_algorithm)
     {
         $this->container['hash_algorithm'] = $hash_algorithm;
-
         return $this;
     }
 
@@ -294,7 +286,6 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     public function setLocation($location)
     {
         $this->container['location'] = $location;
-
         return $this;
     }
 
@@ -318,7 +309,6 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     public function setReason($reason)
     {
         $this->container['reason'] = $reason;
-
         return $this;
     }
 
@@ -342,9 +332,9 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     public function setSignatureDate($signature_date)
     {
         $this->container['signature_date'] = $signature_date;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -415,3 +405,4 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

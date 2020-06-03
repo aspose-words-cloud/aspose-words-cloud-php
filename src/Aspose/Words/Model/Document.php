@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Document.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * Document
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,12 +52,12 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'links' => '\Aspose\Words\Model\Link[]',
+        'document_properties' => '\Aspose\Words\Model\DocumentProperties',
         'file_name' => 'string',
-        'source_format' => 'string',
         'is_encrypted' => 'bool',
         'is_signed' => 'bool',
-        'document_properties' => '\Aspose\Words\Model\DocumentProperties'
+        'links' => '\Aspose\Words\Model\Link[]',
+        'source_format' => 'string'
     ];
 
     /*
@@ -70,12 +66,12 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'links' => null,
-        'file_name' => null,
-        'source_format' => null,
-        'is_encrypted' => null,
-        'is_signed' => null,
-        'document_properties' => null
+        'document_properties' => 'null',
+        'file_name' => 'null',
+        'is_encrypted' => 'null',
+        'is_signed' => 'null',
+        'links' => 'null',
+        'source_format' => 'null'
     ];
 
     /*
@@ -105,12 +101,12 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => 'Links',
+        'document_properties' => 'DocumentProperties',
         'file_name' => 'FileName',
-        'source_format' => 'SourceFormat',
         'is_encrypted' => 'IsEncrypted',
         'is_signed' => 'IsSigned',
-        'document_properties' => 'DocumentProperties'
+        'links' => 'Links',
+        'source_format' => 'SourceFormat'
     ];
 
     /*
@@ -119,12 +115,12 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
+        'document_properties' => 'setDocumentProperties',
         'file_name' => 'setFileName',
-        'source_format' => 'setSourceFormat',
         'is_encrypted' => 'setIsEncrypted',
         'is_signed' => 'setIsSigned',
-        'document_properties' => 'setDocumentProperties'
+        'links' => 'setLinks',
+        'source_format' => 'setSourceFormat'
     ];
 
     /*
@@ -133,12 +129,12 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
+        'document_properties' => 'getDocumentProperties',
         'file_name' => 'getFileName',
-        'source_format' => 'getSourceFormat',
         'is_encrypted' => 'getIsEncrypted',
         'is_signed' => 'getIsSigned',
-        'document_properties' => 'getDocumentProperties'
+        'links' => 'getLinks',
+        'source_format' => 'getSourceFormat'
     ];
 
     /*
@@ -251,12 +247,12 @@ class Document implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['document_properties'] = isset($data['document_properties']) ? $data['document_properties'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
-        $this->container['source_format'] = isset($data['source_format']) ? $data['source_format'] : null;
         $this->container['is_encrypted'] = isset($data['is_encrypted']) ? $data['is_encrypted'] : null;
         $this->container['is_signed'] = isset($data['is_signed']) ? $data['is_signed'] : null;
-        $this->container['document_properties'] = isset($data['document_properties']) ? $data['document_properties'] : null;
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['source_format'] = isset($data['source_format']) ? $data['source_format'] : null;
     }
 
     /*
@@ -276,6 +272,7 @@ class Document implements ArrayAccess
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -287,36 +284,35 @@ class Document implements ArrayAccess
      */
     public function valid()
     {
-
         $allowedValues = $this->getSourceFormatAllowableValues();
         if (!in_array($this->container['source_format'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
 
-
     /*
-     * Gets links
+     * Gets document_properties
      *
-     * @return \Aspose\Words\Model\Link[]
+     * @return \Aspose\Words\Model\DocumentProperties
      */
-    public function getLinks()
+    public function getDocumentProperties()
     {
-        return $this->container['links'];
+        return $this->container['document_properties'];
     }
 
     /*
-     * Sets links
+     * Sets document_properties
      *
-     * @param \Aspose\Words\Model\Link[] $links Gets or sets a list of links that originate from this document.
+     * @param \Aspose\Words\Model\DocumentProperties $document_properties Gets or sets returns document properties.
      *
      * @return $this
      */
-    public function setLinks($links)
+    public function setDocumentProperties($document_properties)
     {
-        $this->container['links'] = $links;
-
+        $this->container['document_properties'] = $document_properties;
         return $this;
     }
 
@@ -340,7 +336,75 @@ class Document implements ArrayAccess
     public function setFileName($file_name)
     {
         $this->container['file_name'] = $file_name;
+        return $this;
+    }
 
+    /*
+     * Gets is_encrypted
+     *
+     * @return bool
+     */
+    public function getIsEncrypted()
+    {
+        return $this->container['is_encrypted'];
+    }
+
+    /*
+     * Sets is_encrypted
+     *
+     * @param bool $is_encrypted Gets or sets a value indicating whether returns true if the document is encrypted and requires a password to open.
+     *
+     * @return $this
+     */
+    public function setIsEncrypted($is_encrypted)
+    {
+        $this->container['is_encrypted'] = $is_encrypted;
+        return $this;
+    }
+
+    /*
+     * Gets is_signed
+     *
+     * @return bool
+     */
+    public function getIsSigned()
+    {
+        return $this->container['is_signed'];
+    }
+
+    /*
+     * Sets is_signed
+     *
+     * @param bool $is_signed Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
+     *
+     * @return $this
+     */
+    public function setIsSigned($is_signed)
+    {
+        $this->container['is_signed'] = $is_signed;
+        return $this;
+    }
+
+    /*
+     * Gets links
+     *
+     * @return \Aspose\Words\Model\Link[]
+     */
+    public function getLinks()
+    {
+        return $this->container['links'];
+    }
+
+    /*
+     * Sets links
+     *
+     * @param \Aspose\Words\Model\Link[] $links Gets or sets a list of links that originate from this document.
+     *
+     * @return $this
+     */
+    public function setLinks($links)
+    {
+        $this->container['links'] = $links;
         return $this;
     }
 
@@ -367,83 +431,10 @@ class Document implements ArrayAccess
         if ((!is_numeric($source_format) && !in_array($source_format, $allowedValues)) || (is_numeric($source_format) && !in_array($allowedValues[$source_format], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'source_format', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['source_format'] = $source_format;
-
         return $this;
     }
 
-    /*
-     * Gets is_encrypted
-     *
-     * @return bool
-     */
-    public function getIsEncrypted()
-    {
-        return $this->container['is_encrypted'];
-    }
-
-    /*
-     * Sets is_encrypted
-     *
-     * @param bool $is_encrypted Gets or sets a value indicating whether returns true if the document is encrypted and requires a password to open.
-     *
-     * @return $this
-     */
-    public function setIsEncrypted($is_encrypted)
-    {
-        $this->container['is_encrypted'] = $is_encrypted;
-
-        return $this;
-    }
-
-    /*
-     * Gets is_signed
-     *
-     * @return bool
-     */
-    public function getIsSigned()
-    {
-        return $this->container['is_signed'];
-    }
-
-    /*
-     * Sets is_signed
-     *
-     * @param bool $is_signed Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
-     *
-     * @return $this
-     */
-    public function setIsSigned($is_signed)
-    {
-        $this->container['is_signed'] = $is_signed;
-
-        return $this;
-    }
-
-    /*
-     * Gets document_properties
-     *
-     * @return \Aspose\Words\Model\DocumentProperties
-     */
-    public function getDocumentProperties()
-    {
-        return $this->container['document_properties'];
-    }
-
-    /*
-     * Sets document_properties
-     *
-     * @param \Aspose\Words\Model\DocumentProperties $document_properties document_properties
-     *
-     * @return $this
-     */
-    public function setDocumentProperties($document_properties)
-    {
-        $this->container['document_properties'] = $document_properties;
-
-        return $this;
-    }
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -514,3 +505,4 @@ class Document implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

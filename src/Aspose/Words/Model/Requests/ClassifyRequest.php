@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ClassifyRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -33,14 +33,59 @@ namespace Aspose\Words\Model\Requests;
  */
 class ClassifyRequest
 {
-    
-	
+    /*
+     * Text to classify.
+     */
+    public $text;
+
+    /*
+     * Number of the best classes to return.
+     */
+    public $best_classes_count;
+
     /*
      * Initializes a new instance of the ClassifyRequest class.
-     *  
+     *
+     * @param string $text Text to classify.
+     * @param string $best_classes_count Number of the best classes to return.
      */
-    public function __construct()             
+    public function __construct($text, $best_classes_count = null)
     {
+        $this->text = $text;
+        $this->best_classes_count = $best_classes_count;
     }
 
+    /*
+     * Text to classify.
+     */
+    public function get_text()
+    {
+        return $this->text;
+    }
+
+    /*
+     * Text to classify.
+     */
+    public function set_text($value)
+    {
+        $this->text = $value;
+        return $this;
+    }
+
+    /*
+     * Number of the best classes to return.
+     */
+    public function get_best_classes_count()
+    {
+        return $this->best_classes_count;
+    }
+
+    /*
+     * Number of the best classes to return.
+     */
+    public function set_best_classes_count($value)
+    {
+        $this->best_classes_count = $value;
+        return $this;
+    }
 }

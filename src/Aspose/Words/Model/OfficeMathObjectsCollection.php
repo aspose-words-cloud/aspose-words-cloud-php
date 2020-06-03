@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OfficeMathObjectsCollection.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * OfficeMathObjectsCollection
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Collection of OfficeMath objects.
  */
-class OfficeMathObjectsCollection extends LinkElement 
+class OfficeMathObjectsCollection extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class OfficeMathObjectsCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list' => null
+        'list' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class OfficeMathObjectsCollection extends LinkElement
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class OfficeMathObjectsCollection extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['list'] = isset($data['list']) ? $data['list'] : null;
     }
 
@@ -179,7 +174,6 @@ class OfficeMathObjectsCollection extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -197,7 +191,6 @@ class OfficeMathObjectsCollection extends LinkElement
 
         return true;
     }
-
 
     /*
      * Gets list
@@ -219,9 +212,9 @@ class OfficeMathObjectsCollection extends LinkElement
     public function setList($list)
     {
         $this->container['list'] = $list;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class OfficeMathObjectsCollection extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

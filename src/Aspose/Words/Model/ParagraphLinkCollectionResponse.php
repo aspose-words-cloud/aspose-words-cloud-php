@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ParagraphLinkCollectionResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ParagraphLinkCollectionResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs.
  */
-class ParagraphLinkCollectionResponse extends WordsResponse 
+class ParagraphLinkCollectionResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class ParagraphLinkCollectionResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'paragraphs' => null
+        'paragraphs' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class ParagraphLinkCollectionResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class ParagraphLinkCollectionResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['paragraphs'] = isset($data['paragraphs']) ? $data['paragraphs'] : null;
     }
 
@@ -179,7 +174,6 @@ class ParagraphLinkCollectionResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class ParagraphLinkCollectionResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets paragraphs
      *
@@ -212,16 +205,16 @@ class ParagraphLinkCollectionResponse extends WordsResponse
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\ParagraphLinkCollection $paragraphs paragraphs
+     * @param \Aspose\Words\Model\ParagraphLinkCollection $paragraphs Gets or sets collection of paragraphs.
      *
      * @return $this
      */
     public function setParagraphs($paragraphs)
     {
         $this->container['paragraphs'] = $paragraphs;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class ParagraphLinkCollectionResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

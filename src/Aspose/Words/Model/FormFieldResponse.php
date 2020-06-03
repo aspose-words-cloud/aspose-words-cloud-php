@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FormFieldResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * FormFieldResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/formfields/{1}.
  */
-class FormFieldResponse extends WordsResponse 
+class FormFieldResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class FormFieldResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'form_field' => null
+        'form_field' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class FormFieldResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class FormFieldResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['form_field'] = isset($data['form_field']) ? $data['form_field'] : null;
     }
 
@@ -179,7 +174,6 @@ class FormFieldResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class FormFieldResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets form_field
      *
@@ -212,16 +205,16 @@ class FormFieldResponse extends WordsResponse
     /*
      * Sets form_field
      *
-     * @param \Aspose\Words\Model\FormField $form_field form_field
+     * @param \Aspose\Words\Model\FormField $form_field Gets or sets field information.
      *
      * @return $this
      */
     public function setFormField($form_field)
     {
         $this->container['form_field'] = $form_field;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class FormFieldResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

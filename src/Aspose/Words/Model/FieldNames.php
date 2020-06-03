@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FieldNames.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FieldNames
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a collection of merge fields within a document.
  */
-class FieldNames extends LinkElement
+class FieldNames extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class FieldNames extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'names' => 'null'
+        'names' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class FieldNames extends LinkElement
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class FieldNames extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['names'] = isset($data['names']) ? $data['names'] : null;
     }
 
@@ -174,6 +179,7 @@ class FieldNames extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -191,6 +197,7 @@ class FieldNames extends LinkElement
 
         return true;
     }
+
 
     /*
      * Gets names
@@ -212,9 +219,9 @@ class FieldNames extends LinkElement
     public function setNames($names)
     {
         $this->container['names'] = $names;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class FieldNames extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

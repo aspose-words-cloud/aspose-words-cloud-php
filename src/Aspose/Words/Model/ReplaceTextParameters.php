@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReplaceTextParameters.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ReplaceTextParameters
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -52,11 +56,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'old_value' => 'string',
+        'new_value' => 'string',
         'is_match_case' => 'bool',
         'is_match_whole_word' => 'bool',
-        'is_old_value_regex' => 'bool',
-        'new_value' => 'string',
-        'old_value' => 'string'
+        'is_old_value_regex' => 'bool'
     ];
 
     /*
@@ -65,11 +69,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_match_case' => 'null',
-        'is_match_whole_word' => 'null',
-        'is_old_value_regex' => 'null',
-        'new_value' => 'null',
-        'old_value' => 'null'
+        'old_value' => null,
+        'new_value' => null,
+        'is_match_case' => null,
+        'is_match_whole_word' => null,
+        'is_old_value_regex' => null
     ];
 
     /*
@@ -99,11 +103,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'old_value' => 'OldValue',
+        'new_value' => 'NewValue',
         'is_match_case' => 'IsMatchCase',
         'is_match_whole_word' => 'IsMatchWholeWord',
-        'is_old_value_regex' => 'IsOldValueRegex',
-        'new_value' => 'NewValue',
-        'old_value' => 'OldValue'
+        'is_old_value_regex' => 'IsOldValueRegex'
     ];
 
     /*
@@ -112,11 +116,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'old_value' => 'setOldValue',
+        'new_value' => 'setNewValue',
         'is_match_case' => 'setIsMatchCase',
         'is_match_whole_word' => 'setIsMatchWholeWord',
-        'is_old_value_regex' => 'setIsOldValueRegex',
-        'new_value' => 'setNewValue',
-        'old_value' => 'setOldValue'
+        'is_old_value_regex' => 'setIsOldValueRegex'
     ];
 
     /*
@@ -125,11 +129,11 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'old_value' => 'getOldValue',
+        'new_value' => 'getNewValue',
         'is_match_case' => 'getIsMatchCase',
         'is_match_whole_word' => 'getIsMatchWholeWord',
-        'is_old_value_regex' => 'getIsOldValueRegex',
-        'new_value' => 'getNewValue',
-        'old_value' => 'getOldValue'
+        'is_old_value_regex' => 'getIsOldValueRegex'
     ];
 
     /*
@@ -190,11 +194,11 @@ class ReplaceTextParameters implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['old_value'] = isset($data['old_value']) ? $data['old_value'] : null;
+        $this->container['new_value'] = isset($data['new_value']) ? $data['new_value'] : null;
         $this->container['is_match_case'] = isset($data['is_match_case']) ? $data['is_match_case'] : null;
         $this->container['is_match_whole_word'] = isset($data['is_match_whole_word']) ? $data['is_match_whole_word'] : null;
         $this->container['is_old_value_regex'] = isset($data['is_old_value_regex']) ? $data['is_old_value_regex'] : null;
-        $this->container['new_value'] = isset($data['new_value']) ? $data['new_value'] : null;
-        $this->container['old_value'] = isset($data['old_value']) ? $data['old_value'] : null;
     }
 
     /*
@@ -217,75 +221,32 @@ class ReplaceTextParameters implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 
+
     /*
-     * Gets is_match_case
+     * Gets old_value
      *
-     * @return bool
+     * @return string
      */
-    public function getIsMatchCase()
+    public function getOldValue()
     {
-        return $this->container['is_match_case'];
+        return $this->container['old_value'];
     }
 
     /*
-     * Sets is_match_case
+     * Sets old_value
      *
-     * @param bool $is_match_case Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
+     * @param string $old_value Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
      *
      * @return $this
      */
-    public function setIsMatchCase($is_match_case)
+    public function setOldValue($old_value)
     {
-        $this->container['is_match_case'] = $is_match_case;
-        return $this;
-    }
+        $this->container['old_value'] = $old_value;
 
-    /*
-     * Gets is_match_whole_word
-     *
-     * @return bool
-     */
-    public function getIsMatchWholeWord()
-    {
-        return $this->container['is_match_whole_word'];
-    }
-
-    /*
-     * Sets is_match_whole_word
-     *
-     * @param bool $is_match_whole_word Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
-     *
-     * @return $this
-     */
-    public function setIsMatchWholeWord($is_match_whole_word)
-    {
-        $this->container['is_match_whole_word'] = $is_match_whole_word;
-        return $this;
-    }
-
-    /*
-     * Gets is_old_value_regex
-     *
-     * @return bool
-     */
-    public function getIsOldValueRegex()
-    {
-        return $this->container['is_old_value_regex'];
-    }
-
-    /*
-     * Sets is_old_value_regex
-     *
-     * @param bool $is_old_value_regex Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
-     *
-     * @return $this
-     */
-    public function setIsOldValueRegex($is_old_value_regex)
-    {
-        $this->container['is_old_value_regex'] = $is_old_value_regex;
         return $this;
     }
 
@@ -309,32 +270,81 @@ class ReplaceTextParameters implements ArrayAccess
     public function setNewValue($new_value)
     {
         $this->container['new_value'] = $new_value;
+
         return $this;
     }
 
     /*
-     * Gets old_value
+     * Gets is_match_case
      *
-     * @return string
+     * @return bool
      */
-    public function getOldValue()
+    public function getIsMatchCase()
     {
-        return $this->container['old_value'];
+        return $this->container['is_match_case'];
     }
 
     /*
-     * Sets old_value
+     * Sets is_match_case
      *
-     * @param string $old_value Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
+     * @param bool $is_match_case Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
      *
      * @return $this
      */
-    public function setOldValue($old_value)
+    public function setIsMatchCase($is_match_case)
     {
-        $this->container['old_value'] = $old_value;
+        $this->container['is_match_case'] = $is_match_case;
+
         return $this;
     }
 
+    /*
+     * Gets is_match_whole_word
+     *
+     * @return bool
+     */
+    public function getIsMatchWholeWord()
+    {
+        return $this->container['is_match_whole_word'];
+    }
+
+    /*
+     * Sets is_match_whole_word
+     *
+     * @param bool $is_match_whole_word Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
+     *
+     * @return $this
+     */
+    public function setIsMatchWholeWord($is_match_whole_word)
+    {
+        $this->container['is_match_whole_word'] = $is_match_whole_word;
+
+        return $this;
+    }
+
+    /*
+     * Gets is_old_value_regex
+     *
+     * @return bool
+     */
+    public function getIsOldValueRegex()
+    {
+        return $this->container['is_old_value_regex'];
+    }
+
+    /*
+     * Sets is_old_value_regex
+     *
+     * @param bool $is_old_value_regex Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
+     *
+     * @return $this
+     */
+    public function setIsOldValueRegex($is_old_value_regex)
+    {
+        $this->container['is_old_value_regex'] = $is_old_value_regex;
+
+        return $this;
+    }
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -405,4 +415,3 @@ class ReplaceTextParameters implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

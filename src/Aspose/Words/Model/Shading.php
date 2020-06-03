@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Shading.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Shading
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -63,9 +67,9 @@ class Shading implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'background_pattern_color' => 'null',
-        'foreground_pattern_color' => 'null',
-        'texture' => 'null'
+        'background_pattern_color' => null,
+        'foreground_pattern_color' => null,
+        'texture' => null
     ];
 
     /*
@@ -320,7 +324,6 @@ class Shading implements ArrayAccess
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -332,14 +335,14 @@ class Shading implements ArrayAccess
      */
     public function valid()
     {
+
         $allowedValues = $this->getTextureAllowableValues();
         if (!in_array($this->container['texture'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets background_pattern_color
@@ -354,13 +357,14 @@ class Shading implements ArrayAccess
     /*
      * Sets background_pattern_color
      *
-     * @param \Aspose\Words\Model\XmlColor $background_pattern_color Gets or sets the color that's applied to the background of the Shading object.
+     * @param \Aspose\Words\Model\XmlColor $background_pattern_color background_pattern_color
      *
      * @return $this
      */
     public function setBackgroundPatternColor($background_pattern_color)
     {
         $this->container['background_pattern_color'] = $background_pattern_color;
+
         return $this;
     }
 
@@ -377,13 +381,14 @@ class Shading implements ArrayAccess
     /*
      * Sets foreground_pattern_color
      *
-     * @param \Aspose\Words\Model\XmlColor $foreground_pattern_color Gets or sets the color that's applied to the foreground of the Shading object.
+     * @param \Aspose\Words\Model\XmlColor $foreground_pattern_color foreground_pattern_color
      *
      * @return $this
      */
     public function setForegroundPatternColor($foreground_pattern_color)
     {
         $this->container['foreground_pattern_color'] = $foreground_pattern_color;
+
         return $this;
     }
 
@@ -410,10 +415,11 @@ class Shading implements ArrayAccess
         if ((!is_numeric($texture) && !in_array($texture, $allowedValues)) || (is_numeric($texture) && !in_array($allowedValues[$texture], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'texture', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['texture'] = $texture;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -484,4 +490,3 @@ class Shading implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

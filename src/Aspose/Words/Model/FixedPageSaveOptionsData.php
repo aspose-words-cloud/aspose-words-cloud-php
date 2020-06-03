@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FixedPageSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FixedPageSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,9 +37,9 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, images etc).
  */
-class FixedPageSaveOptionsData extends SaveOptionsData
+class FixedPageSaveOptionsData extends SaveOptionsData 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -66,13 +69,13 @@ class FixedPageSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'color_mode' => 'null',
-        'jpeg_quality' => 'null',
-        'metafile_rendering_options' => 'null',
-        'numeral_format' => 'null',
-        'optimize_output' => 'null',
-        'page_count' => 'null',
-        'page_index' => 'null'
+        'color_mode' => null,
+        'jpeg_quality' => 'int32',
+        'metafile_rendering_options' => null,
+        'numeral_format' => null,
+        'optimize_output' => null,
+        'page_count' => 'int32',
+        'page_index' => 'int32'
     ];
 
     /*
@@ -184,6 +187,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -193,6 +197,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['color_mode'] = isset($data['color_mode']) ? $data['color_mode'] : null;
         $this->container['jpeg_quality'] = isset($data['jpeg_quality']) ? $data['jpeg_quality'] : null;
         $this->container['metafile_rendering_options'] = isset($data['metafile_rendering_options']) ? $data['metafile_rendering_options'] : null;
@@ -200,6 +205,10 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         $this->container['optimize_output'] = isset($data['optimize_output']) ? $data['optimize_output'] : null;
         $this->container['page_count'] = isset($data['page_count']) ? $data['page_count'] : null;
         $this->container['page_index'] = isset($data['page_index']) ? $data['page_index'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -210,6 +219,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -227,6 +237,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets color_mode
@@ -248,6 +259,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     public function setColorMode($color_mode)
     {
         $this->container['color_mode'] = $color_mode;
+
         return $this;
     }
 
@@ -271,6 +283,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     public function setJpegQuality($jpeg_quality)
     {
         $this->container['jpeg_quality'] = $jpeg_quality;
+
         return $this;
     }
 
@@ -287,13 +300,14 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets metafile_rendering_options
      *
-     * @param \Aspose\Words\Model\MetafileRenderingOptionsData $metafile_rendering_options Gets or sets allows to specify metafile rendering options.
+     * @param \Aspose\Words\Model\MetafileRenderingOptionsData $metafile_rendering_options metafile_rendering_options
      *
      * @return $this
      */
     public function setMetafileRenderingOptions($metafile_rendering_options)
     {
         $this->container['metafile_rendering_options'] = $metafile_rendering_options;
+
         return $this;
     }
 
@@ -317,6 +331,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     public function setNumeralFormat($numeral_format)
     {
         $this->container['numeral_format'] = $numeral_format;
+
         return $this;
     }
 
@@ -340,6 +355,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     public function setOptimizeOutput($optimize_output)
     {
         $this->container['optimize_output'] = $optimize_output;
+
         return $this;
     }
 
@@ -363,6 +379,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     public function setPageCount($page_count)
     {
         $this->container['page_count'] = $page_count;
+
         return $this;
     }
 
@@ -386,9 +403,9 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     public function setPageIndex($page_index)
     {
         $this->container['page_index'] = $page_index;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -459,4 +476,3 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

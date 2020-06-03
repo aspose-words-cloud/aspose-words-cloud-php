@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CommentsResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * CommentsResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/comments.
  */
-class CommentsResponse extends WordsResponse
+class CommentsResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class CommentsResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'comments' => 'null'
+        'comments' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class CommentsResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class CommentsResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
     }
 
@@ -174,6 +179,7 @@ class CommentsResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class CommentsResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets comments
      *
@@ -205,16 +212,16 @@ class CommentsResponse extends WordsResponse
     /*
      * Sets comments
      *
-     * @param \Aspose\Words\Model\CommentsCollection $comments Gets or sets collection of comments.
+     * @param \Aspose\Words\Model\CommentsCollection $comments comments
      *
      * @return $this
      */
     public function setComments($comments)
     {
         $this->container['comments'] = $comments;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class CommentsResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableCell.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * TableCell
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Table cell element.
  */
-class TableCell extends NodeLink
+class TableCell extends NodeLink 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class TableCell extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'child_nodes' => 'null'
+        'child_nodes' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class TableCell extends NodeLink
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class TableCell extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['child_nodes'] = isset($data['child_nodes']) ? $data['child_nodes'] : null;
     }
 
@@ -174,6 +179,7 @@ class TableCell extends NodeLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -191,6 +197,7 @@ class TableCell extends NodeLink
 
         return true;
     }
+
 
     /*
      * Gets child_nodes
@@ -212,9 +219,9 @@ class TableCell extends NodeLink
     public function setChildNodes($child_nodes)
     {
         $this->container['child_nodes'] = $child_nodes;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class TableCell extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

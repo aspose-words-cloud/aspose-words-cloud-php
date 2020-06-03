@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FootnoteResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FootnoteResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/footnote/0.
  */
-class FootnoteResponse extends WordsResponse
+class FootnoteResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class FootnoteResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'footnote' => 'null'
+        'footnote' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class FootnoteResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class FootnoteResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['footnote'] = isset($data['footnote']) ? $data['footnote'] : null;
     }
 
@@ -174,6 +179,7 @@ class FootnoteResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class FootnoteResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets footnote
      *
@@ -205,16 +212,16 @@ class FootnoteResponse extends WordsResponse
     /*
      * Sets footnote
      *
-     * @param \Aspose\Words\Model\Footnote $footnote Gets or sets footnote information.
+     * @param \Aspose\Words\Model\Footnote $footnote footnote
      *
      * @return $this
      */
     public function setFootnote($footnote)
     {
         $this->container['footnote'] = $footnote;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class FootnoteResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

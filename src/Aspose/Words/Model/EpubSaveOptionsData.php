@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EpubSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * EpubSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container class for epub save options.
  */
-class EpubSaveOptionsData extends HtmlSaveOptionsData
+class EpubSaveOptionsData extends HtmlSaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'epub_navigation_map_level' => 'null'
+        'epub_navigation_map_level' => 'int32'
     ];
 
     /*
@@ -154,6 +157,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['epub_navigation_map_level'] = isset($data['epub_navigation_map_level']) ? $data['epub_navigation_map_level'] : null;
     }
 
@@ -174,6 +179,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -191,6 +197,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets epub_navigation_map_level
@@ -212,9 +219,9 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
     public function setEpubNavigationMapLevel($epub_navigation_map_level)
     {
         $this->container['epub_navigation_map_level'] = $epub_navigation_map_level;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

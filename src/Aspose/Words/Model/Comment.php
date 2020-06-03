@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Comment.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Comment
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Comment.
  */
-class Comment extends CommentLink
+class Comment extends CommentLink 
 {
     const DISCRIMINATOR = null;
 
@@ -66,13 +69,13 @@ class Comment extends CommentLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'author' => 'null',
-        'content' => 'null',
-        'date_time' => 'null',
-        'initial' => 'null',
-        'range_end' => 'null',
-        'range_start' => 'null',
-        'text' => 'null'
+        'author' => null,
+        'content' => null,
+        'date_time' => 'date-time',
+        'initial' => null,
+        'range_end' => null,
+        'range_start' => null,
+        'text' => null
     ];
 
     /*
@@ -184,6 +187,7 @@ class Comment extends CommentLink
 
 
 
+
     /*
      * Constructor
      *
@@ -193,6 +197,7 @@ class Comment extends CommentLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['author'] = isset($data['author']) ? $data['author'] : null;
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
@@ -210,6 +215,7 @@ class Comment extends CommentLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -227,6 +233,7 @@ class Comment extends CommentLink
 
         return true;
     }
+
 
     /*
      * Gets author
@@ -248,6 +255,7 @@ class Comment extends CommentLink
     public function setAuthor($author)
     {
         $this->container['author'] = $author;
+
         return $this;
     }
 
@@ -264,13 +272,14 @@ class Comment extends CommentLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets content of comment.
+     * @param \Aspose\Words\Model\StoryChildNodes $content content
      *
      * @return $this
      */
     public function setContent($content)
     {
         $this->container['content'] = $content;
+
         return $this;
     }
 
@@ -294,6 +303,7 @@ class Comment extends CommentLink
     public function setDateTime($date_time)
     {
         $this->container['date_time'] = $date_time;
+
         return $this;
     }
 
@@ -317,6 +327,7 @@ class Comment extends CommentLink
     public function setInitial($initial)
     {
         $this->container['initial'] = $initial;
+
         return $this;
     }
 
@@ -333,13 +344,14 @@ class Comment extends CommentLink
     /*
      * Sets range_end
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets link to comment range end node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_end range_end
      *
      * @return $this
      */
     public function setRangeEnd($range_end)
     {
         $this->container['range_end'] = $range_end;
+
         return $this;
     }
 
@@ -356,13 +368,14 @@ class Comment extends CommentLink
     /*
      * Sets range_start
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_start range_start
      *
      * @return $this
      */
     public function setRangeStart($range_start)
     {
         $this->container['range_start'] = $range_start;
+
         return $this;
     }
 
@@ -386,9 +399,9 @@ class Comment extends CommentLink
     public function setText($text)
     {
         $this->container['text'] = $text;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -459,4 +472,3 @@ class Comment extends CommentLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

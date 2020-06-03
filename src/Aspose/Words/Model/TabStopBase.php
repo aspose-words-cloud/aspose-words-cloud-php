@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TabStopBase.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * TabStopBase
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -37,7 +41,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class TabStopBase implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -63,9 +67,9 @@ class TabStopBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'alignment' => 'null',
-        'leader' => 'null',
-        'position' => 'null'
+        'alignment' => null,
+        'leader' => null,
+        'position' => 'double'
     ];
 
     /*
@@ -168,7 +172,7 @@ class TabStopBase implements ArrayAccess
     const ALIGNMENT_RIGHT = 'Right';
     const ALIGNMENT_DECIMAL = 'Decimal';
     const ALIGNMENT_BAR = 'Bar';
-    const ALIGNMENT_LIST = 'List';
+    const ALIGNMENT__LIST = 'List';
     const ALIGNMENT_CLEAR = 'Clear';
     const LEADER_NONE = 'None';
     const LEADER_DOTS = 'Dots';
@@ -190,7 +194,7 @@ class TabStopBase implements ArrayAccess
             self::ALIGNMENT_RIGHT,
             self::ALIGNMENT_DECIMAL,
             self::ALIGNMENT_BAR,
-            self::ALIGNMENT_LIST,
+            self::ALIGNMENT__LIST,
             self::ALIGNMENT_CLEAR
         ];
     }
@@ -229,6 +233,10 @@ class TabStopBase implements ArrayAccess
         $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
         $this->container['leader'] = isset($data['leader']) ? $data['leader'] : null;
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -256,7 +264,6 @@ class TabStopBase implements ArrayAccess
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -268,19 +275,18 @@ class TabStopBase implements ArrayAccess
      */
     public function valid()
     {
+
         $allowedValues = $this->getAlignmentAllowableValues();
         if (!in_array($this->container['alignment'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getLeaderAllowableValues();
         if (!in_array($this->container['leader'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets alignment
@@ -305,7 +311,9 @@ class TabStopBase implements ArrayAccess
         if ((!is_numeric($alignment) && !in_array($alignment, $allowedValues)) || (is_numeric($alignment) && !in_array($allowedValues[$alignment], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'alignment', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['alignment'] = $alignment;
+
         return $this;
     }
 
@@ -332,7 +340,9 @@ class TabStopBase implements ArrayAccess
         if ((!is_numeric($leader) && !in_array($leader, $allowedValues)) || (is_numeric($leader) && !in_array($allowedValues[$leader], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'leader', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['leader'] = $leader;
+
         return $this;
     }
 
@@ -356,9 +366,9 @@ class TabStopBase implements ArrayAccess
     public function setPosition($position)
     {
         $this->container['position'] = $position;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -429,4 +439,3 @@ class TabStopBase implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

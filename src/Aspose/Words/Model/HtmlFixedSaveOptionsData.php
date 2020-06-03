@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HtmlFixedSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * HtmlFixedSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for fixed html save options.
  */
-class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
+class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -73,20 +76,20 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'css_class_names_prefix' => 'null',
-        'encoding' => 'null',
-        'export_embedded_css' => 'null',
-        'export_embedded_fonts' => 'null',
-        'export_embedded_images' => 'null',
-        'export_form_fields' => 'null',
-        'font_format' => 'null',
-        'page_horizontal_alignment' => 'null',
-        'page_margins' => 'null',
-        'resources_folder' => 'null',
-        'resources_folder_alias' => 'null',
-        'save_font_face_css_separately' => 'null',
-        'show_page_border' => 'null',
-        'use_target_machine_fonts' => 'null'
+        'css_class_names_prefix' => null,
+        'encoding' => null,
+        'export_embedded_css' => null,
+        'export_embedded_fonts' => null,
+        'export_embedded_images' => null,
+        'export_form_fields' => null,
+        'font_format' => null,
+        'page_horizontal_alignment' => null,
+        'page_margins' => 'double',
+        'resources_folder' => null,
+        'resources_folder_alias' => null,
+        'save_font_face_css_separately' => null,
+        'show_page_border' => null,
+        'use_target_machine_fonts' => null
     ];
 
     /*
@@ -219,6 +222,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -228,6 +232,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['css_class_names_prefix'] = isset($data['css_class_names_prefix']) ? $data['css_class_names_prefix'] : null;
         $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
         $this->container['export_embedded_css'] = isset($data['export_embedded_css']) ? $data['export_embedded_css'] : null;
@@ -252,6 +257,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -270,6 +276,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return true;
     }
 
+
     /*
      * Gets css_class_names_prefix
      *
@@ -283,13 +290,14 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets css_class_names_prefix
      *
-     * @param string $css_class_names_prefix Gets or sets specifies prefix which is added to all class names in style.css file. Default value is "aw".
+     * @param string $css_class_names_prefix Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
      *
      * @return $this
      */
     public function setCssClassNamesPrefix($css_class_names_prefix)
     {
         $this->container['css_class_names_prefix'] = $css_class_names_prefix;
+
         return $this;
     }
 
@@ -313,6 +321,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setEncoding($encoding)
     {
         $this->container['encoding'] = $encoding;
+
         return $this;
     }
 
@@ -336,6 +345,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setExportEmbeddedCss($export_embedded_css)
     {
         $this->container['export_embedded_css'] = $export_embedded_css;
+
         return $this;
     }
 
@@ -359,6 +369,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setExportEmbeddedFonts($export_embedded_fonts)
     {
         $this->container['export_embedded_fonts'] = $export_embedded_fonts;
+
         return $this;
     }
 
@@ -382,6 +393,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setExportEmbeddedImages($export_embedded_images)
     {
         $this->container['export_embedded_images'] = $export_embedded_images;
+
         return $this;
     }
 
@@ -405,6 +417,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setExportFormFields($export_form_fields)
     {
         $this->container['export_form_fields'] = $export_form_fields;
+
         return $this;
     }
 
@@ -428,6 +441,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setFontFormat($font_format)
     {
         $this->container['font_format'] = $font_format;
+
         return $this;
     }
 
@@ -451,6 +465,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setPageHorizontalAlignment($page_horizontal_alignment)
     {
         $this->container['page_horizontal_alignment'] = $page_horizontal_alignment;
+
         return $this;
     }
 
@@ -474,6 +489,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setPageMargins($page_margins)
     {
         $this->container['page_margins'] = $page_margins;
+
         return $this;
     }
 
@@ -497,6 +513,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setResourcesFolder($resources_folder)
     {
         $this->container['resources_folder'] = $resources_folder;
+
         return $this;
     }
 
@@ -520,6 +537,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setResourcesFolderAlias($resources_folder_alias)
     {
         $this->container['resources_folder_alias'] = $resources_folder_alias;
+
         return $this;
     }
 
@@ -536,13 +554,14 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets save_font_face_css_separately
      *
-     * @param bool $save_font_face_css_separately Gets or sets flag indicates whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file "styles.css".
+     * @param bool $save_font_face_css_separately Gets or sets flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
      *
      * @return $this
      */
     public function setSaveFontFaceCssSeparately($save_font_face_css_separately)
     {
         $this->container['save_font_face_css_separately'] = $save_font_face_css_separately;
+
         return $this;
     }
 
@@ -566,6 +585,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setShowPageBorder($show_page_border)
     {
         $this->container['show_page_border'] = $show_page_border;
+
         return $this;
     }
 
@@ -589,9 +609,9 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseTargetMachineFonts($use_target_machine_fonts)
     {
         $this->container['use_target_machine_fonts'] = $use_target_machine_fonts;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -662,4 +682,3 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SearchResultsCollection.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * SearchResultsCollection
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Collection of search results.
  */
-class SearchResultsCollection extends LinkElement
+class SearchResultsCollection extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class SearchResultsCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'results_list' => 'null'
+        'results_list' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class SearchResultsCollection extends LinkElement
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class SearchResultsCollection extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['results_list'] = isset($data['results_list']) ? $data['results_list'] : null;
     }
 
@@ -174,6 +179,7 @@ class SearchResultsCollection extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -191,6 +197,7 @@ class SearchResultsCollection extends LinkElement
 
         return true;
     }
+
 
     /*
      * Gets results_list
@@ -212,9 +219,9 @@ class SearchResultsCollection extends LinkElement
     public function setResultsList($results_list)
     {
         $this->container['results_list'] = $results_list;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class SearchResultsCollection extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

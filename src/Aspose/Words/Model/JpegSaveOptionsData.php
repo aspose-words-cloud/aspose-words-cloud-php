@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="JpegSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * JpegSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for jpeg save options.
  */
-class JpegSaveOptionsData extends ImageSaveOptionsData
+class JpegSaveOptionsData extends ImageSaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -149,6 +152,7 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -158,6 +162,7 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
     }
 
     /*
@@ -168,6 +173,7 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -185,7 +191,6 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
 
         return true;
     }
-
 
     /*
      * Returns true if offset exists. False otherwise.
@@ -257,4 +262,3 @@ class JpegSaveOptionsData extends ImageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

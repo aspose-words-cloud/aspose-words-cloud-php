@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OfficeMathObject.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * OfficeMathObject
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description OfficeMath object.
  */
-class OfficeMathObject extends OfficeMathLink
+class OfficeMathObject extends OfficeMathLink 
 {
     const DISCRIMINATOR = null;
 
@@ -63,10 +66,10 @@ class OfficeMathObject extends OfficeMathLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'content' => 'null',
-        'display_type' => 'null',
-        'justification' => 'null',
-        'math_object_type' => 'null'
+        'content' => null,
+        'display_type' => null,
+        'justification' => null,
+        'math_object_type' => null
     ];
 
     /*
@@ -170,7 +173,7 @@ class OfficeMathObject extends OfficeMathLink
     const DISPLAY_TYPE_DISPLAY = 'Display';
     const DISPLAY_TYPE_INLINE = 'Inline';
     const JUSTIFICATION_CENTER_GROUP = 'CenterGroup';
-    const JUSTIFICATION_DEFAULT = 'Default';
+    const JUSTIFICATION__DEFAULT = 'Default';
     const JUSTIFICATION_CENTER = 'Center';
     const JUSTIFICATION_LEFT = 'Left';
     const JUSTIFICATION_RIGHT = 'Right';
@@ -184,11 +187,11 @@ class OfficeMathObject extends OfficeMathLink
     const MATH_OBJECT_TYPE_DELIMITER = 'Delimiter';
     const MATH_OBJECT_TYPE_DEGREE = 'Degree';
     const MATH_OBJECT_TYPE_ARGUMENT = 'Argument';
-    const MATH_OBJECT_TYPE_ARRAY = 'Array';
+    const MATH_OBJECT_TYPE__ARRAY = 'Array';
     const MATH_OBJECT_TYPE_FRACTION = 'Fraction';
     const MATH_OBJECT_TYPE_DENOMINATOR = 'Denominator';
     const MATH_OBJECT_TYPE_NUMERATOR = 'Numerator';
-    const MATH_OBJECT_TYPE_FUNCTION = 'Function';
+    const MATH_OBJECT_TYPE__FUNCTION = 'Function';
     const MATH_OBJECT_TYPE_FUNCTION_NAME = 'FunctionName';
     const MATH_OBJECT_TYPE_GROUP_CHARACTER = 'GroupCharacter';
     const MATH_OBJECT_TYPE_LIMIT = 'Limit';
@@ -227,7 +230,7 @@ class OfficeMathObject extends OfficeMathLink
     {
         return [
             self::JUSTIFICATION_CENTER_GROUP,
-            self::JUSTIFICATION_DEFAULT,
+            self::JUSTIFICATION__DEFAULT,
             self::JUSTIFICATION_CENTER,
             self::JUSTIFICATION_LEFT,
             self::JUSTIFICATION_RIGHT,
@@ -251,11 +254,11 @@ class OfficeMathObject extends OfficeMathLink
             self::MATH_OBJECT_TYPE_DELIMITER,
             self::MATH_OBJECT_TYPE_DEGREE,
             self::MATH_OBJECT_TYPE_ARGUMENT,
-            self::MATH_OBJECT_TYPE_ARRAY,
+            self::MATH_OBJECT_TYPE__ARRAY,
             self::MATH_OBJECT_TYPE_FRACTION,
             self::MATH_OBJECT_TYPE_DENOMINATOR,
             self::MATH_OBJECT_TYPE_NUMERATOR,
-            self::MATH_OBJECT_TYPE_FUNCTION,
+            self::MATH_OBJECT_TYPE__FUNCTION,
             self::MATH_OBJECT_TYPE_FUNCTION_NAME,
             self::MATH_OBJECT_TYPE_GROUP_CHARACTER,
             self::MATH_OBJECT_TYPE_LIMIT,
@@ -275,6 +278,7 @@ class OfficeMathObject extends OfficeMathLink
         ];
     }
 
+
     /*
      * Constructor
      *
@@ -284,6 +288,7 @@ class OfficeMathObject extends OfficeMathLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['display_type'] = isset($data['display_type']) ? $data['display_type'] : null;
         $this->container['justification'] = isset($data['justification']) ? $data['justification'] : null;
@@ -298,6 +303,7 @@ class OfficeMathObject extends OfficeMathLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         $allowedValues = $this->getDisplayTypeAllowableValues();
         if (!in_array($this->container['display_type'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -322,7 +328,6 @@ class OfficeMathObject extends OfficeMathLink
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -342,20 +347,17 @@ class OfficeMathObject extends OfficeMathLink
         if (!in_array($this->container['display_type'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getJustificationAllowableValues();
         if (!in_array($this->container['justification'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getMathObjectTypeAllowableValues();
         if (!in_array($this->container['math_object_type'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets content
@@ -370,13 +372,14 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets content of footnote.
+     * @param \Aspose\Words\Model\StoryChildNodes $content content
      *
      * @return $this
      */
     public function setContent($content)
     {
         $this->container['content'] = $content;
+
         return $this;
     }
 
@@ -403,7 +406,9 @@ class OfficeMathObject extends OfficeMathLink
         if ((!is_numeric($display_type) && !in_array($display_type, $allowedValues)) || (is_numeric($display_type) && !in_array($allowedValues[$display_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'display_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['display_type'] = $display_type;
+
         return $this;
     }
 
@@ -430,7 +435,9 @@ class OfficeMathObject extends OfficeMathLink
         if ((!is_numeric($justification) && !in_array($justification, $allowedValues)) || (is_numeric($justification) && !in_array($allowedValues[$justification], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'justification', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['justification'] = $justification;
+
         return $this;
     }
 
@@ -457,10 +464,11 @@ class OfficeMathObject extends OfficeMathLink
         if ((!is_numeric($math_object_type) && !in_array($math_object_type, $allowedValues)) || (is_numeric($math_object_type) && !in_array($allowedValues[$math_object_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'math_object_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['math_object_type'] = $math_object_type;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -531,4 +539,3 @@ class OfficeMathObject extends OfficeMathLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

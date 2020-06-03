@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StyleCopy.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * StyleCopy
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -61,7 +65,7 @@ class StyleCopy implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'style_name' => 'null'
+        'style_name' => null
     ];
 
     /*
@@ -193,8 +197,10 @@ class StyleCopy implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
+
 
     /*
      * Gets style_name
@@ -216,9 +222,9 @@ class StyleCopy implements ArrayAccess
     public function setStyleName($style_name)
     {
         $this->container['style_name'] = $style_name;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -289,4 +295,3 @@ class StyleCopy implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

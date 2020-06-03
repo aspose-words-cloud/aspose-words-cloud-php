@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OoxmlSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * OoxmlSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for docx/docm/dotx/dotm/flatopc save options.
  */
-class OoxmlSaveOptionsData extends SaveOptionsData
+class OoxmlSaveOptionsData extends SaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -63,10 +66,10 @@ class OoxmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'compliance' => 'null',
-        'compression_level' => 'null',
-        'password' => 'null',
-        'pretty_format' => 'null'
+        'compliance' => null,
+        'compression_level' => null,
+        'password' => null,
+        'pretty_format' => null
     ];
 
     /*
@@ -187,6 +190,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         ];
     }
 
+
     /*
      * Constructor
      *
@@ -196,6 +200,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
         $this->container['compression_level'] = isset($data['compression_level']) ? $data['compression_level'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
@@ -210,6 +215,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         $allowedValues = $this->getCompressionLevelAllowableValues();
         if (!in_array($this->container['compression_level'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -217,7 +223,6 @@ class OoxmlSaveOptionsData extends SaveOptionsData
                 implode("', '", $allowedValues)
             );
         }
-
 
         return $invalidProperties;
     }
@@ -238,10 +243,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         if (!in_array($this->container['compression_level'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets compliance
@@ -263,6 +267,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function setCompliance($compliance)
     {
         $this->container['compliance'] = $compliance;
+
         return $this;
     }
 
@@ -289,7 +294,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         if ((!is_numeric($compression_level) && !in_array($compression_level, $allowedValues)) || (is_numeric($compression_level) && !in_array($allowedValues[$compression_level], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'compression_level', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['compression_level'] = $compression_level;
+
         return $this;
     }
 
@@ -313,6 +320,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
         return $this;
     }
 
@@ -336,9 +344,9 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     public function setPrettyFormat($pretty_format)
     {
         $this->container['pretty_format'] = $pretty_format;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -409,4 +417,3 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

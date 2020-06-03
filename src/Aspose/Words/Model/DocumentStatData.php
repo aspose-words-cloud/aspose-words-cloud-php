@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentStatData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,17 +23,21 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * DocumentStatData
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
  * DocumentStatData
  *
- * @description Container for the document's statistical data.
+ * @description Container for the document&#x27;s statistical data.
  */
 class DocumentStatData implements ArrayAccess
 {
@@ -52,11 +56,11 @@ class DocumentStatData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'footnotes_stat_data' => '\Aspose\Words\Model\FootnotesStatData',
-        'page_count' => 'int',
-        'page_stat_data' => '\Aspose\Words\Model\PageStatData[]',
+        'word_count' => 'int',
         'paragraph_count' => 'int',
-        'word_count' => 'int'
+        'page_count' => 'int',
+        'footnotes_stat_data' => '\Aspose\Words\Model\FootnotesStatData',
+        'page_stat_data' => '\Aspose\Words\Model\PageStatData[]'
     ];
 
     /*
@@ -65,11 +69,11 @@ class DocumentStatData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'footnotes_stat_data' => 'null',
-        'page_count' => 'null',
-        'page_stat_data' => 'null',
-        'paragraph_count' => 'null',
-        'word_count' => 'null'
+        'word_count' => 'int32',
+        'paragraph_count' => 'int32',
+        'page_count' => 'int32',
+        'footnotes_stat_data' => null,
+        'page_stat_data' => null
     ];
 
     /*
@@ -99,11 +103,11 @@ class DocumentStatData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'footnotes_stat_data' => 'FootnotesStatData',
-        'page_count' => 'PageCount',
-        'page_stat_data' => 'PageStatData',
+        'word_count' => 'WordCount',
         'paragraph_count' => 'ParagraphCount',
-        'word_count' => 'WordCount'
+        'page_count' => 'PageCount',
+        'footnotes_stat_data' => 'FootnotesStatData',
+        'page_stat_data' => 'PageStatData'
     ];
 
     /*
@@ -112,11 +116,11 @@ class DocumentStatData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'footnotes_stat_data' => 'setFootnotesStatData',
-        'page_count' => 'setPageCount',
-        'page_stat_data' => 'setPageStatData',
+        'word_count' => 'setWordCount',
         'paragraph_count' => 'setParagraphCount',
-        'word_count' => 'setWordCount'
+        'page_count' => 'setPageCount',
+        'footnotes_stat_data' => 'setFootnotesStatData',
+        'page_stat_data' => 'setPageStatData'
     ];
 
     /*
@@ -125,11 +129,11 @@ class DocumentStatData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'footnotes_stat_data' => 'getFootnotesStatData',
-        'page_count' => 'getPageCount',
-        'page_stat_data' => 'getPageStatData',
+        'word_count' => 'getWordCount',
         'paragraph_count' => 'getParagraphCount',
-        'word_count' => 'getWordCount'
+        'page_count' => 'getPageCount',
+        'footnotes_stat_data' => 'getFootnotesStatData',
+        'page_stat_data' => 'getPageStatData'
     ];
 
     /*
@@ -190,11 +194,11 @@ class DocumentStatData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['footnotes_stat_data'] = isset($data['footnotes_stat_data']) ? $data['footnotes_stat_data'] : null;
-        $this->container['page_count'] = isset($data['page_count']) ? $data['page_count'] : null;
-        $this->container['page_stat_data'] = isset($data['page_stat_data']) ? $data['page_stat_data'] : null;
-        $this->container['paragraph_count'] = isset($data['paragraph_count']) ? $data['paragraph_count'] : null;
         $this->container['word_count'] = isset($data['word_count']) ? $data['word_count'] : null;
+        $this->container['paragraph_count'] = isset($data['paragraph_count']) ? $data['paragraph_count'] : null;
+        $this->container['page_count'] = isset($data['page_count']) ? $data['page_count'] : null;
+        $this->container['footnotes_stat_data'] = isset($data['footnotes_stat_data']) ? $data['footnotes_stat_data'] : null;
+        $this->container['page_stat_data'] = isset($data['page_stat_data']) ? $data['page_stat_data'] : null;
     }
 
     /*
@@ -217,75 +221,32 @@ class DocumentStatData implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 
-    /*
-     * Gets footnotes_stat_data
-     *
-     * @return \Aspose\Words\Model\FootnotesStatData
-     */
-    public function getFootnotesStatData()
-    {
-        return $this->container['footnotes_stat_data'];
-    }
 
     /*
-     * Sets footnotes_stat_data
-     *
-     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets detailed statistics of footnotes.
-     *
-     * @return $this
-     */
-    public function setFootnotesStatData($footnotes_stat_data)
-    {
-        $this->container['footnotes_stat_data'] = $footnotes_stat_data;
-        return $this;
-    }
-
-    /*
-     * Gets page_count
+     * Gets word_count
      *
      * @return int
      */
-    public function getPageCount()
+    public function getWordCount()
     {
-        return $this->container['page_count'];
+        return $this->container['word_count'];
     }
 
     /*
-     * Sets page_count
+     * Sets word_count
      *
-     * @param int $page_count Gets or sets total count of pages in the document.
+     * @param int $word_count Gets or sets total count of words in the document.
      *
      * @return $this
      */
-    public function setPageCount($page_count)
+    public function setWordCount($word_count)
     {
-        $this->container['page_count'] = $page_count;
-        return $this;
-    }
+        $this->container['word_count'] = $word_count;
 
-    /*
-     * Gets page_stat_data
-     *
-     * @return \Aspose\Words\Model\PageStatData[]
-     */
-    public function getPageStatData()
-    {
-        return $this->container['page_stat_data'];
-    }
-
-    /*
-     * Sets page_stat_data
-     *
-     * @param \Aspose\Words\Model\PageStatData[] $page_stat_data Gets or sets detailed statistics of all pages.
-     *
-     * @return $this
-     */
-    public function setPageStatData($page_stat_data)
-    {
-        $this->container['page_stat_data'] = $page_stat_data;
         return $this;
     }
 
@@ -309,32 +270,81 @@ class DocumentStatData implements ArrayAccess
     public function setParagraphCount($paragraph_count)
     {
         $this->container['paragraph_count'] = $paragraph_count;
+
         return $this;
     }
 
     /*
-     * Gets word_count
+     * Gets page_count
      *
      * @return int
      */
-    public function getWordCount()
+    public function getPageCount()
     {
-        return $this->container['word_count'];
+        return $this->container['page_count'];
     }
 
     /*
-     * Sets word_count
+     * Sets page_count
      *
-     * @param int $word_count Gets or sets total count of words in the document.
+     * @param int $page_count Gets or sets total count of pages in the document.
      *
      * @return $this
      */
-    public function setWordCount($word_count)
+    public function setPageCount($page_count)
     {
-        $this->container['word_count'] = $word_count;
+        $this->container['page_count'] = $page_count;
+
         return $this;
     }
 
+    /*
+     * Gets footnotes_stat_data
+     *
+     * @return \Aspose\Words\Model\FootnotesStatData
+     */
+    public function getFootnotesStatData()
+    {
+        return $this->container['footnotes_stat_data'];
+    }
+
+    /*
+     * Sets footnotes_stat_data
+     *
+     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data footnotes_stat_data
+     *
+     * @return $this
+     */
+    public function setFootnotesStatData($footnotes_stat_data)
+    {
+        $this->container['footnotes_stat_data'] = $footnotes_stat_data;
+
+        return $this;
+    }
+
+    /*
+     * Gets page_stat_data
+     *
+     * @return \Aspose\Words\Model\PageStatData[]
+     */
+    public function getPageStatData()
+    {
+        return $this->container['page_stat_data'];
+    }
+
+    /*
+     * Sets page_stat_data
+     *
+     * @param \Aspose\Words\Model\PageStatData[] $page_stat_data Gets or sets detailed statistics of all pages.
+     *
+     * @return $this
+     */
+    public function setPageStatData($page_stat_data)
+    {
+        $this->container['page_stat_data'] = $page_stat_data;
+
+        return $this;
+    }
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -405,4 +415,3 @@ class DocumentStatData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

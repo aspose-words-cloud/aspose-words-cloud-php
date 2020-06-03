@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableRow.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * TableRow
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Table row element.
  */
-class TableRow extends NodeLink
+class TableRow extends NodeLink 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class TableRow extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'row_format' => 'null',
-        'table_cell_list' => 'null'
+        'row_format' => null,
+        'table_cell_list' => null
     ];
 
     /*
@@ -159,6 +162,7 @@ class TableRow extends NodeLink
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class TableRow extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['row_format'] = isset($data['row_format']) ? $data['row_format'] : null;
         $this->container['table_cell_list'] = isset($data['table_cell_list']) ? $data['table_cell_list'] : null;
     }
@@ -180,6 +185,7 @@ class TableRow extends NodeLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -198,6 +204,7 @@ class TableRow extends NodeLink
         return true;
     }
 
+
     /*
      * Gets row_format
      *
@@ -211,13 +218,14 @@ class TableRow extends NodeLink
     /*
      * Sets row_format
      *
-     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets provides access to the formatting properties of the row.
+     * @param \Aspose\Words\Model\TableRowFormat $row_format row_format
      *
      * @return $this
      */
     public function setRowFormat($row_format)
     {
         $this->container['row_format'] = $row_format;
+
         return $this;
     }
 
@@ -241,9 +249,9 @@ class TableRow extends NodeLink
     public function setTableCellList($table_cell_list)
     {
         $this->container['table_cell_list'] = $table_cell_list;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class TableRow extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

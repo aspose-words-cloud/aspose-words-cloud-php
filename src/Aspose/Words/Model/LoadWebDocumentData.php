@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="LoadWebDocumentData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * LoadWebDocumentData
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -62,8 +66,8 @@ class LoadWebDocumentData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'loading_document_url' => 'null',
-        'save_options' => 'null'
+        'loading_document_url' => null,
+        'save_options' => null
     ];
 
     /*
@@ -199,8 +203,10 @@ class LoadWebDocumentData implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
+
 
     /*
      * Gets loading_document_url
@@ -222,6 +228,7 @@ class LoadWebDocumentData implements ArrayAccess
     public function setLoadingDocumentUrl($loading_document_url)
     {
         $this->container['loading_document_url'] = $loading_document_url;
+
         return $this;
     }
 
@@ -238,16 +245,16 @@ class LoadWebDocumentData implements ArrayAccess
     /*
      * Sets save_options
      *
-     * @param \Aspose\Words\Model\SaveOptionsData $save_options Gets or sets save options.
+     * @param \Aspose\Words\Model\SaveOptionsData $save_options save_options
      *
      * @return $this
      */
     public function setSaveOptions($save_options)
     {
         $this->container['save_options'] = $save_options;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -318,4 +325,3 @@ class LoadWebDocumentData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

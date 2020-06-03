@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FormField.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FormField
  */
 
 namespace Aspose\Words\Model;
@@ -34,9 +37,9 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description FromField.
  */
-class FormField extends NodeLink
+class FormField extends NodeLink 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -68,15 +71,15 @@ class FormField extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'calculate_on_exit' => 'null',
-        'enabled' => 'null',
-        'entry_macro' => 'null',
-        'exit_macro' => 'null',
-        'help_text' => 'null',
-        'name' => 'null',
-        'own_help' => 'null',
-        'own_status' => 'null',
-        'status_text' => 'null'
+        'calculate_on_exit' => null,
+        'enabled' => null,
+        'entry_macro' => null,
+        'exit_macro' => null,
+        'help_text' => null,
+        'name' => null,
+        'own_help' => null,
+        'own_status' => null,
+        'status_text' => null
     ];
 
     /*
@@ -194,6 +197,7 @@ class FormField extends NodeLink
 
 
 
+
     /*
      * Constructor
      *
@@ -203,6 +207,7 @@ class FormField extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['calculate_on_exit'] = isset($data['calculate_on_exit']) ? $data['calculate_on_exit'] : null;
         $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : null;
         $this->container['entry_macro'] = isset($data['entry_macro']) ? $data['entry_macro'] : null;
@@ -212,6 +217,10 @@ class FormField extends NodeLink
         $this->container['own_help'] = isset($data['own_help']) ? $data['own_help'] : null;
         $this->container['own_status'] = isset($data['own_status']) ? $data['own_status'] : null;
         $this->container['status_text'] = isset($data['status_text']) ? $data['status_text'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -222,6 +231,7 @@ class FormField extends NodeLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -239,6 +249,7 @@ class FormField extends NodeLink
 
         return true;
     }
+
 
     /*
      * Gets calculate_on_exit
@@ -260,6 +271,7 @@ class FormField extends NodeLink
     public function setCalculateOnExit($calculate_on_exit)
     {
         $this->container['calculate_on_exit'] = $calculate_on_exit;
+
         return $this;
     }
 
@@ -283,6 +295,7 @@ class FormField extends NodeLink
     public function setEnabled($enabled)
     {
         $this->container['enabled'] = $enabled;
+
         return $this;
     }
 
@@ -306,6 +319,7 @@ class FormField extends NodeLink
     public function setEntryMacro($entry_macro)
     {
         $this->container['entry_macro'] = $entry_macro;
+
         return $this;
     }
 
@@ -329,6 +343,7 @@ class FormField extends NodeLink
     public function setExitMacro($exit_macro)
     {
         $this->container['exit_macro'] = $exit_macro;
+
         return $this;
     }
 
@@ -352,6 +367,7 @@ class FormField extends NodeLink
     public function setHelpText($help_text)
     {
         $this->container['help_text'] = $help_text;
+
         return $this;
     }
 
@@ -375,6 +391,7 @@ class FormField extends NodeLink
     public function setName($name)
     {
         $this->container['name'] = $name;
+
         return $this;
     }
 
@@ -398,6 +415,7 @@ class FormField extends NodeLink
     public function setOwnHelp($own_help)
     {
         $this->container['own_help'] = $own_help;
+
         return $this;
     }
 
@@ -421,6 +439,7 @@ class FormField extends NodeLink
     public function setOwnStatus($own_status)
     {
         $this->container['own_status'] = $own_status;
+
         return $this;
     }
 
@@ -444,9 +463,9 @@ class FormField extends NodeLink
     public function setStatusText($status_text)
     {
         $this->container['status_text'] = $status_text;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -517,4 +536,3 @@ class FormField extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableLinkCollection.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * TableLinkCollection
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Collection of links to tables.
  */
-class TableLinkCollection extends LinkElement
+class TableLinkCollection extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class TableLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'table_link_list' => 'null'
+        'table_link_list' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class TableLinkCollection extends LinkElement
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class TableLinkCollection extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['table_link_list'] = isset($data['table_link_list']) ? $data['table_link_list'] : null;
     }
 
@@ -174,6 +179,7 @@ class TableLinkCollection extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -191,6 +197,7 @@ class TableLinkCollection extends LinkElement
 
         return true;
     }
+
 
     /*
      * Gets table_link_list
@@ -212,9 +219,9 @@ class TableLinkCollection extends LinkElement
     public function setTableLinkList($table_link_list)
     {
         $this->container['table_link_list'] = $table_link_list;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class TableLinkCollection extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

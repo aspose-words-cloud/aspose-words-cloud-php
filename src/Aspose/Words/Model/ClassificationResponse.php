@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ClassificationResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ClassificationResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: PUT https://api.aspose.cloud/v4.0/words/classify.
  */
-class ClassificationResponse extends WordsResponse
+class ClassificationResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -62,9 +65,9 @@ class ClassificationResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'best_class_name' => 'null',
-        'best_class_probability' => 'null',
-        'best_results' => 'null'
+        'best_class_name' => null,
+        'best_class_probability' => 'double',
+        'best_results' => null
     ];
 
     /*
@@ -164,6 +167,7 @@ class ClassificationResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -173,6 +177,7 @@ class ClassificationResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['best_class_name'] = isset($data['best_class_name']) ? $data['best_class_name'] : null;
         $this->container['best_class_probability'] = isset($data['best_class_probability']) ? $data['best_class_probability'] : null;
         $this->container['best_results'] = isset($data['best_results']) ? $data['best_results'] : null;
@@ -186,6 +191,7 @@ class ClassificationResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -203,6 +209,7 @@ class ClassificationResponse extends WordsResponse
 
         return true;
     }
+
 
     /*
      * Gets best_class_name
@@ -224,6 +231,7 @@ class ClassificationResponse extends WordsResponse
     public function setBestClassName($best_class_name)
     {
         $this->container['best_class_name'] = $best_class_name;
+
         return $this;
     }
 
@@ -247,6 +255,7 @@ class ClassificationResponse extends WordsResponse
     public function setBestClassProbability($best_class_probability)
     {
         $this->container['best_class_probability'] = $best_class_probability;
+
         return $this;
     }
 
@@ -270,9 +279,9 @@ class ClassificationResponse extends WordsResponse
     public function setBestResults($best_results)
     {
         $this->container['best_results'] = $best_results;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -343,4 +352,3 @@ class ClassificationResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

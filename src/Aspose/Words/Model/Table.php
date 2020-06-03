@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Table.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Table
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Table element.
  */
-class Table extends NodeLink
+class Table extends NodeLink 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class Table extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'table_properties' => 'null',
-        'table_row_list' => 'null'
+        'table_properties' => null,
+        'table_row_list' => null
     ];
 
     /*
@@ -159,6 +162,7 @@ class Table extends NodeLink
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class Table extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['table_properties'] = isset($data['table_properties']) ? $data['table_properties'] : null;
         $this->container['table_row_list'] = isset($data['table_row_list']) ? $data['table_row_list'] : null;
     }
@@ -180,6 +185,7 @@ class Table extends NodeLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -198,6 +204,7 @@ class Table extends NodeLink
         return true;
     }
 
+
     /*
      * Gets table_properties
      *
@@ -211,13 +218,14 @@ class Table extends NodeLink
     /*
      * Sets table_properties
      *
-     * @param \Aspose\Words\Model\TableProperties $table_properties Gets or sets table properties.
+     * @param \Aspose\Words\Model\TableProperties $table_properties table_properties
      *
      * @return $this
      */
     public function setTableProperties($table_properties)
     {
         $this->container['table_properties'] = $table_properties;
+
         return $this;
     }
 
@@ -241,9 +249,9 @@ class Table extends NodeLink
     public function setTableRowList($table_row_list)
     {
         $this->container['table_row_list'] = $table_row_list;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class Table extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

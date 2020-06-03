@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BordersResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * BordersResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET {nodeWithBorders}/borders.
  */
-class BordersResponse extends WordsResponse
+class BordersResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class BordersResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'borders' => 'null'
+        'borders' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class BordersResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class BordersResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['borders'] = isset($data['borders']) ? $data['borders'] : null;
     }
 
@@ -174,6 +179,7 @@ class BordersResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class BordersResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets borders
      *
@@ -205,16 +212,16 @@ class BordersResponse extends WordsResponse
     /*
      * Sets borders
      *
-     * @param \Aspose\Words\Model\BordersCollection $borders Gets or sets table.
+     * @param \Aspose\Words\Model\BordersCollection $borders borders
      *
      * @return $this
      */
     public function setBorders($borders)
     {
         $this->container['borders'] = $borders;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class BordersResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

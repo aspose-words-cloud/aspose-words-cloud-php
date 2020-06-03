@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StyleResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * StyleResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/styles/{0}.
  */
-class StyleResponse extends WordsResponse
+class StyleResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class StyleResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'style' => 'null'
+        'style' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class StyleResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class StyleResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['style'] = isset($data['style']) ? $data['style'] : null;
     }
 
@@ -174,6 +179,7 @@ class StyleResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class StyleResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets style
      *
@@ -205,16 +212,16 @@ class StyleResponse extends WordsResponse
     /*
      * Sets style
      *
-     * @param \Aspose\Words\Model\Style $style Gets or sets style which are contained in document.
+     * @param \Aspose\Words\Model\Style $style style
      *
      * @return $this
      */
     public function setStyle($style)
     {
         $this->container['style'] = $style;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class StyleResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

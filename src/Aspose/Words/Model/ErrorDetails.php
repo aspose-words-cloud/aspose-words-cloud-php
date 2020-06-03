@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ErrorDetails.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,17 +23,21 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ErrorDetails
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
  * ErrorDetails
  *
- * @description The error details.
+ * @description The error details
  */
 class ErrorDetails implements ArrayAccess
 {
@@ -52,8 +56,8 @@ class ErrorDetails implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'error_date_time' => '\DateTime',
-        'request_id' => 'string'
+        'request_id' => 'string',
+        'error_date_time' => '\DateTime'
     ];
 
     /*
@@ -62,8 +66,8 @@ class ErrorDetails implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'error_date_time' => 'null',
-        'request_id' => 'null'
+        'request_id' => null,
+        'error_date_time' => 'date-time'
     ];
 
     /*
@@ -93,8 +97,8 @@ class ErrorDetails implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'error_date_time' => 'ErrorDateTime',
-        'request_id' => 'RequestId'
+        'request_id' => 'RequestId',
+        'error_date_time' => 'ErrorDateTime'
     ];
 
     /*
@@ -103,8 +107,8 @@ class ErrorDetails implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'error_date_time' => 'setErrorDateTime',
-        'request_id' => 'setRequestId'
+        'request_id' => 'setRequestId',
+        'error_date_time' => 'setErrorDateTime'
     ];
 
     /*
@@ -113,8 +117,8 @@ class ErrorDetails implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'error_date_time' => 'getErrorDateTime',
-        'request_id' => 'getRequestId'
+        'request_id' => 'getRequestId',
+        'error_date_time' => 'getErrorDateTime'
     ];
 
     /*
@@ -175,8 +179,8 @@ class ErrorDetails implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['error_date_time'] = isset($data['error_date_time']) ? $data['error_date_time'] : null;
         $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
+        $this->container['error_date_time'] = isset($data['error_date_time']) ? $data['error_date_time'] : null;
     }
 
     /*
@@ -199,7 +203,33 @@ class ErrorDetails implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
+    }
+
+
+    /*
+     * Gets request_id
+     *
+     * @return string
+     */
+    public function getRequestId()
+    {
+        return $this->container['request_id'];
+    }
+
+    /*
+     * Sets request_id
+     *
+     * @param string $request_id The request id.
+     *
+     * @return $this
+     */
+    public function setRequestId($request_id)
+    {
+        $this->container['request_id'] = $request_id;
+
+        return $this;
     }
 
     /*
@@ -222,32 +252,9 @@ class ErrorDetails implements ArrayAccess
     public function setErrorDateTime($error_date_time)
     {
         $this->container['error_date_time'] = $error_date_time;
+
         return $this;
     }
-
-    /*
-     * Gets request_id
-     *
-     * @return string
-     */
-    public function getRequestId()
-    {
-        return $this->container['request_id'];
-    }
-
-    /*
-     * Sets request_id
-     *
-     * @param string $request_id The request id.
-     *
-     * @return $this
-     */
-    public function setRequestId($request_id)
-    {
-        $this->container['request_id'] = $request_id;
-        return $this;
-    }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -318,4 +325,3 @@ class ErrorDetails implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

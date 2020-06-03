@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FieldBase.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FieldBase
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -37,7 +41,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class FieldBase implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -62,8 +66,8 @@ class FieldBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'field_code' => 'null',
-        'locale_id' => 'null'
+        'field_code' => null,
+        'locale_id' => null
     ];
 
     /*
@@ -177,6 +181,10 @@ class FieldBase implements ArrayAccess
     {
         $this->container['field_code'] = isset($data['field_code']) ? $data['field_code'] : null;
         $this->container['locale_id'] = isset($data['locale_id']) ? $data['locale_id'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -199,8 +207,10 @@ class FieldBase implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
+
 
     /*
      * Gets field_code
@@ -222,6 +232,7 @@ class FieldBase implements ArrayAccess
     public function setFieldCode($field_code)
     {
         $this->container['field_code'] = $field_code;
+
         return $this;
     }
 
@@ -245,9 +256,9 @@ class FieldBase implements ArrayAccess
     public function setLocaleId($locale_id)
     {
         $this->container['locale_id'] = $locale_id;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -318,4 +329,3 @@ class FieldBase implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

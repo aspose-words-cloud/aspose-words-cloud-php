@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OdtSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * OdtSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for odt/ott save options.
  */
-class OdtSaveOptionsData extends SaveOptionsData
+class OdtSaveOptionsData extends SaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -63,10 +66,10 @@ class OdtSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_strict_schema11' => 'null',
-        'measure_unit' => 'null',
-        'password' => 'null',
-        'pretty_format' => 'null'
+        'is_strict_schema11' => null,
+        'measure_unit' => null,
+        'password' => null,
+        'pretty_format' => null
     ];
 
     /*
@@ -183,6 +186,7 @@ class OdtSaveOptionsData extends SaveOptionsData
         ];
     }
 
+
     /*
      * Constructor
      *
@@ -192,6 +196,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['is_strict_schema11'] = isset($data['is_strict_schema11']) ? $data['is_strict_schema11'] : null;
         $this->container['measure_unit'] = isset($data['measure_unit']) ? $data['measure_unit'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
@@ -206,6 +211,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         $allowedValues = $this->getMeasureUnitAllowableValues();
         if (!in_array($this->container['measure_unit'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -213,7 +219,6 @@ class OdtSaveOptionsData extends SaveOptionsData
                 implode("', '", $allowedValues)
             );
         }
-
 
         return $invalidProperties;
     }
@@ -234,10 +239,9 @@ class OdtSaveOptionsData extends SaveOptionsData
         if (!in_array($this->container['measure_unit'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets is_strict_schema11
@@ -259,6 +263,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function setIsStrictSchema11($is_strict_schema11)
     {
         $this->container['is_strict_schema11'] = $is_strict_schema11;
+
         return $this;
     }
 
@@ -275,7 +280,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     /*
      * Sets measure_unit
      *
-     * @param string $measure_unit Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters. Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
+     * @param string $measure_unit Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
      *
      * @return $this
      */
@@ -285,7 +290,9 @@ class OdtSaveOptionsData extends SaveOptionsData
         if ((!is_numeric($measure_unit) && !in_array($measure_unit, $allowedValues)) || (is_numeric($measure_unit) && !in_array($allowedValues[$measure_unit], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'measure_unit', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['measure_unit'] = $measure_unit;
+
         return $this;
     }
 
@@ -309,6 +316,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
         return $this;
     }
 
@@ -332,9 +340,9 @@ class OdtSaveOptionsData extends SaveOptionsData
     public function setPrettyFormat($pretty_format)
     {
         $this->container['pretty_format'] = $pretty_format;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -405,4 +413,3 @@ class OdtSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

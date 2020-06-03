@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HyperlinkResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * HyperlinkResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .
  */
-class HyperlinkResponse extends WordsResponse
+class HyperlinkResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class HyperlinkResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'hyperlink' => 'null'
+        'hyperlink' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class HyperlinkResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class HyperlinkResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['hyperlink'] = isset($data['hyperlink']) ? $data['hyperlink'] : null;
     }
 
@@ -174,6 +179,7 @@ class HyperlinkResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class HyperlinkResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets hyperlink
      *
@@ -205,16 +212,16 @@ class HyperlinkResponse extends WordsResponse
     /*
      * Sets hyperlink
      *
-     * @param \Aspose\Words\Model\Hyperlink $hyperlink Gets or sets hyperlink.
+     * @param \Aspose\Words\Model\Hyperlink $hyperlink hyperlink
      *
      * @return $this
      */
     public function setHyperlink($hyperlink)
     {
         $this->container['hyperlink'] = $hyperlink;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class HyperlinkResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

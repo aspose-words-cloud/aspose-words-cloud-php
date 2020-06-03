@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="XamlFlowSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * XamlFlowSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for xaml flow save options.
  */
-class XamlFlowSaveOptionsData extends SaveOptionsData
+class XamlFlowSaveOptionsData extends SaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'images_folder' => 'null',
-        'images_folder_alias' => 'null'
+        'images_folder' => null,
+        'images_folder_alias' => null
     ];
 
     /*
@@ -159,6 +162,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['images_folder'] = isset($data['images_folder']) ? $data['images_folder'] : null;
         $this->container['images_folder_alias'] = isset($data['images_folder_alias']) ? $data['images_folder_alias'] : null;
     }
@@ -180,6 +185,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -197,6 +203,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets images_folder
@@ -218,6 +225,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
     public function setImagesFolder($images_folder)
     {
         $this->container['images_folder'] = $images_folder;
+
         return $this;
     }
 
@@ -241,9 +249,9 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
     public function setImagesFolderAlias($images_folder_alias)
     {
         $this->container['images_folder_alias'] = $images_folder_alias;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

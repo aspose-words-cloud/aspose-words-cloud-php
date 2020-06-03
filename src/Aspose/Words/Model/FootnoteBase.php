@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FootnoteBase.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FootnoteBase
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -37,7 +41,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class FootnoteBase implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -52,8 +56,8 @@ class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'footnote_type' => 'string',
         'position' => '\Aspose\Words\Model\DocumentPosition',
+        'footnote_type' => 'string',
         'reference_mark' => 'string',
         'text' => 'string'
     ];
@@ -64,10 +68,10 @@ class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'footnote_type' => 'null',
-        'position' => 'null',
-        'reference_mark' => 'null',
-        'text' => 'null'
+        'position' => null,
+        'footnote_type' => null,
+        'reference_mark' => null,
+        'text' => null
     ];
 
     /*
@@ -97,8 +101,8 @@ class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'footnote_type' => 'FootnoteType',
         'position' => 'Position',
+        'footnote_type' => 'FootnoteType',
         'reference_mark' => 'ReferenceMark',
         'text' => 'Text'
     ];
@@ -109,8 +113,8 @@ class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'footnote_type' => 'setFootnoteType',
         'position' => 'setPosition',
+        'footnote_type' => 'setFootnoteType',
         'reference_mark' => 'setReferenceMark',
         'text' => 'setText'
     ];
@@ -121,8 +125,8 @@ class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'footnote_type' => 'getFootnoteType',
         'position' => 'getPosition',
+        'footnote_type' => 'getFootnoteType',
         'reference_mark' => 'getReferenceMark',
         'text' => 'getText'
     ];
@@ -199,10 +203,14 @@ class FootnoteBase implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['footnote_type'] = isset($data['footnote_type']) ? $data['footnote_type'] : null;
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
+        $this->container['footnote_type'] = isset($data['footnote_type']) ? $data['footnote_type'] : null;
         $this->container['reference_mark'] = isset($data['reference_mark']) ? $data['reference_mark'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -222,7 +230,6 @@ class FootnoteBase implements ArrayAccess
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -234,13 +241,37 @@ class FootnoteBase implements ArrayAccess
      */
     public function valid()
     {
+
         $allowedValues = $this->getFootnoteTypeAllowableValues();
         if (!in_array($this->container['footnote_type'], $allowedValues)) {
             return false;
         }
-
-
         return true;
+    }
+
+
+    /*
+     * Gets position
+     *
+     * @return \Aspose\Words\Model\DocumentPosition
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /*
+     * Sets position
+     *
+     * @param \Aspose\Words\Model\DocumentPosition $position position
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
+
+        return $this;
     }
 
     /*
@@ -266,30 +297,9 @@ class FootnoteBase implements ArrayAccess
         if ((!is_numeric($footnote_type) && !in_array($footnote_type, $allowedValues)) || (is_numeric($footnote_type) && !in_array($allowedValues[$footnote_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'footnote_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['footnote_type'] = $footnote_type;
-        return $this;
-    }
 
-    /*
-     * Gets position
-     *
-     * @return \Aspose\Words\Model\DocumentPosition
-     */
-    public function getPosition()
-    {
-        return $this->container['position'];
-    }
-
-    /*
-     * Sets position
-     *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets link to comment range start node.
-     *
-     * @return $this
-     */
-    public function setPosition($position)
-    {
-        $this->container['position'] = $position;
         return $this;
     }
 
@@ -313,6 +323,7 @@ class FootnoteBase implements ArrayAccess
     public function setReferenceMark($reference_mark)
     {
         $this->container['reference_mark'] = $reference_mark;
+
         return $this;
     }
 
@@ -336,9 +347,9 @@ class FootnoteBase implements ArrayAccess
     public function setText($text)
     {
         $this->container['text'] = $text;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -409,4 +420,3 @@ class FootnoteBase implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentEntry.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * DocumentEntry
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -62,8 +66,8 @@ class DocumentEntry implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'href' => 'null',
-        'import_format_mode' => 'null'
+        'href' => null,
+        'import_format_mode' => null
     ];
 
     /*
@@ -199,8 +203,10 @@ class DocumentEntry implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
+
 
     /*
      * Gets href
@@ -222,6 +228,7 @@ class DocumentEntry implements ArrayAccess
     public function setHref($href)
     {
         $this->container['href'] = $href;
+
         return $this;
     }
 
@@ -245,9 +252,9 @@ class DocumentEntry implements ArrayAccess
     public function setImportFormatMode($import_format_mode)
     {
         $this->container['import_format_mode'] = $import_format_mode;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -318,4 +325,3 @@ class DocumentEntry implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TiffSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * TiffSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container class for tiff save options.
  */
-class TiffSaveOptionsData extends ImageSaveOptionsData
+class TiffSaveOptionsData extends ImageSaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -62,9 +65,9 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'threshold_for_floyd_steinberg_dithering' => 'null',
-        'tiff_binarization_method' => 'null',
-        'tiff_compression' => 'null'
+        'threshold_for_floyd_steinberg_dithering' => 'byte',
+        'tiff_binarization_method' => null,
+        'tiff_compression' => null
     ];
 
     /*
@@ -164,6 +167,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -173,6 +177,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['threshold_for_floyd_steinberg_dithering'] = isset($data['threshold_for_floyd_steinberg_dithering']) ? $data['threshold_for_floyd_steinberg_dithering'] : null;
         $this->container['tiff_binarization_method'] = isset($data['tiff_binarization_method']) ? $data['tiff_binarization_method'] : null;
         $this->container['tiff_compression'] = isset($data['tiff_compression']) ? $data['tiff_compression'] : null;
@@ -186,6 +191,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -203,6 +209,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets threshold_for_floyd_steinberg_dithering
@@ -224,6 +231,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     public function setThresholdForFloydSteinbergDithering($threshold_for_floyd_steinberg_dithering)
     {
         $this->container['threshold_for_floyd_steinberg_dithering'] = $threshold_for_floyd_steinberg_dithering;
+
         return $this;
     }
 
@@ -247,6 +255,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     public function setTiffBinarizationMethod($tiff_binarization_method)
     {
         $this->container['tiff_binarization_method'] = $tiff_binarization_method;
+
         return $this;
     }
 
@@ -270,9 +279,9 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     public function setTiffCompression($tiff_compression)
     {
         $this->container['tiff_compression'] = $tiff_compression;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -343,4 +352,3 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

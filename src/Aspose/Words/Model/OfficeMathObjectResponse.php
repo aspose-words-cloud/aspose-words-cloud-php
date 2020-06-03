@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OfficeMathObjectResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * OfficeMathObjectResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/officeMathObjects/0.
  */
-class OfficeMathObjectResponse extends WordsResponse
+class OfficeMathObjectResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class OfficeMathObjectResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'office_math_object' => 'null'
+        'office_math_object' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class OfficeMathObjectResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class OfficeMathObjectResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['office_math_object'] = isset($data['office_math_object']) ? $data['office_math_object'] : null;
     }
 
@@ -174,6 +179,7 @@ class OfficeMathObjectResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class OfficeMathObjectResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets office_math_object
      *
@@ -205,16 +212,16 @@ class OfficeMathObjectResponse extends WordsResponse
     /*
      * Sets office_math_object
      *
-     * @param \Aspose\Words\Model\OfficeMathObject $office_math_object Gets or sets officeMathObject information.
+     * @param \Aspose\Words\Model\OfficeMathObject $office_math_object office_math_object
      *
      * @return $this
      */
     public function setOfficeMathObject($office_math_object)
     {
         $this->container['office_math_object'] = $office_math_object;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class OfficeMathObjectResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

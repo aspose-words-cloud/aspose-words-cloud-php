@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ModificationOperationResult.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ModificationOperationResult
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -52,8 +56,8 @@ class ModificationOperationResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'dest' => '\Aspose\Words\Model\FileLink',
-        'source' => '\Aspose\Words\Model\FileLink'
+        'source' => '\Aspose\Words\Model\FileLink',
+        'dest' => '\Aspose\Words\Model\FileLink'
     ];
 
     /*
@@ -62,8 +66,8 @@ class ModificationOperationResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'dest' => 'null',
-        'source' => 'null'
+        'source' => null,
+        'dest' => null
     ];
 
     /*
@@ -93,8 +97,8 @@ class ModificationOperationResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'dest' => 'Dest',
-        'source' => 'Source'
+        'source' => 'Source',
+        'dest' => 'Dest'
     ];
 
     /*
@@ -103,8 +107,8 @@ class ModificationOperationResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'dest' => 'setDest',
-        'source' => 'setSource'
+        'source' => 'setSource',
+        'dest' => 'setDest'
     ];
 
     /*
@@ -113,8 +117,8 @@ class ModificationOperationResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'dest' => 'getDest',
-        'source' => 'getSource'
+        'source' => 'getSource',
+        'dest' => 'getDest'
     ];
 
     /*
@@ -175,8 +179,8 @@ class ModificationOperationResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['dest'] = isset($data['dest']) ? $data['dest'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['dest'] = isset($data['dest']) ? $data['dest'] : null;
     }
 
     /*
@@ -199,7 +203,33 @@ class ModificationOperationResult implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
+    }
+
+
+    /*
+     * Gets source
+     *
+     * @return \Aspose\Words\Model\FileLink
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /*
+     * Sets source
+     *
+     * @param \Aspose\Words\Model\FileLink $source source
+     *
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->container['source'] = $source;
+
+        return $this;
     }
 
     /*
@@ -215,39 +245,16 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Sets dest
      *
-     * @param \Aspose\Words\Model\FileLink $dest Gets or sets link to the dest document (result of the modification operation).
+     * @param \Aspose\Words\Model\FileLink $dest dest
      *
      * @return $this
      */
     public function setDest($dest)
     {
         $this->container['dest'] = $dest;
+
         return $this;
     }
-
-    /*
-     * Gets source
-     *
-     * @return \Aspose\Words\Model\FileLink
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /*
-     * Sets source
-     *
-     * @param \Aspose\Words\Model\FileLink $source Gets or sets link to the source document (source for the modification operation).
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
-        return $this;
-    }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -318,4 +325,3 @@ class ModificationOperationResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

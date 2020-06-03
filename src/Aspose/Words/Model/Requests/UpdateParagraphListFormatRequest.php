@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateParagraphListFormatRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -33,275 +33,14 @@ namespace Aspose\Words\Model\Requests;
  */
 class UpdateParagraphListFormatRequest
 {
-    /*
-     * The document name.
-     */
-    public $name;
-
-    /*
-     * Paragraph format object.
-     */
-    public $dto;
-
-    /*
-     * Path to the node which contains paragraphs.
-     */
-    public $node_path;
-
-    /*
-     * Object index.
-     */
-    public $index;
-
-    /*
-     * Original document folder.
-     */
-    public $folder;
-
-    /*
-     * Original document storage.
-     */
-    public $storage;
-
-    /*
-     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     */
-    public $load_encoding;
-
-    /*
-     * Password for opening an encrypted document.
-     */
-    public $password;
-
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public $dest_file_name;
-
-    /*
-     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     */
-    public $revision_author;
-
-    /*
-     * The date and time to use for revisions.
-     */
-    public $revision_date_time;
-
+    
+	
     /*
      * Initializes a new instance of the UpdateParagraphListFormatRequest class.
-     *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\ListFormatUpdate $dto Paragraph format object.
-     * @param string $node_path Path to the node which contains paragraphs.
-     * @param int $index Object index.
-     * @param string $folder Original document folder.
-     * @param string $storage Original document storage.
-     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
-     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     * @param string $revision_date_time The date and time to use for revisions.
+     *  
      */
-    public function __construct($name, $dto, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct()             
     {
-        $this->name = $name;
-        $this->dto = $dto;
-        $this->node_path = $node_path;
-        $this->index = $index;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->load_encoding = $load_encoding;
-        $this->password = $password;
-        $this->dest_file_name = $dest_file_name;
-        $this->revision_author = $revision_author;
-        $this->revision_date_time = $revision_date_time;
     }
 
-    /*
-     * The document name.
-     */
-    public function get_name()
-    {
-        return $this->name;
-    }
-
-    /*
-     * The document name.
-     */
-    public function set_name($value)
-    {
-        $this->name = $value;
-        return $this;
-    }
-
-    /*
-     * Paragraph format object.
-     */
-    public function get_dto()
-    {
-        return $this->dto;
-    }
-
-    /*
-     * Paragraph format object.
-     */
-    public function set_dto($value)
-    {
-        $this->dto = $value;
-        return $this;
-    }
-
-    /*
-     * Path to the node which contains paragraphs.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node which contains paragraphs.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
-        return $this;
-    }
-
-    /*
-     * Object index.
-     */
-    public function get_index()
-    {
-        return $this->index;
-    }
-
-    /*
-     * Object index.
-     */
-    public function set_index($value)
-    {
-        $this->index = $value;
-        return $this;
-    }
-
-    /*
-     * Original document folder.
-     */
-    public function get_folder()
-    {
-        return $this->folder;
-    }
-
-    /*
-     * Original document folder.
-     */
-    public function set_folder($value)
-    {
-        $this->folder = $value;
-        return $this;
-    }
-
-    /*
-     * Original document storage.
-     */
-    public function get_storage()
-    {
-        return $this->storage;
-    }
-
-    /*
-     * Original document storage.
-     */
-    public function set_storage($value)
-    {
-        $this->storage = $value;
-        return $this;
-    }
-
-    /*
-     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     */
-    public function get_load_encoding()
-    {
-        return $this->load_encoding;
-    }
-
-    /*
-     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     */
-    public function set_load_encoding($value)
-    {
-        $this->load_encoding = $value;
-        return $this;
-    }
-
-    /*
-     * Password for opening an encrypted document.
-     */
-    public function get_password()
-    {
-        return $this->password;
-    }
-
-    /*
-     * Password for opening an encrypted document.
-     */
-    public function set_password($value)
-    {
-        $this->password = $value;
-        return $this;
-    }
-
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function get_dest_file_name()
-    {
-        return $this->dest_file_name;
-    }
-
-    /*
-     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     */
-    public function set_dest_file_name($value)
-    {
-        $this->dest_file_name = $value;
-        return $this;
-    }
-
-    /*
-     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     */
-    public function get_revision_author()
-    {
-        return $this->revision_author;
-    }
-
-    /*
-     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     */
-    public function set_revision_author($value)
-    {
-        $this->revision_author = $value;
-        return $this;
-    }
-
-    /*
-     * The date and time to use for revisions.
-     */
-    public function get_revision_date_time()
-    {
-        return $this->revision_date_time;
-    }
-
-    /*
-     * The date and time to use for revisions.
-     */
-    public function set_revision_date_time($value)
-    {
-        $this->revision_date_time = $value;
-        return $this;
-    }
 }

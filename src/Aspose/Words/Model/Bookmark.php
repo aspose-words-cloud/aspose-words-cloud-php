@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Bookmark.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Bookmark
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a single bookmark.
  */
-class Bookmark extends LinkElement
+class Bookmark extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class Bookmark extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => 'null',
-        'text' => 'null'
+        'name' => null,
+        'text' => null
     ];
 
     /*
@@ -159,6 +162,7 @@ class Bookmark extends LinkElement
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class Bookmark extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
     }
@@ -180,6 +185,7 @@ class Bookmark extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -197,6 +203,7 @@ class Bookmark extends LinkElement
 
         return true;
     }
+
 
     /*
      * Gets name
@@ -218,6 +225,7 @@ class Bookmark extends LinkElement
     public function setName($name)
     {
         $this->container['name'] = $name;
+
         return $this;
     }
 
@@ -241,9 +249,9 @@ class Bookmark extends LinkElement
     public function setText($text)
     {
         $this->container['text'] = $text;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class Bookmark extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

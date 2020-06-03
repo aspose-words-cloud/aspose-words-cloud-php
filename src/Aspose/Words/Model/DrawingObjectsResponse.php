@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DrawingObjectsResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * DrawingObjectsResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  GET /drawingObjects.
  */
-class DrawingObjectsResponse extends WordsResponse
+class DrawingObjectsResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class DrawingObjectsResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'drawing_objects' => 'null'
+        'drawing_objects' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class DrawingObjectsResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class DrawingObjectsResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['drawing_objects'] = isset($data['drawing_objects']) ? $data['drawing_objects'] : null;
     }
 
@@ -174,6 +179,7 @@ class DrawingObjectsResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class DrawingObjectsResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets drawing_objects
      *
@@ -205,16 +212,16 @@ class DrawingObjectsResponse extends WordsResponse
     /*
      * Sets drawing_objects
      *
-     * @param \Aspose\Words\Model\DrawingObjectCollection $drawing_objects Gets or sets collection of drawing objects.
+     * @param \Aspose\Words\Model\DrawingObjectCollection $drawing_objects drawing_objects
      *
      * @return $this
      */
     public function setDrawingObjects($drawing_objects)
     {
         $this->container['drawing_objects'] = $drawing_objects;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class DrawingObjectsResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

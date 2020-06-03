@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="LinkElement.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * LinkElement
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -37,7 +41,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class LinkElement implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -61,7 +65,7 @@ class LinkElement implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'link' => 'null'
+        'link' => null
     ];
 
     /*
@@ -91,7 +95,7 @@ class LinkElement implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'link' => 'Link'
+        'link' => 'link'
     ];
 
     /*
@@ -171,6 +175,10 @@ class LinkElement implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -193,8 +201,10 @@ class LinkElement implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
+
 
     /*
      * Gets link
@@ -209,16 +219,16 @@ class LinkElement implements ArrayAccess
     /*
      * Sets link
      *
-     * @param \Aspose\Words\Model\WordsApiLink $link Gets or sets link to the document.
+     * @param \Aspose\Words\Model\WordsApiLink $link link
      *
      * @return $this
      */
     public function setLink($link)
     {
         $this->container['link'] = $link;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -289,4 +299,3 @@ class LinkElement implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReplaceTextResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ReplaceTextResponse
  */
 
 namespace Aspose\Words\Model;
@@ -32,9 +35,9 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ReplaceTextResponse
  *
- * @description Response for "Replace text" action.
+ * @description Response for \&quot;Replace text\&quot; action.
  */
-class ReplaceTextResponse extends WordsResponse
+class ReplaceTextResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class ReplaceTextResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'document_link' => 'null',
-        'matches' => 'null'
+        'document_link' => null,
+        'matches' => 'int32'
     ];
 
     /*
@@ -159,6 +162,7 @@ class ReplaceTextResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class ReplaceTextResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['document_link'] = isset($data['document_link']) ? $data['document_link'] : null;
         $this->container['matches'] = isset($data['matches']) ? $data['matches'] : null;
     }
@@ -180,6 +185,7 @@ class ReplaceTextResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -198,6 +204,7 @@ class ReplaceTextResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets document_link
      *
@@ -211,13 +218,14 @@ class ReplaceTextResponse extends WordsResponse
     /*
      * Sets document_link
      *
-     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets link to the document.
+     * @param \Aspose\Words\Model\FileLink $document_link document_link
      *
      * @return $this
      */
     public function setDocumentLink($document_link)
     {
         $this->container['document_link'] = $document_link;
+
         return $this;
     }
 
@@ -241,9 +249,9 @@ class ReplaceTextResponse extends WordsResponse
     public function setMatches($matches)
     {
         $this->container['matches'] = $matches;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class ReplaceTextResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

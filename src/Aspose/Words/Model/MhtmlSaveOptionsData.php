@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MhtmlSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * MhtmlSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container class for mhtml save options.
  */
-class MhtmlSaveOptionsData extends HtmlSaveOptionsData
+class MhtmlSaveOptionsData extends HtmlSaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'export_cid_urls_for_mhtml_resources' => 'null'
+        'export_cid_urls_for_mhtml_resources' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['export_cid_urls_for_mhtml_resources'] = isset($data['export_cid_urls_for_mhtml_resources']) ? $data['export_cid_urls_for_mhtml_resources'] : null;
     }
 
@@ -174,6 +179,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -191,6 +197,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets export_cid_urls_for_mhtml_resources
@@ -212,9 +219,9 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
     public function setExportCidUrlsForMhtmlResources($export_cid_urls_for_mhtml_resources)
     {
         $this->container['export_cid_urls_for_mhtml_resources'] = $export_cid_urls_for_mhtml_resources;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

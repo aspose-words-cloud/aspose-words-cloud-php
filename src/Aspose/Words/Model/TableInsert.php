@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableInsert.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * TableInsert
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -52,8 +56,8 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'columns_count' => 'int',
         'position' => '\Aspose\Words\Model\DocumentPosition',
+        'columns_count' => 'int',
         'rows_count' => 'int'
     ];
 
@@ -63,9 +67,9 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'columns_count' => 'null',
-        'position' => 'null',
-        'rows_count' => 'null'
+        'position' => null,
+        'columns_count' => 'int32',
+        'rows_count' => 'int32'
     ];
 
     /*
@@ -95,8 +99,8 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'columns_count' => 'ColumnsCount',
         'position' => 'Position',
+        'columns_count' => 'ColumnsCount',
         'rows_count' => 'RowsCount'
     ];
 
@@ -106,8 +110,8 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'columns_count' => 'setColumnsCount',
         'position' => 'setPosition',
+        'columns_count' => 'setColumnsCount',
         'rows_count' => 'setRowsCount'
     ];
 
@@ -117,8 +121,8 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'columns_count' => 'getColumnsCount',
         'position' => 'getPosition',
+        'columns_count' => 'getColumnsCount',
         'rows_count' => 'getRowsCount'
     ];
 
@@ -180,8 +184,8 @@ class TableInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['columns_count'] = isset($data['columns_count']) ? $data['columns_count'] : null;
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
+        $this->container['columns_count'] = isset($data['columns_count']) ? $data['columns_count'] : null;
         $this->container['rows_count'] = isset($data['rows_count']) ? $data['rows_count'] : null;
     }
 
@@ -205,7 +209,33 @@ class TableInsert implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
+    }
+
+
+    /*
+     * Gets position
+     *
+     * @return \Aspose\Words\Model\DocumentPosition
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /*
+     * Sets position
+     *
+     * @param \Aspose\Words\Model\DocumentPosition $position position
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
+
+        return $this;
     }
 
     /*
@@ -228,29 +258,7 @@ class TableInsert implements ArrayAccess
     public function setColumnsCount($columns_count)
     {
         $this->container['columns_count'] = $columns_count;
-        return $this;
-    }
 
-    /*
-     * Gets position
-     *
-     * @return \Aspose\Words\Model\DocumentPosition
-     */
-    public function getPosition()
-    {
-        return $this->container['position'];
-    }
-
-    /*
-     * Sets position
-     *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets table will be inserted before specified position.
-     *
-     * @return $this
-     */
-    public function setPosition($position)
-    {
-        $this->container['position'] = $position;
         return $this;
     }
 
@@ -274,9 +282,9 @@ class TableInsert implements ArrayAccess
     public function setRowsCount($rows_count)
     {
         $this->container['rows_count'] = $rows_count;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -347,4 +355,3 @@ class TableInsert implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

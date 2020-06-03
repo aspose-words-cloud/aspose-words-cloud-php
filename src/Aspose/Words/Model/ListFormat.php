@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListFormat.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ListFormat
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Paragraph list format element.
  */
-class ListFormat extends LinkElement
+class ListFormat extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -62,9 +65,9 @@ class ListFormat extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_list_item' => 'null',
-        'list_id' => 'null',
-        'list_level_number' => 'null'
+        'is_list_item' => null,
+        'list_id' => 'int32',
+        'list_level_number' => 'int32'
     ];
 
     /*
@@ -164,6 +167,7 @@ class ListFormat extends LinkElement
 
 
 
+
     /*
      * Constructor
      *
@@ -173,6 +177,7 @@ class ListFormat extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['is_list_item'] = isset($data['is_list_item']) ? $data['is_list_item'] : null;
         $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
         $this->container['list_level_number'] = isset($data['list_level_number']) ? $data['list_level_number'] : null;
@@ -186,6 +191,7 @@ class ListFormat extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -203,6 +209,7 @@ class ListFormat extends LinkElement
 
         return true;
     }
+
 
     /*
      * Gets is_list_item
@@ -224,6 +231,7 @@ class ListFormat extends LinkElement
     public function setIsListItem($is_list_item)
     {
         $this->container['is_list_item'] = $is_list_item;
+
         return $this;
     }
 
@@ -247,6 +255,7 @@ class ListFormat extends LinkElement
     public function setListId($list_id)
     {
         $this->container['list_id'] = $list_id;
+
         return $this;
     }
 
@@ -270,9 +279,9 @@ class ListFormat extends LinkElement
     public function setListLevelNumber($list_level_number)
     {
         $this->container['list_level_number'] = $list_level_number;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -343,4 +352,3 @@ class ListFormat extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

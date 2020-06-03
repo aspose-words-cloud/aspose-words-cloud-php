@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListLevelUpdate.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ListLevelUpdate
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -52,16 +56,16 @@ class ListLevelUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'start_at' => 'int',
+        'number_style' => 'string',
+        'number_format' => 'string',
         'alignment' => 'string',
         'is_legal' => 'bool',
-        'number_format' => 'string',
-        'number_position' => 'double',
-        'number_style' => 'string',
         'restart_after_level' => 'int',
-        'start_at' => 'int',
+        'trailing_character' => 'string',
         'tab_position' => 'double',
-        'text_position' => 'double',
-        'trailing_character' => 'string'
+        'number_position' => 'double',
+        'text_position' => 'double'
     ];
 
     /*
@@ -70,16 +74,16 @@ class ListLevelUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'alignment' => 'null',
-        'is_legal' => 'null',
-        'number_format' => 'null',
-        'number_position' => 'null',
-        'number_style' => 'null',
-        'restart_after_level' => 'null',
-        'start_at' => 'null',
-        'tab_position' => 'null',
-        'text_position' => 'null',
-        'trailing_character' => 'null'
+        'start_at' => 'int32',
+        'number_style' => null,
+        'number_format' => null,
+        'alignment' => null,
+        'is_legal' => null,
+        'restart_after_level' => 'int32',
+        'trailing_character' => null,
+        'tab_position' => 'double',
+        'number_position' => 'double',
+        'text_position' => 'double'
     ];
 
     /*
@@ -109,16 +113,16 @@ class ListLevelUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'start_at' => 'StartAt',
+        'number_style' => 'NumberStyle',
+        'number_format' => 'NumberFormat',
         'alignment' => 'Alignment',
         'is_legal' => 'IsLegal',
-        'number_format' => 'NumberFormat',
-        'number_position' => 'NumberPosition',
-        'number_style' => 'NumberStyle',
         'restart_after_level' => 'RestartAfterLevel',
-        'start_at' => 'StartAt',
+        'trailing_character' => 'TrailingCharacter',
         'tab_position' => 'TabPosition',
-        'text_position' => 'TextPosition',
-        'trailing_character' => 'TrailingCharacter'
+        'number_position' => 'NumberPosition',
+        'text_position' => 'TextPosition'
     ];
 
     /*
@@ -127,16 +131,16 @@ class ListLevelUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'start_at' => 'setStartAt',
+        'number_style' => 'setNumberStyle',
+        'number_format' => 'setNumberFormat',
         'alignment' => 'setAlignment',
         'is_legal' => 'setIsLegal',
-        'number_format' => 'setNumberFormat',
-        'number_position' => 'setNumberPosition',
-        'number_style' => 'setNumberStyle',
         'restart_after_level' => 'setRestartAfterLevel',
-        'start_at' => 'setStartAt',
+        'trailing_character' => 'setTrailingCharacter',
         'tab_position' => 'setTabPosition',
-        'text_position' => 'setTextPosition',
-        'trailing_character' => 'setTrailingCharacter'
+        'number_position' => 'setNumberPosition',
+        'text_position' => 'setTextPosition'
     ];
 
     /*
@@ -145,16 +149,16 @@ class ListLevelUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'start_at' => 'getStartAt',
+        'number_style' => 'getNumberStyle',
+        'number_format' => 'getNumberFormat',
         'alignment' => 'getAlignment',
         'is_legal' => 'getIsLegal',
-        'number_format' => 'getNumberFormat',
-        'number_position' => 'getNumberPosition',
-        'number_style' => 'getNumberStyle',
         'restart_after_level' => 'getRestartAfterLevel',
-        'start_at' => 'getStartAt',
+        'trailing_character' => 'getTrailingCharacter',
         'tab_position' => 'getTabPosition',
-        'text_position' => 'getTextPosition',
-        'trailing_character' => 'getTrailingCharacter'
+        'number_position' => 'getNumberPosition',
+        'text_position' => 'getTextPosition'
     ];
 
     /*
@@ -198,9 +202,6 @@ class ListLevelUpdate implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const ALIGNMENT_LEFT = 'Left';
-    const ALIGNMENT_CENTER = 'Center';
-    const ALIGNMENT_RIGHT = 'Right';
     const NUMBER_STYLE_ARABIC = 'Arabic';
     const NUMBER_STYLE_UPPERCASE_ROMAN = 'UppercaseRoman';
     const NUMBER_STYLE_LOWERCASE_ROMAN = 'LowercaseRoman';
@@ -227,10 +228,10 @@ class ListLevelUpdate implements ArrayAccess
     const NUMBER_STYLE_BULLET = 'Bullet';
     const NUMBER_STYLE_GANADA = 'Ganada';
     const NUMBER_STYLE_CHOSUNG = 'Chosung';
-    const NUMBER_STYLE_G_B1 = 'GB1';
-    const NUMBER_STYLE_G_B2 = 'GB2';
-    const NUMBER_STYLE_G_B3 = 'GB3';
-    const NUMBER_STYLE_G_B4 = 'GB4';
+    const NUMBER_STYLE_GB1 = 'GB1';
+    const NUMBER_STYLE_GB2 = 'GB2';
+    const NUMBER_STYLE_GB3 = 'GB3';
+    const NUMBER_STYLE_GB4 = 'GB4';
     const NUMBER_STYLE_ZODIAC1 = 'Zodiac1';
     const NUMBER_STYLE_ZODIAC2 = 'Zodiac2';
     const NUMBER_STYLE_ZODIAC3 = 'Zodiac3';
@@ -263,23 +264,13 @@ class ListLevelUpdate implements ArrayAccess
     const NUMBER_STYLE_UPPERCASE_RUSSIAN = 'UppercaseRussian';
     const NUMBER_STYLE_NONE = 'None';
     const NUMBER_STYLE_CUSTOM = 'Custom';
+    const ALIGNMENT_LEFT = 'Left';
+    const ALIGNMENT_CENTER = 'Center';
+    const ALIGNMENT_RIGHT = 'Right';
     const TRAILING_CHARACTER_TAB = 'Tab';
     const TRAILING_CHARACTER_SPACE = 'Space';
     const TRAILING_CHARACTER_NOTHING = 'Nothing';
 
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getAlignmentAllowableValues()
-    {
-        return [
-            self::ALIGNMENT_LEFT,
-            self::ALIGNMENT_CENTER,
-            self::ALIGNMENT_RIGHT
-        ];
-    }
     /*
      * Gets allowable values of the enum
      *
@@ -314,10 +305,10 @@ class ListLevelUpdate implements ArrayAccess
             self::NUMBER_STYLE_BULLET,
             self::NUMBER_STYLE_GANADA,
             self::NUMBER_STYLE_CHOSUNG,
-            self::NUMBER_STYLE_G_B1,
-            self::NUMBER_STYLE_G_B2,
-            self::NUMBER_STYLE_G_B3,
-            self::NUMBER_STYLE_G_B4,
+            self::NUMBER_STYLE_GB1,
+            self::NUMBER_STYLE_GB2,
+            self::NUMBER_STYLE_GB3,
+            self::NUMBER_STYLE_GB4,
             self::NUMBER_STYLE_ZODIAC1,
             self::NUMBER_STYLE_ZODIAC2,
             self::NUMBER_STYLE_ZODIAC3,
@@ -357,6 +348,19 @@ class ListLevelUpdate implements ArrayAccess
      *
      * @return string[]
      */
+    public function getAlignmentAllowableValues()
+    {
+        return [
+            self::ALIGNMENT_LEFT,
+            self::ALIGNMENT_CENTER,
+            self::ALIGNMENT_RIGHT
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
     public function getTrailingCharacterAllowableValues()
     {
         return [
@@ -381,16 +385,16 @@ class ListLevelUpdate implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
+        $this->container['number_style'] = isset($data['number_style']) ? $data['number_style'] : null;
+        $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
         $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
         $this->container['is_legal'] = isset($data['is_legal']) ? $data['is_legal'] : null;
-        $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
-        $this->container['number_position'] = isset($data['number_position']) ? $data['number_position'] : null;
-        $this->container['number_style'] = isset($data['number_style']) ? $data['number_style'] : null;
         $this->container['restart_after_level'] = isset($data['restart_after_level']) ? $data['restart_after_level'] : null;
-        $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
-        $this->container['tab_position'] = isset($data['tab_position']) ? $data['tab_position'] : null;
-        $this->container['text_position'] = isset($data['text_position']) ? $data['text_position'] : null;
         $this->container['trailing_character'] = isset($data['trailing_character']) ? $data['trailing_character'] : null;
+        $this->container['tab_position'] = isset($data['tab_position']) ? $data['tab_position'] : null;
+        $this->container['number_position'] = isset($data['number_position']) ? $data['number_position'] : null;
+        $this->container['text_position'] = isset($data['text_position']) ? $data['text_position'] : null;
     }
 
     /*
@@ -402,18 +406,18 @@ class ListLevelUpdate implements ArrayAccess
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'alignment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         $allowedValues = $this->getNumberStyleAllowableValues();
         if (!in_array($this->container['number_style'], $allowedValues)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'number_style', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getAlignmentAllowableValues();
+        if (!in_array($this->container['alignment'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'alignment', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -426,7 +430,6 @@ class ListLevelUpdate implements ArrayAccess
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -438,118 +441,44 @@ class ListLevelUpdate implements ArrayAccess
      */
     public function valid()
     {
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            return false;
-        }
 
         $allowedValues = $this->getNumberStyleAllowableValues();
         if (!in_array($this->container['number_style'], $allowedValues)) {
             return false;
         }
-
+        $allowedValues = $this->getAlignmentAllowableValues();
+        if (!in_array($this->container['alignment'], $allowedValues)) {
+            return false;
+        }
         $allowedValues = $this->getTrailingCharacterAllowableValues();
         if (!in_array($this->container['trailing_character'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
 
+
     /*
-     * Gets alignment
+     * Gets start_at
      *
-     * @return string
+     * @return int
      */
-    public function getAlignment()
+    public function getStartAt()
     {
-        return $this->container['alignment'];
+        return $this->container['start_at'];
     }
 
     /*
-     * Sets alignment
+     * Sets start_at
      *
-     * @param string $alignment Gets or sets the justification of the actual number of the list item.
+     * @param int $start_at Gets or sets returns or sets the starting number for this list level.
      *
      * @return $this
      */
-    public function setAlignment($alignment)
+    public function setStartAt($start_at)
     {
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if ((!is_numeric($alignment) && !in_array($alignment, $allowedValues)) || (is_numeric($alignment) && !in_array($allowedValues[$alignment], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'alignment', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-        $this->container['alignment'] = $alignment;
-        return $this;
-    }
+        $this->container['start_at'] = $start_at;
 
-    /*
-     * Gets is_legal
-     *
-     * @return bool
-     */
-    public function getIsLegal()
-    {
-        return $this->container['is_legal'];
-    }
-
-    /*
-     * Sets is_legal
-     *
-     * @param bool $is_legal Gets or sets a value indicating whether true if the level turns all inherited numbers to Arabic, false if it preserves their number style.
-     *
-     * @return $this
-     */
-    public function setIsLegal($is_legal)
-    {
-        $this->container['is_legal'] = $is_legal;
-        return $this;
-    }
-
-    /*
-     * Gets number_format
-     *
-     * @return string
-     */
-    public function getNumberFormat()
-    {
-        return $this->container['number_format'];
-    }
-
-    /*
-     * Sets number_format
-     *
-     * @param string $number_format Gets or sets returns or sets the number format for the list level.
-     *
-     * @return $this
-     */
-    public function setNumberFormat($number_format)
-    {
-        $this->container['number_format'] = $number_format;
-        return $this;
-    }
-
-    /*
-     * Gets number_position
-     *
-     * @return double
-     */
-    public function getNumberPosition()
-    {
-        return $this->container['number_position'];
-    }
-
-    /*
-     * Sets number_position
-     *
-     * @param double $number_position Gets or sets returns or sets the position (in points) of the number or bullet for the list level.
-     *
-     * @return $this
-     */
-    public function setNumberPosition($number_position)
-    {
-        $this->container['number_position'] = $number_position;
         return $this;
     }
 
@@ -576,7 +505,86 @@ class ListLevelUpdate implements ArrayAccess
         if ((!is_numeric($number_style) && !in_array($number_style, $allowedValues)) || (is_numeric($number_style) && !in_array($allowedValues[$number_style], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'number_style', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['number_style'] = $number_style;
+
+        return $this;
+    }
+
+    /*
+     * Gets number_format
+     *
+     * @return string
+     */
+    public function getNumberFormat()
+    {
+        return $this->container['number_format'];
+    }
+
+    /*
+     * Sets number_format
+     *
+     * @param string $number_format Gets or sets returns or sets the number format for the list level.
+     *
+     * @return $this
+     */
+    public function setNumberFormat($number_format)
+    {
+        $this->container['number_format'] = $number_format;
+
+        return $this;
+    }
+
+    /*
+     * Gets alignment
+     *
+     * @return string
+     */
+    public function getAlignment()
+    {
+        return $this->container['alignment'];
+    }
+
+    /*
+     * Sets alignment
+     *
+     * @param string $alignment Gets or sets the justification of the actual number of the list item.
+     *
+     * @return $this
+     */
+    public function setAlignment($alignment)
+    {
+        $allowedValues = $this->getAlignmentAllowableValues();
+        if ((!is_numeric($alignment) && !in_array($alignment, $allowedValues)) || (is_numeric($alignment) && !in_array($allowedValues[$alignment], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'alignment', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+			
+        $this->container['alignment'] = $alignment;
+
+        return $this;
+    }
+
+    /*
+     * Gets is_legal
+     *
+     * @return bool
+     */
+    public function getIsLegal()
+    {
+        return $this->container['is_legal'];
+    }
+
+    /*
+     * Sets is_legal
+     *
+     * @param bool $is_legal Gets or sets a value indicating whether true if the level turns all inherited numbers to Arabic, false if it preserves their number style.
+     *
+     * @return $this
+     */
+    public function setIsLegal($is_legal)
+    {
+        $this->container['is_legal'] = $is_legal;
+
         return $this;
     }
 
@@ -600,75 +608,7 @@ class ListLevelUpdate implements ArrayAccess
     public function setRestartAfterLevel($restart_after_level)
     {
         $this->container['restart_after_level'] = $restart_after_level;
-        return $this;
-    }
 
-    /*
-     * Gets start_at
-     *
-     * @return int
-     */
-    public function getStartAt()
-    {
-        return $this->container['start_at'];
-    }
-
-    /*
-     * Sets start_at
-     *
-     * @param int $start_at Gets or sets returns or sets the starting number for this list level.
-     *
-     * @return $this
-     */
-    public function setStartAt($start_at)
-    {
-        $this->container['start_at'] = $start_at;
-        return $this;
-    }
-
-    /*
-     * Gets tab_position
-     *
-     * @return double
-     */
-    public function getTabPosition()
-    {
-        return $this->container['tab_position'];
-    }
-
-    /*
-     * Sets tab_position
-     *
-     * @param double $tab_position Gets or sets returns or sets the tab position (in points) for the list level.
-     *
-     * @return $this
-     */
-    public function setTabPosition($tab_position)
-    {
-        $this->container['tab_position'] = $tab_position;
-        return $this;
-    }
-
-    /*
-     * Gets text_position
-     *
-     * @return double
-     */
-    public function getTextPosition()
-    {
-        return $this->container['text_position'];
-    }
-
-    /*
-     * Sets text_position
-     *
-     * @param double $text_position Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.
-     *
-     * @return $this
-     */
-    public function setTextPosition($text_position)
-    {
-        $this->container['text_position'] = $text_position;
         return $this;
     }
 
@@ -695,10 +635,83 @@ class ListLevelUpdate implements ArrayAccess
         if ((!is_numeric($trailing_character) && !in_array($trailing_character, $allowedValues)) || (is_numeric($trailing_character) && !in_array($allowedValues[$trailing_character], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'trailing_character', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['trailing_character'] = $trailing_character;
+
         return $this;
     }
 
+    /*
+     * Gets tab_position
+     *
+     * @return double
+     */
+    public function getTabPosition()
+    {
+        return $this->container['tab_position'];
+    }
+
+    /*
+     * Sets tab_position
+     *
+     * @param double $tab_position Gets or sets returns or sets the tab position (in points) for the list level.
+     *
+     * @return $this
+     */
+    public function setTabPosition($tab_position)
+    {
+        $this->container['tab_position'] = $tab_position;
+
+        return $this;
+    }
+
+    /*
+     * Gets number_position
+     *
+     * @return double
+     */
+    public function getNumberPosition()
+    {
+        return $this->container['number_position'];
+    }
+
+    /*
+     * Sets number_position
+     *
+     * @param double $number_position Gets or sets returns or sets the position (in points) of the number or bullet for the list level.
+     *
+     * @return $this
+     */
+    public function setNumberPosition($number_position)
+    {
+        $this->container['number_position'] = $number_position;
+
+        return $this;
+    }
+
+    /*
+     * Gets text_position
+     *
+     * @return double
+     */
+    public function getTextPosition()
+    {
+        return $this->container['text_position'];
+    }
+
+    /*
+     * Sets text_position
+     *
+     * @param double $text_position Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.
+     *
+     * @return $this
+     */
+    public function setTextPosition($text_position)
+    {
+        $this->container['text_position'] = $text_position;
+
+        return $this;
+    }
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -769,4 +782,3 @@ class ListLevelUpdate implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

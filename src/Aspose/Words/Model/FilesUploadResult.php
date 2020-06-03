@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FilesUploadResult.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,17 +23,21 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FilesUploadResult
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
  * FilesUploadResult
  *
- * @description File upload result.
+ * @description File upload result
  */
 class FilesUploadResult implements ArrayAccess
 {
@@ -52,8 +56,8 @@ class FilesUploadResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'errors' => '\Aspose\Words\Model\Error[]',
-        'uploaded' => 'string[]'
+        'uploaded' => 'string[]',
+        'errors' => '\Aspose\Words\Model\Error[]'
     ];
 
     /*
@@ -62,8 +66,8 @@ class FilesUploadResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'errors' => 'null',
-        'uploaded' => 'null'
+        'uploaded' => null,
+        'errors' => null
     ];
 
     /*
@@ -93,8 +97,8 @@ class FilesUploadResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'errors' => 'Errors',
-        'uploaded' => 'Uploaded'
+        'uploaded' => 'Uploaded',
+        'errors' => 'Errors'
     ];
 
     /*
@@ -103,8 +107,8 @@ class FilesUploadResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'errors' => 'setErrors',
-        'uploaded' => 'setUploaded'
+        'uploaded' => 'setUploaded',
+        'errors' => 'setErrors'
     ];
 
     /*
@@ -113,8 +117,8 @@ class FilesUploadResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'errors' => 'getErrors',
-        'uploaded' => 'getUploaded'
+        'uploaded' => 'getUploaded',
+        'errors' => 'getErrors'
     ];
 
     /*
@@ -175,8 +179,8 @@ class FilesUploadResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
         $this->container['uploaded'] = isset($data['uploaded']) ? $data['uploaded'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
     /*
@@ -199,7 +203,33 @@ class FilesUploadResult implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
+    }
+
+
+    /*
+     * Gets uploaded
+     *
+     * @return string[]
+     */
+    public function getUploaded()
+    {
+        return $this->container['uploaded'];
+    }
+
+    /*
+     * Sets uploaded
+     *
+     * @param string[] $uploaded List of uploaded file names
+     *
+     * @return $this
+     */
+    public function setUploaded($uploaded)
+    {
+        $this->container['uploaded'] = $uploaded;
+
+        return $this;
     }
 
     /*
@@ -222,32 +252,9 @@ class FilesUploadResult implements ArrayAccess
     public function setErrors($errors)
     {
         $this->container['errors'] = $errors;
+
         return $this;
     }
-
-    /*
-     * Gets uploaded
-     *
-     * @return string[]
-     */
-    public function getUploaded()
-    {
-        return $this->container['uploaded'];
-    }
-
-    /*
-     * Sets uploaded
-     *
-     * @param string[] $uploaded List of uploaded file names.
-     *
-     * @return $this
-     */
-    public function setUploaded($uploaded)
-    {
-        $this->container['uploaded'] = $uploaded;
-        return $this;
-    }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -318,4 +325,3 @@ class FilesUploadResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

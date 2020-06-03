@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RunsResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * RunsResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/{paragraphPath}/runs.
  */
-class RunsResponse extends WordsResponse
+class RunsResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class RunsResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'runs' => 'null'
+        'runs' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class RunsResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class RunsResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['runs'] = isset($data['runs']) ? $data['runs'] : null;
     }
 
@@ -174,6 +179,7 @@ class RunsResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class RunsResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets runs
      *
@@ -205,16 +212,16 @@ class RunsResponse extends WordsResponse
     /*
      * Sets runs
      *
-     * @param \Aspose\Words\Model\Runs $runs Gets or sets collection of runs.
+     * @param \Aspose\Words\Model\Runs $runs runs
      *
      * @return $this
      */
     public function setRuns($runs)
     {
         $this->container['runs'] = $runs;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class RunsResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

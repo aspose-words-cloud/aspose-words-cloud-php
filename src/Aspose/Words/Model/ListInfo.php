@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListInfo.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ListInfo
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a single document list.
  */
-class ListInfo extends LinkElement
+class ListInfo extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -66,13 +69,13 @@ class ListInfo extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_list_style_definition' => 'null',
-        'is_list_style_reference' => 'null',
-        'is_multi_level' => 'null',
-        'is_restart_at_each_section' => 'null',
-        'list_id' => 'null',
-        'list_levels' => 'null',
-        'style' => 'null'
+        'is_list_style_definition' => null,
+        'is_list_style_reference' => null,
+        'is_multi_level' => null,
+        'is_restart_at_each_section' => null,
+        'list_id' => 'int32',
+        'list_levels' => null,
+        'style' => null
     ];
 
     /*
@@ -184,6 +187,7 @@ class ListInfo extends LinkElement
 
 
 
+
     /*
      * Constructor
      *
@@ -193,6 +197,7 @@ class ListInfo extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['is_list_style_definition'] = isset($data['is_list_style_definition']) ? $data['is_list_style_definition'] : null;
         $this->container['is_list_style_reference'] = isset($data['is_list_style_reference']) ? $data['is_list_style_reference'] : null;
         $this->container['is_multi_level'] = isset($data['is_multi_level']) ? $data['is_multi_level'] : null;
@@ -210,6 +215,7 @@ class ListInfo extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -227,6 +233,7 @@ class ListInfo extends LinkElement
 
         return true;
     }
+
 
     /*
      * Gets is_list_style_definition
@@ -248,6 +255,7 @@ class ListInfo extends LinkElement
     public function setIsListStyleDefinition($is_list_style_definition)
     {
         $this->container['is_list_style_definition'] = $is_list_style_definition;
+
         return $this;
     }
 
@@ -271,6 +279,7 @@ class ListInfo extends LinkElement
     public function setIsListStyleReference($is_list_style_reference)
     {
         $this->container['is_list_style_reference'] = $is_list_style_reference;
+
         return $this;
     }
 
@@ -294,6 +303,7 @@ class ListInfo extends LinkElement
     public function setIsMultiLevel($is_multi_level)
     {
         $this->container['is_multi_level'] = $is_multi_level;
+
         return $this;
     }
 
@@ -317,6 +327,7 @@ class ListInfo extends LinkElement
     public function setIsRestartAtEachSection($is_restart_at_each_section)
     {
         $this->container['is_restart_at_each_section'] = $is_restart_at_each_section;
+
         return $this;
     }
 
@@ -340,6 +351,7 @@ class ListInfo extends LinkElement
     public function setListId($list_id)
     {
         $this->container['list_id'] = $list_id;
+
         return $this;
     }
 
@@ -356,13 +368,14 @@ class ListInfo extends LinkElement
     /*
      * Sets list_levels
      *
-     * @param \Aspose\Words\Model\ListLevels $list_levels Gets or sets the collection of list levels for this list.
+     * @param \Aspose\Words\Model\ListLevels $list_levels list_levels
      *
      * @return $this
      */
     public function setListLevels($list_levels)
     {
         $this->container['list_levels'] = $list_levels;
+
         return $this;
     }
 
@@ -379,16 +392,16 @@ class ListInfo extends LinkElement
     /*
      * Sets style
      *
-     * @param \Aspose\Words\Model\Style $style Gets or sets the list style that this list references or defines.
+     * @param \Aspose\Words\Model\Style $style style
      *
      * @return $this
      */
     public function setStyle($style)
     {
         $this->container['style'] = $style;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -459,4 +472,3 @@ class ListInfo extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListFormatUpdate.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ListFormatUpdate
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -52,8 +56,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list_id' => 'int',
-        'list_level_number' => 'int'
+        'list_level_number' => 'int',
+        'list_id' => 'int'
     ];
 
     /*
@@ -62,8 +66,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list_id' => 'null',
-        'list_level_number' => 'null'
+        'list_level_number' => 'int32',
+        'list_id' => 'int32'
     ];
 
     /*
@@ -93,8 +97,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'list_id' => 'ListId',
-        'list_level_number' => 'ListLevelNumber'
+        'list_level_number' => 'ListLevelNumber',
+        'list_id' => 'ListId'
     ];
 
     /*
@@ -103,8 +107,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'list_id' => 'setListId',
-        'list_level_number' => 'setListLevelNumber'
+        'list_level_number' => 'setListLevelNumber',
+        'list_id' => 'setListId'
     ];
 
     /*
@@ -113,8 +117,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'list_id' => 'getListId',
-        'list_level_number' => 'getListLevelNumber'
+        'list_level_number' => 'getListLevelNumber',
+        'list_id' => 'getListId'
     ];
 
     /*
@@ -175,8 +179,8 @@ class ListFormatUpdate implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
         $this->container['list_level_number'] = isset($data['list_level_number']) ? $data['list_level_number'] : null;
+        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
     }
 
     /*
@@ -199,7 +203,33 @@ class ListFormatUpdate implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
+    }
+
+
+    /*
+     * Gets list_level_number
+     *
+     * @return int
+     */
+    public function getListLevelNumber()
+    {
+        return $this->container['list_level_number'];
+    }
+
+    /*
+     * Sets list_level_number
+     *
+     * @param int $list_level_number Gets or sets the list level number (0 to 8) for the paragraph.
+     *
+     * @return $this
+     */
+    public function setListLevelNumber($list_level_number)
+    {
+        $this->container['list_level_number'] = $list_level_number;
+
+        return $this;
     }
 
     /*
@@ -222,32 +252,9 @@ class ListFormatUpdate implements ArrayAccess
     public function setListId($list_id)
     {
         $this->container['list_id'] = $list_id;
+
         return $this;
     }
-
-    /*
-     * Gets list_level_number
-     *
-     * @return int
-     */
-    public function getListLevelNumber()
-    {
-        return $this->container['list_level_number'];
-    }
-
-    /*
-     * Sets list_level_number
-     *
-     * @param int $list_level_number Gets or sets the list level number (0 to 8) for the paragraph.
-     *
-     * @return $this
-     */
-    public function setListLevelNumber($list_level_number)
-    {
-        $this->container['list_level_number'] = $list_level_number;
-        return $this;
-    }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -318,4 +325,3 @@ class ListFormatUpdate implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

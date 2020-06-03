@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PclSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * PclSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container class for pcl save options.
  */
-class PclSaveOptionsData extends FixedPageSaveOptionsData
+class PclSaveOptionsData extends FixedPageSaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'falllback_font_name' => 'null',
-        'rasterize_transformed_elements' => 'null'
+        'falllback_font_name' => null,
+        'rasterize_transformed_elements' => null
     ];
 
     /*
@@ -159,6 +162,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['falllback_font_name'] = isset($data['falllback_font_name']) ? $data['falllback_font_name'] : null;
         $this->container['rasterize_transformed_elements'] = isset($data['rasterize_transformed_elements']) ? $data['rasterize_transformed_elements'] : null;
     }
@@ -180,6 +185,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -197,6 +203,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets falllback_font_name
@@ -218,6 +225,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
     public function setFalllbackFontName($falllback_font_name)
     {
         $this->container['falllback_font_name'] = $falllback_font_name;
+
         return $this;
     }
 
@@ -241,9 +249,9 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
     public function setRasterizeTransformedElements($rasterize_transformed_elements)
     {
         $this->container['rasterize_transformed_elements'] = $rasterize_transformed_elements;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

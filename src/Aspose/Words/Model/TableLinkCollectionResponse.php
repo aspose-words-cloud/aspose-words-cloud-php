@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableLinkCollectionResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * TableLinkCollectionResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables.
  */
-class TableLinkCollectionResponse extends WordsResponse
+class TableLinkCollectionResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class TableLinkCollectionResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'tables' => 'null'
+        'tables' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class TableLinkCollectionResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class TableLinkCollectionResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['tables'] = isset($data['tables']) ? $data['tables'] : null;
     }
 
@@ -174,6 +179,7 @@ class TableLinkCollectionResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class TableLinkCollectionResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets tables
      *
@@ -205,16 +212,16 @@ class TableLinkCollectionResponse extends WordsResponse
     /*
      * Sets tables
      *
-     * @param \Aspose\Words\Model\TableLinkCollection $tables Gets or sets collection of tables.
+     * @param \Aspose\Words\Model\TableLinkCollection $tables tables
      *
      * @return $this
      */
     public function setTables($tables)
     {
         $this->container['tables'] = $tables;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class TableLinkCollectionResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

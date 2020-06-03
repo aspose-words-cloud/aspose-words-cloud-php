@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CreateFolderRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -33,59 +33,14 @@ namespace Aspose\Words\Model\Requests;
  */
 class CreateFolderRequest
 {
-    /*
-     * Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.
-     */
-    public $path;
-
-    /*
-     * Storage name.
-     */
-    public $storage_name;
-
+    
+	
     /*
      * Initializes a new instance of the CreateFolderRequest class.
-     *
-     * @param string $path Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.
-     * @param string $storage_name Storage name.
+     *  
      */
-    public function __construct($path, $storage_name = null)
+    public function __construct()             
     {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
     }
 
-    /*
-     * Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.
-     */
-    public function get_path()
-    {
-        return $this->path;
-    }
-
-    /*
-     * Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.
-     */
-    public function set_path($value)
-    {
-        $this->path = $value;
-        return $this;
-    }
-
-    /*
-     * Storage name.
-     */
-    public function get_storage_name()
-    {
-        return $this->storage_name;
-    }
-
-    /*
-     * Storage name.
-     */
-    public function set_storage_name($value)
-    {
-        $this->storage_name = $value;
-        return $this;
-    }
 }

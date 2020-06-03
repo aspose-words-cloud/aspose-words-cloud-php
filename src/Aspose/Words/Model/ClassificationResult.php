@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ClassificationResult.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ClassificationResult
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -62,8 +66,8 @@ class ClassificationResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'class_name' => 'null',
-        'class_probability' => 'null'
+        'class_name' => null,
+        'class_probability' => 'double'
     ];
 
     /*
@@ -199,8 +203,10 @@ class ClassificationResult implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
+
 
     /*
      * Gets class_name
@@ -222,6 +228,7 @@ class ClassificationResult implements ArrayAccess
     public function setClassName($class_name)
     {
         $this->container['class_name'] = $class_name;
+
         return $this;
     }
 
@@ -245,9 +252,9 @@ class ClassificationResult implements ArrayAccess
     public function setClassProbability($class_probability)
     {
         $this->container['class_probability'] = $class_probability;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -318,4 +325,3 @@ class ClassificationResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

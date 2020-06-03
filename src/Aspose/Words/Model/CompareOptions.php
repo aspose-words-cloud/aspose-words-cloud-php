@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CompareOptions.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * CompareOptions
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -53,13 +57,13 @@ class CompareOptions implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'ignore_case_changes' => 'bool',
-        'ignore_comments' => 'bool',
+        'ignore_tables' => 'bool',
         'ignore_fields' => 'bool',
         'ignore_footnotes' => 'bool',
+        'ignore_comments' => 'bool',
+        'ignore_textboxes' => 'bool',
         'ignore_formatting' => 'bool',
         'ignore_headers_and_footers' => 'bool',
-        'ignore_tables' => 'bool',
-        'ignore_textboxes' => 'bool',
         'target' => 'string'
     ];
 
@@ -69,15 +73,15 @@ class CompareOptions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'ignore_case_changes' => 'null',
-        'ignore_comments' => 'null',
-        'ignore_fields' => 'null',
-        'ignore_footnotes' => 'null',
-        'ignore_formatting' => 'null',
-        'ignore_headers_and_footers' => 'null',
-        'ignore_tables' => 'null',
-        'ignore_textboxes' => 'null',
-        'target' => 'null'
+        'ignore_case_changes' => null,
+        'ignore_tables' => null,
+        'ignore_fields' => null,
+        'ignore_footnotes' => null,
+        'ignore_comments' => null,
+        'ignore_textboxes' => null,
+        'ignore_formatting' => null,
+        'ignore_headers_and_footers' => null,
+        'target' => null
     ];
 
     /*
@@ -108,13 +112,13 @@ class CompareOptions implements ArrayAccess
      */
     protected static $attributeMap = [
         'ignore_case_changes' => 'IgnoreCaseChanges',
-        'ignore_comments' => 'IgnoreComments',
+        'ignore_tables' => 'IgnoreTables',
         'ignore_fields' => 'IgnoreFields',
         'ignore_footnotes' => 'IgnoreFootnotes',
+        'ignore_comments' => 'IgnoreComments',
+        'ignore_textboxes' => 'IgnoreTextboxes',
         'ignore_formatting' => 'IgnoreFormatting',
         'ignore_headers_and_footers' => 'IgnoreHeadersAndFooters',
-        'ignore_tables' => 'IgnoreTables',
-        'ignore_textboxes' => 'IgnoreTextboxes',
         'target' => 'Target'
     ];
 
@@ -125,13 +129,13 @@ class CompareOptions implements ArrayAccess
      */
     protected static $setters = [
         'ignore_case_changes' => 'setIgnoreCaseChanges',
-        'ignore_comments' => 'setIgnoreComments',
+        'ignore_tables' => 'setIgnoreTables',
         'ignore_fields' => 'setIgnoreFields',
         'ignore_footnotes' => 'setIgnoreFootnotes',
+        'ignore_comments' => 'setIgnoreComments',
+        'ignore_textboxes' => 'setIgnoreTextboxes',
         'ignore_formatting' => 'setIgnoreFormatting',
         'ignore_headers_and_footers' => 'setIgnoreHeadersAndFooters',
-        'ignore_tables' => 'setIgnoreTables',
-        'ignore_textboxes' => 'setIgnoreTextboxes',
         'target' => 'setTarget'
     ];
 
@@ -142,13 +146,13 @@ class CompareOptions implements ArrayAccess
      */
     protected static $getters = [
         'ignore_case_changes' => 'getIgnoreCaseChanges',
-        'ignore_comments' => 'getIgnoreComments',
+        'ignore_tables' => 'getIgnoreTables',
         'ignore_fields' => 'getIgnoreFields',
         'ignore_footnotes' => 'getIgnoreFootnotes',
+        'ignore_comments' => 'getIgnoreComments',
+        'ignore_textboxes' => 'getIgnoreTextboxes',
         'ignore_formatting' => 'getIgnoreFormatting',
         'ignore_headers_and_footers' => 'getIgnoreHeadersAndFooters',
-        'ignore_tables' => 'getIgnoreTables',
-        'ignore_textboxes' => 'getIgnoreTextboxes',
         'target' => 'getTarget'
     ];
 
@@ -194,7 +198,7 @@ class CompareOptions implements ArrayAccess
     }
 
     const TARGET_CURRENT = 'Current';
-    const TARGET_NEW = 'New';
+    const TARGET__NEW = 'New';
 
     /*
      * Gets allowable values of the enum
@@ -205,7 +209,7 @@ class CompareOptions implements ArrayAccess
     {
         return [
             self::TARGET_CURRENT,
-            self::TARGET_NEW
+            self::TARGET__NEW
         ];
     }
 
@@ -225,13 +229,13 @@ class CompareOptions implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['ignore_case_changes'] = isset($data['ignore_case_changes']) ? $data['ignore_case_changes'] : null;
-        $this->container['ignore_comments'] = isset($data['ignore_comments']) ? $data['ignore_comments'] : null;
+        $this->container['ignore_tables'] = isset($data['ignore_tables']) ? $data['ignore_tables'] : null;
         $this->container['ignore_fields'] = isset($data['ignore_fields']) ? $data['ignore_fields'] : null;
         $this->container['ignore_footnotes'] = isset($data['ignore_footnotes']) ? $data['ignore_footnotes'] : null;
+        $this->container['ignore_comments'] = isset($data['ignore_comments']) ? $data['ignore_comments'] : null;
+        $this->container['ignore_textboxes'] = isset($data['ignore_textboxes']) ? $data['ignore_textboxes'] : null;
         $this->container['ignore_formatting'] = isset($data['ignore_formatting']) ? $data['ignore_formatting'] : null;
         $this->container['ignore_headers_and_footers'] = isset($data['ignore_headers_and_footers']) ? $data['ignore_headers_and_footers'] : null;
-        $this->container['ignore_tables'] = isset($data['ignore_tables']) ? $data['ignore_tables'] : null;
-        $this->container['ignore_textboxes'] = isset($data['ignore_textboxes']) ? $data['ignore_textboxes'] : null;
         $this->container['target'] = isset($data['target']) ? $data['target'] : null;
     }
 
@@ -252,7 +256,6 @@ class CompareOptions implements ArrayAccess
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -264,14 +267,14 @@ class CompareOptions implements ArrayAccess
      */
     public function valid()
     {
+
         $allowedValues = $this->getTargetAllowableValues();
         if (!in_array($this->container['target'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets ignore_case_changes
@@ -293,121 +296,7 @@ class CompareOptions implements ArrayAccess
     public function setIgnoreCaseChanges($ignore_case_changes)
     {
         $this->container['ignore_case_changes'] = $ignore_case_changes;
-        return $this;
-    }
 
-    /*
-     * Gets ignore_comments
-     *
-     * @return bool
-     */
-    public function getIgnoreComments()
-    {
-        return $this->container['ignore_comments'];
-    }
-
-    /*
-     * Sets ignore_comments
-     *
-     * @param bool $ignore_comments Gets or sets a value indicating whether specifies whether to compare differences in comments. By default comments are not ignored.
-     *
-     * @return $this
-     */
-    public function setIgnoreComments($ignore_comments)
-    {
-        $this->container['ignore_comments'] = $ignore_comments;
-        return $this;
-    }
-
-    /*
-     * Gets ignore_fields
-     *
-     * @return bool
-     */
-    public function getIgnoreFields()
-    {
-        return $this->container['ignore_fields'];
-    }
-
-    /*
-     * Sets ignore_fields
-     *
-     * @param bool $ignore_fields Gets or sets a value indicating whether specifies whether to compare differences in fields. By default fields are not ignored.
-     *
-     * @return $this
-     */
-    public function setIgnoreFields($ignore_fields)
-    {
-        $this->container['ignore_fields'] = $ignore_fields;
-        return $this;
-    }
-
-    /*
-     * Gets ignore_footnotes
-     *
-     * @return bool
-     */
-    public function getIgnoreFootnotes()
-    {
-        return $this->container['ignore_footnotes'];
-    }
-
-    /*
-     * Sets ignore_footnotes
-     *
-     * @param bool $ignore_footnotes Gets or sets a value indicating whether specifies whether to compare differences in footnotes and endnotes. By default footnotes are not ignored.
-     *
-     * @return $this
-     */
-    public function setIgnoreFootnotes($ignore_footnotes)
-    {
-        $this->container['ignore_footnotes'] = $ignore_footnotes;
-        return $this;
-    }
-
-    /*
-     * Gets ignore_formatting
-     *
-     * @return bool
-     */
-    public function getIgnoreFormatting()
-    {
-        return $this->container['ignore_formatting'];
-    }
-
-    /*
-     * Sets ignore_formatting
-     *
-     * @param bool $ignore_formatting Gets or sets a value indicating whether true indicates that formatting is ignored. By default document formatting is not ignored.
-     *
-     * @return $this
-     */
-    public function setIgnoreFormatting($ignore_formatting)
-    {
-        $this->container['ignore_formatting'] = $ignore_formatting;
-        return $this;
-    }
-
-    /*
-     * Gets ignore_headers_and_footers
-     *
-     * @return bool
-     */
-    public function getIgnoreHeadersAndFooters()
-    {
-        return $this->container['ignore_headers_and_footers'];
-    }
-
-    /*
-     * Sets ignore_headers_and_footers
-     *
-     * @param bool $ignore_headers_and_footers Gets or sets a value indicating whether true indicates that headers and footers content is ignored. By default headers and footers are not ignored.
-     *
-     * @return $this
-     */
-    public function setIgnoreHeadersAndFooters($ignore_headers_and_footers)
-    {
-        $this->container['ignore_headers_and_footers'] = $ignore_headers_and_footers;
         return $this;
     }
 
@@ -431,6 +320,79 @@ class CompareOptions implements ArrayAccess
     public function setIgnoreTables($ignore_tables)
     {
         $this->container['ignore_tables'] = $ignore_tables;
+
+        return $this;
+    }
+
+    /*
+     * Gets ignore_fields
+     *
+     * @return bool
+     */
+    public function getIgnoreFields()
+    {
+        return $this->container['ignore_fields'];
+    }
+
+    /*
+     * Sets ignore_fields
+     *
+     * @param bool $ignore_fields Gets or sets a value indicating whether specifies whether to compare differences in fields. By default fields are not ignored.
+     *
+     * @return $this
+     */
+    public function setIgnoreFields($ignore_fields)
+    {
+        $this->container['ignore_fields'] = $ignore_fields;
+
+        return $this;
+    }
+
+    /*
+     * Gets ignore_footnotes
+     *
+     * @return bool
+     */
+    public function getIgnoreFootnotes()
+    {
+        return $this->container['ignore_footnotes'];
+    }
+
+    /*
+     * Sets ignore_footnotes
+     *
+     * @param bool $ignore_footnotes Gets or sets a value indicating whether specifies whether to compare differences in footnotes and endnotes. By default footnotes are not ignored.
+     *
+     * @return $this
+     */
+    public function setIgnoreFootnotes($ignore_footnotes)
+    {
+        $this->container['ignore_footnotes'] = $ignore_footnotes;
+
+        return $this;
+    }
+
+    /*
+     * Gets ignore_comments
+     *
+     * @return bool
+     */
+    public function getIgnoreComments()
+    {
+        return $this->container['ignore_comments'];
+    }
+
+    /*
+     * Sets ignore_comments
+     *
+     * @param bool $ignore_comments Gets or sets a value indicating whether specifies whether to compare differences in comments. By default comments are not ignored.
+     *
+     * @return $this
+     */
+    public function setIgnoreComments($ignore_comments)
+    {
+        $this->container['ignore_comments'] = $ignore_comments;
+
         return $this;
     }
 
@@ -454,6 +416,55 @@ class CompareOptions implements ArrayAccess
     public function setIgnoreTextboxes($ignore_textboxes)
     {
         $this->container['ignore_textboxes'] = $ignore_textboxes;
+
+        return $this;
+    }
+
+    /*
+     * Gets ignore_formatting
+     *
+     * @return bool
+     */
+    public function getIgnoreFormatting()
+    {
+        return $this->container['ignore_formatting'];
+    }
+
+    /*
+     * Sets ignore_formatting
+     *
+     * @param bool $ignore_formatting Gets or sets a value indicating whether true indicates that formatting is ignored. By default document formatting is not ignored.
+     *
+     * @return $this
+     */
+    public function setIgnoreFormatting($ignore_formatting)
+    {
+        $this->container['ignore_formatting'] = $ignore_formatting;
+
+        return $this;
+    }
+
+    /*
+     * Gets ignore_headers_and_footers
+     *
+     * @return bool
+     */
+    public function getIgnoreHeadersAndFooters()
+    {
+        return $this->container['ignore_headers_and_footers'];
+    }
+
+    /*
+     * Sets ignore_headers_and_footers
+     *
+     * @param bool $ignore_headers_and_footers Gets or sets a value indicating whether true indicates that headers and footers content is ignored. By default headers and footers are not ignored.
+     *
+     * @return $this
+     */
+    public function setIgnoreHeadersAndFooters($ignore_headers_and_footers)
+    {
+        $this->container['ignore_headers_and_footers'] = $ignore_headers_and_footers;
+
         return $this;
     }
 
@@ -480,10 +491,11 @@ class CompareOptions implements ArrayAccess
         if ((!is_numeric($target) && !in_array($target, $allowedValues)) || (is_numeric($target) && !in_array($allowedValues[$target], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'target', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['target'] = $target;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -554,4 +566,3 @@ class CompareOptions implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

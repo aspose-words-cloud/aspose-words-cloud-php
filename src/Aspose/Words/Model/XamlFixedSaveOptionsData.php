@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="XamlFixedSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * XamlFixedSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for xaml fixed save options.
  */
-class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
+class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'resources_folder' => 'null',
-        'resources_folder_alias' => 'null'
+        'resources_folder' => null,
+        'resources_folder_alias' => null
     ];
 
     /*
@@ -159,6 +162,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
     }
@@ -180,6 +185,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -197,6 +203,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets resources_folder
@@ -218,6 +225,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setResourcesFolder($resources_folder)
     {
         $this->container['resources_folder'] = $resources_folder;
+
         return $this;
     }
 
@@ -241,9 +249,9 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function setResourcesFolderAlias($resources_folder_alias)
     {
         $this->container['resources_folder_alias'] = $resources_folder_alias;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

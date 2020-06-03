@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableCellFormatResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * TableCellFormatResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}/rows/{1}/cells/{2}/cellformat.
  */
-class TableCellFormatResponse extends WordsResponse
+class TableCellFormatResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class TableCellFormatResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'cell_format' => 'null'
+        'cell_format' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class TableCellFormatResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class TableCellFormatResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['cell_format'] = isset($data['cell_format']) ? $data['cell_format'] : null;
     }
 
@@ -174,6 +179,7 @@ class TableCellFormatResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class TableCellFormatResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets cell_format
      *
@@ -205,16 +212,16 @@ class TableCellFormatResponse extends WordsResponse
     /*
      * Sets cell_format
      *
-     * @param \Aspose\Words\Model\TableCellFormat $cell_format Gets or sets table.
+     * @param \Aspose\Words\Model\TableCellFormat $cell_format cell_format
      *
      * @return $this
      */
     public function setCellFormat($cell_format)
     {
         $this->container['cell_format'] = $cell_format;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class TableCellFormatResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

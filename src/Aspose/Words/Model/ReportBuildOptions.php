@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReportBuildOptions.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ReportBuildOptions
  */
 
 namespace Aspose\Words\Model;
@@ -40,10 +43,9 @@ class ReportBuildOptions
      * Possible values of this enum
      */
     const NONE = 'None';
-    const ALLOW_MISSING_MEMBERS = 'AllowMissingMembers';
-    const REMOVE_EMPTY_PARAGRAPHS = 'RemoveEmptyParagraphs';
-    const INLINE_ERROR_MESSAGES = 'InlineErrorMessages';
-
+const ALLOW_MISSING_MEMBERS = 'AllowMissingMembers';
+const REMOVE_EMPTY_PARAGRAPHS = 'RemoveEmptyParagraphs';
+const INLINE_ERROR_MESSAGES = 'InlineErrorMessages';
     /*
      * Gets allowable values of the enum
      * @return string[]

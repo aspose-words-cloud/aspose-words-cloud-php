@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FieldsResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FieldsResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/{nodePath}/fields.
  */
-class FieldsResponse extends WordsResponse
+class FieldsResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class FieldsResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'fields' => 'null'
+        'fields' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class FieldsResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class FieldsResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
     }
 
@@ -174,6 +179,7 @@ class FieldsResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class FieldsResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets fields
      *
@@ -205,16 +212,16 @@ class FieldsResponse extends WordsResponse
     /*
      * Sets fields
      *
-     * @param \Aspose\Words\Model\FieldCollection $fields Gets or sets collection of fields.
+     * @param \Aspose\Words\Model\FieldCollection $fields fields
      *
      * @return $this
      */
     public function setFields($fields)
     {
         $this->container['fields'] = $fields;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class FieldsResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

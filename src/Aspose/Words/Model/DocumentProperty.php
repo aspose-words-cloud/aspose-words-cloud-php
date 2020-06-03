@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentProperty.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * DocumentProperty
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Words document property DTO.
  */
-class DocumentProperty extends LinkElement
+class DocumentProperty extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -62,9 +65,9 @@ class DocumentProperty extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'built_in' => 'null',
-        'name' => 'null',
-        'value' => 'null'
+        'built_in' => null,
+        'name' => null,
+        'value' => null
     ];
 
     /*
@@ -164,6 +167,7 @@ class DocumentProperty extends LinkElement
 
 
 
+
     /*
      * Constructor
      *
@@ -173,6 +177,7 @@ class DocumentProperty extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['built_in'] = isset($data['built_in']) ? $data['built_in'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
@@ -186,6 +191,7 @@ class DocumentProperty extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -203,6 +209,7 @@ class DocumentProperty extends LinkElement
 
         return true;
     }
+
 
     /*
      * Gets built_in
@@ -224,6 +231,7 @@ class DocumentProperty extends LinkElement
     public function setBuiltIn($built_in)
     {
         $this->container['built_in'] = $built_in;
+
         return $this;
     }
 
@@ -247,6 +255,7 @@ class DocumentProperty extends LinkElement
     public function setName($name)
     {
         $this->container['name'] = $name;
+
         return $this;
     }
 
@@ -270,9 +279,9 @@ class DocumentProperty extends LinkElement
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -343,4 +352,3 @@ class DocumentProperty extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

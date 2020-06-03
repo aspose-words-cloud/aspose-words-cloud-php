@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RtfSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * RtfSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for rtf save options.
  */
-class RtfSaveOptionsData extends SaveOptionsData
+class RtfSaveOptionsData extends SaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -63,10 +66,10 @@ class RtfSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'export_compact_size' => 'null',
-        'export_images_for_old_readers' => 'null',
-        'pretty_format' => 'null',
-        'save_images_as_wmf' => 'null'
+        'export_compact_size' => null,
+        'export_images_for_old_readers' => null,
+        'pretty_format' => null,
+        'save_images_as_wmf' => null
     ];
 
     /*
@@ -169,6 +172,7 @@ class RtfSaveOptionsData extends SaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -178,6 +182,7 @@ class RtfSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['export_compact_size'] = isset($data['export_compact_size']) ? $data['export_compact_size'] : null;
         $this->container['export_images_for_old_readers'] = isset($data['export_images_for_old_readers']) ? $data['export_images_for_old_readers'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
@@ -192,6 +197,7 @@ class RtfSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -209,6 +215,7 @@ class RtfSaveOptionsData extends SaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets export_compact_size
@@ -230,6 +237,7 @@ class RtfSaveOptionsData extends SaveOptionsData
     public function setExportCompactSize($export_compact_size)
     {
         $this->container['export_compact_size'] = $export_compact_size;
+
         return $this;
     }
 
@@ -246,13 +254,14 @@ class RtfSaveOptionsData extends SaveOptionsData
     /*
      * Sets export_images_for_old_readers
      *
-     * @param bool $export_images_for_old_readers Gets or sets specifies whether the keywords for "old readers" are written to RTF or not.
+     * @param bool $export_images_for_old_readers Gets or sets specifies whether the keywords for \"old readers\" are written to RTF or not.
      *
      * @return $this
      */
     public function setExportImagesForOldReaders($export_images_for_old_readers)
     {
         $this->container['export_images_for_old_readers'] = $export_images_for_old_readers;
+
         return $this;
     }
 
@@ -276,6 +285,7 @@ class RtfSaveOptionsData extends SaveOptionsData
     public function setPrettyFormat($pretty_format)
     {
         $this->container['pretty_format'] = $pretty_format;
+
         return $this;
     }
 
@@ -299,9 +309,9 @@ class RtfSaveOptionsData extends SaveOptionsData
     public function setSaveImagesAsWmf($save_images_as_wmf)
     {
         $this->container['save_images_as_wmf'] = $save_images_as_wmf;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -372,4 +382,3 @@ class RtfSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

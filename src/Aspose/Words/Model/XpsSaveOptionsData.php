@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="XpsSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * XpsSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container class for xps save options.
  */
-class XpsSaveOptionsData extends FixedPageSaveOptionsData
+class XpsSaveOptionsData extends FixedPageSaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -63,10 +66,10 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'bookmarks_outline_level' => 'null',
-        'headings_outline_levels' => 'null',
-        'outline_options' => 'null',
-        'use_book_fold_printing_settings' => 'null'
+        'bookmarks_outline_level' => 'int32',
+        'headings_outline_levels' => 'int32',
+        'outline_options' => null,
+        'use_book_fold_printing_settings' => null
     ];
 
     /*
@@ -169,6 +172,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -178,6 +182,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['bookmarks_outline_level'] = isset($data['bookmarks_outline_level']) ? $data['bookmarks_outline_level'] : null;
         $this->container['headings_outline_levels'] = isset($data['headings_outline_levels']) ? $data['headings_outline_levels'] : null;
         $this->container['outline_options'] = isset($data['outline_options']) ? $data['outline_options'] : null;
@@ -192,6 +197,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -209,6 +215,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets bookmarks_outline_level
@@ -230,6 +237,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     public function setBookmarksOutlineLevel($bookmarks_outline_level)
     {
         $this->container['bookmarks_outline_level'] = $bookmarks_outline_level;
+
         return $this;
     }
 
@@ -253,6 +261,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     public function setHeadingsOutlineLevels($headings_outline_levels)
     {
         $this->container['headings_outline_levels'] = $headings_outline_levels;
+
         return $this;
     }
 
@@ -269,13 +278,14 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets outline_options
      *
-     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets allows to specify outline options.
+     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options outline_options
      *
      * @return $this
      */
     public function setOutlineOptions($outline_options)
     {
         $this->container['outline_options'] = $outline_options;
+
         return $this;
     }
 
@@ -299,9 +309,9 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseBookFoldPrintingSettings($use_book_fold_printing_settings)
     {
         $this->container['use_book_fold_printing_settings'] = $use_book_fold_printing_settings;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -372,4 +382,3 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

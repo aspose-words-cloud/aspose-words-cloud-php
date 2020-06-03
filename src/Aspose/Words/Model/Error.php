@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Error.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,17 +23,21 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Error
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
  * Error
  *
- * @description Error.
+ * @description Error
  */
 class Error implements ArrayAccess
 {
@@ -53,9 +57,9 @@ class Error implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'code' => 'string',
+        'message' => 'string',
         'description' => 'string',
-        'inner_error' => '\Aspose\Words\Model\ErrorDetails',
-        'message' => 'string'
+        'inner_error' => '\Aspose\Words\Model\ErrorDetails'
     ];
 
     /*
@@ -64,10 +68,10 @@ class Error implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'code' => 'null',
-        'description' => 'null',
-        'inner_error' => 'null',
-        'message' => 'null'
+        'code' => null,
+        'message' => null,
+        'description' => null,
+        'inner_error' => null
     ];
 
     /*
@@ -98,9 +102,9 @@ class Error implements ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'Code',
+        'message' => 'Message',
         'description' => 'Description',
-        'inner_error' => 'InnerError',
-        'message' => 'Message'
+        'inner_error' => 'InnerError'
     ];
 
     /*
@@ -110,9 +114,9 @@ class Error implements ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
+        'message' => 'setMessage',
         'description' => 'setDescription',
-        'inner_error' => 'setInnerError',
-        'message' => 'setMessage'
+        'inner_error' => 'setInnerError'
     ];
 
     /*
@@ -122,9 +126,9 @@ class Error implements ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
+        'message' => 'getMessage',
         'description' => 'getDescription',
-        'inner_error' => 'getInnerError',
-        'message' => 'getMessage'
+        'inner_error' => 'getInnerError'
     ];
 
     /*
@@ -186,9 +190,9 @@ class Error implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['inner_error'] = isset($data['inner_error']) ? $data['inner_error'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
     /*
@@ -211,8 +215,10 @@ class Error implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
+
 
     /*
      * Gets code
@@ -227,59 +233,14 @@ class Error implements ArrayAccess
     /*
      * Sets code
      *
-     * @param string $code Code.
+     * @param string $code Code
      *
      * @return $this
      */
     public function setCode($code)
     {
         $this->container['code'] = $code;
-        return $this;
-    }
 
-    /*
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /*
-     * Sets description
-     *
-     * @param string $description Description.
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-        return $this;
-    }
-
-    /*
-     * Gets inner_error
-     *
-     * @return \Aspose\Words\Model\ErrorDetails
-     */
-    public function getInnerError()
-    {
-        return $this->container['inner_error'];
-    }
-
-    /*
-     * Sets inner_error
-     *
-     * @param \Aspose\Words\Model\ErrorDetails $inner_error Inner Error.
-     *
-     * @return $this
-     */
-    public function setInnerError($inner_error)
-    {
-        $this->container['inner_error'] = $inner_error;
         return $this;
     }
 
@@ -296,16 +257,64 @@ class Error implements ArrayAccess
     /*
      * Sets message
      *
-     * @param string $message Message.
+     * @param string $message Message
      *
      * @return $this
      */
     public function setMessage($message)
     {
         $this->container['message'] = $message;
+
         return $this;
     }
 
+    /*
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /*
+     * Sets description
+     *
+     * @param string $description Description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /*
+     * Gets inner_error
+     *
+     * @return \Aspose\Words\Model\ErrorDetails
+     */
+    public function getInnerError()
+    {
+        return $this->container['inner_error'];
+    }
+
+    /*
+     * Sets inner_error
+     *
+     * @param \Aspose\Words\Model\ErrorDetails $inner_error inner_error
+     *
+     * @return $this
+     */
+    public function setInnerError($inner_error)
+    {
+        $this->container['inner_error'] = $inner_error;
+
+        return $this;
+    }
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -376,4 +385,3 @@ class Error implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

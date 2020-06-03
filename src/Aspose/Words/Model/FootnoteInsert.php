@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FootnoteInsert.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FootnoteInsert
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Footnote for insert.
  */
-class FootnoteInsert extends FootnoteBase
+class FootnoteInsert extends FootnoteBase 
 {
     const DISCRIMINATOR = null;
 
@@ -149,6 +152,7 @@ class FootnoteInsert extends FootnoteBase
 
 
 
+
     /*
      * Constructor
      *
@@ -158,6 +162,7 @@ class FootnoteInsert extends FootnoteBase
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
     }
 
     /*
@@ -168,6 +173,7 @@ class FootnoteInsert extends FootnoteBase
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -185,7 +191,6 @@ class FootnoteInsert extends FootnoteBase
 
         return true;
     }
-
 
     /*
      * Returns true if offset exists. False otherwise.
@@ -257,4 +262,3 @@ class FootnoteInsert extends FootnoteBase
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

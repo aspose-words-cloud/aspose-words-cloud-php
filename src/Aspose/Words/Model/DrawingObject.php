@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DrawingObject.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * DrawingObject
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents Drawing Object DTO.
  */
-class DrawingObject extends DrawingObjectLink
+class DrawingObject extends DrawingObjectLink 
 {
     const DISCRIMINATOR = null;
 
@@ -69,16 +72,16 @@ class DrawingObject extends DrawingObjectLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'height' => 'null',
-        'image_data_link' => 'null',
-        'left' => 'null',
-        'ole_data_link' => 'null',
-        'relative_horizontal_position' => 'null',
-        'relative_vertical_position' => 'null',
-        'render_links' => 'null',
-        'top' => 'null',
-        'width' => 'null',
-        'wrap_type' => 'null'
+        'height' => 'double',
+        'image_data_link' => null,
+        'left' => 'double',
+        'ole_data_link' => null,
+        'relative_horizontal_position' => null,
+        'relative_vertical_position' => null,
+        'render_links' => null,
+        'top' => 'double',
+        'width' => 'double',
+        'wrap_type' => null
     ];
 
     /*
@@ -200,7 +203,7 @@ class DrawingObject extends DrawingObjectLink
     const RELATIVE_HORIZONTAL_POSITION_MARGIN = 'Margin';
     const RELATIVE_HORIZONTAL_POSITION_PAGE = 'Page';
     const RELATIVE_HORIZONTAL_POSITION_COLUMN = 'Column';
-    const RELATIVE_HORIZONTAL_POSITION_DEFAULT = 'Default';
+    const RELATIVE_HORIZONTAL_POSITION__DEFAULT = 'Default';
     const RELATIVE_HORIZONTAL_POSITION_CHARACTER = 'Character';
     const RELATIVE_HORIZONTAL_POSITION_LEFT_MARGIN = 'LeftMargin';
     const RELATIVE_HORIZONTAL_POSITION_RIGHT_MARGIN = 'RightMargin';
@@ -234,7 +237,7 @@ class DrawingObject extends DrawingObjectLink
             self::RELATIVE_HORIZONTAL_POSITION_MARGIN,
             self::RELATIVE_HORIZONTAL_POSITION_PAGE,
             self::RELATIVE_HORIZONTAL_POSITION_COLUMN,
-            self::RELATIVE_HORIZONTAL_POSITION_DEFAULT,
+            self::RELATIVE_HORIZONTAL_POSITION__DEFAULT,
             self::RELATIVE_HORIZONTAL_POSITION_CHARACTER,
             self::RELATIVE_HORIZONTAL_POSITION_LEFT_MARGIN,
             self::RELATIVE_HORIZONTAL_POSITION_RIGHT_MARGIN,
@@ -279,6 +282,7 @@ class DrawingObject extends DrawingObjectLink
         ];
     }
 
+
     /*
      * Constructor
      *
@@ -288,6 +292,7 @@ class DrawingObject extends DrawingObjectLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['image_data_link'] = isset($data['image_data_link']) ? $data['image_data_link'] : null;
         $this->container['left'] = isset($data['left']) ? $data['left'] : null;
@@ -308,6 +313,7 @@ class DrawingObject extends DrawingObjectLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         $allowedValues = $this->getRelativeHorizontalPositionAllowableValues();
         if (!in_array($this->container['relative_horizontal_position'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -332,7 +338,6 @@ class DrawingObject extends DrawingObjectLink
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -352,20 +357,17 @@ class DrawingObject extends DrawingObjectLink
         if (!in_array($this->container['relative_horizontal_position'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getRelativeVerticalPositionAllowableValues();
         if (!in_array($this->container['relative_vertical_position'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getWrapTypeAllowableValues();
         if (!in_array($this->container['wrap_type'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets height
@@ -387,6 +389,7 @@ class DrawingObject extends DrawingObjectLink
     public function setHeight($height)
     {
         $this->container['height'] = $height;
+
         return $this;
     }
 
@@ -403,13 +406,14 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Sets image_data_link
      *
-     * @param \Aspose\Words\Model\WordsApiLink $image_data_link Gets or sets link to image data. Can be null if shape does not have an image.
+     * @param \Aspose\Words\Model\WordsApiLink $image_data_link image_data_link
      *
      * @return $this
      */
     public function setImageDataLink($image_data_link)
     {
         $this->container['image_data_link'] = $image_data_link;
+
         return $this;
     }
 
@@ -433,6 +437,7 @@ class DrawingObject extends DrawingObjectLink
     public function setLeft($left)
     {
         $this->container['left'] = $left;
+
         return $this;
     }
 
@@ -449,13 +454,14 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Sets ole_data_link
      *
-     * @param \Aspose\Words\Model\WordsApiLink $ole_data_link Gets or sets link to ole object. Can be null if shape does not have ole data.
+     * @param \Aspose\Words\Model\WordsApiLink $ole_data_link ole_data_link
      *
      * @return $this
      */
     public function setOleDataLink($ole_data_link)
     {
         $this->container['ole_data_link'] = $ole_data_link;
+
         return $this;
     }
 
@@ -482,7 +488,9 @@ class DrawingObject extends DrawingObjectLink
         if ((!is_numeric($relative_horizontal_position) && !in_array($relative_horizontal_position, $allowedValues)) || (is_numeric($relative_horizontal_position) && !in_array($allowedValues[$relative_horizontal_position], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'relative_horizontal_position', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['relative_horizontal_position'] = $relative_horizontal_position;
+
         return $this;
     }
 
@@ -509,7 +517,9 @@ class DrawingObject extends DrawingObjectLink
         if ((!is_numeric($relative_vertical_position) && !in_array($relative_vertical_position, $allowedValues)) || (is_numeric($relative_vertical_position) && !in_array($allowedValues[$relative_vertical_position], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'relative_vertical_position', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['relative_vertical_position'] = $relative_vertical_position;
+
         return $this;
     }
 
@@ -533,6 +543,7 @@ class DrawingObject extends DrawingObjectLink
     public function setRenderLinks($render_links)
     {
         $this->container['render_links'] = $render_links;
+
         return $this;
     }
 
@@ -556,6 +567,7 @@ class DrawingObject extends DrawingObjectLink
     public function setTop($top)
     {
         $this->container['top'] = $top;
+
         return $this;
     }
 
@@ -579,6 +591,7 @@ class DrawingObject extends DrawingObjectLink
     public function setWidth($width)
     {
         $this->container['width'] = $width;
+
         return $this;
     }
 
@@ -605,10 +618,11 @@ class DrawingObject extends DrawingObjectLink
         if ((!is_numeric($wrap_type) && !in_array($wrap_type, $allowedValues)) || (is_numeric($wrap_type) && !in_array($allowedValues[$wrap_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'wrap_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['wrap_type'] = $wrap_type;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -679,4 +693,3 @@ class DrawingObject extends DrawingObjectLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

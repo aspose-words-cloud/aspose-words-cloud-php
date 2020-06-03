@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReportEngineSettings.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * ReportEngineSettings
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -52,10 +56,10 @@ class ReportEngineSettings implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'csv_data_load_options' => '\Aspose\Words\Model\CsvDataLoadOptions',
-        'data_source_name' => 'string',
         'data_source_type' => 'string',
-        'report_build_options' => 'string[]'
+        'report_build_options' => '\Aspose\Words\Model\ReportBuildOptions[]',
+        'data_source_name' => 'string',
+        'csv_data_load_options' => '\Aspose\Words\Model\CsvDataLoadOptions'
     ];
 
     /*
@@ -64,10 +68,10 @@ class ReportEngineSettings implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'csv_data_load_options' => 'null',
-        'data_source_name' => 'null',
-        'data_source_type' => 'null',
-        'report_build_options' => 'null'
+        'data_source_type' => null,
+        'report_build_options' => null,
+        'data_source_name' => null,
+        'csv_data_load_options' => null
     ];
 
     /*
@@ -97,10 +101,10 @@ class ReportEngineSettings implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'csv_data_load_options' => 'CsvDataLoadOptions',
-        'data_source_name' => 'DataSourceName',
         'data_source_type' => 'DataSourceType',
-        'report_build_options' => 'ReportBuildOptions'
+        'report_build_options' => 'ReportBuildOptions',
+        'data_source_name' => 'DataSourceName',
+        'csv_data_load_options' => 'CsvDataLoadOptions'
     ];
 
     /*
@@ -109,10 +113,10 @@ class ReportEngineSettings implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'csv_data_load_options' => 'setCsvDataLoadOptions',
-        'data_source_name' => 'setDataSourceName',
         'data_source_type' => 'setDataSourceType',
-        'report_build_options' => 'setReportBuildOptions'
+        'report_build_options' => 'setReportBuildOptions',
+        'data_source_name' => 'setDataSourceName',
+        'csv_data_load_options' => 'setCsvDataLoadOptions'
     ];
 
     /*
@@ -121,10 +125,10 @@ class ReportEngineSettings implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'csv_data_load_options' => 'getCsvDataLoadOptions',
-        'data_source_name' => 'getDataSourceName',
         'data_source_type' => 'getDataSourceType',
-        'report_build_options' => 'getReportBuildOptions'
+        'report_build_options' => 'getReportBuildOptions',
+        'data_source_name' => 'getDataSourceName',
+        'csv_data_load_options' => 'getCsvDataLoadOptions'
     ];
 
     /*
@@ -201,10 +205,10 @@ class ReportEngineSettings implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['csv_data_load_options'] = isset($data['csv_data_load_options']) ? $data['csv_data_load_options'] : null;
-        $this->container['data_source_name'] = isset($data['data_source_name']) ? $data['data_source_name'] : null;
         $this->container['data_source_type'] = isset($data['data_source_type']) ? $data['data_source_type'] : null;
         $this->container['report_build_options'] = isset($data['report_build_options']) ? $data['report_build_options'] : null;
+        $this->container['data_source_name'] = isset($data['data_source_name']) ? $data['data_source_name'] : null;
+        $this->container['csv_data_load_options'] = isset($data['csv_data_load_options']) ? $data['csv_data_load_options'] : null;
     }
 
     /*
@@ -224,7 +228,6 @@ class ReportEngineSettings implements ArrayAccess
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -236,60 +239,14 @@ class ReportEngineSettings implements ArrayAccess
      */
     public function valid()
     {
+
         $allowedValues = $this->getDataSourceTypeAllowableValues();
         if (!in_array($this->container['data_source_type'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
 
-    /*
-     * Gets csv_data_load_options
-     *
-     * @return \Aspose\Words\Model\CsvDataLoadOptions
-     */
-    public function getCsvDataLoadOptions()
-    {
-        return $this->container['csv_data_load_options'];
-    }
-
-    /*
-     * Sets csv_data_load_options
-     *
-     * @param \Aspose\Words\Model\CsvDataLoadOptions $csv_data_load_options Gets or sets options for parsing CSV data.
-     *
-     * @return $this
-     */
-    public function setCsvDataLoadOptions($csv_data_load_options)
-    {
-        $this->container['csv_data_load_options'] = $csv_data_load_options;
-        return $this;
-    }
-
-    /*
-     * Gets data_source_name
-     *
-     * @return string
-     */
-    public function getDataSourceName()
-    {
-        return $this->container['data_source_name'];
-    }
-
-    /*
-     * Sets data_source_name
-     *
-     * @param string $data_source_name Gets or sets a name to reference the data source object in the template.
-     *
-     * @return $this
-     */
-    public function setDataSourceName($data_source_name)
-    {
-        $this->container['data_source_name'] = $data_source_name;
-        return $this;
-    }
 
     /*
      * Gets data_source_type
@@ -314,14 +271,16 @@ class ReportEngineSettings implements ArrayAccess
         if ((!is_numeric($data_source_type) && !in_array($data_source_type, $allowedValues)) || (is_numeric($data_source_type) && !in_array($allowedValues[$data_source_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'data_source_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['data_source_type'] = $data_source_type;
+
         return $this;
     }
 
     /*
      * Gets report_build_options
      *
-     * @return string[]
+     * @return \Aspose\Words\Model\ReportBuildOptions[]
      */
     public function getReportBuildOptions()
     {
@@ -331,20 +290,64 @@ class ReportEngineSettings implements ArrayAccess
     /*
      * Sets report_build_options
      *
-     * @param string[] $report_build_options Gets or sets type of options to build report.
+     * @param \Aspose\Words\Model\ReportBuildOptions[] $report_build_options Gets or sets type of options to build report.
      *
      * @return $this
      */
     public function setReportBuildOptions($report_build_options)
     {
-        $allowedValues = $this->getReportBuildOptionsAllowableValues();
-        if (!is_null($report_build_options) && array_diff($report_build_options, $allowedValues)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'report_build_options', must be one of '%s'", implode("', '", $allowedValues)));
-        }
         $this->container['report_build_options'] = $report_build_options;
+
         return $this;
     }
 
+    /*
+     * Gets data_source_name
+     *
+     * @return string
+     */
+    public function getDataSourceName()
+    {
+        return $this->container['data_source_name'];
+    }
+
+    /*
+     * Sets data_source_name
+     *
+     * @param string $data_source_name Gets or sets a name to reference the data source object in the template.
+     *
+     * @return $this
+     */
+    public function setDataSourceName($data_source_name)
+    {
+        $this->container['data_source_name'] = $data_source_name;
+
+        return $this;
+    }
+
+    /*
+     * Gets csv_data_load_options
+     *
+     * @return \Aspose\Words\Model\CsvDataLoadOptions
+     */
+    public function getCsvDataLoadOptions()
+    {
+        return $this->container['csv_data_load_options'];
+    }
+
+    /*
+     * Sets csv_data_load_options
+     *
+     * @param \Aspose\Words\Model\CsvDataLoadOptions $csv_data_load_options csv_data_load_options
+     *
+     * @return $this
+     */
+    public function setCsvDataLoadOptions($csv_data_load_options)
+    {
+        $this->container['csv_data_load_options'] = $csv_data_load_options;
+
+        return $this;
+    }
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -415,4 +418,3 @@ class ReportEngineSettings implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

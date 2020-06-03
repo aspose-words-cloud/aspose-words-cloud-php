@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HtmlSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * HtmlSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,9 +37,9 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for html save options.
  */
-class HtmlSaveOptionsData extends SaveOptionsData
+class HtmlSaveOptionsData extends SaveOptionsData 
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
 
     /*
      * The original name of the model.
@@ -98,45 +101,45 @@ class HtmlSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'allow_negative_indent' => 'null',
-        'css_class_name_prefix' => 'null',
-        'css_style_sheet_file_name' => 'null',
-        'css_style_sheet_type' => 'null',
-        'document_split_criteria' => 'null',
-        'document_split_heading_level' => 'null',
-        'encoding' => 'null',
-        'export_document_properties' => 'null',
-        'export_drop_down_form_field_as_text' => 'null',
-        'export_font_resources' => 'null',
-        'export_fonts_as_base64' => 'null',
-        'export_headers_footers_mode' => 'null',
-        'export_images_as_base64' => 'null',
-        'export_language_information' => 'null',
-        'export_list_labels' => 'null',
-        'export_original_url_for_linked_images' => 'null',
-        'export_page_margins' => 'null',
-        'export_page_setup' => 'null',
-        'export_relative_font_size' => 'null',
-        'export_roundtrip_information' => 'null',
-        'export_text_box_as_svg' => 'null',
-        'export_text_input_form_field_as_text' => 'null',
-        'export_toc_page_numbers' => 'null',
-        'export_xhtml_transitional' => 'null',
-        'font_resources_subsetting_size_threshold' => 'null',
-        'fonts_folder' => 'null',
-        'fonts_folder_alias' => 'null',
-        'html_version' => 'null',
-        'image_resolution' => 'null',
-        'images_folder' => 'null',
-        'images_folder_alias' => 'null',
-        'metafile_format' => 'null',
-        'office_math_output_mode' => 'null',
-        'pretty_format' => 'null',
-        'resolve_font_names' => 'null',
-        'resource_folder' => 'null',
-        'resource_folder_alias' => 'null',
-        'scale_image_to_shape_size' => 'null',
-        'table_width_output_mode' => 'null'
+        'allow_negative_indent' => null,
+        'css_class_name_prefix' => null,
+        'css_style_sheet_file_name' => null,
+        'css_style_sheet_type' => null,
+        'document_split_criteria' => null,
+        'document_split_heading_level' => 'int32',
+        'encoding' => null,
+        'export_document_properties' => null,
+        'export_drop_down_form_field_as_text' => null,
+        'export_font_resources' => null,
+        'export_fonts_as_base64' => null,
+        'export_headers_footers_mode' => null,
+        'export_images_as_base64' => null,
+        'export_language_information' => null,
+        'export_list_labels' => null,
+        'export_original_url_for_linked_images' => null,
+        'export_page_margins' => null,
+        'export_page_setup' => null,
+        'export_relative_font_size' => null,
+        'export_roundtrip_information' => null,
+        'export_text_box_as_svg' => null,
+        'export_text_input_form_field_as_text' => null,
+        'export_toc_page_numbers' => null,
+        'export_xhtml_transitional' => null,
+        'font_resources_subsetting_size_threshold' => 'int32',
+        'fonts_folder' => null,
+        'fonts_folder_alias' => null,
+        'html_version' => null,
+        'image_resolution' => 'int32',
+        'images_folder' => null,
+        'images_folder_alias' => null,
+        'metafile_format' => null,
+        'office_math_output_mode' => null,
+        'pretty_format' => null,
+        'resolve_font_names' => null,
+        'resource_folder' => null,
+        'resource_folder_alias' => null,
+        'scale_image_to_shape_size' => null,
+        'table_width_output_mode' => null
     ];
 
     /*
@@ -390,6 +393,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         ];
     }
 
+
     /*
      * Constructor
      *
@@ -399,6 +403,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['allow_negative_indent'] = isset($data['allow_negative_indent']) ? $data['allow_negative_indent'] : null;
         $this->container['css_class_name_prefix'] = isset($data['css_class_name_prefix']) ? $data['css_class_name_prefix'] : null;
         $this->container['css_style_sheet_file_name'] = isset($data['css_style_sheet_file_name']) ? $data['css_style_sheet_file_name'] : null;
@@ -438,6 +443,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['resource_folder_alias'] = isset($data['resource_folder_alias']) ? $data['resource_folder_alias'] : null;
         $this->container['scale_image_to_shape_size'] = isset($data['scale_image_to_shape_size']) ? $data['scale_image_to_shape_size'] : null;
         $this->container['table_width_output_mode'] = isset($data['table_width_output_mode']) ? $data['table_width_output_mode'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -448,6 +457,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         $allowedValues = $this->getHtmlVersionAllowableValues();
         if (!in_array($this->container['html_version'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -472,7 +482,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -492,20 +501,17 @@ class HtmlSaveOptionsData extends SaveOptionsData
         if (!in_array($this->container['html_version'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getMetafileFormatAllowableValues();
         if (!in_array($this->container['metafile_format'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getOfficeMathOutputModeAllowableValues();
         if (!in_array($this->container['office_math_output_mode'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets allow_negative_indent
@@ -527,6 +533,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setAllowNegativeIndent($allow_negative_indent)
     {
         $this->container['allow_negative_indent'] = $allow_negative_indent;
+
         return $this;
     }
 
@@ -543,13 +550,14 @@ class HtmlSaveOptionsData extends SaveOptionsData
     /*
      * Sets css_class_name_prefix
      *
-     * @param string $css_class_name_prefix Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix. If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.
+     * @param string $css_class_name_prefix Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix.  If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.
      *
      * @return $this
      */
     public function setCssClassNamePrefix($css_class_name_prefix)
     {
         $this->container['css_class_name_prefix'] = $css_class_name_prefix;
+
         return $this;
     }
 
@@ -573,6 +581,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setCssStyleSheetFileName($css_style_sheet_file_name)
     {
         $this->container['css_style_sheet_file_name'] = $css_style_sheet_file_name;
+
         return $this;
     }
 
@@ -596,6 +605,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setCssStyleSheetType($css_style_sheet_type)
     {
         $this->container['css_style_sheet_type'] = $css_style_sheet_type;
+
         return $this;
     }
 
@@ -619,6 +629,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setDocumentSplitCriteria($document_split_criteria)
     {
         $this->container['document_split_criteria'] = $document_split_criteria;
+
         return $this;
     }
 
@@ -642,6 +653,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setDocumentSplitHeadingLevel($document_split_heading_level)
     {
         $this->container['document_split_heading_level'] = $document_split_heading_level;
+
         return $this;
     }
 
@@ -665,6 +677,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setEncoding($encoding)
     {
         $this->container['encoding'] = $encoding;
+
         return $this;
     }
 
@@ -688,6 +701,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportDocumentProperties($export_document_properties)
     {
         $this->container['export_document_properties'] = $export_document_properties;
+
         return $this;
     }
 
@@ -711,6 +725,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportDropDownFormFieldAsText($export_drop_down_form_field_as_text)
     {
         $this->container['export_drop_down_form_field_as_text'] = $export_drop_down_form_field_as_text;
+
         return $this;
     }
 
@@ -734,6 +749,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportFontResources($export_font_resources)
     {
         $this->container['export_font_resources'] = $export_font_resources;
+
         return $this;
     }
 
@@ -757,6 +773,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportFontsAsBase64($export_fonts_as_base64)
     {
         $this->container['export_fonts_as_base64'] = $export_fonts_as_base64;
+
         return $this;
     }
 
@@ -780,6 +797,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportHeadersFootersMode($export_headers_footers_mode)
     {
         $this->container['export_headers_footers_mode'] = $export_headers_footers_mode;
+
         return $this;
     }
 
@@ -803,6 +821,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportImagesAsBase64($export_images_as_base64)
     {
         $this->container['export_images_as_base64'] = $export_images_as_base64;
+
         return $this;
     }
 
@@ -826,6 +845,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportLanguageInformation($export_language_information)
     {
         $this->container['export_language_information'] = $export_language_information;
+
         return $this;
     }
 
@@ -849,6 +869,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportListLabels($export_list_labels)
     {
         $this->container['export_list_labels'] = $export_list_labels;
+
         return $this;
     }
 
@@ -872,6 +893,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportOriginalUrlForLinkedImages($export_original_url_for_linked_images)
     {
         $this->container['export_original_url_for_linked_images'] = $export_original_url_for_linked_images;
+
         return $this;
     }
 
@@ -895,6 +917,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportPageMargins($export_page_margins)
     {
         $this->container['export_page_margins'] = $export_page_margins;
+
         return $this;
     }
 
@@ -918,6 +941,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportPageSetup($export_page_setup)
     {
         $this->container['export_page_setup'] = $export_page_setup;
+
         return $this;
     }
 
@@ -941,6 +965,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportRelativeFontSize($export_relative_font_size)
     {
         $this->container['export_relative_font_size'] = $export_relative_font_size;
+
         return $this;
     }
 
@@ -964,6 +989,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportRoundtripInformation($export_roundtrip_information)
     {
         $this->container['export_roundtrip_information'] = $export_roundtrip_information;
+
         return $this;
     }
 
@@ -980,13 +1006,14 @@ class HtmlSaveOptionsData extends SaveOptionsData
     /*
      * Sets export_text_box_as_svg
      *
-     * @param bool $export_text_box_as_svg Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false. When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.
+     * @param bool $export_text_box_as_svg Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.    When set to true, exports textboxes as inline \"svg\" elements. When false, exports as \"image\" elements.
      *
      * @return $this
      */
     public function setExportTextBoxAsSvg($export_text_box_as_svg)
     {
         $this->container['export_text_box_as_svg'] = $export_text_box_as_svg;
+
         return $this;
     }
 
@@ -1010,6 +1037,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportTextInputFormFieldAsText($export_text_input_form_field_as_text)
     {
         $this->container['export_text_input_form_field_as_text'] = $export_text_input_form_field_as_text;
+
         return $this;
     }
 
@@ -1033,6 +1061,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportTocPageNumbers($export_toc_page_numbers)
     {
         $this->container['export_toc_page_numbers'] = $export_toc_page_numbers;
+
         return $this;
     }
 
@@ -1056,6 +1085,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportXhtmlTransitional($export_xhtml_transitional)
     {
         $this->container['export_xhtml_transitional'] = $export_xhtml_transitional;
+
         return $this;
     }
 
@@ -1079,6 +1109,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setFontResourcesSubsettingSizeThreshold($font_resources_subsetting_size_threshold)
     {
         $this->container['font_resources_subsetting_size_threshold'] = $font_resources_subsetting_size_threshold;
+
         return $this;
     }
 
@@ -1102,6 +1133,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setFontsFolder($fonts_folder)
     {
         $this->container['fonts_folder'] = $fonts_folder;
+
         return $this;
     }
 
@@ -1125,6 +1157,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setFontsFolderAlias($fonts_folder_alias)
     {
         $this->container['fonts_folder_alias'] = $fonts_folder_alias;
+
         return $this;
     }
 
@@ -1151,7 +1184,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         if ((!is_numeric($html_version) && !in_array($html_version, $allowedValues)) || (is_numeric($html_version) && !in_array($allowedValues[$html_version], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'html_version', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['html_version'] = $html_version;
+
         return $this;
     }
 
@@ -1175,6 +1210,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setImageResolution($image_resolution)
     {
         $this->container['image_resolution'] = $image_resolution;
+
         return $this;
     }
 
@@ -1198,6 +1234,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setImagesFolder($images_folder)
     {
         $this->container['images_folder'] = $images_folder;
+
         return $this;
     }
 
@@ -1221,6 +1258,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setImagesFolderAlias($images_folder_alias)
     {
         $this->container['images_folder_alias'] = $images_folder_alias;
+
         return $this;
     }
 
@@ -1237,7 +1275,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     /*
      * Sets metafile_format
      *
-     * @param string $metafile_format Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images. Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
+     * @param string $metafile_format Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
      *
      * @return $this
      */
@@ -1247,7 +1285,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         if ((!is_numeric($metafile_format) && !in_array($metafile_format, $allowedValues)) || (is_numeric($metafile_format) && !in_array($allowedValues[$metafile_format], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'metafile_format', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['metafile_format'] = $metafile_format;
+
         return $this;
     }
 
@@ -1274,7 +1314,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         if ((!is_numeric($office_math_output_mode) && !in_array($office_math_output_mode, $allowedValues)) || (is_numeric($office_math_output_mode) && !in_array($allowedValues[$office_math_output_mode], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'office_math_output_mode', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['office_math_output_mode'] = $office_math_output_mode;
+
         return $this;
     }
 
@@ -1298,6 +1340,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setPrettyFormat($pretty_format)
     {
         $this->container['pretty_format'] = $pretty_format;
+
         return $this;
     }
 
@@ -1321,6 +1364,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setResolveFontNames($resolve_font_names)
     {
         $this->container['resolve_font_names'] = $resolve_font_names;
+
         return $this;
     }
 
@@ -1344,6 +1388,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setResourceFolder($resource_folder)
     {
         $this->container['resource_folder'] = $resource_folder;
+
         return $this;
     }
 
@@ -1367,6 +1412,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setResourceFolderAlias($resource_folder_alias)
     {
         $this->container['resource_folder_alias'] = $resource_folder_alias;
+
         return $this;
     }
 
@@ -1390,6 +1436,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setScaleImageToShapeSize($scale_image_to_shape_size)
     {
         $this->container['scale_image_to_shape_size'] = $scale_image_to_shape_size;
+
         return $this;
     }
 
@@ -1413,9 +1460,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setTableWidthOutputMode($table_width_output_mode)
     {
         $this->container['table_width_output_mode'] = $table_width_output_mode;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -1486,4 +1533,3 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

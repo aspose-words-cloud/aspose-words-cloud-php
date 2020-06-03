@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StatDataResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * StatDataResponse
  */
 
 namespace Aspose\Words\Model;
@@ -32,9 +35,9 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * StatDataResponse
  *
- * @description Response for the request of the document's statistical data.
+ * @description Response for the request of the document&#x27;s statistical data.
  */
-class StatDataResponse extends WordsResponse
+class StatDataResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class StatDataResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'document_link' => 'null',
-        'stat_data' => 'null'
+        'document_link' => null,
+        'stat_data' => null
     ];
 
     /*
@@ -159,6 +162,7 @@ class StatDataResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class StatDataResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['document_link'] = isset($data['document_link']) ? $data['document_link'] : null;
         $this->container['stat_data'] = isset($data['stat_data']) ? $data['stat_data'] : null;
     }
@@ -180,6 +185,7 @@ class StatDataResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -198,6 +204,7 @@ class StatDataResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets document_link
      *
@@ -211,13 +218,14 @@ class StatDataResponse extends WordsResponse
     /*
      * Sets document_link
      *
-     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets link to the document.
+     * @param \Aspose\Words\Model\FileLink $document_link document_link
      *
      * @return $this
      */
     public function setDocumentLink($document_link)
     {
         $this->container['document_link'] = $document_link;
+
         return $this;
     }
 
@@ -234,16 +242,16 @@ class StatDataResponse extends WordsResponse
     /*
      * Sets stat_data
      *
-     * @param \Aspose\Words\Model\DocumentStatData $stat_data Gets or sets statistical data of the document.
+     * @param \Aspose\Words\Model\DocumentStatData $stat_data stat_data
      *
      * @return $this
      */
     public function setStatData($stat_data)
     {
         $this->container['stat_data'] = $stat_data;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class StatDataResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

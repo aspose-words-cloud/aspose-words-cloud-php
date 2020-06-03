@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CsvDataLoadOptions.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * CsvDataLoadOptions
  */
 
 namespace Aspose\Words\Model;
+
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -52,10 +56,10 @@ class CsvDataLoadOptions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'comment_char' => 'string',
-        'delimiter' => 'string',
         'has_headers' => 'bool',
-        'quote_char' => 'string'
+        'delimiter' => 'string',
+        'quote_char' => 'string',
+        'comment_char' => 'string'
     ];
 
     /*
@@ -64,10 +68,10 @@ class CsvDataLoadOptions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'comment_char' => 'null',
-        'delimiter' => 'null',
-        'has_headers' => 'null',
-        'quote_char' => 'null'
+        'has_headers' => null,
+        'delimiter' => null,
+        'quote_char' => null,
+        'comment_char' => null
     ];
 
     /*
@@ -97,10 +101,10 @@ class CsvDataLoadOptions implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'comment_char' => 'CommentChar',
-        'delimiter' => 'Delimiter',
         'has_headers' => 'HasHeaders',
-        'quote_char' => 'QuoteChar'
+        'delimiter' => 'Delimiter',
+        'quote_char' => 'QuoteChar',
+        'comment_char' => 'CommentChar'
     ];
 
     /*
@@ -109,10 +113,10 @@ class CsvDataLoadOptions implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'comment_char' => 'setCommentChar',
-        'delimiter' => 'setDelimiter',
         'has_headers' => 'setHasHeaders',
-        'quote_char' => 'setQuoteChar'
+        'delimiter' => 'setDelimiter',
+        'quote_char' => 'setQuoteChar',
+        'comment_char' => 'setCommentChar'
     ];
 
     /*
@@ -121,10 +125,10 @@ class CsvDataLoadOptions implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'comment_char' => 'getCommentChar',
-        'delimiter' => 'getDelimiter',
         'has_headers' => 'getHasHeaders',
-        'quote_char' => 'getQuoteChar'
+        'delimiter' => 'getDelimiter',
+        'quote_char' => 'getQuoteChar',
+        'comment_char' => 'getCommentChar'
     ];
 
     /*
@@ -185,10 +189,10 @@ class CsvDataLoadOptions implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['comment_char'] = isset($data['comment_char']) ? $data['comment_char'] : null;
-        $this->container['delimiter'] = isset($data['delimiter']) ? $data['delimiter'] : null;
         $this->container['has_headers'] = isset($data['has_headers']) ? $data['has_headers'] : null;
+        $this->container['delimiter'] = isset($data['delimiter']) ? $data['delimiter'] : null;
         $this->container['quote_char'] = isset($data['quote_char']) ? $data['quote_char'] : null;
+        $this->container['comment_char'] = isset($data['comment_char']) ? $data['comment_char'] : null;
     }
 
     /*
@@ -211,29 +215,32 @@ class CsvDataLoadOptions implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 
+
     /*
-     * Gets comment_char
+     * Gets has_headers
      *
-     * @return string
+     * @return bool
      */
-    public function getCommentChar()
+    public function getHasHeaders()
     {
-        return $this->container['comment_char'];
+        return $this->container['has_headers'];
     }
 
     /*
-     * Sets comment_char
+     * Sets has_headers
      *
-     * @param string $comment_char Gets or sets the character that is used to comment lines of CSV data.
+     * @param bool $has_headers Gets or sets a value indicating whether the first record of CSV data contains column names.
      *
      * @return $this
      */
-    public function setCommentChar($comment_char)
+    public function setHasHeaders($has_headers)
     {
-        $this->container['comment_char'] = $comment_char;
+        $this->container['has_headers'] = $has_headers;
+
         return $this;
     }
 
@@ -257,29 +264,7 @@ class CsvDataLoadOptions implements ArrayAccess
     public function setDelimiter($delimiter)
     {
         $this->container['delimiter'] = $delimiter;
-        return $this;
-    }
 
-    /*
-     * Gets has_headers
-     *
-     * @return bool
-     */
-    public function getHasHeaders()
-    {
-        return $this->container['has_headers'];
-    }
-
-    /*
-     * Sets has_headers
-     *
-     * @param bool $has_headers Gets or sets a value indicating whether the first record of CSV data contains column names.
-     *
-     * @return $this
-     */
-    public function setHasHeaders($has_headers)
-    {
-        $this->container['has_headers'] = $has_headers;
         return $this;
     }
 
@@ -303,9 +288,33 @@ class CsvDataLoadOptions implements ArrayAccess
     public function setQuoteChar($quote_char)
     {
         $this->container['quote_char'] = $quote_char;
+
         return $this;
     }
 
+    /*
+     * Gets comment_char
+     *
+     * @return string
+     */
+    public function getCommentChar()
+    {
+        return $this->container['comment_char'];
+    }
+
+    /*
+     * Sets comment_char
+     *
+     * @param string $comment_char Gets or sets the character that is used to comment lines of CSV data.
+     *
+     * @return $this
+     */
+    public function setCommentChar($comment_char)
+    {
+        $this->container['comment_char'] = $comment_char;
+
+        return $this;
+    }
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -376,4 +385,3 @@ class CsvDataLoadOptions implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

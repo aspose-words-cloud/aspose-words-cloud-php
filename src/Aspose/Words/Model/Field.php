@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Field.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Field
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Field.
  */
-class Field extends FieldLink
+class Field extends FieldLink 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class Field extends FieldLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'locale_id' => 'null',
-        'result' => 'null'
+        'locale_id' => null,
+        'result' => null
     ];
 
     /*
@@ -159,6 +162,7 @@ class Field extends FieldLink
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class Field extends FieldLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['locale_id'] = isset($data['locale_id']) ? $data['locale_id'] : null;
         $this->container['result'] = isset($data['result']) ? $data['result'] : null;
     }
@@ -180,6 +185,7 @@ class Field extends FieldLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -197,6 +203,7 @@ class Field extends FieldLink
 
         return true;
     }
+
 
     /*
      * Gets locale_id
@@ -218,6 +225,7 @@ class Field extends FieldLink
     public function setLocaleId($locale_id)
     {
         $this->container['locale_id'] = $locale_id;
+
         return $this;
     }
 
@@ -241,9 +249,9 @@ class Field extends FieldLink
     public function setResult($result)
     {
         $this->container['result'] = $result;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class Field extends FieldLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

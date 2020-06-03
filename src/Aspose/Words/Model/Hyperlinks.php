@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Hyperlinks.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Hyperlinks
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Collection of Hyperlink.
  */
-class Hyperlinks extends LinkElement
+class Hyperlinks extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class Hyperlinks extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'hyperlink_list' => 'null'
+        'hyperlink_list' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class Hyperlinks extends LinkElement
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class Hyperlinks extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['hyperlink_list'] = isset($data['hyperlink_list']) ? $data['hyperlink_list'] : null;
     }
 
@@ -174,6 +179,7 @@ class Hyperlinks extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -191,6 +197,7 @@ class Hyperlinks extends LinkElement
 
         return true;
     }
+
 
     /*
      * Gets hyperlink_list
@@ -212,9 +219,9 @@ class Hyperlinks extends LinkElement
     public function setHyperlinkList($hyperlink_list)
     {
         $this->container['hyperlink_list'] = $hyperlink_list;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class Hyperlinks extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PageSetup.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * PageSetup
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents the page setup properties of a section.
  */
-class PageSetup extends LinkElement
+class PageSetup extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -88,35 +91,35 @@ class PageSetup extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'bidi' => 'null',
-        'border_always_in_front' => 'null',
-        'border_applies_to' => 'null',
-        'border_distance_from' => 'null',
-        'bottom_margin' => 'null',
-        'different_first_page_header_footer' => 'null',
-        'first_page_tray' => 'null',
-        'footer_distance' => 'null',
-        'gutter' => 'null',
-        'header_distance' => 'null',
-        'left_margin' => 'null',
-        'line_number_count_by' => 'null',
-        'line_number_distance_from_text' => 'null',
-        'line_number_restart_mode' => 'null',
-        'line_starting_number' => 'null',
-        'orientation' => 'null',
-        'other_pages_tray' => 'null',
-        'page_height' => 'null',
-        'page_number_style' => 'null',
-        'page_starting_number' => 'null',
-        'page_width' => 'null',
-        'paper_size' => 'null',
-        'restart_page_numbering' => 'null',
-        'right_margin' => 'null',
-        'rtl_gutter' => 'null',
-        'section_start' => 'null',
-        'suppress_endnotes' => 'null',
-        'top_margin' => 'null',
-        'vertical_alignment' => 'null'
+        'bidi' => null,
+        'border_always_in_front' => null,
+        'border_applies_to' => null,
+        'border_distance_from' => null,
+        'bottom_margin' => 'double',
+        'different_first_page_header_footer' => null,
+        'first_page_tray' => 'int32',
+        'footer_distance' => 'double',
+        'gutter' => 'double',
+        'header_distance' => 'double',
+        'left_margin' => 'double',
+        'line_number_count_by' => 'int32',
+        'line_number_distance_from_text' => 'double',
+        'line_number_restart_mode' => null,
+        'line_starting_number' => 'int32',
+        'orientation' => null,
+        'other_pages_tray' => 'int32',
+        'page_height' => 'double',
+        'page_number_style' => null,
+        'page_starting_number' => 'int32',
+        'page_width' => 'double',
+        'paper_size' => null,
+        'restart_page_numbering' => null,
+        'right_margin' => 'double',
+        'rtl_gutter' => null,
+        'section_start' => null,
+        'suppress_endnotes' => null,
+        'top_margin' => 'double',
+        'vertical_alignment' => null
     ];
 
     /*
@@ -328,10 +331,10 @@ class PageSetup extends LinkElement
     const PAGE_NUMBER_STYLE_BULLET = 'Bullet';
     const PAGE_NUMBER_STYLE_GANADA = 'Ganada';
     const PAGE_NUMBER_STYLE_CHOSUNG = 'Chosung';
-    const PAGE_NUMBER_STYLE_G_B1 = 'GB1';
-    const PAGE_NUMBER_STYLE_G_B2 = 'GB2';
-    const PAGE_NUMBER_STYLE_G_B3 = 'GB3';
-    const PAGE_NUMBER_STYLE_G_B4 = 'GB4';
+    const PAGE_NUMBER_STYLE_GB1 = 'GB1';
+    const PAGE_NUMBER_STYLE_GB2 = 'GB2';
+    const PAGE_NUMBER_STYLE_GB3 = 'GB3';
+    const PAGE_NUMBER_STYLE_GB4 = 'GB4';
     const PAGE_NUMBER_STYLE_ZODIAC1 = 'Zodiac1';
     const PAGE_NUMBER_STYLE_ZODIAC2 = 'Zodiac2';
     const PAGE_NUMBER_STYLE_ZODIAC3 = 'Zodiac3';
@@ -475,10 +478,10 @@ class PageSetup extends LinkElement
             self::PAGE_NUMBER_STYLE_BULLET,
             self::PAGE_NUMBER_STYLE_GANADA,
             self::PAGE_NUMBER_STYLE_CHOSUNG,
-            self::PAGE_NUMBER_STYLE_G_B1,
-            self::PAGE_NUMBER_STYLE_G_B2,
-            self::PAGE_NUMBER_STYLE_G_B3,
-            self::PAGE_NUMBER_STYLE_G_B4,
+            self::PAGE_NUMBER_STYLE_GB1,
+            self::PAGE_NUMBER_STYLE_GB2,
+            self::PAGE_NUMBER_STYLE_GB3,
+            self::PAGE_NUMBER_STYLE_GB4,
             self::PAGE_NUMBER_STYLE_ZODIAC1,
             self::PAGE_NUMBER_STYLE_ZODIAC2,
             self::PAGE_NUMBER_STYLE_ZODIAC3,
@@ -570,6 +573,7 @@ class PageSetup extends LinkElement
         ];
     }
 
+
     /*
      * Constructor
      *
@@ -579,6 +583,7 @@ class PageSetup extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['bidi'] = isset($data['bidi']) ? $data['bidi'] : null;
         $this->container['border_always_in_front'] = isset($data['border_always_in_front']) ? $data['border_always_in_front'] : null;
         $this->container['border_applies_to'] = isset($data['border_applies_to']) ? $data['border_applies_to'] : null;
@@ -618,6 +623,7 @@ class PageSetup extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         $allowedValues = $this->getBorderAppliesToAllowableValues();
         if (!in_array($this->container['border_applies_to'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -682,7 +688,6 @@ class PageSetup extends LinkElement
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -702,45 +707,37 @@ class PageSetup extends LinkElement
         if (!in_array($this->container['border_applies_to'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getBorderDistanceFromAllowableValues();
         if (!in_array($this->container['border_distance_from'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getLineNumberRestartModeAllowableValues();
         if (!in_array($this->container['line_number_restart_mode'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getOrientationAllowableValues();
         if (!in_array($this->container['orientation'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getPageNumberStyleAllowableValues();
         if (!in_array($this->container['page_number_style'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getPaperSizeAllowableValues();
         if (!in_array($this->container['paper_size'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getSectionStartAllowableValues();
         if (!in_array($this->container['section_start'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getVerticalAlignmentAllowableValues();
         if (!in_array($this->container['vertical_alignment'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets bidi
@@ -762,6 +759,7 @@ class PageSetup extends LinkElement
     public function setBidi($bidi)
     {
         $this->container['bidi'] = $bidi;
+
         return $this;
     }
 
@@ -785,6 +783,7 @@ class PageSetup extends LinkElement
     public function setBorderAlwaysInFront($border_always_in_front)
     {
         $this->container['border_always_in_front'] = $border_always_in_front;
+
         return $this;
     }
 
@@ -811,7 +810,9 @@ class PageSetup extends LinkElement
         if ((!is_numeric($border_applies_to) && !in_array($border_applies_to, $allowedValues)) || (is_numeric($border_applies_to) && !in_array($allowedValues[$border_applies_to], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'border_applies_to', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['border_applies_to'] = $border_applies_to;
+
         return $this;
     }
 
@@ -838,7 +839,9 @@ class PageSetup extends LinkElement
         if ((!is_numeric($border_distance_from) && !in_array($border_distance_from, $allowedValues)) || (is_numeric($border_distance_from) && !in_array($allowedValues[$border_distance_from], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'border_distance_from', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['border_distance_from'] = $border_distance_from;
+
         return $this;
     }
 
@@ -862,6 +865,7 @@ class PageSetup extends LinkElement
     public function setBottomMargin($bottom_margin)
     {
         $this->container['bottom_margin'] = $bottom_margin;
+
         return $this;
     }
 
@@ -885,6 +889,7 @@ class PageSetup extends LinkElement
     public function setDifferentFirstPageHeaderFooter($different_first_page_header_footer)
     {
         $this->container['different_first_page_header_footer'] = $different_first_page_header_footer;
+
         return $this;
     }
 
@@ -908,6 +913,7 @@ class PageSetup extends LinkElement
     public function setFirstPageTray($first_page_tray)
     {
         $this->container['first_page_tray'] = $first_page_tray;
+
         return $this;
     }
 
@@ -931,6 +937,7 @@ class PageSetup extends LinkElement
     public function setFooterDistance($footer_distance)
     {
         $this->container['footer_distance'] = $footer_distance;
+
         return $this;
     }
 
@@ -954,6 +961,7 @@ class PageSetup extends LinkElement
     public function setGutter($gutter)
     {
         $this->container['gutter'] = $gutter;
+
         return $this;
     }
 
@@ -977,6 +985,7 @@ class PageSetup extends LinkElement
     public function setHeaderDistance($header_distance)
     {
         $this->container['header_distance'] = $header_distance;
+
         return $this;
     }
 
@@ -1000,6 +1009,7 @@ class PageSetup extends LinkElement
     public function setLeftMargin($left_margin)
     {
         $this->container['left_margin'] = $left_margin;
+
         return $this;
     }
 
@@ -1023,6 +1033,7 @@ class PageSetup extends LinkElement
     public function setLineNumberCountBy($line_number_count_by)
     {
         $this->container['line_number_count_by'] = $line_number_count_by;
+
         return $this;
     }
 
@@ -1046,6 +1057,7 @@ class PageSetup extends LinkElement
     public function setLineNumberDistanceFromText($line_number_distance_from_text)
     {
         $this->container['line_number_distance_from_text'] = $line_number_distance_from_text;
+
         return $this;
     }
 
@@ -1072,7 +1084,9 @@ class PageSetup extends LinkElement
         if ((!is_numeric($line_number_restart_mode) && !in_array($line_number_restart_mode, $allowedValues)) || (is_numeric($line_number_restart_mode) && !in_array($allowedValues[$line_number_restart_mode], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'line_number_restart_mode', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['line_number_restart_mode'] = $line_number_restart_mode;
+
         return $this;
     }
 
@@ -1096,6 +1110,7 @@ class PageSetup extends LinkElement
     public function setLineStartingNumber($line_starting_number)
     {
         $this->container['line_starting_number'] = $line_starting_number;
+
         return $this;
     }
 
@@ -1122,7 +1137,9 @@ class PageSetup extends LinkElement
         if ((!is_numeric($orientation) && !in_array($orientation, $allowedValues)) || (is_numeric($orientation) && !in_array($allowedValues[$orientation], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'orientation', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['orientation'] = $orientation;
+
         return $this;
     }
 
@@ -1146,6 +1163,7 @@ class PageSetup extends LinkElement
     public function setOtherPagesTray($other_pages_tray)
     {
         $this->container['other_pages_tray'] = $other_pages_tray;
+
         return $this;
     }
 
@@ -1169,6 +1187,7 @@ class PageSetup extends LinkElement
     public function setPageHeight($page_height)
     {
         $this->container['page_height'] = $page_height;
+
         return $this;
     }
 
@@ -1195,7 +1214,9 @@ class PageSetup extends LinkElement
         if ((!is_numeric($page_number_style) && !in_array($page_number_style, $allowedValues)) || (is_numeric($page_number_style) && !in_array($allowedValues[$page_number_style], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'page_number_style', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['page_number_style'] = $page_number_style;
+
         return $this;
     }
 
@@ -1219,6 +1240,7 @@ class PageSetup extends LinkElement
     public function setPageStartingNumber($page_starting_number)
     {
         $this->container['page_starting_number'] = $page_starting_number;
+
         return $this;
     }
 
@@ -1242,6 +1264,7 @@ class PageSetup extends LinkElement
     public function setPageWidth($page_width)
     {
         $this->container['page_width'] = $page_width;
+
         return $this;
     }
 
@@ -1268,7 +1291,9 @@ class PageSetup extends LinkElement
         if ((!is_numeric($paper_size) && !in_array($paper_size, $allowedValues)) || (is_numeric($paper_size) && !in_array($allowedValues[$paper_size], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'paper_size', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['paper_size'] = $paper_size;
+
         return $this;
     }
 
@@ -1292,6 +1317,7 @@ class PageSetup extends LinkElement
     public function setRestartPageNumbering($restart_page_numbering)
     {
         $this->container['restart_page_numbering'] = $restart_page_numbering;
+
         return $this;
     }
 
@@ -1315,6 +1341,7 @@ class PageSetup extends LinkElement
     public function setRightMargin($right_margin)
     {
         $this->container['right_margin'] = $right_margin;
+
         return $this;
     }
 
@@ -1338,6 +1365,7 @@ class PageSetup extends LinkElement
     public function setRtlGutter($rtl_gutter)
     {
         $this->container['rtl_gutter'] = $rtl_gutter;
+
         return $this;
     }
 
@@ -1364,7 +1392,9 @@ class PageSetup extends LinkElement
         if ((!is_numeric($section_start) && !in_array($section_start, $allowedValues)) || (is_numeric($section_start) && !in_array($allowedValues[$section_start], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'section_start', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['section_start'] = $section_start;
+
         return $this;
     }
 
@@ -1388,6 +1418,7 @@ class PageSetup extends LinkElement
     public function setSuppressEndnotes($suppress_endnotes)
     {
         $this->container['suppress_endnotes'] = $suppress_endnotes;
+
         return $this;
     }
 
@@ -1411,6 +1442,7 @@ class PageSetup extends LinkElement
     public function setTopMargin($top_margin)
     {
         $this->container['top_margin'] = $top_margin;
+
         return $this;
     }
 
@@ -1437,10 +1469,11 @@ class PageSetup extends LinkElement
         if ((!is_numeric($vertical_alignment) && !in_array($vertical_alignment, $allowedValues)) || (is_numeric($vertical_alignment) && !in_array($allowedValues[$vertical_alignment], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'vertical_alignment', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['vertical_alignment'] = $vertical_alignment;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -1511,4 +1544,3 @@ class PageSetup extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentPropertyResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * DocumentPropertyResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling:  GET documentProperties/{propertyName}.
  */
-class DocumentPropertyResponse extends WordsResponse
+class DocumentPropertyResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -60,7 +63,7 @@ class DocumentPropertyResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'document_property' => 'null'
+        'document_property' => null
     ];
 
     /*
@@ -154,6 +157,7 @@ class DocumentPropertyResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -163,6 +167,7 @@ class DocumentPropertyResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['document_property'] = isset($data['document_property']) ? $data['document_property'] : null;
     }
 
@@ -174,6 +179,7 @@ class DocumentPropertyResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -192,6 +198,7 @@ class DocumentPropertyResponse extends WordsResponse
         return true;
     }
 
+
     /*
      * Gets document_property
      *
@@ -205,16 +212,16 @@ class DocumentPropertyResponse extends WordsResponse
     /*
      * Sets document_property
      *
-     * @param \Aspose\Words\Model\DocumentProperty $document_property Gets or sets document property.
+     * @param \Aspose\Words\Model\DocumentProperty $document_property document_property
      *
      * @return $this
      */
     public function setDocumentProperty($document_property)
     {
         $this->container['document_property'] = $document_property;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -285,4 +292,3 @@ class DocumentPropertyResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

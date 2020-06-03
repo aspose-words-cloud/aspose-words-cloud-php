@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocSaveOptionsData.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * DocSaveOptionsData
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for doc/dot save options.
  */
-class DocSaveOptionsData extends SaveOptionsData
+class DocSaveOptionsData extends SaveOptionsData 
 {
     const DISCRIMINATOR = null;
 
@@ -63,10 +66,10 @@ class DocSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'always_compress_metafiles' => 'null',
-        'password' => 'null',
-        'save_picture_bullet' => 'null',
-        'save_routing_slip' => 'null'
+        'always_compress_metafiles' => null,
+        'password' => null,
+        'save_picture_bullet' => null,
+        'save_routing_slip' => null
     ];
 
     /*
@@ -169,6 +172,7 @@ class DocSaveOptionsData extends SaveOptionsData
 
 
 
+
     /*
      * Constructor
      *
@@ -178,6 +182,7 @@ class DocSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['always_compress_metafiles'] = isset($data['always_compress_metafiles']) ? $data['always_compress_metafiles'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['save_picture_bullet'] = isset($data['save_picture_bullet']) ? $data['save_picture_bullet'] : null;
@@ -192,6 +197,7 @@ class DocSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -209,6 +215,7 @@ class DocSaveOptionsData extends SaveOptionsData
 
         return true;
     }
+
 
     /*
      * Gets always_compress_metafiles
@@ -230,6 +237,7 @@ class DocSaveOptionsData extends SaveOptionsData
     public function setAlwaysCompressMetafiles($always_compress_metafiles)
     {
         $this->container['always_compress_metafiles'] = $always_compress_metafiles;
+
         return $this;
     }
 
@@ -253,6 +261,7 @@ class DocSaveOptionsData extends SaveOptionsData
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
         return $this;
     }
 
@@ -276,6 +285,7 @@ class DocSaveOptionsData extends SaveOptionsData
     public function setSavePictureBullet($save_picture_bullet)
     {
         $this->container['save_picture_bullet'] = $save_picture_bullet;
+
         return $this;
     }
 
@@ -299,9 +309,9 @@ class DocSaveOptionsData extends SaveOptionsData
     public function setSaveRoutingSlip($save_routing_slip)
     {
         $this->container['save_routing_slip'] = $save_routing_slip;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -372,4 +382,3 @@ class DocSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

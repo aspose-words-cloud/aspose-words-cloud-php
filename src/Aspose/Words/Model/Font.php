@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Font.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Font
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Font element.
  */
-class Font extends LinkElement
+class Font extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -99,46 +102,46 @@ class Font extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'all_caps' => 'null',
-        'bidi' => 'null',
-        'bold' => 'null',
-        'bold_bi' => 'null',
-        'border' => 'null',
-        'color' => 'null',
-        'complex_script' => 'null',
-        'double_strike_through' => 'null',
-        'emboss' => 'null',
-        'engrave' => 'null',
-        'hidden' => 'null',
-        'highlight_color' => 'null',
-        'italic' => 'null',
-        'italic_bi' => 'null',
-        'kerning' => 'null',
-        'locale_id' => 'null',
-        'locale_id_bi' => 'null',
-        'locale_id_far_east' => 'null',
-        'name' => 'null',
-        'name_ascii' => 'null',
-        'name_bi' => 'null',
-        'name_far_east' => 'null',
-        'name_other' => 'null',
-        'no_proofing' => 'null',
-        'outline' => 'null',
-        'position' => 'null',
-        'scaling' => 'null',
-        'shadow' => 'null',
-        'size' => 'null',
-        'size_bi' => 'null',
-        'small_caps' => 'null',
-        'spacing' => 'null',
-        'strike_through' => 'null',
-        'style_identifier' => 'null',
-        'style_name' => 'null',
-        'subscript' => 'null',
-        'superscript' => 'null',
-        'text_effect' => 'null',
-        'underline' => 'null',
-        'underline_color' => 'null'
+        'all_caps' => null,
+        'bidi' => null,
+        'bold' => null,
+        'bold_bi' => null,
+        'border' => null,
+        'color' => null,
+        'complex_script' => null,
+        'double_strike_through' => null,
+        'emboss' => null,
+        'engrave' => null,
+        'hidden' => null,
+        'highlight_color' => null,
+        'italic' => null,
+        'italic_bi' => null,
+        'kerning' => 'double',
+        'locale_id' => 'int32',
+        'locale_id_bi' => 'int32',
+        'locale_id_far_east' => 'int32',
+        'name' => null,
+        'name_ascii' => null,
+        'name_bi' => null,
+        'name_far_east' => null,
+        'name_other' => null,
+        'no_proofing' => null,
+        'outline' => null,
+        'position' => 'double',
+        'scaling' => 'int32',
+        'shadow' => null,
+        'size' => 'double',
+        'size_bi' => 'double',
+        'small_caps' => null,
+        'spacing' => 'double',
+        'strike_through' => null,
+        'style_identifier' => null,
+        'style_name' => null,
+        'subscript' => null,
+        'superscript' => null,
+        'text_effect' => null,
+        'underline' => null,
+        'underline_color' => null
     ];
 
     /*
@@ -394,7 +397,7 @@ class Font extends LinkElement
     const STYLE_IDENTIFIER_TABLE_OF_AUTHORITIES = 'TableOfAuthorities';
     const STYLE_IDENTIFIER_MACRO = 'Macro';
     const STYLE_IDENTIFIER_TOA_HEADING = 'ToaHeading';
-    const STYLE_IDENTIFIER_LIST = 'List';
+    const STYLE_IDENTIFIER__LIST = 'List';
     const STYLE_IDENTIFIER_LIST_BULLET = 'ListBullet';
     const STYLE_IDENTIFIER_LIST_NUMBER = 'ListNumber';
     const STYLE_IDENTIFIER_LIST2 = 'List2';
@@ -801,7 +804,7 @@ class Font extends LinkElement
             self::STYLE_IDENTIFIER_TABLE_OF_AUTHORITIES,
             self::STYLE_IDENTIFIER_MACRO,
             self::STYLE_IDENTIFIER_TOA_HEADING,
-            self::STYLE_IDENTIFIER_LIST,
+            self::STYLE_IDENTIFIER__LIST,
             self::STYLE_IDENTIFIER_LIST_BULLET,
             self::STYLE_IDENTIFIER_LIST_NUMBER,
             self::STYLE_IDENTIFIER_LIST2,
@@ -1175,6 +1178,7 @@ class Font extends LinkElement
         ];
     }
 
+
     /*
      * Constructor
      *
@@ -1184,6 +1188,7 @@ class Font extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['all_caps'] = isset($data['all_caps']) ? $data['all_caps'] : null;
         $this->container['bidi'] = isset($data['bidi']) ? $data['bidi'] : null;
         $this->container['bold'] = isset($data['bold']) ? $data['bold'] : null;
@@ -1234,6 +1239,7 @@ class Font extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         $allowedValues = $this->getStyleIdentifierAllowableValues();
         if (!in_array($this->container['style_identifier'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -1258,7 +1264,6 @@ class Font extends LinkElement
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -1278,20 +1283,17 @@ class Font extends LinkElement
         if (!in_array($this->container['style_identifier'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getTextEffectAllowableValues();
         if (!in_array($this->container['text_effect'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getUnderlineAllowableValues();
         if (!in_array($this->container['underline'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets all_caps
@@ -1313,6 +1315,7 @@ class Font extends LinkElement
     public function setAllCaps($all_caps)
     {
         $this->container['all_caps'] = $all_caps;
+
         return $this;
     }
 
@@ -1336,6 +1339,7 @@ class Font extends LinkElement
     public function setBidi($bidi)
     {
         $this->container['bidi'] = $bidi;
+
         return $this;
     }
 
@@ -1359,6 +1363,7 @@ class Font extends LinkElement
     public function setBold($bold)
     {
         $this->container['bold'] = $bold;
+
         return $this;
     }
 
@@ -1382,6 +1387,7 @@ class Font extends LinkElement
     public function setBoldBi($bold_bi)
     {
         $this->container['bold_bi'] = $bold_bi;
+
         return $this;
     }
 
@@ -1398,13 +1404,14 @@ class Font extends LinkElement
     /*
      * Sets border
      *
-     * @param \Aspose\Words\Model\Border $border Gets or sets border object that specifies border for the font.
+     * @param \Aspose\Words\Model\Border $border border
      *
      * @return $this
      */
     public function setBorder($border)
     {
         $this->container['border'] = $border;
+
         return $this;
     }
 
@@ -1421,13 +1428,14 @@ class Font extends LinkElement
     /*
      * Sets color
      *
-     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the color of the font.
+     * @param \Aspose\Words\Model\XmlColor $color color
      *
      * @return $this
      */
     public function setColor($color)
     {
         $this->container['color'] = $color;
+
         return $this;
     }
 
@@ -1451,6 +1459,7 @@ class Font extends LinkElement
     public function setComplexScript($complex_script)
     {
         $this->container['complex_script'] = $complex_script;
+
         return $this;
     }
 
@@ -1474,6 +1483,7 @@ class Font extends LinkElement
     public function setDoubleStrikeThrough($double_strike_through)
     {
         $this->container['double_strike_through'] = $double_strike_through;
+
         return $this;
     }
 
@@ -1497,6 +1507,7 @@ class Font extends LinkElement
     public function setEmboss($emboss)
     {
         $this->container['emboss'] = $emboss;
+
         return $this;
     }
 
@@ -1520,6 +1531,7 @@ class Font extends LinkElement
     public function setEngrave($engrave)
     {
         $this->container['engrave'] = $engrave;
+
         return $this;
     }
 
@@ -1543,6 +1555,7 @@ class Font extends LinkElement
     public function setHidden($hidden)
     {
         $this->container['hidden'] = $hidden;
+
         return $this;
     }
 
@@ -1559,13 +1572,14 @@ class Font extends LinkElement
     /*
      * Sets highlight_color
      *
-     * @param \Aspose\Words\Model\XmlColor $highlight_color Gets or sets the highlight (marker) color.
+     * @param \Aspose\Words\Model\XmlColor $highlight_color highlight_color
      *
      * @return $this
      */
     public function setHighlightColor($highlight_color)
     {
         $this->container['highlight_color'] = $highlight_color;
+
         return $this;
     }
 
@@ -1589,6 +1603,7 @@ class Font extends LinkElement
     public function setItalic($italic)
     {
         $this->container['italic'] = $italic;
+
         return $this;
     }
 
@@ -1612,6 +1627,7 @@ class Font extends LinkElement
     public function setItalicBi($italic_bi)
     {
         $this->container['italic_bi'] = $italic_bi;
+
         return $this;
     }
 
@@ -1635,6 +1651,7 @@ class Font extends LinkElement
     public function setKerning($kerning)
     {
         $this->container['kerning'] = $kerning;
+
         return $this;
     }
 
@@ -1658,6 +1675,7 @@ class Font extends LinkElement
     public function setLocaleId($locale_id)
     {
         $this->container['locale_id'] = $locale_id;
+
         return $this;
     }
 
@@ -1681,6 +1699,7 @@ class Font extends LinkElement
     public function setLocaleIdBi($locale_id_bi)
     {
         $this->container['locale_id_bi'] = $locale_id_bi;
+
         return $this;
     }
 
@@ -1704,6 +1723,7 @@ class Font extends LinkElement
     public function setLocaleIdFarEast($locale_id_far_east)
     {
         $this->container['locale_id_far_east'] = $locale_id_far_east;
+
         return $this;
     }
 
@@ -1727,6 +1747,7 @@ class Font extends LinkElement
     public function setName($name)
     {
         $this->container['name'] = $name;
+
         return $this;
     }
 
@@ -1750,6 +1771,7 @@ class Font extends LinkElement
     public function setNameAscii($name_ascii)
     {
         $this->container['name_ascii'] = $name_ascii;
+
         return $this;
     }
 
@@ -1773,6 +1795,7 @@ class Font extends LinkElement
     public function setNameBi($name_bi)
     {
         $this->container['name_bi'] = $name_bi;
+
         return $this;
     }
 
@@ -1796,6 +1819,7 @@ class Font extends LinkElement
     public function setNameFarEast($name_far_east)
     {
         $this->container['name_far_east'] = $name_far_east;
+
         return $this;
     }
 
@@ -1819,6 +1843,7 @@ class Font extends LinkElement
     public function setNameOther($name_other)
     {
         $this->container['name_other'] = $name_other;
+
         return $this;
     }
 
@@ -1842,6 +1867,7 @@ class Font extends LinkElement
     public function setNoProofing($no_proofing)
     {
         $this->container['no_proofing'] = $no_proofing;
+
         return $this;
     }
 
@@ -1865,6 +1891,7 @@ class Font extends LinkElement
     public function setOutline($outline)
     {
         $this->container['outline'] = $outline;
+
         return $this;
     }
 
@@ -1888,6 +1915,7 @@ class Font extends LinkElement
     public function setPosition($position)
     {
         $this->container['position'] = $position;
+
         return $this;
     }
 
@@ -1911,6 +1939,7 @@ class Font extends LinkElement
     public function setScaling($scaling)
     {
         $this->container['scaling'] = $scaling;
+
         return $this;
     }
 
@@ -1934,6 +1963,7 @@ class Font extends LinkElement
     public function setShadow($shadow)
     {
         $this->container['shadow'] = $shadow;
+
         return $this;
     }
 
@@ -1957,6 +1987,7 @@ class Font extends LinkElement
     public function setSize($size)
     {
         $this->container['size'] = $size;
+
         return $this;
     }
 
@@ -1980,6 +2011,7 @@ class Font extends LinkElement
     public function setSizeBi($size_bi)
     {
         $this->container['size_bi'] = $size_bi;
+
         return $this;
     }
 
@@ -2003,6 +2035,7 @@ class Font extends LinkElement
     public function setSmallCaps($small_caps)
     {
         $this->container['small_caps'] = $small_caps;
+
         return $this;
     }
 
@@ -2026,6 +2059,7 @@ class Font extends LinkElement
     public function setSpacing($spacing)
     {
         $this->container['spacing'] = $spacing;
+
         return $this;
     }
 
@@ -2049,6 +2083,7 @@ class Font extends LinkElement
     public function setStrikeThrough($strike_through)
     {
         $this->container['strike_through'] = $strike_through;
+
         return $this;
     }
 
@@ -2075,7 +2110,9 @@ class Font extends LinkElement
         if ((!is_numeric($style_identifier) && !in_array($style_identifier, $allowedValues)) || (is_numeric($style_identifier) && !in_array($allowedValues[$style_identifier], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'style_identifier', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['style_identifier'] = $style_identifier;
+
         return $this;
     }
 
@@ -2099,6 +2136,7 @@ class Font extends LinkElement
     public function setStyleName($style_name)
     {
         $this->container['style_name'] = $style_name;
+
         return $this;
     }
 
@@ -2122,6 +2160,7 @@ class Font extends LinkElement
     public function setSubscript($subscript)
     {
         $this->container['subscript'] = $subscript;
+
         return $this;
     }
 
@@ -2145,6 +2184,7 @@ class Font extends LinkElement
     public function setSuperscript($superscript)
     {
         $this->container['superscript'] = $superscript;
+
         return $this;
     }
 
@@ -2171,7 +2211,9 @@ class Font extends LinkElement
         if ((!is_numeric($text_effect) && !in_array($text_effect, $allowedValues)) || (is_numeric($text_effect) && !in_array($allowedValues[$text_effect], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'text_effect', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['text_effect'] = $text_effect;
+
         return $this;
     }
 
@@ -2198,7 +2240,9 @@ class Font extends LinkElement
         if ((!is_numeric($underline) && !in_array($underline, $allowedValues)) || (is_numeric($underline) && !in_array($allowedValues[$underline], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'underline', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['underline'] = $underline;
+
         return $this;
     }
 
@@ -2215,16 +2259,16 @@ class Font extends LinkElement
     /*
      * Sets underline_color
      *
-     * @param \Aspose\Words\Model\XmlColor $underline_color Gets or sets the color of the underline applied to the font.
+     * @param \Aspose\Words\Model\XmlColor $underline_color underline_color
      *
      * @return $this
      */
     public function setUnderlineColor($underline_color)
     {
         $this->container['underline_color'] = $underline_color;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -2295,4 +2339,3 @@ class Font extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

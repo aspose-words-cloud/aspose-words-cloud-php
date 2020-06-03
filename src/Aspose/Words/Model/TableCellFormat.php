@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableCellFormat.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * TableCellFormat
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents all formatting for a table row.
  */
-class TableCellFormat extends LinkElement
+class TableCellFormat extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -71,18 +74,18 @@ class TableCellFormat extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'bottom_padding' => 'null',
-        'fit_text' => 'null',
-        'horizontal_merge' => 'null',
-        'left_padding' => 'null',
-        'orientation' => 'null',
-        'preferred_width' => 'null',
-        'right_padding' => 'null',
-        'top_padding' => 'null',
-        'vertical_alignment' => 'null',
-        'vertical_merge' => 'null',
-        'width' => 'null',
-        'wrap_text' => 'null'
+        'bottom_padding' => 'double',
+        'fit_text' => null,
+        'horizontal_merge' => null,
+        'left_padding' => 'double',
+        'orientation' => null,
+        'preferred_width' => null,
+        'right_padding' => 'double',
+        'top_padding' => 'double',
+        'vertical_alignment' => null,
+        'vertical_merge' => null,
+        'width' => 'double',
+        'wrap_text' => null
     ];
 
     /*
@@ -279,6 +282,7 @@ class TableCellFormat extends LinkElement
         ];
     }
 
+
     /*
      * Constructor
      *
@@ -288,6 +292,7 @@ class TableCellFormat extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['bottom_padding'] = isset($data['bottom_padding']) ? $data['bottom_padding'] : null;
         $this->container['fit_text'] = isset($data['fit_text']) ? $data['fit_text'] : null;
         $this->container['horizontal_merge'] = isset($data['horizontal_merge']) ? $data['horizontal_merge'] : null;
@@ -310,6 +315,7 @@ class TableCellFormat extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         $allowedValues = $this->getHorizontalMergeAllowableValues();
         if (!in_array($this->container['horizontal_merge'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -342,7 +348,6 @@ class TableCellFormat extends LinkElement
             );
         }
 
-
         return $invalidProperties;
     }
 
@@ -362,25 +367,21 @@ class TableCellFormat extends LinkElement
         if (!in_array($this->container['horizontal_merge'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getOrientationAllowableValues();
         if (!in_array($this->container['orientation'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getVerticalAlignmentAllowableValues();
         if (!in_array($this->container['vertical_alignment'], $allowedValues)) {
             return false;
         }
-
         $allowedValues = $this->getVerticalMergeAllowableValues();
         if (!in_array($this->container['vertical_merge'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets bottom_padding
@@ -402,6 +403,7 @@ class TableCellFormat extends LinkElement
     public function setBottomPadding($bottom_padding)
     {
         $this->container['bottom_padding'] = $bottom_padding;
+
         return $this;
     }
 
@@ -425,6 +427,7 @@ class TableCellFormat extends LinkElement
     public function setFitText($fit_text)
     {
         $this->container['fit_text'] = $fit_text;
+
         return $this;
     }
 
@@ -451,7 +454,9 @@ class TableCellFormat extends LinkElement
         if ((!is_numeric($horizontal_merge) && !in_array($horizontal_merge, $allowedValues)) || (is_numeric($horizontal_merge) && !in_array($allowedValues[$horizontal_merge], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'horizontal_merge', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['horizontal_merge'] = $horizontal_merge;
+
         return $this;
     }
 
@@ -475,6 +480,7 @@ class TableCellFormat extends LinkElement
     public function setLeftPadding($left_padding)
     {
         $this->container['left_padding'] = $left_padding;
+
         return $this;
     }
 
@@ -501,7 +507,9 @@ class TableCellFormat extends LinkElement
         if ((!is_numeric($orientation) && !in_array($orientation, $allowedValues)) || (is_numeric($orientation) && !in_array($allowedValues[$orientation], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'orientation', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['orientation'] = $orientation;
+
         return $this;
     }
 
@@ -518,13 +526,14 @@ class TableCellFormat extends LinkElement
     /*
      * Sets preferred_width
      *
-     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets returns or sets the preferred width of the cell.
+     * @param \Aspose\Words\Model\PreferredWidth $preferred_width preferred_width
      *
      * @return $this
      */
     public function setPreferredWidth($preferred_width)
     {
         $this->container['preferred_width'] = $preferred_width;
+
         return $this;
     }
 
@@ -548,6 +557,7 @@ class TableCellFormat extends LinkElement
     public function setRightPadding($right_padding)
     {
         $this->container['right_padding'] = $right_padding;
+
         return $this;
     }
 
@@ -571,6 +581,7 @@ class TableCellFormat extends LinkElement
     public function setTopPadding($top_padding)
     {
         $this->container['top_padding'] = $top_padding;
+
         return $this;
     }
 
@@ -597,7 +608,9 @@ class TableCellFormat extends LinkElement
         if ((!is_numeric($vertical_alignment) && !in_array($vertical_alignment, $allowedValues)) || (is_numeric($vertical_alignment) && !in_array($allowedValues[$vertical_alignment], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'vertical_alignment', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['vertical_alignment'] = $vertical_alignment;
+
         return $this;
     }
 
@@ -624,7 +637,9 @@ class TableCellFormat extends LinkElement
         if ((!is_numeric($vertical_merge) && !in_array($vertical_merge, $allowedValues)) || (is_numeric($vertical_merge) && !in_array($allowedValues[$vertical_merge], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'vertical_merge', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['vertical_merge'] = $vertical_merge;
+
         return $this;
     }
 
@@ -648,6 +663,7 @@ class TableCellFormat extends LinkElement
     public function setWidth($width)
     {
         $this->container['width'] = $width;
+
         return $this;
     }
 
@@ -671,9 +687,9 @@ class TableCellFormat extends LinkElement
     public function setWrapText($wrap_text)
     {
         $this->container['wrap_text'] = $wrap_text;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -744,4 +760,3 @@ class TableCellFormat extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

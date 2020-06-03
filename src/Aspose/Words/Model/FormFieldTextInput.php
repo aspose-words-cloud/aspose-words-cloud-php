@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FormFieldTextInput.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * FormFieldTextInput
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description FormField text input element.
  */
-class FormFieldTextInput extends FormField
+class FormFieldTextInput extends FormField 
 {
     const DISCRIMINATOR = null;
 
@@ -63,10 +66,10 @@ class FormFieldTextInput extends FormField
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'max_length' => 'null',
-        'text_input_default' => 'null',
-        'text_input_format' => 'null',
-        'text_input_type' => 'null'
+        'max_length' => 'int32',
+        'text_input_default' => null,
+        'text_input_format' => null,
+        'text_input_type' => null
     ];
 
     /*
@@ -191,6 +194,7 @@ class FormFieldTextInput extends FormField
         ];
     }
 
+
     /*
      * Constructor
      *
@@ -200,6 +204,7 @@ class FormFieldTextInput extends FormField
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['max_length'] = isset($data['max_length']) ? $data['max_length'] : null;
         $this->container['text_input_default'] = isset($data['text_input_default']) ? $data['text_input_default'] : null;
         $this->container['text_input_format'] = isset($data['text_input_format']) ? $data['text_input_format'] : null;
@@ -214,6 +219,7 @@ class FormFieldTextInput extends FormField
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         $allowedValues = $this->getTextInputTypeAllowableValues();
         if (!in_array($this->container['text_input_type'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -221,7 +227,6 @@ class FormFieldTextInput extends FormField
                 implode("', '", $allowedValues)
             );
         }
-
 
         return $invalidProperties;
     }
@@ -242,10 +247,9 @@ class FormFieldTextInput extends FormField
         if (!in_array($this->container['text_input_type'], $allowedValues)) {
             return false;
         }
-
-
         return true;
     }
+
 
     /*
      * Gets max_length
@@ -267,6 +271,7 @@ class FormFieldTextInput extends FormField
     public function setMaxLength($max_length)
     {
         $this->container['max_length'] = $max_length;
+
         return $this;
     }
 
@@ -290,6 +295,7 @@ class FormFieldTextInput extends FormField
     public function setTextInputDefault($text_input_default)
     {
         $this->container['text_input_default'] = $text_input_default;
+
         return $this;
     }
 
@@ -313,6 +319,7 @@ class FormFieldTextInput extends FormField
     public function setTextInputFormat($text_input_format)
     {
         $this->container['text_input_format'] = $text_input_format;
+
         return $this;
     }
 
@@ -339,10 +346,11 @@ class FormFieldTextInput extends FormField
         if ((!is_numeric($text_input_type) && !in_array($text_input_type, $allowedValues)) || (is_numeric($text_input_type) && !in_array($allowedValues[$text_input_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'text_input_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
+			
         $this->container['text_input_type'] = $text_input_type;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -413,4 +421,3 @@ class FormFieldTextInput extends FormField
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
-/*
- * --------------------------------------------------------------------------------
+/**
+ * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SearchResponse.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2019 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * SearchResponse
  */
 
 namespace Aspose\Words\Model;
@@ -34,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/search.
  */
-class SearchResponse extends WordsResponse
+class SearchResponse extends WordsResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -61,8 +64,8 @@ class SearchResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'searching_pattern' => 'null',
-        'search_results' => 'null'
+        'searching_pattern' => null,
+        'search_results' => null
     ];
 
     /*
@@ -159,6 +162,7 @@ class SearchResponse extends WordsResponse
 
 
 
+
     /*
      * Constructor
      *
@@ -168,6 +172,7 @@ class SearchResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+
         $this->container['searching_pattern'] = isset($data['searching_pattern']) ? $data['searching_pattern'] : null;
         $this->container['search_results'] = isset($data['search_results']) ? $data['search_results'] : null;
     }
@@ -180,6 +185,7 @@ class SearchResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+
         return $invalidProperties;
     }
 
@@ -197,6 +203,7 @@ class SearchResponse extends WordsResponse
 
         return true;
     }
+
 
     /*
      * Gets searching_pattern
@@ -218,6 +225,7 @@ class SearchResponse extends WordsResponse
     public function setSearchingPattern($searching_pattern)
     {
         $this->container['searching_pattern'] = $searching_pattern;
+
         return $this;
     }
 
@@ -234,16 +242,16 @@ class SearchResponse extends WordsResponse
     /*
      * Sets search_results
      *
-     * @param \Aspose\Words\Model\SearchResultsCollection $search_results Gets or sets collection of search results.
+     * @param \Aspose\Words\Model\SearchResultsCollection $search_results search_results
      *
      * @return $this
      */
     public function setSearchResults($search_results)
     {
         $this->container['search_results'] = $search_results;
+
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -314,4 +322,3 @@ class SearchResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

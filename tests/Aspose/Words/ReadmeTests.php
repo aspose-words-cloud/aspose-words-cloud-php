@@ -56,12 +56,12 @@ class ReadmeTests extends BaseTestContext
 
         // upload file to cloud
         $upload_request = new Requests\UploadFileRequest($localFilePath, 'fileStoredInCloud.doc');
-        $upload_result = $words->uploadFile($upload_request);
+        $upload_result = $api->uploadFile($upload_request);
 
         // save as pdf file
         $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => 'destination.pdf'));
         $request = new Requests\SaveAsRequest('fileStoredInCloud.doc', $saveOptions);
-        $result = $words->saveAs($request);
+        $result = $api->saveAs($request);
 
         // End README example
 

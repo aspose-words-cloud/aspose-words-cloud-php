@@ -87,7 +87,7 @@ class InsertDrawingObjectWithoutNodePathRequest
      * Initializes a new instance of the InsertDrawingObjectWithoutNodePathRequest class.
      *
      * @param string $name The document name.
-     * @param string $drawing_object Drawing object parameters.
+     * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
      * @param \SplFileObject $image_file File with image.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.

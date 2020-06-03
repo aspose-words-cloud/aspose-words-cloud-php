@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="InsertDrawingObjectRequest.php">
+ * <copyright company="Aspose" file="InsertParagraphWithoutNodePathRequest.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -29,9 +29,9 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for insertDrawingObject operation.
+ * Request model for insertParagraphWithoutNodePath operation.
  */
-class InsertDrawingObjectRequest
+class InsertParagraphWithoutNodePathRequest
 {
     /*
      * The document name.
@@ -39,19 +39,9 @@ class InsertDrawingObjectRequest
     public $name;
 
     /*
-     * Drawing object parameters.
+     * Paragraph data.
      */
-    public $drawing_object;
-
-    /*
-     * File with image.
-     */
-    public $image_file;
-
-    /*
-     * Path to the node, which contains collection of drawing objects.
-     */
-    public $node_path;
+    public $paragraph;
 
     /*
      * Original document folder.
@@ -89,12 +79,15 @@ class InsertDrawingObjectRequest
     public $revision_date_time;
 
     /*
-     * Initializes a new instance of the InsertDrawingObjectRequest class.
+     * Paragraph will be inserted before node with index.
+     */
+    public $insert_before_node;
+
+    /*
+     * Initializes a new instance of the InsertParagraphWithoutNodePathRequest class.
      *
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
-     * @param \SplFileObject $image_file File with image.
-     * @param string $node_path Path to the node, which contains collection of drawing objects.
+     * @param \Aspose\Words\Model\ParagraphInsert $paragraph Paragraph data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -102,13 +95,12 @@ class InsertDrawingObjectRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
+     * @param string $insert_before_node Paragraph will be inserted before node with index.
      */
-    public function __construct($name, $drawing_object, $image_file, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $paragraph, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)
     {
         $this->name = $name;
-        $this->drawing_object = $drawing_object;
-        $this->image_file = $image_file;
-        $this->node_path = $node_path;
+        $this->paragraph = $paragraph;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -116,6 +108,7 @@ class InsertDrawingObjectRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
+        $this->insert_before_node = $insert_before_node;
     }
 
     /*
@@ -136,53 +129,19 @@ class InsertDrawingObjectRequest
     }
 
     /*
-     * Drawing object parameters.
+     * Paragraph data.
      */
-    public function get_drawing_object()
+    public function get_paragraph()
     {
-        return $this->drawing_object;
+        return $this->paragraph;
     }
 
     /*
-     * Drawing object parameters.
+     * Paragraph data.
      */
-    public function set_drawing_object($value)
+    public function set_paragraph($value)
     {
-        $this->drawing_object = $value;
-        return $this;
-    }
-
-    /*
-     * File with image.
-     */
-    public function get_image_file()
-    {
-        return $this->image_file;
-    }
-
-    /*
-     * File with image.
-     */
-    public function set_image_file($value)
-    {
-        $this->image_file = $value;
-        return $this;
-    }
-
-    /*
-     * Path to the node, which contains collection of drawing objects.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node, which contains collection of drawing objects.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
+        $this->paragraph = $value;
         return $this;
     }
 
@@ -302,6 +261,23 @@ class InsertDrawingObjectRequest
     public function set_revision_date_time($value)
     {
         $this->revision_date_time = $value;
+        return $this;
+    }
+
+    /*
+     * Paragraph will be inserted before node with index.
+     */
+    public function get_insert_before_node()
+    {
+        return $this->insert_before_node;
+    }
+
+    /*
+     * Paragraph will be inserted before node with index.
+     */
+    public function set_insert_before_node($value)
+    {
+        $this->insert_before_node = $value;
         return $this;
     }
 }

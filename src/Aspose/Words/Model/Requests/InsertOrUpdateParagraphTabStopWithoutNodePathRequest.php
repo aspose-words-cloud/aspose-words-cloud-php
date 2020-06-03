@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="InsertDrawingObjectRequest.php">
+ * <copyright company="Aspose" file="InsertOrUpdateParagraphTabStopWithoutNodePathRequest.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -29,9 +29,9 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for insertDrawingObject operation.
+ * Request model for insertOrUpdateParagraphTabStopWithoutNodePath operation.
  */
-class InsertDrawingObjectRequest
+class InsertOrUpdateParagraphTabStopWithoutNodePathRequest
 {
     /*
      * The document name.
@@ -39,19 +39,14 @@ class InsertDrawingObjectRequest
     public $name;
 
     /*
-     * Drawing object parameters.
+     * Paragraph tab stop.
      */
-    public $drawing_object;
+    public $dto;
 
     /*
-     * File with image.
+     * Object index.
      */
-    public $image_file;
-
-    /*
-     * Path to the node, which contains collection of drawing objects.
-     */
-    public $node_path;
+    public $index;
 
     /*
      * Original document folder.
@@ -79,43 +74,27 @@ class InsertDrawingObjectRequest
     public $dest_file_name;
 
     /*
-     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     */
-    public $revision_author;
-
-    /*
-     * The date and time to use for revisions.
-     */
-    public $revision_date_time;
-
-    /*
-     * Initializes a new instance of the InsertDrawingObjectRequest class.
+     * Initializes a new instance of the InsertOrUpdateParagraphTabStopWithoutNodePathRequest class.
      *
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
-     * @param \SplFileObject $image_file File with image.
-     * @param string $node_path Path to the node, which contains collection of drawing objects.
+     * @param \Aspose\Words\Model\TabStopInsert $dto Paragraph tab stop.
+     * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $drawing_object, $image_file, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $dto, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
     {
         $this->name = $name;
-        $this->drawing_object = $drawing_object;
-        $this->image_file = $image_file;
-        $this->node_path = $node_path;
+        $this->dto = $dto;
+        $this->index = $index;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->dest_file_name = $dest_file_name;
-        $this->revision_author = $revision_author;
-        $this->revision_date_time = $revision_date_time;
     }
 
     /*
@@ -136,53 +115,36 @@ class InsertDrawingObjectRequest
     }
 
     /*
-     * Drawing object parameters.
+     * Paragraph tab stop.
      */
-    public function get_drawing_object()
+    public function get_dto()
     {
-        return $this->drawing_object;
+        return $this->dto;
     }
 
     /*
-     * Drawing object parameters.
+     * Paragraph tab stop.
      */
-    public function set_drawing_object($value)
+    public function set_dto($value)
     {
-        $this->drawing_object = $value;
+        $this->dto = $value;
         return $this;
     }
 
     /*
-     * File with image.
+     * Object index.
      */
-    public function get_image_file()
+    public function get_index()
     {
-        return $this->image_file;
+        return $this->index;
     }
 
     /*
-     * File with image.
+     * Object index.
      */
-    public function set_image_file($value)
+    public function set_index($value)
     {
-        $this->image_file = $value;
-        return $this;
-    }
-
-    /*
-     * Path to the node, which contains collection of drawing objects.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node, which contains collection of drawing objects.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
+        $this->index = $value;
         return $this;
     }
 
@@ -268,40 +230,6 @@ class InsertDrawingObjectRequest
     public function set_dest_file_name($value)
     {
         $this->dest_file_name = $value;
-        return $this;
-    }
-
-    /*
-     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     */
-    public function get_revision_author()
-    {
-        return $this->revision_author;
-    }
-
-    /*
-     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-     */
-    public function set_revision_author($value)
-    {
-        $this->revision_author = $value;
-        return $this;
-    }
-
-    /*
-     * The date and time to use for revisions.
-     */
-    public function get_revision_date_time()
-    {
-        return $this->revision_date_time;
-    }
-
-    /*
-     * The date and time to use for revisions.
-     */
-    public function set_revision_date_time($value)
-    {
-        $this->revision_date_time = $value;
         return $this;
     }
 }

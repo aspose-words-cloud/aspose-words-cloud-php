@@ -39,14 +39,14 @@ class DeleteParagraphTabStopRequest
     public $name;
 
     /*
-     * Path to the node which contains paragraph.
-     */
-    public $node_path;
-
-    /*
      * a tab stop position to remove.
      */
     public $position;
+
+    /*
+     * Path to the node which contains paragraph.
+     */
+    public $node_path;
 
     /*
      * Object index.
@@ -82,8 +82,8 @@ class DeleteParagraphTabStopRequest
      * Initializes a new instance of the DeleteParagraphTabStopRequest class.
      *
      * @param string $name The document name.
-     * @param string $node_path Path to the node which contains paragraph.
      * @param double $position a tab stop position to remove.
+     * @param string $node_path Path to the node which contains paragraph.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -91,11 +91,11 @@ class DeleteParagraphTabStopRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $node_path, $position, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
+    public function __construct($name, $position, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
     {
         $this->name = $name;
-        $this->node_path = $node_path;
         $this->position = $position;
+        $this->node_path = $node_path;
         $this->index = $index;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -122,23 +122,6 @@ class DeleteParagraphTabStopRequest
     }
 
     /*
-     * Path to the node which contains paragraph.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node which contains paragraph.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
-        return $this;
-    }
-
-    /*
      * a tab stop position to remove.
      */
     public function get_position()
@@ -152,6 +135,23 @@ class DeleteParagraphTabStopRequest
     public function set_position($value)
     {
         $this->position = $value;
+        return $this;
+    }
+
+    /*
+     * Path to the node which contains paragraph.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node which contains paragraph.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="InsertDrawingObjectRequest.php">
+ * <copyright company="Aspose" file="UpdateParagraphListFormatWithoutNodePathRequest.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -29,9 +29,9 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for insertDrawingObject operation.
+ * Request model for updateParagraphListFormatWithoutNodePath operation.
  */
-class InsertDrawingObjectRequest
+class UpdateParagraphListFormatWithoutNodePathRequest
 {
     /*
      * The document name.
@@ -39,19 +39,14 @@ class InsertDrawingObjectRequest
     public $name;
 
     /*
-     * Drawing object parameters.
+     * Paragraph format object.
      */
-    public $drawing_object;
+    public $dto;
 
     /*
-     * File with image.
+     * Object index.
      */
-    public $image_file;
-
-    /*
-     * Path to the node, which contains collection of drawing objects.
-     */
-    public $node_path;
+    public $index;
 
     /*
      * Original document folder.
@@ -89,12 +84,11 @@ class InsertDrawingObjectRequest
     public $revision_date_time;
 
     /*
-     * Initializes a new instance of the InsertDrawingObjectRequest class.
+     * Initializes a new instance of the UpdateParagraphListFormatWithoutNodePathRequest class.
      *
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
-     * @param \SplFileObject $image_file File with image.
-     * @param string $node_path Path to the node, which contains collection of drawing objects.
+     * @param \Aspose\Words\Model\ListFormatUpdate $dto Paragraph format object.
+     * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -103,12 +97,11 @@ class InsertDrawingObjectRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $drawing_object, $image_file, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $dto, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->drawing_object = $drawing_object;
-        $this->image_file = $image_file;
-        $this->node_path = $node_path;
+        $this->dto = $dto;
+        $this->index = $index;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -136,53 +129,36 @@ class InsertDrawingObjectRequest
     }
 
     /*
-     * Drawing object parameters.
+     * Paragraph format object.
      */
-    public function get_drawing_object()
+    public function get_dto()
     {
-        return $this->drawing_object;
+        return $this->dto;
     }
 
     /*
-     * Drawing object parameters.
+     * Paragraph format object.
      */
-    public function set_drawing_object($value)
+    public function set_dto($value)
     {
-        $this->drawing_object = $value;
+        $this->dto = $value;
         return $this;
     }
 
     /*
-     * File with image.
+     * Object index.
      */
-    public function get_image_file()
+    public function get_index()
     {
-        return $this->image_file;
+        return $this->index;
     }
 
     /*
-     * File with image.
+     * Object index.
      */
-    public function set_image_file($value)
+    public function set_index($value)
     {
-        $this->image_file = $value;
-        return $this;
-    }
-
-    /*
-     * Path to the node, which contains collection of drawing objects.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node, which contains collection of drawing objects.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
+        $this->index = $value;
         return $this;
     }
 

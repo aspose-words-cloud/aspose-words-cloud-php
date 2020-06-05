@@ -98,7 +98,7 @@ class FileTests extends BaseTestContext
     public function testDeleteFile() {
         $localName = "test_multi_pages.docx";
         $remoteName = "TestDeleteFile.docx";
-        $fullName = self::$baseRemoteFolder . '\\' . $remoteName;
+        $fullName = self::$baseRemoteFolder . '/' . $remoteName;
 
         $this->uploadFile(realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName, $fullName);
 
@@ -112,7 +112,7 @@ class FileTests extends BaseTestContext
     public function testDownloadFile() {
         $localName = "test_multi_pages.docx";
         $remoteName = "TestDownloadFile.docx";
-        $fullName = self::$baseRemoteFolder . '\\' . $remoteName;
+        $fullName = self::$baseRemoteFolder . '/' . $remoteName;
 
         $this->uploadFile(realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName, $fullName);
 

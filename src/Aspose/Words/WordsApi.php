@@ -132,7 +132,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -455,7 +455,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -809,7 +809,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -1172,7 +1172,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -1513,7 +1513,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -1818,7 +1818,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -2103,7 +2103,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -2436,7 +2436,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -2770,7 +2770,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -3099,7 +3099,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -3374,7 +3374,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -3641,7 +3641,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -3995,7 +3995,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -4287,7 +4287,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -4530,7 +4530,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -4893,7 +4893,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -5234,7 +5234,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -5566,7 +5566,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -5927,7 +5927,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -6277,7 +6277,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -6587,7 +6587,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -6897,7 +6897,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -7216,7 +7216,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -7526,7 +7526,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -7845,7 +7845,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -8155,7 +8155,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -8465,7 +8465,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -8766,7 +8766,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -9017,7 +9017,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -9268,7 +9268,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -9587,7 +9587,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -9897,7 +9897,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -10216,7 +10216,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -10526,7 +10526,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -10845,7 +10845,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -11165,7 +11165,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -11466,7 +11466,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -11785,7 +11785,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -12095,7 +12095,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -12416,7 +12416,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -12777,7 +12777,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -13129,7 +13129,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -13484,7 +13484,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -13828,7 +13828,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -14138,7 +14138,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -14457,7 +14457,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -14767,7 +14767,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -15086,7 +15086,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -15405,7 +15405,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -15724,7 +15724,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -16036,7 +16036,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -16379,7 +16379,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -16672,7 +16672,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -17040,7 +17040,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -17360,7 +17360,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -17634,7 +17634,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -17956,7 +17956,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -18269,7 +18269,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -18600,7 +18600,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -18922,7 +18922,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -19244,7 +19244,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -19557,7 +19557,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -19870,7 +19870,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -20201,7 +20201,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -20523,7 +20523,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -20854,7 +20854,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -21176,7 +21176,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -21507,7 +21507,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -21829,7 +21829,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -22151,7 +22151,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -22464,7 +22464,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -22787,7 +22787,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -23074,7 +23074,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -23396,7 +23396,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -23709,7 +23709,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -24022,7 +24022,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -24344,7 +24344,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -24657,7 +24657,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -25000,7 +25000,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -25347,7 +25347,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -25678,7 +25678,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -26000,7 +26000,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -26322,7 +26322,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -26635,7 +26635,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -26918,7 +26918,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -27249,7 +27249,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -27571,7 +27571,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -27893,7 +27893,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -28206,7 +28206,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -28537,7 +28537,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -28859,7 +28859,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -29181,7 +29181,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -29494,7 +29494,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -29826,7 +29826,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -30167,7 +30167,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -30499,7 +30499,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -30821,7 +30821,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -31134,7 +31134,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -31465,7 +31465,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -31787,7 +31787,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -32109,7 +32109,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -32422,7 +32422,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -32753,7 +32753,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -33084,7 +33084,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -33406,7 +33406,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -33737,7 +33737,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -34059,7 +34059,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -34390,7 +34390,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -34712,7 +34712,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -35034,7 +35034,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -35356,7 +35356,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -35669,7 +35669,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -35996,7 +35996,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -36327,7 +36327,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -36658,7 +36658,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -36980,7 +36980,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -37302,7 +37302,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -37624,7 +37624,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -37937,7 +37937,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -38259,7 +38259,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -38581,7 +38581,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -38894,7 +38894,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -39225,7 +39225,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -39556,7 +39556,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -39887,7 +39887,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -40218,7 +40218,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -40540,7 +40540,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -40871,7 +40871,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -41202,7 +41202,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -41524,7 +41524,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -41846,7 +41846,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -42159,7 +42159,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -42513,7 +42513,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -42887,7 +42887,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -43252,7 +43252,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -43625,7 +43625,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -43989,7 +43989,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -44352,7 +44352,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -44706,7 +44706,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -45079,7 +45079,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -45443,7 +45443,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -45806,7 +45806,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -46160,7 +46160,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -46512,7 +46512,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -46855,7 +46855,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -47209,7 +47209,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -47582,7 +47582,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -47946,7 +47946,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -48319,7 +48319,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -48673,7 +48673,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -49036,7 +49036,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -49399,7 +49399,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -49762,7 +49762,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -50116,7 +50116,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -50488,7 +50488,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -50842,7 +50842,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -51125,7 +51125,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -51400,7 +51400,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -51667,7 +51667,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -52001,7 +52001,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -52324,7 +52324,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -52661,7 +52661,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -53016,7 +53016,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -53362,7 +53362,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -53717,7 +53717,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -54063,7 +54063,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -54409,7 +54409,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -54764,7 +54764,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -55110,7 +55110,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -55465,7 +55465,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -55811,7 +55811,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -56165,7 +56165,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -56511,7 +56511,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -56735,7 +56735,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -57069,7 +57069,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -57407,7 +57407,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -57911,7 +57911,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -58238,7 +58238,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -58615,7 +58615,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -58949,7 +58949,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -59312,7 +59312,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -59684,7 +59684,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -60047,7 +60047,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -60430,7 +60430,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -60804,7 +60804,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -61176,7 +61176,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -61499,7 +61499,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -61871,7 +61871,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -62234,7 +62234,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -62606,7 +62606,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -62969,7 +62969,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -63332,7 +63332,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -63704,7 +63704,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -64076,7 +64076,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -64439,7 +64439,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -64811,7 +64811,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -65174,7 +65174,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -65546,7 +65546,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -65918,7 +65918,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -66281,7 +66281,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -66644,7 +66644,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -67016,7 +67016,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -67388,7 +67388,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -67751,7 +67751,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
@@ -68123,7 +68123,7 @@ class WordsApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                if ($response->getStatusCode() == 401) {
+                if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }

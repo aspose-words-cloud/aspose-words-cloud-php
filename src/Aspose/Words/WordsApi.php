@@ -134,7 +134,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -457,7 +457,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -811,7 +811,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -1174,7 +1174,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -1515,7 +1515,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -1820,7 +1820,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -2105,7 +2105,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -2438,7 +2438,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -2772,7 +2772,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -3101,7 +3101,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -3376,7 +3376,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -3643,7 +3643,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -3997,7 +3997,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -4289,7 +4289,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -4532,7 +4532,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -4895,7 +4895,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -5236,7 +5236,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -5568,7 +5568,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -5929,7 +5929,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -6279,7 +6279,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -6589,7 +6589,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -6899,7 +6899,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -7218,7 +7218,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -7528,7 +7528,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -7847,7 +7847,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -8157,7 +8157,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -8467,7 +8467,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -8768,7 +8768,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -9019,7 +9019,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -9270,7 +9270,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -9589,7 +9589,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -9899,7 +9899,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -10218,7 +10218,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -10528,7 +10528,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -10847,7 +10847,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -11167,7 +11167,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -11468,7 +11468,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -11787,7 +11787,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -12097,7 +12097,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -12418,7 +12418,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -12779,7 +12779,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -13131,7 +13131,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -13486,7 +13486,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -13830,7 +13830,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -14140,7 +14140,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -14459,7 +14459,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -14769,7 +14769,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -15088,7 +15088,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -15407,7 +15407,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -15726,7 +15726,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -16038,7 +16038,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -16381,7 +16381,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -16674,7 +16674,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -17042,7 +17042,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -17362,7 +17362,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -17636,7 +17636,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -17958,7 +17958,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -18271,7 +18271,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -18602,7 +18602,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -18924,7 +18924,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -19246,7 +19246,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -19559,7 +19559,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -19872,7 +19872,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -20203,7 +20203,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -20525,7 +20525,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -20856,7 +20856,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -21178,7 +21178,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -21509,7 +21509,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -21831,7 +21831,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -22153,7 +22153,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -22466,7 +22466,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -22789,7 +22789,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -23076,7 +23076,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -23398,7 +23398,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -23711,7 +23711,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -24024,7 +24024,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -24346,7 +24346,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -24659,7 +24659,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -25002,7 +25002,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -25349,7 +25349,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -25680,7 +25680,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -26002,7 +26002,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -26324,7 +26324,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -26637,7 +26637,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -26920,7 +26920,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -27251,7 +27251,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -27573,7 +27573,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -27895,7 +27895,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -28208,7 +28208,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -28539,7 +28539,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -28861,7 +28861,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -29183,7 +29183,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -29496,7 +29496,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -29828,7 +29828,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -30169,7 +30169,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -30501,7 +30501,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -30823,7 +30823,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -31136,7 +31136,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -31467,7 +31467,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -31789,7 +31789,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -32111,7 +32111,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -32424,7 +32424,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -32755,7 +32755,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -33086,7 +33086,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -33408,7 +33408,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -33739,7 +33739,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -34061,7 +34061,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -34392,7 +34392,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -34714,7 +34714,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -35036,7 +35036,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -35358,7 +35358,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -35671,7 +35671,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -35998,7 +35998,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -36329,7 +36329,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -36660,7 +36660,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -36982,7 +36982,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -37304,7 +37304,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -37626,7 +37626,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -37939,7 +37939,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -38261,7 +38261,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -38583,7 +38583,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -38896,7 +38896,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -39227,7 +39227,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -39558,7 +39558,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -39889,7 +39889,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -40220,7 +40220,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -40542,7 +40542,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -40873,7 +40873,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -41204,7 +41204,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -41526,7 +41526,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -41848,7 +41848,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -42161,7 +42161,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -42515,7 +42515,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -42889,7 +42889,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -43254,7 +43254,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -43627,7 +43627,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -43991,7 +43991,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -44354,7 +44354,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -44708,7 +44708,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -45081,7 +45081,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -45445,7 +45445,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -45808,7 +45808,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -46162,7 +46162,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -46514,7 +46514,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -46857,7 +46857,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -47211,7 +47211,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -47584,7 +47584,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -47948,7 +47948,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -48321,7 +48321,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -48675,7 +48675,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -49038,7 +49038,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -49401,7 +49401,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -49764,7 +49764,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -50118,7 +50118,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -50490,7 +50490,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -50844,7 +50844,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -51127,7 +51127,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -51402,7 +51402,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -51669,7 +51669,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -52003,7 +52003,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -52326,7 +52326,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -52663,7 +52663,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -53018,7 +53018,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -53364,7 +53364,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -53719,7 +53719,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -54065,7 +54065,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -54411,7 +54411,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -54766,7 +54766,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -55112,7 +55112,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -55467,7 +55467,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -55813,7 +55813,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -56167,7 +56167,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -56513,7 +56513,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -56737,7 +56737,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -57071,7 +57071,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -57409,7 +57409,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -57913,7 +57913,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -58240,7 +58240,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -58617,7 +58617,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -58951,7 +58951,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -59314,7 +59314,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -59686,7 +59686,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -60049,7 +60049,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -60432,7 +60432,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -60806,7 +60806,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -61178,7 +61178,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -61501,7 +61501,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -61873,7 +61873,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -62236,7 +62236,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -62608,7 +62608,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -62971,7 +62971,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -63334,7 +63334,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -63706,7 +63706,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -64078,7 +64078,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -64441,7 +64441,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -64813,7 +64813,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -65176,7 +65176,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -65548,7 +65548,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -65920,7 +65920,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -66283,7 +66283,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -66646,7 +66646,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -67018,7 +67018,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -67390,7 +67390,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -67753,7 +67753,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }
@@ -68125,7 +68125,7 @@ class WordsApi
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException("Request must be retried", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
                 }
                 throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null,  $e->getResponse() ? $e->getResponse()->getBody() : null);
             }

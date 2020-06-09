@@ -40,8 +40,9 @@ require_once('vendor/autoload.php');
 ```php
         // Start README example
 
-        // init api ($baseUrl is optional, the default value is https://api.aspose.cloud )
-        $api = new WordsApi($appSid, $appKey, $baseUrl);
+        $api = new WordsApi($appSid, $appKey);
+        // the step is optional, the default value is https://api.aspose.cloud
+        $api->getConfig()->setHost($baseUrl);
 
         // upload file to cloud
         $upload_request = new Requests\UploadFileRequest($localFilePath, 'fileStoredInCloud.doc');

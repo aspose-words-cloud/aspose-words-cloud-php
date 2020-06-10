@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListLevel.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ListLevel
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a document list levels.
  */
-class ListLevel extends LinkElement 
+class ListLevel extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -74,18 +71,18 @@ class ListLevel extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'alignment' => null,
-        'font' => null,
-        'is_legal' => null,
-        'linked_style' => null,
-        'number_format' => null,
-        'number_position' => 'double',
-        'number_style' => null,
-        'restart_after_level' => 'int32',
-        'start_at' => 'int32',
-        'tab_position' => 'double',
-        'text_position' => 'double',
-        'trailing_character' => null
+        'alignment' => 'null',
+        'font' => 'null',
+        'is_legal' => 'null',
+        'linked_style' => 'null',
+        'number_format' => 'null',
+        'number_position' => 'null',
+        'number_style' => 'null',
+        'restart_after_level' => 'null',
+        'start_at' => 'null',
+        'tab_position' => 'null',
+        'text_position' => 'null',
+        'trailing_character' => 'null'
     ];
 
     /*
@@ -239,10 +236,10 @@ class ListLevel extends LinkElement
     const NUMBER_STYLE_BULLET = 'Bullet';
     const NUMBER_STYLE_GANADA = 'Ganada';
     const NUMBER_STYLE_CHOSUNG = 'Chosung';
-    const NUMBER_STYLE_GB1 = 'GB1';
-    const NUMBER_STYLE_GB2 = 'GB2';
-    const NUMBER_STYLE_GB3 = 'GB3';
-    const NUMBER_STYLE_GB4 = 'GB4';
+    const NUMBER_STYLE_G_B1 = 'GB1';
+    const NUMBER_STYLE_G_B2 = 'GB2';
+    const NUMBER_STYLE_G_B3 = 'GB3';
+    const NUMBER_STYLE_G_B4 = 'GB4';
     const NUMBER_STYLE_ZODIAC1 = 'Zodiac1';
     const NUMBER_STYLE_ZODIAC2 = 'Zodiac2';
     const NUMBER_STYLE_ZODIAC3 = 'Zodiac3';
@@ -326,10 +323,10 @@ class ListLevel extends LinkElement
             self::NUMBER_STYLE_BULLET,
             self::NUMBER_STYLE_GANADA,
             self::NUMBER_STYLE_CHOSUNG,
-            self::NUMBER_STYLE_GB1,
-            self::NUMBER_STYLE_GB2,
-            self::NUMBER_STYLE_GB3,
-            self::NUMBER_STYLE_GB4,
+            self::NUMBER_STYLE_G_B1,
+            self::NUMBER_STYLE_G_B2,
+            self::NUMBER_STYLE_G_B3,
+            self::NUMBER_STYLE_G_B4,
             self::NUMBER_STYLE_ZODIAC1,
             self::NUMBER_STYLE_ZODIAC2,
             self::NUMBER_STYLE_ZODIAC3,
@@ -378,7 +375,6 @@ class ListLevel extends LinkElement
         ];
     }
 
-
     /*
      * Constructor
      *
@@ -388,7 +384,6 @@ class ListLevel extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
         $this->container['font'] = isset($data['font']) ? $data['font'] : null;
         $this->container['is_legal'] = isset($data['is_legal']) ? $data['is_legal'] : null;
@@ -411,7 +406,6 @@ class ListLevel extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         $allowedValues = $this->getAlignmentAllowableValues();
         if (!in_array($this->container['alignment'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -436,6 +430,7 @@ class ListLevel extends LinkElement
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -455,17 +450,20 @@ class ListLevel extends LinkElement
         if (!in_array($this->container['alignment'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getNumberStyleAllowableValues();
         if (!in_array($this->container['number_style'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getTrailingCharacterAllowableValues();
         if (!in_array($this->container['trailing_character'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets alignment
@@ -490,9 +488,7 @@ class ListLevel extends LinkElement
         if ((!is_numeric($alignment) && !in_array($alignment, $allowedValues)) || (is_numeric($alignment) && !in_array($allowedValues[$alignment], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'alignment', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['alignment'] = $alignment;
-
         return $this;
     }
 
@@ -509,14 +505,13 @@ class ListLevel extends LinkElement
     /*
      * Sets font
      *
-     * @param \Aspose\Words\Model\Font $font font
+     * @param \Aspose\Words\Model\Font $font Gets or sets specifies character formatting used for the list label.
      *
      * @return $this
      */
     public function setFont($font)
     {
         $this->container['font'] = $font;
-
         return $this;
     }
 
@@ -540,7 +535,6 @@ class ListLevel extends LinkElement
     public function setIsLegal($is_legal)
     {
         $this->container['is_legal'] = $is_legal;
-
         return $this;
     }
 
@@ -557,14 +551,13 @@ class ListLevel extends LinkElement
     /*
      * Sets linked_style
      *
-     * @param \Aspose\Words\Model\Style $linked_style linked_style
+     * @param \Aspose\Words\Model\Style $linked_style Gets or sets the paragraph style that is linked to this list level.
      *
      * @return $this
      */
     public function setLinkedStyle($linked_style)
     {
         $this->container['linked_style'] = $linked_style;
-
         return $this;
     }
 
@@ -588,7 +581,6 @@ class ListLevel extends LinkElement
     public function setNumberFormat($number_format)
     {
         $this->container['number_format'] = $number_format;
-
         return $this;
     }
 
@@ -612,7 +604,6 @@ class ListLevel extends LinkElement
     public function setNumberPosition($number_position)
     {
         $this->container['number_position'] = $number_position;
-
         return $this;
     }
 
@@ -639,9 +630,7 @@ class ListLevel extends LinkElement
         if ((!is_numeric($number_style) && !in_array($number_style, $allowedValues)) || (is_numeric($number_style) && !in_array($allowedValues[$number_style], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'number_style', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['number_style'] = $number_style;
-
         return $this;
     }
 
@@ -665,7 +654,6 @@ class ListLevel extends LinkElement
     public function setRestartAfterLevel($restart_after_level)
     {
         $this->container['restart_after_level'] = $restart_after_level;
-
         return $this;
     }
 
@@ -689,7 +677,6 @@ class ListLevel extends LinkElement
     public function setStartAt($start_at)
     {
         $this->container['start_at'] = $start_at;
-
         return $this;
     }
 
@@ -713,7 +700,6 @@ class ListLevel extends LinkElement
     public function setTabPosition($tab_position)
     {
         $this->container['tab_position'] = $tab_position;
-
         return $this;
     }
 
@@ -737,7 +723,6 @@ class ListLevel extends LinkElement
     public function setTextPosition($text_position)
     {
         $this->container['text_position'] = $text_position;
-
         return $this;
     }
 
@@ -764,11 +749,10 @@ class ListLevel extends LinkElement
         if ((!is_numeric($trailing_character) && !in_array($trailing_character, $allowedValues)) || (is_numeric($trailing_character) && !in_array($allowedValues[$trailing_character], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'trailing_character', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['trailing_character'] = $trailing_character;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -839,3 +823,4 @@ class ListLevel extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

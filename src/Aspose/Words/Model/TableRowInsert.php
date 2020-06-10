@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableRowInsert.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * TableRowInsert
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,8 +52,8 @@ class TableRowInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'insert_after' => 'int',
-        'columns_count' => 'int'
+        'columns_count' => 'int',
+        'insert_after' => 'int'
     ];
 
     /*
@@ -66,8 +62,8 @@ class TableRowInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'insert_after' => 'int32',
-        'columns_count' => 'int32'
+        'columns_count' => 'null',
+        'insert_after' => 'null'
     ];
 
     /*
@@ -97,8 +93,8 @@ class TableRowInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'insert_after' => 'InsertAfter',
-        'columns_count' => 'ColumnsCount'
+        'columns_count' => 'ColumnsCount',
+        'insert_after' => 'InsertAfter'
     ];
 
     /*
@@ -107,8 +103,8 @@ class TableRowInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'insert_after' => 'setInsertAfter',
-        'columns_count' => 'setColumnsCount'
+        'columns_count' => 'setColumnsCount',
+        'insert_after' => 'setInsertAfter'
     ];
 
     /*
@@ -117,8 +113,8 @@ class TableRowInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'insert_after' => 'getInsertAfter',
-        'columns_count' => 'getColumnsCount'
+        'columns_count' => 'getColumnsCount',
+        'insert_after' => 'getInsertAfter'
     ];
 
     /*
@@ -179,8 +175,8 @@ class TableRowInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['insert_after'] = isset($data['insert_after']) ? $data['insert_after'] : null;
         $this->container['columns_count'] = isset($data['columns_count']) ? $data['columns_count'] : null;
+        $this->container['insert_after'] = isset($data['insert_after']) ? $data['insert_after'] : null;
     }
 
     /*
@@ -203,33 +199,7 @@ class TableRowInsert implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets insert_after
-     *
-     * @return int
-     */
-    public function getInsertAfter()
-    {
-        return $this->container['insert_after'];
-    }
-
-    /*
-     * Sets insert_after
-     *
-     * @param int $insert_after Gets or sets table row will be inserted after row with specified 0-based index.
-     *
-     * @return $this
-     */
-    public function setInsertAfter($insert_after)
-    {
-        $this->container['insert_after'] = $insert_after;
-
-        return $this;
     }
 
     /*
@@ -252,9 +222,32 @@ class TableRowInsert implements ArrayAccess
     public function setColumnsCount($columns_count)
     {
         $this->container['columns_count'] = $columns_count;
-
         return $this;
     }
+
+    /*
+     * Gets insert_after
+     *
+     * @return int
+     */
+    public function getInsertAfter()
+    {
+        return $this->container['insert_after'];
+    }
+
+    /*
+     * Sets insert_after
+     *
+     * @param int $insert_after Gets or sets table row will be inserted after row with specified 0-based index.
+     *
+     * @return $this
+     */
+    public function setInsertAfter($insert_after)
+    {
+        $this->container['insert_after'] = $insert_after;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -325,3 +318,4 @@ class TableRowInsert implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

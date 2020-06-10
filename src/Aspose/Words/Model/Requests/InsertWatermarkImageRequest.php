@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertWatermarkImageRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,63 +37,62 @@ class InsertWatermarkImageRequest
      * The document name.
      */
     public $name;
-	
+
     /*
-     * File with image
+     * File with image.
      */
     public $image_file;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
-	
+
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
     public $revision_author;
-	
+
     /*
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-	
+
     /*
      * The watermark rotation angle.
      */
     public $rotation_angle;
-	
+
     /*
      * The image file server full name. If the name is empty the image is expected in request content.
      */
     public $image;
-    
-	
+
     /*
      * Initializes a new instance of the InsertWatermarkImageRequest class.
-     *  
+     *
      * @param string $name The document name.
-     * @param \SplFileObject $image_file File with image
+     * @param \SplFileObject $image_file File with image.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -104,7 +103,7 @@ class InsertWatermarkImageRequest
      * @param double $rotation_angle The watermark rotation angle.
      * @param string $image The image file server full name. If the name is empty the image is expected in request content.
      */
-    public function __construct($name, $image_file = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)             
+    public function __construct($name, $image_file = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)
     {
         $this->name = $name;
         $this->image_file = $image_file;
@@ -135,9 +134,9 @@ class InsertWatermarkImageRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
-     * File with image
+     * File with image.
      */
     public function get_image_file()
     {
@@ -145,14 +144,14 @@ class InsertWatermarkImageRequest
     }
 
     /*
-     * File with image
+     * File with image.
      */
     public function set_image_file($value)
     {
         $this->image_file = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -169,7 +168,7 @@ class InsertWatermarkImageRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -186,7 +185,7 @@ class InsertWatermarkImageRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -203,7 +202,7 @@ class InsertWatermarkImageRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -220,7 +219,7 @@ class InsertWatermarkImageRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
@@ -237,7 +236,7 @@ class InsertWatermarkImageRequest
         $this->dest_file_name = $value;
         return $this;
     }
-	
+
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
@@ -254,7 +253,7 @@ class InsertWatermarkImageRequest
         $this->revision_author = $value;
         return $this;
     }
-	
+
     /*
      * The date and time to use for revisions.
      */
@@ -271,7 +270,7 @@ class InsertWatermarkImageRequest
         $this->revision_date_time = $value;
         return $this;
     }
-	
+
     /*
      * The watermark rotation angle.
      */
@@ -288,7 +287,7 @@ class InsertWatermarkImageRequest
         $this->rotation_angle = $value;
         return $this;
     }
-	
+
     /*
      * The image file server full name. If the name is empty the image is expected in request content.
      */

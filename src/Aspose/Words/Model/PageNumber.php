@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PageNumber.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * PageNumber
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,8 +52,8 @@ class PageNumber implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'format' => 'string',
         'alignment' => 'string',
+        'format' => 'string',
         'is_top' => 'bool',
         'set_page_number_on_first_page' => 'bool'
     ];
@@ -68,10 +64,10 @@ class PageNumber implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'format' => null,
-        'alignment' => null,
-        'is_top' => null,
-        'set_page_number_on_first_page' => null
+        'alignment' => 'null',
+        'format' => 'null',
+        'is_top' => 'null',
+        'set_page_number_on_first_page' => 'null'
     ];
 
     /*
@@ -101,8 +97,8 @@ class PageNumber implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'format' => 'Format',
         'alignment' => 'Alignment',
+        'format' => 'Format',
         'is_top' => 'IsTop',
         'set_page_number_on_first_page' => 'SetPageNumberOnFirstPage'
     ];
@@ -113,8 +109,8 @@ class PageNumber implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'format' => 'setFormat',
         'alignment' => 'setAlignment',
+        'format' => 'setFormat',
         'is_top' => 'setIsTop',
         'set_page_number_on_first_page' => 'setSetPageNumberOnFirstPage'
     ];
@@ -125,8 +121,8 @@ class PageNumber implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'format' => 'getFormat',
         'alignment' => 'getAlignment',
+        'format' => 'getFormat',
         'is_top' => 'getIsTop',
         'set_page_number_on_first_page' => 'getSetPageNumberOnFirstPage'
     ];
@@ -189,8 +185,8 @@ class PageNumber implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['format'] = isset($data['format']) ? $data['format'] : null;
         $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
+        $this->container['format'] = isset($data['format']) ? $data['format'] : null;
         $this->container['is_top'] = isset($data['is_top']) ? $data['is_top'] : null;
         $this->container['set_page_number_on_first_page'] = isset($data['set_page_number_on_first_page']) ? $data['set_page_number_on_first_page'] : null;
     }
@@ -215,33 +211,7 @@ class PageNumber implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets format
-     *
-     * @return string
-     */
-    public function getFormat()
-    {
-        return $this->container['format'];
-    }
-
-    /*
-     * Sets format
-     *
-     * @param string $format Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".
-     *
-     * @return $this
-     */
-    public function setFormat($format)
-    {
-        $this->container['format'] = $format;
-
-        return $this;
     }
 
     /*
@@ -264,7 +234,29 @@ class PageNumber implements ArrayAccess
     public function setAlignment($alignment)
     {
         $this->container['alignment'] = $alignment;
+        return $this;
+    }
 
+    /*
+     * Gets format
+     *
+     * @return string
+     */
+    public function getFormat()
+    {
+        return $this->container['format'];
+    }
+
+    /*
+     * Sets format
+     *
+     * @param string $format Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".
+     *
+     * @return $this
+     */
+    public function setFormat($format)
+    {
+        $this->container['format'] = $format;
         return $this;
     }
 
@@ -288,7 +280,6 @@ class PageNumber implements ArrayAccess
     public function setIsTop($is_top)
     {
         $this->container['is_top'] = $is_top;
-
         return $this;
     }
 
@@ -312,9 +303,9 @@ class PageNumber implements ArrayAccess
     public function setSetPageNumberOnFirstPage($set_page_number_on_first_page)
     {
         $this->container['set_page_number_on_first_page'] = $set_page_number_on_first_page;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -385,3 +376,4 @@ class PageNumber implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

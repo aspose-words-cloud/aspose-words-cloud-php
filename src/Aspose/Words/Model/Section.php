@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Section.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * Section
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Section element.
  */
-class Section extends LinkElement 
+class Section extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -67,11 +64,11 @@ class Section extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'child_nodes' => null,
-        'header_footers' => null,
-        'page_setup' => null,
-        'paragraphs' => null,
-        'tables' => null
+        'child_nodes' => 'null',
+        'header_footers' => 'null',
+        'page_setup' => 'null',
+        'paragraphs' => 'null',
+        'tables' => 'null'
     ];
 
     /*
@@ -177,7 +174,6 @@ class Section extends LinkElement
 
 
 
-
     /*
      * Constructor
      *
@@ -187,7 +183,6 @@ class Section extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['child_nodes'] = isset($data['child_nodes']) ? $data['child_nodes'] : null;
         $this->container['header_footers'] = isset($data['header_footers']) ? $data['header_footers'] : null;
         $this->container['page_setup'] = isset($data['page_setup']) ? $data['page_setup'] : null;
@@ -203,7 +198,6 @@ class Section extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -221,7 +215,6 @@ class Section extends LinkElement
 
         return true;
     }
-
 
     /*
      * Gets child_nodes
@@ -243,7 +236,6 @@ class Section extends LinkElement
     public function setChildNodes($child_nodes)
     {
         $this->container['child_nodes'] = $child_nodes;
-
         return $this;
     }
 
@@ -260,14 +252,13 @@ class Section extends LinkElement
     /*
      * Sets header_footers
      *
-     * @param \Aspose\Words\Model\LinkElement $header_footers header_footers
+     * @param \Aspose\Words\Model\LinkElement $header_footers Gets or sets link to HeaderFooters resource.
      *
      * @return $this
      */
     public function setHeaderFooters($header_footers)
     {
         $this->container['header_footers'] = $header_footers;
-
         return $this;
     }
 
@@ -284,14 +275,13 @@ class Section extends LinkElement
     /*
      * Sets page_setup
      *
-     * @param \Aspose\Words\Model\LinkElement $page_setup page_setup
+     * @param \Aspose\Words\Model\LinkElement $page_setup Gets or sets link to PageSetup resource.
      *
      * @return $this
      */
     public function setPageSetup($page_setup)
     {
         $this->container['page_setup'] = $page_setup;
-
         return $this;
     }
 
@@ -308,14 +298,13 @@ class Section extends LinkElement
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs paragraphs
+     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets link to Paragraphs resource.
      *
      * @return $this
      */
     public function setParagraphs($paragraphs)
     {
         $this->container['paragraphs'] = $paragraphs;
-
         return $this;
     }
 
@@ -332,16 +321,16 @@ class Section extends LinkElement
     /*
      * Sets tables
      *
-     * @param \Aspose\Words\Model\LinkElement $tables tables
+     * @param \Aspose\Words\Model\LinkElement $tables Gets or sets link to Tables resource.
      *
      * @return $this
      */
     public function setTables($tables)
     {
         $this->container['tables'] = $tables;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -412,3 +401,4 @@ class Section extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

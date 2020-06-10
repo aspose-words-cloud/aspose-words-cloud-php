@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AvailableFontsResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * AvailableFontsResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description The list of fonts, available for document processing.
  */
-class AvailableFontsResponse extends WordsResponse 
+class AvailableFontsResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -65,9 +62,9 @@ class AvailableFontsResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'additional_fonts' => null,
-        'custom_fonts' => null,
-        'system_fonts' => null
+        'additional_fonts' => 'null',
+        'custom_fonts' => 'null',
+        'system_fonts' => 'null'
     ];
 
     /*
@@ -167,7 +164,6 @@ class AvailableFontsResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -177,7 +173,6 @@ class AvailableFontsResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['additional_fonts'] = isset($data['additional_fonts']) ? $data['additional_fonts'] : null;
         $this->container['custom_fonts'] = isset($data['custom_fonts']) ? $data['custom_fonts'] : null;
         $this->container['system_fonts'] = isset($data['system_fonts']) ? $data['system_fonts'] : null;
@@ -191,7 +186,6 @@ class AvailableFontsResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -209,7 +203,6 @@ class AvailableFontsResponse extends WordsResponse
 
         return true;
     }
-
 
     /*
      * Gets additional_fonts
@@ -231,7 +224,6 @@ class AvailableFontsResponse extends WordsResponse
     public function setAdditionalFonts($additional_fonts)
     {
         $this->container['additional_fonts'] = $additional_fonts;
-
         return $this;
     }
 
@@ -248,14 +240,13 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Sets custom_fonts
      *
-     * @param \Aspose\Words\Model\FontInfo[] $custom_fonts Gets or sets custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request.
+     * @param \Aspose\Words\Model\FontInfo[] $custom_fonts Gets or sets custom user fonts (from user file storage). To use them, you should specify "fontsLocation" parameter in any request.
      *
      * @return $this
      */
     public function setCustomFonts($custom_fonts)
     {
         $this->container['custom_fonts'] = $custom_fonts;
-
         return $this;
     }
 
@@ -279,9 +270,9 @@ class AvailableFontsResponse extends WordsResponse
     public function setSystemFonts($system_fonts)
     {
         $this->container['system_fonts'] = $system_fonts;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -352,3 +343,4 @@ class AvailableFontsResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteAllParagraphTabStopsRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,46 +37,45 @@ class DeleteAllParagraphTabStopsRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Path to the node which contains paragraph.
      */
     public $node_path;
-	
+
     /*
      * Object index.
      */
     public $index;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
-    
-	
+
     /*
      * Initializes a new instance of the DeleteAllParagraphTabStopsRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param string $node_path Path to the node which contains paragraph.
      * @param int $index Object index.
@@ -86,7 +85,7 @@ class DeleteAllParagraphTabStopsRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    public function __construct($name, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
     {
         $this->name = $name;
         $this->node_path = $node_path;
@@ -114,7 +113,7 @@ class DeleteAllParagraphTabStopsRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Path to the node which contains paragraph.
      */
@@ -131,7 +130,7 @@ class DeleteAllParagraphTabStopsRequest
         $this->node_path = $value;
         return $this;
     }
-	
+
     /*
      * Object index.
      */
@@ -148,7 +147,7 @@ class DeleteAllParagraphTabStopsRequest
         $this->index = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -165,7 +164,7 @@ class DeleteAllParagraphTabStopsRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -182,7 +181,7 @@ class DeleteAllParagraphTabStopsRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -199,7 +198,7 @@ class DeleteAllParagraphTabStopsRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -216,7 +215,7 @@ class DeleteAllParagraphTabStopsRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CommentBase.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * CommentBase
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -41,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class CommentBase implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -56,11 +52,11 @@ class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'range_start' => '\Aspose\Words\Model\DocumentPosition',
-        'range_end' => '\Aspose\Words\Model\DocumentPosition',
         'author' => 'string',
-        'initial' => 'string',
         'date_time' => '\DateTime',
+        'initial' => 'string',
+        'range_end' => '\Aspose\Words\Model\DocumentPosition',
+        'range_start' => '\Aspose\Words\Model\DocumentPosition',
         'text' => 'string'
     ];
 
@@ -70,12 +66,12 @@ class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'range_start' => null,
-        'range_end' => null,
-        'author' => null,
-        'initial' => null,
-        'date_time' => 'date-time',
-        'text' => null
+        'author' => 'null',
+        'date_time' => 'null',
+        'initial' => 'null',
+        'range_end' => 'null',
+        'range_start' => 'null',
+        'text' => 'null'
     ];
 
     /*
@@ -105,11 +101,11 @@ class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'range_start' => 'RangeStart',
-        'range_end' => 'RangeEnd',
         'author' => 'Author',
-        'initial' => 'Initial',
         'date_time' => 'DateTime',
+        'initial' => 'Initial',
+        'range_end' => 'RangeEnd',
+        'range_start' => 'RangeStart',
         'text' => 'Text'
     ];
 
@@ -119,11 +115,11 @@ class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'range_start' => 'setRangeStart',
-        'range_end' => 'setRangeEnd',
         'author' => 'setAuthor',
-        'initial' => 'setInitial',
         'date_time' => 'setDateTime',
+        'initial' => 'setInitial',
+        'range_end' => 'setRangeEnd',
+        'range_start' => 'setRangeStart',
         'text' => 'setText'
     ];
 
@@ -133,11 +129,11 @@ class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'range_start' => 'getRangeStart',
-        'range_end' => 'getRangeEnd',
         'author' => 'getAuthor',
-        'initial' => 'getInitial',
         'date_time' => 'getDateTime',
+        'initial' => 'getInitial',
+        'range_end' => 'getRangeEnd',
+        'range_start' => 'getRangeStart',
         'text' => 'getText'
     ];
 
@@ -199,16 +195,12 @@ class CommentBase implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
-        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
         $this->container['author'] = isset($data['author']) ? $data['author'] : null;
-        $this->container['initial'] = isset($data['initial']) ? $data['initial'] : null;
         $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
+        $this->container['initial'] = isset($data['initial']) ? $data['initial'] : null;
+        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
+        $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -231,57 +223,7 @@ class CommentBase implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets range_start
-     *
-     * @return \Aspose\Words\Model\DocumentPosition
-     */
-    public function getRangeStart()
-    {
-        return $this->container['range_start'];
-    }
-
-    /*
-     * Sets range_start
-     *
-     * @param \Aspose\Words\Model\DocumentPosition $range_start range_start
-     *
-     * @return $this
-     */
-    public function setRangeStart($range_start)
-    {
-        $this->container['range_start'] = $range_start;
-
-        return $this;
-    }
-
-    /*
-     * Gets range_end
-     *
-     * @return \Aspose\Words\Model\DocumentPosition
-     */
-    public function getRangeEnd()
-    {
-        return $this->container['range_end'];
-    }
-
-    /*
-     * Sets range_end
-     *
-     * @param \Aspose\Words\Model\DocumentPosition $range_end range_end
-     *
-     * @return $this
-     */
-    public function setRangeEnd($range_end)
-    {
-        $this->container['range_end'] = $range_end;
-
-        return $this;
     }
 
     /*
@@ -304,31 +246,6 @@ class CommentBase implements ArrayAccess
     public function setAuthor($author)
     {
         $this->container['author'] = $author;
-
-        return $this;
-    }
-
-    /*
-     * Gets initial
-     *
-     * @return string
-     */
-    public function getInitial()
-    {
-        return $this->container['initial'];
-    }
-
-    /*
-     * Sets initial
-     *
-     * @param string $initial Gets or sets returns or sets the initials of the user associated with a specific comment.
-     *
-     * @return $this
-     */
-    public function setInitial($initial)
-    {
-        $this->container['initial'] = $initial;
-
         return $this;
     }
 
@@ -352,7 +269,75 @@ class CommentBase implements ArrayAccess
     public function setDateTime($date_time)
     {
         $this->container['date_time'] = $date_time;
+        return $this;
+    }
 
+    /*
+     * Gets initial
+     *
+     * @return string
+     */
+    public function getInitial()
+    {
+        return $this->container['initial'];
+    }
+
+    /*
+     * Sets initial
+     *
+     * @param string $initial Gets or sets returns or sets the initials of the user associated with a specific comment.
+     *
+     * @return $this
+     */
+    public function setInitial($initial)
+    {
+        $this->container['initial'] = $initial;
+        return $this;
+    }
+
+    /*
+     * Gets range_end
+     *
+     * @return \Aspose\Words\Model\DocumentPosition
+     */
+    public function getRangeEnd()
+    {
+        return $this->container['range_end'];
+    }
+
+    /*
+     * Sets range_end
+     *
+     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets link to comment range end node.
+     *
+     * @return $this
+     */
+    public function setRangeEnd($range_end)
+    {
+        $this->container['range_end'] = $range_end;
+        return $this;
+    }
+
+    /*
+     * Gets range_start
+     *
+     * @return \Aspose\Words\Model\DocumentPosition
+     */
+    public function getRangeStart()
+    {
+        return $this->container['range_start'];
+    }
+
+    /*
+     * Sets range_start
+     *
+     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets link to comment range start node.
+     *
+     * @return $this
+     */
+    public function setRangeStart($range_start)
+    {
+        $this->container['range_start'] = $range_start;
         return $this;
     }
 
@@ -376,9 +361,9 @@ class CommentBase implements ArrayAccess
     public function setText($text)
     {
         $this->container['text'] = $text;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -449,3 +434,4 @@ class CommentBase implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

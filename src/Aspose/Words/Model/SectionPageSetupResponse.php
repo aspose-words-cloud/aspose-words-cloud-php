@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SectionPageSetupResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SectionPageSetupResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}/PageSetup.
  */
-class SectionPageSetupResponse extends WordsResponse 
+class SectionPageSetupResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class SectionPageSetupResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'page_setup' => null
+        'page_setup' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class SectionPageSetupResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class SectionPageSetupResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['page_setup'] = isset($data['page_setup']) ? $data['page_setup'] : null;
     }
 
@@ -179,7 +174,6 @@ class SectionPageSetupResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class SectionPageSetupResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets page_setup
      *
@@ -212,16 +205,16 @@ class SectionPageSetupResponse extends WordsResponse
     /*
      * Sets page_setup
      *
-     * @param \Aspose\Words\Model\PageSetup $page_setup page_setup
+     * @param \Aspose\Words\Model\PageSetup $page_setup Gets or sets section.
      *
      * @return $this
      */
     public function setPageSetup($page_setup)
     {
         $this->container['page_setup'] = $page_setup;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class SectionPageSetupResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

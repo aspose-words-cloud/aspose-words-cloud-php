@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UnprotectDocumentRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,41 +37,40 @@ class UnprotectDocumentRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * ProtectionRequest with protection settings.
      */
     public $protection_request;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
-    
-	
+
     /*
      * Initializes a new instance of the UnprotectDocumentRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param \Aspose\Words\Model\ProtectionRequest $protection_request ProtectionRequest with protection settings.
      * @param string $folder Original document folder.
@@ -80,7 +79,7 @@ class UnprotectDocumentRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $protection_request, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    public function __construct($name, $protection_request, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
     {
         $this->name = $name;
         $this->protection_request = $protection_request;
@@ -107,7 +106,7 @@ class UnprotectDocumentRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * ProtectionRequest with protection settings.
      */
@@ -124,7 +123,7 @@ class UnprotectDocumentRequest
         $this->protection_request = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -141,7 +140,7 @@ class UnprotectDocumentRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -158,7 +157,7 @@ class UnprotectDocumentRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -175,7 +174,7 @@ class UnprotectDocumentRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -192,7 +191,7 @@ class UnprotectDocumentRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */

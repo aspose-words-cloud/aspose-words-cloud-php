@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RenderTableRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,51 +37,50 @@ class RenderTableRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * The destination format.
      */
     public $format;
-	
+
     /*
      * Path to the node, which contains tables.
      */
     public $node_path;
-	
+
     /*
      * Object index.
      */
     public $index;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
-    
-	
+
     /*
      * Initializes a new instance of the RenderTableRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param string $format The destination format.
      * @param string $node_path Path to the node, which contains tables.
@@ -92,7 +91,7 @@ class RenderTableRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $format, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)             
+    public function __construct($name, $format, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)
     {
         $this->name = $name;
         $this->format = $format;
@@ -121,7 +120,7 @@ class RenderTableRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * The destination format.
      */
@@ -138,7 +137,7 @@ class RenderTableRequest
         $this->format = $value;
         return $this;
     }
-	
+
     /*
      * Path to the node, which contains tables.
      */
@@ -155,7 +154,7 @@ class RenderTableRequest
         $this->node_path = $value;
         return $this;
     }
-	
+
     /*
      * Object index.
      */
@@ -172,7 +171,7 @@ class RenderTableRequest
         $this->index = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -189,7 +188,7 @@ class RenderTableRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -206,7 +205,7 @@ class RenderTableRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -223,7 +222,7 @@ class RenderTableRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -240,7 +239,7 @@ class RenderTableRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Folder in filestorage with custom fonts.
      */

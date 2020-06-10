@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetFilesListRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -34,30 +34,29 @@ namespace Aspose\Words\Model\Requests;
 class GetFilesListRequest
 {
     /*
-     * Folder path e.g. /Folder1
+     * Folder path e.g. /Folder1.
      */
     public $path;
-	
+
     /*
-     * Storage name
+     * Storage name.
      */
     public $storage_name;
-    
-	
+
     /*
      * Initializes a new instance of the GetFilesListRequest class.
-     *  
-     * @param string $path Folder path e.g. /Folder1
-     * @param string $storage_name Storage name
+     *
+     * @param string $path Folder path e.g. /Folder1.
+     * @param string $storage_name Storage name.
      */
-    public function __construct($path, $storage_name = null)             
+    public function __construct($path, $storage_name = null)
     {
         $this->path = $path;
         $this->storage_name = $storage_name;
     }
 
     /*
-     * Folder path e.g. /Folder1
+     * Folder path e.g. /Folder1.
      */
     public function get_path()
     {
@@ -65,16 +64,16 @@ class GetFilesListRequest
     }
 
     /*
-     * Folder path e.g. /Folder1
+     * Folder path e.g. /Folder1.
      */
     public function set_path($value)
     {
         $this->path = $value;
         return $this;
     }
-	
+
     /*
-     * Storage name
+     * Storage name.
      */
     public function get_storage_name()
     {
@@ -82,7 +81,7 @@ class GetFilesListRequest
     }
 
     /*
-     * Storage name
+     * Storage name.
      */
     public function set_storage_name($value)
     {

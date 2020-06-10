@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ParagraphLink.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ParagraphLink
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Paragraph link element.
  */
-class ParagraphLink extends NodeLink 
+class ParagraphLink extends NodeLink
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class ParagraphLink extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'text' => null
+        'text' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class ParagraphLink extends NodeLink
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class ParagraphLink extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
     }
 
@@ -179,7 +174,6 @@ class ParagraphLink extends NodeLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -197,7 +191,6 @@ class ParagraphLink extends NodeLink
 
         return true;
     }
-
 
     /*
      * Gets text
@@ -219,9 +212,9 @@ class ParagraphLink extends NodeLink
     public function setText($text)
     {
         $this->container['text'] = $text;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class ParagraphLink extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EmfSaveOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * EmfSaveOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container class for emf save options.
  */
-class EmfSaveOptionsData extends ImageSaveOptionsData 
+class EmfSaveOptionsData extends ImageSaveOptionsData
 {
     const DISCRIMINATOR = null;
 
@@ -152,7 +149,6 @@ class EmfSaveOptionsData extends ImageSaveOptionsData
 
 
 
-
     /*
      * Constructor
      *
@@ -162,7 +158,6 @@ class EmfSaveOptionsData extends ImageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
     }
 
     /*
@@ -173,7 +168,6 @@ class EmfSaveOptionsData extends ImageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -191,6 +185,7 @@ class EmfSaveOptionsData extends ImageSaveOptionsData
 
         return true;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.
@@ -262,3 +257,4 @@ class EmfSaveOptionsData extends ImageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ParagraphLinkCollection.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ParagraphLinkCollection
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Collection of links to paragraphs.
  */
-class ParagraphLinkCollection extends LinkElement 
+class ParagraphLinkCollection extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class ParagraphLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'paragraph_link_list' => null
+        'paragraph_link_list' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class ParagraphLinkCollection extends LinkElement
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class ParagraphLinkCollection extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['paragraph_link_list'] = isset($data['paragraph_link_list']) ? $data['paragraph_link_list'] : null;
     }
 
@@ -179,7 +174,6 @@ class ParagraphLinkCollection extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -197,7 +191,6 @@ class ParagraphLinkCollection extends LinkElement
 
         return true;
     }
-
 
     /*
      * Gets paragraph_link_list
@@ -219,9 +212,9 @@ class ParagraphLinkCollection extends LinkElement
     public function setParagraphLinkList($paragraph_link_list)
     {
         $this->container['paragraph_link_list'] = $paragraph_link_list;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class ParagraphLinkCollection extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

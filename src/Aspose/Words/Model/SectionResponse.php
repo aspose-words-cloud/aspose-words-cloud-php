@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SectionResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SectionResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}.
  */
-class SectionResponse extends WordsResponse 
+class SectionResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class SectionResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'section' => null
+        'section' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class SectionResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class SectionResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['section'] = isset($data['section']) ? $data['section'] : null;
     }
 
@@ -179,7 +174,6 @@ class SectionResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class SectionResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets section
      *
@@ -212,16 +205,16 @@ class SectionResponse extends WordsResponse
     /*
      * Sets section
      *
-     * @param \Aspose\Words\Model\Section $section section
+     * @param \Aspose\Words\Model\Section $section Gets or sets section.
      *
      * @return $this
      */
     public function setSection($section)
     {
         $this->container['section'] = $section;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class SectionResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

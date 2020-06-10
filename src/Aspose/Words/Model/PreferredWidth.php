@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PreferredWidth.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * PreferredWidth
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -66,8 +62,8 @@ class PreferredWidth implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'type' => null,
-        'value' => 'double'
+        'type' => 'null',
+        'value' => 'null'
     ];
 
     /*
@@ -216,6 +212,7 @@ class PreferredWidth implements ArrayAccess
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -227,14 +224,14 @@ class PreferredWidth implements ArrayAccess
      */
     public function valid()
     {
-
         $allowedValues = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets type
@@ -259,9 +256,7 @@ class PreferredWidth implements ArrayAccess
         if ((!is_numeric($type) && !in_array($type, $allowedValues)) || (is_numeric($type) && !in_array($allowedValues[$type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'type', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['type'] = $type;
-
         return $this;
     }
 
@@ -285,9 +280,9 @@ class PreferredWidth implements ArrayAccess
     public function setValue($value)
     {
         $this->container['value'] = $value;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -358,3 +353,4 @@ class PreferredWidth implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

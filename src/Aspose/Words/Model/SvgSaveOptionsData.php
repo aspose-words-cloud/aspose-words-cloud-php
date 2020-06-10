@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SvgSaveOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SvgSaveOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for svg save options.
  */
-class SvgSaveOptionsData extends FixedPageSaveOptionsData 
+class SvgSaveOptionsData extends FixedPageSaveOptionsData
 {
     const DISCRIMINATOR = null;
 
@@ -68,12 +65,12 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'export_embedded_images' => null,
-        'fit_to_view_port' => null,
-        'resources_folder' => null,
-        'resources_folder_alias' => null,
-        'show_page_border' => null,
-        'text_output_mode' => null
+        'export_embedded_images' => 'null',
+        'fit_to_view_port' => 'null',
+        'resources_folder' => 'null',
+        'resources_folder_alias' => 'null',
+        'show_page_border' => 'null',
+        'text_output_mode' => 'null'
     ];
 
     /*
@@ -182,7 +179,6 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
 
 
 
-
     /*
      * Constructor
      *
@@ -192,7 +188,6 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['export_embedded_images'] = isset($data['export_embedded_images']) ? $data['export_embedded_images'] : null;
         $this->container['fit_to_view_port'] = isset($data['fit_to_view_port']) ? $data['fit_to_view_port'] : null;
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
@@ -209,7 +204,6 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -227,7 +221,6 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
 
         return true;
     }
-
 
     /*
      * Gets export_embedded_images
@@ -249,7 +242,6 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function setExportEmbeddedImages($export_embedded_images)
     {
         $this->container['export_embedded_images'] = $export_embedded_images;
-
         return $this;
     }
 
@@ -273,7 +265,6 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function setFitToViewPort($fit_to_view_port)
     {
         $this->container['fit_to_view_port'] = $fit_to_view_port;
-
         return $this;
     }
 
@@ -297,7 +288,6 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function setResourcesFolder($resources_folder)
     {
         $this->container['resources_folder'] = $resources_folder;
-
         return $this;
     }
 
@@ -321,7 +311,6 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function setResourcesFolderAlias($resources_folder_alias)
     {
         $this->container['resources_folder_alias'] = $resources_folder_alias;
-
         return $this;
     }
 
@@ -345,7 +334,6 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function setShowPageBorder($show_page_border)
     {
         $this->container['show_page_border'] = $show_page_border;
-
         return $this;
     }
 
@@ -369,9 +357,9 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function setTextOutputMode($text_output_mode)
     {
         $this->container['text_output_mode'] = $text_output_mode;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -442,3 +430,4 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CreateDocumentRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,26 +37,25 @@ class CreateDocumentRequest
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * The document name.
      */
     public $file_name;
-	
+
     /*
      * The document folder.
      */
     public $folder;
-    
-	
+
     /*
      * Initializes a new instance of the CreateDocumentRequest class.
-     *  
+     *
      * @param string $storage Original document storage.
      * @param string $file_name The document name.
      * @param string $folder The document folder.
      */
-    public function __construct($storage = null, $file_name = null, $folder = null)             
+    public function __construct($storage = null, $file_name = null, $folder = null)
     {
         $this->storage = $storage;
         $this->file_name = $file_name;
@@ -79,7 +78,7 @@ class CreateDocumentRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * The document name.
      */
@@ -96,7 +95,7 @@ class CreateDocumentRequest
         $this->file_name = $value;
         return $this;
     }
-	
+
     /*
      * The document folder.
      */

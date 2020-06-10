@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FootnotesStatData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * FootnotesStatData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,8 +52,8 @@ class FootnotesStatData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'word_count' => 'int',
-        'paragraph_count' => 'int'
+        'paragraph_count' => 'int',
+        'word_count' => 'int'
     ];
 
     /*
@@ -66,8 +62,8 @@ class FootnotesStatData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'word_count' => 'int32',
-        'paragraph_count' => 'int32'
+        'paragraph_count' => 'null',
+        'word_count' => 'null'
     ];
 
     /*
@@ -97,8 +93,8 @@ class FootnotesStatData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'word_count' => 'WordCount',
-        'paragraph_count' => 'ParagraphCount'
+        'paragraph_count' => 'ParagraphCount',
+        'word_count' => 'WordCount'
     ];
 
     /*
@@ -107,8 +103,8 @@ class FootnotesStatData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'word_count' => 'setWordCount',
-        'paragraph_count' => 'setParagraphCount'
+        'paragraph_count' => 'setParagraphCount',
+        'word_count' => 'setWordCount'
     ];
 
     /*
@@ -117,8 +113,8 @@ class FootnotesStatData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'word_count' => 'getWordCount',
-        'paragraph_count' => 'getParagraphCount'
+        'paragraph_count' => 'getParagraphCount',
+        'word_count' => 'getWordCount'
     ];
 
     /*
@@ -179,8 +175,8 @@ class FootnotesStatData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['word_count'] = isset($data['word_count']) ? $data['word_count'] : null;
         $this->container['paragraph_count'] = isset($data['paragraph_count']) ? $data['paragraph_count'] : null;
+        $this->container['word_count'] = isset($data['word_count']) ? $data['word_count'] : null;
     }
 
     /*
@@ -203,33 +199,7 @@ class FootnotesStatData implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets word_count
-     *
-     * @return int
-     */
-    public function getWordCount()
-    {
-        return $this->container['word_count'];
-    }
-
-    /*
-     * Sets word_count
-     *
-     * @param int $word_count Gets or sets total count of words in footnotes.
-     *
-     * @return $this
-     */
-    public function setWordCount($word_count)
-    {
-        $this->container['word_count'] = $word_count;
-
-        return $this;
     }
 
     /*
@@ -252,9 +222,32 @@ class FootnotesStatData implements ArrayAccess
     public function setParagraphCount($paragraph_count)
     {
         $this->container['paragraph_count'] = $paragraph_count;
-
         return $this;
     }
+
+    /*
+     * Gets word_count
+     *
+     * @return int
+     */
+    public function getWordCount()
+    {
+        return $this->container['word_count'];
+    }
+
+    /*
+     * Sets word_count
+     *
+     * @param int $word_count Gets or sets total count of words in footnotes.
+     *
+     * @return $this
+     */
+    public function setWordCount($word_count)
+    {
+        $this->container['word_count'] = $word_count;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -325,3 +318,4 @@ class FootnotesStatData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

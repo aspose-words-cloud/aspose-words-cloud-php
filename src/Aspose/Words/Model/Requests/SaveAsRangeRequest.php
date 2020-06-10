@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveAsRangeRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,46 +37,47 @@ class SaveAsRangeRequest
      * The document.
      */
     public $name;
-	
+
     /*
-     * The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * The range start identifier.
+     * Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id".
+     * It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public $range_start_identifier;
-	
+
     /*
      * Parameters of a new document.
      */
     public $document_parameters;
-	
+
     /*
      * The range end identifier.
      */
     public $range_end_identifier;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-    
-	
+
     /*
      * Initializes a new instance of the SaveAsRangeRequest class.
-     *  
+     *
      * @param string $name The document.
      * @param string $range_start_identifier The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
      * @param \Aspose\Words\Model\RangeDocument $document_parameters Parameters of a new document.
@@ -86,7 +87,7 @@ class SaveAsRangeRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $range_start_identifier, $document_parameters, $range_end_identifier = null, $folder = null, $storage = null, $load_encoding = null, $password = null)             
+    public function __construct($name, $range_start_identifier, $document_parameters, $range_end_identifier = null, $folder = null, $storage = null, $load_encoding = null, $password = null)
     {
         $this->name = $name;
         $this->range_start_identifier = $range_start_identifier;
@@ -114,9 +115,11 @@ class SaveAsRangeRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
-     * The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * The range start identifier.
+     * Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id".
+     * It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public function get_range_start_identifier()
     {
@@ -124,14 +127,16 @@ class SaveAsRangeRequest
     }
 
     /*
-     * The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
+     * The range start identifier.
+     * Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id".
+     * It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
      */
     public function set_range_start_identifier($value)
     {
         $this->range_start_identifier = $value;
         return $this;
     }
-	
+
     /*
      * Parameters of a new document.
      */
@@ -148,7 +153,7 @@ class SaveAsRangeRequest
         $this->document_parameters = $value;
         return $this;
     }
-	
+
     /*
      * The range end identifier.
      */
@@ -165,7 +170,7 @@ class SaveAsRangeRequest
         $this->range_end_identifier = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -182,7 +187,7 @@ class SaveAsRangeRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -199,7 +204,7 @@ class SaveAsRangeRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -216,7 +221,7 @@ class SaveAsRangeRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */

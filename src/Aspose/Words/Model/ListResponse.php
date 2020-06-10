@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ListResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/lists/{n}.
  */
-class ListResponse extends WordsResponse 
+class ListResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class ListResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list' => null
+        'list' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class ListResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class ListResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['list'] = isset($data['list']) ? $data['list'] : null;
     }
 
@@ -179,7 +174,6 @@ class ListResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class ListResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets list
      *
@@ -212,16 +205,16 @@ class ListResponse extends WordsResponse
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\ListInfo $list list
+     * @param \Aspose\Words\Model\ListInfo $list Gets or sets list which are contained in document.
      *
      * @return $this
      */
     public function setList($list)
     {
         $this->container['list'] = $list;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class ListResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

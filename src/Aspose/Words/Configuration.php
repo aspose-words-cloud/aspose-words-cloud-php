@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Configuration.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words;
@@ -41,13 +41,13 @@ class Configuration
      * @var string[]
      */
     protected $apiKeys = [];
-    
+
     /*
      * AppKey for API
      *
      */
     protected $appKey = '';
-    
+
     /*
      * AppSid for API
      * @var string
@@ -67,7 +67,7 @@ class Configuration
      * @var string
      */
     protected $accessToken = '';
-    
+
     /*
      * Refresh token for OAuth
      *
@@ -94,8 +94,8 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.aspose.cloud/';
-	
+    protected $host = 'https://api.aspose.cloud';
+
     /*
      * Version of API to use, possible values are v4.0
      * @var string
@@ -129,7 +129,7 @@ class Configuration
      * @var string
      */
     protected $tempFolderPath;
-    
+
     /*
      * Version of Aspose.Words Cloud API
      *
@@ -138,17 +138,21 @@ class Configuration
 
     /*
      * Constructor
-	 * @param string   $appSid client app sid
+     * @param string   $appSid client app sid
      * @param string   $appKey app key
+     * @param string   $baseUrl base url for requests
      */
-    public function __construct(string $appSid, string $appKey)
+    public function __construct(string $appSid, string $appKey, string $baseUrl)
     {
         $this->tempFolderPath = sys_get_temp_dir();
         date_default_timezone_set('UTC');
-		$this->setAppSid($appSid);
-		$this->setAppKey($appKey);
+        if (isset($baseUrl) && trim($baseUrl) != '') {
+            $this->setHost($baseUrl);
+        }
+        $this->setAppSid($appSid);
+        $this->setAppKey($appKey);
     }
-    
+
     /*
      * Gets client version
      *
@@ -171,7 +175,7 @@ class Configuration
         $this->apiKeys[$apiKeyIdentifier] = $key;
         return $this;
     }
-    
+
     /*
      * Sets AppSid
      *
@@ -184,7 +188,7 @@ class Configuration
         $this->appSid = $appSid;
         return $this;
     }
-    
+
     /*
      * Gets AppSid
      * @return $appSid
@@ -193,7 +197,7 @@ class Configuration
     {
         return $this->appSid;
     }
-    
+
     /*
      * Sets AppKey
      *
@@ -206,7 +210,7 @@ class Configuration
         $this->appKey = $appKey;
         return $this;
     }
-    
+
     /*
      * Gets AppKey
      * @return $appKey
@@ -276,7 +280,7 @@ class Configuration
     {
         return $this->accessToken;
     }
-    
+
     /*
      * Sets the refresh token for OAuth
      *
@@ -371,7 +375,7 @@ class Configuration
     {
         return $this->host;
     }
-	
+
     /*
      * Gets the base_path
      *
@@ -515,7 +519,7 @@ class Configuration
         $report  = 'PHP SDK (Aspose\Words) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 20.6.0' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 20.6' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

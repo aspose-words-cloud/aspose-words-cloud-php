@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PdfSaveOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * PdfSaveOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description container class for pdf save options.
  */
-class PdfSaveOptionsData extends FixedPageSaveOptionsData 
+class PdfSaveOptionsData extends FixedPageSaveOptionsData
 {
     const DISCRIMINATOR = null;
 
@@ -87,31 +84,31 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'compliance' => null,
-        'create_note_hyperlinks' => null,
-        'custom_properties_export' => null,
-        'digital_signature_details' => null,
-        'display_doc_title' => null,
-        'downsample_options' => null,
-        'embed_full_fonts' => null,
-        'encryption_details' => null,
-        'escape_uri' => null,
-        'export_document_structure' => null,
-        'font_embedding_mode' => null,
-        'header_footer_bookmarks_export_mode' => null,
-        'image_color_space_export_mode' => null,
-        'image_compression' => null,
-        'interpolate_images' => null,
-        'open_hyperlinks_in_new_window' => null,
-        'outline_options' => null,
-        'page_mode' => null,
-        'preblend_images' => null,
-        'preserve_form_fields' => null,
-        'text_compression' => null,
-        'use_book_fold_printing_settings' => null,
-        'use_core_fonts' => null,
-        'zoom_behavior' => null,
-        'zoom_factor' => 'int32'
+        'compliance' => 'null',
+        'create_note_hyperlinks' => 'null',
+        'custom_properties_export' => 'null',
+        'digital_signature_details' => 'null',
+        'display_doc_title' => 'null',
+        'downsample_options' => 'null',
+        'embed_full_fonts' => 'null',
+        'encryption_details' => 'null',
+        'escape_uri' => 'null',
+        'export_document_structure' => 'null',
+        'font_embedding_mode' => 'null',
+        'header_footer_bookmarks_export_mode' => 'null',
+        'image_color_space_export_mode' => 'null',
+        'image_compression' => 'null',
+        'interpolate_images' => 'null',
+        'open_hyperlinks_in_new_window' => 'null',
+        'outline_options' => 'null',
+        'page_mode' => 'null',
+        'preblend_images' => 'null',
+        'preserve_form_fields' => 'null',
+        'text_compression' => 'null',
+        'use_book_fold_printing_settings' => 'null',
+        'use_core_fonts' => 'null',
+        'zoom_behavior' => 'null',
+        'zoom_factor' => 'null'
     ];
 
     /*
@@ -293,7 +290,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         ];
     }
 
-
     /*
      * Constructor
      *
@@ -303,7 +299,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
         $this->container['create_note_hyperlinks'] = isset($data['create_note_hyperlinks']) ? $data['create_note_hyperlinks'] : null;
         $this->container['custom_properties_export'] = isset($data['custom_properties_export']) ? $data['custom_properties_export'] : null;
@@ -339,7 +334,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         $allowedValues = $this->getHeaderFooterBookmarksExportModeAllowableValues();
         if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -347,6 +341,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
                 implode("', '", $allowedValues)
             );
         }
+
 
         return $invalidProperties;
     }
@@ -367,9 +362,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets compliance
@@ -391,7 +387,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setCompliance($compliance)
     {
         $this->container['compliance'] = $compliance;
-
         return $this;
     }
 
@@ -415,7 +410,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setCreateNoteHyperlinks($create_note_hyperlinks)
     {
         $this->container['create_note_hyperlinks'] = $create_note_hyperlinks;
-
         return $this;
     }
 
@@ -439,7 +433,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setCustomPropertiesExport($custom_properties_export)
     {
         $this->container['custom_properties_export'] = $custom_properties_export;
-
         return $this;
     }
 
@@ -456,14 +449,13 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets digital_signature_details
      *
-     * @param \Aspose\Words\Model\PdfDigitalSignatureDetailsData $digital_signature_details digital_signature_details
+     * @param \Aspose\Words\Model\PdfDigitalSignatureDetailsData $digital_signature_details Gets or sets specifies the details for signing the output PDF document.
      *
      * @return $this
      */
     public function setDigitalSignatureDetails($digital_signature_details)
     {
         $this->container['digital_signature_details'] = $digital_signature_details;
-
         return $this;
     }
 
@@ -487,7 +479,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setDisplayDocTitle($display_doc_title)
     {
         $this->container['display_doc_title'] = $display_doc_title;
-
         return $this;
     }
 
@@ -504,14 +495,13 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets downsample_options
      *
-     * @param \Aspose\Words\Model\DownsampleOptionsData $downsample_options downsample_options
+     * @param \Aspose\Words\Model\DownsampleOptionsData $downsample_options Gets or sets allows to specify downsample options.
      *
      * @return $this
      */
     public function setDownsampleOptions($downsample_options)
     {
         $this->container['downsample_options'] = $downsample_options;
-
         return $this;
     }
 
@@ -535,7 +525,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setEmbedFullFonts($embed_full_fonts)
     {
         $this->container['embed_full_fonts'] = $embed_full_fonts;
-
         return $this;
     }
 
@@ -552,14 +541,13 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets encryption_details
      *
-     * @param \Aspose\Words\Model\PdfEncryptionDetailsData $encryption_details encryption_details
+     * @param \Aspose\Words\Model\PdfEncryptionDetailsData $encryption_details Gets or sets specifies the details for encrypting the output PDF document.
      *
      * @return $this
      */
     public function setEncryptionDetails($encryption_details)
     {
         $this->container['encryption_details'] = $encryption_details;
-
         return $this;
     }
 
@@ -583,7 +571,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setEscapeUri($escape_uri)
     {
         $this->container['escape_uri'] = $escape_uri;
-
         return $this;
     }
 
@@ -607,7 +594,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setExportDocumentStructure($export_document_structure)
     {
         $this->container['export_document_structure'] = $export_document_structure;
-
         return $this;
     }
 
@@ -631,7 +617,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setFontEmbeddingMode($font_embedding_mode)
     {
         $this->container['font_embedding_mode'] = $font_embedding_mode;
-
         return $this;
     }
 
@@ -658,9 +643,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         if ((!is_numeric($header_footer_bookmarks_export_mode) && !in_array($header_footer_bookmarks_export_mode, $allowedValues)) || (is_numeric($header_footer_bookmarks_export_mode) && !in_array($allowedValues[$header_footer_bookmarks_export_mode], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'header_footer_bookmarks_export_mode', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['header_footer_bookmarks_export_mode'] = $header_footer_bookmarks_export_mode;
-
         return $this;
     }
 
@@ -684,7 +667,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setImageColorSpaceExportMode($image_color_space_export_mode)
     {
         $this->container['image_color_space_export_mode'] = $image_color_space_export_mode;
-
         return $this;
     }
 
@@ -708,7 +690,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setImageCompression($image_compression)
     {
         $this->container['image_compression'] = $image_compression;
-
         return $this;
     }
 
@@ -732,7 +713,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setInterpolateImages($interpolate_images)
     {
         $this->container['interpolate_images'] = $interpolate_images;
-
         return $this;
     }
 
@@ -756,7 +736,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setOpenHyperlinksInNewWindow($open_hyperlinks_in_new_window)
     {
         $this->container['open_hyperlinks_in_new_window'] = $open_hyperlinks_in_new_window;
-
         return $this;
     }
 
@@ -773,14 +752,13 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets outline_options
      *
-     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options outline_options
+     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets allows to specify outline options.
      *
      * @return $this
      */
     public function setOutlineOptions($outline_options)
     {
         $this->container['outline_options'] = $outline_options;
-
         return $this;
     }
 
@@ -804,7 +782,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setPageMode($page_mode)
     {
         $this->container['page_mode'] = $page_mode;
-
         return $this;
     }
 
@@ -828,7 +805,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setPreblendImages($preblend_images)
     {
         $this->container['preblend_images'] = $preblend_images;
-
         return $this;
     }
 
@@ -852,7 +828,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setPreserveFormFields($preserve_form_fields)
     {
         $this->container['preserve_form_fields'] = $preserve_form_fields;
-
         return $this;
     }
 
@@ -876,7 +851,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setTextCompression($text_compression)
     {
         $this->container['text_compression'] = $text_compression;
-
         return $this;
     }
 
@@ -900,7 +874,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseBookFoldPrintingSettings($use_book_fold_printing_settings)
     {
         $this->container['use_book_fold_printing_settings'] = $use_book_fold_printing_settings;
-
         return $this;
     }
 
@@ -924,7 +897,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseCoreFonts($use_core_fonts)
     {
         $this->container['use_core_fonts'] = $use_core_fonts;
-
         return $this;
     }
 
@@ -948,7 +920,6 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setZoomBehavior($zoom_behavior)
     {
         $this->container['zoom_behavior'] = $zoom_behavior;
-
         return $this;
     }
 
@@ -972,9 +943,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setZoomFactor($zoom_factor)
     {
         $this->container['zoom_factor'] = $zoom_factor;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -1045,3 +1016,4 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

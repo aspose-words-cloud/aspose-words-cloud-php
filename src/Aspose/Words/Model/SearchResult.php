@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SearchResult.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SearchResult
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,8 +52,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'range_start' => '\Aspose\Words\Model\DocumentPosition',
-        'range_end' => '\Aspose\Words\Model\DocumentPosition'
+        'range_end' => '\Aspose\Words\Model\DocumentPosition',
+        'range_start' => '\Aspose\Words\Model\DocumentPosition'
     ];
 
     /*
@@ -66,8 +62,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'range_start' => null,
-        'range_end' => null
+        'range_end' => 'null',
+        'range_start' => 'null'
     ];
 
     /*
@@ -97,8 +93,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'range_start' => 'RangeStart',
-        'range_end' => 'RangeEnd'
+        'range_end' => 'RangeEnd',
+        'range_start' => 'RangeStart'
     ];
 
     /*
@@ -107,8 +103,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'range_start' => 'setRangeStart',
-        'range_end' => 'setRangeEnd'
+        'range_end' => 'setRangeEnd',
+        'range_start' => 'setRangeStart'
     ];
 
     /*
@@ -117,8 +113,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'range_start' => 'getRangeStart',
-        'range_end' => 'getRangeEnd'
+        'range_end' => 'getRangeEnd',
+        'range_start' => 'getRangeStart'
     ];
 
     /*
@@ -179,8 +175,8 @@ class SearchResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
         $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
+        $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
     }
 
     /*
@@ -203,33 +199,7 @@ class SearchResult implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets range_start
-     *
-     * @return \Aspose\Words\Model\DocumentPosition
-     */
-    public function getRangeStart()
-    {
-        return $this->container['range_start'];
-    }
-
-    /*
-     * Sets range_start
-     *
-     * @param \Aspose\Words\Model\DocumentPosition $range_start range_start
-     *
-     * @return $this
-     */
-    public function setRangeStart($range_start)
-    {
-        $this->container['range_start'] = $range_start;
-
-        return $this;
     }
 
     /*
@@ -245,16 +215,39 @@ class SearchResult implements ArrayAccess
     /*
      * Sets range_end
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_end range_end
+     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets link to result range end node.
      *
      * @return $this
      */
     public function setRangeEnd($range_end)
     {
         $this->container['range_end'] = $range_end;
-
         return $this;
     }
+
+    /*
+     * Gets range_start
+     *
+     * @return \Aspose\Words\Model\DocumentPosition
+     */
+    public function getRangeStart()
+    {
+        return $this->container['range_start'];
+    }
+
+    /*
+     * Sets range_start
+     *
+     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets link to result range start node.
+     *
+     * @return $this
+     */
+    public function setRangeStart($range_start)
+    {
+        $this->container['range_start'] = $range_start;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -325,3 +318,4 @@ class SearchResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

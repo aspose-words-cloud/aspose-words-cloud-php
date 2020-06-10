@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="LoadWebDocumentRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,20 +37,19 @@ class LoadWebDocumentRequest
      * Parameters of loading.
      */
     public $data;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-    
-	
+
     /*
      * Initializes a new instance of the LoadWebDocumentRequest class.
-     *  
+     *
      * @param \Aspose\Words\Model\LoadWebDocumentData $data Parameters of loading.
      * @param string $storage Original document storage.
      */
-    public function __construct($data, $storage = null)             
+    public function __construct($data, $storage = null)
     {
         $this->data = $data;
         $this->storage = $storage;
@@ -72,7 +71,7 @@ class LoadWebDocumentRequest
         $this->data = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */

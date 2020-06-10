@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteFileRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -34,29 +34,28 @@ namespace Aspose\Words\Model\Requests;
 class DeleteFileRequest
 {
     /*
-     * Path of the file including file name and extension e.g. /Folder1/file.ext
+     * Path of the file including file name and extension e.g. /Folder1/file.ext.
      */
     public $path;
-	
+
     /*
-     * Storage name
+     * Storage name.
      */
     public $storage_name;
-	
+
     /*
-     * File version ID to delete
+     * File version ID to delete.
      */
     public $version_id;
-    
-	
+
     /*
      * Initializes a new instance of the DeleteFileRequest class.
-     *  
-     * @param string $path Path of the file including file name and extension e.g. /Folder1/file.ext
-     * @param string $storage_name Storage name
-     * @param string $version_id File version ID to delete
+     *
+     * @param string $path Path of the file including file name and extension e.g. /Folder1/file.ext.
+     * @param string $storage_name Storage name.
+     * @param string $version_id File version ID to delete.
      */
-    public function __construct($path, $storage_name = null, $version_id = null)             
+    public function __construct($path, $storage_name = null, $version_id = null)
     {
         $this->path = $path;
         $this->storage_name = $storage_name;
@@ -64,7 +63,7 @@ class DeleteFileRequest
     }
 
     /*
-     * Path of the file including file name and extension e.g. /Folder1/file.ext
+     * Path of the file including file name and extension e.g. /Folder1/file.ext.
      */
     public function get_path()
     {
@@ -72,16 +71,16 @@ class DeleteFileRequest
     }
 
     /*
-     * Path of the file including file name and extension e.g. /Folder1/file.ext
+     * Path of the file including file name and extension e.g. /Folder1/file.ext.
      */
     public function set_path($value)
     {
         $this->path = $value;
         return $this;
     }
-	
+
     /*
-     * Storage name
+     * Storage name.
      */
     public function get_storage_name()
     {
@@ -89,16 +88,16 @@ class DeleteFileRequest
     }
 
     /*
-     * Storage name
+     * Storage name.
      */
     public function set_storage_name($value)
     {
         $this->storage_name = $value;
         return $this;
     }
-	
+
     /*
-     * File version ID to delete
+     * File version ID to delete.
      */
     public function get_version_id()
     {
@@ -106,7 +105,7 @@ class DeleteFileRequest
     }
 
     /*
-     * File version ID to delete
+     * File version ID to delete.
      */
     public function set_version_id($value)
     {

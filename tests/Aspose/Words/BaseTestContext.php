@@ -50,8 +50,7 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
          * To run with your own credentials please, replace parameter in methods 'setAppKey' and 'setAppSid' accordingly to your's AppSid and AppKey
          */
 		 
-        $this->words = new WordsApi($creds["AppSid"], $creds["AppKey"]);
-        $this->words->getConfig()->setHost($creds["BaseUrl"]);
+        $this->words = new WordsApi($creds["AppSid"], $creds["AppKey"], $creds["BaseUrl"]);
     }
 
     public function getConfig() {

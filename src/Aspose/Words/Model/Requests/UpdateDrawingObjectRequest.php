@@ -98,7 +98,7 @@ class UpdateDrawingObjectRequest
      * Initializes a new instance of the UpdateDrawingObjectRequest class.
      *  
      * @param string $name The document name.
-     * @param string $drawing_object Drawing object parameters
+     * @param \Aspose\Words\Model\DrawingObjectUpdate $drawing_object Drawing object parameters
      * @param \SplFileObject $image_file File with image
      * @param string $node_path Path to the node, which contains collection of drawing objects.
      * @param int $index Object index.

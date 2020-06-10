@@ -303,6 +303,31 @@ class ParagraphTests extends BaseTestContext
     }
 
     /**
+     * Test case for insertParagraph
+     *
+     * Adds paragraph to document, returns added paragraph's data..
+     *
+     */
+    public function testInsertParagraphWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestInsertParagraph.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $paragraph = new ParagraphInsert(array("text" => "This is a new paragraph for your document"));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\InsertParagraphWithoutNodePathRequest($remoteName, $paragraph, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->insertParagraphWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for renderParagraph
      *
      * Renders paragraph to specified format..
@@ -427,6 +452,32 @@ class ParagraphTests extends BaseTestContext
     }
 
     /**
+     * Test case for updateParagraphFormat
+     *
+     * Update format of paragraph.
+     *
+     */
+    public function testUpdateParagraphFormatWithoutNodePath()
+    {
+        $localName = "test_multi_pages.docx";
+        $remoteName = "testUpdateParagraphFormat.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+        $body = new ParagraphFormat(array(
+            "alignment" => "Right",
+        ));
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\UpdateParagraphFormatWithoutNodePathRequest($remoteName, $body, $index, $folder=self::$baseTestPath . $subfolder);
+
+        $result = $this->words->updateParagraphFormatWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for deleteParagraphListFormat
      *
      * Remove paragraph list format.
@@ -448,6 +499,30 @@ class ParagraphTests extends BaseTestContext
             null, null);
 
         $result = $this->words->deleteParagraphListFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteParagraphListFormat
+     *
+     * Remove paragraph list format.
+     *
+     */
+    public function testDeleteParagraphListFormatWithoutNodePath()
+    {
+        $localName = "test_doc.docx";
+        $remoteName = "TestDeleteParagraphListFormat.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteParagraphListFormatWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null, null);
+
+        $result = $this->words->deleteParagraphListFormatWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -529,6 +604,33 @@ class ParagraphTests extends BaseTestContext
     }
 
     /**
+     * Test case for updaeParagraphListFormat
+     *
+     * Update paragraph list format
+     *
+     */
+    public function testUpdateParagraphListFormatWithoutNodePath()
+    {
+        $localName = "test_doc.docx";
+        $remoteName = "TestUpdateParagraphListFormat.docx";
+        $subfolder = "DocumentElements/Paragraph";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $dto = new ListFormatUpdate(array("ListId" => 2, "ListLevelNumber" => 1));
+
+        $request = new Requests\UpdateParagraphListFormatWithoutNodePathRequest($remoteName, $dto, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null,
+            null, null);
+
+        $result = $this->words->updateParagraphListFormatWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for getParagraphTabStops
      *
      * Get paragraph tab stops.
@@ -554,6 +656,30 @@ class ParagraphTests extends BaseTestContext
     }
 
     /**
+     * Test case for getParagraphTabStops
+     *
+     * Get paragraph tab stops.
+     *
+     */
+    public function testGetParagraphTabStopsWithoutNodePath()
+    {
+        $localName = "ParagraphTabStops.docx";
+        $remoteName = "TestGetParagraphTabStops.docx";
+        $subfolder = "DocumentElements/Paragraphs";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Paragraphs/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\GetParagraphTabStopsWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->getParagraphTabStopsWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for insertOrUpdateParagraphTabStop
      *
      * Insert / update paragraph tab stop.
@@ -575,11 +701,39 @@ class ParagraphTests extends BaseTestContext
             'leader' => TabStopBase::LEADER_NONE,
             'position' => 72
         ));
-        $request = new Requests\InsertOrUpdateParagraphTabStopRequest($remoteName, "", $dto, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, null,
-            null, null);
+        $request = new Requests\InsertOrUpdateParagraphTabStopRequest($remoteName, $dto, "", $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null);
 
         $result = $this->words->insertOrUpdateParagraphTabStop($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for insertOrUpdateParagraphTabStop
+     *
+     * Insert / update paragraph tab stop.
+     *
+     */
+    public function testInsertOrUpdateParagraphTabStopWithoutNodePath()
+    {
+        $localName = "ParagraphTabStops.docx";
+        $remoteName = "TestInsertOrUpdateParagraphTabStops.docx";
+        $subfolder = "DocumentElements/Paragraphs";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Paragraphs/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $dto = new TabStopInsert(array (
+            'alignment' => TabStopBase::ALIGNMENT_LEFT,
+            'leader' => TabStopBase::LEADER_NONE,
+            'position' => 72
+        ));
+        $request = new Requests\InsertOrUpdateParagraphTabStopWithoutNodePathRequest($remoteName, $dto, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null);
+
+        $result = $this->words->insertOrUpdateParagraphTabStopWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -609,6 +763,30 @@ class ParagraphTests extends BaseTestContext
     }
 
     /**
+     * Test case for deleteAllParagraphTabStops
+     *
+     * Delete all paragraph tab stops.
+     *
+     */
+    public function testDeleteAllParagraphTabStopsWithoutNodePath()
+    {
+        $localName = "ParagraphTabStops.docx";
+        $remoteName = "TestGetParagraphTabStops.docx";
+        $subfolder = "DocumentElements/Paragraphs";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Paragraphs/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteAllParagraphTabStopsWithoutNodePathRequest($remoteName, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null);
+
+        $result = $this->words->deleteAllParagraphTabStopsWithoutNodePath($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
      * Test case for deleteParagraphTabStop
      *
      * Delete a paragraph tab stop.
@@ -625,11 +803,34 @@ class ParagraphTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Paragraphs/' . $localName;
         $this->uploadFile($file, $fullName);
 
-        $request = new Requests\DeleteParagraphTabStopRequest($remoteName, "", 72, $index, $folder=self::$baseTestPath . $subfolder,
-            null, null, null, null,
-            null, null);
+        $request = new Requests\DeleteParagraphTabStopRequest($remoteName,72, "", $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null, null);
 
         $result = $this->words->deleteParagraphTabStop($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /**
+     * Test case for deleteParagraphTabStop
+     *
+     * Delete a paragraph tab stop.
+     *
+     */
+    public function testDeleteParagraphTabStopWithoutNodePath()
+    {
+        $localName = "ParagraphTabStops.docx";
+        $remoteName = "TestGetParagraphTabStops.docx";
+        $subfolder = "DocumentElements/Paragraphs";
+        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
+        $index = 0;
+
+        $file = realpath(__DIR__ . '/../../../..') . '/TestData/DocumentElements/Paragraphs/' . $localName;
+        $this->uploadFile($file, $fullName);
+
+        $request = new Requests\DeleteParagraphTabStopWithoutNodePathRequest($remoteName, 72, $index, $folder=self::$baseTestPath . $subfolder,
+            null, null, null);
+
+        $result = $this->words->deleteParagraphTabStopWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

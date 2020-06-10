@@ -94,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.aspose.cloud';
+    protected $host = 'https://api.aspose.cloud/';
 	
     /*
      * Version of API to use, possible values are v4.0
@@ -134,21 +134,17 @@ class Configuration
      * Version of Aspose.Words Cloud API
      *
      */
-    protected $clientVersion = '20.5';
+    protected $clientVersion = '20.6';
 
     /*
      * Constructor
 	 * @param string   $appSid client app sid
      * @param string   $appKey app key
-     * @param string   $baseUrl base url for requests
      */
-    public function __construct(string $appSid, string $appKey, string $baseUrl)
+    public function __construct(string $appSid, string $appKey)
     {
         $this->tempFolderPath = sys_get_temp_dir();
         date_default_timezone_set('UTC');
-		if (isset($baseUrl) && trim($baseUrl) != '') {
-            $this->setHost($baseUrl);
-		}
 		$this->setAppSid($appSid);
 		$this->setAppKey($appKey);
     }
@@ -519,7 +515,7 @@ class Configuration
         $report  = 'PHP SDK (Aspose\Words) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 20.5.0' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 20.6.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

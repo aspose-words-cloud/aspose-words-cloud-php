@@ -93,7 +93,7 @@ class UpdateDrawingObjectWithoutNodePathRequest
      * Initializes a new instance of the UpdateDrawingObjectWithoutNodePathRequest class.
      *  
      * @param string $name The document name.
-     * @param string $drawing_object Drawing object parameters
+     * @param \Aspose\Words\Model\DrawingObjectUpdate $drawing_object Drawing object parameters
      * @param \SplFileObject $image_file File with image
      * @param int $index Object index.
      * @param string $folder Original document folder.

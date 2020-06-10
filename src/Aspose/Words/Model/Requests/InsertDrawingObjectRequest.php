@@ -39,7 +39,7 @@ class InsertDrawingObjectRequest
     public $name;
 	
     /*
-     * Drawing object parameters
+     * Drawing object parameters.
      */
     public $drawing_object;
 	
@@ -93,7 +93,7 @@ class InsertDrawingObjectRequest
      * Initializes a new instance of the InsertDrawingObjectRequest class.
      *  
      * @param string $name The document name.
-     * @param string $drawing_object Drawing object parameters
+     * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
      * @param \SplFileObject $image_file File with image
      * @param string $node_path Path to the node, which contains collection of drawing objects.
      * @param string $folder Original document folder.
@@ -137,7 +137,7 @@ class InsertDrawingObjectRequest
     }
 	
     /*
-     * Drawing object parameters
+     * Drawing object parameters.
      */
     public function get_drawing_object()
     {
@@ -145,7 +145,7 @@ class InsertDrawingObjectRequest
     }
 
     /*
-     * Drawing object parameters
+     * Drawing object parameters.
      */
     public function set_drawing_object($value)
     {

@@ -49,9 +49,6 @@ class WordsApiTests extends BaseTestContext
         }
         catch (ApiException $exception)
         {
-            $errorObject = $exception->getResponseError();
-            Assert::assertNotNull($errorObject);
-            Assert::assertNotNull($errorObject->getInnerError());
             Assert::equalTo(404, $exception->getCode());
         }
     }

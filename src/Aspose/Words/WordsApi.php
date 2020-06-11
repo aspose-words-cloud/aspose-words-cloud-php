@@ -137,6 +137,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -452,6 +455,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -799,6 +805,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -1155,6 +1164,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -1487,6 +1499,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -1783,6 +1798,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -2061,6 +2079,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -2387,6 +2408,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -2715,6 +2739,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -3036,6 +3063,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -3302,6 +3332,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -3559,6 +3592,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -3911,6 +3947,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -4201,6 +4240,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -4435,6 +4477,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -4791,6 +4836,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -5123,6 +5171,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -5446,6 +5497,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -5799,6 +5853,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -6141,6 +6198,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -6442,6 +6502,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -6742,6 +6805,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -7052,6 +7118,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -7352,6 +7421,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -7662,6 +7734,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -7963,6 +8038,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -8255,6 +8333,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -8557,6 +8638,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -8800,6 +8884,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -9042,6 +9129,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -9352,6 +9442,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -9652,6 +9745,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -9962,6 +10058,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -10262,6 +10361,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -10571,6 +10673,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -10883,6 +10988,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -11175,6 +11283,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -11485,6 +11596,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -11785,6 +11899,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -12096,6 +12213,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -12449,6 +12569,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -12792,6 +12915,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -13138,6 +13264,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -13473,6 +13602,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -13773,6 +13905,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -14083,6 +14218,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -14383,6 +14521,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -14693,6 +14834,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -15001,6 +15145,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -15311,6 +15458,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -15613,6 +15763,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -15950,6 +16103,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -16235,6 +16391,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -16597,6 +16756,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -16909,6 +17071,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -17176,6 +17341,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -17491,6 +17659,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -17796,6 +17967,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -18119,6 +18293,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -18432,6 +18609,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -18747,6 +18927,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -19053,6 +19236,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -19358,6 +19544,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -19681,6 +19870,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -19994,6 +20186,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -20317,6 +20512,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -20630,6 +20828,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -20953,6 +21154,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -21266,6 +21470,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -21581,6 +21788,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -21886,6 +22096,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -22203,6 +22416,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -22482,6 +22698,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -22797,6 +23016,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -23103,6 +23325,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -23408,6 +23633,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -23723,6 +23951,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -24028,6 +24259,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -24364,6 +24598,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -24704,6 +24941,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -25026,6 +25266,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -25340,6 +25583,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -25645,6 +25891,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -25960,6 +26209,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -26235,6 +26487,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -26558,6 +26813,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -26872,6 +27130,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -27177,6 +27438,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -27491,6 +27755,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -27814,6 +28081,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -28128,6 +28398,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -28433,6 +28706,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -28747,6 +29023,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -29071,6 +29350,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -29404,6 +29686,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -29728,6 +30013,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -30042,6 +30330,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -30347,6 +30638,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -30670,6 +30964,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -30984,6 +31281,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -31289,6 +31589,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -31603,6 +31906,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -31926,6 +32232,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -32248,6 +32557,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -32561,6 +32873,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -32884,6 +33199,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -33197,6 +33515,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -33512,6 +33833,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -33817,6 +34141,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -34140,6 +34467,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -34454,6 +34784,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -34767,6 +35100,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -35086,6 +35422,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -35409,6 +35748,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -35731,6 +36073,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -36044,6 +36389,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -36359,6 +36707,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -36673,6 +37024,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -36978,6 +37332,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -37293,6 +37650,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -37607,6 +37967,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -37912,6 +38275,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -38235,6 +38601,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -38556,6 +38925,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -38879,6 +39251,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -39201,6 +39576,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -39514,6 +39892,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -39837,6 +40218,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -40159,6 +40543,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -40473,6 +40860,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -40778,6 +41168,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -41092,6 +41485,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -41439,6 +41835,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -41804,6 +42203,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -42159,6 +42561,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -42525,6 +42930,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -42882,6 +43290,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -43237,6 +43648,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -43583,6 +43997,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -43949,6 +44366,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -44306,6 +44726,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -44661,6 +45084,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -45008,6 +45434,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -45351,6 +45780,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -45685,6 +46117,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -46032,6 +46467,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -46398,6 +46836,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -46754,6 +47195,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -47120,6 +47564,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -47466,6 +47913,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -47822,6 +48272,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -48176,6 +48629,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -48532,6 +48988,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -48878,6 +49337,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -49244,6 +49706,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -49591,6 +50056,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -49868,6 +50336,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -50134,6 +50605,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -50391,6 +50865,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -50719,6 +51196,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -51034,6 +51514,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -51363,6 +51846,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -51709,6 +52195,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -52045,6 +52534,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -52391,6 +52883,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -52728,6 +53223,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -53064,6 +53562,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -53410,6 +53911,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -53746,6 +54250,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -54092,6 +54599,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -54428,6 +54938,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -54776,6 +55289,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -55114,6 +55630,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -55330,6 +55849,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -55657,6 +56179,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -55987,6 +56512,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -56485,6 +57013,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -56803,6 +57334,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -57173,6 +57707,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -57499,6 +58036,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -57854,6 +58394,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -58218,6 +58761,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -58572,6 +59118,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -58945,6 +59494,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -59309,6 +59861,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -59672,6 +60227,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -59987,6 +60545,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -60351,6 +60912,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -60705,6 +61269,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -61069,6 +61636,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -61424,6 +61994,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -61778,6 +62351,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -62142,6 +62718,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -62505,6 +63084,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -62859,6 +63441,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -63223,6 +63808,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -63577,6 +64165,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -63941,6 +64532,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -64304,6 +64898,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -64659,6 +65256,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -65013,6 +65613,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -65377,6 +65980,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -65740,6 +66346,9 @@ class WordsApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                }
             }
 
             $statusCode = $response->getStatusCode();
@@ -66094,6 +66703,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 
@@ -66457,6 +67069,9 @@ class WordsApi
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
                 }
             }
 

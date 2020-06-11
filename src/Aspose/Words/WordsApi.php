@@ -78,7 +78,6 @@ class WordsApi
         $this->client = new Client();
         $this->config = new Configuration($appSid, $appKey);
         $this->headerSelector = new HeaderSelector();
-        $this->_requestToken();
     }
 
     /*

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TextSaveOptionsData.php">
+ * <copyright company="Aspose" file="MarkdownSaveOptionsData.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -30,11 +30,11 @@ namespace Aspose\Words\Model;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * TextSaveOptionsData
+ * MarkdownSaveOptionsData
  *
- * @description Container class for text save options.
+ * @description Container class for markdown save options.
  */
-class TextSaveOptionsData extends TxtSaveOptionsBaseData
+class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +43,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      *
      * @var string
      */
-    protected static $swaggerModelName = "TextSaveOptionsData";
+    protected static $swaggerModelName = "MarkdownSaveOptionsData";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,9 +51,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'add_bidi_marks' => 'bool',
-        'preserve_table_layout' => 'bool',
-        'simplify_list_labels' => 'bool'
+        'table_content_alignment' => 'string'
     ];
 
     /*
@@ -62,9 +60,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'add_bidi_marks' => 'null',
-        'preserve_table_layout' => 'null',
-        'simplify_list_labels' => 'null'
+        'table_content_alignment' => 'null'
     ];
 
     /*
@@ -94,9 +90,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $attributeMap = [
-        'add_bidi_marks' => 'AddBidiMarks',
-        'preserve_table_layout' => 'PreserveTableLayout',
-        'simplify_list_labels' => 'SimplifyListLabels'
+        'table_content_alignment' => 'TableContentAlignment'
     ];
 
     /*
@@ -105,9 +99,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $setters = [
-        'add_bidi_marks' => 'setAddBidiMarks',
-        'preserve_table_layout' => 'setPreserveTableLayout',
-        'simplify_list_labels' => 'setSimplifyListLabels'
+        'table_content_alignment' => 'setTableContentAlignment'
     ];
 
     /*
@@ -116,9 +108,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $getters = [
-        'add_bidi_marks' => 'getAddBidiMarks',
-        'preserve_table_layout' => 'getPreserveTableLayout',
-        'simplify_list_labels' => 'getSimplifyListLabels'
+        'table_content_alignment' => 'getTableContentAlignment'
     ];
 
     /*
@@ -162,7 +152,25 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
         return self::$swaggerModelName;
     }
 
+    const TABLE_CONTENT_ALIGNMENT_AUTO = 'Auto';
+    const TABLE_CONTENT_ALIGNMENT_LEFT = 'Left';
+    const TABLE_CONTENT_ALIGNMENT_CENTER = 'Center';
+    const TABLE_CONTENT_ALIGNMENT_RIGHT = 'Right';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTableContentAlignmentAllowableValues()
+    {
+        return [
+            self::TABLE_CONTENT_ALIGNMENT_AUTO,
+            self::TABLE_CONTENT_ALIGNMENT_LEFT,
+            self::TABLE_CONTENT_ALIGNMENT_CENTER,
+            self::TABLE_CONTENT_ALIGNMENT_RIGHT
+        ];
+    }
 
     /*
      * Constructor
@@ -173,9 +181,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['add_bidi_marks'] = isset($data['add_bidi_marks']) ? $data['add_bidi_marks'] : null;
-        $this->container['preserve_table_layout'] = isset($data['preserve_table_layout']) ? $data['preserve_table_layout'] : null;
-        $this->container['simplify_list_labels'] = isset($data['simplify_list_labels']) ? $data['simplify_list_labels'] : null;
+        $this->container['table_content_alignment'] = isset($data['table_content_alignment']) ? $data['table_content_alignment'] : null;
     }
 
     /*
@@ -186,6 +192,15 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getTableContentAlignmentAllowableValues();
+        if (!in_array($this->container['table_content_alignment'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'table_content_alignment', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -201,75 +216,39 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
             return false;
         }
 
+        $allowedValues = $this->getTableContentAlignmentAllowableValues();
+        if (!in_array($this->container['table_content_alignment'], $allowedValues)) {
+            return false;
+        }
+
+
         return true;
     }
 
     /*
-     * Gets add_bidi_marks
+     * Gets table_content_alignment
      *
-     * @return bool
+     * @return string
      */
-    public function getAddBidiMarks()
+    public function getTableContentAlignment()
     {
-        return $this->container['add_bidi_marks'];
+        return $this->container['table_content_alignment'];
     }
 
     /*
-     * Sets add_bidi_marks
+     * Sets table_content_alignment
      *
-     * @param bool $add_bidi_marks Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
+     * @param string $table_content_alignment Gets or sets a value that specifies how to align contents in tables when exporting into the Markdown format. The default value is Auto.
      *
      * @return $this
      */
-    public function setAddBidiMarks($add_bidi_marks)
+    public function setTableContentAlignment($table_content_alignment)
     {
-        $this->container['add_bidi_marks'] = $add_bidi_marks;
-        return $this;
-    }
-
-    /*
-     * Gets preserve_table_layout
-     *
-     * @return bool
-     */
-    public function getPreserveTableLayout()
-    {
-        return $this->container['preserve_table_layout'];
-    }
-
-    /*
-     * Sets preserve_table_layout
-     *
-     * @param bool $preserve_table_layout Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.
-     *
-     * @return $this
-     */
-    public function setPreserveTableLayout($preserve_table_layout)
-    {
-        $this->container['preserve_table_layout'] = $preserve_table_layout;
-        return $this;
-    }
-
-    /*
-     * Gets simplify_list_labels
-     *
-     * @return bool
-     */
-    public function getSimplifyListLabels()
-    {
-        return $this->container['simplify_list_labels'];
-    }
-
-    /*
-     * Sets simplify_list_labels
-     *
-     * @param bool $simplify_list_labels Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
-     *
-     * @return $this
-     */
-    public function setSimplifyListLabels($simplify_list_labels)
-    {
-        $this->container['simplify_list_labels'] = $simplify_list_labels;
+        $allowedValues = $this->getTableContentAlignmentAllowableValues();
+        if ((!is_numeric($table_content_alignment) && !in_array($table_content_alignment, $allowedValues)) || (is_numeric($table_content_alignment) && !in_array($allowedValues[$table_content_alignment], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'table_content_alignment', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['table_content_alignment'] = $table_content_alignment;
         return $this;
     }
 

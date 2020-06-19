@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ParagraphFormat.php">
+ * <copyright company="Aspose" file="ParagraphFormatUpdate.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -30,11 +30,11 @@ namespace Aspose\Words\Model;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * ParagraphFormat
+ * ParagraphFormatUpdate
  *
- * @description Paragraph format element.
+ * @description Paragraph format element update DTO.
  */
-class ParagraphFormat extends ParagraphFormatBase
+class ParagraphFormatUpdate extends ParagraphFormatBase
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +43,7 @@ class ParagraphFormat extends ParagraphFormatBase
      *
      * @var string
      */
-    protected static $swaggerModelName = "ParagraphFormat";
+    protected static $swaggerModelName = "ParagraphFormatUpdate";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,8 +51,6 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_heading' => 'bool',
-        'is_list_item' => 'bool'
     ];
 
     /*
@@ -61,8 +59,6 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_heading' => 'null',
-        'is_list_item' => 'null'
     ];
 
     /*
@@ -92,8 +88,6 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_heading' => 'IsHeading',
-        'is_list_item' => 'IsListItem'
     ];
 
     /*
@@ -102,8 +96,6 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $setters = [
-        'is_heading' => 'setIsHeading',
-        'is_list_item' => 'setIsListItem'
     ];
 
     /*
@@ -112,8 +104,6 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $getters = [
-        'is_heading' => 'getIsHeading',
-        'is_list_item' => 'getIsListItem'
     ];
 
     /*
@@ -168,8 +158,6 @@ class ParagraphFormat extends ParagraphFormatBase
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['is_heading'] = isset($data['is_heading']) ? $data['is_heading'] : null;
-        $this->container['is_list_item'] = isset($data['is_list_item']) ? $data['is_list_item'] : null;
     }
 
     /*
@@ -198,51 +186,6 @@ class ParagraphFormat extends ParagraphFormatBase
         return true;
     }
 
-    /*
-     * Gets is_heading
-     *
-     * @return bool
-     */
-    public function getIsHeading()
-    {
-        return $this->container['is_heading'];
-    }
-
-    /*
-     * Sets is_heading
-     *
-     * @param bool $is_heading Gets or sets True when the paragraph style is one of the built-in Heading styles.
-     *
-     * @return $this
-     */
-    public function setIsHeading($is_heading)
-    {
-        $this->container['is_heading'] = $is_heading;
-        return $this;
-    }
-
-    /*
-     * Gets is_list_item
-     *
-     * @return bool
-     */
-    public function getIsListItem()
-    {
-        return $this->container['is_list_item'];
-    }
-
-    /*
-     * Sets is_list_item
-     *
-     * @param bool $is_list_item Gets or sets True when the paragraph is an item in a bulleted or numbered list.
-     *
-     * @return $this
-     */
-    public function setIsListItem($is_list_item)
-    {
-        $this->container['is_list_item'] = $is_list_item;
-        return $this;
-    }
 
     /*
      * Returns true if offset exists. False otherwise.

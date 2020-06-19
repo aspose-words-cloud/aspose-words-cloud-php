@@ -92,7 +92,7 @@ class UpdateParagraphFormatRequest
      * Initializes a new instance of the UpdateParagraphFormatRequest class.
      *
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\ParagraphFormat $dto Paragraph format object.
+     * @param \Aspose\Words\Model\ParagraphFormatUpdate $dto Paragraph format object.
      * @param string $node_path Path to the node which contains paragraphs.
      * @param int $index Object index.
      * @param string $folder Original document folder.

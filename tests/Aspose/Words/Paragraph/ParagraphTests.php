@@ -29,6 +29,7 @@ namespace Aspose\Tests;
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Model\ParagraphInsert;
 use Aspose\Words\Model\ParagraphFormat;
+use Aspose\Words\Model\ParagraphFormatUpdate;
 use Aspose\Words\Model\ListFormatUpdate;
 use Aspose\Words\Model\Font;
 use PHPUnit\Framework\Assert;
@@ -438,7 +439,7 @@ class ParagraphTests extends BaseTestContext
         $subfolder = "DocumentElements/Paragraph";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $index = 0;
-        $body = new ParagraphFormat(array(
+        $body = new ParagraphFormatUpdate(array(
             "alignment" => "Right",           
         ));
 
@@ -448,32 +449,6 @@ class ParagraphTests extends BaseTestContext
         $request = new Requests\UpdateParagraphFormatRequest($remoteName, $body, "", $index, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->updateParagraphFormat($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
-    }
-
-    /**
-     * Test case for updateParagraphFormat
-     *
-     * Update format of paragraph.
-     *
-     */
-    public function testUpdateParagraphFormatWithoutNodePath()
-    {
-        $localName = "test_multi_pages.docx";
-        $remoteName = "testUpdateParagraphFormat.docx";
-        $subfolder = "DocumentElements/Paragraph";
-        $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
-        $index = 0;
-        $body = new ParagraphFormat(array(
-            "alignment" => "Right",
-        ));
-
-        $file = realpath(__DIR__ . '/../../../..') . '/TestData/Common/' . $localName;
-        $this->uploadFile($file, $fullName);
-
-        $request = new Requests\UpdateParagraphFormatWithoutNodePathRequest($remoteName, $body, $index, $folder=self::$baseTestPath . $subfolder);
-
-        $result = $this->words->updateParagraphFormatWithoutNodePath($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 

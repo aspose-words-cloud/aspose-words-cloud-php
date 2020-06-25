@@ -47,7 +47,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjects.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -74,7 +74,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjectsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -100,7 +100,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjectByIndex.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -128,7 +128,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjectByIndexWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -155,7 +155,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjectByIndexWithFormat.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -185,7 +185,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjectByIndexWithFormatWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -214,7 +214,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjectImageData.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -242,7 +242,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjectImageDataWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -269,7 +269,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjectOleData.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localDrawingFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localDrawingFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -297,7 +297,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentDrawingObjectOleDataWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localDrawingFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localDrawingFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -324,7 +324,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestInsetDrawingObject.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -334,7 +334,7 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new Requests\InsertDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
             "",
             $remoteDataFolder,
             NULL,
@@ -359,7 +359,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestInsetDrawingObjectWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -369,7 +369,7 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new Requests\InsertDrawingObjectWithoutNodePathRequest(
             $remoteFileName,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -393,7 +393,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestDeleteDrawingObject.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -423,7 +423,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestDeleteDrawingObjectWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -452,7 +452,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestUpdateDrawingObject.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -462,7 +462,7 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new Requests\UpdateDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
             "",
             0,
             $remoteDataFolder,
@@ -488,7 +488,7 @@ class DrawingObjectsTests extends BaseTestContext
         $remoteFileName = "TestUpdateDrawingObjectWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -498,7 +498,7 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new Requests\UpdateDrawingObjectWithoutNodePathRequest(
             $remoteFileName,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
             0,
             $remoteDataFolder,
             NULL,

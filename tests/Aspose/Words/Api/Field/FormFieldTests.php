@@ -47,7 +47,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestUpdateFormField.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -87,7 +87,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestUpdateFormFieldWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -126,7 +126,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestGetFormField.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -154,7 +154,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestGetFormFieldWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -181,7 +181,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestGetFormFields.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -208,7 +208,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestGetFormFieldsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -233,7 +233,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestInsertFormField.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/test_multi_pages.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/test_multi_pages.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -273,7 +273,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestInsertFormFieldWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/test_multi_pages.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/test_multi_pages.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -313,7 +313,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteFormField.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -343,7 +343,7 @@ class FormFieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteFormFieldWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 

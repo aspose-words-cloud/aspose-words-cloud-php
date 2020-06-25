@@ -47,7 +47,7 @@ class PageSetupTests extends BaseTestContext
         $remoteFileName = "TestGetSectionPageSetup.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -74,7 +74,7 @@ class PageSetupTests extends BaseTestContext
         $remoteFileName = "TestUpdateSectionPageSetup.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -111,7 +111,7 @@ class PageSetupTests extends BaseTestContext
         $remoteFileName = "TestGetRenderPage.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localTextFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localTextFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

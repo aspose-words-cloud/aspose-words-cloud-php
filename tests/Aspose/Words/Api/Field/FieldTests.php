@@ -48,7 +48,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestGetFields.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -76,7 +76,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestGetFieldsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -103,7 +103,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestGetField.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -132,7 +132,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestGetFieldWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -160,7 +160,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestInsertField.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $textFolder . "/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $textFolder . "/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -196,7 +196,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestInsertFieldWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $textFolder . "/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $textFolder . "/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -231,7 +231,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestUpdateField.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -266,7 +266,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestInsertPageNumbers.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -301,7 +301,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteField.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -332,7 +332,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteFieldWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $fieldFolder . "/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -361,7 +361,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteParagraphFields.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -390,7 +390,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteParagraphFieldsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -418,7 +418,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteSectionFields.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -447,7 +447,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteSectionFieldsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -475,7 +475,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteSectionParagraphFields.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -504,7 +504,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestDeleteSectionParagraphFields.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -533,7 +533,7 @@ class FieldTests extends BaseTestContext
         $remoteFileName = "TestUpdateDocumentFields.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

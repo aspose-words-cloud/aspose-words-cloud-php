@@ -47,7 +47,7 @@ class ConvertDocumentTests extends BaseTestContext
         $remoteName = "TestSaveAs.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localName,
             $remoteFolder . "/" . $remoteName
         );
 
@@ -80,7 +80,7 @@ class ConvertDocumentTests extends BaseTestContext
         $remoteName = "TestSaveAsFromPdfToDoc.pdf";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFolder . "/" . $localName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFolder . "/" . $localName,
             $remoteFolder . "/" . $remoteName
         );
 
@@ -112,7 +112,7 @@ class ConvertDocumentTests extends BaseTestContext
         $remoteName = "TestSaveAsTiff.pdf";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/" . $localName,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localName,
             $remoteFolder . "/" . $remoteName
         );
 
@@ -159,7 +159,7 @@ class ConvertDocumentTests extends BaseTestContext
         $localFolder = "DocumentActions/ConvertDocument";
 
         $request = new Requests\ConvertDocumentRequest(
-            realpath(__DIR__ . '/../../../../..') . $localFolder . "/test_uploadfile.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFolder . "/test_uploadfile.docx",
             "pdf",
             NULL,
             NULL,

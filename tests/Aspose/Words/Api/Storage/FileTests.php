@@ -47,7 +47,7 @@ class FileTests extends BaseTestContext
         $remoteFileName = "TestUploadFile.docx";
 
         $request = new Requests\UploadFileRequest(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName,
             NULL
         );
@@ -66,7 +66,7 @@ class FileTests extends BaseTestContext
         $remoteFileName = "TestCopyFileSrc.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -91,7 +91,7 @@ class FileTests extends BaseTestContext
         $remoteFileName = "TestMoveFileSrc.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -116,7 +116,7 @@ class FileTests extends BaseTestContext
         $remoteFileName = "TestDeleteFile.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -139,7 +139,7 @@ class FileTests extends BaseTestContext
         $remoteFileName = "TestDownloadFile.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

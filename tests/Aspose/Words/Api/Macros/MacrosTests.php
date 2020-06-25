@@ -47,7 +47,7 @@ class MacrosTests extends BaseTestContext
         $remoteFileName = "TestDeleteDocumentMacros.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

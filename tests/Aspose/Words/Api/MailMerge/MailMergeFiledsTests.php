@@ -46,7 +46,7 @@ class MailMergeFiledsTests extends BaseTestContext
         $localDocumentFile = "SampleExecuteTemplate.docx";
 
         $request = new Requests\GetDocumentFieldNamesOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . $mailMergeFolder . "/" . $localDocumentFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDocumentFile,
             true
         );
 
@@ -63,7 +63,7 @@ class MailMergeFiledsTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentFieldNames.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/test_multi_pages.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/test_multi_pages.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 

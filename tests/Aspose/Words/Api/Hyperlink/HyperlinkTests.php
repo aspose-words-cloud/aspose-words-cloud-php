@@ -47,7 +47,7 @@ class HyperlinkTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentHyperlinkByIndex.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -74,7 +74,7 @@ class HyperlinkTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentHyperlinks.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

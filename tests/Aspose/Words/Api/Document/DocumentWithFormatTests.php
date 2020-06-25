@@ -47,7 +47,7 @@ class DocumentWithFormatTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentWithFormat.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -76,7 +76,7 @@ class DocumentWithFormatTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentWithFormat.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

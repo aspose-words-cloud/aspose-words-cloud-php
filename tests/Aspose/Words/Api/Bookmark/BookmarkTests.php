@@ -47,7 +47,7 @@ class BookmarkTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentBookmarks.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -73,7 +73,7 @@ class BookmarkTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentBookmarkByName.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -101,7 +101,7 @@ class BookmarkTests extends BaseTestContext
         $bookmarkName = "aspose";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

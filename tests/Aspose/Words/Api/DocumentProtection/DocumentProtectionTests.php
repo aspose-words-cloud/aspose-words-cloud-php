@@ -47,7 +47,7 @@ class DocumentProtectionTests extends BaseTestContext
         $remoteFileName = "TestProtectDocument.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -78,7 +78,7 @@ class DocumentProtectionTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentProtection.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -104,7 +104,7 @@ class DocumentProtectionTests extends BaseTestContext
         $remoteFileName = "TestChangeDocumentProtection.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -135,7 +135,7 @@ class DocumentProtectionTests extends BaseTestContext
         $remoteFileName = "TestDeleteUnprotectDocument.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFilePath,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFilePath,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

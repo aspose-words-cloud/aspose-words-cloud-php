@@ -47,13 +47,13 @@ class WatermarkTests extends BaseTestContext
         $remoteFileName = "TestInsertWatermarkImage.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
         $request = new Requests\InsertWatermarkImageRequest(
             $remoteFileName,
-            realpath(__DIR__ . '/../../../../..') . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -80,11 +80,11 @@ class WatermarkTests extends BaseTestContext
         $remoteImagePath = $remoteDataFolder . "/TestInsertWatermarkImage.png";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
             $remoteImagePath
         );
 
@@ -116,7 +116,7 @@ class WatermarkTests extends BaseTestContext
         $remoteFileName = "TestInsertWatermarkText.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -150,7 +150,7 @@ class WatermarkTests extends BaseTestContext
         $remoteFileName = "TestDeleteWatermark.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

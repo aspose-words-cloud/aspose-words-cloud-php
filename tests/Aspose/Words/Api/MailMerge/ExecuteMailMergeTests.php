@@ -47,8 +47,8 @@ class ExecuteMailMergeTests extends BaseTestContext
         $localDataFile = "SampleExecuteTemplateData.txt";
 
         $request = new Requests\ExecuteMailMergeOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . $mailMergeFolder . "/" . $localDocumentFile,
-            realpath(__DIR__ . '/../../../../..') . $mailMergeFolder . "/" . $localDataFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDocumentFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDataFile,
             NULL,
             NULL,
             NULL
@@ -67,10 +67,10 @@ class ExecuteMailMergeTests extends BaseTestContext
         $mailMergeFolder = "DocumentActions/MailMerge";
         $localDocumentFile = "SampleExecuteTemplate.docx";
         $remoteFileName = "TestExecuteMailMerge.docx";
-        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../../../..') . $mailMergeFolder . "/SampleMailMergeTemplateData.txt");
+        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../../../..') . "/TestData/" . $mailMergeFolder . "/SampleMailMergeTemplateData.txt");
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $mailMergeFolder . "/" . $localDocumentFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDocumentFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

@@ -47,7 +47,7 @@ class RevisionsTests extends BaseTestContext
         $remoteFileName = "TestAcceptAllRevisions.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -74,7 +74,7 @@ class RevisionsTests extends BaseTestContext
         $remoteFileName = "TestRejectAllRevisions.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

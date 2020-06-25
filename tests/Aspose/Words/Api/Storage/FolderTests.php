@@ -62,7 +62,7 @@ class FolderTests extends BaseTestContext
         $testDeleteFolder = $remoteDataFolder . "/TestDeleteFolder";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $testDeleteFolder . "/TestDeleteFolder.docx"
         );
 
@@ -101,7 +101,7 @@ class FolderTests extends BaseTestContext
         $folderToCopy = $remoteDataFolder . "/TestCopyFolder";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $folderToCopy . "Src/TestCopyFolderSrc.docx"
         );
 
@@ -125,7 +125,7 @@ class FolderTests extends BaseTestContext
         $folderToMove = $remoteDataFolder . "/TestMoveFolder";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $folderToMove . "Src/TestMoveFolderSrc.docx"
         );
 

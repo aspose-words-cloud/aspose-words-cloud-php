@@ -47,7 +47,7 @@ class TextTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -81,7 +81,7 @@ class TextTests extends BaseTestContext
         $localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

@@ -50,11 +50,11 @@ class CompareDocumentTests extends BaseTestContext
         $remoteName2 = "TestCompareDocument2.doc";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFolder . "/" . $localName1,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFolder . "/" . $localName1,
             $remoteFolder . "/" . $remoteName1
         );
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFolder . "/" . $localName2,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFolder . "/" . $localName2,
             $remoteFolder . "/" . $remoteName2
         );
 

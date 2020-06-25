@@ -47,7 +47,7 @@ class MathObjectTests extends BaseTestContext
         $remoteFileName = "TestGetOfficeMathObjects.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -74,7 +74,7 @@ class MathObjectTests extends BaseTestContext
         $remoteFileName = "TestGetOfficeMathObjectsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -100,7 +100,7 @@ class MathObjectTests extends BaseTestContext
         $remoteFileName = "TestGetOfficeMathObject.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -128,7 +128,7 @@ class MathObjectTests extends BaseTestContext
         $remoteFileName = "TestGetOfficeMathObjectWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -155,7 +155,7 @@ class MathObjectTests extends BaseTestContext
         $remoteFileName = "TestRenderMathObject.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -185,7 +185,7 @@ class MathObjectTests extends BaseTestContext
         $remoteFileName = "TestRenderMathObjectWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -214,7 +214,7 @@ class MathObjectTests extends BaseTestContext
         $remoteFileName = "TestDeleteOfficeMathObject.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -244,7 +244,7 @@ class MathObjectTests extends BaseTestContext
         $remoteFileName = "TestDeleteOfficeMathObjectWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

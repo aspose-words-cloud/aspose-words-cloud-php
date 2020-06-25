@@ -47,7 +47,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestInsertFootnote.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -82,7 +82,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestInsertFootnoteWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -116,7 +116,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestDeleteFootnote.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -146,7 +146,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestDeleteFootnoteWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -175,7 +175,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestGetFootnotes.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -202,7 +202,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestGetFootnotesWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -228,7 +228,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestGetFootnote.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -256,7 +256,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestGetFootnoteWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -283,7 +283,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestUpdateFootnote.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -318,7 +318,7 @@ class FootnoteTests extends BaseTestContext
         $remoteFileName = "TestUpdateFootnoteWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 

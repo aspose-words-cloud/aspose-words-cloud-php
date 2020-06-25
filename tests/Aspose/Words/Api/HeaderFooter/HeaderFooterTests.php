@@ -47,7 +47,7 @@ class HeaderFooterTests extends BaseTestContext
         $remoteFileName = "TestGetHeadersFooters.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -75,7 +75,7 @@ class HeaderFooterTests extends BaseTestContext
         $remoteFileName = "TestGetHeaderFooter.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -103,7 +103,7 @@ class HeaderFooterTests extends BaseTestContext
         $remoteFileName = "TestGetHeaderFooterOfSection.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -132,7 +132,7 @@ class HeaderFooterTests extends BaseTestContext
         $remoteFileName = "TestDeleteHeaderFooter.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -162,7 +162,7 @@ class HeaderFooterTests extends BaseTestContext
         $remoteFileName = "TestDeleteHeadersFooters.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -192,7 +192,7 @@ class HeaderFooterTests extends BaseTestContext
         $remoteFileName = "TestInsertHeaderFooter.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

@@ -47,7 +47,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentParagraphByIndex.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -75,7 +75,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentParagraphByIndexWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -102,7 +102,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentParagraphs.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -129,7 +129,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentParagraphsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -155,7 +155,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentParagraphRun.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -183,7 +183,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentParagraphRunFont.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -211,7 +211,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetParagraphRuns.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -238,7 +238,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestUpdateRunFont.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -273,7 +273,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestInsertParagraph.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -308,7 +308,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestInsertParagraphWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -342,7 +342,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestRenderParagraph.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -372,7 +372,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestRenderParagraphWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -401,7 +401,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentParagraphs.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -429,7 +429,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentParagraphsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -456,7 +456,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentParagraphs.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -491,7 +491,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestDeleteParagraph.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -521,7 +521,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestDeleteParagraphWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -550,7 +550,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestParagraphGetListFormat.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $listFolder . "/ParagraphGetListFormat.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $listFolder . "/ParagraphGetListFormat.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -578,7 +578,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestParagraphGetListFormatWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $listFolder . "/ParagraphGetListFormat.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $listFolder . "/ParagraphGetListFormat.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -605,7 +605,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestUpdateParagraphListFormat.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $listFolder . "/ParagraphUpdateListFormat.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $listFolder . "/ParagraphUpdateListFormat.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -640,7 +640,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestUpdateParagraphListFormatWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $listFolder . "/ParagraphUpdateListFormat.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $listFolder . "/ParagraphUpdateListFormat.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -674,7 +674,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestDeleteParagraphListFormat.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $listFolder . "/ParagraphDeleteListFormat.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $listFolder . "/ParagraphDeleteListFormat.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -705,7 +705,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestDeleteParagraphListFormatWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $listFolder . "/ParagraphDeleteListFormat.doc",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $listFolder . "/ParagraphDeleteListFormat.doc",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -735,7 +735,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetParagraphTabStops.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $tabStopFolder . "/ParagraphTabStops.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -763,7 +763,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestGetParagraphTabStopsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $tabStopFolder . "/ParagraphTabStops.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -790,7 +790,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestInsertOrUpdateParagraphTabStop.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $tabStopFolder . "/ParagraphTabStops.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -825,7 +825,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestInsertOrUpdateParagraphTabStopWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $tabStopFolder . "/ParagraphTabStops.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -859,7 +859,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestDeleteAllParagraphTabStops.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $tabStopFolder . "/ParagraphTabStops.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -888,7 +888,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestDeleteAllParagraphTabStopsWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $tabStopFolder . "/ParagraphTabStops.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -916,7 +916,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestDeleteParagraphTabStop.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $tabStopFolder . "/ParagraphTabStops.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -946,7 +946,7 @@ class ParagraphTests extends BaseTestContext
         $remoteFileName = "TestDeleteParagraphTabStopWithoutNodePath.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $tabStopFolder . "/ParagraphTabStops.docx",
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
             $remoteDataFolder . "/" . $remoteFileName
         );
 

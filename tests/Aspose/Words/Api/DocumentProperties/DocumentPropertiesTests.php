@@ -47,7 +47,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentProperties.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -73,7 +73,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $remoteFileName = "TestGetDocumentProperty.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -100,7 +100,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $remoteFileName = "TestDeleteDocumentProperty.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -129,7 +129,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $remoteFileName = "TestUpdateDocumentProperty.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

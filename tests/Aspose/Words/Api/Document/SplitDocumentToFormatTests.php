@@ -47,7 +47,7 @@ class SplitDocumentToFormatTests extends BaseTestContext
         $remoteFileName = "TestSplitDocument.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 

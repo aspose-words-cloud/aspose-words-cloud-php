@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class CompareDocumentTests extends BaseTestContext
 {
-    private static $remoteFolder = baseRemoteFolder . "/DocumentActions/CompareDocument";
+    private static $remoteFolder = self::$baseRemoteFolder . "/DocumentActions/CompareDocument";
     private static $localFolder = "DocumentActions/CompareDocument";
 
     /*
@@ -71,7 +71,7 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/TestCompareDocumentOut.doc"
+            self::$baseTestOut . "/TestCompareDocumentOut.doc"
         );
 
         $result = $this->words->compareDocument($request);

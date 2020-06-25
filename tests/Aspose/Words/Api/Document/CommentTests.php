@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class CommentTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/Comments";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
     private static $localFile = "Common/test_multi_pages.docx";
 
     /*
@@ -207,7 +207,7 @@ class CommentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );

@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class FootnoteTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Footnotes";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
     private static $footnoteFolder = "DocumentElements/Footnotes";
 
     /*

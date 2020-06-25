@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class MathObjectTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/MathObjects";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
     private static $localFile = "DocumentElements/MathObjects/MathObjects.docx";
 
     /*

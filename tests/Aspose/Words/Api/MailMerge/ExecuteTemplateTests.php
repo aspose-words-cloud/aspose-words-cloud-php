@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class ExecuteTemplateTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentActions/MailMerge";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/MailMerge";
     private static $mailMergeFolder = "DocumentActions/MailMerge";
 
     /*
@@ -65,7 +65,7 @@ class ExecuteTemplateTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName
+            self::$baseTestOut . "/" . $remoteFileName
         );
 
         $result = $this->words->executeMailMerge($request);

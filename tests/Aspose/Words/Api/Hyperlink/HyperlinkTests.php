@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class HyperlinkTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Hyperlink";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Hyperlink";
     private static $localFile = "Common/test_doc.docx";
 
     /*

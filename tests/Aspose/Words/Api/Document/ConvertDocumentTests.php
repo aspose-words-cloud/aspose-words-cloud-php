@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class ConvertDocumentTests extends BaseTestContext
 {
-    private static $remoteFolder = baseRemoteFolder . "/DocumentActions/ConvertDocument";
+    private static $remoteFolder = self::$baseRemoteFolder . "/DocumentActions/ConvertDocument";
     private static $localFolder = "DocumentActions/ConvertDocument";
 
     /*
@@ -55,7 +55,7 @@ class ConvertDocumentTests extends BaseTestContext
 
         $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
             "save_format" => "pdf",
-            "file_name" => baseTestOut . "/TestSaveAs.pdf",
+            "file_name" => self::$baseTestOut . "/TestSaveAs.pdf",
         ));
         $request = new Requests\SaveAsRequest(
             $remoteName,
@@ -86,7 +86,7 @@ class ConvertDocumentTests extends BaseTestContext
 
         $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
             "save_format" => "docx",
-            "file_name" => baseTestOut . "/TestSaveAsFromPdfToDoc.docx",
+            "file_name" => self::$baseTestOut . "/TestSaveAsFromPdfToDoc.docx",
         ));
         $request = new Requests\SaveAsRequest(
             $remoteName,
@@ -117,7 +117,7 @@ class ConvertDocumentTests extends BaseTestContext
 
         $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
             "save_format" => "tiff",
-            "file_name" => baseTestOut . "/abc.tiff",
+            "file_name" => self::$baseTestOut . "/abc.tiff",
         ));
         $request = new Requests\SaveAsTiffRequest(
             $remoteName,

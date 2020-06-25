@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class DrawingObjectsTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
     private static $localFile = "Common/test_multi_pages.docx";
     private static $localDrawingFile = "DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx";
 

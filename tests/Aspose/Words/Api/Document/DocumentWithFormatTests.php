@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class DocumentWithFormatTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentActions/DocumentWithFormat";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/DocumentWithFormat";
     private static $localFile = "Common/test_multi_pages.docx";
 
     /*
@@ -86,7 +86,7 @@ class DocumentWithFormatTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/TestGetDocumentWithFormatAndOutPath.text",
+            self::$baseTestOut . "/TestGetDocumentWithFormatAndOutPath.text",
             NULL
         );
 

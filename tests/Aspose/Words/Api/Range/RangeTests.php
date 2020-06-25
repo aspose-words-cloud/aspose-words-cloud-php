@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class RangeTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Range";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
     private static $localFile = "DocumentElements/Range/RangeGet.doc";
 
     /*

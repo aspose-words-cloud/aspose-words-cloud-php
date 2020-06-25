@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class ParagraphTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Paragraphs";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
     private static $localFile = "Common/test_multi_pages.docx";
     private static $fieldFolder = "DocumentElements/Fields";
     private static $listFolder = "DocumentElements/ParagraphListFormat";
@@ -244,7 +244,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );

@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class MailMergeFiledsTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentActions/MailMerge";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/MailMerge";
     private static $mailMergeFolder = "DocumentActions/MailMerge";
 
     /*

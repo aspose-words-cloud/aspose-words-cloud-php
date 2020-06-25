@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class FolderTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/Storage";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
     private static $localFile = "Common/test_multi_pages.docx";
 
     /*

@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class TextTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Text";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Text";
 
     /*
      * Test for replacing text.
@@ -63,7 +63,7 @@ class TextTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );

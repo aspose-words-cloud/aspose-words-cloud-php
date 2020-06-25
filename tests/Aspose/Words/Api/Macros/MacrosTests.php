@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class MacrosTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Macros";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Macros";
     private static $localFile = "Common/test_multi_pages.docx";
 
     /*

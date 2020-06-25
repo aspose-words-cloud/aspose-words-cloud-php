@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class DocumentPropertiesTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/DocumentProperties";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
     private static $localFile = "Common/test_multi_pages.docx";
 
     /*
@@ -108,7 +108,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -139,7 +139,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );

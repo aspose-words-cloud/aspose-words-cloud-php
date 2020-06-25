@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class HeaderFooterTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/HeaderFooters";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/HeaderFooters";
     private static $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
 
     /*

@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class BookmarkTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Bookmarks";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Bookmarks";
     private static $localFile = "Common/test_multi_pages.docx";
 
     /*
@@ -114,7 +114,7 @@ class BookmarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );

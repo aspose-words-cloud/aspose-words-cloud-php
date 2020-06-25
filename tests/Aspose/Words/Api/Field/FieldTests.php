@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class FieldTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Fields";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
     private static $textFolder = "DocumentElements/Text";
     private static $fieldFolder = "DocumentElements/Fields";
 
@@ -270,7 +270,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );

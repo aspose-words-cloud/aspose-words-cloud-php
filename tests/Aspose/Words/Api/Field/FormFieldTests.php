@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class FormFieldTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/FormFields";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
     private static $fieldFolder = "DocumentElements/FormFields";
 
     /*
@@ -69,7 +69,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -106,7 +106,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -244,7 +244,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL,
             NULL
@@ -282,7 +282,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL,
             NULL
@@ -312,7 +312,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -339,7 +339,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );

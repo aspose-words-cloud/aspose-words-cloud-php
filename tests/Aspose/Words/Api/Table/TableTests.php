@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class TableTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Tables";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
     private static $localFile = "DocumentElements/Tables/TablesGet.docx";
 
     /*

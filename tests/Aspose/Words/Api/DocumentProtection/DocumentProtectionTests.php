@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class DocumentProtectionTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/DocumentProtection";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
     private static $localFile = "Common/test_multi_pages.docx";
 
     /*
@@ -62,7 +62,7 @@ class DocumentProtectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName
+            self::$baseTestOut . "/" . $remoteFileName
         );
 
         $result = $this->words->protectDocument($request);

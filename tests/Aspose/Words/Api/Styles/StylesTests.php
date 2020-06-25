@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class StylesTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentElements/Styles";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
     private static $localFile = "DocumentElements/Styles/GetStyles.docx";
 
     /*

@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class SplitDocumentToFormatTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentActions/SplitDocument";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/SplitDocument";
     private static $localFile = "Common/test_multi_pages.docx";
 
     /*
@@ -59,7 +59,7 @@ class SplitDocumentToFormatTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/TestSplitDocument.text",
+            self::$baseTestOut . "/TestSplitDocument.text",
             1,
             2,
             NULL,

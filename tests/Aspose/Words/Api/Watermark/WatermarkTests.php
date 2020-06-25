@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class WatermarkTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentActions/Watermark";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
     private static $localFile = "Common/test_multi_pages.docx";
 
     /*
@@ -59,7 +59,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL,
             NULL,
@@ -94,7 +94,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL,
             NULL,
@@ -128,7 +128,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -155,7 +155,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOut . "/" . $remoteFileName,
             NULL,
             NULL
         );

@@ -37,7 +37,7 @@ use PHPUnit\Framework\Assert;
  */
 class BuildReportTests extends BaseTestContext
 {
-    private static $remoteDataFolder = baseRemoteFolder . "/DocumentActions/Reporting";
+    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Reporting";
     private static $reportingFolder = "DocumentActions/Reporting";
 
     /*

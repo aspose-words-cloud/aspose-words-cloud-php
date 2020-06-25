@@ -107,7 +107,7 @@ class RangeTests extends BaseTestContext
 
         $requestDocumentParameters = new \Aspose\Words\Model\RangeDocument(array(
             "document_name" => $remoteDataFolder . "/NewDoc.docx",
-        ))
+        ));
         $request = new Requests\SaveAsRangeRequest(
             $remoteFileName,
             "id0.0.0",
@@ -137,7 +137,7 @@ class RangeTests extends BaseTestContext
 
         $requestRangeText = new \Aspose\Words\Model\ReplaceRange(array(
             "text" => "Replaced header",
-        ))
+        ));
         $request = new Requests\ReplaceWithTextRequest(
             $remoteFileName,
             "id0.0.0",

@@ -55,7 +55,7 @@ class FootnoteTests extends BaseTestContext
         $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
             "footnote_type" => "Endnote",
             "text" => "test endnote",
-        ))
+        ));
         $request = new Requests\InsertFootnoteRequest(
             $remoteFileName,
             $requestFootnoteDto,
@@ -88,7 +88,7 @@ class FootnoteTests extends BaseTestContext
         $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
             "footnote_type" => "Endnote",
             "text" => "test endnote",
-        ))
+        ));
         $request = new Requests\InsertFootnoteWithoutNodePathRequest(
             $remoteFileName,
             $requestFootnoteDto,
@@ -274,7 +274,7 @@ class FootnoteTests extends BaseTestContext
 
         $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
             "text" => "new text is here",
-        ))
+        ));
         $request = new Requests\UpdateFootnoteRequest(
             $remoteFileName,
             $requestFootnoteDto,
@@ -307,7 +307,7 @@ class FootnoteTests extends BaseTestContext
 
         $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
             "text" => "new text is here",
-        ))
+        ));
         $request = new Requests\UpdateFootnoteWithoutNodePathRequest(
             $remoteFileName,
             $requestFootnoteDto,

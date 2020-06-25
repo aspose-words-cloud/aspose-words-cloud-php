@@ -103,7 +103,7 @@ class ListsTests extends BaseTestContext
 
         $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
             "is_restart_at_each_section" => true,
-        ))
+        ));
         $request = new Requests\UpdateListRequest(
             $remoteFileName,
             $requestListUpdate,
@@ -135,7 +135,7 @@ class ListsTests extends BaseTestContext
 
         $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
             "alignment" => "Right",
-        ))
+        ));
         $request = new Requests\UpdateListLevelRequest(
             $remoteFileName,
             $requestListUpdate,
@@ -168,7 +168,7 @@ class ListsTests extends BaseTestContext
 
         $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
             "template" => "OutlineLegal",
-        ))
+        ));
         $request = new Requests\InsertListRequest(
             $remoteFileName,
             $requestListInsert,

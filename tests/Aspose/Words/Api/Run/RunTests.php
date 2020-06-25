@@ -54,7 +54,7 @@ class RunTests extends BaseTestContext
 
         $requestRun = new \Aspose\Words\Model\RunUpdate(array(
             "text" => "run with text",
-        ))
+        ));
         $request = new Requests\UpdateRunRequest(
             $remoteFileName,
             $requestRun,
@@ -87,7 +87,7 @@ class RunTests extends BaseTestContext
 
         $requestRun = new \Aspose\Words\Model\RunInsert(array(
             "text" => "run with text",
-        ))
+        ));
         $request = new Requests\InsertRunRequest(
             $remoteFileName,
             "paragraphs/1",

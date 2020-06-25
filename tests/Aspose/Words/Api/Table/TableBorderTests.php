@@ -162,7 +162,7 @@ class TableBorderTests extends BaseTestContext
 
         $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
             "alpha" => 2,
-        ))
+        ));
         $requestBorderProperties = new \Aspose\Words\Model\Border(array(
             "border_type" => "Left",
             "color" => $requestBorderPropertiesColor,
@@ -170,7 +170,7 @@ class TableBorderTests extends BaseTestContext
             "line_style" => "DashDotStroker",
             "line_width" => 2,
             "shadow" => true,
-        ))
+        ));
         $request = new Requests\UpdateBorderRequest(
             $remoteFileName,
             $requestBorderProperties,

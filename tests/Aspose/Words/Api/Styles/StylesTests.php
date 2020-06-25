@@ -103,7 +103,7 @@ class StylesTests extends BaseTestContext
 
         $requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
             "name" => "My Style",
-        ))
+        ));
         $request = new Requests\UpdateStyleRequest(
             $remoteFileName,
             $requestStyleUpdate,
@@ -136,7 +136,7 @@ class StylesTests extends BaseTestContext
         $requestStyleInsert = new \Aspose\Words\Model\StyleInsert(array(
             "style_name" => "My Style",
             "style_type" => "Paragraph",
-        ))
+        ));
         $request = new Requests\InsertStyleRequest(
             $remoteFileName,
             $requestStyleInsert,
@@ -167,7 +167,7 @@ class StylesTests extends BaseTestContext
 
         $requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
             "style_name" => "Heading 1",
-        ))
+        ));
         $request = new Requests\CopyStyleRequest(
             $remoteFileName,
             $requestStyleCopy,
@@ -223,7 +223,7 @@ class StylesTests extends BaseTestContext
 
         $requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
             "style_name" => "Heading 1",
-        ))
+        ));
         $request = new Requests\ApplyStyleToDocumentElementRequest(
             $remoteFileName,
             $requestStyleApply,

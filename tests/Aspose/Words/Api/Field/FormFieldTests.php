@@ -59,7 +59,7 @@ class FormFieldTests extends BaseTestContext
             "status_text" => "",
             "text_input_type" => "Regular",
             "text_input_default" => "No name",
-        ))
+        ));
         $request = new Requests\UpdateFormFieldRequest(
             $remoteFileName,
             $requestFormField,
@@ -97,7 +97,7 @@ class FormFieldTests extends BaseTestContext
             "status_text" => "",
             "text_input_type" => "Regular",
             "text_input_default" => "No name",
-        ))
+        ));
         $request = new Requests\UpdateFormFieldWithoutNodePathRequest(
             $remoteFileName,
             $requestFormField,
@@ -235,7 +235,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_type" => "Regular",
             "text_input_default" => "123",
             "text_input_format" => "UPPERCASE",
-        ))
+        ));
         $request = new Requests\InsertFormFieldRequest(
             $remoteFileName,
             $requestFormField,
@@ -274,7 +274,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_type" => "Regular",
             "text_input_default" => "123",
             "text_input_format" => "UPPERCASE",
-        ))
+        ));
         $request = new Requests\InsertFormFieldWithoutNodePathRequest(
             $remoteFileName,
             $requestFormField,

@@ -55,13 +55,13 @@ class AppendDocumentTests extends BaseTestContext
         $requestDocumentListDocumentEntries0 = new \Aspose\Words\Model\DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName,
             "import_format_mode" => "KeepSourceFormatting",
-        ))
+        ));
         $requestDocumentListDocumentEntries = [
             $requestDocumentListDocumentEntries0,
-        ]
+        ];
         $requestDocumentList = new \Aspose\Words\Model\DocumentEntryList(array(
             "document_entries" => $requestDocumentListDocumentEntries,
-        ))
+        ));
         $request = new Requests\AppendDocumentRequest(
             $remoteFileName,
             $requestDocumentList,

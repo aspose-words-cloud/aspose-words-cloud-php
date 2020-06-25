@@ -55,7 +55,7 @@ class TextTests extends BaseTestContext
         $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
             "old_value" => "aspose",
             "new_value" => "aspose new",
-        ))
+        ));
         $request = new Requests\ReplaceTextRequest(
             $remoteFileName,
             $requestReplaceText,

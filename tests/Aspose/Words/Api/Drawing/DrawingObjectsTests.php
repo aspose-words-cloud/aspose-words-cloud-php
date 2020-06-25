@@ -312,7 +312,7 @@ class DrawingObjectsTests extends BaseTestContext
 
         $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
             "left" => 0,
-        ))
+        ));
         $request = new Requests\InsertDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
@@ -345,7 +345,7 @@ class DrawingObjectsTests extends BaseTestContext
 
         $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
             "left" => 0,
-        ))
+        ));
         $request = new Requests\InsertDrawingObjectWithoutNodePathRequest(
             $remoteFileName,
             $requestDrawingObject,
@@ -432,7 +432,7 @@ class DrawingObjectsTests extends BaseTestContext
 
         $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
             "left" => 0,
-        ))
+        ));
         $request = new Requests\UpdateDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
@@ -466,7 +466,7 @@ class DrawingObjectsTests extends BaseTestContext
 
         $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
             "left" => 0,
-        ))
+        ));
         $request = new Requests\UpdateDrawingObjectWithoutNodePathRequest(
             $remoteFileName,
             $requestDrawingObject,

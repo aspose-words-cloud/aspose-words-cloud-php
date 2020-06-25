@@ -160,7 +160,7 @@ class FieldTests extends BaseTestContext
 
         $requestField = new \Aspose\Words\Model\FieldInsert(array(
             "field_code" => "{ NUMPAGES }",
-        ))
+        ));
         $request = new Requests\InsertFieldRequest(
             $remoteFileName,
             $requestField,
@@ -194,7 +194,7 @@ class FieldTests extends BaseTestContext
 
         $requestField = new \Aspose\Words\Model\FieldInsert(array(
             "field_code" => "{ NUMPAGES }",
-        ))
+        ));
         $request = new Requests\InsertFieldWithoutNodePathRequest(
             $remoteFileName,
             $requestField,
@@ -227,7 +227,7 @@ class FieldTests extends BaseTestContext
 
         $requestField = new \Aspose\Words\Model\FieldUpdate(array(
             "field_code" => "{ NUMPAGES }",
-        ))
+        ));
         $request = new Requests\UpdateFieldRequest(
             $remoteFileName,
             $requestField,
@@ -262,7 +262,7 @@ class FieldTests extends BaseTestContext
         $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
             "alignment" => "center",
             "format" => "{PAGE} of {NUMPAGES}",
-        ))
+        ));
         $request = new Requests\InsertPageNumbersRequest(
             $remoteFileName,
             $requestPageNumber,

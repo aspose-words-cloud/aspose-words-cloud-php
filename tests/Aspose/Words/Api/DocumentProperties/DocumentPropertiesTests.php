@@ -130,7 +130,7 @@ class DocumentPropertiesTests extends BaseTestContext
 
         $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
             "value" => "Imran Anwar",
-        ))
+        ));
         $request = new Requests\CreateOrUpdateDocumentPropertyRequest(
             $remoteFileName,
             "AsposeAuthor",

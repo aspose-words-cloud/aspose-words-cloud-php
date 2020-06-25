@@ -120,7 +120,7 @@ class WatermarkTests extends BaseTestContext
         $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
             "text" => "This is the text",
             "rotation_angle" => 90,
-        ))
+        ));
         $request = new Requests\InsertWatermarkTextRequest(
             $remoteFileName,
             $requestWatermarkText,

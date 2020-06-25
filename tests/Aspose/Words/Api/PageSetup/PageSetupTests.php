@@ -83,7 +83,7 @@ class PageSetupTests extends BaseTestContext
             "left_margin" => 10,
             "orientation" => "Landscape",
             "paper_size" => "A5",
-        ))
+        ));
         $request = new Requests\UpdateSectionPageSetupRequest(
             $remoteFileName,
             0,

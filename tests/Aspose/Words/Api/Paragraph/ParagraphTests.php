@@ -234,7 +234,7 @@ class ParagraphTests extends BaseTestContext
 
         $requestFontDto = new \Aspose\Words\Model\Font(array(
             "bold" => true,
-        ))
+        ));
         $request = new Requests\UpdateRunFontRequest(
             $remoteFileName,
             $requestFontDto,
@@ -267,7 +267,7 @@ class ParagraphTests extends BaseTestContext
 
         $requestParagraph = new \Aspose\Words\Model\ParagraphInsert(array(
             "text" => "This is a new paragraph for your document",
-        ))
+        ));
         $request = new Requests\InsertParagraphRequest(
             $remoteFileName,
             $requestParagraph,
@@ -300,7 +300,7 @@ class ParagraphTests extends BaseTestContext
 
         $requestParagraph = new \Aspose\Words\Model\ParagraphInsert(array(
             "text" => "This is a new paragraph for your document",
-        ))
+        ));
         $request = new Requests\InsertParagraphWithoutNodePathRequest(
             $remoteFileName,
             $requestParagraph,
@@ -438,7 +438,7 @@ class ParagraphTests extends BaseTestContext
 
         $requestDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
             "alignment" => "Right",
-        ))
+        ));
         $request = new Requests\UpdateParagraphFormatRequest(
             $remoteFileName,
             $requestDto,
@@ -577,7 +577,7 @@ class ParagraphTests extends BaseTestContext
 
         $requestDto = new \Aspose\Words\Model\ListFormatUpdate(array(
             "list_id" => 2,
-        ))
+        ));
         $request = new Requests\UpdateParagraphListFormatRequest(
             $remoteFileName,
             $requestDto,
@@ -610,7 +610,7 @@ class ParagraphTests extends BaseTestContext
 
         $requestDto = new \Aspose\Words\Model\ListFormatUpdate(array(
             "list_id" => 2,
-        ))
+        ));
         $request = new Requests\UpdateParagraphListFormatWithoutNodePathRequest(
             $remoteFileName,
             $requestDto,
@@ -752,7 +752,7 @@ class ParagraphTests extends BaseTestContext
             "alignment" => "Left",
             "leader" => "None",
             "position" => 72,
-        ))
+        ));
         $request = new Requests\InsertOrUpdateParagraphTabStopRequest(
             $remoteFileName,
             $requestDto,
@@ -785,7 +785,7 @@ class ParagraphTests extends BaseTestContext
             "alignment" => "Left",
             "leader" => "None",
             "position" => 72,
-        ))
+        ));
         $request = new Requests\InsertOrUpdateParagraphTabStopWithoutNodePathRequest(
             $remoteFileName,
             $requestDto,

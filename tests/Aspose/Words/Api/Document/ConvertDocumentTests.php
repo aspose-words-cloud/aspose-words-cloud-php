@@ -56,7 +56,7 @@ class ConvertDocumentTests extends BaseTestContext
         $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
             "save_format" => "pdf",
             "file_name" => baseTestOut . "/TestSaveAs.pdf",
-        ))
+        ));
         $request = new Requests\SaveAsRequest(
             $remoteName,
             $requestSaveOptionsData,
@@ -87,7 +87,7 @@ class ConvertDocumentTests extends BaseTestContext
         $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
             "save_format" => "docx",
             "file_name" => baseTestOut . "/TestSaveAsFromPdfToDoc.docx",
-        ))
+        ));
         $request = new Requests\SaveAsRequest(
             $remoteName,
             $requestSaveOptionsData,
@@ -118,7 +118,7 @@ class ConvertDocumentTests extends BaseTestContext
         $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
             "save_format" => "tiff",
             "file_name" => baseTestOut . "/abc.tiff",
-        ))
+        ));
         $request = new Requests\SaveAsTiffRequest(
             $remoteName,
             $requestSaveOptions,

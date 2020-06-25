@@ -54,7 +54,7 @@ class DocumentProtectionTests extends BaseTestContext
 
         $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
             "new_password" => "123",
-        ))
+        ));
         $request = new Requests\ProtectDocumentRequest(
             $remoteFileName,
             $requestProtectionRequest,
@@ -107,7 +107,7 @@ class DocumentProtectionTests extends BaseTestContext
 
         $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
             "new_password" => "321",
-        ))
+        ));
         $request = new Requests\ProtectDocumentRequest(
             $remoteFileName,
             $requestProtectionRequest,
@@ -137,7 +137,7 @@ class DocumentProtectionTests extends BaseTestContext
 
         $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
             "password" => "aspose",
-        ))
+        ));
         $request = new Requests\UnprotectDocumentRequest(
             $remoteFileName,
             $requestProtectionRequest,

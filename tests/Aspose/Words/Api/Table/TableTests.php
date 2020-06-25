@@ -210,7 +210,7 @@ class TableTests extends BaseTestContext
         $requestTable = new \Aspose\Words\Model\TableInsert(array(
             "columns_count" => 5,
             "rows_count" => 4,
-        ))
+        ));
         $request = new Requests\InsertTableRequest(
             $remoteFileName,
             $requestTable,
@@ -243,7 +243,7 @@ class TableTests extends BaseTestContext
         $requestTable = new \Aspose\Words\Model\TableInsert(array(
             "columns_count" => 5,
             "rows_count" => 4,
-        ))
+        ));
         $request = new Requests\InsertTableWithoutNodePathRequest(
             $remoteFileName,
             $requestTable,
@@ -330,7 +330,7 @@ class TableTests extends BaseTestContext
             "bottom_padding" => 1,
             "cell_spacing" => 2,
             "style_options" => "ColumnBands",
-        ))
+        ));
         $request = new Requests\UpdateTablePropertiesRequest(
             $remoteFileName,
             $requestProperties,
@@ -368,7 +368,7 @@ class TableTests extends BaseTestContext
             "bottom_padding" => 1,
             "cell_spacing" => 2,
             "style_options" => "ColumnBands",
-        ))
+        ));
         $request = new Requests\UpdateTablePropertiesWithoutNodePathRequest(
             $remoteFileName,
             $requestProperties,
@@ -454,7 +454,7 @@ class TableTests extends BaseTestContext
 
         $requestRow = new \Aspose\Words\Model\TableRowInsert(array(
             "columns_count" => 5,
-        ))
+        ));
         $request = new Requests\InsertTableRowRequest(
             $remoteFileName,
             $requestRow,
@@ -515,7 +515,7 @@ class TableTests extends BaseTestContext
             "heading_format" => true,
             "height" => 10,
             "height_rule" => "Auto",
-        ))
+        ));
         $request = new Requests\UpdateTableRowFormatRequest(
             $remoteFileName,
             $requestFormat,
@@ -601,7 +601,7 @@ class TableTests extends BaseTestContext
         );
 
         $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
-        ))
+        ));
         $request = new Requests\InsertTableCellRequest(
             $remoteFileName,
             $requestCell,
@@ -662,7 +662,7 @@ class TableTests extends BaseTestContext
             "fit_text" => true,
             "horizontal_merge" => "First",
             "wrap_text" => true,
-        ))
+        ));
         $request = new Requests\UpdateTableCellFormatRequest(
             $remoteFileName,
             $requestFormat,

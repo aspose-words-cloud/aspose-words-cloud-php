@@ -49,11 +49,11 @@ class LoadWebDocumentTests extends BaseTestContext
             "dml_rendering_mode" => "1",
             "update_sdt_content" => false,
             "zip_output" => false,
-        ))
+        ));
         $requestData = new \Aspose\Words\Model\LoadWebDocumentData(array(
             "loading_document_url" => "http://google.com",
             "save_options" => $requestDataSaveOptions,
-        ))
+        ));
         $request = new Requests\LoadWebDocumentRequest(
             $requestData,
             NULL

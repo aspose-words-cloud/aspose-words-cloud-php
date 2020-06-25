@@ -105,7 +105,7 @@ class BookmarkTests extends BaseTestContext
         $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
             "name" => $bookmarkName,
             "text" => "This will be the text for Aspose",
-        ))
+        ));
         $request = new Requests\UpdateBookmarkRequest(
             $remoteFileName,
             $requestBookmarkData,

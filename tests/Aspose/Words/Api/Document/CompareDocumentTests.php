@@ -63,7 +63,7 @@ class CompareDocumentTests extends BaseTestContext
             "author" => "author",
             "comparing_with_document" => $remoteFolder . "/" . $remoteName2,
             "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
-        ))
+        ));
         $request = new Requests\CompareDocumentRequest(
             $remoteName1,
             $requestCompareData,

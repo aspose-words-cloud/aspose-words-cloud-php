@@ -42,7 +42,7 @@ class DocumentPropertiesTests extends BaseTestContext
      */
     public function testGetDocumentProperties()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProperties";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentProperties.docx";
 
@@ -68,7 +68,7 @@ class DocumentPropertiesTests extends BaseTestContext
      */
     public function testGetDocumentProperty()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProperties";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentProperty.docx";
 
@@ -95,7 +95,7 @@ class DocumentPropertiesTests extends BaseTestContext
      */
     public function testDeleteDocumentProperty()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProperties";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteDocumentProperty.docx";
 
@@ -111,7 +111,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -124,7 +124,7 @@ class DocumentPropertiesTests extends BaseTestContext
      */
     public function testUpdateDocumentProperty()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProperties";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateDocumentProperty.docx";
 
@@ -144,7 +144,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );

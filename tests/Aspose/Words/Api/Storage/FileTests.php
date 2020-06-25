@@ -42,7 +42,7 @@ class FileTests extends BaseTestContext
      */
     public function testUploadFile()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUploadFile.docx";
 
@@ -61,7 +61,7 @@ class FileTests extends BaseTestContext
      */
     public function testCopyFile()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestCopyFileSrc.docx";
 
@@ -86,7 +86,7 @@ class FileTests extends BaseTestContext
      */
     public function testMoveFile()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestMoveFileSrc.docx";
 
@@ -111,7 +111,7 @@ class FileTests extends BaseTestContext
      */
     public function testDeleteFile()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteFile.docx";
 
@@ -134,7 +134,7 @@ class FileTests extends BaseTestContext
      */
     public function testDownloadFile()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDownloadFile.docx";
 

@@ -42,7 +42,7 @@ class TextTests extends BaseTestContext
      */
     public function testReplaceText()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Text";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Text";
         $remoteFileName = "TestReplaceText.docx";
         $localFile = "Common/test_multi_pages.docx";
 
@@ -62,7 +62,7 @@ class TextTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -76,7 +76,7 @@ class TextTests extends BaseTestContext
      */
     public function testSearch()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Text";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Text";
         $remoteFileName = "TestSearch.docx";
         $localFile = "DocumentElements/Text/SampleWordDocument.docx";
 

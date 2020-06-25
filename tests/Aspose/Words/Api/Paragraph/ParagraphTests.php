@@ -42,7 +42,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetDocumentParagraphByIndex()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentParagraphByIndex.docx";
 
@@ -70,7 +70,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetDocumentParagraphByIndexWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentParagraphByIndexWithoutNodePath.docx";
 
@@ -97,7 +97,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetDocumentParagraphs()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentParagraphs.docx";
 
@@ -124,7 +124,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetDocumentParagraphsWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentParagraphsWithoutNodePath.docx";
 
@@ -150,7 +150,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetDocumentParagraphRun()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentParagraphRun.docx";
 
@@ -178,7 +178,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetDocumentParagraphRunFont()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentParagraphRunFont.docx";
 
@@ -206,7 +206,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetParagraphRuns()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetParagraphRuns.docx";
 
@@ -233,7 +233,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testUpdateRunFont()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateRunFont.docx";
 
@@ -254,7 +254,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -268,7 +268,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testInsertParagraph()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertParagraph.docx";
 
@@ -303,7 +303,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testInsertParagraphWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertParagraphWithoutNodePath.docx";
 
@@ -337,7 +337,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testRenderParagraph()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestRenderParagraph.docx";
 
@@ -367,7 +367,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testRenderParagraphWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestRenderParagraphWithoutNodePath.docx";
 
@@ -396,7 +396,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetParagraphFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentParagraphs.docx";
 
@@ -424,7 +424,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetParagraphFormatWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentParagraphsWithoutNodePath.docx";
 
@@ -451,7 +451,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testUpdateParagraphFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentParagraphs.docx";
 
@@ -486,7 +486,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testDeleteParagraph()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteParagraph.docx";
 
@@ -516,7 +516,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testDeleteParagraphWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteParagraphWithoutNodePath.docx";
 
@@ -545,7 +545,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetParagraphListFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $listFolder = "DocumentElements/ParagraphListFormat";
         $remoteFileName = "TestParagraphGetListFormat.docx";
 
@@ -573,7 +573,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetParagraphListFormatWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $listFolder = "DocumentElements/ParagraphListFormat";
         $remoteFileName = "TestParagraphGetListFormatWithoutNodePath.docx";
 
@@ -600,7 +600,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testUpdateParagraphListFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $listFolder = "DocumentElements/ParagraphListFormat";
         $remoteFileName = "TestUpdateParagraphListFormat.docx";
 
@@ -635,7 +635,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testUpdateParagraphListFormatWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $listFolder = "DocumentElements/ParagraphListFormat";
         $remoteFileName = "TestUpdateParagraphListFormatWithoutNodePath.docx";
 
@@ -669,7 +669,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testDeleteParagraphListFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $listFolder = "DocumentElements/ParagraphListFormat";
         $remoteFileName = "TestDeleteParagraphListFormat.docx";
 
@@ -700,7 +700,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testDeleteParagraphListFormatWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $listFolder = "DocumentElements/ParagraphListFormat";
         $remoteFileName = "TestDeleteParagraphListFormatWithoutNodePath.docx";
 
@@ -730,7 +730,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetParagraphTabStops()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $tabStopFolder = "DocumentElements/Paragraphs";
         $remoteFileName = "TestGetParagraphTabStops.docx";
 
@@ -758,7 +758,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testGetParagraphTabStopsWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $tabStopFolder = "DocumentElements/Paragraphs";
         $remoteFileName = "TestGetParagraphTabStopsWithoutNodePath.docx";
 
@@ -785,7 +785,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testInsertParagraphTabStops()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $tabStopFolder = "DocumentElements/Paragraphs";
         $remoteFileName = "TestInsertOrUpdateParagraphTabStop.docx";
 
@@ -820,7 +820,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testInsertParagraphTabStopsWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $tabStopFolder = "DocumentElements/Paragraphs";
         $remoteFileName = "TestInsertOrUpdateParagraphTabStopWithoutNodePath.docx";
 
@@ -854,7 +854,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testDeleteAllParagraphTabStops()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $tabStopFolder = "DocumentElements/Paragraphs";
         $remoteFileName = "TestDeleteAllParagraphTabStops.docx";
 
@@ -883,7 +883,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testDeleteAllParagraphTabStopsWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $tabStopFolder = "DocumentElements/Paragraphs";
         $remoteFileName = "TestDeleteAllParagraphTabStopsWithoutNodePath.docx";
 
@@ -911,7 +911,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testDeleteParagraphTabStop()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $tabStopFolder = "DocumentElements/Paragraphs";
         $remoteFileName = "TestDeleteParagraphTabStop.docx";
 
@@ -941,7 +941,7 @@ class ParagraphTests extends BaseTestContext
      */
     public function testDeleteParagraphTabStopWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Paragraphs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Paragraphs";
         $tabStopFolder = "DocumentElements/Paragraphs";
         $remoteFileName = "TestDeleteParagraphTabStopWithoutNodePath.docx";
 

@@ -42,7 +42,7 @@ class RangeTests extends BaseTestContext
      */
     public function testGetRangeText()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Range";
         $localFile = "DocumentElements/Range/RangeGet.doc";
         $remoteFileName = "TestGetRangeText.docx";
 
@@ -70,7 +70,7 @@ class RangeTests extends BaseTestContext
      */
     public function testRemoveRange()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Range";
         $localFile = "DocumentElements/Range/RangeGet.doc";
         $remoteFileName = "TestRemoveRange.docx";
 
@@ -99,7 +99,7 @@ class RangeTests extends BaseTestContext
      */
     public function testSaveAsRange()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Range";
         $localFile = "DocumentElements/Range/RangeGet.doc";
         $remoteFileName = "TestSaveAsRange.docx";
 
@@ -131,7 +131,7 @@ class RangeTests extends BaseTestContext
      */
     public function testReplaceWithText()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Range";
         $localFile = "DocumentElements/Range/RangeGet.doc";
         $remoteFileName = "TestReplaceWithText.docx";
 

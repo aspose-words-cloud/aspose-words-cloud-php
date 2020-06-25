@@ -59,7 +59,7 @@ class MailMergeFiledsTests extends BaseTestContext
      */
     public function testGetDocumentFieldNames()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/MailMerge";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/MailMerge";
         $remoteFileName = "TestGetDocumentFieldNames.docx";
 
         $this->uploadFile(

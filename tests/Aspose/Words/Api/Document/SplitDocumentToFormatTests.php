@@ -42,7 +42,7 @@ class SplitDocumentToFormatTests extends BaseTestContext
      */
     public function testSplitDocument()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/SplitDocument";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/SplitDocument";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestSplitDocument.docx";
 
@@ -58,7 +58,7 @@ class SplitDocumentToFormatTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/TestSplitDocument.text",
+            self::$baseTestOutPath . "/TestSplitDocument.text",
             1,
             2,
             NULL,

@@ -42,7 +42,7 @@ class DocumentStatisticsTests extends BaseTestContext
      */
     public function testGetDocumentStatistics()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Statistics";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Statistics";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentStatistics.docx";
 

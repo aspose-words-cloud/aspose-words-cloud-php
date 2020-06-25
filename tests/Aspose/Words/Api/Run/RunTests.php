@@ -42,7 +42,7 @@ class RunTests extends BaseTestContext
      */
     public function testUpdateRun()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Runs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Runs";
         $localFile = "DocumentElements/Runs/Run.doc";
         $remoteFileName = "TestUpdateRun.docx";
 
@@ -77,7 +77,7 @@ class RunTests extends BaseTestContext
      */
     public function testInsertRun()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Runs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Runs";
         $localFile = "DocumentElements/Runs/Run.doc";
         $remoteFileName = "TestInsertRun.docx";
 
@@ -112,7 +112,7 @@ class RunTests extends BaseTestContext
      */
     public function testDeleteRun()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Runs";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Runs";
         $localFile = "DocumentElements/Runs/Run.doc";
         $remoteFileName = "TestDeleteRun.docx";
 

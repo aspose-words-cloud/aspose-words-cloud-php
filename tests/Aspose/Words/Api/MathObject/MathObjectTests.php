@@ -42,7 +42,7 @@ class MathObjectTests extends BaseTestContext
      */
     public function testGetOfficeMathObjects()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/MathObjects";
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestGetOfficeMathObjects.docx";
 
@@ -69,7 +69,7 @@ class MathObjectTests extends BaseTestContext
      */
     public function testGetOfficeMathObjectsWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/MathObjects";
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestGetOfficeMathObjectsWithoutNodePath.docx";
 
@@ -95,7 +95,7 @@ class MathObjectTests extends BaseTestContext
      */
     public function testGetOfficeMathObject()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/MathObjects";
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestGetOfficeMathObject.docx";
 
@@ -123,7 +123,7 @@ class MathObjectTests extends BaseTestContext
      */
     public function testGetOfficeMathObjectWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/MathObjects";
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestGetOfficeMathObjectWithoutNodePath.docx";
 
@@ -150,7 +150,7 @@ class MathObjectTests extends BaseTestContext
      */
     public function testRenderMathObject()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/MathObjects";
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestRenderMathObject.docx";
 
@@ -180,7 +180,7 @@ class MathObjectTests extends BaseTestContext
      */
     public function testRenderMathObjectWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/MathObjects";
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestRenderMathObjectWithoutNodePath.docx";
 
@@ -209,7 +209,7 @@ class MathObjectTests extends BaseTestContext
      */
     public function testDeleteOfficeMathObject()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/MathObjects";
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestDeleteOfficeMathObject.docx";
 
@@ -239,7 +239,7 @@ class MathObjectTests extends BaseTestContext
      */
     public function testDeleteOfficeMathObjectWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/MathObjects";
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestDeleteOfficeMathObjectWithoutNodePath.docx";
 

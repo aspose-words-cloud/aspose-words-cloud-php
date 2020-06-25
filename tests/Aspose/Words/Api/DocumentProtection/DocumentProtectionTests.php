@@ -42,7 +42,7 @@ class DocumentProtectionTests extends BaseTestContext
      */
     public function testProtectDocument()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProtection";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestProtectDocument.docx";
 
@@ -61,7 +61,7 @@ class DocumentProtectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName
+            self::$baseTestOutPath . "/" . $remoteFileName
         );
 
         $result = $this->words->protectDocument($request);
@@ -73,7 +73,7 @@ class DocumentProtectionTests extends BaseTestContext
      */
     public function testGetDocumentProtection()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProtection";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentProtection.docx";
 
@@ -99,7 +99,7 @@ class DocumentProtectionTests extends BaseTestContext
      */
     public function testChangeDocumentProtection()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProtection";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestChangeDocumentProtection.docx";
 
@@ -130,7 +130,7 @@ class DocumentProtectionTests extends BaseTestContext
      */
     public function testDeleteUnprotectDocument()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProtection";
         $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
         $remoteFileName = "TestDeleteUnprotectDocument.docx";
 

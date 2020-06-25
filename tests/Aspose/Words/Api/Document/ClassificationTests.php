@@ -56,7 +56,7 @@ class ClassificationTests extends BaseTestContext
      */
     public function testClassifyDocument()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Common";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Common";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "Source.docx";
 
@@ -84,7 +84,7 @@ class ClassificationTests extends BaseTestContext
      */
     public function testClassifyTaxonomyDocuments()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Common";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Common";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "Source.docx";
 

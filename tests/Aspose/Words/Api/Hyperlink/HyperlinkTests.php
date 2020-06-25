@@ -42,7 +42,7 @@ class HyperlinkTests extends BaseTestContext
      */
     public function testGetDocumentHyperlinkByIndex()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Hyperlink";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Hyperlink";
         $localFile = "Common/test_doc.docx";
         $remoteFileName = "TestGetDocumentHyperlinkByIndex.docx";
 
@@ -69,7 +69,7 @@ class HyperlinkTests extends BaseTestContext
      */
     public function testGetDocumentHyperlinks()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Hyperlink";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Hyperlink";
         $localFile = "Common/test_doc.docx";
         $remoteFileName = "TestGetDocumentHyperlinks.docx";
 

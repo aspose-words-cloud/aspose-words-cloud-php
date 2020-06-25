@@ -42,7 +42,7 @@ class FolderTests extends BaseTestContext
      */
     public function testCreateFolder()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
 
         $request = new Requests\CreateFolderRequest(
             $remoteDataFolder . "/TestCreateFolder",
@@ -57,7 +57,7 @@ class FolderTests extends BaseTestContext
      */
     public function testDeleteFolder()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
         $localFile = "Common/test_multi_pages.docx";
         $testDeleteFolder = $remoteDataFolder . "/TestDeleteFolder";
 
@@ -80,7 +80,7 @@ class FolderTests extends BaseTestContext
      */
     public function testGetFilesList()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
 
         $request = new Requests\GetFilesListRequest(
             $remoteDataFolder,
@@ -96,7 +96,7 @@ class FolderTests extends BaseTestContext
      */
     public function testCopyFolder()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
         $localFile = "Common/test_multi_pages.docx";
         $folderToCopy = $remoteDataFolder . "/TestCopyFolder";
 
@@ -120,7 +120,7 @@ class FolderTests extends BaseTestContext
      */
     public function testMoveFolder()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
         $localFile = "Common/test_multi_pages.docx";
         $folderToMove = $remoteDataFolder . "/TestMoveFolder";
 

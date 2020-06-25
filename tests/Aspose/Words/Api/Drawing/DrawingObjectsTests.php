@@ -42,7 +42,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjects()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjects.docx";
 
@@ -69,7 +69,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectsWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectsWithoutNodePath.docx";
 
@@ -95,7 +95,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectByIndex()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectByIndex.docx";
 
@@ -123,7 +123,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectByIndexWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectByIndexWithoutNodePath.docx";
 
@@ -150,7 +150,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testRenderDrawingObject()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectByIndexWithFormat.docx";
 
@@ -180,7 +180,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testRenderDrawingObjectWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectByIndexWithFormatWithoutNodePath.docx";
 
@@ -209,7 +209,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectImageData()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectImageData.docx";
 
@@ -237,7 +237,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectImageDataWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectImageDataWithoutNodePath.docx";
 
@@ -264,7 +264,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectOleData()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localDrawingFile = "DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectOleData.docx";
 
@@ -292,7 +292,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectOleDataWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localDrawingFile = "DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectOleDataWithoutNodePath.docx";
 
@@ -319,7 +319,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testInsertDrawingObject()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsetDrawingObject.docx";
 
@@ -354,7 +354,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testInsertDrawingObjectWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsetDrawingObjectWithoutNodePath.docx";
 
@@ -388,7 +388,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testDeleteDrawingObject()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteDrawingObject.docx";
 
@@ -418,7 +418,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testDeleteDrawingObjectWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteDrawingObjectWithoutNodePath.docx";
 
@@ -447,7 +447,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testUpdateDrawingObject()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateDrawingObject.docx";
 
@@ -483,7 +483,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testUpdateDrawingObjectWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateDrawingObjectWithoutNodePath.docx";
 

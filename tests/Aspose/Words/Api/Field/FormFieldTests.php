@@ -42,7 +42,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testUpdateFormField()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $fieldFolder = "DocumentElements/FormFields";
         $remoteFileName = "TestUpdateFormField.docx";
 
@@ -68,7 +68,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -82,7 +82,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testUpdateFormFieldWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $fieldFolder = "DocumentElements/FormFields";
         $remoteFileName = "TestUpdateFormFieldWithoutNodePath.docx";
 
@@ -107,7 +107,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -121,7 +121,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testGetFormField()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $fieldFolder = "DocumentElements/FormFields";
         $remoteFileName = "TestGetFormField.docx";
 
@@ -149,7 +149,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testGetFormFieldWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $fieldFolder = "DocumentElements/FormFields";
         $remoteFileName = "TestGetFormFieldWithoutNodePath.docx";
 
@@ -176,7 +176,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testGetFormFields()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $fieldFolder = "DocumentElements/FormFields";
         $remoteFileName = "TestGetFormFields.docx";
 
@@ -203,7 +203,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testGetFormFieldsWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $fieldFolder = "DocumentElements/FormFields";
         $remoteFileName = "TestGetFormFieldsWithoutNodePath.docx";
 
@@ -229,7 +229,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testInsertFormField()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $remoteFileName = "TestInsertFormField.docx";
 
         $this->uploadFile(
@@ -254,7 +254,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL,
             NULL
@@ -269,7 +269,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testInsertFormFieldWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $remoteFileName = "TestInsertFormFieldWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -293,7 +293,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL,
             NULL
@@ -308,7 +308,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testDeleteFormField()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $fieldFolder = "DocumentElements/FormFields";
         $remoteFileName = "TestDeleteFormField.docx";
 
@@ -325,7 +325,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -338,7 +338,7 @@ class FormFieldTests extends BaseTestContext
      */
     public function testDeleteFormFieldWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/FormFields";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/FormFields";
         $fieldFolder = "DocumentElements/FormFields";
         $remoteFileName = "TestDeleteFormFieldWithoutNodePath.docx";
 
@@ -354,7 +354,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );

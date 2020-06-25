@@ -42,7 +42,7 @@ class PageSetupTests extends BaseTestContext
      */
     public function testGetSectionPageSetup()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/PageSetup";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/PageSetup";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetSectionPageSetup.docx";
 
@@ -69,7 +69,7 @@ class PageSetupTests extends BaseTestContext
      */
     public function testUpdateSectionPageSetup()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/PageSetup";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/PageSetup";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateSectionPageSetup.docx";
 
@@ -106,7 +106,7 @@ class PageSetupTests extends BaseTestContext
      */
     public function testGetRenderPage()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/PageSetup";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/PageSetup";
         $localTextFile = "DocumentElements/Text/SampleWordDocument.docx";
         $remoteFileName = "TestGetRenderPage.docx";
 

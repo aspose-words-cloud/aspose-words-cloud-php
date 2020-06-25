@@ -42,7 +42,7 @@ class CommentTests extends BaseTestContext
      */
     public function testGetComment()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Comments";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetComment.docx";
 
@@ -69,7 +69,7 @@ class CommentTests extends BaseTestContext
      */
     public function testGetComments()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Comments";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetComments.docx";
 
@@ -95,7 +95,7 @@ class CommentTests extends BaseTestContext
      */
     public function testInsertComment()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Comments";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertComment.docx";
 
@@ -146,7 +146,7 @@ class CommentTests extends BaseTestContext
      */
     public function testUpdateComment()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Comments";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateComment.docx";
 
@@ -198,7 +198,7 @@ class CommentTests extends BaseTestContext
      */
     public function testDeleteComment()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Comments";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteComment.docx";
 
@@ -214,7 +214,7 @@ class CommentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );

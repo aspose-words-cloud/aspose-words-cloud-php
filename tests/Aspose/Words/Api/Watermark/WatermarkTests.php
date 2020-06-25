@@ -42,7 +42,7 @@ class WatermarkTests extends BaseTestContext
      */
     public function testInsertDocumentWatermarkImage()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertWatermarkImage.docx";
 
@@ -58,7 +58,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL,
             NULL,
@@ -74,7 +74,7 @@ class WatermarkTests extends BaseTestContext
      */
     public function testInsertWatermarkImage()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertWatermarkImage.docx";
         $remoteImagePath = $remoteDataFolder . "/TestInsertWatermarkImage.png";
@@ -95,7 +95,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL,
             NULL,
@@ -111,7 +111,7 @@ class WatermarkTests extends BaseTestContext
      */
     public function testInsertWatermarkText()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertWatermarkText.docx";
 
@@ -131,7 +131,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );
@@ -145,7 +145,7 @@ class WatermarkTests extends BaseTestContext
      */
     public function testDeleteWatermark()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteWatermark.docx";
 
@@ -160,7 +160,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );

@@ -42,7 +42,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testInsertFootnote()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestInsertFootnote.docx";
 
@@ -77,7 +77,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testInsertFootnoteWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestInsertFootnoteWithoutNodePath.docx";
 
@@ -111,7 +111,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testDeleteFootnote()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestDeleteFootnote.docx";
 
@@ -141,7 +141,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testDeleteFootnoteWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestDeleteFootnoteWithoutNodePath.docx";
 
@@ -170,7 +170,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testGetFootnotes()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestGetFootnotes.docx";
 
@@ -197,7 +197,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testGetFootnotesWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestGetFootnotesWithoutNodePath.docx";
 
@@ -223,7 +223,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testGetFootnote()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestGetFootnote.docx";
 
@@ -251,7 +251,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testGetFootnoteWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestGetFootnoteWithoutNodePath.docx";
 
@@ -278,7 +278,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testUpdateFootnote()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestUpdateFootnote.docx";
 
@@ -313,7 +313,7 @@ class FootnoteTests extends BaseTestContext
      */
     public function testUpdateFootnoteWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Footnotes";
         $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestUpdateFootnoteWithoutNodePath.docx";
 

@@ -42,7 +42,7 @@ class TableBorderTests extends BaseTestContext
      */
     public function testGetBorders()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetBorders.docx";
 
@@ -69,7 +69,7 @@ class TableBorderTests extends BaseTestContext
      */
     public function testGetBorder()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetBorder.docx";
 
@@ -97,7 +97,7 @@ class TableBorderTests extends BaseTestContext
      */
     public function testDeleteBorders()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteBorders.docx";
 
@@ -127,7 +127,7 @@ class TableBorderTests extends BaseTestContext
      */
     public function testDeleteBorder()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteBorder.docx";
 
@@ -158,7 +158,7 @@ class TableBorderTests extends BaseTestContext
      */
     public function testUpdateBorder()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateBorder.docx";
 

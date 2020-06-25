@@ -42,7 +42,7 @@ class AppendDocumentTests extends BaseTestContext
      */
     public function testAppendDocument()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/AppendDocument";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/AppendDocument";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestAppendDocument.docx";
 
@@ -68,7 +68,7 @@ class AppendDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );

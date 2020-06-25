@@ -42,7 +42,7 @@ class RevisionsTests extends BaseTestContext
      */
     public function testAcceptAllRevisions()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Revisions";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Revisions";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestAcceptAllRevisions.docx";
 
@@ -57,7 +57,7 @@ class RevisionsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName
+            self::$baseTestOutPath . "/" . $remoteFileName
         );
 
         $result = $this->words->acceptAllRevisions($request);
@@ -69,7 +69,7 @@ class RevisionsTests extends BaseTestContext
      */
     public function testRejectAllRevisions()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Revisions";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Revisions";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestRejectAllRevisions.docx";
 
@@ -84,7 +84,7 @@ class RevisionsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName
+            self::$baseTestOutPath . "/" . $remoteFileName
         );
 
         $result = $this->words->rejectAllRevisions($request);

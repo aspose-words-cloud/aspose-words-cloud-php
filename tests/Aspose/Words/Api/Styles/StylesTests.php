@@ -42,7 +42,7 @@ class StylesTests extends BaseTestContext
      */
     public function testGetStyles()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Styles";
         $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestGetStyles.docx";
 
@@ -68,7 +68,7 @@ class StylesTests extends BaseTestContext
      */
     public function testGetStyle()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Styles";
         $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestGetStyle.docx";
 
@@ -95,7 +95,7 @@ class StylesTests extends BaseTestContext
      */
     public function testUpdateStyle()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Styles";
         $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestUpdateStyle.docx";
 
@@ -129,7 +129,7 @@ class StylesTests extends BaseTestContext
      */
     public function testInsertStyle()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Styles";
         $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestInsertStyle.docx";
 
@@ -163,7 +163,7 @@ class StylesTests extends BaseTestContext
      */
     public function testCopyStyle()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Styles";
         $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestCopyStyle.docx";
 
@@ -196,7 +196,7 @@ class StylesTests extends BaseTestContext
      */
     public function testGetStyleFromDocumentElement()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Styles";
         $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestGetStyleFromDocumentElement.docx";
 
@@ -223,7 +223,7 @@ class StylesTests extends BaseTestContext
      */
     public function testApplyStyleToDocumentElement()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Styles";
         $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestApplyStyleToDocumentElement.docx";
 

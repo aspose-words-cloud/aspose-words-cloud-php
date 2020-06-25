@@ -42,7 +42,7 @@ class BookmarkTests extends BaseTestContext
      */
     public function testGetBookmarks()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Bookmarks";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Bookmarks";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentBookmarks.docx";
 
@@ -68,7 +68,7 @@ class BookmarkTests extends BaseTestContext
      */
     public function testGetBookmarkByName()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Bookmarks";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Bookmarks";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentBookmarkByName.docx";
 
@@ -95,7 +95,7 @@ class BookmarkTests extends BaseTestContext
      */
     public function testUpdateBookmark()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Bookmarks";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Bookmarks";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateDocumentBookmark.docx";
         $bookmarkName = "aspose";
@@ -117,7 +117,7 @@ class BookmarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName,
+            self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
         );

@@ -42,7 +42,7 @@ class MacrosTests extends BaseTestContext
      */
     public function testDeleteMacros()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Macros";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Macros";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteDocumentMacros.docx";
 

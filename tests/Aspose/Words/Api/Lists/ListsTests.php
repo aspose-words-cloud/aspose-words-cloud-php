@@ -42,7 +42,7 @@ class ListsTests extends BaseTestContext
      */
     public function testGetLists()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Lists";
         $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestGetLists.doc";
 
@@ -68,7 +68,7 @@ class ListsTests extends BaseTestContext
      */
     public function testGetList()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Lists";
         $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestGetList.doc";
 
@@ -95,7 +95,7 @@ class ListsTests extends BaseTestContext
      */
     public function testUpdateList()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Lists";
         $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestUpdateList.doc";
 
@@ -129,7 +129,7 @@ class ListsTests extends BaseTestContext
      */
     public function testUpdateListLevel()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Lists";
         $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestUpdateListLevel.doc";
 
@@ -164,7 +164,7 @@ class ListsTests extends BaseTestContext
      */
     public function testInsertList()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Lists";
         $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestInsertList.doc";
 

@@ -42,7 +42,7 @@ class DocumentTests extends BaseTestContext
      */
     public function testGetDocument()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Document";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Document";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocument.docx";
 
@@ -68,7 +68,7 @@ class DocumentTests extends BaseTestContext
      */
     public function testCreateDocument()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Document";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Document";
         $remoteFileName = "TestCreateDocument.doc";
 
         $request = new Requests\CreateDocumentRequest(

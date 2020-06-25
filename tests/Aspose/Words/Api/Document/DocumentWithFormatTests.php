@@ -42,7 +42,7 @@ class DocumentWithFormatTests extends BaseTestContext
      */
     public function testGetDocumentWithFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/DocumentWithFormat";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/DocumentWithFormat";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentWithFormat.docx";
 
@@ -71,7 +71,7 @@ class DocumentWithFormatTests extends BaseTestContext
      */
     public function testGetDocumentWithFormatAndOutPath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/DocumentWithFormat";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/DocumentWithFormat";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentWithFormat.docx";
 
@@ -87,7 +87,7 @@ class DocumentWithFormatTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/TestGetDocumentWithFormatAndOutPath.text",
+            self::$baseTestOutPath . "/TestGetDocumentWithFormatAndOutPath.text",
             NULL
         );
 

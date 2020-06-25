@@ -42,7 +42,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTables()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTables.docx";
 
@@ -69,7 +69,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTablesWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTablesWithoutNodePath.docx";
 
@@ -95,7 +95,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTable()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTable.docx";
 
@@ -123,7 +123,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableWithoutNodePath.docx";
 
@@ -150,7 +150,7 @@ class TableTests extends BaseTestContext
      */
     public function testDeleteTable()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteTable.docx";
 
@@ -180,7 +180,7 @@ class TableTests extends BaseTestContext
      */
     public function testDeleteTableWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteTableWithoutNodePath.docx";
 
@@ -209,7 +209,7 @@ class TableTests extends BaseTestContext
      */
     public function testInsertTable()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestInsertTable.docx";
 
@@ -244,7 +244,7 @@ class TableTests extends BaseTestContext
      */
     public function testInsertTableWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestInsertTableWithoutNodePath.docx";
 
@@ -278,7 +278,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableProperties()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableProperties.docx";
 
@@ -306,7 +306,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTablePropertiesWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTablePropertiesWithoutNodePath.docx";
 
@@ -333,7 +333,7 @@ class TableTests extends BaseTestContext
      */
     public function testUpdateTableProperties()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateTableProperties.docx";
 
@@ -373,7 +373,7 @@ class TableTests extends BaseTestContext
      */
     public function testUpdateTablePropertiesWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateTablePropertiesWithoutNodePath.docx";
 
@@ -412,7 +412,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableRow()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableRow.docx";
 
@@ -440,7 +440,7 @@ class TableTests extends BaseTestContext
      */
     public function testDeleteTableRow()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteTableRow.docx";
 
@@ -470,7 +470,7 @@ class TableTests extends BaseTestContext
      */
     public function testInsertTableRow()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestInsertTableRow.docx";
 
@@ -504,7 +504,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableRowFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableRowFormat.docx";
 
@@ -532,7 +532,7 @@ class TableTests extends BaseTestContext
      */
     public function testUpdateTableRowFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateTableRowFormat.docx";
 
@@ -570,7 +570,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableCell()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableCell.docx";
 
@@ -598,7 +598,7 @@ class TableTests extends BaseTestContext
      */
     public function testDeleteTableCell()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteTableCell.docx";
 
@@ -628,7 +628,7 @@ class TableTests extends BaseTestContext
      */
     public function testInsertTableCell()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestInsertTableCell.docx";
 
@@ -661,7 +661,7 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableCellFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableCellFormat.docx";
 
@@ -689,7 +689,7 @@ class TableTests extends BaseTestContext
      */
     public function testUpdateTableCellFormat()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateTableCellFormat.docx";
 
@@ -727,7 +727,7 @@ class TableTests extends BaseTestContext
      */
     public function testRenderTable()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestRenderTable.docx";
 
@@ -757,7 +757,7 @@ class TableTests extends BaseTestContext
      */
     public function testRenderTableWithoutNodePath()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Tables";
         $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestRenderTableWithoutNodePath.docx";
 

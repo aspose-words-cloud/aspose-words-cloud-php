@@ -42,7 +42,7 @@ class CompareDocumentTests extends BaseTestContext
      */
     public function testCompareDocument()
     {
-        $remoteFolder = self::$baseRemoteFolder . "/DocumentActions/CompareDocument";
+        $remoteFolder = self::$baseRemoteFolderPath . "/DocumentActions/CompareDocument";
         $localFolder = "DocumentActions/CompareDocument";
         $localName1 = "compareTestDoc1.doc";
         $localName2 = "compareTestDoc2.doc";
@@ -70,7 +70,7 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/TestCompareDocumentOut.doc"
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 
         $result = $this->words->compareDocument($request);

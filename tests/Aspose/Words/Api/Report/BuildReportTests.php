@@ -66,7 +66,7 @@ class BuildReportTests extends BaseTestContext
      */
     public function testBuildReport()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Reporting";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Reporting";
         $reportingFolder = "DocumentActions/Reporting";
         $localDocumentFile = "ReportTemplate.docx";
         $remoteFileName = "TestBuildReport.docx";

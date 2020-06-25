@@ -63,7 +63,7 @@ class ExecuteMailMergeTests extends BaseTestContext
      */
     public function testExecuteMailMerge()
     {
-        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/MailMerge";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/MailMerge";
         $mailMergeFolder = "DocumentActions/MailMerge";
         $localDocumentFile = "SampleExecuteTemplate.docx";
         $remoteFileName = "TestExecuteMailMerge.docx";
@@ -85,7 +85,7 @@ class ExecuteMailMergeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOut . "/" . $remoteFileName
+            self::$baseTestOutPath . "/" . $remoteFileName
         );
 
         $result = $this->words->executeMailMerge($request);

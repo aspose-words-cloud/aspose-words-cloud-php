@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class StylesTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
-    private static $localFile = "DocumentElements/Styles/GetStyles.docx";
-
     /*
      * Test for getting styles from document.
      */
     public function testGetStyles()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestGetStyles.docx";
 
         $this->uploadFile(
@@ -69,6 +68,8 @@ class StylesTests extends BaseTestContext
      */
     public function testGetStyle()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestGetStyle.docx";
 
         $this->uploadFile(
@@ -94,6 +95,8 @@ class StylesTests extends BaseTestContext
      */
     public function testUpdateStyle()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestUpdateStyle.docx";
 
         $this->uploadFile(
@@ -126,6 +129,8 @@ class StylesTests extends BaseTestContext
      */
     public function testInsertStyle()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestInsertStyle.docx";
 
         $this->uploadFile(
@@ -158,6 +163,8 @@ class StylesTests extends BaseTestContext
      */
     public function testCopyStyle()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestCopyStyle.docx";
 
         $this->uploadFile(
@@ -189,6 +196,8 @@ class StylesTests extends BaseTestContext
      */
     public function testGetStyleFromDocumentElement()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestGetStyleFromDocumentElement.docx";
 
         $this->uploadFile(
@@ -214,6 +223,8 @@ class StylesTests extends BaseTestContext
      */
     public function testApplyStyleToDocumentElement()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Styles";
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
         $remoteFileName = "TestApplyStyleToDocumentElement.docx";
 
         $this->uploadFile(

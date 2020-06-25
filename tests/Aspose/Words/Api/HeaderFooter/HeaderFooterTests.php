@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class HeaderFooterTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/HeaderFooters";
-    private static $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
-
     /*
      * Test for getting headers and footers.
      */
     public function testGetHeaderFooters()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/HeaderFooters";
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
         $remoteFileName = "TestGetHeadersFooters.docx";
 
         $this->uploadFile(
@@ -71,6 +70,8 @@ class HeaderFooterTests extends BaseTestContext
      */
     public function testGetHeaderFooter()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/HeaderFooters";
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
         $remoteFileName = "TestGetHeaderFooter.docx";
 
         $this->uploadFile(
@@ -97,6 +98,8 @@ class HeaderFooterTests extends BaseTestContext
      */
     public function testGetHeaderFooterOfSection()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/HeaderFooters";
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
         $remoteFileName = "TestGetHeaderFooterOfSection.docx";
 
         $this->uploadFile(
@@ -124,6 +127,8 @@ class HeaderFooterTests extends BaseTestContext
      */
     public function testDeleteHeaderFooter()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/HeaderFooters";
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
         $remoteFileName = "TestDeleteHeaderFooter.docx";
 
         $this->uploadFile(
@@ -152,6 +157,8 @@ class HeaderFooterTests extends BaseTestContext
      */
     public function testDeleteHeadersFooters()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/HeaderFooters";
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
         $remoteFileName = "TestDeleteHeadersFooters.docx";
 
         $this->uploadFile(
@@ -180,6 +187,8 @@ class HeaderFooterTests extends BaseTestContext
      */
     public function testInsertHeaderFooter()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/HeaderFooters";
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
         $remoteFileName = "TestInsertHeaderFooter.docx";
 
         $this->uploadFile(

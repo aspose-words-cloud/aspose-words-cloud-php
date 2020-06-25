@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class DocumentTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Document";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for getting document.
      */
     public function testGetDocument()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Document";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocument.docx";
 
         $this->uploadFile(
@@ -69,6 +68,7 @@ class DocumentTests extends BaseTestContext
      */
     public function testCreateDocument()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Document";
         $remoteFileName = "TestCreateDocument.doc";
 
         $request = new Requests\CreateDocumentRequest(

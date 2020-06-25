@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class ListsTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
-    private static $localFile = "DocumentElements/Lists/ListsGet.doc";
-
     /*
      * Test for getting lists from document.
      */
     public function testGetLists()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestGetLists.doc";
 
         $this->uploadFile(
@@ -69,6 +68,8 @@ class ListsTests extends BaseTestContext
      */
     public function testGetList()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestGetList.doc";
 
         $this->uploadFile(
@@ -94,6 +95,8 @@ class ListsTests extends BaseTestContext
      */
     public function testUpdateList()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestUpdateList.doc";
 
         $this->uploadFile(
@@ -126,6 +129,8 @@ class ListsTests extends BaseTestContext
      */
     public function testUpdateListLevel()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestUpdateListLevel.doc";
 
         $this->uploadFile(
@@ -159,6 +164,8 @@ class ListsTests extends BaseTestContext
      */
     public function testInsertList()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Lists";
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
         $remoteFileName = "TestInsertList.doc";
 
         $this->uploadFile(

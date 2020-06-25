@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class FootnoteTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
-    private static $footnoteFolder = "DocumentElements/Footnotes";
-
     /*
      * Test for adding footnote.
      */
     public function testInsertFootnote()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestInsertFootnote.docx";
 
         $this->uploadFile(
@@ -78,6 +77,8 @@ class FootnoteTests extends BaseTestContext
      */
     public function testInsertFootnoteWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestInsertFootnoteWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -110,6 +111,8 @@ class FootnoteTests extends BaseTestContext
      */
     public function testDeleteFootnote()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestDeleteFootnote.docx";
 
         $this->uploadFile(
@@ -138,6 +141,8 @@ class FootnoteTests extends BaseTestContext
      */
     public function testDeleteFootnoteWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestDeleteFootnoteWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -165,6 +170,8 @@ class FootnoteTests extends BaseTestContext
      */
     public function testGetFootnotes()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestGetFootnotes.docx";
 
         $this->uploadFile(
@@ -190,6 +197,8 @@ class FootnoteTests extends BaseTestContext
      */
     public function testGetFootnotesWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestGetFootnotesWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -214,6 +223,8 @@ class FootnoteTests extends BaseTestContext
      */
     public function testGetFootnote()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestGetFootnote.docx";
 
         $this->uploadFile(
@@ -240,6 +251,8 @@ class FootnoteTests extends BaseTestContext
      */
     public function testGetFootnoteWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestGetFootnoteWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -265,6 +278,8 @@ class FootnoteTests extends BaseTestContext
      */
     public function testUpdateFootnote()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestUpdateFootnote.docx";
 
         $this->uploadFile(
@@ -298,6 +313,8 @@ class FootnoteTests extends BaseTestContext
      */
     public function testUpdateFootnoteWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Footnotes";
+        $footnoteFolder = "DocumentElements/Footnotes";
         $remoteFileName = "TestUpdateFootnoteWithoutNodePath.docx";
 
         $this->uploadFile(

@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class BookmarkTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Bookmarks";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for getting bookmarks from document.
      */
     public function testGetBookmarks()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Bookmarks";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentBookmarks.docx";
 
         $this->uploadFile(
@@ -69,6 +68,8 @@ class BookmarkTests extends BaseTestContext
      */
     public function testGetBookmarkByName()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Bookmarks";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentBookmarkByName.docx";
 
         $this->uploadFile(
@@ -94,6 +95,8 @@ class BookmarkTests extends BaseTestContext
      */
     public function testUpdateBookmark()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Bookmarks";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateDocumentBookmark.docx";
         $bookmarkName = "aspose";
 

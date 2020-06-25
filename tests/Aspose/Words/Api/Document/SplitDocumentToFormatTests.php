@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class SplitDocumentToFormatTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/SplitDocument";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for document splitting.
      */
     public function testSplitDocument()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/SplitDocument";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestSplitDocument.docx";
 
         $this->uploadFile(

@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class CompareDocumentTests extends BaseTestContext
 {
-    private static $remoteFolder = self::$baseRemoteFolder . "/DocumentActions/CompareDocument";
-    private static $localFolder = "DocumentActions/CompareDocument";
-
     /*
      * Test for document comparison.
      */
     public function testCompareDocument()
     {
+        $remoteFolder = self::$baseRemoteFolder . "/DocumentActions/CompareDocument";
+        $localFolder = "DocumentActions/CompareDocument";
         $localName1 = "compareTestDoc1.doc";
         $localName2 = "compareTestDoc2.doc";
         $remoteName1 = "TestCompareDocument1.doc";

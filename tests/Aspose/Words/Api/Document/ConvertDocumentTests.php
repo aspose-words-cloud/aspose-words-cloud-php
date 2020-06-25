@@ -37,14 +37,12 @@ use PHPUnit\Framework\Assert;
  */
 class ConvertDocumentTests extends BaseTestContext
 {
-    private static $remoteFolder = self::$baseRemoteFolder . "/DocumentActions/ConvertDocument";
-    private static $localFolder = "DocumentActions/ConvertDocument";
-
     /*
      * Test for converting document to one of the available formats.
      */
     public function testSaveAs()
     {
+        $remoteFolder = self::$baseRemoteFolder . "/DocumentActions/ConvertDocument";
         $localName = "test_multi_pages.docx";
         $remoteName = "TestSaveAs.docx";
 
@@ -76,6 +74,8 @@ class ConvertDocumentTests extends BaseTestContext
      */
     public function testSaveAsDocx()
     {
+        $remoteFolder = self::$baseRemoteFolder . "/DocumentActions/ConvertDocument";
+        $localFolder = "DocumentActions/ConvertDocument";
         $localName = "45.pdf";
         $remoteName = "TestSaveAsFromPdfToDoc.pdf";
 
@@ -107,6 +107,7 @@ class ConvertDocumentTests extends BaseTestContext
      */
     public function testSaveAsTiff()
     {
+        $remoteFolder = self::$baseRemoteFolder . "/DocumentActions/ConvertDocument";
         $localName = "test_multi_pages.docx";
         $remoteName = "TestSaveAsTiff.pdf";
 
@@ -155,6 +156,8 @@ class ConvertDocumentTests extends BaseTestContext
      */
     public function testConvertDocument()
     {
+        $localFolder = "DocumentActions/ConvertDocument";
+
         $request = new Requests\ConvertDocumentRequest(
             realpath(__DIR__ . '/../../../../..') . $localFolder . "/test_uploadfile.docx",
             "pdf",

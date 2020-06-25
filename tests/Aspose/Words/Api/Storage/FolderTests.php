@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class FolderTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for create folder.
      */
     public function testCreateFolder()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+
         $request = new Requests\CreateFolderRequest(
             $remoteDataFolder . "/TestCreateFolder",
             NULL
@@ -58,6 +57,8 @@ class FolderTests extends BaseTestContext
      */
     public function testDeleteFolder()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $localFile = "Common/test_multi_pages.docx";
         $testDeleteFolder = $remoteDataFolder . "/TestDeleteFolder";
 
         $this->uploadFile(
@@ -79,6 +80,8 @@ class FolderTests extends BaseTestContext
      */
     public function testGetFilesList()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+
         $request = new Requests\GetFilesListRequest(
             $remoteDataFolder,
             NULL
@@ -93,6 +96,8 @@ class FolderTests extends BaseTestContext
      */
     public function testCopyFolder()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $localFile = "Common/test_multi_pages.docx";
         $folderToCopy = $remoteDataFolder . "/TestCopyFolder";
 
         $this->uploadFile(
@@ -115,6 +120,8 @@ class FolderTests extends BaseTestContext
      */
     public function testMoveFolder()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $localFile = "Common/test_multi_pages.docx";
         $folderToMove = $remoteDataFolder . "/TestMoveFolder";
 
         $this->uploadFile(

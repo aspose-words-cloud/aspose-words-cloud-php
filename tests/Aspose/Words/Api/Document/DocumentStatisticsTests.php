@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class DocumentStatisticsTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Statistics";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for document classification.
      */
     public function testGetDocumentStatistics()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Statistics";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentStatistics.docx";
 
         $this->uploadFile(

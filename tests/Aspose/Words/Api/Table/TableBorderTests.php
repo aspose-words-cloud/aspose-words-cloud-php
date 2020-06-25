@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class TableBorderTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
-    private static $localFile = "DocumentElements/Tables/TablesGet.docx";
-
     /*
      * Test for getting borders.
      */
     public function testGetBorders()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetBorders.docx";
 
         $this->uploadFile(
@@ -70,6 +69,8 @@ class TableBorderTests extends BaseTestContext
      */
     public function testGetBorder()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetBorder.docx";
 
         $this->uploadFile(
@@ -96,6 +97,8 @@ class TableBorderTests extends BaseTestContext
      */
     public function testDeleteBorders()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteBorders.docx";
 
         $this->uploadFile(
@@ -124,6 +127,8 @@ class TableBorderTests extends BaseTestContext
      */
     public function testDeleteBorder()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteBorder.docx";
 
         $this->uploadFile(
@@ -153,6 +158,8 @@ class TableBorderTests extends BaseTestContext
      */
     public function testUpdateBorder()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateBorder.docx";
 
         $this->uploadFile(

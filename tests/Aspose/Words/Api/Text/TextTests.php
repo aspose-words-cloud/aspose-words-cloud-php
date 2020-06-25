@@ -37,13 +37,12 @@ use PHPUnit\Framework\Assert;
  */
 class TextTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Text";
-
     /*
      * Test for replacing text.
      */
     public function testReplaceText()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Text";
         $remoteFileName = "TestReplaceText.docx";
         $localFile = "Common/test_multi_pages.docx";
 
@@ -77,6 +76,7 @@ class TextTests extends BaseTestContext
      */
     public function testSearch()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Text";
         $remoteFileName = "TestSearch.docx";
         $localFile = "DocumentElements/Text/SampleWordDocument.docx";
 

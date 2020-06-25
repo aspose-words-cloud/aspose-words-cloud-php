@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class FileTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for uploading file.
      */
     public function testUploadFile()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUploadFile.docx";
 
         $request = new Requests\UploadFileRequest(
@@ -62,6 +61,8 @@ class FileTests extends BaseTestContext
      */
     public function testCopyFile()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestCopyFileSrc.docx";
 
         $this->uploadFile(
@@ -85,6 +86,8 @@ class FileTests extends BaseTestContext
      */
     public function testMoveFile()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestMoveFileSrc.docx";
 
         $this->uploadFile(
@@ -108,6 +111,8 @@ class FileTests extends BaseTestContext
      */
     public function testDeleteFile()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteFile.docx";
 
         $this->uploadFile(
@@ -129,6 +134,8 @@ class FileTests extends BaseTestContext
      */
     public function testDownloadFile()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Storage";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDownloadFile.docx";
 
         $this->uploadFile(

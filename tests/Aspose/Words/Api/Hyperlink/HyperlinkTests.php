@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class HyperlinkTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Hyperlink";
-    private static $localFile = "Common/test_doc.docx";
-
     /*
      * Test for getting hyperlink by specified index.
      */
     public function testGetDocumentHyperlinkByIndex()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Hyperlink";
+        $localFile = "Common/test_doc.docx";
         $remoteFileName = "TestGetDocumentHyperlinkByIndex.docx";
 
         $this->uploadFile(
@@ -70,6 +69,8 @@ class HyperlinkTests extends BaseTestContext
      */
     public function testGetDocumentHyperlinks()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Hyperlink";
+        $localFile = "Common/test_doc.docx";
         $remoteFileName = "TestGetDocumentHyperlinks.docx";
 
         $this->uploadFile(

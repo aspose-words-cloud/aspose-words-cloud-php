@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class ExecuteTemplateTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/MailMerge";
-    private static $mailMergeFolder = "DocumentActions/MailMerge";
-
     /*
      * Test for posting execute template.
      */
     public function testExecuteTemplate()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/MailMerge";
+        $mailMergeFolder = "DocumentActions/MailMerge";
         $localDocumentFile = "TestExecuteTemplate.doc";
         $remoteFileName = "TestExecuteTemplate.docx";
         $localDataFile = file_get_contents(realpath(__DIR__ . '/../../../../..') . $mailMergeFolder . "/TestExecuteTemplateData.txt");
@@ -77,6 +76,7 @@ class ExecuteTemplateTests extends BaseTestContext
      */
     public function testExecuteTemplateOnline()
     {
+        $mailMergeFolder = "DocumentActions/MailMerge";
         $localDocumentFile = "SampleMailMergeTemplate.docx";
         $localDataFile = "SampleExecuteTemplateData.txt";
 

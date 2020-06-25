@@ -37,14 +37,12 @@ use PHPUnit\Framework\Assert;
  */
 class BuildReportTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Reporting";
-    private static $reportingFolder = "DocumentActions/Reporting";
-
     /*
      * Test for build report online.
      */
     public function testBuildReportOnline()
     {
+        $reportingFolder = "DocumentActions/Reporting";
         $localDocumentFile = "ReportTemplate.docx";
         $localDataFile = file_get_contents(realpath(__DIR__ . '/../../../../..') . $reportingFolder . "/ReportData.json");
 
@@ -68,6 +66,8 @@ class BuildReportTests extends BaseTestContext
      */
     public function testBuildReport()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Reporting";
+        $reportingFolder = "DocumentActions/Reporting";
         $localDocumentFile = "ReportTemplate.docx";
         $remoteFileName = "TestBuildReport.docx";
         $localDataFile = file_get_contents(realpath(__DIR__ . '/../../../../..') . $reportingFolder . "/ReportData.json");

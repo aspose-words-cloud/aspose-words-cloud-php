@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class DocumentPropertiesTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for getting document properties.
      */
     public function testGetDocumentProperties()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentProperties.docx";
 
         $this->uploadFile(
@@ -69,6 +68,8 @@ class DocumentPropertiesTests extends BaseTestContext
      */
     public function testGetDocumentProperty()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentProperty.docx";
 
         $this->uploadFile(
@@ -94,6 +95,8 @@ class DocumentPropertiesTests extends BaseTestContext
      */
     public function testDeleteDocumentProperty()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteDocumentProperty.docx";
 
         $this->uploadFile(
@@ -121,6 +124,8 @@ class DocumentPropertiesTests extends BaseTestContext
      */
     public function testUpdateDocumentProperty()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProperties";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateDocumentProperty.docx";
 
         $this->uploadFile(

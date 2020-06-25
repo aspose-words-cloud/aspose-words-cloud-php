@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class SectionTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Section";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for getting section by index.
      */
     public function testGetSection()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Section";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetSection.docx";
 
         $this->uploadFile(
@@ -70,6 +69,8 @@ class SectionTests extends BaseTestContext
      */
     public function testGetSections()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Section";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetSections.docx";
 
         $this->uploadFile(
@@ -94,6 +95,8 @@ class SectionTests extends BaseTestContext
      */
     public function testDeleteSection()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Section";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteSection.docx";
 
         $this->uploadFile(

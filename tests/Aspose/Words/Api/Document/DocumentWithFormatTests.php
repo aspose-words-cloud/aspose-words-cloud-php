@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class DocumentWithFormatTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/DocumentWithFormat";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for getting document with specified format.
      */
     public function testGetDocumentWithFormat()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/DocumentWithFormat";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentWithFormat.docx";
 
         $this->uploadFile(
@@ -72,6 +71,8 @@ class DocumentWithFormatTests extends BaseTestContext
      */
     public function testGetDocumentWithFormatAndOutPath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/DocumentWithFormat";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentWithFormat.docx";
 
         $this->uploadFile(

@@ -37,9 +37,6 @@ use PHPUnit\Framework\Assert;
  */
 class ClassificationTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/Common";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for raw text classification.
      */
@@ -59,6 +56,8 @@ class ClassificationTests extends BaseTestContext
      */
     public function testClassifyDocument()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Common";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "Source.docx";
 
         $this->uploadFile(
@@ -85,6 +84,8 @@ class ClassificationTests extends BaseTestContext
      */
     public function testClassifyTaxonomyDocuments()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Common";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "Source.docx";
 
         $this->uploadFile(

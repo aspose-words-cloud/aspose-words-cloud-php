@@ -37,15 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class DrawingObjectsTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
-    private static $localFile = "Common/test_multi_pages.docx";
-    private static $localDrawingFile = "DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx";
-
     /*
      * Test for getting drawing objects from document.
      */
     public function testGetDocumentDrawingObjects()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjects.docx";
 
         $this->uploadFile(
@@ -71,6 +69,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectsWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectsWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -95,6 +95,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectByIndex()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectByIndex.docx";
 
         $this->uploadFile(
@@ -121,6 +123,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectByIndexWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectByIndexWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -146,6 +150,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testRenderDrawingObject()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectByIndexWithFormat.docx";
 
         $this->uploadFile(
@@ -174,6 +180,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testRenderDrawingObjectWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectByIndexWithFormatWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -201,6 +209,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectImageData()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectImageData.docx";
 
         $this->uploadFile(
@@ -227,6 +237,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectImageDataWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectImageDataWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -252,6 +264,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectOleData()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localDrawingFile = "DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectOleData.docx";
 
         $this->uploadFile(
@@ -278,6 +292,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjectOleDataWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localDrawingFile = "DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx";
         $remoteFileName = "TestGetDocumentDrawingObjectOleDataWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -303,6 +319,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testInsertDrawingObject()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsetDrawingObject.docx";
 
         $this->uploadFile(
@@ -336,6 +354,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testInsertDrawingObjectWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsetDrawingObjectWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -368,6 +388,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testDeleteDrawingObject()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteDrawingObject.docx";
 
         $this->uploadFile(
@@ -396,6 +418,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testDeleteDrawingObjectWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteDrawingObjectWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -423,6 +447,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testUpdateDrawingObject()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateDrawingObject.docx";
 
         $this->uploadFile(
@@ -457,6 +483,8 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testUpdateDrawingObjectWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateDrawingObjectWithoutNodePath.docx";
 
         $this->uploadFile(

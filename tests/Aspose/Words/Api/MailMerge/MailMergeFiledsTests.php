@@ -37,14 +37,12 @@ use PHPUnit\Framework\Assert;
  */
 class MailMergeFiledsTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/MailMerge";
-    private static $mailMergeFolder = "DocumentActions/MailMerge";
-
     /*
      * Test for putting new fields.
      */
     public function testGetDocumentFieldNamesOnline()
     {
+        $mailMergeFolder = "DocumentActions/MailMerge";
         $localDocumentFile = "SampleExecuteTemplate.docx";
 
         $request = new Requests\GetDocumentFieldNamesOnlineRequest(
@@ -61,6 +59,7 @@ class MailMergeFiledsTests extends BaseTestContext
      */
     public function testGetDocumentFieldNames()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/MailMerge";
         $remoteFileName = "TestGetDocumentFieldNames.docx";
 
         $this->uploadFile(

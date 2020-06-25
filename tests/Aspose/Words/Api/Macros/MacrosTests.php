@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class MacrosTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Macros";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for deleting macros.
      */
     public function testDeleteMacros()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Macros";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteDocumentMacros.docx";
 
         $this->uploadFile(

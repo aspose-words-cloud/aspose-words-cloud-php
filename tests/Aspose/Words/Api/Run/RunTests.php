@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class RunTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Runs";
-    private static $localFile = "DocumentElements/Runs/Run.doc";
-
     /*
      * Test for updating run.
      */
     public function testUpdateRun()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Runs";
+        $localFile = "DocumentElements/Runs/Run.doc";
         $remoteFileName = "TestUpdateRun.docx";
 
         $this->uploadFile(
@@ -78,6 +77,8 @@ class RunTests extends BaseTestContext
      */
     public function testInsertRun()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Runs";
+        $localFile = "DocumentElements/Runs/Run.doc";
         $remoteFileName = "TestInsertRun.docx";
 
         $this->uploadFile(
@@ -111,6 +112,8 @@ class RunTests extends BaseTestContext
      */
     public function testDeleteRun()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Runs";
+        $localFile = "DocumentElements/Runs/Run.doc";
         $remoteFileName = "TestDeleteRun.docx";
 
         $this->uploadFile(

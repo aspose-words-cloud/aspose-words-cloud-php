@@ -37,15 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class PageSetupTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/PageSetup";
-    private static $localFile = "Common/test_multi_pages.docx";
-    private static $localTextFile = "DocumentElements/Text/SampleWordDocument.docx";
-
     /*
      * Test for getting page settings.
      */
     public function testGetSectionPageSetup()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/PageSetup";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetSectionPageSetup.docx";
 
         $this->uploadFile(
@@ -71,6 +69,8 @@ class PageSetupTests extends BaseTestContext
      */
     public function testUpdateSectionPageSetup()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/PageSetup";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateSectionPageSetup.docx";
 
         $this->uploadFile(
@@ -106,6 +106,8 @@ class PageSetupTests extends BaseTestContext
      */
     public function testGetRenderPage()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/PageSetup";
+        $localTextFile = "DocumentElements/Text/SampleWordDocument.docx";
         $remoteFileName = "TestGetRenderPage.docx";
 
         $this->uploadFile(

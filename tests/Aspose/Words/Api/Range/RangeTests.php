@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class RangeTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
-    private static $localFile = "DocumentElements/Range/RangeGet.doc";
-
     /*
      * Test for getting the text from range.
      */
     public function testGetRangeText()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
+        $localFile = "DocumentElements/Range/RangeGet.doc";
         $remoteFileName = "TestGetRangeText.docx";
 
         $this->uploadFile(
@@ -71,6 +70,8 @@ class RangeTests extends BaseTestContext
      */
     public function testRemoveRange()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
+        $localFile = "DocumentElements/Range/RangeGet.doc";
         $remoteFileName = "TestRemoveRange.docx";
 
         $this->uploadFile(
@@ -98,6 +99,8 @@ class RangeTests extends BaseTestContext
      */
     public function testSaveAsRange()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
+        $localFile = "DocumentElements/Range/RangeGet.doc";
         $remoteFileName = "TestSaveAsRange.docx";
 
         $this->uploadFile(
@@ -128,6 +131,8 @@ class RangeTests extends BaseTestContext
      */
     public function testReplaceWithText()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Range";
+        $localFile = "DocumentElements/Range/RangeGet.doc";
         $remoteFileName = "TestReplaceWithText.docx";
 
         $this->uploadFile(

@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class RevisionsTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Revisions";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for accepting revisions in document.
      */
     public function testAcceptAllRevisions()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Revisions";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestAcceptAllRevisions.docx";
 
         $this->uploadFile(
@@ -70,6 +69,8 @@ class RevisionsTests extends BaseTestContext
      */
     public function testRejectAllRevisions()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Revisions";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestRejectAllRevisions.docx";
 
         $this->uploadFile(

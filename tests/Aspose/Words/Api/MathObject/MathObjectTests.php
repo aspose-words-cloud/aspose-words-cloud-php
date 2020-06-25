@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class MathObjectTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
-    private static $localFile = "DocumentElements/MathObjects/MathObjects.docx";
-
     /*
      * Test for getting mathObjects.
      */
     public function testGetOfficeMathObjects()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestGetOfficeMathObjects.docx";
 
         $this->uploadFile(
@@ -70,6 +69,8 @@ class MathObjectTests extends BaseTestContext
      */
     public function testGetOfficeMathObjectsWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestGetOfficeMathObjectsWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -94,6 +95,8 @@ class MathObjectTests extends BaseTestContext
      */
     public function testGetOfficeMathObject()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestGetOfficeMathObject.docx";
 
         $this->uploadFile(
@@ -120,6 +123,8 @@ class MathObjectTests extends BaseTestContext
      */
     public function testGetOfficeMathObjectWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestGetOfficeMathObjectWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -145,6 +150,8 @@ class MathObjectTests extends BaseTestContext
      */
     public function testRenderMathObject()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestRenderMathObject.docx";
 
         $this->uploadFile(
@@ -173,6 +180,8 @@ class MathObjectTests extends BaseTestContext
      */
     public function testRenderMathObjectWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestRenderMathObjectWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -200,6 +209,8 @@ class MathObjectTests extends BaseTestContext
      */
     public function testDeleteOfficeMathObject()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestDeleteOfficeMathObject.docx";
 
         $this->uploadFile(
@@ -228,6 +239,8 @@ class MathObjectTests extends BaseTestContext
      */
     public function testDeleteOfficeMathObjectWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/MathObjects";
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
         $remoteFileName = "TestDeleteOfficeMathObjectWithoutNodePath.docx";
 
         $this->uploadFile(

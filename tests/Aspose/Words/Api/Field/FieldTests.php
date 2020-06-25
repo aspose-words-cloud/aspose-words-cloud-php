@@ -37,15 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class FieldTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
-    private static $textFolder = "DocumentElements/Text";
-    private static $fieldFolder = "DocumentElements/Fields";
-
     /*
      * Test for getting fields.
      */
     public function testGetFields()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
+        $fieldFolder = "DocumentElements/Fields";
         $localFileName = "GetField.docx";
         $remoteFileName = "TestGetFields.docx";
 
@@ -72,6 +70,8 @@ class FieldTests extends BaseTestContext
      */
     public function testGetFieldsWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
+        $fieldFolder = "DocumentElements/Fields";
         $localFileName = "GetField.docx";
         $remoteFileName = "TestGetFieldsWithoutNodePath.docx";
 
@@ -97,6 +97,8 @@ class FieldTests extends BaseTestContext
      */
     public function testGetField()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
+        $fieldFolder = "DocumentElements/Fields";
         $localFileName = "GetField.docx";
         $remoteFileName = "TestGetField.docx";
 
@@ -124,6 +126,8 @@ class FieldTests extends BaseTestContext
      */
     public function testGetFieldWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
+        $fieldFolder = "DocumentElements/Fields";
         $localFileName = "GetField.docx";
         $remoteFileName = "TestGetFieldWithoutNodePath.docx";
 
@@ -150,6 +154,8 @@ class FieldTests extends BaseTestContext
      */
     public function testInsertField()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
+        $textFolder = "DocumentElements/Text";
         $localFileName = "SampleWordDocument.docx";
         $remoteFileName = "TestInsertField.docx";
 
@@ -184,6 +190,8 @@ class FieldTests extends BaseTestContext
      */
     public function testInsertFieldWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
+        $textFolder = "DocumentElements/Text";
         $localFileName = "SampleWordDocument.docx";
         $remoteFileName = "TestInsertFieldWithoutNodePath.docx";
 
@@ -217,6 +225,8 @@ class FieldTests extends BaseTestContext
      */
     public function testUpdateField()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
+        $fieldFolder = "DocumentElements/Fields";
         $localFileName = "GetField.docx";
         $remoteFileName = "TestUpdateField.docx";
 
@@ -251,6 +261,7 @@ class FieldTests extends BaseTestContext
      */
     public function testInsertPageNumbers()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
         $localFileName = "test_multi_pages.docx";
         $remoteFileName = "TestInsertPageNumbers.docx";
 
@@ -284,6 +295,8 @@ class FieldTests extends BaseTestContext
      */
     public function testDeleteField()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
+        $fieldFolder = "DocumentElements/Fields";
         $localFileName = "GetField.docx";
         $remoteFileName = "TestDeleteField.docx";
 
@@ -313,6 +326,8 @@ class FieldTests extends BaseTestContext
      */
     public function testDeleteFieldWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
+        $fieldFolder = "DocumentElements/Fields";
         $localFileName = "GetField.docx";
         $remoteFileName = "TestDeleteFieldWithoutNodePath.docx";
 
@@ -341,6 +356,7 @@ class FieldTests extends BaseTestContext
      */
     public function testDeleteParagraphFields()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
         $localFileName = "test_multi_pages.docx";
         $remoteFileName = "TestDeleteParagraphFields.docx";
 
@@ -369,6 +385,7 @@ class FieldTests extends BaseTestContext
      */
     public function testDeleteParagraphFieldsWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
         $localFileName = "test_multi_pages.docx";
         $remoteFileName = "TestDeleteParagraphFieldsWithoutNodePath.docx";
 
@@ -396,6 +413,7 @@ class FieldTests extends BaseTestContext
      */
     public function testDeleteSectionFields()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
         $localFileName = "test_multi_pages.docx";
         $remoteFileName = "TestDeleteSectionFields.docx";
 
@@ -424,6 +442,7 @@ class FieldTests extends BaseTestContext
      */
     public function testDeleteSectionFieldsWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
         $localFileName = "test_multi_pages.docx";
         $remoteFileName = "TestDeleteSectionFieldsWithoutNodePath.docx";
 
@@ -451,6 +470,7 @@ class FieldTests extends BaseTestContext
      */
     public function testDeleteSectionParagraphFields()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
         $localFileName = "test_multi_pages.docx";
         $remoteFileName = "TestDeleteSectionParagraphFields.docx";
 
@@ -479,6 +499,7 @@ class FieldTests extends BaseTestContext
      */
     public function testDeleteDocumentFields()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
         $localFileName = "test_multi_pages.docx";
         $remoteFileName = "TestDeleteSectionParagraphFields.docx";
 
@@ -507,6 +528,7 @@ class FieldTests extends BaseTestContext
      */
     public function testUpdateDocumentFields()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Fields";
         $localFileName = "test_multi_pages.docx";
         $remoteFileName = "TestUpdateDocumentFields.docx";
 

@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class DocumentProtectionTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for setting document protection.
      */
     public function testProtectDocument()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestProtectDocument.docx";
 
         $this->uploadFile(
@@ -74,6 +73,8 @@ class DocumentProtectionTests extends BaseTestContext
      */
     public function testGetDocumentProtection()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentProtection.docx";
 
         $this->uploadFile(
@@ -98,6 +99,8 @@ class DocumentProtectionTests extends BaseTestContext
      */
     public function testChangeDocumentProtection()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestChangeDocumentProtection.docx";
 
         $this->uploadFile(
@@ -127,6 +130,7 @@ class DocumentProtectionTests extends BaseTestContext
      */
     public function testDeleteUnprotectDocument()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/DocumentProtection";
         $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
         $remoteFileName = "TestDeleteUnprotectDocument.docx";
 

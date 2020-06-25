@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class CommentTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for getting comment by specified comment's index.
      */
     public function testGetComment()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetComment.docx";
 
         $this->uploadFile(
@@ -70,6 +69,8 @@ class CommentTests extends BaseTestContext
      */
     public function testGetComments()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetComments.docx";
 
         $this->uploadFile(
@@ -94,6 +95,8 @@ class CommentTests extends BaseTestContext
      */
     public function testInsertComment()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertComment.docx";
 
         $this->uploadFile(
@@ -143,6 +146,8 @@ class CommentTests extends BaseTestContext
      */
     public function testUpdateComment()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateComment.docx";
 
         $this->uploadFile(
@@ -193,6 +198,8 @@ class CommentTests extends BaseTestContext
      */
     public function testDeleteComment()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/Comments";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteComment.docx";
 
         $this->uploadFile(

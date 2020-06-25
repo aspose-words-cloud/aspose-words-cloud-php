@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class WatermarkTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
-    private static $localFile = "Common/test_multi_pages.docx";
-
     /*
      * Test for adding watermark image.
      */
     public function testInsertDocumentWatermarkImage()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertWatermarkImage.docx";
 
         $this->uploadFile(
@@ -75,6 +74,8 @@ class WatermarkTests extends BaseTestContext
      */
     public function testInsertWatermarkImage()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertWatermarkImage.docx";
         $remoteImagePath = $remoteDataFolder . "/TestInsertWatermarkImage.png";
 
@@ -110,6 +111,8 @@ class WatermarkTests extends BaseTestContext
      */
     public function testInsertWatermarkText()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestInsertWatermarkText.docx";
 
         $this->uploadFile(
@@ -142,6 +145,8 @@ class WatermarkTests extends BaseTestContext
      */
     public function testDeleteWatermark()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentActions/Watermark";
+        $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestDeleteWatermark.docx";
 
         $this->uploadFile(

@@ -37,14 +37,13 @@ use PHPUnit\Framework\Assert;
  */
 class TableTests extends BaseTestContext
 {
-    private static $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
-    private static $localFile = "DocumentElements/Tables/TablesGet.docx";
-
     /*
      * Test for getting tables.
      */
     public function testGetTables()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTables.docx";
 
         $this->uploadFile(
@@ -70,6 +69,8 @@ class TableTests extends BaseTestContext
      */
     public function testGetTablesWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTablesWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -94,6 +95,8 @@ class TableTests extends BaseTestContext
      */
     public function testGetTable()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTable.docx";
 
         $this->uploadFile(
@@ -120,6 +123,8 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -145,6 +150,8 @@ class TableTests extends BaseTestContext
      */
     public function testDeleteTable()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteTable.docx";
 
         $this->uploadFile(
@@ -173,6 +180,8 @@ class TableTests extends BaseTestContext
      */
     public function testDeleteTableWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteTableWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -200,6 +209,8 @@ class TableTests extends BaseTestContext
      */
     public function testInsertTable()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestInsertTable.docx";
 
         $this->uploadFile(
@@ -233,6 +244,8 @@ class TableTests extends BaseTestContext
      */
     public function testInsertTableWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestInsertTableWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -265,6 +278,8 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableProperties()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableProperties.docx";
 
         $this->uploadFile(
@@ -291,6 +306,8 @@ class TableTests extends BaseTestContext
      */
     public function testGetTablePropertiesWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTablePropertiesWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -316,6 +333,8 @@ class TableTests extends BaseTestContext
      */
     public function testUpdateTableProperties()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateTableProperties.docx";
 
         $this->uploadFile(
@@ -354,6 +373,8 @@ class TableTests extends BaseTestContext
      */
     public function testUpdateTablePropertiesWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateTablePropertiesWithoutNodePath.docx";
 
         $this->uploadFile(
@@ -391,6 +412,8 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableRow()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableRow.docx";
 
         $this->uploadFile(
@@ -417,6 +440,8 @@ class TableTests extends BaseTestContext
      */
     public function testDeleteTableRow()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteTableRow.docx";
 
         $this->uploadFile(
@@ -445,6 +470,8 @@ class TableTests extends BaseTestContext
      */
     public function testInsertTableRow()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestInsertTableRow.docx";
 
         $this->uploadFile(
@@ -477,6 +504,8 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableRowFormat()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableRowFormat.docx";
 
         $this->uploadFile(
@@ -503,6 +532,8 @@ class TableTests extends BaseTestContext
      */
     public function testUpdateTableRowFormat()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateTableRowFormat.docx";
 
         $this->uploadFile(
@@ -539,6 +570,8 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableCell()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableCell.docx";
 
         $this->uploadFile(
@@ -565,6 +598,8 @@ class TableTests extends BaseTestContext
      */
     public function testDeleteTableCell()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestDeleteTableCell.docx";
 
         $this->uploadFile(
@@ -593,6 +628,8 @@ class TableTests extends BaseTestContext
      */
     public function testInsertTableCell()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestInsertTableCell.docx";
 
         $this->uploadFile(
@@ -624,6 +661,8 @@ class TableTests extends BaseTestContext
      */
     public function testGetTableCellFormat()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestGetTableCellFormat.docx";
 
         $this->uploadFile(
@@ -650,6 +689,8 @@ class TableTests extends BaseTestContext
      */
     public function testUpdateTableCellFormat()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestUpdateTableCellFormat.docx";
 
         $this->uploadFile(
@@ -686,6 +727,8 @@ class TableTests extends BaseTestContext
      */
     public function testRenderTable()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestRenderTable.docx";
 
         $this->uploadFile(
@@ -714,6 +757,8 @@ class TableTests extends BaseTestContext
      */
     public function testRenderTableWithoutNodePath()
     {
+        $remoteDataFolder = self::$baseRemoteFolder . "/DocumentElements/Tables";
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
         $remoteFileName = "TestRenderTableWithoutNodePath.docx";
 
         $this->uploadFile(

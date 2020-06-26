@@ -1,0 +1,18 @@
+# default behavior
+* text=auto
+
+# code files
+*.php text eol=lf
+
+# test files
+*.xml text eol=lf
+*.json text eol=lf
+
+# scripts
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.sh text eol=lf
+
+
+
+

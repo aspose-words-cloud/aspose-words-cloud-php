@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WordsApiTests.php">
+ * <copyright company="Aspose" file="LoadWebDocumentTests.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,43 +27,39 @@
  */
 
 namespace Aspose\Tests;
-use Aspose\Words\ApiException;
-use Aspose\Words\Model\Requests;
-use Aspose\Words\WordsApi;
-use PHPUnit\Framework\Assert;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 
-class WordsApiTests extends BaseTestContext
+use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\BookmarkData;
+use PHPUnit\Framework\Assert;
+
+/*
+ * Example of how to load web document.
+ */
+class LoadWebDocumentTests extends BaseTestContext
 {
     /*
-     * Test case for checking correct handle of server errors
+     * Test for loading web document.
      */
-    public function testHandleServerErrors()
+    public function testLoadWebDocument()
     {
-        $remoteName = "noFileWithThisName.docx";
-        $request = new Requests\GetSectionsRequest($remoteName);
-        try{
-            $this->words->GetSections($request);
-            Assert::fail("Expected exception has not been thrown");
-        }
-        catch (ApiException $exception)
-        {
-            Assert::equalTo(404, $exception->getCode());
-        }
-    }
+        $requestDataSaveOptions = new \Aspose\Words\Model\SaveOptionsData(array(
+            "file_name" => "google.doc",
+            "save_format" => "doc",
+            "dml_effects_rendering_mode" => "1",
+            "dml_rendering_mode" => "1",
+            "update_sdt_content" => false,
+            "zip_output" => false,
+        ));
+        $requestData = new \Aspose\Words\Model\LoadWebDocumentData(array(
+            "loading_document_url" => "http://google.com",
+            "save_options" => $requestDataSaveOptions,
+        ));
+        $request = new Requests\LoadWebDocumentRequest(
+            $requestData,
+            NULL
+        );
 
-    /*
-     * Test case for checking bad appSid
-     */
-    public function testHandleBadAppSid()
-    {
-        try{
-            $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
-        }
-        catch (RequestException $e)
-        {
-            Assert::equalTo(400, $e->getCode());
-        }
+        $result = $this->words->loadWebDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

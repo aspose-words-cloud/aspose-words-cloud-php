@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WordsApiTests.php">
+ * <copyright company="Aspose" file="DocumentTests.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,43 +27,57 @@
  */
 
 namespace Aspose\Tests;
-use Aspose\Words\ApiException;
-use Aspose\Words\Model\Requests;
-use Aspose\Words\WordsApi;
-use PHPUnit\Framework\Assert;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 
-class WordsApiTests extends BaseTestContext
+use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\BookmarkData;
+use PHPUnit\Framework\Assert;
+
+/*
+ * Example of how to get document.
+ */
+class DocumentTests extends BaseTestContext
 {
     /*
-     * Test case for checking correct handle of server errors
+     * Test for getting document.
      */
-    public function testHandleServerErrors()
+    public function testGetDocument()
     {
-        $remoteName = "noFileWithThisName.docx";
-        $request = new Requests\GetSectionsRequest($remoteName);
-        try{
-            $this->words->GetSections($request);
-            Assert::fail("Expected exception has not been thrown");
-        }
-        catch (ApiException $exception)
-        {
-            Assert::equalTo(404, $exception->getCode());
-        }
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Document";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestGetDocument.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new Requests\GetDocumentRequest(
+            $remoteFileName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
-     * Test case for checking bad appSid
+     * Test for creating word document.
      */
-    public function testHandleBadAppSid()
+    public function testCreateDocument()
     {
-        try{
-            $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
-        }
-        catch (RequestException $e)
-        {
-            Assert::equalTo(400, $e->getCode());
-        }
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Document";
+        $remoteFileName = "TestCreateDocument.doc";
+
+        $request = new Requests\CreateDocumentRequest(
+            NULL,
+            $remoteFileName,
+            $remoteDataFolder
+        );
+
+        $result = $this->words->createDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

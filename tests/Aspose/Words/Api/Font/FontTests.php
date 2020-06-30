@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WordsApiTests.php">
+ * <copyright company="Aspose" file="FontTests.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,43 +27,37 @@
  */
 
 namespace Aspose\Tests;
-use Aspose\Words\ApiException;
-use Aspose\Words\Model\Requests;
-use Aspose\Words\WordsApi;
-use PHPUnit\Framework\Assert;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 
-class WordsApiTests extends BaseTestContext
+use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\BookmarkData;
+use PHPUnit\Framework\Assert;
+
+/*
+ * Example of how to work with font.
+ */
+class FontTests extends BaseTestContext
 {
     /*
-     * Test case for checking correct handle of server errors
+     * Test for reseting cache.
      */
-    public function testHandleServerErrors()
+    public function testResetCache()
     {
-        $remoteName = "noFileWithThisName.docx";
-        $request = new Requests\GetSectionsRequest($remoteName);
-        try{
-            $this->words->GetSections($request);
-            Assert::fail("Expected exception has not been thrown");
-        }
-        catch (ApiException $exception)
-        {
-            Assert::equalTo(404, $exception->getCode());
-        }
+        $request = new Requests\ResetCacheRequest(
+        );
+
+    $this->words->resetCache($request);
     }
 
     /*
-     * Test case for checking bad appSid
+     * Test for GetAvailableFonts resource.
      */
-    public function testHandleBadAppSid()
+    public function testGetAvailableFonts()
     {
-        try{
-            $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
-        }
-        catch (RequestException $e)
-        {
-            Assert::equalTo(400, $e->getCode());
-        }
+        $request = new Requests\GetAvailableFontsRequest(
+            NULL
+        );
+
+        $result = $this->words->getAvailableFonts($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

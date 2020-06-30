@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WordsApiTests.php">
+ * <copyright company="Aspose" file="SplitDocumentToFormatTests.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,43 +27,45 @@
  */
 
 namespace Aspose\Tests;
-use Aspose\Words\ApiException;
-use Aspose\Words\Model\Requests;
-use Aspose\Words\WordsApi;
-use PHPUnit\Framework\Assert;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 
-class WordsApiTests extends BaseTestContext
+use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\BookmarkData;
+use PHPUnit\Framework\Assert;
+
+/*
+ * Example of how to split document and return result with specified format and page range.
+ */
+class SplitDocumentToFormatTests extends BaseTestContext
 {
     /*
-     * Test case for checking correct handle of server errors
+     * Test for document splitting.
      */
-    public function testHandleServerErrors()
+    public function testSplitDocument()
     {
-        $remoteName = "noFileWithThisName.docx";
-        $request = new Requests\GetSectionsRequest($remoteName);
-        try{
-            $this->words->GetSections($request);
-            Assert::fail("Expected exception has not been thrown");
-        }
-        catch (ApiException $exception)
-        {
-            Assert::equalTo(404, $exception->getCode());
-        }
-    }
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/SplitDocument";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestSplitDocument.docx";
 
-    /*
-     * Test case for checking bad appSid
-     */
-    public function testHandleBadAppSid()
-    {
-        try{
-            $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
-        }
-        catch (RequestException $e)
-        {
-            Assert::equalTo(400, $e->getCode());
-        }
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new Requests\SplitDocumentRequest(
+            $remoteFileName,
+            "text",
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/TestSplitDocument.text",
+            1,
+            2,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->splitDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

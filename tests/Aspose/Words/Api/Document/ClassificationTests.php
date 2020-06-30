@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WordsApiTests.php">
+ * <copyright company="Aspose" file="ClassificationTests.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,43 +27,55 @@
  */
 
 namespace Aspose\Tests;
-use Aspose\Words\ApiException;
-use Aspose\Words\Model\Requests;
-use Aspose\Words\WordsApi;
-use PHPUnit\Framework\Assert;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 
-class WordsApiTests extends BaseTestContext
+use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\BookmarkData;
+use PHPUnit\Framework\Assert;
+
+/*
+ * Example of how to classify text.
+ */
+class ClassificationTests extends BaseTestContext
 {
     /*
-     * Test case for checking correct handle of server errors
+     * Test for raw text classification.
      */
-    public function testHandleServerErrors()
+    public function testClassify()
     {
-        $remoteName = "noFileWithThisName.docx";
-        $request = new Requests\GetSectionsRequest($remoteName);
-        try{
-            $this->words->GetSections($request);
-            Assert::fail("Expected exception has not been thrown");
-        }
-        catch (ApiException $exception)
-        {
-            Assert::equalTo(404, $exception->getCode());
-        }
+        $request = new Requests\ClassifyRequest(
+            "Try text classification",
+            "3"
+        );
+
+        $result = $this->words->classify($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
-     * Test case for checking bad appSid
+     * Test for document classification.
      */
-    public function testHandleBadAppSid()
+    public function testClassifyDocument()
     {
-        try{
-            $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
-        }
-        catch (RequestException $e)
-        {
-            Assert::equalTo(400, $e->getCode());
-        }
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Common";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestClassifyDocument.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new Requests\ClassifyDocumentRequest(
+            $remoteFileName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            "3",
+            NULL
+        );
+
+        $result = $this->words->classifyDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

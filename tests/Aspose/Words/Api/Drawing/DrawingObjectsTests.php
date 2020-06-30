@@ -329,7 +329,13 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
+            "height" => 0,
             "left" => 0,
+            "top" => 0,
+            "width" => 0,
+            "relative_horizontal_position" => "Margin",
+            "relative_vertical_position" => "Margin",
+            "wrap_type" => "Inline",
         ));
         $request = new Requests\InsertDrawingObjectRequest(
             $remoteFileName,
@@ -364,7 +370,13 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
+            "height" => 0,
             "left" => 0,
+            "top" => 0,
+            "width" => 0,
+            "relative_horizontal_position" => "Margin",
+            "relative_vertical_position" => "Margin",
+            "wrap_type" => "Inline",
         ));
         $request = new Requests\InsertDrawingObjectWithoutNodePathRequest(
             $remoteFileName,

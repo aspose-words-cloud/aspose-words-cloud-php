@@ -40,38 +40,6 @@ class WatermarkTests extends BaseTestContext
     /*
      * Test for adding watermark image.
      */
-    public function testInsertDocumentWatermarkImage()
-    {
-        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";
-        $localFile = "Common/test_multi_pages.docx";
-        $remoteFileName = "TestInsertWatermarkImage.docx";
-
-        $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
-            $remoteDataFolder . "/" . $remoteFileName
-        );
-
-        $request = new Requests\InsertWatermarkImageRequest(
-            $remoteFileName,
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
-            $remoteDataFolder,
-            NULL,
-            NULL,
-            NULL,
-            self::$baseTestOutPath . "/" . $remoteFileName,
-            NULL,
-            NULL,
-            NULL,
-            NULL
-        );
-
-        $result = $this->words->insertWatermarkImage($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
-    }
-
-    /*
-     * Test for adding watermark image.
-     */
     public function testInsertWatermarkImage()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";

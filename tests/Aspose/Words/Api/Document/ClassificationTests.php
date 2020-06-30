@@ -58,7 +58,7 @@ class ClassificationTests extends BaseTestContext
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/Common";
         $localFile = "Common/test_multi_pages.docx";
-        $remoteFileName = "Source.docx";
+        $remoteFileName = "TestClassifyDocument.docx";
 
         $this->uploadFile(
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
@@ -73,34 +73,6 @@ class ClassificationTests extends BaseTestContext
             NULL,
             "3",
             NULL
-        );
-
-        $result = $this->words->classifyDocument($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
-    }
-
-    /*
-     * Test for document classification with taxonomy documents.
-     */
-    public function testClassifyTaxonomyDocuments()
-    {
-        $remoteDataFolder = self::$baseRemoteFolderPath . "/Common";
-        $localFile = "Common/test_multi_pages.docx";
-        $remoteFileName = "Source.docx";
-
-        $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
-            $remoteDataFolder . "/" . $remoteFileName
-        );
-
-        $request = new Requests\ClassifyDocumentRequest(
-            $remoteFileName,
-            $remoteDataFolder,
-            NULL,
-            NULL,
-            NULL,
-            "3",
-            "documents"
         );
 
         $result = $this->words->classifyDocument($request);

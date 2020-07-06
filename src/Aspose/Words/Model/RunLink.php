@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RunLink.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * RunLink
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,9 +34,9 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Run link element.
  */
-class RunLink extends NodeLink 
+class RunLink extends NodeLink
 {
-    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -63,7 +60,7 @@ class RunLink extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'text' => null
+        'text' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class RunLink extends NodeLink
 
 
 
-
     /*
      * Constructor
      *
@@ -167,12 +163,7 @@ class RunLink extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -183,7 +174,6 @@ class RunLink extends NodeLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -201,7 +191,6 @@ class RunLink extends NodeLink
 
         return true;
     }
-
 
     /*
      * Gets text
@@ -223,9 +212,9 @@ class RunLink extends NodeLink
     public function setText($text)
     {
         $this->container['text'] = $text;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -296,3 +285,4 @@ class RunLink extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

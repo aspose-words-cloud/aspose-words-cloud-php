@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableProperties.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * TableProperties
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents the table properties.
  */
-class TableProperties extends LinkElement 
+class TableProperties extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -76,20 +73,20 @@ class TableProperties extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'alignment' => null,
-        'allow_auto_fit' => null,
-        'bidi' => null,
-        'bottom_padding' => 'double',
-        'cell_spacing' => 'double',
-        'left_indent' => 'double',
-        'left_padding' => 'double',
-        'preferred_width' => null,
-        'right_padding' => 'double',
-        'style_identifier' => null,
-        'style_name' => null,
-        'style_options' => null,
-        'text_wrapping' => null,
-        'top_padding' => 'double'
+        'alignment' => 'null',
+        'allow_auto_fit' => 'null',
+        'bidi' => 'null',
+        'bottom_padding' => 'null',
+        'cell_spacing' => 'null',
+        'left_indent' => 'null',
+        'left_padding' => 'null',
+        'preferred_width' => 'null',
+        'right_padding' => 'null',
+        'style_identifier' => 'null',
+        'style_name' => 'null',
+        'style_options' => 'null',
+        'text_wrapping' => 'null',
+        'top_padding' => 'null'
     ];
 
     /*
@@ -270,7 +267,7 @@ class TableProperties extends LinkElement
     const STYLE_IDENTIFIER_TABLE_OF_AUTHORITIES = 'TableOfAuthorities';
     const STYLE_IDENTIFIER_MACRO = 'Macro';
     const STYLE_IDENTIFIER_TOA_HEADING = 'ToaHeading';
-    const STYLE_IDENTIFIER__LIST = 'List';
+    const STYLE_IDENTIFIER_LIST = 'List';
     const STYLE_IDENTIFIER_LIST_BULLET = 'ListBullet';
     const STYLE_IDENTIFIER_LIST_NUMBER = 'ListNumber';
     const STYLE_IDENTIFIER_LIST2 = 'List2';
@@ -602,10 +599,10 @@ class TableProperties extends LinkElement
     const STYLE_OPTIONS_FIRST_COLUMN = 'FirstColumn';
     const STYLE_OPTIONS_LAST_COLUMN = 'LastColumn';
     const STYLE_OPTIONS_ROW_BANDS = 'RowBands';
-    const STYLE_OPTIONS__DEFAULT = 'Default';
+    const STYLE_OPTIONS_DEFAULT = 'Default';
     const STYLE_OPTIONS_COLUMN_BANDS = 'ColumnBands';
     const STYLE_OPTIONS_DEFAULT2003 = 'Default2003';
-    const TEXT_WRAPPING__DEFAULT = 'Default';
+    const TEXT_WRAPPING_DEFAULT = 'Default';
     const TEXT_WRAPPING_NONE = 'None';
     const TEXT_WRAPPING_AROUND = 'Around';
 
@@ -677,7 +674,7 @@ class TableProperties extends LinkElement
             self::STYLE_IDENTIFIER_TABLE_OF_AUTHORITIES,
             self::STYLE_IDENTIFIER_MACRO,
             self::STYLE_IDENTIFIER_TOA_HEADING,
-            self::STYLE_IDENTIFIER__LIST,
+            self::STYLE_IDENTIFIER_LIST,
             self::STYLE_IDENTIFIER_LIST_BULLET,
             self::STYLE_IDENTIFIER_LIST_NUMBER,
             self::STYLE_IDENTIFIER_LIST2,
@@ -1019,7 +1016,7 @@ class TableProperties extends LinkElement
             self::STYLE_OPTIONS_FIRST_COLUMN,
             self::STYLE_OPTIONS_LAST_COLUMN,
             self::STYLE_OPTIONS_ROW_BANDS,
-            self::STYLE_OPTIONS__DEFAULT,
+            self::STYLE_OPTIONS_DEFAULT,
             self::STYLE_OPTIONS_COLUMN_BANDS,
             self::STYLE_OPTIONS_DEFAULT2003
         ];
@@ -1032,12 +1029,11 @@ class TableProperties extends LinkElement
     public function getTextWrappingAllowableValues()
     {
         return [
-            self::TEXT_WRAPPING__DEFAULT,
+            self::TEXT_WRAPPING_DEFAULT,
             self::TEXT_WRAPPING_NONE,
             self::TEXT_WRAPPING_AROUND
         ];
     }
-
 
     /*
      * Constructor
@@ -1048,7 +1044,6 @@ class TableProperties extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
         $this->container['allow_auto_fit'] = isset($data['allow_auto_fit']) ? $data['allow_auto_fit'] : null;
         $this->container['bidi'] = isset($data['bidi']) ? $data['bidi'] : null;
@@ -1073,7 +1068,6 @@ class TableProperties extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         $allowedValues = $this->getAlignmentAllowableValues();
         if (!in_array($this->container['alignment'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -1106,6 +1100,7 @@ class TableProperties extends LinkElement
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -1125,21 +1120,25 @@ class TableProperties extends LinkElement
         if (!in_array($this->container['alignment'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getStyleIdentifierAllowableValues();
         if (!in_array($this->container['style_identifier'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getStyleOptionsAllowableValues();
         if (!in_array($this->container['style_options'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getTextWrappingAllowableValues();
         if (!in_array($this->container['text_wrapping'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets alignment
@@ -1164,9 +1163,7 @@ class TableProperties extends LinkElement
         if ((!is_numeric($alignment) && !in_array($alignment, $allowedValues)) || (is_numeric($alignment) && !in_array($allowedValues[$alignment], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'alignment', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['alignment'] = $alignment;
-
         return $this;
     }
 
@@ -1190,7 +1187,6 @@ class TableProperties extends LinkElement
     public function setAllowAutoFit($allow_auto_fit)
     {
         $this->container['allow_auto_fit'] = $allow_auto_fit;
-
         return $this;
     }
 
@@ -1214,7 +1210,6 @@ class TableProperties extends LinkElement
     public function setBidi($bidi)
     {
         $this->container['bidi'] = $bidi;
-
         return $this;
     }
 
@@ -1238,7 +1233,6 @@ class TableProperties extends LinkElement
     public function setBottomPadding($bottom_padding)
     {
         $this->container['bottom_padding'] = $bottom_padding;
-
         return $this;
     }
 
@@ -1262,7 +1256,6 @@ class TableProperties extends LinkElement
     public function setCellSpacing($cell_spacing)
     {
         $this->container['cell_spacing'] = $cell_spacing;
-
         return $this;
     }
 
@@ -1286,7 +1279,6 @@ class TableProperties extends LinkElement
     public function setLeftIndent($left_indent)
     {
         $this->container['left_indent'] = $left_indent;
-
         return $this;
     }
 
@@ -1310,7 +1302,6 @@ class TableProperties extends LinkElement
     public function setLeftPadding($left_padding)
     {
         $this->container['left_padding'] = $left_padding;
-
         return $this;
     }
 
@@ -1327,14 +1318,13 @@ class TableProperties extends LinkElement
     /*
      * Sets preferred_width
      *
-     * @param \Aspose\Words\Model\PreferredWidth $preferred_width preferred_width
+     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special "auto" value.
      *
      * @return $this
      */
     public function setPreferredWidth($preferred_width)
     {
         $this->container['preferred_width'] = $preferred_width;
-
         return $this;
     }
 
@@ -1358,7 +1348,6 @@ class TableProperties extends LinkElement
     public function setRightPadding($right_padding)
     {
         $this->container['right_padding'] = $right_padding;
-
         return $this;
     }
 
@@ -1385,9 +1374,7 @@ class TableProperties extends LinkElement
         if ((!is_numeric($style_identifier) && !in_array($style_identifier, $allowedValues)) || (is_numeric($style_identifier) && !in_array($allowedValues[$style_identifier], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'style_identifier', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['style_identifier'] = $style_identifier;
-
         return $this;
     }
 
@@ -1411,7 +1398,6 @@ class TableProperties extends LinkElement
     public function setStyleName($style_name)
     {
         $this->container['style_name'] = $style_name;
-
         return $this;
     }
 
@@ -1438,9 +1424,7 @@ class TableProperties extends LinkElement
         if ((!is_numeric($style_options) && !in_array($style_options, $allowedValues)) || (is_numeric($style_options) && !in_array($allowedValues[$style_options], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'style_options', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['style_options'] = $style_options;
-
         return $this;
     }
 
@@ -1467,9 +1451,7 @@ class TableProperties extends LinkElement
         if ((!is_numeric($text_wrapping) && !in_array($text_wrapping, $allowedValues)) || (is_numeric($text_wrapping) && !in_array($allowedValues[$text_wrapping], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'text_wrapping', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['text_wrapping'] = $text_wrapping;
-
         return $this;
     }
 
@@ -1493,9 +1475,9 @@ class TableProperties extends LinkElement
     public function setTopPadding($top_padding)
     {
         $this->container['top_padding'] = $top_padding;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -1566,3 +1548,4 @@ class TableProperties extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

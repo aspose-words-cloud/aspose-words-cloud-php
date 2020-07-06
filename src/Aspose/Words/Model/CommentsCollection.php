@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CommentsCollection.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * CommentsCollection
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Collection of comments.
  */
-class CommentsCollection extends LinkElement 
+class CommentsCollection extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class CommentsCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'comment_list' => null
+        'comment_list' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class CommentsCollection extends LinkElement
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class CommentsCollection extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['comment_list'] = isset($data['comment_list']) ? $data['comment_list'] : null;
     }
 
@@ -179,7 +174,6 @@ class CommentsCollection extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -197,7 +191,6 @@ class CommentsCollection extends LinkElement
 
         return true;
     }
-
 
     /*
      * Gets comment_list
@@ -219,9 +212,9 @@ class CommentsCollection extends LinkElement
     public function setCommentList($comment_list)
     {
         $this->container['comment_list'] = $comment_list;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class CommentsCollection extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

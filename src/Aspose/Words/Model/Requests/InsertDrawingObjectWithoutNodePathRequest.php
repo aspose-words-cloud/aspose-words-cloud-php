@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertDrawingObjectWithoutNodePathRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,59 +37,58 @@ class InsertDrawingObjectWithoutNodePathRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Drawing object parameters.
      */
     public $drawing_object;
-	
+
     /*
-     * File with image
+     * File with image.
      */
     public $image_file;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
-	
+
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
     public $revision_author;
-	
+
     /*
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-    
-	
+
     /*
      * Initializes a new instance of the InsertDrawingObjectWithoutNodePathRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
-     * @param \SplFileObject $image_file File with image
+     * @param \SplFileObject $image_file File with image.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -98,7 +97,7 @@ class InsertDrawingObjectWithoutNodePathRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $drawing_object, $image_file, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
+    public function __construct($name, $drawing_object, $image_file, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
         $this->drawing_object = $drawing_object;
@@ -128,7 +127,7 @@ class InsertDrawingObjectWithoutNodePathRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Drawing object parameters.
      */
@@ -145,9 +144,9 @@ class InsertDrawingObjectWithoutNodePathRequest
         $this->drawing_object = $value;
         return $this;
     }
-	
+
     /*
-     * File with image
+     * File with image.
      */
     public function get_image_file()
     {
@@ -155,14 +154,14 @@ class InsertDrawingObjectWithoutNodePathRequest
     }
 
     /*
-     * File with image
+     * File with image.
      */
     public function set_image_file($value)
     {
         $this->image_file = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -179,7 +178,7 @@ class InsertDrawingObjectWithoutNodePathRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -196,7 +195,7 @@ class InsertDrawingObjectWithoutNodePathRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -213,7 +212,7 @@ class InsertDrawingObjectWithoutNodePathRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -230,7 +229,7 @@ class InsertDrawingObjectWithoutNodePathRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
@@ -247,7 +246,7 @@ class InsertDrawingObjectWithoutNodePathRequest
         $this->dest_file_name = $value;
         return $this;
     }
-	
+
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
@@ -264,7 +263,7 @@ class InsertDrawingObjectWithoutNodePathRequest
         $this->revision_author = $value;
         return $this;
     }
-	
+
     /*
      * The date and time to use for revisions.
      */

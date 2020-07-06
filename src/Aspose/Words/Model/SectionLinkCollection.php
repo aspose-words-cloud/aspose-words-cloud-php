@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SectionLinkCollection.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SectionLinkCollection
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Collection of links to sections.
  */
-class SectionLinkCollection extends LinkElement 
+class SectionLinkCollection extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class SectionLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'section_link_list' => null
+        'section_link_list' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class SectionLinkCollection extends LinkElement
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class SectionLinkCollection extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['section_link_list'] = isset($data['section_link_list']) ? $data['section_link_list'] : null;
     }
 
@@ -179,7 +174,6 @@ class SectionLinkCollection extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -197,7 +191,6 @@ class SectionLinkCollection extends LinkElement
 
         return true;
     }
-
 
     /*
      * Gets section_link_list
@@ -219,9 +212,9 @@ class SectionLinkCollection extends LinkElement
     public function setSectionLinkList($section_link_list)
     {
         $this->container['section_link_list'] = $section_link_list;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class SectionLinkCollection extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

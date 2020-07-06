@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertOrUpdateParagraphTabStopRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,51 +37,50 @@ class InsertOrUpdateParagraphTabStopRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Paragraph tab stop.
      */
     public $dto;
-	
+
     /*
      * Path to the node which contains paragraph.
      */
     public $node_path;
-	
+
     /*
      * Object index.
      */
     public $index;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
-    
-	
+
     /*
      * Initializes a new instance of the InsertOrUpdateParagraphTabStopRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param \Aspose\Words\Model\TabStopInsert $dto Paragraph tab stop.
      * @param string $node_path Path to the node which contains paragraph.
@@ -92,7 +91,7 @@ class InsertOrUpdateParagraphTabStopRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $dto, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)             
+    public function __construct($name, $dto, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
     {
         $this->name = $name;
         $this->dto = $dto;
@@ -121,7 +120,7 @@ class InsertOrUpdateParagraphTabStopRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Paragraph tab stop.
      */
@@ -138,7 +137,7 @@ class InsertOrUpdateParagraphTabStopRequest
         $this->dto = $value;
         return $this;
     }
-	
+
     /*
      * Path to the node which contains paragraph.
      */
@@ -155,7 +154,7 @@ class InsertOrUpdateParagraphTabStopRequest
         $this->node_path = $value;
         return $this;
     }
-	
+
     /*
      * Object index.
      */
@@ -172,7 +171,7 @@ class InsertOrUpdateParagraphTabStopRequest
         $this->index = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -189,7 +188,7 @@ class InsertOrUpdateParagraphTabStopRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -206,7 +205,7 @@ class InsertOrUpdateParagraphTabStopRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -223,7 +222,7 @@ class InsertOrUpdateParagraphTabStopRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -240,7 +239,7 @@ class InsertOrUpdateParagraphTabStopRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */

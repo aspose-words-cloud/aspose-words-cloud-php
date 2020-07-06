@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateFieldRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,61 +37,60 @@ class UpdateFieldRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Field data.
      */
     public $field;
-	
+
     /*
      * Path to the node, which contains collection of fields.
      */
     public $node_path;
-	
+
     /*
      * Object index.
      */
     public $index;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
-	
+
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
     public $revision_author;
-	
+
     /*
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-    
-	
+
     /*
      * Initializes a new instance of the UpdateFieldRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param \Aspose\Words\Model\FieldUpdate $field Field data.
      * @param string $node_path Path to the node, which contains collection of fields.
@@ -104,7 +103,7 @@ class UpdateFieldRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $field, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
+    public function __construct($name, $field, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
         $this->field = $field;
@@ -135,7 +134,7 @@ class UpdateFieldRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Field data.
      */
@@ -152,7 +151,7 @@ class UpdateFieldRequest
         $this->field = $value;
         return $this;
     }
-	
+
     /*
      * Path to the node, which contains collection of fields.
      */
@@ -169,7 +168,7 @@ class UpdateFieldRequest
         $this->node_path = $value;
         return $this;
     }
-	
+
     /*
      * Object index.
      */
@@ -186,7 +185,7 @@ class UpdateFieldRequest
         $this->index = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -203,7 +202,7 @@ class UpdateFieldRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -220,7 +219,7 @@ class UpdateFieldRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -237,7 +236,7 @@ class UpdateFieldRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -254,7 +253,7 @@ class UpdateFieldRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
@@ -271,7 +270,7 @@ class UpdateFieldRequest
         $this->dest_file_name = $value;
         return $this;
     }
-	
+
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
@@ -288,7 +287,7 @@ class UpdateFieldRequest
         $this->revision_author = $value;
         return $this;
     }
-	
+
     /*
      * The date and time to use for revisions.
      */

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StyleUpdate.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * StyleUpdate
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,10 +52,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'next_paragraph_style_name' => 'string',
         'base_style_name' => 'string',
         'is_quick_style' => 'bool',
-        'name' => 'string'
+        'name' => 'string',
+        'next_paragraph_style_name' => 'string'
     ];
 
     /*
@@ -68,10 +64,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'next_paragraph_style_name' => null,
-        'base_style_name' => null,
-        'is_quick_style' => null,
-        'name' => null
+        'base_style_name' => 'null',
+        'is_quick_style' => 'null',
+        'name' => 'null',
+        'next_paragraph_style_name' => 'null'
     ];
 
     /*
@@ -101,10 +97,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'next_paragraph_style_name' => 'NextParagraphStyleName',
         'base_style_name' => 'BaseStyleName',
         'is_quick_style' => 'IsQuickStyle',
-        'name' => 'Name'
+        'name' => 'Name',
+        'next_paragraph_style_name' => 'NextParagraphStyleName'
     ];
 
     /*
@@ -113,10 +109,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'next_paragraph_style_name' => 'setNextParagraphStyleName',
         'base_style_name' => 'setBaseStyleName',
         'is_quick_style' => 'setIsQuickStyle',
-        'name' => 'setName'
+        'name' => 'setName',
+        'next_paragraph_style_name' => 'setNextParagraphStyleName'
     ];
 
     /*
@@ -125,10 +121,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'next_paragraph_style_name' => 'getNextParagraphStyleName',
         'base_style_name' => 'getBaseStyleName',
         'is_quick_style' => 'getIsQuickStyle',
-        'name' => 'getName'
+        'name' => 'getName',
+        'next_paragraph_style_name' => 'getNextParagraphStyleName'
     ];
 
     /*
@@ -189,10 +185,10 @@ class StyleUpdate implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['next_paragraph_style_name'] = isset($data['next_paragraph_style_name']) ? $data['next_paragraph_style_name'] : null;
         $this->container['base_style_name'] = isset($data['base_style_name']) ? $data['base_style_name'] : null;
         $this->container['is_quick_style'] = isset($data['is_quick_style']) ? $data['is_quick_style'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['next_paragraph_style_name'] = isset($data['next_paragraph_style_name']) ? $data['next_paragraph_style_name'] : null;
     }
 
     /*
@@ -215,33 +211,7 @@ class StyleUpdate implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets next_paragraph_style_name
-     *
-     * @return string
-     */
-    public function getNextParagraphStyleName()
-    {
-        return $this->container['next_paragraph_style_name'];
-    }
-
-    /*
-     * Sets next_paragraph_style_name
-     *
-     * @param string $next_paragraph_style_name Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
-     *
-     * @return $this
-     */
-    public function setNextParagraphStyleName($next_paragraph_style_name)
-    {
-        $this->container['next_paragraph_style_name'] = $next_paragraph_style_name;
-
-        return $this;
     }
 
     /*
@@ -264,7 +234,6 @@ class StyleUpdate implements ArrayAccess
     public function setBaseStyleName($base_style_name)
     {
         $this->container['base_style_name'] = $base_style_name;
-
         return $this;
     }
 
@@ -288,7 +257,6 @@ class StyleUpdate implements ArrayAccess
     public function setIsQuickStyle($is_quick_style)
     {
         $this->container['is_quick_style'] = $is_quick_style;
-
         return $this;
     }
 
@@ -312,9 +280,32 @@ class StyleUpdate implements ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
-
         return $this;
     }
+
+    /*
+     * Gets next_paragraph_style_name
+     *
+     * @return string
+     */
+    public function getNextParagraphStyleName()
+    {
+        return $this->container['next_paragraph_style_name'];
+    }
+
+    /*
+     * Sets next_paragraph_style_name
+     *
+     * @param string $next_paragraph_style_name Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
+     *
+     * @return $this
+     */
+    public function setNextParagraphStyleName($next_paragraph_style_name)
+    {
+        $this->container['next_paragraph_style_name'] = $next_paragraph_style_name;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -385,3 +376,4 @@ class StyleUpdate implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteFolderRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -34,29 +34,28 @@ namespace Aspose\Words\Model\Requests;
 class DeleteFolderRequest
 {
     /*
-     * Folder path e.g. /Folder1s
+     * Folder path e.g. /Folder1s.
      */
     public $path;
-	
+
     /*
-     * Storage name
+     * Storage name.
      */
     public $storage_name;
-	
+
     /*
-     * Enable to delete folders, subfolders and files
+     * Enable to delete folders, subfolders and files.
      */
     public $recursive;
-    
-	
+
     /*
      * Initializes a new instance of the DeleteFolderRequest class.
-     *  
-     * @param string $path Folder path e.g. /Folder1s
-     * @param string $storage_name Storage name
-     * @param bool $recursive Enable to delete folders, subfolders and files
+     *
+     * @param string $path Folder path e.g. /Folder1s.
+     * @param string $storage_name Storage name.
+     * @param bool $recursive Enable to delete folders, subfolders and files.
      */
-    public function __construct($path, $storage_name = null, $recursive = null)             
+    public function __construct($path, $storage_name = null, $recursive = null)
     {
         $this->path = $path;
         $this->storage_name = $storage_name;
@@ -64,7 +63,7 @@ class DeleteFolderRequest
     }
 
     /*
-     * Folder path e.g. /Folder1s
+     * Folder path e.g. /Folder1s.
      */
     public function get_path()
     {
@@ -72,16 +71,16 @@ class DeleteFolderRequest
     }
 
     /*
-     * Folder path e.g. /Folder1s
+     * Folder path e.g. /Folder1s.
      */
     public function set_path($value)
     {
         $this->path = $value;
         return $this;
     }
-	
+
     /*
-     * Storage name
+     * Storage name.
      */
     public function get_storage_name()
     {
@@ -89,16 +88,16 @@ class DeleteFolderRequest
     }
 
     /*
-     * Storage name
+     * Storage name.
      */
     public function set_storage_name($value)
     {
         $this->storage_name = $value;
         return $this;
     }
-	
+
     /*
-     * Enable to delete folders, subfolders and files
+     * Enable to delete folders, subfolders and files.
      */
     public function get_recursive()
     {
@@ -106,7 +105,7 @@ class DeleteFolderRequest
     }
 
     /*
-     * Enable to delete folders, subfolders and files
+     * Enable to delete folders, subfolders and files.
      */
     public function set_recursive($value)
     {

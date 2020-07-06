@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ConvertDocumentRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -34,47 +34,46 @@ namespace Aspose\Words\Model\Requests;
 class ConvertDocumentRequest
 {
     /*
-     * Converting document
+     * Converting document.
      */
     public $document;
-	
+
     /*
      * Format to convert.
      */
     public $format;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Path for saving operation result to the local storage.
      */
     public $out_path;
-	
+
     /*
      * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
      */
     public $file_name_field_value;
-	
+
     /*
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
-    
-	
+
     /*
      * Initializes a new instance of the ConvertDocumentRequest class.
-     *  
-     * @param \SplFileObject $document Converting document
+     *
+     * @param \SplFileObject $document Converting document.
      * @param string $format Format to convert.
      * @param string $storage Original document storage.
      * @param string $out_path Path for saving operation result to the local storage.
      * @param string $file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $format, $storage = null, $out_path = null, $file_name_field_value = null, $fonts_location = null)             
+    public function __construct($document, $format, $storage = null, $out_path = null, $file_name_field_value = null, $fonts_location = null)
     {
         $this->document = $document;
         $this->format = $format;
@@ -85,7 +84,7 @@ class ConvertDocumentRequest
     }
 
     /*
-     * Converting document
+     * Converting document.
      */
     public function get_document()
     {
@@ -93,14 +92,14 @@ class ConvertDocumentRequest
     }
 
     /*
-     * Converting document
+     * Converting document.
      */
     public function set_document($value)
     {
         $this->document = $value;
         return $this;
     }
-	
+
     /*
      * Format to convert.
      */
@@ -117,7 +116,7 @@ class ConvertDocumentRequest
         $this->format = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -134,7 +133,7 @@ class ConvertDocumentRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Path for saving operation result to the local storage.
      */
@@ -151,7 +150,7 @@ class ConvertDocumentRequest
         $this->out_path = $value;
         return $this;
     }
-	
+
     /*
      * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
      */
@@ -168,7 +167,7 @@ class ConvertDocumentRequest
         $this->file_name_field_value = $value;
         return $this;
     }
-	
+
     /*
      * Folder in filestorage with custom fonts.
      */

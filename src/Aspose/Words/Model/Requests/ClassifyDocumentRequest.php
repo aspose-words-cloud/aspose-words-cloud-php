@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ClassifyDocumentRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,41 +37,40 @@ class ClassifyDocumentRequest
      * The document name.
      */
     public $document_name;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Count of the best classes to return.
      */
     public $best_classes_count;
-	
+
     /*
      * Taxonomy to use for classification return.
      */
     public $taxonomy;
-    
-	
+
     /*
      * Initializes a new instance of the ClassifyDocumentRequest class.
-     *  
+     *
      * @param string $document_name The document name.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -80,7 +79,7 @@ class ClassifyDocumentRequest
      * @param string $best_classes_count Count of the best classes to return.
      * @param string $taxonomy Taxonomy to use for classification return.
      */
-    public function __construct($document_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $best_classes_count = null, $taxonomy = null)             
+    public function __construct($document_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $best_classes_count = null, $taxonomy = null)
     {
         $this->document_name = $document_name;
         $this->folder = $folder;
@@ -107,7 +106,7 @@ class ClassifyDocumentRequest
         $this->document_name = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -124,7 +123,7 @@ class ClassifyDocumentRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -141,7 +140,7 @@ class ClassifyDocumentRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -158,7 +157,7 @@ class ClassifyDocumentRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -175,7 +174,7 @@ class ClassifyDocumentRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Count of the best classes to return.
      */
@@ -192,7 +191,7 @@ class ClassifyDocumentRequest
         $this->best_classes_count = $value;
         return $this;
     }
-	
+
     /*
      * Taxonomy to use for classification return.
      */

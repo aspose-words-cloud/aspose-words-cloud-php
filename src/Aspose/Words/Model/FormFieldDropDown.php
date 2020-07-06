@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FormFieldDropDown.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * FormFieldDropDown
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description FormField dropdownlist element.
  */
-class FormFieldDropDown extends FormField 
+class FormFieldDropDown extends FormField
 {
     const DISCRIMINATOR = null;
 
@@ -64,8 +61,8 @@ class FormFieldDropDown extends FormField
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'drop_down_items' => null,
-        'drop_down_selected_index' => 'int32'
+        'drop_down_items' => 'null',
+        'drop_down_selected_index' => 'null'
     ];
 
     /*
@@ -162,7 +159,6 @@ class FormFieldDropDown extends FormField
 
 
 
-
     /*
      * Constructor
      *
@@ -172,7 +168,6 @@ class FormFieldDropDown extends FormField
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['drop_down_items'] = isset($data['drop_down_items']) ? $data['drop_down_items'] : null;
         $this->container['drop_down_selected_index'] = isset($data['drop_down_selected_index']) ? $data['drop_down_selected_index'] : null;
     }
@@ -185,7 +180,6 @@ class FormFieldDropDown extends FormField
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -203,7 +197,6 @@ class FormFieldDropDown extends FormField
 
         return true;
     }
-
 
     /*
      * Gets drop_down_items
@@ -225,7 +218,6 @@ class FormFieldDropDown extends FormField
     public function setDropDownItems($drop_down_items)
     {
         $this->container['drop_down_items'] = $drop_down_items;
-
         return $this;
     }
 
@@ -249,9 +241,9 @@ class FormFieldDropDown extends FormField
     public function setDropDownSelectedIndex($drop_down_selected_index)
     {
         $this->container['drop_down_selected_index'] = $drop_down_selected_index;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -322,3 +314,4 @@ class FormFieldDropDown extends FormField
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

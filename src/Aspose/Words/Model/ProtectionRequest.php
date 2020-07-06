@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ProtectionRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ProtectionRequest
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,8 +52,8 @@ class ProtectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'password' => 'string',
         'new_password' => 'string',
+        'password' => 'string',
         'protection_type' => 'string'
     ];
 
@@ -67,9 +63,9 @@ class ProtectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'password' => null,
-        'new_password' => null,
-        'protection_type' => null
+        'new_password' => 'null',
+        'password' => 'null',
+        'protection_type' => 'null'
     ];
 
     /*
@@ -99,8 +95,8 @@ class ProtectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'password' => 'Password',
         'new_password' => 'NewPassword',
+        'password' => 'Password',
         'protection_type' => 'ProtectionType'
     ];
 
@@ -110,8 +106,8 @@ class ProtectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'password' => 'setPassword',
         'new_password' => 'setNewPassword',
+        'password' => 'setPassword',
         'protection_type' => 'setProtectionType'
     ];
 
@@ -121,8 +117,8 @@ class ProtectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'password' => 'getPassword',
         'new_password' => 'getNewPassword',
+        'password' => 'getPassword',
         'protection_type' => 'getProtectionType'
     ];
 
@@ -184,8 +180,8 @@ class ProtectionRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['new_password'] = isset($data['new_password']) ? $data['new_password'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['protection_type'] = isset($data['protection_type']) ? $data['protection_type'] : null;
     }
 
@@ -209,33 +205,7 @@ class ProtectionRequest implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->container['password'];
-    }
-
-    /*
-     * Sets password
-     *
-     * @param string $password Gets or sets current password.
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->container['password'] = $password;
-
-        return $this;
     }
 
     /*
@@ -258,7 +228,29 @@ class ProtectionRequest implements ArrayAccess
     public function setNewPassword($new_password)
     {
         $this->container['new_password'] = $new_password;
+        return $this;
+    }
 
+    /*
+     * Gets password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /*
+     * Sets password
+     *
+     * @param string $password Gets or sets current password.
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->container['password'] = $password;
         return $this;
     }
 
@@ -282,9 +274,9 @@ class ProtectionRequest implements ArrayAccess
     public function setProtectionType($protection_type)
     {
         $this->container['protection_type'] = $protection_type;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -355,3 +347,4 @@ class ProtectionRequest implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

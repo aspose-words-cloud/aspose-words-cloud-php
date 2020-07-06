@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetHeaderFooterRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,41 +37,40 @@ class GetHeaderFooterRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Header/footer index.
      */
     public $header_footer_index;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * List of types of headers and footers.
      */
     public $filter_by_type;
-    
-	
+
     /*
      * Initializes a new instance of the GetHeaderFooterRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param int $header_footer_index Header/footer index.
      * @param string $folder Original document folder.
@@ -80,7 +79,7 @@ class GetHeaderFooterRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $filter_by_type List of types of headers and footers.
      */
-    public function __construct($name, $header_footer_index, $folder = null, $storage = null, $load_encoding = null, $password = null, $filter_by_type = null)             
+    public function __construct($name, $header_footer_index, $folder = null, $storage = null, $load_encoding = null, $password = null, $filter_by_type = null)
     {
         $this->name = $name;
         $this->header_footer_index = $header_footer_index;
@@ -107,7 +106,7 @@ class GetHeaderFooterRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Header/footer index.
      */
@@ -124,7 +123,7 @@ class GetHeaderFooterRequest
         $this->header_footer_index = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -141,7 +140,7 @@ class GetHeaderFooterRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -158,7 +157,7 @@ class GetHeaderFooterRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -175,7 +174,7 @@ class GetHeaderFooterRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -192,7 +191,7 @@ class GetHeaderFooterRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * List of types of headers and footers.
      */

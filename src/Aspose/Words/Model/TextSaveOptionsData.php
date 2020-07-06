@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TextSaveOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * TextSaveOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container class for text save options.
  */
-class TextSaveOptionsData extends SaveOptionsData 
+class TextSaveOptionsData extends TxtSaveOptionsBaseData
 {
     const DISCRIMINATOR = null;
 
@@ -55,10 +52,6 @@ class TextSaveOptionsData extends SaveOptionsData
      */
     protected static $swaggerTypes = [
         'add_bidi_marks' => 'bool',
-        'encoding' => 'string',
-        'export_headers_footers_mode' => 'string',
-        'force_page_breaks' => 'bool',
-        'paragraph_break' => 'string',
         'preserve_table_layout' => 'bool',
         'simplify_list_labels' => 'bool'
     ];
@@ -69,13 +62,9 @@ class TextSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'add_bidi_marks' => null,
-        'encoding' => null,
-        'export_headers_footers_mode' => null,
-        'force_page_breaks' => null,
-        'paragraph_break' => null,
-        'preserve_table_layout' => null,
-        'simplify_list_labels' => null
+        'add_bidi_marks' => 'null',
+        'preserve_table_layout' => 'null',
+        'simplify_list_labels' => 'null'
     ];
 
     /*
@@ -106,10 +95,6 @@ class TextSaveOptionsData extends SaveOptionsData
      */
     protected static $attributeMap = [
         'add_bidi_marks' => 'AddBidiMarks',
-        'encoding' => 'Encoding',
-        'export_headers_footers_mode' => 'ExportHeadersFootersMode',
-        'force_page_breaks' => 'ForcePageBreaks',
-        'paragraph_break' => 'ParagraphBreak',
         'preserve_table_layout' => 'PreserveTableLayout',
         'simplify_list_labels' => 'SimplifyListLabels'
     ];
@@ -121,10 +106,6 @@ class TextSaveOptionsData extends SaveOptionsData
      */
     protected static $setters = [
         'add_bidi_marks' => 'setAddBidiMarks',
-        'encoding' => 'setEncoding',
-        'export_headers_footers_mode' => 'setExportHeadersFootersMode',
-        'force_page_breaks' => 'setForcePageBreaks',
-        'paragraph_break' => 'setParagraphBreak',
         'preserve_table_layout' => 'setPreserveTableLayout',
         'simplify_list_labels' => 'setSimplifyListLabels'
     ];
@@ -136,10 +117,6 @@ class TextSaveOptionsData extends SaveOptionsData
      */
     protected static $getters = [
         'add_bidi_marks' => 'getAddBidiMarks',
-        'encoding' => 'getEncoding',
-        'export_headers_footers_mode' => 'getExportHeadersFootersMode',
-        'force_page_breaks' => 'getForcePageBreaks',
-        'paragraph_break' => 'getParagraphBreak',
         'preserve_table_layout' => 'getPreserveTableLayout',
         'simplify_list_labels' => 'getSimplifyListLabels'
     ];
@@ -185,23 +162,6 @@ class TextSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
-    const EXPORT_HEADERS_FOOTERS_MODE_NONE = 'None';
-    const EXPORT_HEADERS_FOOTERS_MODE_PRIMARY_ONLY = 'PrimaryOnly';
-    const EXPORT_HEADERS_FOOTERS_MODE_ALL_AT_END = 'AllAtEnd';
-
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getExportHeadersFootersModeAllowableValues()
-    {
-        return [
-            self::EXPORT_HEADERS_FOOTERS_MODE_NONE,
-            self::EXPORT_HEADERS_FOOTERS_MODE_PRIMARY_ONLY,
-            self::EXPORT_HEADERS_FOOTERS_MODE_ALL_AT_END
-        ];
-    }
 
 
     /*
@@ -213,12 +173,7 @@ class TextSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['add_bidi_marks'] = isset($data['add_bidi_marks']) ? $data['add_bidi_marks'] : null;
-        $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
-        $this->container['export_headers_footers_mode'] = isset($data['export_headers_footers_mode']) ? $data['export_headers_footers_mode'] : null;
-        $this->container['force_page_breaks'] = isset($data['force_page_breaks']) ? $data['force_page_breaks'] : null;
-        $this->container['paragraph_break'] = isset($data['paragraph_break']) ? $data['paragraph_break'] : null;
         $this->container['preserve_table_layout'] = isset($data['preserve_table_layout']) ? $data['preserve_table_layout'] : null;
         $this->container['simplify_list_labels'] = isset($data['simplify_list_labels']) ? $data['simplify_list_labels'] : null;
     }
@@ -231,15 +186,6 @@ class TextSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
-        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
-        if (!in_array($this->container['export_headers_footers_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'export_headers_footers_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -255,13 +201,8 @@ class TextSaveOptionsData extends SaveOptionsData
             return false;
         }
 
-        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
-        if (!in_array($this->container['export_headers_footers_mode'], $allowedValues)) {
-            return false;
-        }
         return true;
     }
-
 
     /*
      * Gets add_bidi_marks
@@ -283,108 +224,6 @@ class TextSaveOptionsData extends SaveOptionsData
     public function setAddBidiMarks($add_bidi_marks)
     {
         $this->container['add_bidi_marks'] = $add_bidi_marks;
-
-        return $this;
-    }
-
-    /*
-     * Gets encoding
-     *
-     * @return string
-     */
-    public function getEncoding()
-    {
-        return $this->container['encoding'];
-    }
-
-    /*
-     * Sets encoding
-     *
-     * @param string $encoding Gets or sets specifies the encoding to use when exporting in plain text format.
-     *
-     * @return $this
-     */
-    public function setEncoding($encoding)
-    {
-        $this->container['encoding'] = $encoding;
-
-        return $this;
-    }
-
-    /*
-     * Gets export_headers_footers_mode
-     *
-     * @return string
-     */
-    public function getExportHeadersFootersMode()
-    {
-        return $this->container['export_headers_footers_mode'];
-    }
-
-    /*
-     * Sets export_headers_footers_mode
-     *
-     * @param string $export_headers_footers_mode Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.
-     *
-     * @return $this
-     */
-    public function setExportHeadersFootersMode($export_headers_footers_mode)
-    {
-        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
-        if ((!is_numeric($export_headers_footers_mode) && !in_array($export_headers_footers_mode, $allowedValues)) || (is_numeric($export_headers_footers_mode) && !in_array($allowedValues[$export_headers_footers_mode], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'export_headers_footers_mode', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-			
-        $this->container['export_headers_footers_mode'] = $export_headers_footers_mode;
-
-        return $this;
-    }
-
-    /*
-     * Gets force_page_breaks
-     *
-     * @return bool
-     */
-    public function getForcePageBreaks()
-    {
-        return $this->container['force_page_breaks'];
-    }
-
-    /*
-     * Sets force_page_breaks
-     *
-     * @param bool $force_page_breaks Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.
-     *
-     * @return $this
-     */
-    public function setForcePageBreaks($force_page_breaks)
-    {
-        $this->container['force_page_breaks'] = $force_page_breaks;
-
-        return $this;
-    }
-
-    /*
-     * Gets paragraph_break
-     *
-     * @return string
-     */
-    public function getParagraphBreak()
-    {
-        return $this->container['paragraph_break'];
-    }
-
-    /*
-     * Sets paragraph_break
-     *
-     * @param string $paragraph_break Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.
-     *
-     * @return $this
-     */
-    public function setParagraphBreak($paragraph_break)
-    {
-        $this->container['paragraph_break'] = $paragraph_break;
-
         return $this;
     }
 
@@ -408,7 +247,6 @@ class TextSaveOptionsData extends SaveOptionsData
     public function setPreserveTableLayout($preserve_table_layout)
     {
         $this->container['preserve_table_layout'] = $preserve_table_layout;
-
         return $this;
     }
 
@@ -432,9 +270,9 @@ class TextSaveOptionsData extends SaveOptionsData
     public function setSimplifyListLabels($simplify_list_labels)
     {
         $this->container['simplify_list_labels'] = $simplify_list_labels;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -505,3 +343,4 @@ class TextSaveOptionsData extends SaveOptionsData
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

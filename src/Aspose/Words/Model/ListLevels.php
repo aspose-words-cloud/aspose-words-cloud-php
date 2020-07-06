@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListLevels.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ListLevels
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a single document list.
  */
-class ListLevels extends LinkElement 
+class ListLevels extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class ListLevels extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list_level' => null
+        'list_level' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class ListLevels extends LinkElement
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class ListLevels extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['list_level'] = isset($data['list_level']) ? $data['list_level'] : null;
     }
 
@@ -179,7 +174,6 @@ class ListLevels extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -197,7 +191,6 @@ class ListLevels extends LinkElement
 
         return true;
     }
-
 
     /*
      * Gets list_level
@@ -219,9 +212,9 @@ class ListLevels extends LinkElement
     public function setListLevel($list_level)
     {
         $this->container['list_level'] = $list_level;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class ListLevels extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

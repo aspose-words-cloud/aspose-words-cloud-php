@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableRowFormat.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * TableRowFormat
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents all formatting for a table row.
  */
-class TableRowFormat extends LinkElement 
+class TableRowFormat extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -66,10 +63,10 @@ class TableRowFormat extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'allow_break_across_pages' => null,
-        'heading_format' => null,
-        'height' => 'double',
-        'height_rule' => null
+        'allow_break_across_pages' => 'null',
+        'heading_format' => 'null',
+        'height' => 'null',
+        'height_rule' => 'null'
     ];
 
     /*
@@ -188,7 +185,6 @@ class TableRowFormat extends LinkElement
         ];
     }
 
-
     /*
      * Constructor
      *
@@ -198,7 +194,6 @@ class TableRowFormat extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['allow_break_across_pages'] = isset($data['allow_break_across_pages']) ? $data['allow_break_across_pages'] : null;
         $this->container['heading_format'] = isset($data['heading_format']) ? $data['heading_format'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
@@ -213,7 +208,6 @@ class TableRowFormat extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         $allowedValues = $this->getHeightRuleAllowableValues();
         if (!in_array($this->container['height_rule'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -221,6 +215,7 @@ class TableRowFormat extends LinkElement
                 implode("', '", $allowedValues)
             );
         }
+
 
         return $invalidProperties;
     }
@@ -241,9 +236,10 @@ class TableRowFormat extends LinkElement
         if (!in_array($this->container['height_rule'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets allow_break_across_pages
@@ -265,7 +261,6 @@ class TableRowFormat extends LinkElement
     public function setAllowBreakAcrossPages($allow_break_across_pages)
     {
         $this->container['allow_break_across_pages'] = $allow_break_across_pages;
-
         return $this;
     }
 
@@ -289,7 +284,6 @@ class TableRowFormat extends LinkElement
     public function setHeadingFormat($heading_format)
     {
         $this->container['heading_format'] = $heading_format;
-
         return $this;
     }
 
@@ -313,7 +307,6 @@ class TableRowFormat extends LinkElement
     public function setHeight($height)
     {
         $this->container['height'] = $height;
-
         return $this;
     }
 
@@ -340,11 +333,10 @@ class TableRowFormat extends LinkElement
         if ((!is_numeric($height_rule) && !in_array($height_rule, $allowedValues)) || (is_numeric($height_rule) && !in_array($allowedValues[$height_rule], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'height_rule', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['height_rule'] = $height_rule;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -415,3 +407,4 @@ class TableRowFormat extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

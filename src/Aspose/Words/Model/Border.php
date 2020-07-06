@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Border.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * Border
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a border of an object.
  */
-class Border extends LinkElement 
+class Border extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -68,12 +65,12 @@ class Border extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'border_type' => null,
-        'color' => null,
-        'distance_from_text' => 'double',
-        'line_style' => null,
-        'line_width' => 'double',
-        'shadow' => null
+        'border_type' => 'null',
+        'color' => 'null',
+        'distance_from_text' => 'null',
+        'line_style' => 'null',
+        'line_width' => 'null',
+        'shadow' => 'null'
     ];
 
     /*
@@ -274,7 +271,6 @@ class Border extends LinkElement
         ];
     }
 
-
     /*
      * Constructor
      *
@@ -284,7 +280,6 @@ class Border extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['border_type'] = isset($data['border_type']) ? $data['border_type'] : null;
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['distance_from_text'] = isset($data['distance_from_text']) ? $data['distance_from_text'] : null;
@@ -301,7 +296,6 @@ class Border extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         $allowedValues = $this->getBorderTypeAllowableValues();
         if (!in_array($this->container['border_type'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -317,6 +311,7 @@ class Border extends LinkElement
                 implode("', '", $allowedValues)
             );
         }
+
 
         return $invalidProperties;
     }
@@ -337,13 +332,15 @@ class Border extends LinkElement
         if (!in_array($this->container['border_type'], $allowedValues)) {
             return false;
         }
+
         $allowedValues = $this->getLineStyleAllowableValues();
         if (!in_array($this->container['line_style'], $allowedValues)) {
             return false;
         }
+
+
         return true;
     }
-
 
     /*
      * Gets border_type
@@ -368,9 +365,7 @@ class Border extends LinkElement
         if ((!is_numeric($border_type) && !in_array($border_type, $allowedValues)) || (is_numeric($border_type) && !in_array($allowedValues[$border_type], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'border_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['border_type'] = $border_type;
-
         return $this;
     }
 
@@ -387,14 +382,13 @@ class Border extends LinkElement
     /*
      * Sets color
      *
-     * @param \Aspose\Words\Model\XmlColor $color color
+     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the border color.
      *
      * @return $this
      */
     public function setColor($color)
     {
         $this->container['color'] = $color;
-
         return $this;
     }
 
@@ -418,7 +412,6 @@ class Border extends LinkElement
     public function setDistanceFromText($distance_from_text)
     {
         $this->container['distance_from_text'] = $distance_from_text;
-
         return $this;
     }
 
@@ -445,9 +438,7 @@ class Border extends LinkElement
         if ((!is_numeric($line_style) && !in_array($line_style, $allowedValues)) || (is_numeric($line_style) && !in_array($allowedValues[$line_style], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'line_style', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['line_style'] = $line_style;
-
         return $this;
     }
 
@@ -471,7 +462,6 @@ class Border extends LinkElement
     public function setLineWidth($line_width)
     {
         $this->container['line_width'] = $line_width;
-
         return $this;
     }
 
@@ -495,9 +485,9 @@ class Border extends LinkElement
     public function setShadow($shadow)
     {
         $this->container['shadow'] = $shadow;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -568,3 +558,4 @@ class Border extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

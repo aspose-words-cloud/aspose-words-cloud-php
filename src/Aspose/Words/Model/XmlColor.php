@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="XmlColor.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * XmlColor
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,8 +52,8 @@ class XmlColor implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'web' => 'string',
-        'alpha' => 'int'
+        'alpha' => 'int',
+        'web' => 'string'
     ];
 
     /*
@@ -66,8 +62,8 @@ class XmlColor implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'web' => null,
-        'alpha' => 'byte'
+        'alpha' => 'null',
+        'web' => 'null'
     ];
 
     /*
@@ -97,8 +93,8 @@ class XmlColor implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'web' => 'Web',
-        'alpha' => 'Alpha'
+        'alpha' => 'Alpha',
+        'web' => 'Web'
     ];
 
     /*
@@ -107,8 +103,8 @@ class XmlColor implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'web' => 'setWeb',
-        'alpha' => 'setAlpha'
+        'alpha' => 'setAlpha',
+        'web' => 'setWeb'
     ];
 
     /*
@@ -117,8 +113,8 @@ class XmlColor implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'web' => 'getWeb',
-        'alpha' => 'getAlpha'
+        'alpha' => 'getAlpha',
+        'web' => 'getWeb'
     ];
 
     /*
@@ -179,8 +175,8 @@ class XmlColor implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['web'] = isset($data['web']) ? $data['web'] : null;
         $this->container['alpha'] = isset($data['alpha']) ? $data['alpha'] : null;
+        $this->container['web'] = isset($data['web']) ? $data['web'] : null;
     }
 
     /*
@@ -203,33 +199,7 @@ class XmlColor implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets web
-     *
-     * @return string
-     */
-    public function getWeb()
-    {
-        return $this->container['web'];
-    }
-
-    /*
-     * Sets web
-     *
-     * @param string $web Gets or sets hTML string color representation.
-     *
-     * @return $this
-     */
-    public function setWeb($web)
-    {
-        $this->container['web'] = $web;
-
-        return $this;
     }
 
     /*
@@ -252,9 +222,32 @@ class XmlColor implements ArrayAccess
     public function setAlpha($alpha)
     {
         $this->container['alpha'] = $alpha;
-
         return $this;
     }
+
+    /*
+     * Gets web
+     *
+     * @return string
+     */
+    public function getWeb()
+    {
+        return $this->container['web'];
+    }
+
+    /*
+     * Sets web
+     *
+     * @param string $web Gets or sets hTML string color representation.
+     *
+     * @return $this
+     */
+    public function setWeb($web)
+    {
+        $this->container['web'] = $web;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -325,3 +318,4 @@ class XmlColor implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

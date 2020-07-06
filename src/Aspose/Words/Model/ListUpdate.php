@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListUpdate.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * ListUpdate
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -65,7 +61,7 @@ class ListUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_restart_at_each_section' => null
+        'is_restart_at_each_section' => 'null'
     ];
 
     /*
@@ -197,10 +193,8 @@ class ListUpdate implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
-
 
     /*
      * Gets is_restart_at_each_section
@@ -222,9 +216,9 @@ class ListUpdate implements ArrayAccess
     public function setIsRestartAtEachSection($is_restart_at_each_section)
     {
         $this->container['is_restart_at_each_section'] = $is_restart_at_each_section;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -295,3 +289,4 @@ class ListUpdate implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

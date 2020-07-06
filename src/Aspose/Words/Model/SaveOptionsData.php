@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveOptionsData.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SaveOptionsData
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -41,7 +37,7 @@ use \Aspose\Words\ObjectSerializer;
  */
 class SaveOptionsData implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -56,16 +52,16 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'save_format' => 'string',
-        'file_name' => 'string',
-        'dml_rendering_mode' => 'string',
+        'dml3_d_effects_rendering_mode' => 'string',
         'dml_effects_rendering_mode' => 'string',
-        'zip_output' => 'bool',
+        'dml_rendering_mode' => 'string',
+        'file_name' => 'string',
+        'save_format' => 'string',
+        'update_fields' => 'bool',
+        'update_last_printed_property' => 'bool',
         'update_last_saved_time_property' => 'bool',
         'update_sdt_content' => 'bool',
-        'update_fields' => 'bool',
-        'dml3_d_effects_rendering_mode' => 'string',
-        'update_last_printed_property' => 'bool'
+        'zip_output' => 'bool'
     ];
 
     /*
@@ -74,16 +70,16 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'save_format' => null,
-        'file_name' => null,
-        'dml_rendering_mode' => null,
-        'dml_effects_rendering_mode' => null,
-        'zip_output' => null,
-        'update_last_saved_time_property' => null,
-        'update_sdt_content' => null,
-        'update_fields' => null,
-        'dml3_d_effects_rendering_mode' => null,
-        'update_last_printed_property' => null
+        'dml3_d_effects_rendering_mode' => 'null',
+        'dml_effects_rendering_mode' => 'null',
+        'dml_rendering_mode' => 'null',
+        'file_name' => 'null',
+        'save_format' => 'null',
+        'update_fields' => 'null',
+        'update_last_printed_property' => 'null',
+        'update_last_saved_time_property' => 'null',
+        'update_sdt_content' => 'null',
+        'zip_output' => 'null'
     ];
 
     /*
@@ -113,16 +109,16 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'save_format' => 'SaveFormat',
-        'file_name' => 'FileName',
-        'dml_rendering_mode' => 'DmlRenderingMode',
+        'dml3_d_effects_rendering_mode' => 'Dml3DEffectsRenderingMode',
         'dml_effects_rendering_mode' => 'DmlEffectsRenderingMode',
-        'zip_output' => 'ZipOutput',
+        'dml_rendering_mode' => 'DmlRenderingMode',
+        'file_name' => 'FileName',
+        'save_format' => 'SaveFormat',
+        'update_fields' => 'UpdateFields',
+        'update_last_printed_property' => 'UpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'UpdateLastSavedTimeProperty',
         'update_sdt_content' => 'UpdateSdtContent',
-        'update_fields' => 'UpdateFields',
-        'dml3_d_effects_rendering_mode' => 'Dml3DEffectsRenderingMode',
-        'update_last_printed_property' => 'UpdateLastPrintedProperty'
+        'zip_output' => 'ZipOutput'
     ];
 
     /*
@@ -131,16 +127,16 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'save_format' => 'setSaveFormat',
-        'file_name' => 'setFileName',
-        'dml_rendering_mode' => 'setDmlRenderingMode',
+        'dml3_d_effects_rendering_mode' => 'setDml3DEffectsRenderingMode',
         'dml_effects_rendering_mode' => 'setDmlEffectsRenderingMode',
-        'zip_output' => 'setZipOutput',
+        'dml_rendering_mode' => 'setDmlRenderingMode',
+        'file_name' => 'setFileName',
+        'save_format' => 'setSaveFormat',
+        'update_fields' => 'setUpdateFields',
+        'update_last_printed_property' => 'setUpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'setUpdateLastSavedTimeProperty',
         'update_sdt_content' => 'setUpdateSdtContent',
-        'update_fields' => 'setUpdateFields',
-        'dml3_d_effects_rendering_mode' => 'setDml3DEffectsRenderingMode',
-        'update_last_printed_property' => 'setUpdateLastPrintedProperty'
+        'zip_output' => 'setZipOutput'
     ];
 
     /*
@@ -149,16 +145,16 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'save_format' => 'getSaveFormat',
-        'file_name' => 'getFileName',
-        'dml_rendering_mode' => 'getDmlRenderingMode',
+        'dml3_d_effects_rendering_mode' => 'getDml3DEffectsRenderingMode',
         'dml_effects_rendering_mode' => 'getDmlEffectsRenderingMode',
-        'zip_output' => 'getZipOutput',
+        'dml_rendering_mode' => 'getDmlRenderingMode',
+        'file_name' => 'getFileName',
+        'save_format' => 'getSaveFormat',
+        'update_fields' => 'getUpdateFields',
+        'update_last_printed_property' => 'getUpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'getUpdateLastSavedTimeProperty',
         'update_sdt_content' => 'getUpdateSdtContent',
-        'update_fields' => 'getUpdateFields',
-        'dml3_d_effects_rendering_mode' => 'getDml3DEffectsRenderingMode',
-        'update_last_printed_property' => 'getUpdateLastPrintedProperty'
+        'zip_output' => 'getZipOutput'
     ];
 
     /*
@@ -233,20 +229,16 @@ class SaveOptionsData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
-        $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
-        $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
+        $this->container['dml3_d_effects_rendering_mode'] = isset($data['dml3_d_effects_rendering_mode']) ? $data['dml3_d_effects_rendering_mode'] : null;
         $this->container['dml_effects_rendering_mode'] = isset($data['dml_effects_rendering_mode']) ? $data['dml_effects_rendering_mode'] : null;
-        $this->container['zip_output'] = isset($data['zip_output']) ? $data['zip_output'] : null;
+        $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
+        $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
+        $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
+        $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
+        $this->container['update_last_printed_property'] = isset($data['update_last_printed_property']) ? $data['update_last_printed_property'] : null;
         $this->container['update_last_saved_time_property'] = isset($data['update_last_saved_time_property']) ? $data['update_last_saved_time_property'] : null;
         $this->container['update_sdt_content'] = isset($data['update_sdt_content']) ? $data['update_sdt_content'] : null;
-        $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
-        $this->container['dml3_d_effects_rendering_mode'] = isset($data['dml3_d_effects_rendering_mode']) ? $data['dml3_d_effects_rendering_mode'] : null;
-        $this->container['update_last_printed_property'] = isset($data['update_last_printed_property']) ? $data['update_last_printed_property'] : null;
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
+        $this->container['zip_output'] = isset($data['zip_output']) ? $data['zip_output'] : null;
     }
 
     /*
@@ -266,6 +258,7 @@ class SaveOptionsData implements ArrayAccess
             );
         }
 
+
         return $invalidProperties;
     }
 
@@ -277,205 +270,13 @@ class SaveOptionsData implements ArrayAccess
      */
     public function valid()
     {
-
         $allowedValues = $this->getDml3DEffectsRenderingModeAllowableValues();
         if (!in_array($this->container['dml3_d_effects_rendering_mode'], $allowedValues)) {
             return false;
         }
+
+
         return true;
-    }
-
-
-    /*
-     * Gets save_format
-     *
-     * @return string
-     */
-    public function getSaveFormat()
-    {
-        return $this->container['save_format'];
-    }
-
-    /*
-     * Sets save_format
-     *
-     * @param string $save_format Gets or sets format of save.
-     *
-     * @return $this
-     */
-    public function setSaveFormat($save_format)
-    {
-        $this->container['save_format'] = $save_format;
-
-        return $this;
-    }
-
-    /*
-     * Gets file_name
-     *
-     * @return string
-     */
-    public function getFileName()
-    {
-        return $this->container['file_name'];
-    }
-
-    /*
-     * Sets file_name
-     *
-     * @param string $file_name Gets or sets name of destination file.
-     *
-     * @return $this
-     */
-    public function setFileName($file_name)
-    {
-        $this->container['file_name'] = $file_name;
-
-        return $this;
-    }
-
-    /*
-     * Gets dml_rendering_mode
-     *
-     * @return string
-     */
-    public function getDmlRenderingMode()
-    {
-        return $this->container['dml_rendering_mode'];
-    }
-
-    /*
-     * Sets dml_rendering_mode
-     *
-     * @param string $dml_rendering_mode Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
-     *
-     * @return $this
-     */
-    public function setDmlRenderingMode($dml_rendering_mode)
-    {
-        $this->container['dml_rendering_mode'] = $dml_rendering_mode;
-
-        return $this;
-    }
-
-    /*
-     * Gets dml_effects_rendering_mode
-     *
-     * @return string
-     */
-    public function getDmlEffectsRenderingMode()
-    {
-        return $this->container['dml_effects_rendering_mode'];
-    }
-
-    /*
-     * Sets dml_effects_rendering_mode
-     *
-     * @param string $dml_effects_rendering_mode Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
-     *
-     * @return $this
-     */
-    public function setDmlEffectsRenderingMode($dml_effects_rendering_mode)
-    {
-        $this->container['dml_effects_rendering_mode'] = $dml_effects_rendering_mode;
-
-        return $this;
-    }
-
-    /*
-     * Gets zip_output
-     *
-     * @return bool
-     */
-    public function getZipOutput()
-    {
-        return $this->container['zip_output'];
-    }
-
-    /*
-     * Sets zip_output
-     *
-     * @param bool $zip_output Gets or sets controls zip output or not. Default value is false.
-     *
-     * @return $this
-     */
-    public function setZipOutput($zip_output)
-    {
-        $this->container['zip_output'] = $zip_output;
-
-        return $this;
-    }
-
-    /*
-     * Gets update_last_saved_time_property
-     *
-     * @return bool
-     */
-    public function getUpdateLastSavedTimeProperty()
-    {
-        return $this->container['update_last_saved_time_property'];
-    }
-
-    /*
-     * Sets update_last_saved_time_property
-     *
-     * @param bool $update_last_saved_time_property Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
-     *
-     * @return $this
-     */
-    public function setUpdateLastSavedTimeProperty($update_last_saved_time_property)
-    {
-        $this->container['update_last_saved_time_property'] = $update_last_saved_time_property;
-
-        return $this;
-    }
-
-    /*
-     * Gets update_sdt_content
-     *
-     * @return bool
-     */
-    public function getUpdateSdtContent()
-    {
-        return $this->container['update_sdt_content'];
-    }
-
-    /*
-     * Sets update_sdt_content
-     *
-     * @param bool $update_sdt_content Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
-     *
-     * @return $this
-     */
-    public function setUpdateSdtContent($update_sdt_content)
-    {
-        $this->container['update_sdt_content'] = $update_sdt_content;
-
-        return $this;
-    }
-
-    /*
-     * Gets update_fields
-     *
-     * @return bool
-     */
-    public function getUpdateFields()
-    {
-        return $this->container['update_fields'];
-    }
-
-    /*
-     * Sets update_fields
-     *
-     * @param bool $update_fields Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
-     *
-     * @return $this
-     */
-    public function setUpdateFields($update_fields)
-    {
-        $this->container['update_fields'] = $update_fields;
-
-        return $this;
     }
 
     /*
@@ -501,9 +302,122 @@ class SaveOptionsData implements ArrayAccess
         if ((!is_numeric($dml3_d_effects_rendering_mode) && !in_array($dml3_d_effects_rendering_mode, $allowedValues)) || (is_numeric($dml3_d_effects_rendering_mode) && !in_array($allowedValues[$dml3_d_effects_rendering_mode], $allowedValues))) {
             throw new \InvalidArgumentException(sprintf("Invalid value for 'dml3_d_effects_rendering_mode', must be one of '%s'", implode("', '", $allowedValues)));
         }
-			
         $this->container['dml3_d_effects_rendering_mode'] = $dml3_d_effects_rendering_mode;
+        return $this;
+    }
 
+    /*
+     * Gets dml_effects_rendering_mode
+     *
+     * @return string
+     */
+    public function getDmlEffectsRenderingMode()
+    {
+        return $this->container['dml_effects_rendering_mode'];
+    }
+
+    /*
+     * Sets dml_effects_rendering_mode
+     *
+     * @param string $dml_effects_rendering_mode Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
+     *
+     * @return $this
+     */
+    public function setDmlEffectsRenderingMode($dml_effects_rendering_mode)
+    {
+        $this->container['dml_effects_rendering_mode'] = $dml_effects_rendering_mode;
+        return $this;
+    }
+
+    /*
+     * Gets dml_rendering_mode
+     *
+     * @return string
+     */
+    public function getDmlRenderingMode()
+    {
+        return $this->container['dml_rendering_mode'];
+    }
+
+    /*
+     * Sets dml_rendering_mode
+     *
+     * @param string $dml_rendering_mode Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
+     *
+     * @return $this
+     */
+    public function setDmlRenderingMode($dml_rendering_mode)
+    {
+        $this->container['dml_rendering_mode'] = $dml_rendering_mode;
+        return $this;
+    }
+
+    /*
+     * Gets file_name
+     *
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->container['file_name'];
+    }
+
+    /*
+     * Sets file_name
+     *
+     * @param string $file_name Gets or sets name of destination file.
+     *
+     * @return $this
+     */
+    public function setFileName($file_name)
+    {
+        $this->container['file_name'] = $file_name;
+        return $this;
+    }
+
+    /*
+     * Gets save_format
+     *
+     * @return string
+     */
+    public function getSaveFormat()
+    {
+        return $this->container['save_format'];
+    }
+
+    /*
+     * Sets save_format
+     *
+     * @param string $save_format Gets or sets format of save.
+     *
+     * @return $this
+     */
+    public function setSaveFormat($save_format)
+    {
+        $this->container['save_format'] = $save_format;
+        return $this;
+    }
+
+    /*
+     * Gets update_fields
+     *
+     * @return bool
+     */
+    public function getUpdateFields()
+    {
+        return $this->container['update_fields'];
+    }
+
+    /*
+     * Sets update_fields
+     *
+     * @param bool $update_fields Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.
+     *
+     * @return $this
+     */
+    public function setUpdateFields($update_fields)
+    {
+        $this->container['update_fields'] = $update_fields;
         return $this;
     }
 
@@ -527,9 +441,78 @@ class SaveOptionsData implements ArrayAccess
     public function setUpdateLastPrintedProperty($update_last_printed_property)
     {
         $this->container['update_last_printed_property'] = $update_last_printed_property;
-
         return $this;
     }
+
+    /*
+     * Gets update_last_saved_time_property
+     *
+     * @return bool
+     */
+    public function getUpdateLastSavedTimeProperty()
+    {
+        return $this->container['update_last_saved_time_property'];
+    }
+
+    /*
+     * Sets update_last_saved_time_property
+     *
+     * @param bool $update_last_saved_time_property Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+     *
+     * @return $this
+     */
+    public function setUpdateLastSavedTimeProperty($update_last_saved_time_property)
+    {
+        $this->container['update_last_saved_time_property'] = $update_last_saved_time_property;
+        return $this;
+    }
+
+    /*
+     * Gets update_sdt_content
+     *
+     * @return bool
+     */
+    public function getUpdateSdtContent()
+    {
+        return $this->container['update_sdt_content'];
+    }
+
+    /*
+     * Sets update_sdt_content
+     *
+     * @param bool $update_sdt_content Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+     *
+     * @return $this
+     */
+    public function setUpdateSdtContent($update_sdt_content)
+    {
+        $this->container['update_sdt_content'] = $update_sdt_content;
+        return $this;
+    }
+
+    /*
+     * Gets zip_output
+     *
+     * @return bool
+     */
+    public function getZipOutput()
+    {
+        return $this->container['zip_output'];
+    }
+
+    /*
+     * Sets zip_output
+     *
+     * @param bool $zip_output Gets or sets controls zip output or not. Default value is false.
+     *
+     * @return $this
+     */
+    public function setZipOutput($zip_output)
+    {
+        $this->container['zip_output'] = $zip_output;
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -600,3 +583,4 @@ class SaveOptionsData implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

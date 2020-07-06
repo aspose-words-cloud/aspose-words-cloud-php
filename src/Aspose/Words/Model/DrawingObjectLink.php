@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DrawingObjectLink.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * DrawingObjectLink
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,9 +34,9 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents link for Drawing Object DTO.
  */
-class DrawingObjectLink extends NodeLink 
+class DrawingObjectLink extends NodeLink
 {
-    const DISCRIMINATOR = 'Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -152,7 +149,6 @@ class DrawingObjectLink extends NodeLink
 
 
 
-
     /*
      * Constructor
      *
@@ -162,11 +158,6 @@ class DrawingObjectLink extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Discriminator{propertyName&#x3D;&#x27;Type&#x27;, mapping&#x3D;null}', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -177,7 +168,6 @@ class DrawingObjectLink extends NodeLink
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -195,6 +185,7 @@ class DrawingObjectLink extends NodeLink
 
         return true;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.
@@ -266,3 +257,4 @@ class DrawingObjectLink extends NodeLink
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

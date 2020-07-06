@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Hyperlink.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * Hyperlink
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Hyperlink element.
  */
-class Hyperlink extends LinkElement 
+class Hyperlink extends LinkElement
 {
     const DISCRIMINATOR = null;
 
@@ -64,8 +61,8 @@ class Hyperlink extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'display_text' => null,
-        'value' => null
+        'display_text' => 'null',
+        'value' => 'null'
     ];
 
     /*
@@ -162,7 +159,6 @@ class Hyperlink extends LinkElement
 
 
 
-
     /*
      * Constructor
      *
@@ -172,7 +168,6 @@ class Hyperlink extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['display_text'] = isset($data['display_text']) ? $data['display_text'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
@@ -185,7 +180,6 @@ class Hyperlink extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -203,7 +197,6 @@ class Hyperlink extends LinkElement
 
         return true;
     }
-
 
     /*
      * Gets display_text
@@ -225,7 +218,6 @@ class Hyperlink extends LinkElement
     public function setDisplayText($display_text)
     {
         $this->container['display_text'] = $display_text;
-
         return $this;
     }
 
@@ -249,9 +241,9 @@ class Hyperlink extends LinkElement
     public function setValue($value)
     {
         $this->container['value'] = $value;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -322,3 +314,4 @@ class Hyperlink extends LinkElement
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

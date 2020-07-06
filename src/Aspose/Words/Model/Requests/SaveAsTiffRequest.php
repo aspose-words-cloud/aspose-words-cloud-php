@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveAsTiffRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,126 +37,125 @@ class SaveAsTiffRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Tiff save options.
      */
     public $save_options;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Use antialiasing flag.
      */
     public $use_anti_aliasing;
-	
+
     /*
      * Use high quality flag.
      */
     public $use_high_quality_rendering;
-	
+
     /*
      * Brightness for the generated images.
      */
     public $image_brightness;
-	
+
     /*
      * Color mode for the generated images.
      */
     public $image_color_mode;
-	
+
     /*
      * The contrast for the generated images.
      */
     public $image_contrast;
-	
+
     /*
      * The images numeral format.
      */
     public $numeral_format;
-	
+
     /*
      * Number of pages to render.
      */
     public $page_count;
-	
+
     /*
      * Page index to start rendering.
      */
     public $page_index;
-	
+
     /*
      * Background image color.
      */
     public $paper_color;
-	
+
     /*
      * The pixel format of generated images.
      */
     public $pixel_format;
-	
+
     /*
      * The resolution of generated images.
      */
     public $resolution;
-	
+
     /*
      * Zoom factor for generated images.
      */
     public $scale;
-	
+
     /*
      * The compression tipe.
      */
     public $tiff_compression;
-	
+
     /*
      * Optional, default is Fallback.
      */
     public $dml_rendering_mode;
-	
+
     /*
      * Optional, default is Simplified.
      */
     public $dml_effects_rendering_mode;
-	
+
     /*
      * Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
      */
     public $tiff_binarization_method;
-	
+
     /*
      * Optional. A value determining zip output or not.
      */
     public $zip_output;
-	
+
     /*
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
-    
-	
+
     /*
      * Initializes a new instance of the SaveAsTiffRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param \Aspose\Words\Model\TiffSaveOptionsData $save_options Tiff save options.
      * @param string $folder Original document folder.
@@ -182,7 +181,7 @@ class SaveAsTiffRequest
      * @param bool $zip_output Optional. A value determining zip output or not.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $save_options, $folder = null, $storage = null, $load_encoding = null, $password = null, $use_anti_aliasing = null, $use_high_quality_rendering = null, $image_brightness = null, $image_color_mode = null, $image_contrast = null, $numeral_format = null, $page_count = null, $page_index = null, $paper_color = null, $pixel_format = null, $resolution = null, $scale = null, $tiff_compression = null, $dml_rendering_mode = null, $dml_effects_rendering_mode = null, $tiff_binarization_method = null, $zip_output = null, $fonts_location = null)             
+    public function __construct($name, $save_options, $folder = null, $storage = null, $load_encoding = null, $password = null, $use_anti_aliasing = null, $use_high_quality_rendering = null, $image_brightness = null, $image_color_mode = null, $image_contrast = null, $numeral_format = null, $page_count = null, $page_index = null, $paper_color = null, $pixel_format = null, $resolution = null, $scale = null, $tiff_compression = null, $dml_rendering_mode = null, $dml_effects_rendering_mode = null, $tiff_binarization_method = null, $zip_output = null, $fonts_location = null)
     {
         $this->name = $name;
         $this->save_options = $save_options;
@@ -226,7 +225,7 @@ class SaveAsTiffRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Tiff save options.
      */
@@ -243,7 +242,7 @@ class SaveAsTiffRequest
         $this->save_options = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -260,7 +259,7 @@ class SaveAsTiffRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -277,7 +276,7 @@ class SaveAsTiffRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -294,7 +293,7 @@ class SaveAsTiffRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -311,7 +310,7 @@ class SaveAsTiffRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Use antialiasing flag.
      */
@@ -328,7 +327,7 @@ class SaveAsTiffRequest
         $this->use_anti_aliasing = $value;
         return $this;
     }
-	
+
     /*
      * Use high quality flag.
      */
@@ -345,7 +344,7 @@ class SaveAsTiffRequest
         $this->use_high_quality_rendering = $value;
         return $this;
     }
-	
+
     /*
      * Brightness for the generated images.
      */
@@ -362,7 +361,7 @@ class SaveAsTiffRequest
         $this->image_brightness = $value;
         return $this;
     }
-	
+
     /*
      * Color mode for the generated images.
      */
@@ -379,7 +378,7 @@ class SaveAsTiffRequest
         $this->image_color_mode = $value;
         return $this;
     }
-	
+
     /*
      * The contrast for the generated images.
      */
@@ -396,7 +395,7 @@ class SaveAsTiffRequest
         $this->image_contrast = $value;
         return $this;
     }
-	
+
     /*
      * The images numeral format.
      */
@@ -413,7 +412,7 @@ class SaveAsTiffRequest
         $this->numeral_format = $value;
         return $this;
     }
-	
+
     /*
      * Number of pages to render.
      */
@@ -430,7 +429,7 @@ class SaveAsTiffRequest
         $this->page_count = $value;
         return $this;
     }
-	
+
     /*
      * Page index to start rendering.
      */
@@ -447,7 +446,7 @@ class SaveAsTiffRequest
         $this->page_index = $value;
         return $this;
     }
-	
+
     /*
      * Background image color.
      */
@@ -464,7 +463,7 @@ class SaveAsTiffRequest
         $this->paper_color = $value;
         return $this;
     }
-	
+
     /*
      * The pixel format of generated images.
      */
@@ -481,7 +480,7 @@ class SaveAsTiffRequest
         $this->pixel_format = $value;
         return $this;
     }
-	
+
     /*
      * The resolution of generated images.
      */
@@ -498,7 +497,7 @@ class SaveAsTiffRequest
         $this->resolution = $value;
         return $this;
     }
-	
+
     /*
      * Zoom factor for generated images.
      */
@@ -515,7 +514,7 @@ class SaveAsTiffRequest
         $this->scale = $value;
         return $this;
     }
-	
+
     /*
      * The compression tipe.
      */
@@ -532,7 +531,7 @@ class SaveAsTiffRequest
         $this->tiff_compression = $value;
         return $this;
     }
-	
+
     /*
      * Optional, default is Fallback.
      */
@@ -549,7 +548,7 @@ class SaveAsTiffRequest
         $this->dml_rendering_mode = $value;
         return $this;
     }
-	
+
     /*
      * Optional, default is Simplified.
      */
@@ -566,7 +565,7 @@ class SaveAsTiffRequest
         $this->dml_effects_rendering_mode = $value;
         return $this;
     }
-	
+
     /*
      * Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
      */
@@ -583,7 +582,7 @@ class SaveAsTiffRequest
         $this->tiff_binarization_method = $value;
         return $this;
     }
-	
+
     /*
      * Optional. A value determining zip output or not.
      */
@@ -600,7 +599,7 @@ class SaveAsTiffRequest
         $this->zip_output = $value;
         return $this;
     }
-	
+
     /*
      * Folder in filestorage with custom fonts.
      */

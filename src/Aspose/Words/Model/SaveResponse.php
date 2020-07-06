@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveResponse.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SaveResponse
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
@@ -37,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Save response.
  */
-class SaveResponse extends WordsResponse 
+class SaveResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -63,7 +60,7 @@ class SaveResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'save_result' => null
+        'save_result' => 'null'
     ];
 
     /*
@@ -157,7 +154,6 @@ class SaveResponse extends WordsResponse
 
 
 
-
     /*
      * Constructor
      *
@@ -167,7 +163,6 @@ class SaveResponse extends WordsResponse
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-
         $this->container['save_result'] = isset($data['save_result']) ? $data['save_result'] : null;
     }
 
@@ -179,7 +174,6 @@ class SaveResponse extends WordsResponse
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
         return $invalidProperties;
     }
 
@@ -198,7 +192,6 @@ class SaveResponse extends WordsResponse
         return true;
     }
 
-
     /*
      * Gets save_result
      *
@@ -212,16 +205,16 @@ class SaveResponse extends WordsResponse
     /*
      * Sets save_result
      *
-     * @param \Aspose\Words\Model\SaveResult $save_result save_result
+     * @param \Aspose\Words\Model\SaveResult $save_result Gets or sets save result.
      *
      * @return $this
      */
     public function setSaveResult($save_result)
     {
         $this->container['save_result'] = $save_result;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -292,3 +285,4 @@ class SaveResponse extends WordsResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SplitDocumentResult.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-/*
- * SplitDocumentResult
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model;
-
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
@@ -56,8 +52,8 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'source_document' => '\Aspose\Words\Model\FileLink',
         'pages' => '\Aspose\Words\Model\FileLink[]',
+        'source_document' => '\Aspose\Words\Model\FileLink',
         'zipped_pages' => '\Aspose\Words\Model\FileLink'
     ];
 
@@ -67,9 +63,9 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'source_document' => null,
-        'pages' => null,
-        'zipped_pages' => null
+        'pages' => 'null',
+        'source_document' => 'null',
+        'zipped_pages' => 'null'
     ];
 
     /*
@@ -99,8 +95,8 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_document' => 'SourceDocument',
         'pages' => 'Pages',
+        'source_document' => 'SourceDocument',
         'zipped_pages' => 'ZippedPages'
     ];
 
@@ -110,8 +106,8 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'source_document' => 'setSourceDocument',
         'pages' => 'setPages',
+        'source_document' => 'setSourceDocument',
         'zipped_pages' => 'setZippedPages'
     ];
 
@@ -121,8 +117,8 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'source_document' => 'getSourceDocument',
         'pages' => 'getPages',
+        'source_document' => 'getSourceDocument',
         'zipped_pages' => 'getZippedPages'
     ];
 
@@ -184,8 +180,8 @@ class SplitDocumentResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['source_document'] = isset($data['source_document']) ? $data['source_document'] : null;
         $this->container['pages'] = isset($data['pages']) ? $data['pages'] : null;
+        $this->container['source_document'] = isset($data['source_document']) ? $data['source_document'] : null;
         $this->container['zipped_pages'] = isset($data['zipped_pages']) ? $data['zipped_pages'] : null;
     }
 
@@ -209,33 +205,7 @@ class SplitDocumentResult implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
-    }
-
-
-    /*
-     * Gets source_document
-     *
-     * @return \Aspose\Words\Model\FileLink
-     */
-    public function getSourceDocument()
-    {
-        return $this->container['source_document'];
-    }
-
-    /*
-     * Sets source_document
-     *
-     * @param \Aspose\Words\Model\FileLink $source_document source_document
-     *
-     * @return $this
-     */
-    public function setSourceDocument($source_document)
-    {
-        $this->container['source_document'] = $source_document;
-
-        return $this;
     }
 
     /*
@@ -258,7 +228,29 @@ class SplitDocumentResult implements ArrayAccess
     public function setPages($pages)
     {
         $this->container['pages'] = $pages;
+        return $this;
+    }
 
+    /*
+     * Gets source_document
+     *
+     * @return \Aspose\Words\Model\FileLink
+     */
+    public function getSourceDocument()
+    {
+        return $this->container['source_document'];
+    }
+
+    /*
+     * Sets source_document
+     *
+     * @param \Aspose\Words\Model\FileLink $source_document Gets or sets linkt to the source document.
+     *
+     * @return $this
+     */
+    public function setSourceDocument($source_document)
+    {
+        $this->container['source_document'] = $source_document;
         return $this;
     }
 
@@ -275,16 +267,16 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Sets zipped_pages
      *
-     * @param \Aspose\Words\Model\FileLink $zipped_pages zipped_pages
+     * @param \Aspose\Words\Model\FileLink $zipped_pages Gets or sets link to the file archive with pages.
      *
      * @return $this
      */
     public function setZippedPages($zipped_pages)
     {
         $this->container['zipped_pages'] = $zipped_pages;
-
         return $this;
     }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -355,3 +347,4 @@ class SplitDocumentResult implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
-/**
- * --------------------------------------------------------------------------------------------------------------------
+/*
+ * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteBorderRequest.php">
- *   Copyright (c) 2019 Aspose.Words for Cloud
+ *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- * --------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------
  */
 
 namespace Aspose\Words\Model\Requests;
@@ -37,56 +37,55 @@ class DeleteBorderRequest
      * The document name.
      */
     public $name;
-	
+
     /*
      * Path to the node with border(node should be paragraph, cell or row).
      */
     public $node_path;
-	
+
     /*
      * Border type.
      */
     public $border_type;
-	
+
     /*
      * Original document folder.
      */
     public $folder;
-	
+
     /*
      * Original document storage.
      */
     public $storage;
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
-	
+
     /*
      * Password for opening an encrypted document.
      */
     public $password;
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
-	
+
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
     public $revision_author;
-	
+
     /*
      * The date and time to use for revisions.
      */
     public $revision_date_time;
-    
-	
+
     /*
      * Initializes a new instance of the DeleteBorderRequest class.
-     *  
+     *
      * @param string $name The document name.
      * @param string $node_path Path to the node with border(node should be paragraph, cell or row).
      * @param string $border_type Border type.
@@ -98,7 +97,7 @@ class DeleteBorderRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $node_path, $border_type, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)             
+    public function __construct($name, $node_path, $border_type, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
         $this->node_path = $node_path;
@@ -128,7 +127,7 @@ class DeleteBorderRequest
         $this->name = $value;
         return $this;
     }
-	
+
     /*
      * Path to the node with border(node should be paragraph, cell or row).
      */
@@ -145,7 +144,7 @@ class DeleteBorderRequest
         $this->node_path = $value;
         return $this;
     }
-	
+
     /*
      * Border type.
      */
@@ -162,7 +161,7 @@ class DeleteBorderRequest
         $this->border_type = $value;
         return $this;
     }
-	
+
     /*
      * Original document folder.
      */
@@ -179,7 +178,7 @@ class DeleteBorderRequest
         $this->folder = $value;
         return $this;
     }
-	
+
     /*
      * Original document storage.
      */
@@ -196,7 +195,7 @@ class DeleteBorderRequest
         $this->storage = $value;
         return $this;
     }
-	
+
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
@@ -213,7 +212,7 @@ class DeleteBorderRequest
         $this->load_encoding = $value;
         return $this;
     }
-	
+
     /*
      * Password for opening an encrypted document.
      */
@@ -230,7 +229,7 @@ class DeleteBorderRequest
         $this->password = $value;
         return $this;
     }
-	
+
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
@@ -247,7 +246,7 @@ class DeleteBorderRequest
         $this->dest_file_name = $value;
         return $this;
     }
-	
+
     /*
      * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
@@ -264,7 +263,7 @@ class DeleteBorderRequest
         $this->revision_author = $value;
         return $this;
     }
-	
+
     /*
      * The date and time to use for revisions.
      */

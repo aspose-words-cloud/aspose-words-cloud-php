@@ -122,16 +122,15 @@ class FolderTests extends BaseTestContext
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
         $localFile = "Common/test_multi_pages.docx";
-        $folderToMove = $remoteDataFolder . "/TestMoveFolder";
 
         $this->uploadFile(
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
-            $folderToMove . "Src/TestMoveFolderSrc.docx"
+            $remoteDataFolder . "/TestMoveFolderSrc/TestMoveFolderSrc.docx"
         );
 
         $request = new Requests\MoveFolderRequest(
-            $folderToMove . "Dest",
-            $folderToMove . "Src",
+            self::$baseTestOutPath . "/TestMoveFolderDest",
+            $remoteDataFolder . "/TestMoveFolderSrc",
             NULL,
             NULL
         );

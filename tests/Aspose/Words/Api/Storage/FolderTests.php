@@ -129,7 +129,7 @@ class FolderTests extends BaseTestContext
         );
 
         $request = new Requests\MoveFolderRequest(
-            self::$baseTestOutPath . "/TestMoveFolderDest",
+            self::$baseTestOutPath . "/TestMoveFolderDest_" . $this->getGUID(),
             $remoteDataFolder . "/TestMoveFolderSrc",
             NULL,
             NULL

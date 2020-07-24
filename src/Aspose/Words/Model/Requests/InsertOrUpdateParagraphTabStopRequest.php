@@ -44,14 +44,14 @@ class InsertOrUpdateParagraphTabStopRequest
     public $dto;
 
     /*
-     * Path to the node which contains paragraph.
-     */
-    public $node_path;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * Path to the node which contains paragraph.
+     */
+    public $node_path;
 
     /*
      * Original document folder.
@@ -83,20 +83,20 @@ class InsertOrUpdateParagraphTabStopRequest
      *
      * @param string $name The document name.
      * @param \Aspose\Words\Model\TabStopInsert $dto Paragraph tab stop.
-     * @param string $node_path Path to the node which contains paragraph.
      * @param int $index Object index.
+     * @param string $node_path Path to the node which contains paragraph.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $dto, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
+    public function __construct($name, $dto, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
     {
         $this->name = $name;
         $this->dto = $dto;
-        $this->node_path = $node_path;
         $this->index = $index;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -139,23 +139,6 @@ class InsertOrUpdateParagraphTabStopRequest
     }
 
     /*
-     * Path to the node which contains paragraph.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node which contains paragraph.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -169,6 +152,23 @@ class InsertOrUpdateParagraphTabStopRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * Path to the node which contains paragraph.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node which contains paragraph.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 

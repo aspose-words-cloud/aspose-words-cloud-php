@@ -103,7 +103,7 @@ class InsertFormFieldRequest
      * @param string $revision_date_time The date and time to use for revisions.
      * @param string $insert_before_node Form field will be inserted before node with index.
      */
-    public function __construct($name, $form_field, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)
+    public function __construct($name, $form_field, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)
     {
         $this->name = $name;
         $this->form_field = $form_field;

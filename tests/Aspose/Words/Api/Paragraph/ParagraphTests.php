@@ -53,8 +53,8 @@ class ParagraphTests extends BaseTestContext
 
         $request = new Requests\GetParagraphRequest(
             $remoteFileName,
-            "sections/0",
             0,
+            "sections/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -79,16 +79,17 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetParagraphWithoutNodePathRequest(
+        $request = new Requests\GetParagraphRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getParagraphWithoutNodePath($request);
+        $result = $this->words->getParagraph($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -133,15 +134,16 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetParagraphsWithoutNodePathRequest(
+        $request = new Requests\GetParagraphsRequest(
             $remoteFileName,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getParagraphsWithoutNodePath($request);
+        $result = $this->words->getParagraphs($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -315,9 +317,10 @@ class ParagraphTests extends BaseTestContext
         $requestParagraph = new \Aspose\Words\Model\ParagraphInsert(array(
             "text" => "This is a new paragraph for your document",
         ));
-        $request = new Requests\InsertParagraphWithoutNodePathRequest(
+        $request = new Requests\InsertParagraphRequest(
             $remoteFileName,
             $requestParagraph,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -328,7 +331,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->insertParagraphWithoutNodePath($request);
+        $result = $this->words->insertParagraph($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -349,8 +352,8 @@ class ParagraphTests extends BaseTestContext
         $request = new Requests\RenderParagraphRequest(
             $remoteFileName,
             "png",
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -376,10 +379,11 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RenderParagraphWithoutNodePathRequest(
+        $request = new Requests\RenderParagraphRequest(
             $remoteFileName,
             "png",
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -387,7 +391,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->renderParagraphWithoutNodePath($request);
+        $result = $this->words->renderParagraph($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 
@@ -407,8 +411,8 @@ class ParagraphTests extends BaseTestContext
 
         $request = new Requests\GetParagraphFormatRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -433,16 +437,17 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetParagraphFormatWithoutNodePathRequest(
+        $request = new Requests\GetParagraphFormatRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getParagraphFormatWithoutNodePath($request);
+        $result = $this->words->getParagraphFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -466,8 +471,8 @@ class ParagraphTests extends BaseTestContext
         $request = new Requests\UpdateParagraphFormatRequest(
             $remoteFileName,
             $requestDto,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -497,8 +502,8 @@ class ParagraphTests extends BaseTestContext
 
         $request = new Requests\DeleteParagraphRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -525,9 +530,10 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteParagraphWithoutNodePathRequest(
+        $request = new Requests\DeleteParagraphRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -537,7 +543,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteParagraphWithoutNodePath($request);
+    $this->words->deleteParagraph($request);
     }
 
     /*
@@ -556,8 +562,8 @@ class ParagraphTests extends BaseTestContext
 
         $request = new Requests\GetParagraphListFormatRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -582,16 +588,17 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetParagraphListFormatWithoutNodePathRequest(
+        $request = new Requests\GetParagraphListFormatRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getParagraphListFormatWithoutNodePath($request);
+        $result = $this->words->getParagraphListFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -615,8 +622,8 @@ class ParagraphTests extends BaseTestContext
         $request = new Requests\UpdateParagraphListFormatRequest(
             $remoteFileName,
             $requestDto,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -647,10 +654,11 @@ class ParagraphTests extends BaseTestContext
         $requestDto = new \Aspose\Words\Model\ListFormatUpdate(array(
             "list_id" => 2,
         ));
-        $request = new Requests\UpdateParagraphListFormatWithoutNodePathRequest(
+        $request = new Requests\UpdateParagraphListFormatRequest(
             $remoteFileName,
             $requestDto,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -660,7 +668,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->updateParagraphListFormatWithoutNodePath($request);
+        $result = $this->words->updateParagraphListFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -680,8 +688,8 @@ class ParagraphTests extends BaseTestContext
 
         $request = new Requests\DeleteParagraphListFormatRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -709,9 +717,10 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteParagraphListFormatWithoutNodePathRequest(
+        $request = new Requests\DeleteParagraphListFormatRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -721,7 +730,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->deleteParagraphListFormatWithoutNodePath($request);
+        $result = $this->words->deleteParagraphListFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -741,8 +750,8 @@ class ParagraphTests extends BaseTestContext
 
         $request = new Requests\GetParagraphTabStopsRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -767,16 +776,17 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetParagraphTabStopsWithoutNodePathRequest(
+        $request = new Requests\GetParagraphTabStopsRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getParagraphTabStopsWithoutNodePath($request);
+        $result = $this->words->getParagraphTabStops($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -802,8 +812,8 @@ class ParagraphTests extends BaseTestContext
         $request = new Requests\InsertOrUpdateParagraphTabStopRequest(
             $remoteFileName,
             $requestDto,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -834,10 +844,11 @@ class ParagraphTests extends BaseTestContext
             "leader" => "None",
             "position" => 72,
         ));
-        $request = new Requests\InsertOrUpdateParagraphTabStopWithoutNodePathRequest(
+        $request = new Requests\InsertOrUpdateParagraphTabStopRequest(
             $remoteFileName,
             $requestDto,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -845,7 +856,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->insertOrUpdateParagraphTabStopWithoutNodePath($request);
+        $result = $this->words->insertOrUpdateParagraphTabStop($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -865,8 +876,8 @@ class ParagraphTests extends BaseTestContext
 
         $request = new Requests\DeleteAllParagraphTabStopsRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -892,9 +903,10 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteAllParagraphTabStopsWithoutNodePathRequest(
+        $request = new Requests\DeleteAllParagraphTabStopsRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -902,7 +914,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->deleteAllParagraphTabStopsWithoutNodePath($request);
+        $result = $this->words->deleteAllParagraphTabStops($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -923,8 +935,8 @@ class ParagraphTests extends BaseTestContext
         $request = new Requests\DeleteParagraphTabStopRequest(
             $remoteFileName,
             72,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -950,10 +962,11 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteParagraphTabStopWithoutNodePathRequest(
+        $request = new Requests\DeleteParagraphTabStopRequest(
             $remoteFileName,
             72,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -961,7 +974,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->deleteParagraphTabStopWithoutNodePath($request);
+        $result = $this->words->deleteParagraphTabStop($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

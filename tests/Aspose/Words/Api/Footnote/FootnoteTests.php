@@ -90,9 +90,10 @@ class FootnoteTests extends BaseTestContext
             "footnote_type" => "Endnote",
             "text" => "test endnote",
         ));
-        $request = new Requests\InsertFootnoteWithoutNodePathRequest(
+        $request = new Requests\InsertFootnoteRequest(
             $remoteFileName,
             $requestFootnoteDto,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -102,7 +103,7 @@ class FootnoteTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->insertFootnoteWithoutNodePath($request);
+        $result = $this->words->insertFootnote($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -122,8 +123,8 @@ class FootnoteTests extends BaseTestContext
 
         $request = new Requests\DeleteFootnoteRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -150,9 +151,10 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFootnoteWithoutNodePathRequest(
+        $request = new Requests\DeleteFootnoteRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -162,7 +164,7 @@ class FootnoteTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFootnoteWithoutNodePath($request);
+    $this->words->deleteFootnote($request);
     }
 
     /*
@@ -206,15 +208,16 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFootnotesWithoutNodePathRequest(
+        $request = new Requests\GetFootnotesRequest(
             $remoteFileName,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getFootnotesWithoutNodePath($request);
+        $result = $this->words->getFootnotes($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -234,8 +237,8 @@ class FootnoteTests extends BaseTestContext
 
         $request = new Requests\GetFootnoteRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -260,16 +263,17 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFootnoteWithoutNodePathRequest(
+        $request = new Requests\GetFootnoteRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getFootnoteWithoutNodePath($request);
+        $result = $this->words->getFootnote($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -293,8 +297,8 @@ class FootnoteTests extends BaseTestContext
         $request = new Requests\UpdateFootnoteRequest(
             $remoteFileName,
             $requestFootnoteDto,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -325,10 +329,11 @@ class FootnoteTests extends BaseTestContext
         $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
             "text" => "new text is here",
         ));
-        $request = new Requests\UpdateFootnoteWithoutNodePathRequest(
+        $request = new Requests\UpdateFootnoteRequest(
             $remoteFileName,
             $requestFootnoteDto,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -338,7 +343,7 @@ class FootnoteTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->updateFootnoteWithoutNodePath($request);
+        $result = $this->words->updateFootnote($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

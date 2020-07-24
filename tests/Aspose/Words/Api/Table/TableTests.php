@@ -78,15 +78,16 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTablesWithoutNodePathRequest(
+        $request = new Requests\GetTablesRequest(
             $remoteFileName,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getTablesWithoutNodePath($request);
+        $result = $this->words->getTables($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -106,8 +107,8 @@ class TableTests extends BaseTestContext
 
         $request = new Requests\GetTableRequest(
             $remoteFileName,
-            "",
             1,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -132,16 +133,17 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTableWithoutNodePathRequest(
+        $request = new Requests\GetTableRequest(
             $remoteFileName,
             1,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getTableWithoutNodePath($request);
+        $result = $this->words->getTable($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -161,8 +163,8 @@ class TableTests extends BaseTestContext
 
         $request = new Requests\DeleteTableRequest(
             $remoteFileName,
-            "",
             1,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -189,9 +191,10 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteTableWithoutNodePathRequest(
+        $request = new Requests\DeleteTableRequest(
             $remoteFileName,
             1,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -201,7 +204,7 @@ class TableTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteTableWithoutNodePath($request);
+    $this->words->deleteTable($request);
     }
 
     /*
@@ -257,9 +260,10 @@ class TableTests extends BaseTestContext
             "columns_count" => 5,
             "rows_count" => 4,
         ));
-        $request = new Requests\InsertTableWithoutNodePathRequest(
+        $request = new Requests\InsertTableRequest(
             $remoteFileName,
             $requestTable,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -269,7 +273,7 @@ class TableTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->insertTableWithoutNodePath($request);
+        $result = $this->words->insertTable($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -289,8 +293,8 @@ class TableTests extends BaseTestContext
 
         $request = new Requests\GetTablePropertiesRequest(
             $remoteFileName,
-            "",
             1,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -315,16 +319,17 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTablePropertiesWithoutNodePathRequest(
+        $request = new Requests\GetTablePropertiesRequest(
             $remoteFileName,
             1,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getTablePropertiesWithoutNodePath($request);
+        $result = $this->words->getTableProperties($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -353,8 +358,8 @@ class TableTests extends BaseTestContext
         $request = new Requests\UpdateTablePropertiesRequest(
             $remoteFileName,
             $requestProperties,
-            "",
             1,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -390,10 +395,11 @@ class TableTests extends BaseTestContext
             "cell_spacing" => 2,
             "style_options" => "ColumnBands",
         ));
-        $request = new Requests\UpdateTablePropertiesWithoutNodePathRequest(
+        $request = new Requests\UpdateTablePropertiesRequest(
             $remoteFileName,
             $requestProperties,
             1,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -403,7 +409,7 @@ class TableTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->updateTablePropertiesWithoutNodePath($request);
+        $result = $this->words->updateTableProperties($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -739,8 +745,8 @@ class TableTests extends BaseTestContext
         $request = new Requests\RenderTableRequest(
             $remoteFileName,
             "png",
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -766,10 +772,11 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RenderTableWithoutNodePathRequest(
+        $request = new Requests\RenderTableRequest(
             $remoteFileName,
             "png",
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -777,7 +784,7 @@ class TableTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->renderTableWithoutNodePath($request);
+        $result = $this->words->renderTable($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 }

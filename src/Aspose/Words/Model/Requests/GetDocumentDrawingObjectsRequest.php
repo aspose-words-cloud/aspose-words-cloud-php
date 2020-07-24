@@ -73,7 +73,7 @@ class GetDocumentDrawingObjectsRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $node_path, $folder = null, $storage = null, $load_encoding = null, $password = null)
+    public function __construct($name, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null)
     {
         $this->name = $name;
         $this->node_path = $node_path;

@@ -80,8 +80,8 @@ class TableBorderTests extends BaseTestContext
 
         $request = new Requests\GetBorderRequest(
             $remoteFileName,
-            "tables/1/rows/0/cells/0",
             "left",
+            "tables/1/rows/0/cells/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -138,8 +138,8 @@ class TableBorderTests extends BaseTestContext
 
         $request = new Requests\DeleteBorderRequest(
             $remoteFileName,
-            "tables/1/rows/0/cells/0",
             "left",
+            "tables/1/rows/0/cells/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -181,8 +181,8 @@ class TableBorderTests extends BaseTestContext
         $request = new Requests\UpdateBorderRequest(
             $remoteFileName,
             $requestBorderProperties,
-            "tables/1/rows/0/cells/0",
             "left",
+            "tables/1/rows/0/cells/0",
             $remoteDataFolder,
             NULL,
             NULL,

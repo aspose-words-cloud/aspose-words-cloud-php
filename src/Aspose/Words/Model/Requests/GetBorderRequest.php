@@ -39,14 +39,14 @@ class GetBorderRequest
     public $name;
 
     /*
-     * Path to the node with border(node should be paragraph, cell or row).
-     */
-    public $node_path;
-
-    /*
      * Border type.
      */
     public $border_type;
+
+    /*
+     * Path to the node with border(node should be paragraph, cell or row).
+     */
+    public $node_path;
 
     /*
      * Original document folder.
@@ -72,18 +72,18 @@ class GetBorderRequest
      * Initializes a new instance of the GetBorderRequest class.
      *
      * @param string $name The document name.
-     * @param string $node_path Path to the node with border(node should be paragraph, cell or row).
      * @param string $border_type Border type.
+     * @param string $node_path Path to the node with border(node should be paragraph, cell or row).
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $node_path, $border_type, $folder = null, $storage = null, $load_encoding = null, $password = null)
+    public function __construct($name, $border_type, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null)
     {
         $this->name = $name;
-        $this->node_path = $node_path;
         $this->border_type = $border_type;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -108,23 +108,6 @@ class GetBorderRequest
     }
 
     /*
-     * Path to the node with border(node should be paragraph, cell or row).
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node with border(node should be paragraph, cell or row).
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
-        return $this;
-    }
-
-    /*
      * Border type.
      */
     public function get_border_type()
@@ -138,6 +121,23 @@ class GetBorderRequest
     public function set_border_type($value)
     {
         $this->border_type = $value;
+        return $this;
+    }
+
+    /*
+     * Path to the node with border(node should be paragraph, cell or row).
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node with border(node should be paragraph, cell or row).
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 

@@ -44,14 +44,14 @@ class RenderMathObjectRequest
     public $format;
 
     /*
-     * Path to the node, which contains office math objects.
-     */
-    public $node_path;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * Path to the node, which contains office math objects.
+     */
+    public $node_path;
 
     /*
      * Original document folder.
@@ -83,20 +83,20 @@ class RenderMathObjectRequest
      *
      * @param string $name The document name.
      * @param string $format The destination format.
-     * @param string $node_path Path to the node, which contains office math objects.
      * @param int $index Object index.
+     * @param string $node_path Path to the node, which contains office math objects.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $format, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)
+    public function __construct($name, $format, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)
     {
         $this->name = $name;
         $this->format = $format;
-        $this->node_path = $node_path;
         $this->index = $index;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -139,23 +139,6 @@ class RenderMathObjectRequest
     }
 
     /*
-     * Path to the node, which contains office math objects.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node, which contains office math objects.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -169,6 +152,23 @@ class RenderMathObjectRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * Path to the node, which contains office math objects.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node, which contains office math objects.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 

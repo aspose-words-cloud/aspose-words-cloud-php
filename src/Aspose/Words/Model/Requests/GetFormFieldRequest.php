@@ -39,14 +39,14 @@ class GetFormFieldRequest
     public $name;
 
     /*
-     * Path to the node that contains collection of formfields.
-     */
-    public $node_path;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * Path to the node that contains collection of formfields.
+     */
+    public $node_path;
 
     /*
      * Original document folder.
@@ -72,18 +72,18 @@ class GetFormFieldRequest
      * Initializes a new instance of the GetFormFieldRequest class.
      *
      * @param string $name The document name.
-     * @param string $node_path Path to the node that contains collection of formfields.
      * @param int $index Object index.
+     * @param string $node_path Path to the node that contains collection of formfields.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      */
-    public function __construct($name, $node_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null)
+    public function __construct($name, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null)
     {
         $this->name = $name;
-        $this->node_path = $node_path;
         $this->index = $index;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -108,23 +108,6 @@ class GetFormFieldRequest
     }
 
     /*
-     * Path to the node that contains collection of formfields.
-     */
-    public function get_node_path()
-    {
-        return $this->node_path;
-    }
-
-    /*
-     * Path to the node that contains collection of formfields.
-     */
-    public function set_node_path($value)
-    {
-        $this->node_path = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -138,6 +121,23 @@ class GetFormFieldRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * Path to the node that contains collection of formfields.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * Path to the node that contains collection of formfields.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 

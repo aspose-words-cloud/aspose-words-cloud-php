@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="UpdateParagraphListFormatWithoutNodePathRequest.php">
+ * <copyright company="Aspose" file="OptimizeDocumentRequest.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -29,9 +29,9 @@
 namespace Aspose\Words\Model\Requests;
 
 /*
- * Request model for updateParagraphListFormatWithoutNodePath operation.
+ * Request model for optimizeDocument operation.
  */
-class UpdateParagraphListFormatWithoutNodePathRequest
+class OptimizeDocumentRequest
 {
     /*
      * The document name.
@@ -39,14 +39,9 @@ class UpdateParagraphListFormatWithoutNodePathRequest
     public $name;
 
     /*
-     * Paragraph format object.
+     * The document optimization options.
      */
-    public $dto;
-
-    /*
-     * Object index.
-     */
-    public $index;
+    public $options;
 
     /*
      * Original document folder.
@@ -84,11 +79,10 @@ class UpdateParagraphListFormatWithoutNodePathRequest
     public $revision_date_time;
 
     /*
-     * Initializes a new instance of the UpdateParagraphListFormatWithoutNodePathRequest class.
+     * Initializes a new instance of the OptimizeDocumentRequest class.
      *
      * @param string $name The document name.
-     * @param \Aspose\Words\Model\ListFormatUpdate $dto Paragraph format object.
-     * @param int $index Object index.
+     * @param \Aspose\Words\Model\OptimizationOptions $options The document optimization options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -97,11 +91,10 @@ class UpdateParagraphListFormatWithoutNodePathRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $dto, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $options, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->dto = $dto;
-        $this->index = $index;
+        $this->options = $options;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -129,36 +122,19 @@ class UpdateParagraphListFormatWithoutNodePathRequest
     }
 
     /*
-     * Paragraph format object.
+     * The document optimization options.
      */
-    public function get_dto()
+    public function get_options()
     {
-        return $this->dto;
+        return $this->options;
     }
 
     /*
-     * Paragraph format object.
+     * The document optimization options.
      */
-    public function set_dto($value)
+    public function set_options($value)
     {
-        $this->dto = $value;
-        return $this;
-    }
-
-    /*
-     * Object index.
-     */
-    public function get_index()
-    {
-        return $this->index;
-    }
-
-    /*
-     * Object index.
-     */
-    public function set_index($value)
-    {
-        $this->index = $value;
+        $this->options = $value;
         return $this;
     }
 

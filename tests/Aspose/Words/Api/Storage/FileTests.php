@@ -96,7 +96,7 @@ class FileTests extends BaseTestContext
         );
 
         $request = new Requests\MoveFileRequest(
-            $remoteDataFolder . "/TestMoveFileDest.docx",
+            self::$baseTestOutPath . "/TestMoveFileDest_" . $this->getGUID() . ".docx",
             $remoteDataFolder . "/" . $remoteFileName,
             NULL,
             NULL,

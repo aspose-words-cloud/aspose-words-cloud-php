@@ -62,8 +62,8 @@ class FormFieldTests extends BaseTestContext
         $request = new Requests\UpdateFormFieldRequest(
             $remoteFileName,
             $requestFormField,
-            "sections/0",
             0,
+            "sections/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -99,10 +99,11 @@ class FormFieldTests extends BaseTestContext
             "text_input_type" => "Regular",
             "text_input_default" => "No name",
         ));
-        $request = new Requests\UpdateFormFieldWithoutNodePathRequest(
+        $request = new Requests\UpdateFormFieldRequest(
             $remoteFileName,
             $requestFormField,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -112,7 +113,7 @@ class FormFieldTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->updateFormFieldWithoutNodePath($request);
+        $result = $this->words->updateFormField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -132,8 +133,8 @@ class FormFieldTests extends BaseTestContext
 
         $request = new Requests\GetFormFieldRequest(
             $remoteFileName,
-            "sections/0",
             0,
+            "sections/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -158,16 +159,17 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFormFieldWithoutNodePathRequest(
+        $request = new Requests\GetFormFieldRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getFormFieldWithoutNodePath($request);
+        $result = $this->words->getFormField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -212,15 +214,16 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFormFieldsWithoutNodePathRequest(
+        $request = new Requests\GetFormFieldsRequest(
             $remoteFileName,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getFormFieldsWithoutNodePath($request);
+        $result = $this->words->getFormFields($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -286,9 +289,10 @@ class FormFieldTests extends BaseTestContext
             "text_input_default" => "123",
             "text_input_format" => "UPPERCASE",
         ));
-        $request = new Requests\InsertFormFieldWithoutNodePathRequest(
+        $request = new Requests\InsertFormFieldRequest(
             $remoteFileName,
             $requestFormField,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -299,7 +303,7 @@ class FormFieldTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->insertFormFieldWithoutNodePath($request);
+        $result = $this->words->insertFormField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -319,8 +323,8 @@ class FormFieldTests extends BaseTestContext
 
         $request = new Requests\DeleteFormFieldRequest(
             $remoteFileName,
-            "sections/0",
             0,
+            "sections/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -347,9 +351,10 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFormFieldWithoutNodePathRequest(
+        $request = new Requests\DeleteFormFieldRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -359,6 +364,6 @@ class FormFieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFormFieldWithoutNodePath($request);
+    $this->words->deleteFormField($request);
     }
 }

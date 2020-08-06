@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DocumentEntryList.php">
+ * <copyright company="Aspose" file="OptimizationOptions.php">
  *   Copyright (c) 2020 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -31,11 +31,11 @@ use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * DocumentEntryList
+ * OptimizationOptions
  *
- * @description Represents a list of documents which will be appended to the original resource document.
+ * @description Container class for the document optimization options.
  */
-class DocumentEntryList implements ArrayAccess
+class OptimizationOptions implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +44,7 @@ class DocumentEntryList implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "DocumentEntryList";
+    protected static $swaggerModelName = "OptimizationOptions";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,8 +52,7 @@ class DocumentEntryList implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'bool',
-        'document_entries' => '\Aspose\Words\Model\DocumentEntry[]'
+        'ms_word_version' => 'string'
     ];
 
     /*
@@ -62,8 +61,7 @@ class DocumentEntryList implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'null',
-        'document_entries' => 'null'
+        'ms_word_version' => 'null'
     ];
 
     /*
@@ -93,8 +91,7 @@ class DocumentEntryList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'DocumentEntries'
+        'ms_word_version' => 'MsWordVersion'
     ];
 
     /*
@@ -103,8 +100,7 @@ class DocumentEntryList implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'setApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'setDocumentEntries'
+        'ms_word_version' => 'setMsWordVersion'
     ];
 
     /*
@@ -113,8 +109,7 @@ class DocumentEntryList implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'getApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'getDocumentEntries'
+        'ms_word_version' => 'getMsWordVersion'
     ];
 
     /*
@@ -158,7 +153,33 @@ class DocumentEntryList implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const MS_WORD_VERSION_WORD2000 = 'Word2000';
+    const MS_WORD_VERSION_WORD2002 = 'Word2002';
+    const MS_WORD_VERSION_WORD2003 = 'Word2003';
+    const MS_WORD_VERSION_WORD2007 = 'Word2007';
+    const MS_WORD_VERSION_WORD2010 = 'Word2010';
+    const MS_WORD_VERSION_WORD2013 = 'Word2013';
+    const MS_WORD_VERSION_WORD2016 = 'Word2016';
+    const MS_WORD_VERSION_WORD2019 = 'Word2019';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getMsWordVersionAllowableValues()
+    {
+        return [
+            self::MS_WORD_VERSION_WORD2000,
+            self::MS_WORD_VERSION_WORD2002,
+            self::MS_WORD_VERSION_WORD2003,
+            self::MS_WORD_VERSION_WORD2007,
+            self::MS_WORD_VERSION_WORD2010,
+            self::MS_WORD_VERSION_WORD2013,
+            self::MS_WORD_VERSION_WORD2016,
+            self::MS_WORD_VERSION_WORD2019
+        ];
+    }
 
     /*
      * Associative array for storing property values
@@ -175,8 +196,7 @@ class DocumentEntryList implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = isset($data['apply_base_document_headers_and_footers_to_appending_documents']) ? $data['apply_base_document_headers_and_footers_to_appending_documents'] : null;
-        $this->container['document_entries'] = isset($data['document_entries']) ? $data['document_entries'] : null;
+        $this->container['ms_word_version'] = isset($data['ms_word_version']) ? $data['ms_word_version'] : null;
     }
 
     /*
@@ -187,6 +207,15 @@ class DocumentEntryList implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getMsWordVersionAllowableValues();
+        if (!in_array($this->container['ms_word_version'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'ms_word_version', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
 
         return $invalidProperties;
     }
@@ -199,52 +228,39 @@ class DocumentEntryList implements ArrayAccess
      */
     public function valid()
     {
+        $allowedValues = $this->getMsWordVersionAllowableValues();
+        if (!in_array($this->container['ms_word_version'], $allowedValues)) {
+            return false;
+        }
+
+
         return true;
     }
 
     /*
-     * Gets apply_base_document_headers_and_footers_to_appending_documents
+     * Gets ms_word_version
      *
-     * @return bool
+     * @return string
      */
-    public function getApplyBaseDocumentHeadersAndFootersToAppendingDocuments()
+    public function getMsWordVersion()
     {
-        return $this->container['apply_base_document_headers_and_footers_to_appending_documents'];
+        return $this->container['ms_word_version'];
     }
 
     /*
-     * Sets apply_base_document_headers_and_footers_to_appending_documents
+     * Sets ms_word_version
      *
-     * @param bool $apply_base_document_headers_and_footers_to_appending_documents Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.
+     * @param string $ms_word_version Gets or sets specific MSWord version.
      *
      * @return $this
      */
-    public function setApplyBaseDocumentHeadersAndFootersToAppendingDocuments($apply_base_document_headers_and_footers_to_appending_documents)
+    public function setMsWordVersion($ms_word_version)
     {
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = $apply_base_document_headers_and_footers_to_appending_documents;
-        return $this;
-    }
-
-    /*
-     * Gets document_entries
-     *
-     * @return \Aspose\Words\Model\DocumentEntry[]
-     */
-    public function getDocumentEntries()
-    {
-        return $this->container['document_entries'];
-    }
-
-    /*
-     * Sets document_entries
-     *
-     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries Gets or sets list of documents.
-     *
-     * @return $this
-     */
-    public function setDocumentEntries($document_entries)
-    {
-        $this->container['document_entries'] = $document_entries;
+        $allowedValues = $this->getMsWordVersionAllowableValues();
+        if ((!is_numeric($ms_word_version) && !in_array($ms_word_version, $allowedValues)) || (is_numeric($ms_word_version) && !in_array($allowedValues[$ms_word_version], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'ms_word_version', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['ms_word_version'] = $ms_word_version;
         return $this;
     }
 

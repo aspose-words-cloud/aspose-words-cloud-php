@@ -80,15 +80,16 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFieldsWithoutNodePathRequest(
+        $request = new Requests\GetFieldsRequest(
             $remoteFileName,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getFieldsWithoutNodePath($request);
+        $result = $this->words->getFields($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -109,8 +110,8 @@ class FieldTests extends BaseTestContext
 
         $request = new Requests\GetFieldRequest(
             $remoteFileName,
-            "sections/0/paragraphs/0",
             0,
+            "sections/0/paragraphs/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -136,16 +137,17 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFieldWithoutNodePathRequest(
+        $request = new Requests\GetFieldRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getFieldWithoutNodePath($request);
+        $result = $this->words->getField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -203,9 +205,10 @@ class FieldTests extends BaseTestContext
         $requestField = new \Aspose\Words\Model\FieldInsert(array(
             "field_code" => "{ NUMPAGES }",
         ));
-        $request = new Requests\InsertFieldWithoutNodePathRequest(
+        $request = new Requests\InsertFieldRequest(
             $remoteFileName,
             $requestField,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -216,7 +219,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->insertFieldWithoutNodePath($request);
+        $result = $this->words->insertField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -241,8 +244,8 @@ class FieldTests extends BaseTestContext
         $request = new Requests\UpdateFieldRequest(
             $remoteFileName,
             $requestField,
-            "sections/0/paragraphs/0",
             0,
+            "sections/0/paragraphs/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -307,8 +310,8 @@ class FieldTests extends BaseTestContext
 
         $request = new Requests\DeleteFieldRequest(
             $remoteFileName,
-            "sections/0/paragraphs/0",
             0,
+            "sections/0/paragraphs/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -336,9 +339,10 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldWithoutNodePathRequest(
+        $request = new Requests\DeleteFieldRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -348,7 +352,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFieldWithoutNodePath($request);
+    $this->words->deleteField($request);
     }
 
     /*
@@ -394,8 +398,9 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldsWithoutNodePathRequest(
+        $request = new Requests\DeleteFieldsRequest(
             $remoteFileName,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -405,7 +410,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFieldsWithoutNodePath($request);
+    $this->words->deleteFields($request);
     }
 
     /*
@@ -451,8 +456,9 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldsWithoutNodePathRequest(
+        $request = new Requests\DeleteFieldsRequest(
             $remoteFileName,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -462,7 +468,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFieldsWithoutNodePath($request);
+    $this->words->deleteFields($request);
     }
 
     /*

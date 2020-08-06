@@ -78,15 +78,16 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentDrawingObjectsWithoutNodePathRequest(
+        $request = new Requests\GetDocumentDrawingObjectsRequest(
             $remoteFileName,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getDocumentDrawingObjectsWithoutNodePath($request);
+        $result = $this->words->getDocumentDrawingObjects($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -106,8 +107,8 @@ class DrawingObjectsTests extends BaseTestContext
 
         $request = new Requests\GetDocumentDrawingObjectByIndexRequest(
             $remoteFileName,
-            "sections/0",
             0,
+            "sections/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -132,16 +133,17 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentDrawingObjectByIndexWithoutNodePathRequest(
+        $request = new Requests\GetDocumentDrawingObjectByIndexRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getDocumentDrawingObjectByIndexWithoutNodePath($request);
+        $result = $this->words->getDocumentDrawingObjectByIndex($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -162,8 +164,8 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new Requests\RenderDrawingObjectRequest(
             $remoteFileName,
             "png",
-            "sections/0",
             0,
+            "sections/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -189,10 +191,11 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RenderDrawingObjectWithoutNodePathRequest(
+        $request = new Requests\RenderDrawingObjectRequest(
             $remoteFileName,
             "png",
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -200,7 +203,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->renderDrawingObjectWithoutNodePath($request);
+        $result = $this->words->renderDrawingObject($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 
@@ -220,8 +223,8 @@ class DrawingObjectsTests extends BaseTestContext
 
         $request = new Requests\GetDocumentDrawingObjectImageDataRequest(
             $remoteFileName,
-            "sections/0",
             0,
+            "sections/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -246,16 +249,17 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentDrawingObjectImageDataWithoutNodePathRequest(
+        $request = new Requests\GetDocumentDrawingObjectImageDataRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getDocumentDrawingObjectImageDataWithoutNodePath($request);
+        $result = $this->words->getDocumentDrawingObjectImageData($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 
@@ -275,8 +279,8 @@ class DrawingObjectsTests extends BaseTestContext
 
         $request = new Requests\GetDocumentDrawingObjectOleDataRequest(
             $remoteFileName,
-            "sections/0",
             0,
+            "sections/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -301,16 +305,17 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentDrawingObjectOleDataWithoutNodePathRequest(
+        $request = new Requests\GetDocumentDrawingObjectOleDataRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getDocumentDrawingObjectOleDataWithoutNodePath($request);
+        $result = $this->words->getDocumentDrawingObjectOleData($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 
@@ -378,10 +383,11 @@ class DrawingObjectsTests extends BaseTestContext
             "relative_vertical_position" => "Margin",
             "wrap_type" => "Inline",
         ));
-        $request = new Requests\InsertDrawingObjectWithoutNodePathRequest(
+        $request = new Requests\InsertDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -391,7 +397,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->insertDrawingObjectWithoutNodePath($request);
+        $result = $this->words->insertDrawingObject($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -411,8 +417,8 @@ class DrawingObjectsTests extends BaseTestContext
 
         $request = new Requests\DeleteDrawingObjectRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -439,9 +445,10 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteDrawingObjectWithoutNodePathRequest(
+        $request = new Requests\DeleteDrawingObjectRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -451,7 +458,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteDrawingObjectWithoutNodePath($request);
+    $this->words->deleteDrawingObject($request);
     }
 
     /*
@@ -475,8 +482,8 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteFileName,
             $requestDrawingObject,
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -507,11 +514,12 @@ class DrawingObjectsTests extends BaseTestContext
         $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
             "left" => 0,
         ));
-        $request = new Requests\UpdateDrawingObjectWithoutNodePathRequest(
+        $request = new Requests\UpdateDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -521,7 +529,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->updateDrawingObjectWithoutNodePath($request);
+        $result = $this->words->updateDrawingObject($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

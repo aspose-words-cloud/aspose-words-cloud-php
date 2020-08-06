@@ -78,15 +78,16 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetOfficeMathObjectsWithoutNodePathRequest(
+        $request = new Requests\GetOfficeMathObjectsRequest(
             $remoteFileName,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getOfficeMathObjectsWithoutNodePath($request);
+        $result = $this->words->getOfficeMathObjects($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -106,8 +107,8 @@ class MathObjectTests extends BaseTestContext
 
         $request = new Requests\GetOfficeMathObjectRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -132,16 +133,17 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetOfficeMathObjectWithoutNodePathRequest(
+        $request = new Requests\GetOfficeMathObjectRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->getOfficeMathObjectWithoutNodePath($request);
+        $result = $this->words->getOfficeMathObject($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -162,8 +164,8 @@ class MathObjectTests extends BaseTestContext
         $request = new Requests\RenderMathObjectRequest(
             $remoteFileName,
             "png",
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -189,10 +191,11 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RenderMathObjectWithoutNodePathRequest(
+        $request = new Requests\RenderMathObjectRequest(
             $remoteFileName,
             "png",
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -200,7 +203,7 @@ class MathObjectTests extends BaseTestContext
             NULL
         );
 
-        $result = $this->words->renderMathObjectWithoutNodePath($request);
+        $result = $this->words->renderMathObject($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 
@@ -220,8 +223,8 @@ class MathObjectTests extends BaseTestContext
 
         $request = new Requests\DeleteOfficeMathObjectRequest(
             $remoteFileName,
-            "",
             0,
+            "",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -248,9 +251,10 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteOfficeMathObjectWithoutNodePathRequest(
+        $request = new Requests\DeleteOfficeMathObjectRequest(
             $remoteFileName,
             0,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -260,6 +264,6 @@ class MathObjectTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteOfficeMathObjectWithoutNodePath($request);
+    $this->words->deleteOfficeMathObject($request);
     }
 }

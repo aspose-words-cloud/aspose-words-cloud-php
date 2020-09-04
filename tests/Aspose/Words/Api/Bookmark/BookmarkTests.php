@@ -61,6 +61,9 @@ class BookmarkTests extends BaseTestContext
 
         $result = $this->words->getBookmarks($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getBookmarks());
+        Assert::assertCount(3, $result->getBookmarks()->getBookmarkList());
+        Assert::assertEquals("aspose", $result->getBookmarks()->getBookmarkList()[1]->getName());
     }
 
     /*
@@ -71,6 +74,7 @@ class BookmarkTests extends BaseTestContext
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Bookmarks";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentBookmarkByName.docx";
+        $bookmarkName = "aspose";
 
         $this->uploadFile(
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
@@ -79,7 +83,7 @@ class BookmarkTests extends BaseTestContext
 
         $request = new Requests\GetBookmarkByNameRequest(
             $remoteFileName,
-            "aspose",
+            $bookmarkName,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -88,6 +92,8 @@ class BookmarkTests extends BaseTestContext
 
         $result = $this->words->getBookmarkByName($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getBookmark());
+        Assert::assertEquals($bookmarkName, $result->getBookmark()->getName());
     }
 
     /*
@@ -99,6 +105,7 @@ class BookmarkTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUpdateDocumentBookmark.docx";
         $bookmarkName = "aspose";
+        $bookmarkText = "This will be the text for Aspose";
 
         $this->uploadFile(
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
@@ -107,7 +114,7 @@ class BookmarkTests extends BaseTestContext
 
         $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
             "name" => $bookmarkName,
-            "text" => "This will be the text for Aspose",
+            "text" => $bookmarkText,
         ));
         $request = new Requests\UpdateBookmarkRequest(
             $remoteFileName,
@@ -124,5 +131,8 @@ class BookmarkTests extends BaseTestContext
 
         $result = $this->words->updateBookmark($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getBookmark());
+        Assert::assertEquals($bookmarkName, $result->getBookmark()->getName());
+        Assert::assertEquals($bookmarkText, $result->getBookmark()->getText());
     }
 }

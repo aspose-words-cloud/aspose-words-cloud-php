@@ -243,7 +243,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -567,7 +567,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -922,7 +922,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -1289,7 +1289,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -1629,7 +1629,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -1929,7 +1929,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -2212,7 +2212,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -2546,7 +2546,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -2881,7 +2881,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -3165,7 +3165,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -3439,7 +3439,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -3746,7 +3746,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -4109,7 +4109,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -4358,7 +4358,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -4642,7 +4642,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -5009,7 +5009,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -5354,7 +5354,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -5719,7 +5719,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -6029,7 +6029,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -6342,7 +6342,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -6655,7 +6655,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -6977,7 +6977,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -7299,7 +7299,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -7609,7 +7609,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -7860,7 +7860,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -8111,7 +8111,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -8433,7 +8433,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -8755,7 +8755,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -9080,7 +9080,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -9403,7 +9403,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -9704,7 +9704,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -10026,7 +10026,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -10391,7 +10391,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -10756,7 +10756,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -11071,7 +11071,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -11396,7 +11396,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -11709,7 +11709,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -12031,7 +12031,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -12356,7 +12356,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -12724,7 +12724,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -13068,7 +13068,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -13362,7 +13362,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -13731,7 +13731,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -14047,7 +14047,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -14319,7 +14319,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -14645,7 +14645,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -14959,7 +14959,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -15294,7 +15294,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -15617,7 +15617,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -15943,7 +15943,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -16257,7 +16257,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -16571,7 +16571,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -16906,7 +16906,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -17241,7 +17241,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -17576,7 +17576,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -17899,7 +17899,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -18223,7 +18223,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -18507,7 +18507,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -18833,7 +18833,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -19147,7 +19147,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -19461,7 +19461,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -19787,7 +19787,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -20101,7 +20101,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -20445,7 +20445,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -20792,7 +20792,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -21127,7 +21127,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -21450,7 +21450,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -21734,7 +21734,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -22069,7 +22069,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -22392,7 +22392,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -22727,7 +22727,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -23050,7 +23050,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -23386,7 +23386,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -23734,7 +23734,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -24070,7 +24070,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -24396,7 +24396,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -24710,7 +24710,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -25045,7 +25045,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -25368,7 +25368,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -25703,7 +25703,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -26038,7 +26038,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -26373,7 +26373,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -26696,7 +26696,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -27031,7 +27031,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -27366,7 +27366,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -27704,7 +27704,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -28042,7 +28042,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -28368,7 +28368,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -28694,7 +28694,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -29020,7 +29020,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -29334,7 +29334,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -29660,7 +29660,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -29986,7 +29986,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -30300,7 +30300,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -30635,7 +30635,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -30973,7 +30973,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -31311,7 +31311,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -31646,7 +31646,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -31984,7 +31984,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -32322,7 +32322,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -32645,7 +32645,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -33000,7 +33000,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -33373,7 +33373,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -33747,7 +33747,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -34111,7 +34111,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -34485,7 +34485,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -34852,7 +34852,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -35207,7 +35207,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -35563,7 +35563,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -35918,7 +35918,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -36292,7 +36292,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -36669,7 +36669,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -37024,7 +37024,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -37388,7 +37388,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -37755,7 +37755,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -38122,7 +38122,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -38495,7 +38495,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -38850,7 +38850,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -39090,7 +39090,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -39364,7 +39364,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -39628,7 +39628,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -39983,7 +39983,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -40318,7 +40318,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -40642,7 +40642,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -40987,7 +40987,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -41345,7 +41345,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -41703,7 +41703,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -42052,7 +42052,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -42410,7 +42410,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -42768,7 +42768,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -43123,7 +43123,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -43436,7 +43436,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -43698,7 +43698,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -44033,7 +44033,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -44379,7 +44379,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -44884,7 +44884,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -45211,7 +45211,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -45588,7 +45588,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -45923,7 +45923,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -46290,7 +46290,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -46666,7 +46666,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -47033,7 +47033,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -47418,7 +47418,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -47794,7 +47794,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -48118,7 +48118,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -48494,7 +48494,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -48870,7 +48870,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -49237,7 +49237,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -49616,7 +49616,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -49992,7 +49992,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -50368,7 +50368,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -50747,7 +50747,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -51126,7 +51126,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -51493,7 +51493,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -51860,7 +51860,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -52239,7 +52239,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -52615,7 +52615,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -52994,7 +52994,7 @@ class WordsApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", 401, null, null);
                     }
 
@@ -53221,7 +53221,7 @@ class WordsApi
 
     private function _checkAuthToken()
     {
-        if ($this->config->getAccessToken() == "") {
+        if ($this->config->getAccessToken() === "") {
             $this->_requestToken();
         }
     }

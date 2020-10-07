@@ -22,11 +22,12 @@ def runtests(dockerImageVersion)
                 sh 'git show -s HEAD > gitMessage'
                 def commitMessage = readFile('gitMessage').trim()
                 echo commitMessage
-                needToBuild = params.ignoreCiSkip || !commitMessage.contains('[ci skip]')               
+                needToBuild = params.ignoreCiSkip || !commitMessage.contains('[ci skip]')   
+                credsId = params.credsId;
                 sh 'git clean -fdx'
                 
                 if (needToBuild) {
-                    withCredentials([usernamePassword(credentialsId: $credsId, passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+                    withCredentials([usernamePassword(credentialsId: credsId, passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
                         sh 'mkdir -p Settings'
                         sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$apiUrl\\"}" > Settings/servercreds.json'
                     }

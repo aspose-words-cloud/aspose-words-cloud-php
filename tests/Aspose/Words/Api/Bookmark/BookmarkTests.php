@@ -29,6 +29,7 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*

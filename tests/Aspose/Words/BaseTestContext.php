@@ -28,8 +28,9 @@
 
 namespace Aspose\Tests;
 
-use Aspose\Words\ApiException;
 use Aspose\Words\Model\Requests;
+use Aspose\Storage\Api\StorageApi;
+use Aspose\Words\Configuration;
 use Aspose\Words\WordsApi;
 class BaseTestContext extends \PHPUnit_Framework_TestCase
 {
@@ -44,7 +45,6 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
 
     /**
      * Setup before running each test case
-     * @throws ApiException
      */
     public function setUp()
     {

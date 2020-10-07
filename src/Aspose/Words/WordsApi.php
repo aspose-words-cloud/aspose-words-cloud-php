@@ -130,6 +130,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -453,6 +454,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -807,6 +809,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -1173,6 +1176,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -1512,6 +1516,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -1811,6 +1816,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -2093,6 +2099,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -2426,6 +2433,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -2760,6 +2768,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3084,6 +3093,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3357,6 +3367,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3622,6 +3633,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3980,6 +3992,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -4273,6 +4286,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -4515,6 +4529,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -4881,6 +4896,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5225,6 +5241,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5589,6 +5606,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5939,6 +5957,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6251,6 +6270,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6563,6 +6583,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6884,6 +6905,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7205,6 +7227,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7514,6 +7537,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7764,6 +7788,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8014,6 +8039,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8335,6 +8361,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8656,6 +8683,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8980,6 +9008,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9302,6 +9331,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9602,6 +9632,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9923,6 +9954,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -10246,6 +10278,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -10610,6 +10643,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -10965,6 +10999,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -11289,6 +11324,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -11601,6 +11637,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -11922,6 +11959,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -12246,6 +12284,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -12572,6 +12611,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -12915,6 +12955,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -13208,6 +13249,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -13576,6 +13618,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -13891,6 +13934,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -14162,6 +14206,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -14487,6 +14532,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -14800,6 +14846,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -15134,6 +15181,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -15456,6 +15504,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -15781,6 +15830,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -16094,6 +16144,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -16407,6 +16458,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -16741,6 +16793,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -17075,6 +17128,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -17409,6 +17463,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -17731,6 +17786,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18054,6 +18110,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18337,6 +18394,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18662,6 +18720,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18975,6 +19034,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -19288,6 +19348,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -19613,6 +19674,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -19926,6 +19988,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -20269,6 +20332,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -20615,6 +20679,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -20949,6 +21014,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -21271,6 +21337,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -21554,6 +21621,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -21888,6 +21956,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -22210,6 +22279,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -22544,6 +22614,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -22866,6 +22937,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -23201,6 +23273,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -23548,6 +23621,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -23883,6 +23957,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -24208,6 +24283,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -24521,6 +24597,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -24855,6 +24932,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -25177,6 +25255,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -25511,6 +25590,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -25845,6 +25925,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -26179,6 +26260,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -26501,6 +26583,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -26835,6 +26918,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -27169,6 +27253,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -27506,6 +27591,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -27843,6 +27929,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -28168,6 +28255,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -28493,6 +28581,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -28818,6 +28907,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -29131,6 +29221,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -29456,6 +29547,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -29781,6 +29873,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -30094,6 +30187,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -30428,6 +30522,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -30765,6 +30860,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -31102,6 +31198,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -31436,6 +31533,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -31773,6 +31871,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -32110,6 +32209,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -32432,6 +32532,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -32786,6 +32887,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -33158,6 +33260,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -33531,6 +33634,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -33894,6 +33998,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -34267,6 +34372,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -34633,6 +34739,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -34987,6 +35094,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -35342,6 +35450,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -35696,6 +35805,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36069,6 +36179,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36445,6 +36556,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36799,6 +36911,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -37162,6 +37275,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -37528,6 +37642,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -37894,6 +38009,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -38266,6 +38382,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -38620,6 +38737,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -38900,6 +39018,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -39173,6 +39292,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -39436,6 +39556,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -39749,6 +39870,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -40083,6 +40205,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -40406,6 +40529,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -40750,6 +40874,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -41107,6 +41232,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -41464,6 +41590,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -41812,6 +41939,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -42169,6 +42297,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -42526,6 +42655,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -42880,6 +43010,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -43233,6 +43364,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -43453,6 +43585,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -43787,6 +43920,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -44132,6 +44266,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -44636,6 +44771,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -44962,6 +45098,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -45338,6 +45475,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -45672,6 +45810,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -46038,6 +46177,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -46413,6 +46553,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -46779,6 +46920,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -47163,6 +47305,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -47538,6 +47681,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -47861,6 +48005,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -48236,6 +48381,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -48611,6 +48757,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -48977,6 +49124,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -49355,6 +49503,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -49730,6 +49879,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -50105,6 +50255,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -50483,6 +50634,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -50861,6 +51013,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -51227,6 +51380,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -51593,6 +51747,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -51971,6 +52126,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -52346,6 +52502,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -52724,6 +52881,7 @@ class WordsApi
 
         try {
             $options = $this->_createHttpClientOption();
+            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -53059,5 +53217,12 @@ class WordsApi
         $response = $this->client->send(new Request('POST', $requestUrl, [], $httpBody));
         $result = json_decode($response->getBody()->getContents(), true);
         $this->config->setAccessToken($result["access_token"]);
+    }
+
+    private function _checkAuthToken()
+    {
+        if ($this->config->getAccessToken() == "") {
+            $this->_requestToken();
+        }
     }
 }

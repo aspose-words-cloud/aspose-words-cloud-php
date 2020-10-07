@@ -42,7 +42,7 @@ class DrawingObjectsTests extends BaseTestContext
      */
     public function testGetDocumentDrawingObjects()
     {
-        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjects";
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestGetDocumentDrawingObjects.docx";
 

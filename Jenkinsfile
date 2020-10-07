@@ -4,6 +4,7 @@ properties([
 		parameterDefinitions: [
 			[$class: 'StringParameterDefinition', name: 'branch', defaultValue: 'master', description: 'the branch to build'],
 			[$class: 'StringParameterDefinition', name: 'apiUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'api url'],
+			[$class: 'StringParameterDefinition', name: 'credsId', defaultValue: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', description: 'api url'],
             [$class: 'BooleanParameterDefinition', name: 'ignoreCiSkip', defaultValue: false, description: 'ignore CI Skip'],
 		]
 	]
@@ -25,7 +26,7 @@ def runtests(dockerImageVersion)
                 sh 'git clean -fdx'
                 
                 if (needToBuild) {
-                    withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+                    withCredentials([usernamePassword(credentialsId: $credsId, passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
                         sh 'mkdir -p Settings'
                         sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$apiUrl\\"}" > Settings/servercreds.json'
                     }

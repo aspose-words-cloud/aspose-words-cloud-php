@@ -28,6 +28,15 @@
 
 namespace Aspose\Words\Model\Requests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\MultipartStream;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\RequestOptions;
+use Aspose\Words\ObjectSerializer;
+use Aspose\Words\HeaderSelector;
+
 /*
  * Request model for saveAsTiff operation.
  */
@@ -615,5 +624,345 @@ class SaveAsTiffRequest
     {
         $this->fonts_location = $value;
         return $this;
+    }
+
+    /*
+     * Create request data for operation 'saveAsTiff'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequestData($config)
+    {
+        if ($this->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling saveAsTiff');
+        }
+        if ($this->save_options === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $save_options when calling saveAsTiff');
+        }
+
+        $resourcePath = '/words/{name}/saveAs/tiff';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $filename = null;
+        // path params
+        if ($this->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->name), $resourcePath);
+        }
+        else {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
+        }
+
+        // remove empty path parameters
+        $resourcePath = str_replace("//", "/", $resourcePath);
+        // query params
+        if ($this->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($this->folder) ? ($this->folder ? 'true' : 'false') : $this->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($this->load_encoding) ? ($this->load_encoding ? 'true' : 'false') : $this->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->use_anti_aliasing !== null) {
+            $localName = lcfirst('UseAntiAliasing');
+            $localValue = is_bool($this->use_anti_aliasing) ? ($this->use_anti_aliasing ? 'true' : 'false') : $this->use_anti_aliasing;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->use_high_quality_rendering !== null) {
+            $localName = lcfirst('UseHighQualityRendering');
+            $localValue = is_bool($this->use_high_quality_rendering) ? ($this->use_high_quality_rendering ? 'true' : 'false') : $this->use_high_quality_rendering;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->image_brightness !== null) {
+            $localName = lcfirst('ImageBrightness');
+            $localValue = is_bool($this->image_brightness) ? ($this->image_brightness ? 'true' : 'false') : $this->image_brightness;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->image_color_mode !== null) {
+            $localName = lcfirst('ImageColorMode');
+            $localValue = is_bool($this->image_color_mode) ? ($this->image_color_mode ? 'true' : 'false') : $this->image_color_mode;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->image_contrast !== null) {
+            $localName = lcfirst('ImageContrast');
+            $localValue = is_bool($this->image_contrast) ? ($this->image_contrast ? 'true' : 'false') : $this->image_contrast;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->numeral_format !== null) {
+            $localName = lcfirst('NumeralFormat');
+            $localValue = is_bool($this->numeral_format) ? ($this->numeral_format ? 'true' : 'false') : $this->numeral_format;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->page_count !== null) {
+            $localName = lcfirst('PageCount');
+            $localValue = is_bool($this->page_count) ? ($this->page_count ? 'true' : 'false') : $this->page_count;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->page_index !== null) {
+            $localName = lcfirst('PageIndex');
+            $localValue = is_bool($this->page_index) ? ($this->page_index ? 'true' : 'false') : $this->page_index;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->paper_color !== null) {
+            $localName = lcfirst('PaperColor');
+            $localValue = is_bool($this->paper_color) ? ($this->paper_color ? 'true' : 'false') : $this->paper_color;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->pixel_format !== null) {
+            $localName = lcfirst('PixelFormat');
+            $localValue = is_bool($this->pixel_format) ? ($this->pixel_format ? 'true' : 'false') : $this->pixel_format;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->resolution !== null) {
+            $localName = lcfirst('Resolution');
+            $localValue = is_bool($this->resolution) ? ($this->resolution ? 'true' : 'false') : $this->resolution;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->scale !== null) {
+            $localName = lcfirst('Scale');
+            $localValue = is_bool($this->scale) ? ($this->scale ? 'true' : 'false') : $this->scale;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->tiff_compression !== null) {
+            $localName = lcfirst('TiffCompression');
+            $localValue = is_bool($this->tiff_compression) ? ($this->tiff_compression ? 'true' : 'false') : $this->tiff_compression;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->dml_rendering_mode !== null) {
+            $localName = lcfirst('DmlRenderingMode');
+            $localValue = is_bool($this->dml_rendering_mode) ? ($this->dml_rendering_mode ? 'true' : 'false') : $this->dml_rendering_mode;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->dml_effects_rendering_mode !== null) {
+            $localName = lcfirst('DmlEffectsRenderingMode');
+            $localValue = is_bool($this->dml_effects_rendering_mode) ? ($this->dml_effects_rendering_mode ? 'true' : 'false') : $this->dml_effects_rendering_mode;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->tiff_binarization_method !== null) {
+            $localName = lcfirst('TiffBinarizationMethod');
+            $localValue = is_bool($this->tiff_binarization_method) ? ($this->tiff_binarization_method ? 'true' : 'false') : $this->tiff_binarization_method;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->zip_output !== null) {
+            $localName = lcfirst('ZipOutput');
+            $localValue = is_bool($this->zip_output) ? ($this->zip_output ? 'true' : 'false') : $this->zip_output;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($this->fonts_location) ? ($this->fonts_location ? 'true' : 'false') : $this->fonts_location;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+
+        $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        if (isset($this->save_options)) {
+            if (is_string($this->save_options)) {
+                $_tempBody = ['content' => "\"" . $this->save_options . "\"", 'mime' => 'application/json'];
+            } else {
+                $_tempBody = ['content' => $this->save_options, 'mime' => 'application/json'];
+            }
+        }
+        $headerParams = [];
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $headerParams['Content-Type'] = $_tempBody['mime'];
+            if (gettype($_tempBody['content']) === 'string') {
+                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
+            } else {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody['content']));
+            }
+        } elseif (count($formParams) > 1) {
+            $multipartContents = [];
+            foreach ($formParams as $formParamName => $formParamValue) {
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue['content'],
+                    'headers' => ['Content-Type' => $formParamValue['mime']]
+                ];
+            }
+            // for HTTP post (form)
+            $httpBody = new MultipartStream($multipartContents);
+            $headerParams['Content-Type'] = "multipart/form-data; boundary=" . $httpBody->getBoundary();
+        }
+
+        $result = array();
+        $result['method'] = 'PUT';
+        $result['url'] = $resourcePath;
+        $result['headers'] = $headerParams;
+        $result['body'] = $httpBody;
+        return $result;
+    }
+
+    /*
+     * Create request for operation 'saveAsTiff'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequest($config)
+    {
+        $reqdata = $this->createRequestData($config);
+        $defaultHeaders = [];
+
+        if ($config->getAccessToken() !== null) {
+            $defaultHeaders['Authorization'] = 'Bearer ' . $config->getAccessToken();
+        }
+
+        if ($config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $config->getClientVersion();
+
+        $reqdata['headers'] = array_merge($defaultHeaders, $reqdata['headers']);
+        $req = new Request(
+            $reqdata['method'],
+            $reqdata['url'],
+            $reqdata['headers'],
+            $reqdata['body']
+        );
+
+        if ($config->getDebug()) {
+            $this->_writeRequestLog($reqdata['method'], $reqdata['url'], $reqdata['headers'], $reqdata['body']);
+        }
+
+        return $req;
+    }
+
+    /*
+     * Gets response type of this request.
+     */
+    public function getResponseType()
+    {
+        return '\Aspose\Words\Model\SaveResponse';
     }
 }

@@ -61,6 +61,8 @@ class RevisionsTests extends BaseTestContext
 
         $result = $this->words->acceptAllRevisions($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getResult());
+        Assert::assertNotNull($result->getResult()->getDest());
     }
 
     /*
@@ -88,5 +90,7 @@ class RevisionsTests extends BaseTestContext
 
         $result = $this->words->rejectAllRevisions($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getResult());
+        Assert::assertNotNull($result->getResult()->getDest());
     }
 }

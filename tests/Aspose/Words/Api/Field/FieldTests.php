@@ -62,6 +62,10 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->getFields($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFields());
+        Assert::assertNotNull($result->getFields()->getList());
+        Assert::assertCount(1, $result->getFields()->getList());
+        Assert::assertEquals("1", $result->getFields()->getList()[0]->getResult());
     }
 
     /*
@@ -90,6 +94,10 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->getFields($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFields());
+        Assert::assertNotNull($result->getFields()->getList());
+        Assert::assertCount(1, $result->getFields()->getList());
+        Assert::assertEquals("1", $result->getFields()->getList()[0]->getResult());
     }
 
     /*
@@ -119,6 +127,8 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->getField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("1", $result->getField()->getResult());
     }
 
     /*
@@ -148,6 +158,8 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->getField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("1", $result->getField()->getResult());
     }
 
     /*
@@ -184,6 +196,9 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->insertField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("{ NUMPAGES }", $result->getField()->getFieldCode());
+        Assert::assertEquals("0.0.0.1", $result->getField()->getNodeId());
     }
 
     /*
@@ -220,6 +235,9 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->insertField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("{ NUMPAGES }", $result->getField()->getFieldCode());
+        Assert::assertEquals("5.0.22.0", $result->getField()->getNodeId());
     }
 
     /*
@@ -256,6 +274,9 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->updateField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("{ NUMPAGES }", $result->getField()->getFieldCode());
+        Assert::assertEquals("0.0.0.0", $result->getField()->getNodeId());
     }
 
     /*
@@ -290,6 +311,8 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->insertPageNumbers($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestInsertPageNumbers.docx", $result->getDocument()->getFileName());
     }
 
     /*
@@ -553,5 +576,7 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->updateFields($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestUpdateDocumentFields.docx", $result->getDocument()->getFileName());
     }
 }

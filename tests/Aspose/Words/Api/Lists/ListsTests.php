@@ -60,6 +60,10 @@ class ListsTests extends BaseTestContext
 
         $result = $this->words->getLists($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getLists());
+        Assert::assertNotNull($result->getLists()->getListInfo());
+        Assert::assertCount(2, $result->getLists()->getListInfo());
+        Assert::assertEquals(1, $result->getLists()->getListInfo()[0]->getListId());
     }
 
     /*
@@ -87,6 +91,8 @@ class ListsTests extends BaseTestContext
 
         $result = $this->words->getList($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getList());
+        Assert::assertEquals(1, $result->getList()->getListId());
     }
 
     /*
@@ -121,6 +127,9 @@ class ListsTests extends BaseTestContext
 
         $result = $this->words->updateList($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getList());
+        Assert::assertEquals(1, $result->getList()->getListId());
+        Assert::assertTrue($result->getList()->getIsRestartAtEachSection());
     }
 
     /*
@@ -156,6 +165,11 @@ class ListsTests extends BaseTestContext
 
         $result = $this->words->updateListLevel($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getList());
+        Assert::assertNotNull($result->getList()->getListLevels());
+        Assert::assertNotNull($result->getList()->getListLevels()->getListLevel());
+        Assert::assertCount(9, $result->getList()->getListLevels()->getListLevel());
+
     }
 
     /*
@@ -189,5 +203,7 @@ class ListsTests extends BaseTestContext
 
         $result = $this->words->insertList($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getList());
+        Assert::assertEquals(3, $result->getList()->getListId());
     }
 }

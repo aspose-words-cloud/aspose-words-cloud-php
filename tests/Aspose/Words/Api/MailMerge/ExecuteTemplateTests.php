@@ -68,6 +68,8 @@ class ExecuteTemplateTests extends BaseTestContext
 
         $result = $this->words->executeMailMerge($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestExecuteTemplate.docx", $result->getDocument()->getFileName());
     }
 
     /*

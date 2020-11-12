@@ -61,6 +61,8 @@ class PageSetupTests extends BaseTestContext
 
         $result = $this->words->getSectionPageSetup($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getPageSetup());
+        Assert::assertEquals(1, $result->getPageSetup()->getLineStartingNumber());
     }
 
     /*
@@ -79,7 +81,7 @@ class PageSetupTests extends BaseTestContext
 
         $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
             "rtl_gutter" => true,
-            "left_margin" => 10,
+            "left_margin" => 10.0,
             "orientation" => "Landscape",
             "paper_size" => "A5",
         ));
@@ -98,6 +100,10 @@ class PageSetupTests extends BaseTestContext
 
         $result = $this->words->updateSectionPageSetup($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getPageSetup());
+        Assert::assertTrue($result->getPageSetup()->getRtlGutter());
+
+
     }
 
     /*

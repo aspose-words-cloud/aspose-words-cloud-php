@@ -60,6 +60,9 @@ class StylesTests extends BaseTestContext
 
         $result = $this->words->getStyles($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getStyles());
+        Assert::assertCount(22, $result->getStyles());
+        Assert::assertEquals("Default Paragraph Font", $result->getStyles()[0]->getName());
     }
 
     /*
@@ -87,6 +90,8 @@ class StylesTests extends BaseTestContext
 
         $result = $this->words->getStyle($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getStyle());
+        Assert::assertEquals("Heading 1", $result->getStyle()->getName());
     }
 
     /*
@@ -121,6 +126,8 @@ class StylesTests extends BaseTestContext
 
         $result = $this->words->updateStyle($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getStyle());
+        Assert::assertEquals("My Style", $result->getStyle()->getName());
     }
 
     /*
@@ -155,6 +162,8 @@ class StylesTests extends BaseTestContext
 
         $result = $this->words->insertStyle($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getStyle());
+        Assert::assertEquals("My Style", $result->getStyle()->getName());
     }
 
     /*
@@ -188,6 +197,8 @@ class StylesTests extends BaseTestContext
 
         $result = $this->words->copyStyle($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getStyle());
+        Assert::assertEquals("Heading 1_0", $result->getStyle()->getName());
     }
 
     /*
@@ -215,6 +226,8 @@ class StylesTests extends BaseTestContext
 
         $result = $this->words->getStyleFromDocumentElement($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getStyle());
+        Assert::assertEquals("TOC 1", $result->getStyle()->getName());
     }
 
     /*

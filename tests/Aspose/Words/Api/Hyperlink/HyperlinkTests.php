@@ -61,6 +61,8 @@ class HyperlinkTests extends BaseTestContext
 
         $result = $this->words->getDocumentHyperlinkByIndex($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHyperlink());
+        Assert::assertEquals("Aspose", $result->getHyperlink()->getDisplayText());
     }
 
     /*
@@ -87,5 +89,9 @@ class HyperlinkTests extends BaseTestContext
 
         $result = $this->words->getDocumentHyperlinks($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHyperlinks());
+        Assert::assertNotNull($result->getHyperlinks()->getHyperlinkList());
+        Assert::assertCount(2, $result->getHyperlinks()->getHyperlinkList());
+        Assert::assertEquals("Aspose", $result->getHyperlinks()->getHyperlinkList()[0]->getDisplayText());
     }
 }

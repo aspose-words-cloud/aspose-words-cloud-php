@@ -63,5 +63,7 @@ class DocumentStatisticsTests extends BaseTestContext
 
         $result = $this->words->getDocumentStatistics($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getStatData());
+        Assert::assertEquals(10, $result->getStatData()->getWordCount());
     }
 }

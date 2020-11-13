@@ -55,22 +55,22 @@ class WordsApi
 
     /*
      * Initialize a new instance of WordsApi
-     * @param string   $appSid client app sid
-     * @param string   $appKey app key
+     * @param string   $clientId client sid
+     * @param string   $clientSecret client secret
      * @param string   $baseUrl base url for requests
      */
-    public function __construct(string $appSid, string $appKey)
+    public function __construct(string $clientId, string $clientSecret)
     {
-        if (!isset($appSid) || trim($appSid) === '') {
-            throw new ApiException('appSid could not be an empty string.');
+        if (!isset($clientId) || trim($clientId) === '') {
+            throw new ApiException('clientId could not be an empty string.');
         }
 
-        if (!isset($appKey) || trim($appKey) === '') {
-            throw new ApiException('appKey could not be an empty string.');
+        if (!isset($clientSecret) || trim($clientSecret) === '') {
+            throw new ApiException('clientSecret could not be an empty string.');
         }
 
         $this->client = new Client();
-        $this->config = new Configuration($appSid, $appKey);
+        $this->config = new Configuration($clientId, $clientSecret);
     }
 
     /*
@@ -25224,8 +25224,8 @@ class WordsApi
         $requestUrl = $this->config->getHost() . "connect/token";
         $params = array(
             "grant_type"=>'client_credentials',
-            "client_id" => $this->config->getAppSid(),
-            "client_secret" => $this->config->getAppKey()
+            "client_id" => $this->config->getClientId(),
+            "client_secret" => $this->config->getClientSecret()
         );
         $multipartContents = [];
         foreach ($params as $paramName => $paramValue) {

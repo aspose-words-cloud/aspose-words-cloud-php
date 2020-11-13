@@ -110,7 +110,7 @@ require_once('vendor/autoload.php');
 ```php
         // Start README example
 
-        $api = new WordsApi($appSid, $appKey);
+        $api = new WordsApi($clientId, $clientSecret);
         // the step is optional, the default value is https://api.aspose.cloud
         $api->getConfig()->setHost($baseUrl);
 

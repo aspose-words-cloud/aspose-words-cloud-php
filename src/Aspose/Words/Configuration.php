@@ -36,30 +36,30 @@ class Configuration
     private static $_defaultConfiguration;
 
     /*
-     * Associate array to store API key(s)
+     * Associate array to store client secret(s)
      *
      * @var string[]
      */
-    protected $apiKeys = [];
+    protected $clientSecrets = [];
 
     /*
-     * AppKey for API
+     * clientSecret for API
      *
      */
-    protected $appKey = '';
+    protected $clientSecret = '';
 
     /*
-     * AppSid for API
+     * ClientId for API
      * @var string
      */
-    protected $appSid = '';
+    protected $clientId = '';
 
     /*
      * Associate array to store API prefix (e.g. Bearer)
      *
      * @var string[]
      */
-    protected $apiKeyPrefixes = [];
+    protected $clientSecretPrefixes = [];
 
     /*
      * Access token for OAuth
@@ -138,16 +138,16 @@ class Configuration
 
     /*
      * Constructor
-     * @param string   $appSid client app sid
-     * @param string   $appKey app key
+     * @param string   $clientId client client id
+     * @param string   $clientSecret client secret
      * @param string   $baseUrl base url for requests
      */
-    public function __construct(string $appSid, string $appKey)
+    public function __construct(string $clientId, string $clientSecret)
     {
         $this->tempFolderPath = sys_get_temp_dir();
         date_default_timezone_set('UTC');
-        $this->setAppSid($appSid);
-        $this->setAppKey($appKey);
+        $this->setClientId($clientId);
+        $this->setClientSecret($clientSecret);
     }
 
     /*
@@ -160,99 +160,99 @@ class Configuration
     }
 
     /*
-     * Sets API key
+     * Write client secret
      *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key              API key or token
+     * @param string $clientId client id (authentication scheme)
+     * @param string $clientSecret              client secret or token
      *
      * @return $this
      */
-    public function setApiKey($apiKeyIdentifier, $key)
+    public function writeClientSecret($clientId, $clientSecret)
     {
-        $this->apiKeys[$apiKeyIdentifier] = $key;
+        $this->clientSecrets[$clientId] = $clientSecret;
         return $this;
     }
 
     /*
-     * Sets AppSid
+     * Sets ClientId
      *
-     * @param string $appSid
+     * @param string $clientId
      *
      * @return $this
      */
-    public function setAppSid($appSid)
+    public function setClientId($clientId)
     {
-        $this->appSid = $appSid;
+        $this->clientId = $clientId;
         return $this;
     }
 
     /*
-     * Gets AppSid
-     * @return $appSid
+     * Gets ClientId
+     * @return $clientId
      */
-    public function getAppSid()
+    public function getClientId()
     {
-        return $this->appSid;
+        return $this->clientId;
     }
 
     /*
-     * Sets AppKey
+     * Sets ClientSecret
      *
-     * @param string $appKey
+     * @param string $ClientSecret
      *
      * @return $this
      */
-    public function setAppKey($appKey)
+    public function setClientSecret($clientSecret)
     {
-        $this->appKey = $appKey;
+        $this->ClientSecret = $clientSecret;
         return $this;
     }
 
     /*
-     * Gets AppKey
-     * @return $appKey
+     * Gets ClientSecret
+     * @return $ClientSecret
      */
-    public function getAppKey()
+    public function getClientSecret()
     {
-        return $this->appKey;
+        return $this->ClientSecret;
     }
 
     /*
-     * Gets API key
+     * Read client secret
      *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
+     * @param string $clientId client identifier (authentication scheme)
      *
-     * @return string API key or token
+     * @return client secret or token
      */
-    public function getApiKey($apiKeyIdentifier)
+    public function readClientSecret($clientId)
     {
-        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
+        return isset($this->clientSecrets[$clientId]) ? $this->clientSecrets[$clientId] : null;
     }
 
     /*
      * Sets the prefix for API key (e.g. Bearer)
      *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
+     * @param string $clientSecretIdentifier API key identifier (authentication scheme)
      * @param string $prefix           API key prefix, e.g. Bearer
      *
      * @return $this
      */
-    public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
+    public function setclientSecretPrefix($clientSecretIdentifier, $prefix)
     {
-        $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
+        $this->clientSecretPrefixes[$clientSecretIdentifier] = $prefix;
         return $this;
     }
 
     /*
      * Gets API key prefix
      *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
+     * @param string $clientSecretIdentifier API key identifier (authentication scheme)
      *
      * @return string
      */
-    public function getApiKeyPrefix($apiKeyIdentifier)
+    public function getclientSecretPrefix($clientSecretIdentifier)
     {
-        return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
+        return isset($this->clientSecretPrefixes[$clientSecretIdentifier]) ? $this->clientSecretPrefixes[$clientSecretIdentifier] : null;
     }
 
     /*
@@ -525,23 +525,23 @@ class Configuration
     /*
      * Get API key (with prefix if set)
      *
-     * @param  string $apiKeyIdentifier name of apikey
+     * @param  string $clientSecretIdentifier name of clientSecret
      *
      * @return string API key with the prefix
      */
-    public function getApiKeyWithPrefix($apiKeyIdentifier)
+    public function getclientSecretWithPrefix($clientSecretIdentifier)
     {
-        $prefix = $this->getApiKeyPrefix($apiKeyIdentifier);
-        $apiKey = $this->getApiKey($apiKeyIdentifier);
+        $prefix = $this->getclientSecretPrefix($clientSecretIdentifier);
+        $clientSecret = $this->getclientSecret($clientSecretIdentifier);
 
-        if ($apiKey === null) {
+        if ($clientSecret === null) {
             return null;
         }
 
         if ($prefix === null) {
-            $keyWithPrefix = $apiKey;
+            $keyWithPrefix = $clientSecret;
         } else {
-            $keyWithPrefix = $prefix . ' ' . $apiKey;
+            $keyWithPrefix = $prefix . ' ' . $clientSecret;
         }
 
         return $keyWithPrefix;

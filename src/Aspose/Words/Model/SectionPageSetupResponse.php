@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SectionPageSetupResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}/PageSetup.
+ * @description The REST response with a page setup of a section.
  */
 class SectionPageSetupResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class SectionPageSetupResponse extends WordsResponse
     /*
      * Sets page_setup
      *
-     * @param \Aspose\Words\Model\PageSetup $page_setup Gets or sets section.
+     * @param \Aspose\Words\Model\PageSetup $page_setup Gets or sets the page setup of a section.
      *
      * @return $this
      */

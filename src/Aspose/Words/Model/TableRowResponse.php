@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableRowResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}.
+ * @description The REST response with a table row.
  */
 class TableRowResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class TableRowResponse extends WordsResponse
     /*
      * Sets row
      *
-     * @param \Aspose\Words\Model\TableRow $row Gets or sets table row.
+     * @param \Aspose\Words\Model\TableRow $row Gets or sets the table row.
      *
      * @return $this
      */

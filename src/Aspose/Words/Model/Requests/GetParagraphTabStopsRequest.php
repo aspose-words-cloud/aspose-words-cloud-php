@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class GetParagraphTabStopsRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -53,7 +53,7 @@ class GetParagraphTabStopsRequest
     public $index;
 
     /*
-     * Path to the node which contains paragraph.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -80,9 +80,9 @@ class GetParagraphTabStopsRequest
     /*
      * Initializes a new instance of the GetParagraphTabStopsRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param int $index Object index.
-     * @param string $node_path Path to the node which contains paragraph.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -100,7 +100,7 @@ class GetParagraphTabStopsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -108,7 +108,7 @@ class GetParagraphTabStopsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -134,7 +134,7 @@ class GetParagraphTabStopsRequest
     }
 
     /*
-     * Path to the node which contains paragraph.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -142,7 +142,7 @@ class GetParagraphTabStopsRequest
     }
 
     /*
-     * Path to the node which contains paragraph.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

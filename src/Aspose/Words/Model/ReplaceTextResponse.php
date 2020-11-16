@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ReplaceTextResponse
  *
- * @description Response for "Replace text" action.
+ * @description The REST response with a number of occurrences of the captured text in the document.
  */
 class ReplaceTextResponse extends WordsResponse
 {
@@ -211,7 +211,7 @@ class ReplaceTextResponse extends WordsResponse
     /*
      * Sets document_link
      *
-     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets link to the document.
+     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets the link to the document.
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class ReplaceTextResponse extends WordsResponse
     /*
      * Sets matches
      *
-     * @param int $matches Gets or sets number of occurrences of the captured text in the document.
+     * @param int $matches Gets or sets the number of occurrences of the captured text in the document.
      *
      * @return $this
      */

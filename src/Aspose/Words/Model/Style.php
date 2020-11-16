@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Style
  *
- * @description Represents a single document style.
+ * @description DTO container with a single document style.
  */
 class Style extends LinkElement
 {
@@ -1090,7 +1090,7 @@ class Style extends LinkElement
     /*
      * Sets base_style_name
      *
-     * @param string $base_style_name Gets or sets /sets the name of the style this style is based on.
+     * @param string $base_style_name Gets or sets the name of the style this style is based on.
      *
      * @return $this
      */
@@ -1113,7 +1113,7 @@ class Style extends LinkElement
     /*
      * Sets built_in
      *
-     * @param bool $built_in Gets or sets a value indicating whether true if this style is one of the built-in styles in MS Word.
+     * @param bool $built_in Gets or sets a value indicating whether this style is one of the built-in styles in MS Word.
      *
      * @return $this
      */
@@ -1159,7 +1159,7 @@ class Style extends LinkElement
     /*
      * Sets is_heading
      *
-     * @param bool $is_heading Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.
+     * @param bool $is_heading Gets or sets a value indicating whether the style is one of the built-in Heading styles.
      *
      * @return $this
      */
@@ -1182,7 +1182,7 @@ class Style extends LinkElement
     /*
      * Sets is_quick_style
      *
-     * @param bool $is_quick_style Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.
+     * @param bool $is_quick_style Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.
      *
      * @return $this
      */
@@ -1251,7 +1251,7 @@ class Style extends LinkElement
     /*
      * Sets next_paragraph_style_name
      *
-     * @param string $next_paragraph_style_name Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
+     * @param string $next_paragraph_style_name Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
      *
      * @return $this
      */

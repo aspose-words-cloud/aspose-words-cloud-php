@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class GetDocumentRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $document_name;
 
@@ -70,7 +70,7 @@ class GetDocumentRequest
     /*
      * Initializes a new instance of the GetDocumentRequest class.
      *
-     * @param string $document_name The document name.
+     * @param string $document_name The filename of the input document.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -86,7 +86,7 @@ class GetDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_document_name()
     {
@@ -94,7 +94,7 @@ class GetDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_document_name($value)
     {

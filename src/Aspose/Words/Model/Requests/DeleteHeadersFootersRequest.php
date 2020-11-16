@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class DeleteHeadersFootersRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public $section_path;
 
@@ -88,15 +88,15 @@ class DeleteHeadersFootersRequest
     public $revision_date_time;
 
     /*
-     * List of types of headers and footers.
+     * The list of HeaderFooter types.
      */
     public $headers_footers_types;
 
     /*
      * Initializes a new instance of the DeleteHeadersFootersRequest class.
      *
-     * @param string $name The document name.
-     * @param string $section_path Path to parent section.
+     * @param string $name The filename of the input document.
+     * @param string $section_path The path to the section in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -104,7 +104,7 @@ class DeleteHeadersFootersRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $headers_footers_types List of types of headers and footers.
+     * @param string $headers_footers_types The list of HeaderFooter types.
      */
     public function __construct($name, $section_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $headers_footers_types = null)
     {
@@ -121,7 +121,7 @@ class DeleteHeadersFootersRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class DeleteHeadersFootersRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class DeleteHeadersFootersRequest
     }
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public function get_section_path()
     {
@@ -146,7 +146,7 @@ class DeleteHeadersFootersRequest
     }
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public function set_section_path($value)
     {
@@ -274,7 +274,7 @@ class DeleteHeadersFootersRequest
     }
 
     /*
-     * List of types of headers and footers.
+     * The list of HeaderFooter types.
      */
     public function get_headers_footers_types()
     {
@@ -282,7 +282,7 @@ class DeleteHeadersFootersRequest
     }
 
     /*
-     * List of types of headers and footers.
+     * The list of HeaderFooter types.
      */
     public function set_headers_footers_types($value)
     {

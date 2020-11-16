@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * JpegSaveOptionsData
  *
- * @description container class for jpeg save options.
+ * @description Container class for jpeg save options.
  */
 class JpegSaveOptionsData extends ImageSaveOptionsData
 {

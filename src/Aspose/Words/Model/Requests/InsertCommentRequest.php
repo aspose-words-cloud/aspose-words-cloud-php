@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class InsertCommentRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The comment data.
+     * The properties of the comment.
      */
     public $comment;
 
@@ -90,8 +90,8 @@ class InsertCommentRequest
     /*
      * Initializes a new instance of the InsertCommentRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\CommentInsert $comment The comment data.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\CommentInsert $comment The properties of the comment.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class InsertCommentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class InsertCommentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class InsertCommentRequest
     }
 
     /*
-     * The comment data.
+     * The properties of the comment.
      */
     public function get_comment()
     {
@@ -139,7 +139,7 @@ class InsertCommentRequest
     }
 
     /*
-     * The comment data.
+     * The properties of the comment.
      */
     public function set_comment($value)
     {

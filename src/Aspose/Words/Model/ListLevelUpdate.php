@@ -497,7 +497,7 @@ class ListLevelUpdate implements ArrayAccess
     /*
      * Sets is_legal
      *
-     * @param bool $is_legal Gets or sets a value indicating whether true if the level turns all inherited numbers to Arabic, false if it preserves their number style.
+     * @param bool $is_legal Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.
      *
      * @return $this
      */
@@ -520,7 +520,7 @@ class ListLevelUpdate implements ArrayAccess
     /*
      * Sets number_format
      *
-     * @param string $number_format Gets or sets returns or sets the number format for the list level.
+     * @param string $number_format Gets or sets the number format for the list level.
      *
      * @return $this
      */
@@ -543,7 +543,7 @@ class ListLevelUpdate implements ArrayAccess
     /*
      * Sets number_position
      *
-     * @param double $number_position Gets or sets returns or sets the position (in points) of the number or bullet for the list level.
+     * @param double $number_position Gets or sets the position (in points) of the number or bullet for the list level.
      *
      * @return $this
      */
@@ -566,7 +566,7 @@ class ListLevelUpdate implements ArrayAccess
     /*
      * Sets number_style
      *
-     * @param string $number_style Gets or sets returns or sets the number style for this list level.
+     * @param string $number_style Gets or sets the number style for this list level.
      *
      * @return $this
      */
@@ -593,7 +593,7 @@ class ListLevelUpdate implements ArrayAccess
     /*
      * Sets restart_after_level
      *
-     * @param int $restart_after_level Gets or sets or returns the list level that must appear before the specified list level restarts numbering.
+     * @param int $restart_after_level Gets or sets the list level that must appear before the specified list level restarts numbering.
      *
      * @return $this
      */
@@ -616,7 +616,7 @@ class ListLevelUpdate implements ArrayAccess
     /*
      * Sets start_at
      *
-     * @param int $start_at Gets or sets returns or sets the starting number for this list level.
+     * @param int $start_at Gets or sets the starting number for this list level.
      *
      * @return $this
      */
@@ -639,7 +639,7 @@ class ListLevelUpdate implements ArrayAccess
     /*
      * Sets tab_position
      *
-     * @param double $tab_position Gets or sets returns or sets the tab position (in points) for the list level.
+     * @param double $tab_position Gets or sets the tab position (in points) for the list level.
      *
      * @return $this
      */
@@ -662,7 +662,7 @@ class ListLevelUpdate implements ArrayAccess
     /*
      * Sets text_position
      *
-     * @param double $text_position Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.
+     * @param double $text_position Gets or sets the position (in points) for the second line of wrapping text for the list level.
      *
      * @return $this
      */
@@ -685,7 +685,7 @@ class ListLevelUpdate implements ArrayAccess
     /*
      * Sets trailing_character
      *
-     * @param string $trailing_character Gets or sets returns or sets the character inserted after the number for the list level.
+     * @param string $trailing_character Gets or sets the character to be inserted after the number for the list level.
      *
      * @return $this
      */

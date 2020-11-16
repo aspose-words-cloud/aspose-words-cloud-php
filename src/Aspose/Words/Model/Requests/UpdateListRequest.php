@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class UpdateListRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * List object.
+     * The properties of the list.
      */
     public $list_update;
 
     /*
-     * List unique identifier.
+     * The list Id.
      */
     public $list_id;
 
@@ -95,9 +95,9 @@ class UpdateListRequest
     /*
      * Initializes a new instance of the UpdateListRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\ListUpdate $list_update List object.
-     * @param int $list_id List unique identifier.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\ListUpdate $list_update The properties of the list.
+     * @param int $list_id The list Id.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class UpdateListRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class UpdateListRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class UpdateListRequest
     }
 
     /*
-     * List object.
+     * The properties of the list.
      */
     public function get_list_update()
     {
@@ -146,7 +146,7 @@ class UpdateListRequest
     }
 
     /*
-     * List object.
+     * The properties of the list.
      */
     public function set_list_update($value)
     {
@@ -155,7 +155,7 @@ class UpdateListRequest
     }
 
     /*
-     * List unique identifier.
+     * The list Id.
      */
     public function get_list_id()
     {
@@ -163,7 +163,7 @@ class UpdateListRequest
     }
 
     /*
-     * List unique identifier.
+     * The list Id.
      */
     public function set_list_id($value)
     {

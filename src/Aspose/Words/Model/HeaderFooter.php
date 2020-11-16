@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HeaderFooter
  *
- * @description Section element.
+ * @description DTO container with a section element.
  */
 class HeaderFooter extends HeaderFooterLink
 {
@@ -217,7 +217,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets child nodes.
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets the child nodes.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets drawing_objects
      *
-     * @param \Aspose\Words\Model\LinkElement $drawing_objects Gets or sets link to DrawingObjects resource.
+     * @param \Aspose\Words\Model\LinkElement $drawing_objects Gets or sets the link to DrawingObjects resource.
      *
      * @return $this
      */
@@ -263,7 +263,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets link to Paragraphs resource.
+     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets the link to Paragraphs resource.
      *
      * @return $this
      */

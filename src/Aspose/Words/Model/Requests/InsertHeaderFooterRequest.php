@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class InsertHeaderFooterRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Type of header/footer.
+     * The type of a HeaderFooter object.
      */
     public $header_footer_type;
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public $section_path;
 
@@ -95,9 +95,9 @@ class InsertHeaderFooterRequest
     /*
      * Initializes a new instance of the InsertHeaderFooterRequest class.
      *
-     * @param string $name The document name.
-     * @param string $header_footer_type Type of header/footer.
-     * @param string $section_path Path to parent section.
+     * @param string $name The filename of the input document.
+     * @param string $header_footer_type The type of a HeaderFooter object.
+     * @param string $section_path The path to the section in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class InsertHeaderFooterRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class InsertHeaderFooterRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class InsertHeaderFooterRequest
     }
 
     /*
-     * Type of header/footer.
+     * The type of a HeaderFooter object.
      */
     public function get_header_footer_type()
     {
@@ -146,7 +146,7 @@ class InsertHeaderFooterRequest
     }
 
     /*
-     * Type of header/footer.
+     * The type of a HeaderFooter object.
      */
     public function set_header_footer_type($value)
     {
@@ -155,7 +155,7 @@ class InsertHeaderFooterRequest
     }
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public function get_section_path()
     {
@@ -163,7 +163,7 @@ class InsertHeaderFooterRequest
     }
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public function set_section_path($value)
     {

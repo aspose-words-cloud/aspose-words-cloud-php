@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FieldCollection
  *
- * @description Represents DTO for collection of fields.
+ * @description DTO container with a collection of fields.
  */
 class FieldCollection extends LinkElement
 {
@@ -205,7 +205,7 @@ class FieldCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\Field[] $list Gets or sets collection of fields.
+     * @param \Aspose\Words\Model\Field[] $list Gets or sets the collection of fields.
      *
      * @return $this
      */

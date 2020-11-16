@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * RangeTextResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/range/{0}/{1}/.
+ * @description The REST response with a range's text.
  */
 class RangeTextResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class RangeTextResponse extends WordsResponse
     /*
      * Sets text
      *
-     * @param string $text Gets or sets text from range.
+     * @param string $text Gets or sets the range's text.
      *
      * @return $this
      */

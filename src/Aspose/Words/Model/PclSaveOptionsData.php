@@ -211,7 +211,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets falllback_font_name
      *
-     * @param string $falllback_font_name Gets or sets name of the font that will be used if no expected font is found in printer and built-in fonts collections.
+     * @param string $falllback_font_name Gets or sets the font name, that will be used if no expected font is found in printer and built-in fonts collections.
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets rasterize_transformed_elements
      *
-     * @param bool $rasterize_transformed_elements Gets or sets a value determining whether or not complex transformed elements should be rasterized before saving to PCL document.  Default is true.
+     * @param bool $rasterize_transformed_elements Gets or sets a value indicating whether complex transformed elements should be rasterized before saving to PCL document.. The default value is true.
      *
      * @return $this
      */

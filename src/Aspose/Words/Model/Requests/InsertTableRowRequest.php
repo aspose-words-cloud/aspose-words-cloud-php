@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class InsertTableRowRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Table row parameters/.
+     * The properties of the row.
      */
     public $row;
 
     /*
-     * Path to table.
+     * The path to the table in the document tree.
      */
     public $table_path;
 
@@ -95,9 +95,9 @@ class InsertTableRowRequest
     /*
      * Initializes a new instance of the InsertTableRowRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\TableRowInsert $row Table row parameters/.
-     * @param string $table_path Path to table.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\TableRowInsert $row The properties of the row.
+     * @param string $table_path The path to the table in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class InsertTableRowRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class InsertTableRowRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class InsertTableRowRequest
     }
 
     /*
-     * Table row parameters/.
+     * The properties of the row.
      */
     public function get_row()
     {
@@ -146,7 +146,7 @@ class InsertTableRowRequest
     }
 
     /*
-     * Table row parameters/.
+     * The properties of the row.
      */
     public function set_row($value)
     {
@@ -155,7 +155,7 @@ class InsertTableRowRequest
     }
 
     /*
-     * Path to table.
+     * The path to the table in the document tree.
      */
     public function get_table_path()
     {
@@ -163,7 +163,7 @@ class InsertTableRowRequest
     }
 
     /*
-     * Path to table.
+     * The path to the table in the document tree.
      */
     public function set_table_path($value)
     {

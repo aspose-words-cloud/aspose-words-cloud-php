@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetStyleFromDocumentElementRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      */
     public $styled_node_path;
 
@@ -75,8 +75,8 @@ class GetStyleFromDocumentElementRequest
     /*
      * Initializes a new instance of the GetStyleFromDocumentElementRequest class.
      *
-     * @param string $name The document name.
-     * @param string $styled_node_path The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * @param string $name The filename of the input document.
+     * @param string $styled_node_path The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,7 +93,7 @@ class GetStyleFromDocumentElementRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class GetStyleFromDocumentElementRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -110,7 +110,7 @@ class GetStyleFromDocumentElementRequest
     }
 
     /*
-     * The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      */
     public function get_styled_node_path()
     {
@@ -118,7 +118,7 @@ class GetStyleFromDocumentElementRequest
     }
 
     /*
-     * The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      */
     public function set_styled_node_path($value)
     {

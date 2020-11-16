@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class DeleteHeaderFooterRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public $section_path;
 
@@ -95,8 +95,8 @@ class DeleteHeaderFooterRequest
     /*
      * Initializes a new instance of the DeleteHeaderFooterRequest class.
      *
-     * @param string $name The document name.
-     * @param string $section_path Path to parent section.
+     * @param string $name The filename of the input document.
+     * @param string $section_path The path to the section in the document tree.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -121,7 +121,7 @@ class DeleteHeaderFooterRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class DeleteHeaderFooterRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class DeleteHeaderFooterRequest
     }
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public function get_section_path()
     {
@@ -146,7 +146,7 @@ class DeleteHeaderFooterRequest
     }
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public function set_section_path($value)
     {

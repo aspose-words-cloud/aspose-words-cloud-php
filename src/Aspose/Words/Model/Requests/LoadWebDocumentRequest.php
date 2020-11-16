@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class LoadWebDocumentRequest
 {
     /*
-     * Parameters of loading.
+     * The properties of data downloading.
      */
     public $data;
 
@@ -55,7 +55,7 @@ class LoadWebDocumentRequest
     /*
      * Initializes a new instance of the LoadWebDocumentRequest class.
      *
-     * @param \Aspose\Words\Model\LoadWebDocumentData $data Parameters of loading.
+     * @param \Aspose\Words\Model\LoadWebDocumentData $data The properties of data downloading.
      * @param string $storage Original document storage.
      */
     public function __construct($data, $storage = null)
@@ -65,7 +65,7 @@ class LoadWebDocumentRequest
     }
 
     /*
-     * Parameters of loading.
+     * The properties of data downloading.
      */
     public function get_data()
     {
@@ -73,7 +73,7 @@ class LoadWebDocumentRequest
     }
 
     /*
-     * Parameters of loading.
+     * The properties of data downloading.
      */
     public function set_data($value)
     {

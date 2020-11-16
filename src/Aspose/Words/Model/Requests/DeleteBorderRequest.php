@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class DeleteBorderRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -53,7 +53,7 @@ class DeleteBorderRequest
     public $border_type;
 
     /*
-     * Path to the node with border(node should be paragraph, cell or row).
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -95,9 +95,9 @@ class DeleteBorderRequest
     /*
      * Initializes a new instance of the DeleteBorderRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param string $border_type Border type.
-     * @param string $node_path Path to the node with border(node should be paragraph, cell or row).
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class DeleteBorderRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class DeleteBorderRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -155,7 +155,7 @@ class DeleteBorderRequest
     }
 
     /*
-     * Path to the node with border(node should be paragraph, cell or row).
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -163,7 +163,7 @@ class DeleteBorderRequest
     }
 
     /*
-     * Path to the node with border(node should be paragraph, cell or row).
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

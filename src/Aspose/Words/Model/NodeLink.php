@@ -205,7 +205,7 @@ class NodeLink extends LinkElement
     /*
      * Sets node_id
      *
-     * @param string $node_id Gets or sets node id.
+     * @param string $node_id Gets or sets the node id.
      *
      * @return $this
      */

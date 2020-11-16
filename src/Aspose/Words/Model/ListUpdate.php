@@ -209,7 +209,7 @@ class ListUpdate implements ArrayAccess
     /*
      * Sets is_restart_at_each_section
      *
-     * @param bool $is_restart_at_each_section Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+     * @param bool $is_restart_at_each_section Gets or sets a value indicating whether list should be restarted at each section. The default value is false.
      *
      * @return $this
      */

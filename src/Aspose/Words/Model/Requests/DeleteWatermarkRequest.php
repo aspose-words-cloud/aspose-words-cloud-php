@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class DeleteWatermarkRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -85,7 +85,7 @@ class DeleteWatermarkRequest
     /*
      * Initializes a new instance of the DeleteWatermarkRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -107,7 +107,7 @@ class DeleteWatermarkRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -115,7 +115,7 @@ class DeleteWatermarkRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {

@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Lists
  *
- * @description Represents an array of document lists.
+ * @description DTO container with an array of document lists.
  */
 class Lists extends LinkElement
 {
@@ -205,7 +205,7 @@ class Lists extends LinkElement
     /*
      * Sets list_info
      *
-     * @param \Aspose\Words\Model\ListInfo[] $list_info Gets or sets array of document lists.
+     * @param \Aspose\Words\Model\ListInfo[] $list_info Gets or sets the array of document lists.
      *
      * @return $this
      */

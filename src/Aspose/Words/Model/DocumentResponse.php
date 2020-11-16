@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DocumentResponse
  *
- * @description Represents the response with document description.
+ * @description The REST response with a document description.
  */
 class DocumentResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class DocumentResponse extends WordsResponse
     /*
      * Sets document
      *
-     * @param \Aspose\Words\Model\Document $document Gets or sets document description.
+     * @param \Aspose\Words\Model\Document $document Gets or sets the document description.
      *
      * @return $this
      */

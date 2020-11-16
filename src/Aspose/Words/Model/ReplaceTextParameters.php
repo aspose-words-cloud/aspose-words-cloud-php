@@ -302,7 +302,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets new_value
      *
-     * @param string $new_value Gets or sets new text value to replace by.
+     * @param string $new_value Gets or sets the new text value to replace by.
      *
      * @return $this
      */
@@ -325,7 +325,7 @@ class ReplaceTextParameters implements ArrayAccess
     /*
      * Sets old_value
      *
-     * @param string $old_value Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
+     * @param string $old_value Gets or sets the old text value (or regex pattern IsOldValueRegex) to replace.
      *
      * @return $this
      */

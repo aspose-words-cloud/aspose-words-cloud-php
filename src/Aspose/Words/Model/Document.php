@@ -306,7 +306,7 @@ class Document implements ArrayAccess
     /*
      * Sets document_properties
      *
-     * @param \Aspose\Words\Model\DocumentProperties $document_properties Gets or sets returns document properties.
+     * @param \Aspose\Words\Model\DocumentProperties $document_properties Gets or sets the document properties.
      *
      * @return $this
      */
@@ -352,7 +352,7 @@ class Document implements ArrayAccess
     /*
      * Sets is_encrypted
      *
-     * @param bool $is_encrypted Gets or sets a value indicating whether returns true if the document is encrypted and requires a password to open.
+     * @param bool $is_encrypted Gets or sets a value indicating whether the document is encrypted and requires a password to open.
      *
      * @return $this
      */
@@ -375,7 +375,7 @@ class Document implements ArrayAccess
     /*
      * Sets is_signed
      *
-     * @param bool $is_signed Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
+     * @param bool $is_signed Gets or sets a value indicating whether the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class Document implements ArrayAccess
     /*
      * Sets links
      *
-     * @param \Aspose\Words\Model\Link[] $links Gets or sets a list of links that originate from this document.
+     * @param \Aspose\Words\Model\Link[] $links Gets or sets the list of links that originate from this document.
      *
      * @return $this
      */

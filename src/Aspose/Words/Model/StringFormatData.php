@@ -425,7 +425,7 @@ class StringFormatData implements ArrayAccess
     /*
      * Sets format_flags
      *
-     * @param string $format_flags Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
+     * @param string $format_flags Gets or sets the System.Drawing.StringFormatFlags enumeration, that contains formatting information.
      *
      * @return $this
      */

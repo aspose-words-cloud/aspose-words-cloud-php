@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class UpdateFootnoteRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Footnote data.
+     * The properties of the footnote.
      */
     public $footnote_dto;
 
@@ -58,7 +58,7 @@ class UpdateFootnoteRequest
     public $index;
 
     /*
-     * Path to the node, which contains collection of footnotes.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -100,10 +100,10 @@ class UpdateFootnoteRequest
     /*
      * Initializes a new instance of the UpdateFootnoteRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\FootnoteUpdate $footnote_dto Footnote data.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\FootnoteUpdate $footnote_dto The properties of the footnote.
      * @param int $index Object index.
-     * @param string $node_path Path to the node, which contains collection of footnotes.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -128,7 +128,7 @@ class UpdateFootnoteRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class UpdateFootnoteRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class UpdateFootnoteRequest
     }
 
     /*
-     * Footnote data.
+     * The properties of the footnote.
      */
     public function get_footnote_dto()
     {
@@ -153,7 +153,7 @@ class UpdateFootnoteRequest
     }
 
     /*
-     * Footnote data.
+     * The properties of the footnote.
      */
     public function set_footnote_dto($value)
     {
@@ -179,7 +179,7 @@ class UpdateFootnoteRequest
     }
 
     /*
-     * Path to the node, which contains collection of footnotes.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -187,7 +187,7 @@ class UpdateFootnoteRequest
     }
 
     /*
-     * Path to the node, which contains collection of footnotes.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

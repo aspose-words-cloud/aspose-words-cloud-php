@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class CompareDocumentRequest
 {
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * CompareData with a document to compare.
+     * The properties of the document to compare with.
      */
     public $compare_data;
 
@@ -80,8 +80,8 @@ class CompareDocumentRequest
     /*
      * Initializes a new instance of the CompareDocumentRequest class.
      *
-     * @param string $name Original document name.
-     * @param \Aspose\Words\Model\CompareData $compare_data CompareData with a document to compare.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\CompareData $compare_data The properties of the document to compare with.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -100,7 +100,7 @@ class CompareDocumentRequest
     }
 
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -108,7 +108,7 @@ class CompareDocumentRequest
     }
 
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -117,7 +117,7 @@ class CompareDocumentRequest
     }
 
     /*
-     * CompareData with a document to compare.
+     * The properties of the document to compare with.
      */
     public function get_compare_data()
     {
@@ -125,7 +125,7 @@ class CompareDocumentRequest
     }
 
     /*
-     * CompareData with a document to compare.
+     * The properties of the document to compare with.
      */
     public function set_compare_data($value)
     {

@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableInsert
  *
- * @description Table element.
+ * @description DTO container with a table element.
  */
 class TableInsert implements ArrayAccess
 {
@@ -221,7 +221,7 @@ class TableInsert implements ArrayAccess
     /*
      * Sets columns_count
      *
-     * @param int $columns_count Gets or sets count of columns. Default is 2.
+     * @param int $columns_count Gets or sets the number of columns. The default value is 2.
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class TableInsert implements ArrayAccess
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets table will be inserted before specified position.
+     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets the position to insert the table. The table will be inserted before the specified position.
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class TableInsert implements ArrayAccess
     /*
      * Sets rows_count
      *
-     * @param int $rows_count Gets or sets count of rows. Default is 2.
+     * @param int $rows_count Gets or sets the number of rows. The default value is 2.
      *
      * @return $this
      */

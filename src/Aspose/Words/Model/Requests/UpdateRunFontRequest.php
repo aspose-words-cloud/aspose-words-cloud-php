@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class UpdateRunFontRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Font dto object.
+     * The font properties of a Run object.
      */
     public $font_dto;
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public $paragraph_path;
 
@@ -100,9 +100,9 @@ class UpdateRunFontRequest
     /*
      * Initializes a new instance of the UpdateRunFontRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\Font $font_dto Font dto object.
-     * @param string $paragraph_path Path to parent paragraph.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\Font $font_dto The font properties of a Run object.
+     * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -128,7 +128,7 @@ class UpdateRunFontRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class UpdateRunFontRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class UpdateRunFontRequest
     }
 
     /*
-     * Font dto object.
+     * The font properties of a Run object.
      */
     public function get_font_dto()
     {
@@ -153,7 +153,7 @@ class UpdateRunFontRequest
     }
 
     /*
-     * Font dto object.
+     * The font properties of a Run object.
      */
     public function set_font_dto($value)
     {
@@ -162,7 +162,7 @@ class UpdateRunFontRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function get_paragraph_path()
     {
@@ -170,7 +170,7 @@ class UpdateRunFontRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function set_paragraph_path($value)
     {

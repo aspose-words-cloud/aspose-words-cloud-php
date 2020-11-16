@@ -205,7 +205,7 @@ class ParagraphLink extends NodeLink
     /*
      * Sets text
      *
-     * @param string $text Gets or sets paragraph's text.
+     * @param string $text Gets or sets the paragraph's text.
      *
      * @return $this
      */

@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class InsertFootnoteRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Footnote data.
+     * The properties of the footnote.
      */
     public $footnote_dto;
 
     /*
-     * Path to the node, which contains collection of footnotes.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -95,9 +95,9 @@ class InsertFootnoteRequest
     /*
      * Initializes a new instance of the InsertFootnoteRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\FootnoteInsert $footnote_dto Footnote data.
-     * @param string $node_path Path to the node, which contains collection of footnotes.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\FootnoteInsert $footnote_dto The properties of the footnote.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class InsertFootnoteRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class InsertFootnoteRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class InsertFootnoteRequest
     }
 
     /*
-     * Footnote data.
+     * The properties of the footnote.
      */
     public function get_footnote_dto()
     {
@@ -146,7 +146,7 @@ class InsertFootnoteRequest
     }
 
     /*
-     * Footnote data.
+     * The properties of the footnote.
      */
     public function set_footnote_dto($value)
     {
@@ -155,7 +155,7 @@ class InsertFootnoteRequest
     }
 
     /*
-     * Path to the node, which contains collection of footnotes.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -163,7 +163,7 @@ class InsertFootnoteRequest
     }
 
     /*
-     * Path to the node, which contains collection of footnotes.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

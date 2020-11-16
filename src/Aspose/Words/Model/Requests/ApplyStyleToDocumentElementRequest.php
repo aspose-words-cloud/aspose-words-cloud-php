@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class ApplyStyleToDocumentElementRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Style to apply.
+     * The style to apply.
      */
     public $style_apply;
 
     /*
-     * The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      */
     public $styled_node_path;
 
@@ -95,9 +95,9 @@ class ApplyStyleToDocumentElementRequest
     /*
      * Initializes a new instance of the ApplyStyleToDocumentElementRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\StyleApply $style_apply Style to apply.
-     * @param string $styled_node_path The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\StyleApply $style_apply The style to apply.
+     * @param string $styled_node_path The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class ApplyStyleToDocumentElementRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class ApplyStyleToDocumentElementRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class ApplyStyleToDocumentElementRequest
     }
 
     /*
-     * Style to apply.
+     * The style to apply.
      */
     public function get_style_apply()
     {
@@ -146,7 +146,7 @@ class ApplyStyleToDocumentElementRequest
     }
 
     /*
-     * Style to apply.
+     * The style to apply.
      */
     public function set_style_apply($value)
     {
@@ -155,7 +155,7 @@ class ApplyStyleToDocumentElementRequest
     }
 
     /*
-     * The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      */
     public function get_styled_node_path()
     {
@@ -163,7 +163,7 @@ class ApplyStyleToDocumentElementRequest
     }
 
     /*
-     * The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+     * The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      */
     public function set_styled_node_path($value)
     {

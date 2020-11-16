@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PngSaveOptionsData
  *
- * @description container class for png save options.
+ * @description Container class for png save options.
  */
 class PngSaveOptionsData extends ImageSaveOptionsData
 {

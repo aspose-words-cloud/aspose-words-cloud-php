@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DrawingObjectsResponse
  *
- * @description This response should be returned by the service when handling:  GET /drawingObjects.
+ * @description The REST response with a collection of DrawingObjects.
  */
 class DrawingObjectsResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class DrawingObjectsResponse extends WordsResponse
     /*
      * Sets drawing_objects
      *
-     * @param \Aspose\Words\Model\DrawingObjectCollection $drawing_objects Gets or sets collection of drawing objects.
+     * @param \Aspose\Words\Model\DrawingObjectCollection $drawing_objects Gets or sets the collection of DrawingObjects.
      *
      * @return $this
      */

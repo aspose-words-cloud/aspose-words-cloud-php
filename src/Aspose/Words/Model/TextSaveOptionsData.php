@@ -217,7 +217,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     /*
      * Sets add_bidi_marks
      *
-     * @param bool $add_bidi_marks Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
+     * @param bool $add_bidi_marks Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     /*
      * Sets preserve_table_layout
      *
-     * @param bool $preserve_table_layout Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.
+     * @param bool $preserve_table_layout Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
      *
      * @return $this
      */
@@ -263,7 +263,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     /*
      * Sets simplify_list_labels
      *
-     * @param bool $simplify_list_labels Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
+     * @param bool $simplify_list_labels Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
      *
      * @return $this
      */

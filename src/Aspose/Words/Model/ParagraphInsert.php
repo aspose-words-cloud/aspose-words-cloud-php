@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ParagraphInsert
  *
- * @description Paragraph element.
+ * @description DTO container with a paragraph's text.
  */
 class ParagraphInsert implements ArrayAccess
 {
@@ -209,7 +209,7 @@ class ParagraphInsert implements ArrayAccess
     /*
      * Sets text
      *
-     * @param string $text Gets or sets paragraph's text.
+     * @param string $text Gets or sets the paragraph's text.
      *
      * @return $this
      */

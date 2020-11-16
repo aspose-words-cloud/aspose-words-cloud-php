@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * CommentsResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/comments.
+ * @description The REST response with a collection of comments.
  */
 class CommentsResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class CommentsResponse extends WordsResponse
     /*
      * Sets comments
      *
-     * @param \Aspose\Words\Model\CommentsCollection $comments Gets or sets collection of comments.
+     * @param \Aspose\Words\Model\CommentsCollection $comments Gets or sets the collection of comments.
      *
      * @return $this
      */

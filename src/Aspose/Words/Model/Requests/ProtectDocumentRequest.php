@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class ProtectDocumentRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * ProtectionRequest with protection settings.
+     * The protection settings.
      */
     public $protection_request;
 
@@ -80,8 +80,8 @@ class ProtectDocumentRequest
     /*
      * Initializes a new instance of the ProtectDocumentRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\ProtectionRequest $protection_request ProtectionRequest with protection settings.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\ProtectionRequest $protection_request The protection settings.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -100,7 +100,7 @@ class ProtectDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -108,7 +108,7 @@ class ProtectDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -117,7 +117,7 @@ class ProtectDocumentRequest
     }
 
     /*
-     * ProtectionRequest with protection settings.
+     * The protection settings.
      */
     public function get_protection_request()
     {
@@ -125,7 +125,7 @@ class ProtectDocumentRequest
     }
 
     /*
-     * ProtectionRequest with protection settings.
+     * The protection settings.
      */
     public function set_protection_request($value)
     {

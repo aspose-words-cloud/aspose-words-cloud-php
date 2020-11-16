@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableProperties
  *
- * @description Represents the table properties.
+ * @description DTO container with table properties.
  */
 class TableProperties extends LinkElement
 {
@@ -1153,7 +1153,7 @@ class TableProperties extends LinkElement
     /*
      * Sets alignment
      *
-     * @param string $alignment Gets or sets specifies how an inline table is aligned in the document.
+     * @param string $alignment Gets or sets the option that controls how an inline table is aligned in the document.
      *
      * @return $this
      */
@@ -1180,7 +1180,7 @@ class TableProperties extends LinkElement
     /*
      * Sets allow_auto_fit
      *
-     * @param bool $allow_auto_fit Gets or sets allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.
+     * @param bool $allow_auto_fit Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.
      *
      * @return $this
      */
@@ -1203,7 +1203,7 @@ class TableProperties extends LinkElement
     /*
      * Sets bidi
      *
-     * @param bool $bidi Gets or sets whether this is a right-to-left table.
+     * @param bool $bidi Gets or sets a value indicating whether this is a right-to-left table.
      *
      * @return $this
      */
@@ -1272,7 +1272,7 @@ class TableProperties extends LinkElement
     /*
      * Sets left_indent
      *
-     * @param double $left_indent Gets or sets the value that represents the left indent of the table.
+     * @param double $left_indent Gets or sets the value, that represents the left indent of the table.
      *
      * @return $this
      */
@@ -1414,7 +1414,7 @@ class TableProperties extends LinkElement
     /*
      * Sets style_options
      *
-     * @param string $style_options Gets or sets bit flags that specify how a table style is applied to this table.
+     * @param string $style_options Gets or sets the bit flags, that specify how a table style is applied to this table.
      *
      * @return $this
      */
@@ -1441,7 +1441,7 @@ class TableProperties extends LinkElement
     /*
      * Sets text_wrapping
      *
-     * @param string $text_wrapping Gets or sets get or sets TextWrapping for table.
+     * @param string $text_wrapping Gets or sets the option that controls text wrapping for the table.
      *
      * @return $this
      */

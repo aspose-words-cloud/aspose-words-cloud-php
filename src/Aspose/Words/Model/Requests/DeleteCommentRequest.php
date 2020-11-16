@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class DeleteCommentRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The comment index.
+     * The index of the comment.
      */
     public $comment_index;
 
@@ -90,8 +90,8 @@ class DeleteCommentRequest
     /*
      * Initializes a new instance of the DeleteCommentRequest class.
      *
-     * @param string $name The document name.
-     * @param int $comment_index The comment index.
+     * @param string $name The filename of the input document.
+     * @param int $comment_index The index of the comment.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class DeleteCommentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class DeleteCommentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class DeleteCommentRequest
     }
 
     /*
-     * The comment index.
+     * The index of the comment.
      */
     public function get_comment_index()
     {
@@ -139,7 +139,7 @@ class DeleteCommentRequest
     }
 
     /*
-     * The comment index.
+     * The index of the comment.
      */
     public function set_comment_index($value)
     {

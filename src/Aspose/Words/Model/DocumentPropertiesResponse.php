@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DocumentPropertiesResponse
  *
- * @description This response should be returned by the service when handling:  GET /documentProperties.
+ * @description The REST response with a collection of document properties.
  */
 class DocumentPropertiesResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class DocumentPropertiesResponse extends WordsResponse
     /*
      * Sets document_properties
      *
-     * @param \Aspose\Words\Model\DocumentProperties $document_properties Gets or sets collection of document properties.
+     * @param \Aspose\Words\Model\DocumentProperties $document_properties Gets or sets the collection of document properties.
      *
      * @return $this
      */

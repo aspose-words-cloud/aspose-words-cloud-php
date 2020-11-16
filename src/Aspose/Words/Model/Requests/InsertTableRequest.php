@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class InsertTableRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Table parameters/.
+     * The properties of the table.
      */
     public $table;
 
     /*
-     * Path to the node, which contains tables.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -95,9 +95,9 @@ class InsertTableRequest
     /*
      * Initializes a new instance of the InsertTableRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\TableInsert $table Table parameters/.
-     * @param string $node_path Path to the node, which contains tables.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\TableInsert $table The properties of the table.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class InsertTableRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class InsertTableRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class InsertTableRequest
     }
 
     /*
-     * Table parameters/.
+     * The properties of the table.
      */
     public function get_table()
     {
@@ -146,7 +146,7 @@ class InsertTableRequest
     }
 
     /*
-     * Table parameters/.
+     * The properties of the table.
      */
     public function set_table($value)
     {
@@ -155,7 +155,7 @@ class InsertTableRequest
     }
 
     /*
-     * Path to the node, which contains tables.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -163,7 +163,7 @@ class InsertTableRequest
     }
 
     /*
-     * Path to the node, which contains tables.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

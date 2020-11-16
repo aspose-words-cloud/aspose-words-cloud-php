@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class InsertDrawingObjectRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -58,7 +58,7 @@ class InsertDrawingObjectRequest
     public $image_file;
 
     /*
-     * Path to the node, which contains collection of drawing objects.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -100,10 +100,10 @@ class InsertDrawingObjectRequest
     /*
      * Initializes a new instance of the InsertDrawingObjectRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
      * @param \SplFileObject $image_file File with image.
-     * @param string $node_path Path to the node, which contains collection of drawing objects.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -128,7 +128,7 @@ class InsertDrawingObjectRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class InsertDrawingObjectRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -179,7 +179,7 @@ class InsertDrawingObjectRequest
     }
 
     /*
-     * Path to the node, which contains collection of drawing objects.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -187,7 +187,7 @@ class InsertDrawingObjectRequest
     }
 
     /*
-     * Path to the node, which contains collection of drawing objects.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class ClassifyDocumentRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $document_name;
 
@@ -68,25 +68,25 @@ class ClassifyDocumentRequest
     public $password;
 
     /*
-     * Count of the best classes to return.
+     * The number of the best classes to return.
      */
     public $best_classes_count;
 
     /*
-     * Taxonomy to use for classification return.
+     * The taxonomy to use.
      */
     public $taxonomy;
 
     /*
      * Initializes a new instance of the ClassifyDocumentRequest class.
      *
-     * @param string $document_name The document name.
+     * @param string $document_name The filename of the input document.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $best_classes_count Count of the best classes to return.
-     * @param string $taxonomy Taxonomy to use for classification return.
+     * @param string $best_classes_count The number of the best classes to return.
+     * @param string $taxonomy The taxonomy to use.
      */
     public function __construct($document_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $best_classes_count = null, $taxonomy = null)
     {
@@ -100,7 +100,7 @@ class ClassifyDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_document_name()
     {
@@ -108,7 +108,7 @@ class ClassifyDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_document_name($value)
     {
@@ -185,7 +185,7 @@ class ClassifyDocumentRequest
     }
 
     /*
-     * Count of the best classes to return.
+     * The number of the best classes to return.
      */
     public function get_best_classes_count()
     {
@@ -193,7 +193,7 @@ class ClassifyDocumentRequest
     }
 
     /*
-     * Count of the best classes to return.
+     * The number of the best classes to return.
      */
     public function set_best_classes_count($value)
     {
@@ -202,7 +202,7 @@ class ClassifyDocumentRequest
     }
 
     /*
-     * Taxonomy to use for classification return.
+     * The taxonomy to use.
      */
     public function get_taxonomy()
     {
@@ -210,7 +210,7 @@ class ClassifyDocumentRequest
     }
 
     /*
-     * Taxonomy to use for classification return.
+     * The taxonomy to use.
      */
     public function set_taxonomy($value)
     {

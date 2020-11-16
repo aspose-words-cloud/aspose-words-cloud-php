@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class UpdateDrawingObjectRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -63,7 +63,7 @@ class UpdateDrawingObjectRequest
     public $index;
 
     /*
-     * Path to the node, which contains collection of drawing objects.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -105,11 +105,11 @@ class UpdateDrawingObjectRequest
     /*
      * Initializes a new instance of the UpdateDrawingObjectRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param \Aspose\Words\Model\DrawingObjectUpdate $drawing_object Drawing object parameters.
      * @param \SplFileObject $image_file File with image.
      * @param int $index Object index.
-     * @param string $node_path Path to the node, which contains collection of drawing objects.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -135,7 +135,7 @@ class UpdateDrawingObjectRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -143,7 +143,7 @@ class UpdateDrawingObjectRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -203,7 +203,7 @@ class UpdateDrawingObjectRequest
     }
 
     /*
-     * Path to the node, which contains collection of drawing objects.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -211,7 +211,7 @@ class UpdateDrawingObjectRequest
     }
 
     /*
-     * Path to the node, which contains collection of drawing objects.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

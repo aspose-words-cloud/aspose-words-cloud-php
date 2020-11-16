@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableLinkCollectionResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables.
+ * @description The REST response with a collection of tables.
  */
 class TableLinkCollectionResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class TableLinkCollectionResponse extends WordsResponse
     /*
      * Sets tables
      *
-     * @param \Aspose\Words\Model\TableLinkCollection $tables Gets or sets collection of tables.
+     * @param \Aspose\Words\Model\TableLinkCollection $tables Gets or sets the collection of tables.
      *
      * @return $this
      */

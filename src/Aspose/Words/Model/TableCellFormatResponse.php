@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableCellFormatResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}/rows/{1}/cells/{2}/cellformat.
+ * @description The REST response with the formatting properties of a table cell.
  */
 class TableCellFormatResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class TableCellFormatResponse extends WordsResponse
     /*
      * Sets cell_format
      *
-     * @param \Aspose\Words\Model\TableCellFormat $cell_format Gets or sets table.
+     * @param \Aspose\Words\Model\TableCellFormat $cell_format Gets or sets the formatting properties of a table cell.
      *
      * @return $this
      */

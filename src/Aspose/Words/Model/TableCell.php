@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableCell
  *
- * @description Table cell element.
+ * @description DTO container with a table cell element.
  */
 class TableCell extends NodeLink
 {
@@ -205,7 +205,7 @@ class TableCell extends NodeLink
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets child nodes.
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets the list of child nodes.
      *
      * @return $this
      */

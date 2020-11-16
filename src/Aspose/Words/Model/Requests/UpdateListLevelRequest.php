@@ -43,22 +43,22 @@ use Aspose\Words\HeaderSelector;
 class UpdateListLevelRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * List object.
+     * The properties of the List element.
      */
     public $list_update;
 
     /*
-     * List unique identifier.
+     * The list Id.
      */
     public $list_id;
 
     /*
-     * List level identifier.
+     * The list level.
      */
     public $list_level;
 
@@ -100,10 +100,10 @@ class UpdateListLevelRequest
     /*
      * Initializes a new instance of the UpdateListLevelRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\ListLevelUpdate $list_update List object.
-     * @param int $list_id List unique identifier.
-     * @param int $list_level List level identifier.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\ListLevelUpdate $list_update The properties of the List element.
+     * @param int $list_id The list Id.
+     * @param int $list_level The list level.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -128,7 +128,7 @@ class UpdateListLevelRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class UpdateListLevelRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class UpdateListLevelRequest
     }
 
     /*
-     * List object.
+     * The properties of the List element.
      */
     public function get_list_update()
     {
@@ -153,7 +153,7 @@ class UpdateListLevelRequest
     }
 
     /*
-     * List object.
+     * The properties of the List element.
      */
     public function set_list_update($value)
     {
@@ -162,7 +162,7 @@ class UpdateListLevelRequest
     }
 
     /*
-     * List unique identifier.
+     * The list Id.
      */
     public function get_list_id()
     {
@@ -170,7 +170,7 @@ class UpdateListLevelRequest
     }
 
     /*
-     * List unique identifier.
+     * The list Id.
      */
     public function set_list_id($value)
     {
@@ -179,7 +179,7 @@ class UpdateListLevelRequest
     }
 
     /*
-     * List level identifier.
+     * The list level.
      */
     public function get_list_level()
     {
@@ -187,7 +187,7 @@ class UpdateListLevelRequest
     }
 
     /*
-     * List level identifier.
+     * The list level.
      */
     public function set_list_level($value)
     {

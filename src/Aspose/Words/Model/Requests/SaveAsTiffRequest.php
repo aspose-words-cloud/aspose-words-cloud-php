@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class SaveAsTiffRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Tiff save options.
+     * The save options to TIFF format.
      */
     public $save_options;
 
@@ -73,22 +73,22 @@ class SaveAsTiffRequest
     public $password;
 
     /*
-     * Use antialiasing flag.
+     * The flag indicating whether to use antialiasing.
      */
     public $use_anti_aliasing;
 
     /*
-     * Use high quality flag.
+     * The flag indicating whether to use high quality.
      */
     public $use_high_quality_rendering;
 
     /*
-     * Brightness for the generated images.
+     * The level of brightness for the generated images.
      */
     public $image_brightness;
 
     /*
-     * Color mode for the generated images.
+     * The color mode for the generated images.
      */
     public $image_color_mode;
 
@@ -103,32 +103,32 @@ class SaveAsTiffRequest
     public $numeral_format;
 
     /*
-     * Number of pages to render.
+     * The number of pages to render.
      */
     public $page_count;
 
     /*
-     * Page index to start rendering.
+     * The index of the page to start rendering.
      */
     public $page_index;
 
     /*
-     * Background image color.
+     * The background image color.
      */
     public $paper_color;
 
     /*
-     * The pixel format of generated images.
+     * The pixel format of the generated images.
      */
     public $pixel_format;
 
     /*
-     * The resolution of generated images.
+     * The resolution of the generated images.
      */
     public $resolution;
 
     /*
-     * Zoom factor for generated images.
+     * The zoom factor for the generated images.
      */
     public $scale;
 
@@ -138,22 +138,22 @@ class SaveAsTiffRequest
     public $tiff_compression;
 
     /*
-     * Optional, default is Fallback.
+     * The optional dml rendering mode. The default value is Fallback.
      */
     public $dml_rendering_mode;
 
     /*
-     * Optional, default is Simplified.
+     * The optional dml effects rendering mode. The default value is Simplified.
      */
     public $dml_effects_rendering_mode;
 
     /*
-     * Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
+     * The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.
      */
     public $tiff_binarization_method;
 
     /*
-     * Optional. A value determining zip output or not.
+     * The flag indicating whether to ZIP the output.
      */
     public $zip_output;
 
@@ -165,29 +165,29 @@ class SaveAsTiffRequest
     /*
      * Initializes a new instance of the SaveAsTiffRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\TiffSaveOptionsData $save_options Tiff save options.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\TiffSaveOptionsData $save_options The save options to TIFF format.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param bool $use_anti_aliasing Use antialiasing flag.
-     * @param bool $use_high_quality_rendering Use high quality flag.
-     * @param double $image_brightness Brightness for the generated images.
-     * @param string $image_color_mode Color mode for the generated images.
+     * @param bool $use_anti_aliasing The flag indicating whether to use antialiasing.
+     * @param bool $use_high_quality_rendering The flag indicating whether to use high quality.
+     * @param double $image_brightness The level of brightness for the generated images.
+     * @param string $image_color_mode The color mode for the generated images.
      * @param double $image_contrast The contrast for the generated images.
      * @param string $numeral_format The images numeral format.
-     * @param int $page_count Number of pages to render.
-     * @param int $page_index Page index to start rendering.
-     * @param string $paper_color Background image color.
-     * @param string $pixel_format The pixel format of generated images.
-     * @param double $resolution The resolution of generated images.
-     * @param double $scale Zoom factor for generated images.
+     * @param int $page_count The number of pages to render.
+     * @param int $page_index The index of the page to start rendering.
+     * @param string $paper_color The background image color.
+     * @param string $pixel_format The pixel format of the generated images.
+     * @param double $resolution The resolution of the generated images.
+     * @param double $scale The zoom factor for the generated images.
      * @param string $tiff_compression The compression tipe.
-     * @param string $dml_rendering_mode Optional, default is Fallback.
-     * @param string $dml_effects_rendering_mode Optional, default is Simplified.
-     * @param string $tiff_binarization_method Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
-     * @param bool $zip_output Optional. A value determining zip output or not.
+     * @param string $dml_rendering_mode The optional dml rendering mode. The default value is Fallback.
+     * @param string $dml_effects_rendering_mode The optional dml effects rendering mode. The default value is Simplified.
+     * @param string $tiff_binarization_method The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.
+     * @param bool $zip_output The flag indicating whether to ZIP the output.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
     public function __construct($name, $save_options, $folder = null, $storage = null, $load_encoding = null, $password = null, $use_anti_aliasing = null, $use_high_quality_rendering = null, $image_brightness = null, $image_color_mode = null, $image_contrast = null, $numeral_format = null, $page_count = null, $page_index = null, $paper_color = null, $pixel_format = null, $resolution = null, $scale = null, $tiff_compression = null, $dml_rendering_mode = null, $dml_effects_rendering_mode = null, $tiff_binarization_method = null, $zip_output = null, $fonts_location = null)
@@ -219,7 +219,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -227,7 +227,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -236,7 +236,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Tiff save options.
+     * The save options to TIFF format.
      */
     public function get_save_options()
     {
@@ -244,7 +244,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Tiff save options.
+     * The save options to TIFF format.
      */
     public function set_save_options($value)
     {
@@ -321,7 +321,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Use antialiasing flag.
+     * The flag indicating whether to use antialiasing.
      */
     public function get_use_anti_aliasing()
     {
@@ -329,7 +329,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Use antialiasing flag.
+     * The flag indicating whether to use antialiasing.
      */
     public function set_use_anti_aliasing($value)
     {
@@ -338,7 +338,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Use high quality flag.
+     * The flag indicating whether to use high quality.
      */
     public function get_use_high_quality_rendering()
     {
@@ -346,7 +346,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Use high quality flag.
+     * The flag indicating whether to use high quality.
      */
     public function set_use_high_quality_rendering($value)
     {
@@ -355,7 +355,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Brightness for the generated images.
+     * The level of brightness for the generated images.
      */
     public function get_image_brightness()
     {
@@ -363,7 +363,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Brightness for the generated images.
+     * The level of brightness for the generated images.
      */
     public function set_image_brightness($value)
     {
@@ -372,7 +372,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Color mode for the generated images.
+     * The color mode for the generated images.
      */
     public function get_image_color_mode()
     {
@@ -380,7 +380,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Color mode for the generated images.
+     * The color mode for the generated images.
      */
     public function set_image_color_mode($value)
     {
@@ -423,7 +423,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Number of pages to render.
+     * The number of pages to render.
      */
     public function get_page_count()
     {
@@ -431,7 +431,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Number of pages to render.
+     * The number of pages to render.
      */
     public function set_page_count($value)
     {
@@ -440,7 +440,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Page index to start rendering.
+     * The index of the page to start rendering.
      */
     public function get_page_index()
     {
@@ -448,7 +448,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Page index to start rendering.
+     * The index of the page to start rendering.
      */
     public function set_page_index($value)
     {
@@ -457,7 +457,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Background image color.
+     * The background image color.
      */
     public function get_paper_color()
     {
@@ -465,7 +465,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Background image color.
+     * The background image color.
      */
     public function set_paper_color($value)
     {
@@ -474,7 +474,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * The pixel format of generated images.
+     * The pixel format of the generated images.
      */
     public function get_pixel_format()
     {
@@ -482,7 +482,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * The pixel format of generated images.
+     * The pixel format of the generated images.
      */
     public function set_pixel_format($value)
     {
@@ -491,7 +491,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * The resolution of generated images.
+     * The resolution of the generated images.
      */
     public function get_resolution()
     {
@@ -499,7 +499,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * The resolution of generated images.
+     * The resolution of the generated images.
      */
     public function set_resolution($value)
     {
@@ -508,7 +508,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Zoom factor for generated images.
+     * The zoom factor for the generated images.
      */
     public function get_scale()
     {
@@ -516,7 +516,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Zoom factor for generated images.
+     * The zoom factor for the generated images.
      */
     public function set_scale($value)
     {
@@ -542,7 +542,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Optional, default is Fallback.
+     * The optional dml rendering mode. The default value is Fallback.
      */
     public function get_dml_rendering_mode()
     {
@@ -550,7 +550,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Optional, default is Fallback.
+     * The optional dml rendering mode. The default value is Fallback.
      */
     public function set_dml_rendering_mode($value)
     {
@@ -559,7 +559,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Optional, default is Simplified.
+     * The optional dml effects rendering mode. The default value is Simplified.
      */
     public function get_dml_effects_rendering_mode()
     {
@@ -567,7 +567,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Optional, default is Simplified.
+     * The optional dml effects rendering mode. The default value is Simplified.
      */
     public function set_dml_effects_rendering_mode($value)
     {
@@ -576,7 +576,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
+     * The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.
      */
     public function get_tiff_binarization_method()
     {
@@ -584,7 +584,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
+     * The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.
      */
     public function set_tiff_binarization_method($value)
     {
@@ -593,7 +593,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Optional. A value determining zip output or not.
+     * The flag indicating whether to ZIP the output.
      */
     public function get_zip_output()
     {
@@ -601,7 +601,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * Optional. A value determining zip output or not.
+     * The flag indicating whether to ZIP the output.
      */
     public function set_zip_output($value)
     {

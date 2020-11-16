@@ -241,7 +241,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets color_mode
      *
-     * @param string $color_mode Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
+     * @param string $color_mode Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets jpeg_quality
      *
-     * @param int $jpeg_quality Gets or sets determines the quality of the JPEG images inside PDF document.
+     * @param int $jpeg_quality Gets or sets the quality of the JPEG images inside PDF document.
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets metafile_rendering_options
      *
-     * @param \Aspose\Words\Model\MetafileRenderingOptionsData $metafile_rendering_options Gets or sets allows to specify metafile rendering options.
+     * @param \Aspose\Words\Model\MetafileRenderingOptionsData $metafile_rendering_options Gets or sets the metafile rendering options.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets numeral_format
      *
-     * @param string $numeral_format Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
+     * @param string $numeral_format Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets optimize_output
      *
-     * @param bool $optimize_output Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+     * @param bool $optimize_output Gets or sets a value indicating whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
      *
      * @return $this
      */
@@ -356,7 +356,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets page_count
      *
-     * @param int $page_count Gets or sets determines number of pages to render.
+     * @param int $page_count Gets or sets the number of pages to render.
      *
      * @return $this
      */
@@ -379,7 +379,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets page_index
      *
-     * @param int $page_index Gets or sets determines 0-based index of the first page to render.
+     * @param int $page_index Gets or sets the 0-based index of the first page to render.
      *
      * @return $this
      */

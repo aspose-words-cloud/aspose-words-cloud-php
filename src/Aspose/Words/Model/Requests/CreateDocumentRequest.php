@@ -48,12 +48,12 @@ class CreateDocumentRequest
     public $storage;
 
     /*
-     * The document name.
+     * The filename of the document.
      */
     public $file_name;
 
     /*
-     * The document folder.
+     * The path to the document folder.
      */
     public $folder;
 
@@ -61,8 +61,8 @@ class CreateDocumentRequest
      * Initializes a new instance of the CreateDocumentRequest class.
      *
      * @param string $storage Original document storage.
-     * @param string $file_name The document name.
-     * @param string $folder The document folder.
+     * @param string $file_name The filename of the document.
+     * @param string $folder The path to the document folder.
      */
     public function __construct($storage = null, $file_name = null, $folder = null)
     {
@@ -89,7 +89,7 @@ class CreateDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the document.
      */
     public function get_file_name()
     {
@@ -97,7 +97,7 @@ class CreateDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the document.
      */
     public function set_file_name($value)
     {
@@ -106,7 +106,7 @@ class CreateDocumentRequest
     }
 
     /*
-     * The document folder.
+     * The path to the document folder.
      */
     public function get_folder()
     {
@@ -114,7 +114,7 @@ class CreateDocumentRequest
     }
 
     /*
-     * The document folder.
+     * The path to the document folder.
      */
     public function set_folder($value)
     {

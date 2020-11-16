@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class InsertWatermarkTextRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * WatermarkText with the watermark data.
+     * The watermark text to insert.
      */
     public $watermark_text;
 
@@ -90,8 +90,8 @@ class InsertWatermarkTextRequest
     /*
      * Initializes a new instance of the InsertWatermarkTextRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\WatermarkText $watermark_text WatermarkText with the watermark data.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\WatermarkText $watermark_text The watermark text to insert.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class InsertWatermarkTextRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class InsertWatermarkTextRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class InsertWatermarkTextRequest
     }
 
     /*
-     * WatermarkText with the watermark data.
+     * The watermark text to insert.
      */
     public function get_watermark_text()
     {
@@ -139,7 +139,7 @@ class InsertWatermarkTextRequest
     }
 
     /*
-     * WatermarkText with the watermark data.
+     * The watermark text to insert.
      */
     public function set_watermark_text($value)
     {

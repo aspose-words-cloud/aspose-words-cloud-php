@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetBookmarkByNameRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The bookmark name.
+     * The name of the bookmark.
      */
     public $bookmark_name;
 
@@ -75,8 +75,8 @@ class GetBookmarkByNameRequest
     /*
      * Initializes a new instance of the GetBookmarkByNameRequest class.
      *
-     * @param string $name The document name.
-     * @param string $bookmark_name The bookmark name.
+     * @param string $name The filename of the input document.
+     * @param string $bookmark_name The name of the bookmark.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,7 +93,7 @@ class GetBookmarkByNameRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class GetBookmarkByNameRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -110,7 +110,7 @@ class GetBookmarkByNameRequest
     }
 
     /*
-     * The bookmark name.
+     * The name of the bookmark.
      */
     public function get_bookmark_name()
     {
@@ -118,7 +118,7 @@ class GetBookmarkByNameRequest
     }
 
     /*
-     * The bookmark name.
+     * The name of the bookmark.
      */
     public function set_bookmark_name($value)
     {

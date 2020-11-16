@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class DeleteParagraphTabStopRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * a tab stop position to remove.
+     * The position of a tab stop to remove.
      */
     public $position;
 
@@ -58,7 +58,7 @@ class DeleteParagraphTabStopRequest
     public $index;
 
     /*
-     * Path to the node which contains paragraph.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -90,10 +90,10 @@ class DeleteParagraphTabStopRequest
     /*
      * Initializes a new instance of the DeleteParagraphTabStopRequest class.
      *
-     * @param string $name The document name.
-     * @param double $position a tab stop position to remove.
+     * @param string $name The filename of the input document.
+     * @param double $position The position of a tab stop to remove.
      * @param int $index Object index.
-     * @param string $node_path Path to the node which contains paragraph.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class DeleteParagraphTabStopRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class DeleteParagraphTabStopRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class DeleteParagraphTabStopRequest
     }
 
     /*
-     * a tab stop position to remove.
+     * The position of a tab stop to remove.
      */
     public function get_position()
     {
@@ -139,7 +139,7 @@ class DeleteParagraphTabStopRequest
     }
 
     /*
-     * a tab stop position to remove.
+     * The position of a tab stop to remove.
      */
     public function set_position($value)
     {
@@ -165,7 +165,7 @@ class DeleteParagraphTabStopRequest
     }
 
     /*
-     * Path to the node which contains paragraph.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -173,7 +173,7 @@ class DeleteParagraphTabStopRequest
     }
 
     /*
-     * Path to the node which contains paragraph.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

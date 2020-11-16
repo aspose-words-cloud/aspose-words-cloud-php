@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class DeleteRunRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public $paragraph_path;
 
@@ -95,8 +95,8 @@ class DeleteRunRequest
     /*
      * Initializes a new instance of the DeleteRunRequest class.
      *
-     * @param string $name The document name.
-     * @param string $paragraph_path Path to parent paragraph.
+     * @param string $name The filename of the input document.
+     * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -121,7 +121,7 @@ class DeleteRunRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class DeleteRunRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class DeleteRunRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function get_paragraph_path()
     {
@@ -146,7 +146,7 @@ class DeleteRunRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function set_paragraph_path($value)
     {

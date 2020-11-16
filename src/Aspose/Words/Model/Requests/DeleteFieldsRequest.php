@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class DeleteFieldsRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Path to the node, which contains collection of fields.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -90,8 +90,8 @@ class DeleteFieldsRequest
     /*
      * Initializes a new instance of the DeleteFieldsRequest class.
      *
-     * @param string $name The document name.
-     * @param string $node_path Path to the node, which contains collection of fields.
+     * @param string $name The filename of the input document.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class DeleteFieldsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class DeleteFieldsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class DeleteFieldsRequest
     }
 
     /*
-     * Path to the node, which contains collection of fields.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -139,7 +139,7 @@ class DeleteFieldsRequest
     }
 
     /*
-     * Path to the node, which contains collection of fields.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

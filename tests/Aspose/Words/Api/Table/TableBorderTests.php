@@ -183,7 +183,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
-            "alpha" => 2,
+            "web" => "#AABBCC",
         ));
         $requestBorderProperties = new \Aspose\Words\Model\Border(array(
             "border_type" => "Left",
@@ -211,7 +211,7 @@ class TableBorderTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getBorder());
         Assert::assertNotNull($result->getBorder()->getColor());
-        Assert::assertEquals("#000002", $result->getBorder()->getColor()->getWeb());
+        Assert::assertEquals("#AABBCC", $result->getBorder()->getColor()->getWeb());
         Assert::assertEquals(6.0, $result->getBorder()->getDistanceFromText());
         Assert::assertEquals(2.0, $result->getBorder()->getLineWidth());
         Assert::assertTrue($result->getBorder()->getShadow());

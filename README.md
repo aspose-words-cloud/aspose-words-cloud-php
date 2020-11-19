@@ -13,6 +13,12 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 20.11
+
+- In configuration json file appSid / appKey has been replaced to clientId / clientSecret.
+- In Words API initialization methods clientId parameter precedes clientSecret parameter.
+
+
 ## Enhancements in Version 20.10
 
 - Internal API changes.

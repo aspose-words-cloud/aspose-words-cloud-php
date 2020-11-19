@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class SearchRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -75,7 +75,7 @@ class SearchRequest
     /*
      * Initializes a new instance of the SearchRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param string $pattern The regular expression used to find matches.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -93,7 +93,7 @@ class SearchRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class SearchRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {

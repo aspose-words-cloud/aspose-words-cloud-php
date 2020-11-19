@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class AcceptAllRevisionsRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -75,7 +75,7 @@ class AcceptAllRevisionsRequest
     /*
      * Initializes a new instance of the AcceptAllRevisionsRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,7 +93,7 @@ class AcceptAllRevisionsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class AcceptAllRevisionsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {

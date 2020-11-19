@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class UpdateSectionPageSetupRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Section index.
+     * The index of the section.
      */
     public $section_index;
 
     /*
-     * Page setup properties dto.
+     * The properties of the page setup.
      */
     public $page_setup;
 
@@ -95,9 +95,9 @@ class UpdateSectionPageSetupRequest
     /*
      * Initializes a new instance of the UpdateSectionPageSetupRequest class.
      *
-     * @param string $name The document name.
-     * @param int $section_index Section index.
-     * @param \Aspose\Words\Model\PageSetup $page_setup Page setup properties dto.
+     * @param string $name The filename of the input document.
+     * @param int $section_index The index of the section.
+     * @param \Aspose\Words\Model\PageSetup $page_setup The properties of the page setup.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * Section index.
+     * The index of the section.
      */
     public function get_section_index()
     {
@@ -146,7 +146,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * Section index.
+     * The index of the section.
      */
     public function set_section_index($value)
     {
@@ -155,7 +155,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * Page setup properties dto.
+     * The properties of the page setup.
      */
     public function get_page_setup()
     {
@@ -163,7 +163,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * Page setup properties dto.
+     * The properties of the page setup.
      */
     public function set_page_setup($value)
     {

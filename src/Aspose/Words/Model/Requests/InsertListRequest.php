@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class InsertListRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * List to insert.
+     * The properties of the list.
      */
     public $list_insert;
 
@@ -90,8 +90,8 @@ class InsertListRequest
     /*
      * Initializes a new instance of the InsertListRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\ListInsert $list_insert List to insert.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\ListInsert $list_insert The properties of the list.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class InsertListRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class InsertListRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class InsertListRequest
     }
 
     /*
-     * List to insert.
+     * The properties of the list.
      */
     public function get_list_insert()
     {
@@ -139,7 +139,7 @@ class InsertListRequest
     }
 
     /*
-     * List to insert.
+     * The properties of the list.
      */
     public function set_list_insert($value)
     {

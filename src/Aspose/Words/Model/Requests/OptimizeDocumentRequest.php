@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class OptimizeDocumentRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -90,7 +90,7 @@ class OptimizeDocumentRequest
     /*
      * Initializes a new instance of the OptimizeDocumentRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param \Aspose\Words\Model\OptimizationOptions $options The document optimization options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -114,7 +114,7 @@ class OptimizeDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class OptimizeDocumentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {

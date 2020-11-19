@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PdfSaveOptionsData
  *
- * @description container class for pdf save options.
+ * @description Container class for pdf save options.
  */
 class PdfSaveOptionsData extends FixedPageSaveOptionsData
 {
@@ -380,7 +380,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets compliance
      *
-     * @param string $compliance Gets or sets specifies the PDF standards compliance level for output documents.
+     * @param string $compliance Gets or sets the PDF standards compliance level for output documents.
      *
      * @return $this
      */
@@ -403,7 +403,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets create_note_hyperlinks
      *
-     * @param bool $create_note_hyperlinks Gets or sets specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.
+     * @param bool $create_note_hyperlinks Gets or sets a value indicating whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. The default value is false.
      *
      * @return $this
      */
@@ -426,7 +426,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets custom_properties_export
      *
-     * @param string $custom_properties_export Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file. Default value is None.
+     * @param string $custom_properties_export Gets or sets the option that controls the way CustomDocumentProperties are exported to PDF file. The default value is None.
      *
      * @return $this
      */
@@ -449,7 +449,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets digital_signature_details
      *
-     * @param \Aspose\Words\Model\PdfDigitalSignatureDetailsData $digital_signature_details Gets or sets specifies the details for signing the output PDF document.
+     * @param \Aspose\Words\Model\PdfDigitalSignatureDetailsData $digital_signature_details Gets or sets the details for signing the output PDF document.
      *
      * @return $this
      */
@@ -472,7 +472,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets display_doc_title
      *
-     * @param bool $display_doc_title Gets or sets a flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
+     * @param bool $display_doc_title Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
      *
      * @return $this
      */
@@ -495,7 +495,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets downsample_options
      *
-     * @param \Aspose\Words\Model\DownsampleOptionsData $downsample_options Gets or sets allows to specify downsample options.
+     * @param \Aspose\Words\Model\DownsampleOptionsData $downsample_options Gets or sets the downsample options.
      *
      * @return $this
      */
@@ -518,7 +518,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets embed_full_fonts
      *
-     * @param bool $embed_full_fonts Gets or sets controls how fonts are embedded into the resulting PDF documents.
+     * @param bool $embed_full_fonts Gets or sets a value indicating whether fonts are embedded into the resulting PDF documents.
      *
      * @return $this
      */
@@ -541,7 +541,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets encryption_details
      *
-     * @param \Aspose\Words\Model\PdfEncryptionDetailsData $encryption_details Gets or sets specifies the details for encrypting the output PDF document.
+     * @param \Aspose\Words\Model\PdfEncryptionDetailsData $encryption_details Gets or sets the details for encrypting the output PDF document.
      *
      * @return $this
      */
@@ -564,7 +564,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets escape_uri
      *
-     * @param bool $escape_uri Gets or sets a flag specifying whether URI should be escaped before writing.
+     * @param bool $escape_uri Gets or sets a value indicating whether URI should be escaped before writing.
      *
      * @return $this
      */
@@ -587,7 +587,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_document_structure
      *
-     * @param bool $export_document_structure Gets or sets determines whether or not to export document structure.
+     * @param bool $export_document_structure Gets or sets a value indicating whether to export document structure.
      *
      * @return $this
      */
@@ -610,7 +610,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets font_embedding_mode
      *
-     * @param string $font_embedding_mode Gets or sets specifies the font embedding mode.
+     * @param string $font_embedding_mode Gets or sets the font embedding mode.
      *
      * @return $this
      */
@@ -633,7 +633,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets header_footer_bookmarks_export_mode
      *
-     * @param string $header_footer_bookmarks_export_mode Gets or sets determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
+     * @param string $header_footer_bookmarks_export_mode Gets or sets the option that controls how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
      *
      * @return $this
      */
@@ -660,7 +660,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets image_color_space_export_mode
      *
-     * @param string $image_color_space_export_mode Gets or sets specifies how the color space will be selected for the images in PDF document.
+     * @param string $image_color_space_export_mode Gets or sets the option that controls how the color space will be selected for the images in PDF document.
      *
      * @return $this
      */
@@ -683,7 +683,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets image_compression
      *
-     * @param string $image_compression Gets or sets specifies compression type to be used for all images in the document.
+     * @param string $image_compression Gets or sets the compression type to be used for all images in the document.
      *
      * @return $this
      */
@@ -706,7 +706,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets interpolate_images
      *
-     * @param bool $interpolate_images Gets or sets a flag indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behaviour of reader is used instead.
+     * @param bool $interpolate_images Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead.
      *
      * @return $this
      */
@@ -729,7 +729,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets open_hyperlinks_in_new_window
      *
-     * @param bool $open_hyperlinks_in_new_window Gets or sets determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
+     * @param bool $open_hyperlinks_in_new_window Gets or sets a value indicating whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
      *
      * @return $this
      */
@@ -752,7 +752,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets outline_options
      *
-     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets allows to specify outline options.
+     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets the outline options.
      *
      * @return $this
      */
@@ -775,7 +775,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets page_mode
      *
-     * @param string $page_mode Gets or sets specifies how the PDF document should be displayed when opened in the PDF reader.
+     * @param string $page_mode Gets or sets the option that controls how the PDF document should be displayed when opened in the PDF reader.
      *
      * @return $this
      */
@@ -798,7 +798,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets preblend_images
      *
-     * @param bool $preblend_images Gets or sets a value determining whether or not to preblend transparent images with black background color.
+     * @param bool $preblend_images Gets or sets a value indicating whether to preblend transparent images with black background color.
      *
      * @return $this
      */
@@ -821,7 +821,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets preserve_form_fields
      *
-     * @param bool $preserve_form_fields Gets or sets specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.
+     * @param bool $preserve_form_fields Gets or sets a value indicating whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.
      *
      * @return $this
      */
@@ -844,7 +844,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets text_compression
      *
-     * @param string $text_compression Gets or sets specifies compression type to be used for all textual content in the document.
+     * @param string $text_compression Gets or sets the compression type to be used for all textual content in the document.
      *
      * @return $this
      */
@@ -867,7 +867,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets use_book_fold_printing_settings
      *
-     * @param bool $use_book_fold_printing_settings Gets or sets determines whether the document should be saved using a booklet printing layout.
+     * @param bool $use_book_fold_printing_settings Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
      *
      * @return $this
      */
@@ -890,7 +890,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets use_core_fonts
      *
-     * @param bool $use_core_fonts Gets or sets determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts.
+     * @param bool $use_core_fonts Gets or sets a value indicating whether to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts.
      *
      * @return $this
      */
@@ -913,7 +913,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets zoom_behavior
      *
-     * @param string $zoom_behavior Gets or sets determines what type of zoom should be applied when a document is opened with a PDF viewer.
+     * @param string $zoom_behavior Gets or sets the option that controls what type of zoom should be applied when a document is opened with a PDF viewer.
      *
      * @return $this
      */
@@ -936,7 +936,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets zoom_factor
      *
-     * @param int $zoom_factor Gets or sets determines zoom factor (in percentages) for a document.
+     * @param int $zoom_factor Gets or sets the zoom factor (in percentages) for a document.
      *
      * @return $this
      */

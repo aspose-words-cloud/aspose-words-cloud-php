@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class RenderPageRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Comment index.
+     * The index of the page.
      */
     public $page_index;
 
@@ -85,8 +85,8 @@ class RenderPageRequest
     /*
      * Initializes a new instance of the RenderPageRequest class.
      *
-     * @param string $name The document name.
-     * @param int $page_index Comment index.
+     * @param string $name The filename of the input document.
+     * @param int $page_index The index of the page.
      * @param string $format The destination format.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -107,7 +107,7 @@ class RenderPageRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -115,7 +115,7 @@ class RenderPageRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -124,7 +124,7 @@ class RenderPageRequest
     }
 
     /*
-     * Comment index.
+     * The index of the page.
      */
     public function get_page_index()
     {
@@ -132,7 +132,7 @@ class RenderPageRequest
     }
 
     /*
-     * Comment index.
+     * The index of the page.
      */
     public function set_page_index($value)
     {

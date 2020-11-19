@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class UpdateRunRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Run data.
+     * The properties of the Run object.
      */
     public $run;
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public $paragraph_path;
 
@@ -100,9 +100,9 @@ class UpdateRunRequest
     /*
      * Initializes a new instance of the UpdateRunRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\RunUpdate $run Run data.
-     * @param string $paragraph_path Path to parent paragraph.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\RunUpdate $run The properties of the Run object.
+     * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -128,7 +128,7 @@ class UpdateRunRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class UpdateRunRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class UpdateRunRequest
     }
 
     /*
-     * Run data.
+     * The properties of the Run object.
      */
     public function get_run()
     {
@@ -153,7 +153,7 @@ class UpdateRunRequest
     }
 
     /*
-     * Run data.
+     * The properties of the Run object.
      */
     public function set_run($value)
     {
@@ -162,7 +162,7 @@ class UpdateRunRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function get_paragraph_path()
     {
@@ -170,7 +170,7 @@ class UpdateRunRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function set_paragraph_path($value)
     {

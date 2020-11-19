@@ -71,14 +71,14 @@ class BatchTests extends BaseTestContext
             $requestReportEngineSettings,
             NULL
         );
+        $upload_result = $this->words->uploadFile($request0);
 
-        $result = $this->words->batch(array($request0, $request1, $request2, $request3, $request4, $request5));
-        Assert::assertCount(6, $result);
-        Assert::assertEquals(true, $result[0] instanceof \Aspose\Words\Model\FilesUploadResult);
-        Assert::assertEquals(true, $result[1] instanceof \Aspose\Words\Model\ParagraphLinkCollectionResponse);
+        $result = $this->words->batch(array($request1, $request2, $request3, $request4, $request5));
+        Assert::assertCount(5, $result);
+        Assert::assertEquals(true, $result[0] instanceof \Aspose\Words\Model\ParagraphLinkCollectionResponse);
+        Assert::assertEquals(true, $result[1] instanceof \Aspose\Words\Model\ParagraphResponse);
         Assert::assertEquals(true, $result[2] instanceof \Aspose\Words\Model\ParagraphResponse);
-        Assert::assertEquals(true, $result[3] instanceof \Aspose\Words\Model\ParagraphResponse);
-        Assert::assertEquals(null, $result[4]);
-        Assert::assertEquals(true, $result[5] instanceof \SplFileObject);
+        Assert::assertEquals(null, $result[3]);
+        Assert::assertEquals(true, $result[4] instanceof \SplFileObject);
     }
 }

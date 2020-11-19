@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class UpdateTableRowFormatRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Table row format.
+     * The row format.
      */
     public $format;
 
     /*
-     * Path to table.
+     * The path to the table in the document tree.
      */
     public $table_path;
 
@@ -100,9 +100,9 @@ class UpdateTableRowFormatRequest
     /*
      * Initializes a new instance of the UpdateTableRowFormatRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\TableRowFormat $format Table row format.
-     * @param string $table_path Path to table.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\TableRowFormat $format The row format.
+     * @param string $table_path The path to the table in the document tree.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -128,7 +128,7 @@ class UpdateTableRowFormatRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class UpdateTableRowFormatRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class UpdateTableRowFormatRequest
     }
 
     /*
-     * Table row format.
+     * The row format.
      */
     public function get_format()
     {
@@ -153,7 +153,7 @@ class UpdateTableRowFormatRequest
     }
 
     /*
-     * Table row format.
+     * The row format.
      */
     public function set_format($value)
     {
@@ -162,7 +162,7 @@ class UpdateTableRowFormatRequest
     }
 
     /*
-     * Path to table.
+     * The path to the table in the document tree.
      */
     public function get_table_path()
     {
@@ -170,7 +170,7 @@ class UpdateTableRowFormatRequest
     }
 
     /*
-     * Path to table.
+     * The path to the table in the document tree.
      */
     public function set_table_path($value)
     {

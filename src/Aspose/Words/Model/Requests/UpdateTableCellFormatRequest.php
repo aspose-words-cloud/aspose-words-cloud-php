@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class UpdateTableCellFormatRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The properties.
+     * The cell format.
      */
     public $format;
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public $table_row_path;
 
@@ -100,9 +100,9 @@ class UpdateTableCellFormatRequest
     /*
      * Initializes a new instance of the UpdateTableCellFormatRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\TableCellFormat $format The properties.
-     * @param string $table_row_path Path to table row.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\TableCellFormat $format The cell format.
+     * @param string $table_row_path The path to the table row in the document tree.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -128,7 +128,7 @@ class UpdateTableCellFormatRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class UpdateTableCellFormatRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class UpdateTableCellFormatRequest
     }
 
     /*
-     * The properties.
+     * The cell format.
      */
     public function get_format()
     {
@@ -153,7 +153,7 @@ class UpdateTableCellFormatRequest
     }
 
     /*
-     * The properties.
+     * The cell format.
      */
     public function set_format($value)
     {
@@ -162,7 +162,7 @@ class UpdateTableCellFormatRequest
     }
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public function get_table_row_path()
     {
@@ -170,7 +170,7 @@ class UpdateTableCellFormatRequest
     }
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public function set_table_row_path($value)
     {

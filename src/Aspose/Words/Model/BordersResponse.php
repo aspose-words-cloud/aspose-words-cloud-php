@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * BordersResponse
  *
- * @description This response should be returned by the service when handling: GET {nodeWithBorders}/borders.
+ * @description The REST response with a collection of borders.
  */
 class BordersResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class BordersResponse extends WordsResponse
     /*
      * Sets borders
      *
-     * @param \Aspose\Words\Model\BordersCollection $borders Gets or sets table.
+     * @param \Aspose\Words\Model\BordersCollection $borders Gets or sets the collection of borders.
      *
      * @return $this
      */

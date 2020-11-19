@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class SplitDocumentRequest
 {
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Format to split.
+     * The format to split.
      */
     public $format;
 
@@ -78,17 +78,17 @@ class SplitDocumentRequest
     public $dest_file_name;
 
     /*
-     * Start page.
+     * The start page.
      */
     public $from;
 
     /*
-     * End page.
+     * The end page.
      */
     public $to;
 
     /*
-     * ZipOutput or not.
+     * The flag indicating whether to ZIP the output.
      */
     public $zip_output;
 
@@ -100,16 +100,16 @@ class SplitDocumentRequest
     /*
      * Initializes a new instance of the SplitDocumentRequest class.
      *
-     * @param string $name Original document name.
-     * @param string $format Format to split.
+     * @param string $name The filename of the input document.
+     * @param string $format The format to split.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param int $from Start page.
-     * @param int $to End page.
-     * @param bool $zip_output ZipOutput or not.
+     * @param int $from The start page.
+     * @param int $to The end page.
+     * @param bool $zip_output The flag indicating whether to ZIP the output.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
     public function __construct($name, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $from = null, $to = null, $zip_output = null, $fonts_location = null)
@@ -128,7 +128,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Format to split.
+     * The format to split.
      */
     public function get_format()
     {
@@ -153,7 +153,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Format to split.
+     * The format to split.
      */
     public function set_format($value)
     {
@@ -247,7 +247,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Start page.
+     * The start page.
      */
     public function get_from()
     {
@@ -255,7 +255,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Start page.
+     * The start page.
      */
     public function set_from($value)
     {
@@ -264,7 +264,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * End page.
+     * The end page.
      */
     public function get_to()
     {
@@ -272,7 +272,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * End page.
+     * The end page.
      */
     public function set_to($value)
     {
@@ -281,7 +281,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * ZipOutput or not.
+     * The flag indicating whether to ZIP the output.
      */
     public function get_zip_output()
     {
@@ -289,7 +289,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * ZipOutput or not.
+     * The flag indicating whether to ZIP the output.
      */
     public function set_zip_output($value)
     {

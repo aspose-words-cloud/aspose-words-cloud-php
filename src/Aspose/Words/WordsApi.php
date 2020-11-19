@@ -55,22 +55,22 @@ class WordsApi
 
     /*
      * Initialize a new instance of WordsApi
-     * @param string   $appSid client app sid
-     * @param string   $appKey app key
+     * @param string   $clientId client sid
+     * @param string   $clientSecret client secret
      * @param string   $baseUrl base url for requests
      */
-    public function __construct(string $appSid, string $appKey)
+    public function __construct(string $clientId, string $clientSecret)
     {
-        if (!isset($appSid) || trim($appSid) === '') {
-            throw new ApiException('appSid could not be an empty string.');
+        if (!isset($clientId) || trim($clientId) === '') {
+            throw new ApiException('clientId could not be an empty string.');
         }
 
-        if (!isset($appKey) || trim($appKey) === '') {
-            throw new ApiException('appKey could not be an empty string.');
+        if (!isset($clientSecret) || trim($clientSecret) === '') {
+            throw new ApiException('clientSecret could not be an empty string.');
         }
 
         $this->client = new Client();
-        $this->config = new Configuration($appSid, $appKey);
+        $this->config = new Configuration($clientId, $clientSecret);
     }
 
     /*
@@ -85,7 +85,7 @@ class WordsApi
     /*
      * Operation acceptAllRevisions
      *
-     * Accepts all revisions in document.
+     * Accepts all revisions in the document.
      *
      * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
@@ -108,7 +108,7 @@ class WordsApi
     /*
      * Operation acceptAllRevisionsWithHttpInfo
      *
-     * Accepts all revisions in document.
+     * Accepts all revisions in the document.
      *
      * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
@@ -175,7 +175,7 @@ class WordsApi
     /*
      * Operation acceptAllRevisionsAsync
      *
-     * Accepts all revisions in document.
+     * Accepts all revisions in the document.
      *
      * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
@@ -195,7 +195,7 @@ class WordsApi
     /*
      * Operation acceptAllRevisionsAsyncWithHttpInfo
      *
-     * Accepts all revisions in document.
+     * Accepts all revisions in the document.
      *
      * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
@@ -250,7 +250,7 @@ class WordsApi
     /*
      * Operation appendDocument
      *
-     * Appends documents to original document.
+     * Appends documents to the original document.
      *
      * @param Requests\appendDocumentRequest $request is a request object for operation
      *
@@ -273,7 +273,7 @@ class WordsApi
     /*
      * Operation appendDocumentWithHttpInfo
      *
-     * Appends documents to original document.
+     * Appends documents to the original document.
      *
      * @param Requests\appendDocumentRequest $request is a request object for operation
      *
@@ -340,7 +340,7 @@ class WordsApi
     /*
      * Operation appendDocumentAsync
      *
-     * Appends documents to original document.
+     * Appends documents to the original document.
      *
      * @param Requests\appendDocumentRequest $request is a request object for operation
      *
@@ -360,7 +360,7 @@ class WordsApi
     /*
      * Operation appendDocumentAsyncWithHttpInfo
      *
-     * Appends documents to original document.
+     * Appends documents to the original document.
      *
      * @param Requests\appendDocumentRequest $request is a request object for operation
      *
@@ -415,7 +415,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElement
      *
-     * Apply a style to the document node.
+     * Applies a style to the document node.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -438,7 +438,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElementWithHttpInfo
      *
-     * Apply a style to the document node.
+     * Applies a style to the document node.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -505,7 +505,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElementAsync
      *
-     * Apply a style to the document node.
+     * Applies a style to the document node.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -525,7 +525,7 @@ class WordsApi
     /*
      * Operation applyStyleToDocumentElementAsyncWithHttpInfo
      *
-     * Apply a style to the document node.
+     * Applies a style to the document node.
      *
      * @param Requests\applyStyleToDocumentElementRequest $request is a request object for operation
      *
@@ -580,7 +580,7 @@ class WordsApi
     /*
      * Operation buildReport
      *
-     * Executes document "build report" operation.
+     * Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.
      *
      * @param Requests\buildReportRequest $request is a request object for operation
      *
@@ -603,7 +603,7 @@ class WordsApi
     /*
      * Operation buildReportWithHttpInfo
      *
-     * Executes document "build report" operation.
+     * Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.
      *
      * @param Requests\buildReportRequest $request is a request object for operation
      *
@@ -670,7 +670,7 @@ class WordsApi
     /*
      * Operation buildReportAsync
      *
-     * Executes document "build report" operation.
+     * Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.
      *
      * @param Requests\buildReportRequest $request is a request object for operation
      *
@@ -690,7 +690,7 @@ class WordsApi
     /*
      * Operation buildReportAsyncWithHttpInfo
      *
-     * Executes document "build report" operation.
+     * Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.
      *
      * @param Requests\buildReportRequest $request is a request object for operation
      *
@@ -745,7 +745,7 @@ class WordsApi
     /*
      * Operation buildReportOnline
      *
-     * Executes document "build report" online operation.
+     * Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.
      *
      * @param Requests\buildReportOnlineRequest $request is a request object for operation
      *
@@ -768,7 +768,7 @@ class WordsApi
     /*
      * Operation buildReportOnlineWithHttpInfo
      *
-     * Executes document "build report" online operation.
+     * Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.
      *
      * @param Requests\buildReportOnlineRequest $request is a request object for operation
      *
@@ -835,7 +835,7 @@ class WordsApi
     /*
      * Operation buildReportOnlineAsync
      *
-     * Executes document "build report" online operation.
+     * Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.
      *
      * @param Requests\buildReportOnlineRequest $request is a request object for operation
      *
@@ -855,7 +855,7 @@ class WordsApi
     /*
      * Operation buildReportOnlineAsyncWithHttpInfo
      *
-     * Executes document "build report" online operation.
+     * Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.
      *
      * @param Requests\buildReportOnlineRequest $request is a request object for operation
      *
@@ -910,7 +910,7 @@ class WordsApi
     /*
      * Operation classify
      *
-     * Classifies raw text.
+     * Runs a multi-class text classification for the specified raw text.
      *
      * @param Requests\classifyRequest $request is a request object for operation
      *
@@ -933,7 +933,7 @@ class WordsApi
     /*
      * Operation classifyWithHttpInfo
      *
-     * Classifies raw text.
+     * Runs a multi-class text classification for the specified raw text.
      *
      * @param Requests\classifyRequest $request is a request object for operation
      *
@@ -1000,7 +1000,7 @@ class WordsApi
     /*
      * Operation classifyAsync
      *
-     * Classifies raw text.
+     * Runs a multi-class text classification for the specified raw text.
      *
      * @param Requests\classifyRequest $request is a request object for operation
      *
@@ -1020,7 +1020,7 @@ class WordsApi
     /*
      * Operation classifyAsyncWithHttpInfo
      *
-     * Classifies raw text.
+     * Runs a multi-class text classification for the specified raw text.
      *
      * @param Requests\classifyRequest $request is a request object for operation
      *
@@ -1075,7 +1075,7 @@ class WordsApi
     /*
      * Operation classifyDocument
      *
-     * Classifies document.
+     * Runs a multi-class text classification for the document.
      *
      * @param Requests\classifyDocumentRequest $request is a request object for operation
      *
@@ -1098,7 +1098,7 @@ class WordsApi
     /*
      * Operation classifyDocumentWithHttpInfo
      *
-     * Classifies document.
+     * Runs a multi-class text classification for the document.
      *
      * @param Requests\classifyDocumentRequest $request is a request object for operation
      *
@@ -1165,7 +1165,7 @@ class WordsApi
     /*
      * Operation classifyDocumentAsync
      *
-     * Classifies document.
+     * Runs a multi-class text classification for the document.
      *
      * @param Requests\classifyDocumentRequest $request is a request object for operation
      *
@@ -1185,7 +1185,7 @@ class WordsApi
     /*
      * Operation classifyDocumentAsyncWithHttpInfo
      *
-     * Classifies document.
+     * Runs a multi-class text classification for the document.
      *
      * @param Requests\classifyDocumentRequest $request is a request object for operation
      *
@@ -1240,7 +1240,7 @@ class WordsApi
     /*
      * Operation compareDocument
      *
-     * Compares document with original document.
+     * Compares two documents.
      *
      * @param Requests\compareDocumentRequest $request is a request object for operation
      *
@@ -1263,7 +1263,7 @@ class WordsApi
     /*
      * Operation compareDocumentWithHttpInfo
      *
-     * Compares document with original document.
+     * Compares two documents.
      *
      * @param Requests\compareDocumentRequest $request is a request object for operation
      *
@@ -1330,7 +1330,7 @@ class WordsApi
     /*
      * Operation compareDocumentAsync
      *
-     * Compares document with original document.
+     * Compares two documents.
      *
      * @param Requests\compareDocumentRequest $request is a request object for operation
      *
@@ -1350,7 +1350,7 @@ class WordsApi
     /*
      * Operation compareDocumentAsyncWithHttpInfo
      *
-     * Compares document with original document.
+     * Compares two documents.
      *
      * @param Requests\compareDocumentRequest $request is a request object for operation
      *
@@ -1405,7 +1405,7 @@ class WordsApi
     /*
      * Operation convertDocument
      *
-     * Converts document from the request's content to the specified format.
+     * Converts a document on a local drive to the specified format.
      *
      * @param Requests\convertDocumentRequest $request is a request object for operation
      *
@@ -1428,7 +1428,7 @@ class WordsApi
     /*
      * Operation convertDocumentWithHttpInfo
      *
-     * Converts document from the request's content to the specified format.
+     * Converts a document on a local drive to the specified format.
      *
      * @param Requests\convertDocumentRequest $request is a request object for operation
      *
@@ -1495,7 +1495,7 @@ class WordsApi
     /*
      * Operation convertDocumentAsync
      *
-     * Converts document from the request's content to the specified format.
+     * Converts a document on a local drive to the specified format.
      *
      * @param Requests\convertDocumentRequest $request is a request object for operation
      *
@@ -1515,7 +1515,7 @@ class WordsApi
     /*
      * Operation convertDocumentAsyncWithHttpInfo
      *
-     * Converts document from the request's content to the specified format.
+     * Converts a document on a local drive to the specified format.
      *
      * @param Requests\convertDocumentRequest $request is a request object for operation
      *
@@ -1814,7 +1814,7 @@ class WordsApi
     /*
      * Operation copyStyle
      *
-     * Copy and insert a new style to the document, returns a copied style.
+     * Makes a copy of the style in the document.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -1837,7 +1837,7 @@ class WordsApi
     /*
      * Operation copyStyleWithHttpInfo
      *
-     * Copy and insert a new style to the document, returns a copied style.
+     * Makes a copy of the style in the document.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -1904,7 +1904,7 @@ class WordsApi
     /*
      * Operation copyStyleAsync
      *
-     * Copy and insert a new style to the document, returns a copied style.
+     * Makes a copy of the style in the document.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -1924,7 +1924,7 @@ class WordsApi
     /*
      * Operation copyStyleAsyncWithHttpInfo
      *
-     * Copy and insert a new style to the document, returns a copied style.
+     * Makes a copy of the style in the document.
      *
      * @param Requests\copyStyleRequest $request is a request object for operation
      *
@@ -1979,8 +1979,6 @@ class WordsApi
     /*
      * Operation createDocument
      *
-     * Creates new document.
-     * Document is created with format which is recognized from file extensions.
      * Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
      *
      * @param Requests\createDocumentRequest $request is a request object for operation
@@ -2004,8 +2002,6 @@ class WordsApi
     /*
      * Operation createDocumentWithHttpInfo
      *
-     * Creates new document.
-     * Document is created with format which is recognized from file extensions.
      * Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
      *
      * @param Requests\createDocumentRequest $request is a request object for operation
@@ -2073,8 +2069,6 @@ class WordsApi
     /*
      * Operation createDocumentAsync
      *
-     * Creates new document.
-     * Document is created with format which is recognized from file extensions.
      * Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
      *
      * @param Requests\createDocumentRequest $request is a request object for operation
@@ -2095,8 +2089,6 @@ class WordsApi
     /*
      * Operation createDocumentAsyncWithHttpInfo
      *
-     * Creates new document.
-     * Document is created with format which is recognized from file extensions.
      * Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
      *
      * @param Requests\createDocumentRequest $request is a request object for operation
@@ -2274,7 +2266,7 @@ class WordsApi
     /*
      * Operation createOrUpdateDocumentProperty
      *
-     * Adds new or update existing document property.
+     * Adds a new or updates an existing document property.
      *
      * @param Requests\createOrUpdateDocumentPropertyRequest $request is a request object for operation
      *
@@ -2297,7 +2289,7 @@ class WordsApi
     /*
      * Operation createOrUpdateDocumentPropertyWithHttpInfo
      *
-     * Adds new or update existing document property.
+     * Adds a new or updates an existing document property.
      *
      * @param Requests\createOrUpdateDocumentPropertyRequest $request is a request object for operation
      *
@@ -2364,7 +2356,7 @@ class WordsApi
     /*
      * Operation createOrUpdateDocumentPropertyAsync
      *
-     * Adds new or update existing document property.
+     * Adds a new or updates an existing document property.
      *
      * @param Requests\createOrUpdateDocumentPropertyRequest $request is a request object for operation
      *
@@ -2384,7 +2376,7 @@ class WordsApi
     /*
      * Operation createOrUpdateDocumentPropertyAsyncWithHttpInfo
      *
-     * Adds new or update existing document property.
+     * Adds a new or updates an existing document property.
      *
      * @param Requests\createOrUpdateDocumentPropertyRequest $request is a request object for operation
      *
@@ -2439,7 +2431,7 @@ class WordsApi
     /*
      * Operation deleteAllParagraphTabStops
      *
-     * Remove all tab stops.
+     * Removes paragraph tab stops from the document node.
      *
      * @param Requests\deleteAllParagraphTabStopsRequest $request is a request object for operation
      *
@@ -2462,7 +2454,7 @@ class WordsApi
     /*
      * Operation deleteAllParagraphTabStopsWithHttpInfo
      *
-     * Remove all tab stops.
+     * Removes paragraph tab stops from the document node.
      *
      * @param Requests\deleteAllParagraphTabStopsRequest $request is a request object for operation
      *
@@ -2529,7 +2521,7 @@ class WordsApi
     /*
      * Operation deleteAllParagraphTabStopsAsync
      *
-     * Remove all tab stops.
+     * Removes paragraph tab stops from the document node.
      *
      * @param Requests\deleteAllParagraphTabStopsRequest $request is a request object for operation
      *
@@ -2549,7 +2541,7 @@ class WordsApi
     /*
      * Operation deleteAllParagraphTabStopsAsyncWithHttpInfo
      *
-     * Remove all tab stops.
+     * Removes paragraph tab stops from the document node.
      *
      * @param Requests\deleteAllParagraphTabStopsRequest $request is a request object for operation
      *
@@ -2604,7 +2596,7 @@ class WordsApi
     /*
      * Operation deleteBorder
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderRequest $request is a request object for operation
      *
@@ -2627,7 +2619,7 @@ class WordsApi
     /*
      * Operation deleteBorderWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderRequest $request is a request object for operation
      *
@@ -2694,7 +2686,7 @@ class WordsApi
     /*
      * Operation deleteBorderAsync
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderRequest $request is a request object for operation
      *
@@ -2714,7 +2706,7 @@ class WordsApi
     /*
      * Operation deleteBorderAsyncWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderRequest $request is a request object for operation
      *
@@ -2769,7 +2761,7 @@ class WordsApi
     /*
      * Operation deleteBorders
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersRequest $request is a request object for operation
      *
@@ -2792,7 +2784,7 @@ class WordsApi
     /*
      * Operation deleteBordersWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersRequest $request is a request object for operation
      *
@@ -2859,7 +2851,7 @@ class WordsApi
     /*
      * Operation deleteBordersAsync
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersRequest $request is a request object for operation
      *
@@ -2879,7 +2871,7 @@ class WordsApi
     /*
      * Operation deleteBordersAsyncWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersRequest $request is a request object for operation
      *
@@ -2934,7 +2926,7 @@ class WordsApi
     /*
      * Operation deleteComment
      *
-     * Removes comment from document.
+     * Removes a comment from the document.
      *
      * @param Requests\deleteCommentRequest $request is a request object for operation
      *
@@ -2955,7 +2947,7 @@ class WordsApi
     /*
      * Operation deleteCommentWithHttpInfo
      *
-     * Removes comment from document.
+     * Removes a comment from the document.
      *
      * @param Requests\deleteCommentRequest $request is a request object for operation
      *
@@ -2999,7 +2991,7 @@ class WordsApi
     /*
      * Operation deleteCommentAsync
      *
-     * Removes comment from document.
+     * Removes a comment from the document.
      *
      * @param Requests\deleteCommentRequest $request is a request object for operation
      *
@@ -3019,7 +3011,7 @@ class WordsApi
     /*
      * Operation deleteCommentAsyncWithHttpInfo
      *
-     * Removes comment from document.
+     * Removes a comment from the document.
      *
      * @param Requests\deleteCommentRequest $request is a request object for operation
      *
@@ -3056,7 +3048,7 @@ class WordsApi
     /*
      * Operation deleteDocumentProperty
      *
-     * Deletes document property.
+     * Removes a document property.
      *
      * @param Requests\deleteDocumentPropertyRequest $request is a request object for operation
      *
@@ -3077,7 +3069,7 @@ class WordsApi
     /*
      * Operation deleteDocumentPropertyWithHttpInfo
      *
-     * Deletes document property.
+     * Removes a document property.
      *
      * @param Requests\deleteDocumentPropertyRequest $request is a request object for operation
      *
@@ -3121,7 +3113,7 @@ class WordsApi
     /*
      * Operation deleteDocumentPropertyAsync
      *
-     * Deletes document property.
+     * Removes a document property.
      *
      * @param Requests\deleteDocumentPropertyRequest $request is a request object for operation
      *
@@ -3141,7 +3133,7 @@ class WordsApi
     /*
      * Operation deleteDocumentPropertyAsyncWithHttpInfo
      *
-     * Deletes document property.
+     * Removes a document property.
      *
      * @param Requests\deleteDocumentPropertyRequest $request is a request object for operation
      *
@@ -3178,7 +3170,7 @@ class WordsApi
     /*
      * Operation deleteDrawingObject
      *
-     * Removes drawing object from document.
+     * Removes a DrawingObject from the document node.
      *
      * @param Requests\deleteDrawingObjectRequest $request is a request object for operation
      *
@@ -3199,7 +3191,7 @@ class WordsApi
     /*
      * Operation deleteDrawingObjectWithHttpInfo
      *
-     * Removes drawing object from document.
+     * Removes a DrawingObject from the document node.
      *
      * @param Requests\deleteDrawingObjectRequest $request is a request object for operation
      *
@@ -3243,7 +3235,7 @@ class WordsApi
     /*
      * Operation deleteDrawingObjectAsync
      *
-     * Removes drawing object from document.
+     * Removes a DrawingObject from the document node.
      *
      * @param Requests\deleteDrawingObjectRequest $request is a request object for operation
      *
@@ -3263,7 +3255,7 @@ class WordsApi
     /*
      * Operation deleteDrawingObjectAsyncWithHttpInfo
      *
-     * Removes drawing object from document.
+     * Removes a DrawingObject from the document node.
      *
      * @param Requests\deleteDrawingObjectRequest $request is a request object for operation
      *
@@ -3300,7 +3292,7 @@ class WordsApi
     /*
      * Operation deleteField
      *
-     * Deletes field from document.
+     * Removes a field from the document node.
      *
      * @param Requests\deleteFieldRequest $request is a request object for operation
      *
@@ -3321,7 +3313,7 @@ class WordsApi
     /*
      * Operation deleteFieldWithHttpInfo
      *
-     * Deletes field from document.
+     * Removes a field from the document node.
      *
      * @param Requests\deleteFieldRequest $request is a request object for operation
      *
@@ -3365,7 +3357,7 @@ class WordsApi
     /*
      * Operation deleteFieldAsync
      *
-     * Deletes field from document.
+     * Removes a field from the document node.
      *
      * @param Requests\deleteFieldRequest $request is a request object for operation
      *
@@ -3385,7 +3377,7 @@ class WordsApi
     /*
      * Operation deleteFieldAsyncWithHttpInfo
      *
-     * Deletes field from document.
+     * Removes a field from the document node.
      *
      * @param Requests\deleteFieldRequest $request is a request object for operation
      *
@@ -3422,7 +3414,7 @@ class WordsApi
     /*
      * Operation deleteFields
      *
-     * Removes fields from section paragraph.
+     * Removes fields from the document node.
      *
      * @param Requests\deleteFieldsRequest $request is a request object for operation
      *
@@ -3443,7 +3435,7 @@ class WordsApi
     /*
      * Operation deleteFieldsWithHttpInfo
      *
-     * Removes fields from section paragraph.
+     * Removes fields from the document node.
      *
      * @param Requests\deleteFieldsRequest $request is a request object for operation
      *
@@ -3487,7 +3479,7 @@ class WordsApi
     /*
      * Operation deleteFieldsAsync
      *
-     * Removes fields from section paragraph.
+     * Removes fields from the document node.
      *
      * @param Requests\deleteFieldsRequest $request is a request object for operation
      *
@@ -3507,7 +3499,7 @@ class WordsApi
     /*
      * Operation deleteFieldsAsyncWithHttpInfo
      *
-     * Removes fields from section paragraph.
+     * Removes fields from the document node.
      *
      * @param Requests\deleteFieldsRequest $request is a request object for operation
      *
@@ -3788,7 +3780,7 @@ class WordsApi
     /*
      * Operation deleteFootnote
      *
-     * Removes footnote from document.
+     * Removes a footnote from the document node.
      *
      * @param Requests\deleteFootnoteRequest $request is a request object for operation
      *
@@ -3809,7 +3801,7 @@ class WordsApi
     /*
      * Operation deleteFootnoteWithHttpInfo
      *
-     * Removes footnote from document.
+     * Removes a footnote from the document node.
      *
      * @param Requests\deleteFootnoteRequest $request is a request object for operation
      *
@@ -3853,7 +3845,7 @@ class WordsApi
     /*
      * Operation deleteFootnoteAsync
      *
-     * Removes footnote from document.
+     * Removes a footnote from the document node.
      *
      * @param Requests\deleteFootnoteRequest $request is a request object for operation
      *
@@ -3873,7 +3865,7 @@ class WordsApi
     /*
      * Operation deleteFootnoteAsyncWithHttpInfo
      *
-     * Removes footnote from document.
+     * Removes a footnote from the document node.
      *
      * @param Requests\deleteFootnoteRequest $request is a request object for operation
      *
@@ -3910,7 +3902,7 @@ class WordsApi
     /*
      * Operation deleteFormField
      *
-     * Removes form field from document.
+     * Removes a form field from the document node.
      *
      * @param Requests\deleteFormFieldRequest $request is a request object for operation
      *
@@ -3931,7 +3923,7 @@ class WordsApi
     /*
      * Operation deleteFormFieldWithHttpInfo
      *
-     * Removes form field from document.
+     * Removes a form field from the document node.
      *
      * @param Requests\deleteFormFieldRequest $request is a request object for operation
      *
@@ -3975,7 +3967,7 @@ class WordsApi
     /*
      * Operation deleteFormFieldAsync
      *
-     * Removes form field from document.
+     * Removes a form field from the document node.
      *
      * @param Requests\deleteFormFieldRequest $request is a request object for operation
      *
@@ -3995,7 +3987,7 @@ class WordsApi
     /*
      * Operation deleteFormFieldAsyncWithHttpInfo
      *
-     * Removes form field from document.
+     * Removes a form field from the document node.
      *
      * @param Requests\deleteFormFieldRequest $request is a request object for operation
      *
@@ -4032,7 +4024,7 @@ class WordsApi
     /*
      * Operation deleteHeaderFooter
      *
-     * Deletes header/footer from document.
+     * Removes a HeaderFooter object from the document section.
      *
      * @param Requests\deleteHeaderFooterRequest $request is a request object for operation
      *
@@ -4053,7 +4045,7 @@ class WordsApi
     /*
      * Operation deleteHeaderFooterWithHttpInfo
      *
-     * Deletes header/footer from document.
+     * Removes a HeaderFooter object from the document section.
      *
      * @param Requests\deleteHeaderFooterRequest $request is a request object for operation
      *
@@ -4097,7 +4089,7 @@ class WordsApi
     /*
      * Operation deleteHeaderFooterAsync
      *
-     * Deletes header/footer from document.
+     * Removes a HeaderFooter object from the document section.
      *
      * @param Requests\deleteHeaderFooterRequest $request is a request object for operation
      *
@@ -4117,7 +4109,7 @@ class WordsApi
     /*
      * Operation deleteHeaderFooterAsyncWithHttpInfo
      *
-     * Deletes header/footer from document.
+     * Removes a HeaderFooter object from the document section.
      *
      * @param Requests\deleteHeaderFooterRequest $request is a request object for operation
      *
@@ -4154,7 +4146,7 @@ class WordsApi
     /*
      * Operation deleteHeadersFooters
      *
-     * Deletes document headers and footers.
+     * Removes HeaderFooter objects from the document section.
      *
      * @param Requests\deleteHeadersFootersRequest $request is a request object for operation
      *
@@ -4175,7 +4167,7 @@ class WordsApi
     /*
      * Operation deleteHeadersFootersWithHttpInfo
      *
-     * Deletes document headers and footers.
+     * Removes HeaderFooter objects from the document section.
      *
      * @param Requests\deleteHeadersFootersRequest $request is a request object for operation
      *
@@ -4219,7 +4211,7 @@ class WordsApi
     /*
      * Operation deleteHeadersFootersAsync
      *
-     * Deletes document headers and footers.
+     * Removes HeaderFooter objects from the document section.
      *
      * @param Requests\deleteHeadersFootersRequest $request is a request object for operation
      *
@@ -4239,7 +4231,7 @@ class WordsApi
     /*
      * Operation deleteHeadersFootersAsyncWithHttpInfo
      *
-     * Deletes document headers and footers.
+     * Removes HeaderFooter objects from the document section.
      *
      * @param Requests\deleteHeadersFootersRequest $request is a request object for operation
      *
@@ -4276,7 +4268,7 @@ class WordsApi
     /*
      * Operation deleteMacros
      *
-     * Removes macros from document.
+     * Removes macros from the document.
      *
      * @param Requests\deleteMacrosRequest $request is a request object for operation
      *
@@ -4297,7 +4289,7 @@ class WordsApi
     /*
      * Operation deleteMacrosWithHttpInfo
      *
-     * Removes macros from document.
+     * Removes macros from the document.
      *
      * @param Requests\deleteMacrosRequest $request is a request object for operation
      *
@@ -4341,7 +4333,7 @@ class WordsApi
     /*
      * Operation deleteMacrosAsync
      *
-     * Removes macros from document.
+     * Removes macros from the document.
      *
      * @param Requests\deleteMacrosRequest $request is a request object for operation
      *
@@ -4361,7 +4353,7 @@ class WordsApi
     /*
      * Operation deleteMacrosAsyncWithHttpInfo
      *
-     * Removes macros from document.
+     * Removes macros from the document.
      *
      * @param Requests\deleteMacrosRequest $request is a request object for operation
      *
@@ -4398,7 +4390,7 @@ class WordsApi
     /*
      * Operation deleteOfficeMathObject
      *
-     * Removes OfficeMath object from document.
+     * Removes an OfficeMath object from the document node.
      *
      * @param Requests\deleteOfficeMathObjectRequest $request is a request object for operation
      *
@@ -4419,7 +4411,7 @@ class WordsApi
     /*
      * Operation deleteOfficeMathObjectWithHttpInfo
      *
-     * Removes OfficeMath object from document.
+     * Removes an OfficeMath object from the document node.
      *
      * @param Requests\deleteOfficeMathObjectRequest $request is a request object for operation
      *
@@ -4463,7 +4455,7 @@ class WordsApi
     /*
      * Operation deleteOfficeMathObjectAsync
      *
-     * Removes OfficeMath object from document.
+     * Removes an OfficeMath object from the document node.
      *
      * @param Requests\deleteOfficeMathObjectRequest $request is a request object for operation
      *
@@ -4483,7 +4475,7 @@ class WordsApi
     /*
      * Operation deleteOfficeMathObjectAsyncWithHttpInfo
      *
-     * Removes OfficeMath object from document.
+     * Removes an OfficeMath object from the document node.
      *
      * @param Requests\deleteOfficeMathObjectRequest $request is a request object for operation
      *
@@ -4520,7 +4512,7 @@ class WordsApi
     /*
      * Operation deleteParagraph
      *
-     * Removes paragraph from section.
+     * Removes a paragraph from the document node.
      *
      * @param Requests\deleteParagraphRequest $request is a request object for operation
      *
@@ -4541,7 +4533,7 @@ class WordsApi
     /*
      * Operation deleteParagraphWithHttpInfo
      *
-     * Removes paragraph from section.
+     * Removes a paragraph from the document node.
      *
      * @param Requests\deleteParagraphRequest $request is a request object for operation
      *
@@ -4585,7 +4577,7 @@ class WordsApi
     /*
      * Operation deleteParagraphAsync
      *
-     * Removes paragraph from section.
+     * Removes a paragraph from the document node.
      *
      * @param Requests\deleteParagraphRequest $request is a request object for operation
      *
@@ -4605,7 +4597,7 @@ class WordsApi
     /*
      * Operation deleteParagraphAsyncWithHttpInfo
      *
-     * Removes paragraph from section.
+     * Removes a paragraph from the document node.
      *
      * @param Requests\deleteParagraphRequest $request is a request object for operation
      *
@@ -4642,7 +4634,7 @@ class WordsApi
     /*
      * Operation deleteParagraphListFormat
      *
-     * Delete paragraph list format, returns updated list format properties.
+     * Removes the formatting properties of a paragraph list from the document node.
      *
      * @param Requests\deleteParagraphListFormatRequest $request is a request object for operation
      *
@@ -4665,7 +4657,7 @@ class WordsApi
     /*
      * Operation deleteParagraphListFormatWithHttpInfo
      *
-     * Delete paragraph list format, returns updated list format properties.
+     * Removes the formatting properties of a paragraph list from the document node.
      *
      * @param Requests\deleteParagraphListFormatRequest $request is a request object for operation
      *
@@ -4732,7 +4724,7 @@ class WordsApi
     /*
      * Operation deleteParagraphListFormatAsync
      *
-     * Delete paragraph list format, returns updated list format properties.
+     * Removes the formatting properties of a paragraph list from the document node.
      *
      * @param Requests\deleteParagraphListFormatRequest $request is a request object for operation
      *
@@ -4752,7 +4744,7 @@ class WordsApi
     /*
      * Operation deleteParagraphListFormatAsyncWithHttpInfo
      *
-     * Delete paragraph list format, returns updated list format properties.
+     * Removes the formatting properties of a paragraph list from the document node.
      *
      * @param Requests\deleteParagraphListFormatRequest $request is a request object for operation
      *
@@ -4807,7 +4799,7 @@ class WordsApi
     /*
      * Operation deleteParagraphTabStop
      *
-     * Remove the i-th tab stop.
+     * Removes a paragraph tab stop from the document node.
      *
      * @param Requests\deleteParagraphTabStopRequest $request is a request object for operation
      *
@@ -4830,7 +4822,7 @@ class WordsApi
     /*
      * Operation deleteParagraphTabStopWithHttpInfo
      *
-     * Remove the i-th tab stop.
+     * Removes a paragraph tab stop from the document node.
      *
      * @param Requests\deleteParagraphTabStopRequest $request is a request object for operation
      *
@@ -4897,7 +4889,7 @@ class WordsApi
     /*
      * Operation deleteParagraphTabStopAsync
      *
-     * Remove the i-th tab stop.
+     * Removes a paragraph tab stop from the document node.
      *
      * @param Requests\deleteParagraphTabStopRequest $request is a request object for operation
      *
@@ -4917,7 +4909,7 @@ class WordsApi
     /*
      * Operation deleteParagraphTabStopAsyncWithHttpInfo
      *
-     * Remove the i-th tab stop.
+     * Removes a paragraph tab stop from the document node.
      *
      * @param Requests\deleteParagraphTabStopRequest $request is a request object for operation
      *
@@ -4972,7 +4964,7 @@ class WordsApi
     /*
      * Operation deleteRun
      *
-     * Removes run from document.
+     * Removes a Run object from the paragraph.
      *
      * @param Requests\deleteRunRequest $request is a request object for operation
      *
@@ -4993,7 +4985,7 @@ class WordsApi
     /*
      * Operation deleteRunWithHttpInfo
      *
-     * Removes run from document.
+     * Removes a Run object from the paragraph.
      *
      * @param Requests\deleteRunRequest $request is a request object for operation
      *
@@ -5037,7 +5029,7 @@ class WordsApi
     /*
      * Operation deleteRunAsync
      *
-     * Removes run from document.
+     * Removes a Run object from the paragraph.
      *
      * @param Requests\deleteRunRequest $request is a request object for operation
      *
@@ -5057,7 +5049,7 @@ class WordsApi
     /*
      * Operation deleteRunAsyncWithHttpInfo
      *
-     * Removes run from document.
+     * Removes a Run object from the paragraph.
      *
      * @param Requests\deleteRunRequest $request is a request object for operation
      *
@@ -5094,7 +5086,7 @@ class WordsApi
     /*
      * Operation deleteSection
      *
-     * Removes section from document.
+     * Removes a section from the document.
      *
      * @param Requests\deleteSectionRequest $request is a request object for operation
      *
@@ -5115,7 +5107,7 @@ class WordsApi
     /*
      * Operation deleteSectionWithHttpInfo
      *
-     * Removes section from document.
+     * Removes a section from the document.
      *
      * @param Requests\deleteSectionRequest $request is a request object for operation
      *
@@ -5159,7 +5151,7 @@ class WordsApi
     /*
      * Operation deleteSectionAsync
      *
-     * Removes section from document.
+     * Removes a section from the document.
      *
      * @param Requests\deleteSectionRequest $request is a request object for operation
      *
@@ -5179,7 +5171,7 @@ class WordsApi
     /*
      * Operation deleteSectionAsyncWithHttpInfo
      *
-     * Removes section from document.
+     * Removes a section from the document.
      *
      * @param Requests\deleteSectionRequest $request is a request object for operation
      *
@@ -5216,7 +5208,7 @@ class WordsApi
     /*
      * Operation deleteTable
      *
-     * Deletes a table.
+     * Removes a table from the document node.
      *
      * @param Requests\deleteTableRequest $request is a request object for operation
      *
@@ -5237,7 +5229,7 @@ class WordsApi
     /*
      * Operation deleteTableWithHttpInfo
      *
-     * Deletes a table.
+     * Removes a table from the document node.
      *
      * @param Requests\deleteTableRequest $request is a request object for operation
      *
@@ -5281,7 +5273,7 @@ class WordsApi
     /*
      * Operation deleteTableAsync
      *
-     * Deletes a table.
+     * Removes a table from the document node.
      *
      * @param Requests\deleteTableRequest $request is a request object for operation
      *
@@ -5301,7 +5293,7 @@ class WordsApi
     /*
      * Operation deleteTableAsyncWithHttpInfo
      *
-     * Deletes a table.
+     * Removes a table from the document node.
      *
      * @param Requests\deleteTableRequest $request is a request object for operation
      *
@@ -5338,7 +5330,7 @@ class WordsApi
     /*
      * Operation deleteTableCell
      *
-     * Deletes a table cell.
+     * Removes a cell from the table row.
      *
      * @param Requests\deleteTableCellRequest $request is a request object for operation
      *
@@ -5359,7 +5351,7 @@ class WordsApi
     /*
      * Operation deleteTableCellWithHttpInfo
      *
-     * Deletes a table cell.
+     * Removes a cell from the table row.
      *
      * @param Requests\deleteTableCellRequest $request is a request object for operation
      *
@@ -5403,7 +5395,7 @@ class WordsApi
     /*
      * Operation deleteTableCellAsync
      *
-     * Deletes a table cell.
+     * Removes a cell from the table row.
      *
      * @param Requests\deleteTableCellRequest $request is a request object for operation
      *
@@ -5423,7 +5415,7 @@ class WordsApi
     /*
      * Operation deleteTableCellAsyncWithHttpInfo
      *
-     * Deletes a table cell.
+     * Removes a cell from the table row.
      *
      * @param Requests\deleteTableCellRequest $request is a request object for operation
      *
@@ -5460,7 +5452,7 @@ class WordsApi
     /*
      * Operation deleteTableRow
      *
-     * Deletes a table row.
+     * Removes a row from the table.
      *
      * @param Requests\deleteTableRowRequest $request is a request object for operation
      *
@@ -5481,7 +5473,7 @@ class WordsApi
     /*
      * Operation deleteTableRowWithHttpInfo
      *
-     * Deletes a table row.
+     * Removes a row from the table.
      *
      * @param Requests\deleteTableRowRequest $request is a request object for operation
      *
@@ -5525,7 +5517,7 @@ class WordsApi
     /*
      * Operation deleteTableRowAsync
      *
-     * Deletes a table row.
+     * Removes a row from the table.
      *
      * @param Requests\deleteTableRowRequest $request is a request object for operation
      *
@@ -5545,7 +5537,7 @@ class WordsApi
     /*
      * Operation deleteTableRowAsyncWithHttpInfo
      *
-     * Deletes a table row.
+     * Removes a row from the table.
      *
      * @param Requests\deleteTableRowRequest $request is a request object for operation
      *
@@ -5582,7 +5574,7 @@ class WordsApi
     /*
      * Operation deleteWatermark
      *
-     * Deletes watermark (for deleting last watermark from the document).
+     * Removes a watermark from the document.
      *
      * @param Requests\deleteWatermarkRequest $request is a request object for operation
      *
@@ -5605,7 +5597,7 @@ class WordsApi
     /*
      * Operation deleteWatermarkWithHttpInfo
      *
-     * Deletes watermark (for deleting last watermark from the document).
+     * Removes a watermark from the document.
      *
      * @param Requests\deleteWatermarkRequest $request is a request object for operation
      *
@@ -5672,7 +5664,7 @@ class WordsApi
     /*
      * Operation deleteWatermarkAsync
      *
-     * Deletes watermark (for deleting last watermark from the document).
+     * Removes a watermark from the document.
      *
      * @param Requests\deleteWatermarkRequest $request is a request object for operation
      *
@@ -5692,7 +5684,7 @@ class WordsApi
     /*
      * Operation deleteWatermarkAsyncWithHttpInfo
      *
-     * Deletes watermark (for deleting last watermark from the document).
+     * Removes a watermark from the document.
      *
      * @param Requests\deleteWatermarkRequest $request is a request object for operation
      *
@@ -5912,7 +5904,7 @@ class WordsApi
     /*
      * Operation executeMailMerge
      *
-     * Executes document mail merge operation.
+     * Executes a Mail Merge operation.
      *
      * @param Requests\executeMailMergeRequest $request is a request object for operation
      *
@@ -5935,7 +5927,7 @@ class WordsApi
     /*
      * Operation executeMailMergeWithHttpInfo
      *
-     * Executes document mail merge operation.
+     * Executes a Mail Merge operation.
      *
      * @param Requests\executeMailMergeRequest $request is a request object for operation
      *
@@ -6002,7 +5994,7 @@ class WordsApi
     /*
      * Operation executeMailMergeAsync
      *
-     * Executes document mail merge operation.
+     * Executes a Mail Merge operation.
      *
      * @param Requests\executeMailMergeRequest $request is a request object for operation
      *
@@ -6022,7 +6014,7 @@ class WordsApi
     /*
      * Operation executeMailMergeAsyncWithHttpInfo
      *
-     * Executes document mail merge operation.
+     * Executes a Mail Merge operation.
      *
      * @param Requests\executeMailMergeRequest $request is a request object for operation
      *
@@ -6077,7 +6069,7 @@ class WordsApi
     /*
      * Operation executeMailMergeOnline
      *
-     * Executes document mail merge online.
+     * Executes a Mail Merge operation online.
      *
      * @param Requests\executeMailMergeOnlineRequest $request is a request object for operation
      *
@@ -6100,7 +6092,7 @@ class WordsApi
     /*
      * Operation executeMailMergeOnlineWithHttpInfo
      *
-     * Executes document mail merge online.
+     * Executes a Mail Merge operation online.
      *
      * @param Requests\executeMailMergeOnlineRequest $request is a request object for operation
      *
@@ -6167,7 +6159,7 @@ class WordsApi
     /*
      * Operation executeMailMergeOnlineAsync
      *
-     * Executes document mail merge online.
+     * Executes a Mail Merge operation online.
      *
      * @param Requests\executeMailMergeOnlineRequest $request is a request object for operation
      *
@@ -6187,7 +6179,7 @@ class WordsApi
     /*
      * Operation executeMailMergeOnlineAsyncWithHttpInfo
      *
-     * Executes document mail merge online.
+     * Executes a Mail Merge operation online.
      *
      * @param Requests\executeMailMergeOnlineRequest $request is a request object for operation
      *
@@ -6242,7 +6234,7 @@ class WordsApi
     /*
      * Operation getAvailableFonts
      *
-     * Gets the list of fonts, available for document processing.
+     * Reads available fonts from the document.
      *
      * @param Requests\getAvailableFontsRequest $request is a request object for operation
      *
@@ -6265,7 +6257,7 @@ class WordsApi
     /*
      * Operation getAvailableFontsWithHttpInfo
      *
-     * Gets the list of fonts, available for document processing.
+     * Reads available fonts from the document.
      *
      * @param Requests\getAvailableFontsRequest $request is a request object for operation
      *
@@ -6332,7 +6324,7 @@ class WordsApi
     /*
      * Operation getAvailableFontsAsync
      *
-     * Gets the list of fonts, available for document processing.
+     * Reads available fonts from the document.
      *
      * @param Requests\getAvailableFontsRequest $request is a request object for operation
      *
@@ -6352,7 +6344,7 @@ class WordsApi
     /*
      * Operation getAvailableFontsAsyncWithHttpInfo
      *
-     * Gets the list of fonts, available for document processing.
+     * Reads available fonts from the document.
      *
      * @param Requests\getAvailableFontsRequest $request is a request object for operation
      *
@@ -6407,7 +6399,7 @@ class WordsApi
     /*
      * Operation getBookmarkByName
      *
-     * Reads document bookmark data by its name.
+     * Reads a bookmark, specified by name, from the document.
      *
      * @param Requests\getBookmarkByNameRequest $request is a request object for operation
      *
@@ -6430,7 +6422,7 @@ class WordsApi
     /*
      * Operation getBookmarkByNameWithHttpInfo
      *
-     * Reads document bookmark data by its name.
+     * Reads a bookmark, specified by name, from the document.
      *
      * @param Requests\getBookmarkByNameRequest $request is a request object for operation
      *
@@ -6497,7 +6489,7 @@ class WordsApi
     /*
      * Operation getBookmarkByNameAsync
      *
-     * Reads document bookmark data by its name.
+     * Reads a bookmark, specified by name, from the document.
      *
      * @param Requests\getBookmarkByNameRequest $request is a request object for operation
      *
@@ -6517,7 +6509,7 @@ class WordsApi
     /*
      * Operation getBookmarkByNameAsyncWithHttpInfo
      *
-     * Reads document bookmark data by its name.
+     * Reads a bookmark, specified by name, from the document.
      *
      * @param Requests\getBookmarkByNameRequest $request is a request object for operation
      *
@@ -6572,7 +6564,7 @@ class WordsApi
     /*
      * Operation getBookmarks
      *
-     * Reads document bookmarks common info.
+     * Reads bookmarks from the document.
      *
      * @param Requests\getBookmarksRequest $request is a request object for operation
      *
@@ -6595,7 +6587,7 @@ class WordsApi
     /*
      * Operation getBookmarksWithHttpInfo
      *
-     * Reads document bookmarks common info.
+     * Reads bookmarks from the document.
      *
      * @param Requests\getBookmarksRequest $request is a request object for operation
      *
@@ -6662,7 +6654,7 @@ class WordsApi
     /*
      * Operation getBookmarksAsync
      *
-     * Reads document bookmarks common info.
+     * Reads bookmarks from the document.
      *
      * @param Requests\getBookmarksRequest $request is a request object for operation
      *
@@ -6682,7 +6674,7 @@ class WordsApi
     /*
      * Operation getBookmarksAsyncWithHttpInfo
      *
-     * Reads document bookmarks common info.
+     * Reads bookmarks from the document.
      *
      * @param Requests\getBookmarksRequest $request is a request object for operation
      *
@@ -6737,7 +6729,7 @@ class WordsApi
     /*
      * Operation getBorder
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderRequest $request is a request object for operation
      *
@@ -6760,7 +6752,7 @@ class WordsApi
     /*
      * Operation getBorderWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderRequest $request is a request object for operation
      *
@@ -6827,7 +6819,7 @@ class WordsApi
     /*
      * Operation getBorderAsync
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderRequest $request is a request object for operation
      *
@@ -6847,7 +6839,7 @@ class WordsApi
     /*
      * Operation getBorderAsyncWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderRequest $request is a request object for operation
      *
@@ -6902,7 +6894,7 @@ class WordsApi
     /*
      * Operation getBorders
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * Reads borders from the document node.
      *
      * @param Requests\getBordersRequest $request is a request object for operation
      *
@@ -6925,7 +6917,7 @@ class WordsApi
     /*
      * Operation getBordersWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * Reads borders from the document node.
      *
      * @param Requests\getBordersRequest $request is a request object for operation
      *
@@ -6992,7 +6984,7 @@ class WordsApi
     /*
      * Operation getBordersAsync
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * Reads borders from the document node.
      *
      * @param Requests\getBordersRequest $request is a request object for operation
      *
@@ -7012,7 +7004,7 @@ class WordsApi
     /*
      * Operation getBordersAsyncWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * Reads borders from the document node.
      *
      * @param Requests\getBordersRequest $request is a request object for operation
      *
@@ -7067,7 +7059,7 @@ class WordsApi
     /*
      * Operation getComment
      *
-     * Gets comment from document.
+     * Reads a comment from the document.
      *
      * @param Requests\getCommentRequest $request is a request object for operation
      *
@@ -7090,7 +7082,7 @@ class WordsApi
     /*
      * Operation getCommentWithHttpInfo
      *
-     * Gets comment from document.
+     * Reads a comment from the document.
      *
      * @param Requests\getCommentRequest $request is a request object for operation
      *
@@ -7157,7 +7149,7 @@ class WordsApi
     /*
      * Operation getCommentAsync
      *
-     * Gets comment from document.
+     * Reads a comment from the document.
      *
      * @param Requests\getCommentRequest $request is a request object for operation
      *
@@ -7177,7 +7169,7 @@ class WordsApi
     /*
      * Operation getCommentAsyncWithHttpInfo
      *
-     * Gets comment from document.
+     * Reads a comment from the document.
      *
      * @param Requests\getCommentRequest $request is a request object for operation
      *
@@ -7232,7 +7224,7 @@ class WordsApi
     /*
      * Operation getComments
      *
-     * Gets comments from document.
+     * Reads comments from the document.
      *
      * @param Requests\getCommentsRequest $request is a request object for operation
      *
@@ -7255,7 +7247,7 @@ class WordsApi
     /*
      * Operation getCommentsWithHttpInfo
      *
-     * Gets comments from document.
+     * Reads comments from the document.
      *
      * @param Requests\getCommentsRequest $request is a request object for operation
      *
@@ -7322,7 +7314,7 @@ class WordsApi
     /*
      * Operation getCommentsAsync
      *
-     * Gets comments from document.
+     * Reads comments from the document.
      *
      * @param Requests\getCommentsRequest $request is a request object for operation
      *
@@ -7342,7 +7334,7 @@ class WordsApi
     /*
      * Operation getCommentsAsyncWithHttpInfo
      *
-     * Gets comments from document.
+     * Reads comments from the document.
      *
      * @param Requests\getCommentsRequest $request is a request object for operation
      *
@@ -7397,7 +7389,7 @@ class WordsApi
     /*
      * Operation getDocument
      *
-     * Reads document common info.
+     * Reads common information from the document.
      *
      * @param Requests\getDocumentRequest $request is a request object for operation
      *
@@ -7420,7 +7412,7 @@ class WordsApi
     /*
      * Operation getDocumentWithHttpInfo
      *
-     * Reads document common info.
+     * Reads common information from the document.
      *
      * @param Requests\getDocumentRequest $request is a request object for operation
      *
@@ -7487,7 +7479,7 @@ class WordsApi
     /*
      * Operation getDocumentAsync
      *
-     * Reads document common info.
+     * Reads common information from the document.
      *
      * @param Requests\getDocumentRequest $request is a request object for operation
      *
@@ -7507,7 +7499,7 @@ class WordsApi
     /*
      * Operation getDocumentAsyncWithHttpInfo
      *
-     * Reads document common info.
+     * Reads common information from the document.
      *
      * @param Requests\getDocumentRequest $request is a request object for operation
      *
@@ -7562,7 +7554,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectByIndex
      *
-     * Reads document drawing object common info by its index or convert to format specified.
+     * Reads a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectByIndexRequest $request is a request object for operation
      *
@@ -7585,7 +7577,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectByIndexWithHttpInfo
      *
-     * Reads document drawing object common info by its index or convert to format specified.
+     * Reads a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectByIndexRequest $request is a request object for operation
      *
@@ -7652,7 +7644,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectByIndexAsync
      *
-     * Reads document drawing object common info by its index or convert to format specified.
+     * Reads a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectByIndexRequest $request is a request object for operation
      *
@@ -7672,7 +7664,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectByIndexAsyncWithHttpInfo
      *
-     * Reads document drawing object common info by its index or convert to format specified.
+     * Reads a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectByIndexRequest $request is a request object for operation
      *
@@ -7727,7 +7719,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectImageData
      *
-     * Reads drawing object image data.
+     * Reads image data of a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectImageDataRequest $request is a request object for operation
      *
@@ -7750,7 +7742,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectImageDataWithHttpInfo
      *
-     * Reads drawing object image data.
+     * Reads image data of a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectImageDataRequest $request is a request object for operation
      *
@@ -7817,7 +7809,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectImageDataAsync
      *
-     * Reads drawing object image data.
+     * Reads image data of a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectImageDataRequest $request is a request object for operation
      *
@@ -7837,7 +7829,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectImageDataAsyncWithHttpInfo
      *
-     * Reads drawing object image data.
+     * Reads image data of a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectImageDataRequest $request is a request object for operation
      *
@@ -7892,7 +7884,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectOleData
      *
-     * Gets drawing object OLE data.
+     * Reads OLE data of a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectOleDataRequest $request is a request object for operation
      *
@@ -7915,7 +7907,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectOleDataWithHttpInfo
      *
-     * Gets drawing object OLE data.
+     * Reads OLE data of a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectOleDataRequest $request is a request object for operation
      *
@@ -7982,7 +7974,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectOleDataAsync
      *
-     * Gets drawing object OLE data.
+     * Reads OLE data of a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectOleDataRequest $request is a request object for operation
      *
@@ -8002,7 +7994,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectOleDataAsyncWithHttpInfo
      *
-     * Gets drawing object OLE data.
+     * Reads OLE data of a DrawingObject from the document node.
      *
      * @param Requests\getDocumentDrawingObjectOleDataRequest $request is a request object for operation
      *
@@ -8057,7 +8049,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjects
      *
-     * Reads document drawing objects common info.
+     * Reads DrawingObjects from the document node.
      *
      * @param Requests\getDocumentDrawingObjectsRequest $request is a request object for operation
      *
@@ -8080,7 +8072,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectsWithHttpInfo
      *
-     * Reads document drawing objects common info.
+     * Reads DrawingObjects from the document node.
      *
      * @param Requests\getDocumentDrawingObjectsRequest $request is a request object for operation
      *
@@ -8147,7 +8139,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectsAsync
      *
-     * Reads document drawing objects common info.
+     * Reads DrawingObjects from the document node.
      *
      * @param Requests\getDocumentDrawingObjectsRequest $request is a request object for operation
      *
@@ -8167,7 +8159,7 @@ class WordsApi
     /*
      * Operation getDocumentDrawingObjectsAsyncWithHttpInfo
      *
-     * Reads document drawing objects common info.
+     * Reads DrawingObjects from the document node.
      *
      * @param Requests\getDocumentDrawingObjectsRequest $request is a request object for operation
      *
@@ -8222,7 +8214,7 @@ class WordsApi
     /*
      * Operation getDocumentFieldNames
      *
-     * Reads document field names.
+     * Reads merge field names from the document.
      *
      * @param Requests\getDocumentFieldNamesRequest $request is a request object for operation
      *
@@ -8245,7 +8237,7 @@ class WordsApi
     /*
      * Operation getDocumentFieldNamesWithHttpInfo
      *
-     * Reads document field names.
+     * Reads merge field names from the document.
      *
      * @param Requests\getDocumentFieldNamesRequest $request is a request object for operation
      *
@@ -8312,7 +8304,7 @@ class WordsApi
     /*
      * Operation getDocumentFieldNamesAsync
      *
-     * Reads document field names.
+     * Reads merge field names from the document.
      *
      * @param Requests\getDocumentFieldNamesRequest $request is a request object for operation
      *
@@ -8332,7 +8324,7 @@ class WordsApi
     /*
      * Operation getDocumentFieldNamesAsyncWithHttpInfo
      *
-     * Reads document field names.
+     * Reads merge field names from the document.
      *
      * @param Requests\getDocumentFieldNamesRequest $request is a request object for operation
      *
@@ -8387,7 +8379,7 @@ class WordsApi
     /*
      * Operation getDocumentFieldNamesOnline
      *
-     * Reads document field names.
+     * Reads merge field names from the document.
      *
      * @param Requests\getDocumentFieldNamesOnlineRequest $request is a request object for operation
      *
@@ -8410,7 +8402,7 @@ class WordsApi
     /*
      * Operation getDocumentFieldNamesOnlineWithHttpInfo
      *
-     * Reads document field names.
+     * Reads merge field names from the document.
      *
      * @param Requests\getDocumentFieldNamesOnlineRequest $request is a request object for operation
      *
@@ -8477,7 +8469,7 @@ class WordsApi
     /*
      * Operation getDocumentFieldNamesOnlineAsync
      *
-     * Reads document field names.
+     * Reads merge field names from the document.
      *
      * @param Requests\getDocumentFieldNamesOnlineRequest $request is a request object for operation
      *
@@ -8497,7 +8489,7 @@ class WordsApi
     /*
      * Operation getDocumentFieldNamesOnlineAsyncWithHttpInfo
      *
-     * Reads document field names.
+     * Reads merge field names from the document.
      *
      * @param Requests\getDocumentFieldNamesOnlineRequest $request is a request object for operation
      *
@@ -8552,7 +8544,7 @@ class WordsApi
     /*
      * Operation getDocumentHyperlinkByIndex
      *
-     * Reads document hyperlink by its index.
+     * Reads a hyperlink from the document.
      *
      * @param Requests\getDocumentHyperlinkByIndexRequest $request is a request object for operation
      *
@@ -8575,7 +8567,7 @@ class WordsApi
     /*
      * Operation getDocumentHyperlinkByIndexWithHttpInfo
      *
-     * Reads document hyperlink by its index.
+     * Reads a hyperlink from the document.
      *
      * @param Requests\getDocumentHyperlinkByIndexRequest $request is a request object for operation
      *
@@ -8642,7 +8634,7 @@ class WordsApi
     /*
      * Operation getDocumentHyperlinkByIndexAsync
      *
-     * Reads document hyperlink by its index.
+     * Reads a hyperlink from the document.
      *
      * @param Requests\getDocumentHyperlinkByIndexRequest $request is a request object for operation
      *
@@ -8662,7 +8654,7 @@ class WordsApi
     /*
      * Operation getDocumentHyperlinkByIndexAsyncWithHttpInfo
      *
-     * Reads document hyperlink by its index.
+     * Reads a hyperlink from the document.
      *
      * @param Requests\getDocumentHyperlinkByIndexRequest $request is a request object for operation
      *
@@ -8717,7 +8709,7 @@ class WordsApi
     /*
      * Operation getDocumentHyperlinks
      *
-     * Reads document hyperlinks common info.
+     * Reads hyperlinks from the document.
      *
      * @param Requests\getDocumentHyperlinksRequest $request is a request object for operation
      *
@@ -8740,7 +8732,7 @@ class WordsApi
     /*
      * Operation getDocumentHyperlinksWithHttpInfo
      *
-     * Reads document hyperlinks common info.
+     * Reads hyperlinks from the document.
      *
      * @param Requests\getDocumentHyperlinksRequest $request is a request object for operation
      *
@@ -8807,7 +8799,7 @@ class WordsApi
     /*
      * Operation getDocumentHyperlinksAsync
      *
-     * Reads document hyperlinks common info.
+     * Reads hyperlinks from the document.
      *
      * @param Requests\getDocumentHyperlinksRequest $request is a request object for operation
      *
@@ -8827,7 +8819,7 @@ class WordsApi
     /*
      * Operation getDocumentHyperlinksAsyncWithHttpInfo
      *
-     * Reads document hyperlinks common info.
+     * Reads hyperlinks from the document.
      *
      * @param Requests\getDocumentHyperlinksRequest $request is a request object for operation
      *
@@ -8882,7 +8874,7 @@ class WordsApi
     /*
      * Operation getDocumentProperties
      *
-     * Reads document properties info.
+     * Reads document properties.
      *
      * @param Requests\getDocumentPropertiesRequest $request is a request object for operation
      *
@@ -8905,7 +8897,7 @@ class WordsApi
     /*
      * Operation getDocumentPropertiesWithHttpInfo
      *
-     * Reads document properties info.
+     * Reads document properties.
      *
      * @param Requests\getDocumentPropertiesRequest $request is a request object for operation
      *
@@ -8972,7 +8964,7 @@ class WordsApi
     /*
      * Operation getDocumentPropertiesAsync
      *
-     * Reads document properties info.
+     * Reads document properties.
      *
      * @param Requests\getDocumentPropertiesRequest $request is a request object for operation
      *
@@ -8992,7 +8984,7 @@ class WordsApi
     /*
      * Operation getDocumentPropertiesAsyncWithHttpInfo
      *
-     * Reads document properties info.
+     * Reads document properties.
      *
      * @param Requests\getDocumentPropertiesRequest $request is a request object for operation
      *
@@ -9047,7 +9039,7 @@ class WordsApi
     /*
      * Operation getDocumentProperty
      *
-     * Reads document property info by the property name.
+     * Reads a document property.
      *
      * @param Requests\getDocumentPropertyRequest $request is a request object for operation
      *
@@ -9070,7 +9062,7 @@ class WordsApi
     /*
      * Operation getDocumentPropertyWithHttpInfo
      *
-     * Reads document property info by the property name.
+     * Reads a document property.
      *
      * @param Requests\getDocumentPropertyRequest $request is a request object for operation
      *
@@ -9137,7 +9129,7 @@ class WordsApi
     /*
      * Operation getDocumentPropertyAsync
      *
-     * Reads document property info by the property name.
+     * Reads a document property.
      *
      * @param Requests\getDocumentPropertyRequest $request is a request object for operation
      *
@@ -9157,7 +9149,7 @@ class WordsApi
     /*
      * Operation getDocumentPropertyAsyncWithHttpInfo
      *
-     * Reads document property info by the property name.
+     * Reads a document property.
      *
      * @param Requests\getDocumentPropertyRequest $request is a request object for operation
      *
@@ -9212,7 +9204,7 @@ class WordsApi
     /*
      * Operation getDocumentProtection
      *
-     * Reads document protection common info.
+     * Reads protection properties from the document.
      *
      * @param Requests\getDocumentProtectionRequest $request is a request object for operation
      *
@@ -9235,7 +9227,7 @@ class WordsApi
     /*
      * Operation getDocumentProtectionWithHttpInfo
      *
-     * Reads document protection common info.
+     * Reads protection properties from the document.
      *
      * @param Requests\getDocumentProtectionRequest $request is a request object for operation
      *
@@ -9302,7 +9294,7 @@ class WordsApi
     /*
      * Operation getDocumentProtectionAsync
      *
-     * Reads document protection common info.
+     * Reads protection properties from the document.
      *
      * @param Requests\getDocumentProtectionRequest $request is a request object for operation
      *
@@ -9322,7 +9314,7 @@ class WordsApi
     /*
      * Operation getDocumentProtectionAsyncWithHttpInfo
      *
-     * Reads document protection common info.
+     * Reads protection properties from the document.
      *
      * @param Requests\getDocumentProtectionRequest $request is a request object for operation
      *
@@ -9542,7 +9534,7 @@ class WordsApi
     /*
      * Operation getDocumentWithFormat
      *
-     * Exports the document into the specified format.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\getDocumentWithFormatRequest $request is a request object for operation
      *
@@ -9565,7 +9557,7 @@ class WordsApi
     /*
      * Operation getDocumentWithFormatWithHttpInfo
      *
-     * Exports the document into the specified format.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\getDocumentWithFormatRequest $request is a request object for operation
      *
@@ -9632,7 +9624,7 @@ class WordsApi
     /*
      * Operation getDocumentWithFormatAsync
      *
-     * Exports the document into the specified format.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\getDocumentWithFormatRequest $request is a request object for operation
      *
@@ -9652,7 +9644,7 @@ class WordsApi
     /*
      * Operation getDocumentWithFormatAsyncWithHttpInfo
      *
-     * Exports the document into the specified format.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\getDocumentWithFormatRequest $request is a request object for operation
      *
@@ -9707,7 +9699,7 @@ class WordsApi
     /*
      * Operation getField
      *
-     * Gets field from document.
+     * Reads a field from the document node.
      *
      * @param Requests\getFieldRequest $request is a request object for operation
      *
@@ -9730,7 +9722,7 @@ class WordsApi
     /*
      * Operation getFieldWithHttpInfo
      *
-     * Gets field from document.
+     * Reads a field from the document node.
      *
      * @param Requests\getFieldRequest $request is a request object for operation
      *
@@ -9797,7 +9789,7 @@ class WordsApi
     /*
      * Operation getFieldAsync
      *
-     * Gets field from document.
+     * Reads a field from the document node.
      *
      * @param Requests\getFieldRequest $request is a request object for operation
      *
@@ -9817,7 +9809,7 @@ class WordsApi
     /*
      * Operation getFieldAsyncWithHttpInfo
      *
-     * Gets field from document.
+     * Reads a field from the document node.
      *
      * @param Requests\getFieldRequest $request is a request object for operation
      *
@@ -9872,7 +9864,7 @@ class WordsApi
     /*
      * Operation getFields
      *
-     * Get fields from document.
+     * Reads fields from the document node.
      *
      * @param Requests\getFieldsRequest $request is a request object for operation
      *
@@ -9895,7 +9887,7 @@ class WordsApi
     /*
      * Operation getFieldsWithHttpInfo
      *
-     * Get fields from document.
+     * Reads fields from the document node.
      *
      * @param Requests\getFieldsRequest $request is a request object for operation
      *
@@ -9962,7 +9954,7 @@ class WordsApi
     /*
      * Operation getFieldsAsync
      *
-     * Get fields from document.
+     * Reads fields from the document node.
      *
      * @param Requests\getFieldsRequest $request is a request object for operation
      *
@@ -9982,7 +9974,7 @@ class WordsApi
     /*
      * Operation getFieldsAsyncWithHttpInfo
      *
-     * Get fields from document.
+     * Reads fields from the document node.
      *
      * @param Requests\getFieldsRequest $request is a request object for operation
      *
@@ -10202,7 +10194,7 @@ class WordsApi
     /*
      * Operation getFootnote
      *
-     * Reads footnote by index.
+     * Reads a footnote from the document node.
      *
      * @param Requests\getFootnoteRequest $request is a request object for operation
      *
@@ -10225,7 +10217,7 @@ class WordsApi
     /*
      * Operation getFootnoteWithHttpInfo
      *
-     * Reads footnote by index.
+     * Reads a footnote from the document node.
      *
      * @param Requests\getFootnoteRequest $request is a request object for operation
      *
@@ -10292,7 +10284,7 @@ class WordsApi
     /*
      * Operation getFootnoteAsync
      *
-     * Reads footnote by index.
+     * Reads a footnote from the document node.
      *
      * @param Requests\getFootnoteRequest $request is a request object for operation
      *
@@ -10312,7 +10304,7 @@ class WordsApi
     /*
      * Operation getFootnoteAsyncWithHttpInfo
      *
-     * Reads footnote by index.
+     * Reads a footnote from the document node.
      *
      * @param Requests\getFootnoteRequest $request is a request object for operation
      *
@@ -10367,7 +10359,7 @@ class WordsApi
     /*
      * Operation getFootnotes
      *
-     * Gets footnotes from document.
+     * Reads footnotes from the document node.
      *
      * @param Requests\getFootnotesRequest $request is a request object for operation
      *
@@ -10390,7 +10382,7 @@ class WordsApi
     /*
      * Operation getFootnotesWithHttpInfo
      *
-     * Gets footnotes from document.
+     * Reads footnotes from the document node.
      *
      * @param Requests\getFootnotesRequest $request is a request object for operation
      *
@@ -10457,7 +10449,7 @@ class WordsApi
     /*
      * Operation getFootnotesAsync
      *
-     * Gets footnotes from document.
+     * Reads footnotes from the document node.
      *
      * @param Requests\getFootnotesRequest $request is a request object for operation
      *
@@ -10477,7 +10469,7 @@ class WordsApi
     /*
      * Operation getFootnotesAsyncWithHttpInfo
      *
-     * Gets footnotes from document.
+     * Reads footnotes from the document node.
      *
      * @param Requests\getFootnotesRequest $request is a request object for operation
      *
@@ -10532,7 +10524,7 @@ class WordsApi
     /*
      * Operation getFormField
      *
-     * Returns representation of an one of the form field.
+     * Reads a form field from the document node.
      *
      * @param Requests\getFormFieldRequest $request is a request object for operation
      *
@@ -10555,7 +10547,7 @@ class WordsApi
     /*
      * Operation getFormFieldWithHttpInfo
      *
-     * Returns representation of an one of the form field.
+     * Reads a form field from the document node.
      *
      * @param Requests\getFormFieldRequest $request is a request object for operation
      *
@@ -10622,7 +10614,7 @@ class WordsApi
     /*
      * Operation getFormFieldAsync
      *
-     * Returns representation of an one of the form field.
+     * Reads a form field from the document node.
      *
      * @param Requests\getFormFieldRequest $request is a request object for operation
      *
@@ -10642,7 +10634,7 @@ class WordsApi
     /*
      * Operation getFormFieldAsyncWithHttpInfo
      *
-     * Returns representation of an one of the form field.
+     * Reads a form field from the document node.
      *
      * @param Requests\getFormFieldRequest $request is a request object for operation
      *
@@ -10697,7 +10689,7 @@ class WordsApi
     /*
      * Operation getFormFields
      *
-     * Gets form fields from document.
+     * Reads form fields from the document node.
      *
      * @param Requests\getFormFieldsRequest $request is a request object for operation
      *
@@ -10720,7 +10712,7 @@ class WordsApi
     /*
      * Operation getFormFieldsWithHttpInfo
      *
-     * Gets form fields from document.
+     * Reads form fields from the document node.
      *
      * @param Requests\getFormFieldsRequest $request is a request object for operation
      *
@@ -10787,7 +10779,7 @@ class WordsApi
     /*
      * Operation getFormFieldsAsync
      *
-     * Gets form fields from document.
+     * Reads form fields from the document node.
      *
      * @param Requests\getFormFieldsRequest $request is a request object for operation
      *
@@ -10807,7 +10799,7 @@ class WordsApi
     /*
      * Operation getFormFieldsAsyncWithHttpInfo
      *
-     * Gets form fields from document.
+     * Reads form fields from the document node.
      *
      * @param Requests\getFormFieldsRequest $request is a request object for operation
      *
@@ -10862,7 +10854,7 @@ class WordsApi
     /*
      * Operation getHeaderFooter
      *
-     * Returns a header/footer from the document by index.
+     * Reads a HeaderFooter object from the document.
      *
      * @param Requests\getHeaderFooterRequest $request is a request object for operation
      *
@@ -10885,7 +10877,7 @@ class WordsApi
     /*
      * Operation getHeaderFooterWithHttpInfo
      *
-     * Returns a header/footer from the document by index.
+     * Reads a HeaderFooter object from the document.
      *
      * @param Requests\getHeaderFooterRequest $request is a request object for operation
      *
@@ -10952,7 +10944,7 @@ class WordsApi
     /*
      * Operation getHeaderFooterAsync
      *
-     * Returns a header/footer from the document by index.
+     * Reads a HeaderFooter object from the document.
      *
      * @param Requests\getHeaderFooterRequest $request is a request object for operation
      *
@@ -10972,7 +10964,7 @@ class WordsApi
     /*
      * Operation getHeaderFooterAsyncWithHttpInfo
      *
-     * Returns a header/footer from the document by index.
+     * Reads a HeaderFooter object from the document.
      *
      * @param Requests\getHeaderFooterRequest $request is a request object for operation
      *
@@ -11027,7 +11019,7 @@ class WordsApi
     /*
      * Operation getHeaderFooterOfSection
      *
-     * Returns a header/footer from the document section.
+     * Reads a HeaderFooter object from the document section.
      *
      * @param Requests\getHeaderFooterOfSectionRequest $request is a request object for operation
      *
@@ -11050,7 +11042,7 @@ class WordsApi
     /*
      * Operation getHeaderFooterOfSectionWithHttpInfo
      *
-     * Returns a header/footer from the document section.
+     * Reads a HeaderFooter object from the document section.
      *
      * @param Requests\getHeaderFooterOfSectionRequest $request is a request object for operation
      *
@@ -11117,7 +11109,7 @@ class WordsApi
     /*
      * Operation getHeaderFooterOfSectionAsync
      *
-     * Returns a header/footer from the document section.
+     * Reads a HeaderFooter object from the document section.
      *
      * @param Requests\getHeaderFooterOfSectionRequest $request is a request object for operation
      *
@@ -11137,7 +11129,7 @@ class WordsApi
     /*
      * Operation getHeaderFooterOfSectionAsyncWithHttpInfo
      *
-     * Returns a header/footer from the document section.
+     * Reads a HeaderFooter object from the document section.
      *
      * @param Requests\getHeaderFooterOfSectionRequest $request is a request object for operation
      *
@@ -11192,7 +11184,7 @@ class WordsApi
     /*
      * Operation getHeaderFooters
      *
-     * Returns a list of header/footers from the document.
+     * Reads HeaderFooter objects from the document section.
      *
      * @param Requests\getHeaderFootersRequest $request is a request object for operation
      *
@@ -11215,7 +11207,7 @@ class WordsApi
     /*
      * Operation getHeaderFootersWithHttpInfo
      *
-     * Returns a list of header/footers from the document.
+     * Reads HeaderFooter objects from the document section.
      *
      * @param Requests\getHeaderFootersRequest $request is a request object for operation
      *
@@ -11282,7 +11274,7 @@ class WordsApi
     /*
      * Operation getHeaderFootersAsync
      *
-     * Returns a list of header/footers from the document.
+     * Reads HeaderFooter objects from the document section.
      *
      * @param Requests\getHeaderFootersRequest $request is a request object for operation
      *
@@ -11302,7 +11294,7 @@ class WordsApi
     /*
      * Operation getHeaderFootersAsyncWithHttpInfo
      *
-     * Returns a list of header/footers from the document.
+     * Reads HeaderFooter objects from the document section.
      *
      * @param Requests\getHeaderFootersRequest $request is a request object for operation
      *
@@ -11357,7 +11349,7 @@ class WordsApi
     /*
      * Operation getList
      *
-     * This resource represents one of the lists contained in the document.
+     * Reads a list from the document.
      *
      * @param Requests\getListRequest $request is a request object for operation
      *
@@ -11380,7 +11372,7 @@ class WordsApi
     /*
      * Operation getListWithHttpInfo
      *
-     * This resource represents one of the lists contained in the document.
+     * Reads a list from the document.
      *
      * @param Requests\getListRequest $request is a request object for operation
      *
@@ -11447,7 +11439,7 @@ class WordsApi
     /*
      * Operation getListAsync
      *
-     * This resource represents one of the lists contained in the document.
+     * Reads a list from the document.
      *
      * @param Requests\getListRequest $request is a request object for operation
      *
@@ -11467,7 +11459,7 @@ class WordsApi
     /*
      * Operation getListAsyncWithHttpInfo
      *
-     * This resource represents one of the lists contained in the document.
+     * Reads a list from the document.
      *
      * @param Requests\getListRequest $request is a request object for operation
      *
@@ -11522,7 +11514,7 @@ class WordsApi
     /*
      * Operation getLists
      *
-     * Returns a list of lists that are contained in the document.
+     * Reads lists from the document.
      *
      * @param Requests\getListsRequest $request is a request object for operation
      *
@@ -11545,7 +11537,7 @@ class WordsApi
     /*
      * Operation getListsWithHttpInfo
      *
-     * Returns a list of lists that are contained in the document.
+     * Reads lists from the document.
      *
      * @param Requests\getListsRequest $request is a request object for operation
      *
@@ -11612,7 +11604,7 @@ class WordsApi
     /*
      * Operation getListsAsync
      *
-     * Returns a list of lists that are contained in the document.
+     * Reads lists from the document.
      *
      * @param Requests\getListsRequest $request is a request object for operation
      *
@@ -11632,7 +11624,7 @@ class WordsApi
     /*
      * Operation getListsAsyncWithHttpInfo
      *
-     * Returns a list of lists that are contained in the document.
+     * Reads lists from the document.
      *
      * @param Requests\getListsRequest $request is a request object for operation
      *
@@ -11687,7 +11679,7 @@ class WordsApi
     /*
      * Operation getOfficeMathObject
      *
-     * Reads OfficeMath object by index.
+     * Reads an OfficeMath object from the document node.
      *
      * @param Requests\getOfficeMathObjectRequest $request is a request object for operation
      *
@@ -11710,7 +11702,7 @@ class WordsApi
     /*
      * Operation getOfficeMathObjectWithHttpInfo
      *
-     * Reads OfficeMath object by index.
+     * Reads an OfficeMath object from the document node.
      *
      * @param Requests\getOfficeMathObjectRequest $request is a request object for operation
      *
@@ -11777,7 +11769,7 @@ class WordsApi
     /*
      * Operation getOfficeMathObjectAsync
      *
-     * Reads OfficeMath object by index.
+     * Reads an OfficeMath object from the document node.
      *
      * @param Requests\getOfficeMathObjectRequest $request is a request object for operation
      *
@@ -11797,7 +11789,7 @@ class WordsApi
     /*
      * Operation getOfficeMathObjectAsyncWithHttpInfo
      *
-     * Reads OfficeMath object by index.
+     * Reads an OfficeMath object from the document node.
      *
      * @param Requests\getOfficeMathObjectRequest $request is a request object for operation
      *
@@ -11852,7 +11844,7 @@ class WordsApi
     /*
      * Operation getOfficeMathObjects
      *
-     * Gets OfficeMath objects from document.
+     * Reads OfficeMath objects from the document node.
      *
      * @param Requests\getOfficeMathObjectsRequest $request is a request object for operation
      *
@@ -11875,7 +11867,7 @@ class WordsApi
     /*
      * Operation getOfficeMathObjectsWithHttpInfo
      *
-     * Gets OfficeMath objects from document.
+     * Reads OfficeMath objects from the document node.
      *
      * @param Requests\getOfficeMathObjectsRequest $request is a request object for operation
      *
@@ -11942,7 +11934,7 @@ class WordsApi
     /*
      * Operation getOfficeMathObjectsAsync
      *
-     * Gets OfficeMath objects from document.
+     * Reads OfficeMath objects from the document node.
      *
      * @param Requests\getOfficeMathObjectsRequest $request is a request object for operation
      *
@@ -11962,7 +11954,7 @@ class WordsApi
     /*
      * Operation getOfficeMathObjectsAsyncWithHttpInfo
      *
-     * Gets OfficeMath objects from document.
+     * Reads OfficeMath objects from the document node.
      *
      * @param Requests\getOfficeMathObjectsRequest $request is a request object for operation
      *
@@ -12017,7 +12009,7 @@ class WordsApi
     /*
      * Operation getParagraph
      *
-     * This resource represents one of the paragraphs contained in the document.
+     * Reads a paragraph from the document node.
      *
      * @param Requests\getParagraphRequest $request is a request object for operation
      *
@@ -12040,7 +12032,7 @@ class WordsApi
     /*
      * Operation getParagraphWithHttpInfo
      *
-     * This resource represents one of the paragraphs contained in the document.
+     * Reads a paragraph from the document node.
      *
      * @param Requests\getParagraphRequest $request is a request object for operation
      *
@@ -12107,7 +12099,7 @@ class WordsApi
     /*
      * Operation getParagraphAsync
      *
-     * This resource represents one of the paragraphs contained in the document.
+     * Reads a paragraph from the document node.
      *
      * @param Requests\getParagraphRequest $request is a request object for operation
      *
@@ -12127,7 +12119,7 @@ class WordsApi
     /*
      * Operation getParagraphAsyncWithHttpInfo
      *
-     * This resource represents one of the paragraphs contained in the document.
+     * Reads a paragraph from the document node.
      *
      * @param Requests\getParagraphRequest $request is a request object for operation
      *
@@ -12182,7 +12174,7 @@ class WordsApi
     /*
      * Operation getParagraphFormat
      *
-     * Represents all the formatting for a paragraph.
+     * Reads the formatting properties of a paragraph from the document node.
      *
      * @param Requests\getParagraphFormatRequest $request is a request object for operation
      *
@@ -12205,7 +12197,7 @@ class WordsApi
     /*
      * Operation getParagraphFormatWithHttpInfo
      *
-     * Represents all the formatting for a paragraph.
+     * Reads the formatting properties of a paragraph from the document node.
      *
      * @param Requests\getParagraphFormatRequest $request is a request object for operation
      *
@@ -12272,7 +12264,7 @@ class WordsApi
     /*
      * Operation getParagraphFormatAsync
      *
-     * Represents all the formatting for a paragraph.
+     * Reads the formatting properties of a paragraph from the document node.
      *
      * @param Requests\getParagraphFormatRequest $request is a request object for operation
      *
@@ -12292,7 +12284,7 @@ class WordsApi
     /*
      * Operation getParagraphFormatAsyncWithHttpInfo
      *
-     * Represents all the formatting for a paragraph.
+     * Reads the formatting properties of a paragraph from the document node.
      *
      * @param Requests\getParagraphFormatRequest $request is a request object for operation
      *
@@ -12347,7 +12339,7 @@ class WordsApi
     /*
      * Operation getParagraphListFormat
      *
-     * Represents list format for a paragraph.
+     * Reads the formatting properties of a paragraph list from the document node.
      *
      * @param Requests\getParagraphListFormatRequest $request is a request object for operation
      *
@@ -12370,7 +12362,7 @@ class WordsApi
     /*
      * Operation getParagraphListFormatWithHttpInfo
      *
-     * Represents list format for a paragraph.
+     * Reads the formatting properties of a paragraph list from the document node.
      *
      * @param Requests\getParagraphListFormatRequest $request is a request object for operation
      *
@@ -12437,7 +12429,7 @@ class WordsApi
     /*
      * Operation getParagraphListFormatAsync
      *
-     * Represents list format for a paragraph.
+     * Reads the formatting properties of a paragraph list from the document node.
      *
      * @param Requests\getParagraphListFormatRequest $request is a request object for operation
      *
@@ -12457,7 +12449,7 @@ class WordsApi
     /*
      * Operation getParagraphListFormatAsyncWithHttpInfo
      *
-     * Represents list format for a paragraph.
+     * Reads the formatting properties of a paragraph list from the document node.
      *
      * @param Requests\getParagraphListFormatRequest $request is a request object for operation
      *
@@ -12512,7 +12504,7 @@ class WordsApi
     /*
      * Operation getParagraphs
      *
-     * Returns a list of paragraphs that are contained in the document.
+     * Reads paragraphs from the document node.
      *
      * @param Requests\getParagraphsRequest $request is a request object for operation
      *
@@ -12535,7 +12527,7 @@ class WordsApi
     /*
      * Operation getParagraphsWithHttpInfo
      *
-     * Returns a list of paragraphs that are contained in the document.
+     * Reads paragraphs from the document node.
      *
      * @param Requests\getParagraphsRequest $request is a request object for operation
      *
@@ -12602,7 +12594,7 @@ class WordsApi
     /*
      * Operation getParagraphsAsync
      *
-     * Returns a list of paragraphs that are contained in the document.
+     * Reads paragraphs from the document node.
      *
      * @param Requests\getParagraphsRequest $request is a request object for operation
      *
@@ -12622,7 +12614,7 @@ class WordsApi
     /*
      * Operation getParagraphsAsyncWithHttpInfo
      *
-     * Returns a list of paragraphs that are contained in the document.
+     * Reads paragraphs from the document node.
      *
      * @param Requests\getParagraphsRequest $request is a request object for operation
      *
@@ -12677,7 +12669,7 @@ class WordsApi
     /*
      * Operation getParagraphTabStops
      *
-     * Get all tab stops for the paragraph.
+     * Reads paragraph tab stops from the document node.
      *
      * @param Requests\getParagraphTabStopsRequest $request is a request object for operation
      *
@@ -12700,7 +12692,7 @@ class WordsApi
     /*
      * Operation getParagraphTabStopsWithHttpInfo
      *
-     * Get all tab stops for the paragraph.
+     * Reads paragraph tab stops from the document node.
      *
      * @param Requests\getParagraphTabStopsRequest $request is a request object for operation
      *
@@ -12767,7 +12759,7 @@ class WordsApi
     /*
      * Operation getParagraphTabStopsAsync
      *
-     * Get all tab stops for the paragraph.
+     * Reads paragraph tab stops from the document node.
      *
      * @param Requests\getParagraphTabStopsRequest $request is a request object for operation
      *
@@ -12787,7 +12779,7 @@ class WordsApi
     /*
      * Operation getParagraphTabStopsAsyncWithHttpInfo
      *
-     * Get all tab stops for the paragraph.
+     * Reads paragraph tab stops from the document node.
      *
      * @param Requests\getParagraphTabStopsRequest $request is a request object for operation
      *
@@ -12842,7 +12834,7 @@ class WordsApi
     /*
      * Operation getRangeText
      *
-     * Gets the text from the range.
+     * Reads range text from the document.
      *
      * @param Requests\getRangeTextRequest $request is a request object for operation
      *
@@ -12865,7 +12857,7 @@ class WordsApi
     /*
      * Operation getRangeTextWithHttpInfo
      *
-     * Gets the text from the range.
+     * Reads range text from the document.
      *
      * @param Requests\getRangeTextRequest $request is a request object for operation
      *
@@ -12932,7 +12924,7 @@ class WordsApi
     /*
      * Operation getRangeTextAsync
      *
-     * Gets the text from the range.
+     * Reads range text from the document.
      *
      * @param Requests\getRangeTextRequest $request is a request object for operation
      *
@@ -12952,7 +12944,7 @@ class WordsApi
     /*
      * Operation getRangeTextAsyncWithHttpInfo
      *
-     * Gets the text from the range.
+     * Reads range text from the document.
      *
      * @param Requests\getRangeTextRequest $request is a request object for operation
      *
@@ -13007,7 +12999,7 @@ class WordsApi
     /*
      * Operation getRun
      *
-     * This resource represents run of text contained in the document.
+     * Reads a Run object from the paragraph.
      *
      * @param Requests\getRunRequest $request is a request object for operation
      *
@@ -13030,7 +13022,7 @@ class WordsApi
     /*
      * Operation getRunWithHttpInfo
      *
-     * This resource represents run of text contained in the document.
+     * Reads a Run object from the paragraph.
      *
      * @param Requests\getRunRequest $request is a request object for operation
      *
@@ -13097,7 +13089,7 @@ class WordsApi
     /*
      * Operation getRunAsync
      *
-     * This resource represents run of text contained in the document.
+     * Reads a Run object from the paragraph.
      *
      * @param Requests\getRunRequest $request is a request object for operation
      *
@@ -13117,7 +13109,7 @@ class WordsApi
     /*
      * Operation getRunAsyncWithHttpInfo
      *
-     * This resource represents run of text contained in the document.
+     * Reads a Run object from the paragraph.
      *
      * @param Requests\getRunRequest $request is a request object for operation
      *
@@ -13172,7 +13164,7 @@ class WordsApi
     /*
      * Operation getRunFont
      *
-     * This resource represents font of run.
+     * Reads the font properties of a Run object from the paragraph.
      *
      * @param Requests\getRunFontRequest $request is a request object for operation
      *
@@ -13195,7 +13187,7 @@ class WordsApi
     /*
      * Operation getRunFontWithHttpInfo
      *
-     * This resource represents font of run.
+     * Reads the font properties of a Run object from the paragraph.
      *
      * @param Requests\getRunFontRequest $request is a request object for operation
      *
@@ -13262,7 +13254,7 @@ class WordsApi
     /*
      * Operation getRunFontAsync
      *
-     * This resource represents font of run.
+     * Reads the font properties of a Run object from the paragraph.
      *
      * @param Requests\getRunFontRequest $request is a request object for operation
      *
@@ -13282,7 +13274,7 @@ class WordsApi
     /*
      * Operation getRunFontAsyncWithHttpInfo
      *
-     * This resource represents font of run.
+     * Reads the font properties of a Run object from the paragraph.
      *
      * @param Requests\getRunFontRequest $request is a request object for operation
      *
@@ -13337,7 +13329,7 @@ class WordsApi
     /*
      * Operation getRuns
      *
-     * This resource represents collection of runs in the paragraph.
+     * Reads Run objects from the paragraph.
      *
      * @param Requests\getRunsRequest $request is a request object for operation
      *
@@ -13360,7 +13352,7 @@ class WordsApi
     /*
      * Operation getRunsWithHttpInfo
      *
-     * This resource represents collection of runs in the paragraph.
+     * Reads Run objects from the paragraph.
      *
      * @param Requests\getRunsRequest $request is a request object for operation
      *
@@ -13427,7 +13419,7 @@ class WordsApi
     /*
      * Operation getRunsAsync
      *
-     * This resource represents collection of runs in the paragraph.
+     * Reads Run objects from the paragraph.
      *
      * @param Requests\getRunsRequest $request is a request object for operation
      *
@@ -13447,7 +13439,7 @@ class WordsApi
     /*
      * Operation getRunsAsyncWithHttpInfo
      *
-     * This resource represents collection of runs in the paragraph.
+     * Reads Run objects from the paragraph.
      *
      * @param Requests\getRunsRequest $request is a request object for operation
      *
@@ -13502,7 +13494,7 @@ class WordsApi
     /*
      * Operation getSection
      *
-     * Gets document section by index.
+     * Reads a section from the document.
      *
      * @param Requests\getSectionRequest $request is a request object for operation
      *
@@ -13525,7 +13517,7 @@ class WordsApi
     /*
      * Operation getSectionWithHttpInfo
      *
-     * Gets document section by index.
+     * Reads a section from the document.
      *
      * @param Requests\getSectionRequest $request is a request object for operation
      *
@@ -13592,7 +13584,7 @@ class WordsApi
     /*
      * Operation getSectionAsync
      *
-     * Gets document section by index.
+     * Reads a section from the document.
      *
      * @param Requests\getSectionRequest $request is a request object for operation
      *
@@ -13612,7 +13604,7 @@ class WordsApi
     /*
      * Operation getSectionAsyncWithHttpInfo
      *
-     * Gets document section by index.
+     * Reads a section from the document.
      *
      * @param Requests\getSectionRequest $request is a request object for operation
      *
@@ -13667,7 +13659,7 @@ class WordsApi
     /*
      * Operation getSectionPageSetup
      *
-     * Gets page setup of section.
+     * Reads the page setup of a section from the document.
      *
      * @param Requests\getSectionPageSetupRequest $request is a request object for operation
      *
@@ -13690,7 +13682,7 @@ class WordsApi
     /*
      * Operation getSectionPageSetupWithHttpInfo
      *
-     * Gets page setup of section.
+     * Reads the page setup of a section from the document.
      *
      * @param Requests\getSectionPageSetupRequest $request is a request object for operation
      *
@@ -13757,7 +13749,7 @@ class WordsApi
     /*
      * Operation getSectionPageSetupAsync
      *
-     * Gets page setup of section.
+     * Reads the page setup of a section from the document.
      *
      * @param Requests\getSectionPageSetupRequest $request is a request object for operation
      *
@@ -13777,7 +13769,7 @@ class WordsApi
     /*
      * Operation getSectionPageSetupAsyncWithHttpInfo
      *
-     * Gets page setup of section.
+     * Reads the page setup of a section from the document.
      *
      * @param Requests\getSectionPageSetupRequest $request is a request object for operation
      *
@@ -13832,7 +13824,7 @@ class WordsApi
     /*
      * Operation getSections
      *
-     * Returns a list of sections that are contained in the document.
+     * Reads sections from the document.
      *
      * @param Requests\getSectionsRequest $request is a request object for operation
      *
@@ -13855,7 +13847,7 @@ class WordsApi
     /*
      * Operation getSectionsWithHttpInfo
      *
-     * Returns a list of sections that are contained in the document.
+     * Reads sections from the document.
      *
      * @param Requests\getSectionsRequest $request is a request object for operation
      *
@@ -13922,7 +13914,7 @@ class WordsApi
     /*
      * Operation getSectionsAsync
      *
-     * Returns a list of sections that are contained in the document.
+     * Reads sections from the document.
      *
      * @param Requests\getSectionsRequest $request is a request object for operation
      *
@@ -13942,7 +13934,7 @@ class WordsApi
     /*
      * Operation getSectionsAsyncWithHttpInfo
      *
-     * Returns a list of sections that are contained in the document.
+     * Reads sections from the document.
      *
      * @param Requests\getSectionsRequest $request is a request object for operation
      *
@@ -13997,7 +13989,7 @@ class WordsApi
     /*
      * Operation getStyle
      *
-     * This resource represents one of the styles contained in the document.
+     * Reads a style from the document.
      *
      * @param Requests\getStyleRequest $request is a request object for operation
      *
@@ -14020,7 +14012,7 @@ class WordsApi
     /*
      * Operation getStyleWithHttpInfo
      *
-     * This resource represents one of the styles contained in the document.
+     * Reads a style from the document.
      *
      * @param Requests\getStyleRequest $request is a request object for operation
      *
@@ -14087,7 +14079,7 @@ class WordsApi
     /*
      * Operation getStyleAsync
      *
-     * This resource represents one of the styles contained in the document.
+     * Reads a style from the document.
      *
      * @param Requests\getStyleRequest $request is a request object for operation
      *
@@ -14107,7 +14099,7 @@ class WordsApi
     /*
      * Operation getStyleAsyncWithHttpInfo
      *
-     * This resource represents one of the styles contained in the document.
+     * Reads a style from the document.
      *
      * @param Requests\getStyleRequest $request is a request object for operation
      *
@@ -14162,7 +14154,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElement
      *
-     * Gets a style from the document node.
+     * Reads a style from the document node.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -14185,7 +14177,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElementWithHttpInfo
      *
-     * Gets a style from the document node.
+     * Reads a style from the document node.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -14252,7 +14244,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElementAsync
      *
-     * Gets a style from the document node.
+     * Reads a style from the document node.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -14272,7 +14264,7 @@ class WordsApi
     /*
      * Operation getStyleFromDocumentElementAsyncWithHttpInfo
      *
-     * Gets a style from the document node.
+     * Reads a style from the document node.
      *
      * @param Requests\getStyleFromDocumentElementRequest $request is a request object for operation
      *
@@ -14327,7 +14319,7 @@ class WordsApi
     /*
      * Operation getStyles
      *
-     * Returns a list of styles contained in the document.
+     * Reads styles from the document.
      *
      * @param Requests\getStylesRequest $request is a request object for operation
      *
@@ -14350,7 +14342,7 @@ class WordsApi
     /*
      * Operation getStylesWithHttpInfo
      *
-     * Returns a list of styles contained in the document.
+     * Reads styles from the document.
      *
      * @param Requests\getStylesRequest $request is a request object for operation
      *
@@ -14417,7 +14409,7 @@ class WordsApi
     /*
      * Operation getStylesAsync
      *
-     * Returns a list of styles contained in the document.
+     * Reads styles from the document.
      *
      * @param Requests\getStylesRequest $request is a request object for operation
      *
@@ -14437,7 +14429,7 @@ class WordsApi
     /*
      * Operation getStylesAsyncWithHttpInfo
      *
-     * Returns a list of styles contained in the document.
+     * Reads styles from the document.
      *
      * @param Requests\getStylesRequest $request is a request object for operation
      *
@@ -14492,7 +14484,7 @@ class WordsApi
     /*
      * Operation getTable
      *
-     * Returns a table.
+     * Reads a table from the document node.
      *
      * @param Requests\getTableRequest $request is a request object for operation
      *
@@ -14515,7 +14507,7 @@ class WordsApi
     /*
      * Operation getTableWithHttpInfo
      *
-     * Returns a table.
+     * Reads a table from the document node.
      *
      * @param Requests\getTableRequest $request is a request object for operation
      *
@@ -14582,7 +14574,7 @@ class WordsApi
     /*
      * Operation getTableAsync
      *
-     * Returns a table.
+     * Reads a table from the document node.
      *
      * @param Requests\getTableRequest $request is a request object for operation
      *
@@ -14602,7 +14594,7 @@ class WordsApi
     /*
      * Operation getTableAsyncWithHttpInfo
      *
-     * Returns a table.
+     * Reads a table from the document node.
      *
      * @param Requests\getTableRequest $request is a request object for operation
      *
@@ -14657,7 +14649,7 @@ class WordsApi
     /*
      * Operation getTableCell
      *
-     * Returns a table cell.
+     * Reads a cell from the table row.
      *
      * @param Requests\getTableCellRequest $request is a request object for operation
      *
@@ -14680,7 +14672,7 @@ class WordsApi
     /*
      * Operation getTableCellWithHttpInfo
      *
-     * Returns a table cell.
+     * Reads a cell from the table row.
      *
      * @param Requests\getTableCellRequest $request is a request object for operation
      *
@@ -14747,7 +14739,7 @@ class WordsApi
     /*
      * Operation getTableCellAsync
      *
-     * Returns a table cell.
+     * Reads a cell from the table row.
      *
      * @param Requests\getTableCellRequest $request is a request object for operation
      *
@@ -14767,7 +14759,7 @@ class WordsApi
     /*
      * Operation getTableCellAsyncWithHttpInfo
      *
-     * Returns a table cell.
+     * Reads a cell from the table row.
      *
      * @param Requests\getTableCellRequest $request is a request object for operation
      *
@@ -14822,7 +14814,7 @@ class WordsApi
     /*
      * Operation getTableCellFormat
      *
-     * Returns a table cell format.
+     * Reads the formatting properties of a table cell.
      *
      * @param Requests\getTableCellFormatRequest $request is a request object for operation
      *
@@ -14845,7 +14837,7 @@ class WordsApi
     /*
      * Operation getTableCellFormatWithHttpInfo
      *
-     * Returns a table cell format.
+     * Reads the formatting properties of a table cell.
      *
      * @param Requests\getTableCellFormatRequest $request is a request object for operation
      *
@@ -14912,7 +14904,7 @@ class WordsApi
     /*
      * Operation getTableCellFormatAsync
      *
-     * Returns a table cell format.
+     * Reads the formatting properties of a table cell.
      *
      * @param Requests\getTableCellFormatRequest $request is a request object for operation
      *
@@ -14932,7 +14924,7 @@ class WordsApi
     /*
      * Operation getTableCellFormatAsyncWithHttpInfo
      *
-     * Returns a table cell format.
+     * Reads the formatting properties of a table cell.
      *
      * @param Requests\getTableCellFormatRequest $request is a request object for operation
      *
@@ -14987,7 +14979,7 @@ class WordsApi
     /*
      * Operation getTableProperties
      *
-     * Returns a table properties.
+     * Reads properties of a table from the document node.
      *
      * @param Requests\getTablePropertiesRequest $request is a request object for operation
      *
@@ -15010,7 +15002,7 @@ class WordsApi
     /*
      * Operation getTablePropertiesWithHttpInfo
      *
-     * Returns a table properties.
+     * Reads properties of a table from the document node.
      *
      * @param Requests\getTablePropertiesRequest $request is a request object for operation
      *
@@ -15077,7 +15069,7 @@ class WordsApi
     /*
      * Operation getTablePropertiesAsync
      *
-     * Returns a table properties.
+     * Reads properties of a table from the document node.
      *
      * @param Requests\getTablePropertiesRequest $request is a request object for operation
      *
@@ -15097,7 +15089,7 @@ class WordsApi
     /*
      * Operation getTablePropertiesAsyncWithHttpInfo
      *
-     * Returns a table properties.
+     * Reads properties of a table from the document node.
      *
      * @param Requests\getTablePropertiesRequest $request is a request object for operation
      *
@@ -15152,7 +15144,7 @@ class WordsApi
     /*
      * Operation getTableRow
      *
-     * Returns a table row.
+     * Reads a row from the table.
      *
      * @param Requests\getTableRowRequest $request is a request object for operation
      *
@@ -15175,7 +15167,7 @@ class WordsApi
     /*
      * Operation getTableRowWithHttpInfo
      *
-     * Returns a table row.
+     * Reads a row from the table.
      *
      * @param Requests\getTableRowRequest $request is a request object for operation
      *
@@ -15242,7 +15234,7 @@ class WordsApi
     /*
      * Operation getTableRowAsync
      *
-     * Returns a table row.
+     * Reads a row from the table.
      *
      * @param Requests\getTableRowRequest $request is a request object for operation
      *
@@ -15262,7 +15254,7 @@ class WordsApi
     /*
      * Operation getTableRowAsyncWithHttpInfo
      *
-     * Returns a table row.
+     * Reads a row from the table.
      *
      * @param Requests\getTableRowRequest $request is a request object for operation
      *
@@ -15317,7 +15309,7 @@ class WordsApi
     /*
      * Operation getTableRowFormat
      *
-     * Returns a table row format.
+     * Reads the formatting properties of a table row.
      *
      * @param Requests\getTableRowFormatRequest $request is a request object for operation
      *
@@ -15340,7 +15332,7 @@ class WordsApi
     /*
      * Operation getTableRowFormatWithHttpInfo
      *
-     * Returns a table row format.
+     * Reads the formatting properties of a table row.
      *
      * @param Requests\getTableRowFormatRequest $request is a request object for operation
      *
@@ -15407,7 +15399,7 @@ class WordsApi
     /*
      * Operation getTableRowFormatAsync
      *
-     * Returns a table row format.
+     * Reads the formatting properties of a table row.
      *
      * @param Requests\getTableRowFormatRequest $request is a request object for operation
      *
@@ -15427,7 +15419,7 @@ class WordsApi
     /*
      * Operation getTableRowFormatAsyncWithHttpInfo
      *
-     * Returns a table row format.
+     * Reads the formatting properties of a table row.
      *
      * @param Requests\getTableRowFormatRequest $request is a request object for operation
      *
@@ -15482,7 +15474,7 @@ class WordsApi
     /*
      * Operation getTables
      *
-     * Returns a list of tables that are contained in the document.
+     * Reads tables from the document node.
      *
      * @param Requests\getTablesRequest $request is a request object for operation
      *
@@ -15505,7 +15497,7 @@ class WordsApi
     /*
      * Operation getTablesWithHttpInfo
      *
-     * Returns a list of tables that are contained in the document.
+     * Reads tables from the document node.
      *
      * @param Requests\getTablesRequest $request is a request object for operation
      *
@@ -15572,7 +15564,7 @@ class WordsApi
     /*
      * Operation getTablesAsync
      *
-     * Returns a list of tables that are contained in the document.
+     * Reads tables from the document node.
      *
      * @param Requests\getTablesRequest $request is a request object for operation
      *
@@ -15592,7 +15584,7 @@ class WordsApi
     /*
      * Operation getTablesAsyncWithHttpInfo
      *
-     * Returns a list of tables that are contained in the document.
+     * Reads tables from the document node.
      *
      * @param Requests\getTablesRequest $request is a request object for operation
      *
@@ -15647,7 +15639,7 @@ class WordsApi
     /*
      * Operation insertComment
      *
-     * Adds comment to document, returns inserted comment data.
+     * Inserts a new comment to the document.
      *
      * @param Requests\insertCommentRequest $request is a request object for operation
      *
@@ -15670,7 +15662,7 @@ class WordsApi
     /*
      * Operation insertCommentWithHttpInfo
      *
-     * Adds comment to document, returns inserted comment data.
+     * Inserts a new comment to the document.
      *
      * @param Requests\insertCommentRequest $request is a request object for operation
      *
@@ -15737,7 +15729,7 @@ class WordsApi
     /*
      * Operation insertCommentAsync
      *
-     * Adds comment to document, returns inserted comment data.
+     * Inserts a new comment to the document.
      *
      * @param Requests\insertCommentRequest $request is a request object for operation
      *
@@ -15757,7 +15749,7 @@ class WordsApi
     /*
      * Operation insertCommentAsyncWithHttpInfo
      *
-     * Adds comment to document, returns inserted comment data.
+     * Inserts a new comment to the document.
      *
      * @param Requests\insertCommentRequest $request is a request object for operation
      *
@@ -15812,7 +15804,7 @@ class WordsApi
     /*
      * Operation insertDrawingObject
      *
-     * Adds drawing object to document, returns added  drawing object's data.
+     * Inserts a new DrawingObject to the document node.
      *
      * @param Requests\insertDrawingObjectRequest $request is a request object for operation
      *
@@ -15835,7 +15827,7 @@ class WordsApi
     /*
      * Operation insertDrawingObjectWithHttpInfo
      *
-     * Adds drawing object to document, returns added  drawing object's data.
+     * Inserts a new DrawingObject to the document node.
      *
      * @param Requests\insertDrawingObjectRequest $request is a request object for operation
      *
@@ -15902,7 +15894,7 @@ class WordsApi
     /*
      * Operation insertDrawingObjectAsync
      *
-     * Adds drawing object to document, returns added  drawing object's data.
+     * Inserts a new DrawingObject to the document node.
      *
      * @param Requests\insertDrawingObjectRequest $request is a request object for operation
      *
@@ -15922,7 +15914,7 @@ class WordsApi
     /*
      * Operation insertDrawingObjectAsyncWithHttpInfo
      *
-     * Adds drawing object to document, returns added  drawing object's data.
+     * Inserts a new DrawingObject to the document node.
      *
      * @param Requests\insertDrawingObjectRequest $request is a request object for operation
      *
@@ -15977,7 +15969,7 @@ class WordsApi
     /*
      * Operation insertField
      *
-     * Adds field to document, returns inserted field's data.
+     * Inserts a new field to the document node.
      *
      * @param Requests\insertFieldRequest $request is a request object for operation
      *
@@ -16000,7 +15992,7 @@ class WordsApi
     /*
      * Operation insertFieldWithHttpInfo
      *
-     * Adds field to document, returns inserted field's data.
+     * Inserts a new field to the document node.
      *
      * @param Requests\insertFieldRequest $request is a request object for operation
      *
@@ -16067,7 +16059,7 @@ class WordsApi
     /*
      * Operation insertFieldAsync
      *
-     * Adds field to document, returns inserted field's data.
+     * Inserts a new field to the document node.
      *
      * @param Requests\insertFieldRequest $request is a request object for operation
      *
@@ -16087,7 +16079,7 @@ class WordsApi
     /*
      * Operation insertFieldAsyncWithHttpInfo
      *
-     * Adds field to document, returns inserted field's data.
+     * Inserts a new field to the document node.
      *
      * @param Requests\insertFieldRequest $request is a request object for operation
      *
@@ -16142,7 +16134,7 @@ class WordsApi
     /*
      * Operation insertFootnote
      *
-     * Adds footnote to document, returns added footnote's data.
+     * Inserts a new footnote to the document node.
      *
      * @param Requests\insertFootnoteRequest $request is a request object for operation
      *
@@ -16165,7 +16157,7 @@ class WordsApi
     /*
      * Operation insertFootnoteWithHttpInfo
      *
-     * Adds footnote to document, returns added footnote's data.
+     * Inserts a new footnote to the document node.
      *
      * @param Requests\insertFootnoteRequest $request is a request object for operation
      *
@@ -16232,7 +16224,7 @@ class WordsApi
     /*
      * Operation insertFootnoteAsync
      *
-     * Adds footnote to document, returns added footnote's data.
+     * Inserts a new footnote to the document node.
      *
      * @param Requests\insertFootnoteRequest $request is a request object for operation
      *
@@ -16252,7 +16244,7 @@ class WordsApi
     /*
      * Operation insertFootnoteAsyncWithHttpInfo
      *
-     * Adds footnote to document, returns added footnote's data.
+     * Inserts a new footnote to the document node.
      *
      * @param Requests\insertFootnoteRequest $request is a request object for operation
      *
@@ -16307,7 +16299,7 @@ class WordsApi
     /*
      * Operation insertFormField
      *
-     * Adds form field to paragraph, returns added form field's data.
+     * Inserts a new form field to the document node.
      *
      * @param Requests\insertFormFieldRequest $request is a request object for operation
      *
@@ -16330,7 +16322,7 @@ class WordsApi
     /*
      * Operation insertFormFieldWithHttpInfo
      *
-     * Adds form field to paragraph, returns added form field's data.
+     * Inserts a new form field to the document node.
      *
      * @param Requests\insertFormFieldRequest $request is a request object for operation
      *
@@ -16397,7 +16389,7 @@ class WordsApi
     /*
      * Operation insertFormFieldAsync
      *
-     * Adds form field to paragraph, returns added form field's data.
+     * Inserts a new form field to the document node.
      *
      * @param Requests\insertFormFieldRequest $request is a request object for operation
      *
@@ -16417,7 +16409,7 @@ class WordsApi
     /*
      * Operation insertFormFieldAsyncWithHttpInfo
      *
-     * Adds form field to paragraph, returns added form field's data.
+     * Inserts a new form field to the document node.
      *
      * @param Requests\insertFormFieldRequest $request is a request object for operation
      *
@@ -16472,7 +16464,7 @@ class WordsApi
     /*
      * Operation insertHeaderFooter
      *
-     * Inserts to document header or footer.
+     * Inserts a new HeaderFooter object to the document section.
      *
      * @param Requests\insertHeaderFooterRequest $request is a request object for operation
      *
@@ -16495,7 +16487,7 @@ class WordsApi
     /*
      * Operation insertHeaderFooterWithHttpInfo
      *
-     * Inserts to document header or footer.
+     * Inserts a new HeaderFooter object to the document section.
      *
      * @param Requests\insertHeaderFooterRequest $request is a request object for operation
      *
@@ -16562,7 +16554,7 @@ class WordsApi
     /*
      * Operation insertHeaderFooterAsync
      *
-     * Inserts to document header or footer.
+     * Inserts a new HeaderFooter object to the document section.
      *
      * @param Requests\insertHeaderFooterRequest $request is a request object for operation
      *
@@ -16582,7 +16574,7 @@ class WordsApi
     /*
      * Operation insertHeaderFooterAsyncWithHttpInfo
      *
-     * Inserts to document header or footer.
+     * Inserts a new HeaderFooter object to the document section.
      *
      * @param Requests\insertHeaderFooterRequest $request is a request object for operation
      *
@@ -16637,7 +16629,7 @@ class WordsApi
     /*
      * Operation insertList
      *
-     * Adds list to document, returns added list's data.
+     * Inserts a new list to the document.
      *
      * @param Requests\insertListRequest $request is a request object for operation
      *
@@ -16660,7 +16652,7 @@ class WordsApi
     /*
      * Operation insertListWithHttpInfo
      *
-     * Adds list to document, returns added list's data.
+     * Inserts a new list to the document.
      *
      * @param Requests\insertListRequest $request is a request object for operation
      *
@@ -16727,7 +16719,7 @@ class WordsApi
     /*
      * Operation insertListAsync
      *
-     * Adds list to document, returns added list's data.
+     * Inserts a new list to the document.
      *
      * @param Requests\insertListRequest $request is a request object for operation
      *
@@ -16747,7 +16739,7 @@ class WordsApi
     /*
      * Operation insertListAsyncWithHttpInfo
      *
-     * Adds list to document, returns added list's data.
+     * Inserts a new list to the document.
      *
      * @param Requests\insertListRequest $request is a request object for operation
      *
@@ -16802,7 +16794,7 @@ class WordsApi
     /*
      * Operation insertOrUpdateParagraphTabStop
      *
-     * Insert or resplace tab stop if a tab stop with the position exists.
+     * Inserts a new or updates an existing paragraph tab stop in the document node.
      *
      * @param Requests\insertOrUpdateParagraphTabStopRequest $request is a request object for operation
      *
@@ -16825,7 +16817,7 @@ class WordsApi
     /*
      * Operation insertOrUpdateParagraphTabStopWithHttpInfo
      *
-     * Insert or resplace tab stop if a tab stop with the position exists.
+     * Inserts a new or updates an existing paragraph tab stop in the document node.
      *
      * @param Requests\insertOrUpdateParagraphTabStopRequest $request is a request object for operation
      *
@@ -16892,7 +16884,7 @@ class WordsApi
     /*
      * Operation insertOrUpdateParagraphTabStopAsync
      *
-     * Insert or resplace tab stop if a tab stop with the position exists.
+     * Inserts a new or updates an existing paragraph tab stop in the document node.
      *
      * @param Requests\insertOrUpdateParagraphTabStopRequest $request is a request object for operation
      *
@@ -16912,7 +16904,7 @@ class WordsApi
     /*
      * Operation insertOrUpdateParagraphTabStopAsyncWithHttpInfo
      *
-     * Insert or resplace tab stop if a tab stop with the position exists.
+     * Inserts a new or updates an existing paragraph tab stop in the document node.
      *
      * @param Requests\insertOrUpdateParagraphTabStopRequest $request is a request object for operation
      *
@@ -16967,7 +16959,7 @@ class WordsApi
     /*
      * Operation insertPageNumbers
      *
-     * Inserts document page numbers.
+     * Inserts page numbers to the document.
      *
      * @param Requests\insertPageNumbersRequest $request is a request object for operation
      *
@@ -16990,7 +16982,7 @@ class WordsApi
     /*
      * Operation insertPageNumbersWithHttpInfo
      *
-     * Inserts document page numbers.
+     * Inserts page numbers to the document.
      *
      * @param Requests\insertPageNumbersRequest $request is a request object for operation
      *
@@ -17057,7 +17049,7 @@ class WordsApi
     /*
      * Operation insertPageNumbersAsync
      *
-     * Inserts document page numbers.
+     * Inserts page numbers to the document.
      *
      * @param Requests\insertPageNumbersRequest $request is a request object for operation
      *
@@ -17077,7 +17069,7 @@ class WordsApi
     /*
      * Operation insertPageNumbersAsyncWithHttpInfo
      *
-     * Inserts document page numbers.
+     * Inserts page numbers to the document.
      *
      * @param Requests\insertPageNumbersRequest $request is a request object for operation
      *
@@ -17132,7 +17124,7 @@ class WordsApi
     /*
      * Operation insertParagraph
      *
-     * Adds paragraph to document, returns added paragraph's data.
+     * Inserts a new paragraph to the document node.
      *
      * @param Requests\insertParagraphRequest $request is a request object for operation
      *
@@ -17155,7 +17147,7 @@ class WordsApi
     /*
      * Operation insertParagraphWithHttpInfo
      *
-     * Adds paragraph to document, returns added paragraph's data.
+     * Inserts a new paragraph to the document node.
      *
      * @param Requests\insertParagraphRequest $request is a request object for operation
      *
@@ -17222,7 +17214,7 @@ class WordsApi
     /*
      * Operation insertParagraphAsync
      *
-     * Adds paragraph to document, returns added paragraph's data.
+     * Inserts a new paragraph to the document node.
      *
      * @param Requests\insertParagraphRequest $request is a request object for operation
      *
@@ -17242,7 +17234,7 @@ class WordsApi
     /*
      * Operation insertParagraphAsyncWithHttpInfo
      *
-     * Adds paragraph to document, returns added paragraph's data.
+     * Inserts a new paragraph to the document node.
      *
      * @param Requests\insertParagraphRequest $request is a request object for operation
      *
@@ -17297,7 +17289,7 @@ class WordsApi
     /*
      * Operation insertRun
      *
-     * Adds run to document, returns added paragraph's data.
+     * Inserts a new Run object to the paragraph.
      *
      * @param Requests\insertRunRequest $request is a request object for operation
      *
@@ -17320,7 +17312,7 @@ class WordsApi
     /*
      * Operation insertRunWithHttpInfo
      *
-     * Adds run to document, returns added paragraph's data.
+     * Inserts a new Run object to the paragraph.
      *
      * @param Requests\insertRunRequest $request is a request object for operation
      *
@@ -17387,7 +17379,7 @@ class WordsApi
     /*
      * Operation insertRunAsync
      *
-     * Adds run to document, returns added paragraph's data.
+     * Inserts a new Run object to the paragraph.
      *
      * @param Requests\insertRunRequest $request is a request object for operation
      *
@@ -17407,7 +17399,7 @@ class WordsApi
     /*
      * Operation insertRunAsyncWithHttpInfo
      *
-     * Adds run to document, returns added paragraph's data.
+     * Inserts a new Run object to the paragraph.
      *
      * @param Requests\insertRunRequest $request is a request object for operation
      *
@@ -17462,7 +17454,7 @@ class WordsApi
     /*
      * Operation insertStyle
      *
-     * Adds a style to the document, returns an added style.
+     * Inserts a new style to the document.
      *
      * @param Requests\insertStyleRequest $request is a request object for operation
      *
@@ -17485,7 +17477,7 @@ class WordsApi
     /*
      * Operation insertStyleWithHttpInfo
      *
-     * Adds a style to the document, returns an added style.
+     * Inserts a new style to the document.
      *
      * @param Requests\insertStyleRequest $request is a request object for operation
      *
@@ -17552,7 +17544,7 @@ class WordsApi
     /*
      * Operation insertStyleAsync
      *
-     * Adds a style to the document, returns an added style.
+     * Inserts a new style to the document.
      *
      * @param Requests\insertStyleRequest $request is a request object for operation
      *
@@ -17572,7 +17564,7 @@ class WordsApi
     /*
      * Operation insertStyleAsyncWithHttpInfo
      *
-     * Adds a style to the document, returns an added style.
+     * Inserts a new style to the document.
      *
      * @param Requests\insertStyleRequest $request is a request object for operation
      *
@@ -17627,7 +17619,7 @@ class WordsApi
     /*
      * Operation insertTable
      *
-     * Adds table to document, returns added table's data.
+     * Inserts a new table to the document node.
      *
      * @param Requests\insertTableRequest $request is a request object for operation
      *
@@ -17650,7 +17642,7 @@ class WordsApi
     /*
      * Operation insertTableWithHttpInfo
      *
-     * Adds table to document, returns added table's data.
+     * Inserts a new table to the document node.
      *
      * @param Requests\insertTableRequest $request is a request object for operation
      *
@@ -17717,7 +17709,7 @@ class WordsApi
     /*
      * Operation insertTableAsync
      *
-     * Adds table to document, returns added table's data.
+     * Inserts a new table to the document node.
      *
      * @param Requests\insertTableRequest $request is a request object for operation
      *
@@ -17737,7 +17729,7 @@ class WordsApi
     /*
      * Operation insertTableAsyncWithHttpInfo
      *
-     * Adds table to document, returns added table's data.
+     * Inserts a new table to the document node.
      *
      * @param Requests\insertTableRequest $request is a request object for operation
      *
@@ -17792,7 +17784,7 @@ class WordsApi
     /*
      * Operation insertTableCell
      *
-     * Adds table cell to table, returns added cell's data.
+     * Inserts a new cell to the table row.
      *
      * @param Requests\insertTableCellRequest $request is a request object for operation
      *
@@ -17815,7 +17807,7 @@ class WordsApi
     /*
      * Operation insertTableCellWithHttpInfo
      *
-     * Adds table cell to table, returns added cell's data.
+     * Inserts a new cell to the table row.
      *
      * @param Requests\insertTableCellRequest $request is a request object for operation
      *
@@ -17882,7 +17874,7 @@ class WordsApi
     /*
      * Operation insertTableCellAsync
      *
-     * Adds table cell to table, returns added cell's data.
+     * Inserts a new cell to the table row.
      *
      * @param Requests\insertTableCellRequest $request is a request object for operation
      *
@@ -17902,7 +17894,7 @@ class WordsApi
     /*
      * Operation insertTableCellAsyncWithHttpInfo
      *
-     * Adds table cell to table, returns added cell's data.
+     * Inserts a new cell to the table row.
      *
      * @param Requests\insertTableCellRequest $request is a request object for operation
      *
@@ -17957,7 +17949,7 @@ class WordsApi
     /*
      * Operation insertTableRow
      *
-     * Adds table row to table, returns added row's data.
+     * Inserts a new row to the table.
      *
      * @param Requests\insertTableRowRequest $request is a request object for operation
      *
@@ -17980,7 +17972,7 @@ class WordsApi
     /*
      * Operation insertTableRowWithHttpInfo
      *
-     * Adds table row to table, returns added row's data.
+     * Inserts a new row to the table.
      *
      * @param Requests\insertTableRowRequest $request is a request object for operation
      *
@@ -18047,7 +18039,7 @@ class WordsApi
     /*
      * Operation insertTableRowAsync
      *
-     * Adds table row to table, returns added row's data.
+     * Inserts a new row to the table.
      *
      * @param Requests\insertTableRowRequest $request is a request object for operation
      *
@@ -18067,7 +18059,7 @@ class WordsApi
     /*
      * Operation insertTableRowAsyncWithHttpInfo
      *
-     * Adds table row to table, returns added row's data.
+     * Inserts a new row to the table.
      *
      * @param Requests\insertTableRowRequest $request is a request object for operation
      *
@@ -18122,7 +18114,7 @@ class WordsApi
     /*
      * Operation insertWatermarkImage
      *
-     * Inserts document watermark image.
+     * Inserts a new watermark image to the document.
      *
      * @param Requests\insertWatermarkImageRequest $request is a request object for operation
      *
@@ -18145,7 +18137,7 @@ class WordsApi
     /*
      * Operation insertWatermarkImageWithHttpInfo
      *
-     * Inserts document watermark image.
+     * Inserts a new watermark image to the document.
      *
      * @param Requests\insertWatermarkImageRequest $request is a request object for operation
      *
@@ -18212,7 +18204,7 @@ class WordsApi
     /*
      * Operation insertWatermarkImageAsync
      *
-     * Inserts document watermark image.
+     * Inserts a new watermark image to the document.
      *
      * @param Requests\insertWatermarkImageRequest $request is a request object for operation
      *
@@ -18232,7 +18224,7 @@ class WordsApi
     /*
      * Operation insertWatermarkImageAsyncWithHttpInfo
      *
-     * Inserts document watermark image.
+     * Inserts a new watermark image to the document.
      *
      * @param Requests\insertWatermarkImageRequest $request is a request object for operation
      *
@@ -18287,7 +18279,7 @@ class WordsApi
     /*
      * Operation insertWatermarkText
      *
-     * Inserts document watermark text.
+     * Inserts a new watermark text to the document.
      *
      * @param Requests\insertWatermarkTextRequest $request is a request object for operation
      *
@@ -18310,7 +18302,7 @@ class WordsApi
     /*
      * Operation insertWatermarkTextWithHttpInfo
      *
-     * Inserts document watermark text.
+     * Inserts a new watermark text to the document.
      *
      * @param Requests\insertWatermarkTextRequest $request is a request object for operation
      *
@@ -18377,7 +18369,7 @@ class WordsApi
     /*
      * Operation insertWatermarkTextAsync
      *
-     * Inserts document watermark text.
+     * Inserts a new watermark text to the document.
      *
      * @param Requests\insertWatermarkTextRequest $request is a request object for operation
      *
@@ -18397,7 +18389,7 @@ class WordsApi
     /*
      * Operation insertWatermarkTextAsyncWithHttpInfo
      *
-     * Inserts document watermark text.
+     * Inserts a new watermark text to the document.
      *
      * @param Requests\insertWatermarkTextRequest $request is a request object for operation
      *
@@ -18452,7 +18444,7 @@ class WordsApi
     /*
      * Operation loadWebDocument
      *
-     * Loads new document from web into the file with any supported format of data.
+     * Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
      *
      * @param Requests\loadWebDocumentRequest $request is a request object for operation
      *
@@ -18475,7 +18467,7 @@ class WordsApi
     /*
      * Operation loadWebDocumentWithHttpInfo
      *
-     * Loads new document from web into the file with any supported format of data.
+     * Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
      *
      * @param Requests\loadWebDocumentRequest $request is a request object for operation
      *
@@ -18542,7 +18534,7 @@ class WordsApi
     /*
      * Operation loadWebDocumentAsync
      *
-     * Loads new document from web into the file with any supported format of data.
+     * Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
      *
      * @param Requests\loadWebDocumentRequest $request is a request object for operation
      *
@@ -18562,7 +18554,7 @@ class WordsApi
     /*
      * Operation loadWebDocumentAsyncWithHttpInfo
      *
-     * Loads new document from web into the file with any supported format of data.
+     * Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
      *
      * @param Requests\loadWebDocumentRequest $request is a request object for operation
      *
@@ -18861,7 +18853,7 @@ class WordsApi
     /*
      * Operation optimizeDocument
      *
-     * Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.
+     * Applies document content optimization options, specific to a particular versions of Microsoft Word.
      *
      * @param Requests\optimizeDocumentRequest $request is a request object for operation
      *
@@ -18882,7 +18874,7 @@ class WordsApi
     /*
      * Operation optimizeDocumentWithHttpInfo
      *
-     * Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.
+     * Applies document content optimization options, specific to a particular versions of Microsoft Word.
      *
      * @param Requests\optimizeDocumentRequest $request is a request object for operation
      *
@@ -18926,7 +18918,7 @@ class WordsApi
     /*
      * Operation optimizeDocumentAsync
      *
-     * Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.
+     * Applies document content optimization options, specific to a particular versions of Microsoft Word.
      *
      * @param Requests\optimizeDocumentRequest $request is a request object for operation
      *
@@ -18946,7 +18938,7 @@ class WordsApi
     /*
      * Operation optimizeDocumentAsyncWithHttpInfo
      *
-     * Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.
+     * Applies document content optimization options, specific to a particular versions of Microsoft Word.
      *
      * @param Requests\optimizeDocumentRequest $request is a request object for operation
      *
@@ -18983,7 +18975,7 @@ class WordsApi
     /*
      * Operation protectDocument
      *
-     * Protects document.
+     * Adds protection to the document.
      *
      * @param Requests\protectDocumentRequest $request is a request object for operation
      *
@@ -19006,7 +18998,7 @@ class WordsApi
     /*
      * Operation protectDocumentWithHttpInfo
      *
-     * Protects document.
+     * Adds protection to the document.
      *
      * @param Requests\protectDocumentRequest $request is a request object for operation
      *
@@ -19073,7 +19065,7 @@ class WordsApi
     /*
      * Operation protectDocumentAsync
      *
-     * Protects document.
+     * Adds protection to the document.
      *
      * @param Requests\protectDocumentRequest $request is a request object for operation
      *
@@ -19093,7 +19085,7 @@ class WordsApi
     /*
      * Operation protectDocumentAsyncWithHttpInfo
      *
-     * Protects document.
+     * Adds protection to the document.
      *
      * @param Requests\protectDocumentRequest $request is a request object for operation
      *
@@ -19148,7 +19140,7 @@ class WordsApi
     /*
      * Operation rejectAllRevisions
      *
-     * Rejects all revisions in document.
+     * Rejects all revisions in the document.
      *
      * @param Requests\rejectAllRevisionsRequest $request is a request object for operation
      *
@@ -19171,7 +19163,7 @@ class WordsApi
     /*
      * Operation rejectAllRevisionsWithHttpInfo
      *
-     * Rejects all revisions in document.
+     * Rejects all revisions in the document.
      *
      * @param Requests\rejectAllRevisionsRequest $request is a request object for operation
      *
@@ -19238,7 +19230,7 @@ class WordsApi
     /*
      * Operation rejectAllRevisionsAsync
      *
-     * Rejects all revisions in document.
+     * Rejects all revisions in the document.
      *
      * @param Requests\rejectAllRevisionsRequest $request is a request object for operation
      *
@@ -19258,7 +19250,7 @@ class WordsApi
     /*
      * Operation rejectAllRevisionsAsyncWithHttpInfo
      *
-     * Rejects all revisions in document.
+     * Rejects all revisions in the document.
      *
      * @param Requests\rejectAllRevisionsRequest $request is a request object for operation
      *
@@ -19313,7 +19305,7 @@ class WordsApi
     /*
      * Operation removeRange
      *
-     * Removes the range from the document.
+     * Removes a range from the document.
      *
      * @param Requests\removeRangeRequest $request is a request object for operation
      *
@@ -19336,7 +19328,7 @@ class WordsApi
     /*
      * Operation removeRangeWithHttpInfo
      *
-     * Removes the range from the document.
+     * Removes a range from the document.
      *
      * @param Requests\removeRangeRequest $request is a request object for operation
      *
@@ -19403,7 +19395,7 @@ class WordsApi
     /*
      * Operation removeRangeAsync
      *
-     * Removes the range from the document.
+     * Removes a range from the document.
      *
      * @param Requests\removeRangeRequest $request is a request object for operation
      *
@@ -19423,7 +19415,7 @@ class WordsApi
     /*
      * Operation removeRangeAsyncWithHttpInfo
      *
-     * Removes the range from the document.
+     * Removes a range from the document.
      *
      * @param Requests\removeRangeRequest $request is a request object for operation
      *
@@ -19478,7 +19470,7 @@ class WordsApi
     /*
      * Operation renderDrawingObject
      *
-     * Renders drawing object to specified format.
+     * Renders a DrawingObject to the specified format.
      *
      * @param Requests\renderDrawingObjectRequest $request is a request object for operation
      *
@@ -19501,7 +19493,7 @@ class WordsApi
     /*
      * Operation renderDrawingObjectWithHttpInfo
      *
-     * Renders drawing object to specified format.
+     * Renders a DrawingObject to the specified format.
      *
      * @param Requests\renderDrawingObjectRequest $request is a request object for operation
      *
@@ -19568,7 +19560,7 @@ class WordsApi
     /*
      * Operation renderDrawingObjectAsync
      *
-     * Renders drawing object to specified format.
+     * Renders a DrawingObject to the specified format.
      *
      * @param Requests\renderDrawingObjectRequest $request is a request object for operation
      *
@@ -19588,7 +19580,7 @@ class WordsApi
     /*
      * Operation renderDrawingObjectAsyncWithHttpInfo
      *
-     * Renders drawing object to specified format.
+     * Renders a DrawingObject to the specified format.
      *
      * @param Requests\renderDrawingObjectRequest $request is a request object for operation
      *
@@ -19643,7 +19635,7 @@ class WordsApi
     /*
      * Operation renderMathObject
      *
-     * Renders math object to specified format.
+     * Renders an OfficeMath object to the specified format.
      *
      * @param Requests\renderMathObjectRequest $request is a request object for operation
      *
@@ -19666,7 +19658,7 @@ class WordsApi
     /*
      * Operation renderMathObjectWithHttpInfo
      *
-     * Renders math object to specified format.
+     * Renders an OfficeMath object to the specified format.
      *
      * @param Requests\renderMathObjectRequest $request is a request object for operation
      *
@@ -19733,7 +19725,7 @@ class WordsApi
     /*
      * Operation renderMathObjectAsync
      *
-     * Renders math object to specified format.
+     * Renders an OfficeMath object to the specified format.
      *
      * @param Requests\renderMathObjectRequest $request is a request object for operation
      *
@@ -19753,7 +19745,7 @@ class WordsApi
     /*
      * Operation renderMathObjectAsyncWithHttpInfo
      *
-     * Renders math object to specified format.
+     * Renders an OfficeMath object to the specified format.
      *
      * @param Requests\renderMathObjectRequest $request is a request object for operation
      *
@@ -19808,7 +19800,7 @@ class WordsApi
     /*
      * Operation renderPage
      *
-     * Renders page to specified format.
+     * Renders a page to the specified format.
      *
      * @param Requests\renderPageRequest $request is a request object for operation
      *
@@ -19831,7 +19823,7 @@ class WordsApi
     /*
      * Operation renderPageWithHttpInfo
      *
-     * Renders page to specified format.
+     * Renders a page to the specified format.
      *
      * @param Requests\renderPageRequest $request is a request object for operation
      *
@@ -19898,7 +19890,7 @@ class WordsApi
     /*
      * Operation renderPageAsync
      *
-     * Renders page to specified format.
+     * Renders a page to the specified format.
      *
      * @param Requests\renderPageRequest $request is a request object for operation
      *
@@ -19918,7 +19910,7 @@ class WordsApi
     /*
      * Operation renderPageAsyncWithHttpInfo
      *
-     * Renders page to specified format.
+     * Renders a page to the specified format.
      *
      * @param Requests\renderPageRequest $request is a request object for operation
      *
@@ -19973,7 +19965,7 @@ class WordsApi
     /*
      * Operation renderParagraph
      *
-     * Renders paragraph to specified format.
+     * Renders a paragraph to the specified format.
      *
      * @param Requests\renderParagraphRequest $request is a request object for operation
      *
@@ -19996,7 +19988,7 @@ class WordsApi
     /*
      * Operation renderParagraphWithHttpInfo
      *
-     * Renders paragraph to specified format.
+     * Renders a paragraph to the specified format.
      *
      * @param Requests\renderParagraphRequest $request is a request object for operation
      *
@@ -20063,7 +20055,7 @@ class WordsApi
     /*
      * Operation renderParagraphAsync
      *
-     * Renders paragraph to specified format.
+     * Renders a paragraph to the specified format.
      *
      * @param Requests\renderParagraphRequest $request is a request object for operation
      *
@@ -20083,7 +20075,7 @@ class WordsApi
     /*
      * Operation renderParagraphAsyncWithHttpInfo
      *
-     * Renders paragraph to specified format.
+     * Renders a paragraph to the specified format.
      *
      * @param Requests\renderParagraphRequest $request is a request object for operation
      *
@@ -20138,7 +20130,7 @@ class WordsApi
     /*
      * Operation renderTable
      *
-     * Renders table to specified format.
+     * Renders a table to the specified format.
      *
      * @param Requests\renderTableRequest $request is a request object for operation
      *
@@ -20161,7 +20153,7 @@ class WordsApi
     /*
      * Operation renderTableWithHttpInfo
      *
-     * Renders table to specified format.
+     * Renders a table to the specified format.
      *
      * @param Requests\renderTableRequest $request is a request object for operation
      *
@@ -20228,7 +20220,7 @@ class WordsApi
     /*
      * Operation renderTableAsync
      *
-     * Renders table to specified format.
+     * Renders a table to the specified format.
      *
      * @param Requests\renderTableRequest $request is a request object for operation
      *
@@ -20248,7 +20240,7 @@ class WordsApi
     /*
      * Operation renderTableAsyncWithHttpInfo
      *
-     * Renders table to specified format.
+     * Renders a table to the specified format.
      *
      * @param Requests\renderTableRequest $request is a request object for operation
      *
@@ -20303,7 +20295,7 @@ class WordsApi
     /*
      * Operation replaceText
      *
-     * Replaces document text.
+     * Replaces text in the document.
      *
      * @param Requests\replaceTextRequest $request is a request object for operation
      *
@@ -20326,7 +20318,7 @@ class WordsApi
     /*
      * Operation replaceTextWithHttpInfo
      *
-     * Replaces document text.
+     * Replaces text in the document.
      *
      * @param Requests\replaceTextRequest $request is a request object for operation
      *
@@ -20393,7 +20385,7 @@ class WordsApi
     /*
      * Operation replaceTextAsync
      *
-     * Replaces document text.
+     * Replaces text in the document.
      *
      * @param Requests\replaceTextRequest $request is a request object for operation
      *
@@ -20413,7 +20405,7 @@ class WordsApi
     /*
      * Operation replaceTextAsyncWithHttpInfo
      *
-     * Replaces document text.
+     * Replaces text in the document.
      *
      * @param Requests\replaceTextRequest $request is a request object for operation
      *
@@ -20468,7 +20460,7 @@ class WordsApi
     /*
      * Operation replaceWithText
      *
-     * Replaces the content in the range.
+     * Replaces a range with text in the document.
      *
      * @param Requests\replaceWithTextRequest $request is a request object for operation
      *
@@ -20491,7 +20483,7 @@ class WordsApi
     /*
      * Operation replaceWithTextWithHttpInfo
      *
-     * Replaces the content in the range.
+     * Replaces a range with text in the document.
      *
      * @param Requests\replaceWithTextRequest $request is a request object for operation
      *
@@ -20558,7 +20550,7 @@ class WordsApi
     /*
      * Operation replaceWithTextAsync
      *
-     * Replaces the content in the range.
+     * Replaces a range with text in the document.
      *
      * @param Requests\replaceWithTextRequest $request is a request object for operation
      *
@@ -20578,7 +20570,7 @@ class WordsApi
     /*
      * Operation replaceWithTextAsyncWithHttpInfo
      *
-     * Replaces the content in the range.
+     * Replaces a range with text in the document.
      *
      * @param Requests\replaceWithTextRequest $request is a request object for operation
      *
@@ -20633,7 +20625,7 @@ class WordsApi
     /*
      * Operation resetCache
      *
-     * Resets font's cache.
+     * Clears the font cache.
      *
      * @param Requests\resetCacheRequest $request is a request object for operation
      *
@@ -20654,7 +20646,7 @@ class WordsApi
     /*
      * Operation resetCacheWithHttpInfo
      *
-     * Resets font's cache.
+     * Clears the font cache.
      *
      * @param Requests\resetCacheRequest $request is a request object for operation
      *
@@ -20698,7 +20690,7 @@ class WordsApi
     /*
      * Operation resetCacheAsync
      *
-     * Resets font's cache.
+     * Clears the font cache.
      *
      * @param Requests\resetCacheRequest $request is a request object for operation
      *
@@ -20718,7 +20710,7 @@ class WordsApi
     /*
      * Operation resetCacheAsyncWithHttpInfo
      *
-     * Resets font's cache.
+     * Clears the font cache.
      *
      * @param Requests\resetCacheRequest $request is a request object for operation
      *
@@ -20755,7 +20747,7 @@ class WordsApi
     /*
      * Operation saveAs
      *
-     * Converts document to destination format with detailed settings and saves result to storage.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\saveAsRequest $request is a request object for operation
      *
@@ -20778,7 +20770,7 @@ class WordsApi
     /*
      * Operation saveAsWithHttpInfo
      *
-     * Converts document to destination format with detailed settings and saves result to storage.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\saveAsRequest $request is a request object for operation
      *
@@ -20845,7 +20837,7 @@ class WordsApi
     /*
      * Operation saveAsAsync
      *
-     * Converts document to destination format with detailed settings and saves result to storage.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\saveAsRequest $request is a request object for operation
      *
@@ -20865,7 +20857,7 @@ class WordsApi
     /*
      * Operation saveAsAsyncWithHttpInfo
      *
-     * Converts document to destination format with detailed settings and saves result to storage.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\saveAsRequest $request is a request object for operation
      *
@@ -20920,7 +20912,7 @@ class WordsApi
     /*
      * Operation saveAsRange
      *
-     * Saves the selected range as a new document.
+     * Saves a range as a new document.
      *
      * @param Requests\saveAsRangeRequest $request is a request object for operation
      *
@@ -20943,7 +20935,7 @@ class WordsApi
     /*
      * Operation saveAsRangeWithHttpInfo
      *
-     * Saves the selected range as a new document.
+     * Saves a range as a new document.
      *
      * @param Requests\saveAsRangeRequest $request is a request object for operation
      *
@@ -21010,7 +21002,7 @@ class WordsApi
     /*
      * Operation saveAsRangeAsync
      *
-     * Saves the selected range as a new document.
+     * Saves a range as a new document.
      *
      * @param Requests\saveAsRangeRequest $request is a request object for operation
      *
@@ -21030,7 +21022,7 @@ class WordsApi
     /*
      * Operation saveAsRangeAsyncWithHttpInfo
      *
-     * Saves the selected range as a new document.
+     * Saves a range as a new document.
      *
      * @param Requests\saveAsRangeRequest $request is a request object for operation
      *
@@ -21085,7 +21077,7 @@ class WordsApi
     /*
      * Operation saveAsTiff
      *
-     * Converts document to tiff with detailed settings and saves result to storage.
+     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffRequest $request is a request object for operation
      *
@@ -21108,7 +21100,7 @@ class WordsApi
     /*
      * Operation saveAsTiffWithHttpInfo
      *
-     * Converts document to tiff with detailed settings and saves result to storage.
+     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffRequest $request is a request object for operation
      *
@@ -21175,7 +21167,7 @@ class WordsApi
     /*
      * Operation saveAsTiffAsync
      *
-     * Converts document to tiff with detailed settings and saves result to storage.
+     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffRequest $request is a request object for operation
      *
@@ -21195,7 +21187,7 @@ class WordsApi
     /*
      * Operation saveAsTiffAsyncWithHttpInfo
      *
-     * Converts document to tiff with detailed settings and saves result to storage.
+     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffRequest $request is a request object for operation
      *
@@ -21250,7 +21242,7 @@ class WordsApi
     /*
      * Operation search
      *
-     * Searches text in document.
+     * Searches text, specified by the regular expression, in the document.
      *
      * @param Requests\searchRequest $request is a request object for operation
      *
@@ -21273,7 +21265,7 @@ class WordsApi
     /*
      * Operation searchWithHttpInfo
      *
-     * Searches text in document.
+     * Searches text, specified by the regular expression, in the document.
      *
      * @param Requests\searchRequest $request is a request object for operation
      *
@@ -21340,7 +21332,7 @@ class WordsApi
     /*
      * Operation searchAsync
      *
-     * Searches text in document.
+     * Searches text, specified by the regular expression, in the document.
      *
      * @param Requests\searchRequest $request is a request object for operation
      *
@@ -21360,7 +21352,7 @@ class WordsApi
     /*
      * Operation searchAsyncWithHttpInfo
      *
-     * Searches text in document.
+     * Searches text, specified by the regular expression, in the document.
      *
      * @param Requests\searchRequest $request is a request object for operation
      *
@@ -21415,7 +21407,7 @@ class WordsApi
     /*
      * Operation splitDocument
      *
-     * Splits document.
+     * Splits a document into parts and saves them in the specified format.
      *
      * @param Requests\splitDocumentRequest $request is a request object for operation
      *
@@ -21438,7 +21430,7 @@ class WordsApi
     /*
      * Operation splitDocumentWithHttpInfo
      *
-     * Splits document.
+     * Splits a document into parts and saves them in the specified format.
      *
      * @param Requests\splitDocumentRequest $request is a request object for operation
      *
@@ -21505,7 +21497,7 @@ class WordsApi
     /*
      * Operation splitDocumentAsync
      *
-     * Splits document.
+     * Splits a document into parts and saves them in the specified format.
      *
      * @param Requests\splitDocumentRequest $request is a request object for operation
      *
@@ -21525,7 +21517,7 @@ class WordsApi
     /*
      * Operation splitDocumentAsyncWithHttpInfo
      *
-     * Splits document.
+     * Splits a document into parts and saves them in the specified format.
      *
      * @param Requests\splitDocumentRequest $request is a request object for operation
      *
@@ -21580,7 +21572,7 @@ class WordsApi
     /*
      * Operation unprotectDocument
      *
-     * Unprotects document.
+     * Removes protection from the document.
      *
      * @param Requests\unprotectDocumentRequest $request is a request object for operation
      *
@@ -21603,7 +21595,7 @@ class WordsApi
     /*
      * Operation unprotectDocumentWithHttpInfo
      *
-     * Unprotects document.
+     * Removes protection from the document.
      *
      * @param Requests\unprotectDocumentRequest $request is a request object for operation
      *
@@ -21670,7 +21662,7 @@ class WordsApi
     /*
      * Operation unprotectDocumentAsync
      *
-     * Unprotects document.
+     * Removes protection from the document.
      *
      * @param Requests\unprotectDocumentRequest $request is a request object for operation
      *
@@ -21690,7 +21682,7 @@ class WordsApi
     /*
      * Operation unprotectDocumentAsyncWithHttpInfo
      *
-     * Unprotects document.
+     * Removes protection from the document.
      *
      * @param Requests\unprotectDocumentRequest $request is a request object for operation
      *
@@ -21745,7 +21737,7 @@ class WordsApi
     /*
      * Operation updateBookmark
      *
-     * Updates document bookmark.
+     * Updates a bookmark in the document.
      *
      * @param Requests\updateBookmarkRequest $request is a request object for operation
      *
@@ -21768,7 +21760,7 @@ class WordsApi
     /*
      * Operation updateBookmarkWithHttpInfo
      *
-     * Updates document bookmark.
+     * Updates a bookmark in the document.
      *
      * @param Requests\updateBookmarkRequest $request is a request object for operation
      *
@@ -21835,7 +21827,7 @@ class WordsApi
     /*
      * Operation updateBookmarkAsync
      *
-     * Updates document bookmark.
+     * Updates a bookmark in the document.
      *
      * @param Requests\updateBookmarkRequest $request is a request object for operation
      *
@@ -21855,7 +21847,7 @@ class WordsApi
     /*
      * Operation updateBookmarkAsyncWithHttpInfo
      *
-     * Updates document bookmark.
+     * Updates a bookmark in the document.
      *
      * @param Requests\updateBookmarkRequest $request is a request object for operation
      *
@@ -21910,7 +21902,7 @@ class WordsApi
     /*
      * Operation updateBorder
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderRequest $request is a request object for operation
      *
@@ -21933,7 +21925,7 @@ class WordsApi
     /*
      * Operation updateBorderWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderRequest $request is a request object for operation
      *
@@ -22000,7 +21992,7 @@ class WordsApi
     /*
      * Operation updateBorderAsync
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderRequest $request is a request object for operation
      *
@@ -22020,7 +22012,7 @@ class WordsApi
     /*
      * Operation updateBorderAsyncWithHttpInfo
      *
-     * 'nodePath' should refer to paragraph, cell or row.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderRequest $request is a request object for operation
      *
@@ -22075,7 +22067,7 @@ class WordsApi
     /*
      * Operation updateComment
      *
-     * Updates the comment, returns updated comment data.
+     * Updates a comment in the document.
      *
      * @param Requests\updateCommentRequest $request is a request object for operation
      *
@@ -22098,7 +22090,7 @@ class WordsApi
     /*
      * Operation updateCommentWithHttpInfo
      *
-     * Updates the comment, returns updated comment data.
+     * Updates a comment in the document.
      *
      * @param Requests\updateCommentRequest $request is a request object for operation
      *
@@ -22165,7 +22157,7 @@ class WordsApi
     /*
      * Operation updateCommentAsync
      *
-     * Updates the comment, returns updated comment data.
+     * Updates a comment in the document.
      *
      * @param Requests\updateCommentRequest $request is a request object for operation
      *
@@ -22185,7 +22177,7 @@ class WordsApi
     /*
      * Operation updateCommentAsyncWithHttpInfo
      *
-     * Updates the comment, returns updated comment data.
+     * Updates a comment in the document.
      *
      * @param Requests\updateCommentRequest $request is a request object for operation
      *
@@ -22240,7 +22232,7 @@ class WordsApi
     /*
      * Operation updateDrawingObject
      *
-     * Updates drawing object, returns updated  drawing object's data.
+     * Updates a DrawingObject in the document node.
      *
      * @param Requests\updateDrawingObjectRequest $request is a request object for operation
      *
@@ -22263,7 +22255,7 @@ class WordsApi
     /*
      * Operation updateDrawingObjectWithHttpInfo
      *
-     * Updates drawing object, returns updated  drawing object's data.
+     * Updates a DrawingObject in the document node.
      *
      * @param Requests\updateDrawingObjectRequest $request is a request object for operation
      *
@@ -22330,7 +22322,7 @@ class WordsApi
     /*
      * Operation updateDrawingObjectAsync
      *
-     * Updates drawing object, returns updated  drawing object's data.
+     * Updates a DrawingObject in the document node.
      *
      * @param Requests\updateDrawingObjectRequest $request is a request object for operation
      *
@@ -22350,7 +22342,7 @@ class WordsApi
     /*
      * Operation updateDrawingObjectAsyncWithHttpInfo
      *
-     * Updates drawing object, returns updated  drawing object's data.
+     * Updates a DrawingObject in the document node.
      *
      * @param Requests\updateDrawingObjectRequest $request is a request object for operation
      *
@@ -22405,7 +22397,7 @@ class WordsApi
     /*
      * Operation updateField
      *
-     * Updates field's properties, returns updated field's data.
+     * Updates a field in the document node.
      *
      * @param Requests\updateFieldRequest $request is a request object for operation
      *
@@ -22428,7 +22420,7 @@ class WordsApi
     /*
      * Operation updateFieldWithHttpInfo
      *
-     * Updates field's properties, returns updated field's data.
+     * Updates a field in the document node.
      *
      * @param Requests\updateFieldRequest $request is a request object for operation
      *
@@ -22495,7 +22487,7 @@ class WordsApi
     /*
      * Operation updateFieldAsync
      *
-     * Updates field's properties, returns updated field's data.
+     * Updates a field in the document node.
      *
      * @param Requests\updateFieldRequest $request is a request object for operation
      *
@@ -22515,7 +22507,7 @@ class WordsApi
     /*
      * Operation updateFieldAsyncWithHttpInfo
      *
-     * Updates field's properties, returns updated field's data.
+     * Updates a field in the document node.
      *
      * @param Requests\updateFieldRequest $request is a request object for operation
      *
@@ -22570,7 +22562,7 @@ class WordsApi
     /*
      * Operation updateFields
      *
-     * Updates (reevaluate) fields in document.
+     * Reevaluates field values in the document.
      *
      * @param Requests\updateFieldsRequest $request is a request object for operation
      *
@@ -22593,7 +22585,7 @@ class WordsApi
     /*
      * Operation updateFieldsWithHttpInfo
      *
-     * Updates (reevaluate) fields in document.
+     * Reevaluates field values in the document.
      *
      * @param Requests\updateFieldsRequest $request is a request object for operation
      *
@@ -22660,7 +22652,7 @@ class WordsApi
     /*
      * Operation updateFieldsAsync
      *
-     * Updates (reevaluate) fields in document.
+     * Reevaluates field values in the document.
      *
      * @param Requests\updateFieldsRequest $request is a request object for operation
      *
@@ -22680,7 +22672,7 @@ class WordsApi
     /*
      * Operation updateFieldsAsyncWithHttpInfo
      *
-     * Updates (reevaluate) fields in document.
+     * Reevaluates field values in the document.
      *
      * @param Requests\updateFieldsRequest $request is a request object for operation
      *
@@ -22735,7 +22727,7 @@ class WordsApi
     /*
      * Operation updateFootnote
      *
-     * Updates footnote's properties, returns updated run's data.
+     * Updates a footnote in the document node.
      *
      * @param Requests\updateFootnoteRequest $request is a request object for operation
      *
@@ -22758,7 +22750,7 @@ class WordsApi
     /*
      * Operation updateFootnoteWithHttpInfo
      *
-     * Updates footnote's properties, returns updated run's data.
+     * Updates a footnote in the document node.
      *
      * @param Requests\updateFootnoteRequest $request is a request object for operation
      *
@@ -22825,7 +22817,7 @@ class WordsApi
     /*
      * Operation updateFootnoteAsync
      *
-     * Updates footnote's properties, returns updated run's data.
+     * Updates a footnote in the document node.
      *
      * @param Requests\updateFootnoteRequest $request is a request object for operation
      *
@@ -22845,7 +22837,7 @@ class WordsApi
     /*
      * Operation updateFootnoteAsyncWithHttpInfo
      *
-     * Updates footnote's properties, returns updated run's data.
+     * Updates a footnote in the document node.
      *
      * @param Requests\updateFootnoteRequest $request is a request object for operation
      *
@@ -22900,7 +22892,7 @@ class WordsApi
     /*
      * Operation updateFormField
      *
-     * Updates properties of form field, returns updated form field.
+     * Updates a form field in the document node.
      *
      * @param Requests\updateFormFieldRequest $request is a request object for operation
      *
@@ -22923,7 +22915,7 @@ class WordsApi
     /*
      * Operation updateFormFieldWithHttpInfo
      *
-     * Updates properties of form field, returns updated form field.
+     * Updates a form field in the document node.
      *
      * @param Requests\updateFormFieldRequest $request is a request object for operation
      *
@@ -22990,7 +22982,7 @@ class WordsApi
     /*
      * Operation updateFormFieldAsync
      *
-     * Updates properties of form field, returns updated form field.
+     * Updates a form field in the document node.
      *
      * @param Requests\updateFormFieldRequest $request is a request object for operation
      *
@@ -23010,7 +23002,7 @@ class WordsApi
     /*
      * Operation updateFormFieldAsyncWithHttpInfo
      *
-     * Updates properties of form field, returns updated form field.
+     * Updates a form field in the document node.
      *
      * @param Requests\updateFormFieldRequest $request is a request object for operation
      *
@@ -23065,7 +23057,7 @@ class WordsApi
     /*
      * Operation updateList
      *
-     * Updates list properties, returns updated list.
+     * Updates a list in the document.
      *
      * @param Requests\updateListRequest $request is a request object for operation
      *
@@ -23088,7 +23080,7 @@ class WordsApi
     /*
      * Operation updateListWithHttpInfo
      *
-     * Updates list properties, returns updated list.
+     * Updates a list in the document.
      *
      * @param Requests\updateListRequest $request is a request object for operation
      *
@@ -23155,7 +23147,7 @@ class WordsApi
     /*
      * Operation updateListAsync
      *
-     * Updates list properties, returns updated list.
+     * Updates a list in the document.
      *
      * @param Requests\updateListRequest $request is a request object for operation
      *
@@ -23175,7 +23167,7 @@ class WordsApi
     /*
      * Operation updateListAsyncWithHttpInfo
      *
-     * Updates list properties, returns updated list.
+     * Updates a list in the document.
      *
      * @param Requests\updateListRequest $request is a request object for operation
      *
@@ -23230,7 +23222,7 @@ class WordsApi
     /*
      * Operation updateListLevel
      *
-     * Updates list level in document list, returns updated list.
+     * Updates the level of a List element in the document.
      *
      * @param Requests\updateListLevelRequest $request is a request object for operation
      *
@@ -23253,7 +23245,7 @@ class WordsApi
     /*
      * Operation updateListLevelWithHttpInfo
      *
-     * Updates list level in document list, returns updated list.
+     * Updates the level of a List element in the document.
      *
      * @param Requests\updateListLevelRequest $request is a request object for operation
      *
@@ -23320,7 +23312,7 @@ class WordsApi
     /*
      * Operation updateListLevelAsync
      *
-     * Updates list level in document list, returns updated list.
+     * Updates the level of a List element in the document.
      *
      * @param Requests\updateListLevelRequest $request is a request object for operation
      *
@@ -23340,7 +23332,7 @@ class WordsApi
     /*
      * Operation updateListLevelAsyncWithHttpInfo
      *
-     * Updates list level in document list, returns updated list.
+     * Updates the level of a List element in the document.
      *
      * @param Requests\updateListLevelRequest $request is a request object for operation
      *
@@ -23395,7 +23387,7 @@ class WordsApi
     /*
      * Operation updateParagraphFormat
      *
-     * Updates paragraph format properties, returns updated format properties.
+     * Updates the formatting properties of a paragraph in the document node.
      *
      * @param Requests\updateParagraphFormatRequest $request is a request object for operation
      *
@@ -23418,7 +23410,7 @@ class WordsApi
     /*
      * Operation updateParagraphFormatWithHttpInfo
      *
-     * Updates paragraph format properties, returns updated format properties.
+     * Updates the formatting properties of a paragraph in the document node.
      *
      * @param Requests\updateParagraphFormatRequest $request is a request object for operation
      *
@@ -23485,7 +23477,7 @@ class WordsApi
     /*
      * Operation updateParagraphFormatAsync
      *
-     * Updates paragraph format properties, returns updated format properties.
+     * Updates the formatting properties of a paragraph in the document node.
      *
      * @param Requests\updateParagraphFormatRequest $request is a request object for operation
      *
@@ -23505,7 +23497,7 @@ class WordsApi
     /*
      * Operation updateParagraphFormatAsyncWithHttpInfo
      *
-     * Updates paragraph format properties, returns updated format properties.
+     * Updates the formatting properties of a paragraph in the document node.
      *
      * @param Requests\updateParagraphFormatRequest $request is a request object for operation
      *
@@ -23560,7 +23552,7 @@ class WordsApi
     /*
      * Operation updateParagraphListFormat
      *
-     * Updates paragraph list format properties, returns updated list format properties.
+     * Updates the formatting properties of a paragraph list in the document node.
      *
      * @param Requests\updateParagraphListFormatRequest $request is a request object for operation
      *
@@ -23583,7 +23575,7 @@ class WordsApi
     /*
      * Operation updateParagraphListFormatWithHttpInfo
      *
-     * Updates paragraph list format properties, returns updated list format properties.
+     * Updates the formatting properties of a paragraph list in the document node.
      *
      * @param Requests\updateParagraphListFormatRequest $request is a request object for operation
      *
@@ -23650,7 +23642,7 @@ class WordsApi
     /*
      * Operation updateParagraphListFormatAsync
      *
-     * Updates paragraph list format properties, returns updated list format properties.
+     * Updates the formatting properties of a paragraph list in the document node.
      *
      * @param Requests\updateParagraphListFormatRequest $request is a request object for operation
      *
@@ -23670,7 +23662,7 @@ class WordsApi
     /*
      * Operation updateParagraphListFormatAsyncWithHttpInfo
      *
-     * Updates paragraph list format properties, returns updated list format properties.
+     * Updates the formatting properties of a paragraph list in the document node.
      *
      * @param Requests\updateParagraphListFormatRequest $request is a request object for operation
      *
@@ -23725,7 +23717,7 @@ class WordsApi
     /*
      * Operation updateRun
      *
-     * Updates run's properties, returns updated run's data.
+     * Updates a Run object in the paragraph.
      *
      * @param Requests\updateRunRequest $request is a request object for operation
      *
@@ -23748,7 +23740,7 @@ class WordsApi
     /*
      * Operation updateRunWithHttpInfo
      *
-     * Updates run's properties, returns updated run's data.
+     * Updates a Run object in the paragraph.
      *
      * @param Requests\updateRunRequest $request is a request object for operation
      *
@@ -23815,7 +23807,7 @@ class WordsApi
     /*
      * Operation updateRunAsync
      *
-     * Updates run's properties, returns updated run's data.
+     * Updates a Run object in the paragraph.
      *
      * @param Requests\updateRunRequest $request is a request object for operation
      *
@@ -23835,7 +23827,7 @@ class WordsApi
     /*
      * Operation updateRunAsyncWithHttpInfo
      *
-     * Updates run's properties, returns updated run's data.
+     * Updates a Run object in the paragraph.
      *
      * @param Requests\updateRunRequest $request is a request object for operation
      *
@@ -23890,7 +23882,7 @@ class WordsApi
     /*
      * Operation updateRunFont
      *
-     * Updates font properties, returns updated font data.
+     * Updates the font properties of a Run object in the paragraph.
      *
      * @param Requests\updateRunFontRequest $request is a request object for operation
      *
@@ -23913,7 +23905,7 @@ class WordsApi
     /*
      * Operation updateRunFontWithHttpInfo
      *
-     * Updates font properties, returns updated font data.
+     * Updates the font properties of a Run object in the paragraph.
      *
      * @param Requests\updateRunFontRequest $request is a request object for operation
      *
@@ -23980,7 +23972,7 @@ class WordsApi
     /*
      * Operation updateRunFontAsync
      *
-     * Updates font properties, returns updated font data.
+     * Updates the font properties of a Run object in the paragraph.
      *
      * @param Requests\updateRunFontRequest $request is a request object for operation
      *
@@ -24000,7 +23992,7 @@ class WordsApi
     /*
      * Operation updateRunFontAsyncWithHttpInfo
      *
-     * Updates font properties, returns updated font data.
+     * Updates the font properties of a Run object in the paragraph.
      *
      * @param Requests\updateRunFontRequest $request is a request object for operation
      *
@@ -24055,7 +24047,7 @@ class WordsApi
     /*
      * Operation updateSectionPageSetup
      *
-     * Updates page setup of section.
+     * Updates the page setup of a section in the document.
      *
      * @param Requests\updateSectionPageSetupRequest $request is a request object for operation
      *
@@ -24078,7 +24070,7 @@ class WordsApi
     /*
      * Operation updateSectionPageSetupWithHttpInfo
      *
-     * Updates page setup of section.
+     * Updates the page setup of a section in the document.
      *
      * @param Requests\updateSectionPageSetupRequest $request is a request object for operation
      *
@@ -24145,7 +24137,7 @@ class WordsApi
     /*
      * Operation updateSectionPageSetupAsync
      *
-     * Updates page setup of section.
+     * Updates the page setup of a section in the document.
      *
      * @param Requests\updateSectionPageSetupRequest $request is a request object for operation
      *
@@ -24165,7 +24157,7 @@ class WordsApi
     /*
      * Operation updateSectionPageSetupAsyncWithHttpInfo
      *
-     * Updates page setup of section.
+     * Updates the page setup of a section in the document.
      *
      * @param Requests\updateSectionPageSetupRequest $request is a request object for operation
      *
@@ -24220,7 +24212,7 @@ class WordsApi
     /*
      * Operation updateStyle
      *
-     * Updates style properties, returns an updated style.
+     * Updates a style in the document.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -24243,7 +24235,7 @@ class WordsApi
     /*
      * Operation updateStyleWithHttpInfo
      *
-     * Updates style properties, returns an updated style.
+     * Updates a style in the document.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -24310,7 +24302,7 @@ class WordsApi
     /*
      * Operation updateStyleAsync
      *
-     * Updates style properties, returns an updated style.
+     * Updates a style in the document.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -24330,7 +24322,7 @@ class WordsApi
     /*
      * Operation updateStyleAsyncWithHttpInfo
      *
-     * Updates style properties, returns an updated style.
+     * Updates a style in the document.
      *
      * @param Requests\updateStyleRequest $request is a request object for operation
      *
@@ -24385,7 +24377,7 @@ class WordsApi
     /*
      * Operation updateTableCellFormat
      *
-     * Updates a table cell format.
+     * Updates the formatting properties of a cell in the table row.
      *
      * @param Requests\updateTableCellFormatRequest $request is a request object for operation
      *
@@ -24408,7 +24400,7 @@ class WordsApi
     /*
      * Operation updateTableCellFormatWithHttpInfo
      *
-     * Updates a table cell format.
+     * Updates the formatting properties of a cell in the table row.
      *
      * @param Requests\updateTableCellFormatRequest $request is a request object for operation
      *
@@ -24475,7 +24467,7 @@ class WordsApi
     /*
      * Operation updateTableCellFormatAsync
      *
-     * Updates a table cell format.
+     * Updates the formatting properties of a cell in the table row.
      *
      * @param Requests\updateTableCellFormatRequest $request is a request object for operation
      *
@@ -24495,7 +24487,7 @@ class WordsApi
     /*
      * Operation updateTableCellFormatAsyncWithHttpInfo
      *
-     * Updates a table cell format.
+     * Updates the formatting properties of a cell in the table row.
      *
      * @param Requests\updateTableCellFormatRequest $request is a request object for operation
      *
@@ -24550,7 +24542,7 @@ class WordsApi
     /*
      * Operation updateTableProperties
      *
-     * Updates a table properties.
+     * Updates properties of a table in the document node.
      *
      * @param Requests\updateTablePropertiesRequest $request is a request object for operation
      *
@@ -24573,7 +24565,7 @@ class WordsApi
     /*
      * Operation updateTablePropertiesWithHttpInfo
      *
-     * Updates a table properties.
+     * Updates properties of a table in the document node.
      *
      * @param Requests\updateTablePropertiesRequest $request is a request object for operation
      *
@@ -24640,7 +24632,7 @@ class WordsApi
     /*
      * Operation updateTablePropertiesAsync
      *
-     * Updates a table properties.
+     * Updates properties of a table in the document node.
      *
      * @param Requests\updateTablePropertiesRequest $request is a request object for operation
      *
@@ -24660,7 +24652,7 @@ class WordsApi
     /*
      * Operation updateTablePropertiesAsyncWithHttpInfo
      *
-     * Updates a table properties.
+     * Updates properties of a table in the document node.
      *
      * @param Requests\updateTablePropertiesRequest $request is a request object for operation
      *
@@ -24715,7 +24707,7 @@ class WordsApi
     /*
      * Operation updateTableRowFormat
      *
-     * Updates a table row format.
+     * Updates the formatting properties of a table row.
      *
      * @param Requests\updateTableRowFormatRequest $request is a request object for operation
      *
@@ -24738,7 +24730,7 @@ class WordsApi
     /*
      * Operation updateTableRowFormatWithHttpInfo
      *
-     * Updates a table row format.
+     * Updates the formatting properties of a table row.
      *
      * @param Requests\updateTableRowFormatRequest $request is a request object for operation
      *
@@ -24805,7 +24797,7 @@ class WordsApi
     /*
      * Operation updateTableRowFormatAsync
      *
-     * Updates a table row format.
+     * Updates the formatting properties of a table row.
      *
      * @param Requests\updateTableRowFormatRequest $request is a request object for operation
      *
@@ -24825,7 +24817,7 @@ class WordsApi
     /*
      * Operation updateTableRowFormatAsyncWithHttpInfo
      *
-     * Updates a table row format.
+     * Updates the formatting properties of a table row.
      *
      * @param Requests\updateTableRowFormatRequest $request is a request object for operation
      *
@@ -25224,8 +25216,8 @@ class WordsApi
         $requestUrl = $this->config->getHost() . "connect/token";
         $params = array(
             "grant_type"=>'client_credentials',
-            "client_id" => $this->config->getAppSid(),
-            "client_secret" => $this->config->getAppKey()
+            "client_id" => $this->config->getClientId(),
+            "client_secret" => $this->config->getClientSecret()
         );
         $multipartContents = [];
         foreach ($params as $paramName => $paramValue) {

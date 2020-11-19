@@ -62,6 +62,9 @@ class HeaderFooterTests extends BaseTestContext
 
         $result = $this->words->getHeaderFooters($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHeaderFooters());
+        Assert::assertNotNull($result->getHeaderFooters()->getList());
+        Assert::assertCount(6, $result->getHeaderFooters()->getList());
     }
 
     /*
@@ -90,6 +93,10 @@ class HeaderFooterTests extends BaseTestContext
 
         $result = $this->words->getHeaderFooter($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHeaderFooter());
+        Assert::assertNotNull($result->getHeaderFooter()->getChildNodes());
+        Assert::assertCount(1, $result->getHeaderFooter()->getChildNodes());
+        Assert::assertEquals("0.0.0", $result->getHeaderFooter()->getChildNodes()[0]->getNodeId());
     }
 
     /*
@@ -119,6 +126,10 @@ class HeaderFooterTests extends BaseTestContext
 
         $result = $this->words->getHeaderFooterOfSection($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHeaderFooter());
+        Assert::assertNotNull($result->getHeaderFooter()->getChildNodes());
+        Assert::assertCount(1, $result->getHeaderFooter()->getChildNodes());
+        Assert::assertEquals("0.0.0", $result->getHeaderFooter()->getChildNodes()[0]->getNodeId());
     }
 
     /*
@@ -210,5 +221,9 @@ class HeaderFooterTests extends BaseTestContext
 
         $result = $this->words->insertHeaderFooter($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHeaderFooter());
+        Assert::assertNotNull($result->getHeaderFooter()->getChildNodes());
+        Assert::assertCount(1, $result->getHeaderFooter()->getChildNodes());
+        Assert::assertEquals("0.2.0", $result->getHeaderFooter()->getChildNodes()[0]->getNodeId());
     }
 }

@@ -43,20 +43,20 @@ use Aspose\Words\HeaderSelector;
 class ClassifyRequest
 {
     /*
-     * Text to classify.
+     * The text to classify.
      */
     public $text;
 
     /*
-     * Number of the best classes to return.
+     * The number of the best classes to return.
      */
     public $best_classes_count;
 
     /*
      * Initializes a new instance of the ClassifyRequest class.
      *
-     * @param string $text Text to classify.
-     * @param string $best_classes_count Number of the best classes to return.
+     * @param string $text The text to classify.
+     * @param string $best_classes_count The number of the best classes to return.
      */
     public function __construct($text, $best_classes_count = null)
     {
@@ -65,7 +65,7 @@ class ClassifyRequest
     }
 
     /*
-     * Text to classify.
+     * The text to classify.
      */
     public function get_text()
     {
@@ -73,7 +73,7 @@ class ClassifyRequest
     }
 
     /*
-     * Text to classify.
+     * The text to classify.
      */
     public function set_text($value)
     {
@@ -82,7 +82,7 @@ class ClassifyRequest
     }
 
     /*
-     * Number of the best classes to return.
+     * The number of the best classes to return.
      */
     public function get_best_classes_count()
     {
@@ -90,7 +90,7 @@ class ClassifyRequest
     }
 
     /*
-     * Number of the best classes to return.
+     * The number of the best classes to return.
      */
     public function set_best_classes_count($value)
     {

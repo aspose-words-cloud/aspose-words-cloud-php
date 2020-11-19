@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetStyleRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Style name.
+     * The name of the style.
      */
     public $style_name;
 
@@ -75,8 +75,8 @@ class GetStyleRequest
     /*
      * Initializes a new instance of the GetStyleRequest class.
      *
-     * @param string $name The document name.
-     * @param string $style_name Style name.
+     * @param string $name The filename of the input document.
+     * @param string $style_name The name of the style.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,7 +93,7 @@ class GetStyleRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class GetStyleRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -110,7 +110,7 @@ class GetStyleRequest
     }
 
     /*
-     * Style name.
+     * The name of the style.
      */
     public function get_style_name()
     {
@@ -118,7 +118,7 @@ class GetStyleRequest
     }
 
     /*
-     * Style name.
+     * The name of the style.
      */
     public function set_style_name($value)
     {

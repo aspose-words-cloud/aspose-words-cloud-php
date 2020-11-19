@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DrawingObjectCollection
  *
- * @description Represents drawing objects collection DTO.
+ * @description DTO container with a collection of DrawingObjects links.
  */
 class DrawingObjectCollection extends LinkElement
 {
@@ -205,7 +205,7 @@ class DrawingObjectCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\LinkElement[] $list Gets or sets collection of DrawingObjects links.
+     * @param \Aspose\Words\Model\LinkElement[] $list Gets or sets the collection of DrawingObjects links.
      *
      * @return $this
      */

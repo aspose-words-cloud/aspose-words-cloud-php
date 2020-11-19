@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableRowInsert
  *
- * @description Table row element.
+ * @description DTO container with a table row element.
  */
 class TableRowInsert implements ArrayAccess
 {
@@ -215,7 +215,7 @@ class TableRowInsert implements ArrayAccess
     /*
      * Sets columns_count
      *
-     * @param int $columns_count Gets or sets count of columns. Default is 1.
+     * @param int $columns_count Gets or sets the count of columns. The default value is 1.
      *
      * @return $this
      */

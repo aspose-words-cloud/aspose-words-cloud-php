@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class CopyStyleRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Style to copy.
+     * The properties of the style.
      */
     public $style_copy;
 
@@ -90,8 +90,8 @@ class CopyStyleRequest
     /*
      * Initializes a new instance of the CopyStyleRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\StyleCopy $style_copy Style to copy.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\StyleCopy $style_copy The properties of the style.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class CopyStyleRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class CopyStyleRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class CopyStyleRequest
     }
 
     /*
-     * Style to copy.
+     * The properties of the style.
      */
     public function get_style_copy()
     {
@@ -139,7 +139,7 @@ class CopyStyleRequest
     }
 
     /*
-     * Style to copy.
+     * The properties of the style.
      */
     public function set_style_copy($value)
     {

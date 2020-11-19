@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class InsertRunRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public $paragraph_path;
 
     /*
-     * Run data.
+     * The properties of the Run object.
      */
     public $run;
 
@@ -93,16 +93,16 @@ class InsertRunRequest
     public $revision_date_time;
 
     /*
-     * Paragraph will be inserted before node with index.
+     * The index of the node. A new Run object will be inserted before the node with the specified node Id.
      */
     public $insert_before_node;
 
     /*
      * Initializes a new instance of the InsertRunRequest class.
      *
-     * @param string $name The document name.
-     * @param string $paragraph_path Path to parent paragraph.
-     * @param \Aspose\Words\Model\RunInsert $run Run data.
+     * @param string $name The filename of the input document.
+     * @param string $paragraph_path The path to the paragraph in the document tree.
+     * @param \Aspose\Words\Model\RunInsert $run The properties of the Run object.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -110,7 +110,7 @@ class InsertRunRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $insert_before_node Paragraph will be inserted before node with index.
+     * @param string $insert_before_node The index of the node. A new Run object will be inserted before the node with the specified node Id.
      */
     public function __construct($name, $paragraph_path, $run, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)
     {
@@ -128,7 +128,7 @@ class InsertRunRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class InsertRunRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class InsertRunRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function get_paragraph_path()
     {
@@ -153,7 +153,7 @@ class InsertRunRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function set_paragraph_path($value)
     {
@@ -162,7 +162,7 @@ class InsertRunRequest
     }
 
     /*
-     * Run data.
+     * The properties of the Run object.
      */
     public function get_run()
     {
@@ -170,7 +170,7 @@ class InsertRunRequest
     }
 
     /*
-     * Run data.
+     * The properties of the Run object.
      */
     public function set_run($value)
     {
@@ -298,7 +298,7 @@ class InsertRunRequest
     }
 
     /*
-     * Paragraph will be inserted before node with index.
+     * The index of the node. A new Run object will be inserted before the node with the specified node Id.
      */
     public function get_insert_before_node()
     {
@@ -306,7 +306,7 @@ class InsertRunRequest
     }
 
     /*
-     * Paragraph will be inserted before node with index.
+     * The index of the node. A new Run object will be inserted before the node with the specified node Id.
      */
     public function set_insert_before_node($value)
     {

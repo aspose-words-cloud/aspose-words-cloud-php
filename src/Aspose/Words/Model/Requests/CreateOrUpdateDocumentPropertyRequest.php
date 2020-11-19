@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class CreateOrUpdateDocumentPropertyRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The property name.
+     * The name of the property.
      */
     public $property_name;
 
     /*
-     * The property with new value.
+     * The property with a new value.
      */
     public $property;
 
@@ -95,9 +95,9 @@ class CreateOrUpdateDocumentPropertyRequest
     /*
      * Initializes a new instance of the CreateOrUpdateDocumentPropertyRequest class.
      *
-     * @param string $name The document name.
-     * @param string $property_name The property name.
-     * @param \Aspose\Words\Model\DocumentPropertyCreateOrUpdate $property The property with new value.
+     * @param string $name The filename of the input document.
+     * @param string $property_name The name of the property.
+     * @param \Aspose\Words\Model\DocumentPropertyCreateOrUpdate $property The property with a new value.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class CreateOrUpdateDocumentPropertyRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class CreateOrUpdateDocumentPropertyRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class CreateOrUpdateDocumentPropertyRequest
     }
 
     /*
-     * The property name.
+     * The name of the property.
      */
     public function get_property_name()
     {
@@ -146,7 +146,7 @@ class CreateOrUpdateDocumentPropertyRequest
     }
 
     /*
-     * The property name.
+     * The name of the property.
      */
     public function set_property_name($value)
     {
@@ -155,7 +155,7 @@ class CreateOrUpdateDocumentPropertyRequest
     }
 
     /*
-     * The property with new value.
+     * The property with a new value.
      */
     public function get_property()
     {
@@ -163,7 +163,7 @@ class CreateOrUpdateDocumentPropertyRequest
     }
 
     /*
-     * The property with new value.
+     * The property with a new value.
      */
     public function set_property($value)
     {

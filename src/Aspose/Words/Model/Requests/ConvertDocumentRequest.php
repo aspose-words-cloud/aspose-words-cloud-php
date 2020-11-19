@@ -48,7 +48,7 @@ class ConvertDocumentRequest
     public $document;
 
     /*
-     * Format to convert.
+     * The format to convert.
      */
     public $format;
 
@@ -58,12 +58,12 @@ class ConvertDocumentRequest
     public $storage;
 
     /*
-     * Path for saving operation result to the local storage.
+     * The path to the output document on a local storage.
      */
     public $out_path;
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
      */
     public $file_name_field_value;
 
@@ -76,10 +76,10 @@ class ConvertDocumentRequest
      * Initializes a new instance of the ConvertDocumentRequest class.
      *
      * @param \SplFileObject $document Converting document.
-     * @param string $format Format to convert.
+     * @param string $format The format to convert.
      * @param string $storage Original document storage.
-     * @param string $out_path Path for saving operation result to the local storage.
-     * @param string $file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
+     * @param string $out_path The path to the output document on a local storage.
+     * @param string $file_name_field_value The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
     public function __construct($document, $format, $storage = null, $out_path = null, $file_name_field_value = null, $fonts_location = null)
@@ -110,7 +110,7 @@ class ConvertDocumentRequest
     }
 
     /*
-     * Format to convert.
+     * The format to convert.
      */
     public function get_format()
     {
@@ -118,7 +118,7 @@ class ConvertDocumentRequest
     }
 
     /*
-     * Format to convert.
+     * The format to convert.
      */
     public function set_format($value)
     {
@@ -144,7 +144,7 @@ class ConvertDocumentRequest
     }
 
     /*
-     * Path for saving operation result to the local storage.
+     * The path to the output document on a local storage.
      */
     public function get_out_path()
     {
@@ -152,7 +152,7 @@ class ConvertDocumentRequest
     }
 
     /*
-     * Path for saving operation result to the local storage.
+     * The path to the output document on a local storage.
      */
     public function set_out_path($value)
     {
@@ -161,7 +161,7 @@ class ConvertDocumentRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
      */
     public function get_file_name_field_value()
     {
@@ -169,7 +169,7 @@ class ConvertDocumentRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
      */
     public function set_file_name_field_value($value)
     {

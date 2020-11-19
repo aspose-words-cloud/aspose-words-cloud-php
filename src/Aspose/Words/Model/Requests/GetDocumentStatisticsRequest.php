@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class GetDocumentStatisticsRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -68,31 +68,31 @@ class GetDocumentStatisticsRequest
     public $password;
 
     /*
-     * Support including/excluding comments from the WordCount. Default value is "false".
+     * The flag indicating whether to include comments from the WordCount. The default value is "false".
      */
     public $include_comments;
 
     /*
-     * Support including/excluding footnotes from the WordCount. Default value is "false".
+     * The flag indicating whether to include footnotes from the WordCount. The default value is "false".
      */
     public $include_footnotes;
 
     /*
-     * Support including/excluding shape's text from the WordCount. Default value is "false".
+     * The flag indicating whether to include shape's text from the WordCount. The default value is "false".
      */
     public $include_text_in_shapes;
 
     /*
      * Initializes a new instance of the GetDocumentStatisticsRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param bool $include_comments Support including/excluding comments from the WordCount. Default value is "false".
-     * @param bool $include_footnotes Support including/excluding footnotes from the WordCount. Default value is "false".
-     * @param bool $include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is "false".
+     * @param bool $include_comments The flag indicating whether to include comments from the WordCount. The default value is "false".
+     * @param bool $include_footnotes The flag indicating whether to include footnotes from the WordCount. The default value is "false".
+     * @param bool $include_text_in_shapes The flag indicating whether to include shape's text from the WordCount. The default value is "false".
      */
     public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)
     {
@@ -107,7 +107,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -115,7 +115,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -192,7 +192,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * Support including/excluding comments from the WordCount. Default value is "false".
+     * The flag indicating whether to include comments from the WordCount. The default value is "false".
      */
     public function get_include_comments()
     {
@@ -200,7 +200,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * Support including/excluding comments from the WordCount. Default value is "false".
+     * The flag indicating whether to include comments from the WordCount. The default value is "false".
      */
     public function set_include_comments($value)
     {
@@ -209,7 +209,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * Support including/excluding footnotes from the WordCount. Default value is "false".
+     * The flag indicating whether to include footnotes from the WordCount. The default value is "false".
      */
     public function get_include_footnotes()
     {
@@ -217,7 +217,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * Support including/excluding footnotes from the WordCount. Default value is "false".
+     * The flag indicating whether to include footnotes from the WordCount. The default value is "false".
      */
     public function set_include_footnotes($value)
     {
@@ -226,7 +226,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * Support including/excluding shape's text from the WordCount. Default value is "false".
+     * The flag indicating whether to include shape's text from the WordCount. The default value is "false".
      */
     public function get_include_text_in_shapes()
     {
@@ -234,7 +234,7 @@ class GetDocumentStatisticsRequest
     }
 
     /*
-     * Support including/excluding shape's text from the WordCount. Default value is "false".
+     * The flag indicating whether to include shape's text from the WordCount. The default value is "false".
      */
     public function set_include_text_in_shapes($value)
     {

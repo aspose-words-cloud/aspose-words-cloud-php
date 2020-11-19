@@ -66,6 +66,8 @@ class ConvertDocumentTests extends BaseTestContext
 
         $result = $this->words->saveAs($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSaveResult());
+        Assert::assertNotNull($result->getSaveResult()->getDestDocument());
     }
 
     /*
@@ -99,6 +101,8 @@ class ConvertDocumentTests extends BaseTestContext
 
         $result = $this->words->saveAs($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSaveResult());
+        Assert::assertNotNull($result->getSaveResult()->getDestDocument());
     }
 
     /*
@@ -148,6 +152,8 @@ class ConvertDocumentTests extends BaseTestContext
 
         $result = $this->words->saveAsTiff($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSaveResult());
+        Assert::assertNotNull($result->getSaveResult()->getDestDocument());
     }
 
     /*

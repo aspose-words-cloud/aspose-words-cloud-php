@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class InsertTableCellRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Table cell parameters/.
+     * The properties of the cell.
      */
     public $cell;
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public $table_row_path;
 
@@ -95,9 +95,9 @@ class InsertTableCellRequest
     /*
      * Initializes a new instance of the InsertTableCellRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\TableCellInsert $cell Table cell parameters/.
-     * @param string $table_row_path Path to table row.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\TableCellInsert $cell The properties of the cell.
+     * @param string $table_row_path The path to the table row in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class InsertTableCellRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class InsertTableCellRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class InsertTableCellRequest
     }
 
     /*
-     * Table cell parameters/.
+     * The properties of the cell.
      */
     public function get_cell()
     {
@@ -146,7 +146,7 @@ class InsertTableCellRequest
     }
 
     /*
-     * Table cell parameters/.
+     * The properties of the cell.
      */
     public function set_cell($value)
     {
@@ -155,7 +155,7 @@ class InsertTableCellRequest
     }
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public function get_table_row_path()
     {
@@ -163,7 +163,7 @@ class InsertTableCellRequest
     }
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public function set_table_row_path($value)
     {

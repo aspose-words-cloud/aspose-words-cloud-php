@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * OoxmlSaveOptionsData
  *
- * @description container class for docx/docm/dotx/dotm/flatopc save options.
+ * @description Container class for docx/docm/dotx/dotm/flatopc save options.
  */
 class OoxmlSaveOptionsData extends SaveOptionsData
 {
@@ -256,7 +256,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     /*
      * Sets compliance
      *
-     * @param string $compliance Gets or sets specifies the OOXML version for the output document.
+     * @param string $compliance Gets or sets the oOXML version for the output document.
      *
      * @return $this
      */
@@ -279,7 +279,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     /*
      * Sets compression_level
      *
-     * @param string $compression_level Gets or sets compression level.
+     * @param string $compression_level Gets or sets the compression level.
      *
      * @return $this
      */
@@ -306,7 +306,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     /*
      * Sets password
      *
-     * @param string $password Gets or sets specifies a password to encrypt document using ECMA376 Standard encryption algorithm.
+     * @param string $password Gets or sets the password to encrypt document using ECMA376 Standard encryption algorithm.
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
     /*
      * Sets pretty_format
      *
-     * @param bool $pretty_format Gets or sets specifies whether or not use pretty formats output.
+     * @param bool $pretty_format Gets or sets a value indicating whether to use pretty formats output.
      *
      * @return $this
      */

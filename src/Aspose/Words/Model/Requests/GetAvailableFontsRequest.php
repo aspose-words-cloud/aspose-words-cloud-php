@@ -43,14 +43,14 @@ use Aspose\Words\HeaderSelector;
 class GetAvailableFontsRequest
 {
     /*
-     * Folder in filestorage with custom fonts.
+     * The folder in cloud storage with custom fonts.
      */
     public $fonts_location;
 
     /*
      * Initializes a new instance of the GetAvailableFontsRequest class.
      *
-     * @param string $fonts_location Folder in filestorage with custom fonts.
+     * @param string $fonts_location The folder in cloud storage with custom fonts.
      */
     public function __construct($fonts_location = null)
     {
@@ -58,7 +58,7 @@ class GetAvailableFontsRequest
     }
 
     /*
-     * Folder in filestorage with custom fonts.
+     * The folder in cloud storage with custom fonts.
      */
     public function get_fonts_location()
     {
@@ -66,7 +66,7 @@ class GetAvailableFontsRequest
     }
 
     /*
-     * Folder in filestorage with custom fonts.
+     * The folder in cloud storage with custom fonts.
      */
     public function set_fonts_location($value)
     {

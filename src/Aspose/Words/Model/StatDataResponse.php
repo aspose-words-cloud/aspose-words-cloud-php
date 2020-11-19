@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * StatDataResponse
  *
- * @description Response for the request of the document's statistical data.
+ * @description The REST response with document's statistical data.
  */
 class StatDataResponse extends WordsResponse
 {
@@ -211,7 +211,7 @@ class StatDataResponse extends WordsResponse
     /*
      * Sets document_link
      *
-     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets link to the document.
+     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets the link to the document.
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class StatDataResponse extends WordsResponse
     /*
      * Sets stat_data
      *
-     * @param \Aspose\Words\Model\DocumentStatData $stat_data Gets or sets statistical data of the document.
+     * @param \Aspose\Words\Model\DocumentStatData $stat_data Gets or sets the statistical data of the document.
      *
      * @return $this
      */

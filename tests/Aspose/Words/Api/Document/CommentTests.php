@@ -61,6 +61,8 @@ class CommentTests extends BaseTestContext
 
         $result = $this->words->getComment($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getComment());
+        Assert::assertEquals("Comment 1" . "\r\n\r\n", $result->getComment()->getText());
     }
 
     /*
@@ -87,6 +89,10 @@ class CommentTests extends BaseTestContext
 
         $result = $this->words->getComments($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getComments());
+        Assert::assertNotNull($result->getComments()->getCommentList());
+        Assert::assertCount(1, $result->getComments()->getCommentList());
+        Assert::assertEquals("Comment 1" . "\r\n\r\n", $result->getComments()->getCommentList()[0]->getText());
     }
 
     /*
@@ -138,6 +144,11 @@ class CommentTests extends BaseTestContext
 
         $result = $this->words->insertComment($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getComment());
+        Assert::assertEquals("A new Comment" . "\r\n", $result->getComment()->getText());
+        Assert::assertNotNull($result->getComment()->getRangeStart());
+        Assert::assertNotNull($result->getComment()->getRangeStart()->getNode());
+        Assert::assertEquals("0.3.0.4", $result->getComment()->getRangeStart()->getNode()->getNodeId());
     }
 
     /*
@@ -190,6 +201,11 @@ class CommentTests extends BaseTestContext
 
         $result = $this->words->updateComment($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getComment());
+        Assert::assertEquals("A new Comment" . "\r\n", $result->getComment()->getText());
+        Assert::assertNotNull($result->getComment()->getRangeStart());
+        Assert::assertNotNull($result->getComment()->getRangeStart()->getNode());
+        Assert::assertEquals("0.3.0.1", $result->getComment()->getRangeStart()->getNode()->getNodeId());
     }
 
     /*

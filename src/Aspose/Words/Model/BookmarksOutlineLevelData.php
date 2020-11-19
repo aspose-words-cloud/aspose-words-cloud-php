@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * BookmarksOutlineLevelData
  *
- * @description container class for individual bookmarks outline level.
+ * @description Container class for individual bookmarks outline level.
  */
 class BookmarksOutlineLevelData implements ArrayAccess
 {
@@ -215,7 +215,7 @@ class BookmarksOutlineLevelData implements ArrayAccess
     /*
      * Sets bookmarks_outline_level
      *
-     * @param int $bookmarks_outline_level Gets or sets specify the bookmark's level.
+     * @param int $bookmarks_outline_level Gets or sets the bookmark's level.
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class BookmarksOutlineLevelData implements ArrayAccess
     /*
      * Sets name
      *
-     * @param string $name Gets or sets specify the bookmark's name.
+     * @param string $name Gets or sets the bookmark's name.
      *
      * @return $this
      */

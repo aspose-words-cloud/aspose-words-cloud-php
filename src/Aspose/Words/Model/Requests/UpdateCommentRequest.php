@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class UpdateCommentRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The comment index.
+     * The index of the comment.
      */
     public $comment_index;
 
     /*
-     * The comment data.
+     * The properties of the comment.
      */
     public $comment;
 
@@ -95,9 +95,9 @@ class UpdateCommentRequest
     /*
      * Initializes a new instance of the UpdateCommentRequest class.
      *
-     * @param string $name The document name.
-     * @param int $comment_index The comment index.
-     * @param \Aspose\Words\Model\CommentUpdate $comment The comment data.
+     * @param string $name The filename of the input document.
+     * @param int $comment_index The index of the comment.
+     * @param \Aspose\Words\Model\CommentUpdate $comment The properties of the comment.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class UpdateCommentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class UpdateCommentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class UpdateCommentRequest
     }
 
     /*
-     * The comment index.
+     * The index of the comment.
      */
     public function get_comment_index()
     {
@@ -146,7 +146,7 @@ class UpdateCommentRequest
     }
 
     /*
-     * The comment index.
+     * The index of the comment.
      */
     public function set_comment_index($value)
     {
@@ -155,7 +155,7 @@ class UpdateCommentRequest
     }
 
     /*
-     * The comment data.
+     * The properties of the comment.
      */
     public function get_comment()
     {
@@ -163,7 +163,7 @@ class UpdateCommentRequest
     }
 
     /*
-     * The comment data.
+     * The properties of the comment.
      */
     public function set_comment($value)
     {

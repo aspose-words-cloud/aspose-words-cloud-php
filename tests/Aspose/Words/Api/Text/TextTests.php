@@ -51,8 +51,8 @@ class TextTests extends BaseTestContext
         );
 
         $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
-            "old_value" => "aspose",
-            "new_value" => "aspose new",
+            "old_value" => "Testing",
+            "new_value" => "Aspose testing",
         ));
         $request = new Requests\ReplaceTextRequest(
             $remoteFileName,
@@ -68,6 +68,7 @@ class TextTests extends BaseTestContext
 
         $result = $this->words->replaceText($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertEquals(3, $result->getMatches());
     }
 
     /*
@@ -95,5 +96,10 @@ class TextTests extends BaseTestContext
 
         $result = $this->words->search($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSearchResults());
+        Assert::assertNotNull($result->getSearchResults()->getResultsList());
+        Assert::assertCount(23, $result->getSearchResults()->getResultsList());
+        Assert::assertNotNull($result->getSearchResults()->getResultsList()[0]->getRangeStart());
+        Assert::assertEquals(65, $result->getSearchResults()->getResultsList()[0]->getRangeStart()->getOffset());
     }
 }

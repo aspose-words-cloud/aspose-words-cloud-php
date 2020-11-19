@@ -88,6 +88,7 @@ class FolderTests extends BaseTestContext
 
         $result = $this->words->getFilesList($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getValue());
     }
 
     /*

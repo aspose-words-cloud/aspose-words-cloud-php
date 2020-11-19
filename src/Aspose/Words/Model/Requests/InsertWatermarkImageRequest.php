@@ -43,7 +43,7 @@ use Aspose\Words\HeaderSelector;
 class InsertWatermarkImageRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
@@ -88,19 +88,19 @@ class InsertWatermarkImageRequest
     public $revision_date_time;
 
     /*
-     * The watermark rotation angle.
+     * The rotation angle of the watermark.
      */
     public $rotation_angle;
 
     /*
-     * The image file server full name. If the name is empty the image is expected in request content.
+     * The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
     public $image;
 
     /*
      * Initializes a new instance of the InsertWatermarkImageRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
      * @param \SplFileObject $image_file File with image.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -109,8 +109,8 @@ class InsertWatermarkImageRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param double $rotation_angle The watermark rotation angle.
-     * @param string $image The image file server full name. If the name is empty the image is expected in request content.
+     * @param double $rotation_angle The rotation angle of the watermark.
+     * @param string $image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
     public function __construct($name, $image_file = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)
     {
@@ -128,7 +128,7 @@ class InsertWatermarkImageRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class InsertWatermarkImageRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -281,7 +281,7 @@ class InsertWatermarkImageRequest
     }
 
     /*
-     * The watermark rotation angle.
+     * The rotation angle of the watermark.
      */
     public function get_rotation_angle()
     {
@@ -289,7 +289,7 @@ class InsertWatermarkImageRequest
     }
 
     /*
-     * The watermark rotation angle.
+     * The rotation angle of the watermark.
      */
     public function set_rotation_angle($value)
     {
@@ -298,7 +298,7 @@ class InsertWatermarkImageRequest
     }
 
     /*
-     * The image file server full name. If the name is empty the image is expected in request content.
+     * The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
     public function get_image()
     {
@@ -306,7 +306,7 @@ class InsertWatermarkImageRequest
     }
 
     /*
-     * The image file server full name. If the name is empty the image is expected in request content.
+     * The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
     public function set_image($value)
     {

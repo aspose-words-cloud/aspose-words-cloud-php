@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Runs
  *
- * @description Represents DTO for collection of runs.
+ * @description DTO container with a collection of runs.
  */
 class Runs extends LinkElement
 {
@@ -205,7 +205,7 @@ class Runs extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\Run[] $list Gets or sets collection of fields.
+     * @param \Aspose\Words\Model\Run[] $list Gets or sets the collection of runs.
      *
      * @return $this
      */

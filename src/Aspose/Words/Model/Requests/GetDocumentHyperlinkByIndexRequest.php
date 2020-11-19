@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetDocumentHyperlinkByIndexRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The hyperlink index.
+     * The index of the hyperlink.
      */
     public $hyperlink_index;
 
@@ -75,8 +75,8 @@ class GetDocumentHyperlinkByIndexRequest
     /*
      * Initializes a new instance of the GetDocumentHyperlinkByIndexRequest class.
      *
-     * @param string $name The document name.
-     * @param int $hyperlink_index The hyperlink index.
+     * @param string $name The filename of the input document.
+     * @param int $hyperlink_index The index of the hyperlink.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,7 +93,7 @@ class GetDocumentHyperlinkByIndexRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class GetDocumentHyperlinkByIndexRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -110,7 +110,7 @@ class GetDocumentHyperlinkByIndexRequest
     }
 
     /*
-     * The hyperlink index.
+     * The index of the hyperlink.
      */
     public function get_hyperlink_index()
     {
@@ -118,7 +118,7 @@ class GetDocumentHyperlinkByIndexRequest
     }
 
     /*
-     * The hyperlink index.
+     * The index of the hyperlink.
      */
     public function set_hyperlink_index($value)
     {

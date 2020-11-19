@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetListRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * List unique identifier.
+     * The list Id.
      */
     public $list_id;
 
@@ -75,8 +75,8 @@ class GetListRequest
     /*
      * Initializes a new instance of the GetListRequest class.
      *
-     * @param string $name The document name.
-     * @param int $list_id List unique identifier.
+     * @param string $name The filename of the input document.
+     * @param int $list_id The list Id.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,7 +93,7 @@ class GetListRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class GetListRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -110,7 +110,7 @@ class GetListRequest
     }
 
     /*
-     * List unique identifier.
+     * The list Id.
      */
     public function get_list_id()
     {
@@ -118,7 +118,7 @@ class GetListRequest
     }
 
     /*
-     * List unique identifier.
+     * The list Id.
      */
     public function set_list_id($value)
     {

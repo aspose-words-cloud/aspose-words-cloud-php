@@ -414,7 +414,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
     /*
      * Sets compositing_mode
      *
-     * @param string $compositing_mode Gets or sets a value that specifies how composited images are drawn to this Graphics.
+     * @param string $compositing_mode Gets or sets the value, that specifies how composited images are drawn to this Graphics.
      *
      * @return $this
      */

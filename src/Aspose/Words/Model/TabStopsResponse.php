@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TabStopsResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/tabstops.
+ * @description The REST response with an array of tab stops.
  */
 class TabStopsResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class TabStopsResponse extends WordsResponse
     /*
      * Sets tab_stops
      *
-     * @param \Aspose\Words\Model\TabStop[] $tab_stops Gets or sets represents a tab stop.
+     * @param \Aspose\Words\Model\TabStop[] $tab_stops Gets or sets the array of tab stops.
      *
      * @return $this
      */

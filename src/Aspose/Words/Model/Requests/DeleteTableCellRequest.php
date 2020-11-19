@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class DeleteTableCellRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public $table_row_path;
 
@@ -95,8 +95,8 @@ class DeleteTableCellRequest
     /*
      * Initializes a new instance of the DeleteTableCellRequest class.
      *
-     * @param string $name The document name.
-     * @param string $table_row_path Path to table row.
+     * @param string $name The filename of the input document.
+     * @param string $table_row_path The path to the table row in the document tree.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -121,7 +121,7 @@ class DeleteTableCellRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class DeleteTableCellRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class DeleteTableCellRequest
     }
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public function get_table_row_path()
     {
@@ -146,7 +146,7 @@ class DeleteTableCellRequest
     }
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public function set_table_row_path($value)
     {

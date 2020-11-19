@@ -48,7 +48,7 @@ class GetDocumentFieldNamesOnlineRequest
     public $template;
 
     /*
-     * Use non merge fields or not.
+     * The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
      */
     public $use_non_merge_fields;
 
@@ -56,7 +56,7 @@ class GetDocumentFieldNamesOnlineRequest
      * Initializes a new instance of the GetDocumentFieldNamesOnlineRequest class.
      *
      * @param \SplFileObject $template File with template.
-     * @param bool $use_non_merge_fields Use non merge fields or not.
+     * @param bool $use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
      */
     public function __construct($template, $use_non_merge_fields = null)
     {
@@ -82,7 +82,7 @@ class GetDocumentFieldNamesOnlineRequest
     }
 
     /*
-     * Use non merge fields or not.
+     * The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
      */
     public function get_use_non_merge_fields()
     {
@@ -90,7 +90,7 @@ class GetDocumentFieldNamesOnlineRequest
     }
 
     /*
-     * Use non merge fields or not.
+     * The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
      */
     public function set_use_non_merge_fields($value)
     {

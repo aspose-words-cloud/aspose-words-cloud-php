@@ -53,17 +53,17 @@ class ExecuteMailMergeOnlineRequest
     public $data;
 
     /*
-     * With regions flag.
+     * The flag indicating whether to execute Mail Merge operation with regions.
      */
     public $with_regions;
 
     /*
-     * Clean up options.
+     * The cleanup options.
      */
     public $cleanup;
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public $document_file_name;
 
@@ -72,9 +72,9 @@ class ExecuteMailMergeOnlineRequest
      *
      * @param \SplFileObject $template File with template.
      * @param \SplFileObject $data File with mailmerge data.
-     * @param bool $with_regions With regions flag.
-     * @param string $cleanup Clean up options.
-     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * @param bool $with_regions The flag indicating whether to execute Mail Merge operation with regions.
+     * @param string $cleanup The cleanup options.
+     * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function __construct($template, $data, $with_regions = null, $cleanup = null, $document_file_name = null)
     {
@@ -120,7 +120,7 @@ class ExecuteMailMergeOnlineRequest
     }
 
     /*
-     * With regions flag.
+     * The flag indicating whether to execute Mail Merge operation with regions.
      */
     public function get_with_regions()
     {
@@ -128,7 +128,7 @@ class ExecuteMailMergeOnlineRequest
     }
 
     /*
-     * With regions flag.
+     * The flag indicating whether to execute Mail Merge operation with regions.
      */
     public function set_with_regions($value)
     {
@@ -137,7 +137,7 @@ class ExecuteMailMergeOnlineRequest
     }
 
     /*
-     * Clean up options.
+     * The cleanup options.
      */
     public function get_cleanup()
     {
@@ -145,7 +145,7 @@ class ExecuteMailMergeOnlineRequest
     }
 
     /*
-     * Clean up options.
+     * The cleanup options.
      */
     public function set_cleanup($value)
     {
@@ -154,7 +154,7 @@ class ExecuteMailMergeOnlineRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function get_document_file_name()
     {
@@ -162,7 +162,7 @@ class ExecuteMailMergeOnlineRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function set_document_file_name($value)
     {

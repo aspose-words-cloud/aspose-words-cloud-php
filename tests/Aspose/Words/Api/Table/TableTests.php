@@ -61,6 +61,10 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTables($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTables());
+        Assert::assertNotNull($result->getTables()->getTableLinkList());
+        Assert::assertCount(5, $result->getTables()->getTableLinkList());
+        Assert::assertEquals("0.0.1", $result->getTables()->getTableLinkList()[0]->getNodeId());
     }
 
     /*
@@ -88,6 +92,10 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTables($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTables());
+        Assert::assertNotNull($result->getTables()->getTableLinkList());
+        Assert::assertCount(5, $result->getTables()->getTableLinkList());
+        Assert::assertEquals("0.0.1", $result->getTables()->getTableLinkList()[0]->getNodeId());
     }
 
     /*
@@ -116,6 +124,11 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTable($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTable());
+        Assert::assertNotNull($result->getTable()->getTableRowList());
+        Assert::assertCount(1, $result->getTable()->getTableRowList());
+        Assert::assertNotNull($result->getTable()->getTableRowList()[0]->getTableCellList());
+        Assert::assertCount(2, $result->getTable()->getTableRowList()[0]->getTableCellList());
     }
 
     /*
@@ -144,6 +157,11 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTable($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTable());
+        Assert::assertNotNull($result->getTable()->getTableRowList());
+        Assert::assertCount(1, $result->getTable()->getTableRowList());
+        Assert::assertNotNull($result->getTable()->getTableRowList()[0]->getTableCellList());
+        Assert::assertCount(2, $result->getTable()->getTableRowList()[0]->getTableCellList());
     }
 
     /*
@@ -239,6 +257,11 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->insertTable($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTable());
+        Assert::assertNotNull($result->getTable()->getTableRowList());
+        Assert::assertCount(4, $result->getTable()->getTableRowList());
+        Assert::assertNotNull($result->getTable()->getTableRowList()[0]->getTableCellList());
+        Assert::assertCount(5, $result->getTable()->getTableRowList()[0]->getTableCellList());
     }
 
     /*
@@ -274,6 +297,11 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->insertTable($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTable());
+        Assert::assertNotNull($result->getTable()->getTableRowList());
+        Assert::assertCount(4, $result->getTable()->getTableRowList());
+        Assert::assertNotNull($result->getTable()->getTableRowList()[0]->getTableCellList());
+        Assert::assertCount(5, $result->getTable()->getTableRowList()[0]->getTableCellList());
     }
 
     /*
@@ -302,6 +330,8 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTableProperties($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getProperties());
+        Assert::assertEquals("Table Grid", $result->getProperties()->getStyleName());
     }
 
     /*
@@ -330,6 +360,8 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTableProperties($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getProperties());
+        Assert::assertEquals("Table Grid", $result->getProperties()->getStyleName());
     }
 
     /*
@@ -351,7 +383,7 @@ class TableTests extends BaseTestContext
             "allow_auto_fit" => false,
             "bidi" => true,
             "bottom_padding" => 1,
-            "cell_spacing" => 2,
+            "cell_spacing" => 2.0,
             "style_options" => "ColumnBands",
         ));
         $request = new Requests\UpdateTablePropertiesRequest(
@@ -370,6 +402,11 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->updateTableProperties($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getProperties());
+        Assert::assertFalse($result->getProperties()->getAllowAutoFit());
+        Assert::assertTrue($result->getProperties()->getBidi());
+        Assert::assertEquals(1.0, $result->getProperties()->getBottomPadding());
+        Assert::assertEquals(2.0, $result->getProperties()->getCellSpacing());
     }
 
     /*
@@ -390,8 +427,8 @@ class TableTests extends BaseTestContext
             "alignment" => "Right",
             "allow_auto_fit" => false,
             "bidi" => true,
-            "bottom_padding" => 1,
-            "cell_spacing" => 2,
+            "bottom_padding" => 1.0,
+            "cell_spacing" => 2.0,
             "style_options" => "ColumnBands",
         ));
         $request = new Requests\UpdateTablePropertiesRequest(
@@ -410,6 +447,11 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->updateTableProperties($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getProperties());
+        Assert::assertFalse($result->getProperties()->getAllowAutoFit());
+        Assert::assertTrue($result->getProperties()->getBidi());
+        Assert::assertEquals(1.0, $result->getProperties()->getBottomPadding());
+        Assert::assertEquals(2.0, $result->getProperties()->getCellSpacing());
     }
 
     /*
@@ -438,6 +480,9 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTableRow($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRow());
+        Assert::assertNotNull($result->getRow()->getTableCellList());
+        Assert::assertCount(2, $result->getRow()->getTableCellList());
     }
 
     /*
@@ -502,6 +547,9 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->insertTableRow($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRow());
+        Assert::assertNotNull($result->getRow()->getTableCellList());
+        Assert::assertCount(5, $result->getRow()->getTableCellList());
     }
 
     /*
@@ -530,6 +578,8 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTableRowFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRowFormat());
+        Assert::assertTrue($result->getRowFormat()->getAllowBreakAcrossPages());
     }
 
     /*
@@ -549,8 +599,8 @@ class TableTests extends BaseTestContext
         $requestFormat = new \Aspose\Words\Model\TableRowFormat(array(
             "allow_break_across_pages" => true,
             "heading_format" => true,
-            "height" => 10,
-            "height_rule" => "Auto",
+            "height" => 10.0,
+            "height_rule" => "Exactly",
         ));
         $request = new Requests\UpdateTableRowFormatRequest(
             $remoteFileName,
@@ -568,6 +618,10 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->updateTableRowFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRowFormat());
+        Assert::assertTrue($result->getRowFormat()->getAllowBreakAcrossPages());
+        Assert::assertTrue($result->getRowFormat()->getHeadingFormat());
+        Assert::assertEquals(10.0, $result->getRowFormat()->getHeight());
     }
 
     /*
@@ -596,6 +650,8 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTableCell($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getCell());
+        Assert::assertEquals("0.0.5.0.0", $result->getCell()->getNodeId());
     }
 
     /*
@@ -659,6 +715,8 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->insertTableCell($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getCell());
+        Assert::assertEquals("0.0.5.0.3", $result->getCell()->getNodeId());
     }
 
     /*
@@ -687,6 +745,8 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->getTableCellFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getCellFormat());
+        Assert::assertTrue($result->getCellFormat()->getWrapText());
     }
 
     /*
@@ -704,7 +764,7 @@ class TableTests extends BaseTestContext
         );
 
         $requestFormat = new \Aspose\Words\Model\TableCellFormat(array(
-            "bottom_padding" => 5,
+            "bottom_padding" => 5.0,
             "fit_text" => true,
             "horizontal_merge" => "First",
             "wrap_text" => true,
@@ -725,6 +785,10 @@ class TableTests extends BaseTestContext
 
         $result = $this->words->updateTableCellFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getCellFormat());
+        Assert::assertEquals(5.0, $result->getCellFormat()->getBottomPadding());
+        Assert::assertTrue($result->getCellFormat()->getFitText());
+        Assert::assertTrue($result->getCellFormat()->getWrapText());
     }
 
     /*

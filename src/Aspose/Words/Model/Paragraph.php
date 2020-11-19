@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Paragraph
  *
- * @description Paragraph element.
+ * @description DTO container with a paragraph element.
  */
 class Paragraph extends NodeLink
 {
@@ -205,7 +205,7 @@ class Paragraph extends NodeLink
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets child nodes.
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets the list of child nodes.
      *
      * @return $this
      */

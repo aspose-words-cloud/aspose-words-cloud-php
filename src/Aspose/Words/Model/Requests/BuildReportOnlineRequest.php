@@ -58,7 +58,7 @@ class BuildReportOnlineRequest
     public $report_engine_settings;
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public $document_file_name;
 
@@ -68,7 +68,7 @@ class BuildReportOnlineRequest
      * @param \SplFileObject $template File with template.
      * @param string $data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
-     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function __construct($template, $data, $report_engine_settings, $document_file_name = null)
     {
@@ -130,7 +130,7 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function get_document_file_name()
     {
@@ -138,7 +138,7 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function set_document_file_name($value)
     {

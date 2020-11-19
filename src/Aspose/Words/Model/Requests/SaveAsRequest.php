@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class SaveAsRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Save options.
+     * The save options.
      */
     public $save_options_data;
 
@@ -80,8 +80,8 @@ class SaveAsRequest
     /*
      * Initializes a new instance of the SaveAsRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\SaveOptionsData $save_options_data Save options.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\SaveOptionsData $save_options_data The save options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -100,7 +100,7 @@ class SaveAsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -108,7 +108,7 @@ class SaveAsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -117,7 +117,7 @@ class SaveAsRequest
     }
 
     /*
-     * Save options.
+     * The save options.
      */
     public function get_save_options_data()
     {
@@ -125,7 +125,7 @@ class SaveAsRequest
     }
 
     /*
-     * Save options.
+     * The save options.
      */
     public function set_save_options_data($value)
     {

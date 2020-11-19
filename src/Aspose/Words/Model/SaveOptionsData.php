@@ -292,7 +292,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets dml3_d_effects_rendering_mode
      *
-     * @param string $dml3_d_effects_rendering_mode Gets or sets a value determining how 3D effects are rendered.
+     * @param string $dml3_d_effects_rendering_mode Gets or sets the value determining how 3D effects are rendered.
      *
      * @return $this
      */
@@ -319,7 +319,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets dml_effects_rendering_mode
      *
-     * @param string $dml_effects_rendering_mode Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
+     * @param string $dml_effects_rendering_mode Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
      *
      * @return $this
      */
@@ -342,7 +342,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets dml_rendering_mode
      *
-     * @param string $dml_rendering_mode Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
+     * @param string $dml_rendering_mode Gets or sets the option that controls how DrawingML shapes are rendered.
      *
      * @return $this
      */
@@ -365,7 +365,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets file_name
      *
-     * @param string $file_name Gets or sets name of destination file.
+     * @param string $file_name Gets or sets the name of destination file.
      *
      * @return $this
      */
@@ -388,7 +388,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets save_format
      *
-     * @param string $save_format Gets or sets format of save.
+     * @param string $save_format Gets or sets the format of save.
      *
      * @return $this
      */
@@ -411,7 +411,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets update_fields
      *
-     * @param bool $update_fields Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.
+     * @param bool $update_fields Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
      *
      * @return $this
      */
@@ -434,7 +434,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets update_last_printed_property
      *
-     * @param bool $update_last_printed_property Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
+     * @param bool $update_last_printed_property Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
      *
      * @return $this
      */
@@ -457,7 +457,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets update_last_saved_time_property
      *
-     * @param bool $update_last_saved_time_property Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+     * @param bool $update_last_saved_time_property Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
      *
      * @return $this
      */
@@ -480,7 +480,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets update_sdt_content
      *
-     * @param bool $update_sdt_content Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+     * @param bool $update_sdt_content Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
      *
      * @return $this
      */
@@ -503,7 +503,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets zip_output
      *
-     * @param bool $zip_output Gets or sets controls zip output or not. Default value is false.
+     * @param bool $zip_output Gets or sets a value indicating whether to zip output or not. The default value is false.
      *
      * @return $this
      */

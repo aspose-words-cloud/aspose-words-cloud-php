@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetSectionRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Section index.
+     * The index of the section.
      */
     public $section_index;
 
@@ -75,8 +75,8 @@ class GetSectionRequest
     /*
      * Initializes a new instance of the GetSectionRequest class.
      *
-     * @param string $name The document name.
-     * @param int $section_index Section index.
+     * @param string $name The filename of the input document.
+     * @param int $section_index The index of the section.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,7 +93,7 @@ class GetSectionRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class GetSectionRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -110,7 +110,7 @@ class GetSectionRequest
     }
 
     /*
-     * Section index.
+     * The index of the section.
      */
     public function get_section_index()
     {
@@ -118,7 +118,7 @@ class GetSectionRequest
     }
 
     /*
-     * Section index.
+     * The index of the section.
      */
     public function set_section_index($value)
     {

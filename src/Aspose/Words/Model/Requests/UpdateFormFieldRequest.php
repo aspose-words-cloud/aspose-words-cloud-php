@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class UpdateFormFieldRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * From field data.
+     * The new form field properties.
      */
     public $form_field;
 
@@ -58,7 +58,7 @@ class UpdateFormFieldRequest
     public $index;
 
     /*
-     * Path to the node that contains collection of formfields.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -100,10 +100,10 @@ class UpdateFormFieldRequest
     /*
      * Initializes a new instance of the UpdateFormFieldRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\FormField $form_field From field data.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\FormField $form_field The new form field properties.
      * @param int $index Object index.
-     * @param string $node_path Path to the node that contains collection of formfields.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -128,7 +128,7 @@ class UpdateFormFieldRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class UpdateFormFieldRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class UpdateFormFieldRequest
     }
 
     /*
-     * From field data.
+     * The new form field properties.
      */
     public function get_form_field()
     {
@@ -153,7 +153,7 @@ class UpdateFormFieldRequest
     }
 
     /*
-     * From field data.
+     * The new form field properties.
      */
     public function set_form_field($value)
     {
@@ -179,7 +179,7 @@ class UpdateFormFieldRequest
     }
 
     /*
-     * Path to the node that contains collection of formfields.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -187,7 +187,7 @@ class UpdateFormFieldRequest
     }
 
     /*
-     * Path to the node that contains collection of formfields.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

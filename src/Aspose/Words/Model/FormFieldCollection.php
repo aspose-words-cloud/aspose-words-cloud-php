@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FormFieldCollection
  *
- * @description Represents DTO for collection of formfields.
+ * @description DTO container with a collection of form fields.
  */
 class FormFieldCollection extends LinkElement
 {
@@ -205,7 +205,7 @@ class FormFieldCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\FormField[] $list Gets or sets collection of formfields.
+     * @param \Aspose\Words\Model\FormField[] $list Gets or sets the collection of form fields.
      *
      * @return $this
      */

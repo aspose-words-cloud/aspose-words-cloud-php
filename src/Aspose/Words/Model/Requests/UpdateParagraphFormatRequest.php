@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class UpdateParagraphFormatRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Paragraph format object.
+     * The formatting properties of a paragraph.
      */
     public $dto;
 
@@ -58,7 +58,7 @@ class UpdateParagraphFormatRequest
     public $index;
 
     /*
-     * Path to the node which contains paragraphs.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -100,10 +100,10 @@ class UpdateParagraphFormatRequest
     /*
      * Initializes a new instance of the UpdateParagraphFormatRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\ParagraphFormatUpdate $dto Paragraph format object.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\ParagraphFormatUpdate $dto The formatting properties of a paragraph.
      * @param int $index Object index.
-     * @param string $node_path Path to the node which contains paragraphs.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -128,7 +128,7 @@ class UpdateParagraphFormatRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class UpdateParagraphFormatRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class UpdateParagraphFormatRequest
     }
 
     /*
-     * Paragraph format object.
+     * The formatting properties of a paragraph.
      */
     public function get_dto()
     {
@@ -153,7 +153,7 @@ class UpdateParagraphFormatRequest
     }
 
     /*
-     * Paragraph format object.
+     * The formatting properties of a paragraph.
      */
     public function set_dto($value)
     {
@@ -179,7 +179,7 @@ class UpdateParagraphFormatRequest
     }
 
     /*
-     * Path to the node which contains paragraphs.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -187,7 +187,7 @@ class UpdateParagraphFormatRequest
     }
 
     /*
-     * Path to the node which contains paragraphs.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

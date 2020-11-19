@@ -205,7 +205,7 @@ class RunLink extends NodeLink
     /*
      * Sets text
      *
-     * @param string $text Gets or sets run's text.
+     * @param string $text Gets or sets the run's text.
      *
      * @return $this
      */

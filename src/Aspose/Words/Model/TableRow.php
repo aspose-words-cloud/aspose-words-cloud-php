@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableRow
  *
- * @description Table row element.
+ * @description DTO container with a table row element.
  */
 class TableRow extends NodeLink
 {
@@ -211,7 +211,7 @@ class TableRow extends NodeLink
     /*
      * Sets row_format
      *
-     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets provides access to the formatting properties of the row.
+     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets the formatting properties of a row.
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class TableRow extends NodeLink
     /*
      * Sets table_cell_list
      *
-     * @param \Aspose\Words\Model\TableCell[] $table_cell_list Gets or sets collection of table's rows.
+     * @param \Aspose\Words\Model\TableCell[] $table_cell_list Gets or sets the collection of rows.
      *
      * @return $this
      */

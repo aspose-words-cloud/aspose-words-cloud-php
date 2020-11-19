@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class UpdateStyleRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Style properties to update.
+     * The properties of the style.
      */
     public $style_update;
 
     /*
-     * Style name.
+     * The name of the style.
      */
     public $style_name;
 
@@ -95,9 +95,9 @@ class UpdateStyleRequest
     /*
      * Initializes a new instance of the UpdateStyleRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\StyleUpdate $style_update Style properties to update.
-     * @param string $style_name Style name.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\StyleUpdate $style_update The properties of the style.
+     * @param string $style_name The name of the style.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -121,7 +121,7 @@ class UpdateStyleRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -129,7 +129,7 @@ class UpdateStyleRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -138,7 +138,7 @@ class UpdateStyleRequest
     }
 
     /*
-     * Style properties to update.
+     * The properties of the style.
      */
     public function get_style_update()
     {
@@ -146,7 +146,7 @@ class UpdateStyleRequest
     }
 
     /*
-     * Style properties to update.
+     * The properties of the style.
      */
     public function set_style_update($value)
     {
@@ -155,7 +155,7 @@ class UpdateStyleRequest
     }
 
     /*
-     * Style name.
+     * The name of the style.
      */
     public function get_style_name()
     {
@@ -163,7 +163,7 @@ class UpdateStyleRequest
     }
 
     /*
-     * Style name.
+     * The name of the style.
      */
     public function set_style_name($value)
     {

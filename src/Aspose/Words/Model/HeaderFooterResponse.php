@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HeaderFooterResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters/{0}.
+ * @description The REST response with a HeaderFooter.
  */
 class HeaderFooterResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class HeaderFooterResponse extends WordsResponse
     /*
      * Sets header_footer
      *
-     * @param \Aspose\Words\Model\HeaderFooter $header_footer Gets or sets headerFooter.
+     * @param \Aspose\Words\Model\HeaderFooter $header_footer Gets or sets the HeaderFooter.
      *
      * @return $this
      */

@@ -221,7 +221,7 @@ class ProtectionRequest implements ArrayAccess
     /*
      * Sets new_password
      *
-     * @param string $new_password Gets or sets new password.
+     * @param string $new_password Gets or sets the new password.
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class ProtectionRequest implements ArrayAccess
     /*
      * Sets password
      *
-     * @param string $password Gets or sets current password.
+     * @param string $password Gets or sets the current password.
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class ProtectionRequest implements ArrayAccess
     /*
      * Sets protection_type
      *
-     * @param string $protection_type Gets or sets new type of protection.
+     * @param string $protection_type Gets or sets the new type of protection.
      *
      * @return $this
      */

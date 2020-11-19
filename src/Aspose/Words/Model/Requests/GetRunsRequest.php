@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetRunsRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public $paragraph_path;
 
@@ -75,8 +75,8 @@ class GetRunsRequest
     /*
      * Initializes a new instance of the GetRunsRequest class.
      *
-     * @param string $name The document name.
-     * @param string $paragraph_path Path to parent paragraph.
+     * @param string $name The filename of the input document.
+     * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,7 +93,7 @@ class GetRunsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class GetRunsRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -110,7 +110,7 @@ class GetRunsRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function get_paragraph_path()
     {
@@ -118,7 +118,7 @@ class GetRunsRequest
     }
 
     /*
-     * Path to parent paragraph.
+     * The path to the paragraph in the document tree.
      */
     public function set_paragraph_path($value)
     {

@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DocumentPosition
  *
- * @description Represents a position in the document tree.
+ * @description DTO container with a position in the document tree.
  */
 class DocumentPosition implements ArrayAccess
 {
@@ -215,7 +215,7 @@ class DocumentPosition implements ArrayAccess
     /*
      * Sets node
      *
-     * @param \Aspose\Words\Model\NodeLink $node Gets or sets link to  node.
+     * @param \Aspose\Words\Model\NodeLink $node Gets or sets the link to a node.
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class DocumentPosition implements ArrayAccess
     /*
      * Sets offset
      *
-     * @param int $offset Gets or sets offset into the node.
+     * @param int $offset Gets or sets the offset in the node.
      *
      * @return $this
      */

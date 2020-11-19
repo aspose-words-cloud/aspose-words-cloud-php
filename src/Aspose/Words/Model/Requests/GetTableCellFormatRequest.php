@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetTableCellFormatRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public $table_row_path;
 
@@ -80,8 +80,8 @@ class GetTableCellFormatRequest
     /*
      * Initializes a new instance of the GetTableCellFormatRequest class.
      *
-     * @param string $name The document name.
-     * @param string $table_row_path Path to table row.
+     * @param string $name The filename of the input document.
+     * @param string $table_row_path The path to the table row in the document tree.
      * @param int $index Object index.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -100,7 +100,7 @@ class GetTableCellFormatRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -108,7 +108,7 @@ class GetTableCellFormatRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -117,7 +117,7 @@ class GetTableCellFormatRequest
     }
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public function get_table_row_path()
     {
@@ -125,7 +125,7 @@ class GetTableCellFormatRequest
     }
 
     /*
-     * Path to table row.
+     * The path to the table row in the document tree.
      */
     public function set_table_row_path($value)
     {

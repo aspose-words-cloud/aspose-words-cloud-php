@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class InsertPageNumbersRequest
 {
     /*
-     * A document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * PageNumber with the page numbers settings.
+     * The page numbers settings.
      */
     public $page_number;
 
@@ -90,8 +90,8 @@ class InsertPageNumbersRequest
     /*
      * Initializes a new instance of the InsertPageNumbersRequest class.
      *
-     * @param string $name A document name.
-     * @param \Aspose\Words\Model\PageNumber $page_number PageNumber with the page numbers settings.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\PageNumber $page_number The page numbers settings.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class InsertPageNumbersRequest
     }
 
     /*
-     * A document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class InsertPageNumbersRequest
     }
 
     /*
-     * A document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class InsertPageNumbersRequest
     }
 
     /*
-     * PageNumber with the page numbers settings.
+     * The page numbers settings.
      */
     public function get_page_number()
     {
@@ -139,7 +139,7 @@ class InsertPageNumbersRequest
     }
 
     /*
-     * PageNumber with the page numbers settings.
+     * The page numbers settings.
      */
     public function set_page_number($value)
     {

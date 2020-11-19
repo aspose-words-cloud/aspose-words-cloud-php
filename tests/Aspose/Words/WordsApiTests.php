@@ -54,9 +54,9 @@ class WordsApiTests extends BaseTestContext
     }
 
     /*
-     * Test case for checking bad appSid
+     * Test case for checking bad clientId
      */
-    public function testHandleBadAppSid()
+    public function testHandleBadClientId()
     {
         try{
             $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");

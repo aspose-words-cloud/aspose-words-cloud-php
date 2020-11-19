@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class UpdateTablePropertiesRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The properties.
+     * The properties of the table.
      */
     public $properties;
 
@@ -58,7 +58,7 @@ class UpdateTablePropertiesRequest
     public $index;
 
     /*
-     * Path to the node, which contains tables.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -100,10 +100,10 @@ class UpdateTablePropertiesRequest
     /*
      * Initializes a new instance of the UpdateTablePropertiesRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\TableProperties $properties The properties.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\TableProperties $properties The properties of the table.
      * @param int $index Object index.
-     * @param string $node_path Path to the node, which contains tables.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -128,7 +128,7 @@ class UpdateTablePropertiesRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class UpdateTablePropertiesRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class UpdateTablePropertiesRequest
     }
 
     /*
-     * The properties.
+     * The properties of the table.
      */
     public function get_properties()
     {
@@ -153,7 +153,7 @@ class UpdateTablePropertiesRequest
     }
 
     /*
-     * The properties.
+     * The properties of the table.
      */
     public function set_properties($value)
     {
@@ -179,7 +179,7 @@ class UpdateTablePropertiesRequest
     }
 
     /*
-     * Path to the node, which contains tables.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -187,7 +187,7 @@ class UpdateTablePropertiesRequest
     }
 
     /*
-     * Path to the node, which contains tables.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {

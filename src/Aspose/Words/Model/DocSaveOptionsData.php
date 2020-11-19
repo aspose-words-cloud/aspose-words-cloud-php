@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DocSaveOptionsData
  *
- * @description container class for doc/dot save options.
+ * @description Container class for doc/dot save options.
  */
 class DocSaveOptionsData extends SaveOptionsData
 {
@@ -223,7 +223,7 @@ class DocSaveOptionsData extends SaveOptionsData
     /*
      * Sets always_compress_metafiles
      *
-     * @param bool $always_compress_metafiles Gets or sets When false, small metafiles are not compressed for performance reason. Default value is true, all metafiles are compressed regardless of its size.
+     * @param bool $always_compress_metafiles Gets or sets a value indicating when False, that small metafiles are not compressed for performance reason. The default value is true, all metafiles are compressed regardless of its size.
      *
      * @return $this
      */
@@ -246,7 +246,7 @@ class DocSaveOptionsData extends SaveOptionsData
     /*
      * Sets password
      *
-     * @param string $password Gets or sets password.
+     * @param string $password Gets or sets the password.
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class DocSaveOptionsData extends SaveOptionsData
     /*
      * Sets save_picture_bullet
      *
-     * @param bool $save_picture_bullet Gets or sets When false, PictureBullet data is not saved to output document. Default value is true.
+     * @param bool $save_picture_bullet Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document. The default value is true.
      *
      * @return $this
      */
@@ -292,7 +292,7 @@ class DocSaveOptionsData extends SaveOptionsData
     /*
      * Sets save_routing_slip
      *
-     * @param bool $save_routing_slip Gets or sets determine whether or not save RoutingSlip data saved to output document.
+     * @param bool $save_routing_slip Gets or sets a value indicating whether to save RoutingSlip data to output document.
      *
      * @return $this
      */

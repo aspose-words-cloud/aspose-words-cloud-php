@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SearchResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/search.
+ * @description The REST response with a regular expression pattern and a collection of search results.
  */
 class SearchResponse extends WordsResponse
 {
@@ -211,7 +211,7 @@ class SearchResponse extends WordsResponse
     /*
      * Sets searching_pattern
      *
-     * @param string $searching_pattern Gets or sets a regular expression pattern used to find matches.
+     * @param string $searching_pattern Gets or sets the regular expression pattern used to find matches.
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class SearchResponse extends WordsResponse
     /*
      * Sets search_results
      *
-     * @param \Aspose\Words\Model\SearchResultsCollection $search_results Gets or sets collection of search results.
+     * @param \Aspose\Words\Model\SearchResultsCollection $search_results Gets or sets the collection of search results.
      *
      * @return $this
      */

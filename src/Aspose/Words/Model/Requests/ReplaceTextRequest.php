@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class ReplaceTextRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * ReplaceTextResponse with the replace operation settings.
+     * The text replacement parameters.
      */
     public $replace_text;
 
@@ -90,8 +90,8 @@ class ReplaceTextRequest
     /*
      * Initializes a new instance of the ReplaceTextRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\ReplaceTextParameters $replace_text ReplaceTextResponse with the replace operation settings.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\ReplaceTextParameters $replace_text The text replacement parameters.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class ReplaceTextRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class ReplaceTextRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class ReplaceTextRequest
     }
 
     /*
-     * ReplaceTextResponse with the replace operation settings.
+     * The text replacement parameters.
      */
     public function get_replace_text()
     {
@@ -139,7 +139,7 @@ class ReplaceTextRequest
     }
 
     /*
-     * ReplaceTextResponse with the replace operation settings.
+     * The text replacement parameters.
      */
     public function set_replace_text($value)
     {

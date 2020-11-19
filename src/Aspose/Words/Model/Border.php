@@ -405,7 +405,7 @@ class Border extends LinkElement
     /*
      * Sets distance_from_text
      *
-     * @param double $distance_from_text Gets or sets distance of the border from text or from the page edge in points.
+     * @param double $distance_from_text Gets or sets the distance of the border from text or from the page edge in points.
      *
      * @return $this
      */

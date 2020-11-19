@@ -43,17 +43,17 @@ use Aspose\Words\HeaderSelector;
 class InsertFormFieldRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * From field data.
+     * The properties of the form field.
      */
     public $form_field;
 
     /*
-     * Path to the node that contains collection of formfields.
+     * The path to the node in the document tree.
      */
     public $node_path;
 
@@ -93,16 +93,16 @@ class InsertFormFieldRequest
     public $revision_date_time;
 
     /*
-     * Form field will be inserted before node with index.
+     * The index of the node. A new form field will be inserted before the node with the specified node Id.
      */
     public $insert_before_node;
 
     /*
      * Initializes a new instance of the InsertFormFieldRequest class.
      *
-     * @param string $name The document name.
-     * @param \Aspose\Words\Model\FormField $form_field From field data.
-     * @param string $node_path Path to the node that contains collection of formfields.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\FormField $form_field The properties of the form field.
+     * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -110,7 +110,7 @@ class InsertFormFieldRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $insert_before_node Form field will be inserted before node with index.
+     * @param string $insert_before_node The index of the node. A new form field will be inserted before the node with the specified node Id.
      */
     public function __construct($name, $form_field, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)
     {
@@ -128,7 +128,7 @@ class InsertFormFieldRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -136,7 +136,7 @@ class InsertFormFieldRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -145,7 +145,7 @@ class InsertFormFieldRequest
     }
 
     /*
-     * From field data.
+     * The properties of the form field.
      */
     public function get_form_field()
     {
@@ -153,7 +153,7 @@ class InsertFormFieldRequest
     }
 
     /*
-     * From field data.
+     * The properties of the form field.
      */
     public function set_form_field($value)
     {
@@ -162,7 +162,7 @@ class InsertFormFieldRequest
     }
 
     /*
-     * Path to the node that contains collection of formfields.
+     * The path to the node in the document tree.
      */
     public function get_node_path()
     {
@@ -170,7 +170,7 @@ class InsertFormFieldRequest
     }
 
     /*
-     * Path to the node that contains collection of formfields.
+     * The path to the node in the document tree.
      */
     public function set_node_path($value)
     {
@@ -298,7 +298,7 @@ class InsertFormFieldRequest
     }
 
     /*
-     * Form field will be inserted before node with index.
+     * The index of the node. A new form field will be inserted before the node with the specified node Id.
      */
     public function get_insert_before_node()
     {
@@ -306,7 +306,7 @@ class InsertFormFieldRequest
     }
 
     /*
-     * Form field will be inserted before node with index.
+     * The index of the node. A new form field will be inserted before the node with the specified node Id.
      */
     public function set_insert_before_node($value)
     {

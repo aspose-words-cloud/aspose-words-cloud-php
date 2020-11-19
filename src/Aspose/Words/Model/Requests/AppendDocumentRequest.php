@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class AppendDocumentRequest
 {
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * DocumentEntryList with a list of documents to append.
+     * The collection of documents to append.
      */
     public $document_list;
 
@@ -90,8 +90,8 @@ class AppendDocumentRequest
     /*
      * Initializes a new instance of the AppendDocumentRequest class.
      *
-     * @param string $name Original document name.
-     * @param \Aspose\Words\Model\DocumentEntryList $document_list DocumentEntryList with a list of documents to append.
+     * @param string $name The filename of the input document.
+     * @param \Aspose\Words\Model\DocumentEntryList $document_list The collection of documents to append.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,7 +114,7 @@ class AppendDocumentRequest
     }
 
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -122,7 +122,7 @@ class AppendDocumentRequest
     }
 
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -131,7 +131,7 @@ class AppendDocumentRequest
     }
 
     /*
-     * DocumentEntryList with a list of documents to append.
+     * The collection of documents to append.
      */
     public function get_document_list()
     {
@@ -139,7 +139,7 @@ class AppendDocumentRequest
     }
 
     /*
-     * DocumentEntryList with a list of documents to append.
+     * The collection of documents to append.
      */
     public function set_document_list($value)
     {

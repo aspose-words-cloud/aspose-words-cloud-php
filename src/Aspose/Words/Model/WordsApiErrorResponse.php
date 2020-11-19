@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * WordsApiErrorResponse
  *
- * @description Response for Api error.
+ * @description The REST response with an API error.
  */
 class WordsApiErrorResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class WordsApiErrorResponse extends WordsResponse
     /*
      * Sets error
      *
-     * @param \Aspose\Words\Model\ApiError $error Gets or sets error.
+     * @param \Aspose\Words\Model\ApiError $error Gets or sets the API error.
      *
      * @return $this
      */

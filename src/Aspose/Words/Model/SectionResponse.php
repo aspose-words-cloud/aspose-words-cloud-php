@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SectionResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}.
+ * @description The REST response with a section.
  */
 class SectionResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class SectionResponse extends WordsResponse
     /*
      * Sets section
      *
-     * @param \Aspose\Words\Model\Section $section Gets or sets section.
+     * @param \Aspose\Words\Model\Section $section Gets or sets the section.
      *
      * @return $this
      */

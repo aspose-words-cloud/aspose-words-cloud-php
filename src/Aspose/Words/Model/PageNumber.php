@@ -250,7 +250,7 @@ class PageNumber implements ArrayAccess
     /*
      * Sets format
      *
-     * @param string $format Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".
+     * @param string $format Gets or sets the page number format, e.g. "{PAGE} of {NUMPAGES}".
      *
      * @return $this
      */

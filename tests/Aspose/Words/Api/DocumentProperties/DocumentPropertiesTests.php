@@ -60,6 +60,12 @@ class DocumentPropertiesTests extends BaseTestContext
 
         $result = $this->words->getDocumentProperties($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocumentProperties());
+        Assert::assertNotNull($result->getDocumentProperties()->getList());
+        Assert::assertCount(24, $result->getDocumentProperties()->getList());
+        Assert::assertNotNull($result->getDocumentProperties()->getList()[0]);
+        Assert::assertEquals("Author", $result->getDocumentProperties()->getList()[0]->getName());
+        Assert::assertEquals("", $result->getDocumentProperties()->getList()[0]->getValue());
     }
 
     /*
@@ -87,6 +93,9 @@ class DocumentPropertiesTests extends BaseTestContext
 
         $result = $this->words->getDocumentProperty($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocumentProperty());
+        Assert::assertEquals("Author", $result->getDocumentProperty()->getName());
+        Assert::assertEquals("", $result->getDocumentProperty()->getValue());
     }
 
     /*
@@ -150,5 +159,8 @@ class DocumentPropertiesTests extends BaseTestContext
 
         $result = $this->words->createOrUpdateDocumentProperty($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocumentProperty());
+        Assert::assertEquals("AsposeAuthor", $result->getDocumentProperty()->getName());
+        Assert::assertEquals("Imran Anwar", $result->getDocumentProperty()->getValue());
     }
 }

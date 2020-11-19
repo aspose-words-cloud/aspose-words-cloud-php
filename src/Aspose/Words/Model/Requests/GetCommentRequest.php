@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetCommentRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * The comment index.
+     * The index of the comment.
      */
     public $comment_index;
 
@@ -75,8 +75,8 @@ class GetCommentRequest
     /*
      * Initializes a new instance of the GetCommentRequest class.
      *
-     * @param string $name The document name.
-     * @param int $comment_index The comment index.
+     * @param string $name The filename of the input document.
+     * @param int $comment_index The index of the comment.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,7 +93,7 @@ class GetCommentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -101,7 +101,7 @@ class GetCommentRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -110,7 +110,7 @@ class GetCommentRequest
     }
 
     /*
-     * The comment index.
+     * The index of the comment.
      */
     public function get_comment_index()
     {
@@ -118,7 +118,7 @@ class GetCommentRequest
     }
 
     /*
-     * The comment index.
+     * The index of the comment.
      */
     public function set_comment_index($value)
     {

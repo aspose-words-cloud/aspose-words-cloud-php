@@ -43,12 +43,12 @@ use Aspose\Words\HeaderSelector;
 class GetHeaderFootersRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public $section_path;
 
@@ -73,20 +73,20 @@ class GetHeaderFootersRequest
     public $password;
 
     /*
-     * List of types of headers and footers.
+     * The list of HeaderFooter types.
      */
     public $filter_by_type;
 
     /*
      * Initializes a new instance of the GetHeaderFootersRequest class.
      *
-     * @param string $name The document name.
-     * @param string $section_path Path to parent section.
+     * @param string $name The filename of the input document.
+     * @param string $section_path The path to the section in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $filter_by_type List of types of headers and footers.
+     * @param string $filter_by_type The list of HeaderFooter types.
      */
     public function __construct($name, $section_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $filter_by_type = null)
     {
@@ -100,7 +100,7 @@ class GetHeaderFootersRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -108,7 +108,7 @@ class GetHeaderFootersRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -117,7 +117,7 @@ class GetHeaderFootersRequest
     }
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public function get_section_path()
     {
@@ -125,7 +125,7 @@ class GetHeaderFootersRequest
     }
 
     /*
-     * Path to parent section.
+     * The path to the section in the document tree.
      */
     public function set_section_path($value)
     {
@@ -202,7 +202,7 @@ class GetHeaderFootersRequest
     }
 
     /*
-     * List of types of headers and footers.
+     * The list of HeaderFooter types.
      */
     public function get_filter_by_type()
     {
@@ -210,7 +210,7 @@ class GetHeaderFootersRequest
     }
 
     /*
-     * List of types of headers and footers.
+     * The list of HeaderFooter types.
      */
     public function set_filter_by_type($value)
     {

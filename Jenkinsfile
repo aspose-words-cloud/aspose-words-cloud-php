@@ -27,9 +27,9 @@ def runtests(dockerImageVersion)
                 sh 'git clean -fdx'
                 
                 if (needToBuild) {
-                    withCredentials([usernamePassword(credentialsId: credsId, passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+                    withCredentials([usernamePassword(credentialsId: credsId, passwordVariable: 'ClientSecret', usernameVariable: 'ClientId')]) {
                         sh 'mkdir -p Settings'
-                        sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$apiUrl\\"}" > Settings/servercreds.json'
+                        sh 'echo "{\\"ClientId\\": \\"$ClientId\\",\\"ClientSecret\\": \\"$ClientSecret\\", \\"BaseUrl\\": \\"$apiUrl\\"}" > Settings/servercreds.json'
                     }
                 }
             }

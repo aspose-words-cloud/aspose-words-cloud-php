@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -98,5 +97,7 @@ class BuildReportTests extends BaseTestContext
 
         $result = $this->words->buildReport($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestBuildReport.docx", $result->getDocument()->getFileName());
     }
 }

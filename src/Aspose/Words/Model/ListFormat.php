@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ListFormat
  *
- * @description Paragraph list format element.
+ * @description DTO container with a paragraph list format element.
  */
 class ListFormat extends LinkElement
 {

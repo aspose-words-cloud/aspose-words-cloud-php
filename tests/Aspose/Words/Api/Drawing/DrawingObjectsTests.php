@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -61,6 +60,24 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentDrawingObjects($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for getting drawing objects from document online.
+     */
+    public function testGetDocumentDrawingObjectsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentDrawingObjectsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentDrawingObjectsOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -116,6 +133,25 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentDrawingObjectByIndex($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for getting drawing object by specified index online.
+     */
+    public function testGetDocumentDrawingObjectByIndexOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentDrawingObjectByIndexOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "sections/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentDrawingObjectByIndexOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -178,6 +214,27 @@ class DrawingObjectsTests extends BaseTestContext
     }
 
     /*
+     * Test for getting drawing object by specified index and format online.
+     */
+    public function testRenderDrawingObjectOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\RenderDrawingObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "png",
+            0,
+            "sections/0",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->renderDrawingObjectOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for getting drawing object by specified index and format without node path.
      */
     public function testRenderDrawingObjectWithoutNodePath()
@@ -236,6 +293,25 @@ class DrawingObjectsTests extends BaseTestContext
     }
 
     /*
+     * Test for reading drawing object's image data online.
+     */
+    public function testGetDocumentDrawingObjectImageDataOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentDrawingObjectImageDataOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "sections/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentDrawingObjectImageDataOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for reading drawing object's image data without node path.
      */
     public function testGetDocumentDrawingObjectImageDataWithoutNodePath()
@@ -288,6 +364,25 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentDrawingObjectOleData($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for getting drawing object OLE data online.
+     */
+    public function testGetDocumentDrawingObjectOleDataOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentDrawingObjectOleDataOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "sections/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentDrawingObjectOleDataOnline($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 
@@ -357,6 +452,38 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->insertDrawingObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for adding drawing object online.
+     */
+    public function testInsertDrawingObjectOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
+            "height" => 0,
+            "left" => 0,
+            "top" => 0,
+            "width" => 0,
+            "relative_horizontal_position" => "Margin",
+            "relative_vertical_position" => "Margin",
+            "wrap_type" => "Inline",
+        ));
+        $request = new Requests\InsertDrawingObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestDrawingObject,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertDrawingObjectOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -432,6 +559,28 @@ class DrawingObjectsTests extends BaseTestContext
     }
 
     /*
+     * Test for deleting drawing object online.
+     */
+    public function testDeleteDrawingObjectOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteDrawingObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteDrawingObjectOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for deleting drawing object without node path.
      */
     public function testDeleteDrawingObjectWithoutNodePath()
@@ -494,6 +643,33 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->updateDrawingObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for updating drawing object online.
+     */
+    public function testUpdateDrawingObjectOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
+            "left" => 0,
+        ));
+        $request = new Requests\UpdateDrawingObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestDrawingObject,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateDrawingObjectOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 

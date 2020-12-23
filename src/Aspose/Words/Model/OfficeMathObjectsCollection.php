@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * OfficeMathObjectsCollection
  *
- * @description Collection of OfficeMath objects.
+ * @description DTO container with a collection of OfficeMath objects.
  */
 class OfficeMathObjectsCollection extends LinkElement
 {
@@ -205,7 +205,7 @@ class OfficeMathObjectsCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\OfficeMathObject[] $list Gets or sets collection of OfficeMath objects.
+     * @param \Aspose\Words\Model\OfficeMathObject[] $list Gets or sets the collection of OfficeMath objects.
      *
      * @return $this
      */

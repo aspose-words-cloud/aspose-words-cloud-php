@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableRowFormat
  *
- * @description Represents all formatting for a table row.
+ * @description DTO container with formatting for a table row.
  */
 class TableRowFormat extends LinkElement
 {
@@ -254,7 +254,7 @@ class TableRowFormat extends LinkElement
     /*
      * Sets allow_break_across_pages
      *
-     * @param bool $allow_break_across_pages Gets or sets true if the text in a table row is allowed to split across a page break.
+     * @param bool $allow_break_across_pages Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class TableRowFormat extends LinkElement
     /*
      * Sets heading_format
      *
-     * @param bool $heading_format Gets or sets true if the row is repeated as a table heading on every page when the table spans more than one page.
+     * @param bool $heading_format Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.
      *
      * @return $this
      */

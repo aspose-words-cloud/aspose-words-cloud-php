@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FieldNamesResponse
  *
- * @description This response should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.
+ * @description The REST response with a collection of mail merge fields.
  */
 class FieldNamesResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class FieldNamesResponse extends WordsResponse
     /*
      * Sets field_names
      *
-     * @param \Aspose\Words\Model\FieldNames $field_names Gets or sets collection of mail merge fields.
+     * @param \Aspose\Words\Model\FieldNames $field_names Gets or sets the collection of mail merge fields.
      *
      * @return $this
      */

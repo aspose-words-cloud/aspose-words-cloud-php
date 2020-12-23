@@ -215,7 +215,7 @@ class FieldBase implements ArrayAccess
     /*
      * Sets field_code
      *
-     * @param string $field_code Gets or sets field code.
+     * @param string $field_code Gets or sets the field code.
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class FieldBase implements ArrayAccess
     /*
      * Sets locale_id
      *
-     * @param string $locale_id Gets or sets LCID of the field.
+     * @param string $locale_id Gets or sets the LCID of the field.
      *
      * @return $this
      */

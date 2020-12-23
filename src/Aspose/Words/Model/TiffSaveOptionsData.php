@@ -240,7 +240,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     /*
      * Sets tiff_binarization_method
      *
-     * @param string $tiff_binarization_method Gets or sets specifies method used while converting images to 1 bpp format.
+     * @param string $tiff_binarization_method Gets or sets the method used while converting images to 1 bpp format.
      *
      * @return $this
      */
@@ -263,7 +263,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     /*
      * Sets tiff_compression
      *
-     * @param string $tiff_compression Gets or sets type of compression.
+     * @param string $tiff_compression Gets or sets the type of compression.
      *
      * @return $this
      */

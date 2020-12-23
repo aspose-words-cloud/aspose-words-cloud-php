@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Field
  *
- * @description Field.
+ * @description DTO container with a field.
  */
 class Field extends FieldLink
 {
@@ -211,7 +211,7 @@ class Field extends FieldLink
     /*
      * Sets locale_id
      *
-     * @param string $locale_id Gets or sets LCID of the field.
+     * @param string $locale_id Gets or sets the LCID of the field.
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class Field extends FieldLink
     /*
      * Sets result
      *
-     * @param string $result Gets or sets field result.
+     * @param string $result Gets or sets the field result.
      *
      * @return $this
      */

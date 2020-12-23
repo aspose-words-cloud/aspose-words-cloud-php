@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -62,6 +61,26 @@ class HyperlinkTests extends BaseTestContext
 
         $result = $this->words->getDocumentHyperlinkByIndex($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHyperlink());
+        Assert::assertEquals("Aspose", $result->getHyperlink()->getDisplayText());
+    }
+
+    /*
+     * Test for getting hyperlink by specified index online.
+     */
+    public function testGetDocumentHyperlinkByIndexOnline()
+    {
+        $localFile = "Common/test_doc.docx";
+
+        $request = new Requests\GetDocumentHyperlinkByIndexOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentHyperlinkByIndexOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -87,6 +106,27 @@ class HyperlinkTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentHyperlinks($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHyperlinks());
+        Assert::assertNotNull($result->getHyperlinks()->getHyperlinkList());
+        Assert::assertCount(2, $result->getHyperlinks()->getHyperlinkList());
+        Assert::assertEquals("Aspose", $result->getHyperlinks()->getHyperlinkList()[0]->getDisplayText());
+    }
+
+    /*
+     * Test for getting hyperlinks online.
+     */
+    public function testGetDocumentHyperlinksOnline()
+    {
+        $localFile = "Common/test_doc.docx";
+
+        $request = new Requests\GetDocumentHyperlinksOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentHyperlinksOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

@@ -260,7 +260,7 @@ class FormFieldTextInput extends FormField
     /*
      * Sets max_length
      *
-     * @param int $max_length Gets or sets maximum length for the text field. Zero when the length is not limited.
+     * @param int $max_length Gets or sets the maximum length for the text field. Zero when the length is not limited.
      *
      * @return $this
      */
@@ -283,7 +283,7 @@ class FormFieldTextInput extends FormField
     /*
      * Sets text_input_default
      *
-     * @param string $text_input_default Gets or sets the default string or a calculation expression of a text form field.
+     * @param string $text_input_default Gets or sets the default string or a calculation expression of the text form field.
      *
      * @return $this
      */
@@ -306,7 +306,7 @@ class FormFieldTextInput extends FormField
     /*
      * Sets text_input_format
      *
-     * @param string $text_input_format Gets or sets returns or sets the text formatting for a text form field.
+     * @param string $text_input_format Gets or sets text formatting for the text form field.
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class FormFieldTextInput extends FormField
     /*
      * Sets text_input_type
      *
-     * @param string $text_input_type Gets or sets the type of a text form field.
+     * @param string $text_input_type Gets or sets the type of the text form field.
      *
      * @return $this
      */

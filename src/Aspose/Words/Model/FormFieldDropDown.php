@@ -211,7 +211,7 @@ class FormFieldDropDown extends FormField
     /*
      * Sets drop_down_items
      *
-     * @param string[] $drop_down_items Gets or sets provides access to the items of a dropdown form field.
+     * @param string[] $drop_down_items Gets or sets the items array of a dropdown form field.
      *
      * @return $this
      */

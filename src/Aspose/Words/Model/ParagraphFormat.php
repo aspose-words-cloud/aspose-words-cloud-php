@@ -211,7 +211,7 @@ class ParagraphFormat extends ParagraphFormatBase
     /*
      * Sets is_heading
      *
-     * @param bool $is_heading Gets or sets True when the paragraph style is one of the built-in Heading styles.
+     * @param bool $is_heading Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class ParagraphFormat extends ParagraphFormatBase
     /*
      * Sets is_list_item
      *
-     * @param bool $is_list_item Gets or sets True when the paragraph is an item in a bulleted or numbered list.
+     * @param bool $is_list_item Gets or sets a value indicating whether the paragraph is an item in a bulleted or numbered list.
      *
      * @return $this
      */

@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -61,5 +60,8 @@ class LoadWebDocumentTests extends BaseTestContext
 
         $result = $this->words->loadWebDocument($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSaveResult());
+        Assert::assertNotNull($result->getSaveResult()->getDestDocument());
+        Assert::assertEquals("google.doc", $result->getSaveResult()->getDestDocument()->getHref());
     }
 }

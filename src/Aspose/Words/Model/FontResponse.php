@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FontResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/runs/{1}/font.
+ * @description The REST response with a font.
  */
 class FontResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class FontResponse extends WordsResponse
     /*
      * Sets font
      *
-     * @param \Aspose\Words\Model\Font $font Gets or sets font.
+     * @param \Aspose\Words\Model\Font $font Gets or sets the font.
      *
      * @return $this
      */

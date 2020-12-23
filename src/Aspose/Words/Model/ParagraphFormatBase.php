@@ -1268,7 +1268,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets add_space_between_far_east_and_alpha
      *
-     * @param bool $add_space_between_far_east_and_alpha Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.
+     * @param bool $add_space_between_far_east_and_alpha Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.
      *
      * @return $this
      */
@@ -1291,7 +1291,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets add_space_between_far_east_and_digit
      *
-     * @param bool $add_space_between_far_east_and_digit Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of numbers and regions of East Asian text in the current paragraph.
+     * @param bool $add_space_between_far_east_and_digit Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of numbers and regions of East Asian text in the current paragraph.
      *
      * @return $this
      */
@@ -1341,7 +1341,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets bidi
      *
-     * @param bool $bidi Gets or sets whether this is a right-to-left paragraph.
+     * @param bool $bidi Gets or sets a value indicating whether this is a right-to-left paragraph.
      *
      * @return $this
      */
@@ -1414,7 +1414,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets keep_together
      *
-     * @param bool $keep_together Gets or sets true if all lines in the paragraph are to remain on the same page.
+     * @param bool $keep_together Gets or sets a value indicating whether all lines in the paragraph are to remain on the same page.
      *
      * @return $this
      */
@@ -1437,7 +1437,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets keep_with_next
      *
-     * @param bool $keep_with_next Gets or sets true if the paragraph is to remains on the same page as the paragraph that follows it.
+     * @param bool $keep_with_next Gets or sets a value indicating whether the paragraph is to remains on the same page as the paragraph that follows it.
      *
      * @return $this
      */
@@ -1460,7 +1460,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets left_indent
      *
-     * @param double $left_indent Gets or sets the value (in points) that represents the left indent for paragraph.
+     * @param double $left_indent Gets or sets the value (in points), that represents the left indent for paragraph.
      *
      * @return $this
      */
@@ -1556,7 +1556,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets no_space_between_paragraphs_of_same_style
      *
-     * @param bool $no_space_between_paragraphs_of_same_style Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.
+     * @param bool $no_space_between_paragraphs_of_same_style Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.
      *
      * @return $this
      */
@@ -1579,7 +1579,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets outline_level
      *
-     * @param string $outline_level Gets or sets specifies the outline level of the paragraph in the document.
+     * @param string $outline_level Gets or sets the outline level of the paragraph in the document.
      *
      * @return $this
      */
@@ -1606,7 +1606,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets page_break_before
      *
-     * @param bool $page_break_before Gets or sets true if a page break is forced before the paragraph.
+     * @param bool $page_break_before Gets or sets a value indicating whether a page break is forced before the paragraph.
      *
      * @return $this
      */
@@ -1652,7 +1652,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets shading
      *
-     * @param \Aspose\Words\Model\Shading $shading Gets or sets a Shading object that refers to the shading formatting for the paragraph.
+     * @param \Aspose\Words\Model\Shading $shading Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
      *
      * @return $this
      */
@@ -1698,7 +1698,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets space_after_auto
      *
-     * @param bool $space_after_auto Gets or sets true if the amount of spacing after the paragraph is set automatically.
+     * @param bool $space_after_auto Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically.
      *
      * @return $this
      */
@@ -1744,7 +1744,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets space_before_auto
      *
-     * @param bool $space_before_auto Gets or sets true if the amount of spacing before the paragraph is set automatically.
+     * @param bool $space_before_auto Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically.
      *
      * @return $this
      */
@@ -1817,7 +1817,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets suppress_auto_hyphens
      *
-     * @param bool $suppress_auto_hyphens Gets or sets specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.
+     * @param bool $suppress_auto_hyphens Gets or sets a value indicating whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.
      *
      * @return $this
      */
@@ -1840,7 +1840,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets suppress_line_numbers
      *
-     * @param bool $suppress_line_numbers Gets or sets specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.
+     * @param bool $suppress_line_numbers Gets or sets a value indicating whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.
      *
      * @return $this
      */
@@ -1863,7 +1863,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets widow_control
      *
-     * @param bool $widow_control Gets or sets true if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.
+     * @param bool $widow_control Gets or sets a value indicating whether the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.
      *
      * @return $this
      */

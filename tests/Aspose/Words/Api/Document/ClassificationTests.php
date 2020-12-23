@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -49,6 +48,9 @@ class ClassificationTests extends BaseTestContext
 
         $result = $this->words->classify($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertEquals("Science", $result->getBestClassName());
+        Assert::assertNotNull($result->getBestResults());
+        Assert::assertCount(3, $result->getBestResults());
     }
 
     /*
@@ -76,6 +78,28 @@ class ClassificationTests extends BaseTestContext
         );
 
         $result = $this->words->classifyDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertEquals("Hobbies_&_Interests", $result->getBestClassName());
+        Assert::assertNotNull($result->getBestResults());
+        Assert::assertCount(3, $result->getBestResults());
+    }
+
+    /*
+     * Test for document classification online.
+     */
+    public function testClassifyDocumentOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\ClassifyDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            "3",
+            NULL
+        );
+
+        $result = $this->words->classifyDocumentOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

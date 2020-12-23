@@ -227,7 +227,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets footnotes_stat_data
      *
-     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets detailed statistics of footnotes.
+     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets the detailed statistics on the footnotes.
      *
      * @return $this
      */
@@ -250,7 +250,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets page_number
      *
-     * @param int $page_number Gets or sets page number.
+     * @param int $page_number Gets or sets the page number.
      *
      * @return $this
      */
@@ -273,7 +273,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets paragraph_count
      *
-     * @param int $paragraph_count Gets or sets total count of paragraphs in the page.
+     * @param int $paragraph_count Gets or sets the total count of paragraphs in the page.
      *
      * @return $this
      */
@@ -296,7 +296,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets word_count
      *
-     * @param int $word_count Gets or sets total count of words in the page.
+     * @param int $word_count Gets or sets the total count of words in the page.
      *
      * @return $this
      */

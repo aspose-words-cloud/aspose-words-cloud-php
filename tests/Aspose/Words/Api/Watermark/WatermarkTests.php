@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -72,6 +71,31 @@ class WatermarkTests extends BaseTestContext
 
         $result = $this->words->insertWatermarkImage($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestInsertWatermarkImage.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for adding watermark image online.
+     */
+    public function testInsertWatermarkImageOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\InsertWatermarkImageOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertWatermarkImageOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -90,7 +114,7 @@ class WatermarkTests extends BaseTestContext
 
         $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
             "text" => "This is the text",
-            "rotation_angle" => 90,
+            "rotation_angle" => 90.0,
         ));
         $request = new Requests\InsertWatermarkTextRequest(
             $remoteFileName,
@@ -105,6 +129,33 @@ class WatermarkTests extends BaseTestContext
         );
 
         $result = $this->words->insertWatermarkText($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestInsertWatermarkText.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for adding watermark text online.
+     */
+    public function testInsertWatermarkTextOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
+            "text" => "This is the text",
+            "rotation_angle" => 90,
+        ));
+        $request = new Requests\InsertWatermarkTextOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestWatermarkText,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertWatermarkTextOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -134,6 +185,28 @@ class WatermarkTests extends BaseTestContext
         );
 
         $result = $this->words->deleteWatermark($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestDeleteWatermark.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for deleting watermark online.
+     */
+    public function testDeleteWatermarkOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteWatermarkOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteWatermarkOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -62,6 +61,28 @@ class SectionTests extends BaseTestContext
 
         $result = $this->words->getSection($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSection());
+        Assert::assertNotNull($result->getSection()->getChildNodes());
+        Assert::assertCount(13, $result->getSection()->getChildNodes());
+        Assert::assertEquals("0.3.0", $result->getSection()->getChildNodes()[0]->getNodeId());
+    }
+
+    /*
+     * Test for getting section by index online.
+     */
+    public function testGetSectionOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetSectionOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getSectionOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -87,6 +108,27 @@ class SectionTests extends BaseTestContext
         );
 
         $result = $this->words->getSections($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSections());
+        Assert::assertNotNull($result->getSections()->getSectionLinkList());
+        Assert::assertCount(1, $result->getSections()->getSectionLinkList());
+        Assert::assertEquals("0", $result->getSections()->getSectionLinkList()[0]->getNodeId());
+    }
+
+    /*
+     * Test for getting sections online.
+     */
+    public function testGetSectionsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetSectionsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getSectionsOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -117,5 +159,26 @@ class SectionTests extends BaseTestContext
         );
 
     $this->words->deleteSection($request);
+    }
+
+    /*
+     * Test for delete a section online.
+     */
+    public function testDeleteSectionOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteSectionOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteSectionOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

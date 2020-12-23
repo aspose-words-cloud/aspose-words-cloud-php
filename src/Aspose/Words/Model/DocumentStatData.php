@@ -233,7 +233,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets footnotes_stat_data
      *
-     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets detailed statistics of footnotes.
+     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets the detailed statistics on footnotes.
      *
      * @return $this
      */
@@ -256,7 +256,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets page_count
      *
-     * @param int $page_count Gets or sets total count of pages in the document.
+     * @param int $page_count Gets or sets the total count of pages in the document.
      *
      * @return $this
      */
@@ -279,7 +279,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets page_stat_data
      *
-     * @param \Aspose\Words\Model\PageStatData[] $page_stat_data Gets or sets detailed statistics of all pages.
+     * @param \Aspose\Words\Model\PageStatData[] $page_stat_data Gets or sets the detailed statistics on all pages.
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets paragraph_count
      *
-     * @param int $paragraph_count Gets or sets total count of paragraphs in the document.
+     * @param int $paragraph_count Gets or sets the total count of paragraphs in the document.
      *
      * @return $this
      */
@@ -325,7 +325,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets word_count
      *
-     * @param int $word_count Gets or sets total count of words in the document.
+     * @param int $word_count Gets or sets the total count of words in the document.
      *
      * @return $this
      */

@@ -211,7 +211,7 @@ class Hyperlink extends LinkElement
     /*
      * Sets display_text
      *
-     * @param string $display_text Gets or sets hypelink's display text.
+     * @param string $display_text Gets or sets the hypelink's display text.
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class Hyperlink extends LinkElement
     /*
      * Sets value
      *
-     * @param string $value Gets or sets value.
+     * @param string $value Gets or sets the value.
      *
      * @return $this
      */

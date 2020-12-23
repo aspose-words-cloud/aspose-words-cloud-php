@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HyperlinksResponse
  *
- * @description This response should be returned by the service when handling:  GET /{name}/hyperlinks .
+ * @description The REST response with a collection of hyperlinks.
  */
 class HyperlinksResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class HyperlinksResponse extends WordsResponse
     /*
      * Sets hyperlinks
      *
-     * @param \Aspose\Words\Model\Hyperlinks $hyperlinks Gets or sets collection of hyperlinks.
+     * @param \Aspose\Words\Model\Hyperlinks $hyperlinks Gets or sets the collection of hyperlinks.
      *
      * @return $this
      */

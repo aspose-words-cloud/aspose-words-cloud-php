@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +51,8 @@ class DocumentProtectionTests extends BaseTestContext
         );
 
         $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
-            "new_password" => "123",
+            "password" => "123",
+            "protection_type" => "ReadOnly",
         ));
         $request = new Requests\ProtectDocumentRequest(
             $remoteFileName,
@@ -66,6 +66,30 @@ class DocumentProtectionTests extends BaseTestContext
 
         $result = $this->words->protectDocument($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getProtectionData());
+        Assert::assertEquals("ReadOnly", $result->getProtectionData()->getProtectionType());
+    }
+
+    /*
+     * Test for setting document protection.
+     */
+    public function testProtectDocumentOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+            "new_password" => "123",
+        ));
+        $request = new Requests\ProtectDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestProtectionRequest,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->protectDocumentOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -74,11 +98,11 @@ class DocumentProtectionTests extends BaseTestContext
     public function testGetDocumentProtection()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProtection";
-        $localFile = "Common/test_multi_pages.docx";
+        $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
         $remoteFileName = "TestGetDocumentProtection.docx";
 
         $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFilePath,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
@@ -95,33 +119,19 @@ class DocumentProtectionTests extends BaseTestContext
     }
 
     /*
-     * Test for changing document protection.
+     * Test for getting document protection.
      */
-    public function testChangeDocumentProtection()
+    public function testGetDocumentProtectionOnline()
     {
-        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProtection";
         $localFile = "Common/test_multi_pages.docx";
-        $remoteFileName = "TestChangeDocumentProtection.docx";
 
-        $this->uploadFile(
+        $request = new Requests\GetDocumentProtectionOnlineRequest(
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
-            $remoteDataFolder . "/" . $remoteFileName
-        );
-
-        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
-            "new_password" => "321",
-        ));
-        $request = new Requests\ProtectDocumentRequest(
-            $remoteFileName,
-            $requestProtectionRequest,
-            $remoteDataFolder,
-            NULL,
-            NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->protectDocument($request);
+        $result = $this->words->getDocumentProtectionOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -153,6 +163,30 @@ class DocumentProtectionTests extends BaseTestContext
         );
 
         $result = $this->words->unprotectDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getProtectionData());
+        Assert::assertEquals("NoProtection", $result->getProtectionData()->getProtectionType());
+    }
+
+    /*
+     * Test for deleting unprotect document.
+     */
+    public function testDeleteUnprotectDocumentOnline()
+    {
+        $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
+
+        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+            "password" => "aspose",
+        ));
+        $request = new Requests\UnprotectDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFilePath,
+            $requestProtectionRequest,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->unprotectDocumentOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

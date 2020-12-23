@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -62,6 +61,29 @@ class TableBorderTests extends BaseTestContext
 
         $result = $this->words->getBorders($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getBorders());
+        Assert::assertNotNull($result->getBorders()->getList());
+        Assert::assertCount(6, $result->getBorders()->getList());
+        Assert::assertNotNull($result->getBorders()->getList()[0]->getColor());
+        Assert::assertEquals("#000000", $result->getBorders()->getList()[0]->getColor()->getWeb());
+    }
+
+    /*
+     * Test for getting borders online.
+     */
+    public function testGetBordersOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetBordersOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getBordersOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -89,6 +111,28 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->getBorder($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getBorder());
+        Assert::assertNotNull($result->getBorder()->getColor());
+        Assert::assertEquals("#000000", $result->getBorder()->getColor()->getWeb());
+    }
+
+    /*
+     * Test for getting border online.
+     */
+    public function testGetBorderOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetBorderOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "left",
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getBorderOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -119,6 +163,27 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->deleteBorders($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for deleting borders online.
+     */
+    public function testDeleteBordersOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\DeleteBordersOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteBordersOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -154,6 +219,28 @@ class TableBorderTests extends BaseTestContext
     }
 
     /*
+     * Test for deleting border online.
+     */
+    public function testDeleteBorderOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\DeleteBorderOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "left",
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteBorderOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for updating border.
      */
     public function testUpdateBorder()
@@ -168,20 +255,20 @@ class TableBorderTests extends BaseTestContext
         );
 
         $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
-            "alpha" => 2,
+            "web" => "#AABBCC",
         ));
         $requestBorderProperties = new \Aspose\Words\Model\Border(array(
             "border_type" => "Left",
             "color" => $requestBorderPropertiesColor,
-            "distance_from_text" => 6,
+            "distance_from_text" => 6.0,
             "line_style" => "DashDotStroker",
-            "line_width" => 2,
+            "line_width" => 2.0,
             "shadow" => true,
         ));
         $request = new Requests\UpdateBorderRequest(
             $remoteFileName,
-            $requestBorderProperties,
             "left",
+            $requestBorderProperties,
             "tables/1/rows/0/cells/0",
             $remoteDataFolder,
             NULL,
@@ -193,6 +280,46 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->updateBorder($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getBorder());
+        Assert::assertNotNull($result->getBorder()->getColor());
+        Assert::assertEquals("#AABBCC", $result->getBorder()->getColor()->getWeb());
+        Assert::assertEquals(6.0, $result->getBorder()->getDistanceFromText());
+        Assert::assertEquals(2.0, $result->getBorder()->getLineWidth());
+        Assert::assertTrue($result->getBorder()->getShadow());
+    }
+
+    /*
+     * Test for updating border online.
+     */
+    public function testUpdateBorderOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
+            "alpha" => 2,
+        ));
+        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
+            "border_type" => "Left",
+            "color" => $requestBorderPropertiesColor,
+            "distance_from_text" => 6,
+            "line_style" => "DashDotStroker",
+            "line_width" => 2,
+            "shadow" => true,
+        ));
+        $request = new Requests\UpdateBorderOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestBorderProperties,
+            "left",
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateBorderOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

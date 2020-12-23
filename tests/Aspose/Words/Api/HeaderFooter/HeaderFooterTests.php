@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -63,6 +62,28 @@ class HeaderFooterTests extends BaseTestContext
 
         $result = $this->words->getHeaderFooters($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHeaderFooters());
+        Assert::assertNotNull($result->getHeaderFooters()->getList());
+        Assert::assertCount(6, $result->getHeaderFooters()->getList());
+    }
+
+    /*
+     * Test for getting headers and footers online.
+     */
+    public function testGetHeaderFootersOnline()
+    {
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
+
+        $request = new Requests\GetHeaderFootersOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getHeaderFootersOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -90,6 +111,29 @@ class HeaderFooterTests extends BaseTestContext
         );
 
         $result = $this->words->getHeaderFooter($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHeaderFooter());
+        Assert::assertNotNull($result->getHeaderFooter()->getChildNodes());
+        Assert::assertCount(1, $result->getHeaderFooter()->getChildNodes());
+        Assert::assertEquals("0.0.0", $result->getHeaderFooter()->getChildNodes()[0]->getNodeId());
+    }
+
+    /*
+     * Test for getting headerfooter online.
+     */
+    public function testGetHeaderFooterOnline()
+    {
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
+
+        $request = new Requests\GetHeaderFooterOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getHeaderFooterOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -119,6 +163,30 @@ class HeaderFooterTests extends BaseTestContext
         );
 
         $result = $this->words->getHeaderFooterOfSection($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getHeaderFooter());
+        Assert::assertNotNull($result->getHeaderFooter()->getChildNodes());
+        Assert::assertCount(1, $result->getHeaderFooter()->getChildNodes());
+        Assert::assertEquals("0.0.0", $result->getHeaderFooter()->getChildNodes()[0]->getNodeId());
+    }
+
+    /*
+     * Test for getting headerfooter of section online.
+     */
+    public function testGetHeaderFooterOfSectionOnline()
+    {
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
+
+        $request = new Requests\GetHeaderFooterOfSectionOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            0,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getHeaderFooterOfSectionOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -153,6 +221,28 @@ class HeaderFooterTests extends BaseTestContext
     }
 
     /*
+     * Test for deleting headerfooter online.
+     */
+    public function testDeleteHeaderFooterOnline()
+    {
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
+
+        $request = new Requests\DeleteHeaderFooterOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "",
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteHeaderFooterOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for deleting headerfooters.
      */
     public function testDeleteHeadersFooters()
@@ -183,6 +273,28 @@ class HeaderFooterTests extends BaseTestContext
     }
 
     /*
+     * Test for deleting headerfooters online.
+     */
+    public function testDeleteHeadersFootersOnline()
+    {
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
+
+        $request = new Requests\DeleteHeadersFootersOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteHeadersFootersOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for adding headerfooters.
      */
     public function testInsertHeaderFooter()
@@ -198,8 +310,8 @@ class HeaderFooterTests extends BaseTestContext
 
         $request = new Requests\InsertHeaderFooterRequest(
             $remoteFileName,
-            "FooterEven",
             "",
+            "FooterEven",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -211,5 +323,31 @@ class HeaderFooterTests extends BaseTestContext
 
         $result = $this->words->insertHeaderFooter($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for adding headerfooters online.
+     */
+    public function testInsertHeaderFooterOnline()
+    {
+        $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
+
+        $request = new Requests\InsertHeaderFooterOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "",
+            "FooterEven",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertHeaderFooterOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getModel()->getHeaderFooter());
+        Assert::assertNotNull($result->getModel()->getHeaderFooter()->getChildNodes());
+        Assert::assertCount(1, $result->getModel()->getHeaderFooter()->getChildNodes());
+        Assert::assertEquals("0.2.0", $result->getModel()->getHeaderFooter()->getChildNodes()[0]->getNodeId());
     }
 }

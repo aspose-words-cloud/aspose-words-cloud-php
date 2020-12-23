@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * OdtSaveOptionsData
  *
- * @description container class for odt/ott save options.
+ * @description Container class for odt/ott save options.
  */
 class OdtSaveOptionsData extends SaveOptionsData
 {
@@ -252,7 +252,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     /*
      * Sets is_strict_schema11
      *
-     * @param bool $is_strict_schema11 Gets or sets specifies whether export should correspond to ODT specification 1.1 strictly.
+     * @param bool $is_strict_schema11 Gets or sets a value indicating whether export should correspond to ODT specification 1.1 strictly.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     /*
      * Sets measure_unit
      *
-     * @param string $measure_unit Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters. Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
+     * @param string $measure_unit Gets or sets the units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters. Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     /*
      * Sets password
      *
-     * @param string $password Gets or sets a password to encrypt document.
+     * @param string $password Gets or sets the password to encrypt document.
      *
      * @return $this
      */
@@ -325,7 +325,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     /*
      * Sets pretty_format
      *
-     * @param bool $pretty_format Gets or sets specifies whether or not use pretty formats output.
+     * @param bool $pretty_format Gets or sets a value indicating whether to use pretty formats output.
      *
      * @return $this
      */

@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * MetafileRenderingOptionsData
  *
- * @description container class for options of metafile rendering.
+ * @description Container class for options of metafile rendering.
  */
 class MetafileRenderingOptionsData implements ArrayAccess
 {
@@ -233,7 +233,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
     /*
      * Sets emf_plus_dual_rendering_mode
      *
-     * @param string $emf_plus_dual_rendering_mode Gets or sets determines how EMF+ Dual metafiles should be rendered.
+     * @param string $emf_plus_dual_rendering_mode Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.
      *
      * @return $this
      */
@@ -256,7 +256,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
     /*
      * Sets emulate_raster_operations
      *
-     * @param bool $emulate_raster_operations Gets or sets a value determining whether or not the raster operations should be emulated.
+     * @param bool $emulate_raster_operations Gets or sets a value indicating whether the raster operations should be emulated.
      *
      * @return $this
      */
@@ -279,7 +279,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
     /*
      * Sets rendering_mode
      *
-     * @param string $rendering_mode Gets or sets determines how metafile images should be rendered.
+     * @param string $rendering_mode Gets or sets the option that controls how metafile images should be rendered.
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
     /*
      * Sets scale_wmf_fonts_to_metafile_size
      *
-     * @param bool $scale_wmf_fonts_to_metafile_size Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page. The default value is true.
+     * @param bool $scale_wmf_fonts_to_metafile_size Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page. The default value is true.
      *
      * @return $this
      */
@@ -325,7 +325,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
     /*
      * Sets use_emf_embedded_to_wmf
      *
-     * @param bool $use_emf_embedded_to_wmf Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.
+     * @param bool $use_emf_embedded_to_wmf Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.
      *
      * @return $this
      */

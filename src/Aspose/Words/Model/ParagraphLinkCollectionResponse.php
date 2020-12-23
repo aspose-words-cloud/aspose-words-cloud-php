@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ParagraphLinkCollectionResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs.
+ * @description The REST response with a collection of paragraphs.
  */
 class ParagraphLinkCollectionResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class ParagraphLinkCollectionResponse extends WordsResponse
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\ParagraphLinkCollection $paragraphs Gets or sets collection of paragraphs.
+     * @param \Aspose\Words\Model\ParagraphLinkCollection $paragraphs Gets or sets the collection of paragraphs.
      *
      * @return $this
      */

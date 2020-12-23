@@ -209,7 +209,7 @@ class RunBase implements ArrayAccess
     /*
      * Sets text
      *
-     * @param string $text Gets or sets run's text.
+     * @param string $text Gets or sets the run's text.
      *
      * @return $this
      */

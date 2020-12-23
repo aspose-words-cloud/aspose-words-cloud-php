@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SvgSaveOptionsData
  *
- * @description container class for svg save options.
+ * @description Container class for svg save options.
  */
 class SvgSaveOptionsData extends FixedPageSaveOptionsData
 {
@@ -235,7 +235,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_embedded_images
      *
-     * @param bool $export_embedded_images Gets or sets specified whether images should be embedded into SVG document as base64.
+     * @param bool $export_embedded_images Gets or sets a value indicating whether images should be embedded into SVG document as base64.
      *
      * @return $this
      */
@@ -258,7 +258,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets fit_to_view_port
      *
-     * @param bool $fit_to_view_port Gets or sets specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.
+     * @param bool $fit_to_view_port Gets or sets a value indicating whether the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.
      *
      * @return $this
      */
@@ -281,7 +281,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resources_folder
      *
-     * @param string $resources_folder Gets or sets specifies the physical folder where resources (images) are saved when exporting.
+     * @param string $resources_folder Gets or sets the physical folder where resources (images) are saved when exporting.
      *
      * @return $this
      */
@@ -304,7 +304,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resources_folder_alias
      *
-     * @param string $resources_folder_alias Gets or sets specifies the name of the folder used to construct image URIs.
+     * @param string $resources_folder_alias Gets or sets the name of the folder used to construct image URIs.
      *
      * @return $this
      */
@@ -327,7 +327,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets show_page_border
      *
-     * @param bool $show_page_border Gets or sets show/hide page stepper.
+     * @param bool $show_page_border Gets or sets a value indicating whether to show or hide page stepper.
      *
      * @return $this
      */
@@ -350,7 +350,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets text_output_mode
      *
-     * @param string $text_output_mode Gets or sets determines how text should be rendered.
+     * @param string $text_output_mode Gets or sets the option that controls how text should be rendered.
      *
      * @return $this
      */

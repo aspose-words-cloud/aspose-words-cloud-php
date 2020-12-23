@@ -227,7 +227,7 @@ class CompareData implements ArrayAccess
     /*
      * Sets author
      *
-     * @param string $author Gets or sets initials of the author to use for revisions.
+     * @param string $author Gets or sets the initials of the author to use for revisions.
      *
      * @return $this
      */
@@ -273,7 +273,7 @@ class CompareData implements ArrayAccess
     /*
      * Sets comparing_with_document
      *
-     * @param string $comparing_with_document Gets or sets path to document to compare at the server.
+     * @param string $comparing_with_document Gets or sets the path to document to compare at the server.
      *
      * @return $this
      */

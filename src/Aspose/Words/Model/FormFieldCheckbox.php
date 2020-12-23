@@ -263,7 +263,7 @@ class FormFieldCheckbox extends FormField
     /*
      * Sets is_check_box_exact_size
      *
-     * @param bool $is_check_box_exact_size Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.
+     * @param bool $is_check_box_exact_size Gets or sets a value indicating whether the size of the textbox is automatic or specified explicitly.
      *
      * @return $this
      */

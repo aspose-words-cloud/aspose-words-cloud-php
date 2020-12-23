@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PsSaveOptionsData
  *
- * @description container class for ps save options.
+ * @description Container class for ps save options.
  */
 class PsSaveOptionsData extends FixedPageSaveOptionsData
 {
@@ -205,7 +205,7 @@ class PsSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets use_book_fold_printing_settings
      *
-     * @param bool $use_book_fold_printing_settings Gets or sets determines whether the document should be saved using a booklet printing layout.
+     * @param bool $use_book_fold_printing_settings Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
      *
      * @return $this
      */

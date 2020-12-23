@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * WordsApiLink
  *
- * @description Provides information for the words api resource link.
+ * @description Provides information for the words API resource link.
  */
 class WordsApiLink extends Link
 {

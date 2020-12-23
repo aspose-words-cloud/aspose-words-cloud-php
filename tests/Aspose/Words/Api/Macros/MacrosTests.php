@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -63,5 +62,25 @@ class MacrosTests extends BaseTestContext
         );
 
     $this->words->deleteMacros($request);
+    }
+
+    /*
+     * Test for deleting macros online.
+     */
+    public function testDeleteMacrosOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteMacrosOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteMacrosOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

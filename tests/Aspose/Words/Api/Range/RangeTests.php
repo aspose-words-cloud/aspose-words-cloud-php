@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -63,6 +62,26 @@ class RangeTests extends BaseTestContext
 
         $result = $this->words->getRangeText($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertEquals("This is HEADER ", $result->getText());
+    }
+
+    /*
+     * Test for getting the text from range online.
+     */
+    public function testGetRangeTextOnline()
+    {
+        $localFile = "DocumentElements/Range/RangeGet.doc";
+
+        $request = new Requests\GetRangeTextOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "id0.0.0",
+            "id0.0.1",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getRangeTextOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -91,6 +110,26 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->removeRange($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for removing the text for range online.
+     */
+    public function testRemoveRangeOnline()
+    {
+        $localFile = "DocumentElements/Range/RangeGet.doc";
+
+        $request = new Requests\RemoveRangeOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "id0.0.0",
+            "id0.0.1",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->removeRangeOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -124,6 +163,32 @@ class RangeTests extends BaseTestContext
 
         $result = $this->words->saveAsRange($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("NewDoc.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for saving a range as a new document online.
+     */
+    public function testSaveAsRangeOnline()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Range";
+        $localFile = "DocumentElements/Range/RangeGet.doc";
+
+        $requestDocumentParameters = new \Aspose\Words\Model\RangeDocument(array(
+            "document_name" => $remoteDataFolder . "/NewDoc.docx",
+        ));
+        $request = new Requests\SaveAsRangeOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "id0.0.0",
+            $requestDocumentParameters,
+            "id0.0.1",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->saveAsRangeOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -156,6 +221,32 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->replaceWithText($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestReplaceWithText.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for replacing text in range online.
+     */
+    public function testReplaceWithTextOnline()
+    {
+        $localFile = "DocumentElements/Range/RangeGet.doc";
+
+        $requestRangeText = new \Aspose\Words\Model\ReplaceRange(array(
+            "text" => "Replaced header",
+        ));
+        $request = new Requests\ReplaceWithTextOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "id0.0.0",
+            $requestRangeText,
+            "id0.0.1",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->replaceWithTextOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

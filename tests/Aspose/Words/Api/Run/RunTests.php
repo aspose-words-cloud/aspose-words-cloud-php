@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -56,9 +55,9 @@ class RunTests extends BaseTestContext
         ));
         $request = new Requests\UpdateRunRequest(
             $remoteFileName,
-            $requestRun,
             "paragraphs/1",
             0,
+            $requestRun,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -69,6 +68,34 @@ class RunTests extends BaseTestContext
         );
 
         $result = $this->words->updateRun($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRun());
+        Assert::assertEquals("run with text", $result->getRun()->getText());
+    }
+
+    /*
+     * Test for updating run online.
+     */
+    public function testUpdateRunOnline()
+    {
+        $localFile = "DocumentElements/Runs/Run.doc";
+
+        $requestRun = new \Aspose\Words\Model\RunUpdate(array(
+            "text" => "run with text",
+        ));
+        $request = new Requests\UpdateRunOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "paragraphs/1",
+            $requestRun,
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateRunOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -105,6 +132,35 @@ class RunTests extends BaseTestContext
 
         $result = $this->words->insertRun($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRun());
+        Assert::assertEquals("run with text", $result->getRun()->getText());
+        Assert::assertEquals("0.0.1.3", $result->getRun()->getNodeId());
+    }
+
+    /*
+     * Test for adding run online.
+     */
+    public function testInsertRunOnline()
+    {
+        $localFile = "DocumentElements/Runs/Run.doc";
+
+        $requestRun = new \Aspose\Words\Model\RunInsert(array(
+            "text" => "run with text",
+        ));
+        $request = new Requests\InsertRunOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "paragraphs/1",
+            $requestRun,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertRunOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -135,5 +191,27 @@ class RunTests extends BaseTestContext
         );
 
     $this->words->deleteRun($request);
+    }
+
+    /*
+     * Test for deleting run online.
+     */
+    public function testDeleteRunOnline()
+    {
+        $localFile = "DocumentElements/Runs/Run.doc";
+
+        $request = new Requests\DeleteRunOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "paragraphs/1",
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteRunOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

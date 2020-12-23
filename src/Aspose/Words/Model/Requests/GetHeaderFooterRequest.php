@@ -28,18 +28,27 @@
 
 namespace Aspose\Words\Model\Requests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\MultipartStream;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\RequestOptions;
+use Aspose\Words\ObjectSerializer;
+use Aspose\Words\HeaderSelector;
+
 /*
  * Request model for getHeaderFooter operation.
  */
 class GetHeaderFooterRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Header/footer index.
+     * The index of the HeaderFooter object.
      */
     public $header_footer_index;
 
@@ -64,20 +73,20 @@ class GetHeaderFooterRequest
     public $password;
 
     /*
-     * List of types of headers and footers.
+     * The list of HeaderFooter types.
      */
     public $filter_by_type;
 
     /*
      * Initializes a new instance of the GetHeaderFooterRequest class.
      *
-     * @param string $name The document name.
-     * @param int $header_footer_index Header/footer index.
+     * @param string $name The filename of the input document.
+     * @param int $header_footer_index The index of the HeaderFooter object.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
-     * @param string $filter_by_type List of types of headers and footers.
+     * @param string $filter_by_type The list of HeaderFooter types.
      */
     public function __construct($name, $header_footer_index, $folder = null, $storage = null, $load_encoding = null, $password = null, $filter_by_type = null)
     {
@@ -91,7 +100,7 @@ class GetHeaderFooterRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -99,7 +108,7 @@ class GetHeaderFooterRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -108,7 +117,7 @@ class GetHeaderFooterRequest
     }
 
     /*
-     * Header/footer index.
+     * The index of the HeaderFooter object.
      */
     public function get_header_footer_index()
     {
@@ -116,7 +125,7 @@ class GetHeaderFooterRequest
     }
 
     /*
-     * Header/footer index.
+     * The index of the HeaderFooter object.
      */
     public function set_header_footer_index($value)
     {
@@ -193,7 +202,7 @@ class GetHeaderFooterRequest
     }
 
     /*
-     * List of types of headers and footers.
+     * The list of HeaderFooter types.
      */
     public function get_filter_by_type()
     {
@@ -201,11 +210,183 @@ class GetHeaderFooterRequest
     }
 
     /*
-     * List of types of headers and footers.
+     * The list of HeaderFooter types.
      */
     public function set_filter_by_type($value)
     {
         $this->filter_by_type = $value;
         return $this;
+    }
+
+    /*
+     * Create request data for operation 'getHeaderFooter'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequestData($config)
+    {
+        if ($this->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getHeaderFooter');
+        }
+        if ($this->header_footer_index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $header_footer_index when calling getHeaderFooter');
+        }
+
+        $resourcePath = '/words/{name}/headersfooters/{headerFooterIndex}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $filename = null;
+        // path params
+        if ($this->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->name), $resourcePath);
+        }
+        else {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
+        }
+        // path params
+        if ($this->header_footer_index !== null) {
+            $localName = lcfirst('HeaderFooterIndex');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->header_footer_index), $resourcePath);
+        }
+        else {
+            $localName = lcfirst('HeaderFooterIndex');
+            $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
+        }
+
+        // remove empty path parameters
+        $resourcePath = str_replace("//", "/", $resourcePath);
+        // query params
+        if ($this->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($this->folder) ? ($this->folder ? 'true' : 'false') : $this->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($this->load_encoding) ? ($this->load_encoding ? 'true' : 'false') : $this->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->filter_by_type !== null) {
+            $localName = lcfirst('FilterByType');
+            $localValue = is_bool($this->filter_by_type) ? ($this->filter_by_type ? 'true' : 'false') : $this->filter_by_type;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+
+        $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        $headerParams = [];
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $headerParams['Content-Type'] = $_tempBody['mime'];
+            if (gettype($_tempBody['content']) === 'string') {
+                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
+            } else {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody['content']));
+            }
+        } elseif (count($formParams) > 1) {
+            $multipartContents = [];
+            foreach ($formParams as $formParamName => $formParamValue) {
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue['content'],
+                    'headers' => ['Content-Type' => $formParamValue['mime']]
+                ];
+            }
+            // for HTTP post (form)
+            $httpBody = new MultipartStream($multipartContents);
+            $headerParams['Content-Type'] = "multipart/form-data; boundary=" . $httpBody->getBoundary();
+        }
+
+        $result = array();
+        $result['method'] = 'GET';
+        $result['url'] = $resourcePath;
+        $result['headers'] = $headerParams;
+        $result['body'] = $httpBody;
+        return $result;
+    }
+
+    /*
+     * Create request for operation 'getHeaderFooter'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequest($config)
+    {
+        $reqdata = $this->createRequestData($config);
+        $defaultHeaders = [];
+
+        if ($config->getAccessToken() !== null) {
+            $defaultHeaders['Authorization'] = 'Bearer ' . $config->getAccessToken();
+        }
+
+        if ($config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $config->getClientVersion();
+
+        $reqdata['headers'] = array_merge($defaultHeaders, $reqdata['headers']);
+        $req = new Request(
+            $reqdata['method'],
+            $reqdata['url'],
+            $reqdata['headers'],
+            $reqdata['body']
+        );
+
+        if ($config->getDebug()) {
+            $this->_writeRequestLog($reqdata['method'], $reqdata['url'], $reqdata['headers'], $reqdata['body']);
+        }
+
+        return $req;
+    }
+
+    /*
+     * Gets response type of this request.
+     */
+    public function getResponseType()
+    {
+        return '\Aspose\Words\Model\HeaderFooterResponse';
     }
 }

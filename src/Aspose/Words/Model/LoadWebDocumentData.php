@@ -215,7 +215,7 @@ class LoadWebDocumentData implements ArrayAccess
     /*
      * Sets loading_document_url
      *
-     * @param string $loading_document_url Gets or sets web document url.
+     * @param string $loading_document_url Gets or sets the web document URL.
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class LoadWebDocumentData implements ArrayAccess
     /*
      * Sets save_options
      *
-     * @param \Aspose\Words\Model\SaveOptionsData $save_options Gets or sets save options.
+     * @param \Aspose\Words\Model\SaveOptionsData $save_options Gets or sets the save options.
      *
      * @return $this
      */

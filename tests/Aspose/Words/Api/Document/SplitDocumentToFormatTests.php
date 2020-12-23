@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -66,6 +65,32 @@ class SplitDocumentToFormatTests extends BaseTestContext
         );
 
         $result = $this->words->splitDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSplitResult());
+        Assert::assertNotNull($result->getSplitResult()->getPages());
+        Assert::assertCount(2, $result->getSplitResult()->getPages());
+    }
+
+    /*
+     * Test for document splitting online.
+     */
+    public function testSplitDocumentOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\SplitDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "text",
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/TestSplitDocument.text",
+            1,
+            2,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->splitDocumentOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

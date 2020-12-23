@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -67,5 +66,29 @@ class CompatibilityTests extends BaseTestContext
         );
 
     $this->words->optimizeDocument($request);
+    }
+
+    /*
+     * Test for optimize document to specific MS Word version.
+     */
+    public function testOptimizeDocumentOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestOptions = new \Aspose\Words\Model\OptimizationOptions(array(
+            "ms_word_version" => "Word2002",
+        ));
+        $request = new Requests\OptimizeDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestOptions,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->optimizeDocumentOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * CommentsCollection
  *
- * @description Collection of comments.
+ * @description The collection of comments.
  */
 class CommentsCollection extends LinkElement
 {
@@ -205,7 +205,7 @@ class CommentsCollection extends LinkElement
     /*
      * Sets comment_list
      *
-     * @param \Aspose\Words\Model\Comment[] $comment_list Gets or sets collection of comments.
+     * @param \Aspose\Words\Model\Comment[] $comment_list Gets or sets the collection of comments.
      *
      * @return $this
      */

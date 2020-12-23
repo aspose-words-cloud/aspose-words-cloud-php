@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * LinkElement
  *
- * @description Reference to document.
+ * @description Reference to a document.
  */
 class LinkElement implements ArrayAccess
 {
@@ -209,7 +209,7 @@ class LinkElement implements ArrayAccess
     /*
      * Sets link
      *
-     * @param \Aspose\Words\Model\WordsApiLink $link Gets or sets link to the document.
+     * @param \Aspose\Words\Model\WordsApiLink $link Gets or sets the link to the document.
      *
      * @return $this
      */

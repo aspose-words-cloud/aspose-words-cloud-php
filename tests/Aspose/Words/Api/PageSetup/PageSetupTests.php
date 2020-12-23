@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -62,6 +61,26 @@ class PageSetupTests extends BaseTestContext
 
         $result = $this->words->getSectionPageSetup($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getPageSetup());
+        Assert::assertEquals(1, $result->getPageSetup()->getLineStartingNumber());
+    }
+
+    /*
+     * Test for getting page settings online.
+     */
+    public function testGetSectionPageSetupOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetSectionPageSetupOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getSectionPageSetupOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -80,7 +99,7 @@ class PageSetupTests extends BaseTestContext
 
         $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
             "rtl_gutter" => true,
-            "left_margin" => 10,
+            "left_margin" => 10.0,
             "orientation" => "Landscape",
             "paper_size" => "A5",
         ));
@@ -98,6 +117,38 @@ class PageSetupTests extends BaseTestContext
         );
 
         $result = $this->words->updateSectionPageSetup($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getPageSetup());
+        Assert::assertTrue($result->getPageSetup()->getRtlGutter());
+
+
+    }
+
+    /*
+     * Test for updating page settings online.
+     */
+    public function testUpdateSectionPageSetupOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
+            "rtl_gutter" => true,
+            "left_margin" => 10,
+            "orientation" => "Landscape",
+            "paper_size" => "A5",
+        ));
+        $request = new Requests\UpdateSectionPageSetupOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            $requestPageSetup,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateSectionPageSetupOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -127,6 +178,26 @@ class PageSetupTests extends BaseTestContext
         );
 
         $result = $this->words->renderPage($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for page rendering.
+     */
+    public function testGetRenderPageOnline()
+    {
+        $localTextFile = "DocumentElements/Text/SampleWordDocument.docx";
+
+        $request = new Requests\RenderPageOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localTextFile,
+            1,
+            "bmp",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->renderPageOnline($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 }

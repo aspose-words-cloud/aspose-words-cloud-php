@@ -205,7 +205,7 @@ class Hyperlinks extends LinkElement
     /*
      * Sets hyperlink_list
      *
-     * @param \Aspose\Words\Model\Hyperlink[] $hyperlink_list Gets or sets array of Hyperlink.
+     * @param \Aspose\Words\Model\Hyperlink[] $hyperlink_list Gets or sets the array of Hyperlink.
      *
      * @return $this
      */

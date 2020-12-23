@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -63,6 +62,28 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->getFields($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFields());
+        Assert::assertNotNull($result->getFields()->getList());
+        Assert::assertCount(1, $result->getFields()->getList());
+        Assert::assertEquals("1", $result->getFields()->getList()[0]->getResult());
+    }
+
+    /*
+     * Test for getting fields online.
+     */
+    public function testGetFieldsOnline()
+    {
+        $fieldFolder = "DocumentElements/Fields";
+
+        $request = new Requests\GetFieldsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            "sections/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getFieldsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -91,6 +112,10 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->getFields($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFields());
+        Assert::assertNotNull($result->getFields()->getList());
+        Assert::assertCount(1, $result->getFields()->getList());
+        Assert::assertEquals("1", $result->getFields()->getList()[0]->getResult());
     }
 
     /*
@@ -119,6 +144,27 @@ class FieldTests extends BaseTestContext
         );
 
         $result = $this->words->getField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("1", $result->getField()->getResult());
+    }
+
+    /*
+     * Test for getting field by index online.
+     */
+    public function testGetFieldOnline()
+    {
+        $fieldFolder = "DocumentElements/Fields";
+
+        $request = new Requests\GetFieldOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            0,
+            "sections/0/paragraphs/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getFieldOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -149,6 +195,8 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->getField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("1", $result->getField()->getResult());
     }
 
     /*
@@ -184,6 +232,35 @@ class FieldTests extends BaseTestContext
         );
 
         $result = $this->words->insertField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("{ NUMPAGES }", $result->getField()->getFieldCode());
+        Assert::assertEquals("0.0.0.1", $result->getField()->getNodeId());
+    }
+
+    /*
+     * Test for putting field online.
+     */
+    public function testInsertFieldOnline()
+    {
+        $fieldFolder = "DocumentElements/Fields";
+
+        $requestField = new \Aspose\Words\Model\FieldInsert(array(
+            "field_code" => "{ NUMPAGES }",
+        ));
+        $request = new Requests\InsertFieldOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            $requestField,
+            "sections/0/paragraphs/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertFieldOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -221,6 +298,9 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->insertField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("{ NUMPAGES }", $result->getField()->getFieldCode());
+        Assert::assertEquals("5.0.22.0", $result->getField()->getNodeId());
     }
 
     /*
@@ -243,8 +323,8 @@ class FieldTests extends BaseTestContext
         ));
         $request = new Requests\UpdateFieldRequest(
             $remoteFileName,
-            $requestField,
             0,
+            $requestField,
             "sections/0/paragraphs/0",
             $remoteDataFolder,
             NULL,
@@ -256,6 +336,35 @@ class FieldTests extends BaseTestContext
         );
 
         $result = $this->words->updateField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getField());
+        Assert::assertEquals("{ NUMPAGES }", $result->getField()->getFieldCode());
+        Assert::assertEquals("0.0.0.0", $result->getField()->getNodeId());
+    }
+
+    /*
+     * Test for posting field online.
+     */
+    public function testUpdateFieldOnline()
+    {
+        $fieldFolder = "DocumentElements/Fields";
+
+        $requestField = new \Aspose\Words\Model\FieldUpdate(array(
+            "field_code" => "{ NUMPAGES }",
+        ));
+        $request = new Requests\UpdateFieldOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            $requestField,
+            0,
+            "sections/0/paragraphs/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateFieldOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -291,6 +400,33 @@ class FieldTests extends BaseTestContext
 
         $result = $this->words->insertPageNumbers($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestInsertPageNumbers.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for inserting page numbers field online.
+     */
+    public function testInsertPageNumbersOnline()
+    {
+        $localFileName = "test_multi_pages.docx";
+
+        $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
+            "alignment" => "center",
+            "format" => "{PAGE} of {NUMPAGES}",
+        ));
+        $request = new Requests\InsertPageNumbersOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
+            $requestPageNumber,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertPageNumbersOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -322,6 +458,28 @@ class FieldTests extends BaseTestContext
         );
 
     $this->words->deleteField($request);
+    }
+
+    /*
+     * Test for deleting field online.
+     */
+    public function testDeleteFieldOnline()
+    {
+        $fieldFolder = "DocumentElements/Fields";
+
+        $request = new Requests\DeleteFieldOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            0,
+            "sections/0/paragraphs/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteFieldOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*
@@ -530,6 +688,27 @@ class FieldTests extends BaseTestContext
     }
 
     /*
+     * Test for deleting fields online.
+     */
+    public function testDeleteDocumentFieldsOnline()
+    {
+        $localFileName = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteFieldsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFileName,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteFieldsOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for posting updated fields.
      */
     public function testUpdateDocumentFields()
@@ -553,6 +732,26 @@ class FieldTests extends BaseTestContext
         );
 
         $result = $this->words->updateFields($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestUpdateDocumentFields.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for posting updated fields online.
+     */
+    public function testUpdateDocumentFieldsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\UpdateFieldsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateFieldsOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

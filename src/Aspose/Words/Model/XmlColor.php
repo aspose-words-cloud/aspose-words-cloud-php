@@ -215,7 +215,7 @@ class XmlColor implements ArrayAccess
     /*
      * Sets alpha
      *
-     * @param int $alpha Gets or sets alpha component of color structure.
+     * @param int $alpha Gets or sets the Alpha component of color structure.
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class XmlColor implements ArrayAccess
     /*
      * Sets web
      *
-     * @param string $web Gets or sets hTML string color representation.
+     * @param string $web Gets or sets the HTML string color representation.
      *
      * @return $this
      */

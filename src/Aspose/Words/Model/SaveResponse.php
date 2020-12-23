@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SaveResponse
  *
- * @description Save response.
+ * @description The REST response with a save result.
  */
 class SaveResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class SaveResponse extends WordsResponse
     /*
      * Sets save_result
      *
-     * @param \Aspose\Words\Model\SaveResult $save_result Gets or sets save result.
+     * @param \Aspose\Words\Model\SaveResult $save_result Gets or sets the save result.
      *
      * @return $this
      */

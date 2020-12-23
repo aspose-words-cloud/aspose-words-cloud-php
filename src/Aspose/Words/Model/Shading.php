@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Shading
  *
- * @description Paragraph format shading element.
+ * @description DTO container with a paragraph format shading element.
  */
 class Shading implements ArrayAccess
 {

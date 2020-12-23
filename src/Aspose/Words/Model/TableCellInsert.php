@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableCellInsert
  *
- * @description Table cell element.
+ * @description DTO container with a table cell.
  */
 class TableCellInsert implements ArrayAccess
 {
@@ -209,7 +209,7 @@ class TableCellInsert implements ArrayAccess
     /*
      * Sets insert_after
      *
-     * @param int $insert_after Gets or sets table cell will be inserted after cell with specified 0-based index.
+     * @param int $insert_after Gets or sets the 0-based index, the table cell will be inserted after.
      *
      * @return $this
      */

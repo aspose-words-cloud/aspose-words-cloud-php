@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * RangeDocument
  *
- * @description Range element.
+ * @description DTO container with a Range element.
  */
 class RangeDocument implements ArrayAccess
 {
@@ -209,7 +209,7 @@ class RangeDocument implements ArrayAccess
     /*
      * Sets document_name
      *
-     * @param string $document_name Gets or sets name for new document.
+     * @param string $document_name Gets or sets the name for a new document.
      *
      * @return $this
      */

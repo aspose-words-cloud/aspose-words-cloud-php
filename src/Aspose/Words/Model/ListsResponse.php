@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ListsResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/lists.
+ * @description The REST response with a collection of lists, contained in the document.
  */
 class ListsResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class ListsResponse extends WordsResponse
     /*
      * Sets lists
      *
-     * @param \Aspose\Words\Model\Lists $lists Gets or sets lists which are contained in document.
+     * @param \Aspose\Words\Model\Lists $lists Gets or sets the collection of lists, contained in the document.
      *
      * @return $this
      */

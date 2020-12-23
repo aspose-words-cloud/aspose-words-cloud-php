@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DocumentProperties
  *
- * @description Collection of document properties.
+ * @description The collection of document properties.
  */
 class DocumentProperties extends LinkElement
 {
@@ -205,7 +205,7 @@ class DocumentProperties extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\DocumentProperty[] $list Gets or sets collection of document properties.
+     * @param \Aspose\Words\Model\DocumentProperty[] $list Gets or sets the collection of document properties.
      *
      * @return $this
      */

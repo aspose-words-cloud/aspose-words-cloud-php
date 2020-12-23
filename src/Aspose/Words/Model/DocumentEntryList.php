@@ -215,7 +215,7 @@ class DocumentEntryList implements ArrayAccess
     /*
      * Sets apply_base_document_headers_and_footers_to_appending_documents
      *
-     * @param bool $apply_base_document_headers_and_footers_to_appending_documents Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.
+     * @param bool $apply_base_document_headers_and_footers_to_appending_documents Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class DocumentEntryList implements ArrayAccess
     /*
      * Sets document_entries
      *
-     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries Gets or sets list of documents.
+     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries Gets or sets the list of documents.
      *
      * @return $this
      */

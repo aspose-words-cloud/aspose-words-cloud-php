@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FontInfo
  *
- * @description Font info.
+ * @description DTO container with font info.
  */
 class FontInfo implements ArrayAccess
 {
@@ -227,7 +227,7 @@ class FontInfo implements ArrayAccess
     /*
      * Sets file_path
      *
-     * @param string $file_path Gets or sets path to the font file if any.
+     * @param string $file_path Gets or sets the path to the font file if any.
      *
      * @return $this
      */
@@ -250,7 +250,7 @@ class FontInfo implements ArrayAccess
     /*
      * Sets font_family_name
      *
-     * @param string $font_family_name Gets or sets family name of the font.
+     * @param string $font_family_name Gets or sets the family name of the font.
      *
      * @return $this
      */
@@ -273,7 +273,7 @@ class FontInfo implements ArrayAccess
     /*
      * Sets full_font_name
      *
-     * @param string $full_font_name Gets or sets full name of the font.
+     * @param string $full_font_name Gets or sets the full name of the font.
      *
      * @return $this
      */
@@ -296,7 +296,7 @@ class FontInfo implements ArrayAccess
     /*
      * Sets version
      *
-     * @param string $version Gets or sets version string of the font.
+     * @param string $version Gets or sets the version string of the font.
      *
      * @return $this
      */

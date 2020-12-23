@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -61,6 +60,8 @@ class DocumentTests extends BaseTestContext
 
         $result = $this->words->getDocument($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestGetDocument.docx", $result->getDocument()->getFileName());
     }
 
     /*
@@ -79,5 +80,7 @@ class DocumentTests extends BaseTestContext
 
         $result = $this->words->createDocument($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestCreateDocument.doc", $result->getDocument()->getFileName());
     }
 }

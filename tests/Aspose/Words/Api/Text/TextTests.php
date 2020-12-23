@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,8 +51,8 @@ class TextTests extends BaseTestContext
         );
 
         $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
-            "old_value" => "aspose",
-            "new_value" => "aspose new",
+            "old_value" => "Testing",
+            "new_value" => "Aspose testing",
         ));
         $request = new Requests\ReplaceTextRequest(
             $remoteFileName,
@@ -68,6 +67,32 @@ class TextTests extends BaseTestContext
         );
 
         $result = $this->words->replaceText($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertEquals(3, $result->getMatches());
+    }
+
+    /*
+     * Test for replacing text online.
+     */
+    public function testReplaceTextOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
+            "old_value" => "aspose",
+            "new_value" => "aspose new",
+        ));
+        $request = new Requests\ReplaceTextOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestReplaceText,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->replaceTextOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -95,6 +120,29 @@ class TextTests extends BaseTestContext
         );
 
         $result = $this->words->search($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSearchResults());
+        Assert::assertNotNull($result->getSearchResults()->getResultsList());
+        Assert::assertCount(23, $result->getSearchResults()->getResultsList());
+        Assert::assertNotNull($result->getSearchResults()->getResultsList()[0]->getRangeStart());
+        Assert::assertEquals(65, $result->getSearchResults()->getResultsList()[0]->getRangeStart()->getOffset());
+    }
+
+    /*
+     * Test for searching online.
+     */
+    public function testSearchOnline()
+    {
+        $localFile = "DocumentElements/Text/SampleWordDocument.docx";
+
+        $request = new Requests\SearchOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "aspose",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->searchOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

@@ -28,18 +28,27 @@
 
 namespace Aspose\Words\Model\Requests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\MultipartStream;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\RequestOptions;
+use Aspose\Words\ObjectSerializer;
+use Aspose\Words\HeaderSelector;
+
 /*
  * Request model for splitDocument operation.
  */
 class SplitDocumentRequest
 {
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public $name;
 
     /*
-     * Format to split.
+     * The format to split.
      */
     public $format;
 
@@ -69,17 +78,17 @@ class SplitDocumentRequest
     public $dest_file_name;
 
     /*
-     * Start page.
+     * The start page.
      */
     public $from;
 
     /*
-     * End page.
+     * The end page.
      */
     public $to;
 
     /*
-     * ZipOutput or not.
+     * The flag indicating whether to ZIP the output.
      */
     public $zip_output;
 
@@ -91,16 +100,16 @@ class SplitDocumentRequest
     /*
      * Initializes a new instance of the SplitDocumentRequest class.
      *
-     * @param string $name Original document name.
-     * @param string $format Format to split.
+     * @param string $name The filename of the input document.
+     * @param string $format The format to split.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param int $from Start page.
-     * @param int $to End page.
-     * @param bool $zip_output ZipOutput or not.
+     * @param int $from The start page.
+     * @param int $to The end page.
+     * @param bool $zip_output The flag indicating whether to ZIP the output.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
     public function __construct($name, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $from = null, $to = null, $zip_output = null, $fonts_location = null)
@@ -119,7 +128,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -127,7 +136,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Original document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
@@ -136,7 +145,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Format to split.
+     * The format to split.
      */
     public function get_format()
     {
@@ -144,7 +153,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Format to split.
+     * The format to split.
      */
     public function set_format($value)
     {
@@ -238,7 +247,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Start page.
+     * The start page.
      */
     public function get_from()
     {
@@ -246,7 +255,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * Start page.
+     * The start page.
      */
     public function set_from($value)
     {
@@ -255,7 +264,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * End page.
+     * The end page.
      */
     public function get_to()
     {
@@ -263,7 +272,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * End page.
+     * The end page.
      */
     public function set_to($value)
     {
@@ -272,7 +281,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * ZipOutput or not.
+     * The flag indicating whether to ZIP the output.
      */
     public function get_zip_output()
     {
@@ -280,7 +289,7 @@ class SplitDocumentRequest
     }
 
     /*
-     * ZipOutput or not.
+     * The flag indicating whether to ZIP the output.
      */
     public function set_zip_output($value)
     {
@@ -303,5 +312,218 @@ class SplitDocumentRequest
     {
         $this->fonts_location = $value;
         return $this;
+    }
+
+    /*
+     * Create request data for operation 'splitDocument'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequestData($config)
+    {
+        if ($this->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling splitDocument');
+        }
+        if ($this->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling splitDocument');
+        }
+
+        $resourcePath = '/words/{name}/split';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $filename = null;
+        // path params
+        if ($this->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->name), $resourcePath);
+        }
+        else {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
+        }
+
+        // remove empty path parameters
+        $resourcePath = str_replace("//", "/", $resourcePath);
+        // query params
+        if ($this->format !== null) {
+            $localName = lcfirst('Format');
+            $localValue = is_bool($this->format) ? ($this->format ? 'true' : 'false') : $this->format;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($this->folder) ? ($this->folder ? 'true' : 'false') : $this->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($this->load_encoding) ? ($this->load_encoding ? 'true' : 'false') : $this->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($this->dest_file_name) ? ($this->dest_file_name ? 'true' : 'false') : $this->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->from !== null) {
+            $localName = lcfirst('From');
+            $localValue = is_bool($this->from) ? ($this->from ? 'true' : 'false') : $this->from;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->to !== null) {
+            $localName = lcfirst('To');
+            $localValue = is_bool($this->to) ? ($this->to ? 'true' : 'false') : $this->to;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->zip_output !== null) {
+            $localName = lcfirst('ZipOutput');
+            $localValue = is_bool($this->zip_output) ? ($this->zip_output ? 'true' : 'false') : $this->zip_output;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($this->fonts_location) ? ($this->fonts_location ? 'true' : 'false') : $this->fonts_location;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+
+        $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        $headerParams = [];
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $headerParams['Content-Type'] = $_tempBody['mime'];
+            if (gettype($_tempBody['content']) === 'string') {
+                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
+            } else {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody['content']));
+            }
+        } elseif (count($formParams) > 1) {
+            $multipartContents = [];
+            foreach ($formParams as $formParamName => $formParamValue) {
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue['content'],
+                    'headers' => ['Content-Type' => $formParamValue['mime']]
+                ];
+            }
+            // for HTTP post (form)
+            $httpBody = new MultipartStream($multipartContents);
+            $headerParams['Content-Type'] = "multipart/form-data; boundary=" . $httpBody->getBoundary();
+        }
+
+        $result = array();
+        $result['method'] = 'PUT';
+        $result['url'] = $resourcePath;
+        $result['headers'] = $headerParams;
+        $result['body'] = $httpBody;
+        return $result;
+    }
+
+    /*
+     * Create request for operation 'splitDocument'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequest($config)
+    {
+        $reqdata = $this->createRequestData($config);
+        $defaultHeaders = [];
+
+        if ($config->getAccessToken() !== null) {
+            $defaultHeaders['Authorization'] = 'Bearer ' . $config->getAccessToken();
+        }
+
+        if ($config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $config->getClientVersion();
+
+        $reqdata['headers'] = array_merge($defaultHeaders, $reqdata['headers']);
+        $req = new Request(
+            $reqdata['method'],
+            $reqdata['url'],
+            $reqdata['headers'],
+            $reqdata['body']
+        );
+
+        if ($config->getDebug()) {
+            $this->_writeRequestLog($reqdata['method'], $reqdata['url'], $reqdata['headers'], $reqdata['body']);
+        }
+
+        return $req;
+    }
+
+    /*
+     * Gets response type of this request.
+     */
+    public function getResponseType()
+    {
+        return '\Aspose\Words\Model\SplitDocumentResponse';
     }
 }

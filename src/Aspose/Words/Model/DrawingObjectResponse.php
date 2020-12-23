@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DrawingObjectResponse
  *
- * @description Response for "drawingObjects/n" resource.
+ * @description The REST response with a DrawingObject.
  */
 class DrawingObjectResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class DrawingObjectResponse extends WordsResponse
     /*
      * Sets drawing_object
      *
-     * @param \Aspose\Words\Model\DrawingObject $drawing_object Gets or sets drawing object.
+     * @param \Aspose\Words\Model\DrawingObject $drawing_object Gets or sets the DrawingObject.
      *
      * @return $this
      */

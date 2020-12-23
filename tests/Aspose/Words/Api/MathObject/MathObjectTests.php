@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -62,6 +61,28 @@ class MathObjectTests extends BaseTestContext
 
         $result = $this->words->getOfficeMathObjects($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getOfficeMathObjects());
+        Assert::assertNotNull($result->getOfficeMathObjects()->getList());
+        Assert::assertCount(16, $result->getOfficeMathObjects()->getList());
+        Assert::assertEquals("0.0.0.0", $result->getOfficeMathObjects()->getList()[0]->getNodeId());
+    }
+
+    /*
+     * Test for getting mathObjects online.
+     */
+    public function testGetOfficeMathObjectsOnline()
+    {
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+
+        $request = new Requests\GetOfficeMathObjectsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getOfficeMathObjectsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -89,6 +110,10 @@ class MathObjectTests extends BaseTestContext
 
         $result = $this->words->getOfficeMathObjects($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getOfficeMathObjects());
+        Assert::assertNotNull($result->getOfficeMathObjects()->getList());
+        Assert::assertCount(16, $result->getOfficeMathObjects()->getList());
+        Assert::assertEquals("0.0.0.0", $result->getOfficeMathObjects()->getList()[0]->getNodeId());
     }
 
     /*
@@ -116,6 +141,27 @@ class MathObjectTests extends BaseTestContext
         );
 
         $result = $this->words->getOfficeMathObject($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getOfficeMathObject());
+        Assert::assertEquals("0.0.0.0", $result->getOfficeMathObject()->getNodeId());
+    }
+
+    /*
+     * Test for getting mathObject online.
+     */
+    public function testGetOfficeMathObjectOnline()
+    {
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+
+        $request = new Requests\GetOfficeMathObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getOfficeMathObjectOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -145,6 +191,8 @@ class MathObjectTests extends BaseTestContext
 
         $result = $this->words->getOfficeMathObject($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getOfficeMathObject());
+        Assert::assertEquals("0.0.0.0", $result->getOfficeMathObject()->getNodeId());
     }
 
     /*
@@ -174,6 +222,27 @@ class MathObjectTests extends BaseTestContext
         );
 
         $result = $this->words->renderMathObject($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for rendering mathObject.
+     */
+    public function testRenderMathObjectOnline()
+    {
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+
+        $request = new Requests\RenderMathObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "png",
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->renderMathObjectOnline($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 
@@ -235,6 +304,28 @@ class MathObjectTests extends BaseTestContext
         );
 
     $this->words->deleteOfficeMathObject($request);
+    }
+
+    /*
+     * Test for deleting mathObject online.
+     */
+    public function testDeleteOfficeMathObjectOnline()
+    {
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+
+        $request = new Requests\DeleteOfficeMathObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteOfficeMathObjectOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*

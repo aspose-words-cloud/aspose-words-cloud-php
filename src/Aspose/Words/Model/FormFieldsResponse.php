@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FormFieldsResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/{nodePath}/formfields.
+ * @description The REST response with a collection of form fields.
  */
 class FormFieldsResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class FormFieldsResponse extends WordsResponse
     /*
      * Sets form_fields
      *
-     * @param \Aspose\Words\Model\FormFieldCollection $form_fields Gets or sets collection of form fields.
+     * @param \Aspose\Words\Model\FormFieldCollection $form_fields Gets or sets the collection of form fields.
      *
      * @return $this
      */

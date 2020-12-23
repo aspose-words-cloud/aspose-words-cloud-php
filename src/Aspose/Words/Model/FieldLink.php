@@ -205,7 +205,7 @@ class FieldLink extends NodeLink
     /*
      * Sets field_code
      *
-     * @param string $field_code Gets or sets field code.
+     * @param string $field_code Gets or sets the field code.
      *
      * @return $this
      */

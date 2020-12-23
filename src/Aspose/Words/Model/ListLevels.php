@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ListLevels
  *
- * @description Represents a single document list.
+ * @description DTO container with a single document list.
  */
 class ListLevels extends LinkElement
 {

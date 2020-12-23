@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * WordsResponse
  *
- * @description Base class for all responses.
+ * @description The base class for all responses.
  */
 class WordsResponse implements ArrayAccess
 {
@@ -209,7 +209,7 @@ class WordsResponse implements ArrayAccess
     /*
      * Sets request_id
      *
-     * @param string $request_id Gets or sets request Id.
+     * @param string $request_id Gets or sets the request Id.
      *
      * @return $this
      */

@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PreferredWidth
  *
- * @description Preferred width.
+ * @description DTO container with a preferred width value.
  */
 class PreferredWidth implements ArrayAccess
 {

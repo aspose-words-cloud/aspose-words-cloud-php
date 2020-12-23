@@ -253,7 +253,7 @@ class FormField extends NodeLink
     /*
      * Sets calculate_on_exit
      *
-     * @param bool $calculate_on_exit Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.
+     * @param bool $calculate_on_exit Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class FormField extends NodeLink
     /*
      * Sets enabled
      *
-     * @param bool $enabled Gets or sets true if a form field is enabled.
+     * @param bool $enabled Gets or sets a value indicating whether a form field is enabled.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class FormField extends NodeLink
     /*
      * Sets entry_macro
      *
-     * @param string $entry_macro Gets or sets returns or sets an entry macro name for the form field.
+     * @param string $entry_macro Gets or sets the entry macro name for the form field.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class FormField extends NodeLink
     /*
      * Sets exit_macro
      *
-     * @param string $exit_macro Gets or sets returns or sets an exit macro name for the form field.
+     * @param string $exit_macro Gets or sets the exit macro name for the form field.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class FormField extends NodeLink
     /*
      * Sets help_text
      *
-     * @param string $help_text Gets or sets returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
+     * @param string $help_text Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.
      *
      * @return $this
      */
@@ -391,7 +391,7 @@ class FormField extends NodeLink
     /*
      * Sets own_help
      *
-     * @param bool $own_help Gets or sets specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
+     * @param bool $own_help Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
      *
      * @return $this
      */
@@ -414,7 +414,7 @@ class FormField extends NodeLink
     /*
      * Sets own_status
      *
-     * @param bool $own_status Gets or sets specifies the source of the text that's displayed in the status bar when a form field has the focus.
+     * @param bool $own_status Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.
      *
      * @return $this
      */
@@ -437,7 +437,7 @@ class FormField extends NodeLink
     /*
      * Sets status_text
      *
-     * @param string $status_text Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.
+     * @param string $status_text Gets or sets text, displayed in the status bar when a form field has the focus.
      *
      * @return $this
      */

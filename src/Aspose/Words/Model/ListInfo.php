@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ListInfo
  *
- * @description Represents a single document list.
+ * @description DTO container with a single document list.
  */
 class ListInfo extends LinkElement
 {
@@ -241,7 +241,7 @@ class ListInfo extends LinkElement
     /*
      * Sets is_list_style_definition
      *
-     * @param bool $is_list_style_definition Gets or sets a value indicating whether returns true if this list is a definition of a list style.
+     * @param bool $is_list_style_definition Gets or sets a value indicating whether this list is a definition of a list style.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class ListInfo extends LinkElement
     /*
      * Sets is_list_style_reference
      *
-     * @param bool $is_list_style_reference Gets or sets a value indicating whether returns true if this list is a reference to a list style.
+     * @param bool $is_list_style_reference Gets or sets a value indicating whether this list is a reference to a list style.
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class ListInfo extends LinkElement
     /*
      * Sets is_multi_level
      *
-     * @param bool $is_multi_level Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.
+     * @param bool $is_multi_level Gets or sets a value indicating whether the list contains 9 levels; false when 1 level.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class ListInfo extends LinkElement
     /*
      * Sets is_restart_at_each_section
      *
-     * @param bool $is_restart_at_each_section Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+     * @param bool $is_restart_at_each_section Gets or sets a value indicating whether list should be restarted at each section. The default value is false.
      *
      * @return $this
      */

@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * RevisionsModificationResponse
  *
- * @description response of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
+ * @description The REST response with a result of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
  */
 class RevisionsModificationResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class RevisionsModificationResponse extends WordsResponse
     /*
      * Sets result
      *
-     * @param \Aspose\Words\Model\ModificationOperationResult $result Gets or sets result of the modification operations for the revisions collection.
+     * @param \Aspose\Words\Model\ModificationOperationResult $result Gets or sets the result of the modification operations for the revisions collection.
      *
      * @return $this
      */

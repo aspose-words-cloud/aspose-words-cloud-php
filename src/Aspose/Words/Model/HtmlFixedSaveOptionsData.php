@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HtmlFixedSaveOptionsData
  *
- * @description container class for fixed html save options.
+ * @description Container class for fixed html save options.
  */
 class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
 {
@@ -283,7 +283,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets css_class_names_prefix
      *
-     * @param string $css_class_names_prefix Gets or sets specifies prefix which is added to all class names in style.css file. Default value is "aw".
+     * @param string $css_class_names_prefix Gets or sets the prefix which is added to all class names in style.css file. Default value is "aw".
      *
      * @return $this
      */
@@ -306,7 +306,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets encoding
      *
-     * @param string $encoding Gets or sets encoding.
+     * @param string $encoding Gets or sets the character encoding.
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_embedded_css
      *
-     * @param bool $export_embedded_css Gets or sets specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
+     * @param bool $export_embedded_css Gets or sets a value indicating whether the CSS (Cascading Style Sheet) should be embedded into the Html document.
      *
      * @return $this
      */
@@ -352,7 +352,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_embedded_fonts
      *
-     * @param bool $export_embedded_fonts Gets or sets specifies whether fonts should be embedded into Html document in Base64 format.
+     * @param bool $export_embedded_fonts Gets or sets a value indicating whether fonts should be embedded into the Html document in Base64 format.
      *
      * @return $this
      */
@@ -375,7 +375,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_embedded_images
      *
-     * @param bool $export_embedded_images Gets or sets specifies whether images should be embedded into Html document in Base64 format.
+     * @param bool $export_embedded_images Gets or sets a value indicating whether images should be embedded into the Html document in Base64 format.
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_form_fields
      *
-     * @param bool $export_form_fields Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
+     * @param bool $export_form_fields Gets or sets a value indicating whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
      *
      * @return $this
      */
@@ -421,7 +421,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets font_format
      *
-     * @param string $font_format Gets or sets specifies export format of fonts.
+     * @param string $font_format Gets or sets the export format of fonts.
      *
      * @return $this
      */
@@ -444,7 +444,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets page_horizontal_alignment
      *
-     * @param string $page_horizontal_alignment Gets or sets specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
+     * @param string $page_horizontal_alignment Gets or sets the horizontal alignment of pages in the HTML document. The default value is HtmlFixedHorizontalPageAlignment.Center.
      *
      * @return $this
      */
@@ -467,7 +467,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets page_margins
      *
-     * @param double $page_margins Gets or sets specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
+     * @param double $page_margins Gets or sets the margin around pages in HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
      *
      * @return $this
      */
@@ -490,7 +490,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resources_folder
      *
-     * @param string $resources_folder Gets or sets specifies the physical folder where resources are saved when exporting a document.
+     * @param string $resources_folder Gets or sets the physical folder where resources are saved when exporting the document.
      *
      * @return $this
      */
@@ -513,7 +513,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets resources_folder_alias
      *
-     * @param string $resources_folder_alias Gets or sets specifies the name of the folder used to construct resource URIs.
+     * @param string $resources_folder_alias Gets or sets the name of the folder used to construct resource URIs.
      *
      * @return $this
      */
@@ -536,7 +536,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets save_font_face_css_separately
      *
-     * @param bool $save_font_face_css_separately Gets or sets flag indicates whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file "styles.css".
+     * @param bool $save_font_face_css_separately Gets or sets a value indicating whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). The default value is false, all CSS rules are written into single file "styles.css".
      *
      * @return $this
      */
@@ -559,7 +559,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets show_page_border
      *
-     * @param bool $show_page_border Gets or sets specifies whether border around pages should be shown.
+     * @param bool $show_page_border Gets or sets a value indicating whether to show border around pages.
      *
      * @return $this
      */
@@ -582,7 +582,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets use_target_machine_fonts
      *
-     * @param bool $use_target_machine_fonts Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false.
+     * @param bool $use_target_machine_fonts Gets or sets a value indicating whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. The default value is false.
      *
      * @return $this
      */

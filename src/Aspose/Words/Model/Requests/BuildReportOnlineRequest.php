@@ -28,6 +28,15 @@
 
 namespace Aspose\Words\Model\Requests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\MultipartStream;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\RequestOptions;
+use Aspose\Words\ObjectSerializer;
+use Aspose\Words\HeaderSelector;
+
 /*
  * Request model for buildReportOnline operation.
  */
@@ -49,7 +58,7 @@ class BuildReportOnlineRequest
     public $report_engine_settings;
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public $document_file_name;
 
@@ -59,7 +68,7 @@ class BuildReportOnlineRequest
      * @param \SplFileObject $template File with template.
      * @param string $data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
-     * @param string $document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function __construct($template, $data, $report_engine_settings, $document_file_name = null)
     {
@@ -121,7 +130,7 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function get_document_file_name()
     {
@@ -129,11 +138,151 @@ class BuildReportOnlineRequest
     }
 
     /*
-     * This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function set_document_file_name($value)
     {
         $this->document_file_name = $value;
         return $this;
+    }
+
+    /*
+     * Create request data for operation 'buildReportOnline'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequestData($config)
+    {
+        if ($this->template === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $template when calling buildReportOnline');
+        }
+        if ($this->data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $data when calling buildReportOnline');
+        }
+        if ($this->report_engine_settings === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $report_engine_settings when calling buildReportOnline');
+        }
+
+        $resourcePath = '/words/buildReport';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $filename = null;
+
+        // remove empty path parameters
+        $resourcePath = str_replace("//", "/", $resourcePath);
+        // query params
+        if ($this->document_file_name !== null) {
+            $localName = lcfirst('DocumentFileName');
+            $localValue = is_bool($this->document_file_name) ? ($this->document_file_name ? 'true' : 'false') : $this->document_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+
+        $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
+        // form params
+        if ($this->template !== null) {
+            $multipart = true; 
+            $filename = ObjectSerializer::toFormValue($this->template);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['template'] = ['content' => $contents, 'mime' => 'application/octet-stream'];
+        }
+        // form params
+        if ($this->data !== null) {
+            $multipart = true; 
+            $formParams['data'] = ['content' => ObjectSerializer::toFormValue($this->data), 'mime' => 'application/json'];
+        }
+        // form params
+        if ($this->report_engine_settings !== null) {
+            $multipart = true; 
+            $formParams['report_engine_settings'] = ['content' => ObjectSerializer::toFormValue($this->report_engine_settings), 'mime' => 'application/json'];
+        }
+
+        // body params
+        $_tempBody = null;
+        if (count($formParams) == 1) {
+            $_tempBody = array_shift($formParams);
+        }
+
+        $headerParams = [];
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $headerParams['Content-Type'] = $_tempBody['mime'];
+            if (gettype($_tempBody['content']) === 'string') {
+                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
+            } else {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody['content']));
+            }
+        } elseif (count($formParams) > 1) {
+            $multipartContents = [];
+            foreach ($formParams as $formParamName => $formParamValue) {
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue['content'],
+                    'headers' => ['Content-Type' => $formParamValue['mime']]
+                ];
+            }
+            // for HTTP post (form)
+            $httpBody = new MultipartStream($multipartContents);
+            $headerParams['Content-Type'] = "multipart/form-data; boundary=" . $httpBody->getBoundary();
+        }
+
+        $result = array();
+        $result['method'] = 'PUT';
+        $result['url'] = $resourcePath;
+        $result['headers'] = $headerParams;
+        $result['body'] = $httpBody;
+        return $result;
+    }
+
+    /*
+     * Create request for operation 'buildReportOnline'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequest($config)
+    {
+        $reqdata = $this->createRequestData($config);
+        $defaultHeaders = [];
+
+        if ($config->getAccessToken() !== null) {
+            $defaultHeaders['Authorization'] = 'Bearer ' . $config->getAccessToken();
+        }
+
+        if ($config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $config->getClientVersion();
+
+        $reqdata['headers'] = array_merge($defaultHeaders, $reqdata['headers']);
+        $req = new Request(
+            $reqdata['method'],
+            $reqdata['url'],
+            $reqdata['headers'],
+            $reqdata['body']
+        );
+
+        if ($config->getDebug()) {
+            $this->_writeRequestLog($reqdata['method'], $reqdata['url'], $reqdata['headers'], $reqdata['body']);
+        }
+
+        return $req;
+    }
+
+    /*
+     * Gets response type of this request.
+     */
+    public function getResponseType()
+    {
+        return '\SplFileObject';
     }
 }

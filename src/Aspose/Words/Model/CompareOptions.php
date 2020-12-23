@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * CompareOptions
  *
- * @description Container class for compare documents options.
+ * @description DTO container with compare documents options.
  */
 class CompareOptions implements ArrayAccess
 {
@@ -286,7 +286,7 @@ class CompareOptions implements ArrayAccess
     /*
      * Sets ignore_case_changes
      *
-     * @param bool $ignore_case_changes Gets or sets a value indicating whether true indicates that documents comparison is case insensitive. By default comparison is case sensitive.
+     * @param bool $ignore_case_changes Gets or sets a value indicating whether documents comparison is case insensitive. By default comparison is case sensitive.
      *
      * @return $this
      */
@@ -309,7 +309,7 @@ class CompareOptions implements ArrayAccess
     /*
      * Sets ignore_comments
      *
-     * @param bool $ignore_comments Gets or sets a value indicating whether specifies whether to compare differences in comments. By default comments are not ignored.
+     * @param bool $ignore_comments Gets or sets a value indicating whether comments content is ignored. By default comments are not ignored.
      *
      * @return $this
      */
@@ -332,7 +332,7 @@ class CompareOptions implements ArrayAccess
     /*
      * Sets ignore_fields
      *
-     * @param bool $ignore_fields Gets or sets a value indicating whether specifies whether to compare differences in fields. By default fields are not ignored.
+     * @param bool $ignore_fields Gets or sets a value indicating whether fields content is ignored. By default fields are not ignored.
      *
      * @return $this
      */
@@ -355,7 +355,7 @@ class CompareOptions implements ArrayAccess
     /*
      * Sets ignore_footnotes
      *
-     * @param bool $ignore_footnotes Gets or sets a value indicating whether specifies whether to compare differences in footnotes and endnotes. By default footnotes are not ignored.
+     * @param bool $ignore_footnotes Gets or sets a value indicating whether footnotes/endnotes content is ignored. By default footnotes/endnotes are not ignored.
      *
      * @return $this
      */
@@ -378,7 +378,7 @@ class CompareOptions implements ArrayAccess
     /*
      * Sets ignore_formatting
      *
-     * @param bool $ignore_formatting Gets or sets a value indicating whether true indicates that formatting is ignored. By default document formatting is not ignored.
+     * @param bool $ignore_formatting Gets or sets a value indicating whether formatting is ignored. By default document formatting is not ignored.
      *
      * @return $this
      */
@@ -401,7 +401,7 @@ class CompareOptions implements ArrayAccess
     /*
      * Sets ignore_headers_and_footers
      *
-     * @param bool $ignore_headers_and_footers Gets or sets a value indicating whether true indicates that headers and footers content is ignored. By default headers and footers are not ignored.
+     * @param bool $ignore_headers_and_footers Gets or sets a value indicating whether headers and footers content is ignored. By default headers and footers are not ignored.
      *
      * @return $this
      */
@@ -424,7 +424,7 @@ class CompareOptions implements ArrayAccess
     /*
      * Sets ignore_tables
      *
-     * @param bool $ignore_tables Gets or sets a value indicating whether specifies whether to compare the differences in data contained in tables. By default tables are not ignored.
+     * @param bool $ignore_tables Gets or sets a value indicating whether tables content is ignored. By default tables are not ignored.
      *
      * @return $this
      */
@@ -447,7 +447,7 @@ class CompareOptions implements ArrayAccess
     /*
      * Sets ignore_textboxes
      *
-     * @param bool $ignore_textboxes Gets or sets a value indicating whether specifies whether to compare differences in the data contained within text boxes. By default textboxes are not ignored.
+     * @param bool $ignore_textboxes Gets or sets a value indicating whether textboxes content is ignored. By default textboxes are not ignored.
      *
      * @return $this
      */
@@ -470,7 +470,7 @@ class CompareOptions implements ArrayAccess
     /*
      * Sets target
      *
-     * @param string $target Gets or sets specifies which document shall be used as a target during comparison.
+     * @param string $target Gets or sets the option that controls which document shall be used as a target during comparison.
      *
      * @return $this
      */

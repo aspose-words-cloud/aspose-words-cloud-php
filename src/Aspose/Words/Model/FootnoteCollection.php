@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FootnoteCollection
  *
- * @description Collection of footnotes.
+ * @description DTO container with a collection of footnotes.
  */
 class FootnoteCollection extends LinkElement
 {
@@ -205,7 +205,7 @@ class FootnoteCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\Footnote[] $list Gets or sets collection of foonotes links.
+     * @param \Aspose\Words\Model\Footnote[] $list Gets or sets the collection of footnotes.
      *
      * @return $this
      */

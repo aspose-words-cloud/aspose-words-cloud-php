@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -54,6 +53,9 @@ class FileTests extends BaseTestContext
 
         $result = $this->words->uploadFile($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getUploaded());
+        Assert::assertCount(1, $result->getUploaded());
+        Assert::assertEquals("TestUploadFile.docx", $result->getUploaded()[0]);
     }
 
     /*

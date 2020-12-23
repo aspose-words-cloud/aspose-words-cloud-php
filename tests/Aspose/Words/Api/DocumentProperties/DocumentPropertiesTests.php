@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -61,6 +60,29 @@ class DocumentPropertiesTests extends BaseTestContext
 
         $result = $this->words->getDocumentProperties($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocumentProperties());
+        Assert::assertNotNull($result->getDocumentProperties()->getList());
+        Assert::assertCount(24, $result->getDocumentProperties()->getList());
+        Assert::assertNotNull($result->getDocumentProperties()->getList()[0]);
+        Assert::assertEquals("Author", $result->getDocumentProperties()->getList()[0]->getName());
+        Assert::assertEquals("", $result->getDocumentProperties()->getList()[0]->getValue());
+    }
+
+    /*
+     * Test for getting document properties online.
+     */
+    public function testGetDocumentPropertiesOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentPropertiesOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentPropertiesOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -87,6 +109,27 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentProperty($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocumentProperty());
+        Assert::assertEquals("Author", $result->getDocumentProperty()->getName());
+        Assert::assertEquals("", $result->getDocumentProperty()->getValue());
+    }
+
+    /*
+     * A test for GetDocumentProperty online.
+     */
+    public function testGetDocumentPropertyOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentPropertyOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "Author",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentPropertyOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -120,6 +163,27 @@ class DocumentPropertiesTests extends BaseTestContext
     }
 
     /*
+     * Test for deleting document property online.
+     */
+    public function testDeleteDocumentPropertyOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteDocumentPropertyOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "testProp",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteDocumentPropertyOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for updating document property.
      */
     public function testUpdateDocumentProperty()
@@ -150,6 +214,34 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
         $result = $this->words->createOrUpdateDocumentProperty($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocumentProperty());
+        Assert::assertEquals("AsposeAuthor", $result->getDocumentProperty()->getName());
+        Assert::assertEquals("Imran Anwar", $result->getDocumentProperty()->getValue());
+    }
+
+    /*
+     * Test for updating document property online.
+     */
+    public function testUpdateDocumentPropertyOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
+            "value" => "Imran Anwar",
+        ));
+        $request = new Requests\CreateOrUpdateDocumentPropertyOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "AsposeAuthor",
+            $requestProperty,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->createOrUpdateDocumentPropertyOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

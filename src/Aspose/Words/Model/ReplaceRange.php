@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ReplaceRange
  *
- * @description Range element.
+ * @description DTO container with a range element.
  */
 class ReplaceRange implements ArrayAccess
 {
@@ -244,7 +244,7 @@ class ReplaceRange implements ArrayAccess
     /*
      * Sets text
      *
-     * @param string $text Gets or sets range's text.
+     * @param string $text Gets or sets the range's text.
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class ReplaceRange implements ArrayAccess
     /*
      * Sets text_type
      *
-     * @param string $text_type Gets or sets range's text type.
+     * @param string $text_type Gets or sets the range's text type.
      *
      * @return $this
      */

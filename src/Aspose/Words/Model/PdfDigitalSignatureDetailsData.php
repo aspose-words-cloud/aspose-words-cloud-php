@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PdfDigitalSignatureDetailsData
  *
- * @description container class for details of digital signature.
+ * @description Container class for details of digital signature.
  */
 class PdfDigitalSignatureDetailsData implements ArrayAccess
 {
@@ -233,7 +233,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     /*
      * Sets certificate_filename
      *
-     * @param string $certificate_filename Gets or sets certificate's filename using for signing.
+     * @param string $certificate_filename Gets or sets the certificate's filename using for signing.
      *
      * @return $this
      */
@@ -256,7 +256,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     /*
      * Sets hash_algorithm
      *
-     * @param string $hash_algorithm Gets or sets hash algorithm.
+     * @param string $hash_algorithm Gets or sets the hash algorithm.
      *
      * @return $this
      */
@@ -279,7 +279,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     /*
      * Sets location
      *
-     * @param string $location Gets or sets location of the signing.
+     * @param string $location Gets or sets the location of the signing.
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     /*
      * Sets reason
      *
-     * @param string $reason Gets or sets reason for the signing.
+     * @param string $reason Gets or sets the reason for the signing.
      *
      * @return $this
      */
@@ -325,7 +325,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     /*
      * Sets signature_date
      *
-     * @param \DateTime $signature_date Gets or sets date of the signing.
+     * @param \DateTime $signature_date Gets or sets the date of the signing.
      *
      * @return $this
      */

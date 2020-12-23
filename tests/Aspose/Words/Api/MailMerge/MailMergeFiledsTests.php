@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -47,11 +46,17 @@ class MailMergeFiledsTests extends BaseTestContext
 
         $request = new Requests\GetDocumentFieldNamesOnlineRequest(
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDocumentFile,
+            NULL,
+            NULL,
             true
         );
 
         $result = $this->words->getDocumentFieldNamesOnline($request);
-        Assert::assertNotNull($result, "Error occurred");
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFieldNames());
+        Assert::assertNotNull($result->getFieldNames()->getNames());
+        Assert::assertCount(15, $result->getFieldNames()->getNames());
+        Assert::assertEquals("TableStart:Order", $result->getFieldNames()->getNames()[0]);
     }
 
     /*
@@ -78,5 +83,8 @@ class MailMergeFiledsTests extends BaseTestContext
 
         $result = $this->words->getDocumentFieldNames($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFieldNames());
+        Assert::assertNotNull($result->getFieldNames()->getNames());
+        Assert::assertCount(0, $result->getFieldNames()->getNames());
     }
 }

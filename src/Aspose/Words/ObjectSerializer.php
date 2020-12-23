@@ -34,6 +34,146 @@ namespace Aspose\Words;
 class ObjectSerializer
 {
     /*
+     * Executes url parsing
+     */
+    public static function parseURL($config, $url, $queryParams) 
+    {
+        $urlQuery = http_build_query($queryParams);
+        $result = $config->getHost() . $config->getBasePath() . $url;
+        if (false == empty($urlQuery))
+        {
+             $result = $result . "?" . $urlQuery;
+        }
+
+        return $result;
+    }
+
+    /*
+     * Creates the batch part data from request
+     */
+    public static function createBatchPart($config, $request) 
+    {
+        $requestData = $request->createRequestData($config);
+        $stream = new \GuzzleHttp\Psr7\AppendStream();
+        $prefixPath = $config->getHost() . $config->getBasePath() . "/words/";
+        $relPath = substr($requestData['url'], strlen($prefixPath));
+
+        $stream->addStream(\GuzzleHttp\Psr7\Utils::streamFor($requestData['method'] . " " . $relPath . " \r\n"));
+        foreach ($requestData['headers'] as $key => $value) {
+            $stream->addStream(\GuzzleHttp\Psr7\Utils::streamFor($key . ": " . $value . "\r\n"));
+        }
+
+        $stream->addStream(\GuzzleHttp\Psr7\Utils::streamFor("\r\n"));
+        $body = $requestData['body'];
+        if (isset($body)) {
+            $stream->addStream(\GuzzleHttp\Psr7\Utils::streamFor($body));
+        }
+
+        return $stream;
+    }
+
+    /*
+     * Parse the multipart form data from response
+     */
+    public static function parseMultipart($response)
+    {
+        $separator = "\r\n\r\n";
+        $contentType = $response->getHeader('Content-Type')[0];
+        preg_match('/boundary=(.*)$/', $contentType, $matches);
+        $boundary = trim($matches[1], "\"");
+
+        $a_blocks = preg_split("/-+$boundary/", $response->getBody());
+        array_pop($a_blocks);
+
+        $result = [];
+        foreach ($a_blocks as $id => $block) {
+            $block = trim($block);
+            if (empty($block)) {
+                continue;
+            }
+
+            $dataIndex = strpos($block, $separator);
+            if ($dataIndex === false) {
+                continue;
+            }
+
+            $headersData = substr($block, 0, $dataIndex);
+            $bodyData = substr($block, $dataIndex + strlen($separator));
+            $headers = [];
+            foreach (preg_split('/\r\n/', $headersData) as $headerLine) {
+                $headerParts = preg_split('/:/', $headerLine);
+                if (count($headerParts) == 2) {
+                    $headers[trim($headerParts[0])] = trim($headerParts[1]);
+                }
+            }
+
+            $result[] = [
+                'headers' => $headers,
+                'body' => $bodyData
+            ];
+        }
+
+        return $result;
+    }
+
+    /*
+     * Parse the multipart response as batch
+     */
+    public static function parseBatchResponse($response, $requests)
+    {
+        $separator = "\r\n\r\n";
+        $parts = ObjectSerializer::parseMultipart($response);
+        $result = [];
+
+        if (count($parts) != count($requests)) {
+            throw new ApiException("Request and response parts mismatch.", 400, null, null);
+        }
+
+        for ($i = 0; $i < count($requests); $i++) {
+            $part = $parts[$i];
+            $request = $requests[$i];
+            $responseType = $request->getResponseType();
+            $block = $part['body'];
+            $headers = $part['headers'];
+
+            $dataIndex = strpos($block, $separator);
+            if ($dataIndex === false) {
+                $headersData = $block;
+                $bodyData = null;
+            } else {
+                $headersData = substr($block, 0, $dataIndex);
+                $bodyData = substr($block, $dataIndex + strlen($separator));
+            }
+
+            $headerLines = preg_split('/\r\n/', $headersData);
+            if (count($headerLines) == 0) {
+                throw new ApiException("Failed to parse batch part data.", 400, null, null);
+            }
+
+            $statusLine = $headerLines[0];
+            for ($q = 1; $q < count($headerLines); $q++) {
+                $headerLine = $headerLines[$q];
+                $headerParts = preg_split('/:/', $headerLine);
+                if (count($headerParts) == 2) {
+                    $headers[trim($headerParts[0])] = trim($headerParts[1]);
+                }
+            }
+
+            $statusCode = intval(preg_split('/ /', $statusLine)[0]);
+            $partResult = null;
+            if ($statusCode != 200) {
+                $partResult = new ApiException(sprintf('[%d] Error connecting to the API', $statusCode), $statusCode, $headers, $bodyData);
+            } else if ($responseType !== null) {
+                $partResult = ObjectSerializer::deserialize($bodyData, $responseType, $headers);
+            }
+
+            $result[] = $partResult;
+        }
+
+        return $result;
+    }
+
+    /*
      * Serialize data
      *
      * @param mixed  $data   the data to serialize
@@ -265,8 +405,12 @@ class ObjectSerializer
             }
 
             $file = fopen($filename, 'w');
-            while ($chunk = $data->read(200)) {
-                fwrite($file, $chunk);
+            if (gettype($data) === 'string') {
+                fwrite($file, $data);
+            } else {
+                while ($chunk = $data->read(200)) {
+                    fwrite($file, $chunk);
+                }
             }
             fclose($file);
 

@@ -242,7 +242,7 @@ class HeaderFooterLink extends LinkElement
     /*
      * Sets type
      *
-     * @param string $type Gets or sets paragraph's text.
+     * @param string $type Gets or sets the paragraph's text.
      *
      * @return $this
      */

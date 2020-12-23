@@ -28,6 +28,15 @@
 
 namespace Aspose\Words\Model\Requests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\MultipartStream;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\RequestOptions;
+use Aspose\Words\ObjectSerializer;
+use Aspose\Words\HeaderSelector;
+
 /*
  * Request model for moveFile operation.
  */
@@ -159,5 +168,158 @@ class MoveFileRequest
     {
         $this->version_id = $value;
         return $this;
+    }
+
+    /*
+     * Create request data for operation 'moveFile'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequestData($config)
+    {
+        if ($this->dest_path === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $dest_path when calling moveFile');
+        }
+        if ($this->src_path === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $src_path when calling moveFile');
+        }
+
+        $resourcePath = '/words/storage/file/move/{srcPath}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $filename = null;
+        // path params
+        if ($this->src_path !== null) {
+            $localName = lcfirst('SrcPath');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->src_path), $resourcePath);
+        }
+        else {
+            $localName = lcfirst('SrcPath');
+            $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
+        }
+
+        // remove empty path parameters
+        $resourcePath = str_replace("//", "/", $resourcePath);
+        // query params
+        if ($this->dest_path !== null) {
+            $localName = lcfirst('DestPath');
+            $localValue = is_bool($this->dest_path) ? ($this->dest_path ? 'true' : 'false') : $this->dest_path;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->src_storage_name !== null) {
+            $localName = lcfirst('SrcStorageName');
+            $localValue = is_bool($this->src_storage_name) ? ($this->src_storage_name ? 'true' : 'false') : $this->src_storage_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->dest_storage_name !== null) {
+            $localName = lcfirst('DestStorageName');
+            $localValue = is_bool($this->dest_storage_name) ? ($this->dest_storage_name ? 'true' : 'false') : $this->dest_storage_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->version_id !== null) {
+            $localName = lcfirst('VersionId');
+            $localValue = is_bool($this->version_id) ? ($this->version_id ? 'true' : 'false') : $this->version_id;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+
+        $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        $headerParams = [];
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $headerParams['Content-Type'] = $_tempBody['mime'];
+            if (gettype($_tempBody['content']) === 'string') {
+                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
+            } else {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody['content']));
+            }
+        } elseif (count($formParams) > 1) {
+            $multipartContents = [];
+            foreach ($formParams as $formParamName => $formParamValue) {
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue['content'],
+                    'headers' => ['Content-Type' => $formParamValue['mime']]
+                ];
+            }
+            // for HTTP post (form)
+            $httpBody = new MultipartStream($multipartContents);
+            $headerParams['Content-Type'] = "multipart/form-data; boundary=" . $httpBody->getBoundary();
+        }
+
+        $result = array();
+        $result['method'] = 'PUT';
+        $result['url'] = $resourcePath;
+        $result['headers'] = $headerParams;
+        $result['body'] = $httpBody;
+        return $result;
+    }
+
+    /*
+     * Create request for operation 'moveFile'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequest($config)
+    {
+        $reqdata = $this->createRequestData($config);
+        $defaultHeaders = [];
+
+        if ($config->getAccessToken() !== null) {
+            $defaultHeaders['Authorization'] = 'Bearer ' . $config->getAccessToken();
+        }
+
+        if ($config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $config->getClientVersion();
+
+        $reqdata['headers'] = array_merge($defaultHeaders, $reqdata['headers']);
+        $req = new Request(
+            $reqdata['method'],
+            $reqdata['url'],
+            $reqdata['headers'],
+            $reqdata['body']
+        );
+
+        if ($config->getDebug()) {
+            $this->_writeRequestLog($reqdata['method'], $reqdata['url'], $reqdata['headers'], $reqdata['body']);
+        }
+
+        return $req;
+    }
+
+    /*
+     * Gets response type of this request.
+     */
+    public function getResponseType()
+    {
+        return NULL;
     }
 }

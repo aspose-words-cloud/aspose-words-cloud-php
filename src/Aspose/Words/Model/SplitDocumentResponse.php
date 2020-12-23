@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SplitDocumentResponse
  *
- * @description This response should be returned by the service when handling:  POST /{name}/split .
+ * @description The REST response with a result of document splitting.
  */
 class SplitDocumentResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class SplitDocumentResponse extends WordsResponse
     /*
      * Sets split_result
      *
-     * @param \Aspose\Words\Model\SplitDocumentResult $split_result Gets or sets resylt of splitting document.
+     * @param \Aspose\Words\Model\SplitDocumentResult $split_result Gets or sets the result of document splitting.
      *
      * @return $this
      */

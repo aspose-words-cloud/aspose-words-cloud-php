@@ -366,7 +366,7 @@ class DrawingObjectUpdate implements ArrayAccess
     /*
      * Sets height
      *
-     * @param double $height Gets or sets height of the drawing object in points.
+     * @param double $height Gets or sets the height of the DrawingObject in points.
      *
      * @return $this
      */
@@ -389,7 +389,7 @@ class DrawingObjectUpdate implements ArrayAccess
     /*
      * Sets left
      *
-     * @param double $left Gets or sets distance in points from the origin to the left side of the image.
+     * @param double $left Gets or sets the distance in points from the origin to the left side of the image.
      *
      * @return $this
      */
@@ -412,7 +412,7 @@ class DrawingObjectUpdate implements ArrayAccess
     /*
      * Sets relative_horizontal_position
      *
-     * @param string $relative_horizontal_position Gets or sets specifies where the distance to the image is measured from.
+     * @param string $relative_horizontal_position Gets or sets the relative horizontal position, from which the distance to the image is measured.
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class DrawingObjectUpdate implements ArrayAccess
     /*
      * Sets relative_vertical_position
      *
-     * @param string $relative_vertical_position Gets or sets specifies where the distance to the image measured from.
+     * @param string $relative_vertical_position Gets or sets the relative vertical position, from which the distance to the image measured.
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class DrawingObjectUpdate implements ArrayAccess
     /*
      * Sets top
      *
-     * @param double $top Gets or sets distance in points from the origin to the top side of the image.
+     * @param double $top Gets or sets the distance in points from the origin to the top side of the image.
      *
      * @return $this
      */
@@ -489,7 +489,7 @@ class DrawingObjectUpdate implements ArrayAccess
     /*
      * Sets width
      *
-     * @param double $width Gets or sets width of the drawing objects in points.
+     * @param double $width Gets or sets the width of the DrawingObjects in points.
      *
      * @return $this
      */
@@ -512,7 +512,7 @@ class DrawingObjectUpdate implements ArrayAccess
     /*
      * Sets wrap_type
      *
-     * @param string $wrap_type Gets or sets specifies how to wrap text around the image.
+     * @param string $wrap_type Gets or sets the option that controls how to wrap text around the image.
      *
      * @return $this
      */

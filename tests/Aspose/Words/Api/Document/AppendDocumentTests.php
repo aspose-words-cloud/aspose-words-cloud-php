@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -75,6 +74,8 @@ class AppendDocumentTests extends BaseTestContext
 
         $result = $this->words->appendDocument($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestAppendDocument.docx", $result->getDocument()->getFileName());
     }
 
     /*
@@ -103,10 +104,15 @@ class AppendDocumentTests extends BaseTestContext
         ));
         $request = new Requests\AppendDocumentOnlineRequest(
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
-            $requestDocumentList
+            $requestDocumentList,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
         );
 
         $result = $this->words->appendDocumentOnline($request);
-        Assert::assertNotNull($result, "Error occurred");
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

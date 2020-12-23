@@ -254,7 +254,7 @@ class TxtSaveOptionsBaseData extends SaveOptionsData
     /*
      * Sets encoding
      *
-     * @param string $encoding Gets or sets specifies the encoding to use when exporting in plain text format.
+     * @param string $encoding Gets or sets the character encoding to use when exporting in plain text format.
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class TxtSaveOptionsBaseData extends SaveOptionsData
     /*
      * Sets export_headers_footers_mode
      *
-     * @param string $export_headers_footers_mode Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.
+     * @param string $export_headers_footers_mode Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.
      *
      * @return $this
      */
@@ -304,7 +304,7 @@ class TxtSaveOptionsBaseData extends SaveOptionsData
     /*
      * Sets force_page_breaks
      *
-     * @param bool $force_page_breaks Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.
+     * @param bool $force_page_breaks Gets or sets a value indicating whether the page breaks should be preserved during export. The default value is false.
      *
      * @return $this
      */
@@ -327,7 +327,7 @@ class TxtSaveOptionsBaseData extends SaveOptionsData
     /*
      * Sets paragraph_break
      *
-     * @param string $paragraph_break Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.
+     * @param string $paragraph_break Gets or sets the string to use as a paragraph break when exporting in plain text format.
      *
      * @return $this
      */

@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * OfficeMathObjectsResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/OfficeMathObjects.
+ * @description The REST response with a collection of OfficeMath objects.
  */
 class OfficeMathObjectsResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class OfficeMathObjectsResponse extends WordsResponse
     /*
      * Sets office_math_objects
      *
-     * @param \Aspose\Words\Model\OfficeMathObjectsCollection $office_math_objects Gets or sets collection of OfficeMath objects.
+     * @param \Aspose\Words\Model\OfficeMathObjectsCollection $office_math_objects Gets or sets the collection of OfficeMath objects.
      *
      * @return $this
      */

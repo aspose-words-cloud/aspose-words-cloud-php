@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -62,7 +61,28 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->getParagraph($request);
-        Assert::assertNotNull($result, "Error occurred");
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getParagraph());
+        Assert::assertEquals("0.0.0", $result->getParagraph()->getNodeId());
+    }
+
+    /*
+     * Test for getting paragraph online.
+     */
+    public function testGetDocumentParagraphOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetParagraphOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "sections/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getParagraphOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -90,7 +110,9 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->getParagraph($request);
-        Assert::assertNotNull($result, "Error occurred");
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getParagraph());
+        Assert::assertEquals("0.0.0", $result->getParagraph()->getNodeId());
     }
 
     /*
@@ -117,7 +139,29 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->getParagraphs($request);
-        Assert::assertNotNull($result, "Error occurred");
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getParagraphs());
+        Assert::assertNotNull($result->getParagraphs()->getParagraphLinkList());
+        Assert::assertCount(15, $result->getParagraphs()->getParagraphLinkList());
+        Assert::assertEquals("Page 1 of 3", $result->getParagraphs()->getParagraphLinkList()[0]->getText());
+    }
+
+    /*
+     * Test for getting all paragraphs online.
+     */
+    public function testGetDocumentParagraphsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetParagraphsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getParagraphsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -144,7 +188,11 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->getParagraphs($request);
-        Assert::assertNotNull($result, "Error occurred");
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getParagraphs());
+        Assert::assertNotNull($result->getParagraphs()->getParagraphLinkList());
+        Assert::assertCount(15, $result->getParagraphs()->getParagraphLinkList());
+        Assert::assertEquals("Page 1 of 3", $result->getParagraphs()->getParagraphLinkList()[0]->getText());
     }
 
     /*
@@ -172,6 +220,27 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->getRun($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRun());
+        Assert::assertEquals("Page ", $result->getRun()->getText());
+    }
+
+    /*
+     * Test for getting paragraph run online.
+     */
+    public function testGetDocumentParagraphRunOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetRunOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "paragraphs/0",
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getRunOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -201,6 +270,27 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->getRunFont($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFont());
+        Assert::assertEquals("Times New Roman", $result->getFont()->getName());
+    }
+
+    /*
+     * Test for getting paragraph run font online.
+     */
+    public function testGetDocumentParagraphRunFontOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetRunFontOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "paragraphs/0",
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getRunFontOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -228,6 +318,28 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->getRuns($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRuns());
+        Assert::assertNotNull($result->getRuns()->getList());
+        Assert::assertCount(6, $result->getRuns()->getList());
+        Assert::assertEquals("Page ", $result->getRuns()->getList()[0]->getText());
+    }
+
+    /*
+     * Test for getting paragraph runs online.
+     */
+    public function testGetParagraphRunsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetRunsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0/paragraphs/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getRunsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -249,9 +361,9 @@ class ParagraphTests extends BaseTestContext
         ));
         $request = new Requests\UpdateRunFontRequest(
             $remoteFileName,
-            $requestFontDto,
             "paragraphs/0",
             0,
+            $requestFontDto,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -262,6 +374,34 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->updateRunFont($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFont());
+        Assert::assertTrue($result->getFont()->getBold());
+    }
+
+    /*
+     * Test for updating paragraph run font online.
+     */
+    public function testUpdateRunFontOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestFontDto = new \Aspose\Words\Model\Font(array(
+            "bold" => true,
+        ));
+        $request = new Requests\UpdateRunFontOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "paragraphs/0",
+            $requestFontDto,
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateRunFontOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -297,7 +437,35 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->insertParagraph($request);
-        Assert::assertNotNull($result, "Error occurred");
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getParagraph());
+        Assert::assertEquals("0.3.8", $result->getParagraph()->getNodeId());
+    }
+
+    /*
+     * Test for adding paragraph online.
+     */
+    public function testInsertParagraphOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestParagraph = new \Aspose\Words\Model\ParagraphInsert(array(
+            "text" => "This is a new paragraph for your document",
+        ));
+        $request = new Requests\InsertParagraphOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestParagraph,
+            "sections/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertParagraphOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -332,7 +500,9 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->insertParagraph($request);
-        Assert::assertNotNull($result, "Error occurred");
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getParagraph());
+        Assert::assertEquals("0.3.8", $result->getParagraph()->getNodeId());
     }
 
     /*
@@ -362,6 +532,27 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->renderParagraph($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for paragraph rendering.
+     */
+    public function testRenderParagraphOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\RenderParagraphOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "png",
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->renderParagraphOnline($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 
@@ -421,6 +612,27 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->getParagraphFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getParagraphFormat());
+        Assert::assertEquals("Normal", $result->getParagraphFormat()->getStyleName());
+    }
+
+    /*
+     * Test for getting paragraph format settings online.
+     */
+    public function testGetParagraphFormatOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetParagraphFormatOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getParagraphFormatOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -449,6 +661,8 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->getParagraphFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getParagraphFormat());
+        Assert::assertEquals("Normal", $result->getParagraphFormat()->getStyleName());
     }
 
     /*
@@ -465,13 +679,13 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
+        $requestParagraphFormatDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
             "alignment" => "Right",
         ));
         $request = new Requests\UpdateParagraphFormatRequest(
             $remoteFileName,
-            $requestDto,
             0,
+            $requestParagraphFormatDto,
             "",
             $remoteDataFolder,
             NULL,
@@ -483,6 +697,34 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->updateParagraphFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getParagraphFormat());
+
+    }
+
+    /*
+     * Test for updating  paragraph format settings online.
+     */
+    public function testUpdateParagraphFormatOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestParagraphFormatDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
+            "alignment" => "Right",
+        ));
+        $request = new Requests\UpdateParagraphFormatOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestParagraphFormatDto,
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateParagraphFormatOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -514,6 +756,28 @@ class ParagraphTests extends BaseTestContext
         );
 
     $this->words->deleteParagraph($request);
+    }
+
+    /*
+     * Test for deleting  a paragraph online.
+     */
+    public function testDeleteParagraphOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteParagraphOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteParagraphOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*
@@ -572,6 +836,27 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->getParagraphListFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getListFormat());
+        Assert::assertEquals(1, $result->getListFormat()->getListId());
+    }
+
+    /*
+     * Test for getting paragraph list format online.
+     */
+    public function testGetParagraphListFormatOnline()
+    {
+        $listFolder = "DocumentElements/ParagraphListFormat";
+
+        $request = new Requests\GetParagraphListFormatOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $listFolder . "/ParagraphGetListFormat.doc",
+            0,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getParagraphListFormatOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -600,6 +885,8 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->getParagraphListFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getListFormat());
+        Assert::assertEquals(1, $result->getListFormat()->getListId());
     }
 
     /*
@@ -616,13 +903,13 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDto = new \Aspose\Words\Model\ListFormatUpdate(array(
+        $requestListFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
             "list_id" => 2,
         ));
         $request = new Requests\UpdateParagraphListFormatRequest(
             $remoteFileName,
-            $requestDto,
             0,
+            $requestListFormatDto,
             "",
             $remoteDataFolder,
             NULL,
@@ -634,6 +921,34 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->updateParagraphListFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getListFormat());
+        Assert::assertEquals(2, $result->getListFormat()->getListId());
+    }
+
+    /*
+     * Test for updating paragraph list format online.
+     */
+    public function testUpdateParagraphListFormatOnline()
+    {
+        $listFolder = "DocumentElements/ParagraphListFormat";
+
+        $requestListFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
+            "list_id" => 2,
+        ));
+        $request = new Requests\UpdateParagraphListFormatOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $listFolder . "/ParagraphUpdateListFormat.doc",
+            $requestListFormatDto,
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateParagraphListFormatOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -651,13 +966,13 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDto = new \Aspose\Words\Model\ListFormatUpdate(array(
+        $requestListFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
             "list_id" => 2,
         ));
         $request = new Requests\UpdateParagraphListFormatRequest(
             $remoteFileName,
-            $requestDto,
             0,
+            $requestListFormatDto,
             NULL,
             $remoteDataFolder,
             NULL,
@@ -670,6 +985,8 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->updateParagraphListFormat($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getListFormat());
+        Assert::assertEquals(2, $result->getListFormat()->getListId());
     }
 
     /*
@@ -700,6 +1017,28 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->deleteParagraphListFormat($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for deleting paragraph list format online.
+     */
+    public function testDeleteParagraphListFormatOnline()
+    {
+        $listFolder = "DocumentElements/ParagraphListFormat";
+
+        $request = new Requests\DeleteParagraphListFormatOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $listFolder . "/ParagraphDeleteListFormat.doc",
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteParagraphListFormatOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -760,6 +1099,28 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->getParagraphTabStops($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTabStops());
+        Assert::assertCount(2, $result->getTabStops());
+        Assert::assertEquals(72.0, $result->getTabStops()[0]->getPosition());
+    }
+
+    /*
+     * Test for getting paragraph tab stops online.
+     */
+    public function testGetParagraphTabStopsOnline()
+    {
+        $tabStopFolder = "DocumentElements/Paragraphs";
+
+        $request = new Requests\GetParagraphTabStopsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
+            0,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getParagraphTabStopsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -788,6 +1149,9 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->getParagraphTabStops($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTabStops());
+        Assert::assertCount(2, $result->getTabStops());
+        Assert::assertEquals(72.0, $result->getTabStops()[0]->getPosition());
     }
 
     /*
@@ -804,15 +1168,15 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDto = new \Aspose\Words\Model\TabStopInsert(array(
+        $requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
             "alignment" => "Left",
             "leader" => "None",
-            "position" => 72,
+            "position" => 100.0,
         ));
         $request = new Requests\InsertOrUpdateParagraphTabStopRequest(
             $remoteFileName,
-            $requestDto,
             0,
+            $requestTabStopInsertDto,
             "",
             $remoteDataFolder,
             NULL,
@@ -822,6 +1186,37 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->insertOrUpdateParagraphTabStop($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTabStops());
+        Assert::assertCount(3, $result->getTabStops());
+        Assert::assertEquals(100.0, $result->getTabStops()[1]->getPosition());
+
+
+    }
+
+    /*
+     * Test for inserting paragraph tab stop online.
+     */
+    public function testInsertParagraphTabStopsOnline()
+    {
+        $tabStopFolder = "DocumentElements/Paragraphs";
+
+        $requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
+            "alignment" => "Left",
+            "leader" => "None",
+            "position" => 72,
+        ));
+        $request = new Requests\InsertOrUpdateParagraphTabStopOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $tabStopFolder . "/ParagraphTabStops.docx",
+            $requestTabStopInsertDto,
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertOrUpdateParagraphTabStopOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -839,15 +1234,15 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDto = new \Aspose\Words\Model\TabStopInsert(array(
+        $requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
             "alignment" => "Left",
             "leader" => "None",
-            "position" => 72,
+            "position" => 100.0,
         ));
         $request = new Requests\InsertOrUpdateParagraphTabStopRequest(
             $remoteFileName,
-            $requestDto,
             0,
+            $requestTabStopInsertDto,
             NULL,
             $remoteDataFolder,
             NULL,
@@ -858,6 +1253,11 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->insertOrUpdateParagraphTabStop($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTabStops());
+        Assert::assertCount(3, $result->getTabStops());
+        Assert::assertEquals(100.0, $result->getTabStops()[1]->getPosition());
+
+
     }
 
     /*
@@ -887,6 +1287,8 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->deleteAllParagraphTabStops($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTabStops());
+        Assert::assertCount(0, $result->getTabStops());
     }
 
     /*
@@ -916,6 +1318,8 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->deleteAllParagraphTabStops($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTabStops());
+        Assert::assertCount(0, $result->getTabStops());
     }
 
     /*
@@ -934,7 +1338,7 @@ class ParagraphTests extends BaseTestContext
 
         $request = new Requests\DeleteParagraphTabStopRequest(
             $remoteFileName,
-            72,
+            72.0,
             0,
             "",
             $remoteDataFolder,
@@ -946,6 +1350,8 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->deleteParagraphTabStop($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTabStops());
+        Assert::assertCount(1, $result->getTabStops());
     }
 
     /*
@@ -964,7 +1370,7 @@ class ParagraphTests extends BaseTestContext
 
         $request = new Requests\DeleteParagraphTabStopRequest(
             $remoteFileName,
-            72,
+            72.0,
             0,
             NULL,
             $remoteDataFolder,
@@ -976,5 +1382,7 @@ class ParagraphTests extends BaseTestContext
 
         $result = $this->words->deleteParagraphTabStop($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getTabStops());
+        Assert::assertCount(1, $result->getTabStops());
     }
 }

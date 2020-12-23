@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -64,6 +63,8 @@ class DocumentStatisticsTests extends BaseTestContext
 
         $result = $this->words->getDocumentStatistics($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getStatData());
+        Assert::assertEquals(10, $result->getStatData()->getWordCount());
     }
 
     /*
@@ -77,10 +78,12 @@ class DocumentStatisticsTests extends BaseTestContext
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             NULL,
             NULL,
+            NULL,
+            NULL,
             NULL
         );
 
         $result = $this->words->getDocumentStatisticsOnline($request);
-        Assert::assertNotNull($result, "Error occurred");
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

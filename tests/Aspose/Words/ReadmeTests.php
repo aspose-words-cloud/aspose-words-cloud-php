@@ -43,15 +43,15 @@ class ReadmeTests extends BaseTestContext
     public function testReadmeCode()
     {
         $creds = parent::getConfig();
-        $appSid = $creds["AppSid"];
-        $appKey = $creds["AppKey"];
+        $clientId = $creds["ClientId"];
+        $clientSecret = $creds["ClientSecret"];
         $baseUrl = $creds["BaseUrl"];
 
         $localFilePath = realpath(__DIR__ . '/../../..') . '/TestData/Common/test_multi_pages.docx';
 
         // Start README example
 
-        $api = new WordsApi($appSid, $appKey);
+        $api = new WordsApi($clientId, $clientSecret);
         // the step is optional, the default value is https://api.aspose.cloud
         $api->getConfig()->setHost($baseUrl);
 

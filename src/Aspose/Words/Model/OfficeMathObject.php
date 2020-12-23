@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * OfficeMathObject
  *
- * @description OfficeMath object.
+ * @description DTO container with an OfficeMath object.
  */
 class OfficeMathObject extends OfficeMathLink
 {
@@ -370,7 +370,7 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets content of footnote.
+     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets the content of a footnote.
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Sets display_type
      *
-     * @param string $display_type Gets or sets /sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.
+     * @param string $display_type Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Sets justification
      *
-     * @param string $justification Gets or sets /sets Office Math justification.
+     * @param string $justification Gets or sets the justification of the OfficeMath object.
      *
      * @return $this
      */
@@ -447,7 +447,7 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Sets math_object_type
      *
-     * @param string $math_object_type Gets or sets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.
+     * @param string $math_object_type Gets or sets the type of the OfficeMath object.
      *
      * @return $this
      */

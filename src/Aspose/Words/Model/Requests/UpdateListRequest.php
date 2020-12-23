@@ -28,25 +28,34 @@
 
 namespace Aspose\Words\Model\Requests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\MultipartStream;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\RequestOptions;
+use Aspose\Words\ObjectSerializer;
+use Aspose\Words\HeaderSelector;
+
 /*
  * Request model for updateList operation.
  */
 class UpdateListRequest
 {
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public $name;
+
+    /*
+     * The list Id.
+     */
+    public $list_id;
 
     /*
      * List object.
      */
     public $list_update;
-
-    /*
-     * List unique identifier.
-     */
-    public $list_id;
 
     /*
      * Original document folder.
@@ -86,9 +95,9 @@ class UpdateListRequest
     /*
      * Initializes a new instance of the UpdateListRequest class.
      *
-     * @param string $name The document name.
+     * @param string $name The filename of the input document.
+     * @param int $list_id The list Id.
      * @param \Aspose\Words\Model\ListUpdate $list_update List object.
-     * @param int $list_id List unique identifier.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -97,11 +106,11 @@ class UpdateListRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $list_update, $list_id, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $list_id, $list_update, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->list_update = $list_update;
         $this->list_id = $list_id;
+        $this->list_update = $list_update;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -112,7 +121,7 @@ class UpdateListRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function get_name()
     {
@@ -120,11 +129,28 @@ class UpdateListRequest
     }
 
     /*
-     * The document name.
+     * The filename of the input document.
      */
     public function set_name($value)
     {
         $this->name = $value;
+        return $this;
+    }
+
+    /*
+     * The list Id.
+     */
+    public function get_list_id()
+    {
+        return $this->list_id;
+    }
+
+    /*
+     * The list Id.
+     */
+    public function set_list_id($value)
+    {
+        $this->list_id = $value;
         return $this;
     }
 
@@ -142,23 +168,6 @@ class UpdateListRequest
     public function set_list_update($value)
     {
         $this->list_update = $value;
-        return $this;
-    }
-
-    /*
-     * List unique identifier.
-     */
-    public function get_list_id()
-    {
-        return $this->list_id;
-    }
-
-    /*
-     * List unique identifier.
-     */
-    public function set_list_id($value)
-    {
-        $this->list_id = $value;
         return $this;
     }
 
@@ -279,5 +288,207 @@ class UpdateListRequest
     {
         $this->revision_date_time = $value;
         return $this;
+    }
+
+    /*
+     * Create request data for operation 'updateList'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequestData($config)
+    {
+        if ($this->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling updateList');
+        }
+        if ($this->list_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $list_id when calling updateList');
+        }
+        if ($this->list_update === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $list_update when calling updateList');
+        }
+
+        $resourcePath = '/words/{name}/lists/{listId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $filename = null;
+        // path params
+        if ($this->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->name), $resourcePath);
+        }
+        else {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
+        }
+        // path params
+        if ($this->list_id !== null) {
+            $localName = lcfirst('ListId');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->list_id), $resourcePath);
+        }
+        else {
+            $localName = lcfirst('ListId');
+            $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
+        }
+
+        // remove empty path parameters
+        $resourcePath = str_replace("//", "/", $resourcePath);
+        // query params
+        if ($this->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($this->folder) ? ($this->folder ? 'true' : 'false') : $this->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($this->load_encoding) ? ($this->load_encoding ? 'true' : 'false') : $this->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($this->dest_file_name) ? ($this->dest_file_name ? 'true' : 'false') : $this->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->revision_author !== null) {
+            $localName = lcfirst('RevisionAuthor');
+            $localValue = is_bool($this->revision_author) ? ($this->revision_author ? 'true' : 'false') : $this->revision_author;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->revision_date_time !== null) {
+            $localName = lcfirst('RevisionDateTime');
+            $localValue = is_bool($this->revision_date_time) ? ($this->revision_date_time ? 'true' : 'false') : $this->revision_date_time;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+
+        $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        if (isset($this->list_update)) {
+            if (is_string($this->list_update)) {
+                $_tempBody = ['content' => "\"" . $this->list_update . "\"", 'mime' => 'application/json'];
+            } else {
+                $_tempBody = ['content' => $this->list_update, 'mime' => 'application/json'];
+            }
+        }
+        $headerParams = [];
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $headerParams['Content-Type'] = $_tempBody['mime'];
+            if (gettype($_tempBody['content']) === 'string') {
+                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
+            } else {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody['content']));
+            }
+        } elseif (count($formParams) > 1) {
+            $multipartContents = [];
+            foreach ($formParams as $formParamName => $formParamValue) {
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue['content'],
+                    'headers' => ['Content-Type' => $formParamValue['mime']]
+                ];
+            }
+            // for HTTP post (form)
+            $httpBody = new MultipartStream($multipartContents);
+            $headerParams['Content-Type'] = "multipart/form-data; boundary=" . $httpBody->getBoundary();
+        }
+
+        $result = array();
+        $result['method'] = 'PUT';
+        $result['url'] = $resourcePath;
+        $result['headers'] = $headerParams;
+        $result['body'] = $httpBody;
+        return $result;
+    }
+
+    /*
+     * Create request for operation 'updateList'
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createRequest($config)
+    {
+        $reqdata = $this->createRequestData($config);
+        $defaultHeaders = [];
+
+        if ($config->getAccessToken() !== null) {
+            $defaultHeaders['Authorization'] = 'Bearer ' . $config->getAccessToken();
+        }
+
+        if ($config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $config->getClientVersion();
+
+        $reqdata['headers'] = array_merge($defaultHeaders, $reqdata['headers']);
+        $req = new Request(
+            $reqdata['method'],
+            $reqdata['url'],
+            $reqdata['headers'],
+            $reqdata['body']
+        );
+
+        if ($config->getDebug()) {
+            $this->_writeRequestLog($reqdata['method'], $reqdata['url'], $reqdata['headers'], $reqdata['body']);
+        }
+
+        return $req;
+    }
+
+    /*
+     * Gets response type of this request.
+     */
+    public function getResponseType()
+    {
+        return '\Aspose\Words\Model\ListResponse';
     }
 }

@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FieldsResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/{nodePath}/fields.
+ * @description The REST response with a collection of fields.
  */
 class FieldsResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class FieldsResponse extends WordsResponse
     /*
      * Sets fields
      *
-     * @param \Aspose\Words\Model\FieldCollection $fields Gets or sets collection of fields.
+     * @param \Aspose\Words\Model\FieldCollection $fields Gets or sets the collection of fields.
      *
      * @return $this
      */

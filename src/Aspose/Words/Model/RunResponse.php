@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * RunResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/runs/{1}.
+ * @description The REST response with a Run element.
  */
 class RunResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class RunResponse extends WordsResponse
     /*
      * Sets run
      *
-     * @param \Aspose\Words\Model\Run $run Gets or sets run.
+     * @param \Aspose\Words\Model\Run $run Gets or sets the Run element.
      *
      * @return $this
      */

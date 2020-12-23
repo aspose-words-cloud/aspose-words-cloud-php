@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -62,6 +61,26 @@ class RevisionsTests extends BaseTestContext
 
         $result = $this->words->acceptAllRevisions($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getResult());
+        Assert::assertNotNull($result->getResult()->getDest());
+    }
+
+    /*
+     * Test for accepting revisions in document online.
+     */
+    public function testAcceptAllRevisionsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\AcceptAllRevisionsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->acceptAllRevisionsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -88,6 +107,26 @@ class RevisionsTests extends BaseTestContext
         );
 
         $result = $this->words->rejectAllRevisions($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getResult());
+        Assert::assertNotNull($result->getResult()->getDest());
+    }
+
+    /*
+     * Test for rejecting revisions in document online.
+     */
+    public function testRejectAllRevisionsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\RejectAllRevisionsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->rejectAllRevisionsOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

@@ -223,7 +223,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets bookmarks_outline_level
      *
-     * @param int $bookmarks_outline_level Gets or sets specifies the level in the XPS document outline at which to display Word bookmarks.
+     * @param int $bookmarks_outline_level Gets or sets the level in the XPS document outline at which to display Word bookmarks.
      *
      * @return $this
      */
@@ -246,7 +246,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets headings_outline_levels
      *
-     * @param int $headings_outline_levels Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the XPS document outline.
+     * @param int $headings_outline_levels Gets or sets the number of heading levels (paragraphs formatted with the Heading styles) to include in the XPS document outline.
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets outline_options
      *
-     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets allows to specify outline options.
+     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets the outline options.
      *
      * @return $this
      */
@@ -292,7 +292,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets use_book_fold_printing_settings
      *
-     * @param bool $use_book_fold_printing_settings Gets or sets determines whether the document should be saved using a booklet printing layout.
+     * @param bool $use_book_fold_printing_settings Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
      *
      * @return $this
      */

@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SearchResultsCollection
  *
- * @description Collection of search results.
+ * @description The collection of search results.
  */
 class SearchResultsCollection extends LinkElement
 {
@@ -205,7 +205,7 @@ class SearchResultsCollection extends LinkElement
     /*
      * Sets results_list
      *
-     * @param \Aspose\Words\Model\SearchResult[] $results_list Gets or sets collection of comments.
+     * @param \Aspose\Words\Model\SearchResult[] $results_list Gets or sets the collection of comments.
      *
      * @return $this
      */

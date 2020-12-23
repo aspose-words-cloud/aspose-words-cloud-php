@@ -256,7 +256,7 @@ class FootnoteBase implements ArrayAccess
     /*
      * Sets footnote_type
      *
-     * @param string $footnote_type Gets or sets returns a value that specifies whether this is a footnote or endnote.
+     * @param string $footnote_type Gets or sets the option, that specifies whether this is a footnote or endnote.
      *
      * @return $this
      */
@@ -283,7 +283,7 @@ class FootnoteBase implements ArrayAccess
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets the link to comment range start node.
      *
      * @return $this
      */
@@ -306,7 +306,7 @@ class FootnoteBase implements ArrayAccess
     /*
      * Sets reference_mark
      *
-     * @param string $reference_mark Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
+     * @param string $reference_mark Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class FootnoteBase implements ArrayAccess
     /*
      * Sets text
      *
-     * @param string $text Gets or sets this is a convenience property that allows to easily get or set text of the footnote.
+     * @param string $text Gets or sets text of the footnote.
      *
      * @return $this
      */

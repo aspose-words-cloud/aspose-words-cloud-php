@@ -250,7 +250,7 @@ class OptimizationOptions implements ArrayAccess
     /*
      * Sets ms_word_version
      *
-     * @param string $ms_word_version Gets or sets specific MSWord version.
+     * @param string $ms_word_version Gets or sets the specific MSWord version.
      *
      * @return $this
      */

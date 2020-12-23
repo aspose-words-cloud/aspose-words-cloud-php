@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Comment
  *
- * @description Comment.
+ * @description DTO container with a comment.
  */
 class Comment extends CommentLink
 {
@@ -241,7 +241,7 @@ class Comment extends CommentLink
     /*
      * Sets author
      *
-     * @param string $author Gets or sets returns or sets the author name for a comment.
+     * @param string $author Gets or sets the author name for a comment.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class Comment extends CommentLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets content of comment.
+     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets the content of the comment.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class Comment extends CommentLink
     /*
      * Sets initial
      *
-     * @param string $initial Gets or sets returns or sets the initials of the user associated with a specific comment.
+     * @param string $initial Gets or sets the initials of the user associated with a specific comment.
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ class Comment extends CommentLink
     /*
      * Sets range_end
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets link to comment range end node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets the link to comment range end node.
      *
      * @return $this
      */
@@ -356,7 +356,7 @@ class Comment extends CommentLink
     /*
      * Sets range_start
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets the link to comment range start node.
      *
      * @return $this
      */
@@ -379,7 +379,7 @@ class Comment extends CommentLink
     /*
      * Sets text
      *
-     * @param string $text Gets or sets this is a convenience property that allows to easily get or set text of the comment.
+     * @param string $text Gets or sets text of the comment.
      *
      * @return $this
      */

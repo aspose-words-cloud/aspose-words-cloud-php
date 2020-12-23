@@ -258,7 +258,7 @@ class ReportEngineSettings implements ArrayAccess
     /*
      * Sets csv_data_load_options
      *
-     * @param \Aspose\Words\Model\CsvDataLoadOptions $csv_data_load_options Gets or sets options for parsing CSV data.
+     * @param \Aspose\Words\Model\CsvDataLoadOptions $csv_data_load_options Gets or sets the options for parsing CSV data.
      *
      * @return $this
      */
@@ -281,7 +281,7 @@ class ReportEngineSettings implements ArrayAccess
     /*
      * Sets data_source_name
      *
-     * @param string $data_source_name Gets or sets a name to reference the data source object in the template.
+     * @param string $data_source_name Gets or sets the name to reference the data source object in the template.
      *
      * @return $this
      */

@@ -209,7 +209,7 @@ class DocumentPropertyBase implements ArrayAccess
     /*
      * Sets value
      *
-     * @param string $value Gets or sets string value of the document property.
+     * @param string $value Gets or sets the value of the document property.
      *
      * @return $this
      */

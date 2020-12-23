@@ -234,7 +234,7 @@ class Bookmark extends LinkElement
     /*
      * Sets text
      *
-     * @param string $text Gets or sets the text enclosed in the bookmark.
+     * @param string $text Gets or sets text, enclosed in the bookmark.
      *
      * @return $this
      */

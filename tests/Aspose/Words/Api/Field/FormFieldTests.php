@@ -29,7 +29,6 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Words\Model\BookmarkData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -61,8 +60,8 @@ class FormFieldTests extends BaseTestContext
         ));
         $request = new Requests\UpdateFormFieldRequest(
             $remoteFileName,
-            $requestFormField,
             0,
+            $requestFormField,
             "sections/0",
             $remoteDataFolder,
             NULL,
@@ -74,6 +73,40 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->updateFormField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFormField());
+        Assert::assertEquals("FullName", $result->getFormField()->getName());
+        Assert::assertEquals("", $result->getFormField()->getStatusText());
+    }
+
+    /*
+     * Test for posting form field online.
+     */
+    public function testUpdateFormFieldOnline()
+    {
+        $fieldFolder = "DocumentElements/FormFields";
+
+        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+            "name" => "FullName",
+            "enabled" => true,
+            "calculate_on_exit" => true,
+            "status_text" => "",
+            "text_input_type" => "Regular",
+            "text_input_default" => "No name",
+        ));
+        $request = new Requests\UpdateFormFieldOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            $requestFormField,
+            0,
+            "sections/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateFormFieldOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -101,8 +134,8 @@ class FormFieldTests extends BaseTestContext
         ));
         $request = new Requests\UpdateFormFieldRequest(
             $remoteFileName,
-            $requestFormField,
             0,
+            $requestFormField,
             NULL,
             $remoteDataFolder,
             NULL,
@@ -115,6 +148,9 @@ class FormFieldTests extends BaseTestContext
 
         $result = $this->words->updateFormField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFormField());
+        Assert::assertEquals("FullName", $result->getFormField()->getName());
+        Assert::assertEquals("", $result->getFormField()->getStatusText());
     }
 
     /*
@@ -142,6 +178,27 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->getFormField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFormField());
+        Assert::assertEquals("FullName", $result->getFormField()->getName());
+    }
+
+    /*
+     * Test for getting form field online.
+     */
+    public function testGetFormFieldOnline()
+    {
+        $fieldFolder = "DocumentElements/FormFields";
+
+        $request = new Requests\GetFormFieldOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            0,
+            "sections/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getFormFieldOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -171,6 +228,8 @@ class FormFieldTests extends BaseTestContext
 
         $result = $this->words->getFormField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFormField());
+        Assert::assertEquals("FullName", $result->getFormField()->getName());
     }
 
     /*
@@ -197,6 +256,28 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->getFormFields($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFormFields());
+        Assert::assertNotNull($result->getFormFields()->getList());
+        Assert::assertCount(5, $result->getFormFields()->getList());
+        Assert::assertEquals("FullName", $result->getFormFields()->getList()[0]->getName());
+    }
+
+    /*
+     * Test for getting form fields online.
+     */
+    public function testGetFormFieldsOnline()
+    {
+        $fieldFolder = "DocumentElements/FormFields";
+
+        $request = new Requests\GetFormFieldsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            "sections/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getFormFieldsOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -225,6 +306,10 @@ class FormFieldTests extends BaseTestContext
 
         $result = $this->words->getFormFields($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFormFields());
+        Assert::assertNotNull($result->getFormFields()->getList());
+        Assert::assertCount(5, $result->getFormFields()->getList());
+        Assert::assertEquals("FullName", $result->getFormFields()->getList()[0]->getName());
     }
 
     /*
@@ -264,6 +349,41 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->insertFormField($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFormField());
+        Assert::assertEquals("FullName", $result->getFormField()->getName());
+        Assert::assertEquals("", $result->getFormField()->getStatusText());
+    }
+
+    /*
+     * Test for insert form field without node path online.
+     */
+    public function testInsertFormFieldOnline()
+    {
+        $fieldFolder = "DocumentElements/FormFields";
+
+        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+            "name" => "FullName",
+            "enabled" => true,
+            "calculate_on_exit" => true,
+            "status_text" => "",
+            "text_input_type" => "Regular",
+            "text_input_default" => "123",
+            "text_input_format" => "UPPERCASE",
+        ));
+        $request = new Requests\InsertFormFieldOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            $requestFormField,
+            "sections/0/paragraphs/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertFormFieldOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
@@ -305,6 +425,9 @@ class FormFieldTests extends BaseTestContext
 
         $result = $this->words->insertFormField($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getFormField());
+        Assert::assertEquals("FullName", $result->getFormField()->getName());
+        Assert::assertEquals("", $result->getFormField()->getStatusText());
     }
 
     /*
@@ -335,6 +458,28 @@ class FormFieldTests extends BaseTestContext
         );
 
     $this->words->deleteFormField($request);
+    }
+
+    /*
+     * Test for deleting form field online.
+     */
+    public function testDeleteFormFieldOnline()
+    {
+        $fieldFolder = "DocumentElements/FormFields";
+
+        $request = new Requests\DeleteFormFieldOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            0,
+            "sections/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteFormFieldOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*

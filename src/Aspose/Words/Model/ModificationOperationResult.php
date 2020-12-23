@@ -215,7 +215,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Sets dest
      *
-     * @param \Aspose\Words\Model\FileLink $dest Gets or sets link to the dest document (result of the modification operation).
+     * @param \Aspose\Words\Model\FileLink $dest Gets or sets the link to the dest document (result of the modification operation).
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Sets source
      *
-     * @param \Aspose\Words\Model\FileLink $source Gets or sets link to the source document (source for the modification operation).
+     * @param \Aspose\Words\Model\FileLink $source Gets or sets the link to the source document (source for the modification operation).
      *
      * @return $this
      */

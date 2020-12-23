@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * BordersCollection
  *
- * @description Collection of borders.
+ * @description The collection of borders.
  */
 class BordersCollection extends LinkElement
 {
@@ -205,7 +205,7 @@ class BordersCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\Border[] $list Gets or sets collection of comments.
+     * @param \Aspose\Words\Model\Border[] $list Gets or sets the collection of comments.
      *
      * @return $this
      */

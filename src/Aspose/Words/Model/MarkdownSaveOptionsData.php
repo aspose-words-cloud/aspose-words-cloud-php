@@ -238,7 +238,7 @@ class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
     /*
      * Sets table_content_alignment
      *
-     * @param string $table_content_alignment Gets or sets a value that specifies how to align contents in tables when exporting into the Markdown format. The default value is Auto.
+     * @param string $table_content_alignment Gets or sets the value, that specifies how to align contents in tables when exporting into the Markdown format. The default value is Auto.
      *
      * @return $this
      */

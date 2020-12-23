@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TabStop
  *
- * @description Paragraph format tab stop.
+ * @description DTO container with paragraph format tab stop.
  */
 class TabStop extends TabStopBase
 {

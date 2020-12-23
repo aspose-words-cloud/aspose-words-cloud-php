@@ -215,7 +215,7 @@ class SearchResult implements ArrayAccess
     /*
      * Sets range_end
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets link to result range end node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets the link to result range end node.
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class SearchResult implements ArrayAccess
     /*
      * Sets range_start
      *
-     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets link to result range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets the link to result range start node.
      *
      * @return $this
      */

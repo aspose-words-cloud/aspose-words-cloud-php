@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * BookmarkResponse
  *
- * @description This response should be returned by the service when handling:  GET bookmarks/{bookmarkName}.
+ * @description The REST response with a bookmark.
  */
 class BookmarkResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class BookmarkResponse extends WordsResponse
     /*
      * Sets bookmark
      *
-     * @param \Aspose\Words\Model\Bookmark $bookmark Gets or sets bookmark.
+     * @param \Aspose\Words\Model\Bookmark $bookmark Gets or sets the bookmark.
      *
      * @return $this
      */

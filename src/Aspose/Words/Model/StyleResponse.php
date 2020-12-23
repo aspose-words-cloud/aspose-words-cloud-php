@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * StyleResponse
  *
- * @description This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/styles/{0}.
+ * @description The REST response with a style.
  */
 class StyleResponse extends WordsResponse
 {
@@ -205,7 +205,7 @@ class StyleResponse extends WordsResponse
     /*
      * Sets style
      *
-     * @param \Aspose\Words\Model\Style $style Gets or sets style which are contained in document.
+     * @param \Aspose\Words\Model\Style $style Gets or sets the style, containded in the document.
      *
      * @return $this
      */

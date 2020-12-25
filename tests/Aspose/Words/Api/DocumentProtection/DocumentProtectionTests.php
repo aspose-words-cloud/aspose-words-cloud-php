@@ -71,6 +71,40 @@ class DocumentProtectionTests extends BaseTestContext
     }
 
     /*
+     * Test for changing document protection.
+     */
+    public function testChangeDocumentProtection()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProtection";
+        $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
+        $remoteFileName = "TestChangeDocumentProtection.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFilePath,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+            "password" => "aspose",
+            "protection_type" => "AllowOnlyComments",
+        ));
+        $request = new Requests\ProtectDocumentRequest(
+            $remoteFileName,
+            $requestProtectionRequest,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->protectDocument($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getProtectionData());
+        Assert::assertEquals("AllowOnlyComments", $result->getProtectionData()->getProtectionType());
+    }
+
+    /*
      * Test for getting document protection.
      */
     public function testGetDocumentProtection()

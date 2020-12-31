@@ -100,8 +100,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->acceptAllRevisionsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->acceptAllRevisionsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -265,8 +270,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->appendDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->appendDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -430,8 +440,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->applyStyleToDocumentElementWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->applyStyleToDocumentElementWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -595,8 +610,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->buildReportWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->buildReportWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -760,8 +780,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->buildReportOnlineWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->buildReportOnlineWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -925,8 +950,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->classifyWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->classifyWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -1090,8 +1120,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->classifyDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->classifyDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -1255,8 +1290,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->compareDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->compareDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -1420,8 +1460,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->convertDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->convertDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -1584,7 +1629,12 @@ class WordsApi
     $this->copyFileWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->copyFileWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -1706,7 +1756,12 @@ class WordsApi
     $this->copyFolderWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->copyFolderWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -1829,8 +1884,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->copyStyleWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->copyStyleWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -1994,8 +2054,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->createDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->createDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -2158,7 +2223,12 @@ class WordsApi
     $this->createFolderWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->createFolderWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -2281,8 +2351,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->createOrUpdateDocumentPropertyWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->createOrUpdateDocumentPropertyWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -2446,8 +2521,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->deleteAllParagraphTabStopsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->deleteAllParagraphTabStopsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -2611,8 +2691,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->deleteBorderWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->deleteBorderWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -2776,8 +2861,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->deleteBordersWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->deleteBordersWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -2940,7 +3030,12 @@ class WordsApi
     $this->deleteCommentWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteCommentWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -3062,7 +3157,12 @@ class WordsApi
     $this->deleteDocumentPropertyWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteDocumentPropertyWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -3184,7 +3284,12 @@ class WordsApi
     $this->deleteDrawingObjectWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteDrawingObjectWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -3306,7 +3411,12 @@ class WordsApi
     $this->deleteFieldWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteFieldWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -3428,7 +3538,12 @@ class WordsApi
     $this->deleteFieldsWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteFieldsWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -3550,7 +3665,12 @@ class WordsApi
     $this->deleteFileWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteFileWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -3672,7 +3792,12 @@ class WordsApi
     $this->deleteFolderWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteFolderWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -3794,7 +3919,12 @@ class WordsApi
     $this->deleteFootnoteWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteFootnoteWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -3916,7 +4046,12 @@ class WordsApi
     $this->deleteFormFieldWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteFormFieldWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -4038,7 +4173,12 @@ class WordsApi
     $this->deleteHeaderFooterWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteHeaderFooterWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -4160,7 +4300,12 @@ class WordsApi
     $this->deleteHeadersFootersWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteHeadersFootersWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -4282,7 +4427,12 @@ class WordsApi
     $this->deleteMacrosWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteMacrosWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -4404,7 +4554,12 @@ class WordsApi
     $this->deleteOfficeMathObjectWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteOfficeMathObjectWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -4526,7 +4681,12 @@ class WordsApi
     $this->deleteParagraphWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteParagraphWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -4649,8 +4809,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->deleteParagraphListFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->deleteParagraphListFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -4814,8 +4979,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->deleteParagraphTabStopWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->deleteParagraphTabStopWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -4978,7 +5148,12 @@ class WordsApi
     $this->deleteRunWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteRunWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -5100,7 +5275,12 @@ class WordsApi
     $this->deleteSectionWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteSectionWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -5222,7 +5402,12 @@ class WordsApi
     $this->deleteTableWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteTableWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -5344,7 +5529,12 @@ class WordsApi
     $this->deleteTableCellWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteTableCellWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -5466,7 +5656,12 @@ class WordsApi
     $this->deleteTableRowWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->deleteTableRowWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -5589,8 +5784,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->deleteWatermarkWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->deleteWatermarkWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -5754,8 +5954,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->downloadFileWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->downloadFileWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -5919,8 +6124,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->executeMailMergeWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->executeMailMergeWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -6084,8 +6294,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->executeMailMergeOnlineWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->executeMailMergeOnlineWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -6249,8 +6464,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getAvailableFontsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getAvailableFontsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -6414,8 +6634,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getBookmarkByNameWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getBookmarkByNameWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -6579,8 +6804,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getBookmarksWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getBookmarksWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -6744,8 +6974,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getBorderWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getBorderWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -6909,8 +7144,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getBordersWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getBordersWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -7074,8 +7314,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getCommentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getCommentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -7239,8 +7484,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getCommentsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getCommentsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -7404,8 +7654,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -7569,8 +7824,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentDrawingObjectByIndexWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentDrawingObjectByIndexWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -7734,8 +7994,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentDrawingObjectImageDataWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentDrawingObjectImageDataWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -7899,8 +8164,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentDrawingObjectOleDataWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentDrawingObjectOleDataWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -8064,8 +8334,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentDrawingObjectsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentDrawingObjectsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -8229,8 +8504,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentFieldNamesWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentFieldNamesWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -8394,8 +8674,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentFieldNamesOnlineWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentFieldNamesOnlineWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -8559,8 +8844,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentHyperlinkByIndexWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentHyperlinkByIndexWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -8724,8 +9014,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentHyperlinksWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentHyperlinksWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -8889,8 +9184,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentPropertiesWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentPropertiesWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -9054,8 +9354,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentPropertyWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentPropertyWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -9219,8 +9524,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentProtectionWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentProtectionWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -9384,8 +9694,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentStatisticsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentStatisticsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -9549,8 +9864,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getDocumentWithFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getDocumentWithFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -9714,8 +10034,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getFieldWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getFieldWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -9879,8 +10204,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getFieldsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getFieldsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -10044,8 +10374,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getFilesListWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getFilesListWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -10209,8 +10544,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getFootnoteWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getFootnoteWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -10374,8 +10714,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getFootnotesWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getFootnotesWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -10539,8 +10884,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getFormFieldWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getFormFieldWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -10704,8 +11054,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getFormFieldsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getFormFieldsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -10869,8 +11224,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getHeaderFooterWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getHeaderFooterWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -11034,8 +11394,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getHeaderFooterOfSectionWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getHeaderFooterOfSectionWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -11199,8 +11564,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getHeaderFootersWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getHeaderFootersWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -11364,8 +11734,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getListWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getListWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -11529,8 +11904,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getListsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getListsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -11694,8 +12074,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getOfficeMathObjectWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getOfficeMathObjectWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -11859,8 +12244,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getOfficeMathObjectsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getOfficeMathObjectsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -12024,8 +12414,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getParagraphWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getParagraphWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -12189,8 +12584,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getParagraphFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getParagraphFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -12354,8 +12754,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getParagraphListFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getParagraphListFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -12519,8 +12924,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getParagraphsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getParagraphsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -12684,8 +13094,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getParagraphTabStopsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getParagraphTabStopsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -12849,8 +13264,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getRangeTextWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getRangeTextWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -13014,8 +13434,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getRunWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getRunWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -13179,8 +13604,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getRunFontWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getRunFontWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -13344,8 +13774,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getRunsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getRunsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -13509,8 +13944,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getSectionWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getSectionWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -13674,8 +14114,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getSectionPageSetupWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getSectionPageSetupWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -13839,8 +14284,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getSectionsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getSectionsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -14004,8 +14454,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getStyleWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getStyleWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -14169,8 +14624,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getStyleFromDocumentElementWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getStyleFromDocumentElementWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -14334,8 +14794,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getStylesWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getStylesWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -14499,8 +14964,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getTableWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getTableWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -14664,8 +15134,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getTableCellWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getTableCellWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -14829,8 +15304,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getTableCellFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getTableCellFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -14994,8 +15474,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getTablePropertiesWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getTablePropertiesWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -15159,8 +15644,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getTableRowWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getTableRowWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -15324,8 +15814,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getTableRowFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getTableRowFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -15489,8 +15984,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->getTablesWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->getTablesWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -15654,8 +16154,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertCommentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertCommentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -15819,8 +16324,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertDrawingObjectWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertDrawingObjectWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -15984,8 +16494,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertFieldWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertFieldWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -16149,8 +16664,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertFootnoteWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertFootnoteWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -16314,8 +16834,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertFormFieldWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertFormFieldWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -16479,8 +17004,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertHeaderFooterWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertHeaderFooterWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -16644,8 +17174,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertListWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertListWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -16809,8 +17344,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertOrUpdateParagraphTabStopWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertOrUpdateParagraphTabStopWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -16974,8 +17514,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertPageNumbersWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertPageNumbersWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -17139,8 +17684,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertParagraphWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertParagraphWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -17304,8 +17854,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertRunWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertRunWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -17469,8 +18024,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertStyleWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertStyleWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -17634,8 +18194,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertTableWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertTableWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -17799,8 +18364,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertTableCellWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertTableCellWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -17964,8 +18534,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertTableRowWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertTableRowWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -18129,8 +18704,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertWatermarkImageWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertWatermarkImageWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -18294,8 +18874,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->insertWatermarkTextWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->insertWatermarkTextWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -18459,8 +19044,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->loadWebDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->loadWebDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -18623,7 +19213,12 @@ class WordsApi
     $this->moveFileWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->moveFileWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -18745,7 +19340,12 @@ class WordsApi
     $this->moveFolderWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->moveFolderWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -18867,7 +19467,12 @@ class WordsApi
     $this->optimizeDocumentWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->optimizeDocumentWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -18990,8 +19595,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->protectDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->protectDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -19155,8 +19765,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->rejectAllRevisionsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->rejectAllRevisionsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -19320,8 +19935,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->removeRangeWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->removeRangeWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -19485,8 +20105,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->renderDrawingObjectWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->renderDrawingObjectWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -19650,8 +20275,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->renderMathObjectWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->renderMathObjectWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -19815,8 +20445,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->renderPageWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->renderPageWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -19980,8 +20615,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->renderParagraphWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->renderParagraphWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -20145,8 +20785,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->renderTableWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->renderTableWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -20310,8 +20955,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->replaceTextWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->replaceTextWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -20475,8 +21125,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->replaceWithTextWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->replaceWithTextWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -20639,7 +21294,12 @@ class WordsApi
     $this->resetCacheWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
+            try {
     $this->resetCacheWithHttpInfo($request);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -20762,8 +21422,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->saveAsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->saveAsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -20927,8 +21592,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->saveAsRangeWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->saveAsRangeWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -21092,8 +21762,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->saveAsTiffWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->saveAsTiffWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -21257,8 +21932,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->searchWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->searchWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -21422,8 +22102,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->splitDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->splitDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -21587,8 +22272,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->unprotectDocumentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->unprotectDocumentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -21752,8 +22442,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateBookmarkWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateBookmarkWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -21917,8 +22612,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateBorderWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateBorderWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -22082,8 +22782,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateCommentWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateCommentWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -22247,8 +22952,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateDrawingObjectWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateDrawingObjectWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -22412,8 +23122,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateFieldWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateFieldWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -22577,8 +23292,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateFieldsWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateFieldsWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -22742,8 +23462,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateFootnoteWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateFootnoteWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -22907,8 +23632,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateFormFieldWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateFormFieldWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -23072,8 +23802,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateListWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateListWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -23237,8 +23972,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateListLevelWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateListLevelWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -23402,8 +24142,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateParagraphFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateParagraphFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -23567,8 +24312,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateParagraphListFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateParagraphListFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -23732,8 +24482,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateRunWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateRunWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -23897,8 +24652,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateRunFontWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateRunFontWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -24062,8 +24822,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateSectionPageSetupWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateSectionPageSetupWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -24227,8 +24992,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateStyleWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateStyleWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -24392,8 +25162,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateTableCellFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateTableCellFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -24557,8 +25332,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateTablePropertiesWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateTablePropertiesWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -24722,8 +25502,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->updateTableRowFormatWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->updateTableRowFormatWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 
@@ -24887,8 +25672,13 @@ class WordsApi
             return $response;
         }
         catch(RepeatRequestException $e) {
-            list($response) = $this->uploadFileWithHttpInfo($request);
-            return $response;
+            try {
+                list($response) = $this->uploadFileWithHttpInfo($request);
+                return $response;
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            }
         } 
     }
 

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RevisionsTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,6 +66,24 @@ class RevisionsTests extends BaseTestContext
     }
 
     /*
+     * Test for accepting revisions in document online.
+     */
+    public function testAcceptAllRevisionsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\AcceptAllRevisionsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->acceptAllRevisionsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for rejecting revisions in document.
      */
     public function testRejectAllRevisions()
@@ -92,5 +110,23 @@ class RevisionsTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getResult());
         Assert::assertNotNull($result->getResult()->getDest());
+    }
+
+    /*
+     * Test for rejecting revisions in document online.
+     */
+    public function testRejectAllRevisionsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\RejectAllRevisionsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->rejectAllRevisionsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

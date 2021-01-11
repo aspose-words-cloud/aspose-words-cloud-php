@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CompareDocumentRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,7 +48,7 @@ class CompareDocumentRequest
     public $name;
 
     /*
-     * The properties of the document to compare with.
+     * Compare data.
      */
     public $compare_data;
 
@@ -81,7 +81,7 @@ class CompareDocumentRequest
      * Initializes a new instance of the CompareDocumentRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\CompareData $compare_data The properties of the document to compare with.
+     * @param \Aspose\Words\Model\CompareData $compare_data Compare data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -117,7 +117,7 @@ class CompareDocumentRequest
     }
 
     /*
-     * The properties of the document to compare with.
+     * Compare data.
      */
     public function get_compare_data()
     {
@@ -125,7 +125,7 @@ class CompareDocumentRequest
     }
 
     /*
-     * The properties of the document to compare with.
+     * Compare data.
      */
     public function set_compare_data($value)
     {

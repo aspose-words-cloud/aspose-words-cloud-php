@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveAsRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,7 +48,7 @@ class SaveAsRequest
     public $name;
 
     /*
-     * The save options.
+     * Save options.
      */
     public $save_options_data;
 
@@ -81,7 +81,7 @@ class SaveAsRequest
      * Initializes a new instance of the SaveAsRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\SaveOptionsData $save_options_data The save options.
+     * @param \Aspose\Words\Model\SaveOptionsData $save_options_data Save options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -117,7 +117,7 @@ class SaveAsRequest
     }
 
     /*
-     * The save options.
+     * Save options.
      */
     public function get_save_options_data()
     {
@@ -125,7 +125,7 @@ class SaveAsRequest
     }
 
     /*
-     * The save options.
+     * Save options.
      */
     public function set_save_options_data($value)
     {

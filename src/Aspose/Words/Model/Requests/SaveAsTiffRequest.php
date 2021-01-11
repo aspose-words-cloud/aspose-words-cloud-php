@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveAsTiffRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,7 +48,7 @@ class SaveAsTiffRequest
     public $name;
 
     /*
-     * The save options to TIFF format.
+     * Tiff save options.
      */
     public $save_options;
 
@@ -166,7 +166,7 @@ class SaveAsTiffRequest
      * Initializes a new instance of the SaveAsTiffRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\TiffSaveOptionsData $save_options The save options to TIFF format.
+     * @param \Aspose\Words\Model\TiffSaveOptionsData $save_options Tiff save options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -236,7 +236,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * The save options to TIFF format.
+     * Tiff save options.
      */
     public function get_save_options()
     {
@@ -244,7 +244,7 @@ class SaveAsTiffRequest
     }
 
     /*
-     * The save options to TIFF format.
+     * Tiff save options.
      */
     public function set_save_options($value)
     {

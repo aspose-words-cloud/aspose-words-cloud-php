@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertFieldRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,7 +48,7 @@ class InsertFieldRequest
     public $name;
 
     /*
-     * The properties of the field.
+     * Field data.
      */
     public $field;
 
@@ -101,7 +101,7 @@ class InsertFieldRequest
      * Initializes a new instance of the InsertFieldRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\FieldInsert $field The properties of the field.
+     * @param \Aspose\Words\Model\FieldInsert $field Field data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -145,7 +145,7 @@ class InsertFieldRequest
     }
 
     /*
-     * The properties of the field.
+     * Field data.
      */
     public function get_field()
     {
@@ -153,7 +153,7 @@ class InsertFieldRequest
     }
 
     /*
-     * The properties of the field.
+     * Field data.
      */
     public function set_field($value)
     {

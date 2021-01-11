@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertListRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,7 +48,7 @@ class InsertListRequest
     public $name;
 
     /*
-     * The properties of the list.
+     * List object.
      */
     public $list_insert;
 
@@ -91,7 +91,7 @@ class InsertListRequest
      * Initializes a new instance of the InsertListRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ListInsert $list_insert The properties of the list.
+     * @param \Aspose\Words\Model\ListInsert $list_insert List object.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -131,7 +131,7 @@ class InsertListRequest
     }
 
     /*
-     * The properties of the list.
+     * List object.
      */
     public function get_list_insert()
     {
@@ -139,7 +139,7 @@ class InsertListRequest
     }
 
     /*
-     * The properties of the list.
+     * List object.
      */
     public function set_list_insert($value)
     {

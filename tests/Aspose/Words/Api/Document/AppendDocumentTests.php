@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AppendDocumentTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -76,5 +76,43 @@ class AppendDocumentTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocument());
         Assert::assertEquals("TestAppendDocument.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for appending document online.
+     */
+    public function testAppendDocumentOnline()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/AppendDocument";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestAppendDocument.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $requestDocumentListDocumentEntries0 = new \Aspose\Words\Model\DocumentEntry(array(
+            "href" => $remoteDataFolder . "/" . $remoteFileName,
+            "import_format_mode" => "KeepSourceFormatting",
+        ));
+        $requestDocumentListDocumentEntries = [
+            $requestDocumentListDocumentEntries0,
+        ];
+        $requestDocumentList = new \Aspose\Words\Model\DocumentEntryList(array(
+            "document_entries" => $requestDocumentListDocumentEntries,
+        ));
+        $request = new Requests\AppendDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestDocumentList,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->appendDocumentOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

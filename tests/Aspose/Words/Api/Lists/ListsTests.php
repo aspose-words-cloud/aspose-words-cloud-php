@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListsTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -67,6 +67,23 @@ class ListsTests extends BaseTestContext
     }
 
     /*
+     * Test for getting lists from document online.
+     */
+    public function testGetListsOnline()
+    {
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
+
+        $request = new Requests\GetListsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getListsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting list from document.
      */
     public function testGetList()
@@ -96,6 +113,24 @@ class ListsTests extends BaseTestContext
     }
 
     /*
+     * Test for getting list from document online.
+     */
+    public function testGetListOnline()
+    {
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
+
+        $request = new Requests\GetListOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            1,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getListOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for updating list from document.
      */
     public function testUpdateList()
@@ -114,8 +149,8 @@ class ListsTests extends BaseTestContext
         ));
         $request = new Requests\UpdateListRequest(
             $remoteFileName,
-            $requestListUpdate,
             1,
+            $requestListUpdate,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -127,9 +162,34 @@ class ListsTests extends BaseTestContext
 
         $result = $this->words->updateList($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getList());
-        Assert::assertEquals(1, $result->getList()->getListId());
-        Assert::assertTrue($result->getList()->getIsRestartAtEachSection());
+    }
+
+    /*
+     * Test for updating list from document online.
+     */
+    public function testUpdateListOnline()
+    {
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
+
+        $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
+            "is_restart_at_each_section" => true,
+        ));
+        $request = new Requests\UpdateListOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            1,
+            $requestListUpdate,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateListOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getModel()->getList());
+        Assert::assertEquals(1, $result->getModel()->getList()->getListId());
+        Assert::assertTrue($result->getModel()->getList()->getIsRestartAtEachSection());
     }
 
     /*
@@ -151,9 +211,9 @@ class ListsTests extends BaseTestContext
         ));
         $request = new Requests\UpdateListLevelRequest(
             $remoteFileName,
+            1,
+            1,
             $requestListUpdate,
-            1,
-            1,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -165,10 +225,36 @@ class ListsTests extends BaseTestContext
 
         $result = $this->words->updateListLevel($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getList());
-        Assert::assertNotNull($result->getList()->getListLevels());
-        Assert::assertNotNull($result->getList()->getListLevels()->getListLevel());
-        Assert::assertCount(9, $result->getList()->getListLevels()->getListLevel());
+    }
+
+    /*
+     * Test for updating list level from document online.
+     */
+    public function testUpdateListLevelOnline()
+    {
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
+
+        $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
+            "alignment" => "Right",
+        ));
+        $request = new Requests\UpdateListLevelOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            1,
+            $requestListUpdate,
+            1,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateListLevelOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getModel()->getList());
+        Assert::assertNotNull($result->getModel()->getList()->getListLevels());
+        Assert::assertNotNull($result->getModel()->getList()->getListLevels()->getListLevel());
+        Assert::assertCount(9, $result->getModel()->getList()->getListLevels()->getListLevel());
 
     }
 
@@ -205,5 +291,29 @@ class ListsTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getList());
         Assert::assertEquals(3, $result->getList()->getListId());
+    }
+
+    /*
+     * Test for inserting list from document online.
+     */
+    public function testInsertListOnline()
+    {
+        $localFile = "DocumentElements/Lists/ListsGet.doc";
+
+        $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
+            "template" => "OutlineLegal",
+        ));
+        $request = new Requests\InsertListOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestListInsert,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertListOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

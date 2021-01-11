@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableCellRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,14 +48,14 @@ class InsertTableCellRequest
     public $name;
 
     /*
-     * The properties of the cell.
-     */
-    public $cell;
-
-    /*
      * The path to the table row in the document tree.
      */
     public $table_row_path;
+
+    /*
+     * Table cell parameters.
+     */
+    public $cell;
 
     /*
      * Original document folder.
@@ -96,8 +96,8 @@ class InsertTableCellRequest
      * Initializes a new instance of the InsertTableCellRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\TableCellInsert $cell The properties of the cell.
      * @param string $table_row_path The path to the table row in the document tree.
+     * @param \Aspose\Words\Model\TableCellInsert $cell Table cell parameters.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -106,11 +106,11 @@ class InsertTableCellRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $cell, $table_row_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $table_row_path, $cell, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->cell = $cell;
         $this->table_row_path = $table_row_path;
+        $this->cell = $cell;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -138,23 +138,6 @@ class InsertTableCellRequest
     }
 
     /*
-     * The properties of the cell.
-     */
-    public function get_cell()
-    {
-        return $this->cell;
-    }
-
-    /*
-     * The properties of the cell.
-     */
-    public function set_cell($value)
-    {
-        $this->cell = $value;
-        return $this;
-    }
-
-    /*
      * The path to the table row in the document tree.
      */
     public function get_table_row_path()
@@ -168,6 +151,23 @@ class InsertTableCellRequest
     public function set_table_row_path($value)
     {
         $this->table_row_path = $value;
+        return $this;
+    }
+
+    /*
+     * Table cell parameters.
+     */
+    public function get_cell()
+    {
+        return $this->cell;
+    }
+
+    /*
+     * Table cell parameters.
+     */
+    public function set_cell($value)
+    {
+        $this->cell = $value;
         return $this;
     }
 
@@ -301,11 +301,11 @@ class InsertTableCellRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableCell');
         }
-        if ($this->cell === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $cell when calling insertTableCell');
-        }
         if ($this->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling insertTableCell');
+        }
+        if ($this->cell === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $cell when calling insertTableCell');
         }
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells';

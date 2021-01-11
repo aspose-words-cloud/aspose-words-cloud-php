@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ApplyStyleToDocumentElementRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,14 +48,14 @@ class ApplyStyleToDocumentElementRequest
     public $name;
 
     /*
-     * The style to apply.
-     */
-    public $style_apply;
-
-    /*
      * The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      */
     public $styled_node_path;
+
+    /*
+     * Style to apply.
+     */
+    public $style_apply;
 
     /*
      * Original document folder.
@@ -96,8 +96,8 @@ class ApplyStyleToDocumentElementRequest
      * Initializes a new instance of the ApplyStyleToDocumentElementRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\StyleApply $style_apply The style to apply.
      * @param string $styled_node_path The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
+     * @param \Aspose\Words\Model\StyleApply $style_apply Style to apply.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -106,11 +106,11 @@ class ApplyStyleToDocumentElementRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $style_apply, $styled_node_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $styled_node_path, $style_apply, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->style_apply = $style_apply;
         $this->styled_node_path = $styled_node_path;
+        $this->style_apply = $style_apply;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -138,23 +138,6 @@ class ApplyStyleToDocumentElementRequest
     }
 
     /*
-     * The style to apply.
-     */
-    public function get_style_apply()
-    {
-        return $this->style_apply;
-    }
-
-    /*
-     * The style to apply.
-     */
-    public function set_style_apply($value)
-    {
-        $this->style_apply = $value;
-        return $this;
-    }
-
-    /*
      * The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
      */
     public function get_styled_node_path()
@@ -168,6 +151,23 @@ class ApplyStyleToDocumentElementRequest
     public function set_styled_node_path($value)
     {
         $this->styled_node_path = $value;
+        return $this;
+    }
+
+    /*
+     * Style to apply.
+     */
+    public function get_style_apply()
+    {
+        return $this->style_apply;
+    }
+
+    /*
+     * Style to apply.
+     */
+    public function set_style_apply($value)
+    {
+        $this->style_apply = $value;
         return $this;
     }
 
@@ -301,11 +301,11 @@ class ApplyStyleToDocumentElementRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling applyStyleToDocumentElement');
         }
-        if ($this->style_apply === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $style_apply when calling applyStyleToDocumentElement');
-        }
         if ($this->styled_node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $styled_node_path when calling applyStyleToDocumentElement');
+        }
+        if ($this->style_apply === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $style_apply when calling applyStyleToDocumentElement');
         }
 
         $resourcePath = '/words/{name}/{styledNodePath}/style';
@@ -441,7 +441,7 @@ class ApplyStyleToDocumentElementRequest
         }
 
         $result = array();
-        $result['method'] = 'PUT';
+        $result['method'] = 'POST';
         $result['url'] = $resourcePath;
         $result['headers'] = $headerParams;
         $result['body'] = $httpBody;

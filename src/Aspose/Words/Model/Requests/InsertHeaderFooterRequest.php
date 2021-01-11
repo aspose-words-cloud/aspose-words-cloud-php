@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertHeaderFooterRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,14 +48,14 @@ class InsertHeaderFooterRequest
     public $name;
 
     /*
-     * The type of a HeaderFooter object.
-     */
-    public $header_footer_type;
-
-    /*
      * The path to the section in the document tree.
      */
     public $section_path;
+
+    /*
+     * Type of header/footer.
+     */
+    public $header_footer_type;
 
     /*
      * Original document folder.
@@ -96,8 +96,8 @@ class InsertHeaderFooterRequest
      * Initializes a new instance of the InsertHeaderFooterRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param string $header_footer_type The type of a HeaderFooter object.
      * @param string $section_path The path to the section in the document tree.
+     * @param string $header_footer_type Type of header/footer.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -106,11 +106,11 @@ class InsertHeaderFooterRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $header_footer_type, $section_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $section_path, $header_footer_type, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->header_footer_type = $header_footer_type;
         $this->section_path = $section_path;
+        $this->header_footer_type = $header_footer_type;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -138,23 +138,6 @@ class InsertHeaderFooterRequest
     }
 
     /*
-     * The type of a HeaderFooter object.
-     */
-    public function get_header_footer_type()
-    {
-        return $this->header_footer_type;
-    }
-
-    /*
-     * The type of a HeaderFooter object.
-     */
-    public function set_header_footer_type($value)
-    {
-        $this->header_footer_type = $value;
-        return $this;
-    }
-
-    /*
      * The path to the section in the document tree.
      */
     public function get_section_path()
@@ -168,6 +151,23 @@ class InsertHeaderFooterRequest
     public function set_section_path($value)
     {
         $this->section_path = $value;
+        return $this;
+    }
+
+    /*
+     * Type of header/footer.
+     */
+    public function get_header_footer_type()
+    {
+        return $this->header_footer_type;
+    }
+
+    /*
+     * Type of header/footer.
+     */
+    public function set_header_footer_type($value)
+    {
+        $this->header_footer_type = $value;
         return $this;
     }
 
@@ -301,11 +301,11 @@ class InsertHeaderFooterRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertHeaderFooter');
         }
-        if ($this->header_footer_type === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $header_footer_type when calling insertHeaderFooter');
-        }
         if ($this->section_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_path when calling insertHeaderFooter');
+        }
+        if ($this->header_footer_type === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $header_footer_type when calling insertHeaderFooter');
         }
 
         $resourcePath = '/words/{name}/{sectionPath}/headersfooters';
@@ -441,7 +441,7 @@ class InsertHeaderFooterRequest
         }
 
         $result = array();
-        $result['method'] = 'PUT';
+        $result['method'] = 'POST';
         $result['url'] = $resourcePath;
         $result['headers'] = $headerParams;
         $result['body'] = $httpBody;

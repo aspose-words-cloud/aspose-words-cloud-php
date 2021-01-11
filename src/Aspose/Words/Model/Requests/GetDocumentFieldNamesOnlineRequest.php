@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentFieldNamesOnlineRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,9 +43,19 @@ use Aspose\Words\HeaderSelector;
 class GetDocumentFieldNamesOnlineRequest
 {
     /*
-     * File with template.
+     * The document.
      */
-    public $template;
+    public $document;
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public $load_encoding;
+
+    /*
+     * Password for opening an encrypted document.
+     */
+    public $password;
 
     /*
      * The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
@@ -55,29 +65,67 @@ class GetDocumentFieldNamesOnlineRequest
     /*
      * Initializes a new instance of the GetDocumentFieldNamesOnlineRequest class.
      *
-     * @param \SplFileObject $template File with template.
+     * @param \SplFileObject $document The document.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password for opening an encrypted document.
      * @param bool $use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
      */
-    public function __construct($template, $use_non_merge_fields = null)
+    public function __construct($document, $load_encoding = null, $password = null, $use_non_merge_fields = null)
     {
-        $this->template = $template;
+        $this->document = $document;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
         $this->use_non_merge_fields = $use_non_merge_fields;
     }
 
     /*
-     * File with template.
+     * The document.
      */
-    public function get_template()
+    public function get_document()
     {
-        return $this->template;
+        return $this->document;
     }
 
     /*
-     * File with template.
+     * The document.
      */
-    public function set_template($value)
+    public function set_document($value)
     {
-        $this->template = $value;
+        $this->document = $value;
+        return $this;
+    }
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function get_load_encoding()
+    {
+        return $this->load_encoding;
+    }
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function set_load_encoding($value)
+    {
+        $this->load_encoding = $value;
+        return $this;
+    }
+
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function get_password()
+    {
+        return $this->password;
+    }
+
+    /*
+     * Password for opening an encrypted document.
+     */
+    public function set_password($value)
+    {
+        $this->password = $value;
         return $this;
     }
 
@@ -106,11 +154,11 @@ class GetDocumentFieldNamesOnlineRequest
      */
     public function createRequestData($config)
     {
-        if ($this->template === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $template when calling getDocumentFieldNamesOnline');
+        if ($this->document === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $document when calling getDocumentFieldNamesOnline');
         }
 
-        $resourcePath = '/words/mailMerge/FieldNames';
+        $resourcePath = '/words/online/get/mailMerge/FieldNames';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -119,6 +167,26 @@ class GetDocumentFieldNamesOnlineRequest
 
         // remove empty path parameters
         $resourcePath = str_replace("//", "/", $resourcePath);
+        // query params
+        if ($this->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($this->load_encoding) ? ($this->load_encoding ? 'true' : 'false') : $this->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
         // query params
         if ($this->use_non_merge_fields !== null) {
             $localName = lcfirst('UseNonMergeFields');
@@ -132,13 +200,13 @@ class GetDocumentFieldNamesOnlineRequest
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
         // form params
-        if ($this->template !== null) {
+        if ($this->document !== null) {
             $multipart = true; 
-            $filename = ObjectSerializer::toFormValue($this->template);
+            $filename = ObjectSerializer::toFormValue($this->document);
             $handle = fopen($filename, "rb");
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
-            $formParams['template'] = ['content' => $contents, 'mime' => 'application/octet-stream'];
+            $formParams['document'] = ['content' => $contents, 'mime' => 'application/octet-stream'];
         }
 
         // body params

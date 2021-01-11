@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SectionTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,6 +68,24 @@ class SectionTests extends BaseTestContext
     }
 
     /*
+     * Test for getting section by index online.
+     */
+    public function testGetSectionOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetSectionOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getSectionOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting sections.
      */
     public function testGetSections()
@@ -98,6 +116,23 @@ class SectionTests extends BaseTestContext
     }
 
     /*
+     * Test for getting sections online.
+     */
+    public function testGetSectionsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetSectionsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getSectionsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for delete a section.
      */
     public function testDeleteSection()
@@ -124,5 +159,26 @@ class SectionTests extends BaseTestContext
         );
 
     $this->words->deleteSection($request);
+    }
+
+    /*
+     * Test for delete a section online.
+     */
+    public function testDeleteSectionOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteSectionOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteSectionOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

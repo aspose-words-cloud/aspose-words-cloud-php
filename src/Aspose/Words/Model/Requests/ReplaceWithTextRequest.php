@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReplaceWithTextRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,7 +53,7 @@ class ReplaceWithTextRequest
     public $range_start_identifier;
 
     /*
-     * The text replacement properties.
+     * Model with text for replacement.
      */
     public $range_text;
 
@@ -92,7 +92,7 @@ class ReplaceWithTextRequest
      *
      * @param string $name The filename of the input document.
      * @param string $range_start_identifier The range start identifier.
-     * @param \Aspose\Words\Model\ReplaceRange $range_text The text replacement properties.
+     * @param \Aspose\Words\Model\ReplaceRange $range_text Model with text for replacement.
      * @param string $range_end_identifier The range end identifier.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -148,7 +148,7 @@ class ReplaceWithTextRequest
     }
 
     /*
-     * The text replacement properties.
+     * Model with text for replacement.
      */
     public function get_range_text()
     {
@@ -156,7 +156,7 @@ class ReplaceWithTextRequest
     }
 
     /*
-     * The text replacement properties.
+     * Model with text for replacement.
      */
     public function set_range_text($value)
     {

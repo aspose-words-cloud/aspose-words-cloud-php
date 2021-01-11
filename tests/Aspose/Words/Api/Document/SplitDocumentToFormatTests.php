@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SplitDocumentToFormatTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -69,5 +69,28 @@ class SplitDocumentToFormatTests extends BaseTestContext
         Assert::assertNotNull($result->getSplitResult());
         Assert::assertNotNull($result->getSplitResult()->getPages());
         Assert::assertCount(2, $result->getSplitResult()->getPages());
+    }
+
+    /*
+     * Test for document splitting online.
+     */
+    public function testSplitDocumentOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\SplitDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "text",
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/TestSplitDocument.text",
+            1,
+            2,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->splitDocumentOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

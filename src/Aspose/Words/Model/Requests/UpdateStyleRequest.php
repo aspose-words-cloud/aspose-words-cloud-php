@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateStyleRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,14 +48,14 @@ class UpdateStyleRequest
     public $name;
 
     /*
-     * The properties of the style.
-     */
-    public $style_update;
-
-    /*
      * The name of the style.
      */
     public $style_name;
+
+    /*
+     * Style properties to update.
+     */
+    public $style_update;
 
     /*
      * Original document folder.
@@ -96,8 +96,8 @@ class UpdateStyleRequest
      * Initializes a new instance of the UpdateStyleRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\StyleUpdate $style_update The properties of the style.
      * @param string $style_name The name of the style.
+     * @param \Aspose\Words\Model\StyleUpdate $style_update Style properties to update.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -106,11 +106,11 @@ class UpdateStyleRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $style_update, $style_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $style_name, $style_update, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->style_update = $style_update;
         $this->style_name = $style_name;
+        $this->style_update = $style_update;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -138,23 +138,6 @@ class UpdateStyleRequest
     }
 
     /*
-     * The properties of the style.
-     */
-    public function get_style_update()
-    {
-        return $this->style_update;
-    }
-
-    /*
-     * The properties of the style.
-     */
-    public function set_style_update($value)
-    {
-        $this->style_update = $value;
-        return $this;
-    }
-
-    /*
      * The name of the style.
      */
     public function get_style_name()
@@ -168,6 +151,23 @@ class UpdateStyleRequest
     public function set_style_name($value)
     {
         $this->style_name = $value;
+        return $this;
+    }
+
+    /*
+     * Style properties to update.
+     */
+    public function get_style_update()
+    {
+        return $this->style_update;
+    }
+
+    /*
+     * Style properties to update.
+     */
+    public function set_style_update($value)
+    {
+        $this->style_update = $value;
         return $this;
     }
 
@@ -301,11 +301,11 @@ class UpdateStyleRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateStyle');
         }
-        if ($this->style_update === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $style_update when calling updateStyle');
-        }
         if ($this->style_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_name when calling updateStyle');
+        }
+        if ($this->style_update === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $style_update when calling updateStyle');
         }
 
         $resourcePath = '/words/{name}/styles/{styleName}/update';

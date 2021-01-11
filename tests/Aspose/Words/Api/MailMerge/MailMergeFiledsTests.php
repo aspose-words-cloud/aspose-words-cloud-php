@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MailMergeFiledsTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,6 +46,8 @@ class MailMergeFiledsTests extends BaseTestContext
 
         $request = new Requests\GetDocumentFieldNamesOnlineRequest(
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDocumentFile,
+            NULL,
+            NULL,
             true
         );
 

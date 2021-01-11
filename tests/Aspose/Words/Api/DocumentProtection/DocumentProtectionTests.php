@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentProtectionTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -71,37 +71,25 @@ class DocumentProtectionTests extends BaseTestContext
     }
 
     /*
-     * Test for changing document protection.
+     * Test for setting document protection.
      */
-    public function testChangeDocumentProtection()
+    public function testProtectDocumentOnline()
     {
-        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DocumentProtection";
-        $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
-        $remoteFileName = "TestChangeDocumentProtection.docx";
-
-        $this->uploadFile(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFilePath,
-            $remoteDataFolder . "/" . $remoteFileName
-        );
+        $localFile = "Common/test_multi_pages.docx";
 
         $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
-            "password" => "aspose",
-            "protection_type" => "AllowOnlyComments",
+            "new_password" => "123",
         ));
-        $request = new Requests\ProtectDocumentRequest(
-            $remoteFileName,
+        $request = new Requests\ProtectDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
             $requestProtectionRequest,
-            $remoteDataFolder,
-            NULL,
             NULL,
             NULL,
             NULL
         );
 
-        $result = $this->words->protectDocument($request);
+        $result = $this->words->protectDocumentOnline($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getProtectionData());
-        Assert::assertEquals("AllowOnlyComments", $result->getProtectionData()->getProtectionType());
     }
 
     /*
@@ -128,8 +116,23 @@ class DocumentProtectionTests extends BaseTestContext
 
         $result = $this->words->getDocumentProtection($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getProtectionData());
-        Assert::assertEquals("ReadOnly", $result->getProtectionData()->getProtectionType());
+    }
+
+    /*
+     * Test for getting document protection.
+     */
+    public function testGetDocumentProtectionOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentProtectionOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentProtectionOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -163,5 +166,27 @@ class DocumentProtectionTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getProtectionData());
         Assert::assertEquals("NoProtection", $result->getProtectionData()->getProtectionType());
+    }
+
+    /*
+     * Test for deleting unprotect document.
+     */
+    public function testDeleteUnprotectDocumentOnline()
+    {
+        $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
+
+        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+            "password" => "aspose",
+        ));
+        $request = new Requests\UnprotectDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFilePath,
+            $requestProtectionRequest,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->unprotectDocumentOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

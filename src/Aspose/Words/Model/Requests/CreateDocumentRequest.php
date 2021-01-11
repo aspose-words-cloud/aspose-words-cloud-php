@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CreateDocumentRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,11 +43,6 @@ use Aspose\Words\HeaderSelector;
 class CreateDocumentRequest
 {
     /*
-     * Original document storage.
-     */
-    public $storage;
-
-    /*
      * The filename of the document.
      */
     public $file_name;
@@ -58,34 +53,22 @@ class CreateDocumentRequest
     public $folder;
 
     /*
+     * Original document storage.
+     */
+    public $storage;
+
+    /*
      * Initializes a new instance of the CreateDocumentRequest class.
      *
-     * @param string $storage Original document storage.
      * @param string $file_name The filename of the document.
      * @param string $folder The path to the document folder.
+     * @param string $storage Original document storage.
      */
-    public function __construct($storage = null, $file_name = null, $folder = null)
+    public function __construct($file_name = null, $folder = null, $storage = null)
     {
-        $this->storage = $storage;
         $this->file_name = $file_name;
         $this->folder = $folder;
-    }
-
-    /*
-     * Original document storage.
-     */
-    public function get_storage()
-    {
-        return $this->storage;
-    }
-
-    /*
-     * Original document storage.
-     */
-    public function set_storage($value)
-    {
-        $this->storage = $value;
-        return $this;
+        $this->storage = $storage;
     }
 
     /*
@@ -123,6 +106,23 @@ class CreateDocumentRequest
     }
 
     /*
+     * Original document storage.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * Original document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+
+    /*
      * Create request data for operation 'createDocument'
      *
      * @throws \InvalidArgumentException
@@ -141,16 +141,6 @@ class CreateDocumentRequest
         // remove empty path parameters
         $resourcePath = str_replace("//", "/", $resourcePath);
         // query params
-        if ($this->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($this->file_name !== null) {
             $localName = lcfirst('FileName');
             $localValue = is_bool($this->file_name) ? ($this->file_name ? 'true' : 'false') : $this->file_name;
@@ -164,6 +154,16 @@ class CreateDocumentRequest
         if ($this->folder !== null) {
             $localName = lcfirst('Folder');
             $localValue = is_bool($this->folder) ? ($this->folder ? 'true' : 'false') : $this->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MathObjectTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,6 +68,24 @@ class MathObjectTests extends BaseTestContext
     }
 
     /*
+     * Test for getting mathObjects online.
+     */
+    public function testGetOfficeMathObjectsOnline()
+    {
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+
+        $request = new Requests\GetOfficeMathObjectsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getOfficeMathObjectsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting mathObjects without node path.
      */
     public function testGetOfficeMathObjectsWithoutNodePath()
@@ -129,6 +147,25 @@ class MathObjectTests extends BaseTestContext
     }
 
     /*
+     * Test for getting mathObject online.
+     */
+    public function testGetOfficeMathObjectOnline()
+    {
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+
+        $request = new Requests\GetOfficeMathObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getOfficeMathObjectOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting mathObject without node path.
      */
     public function testGetOfficeMathObjectWithoutNodePath()
@@ -181,11 +218,34 @@ class MathObjectTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
         $result = $this->words->renderMathObject($request);
         Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for rendering mathObject.
+     */
+    public function testRenderMathObjectOnline()
+    {
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+
+        $request = new Requests\RenderMathObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "png",
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->renderMathObjectOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -208,6 +268,7 @@ class MathObjectTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -246,6 +307,28 @@ class MathObjectTests extends BaseTestContext
         );
 
     $this->words->deleteOfficeMathObject($request);
+    }
+
+    /*
+     * Test for deleting mathObject online.
+     */
+    public function testDeleteOfficeMathObjectOnline()
+    {
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+
+        $request = new Requests\DeleteOfficeMathObjectOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteOfficeMathObjectOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*

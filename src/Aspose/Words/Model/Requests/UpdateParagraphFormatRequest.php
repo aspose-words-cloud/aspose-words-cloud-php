@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateParagraphFormatRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,14 +48,14 @@ class UpdateParagraphFormatRequest
     public $name;
 
     /*
-     * The formatting properties of a paragraph.
-     */
-    public $dto;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * Dto for paragraph format update.
+     */
+    public $paragraph_format_dto;
 
     /*
      * The path to the node in the document tree.
@@ -101,8 +101,8 @@ class UpdateParagraphFormatRequest
      * Initializes a new instance of the UpdateParagraphFormatRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ParagraphFormatUpdate $dto The formatting properties of a paragraph.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\ParagraphFormatUpdate $paragraph_format_dto Dto for paragraph format update.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -112,11 +112,11 @@ class UpdateParagraphFormatRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $dto, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $index, $paragraph_format_dto, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->dto = $dto;
         $this->index = $index;
+        $this->paragraph_format_dto = $paragraph_format_dto;
         $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -145,23 +145,6 @@ class UpdateParagraphFormatRequest
     }
 
     /*
-     * The formatting properties of a paragraph.
-     */
-    public function get_dto()
-    {
-        return $this->dto;
-    }
-
-    /*
-     * The formatting properties of a paragraph.
-     */
-    public function set_dto($value)
-    {
-        $this->dto = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -175,6 +158,23 @@ class UpdateParagraphFormatRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * Dto for paragraph format update.
+     */
+    public function get_paragraph_format_dto()
+    {
+        return $this->paragraph_format_dto;
+    }
+
+    /*
+     * Dto for paragraph format update.
+     */
+    public function set_paragraph_format_dto($value)
+    {
+        $this->paragraph_format_dto = $value;
         return $this;
     }
 
@@ -325,11 +325,11 @@ class UpdateParagraphFormatRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateParagraphFormat');
         }
-        if ($this->dto === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $dto when calling updateParagraphFormat');
-        }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateParagraphFormat');
+        }
+        if ($this->paragraph_format_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $paragraph_format_dto when calling updateParagraphFormat');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/format';
@@ -443,11 +443,11 @@ class UpdateParagraphFormatRequest
 
         // body params
         $_tempBody = null;
-        if (isset($this->dto)) {
-            if (is_string($this->dto)) {
-                $_tempBody = ['content' => "\"" . $this->dto . "\"", 'mime' => 'application/json'];
+        if (isset($this->paragraph_format_dto)) {
+            if (is_string($this->paragraph_format_dto)) {
+                $_tempBody = ['content' => "\"" . $this->paragraph_format_dto . "\"", 'mime' => 'application/json'];
             } else {
-                $_tempBody = ['content' => $this->dto, 'mime' => 'application/json'];
+                $_tempBody = ['content' => $this->paragraph_format_dto, 'mime' => 'application/json'];
             }
         }
         $headerParams = [];
@@ -474,7 +474,7 @@ class UpdateParagraphFormatRequest
         }
 
         $result = array();
-        $result['method'] = 'PUT';
+        $result['method'] = 'POST';
         $result['url'] = $resourcePath;
         $result['headers'] = $headerParams;
         $result['body'] = $httpBody;

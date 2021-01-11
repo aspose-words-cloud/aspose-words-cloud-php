@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SaveAsRangeRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,7 +53,7 @@ class SaveAsRangeRequest
     public $range_start_identifier;
 
     /*
-     * The parameters of a new document.
+     * Parameters of a new document.
      */
     public $document_parameters;
 
@@ -87,7 +87,7 @@ class SaveAsRangeRequest
      *
      * @param string $name The filename of the input document.
      * @param string $range_start_identifier The range start identifier.
-     * @param \Aspose\Words\Model\RangeDocument $document_parameters The parameters of a new document.
+     * @param \Aspose\Words\Model\RangeDocument $document_parameters Parameters of a new document.
      * @param string $range_end_identifier The range end identifier.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -141,7 +141,7 @@ class SaveAsRangeRequest
     }
 
     /*
-     * The parameters of a new document.
+     * Parameters of a new document.
      */
     public function get_document_parameters()
     {
@@ -149,7 +149,7 @@ class SaveAsRangeRequest
     }
 
     /*
-     * The parameters of a new document.
+     * Parameters of a new document.
      */
     public function set_document_parameters($value)
     {

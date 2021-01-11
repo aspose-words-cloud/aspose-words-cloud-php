@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateTableRowFormatRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,11 +48,6 @@ class UpdateTableRowFormatRequest
     public $name;
 
     /*
-     * The row format.
-     */
-    public $format;
-
-    /*
      * The path to the table in the document tree.
      */
     public $table_path;
@@ -61,6 +56,11 @@ class UpdateTableRowFormatRequest
      * Object index.
      */
     public $index;
+
+    /*
+     * Table row format.
+     */
+    public $format;
 
     /*
      * Original document folder.
@@ -101,9 +101,9 @@ class UpdateTableRowFormatRequest
      * Initializes a new instance of the UpdateTableRowFormatRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\TableRowFormat $format The row format.
      * @param string $table_path The path to the table in the document tree.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\TableRowFormat $format Table row format.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -112,12 +112,12 @@ class UpdateTableRowFormatRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $format, $table_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $table_path, $index, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->format = $format;
         $this->table_path = $table_path;
         $this->index = $index;
+        $this->format = $format;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -141,23 +141,6 @@ class UpdateTableRowFormatRequest
     public function set_name($value)
     {
         $this->name = $value;
-        return $this;
-    }
-
-    /*
-     * The row format.
-     */
-    public function get_format()
-    {
-        return $this->format;
-    }
-
-    /*
-     * The row format.
-     */
-    public function set_format($value)
-    {
-        $this->format = $value;
         return $this;
     }
 
@@ -192,6 +175,23 @@ class UpdateTableRowFormatRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * Table row format.
+     */
+    public function get_format()
+    {
+        return $this->format;
+    }
+
+    /*
+     * Table row format.
+     */
+    public function set_format($value)
+    {
+        $this->format = $value;
         return $this;
     }
 
@@ -325,14 +325,14 @@ class UpdateTableRowFormatRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableRowFormat');
         }
-        if ($this->format === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableRowFormat');
-        }
         if ($this->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling updateTableRowFormat');
         }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableRowFormat');
+        }
+        if ($this->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableRowFormat');
         }
 
         $resourcePath = '/words/{name}/{tablePath}/rows/{index}/rowformat';
@@ -477,7 +477,7 @@ class UpdateTableRowFormatRequest
         }
 
         $result = array();
-        $result['method'] = 'PUT';
+        $result['method'] = 'POST';
         $result['url'] = $resourcePath;
         $result['headers'] = $headerParams;
         $result['body'] = $httpBody;

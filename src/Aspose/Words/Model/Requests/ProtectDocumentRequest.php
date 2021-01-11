@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ProtectDocumentRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,7 +48,7 @@ class ProtectDocumentRequest
     public $name;
 
     /*
-     * The protection settings.
+     * Protection request.
      */
     public $protection_request;
 
@@ -81,7 +81,7 @@ class ProtectDocumentRequest
      * Initializes a new instance of the ProtectDocumentRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ProtectionRequest $protection_request The protection settings.
+     * @param \Aspose\Words\Model\ProtectionRequest $protection_request Protection request.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -117,7 +117,7 @@ class ProtectDocumentRequest
     }
 
     /*
-     * The protection settings.
+     * Protection request.
      */
     public function get_protection_request()
     {
@@ -125,7 +125,7 @@ class ProtectDocumentRequest
     }
 
     /*
-     * The protection settings.
+     * Protection request.
      */
     public function set_protection_request($value)
     {

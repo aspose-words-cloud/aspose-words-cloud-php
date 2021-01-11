@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ClassifyDocumentRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,9 +43,9 @@ use Aspose\Words\HeaderSelector;
 class ClassifyDocumentRequest
 {
     /*
-     * The filename of the input document.
+     * The document name.
      */
-    public $document_name;
+    public $name;
 
     /*
      * Original document folder.
@@ -80,7 +80,7 @@ class ClassifyDocumentRequest
     /*
      * Initializes a new instance of the ClassifyDocumentRequest class.
      *
-     * @param string $document_name The filename of the input document.
+     * @param string $name The document name.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -88,9 +88,9 @@ class ClassifyDocumentRequest
      * @param string $best_classes_count The number of the best classes to return.
      * @param string $taxonomy The taxonomy to use.
      */
-    public function __construct($document_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $best_classes_count = null, $taxonomy = null)
+    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $best_classes_count = null, $taxonomy = null)
     {
-        $this->document_name = $document_name;
+        $this->name = $name;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -100,19 +100,19 @@ class ClassifyDocumentRequest
     }
 
     /*
-     * The filename of the input document.
+     * The document name.
      */
-    public function get_document_name()
+    public function get_name()
     {
-        return $this->document_name;
+        return $this->name;
     }
 
     /*
-     * The filename of the input document.
+     * The document name.
      */
-    public function set_document_name($value)
+    public function set_name($value)
     {
-        $this->document_name = $value;
+        $this->name = $value;
         return $this;
     }
 
@@ -226,23 +226,23 @@ class ClassifyDocumentRequest
      */
     public function createRequestData($config)
     {
-        if ($this->document_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $document_name when calling classifyDocument');
+        if ($this->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling classifyDocument');
         }
 
-        $resourcePath = '/words/{documentName}/classify';
+        $resourcePath = '/words/{name}/classify';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = "";
         $filename = null;
         // path params
-        if ($this->document_name !== null) {
-            $localName = lcfirst('DocumentName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->document_name), $resourcePath);
+        if ($this->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->name), $resourcePath);
         }
         else {
-            $localName = lcfirst('DocumentName');
+            $localName = lcfirst('Name');
             $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
         }
 

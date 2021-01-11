@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -73,9 +73,9 @@ class DocumentTests extends BaseTestContext
         $remoteFileName = "TestCreateDocument.doc";
 
         $request = new Requests\CreateDocumentRequest(
-            NULL,
             $remoteFileName,
-            $remoteDataFolder
+            $remoteDataFolder,
+            NULL
         );
 
         $result = $this->words->createDocument($request);

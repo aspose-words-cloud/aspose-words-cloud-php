@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -65,6 +65,24 @@ class TableTests extends BaseTestContext
         Assert::assertNotNull($result->getTables()->getTableLinkList());
         Assert::assertCount(5, $result->getTables()->getTableLinkList());
         Assert::assertEquals("0.0.1", $result->getTables()->getTableLinkList()[0]->getNodeId());
+    }
+
+    /*
+     * Test for getting tables online.
+     */
+    public function testGetTablesOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetTablesOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getTablesOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -132,6 +150,25 @@ class TableTests extends BaseTestContext
     }
 
     /*
+     * Test for getting table online.
+     */
+    public function testGetTableOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetTableOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            1,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getTableOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting table without node path.
      */
     public function testGetTableWithoutNodePath()
@@ -192,6 +229,28 @@ class TableTests extends BaseTestContext
         );
 
     $this->words->deleteTable($request);
+    }
+
+    /*
+     * Test for deleting table online.
+     */
+    public function testDeleteTableOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\DeleteTableOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            1,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteTableOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*
@@ -265,6 +324,32 @@ class TableTests extends BaseTestContext
     }
 
     /*
+     * Test for adding table online.
+     */
+    public function testInsertTableOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $requestTable = new \Aspose\Words\Model\TableInsert(array(
+            "columns_count" => 5,
+            "rows_count" => 4,
+        ));
+        $request = new Requests\InsertTableOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestTable,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertTableOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for adding table without node path.
      */
     public function testInsertTableWithoutNodePath()
@@ -335,6 +420,25 @@ class TableTests extends BaseTestContext
     }
 
     /*
+     * Test for getting document properties online.
+     */
+    public function testGetTablePropertiesOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetTablePropertiesOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            1,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getTablePropertiesOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting document properties without node path.
      */
     public function testGetTablePropertiesWithoutNodePath()
@@ -388,8 +492,8 @@ class TableTests extends BaseTestContext
         ));
         $request = new Requests\UpdateTablePropertiesRequest(
             $remoteFileName,
-            $requestProperties,
             1,
+            $requestProperties,
             "",
             $remoteDataFolder,
             NULL,
@@ -407,6 +511,37 @@ class TableTests extends BaseTestContext
         Assert::assertTrue($result->getProperties()->getBidi());
         Assert::assertEquals(1.0, $result->getProperties()->getBottomPadding());
         Assert::assertEquals(2.0, $result->getProperties()->getCellSpacing());
+    }
+
+    /*
+     * Test for updating table properties online.
+     */
+    public function testUpdateTablePropertiesOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $requestProperties = new \Aspose\Words\Model\TableProperties(array(
+            "alignment" => "Right",
+            "allow_auto_fit" => false,
+            "bidi" => true,
+            "bottom_padding" => 1,
+            "cell_spacing" => 2,
+            "style_options" => "ColumnBands",
+        ));
+        $request = new Requests\UpdateTablePropertiesOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestProperties,
+            1,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateTablePropertiesOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -433,8 +568,8 @@ class TableTests extends BaseTestContext
         ));
         $request = new Requests\UpdateTablePropertiesRequest(
             $remoteFileName,
-            $requestProperties,
             1,
+            $requestProperties,
             NULL,
             $remoteDataFolder,
             NULL,
@@ -486,6 +621,25 @@ class TableTests extends BaseTestContext
     }
 
     /*
+     * Test for getting table row online.
+     */
+    public function testGetTableRowOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetTableRowOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "tables/1",
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getTableRowOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for deleting table row.
      */
     public function testDeleteTableRow()
@@ -516,6 +670,28 @@ class TableTests extends BaseTestContext
     }
 
     /*
+     * Test for deleting table row online.
+     */
+    public function testDeleteTableRowOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\DeleteTableRowOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "tables/1",
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteTableRowOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for adding row.
      */
     public function testInsertTableRow()
@@ -534,8 +710,8 @@ class TableTests extends BaseTestContext
         ));
         $request = new Requests\InsertTableRowRequest(
             $remoteFileName,
-            $requestRow,
             "sections/0/tables/2",
+            $requestRow,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -550,6 +726,31 @@ class TableTests extends BaseTestContext
         Assert::assertNotNull($result->getRow());
         Assert::assertNotNull($result->getRow()->getTableCellList());
         Assert::assertCount(5, $result->getRow()->getTableCellList());
+    }
+
+    /*
+     * Test for adding row online.
+     */
+    public function testInsertTableRowOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $requestRow = new \Aspose\Words\Model\TableRowInsert(array(
+            "columns_count" => 5,
+        ));
+        $request = new Requests\InsertTableRowOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0/tables/2",
+            $requestRow,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertTableRowOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -583,6 +784,25 @@ class TableTests extends BaseTestContext
     }
 
     /*
+     * Test for getting row format online.
+     */
+    public function testGetTableRowFormatOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetTableRowFormatOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0/tables/2",
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getTableRowFormatOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test updating row format.
      */
     public function testUpdateTableRowFormat()
@@ -604,9 +824,9 @@ class TableTests extends BaseTestContext
         ));
         $request = new Requests\UpdateTableRowFormatRequest(
             $remoteFileName,
-            $requestFormat,
             "sections/0/tables/2",
             0,
+            $requestFormat,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -622,6 +842,35 @@ class TableTests extends BaseTestContext
         Assert::assertTrue($result->getRowFormat()->getAllowBreakAcrossPages());
         Assert::assertTrue($result->getRowFormat()->getHeadingFormat());
         Assert::assertEquals(10.0, $result->getRowFormat()->getHeight());
+    }
+
+    /*
+     * Test updating row format online.
+     */
+    public function testUpdateTableRowFormatOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $requestFormat = new \Aspose\Words\Model\TableRowFormat(array(
+            "allow_break_across_pages" => true,
+            "heading_format" => true,
+            "height" => 10,
+            "height_rule" => "Auto",
+        ));
+        $request = new Requests\UpdateTableRowFormatOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0/tables/2",
+            $requestFormat,
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateTableRowFormatOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -655,6 +904,25 @@ class TableTests extends BaseTestContext
     }
 
     /*
+     * Test for getting table cell online.
+     */
+    public function testGetTableCellOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetTableCellOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0/tables/2/rows/0",
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getTableCellOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for deleting cell.
      */
     public function testDeleteTableCell()
@@ -685,6 +953,28 @@ class TableTests extends BaseTestContext
     }
 
     /*
+     * Test for deleting cell online.
+     */
+    public function testDeleteTableCellOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\DeleteTableCellOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0/tables/2/rows/0",
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteTableCellOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for adding cell.
      */
     public function testInsertTableCell()
@@ -702,8 +992,8 @@ class TableTests extends BaseTestContext
         ));
         $request = new Requests\InsertTableCellRequest(
             $remoteFileName,
-            $requestCell,
             "sections/0/tables/2/rows/0",
+            $requestCell,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -717,6 +1007,30 @@ class TableTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getCell());
         Assert::assertEquals("0.0.5.0.3", $result->getCell()->getNodeId());
+    }
+
+    /*
+     * Test for adding cell online.
+     */
+    public function testInsertTableCellOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
+        ));
+        $request = new Requests\InsertTableCellOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0/tables/2/rows/0",
+            $requestCell,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertTableCellOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -750,6 +1064,25 @@ class TableTests extends BaseTestContext
     }
 
     /*
+     * Test for getting cell format online.
+     */
+    public function testGetTableCellFormatOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetTableCellFormatOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0/tables/2/rows/0",
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getTableCellFormatOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for updating cell format.
      */
     public function testUpdateTableCellFormat()
@@ -771,9 +1104,9 @@ class TableTests extends BaseTestContext
         ));
         $request = new Requests\UpdateTableCellFormatRequest(
             $remoteFileName,
-            $requestFormat,
             "sections/0/tables/2/rows/0",
             0,
+            $requestFormat,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -789,6 +1122,35 @@ class TableTests extends BaseTestContext
         Assert::assertEquals(5.0, $result->getCellFormat()->getBottomPadding());
         Assert::assertTrue($result->getCellFormat()->getFitText());
         Assert::assertTrue($result->getCellFormat()->getWrapText());
+    }
+
+    /*
+     * Test for updating cell format online.
+     */
+    public function testUpdateTableCellFormatOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $requestFormat = new \Aspose\Words\Model\TableCellFormat(array(
+            "bottom_padding" => 5,
+            "fit_text" => true,
+            "horizontal_merge" => "First",
+            "wrap_text" => true,
+        ));
+        $request = new Requests\UpdateTableCellFormatOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "sections/0/tables/2/rows/0",
+            $requestFormat,
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateTableCellFormatOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -814,11 +1176,34 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
         $result = $this->words->renderTable($request);
         Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for table rendering.
+     */
+    public function testRenderTableOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\RenderTableOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "png",
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->renderTableOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -841,6 +1226,7 @@ class TableTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

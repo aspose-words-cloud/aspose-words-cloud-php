@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateTableCellFormatRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,11 +48,6 @@ class UpdateTableCellFormatRequest
     public $name;
 
     /*
-     * The cell format.
-     */
-    public $format;
-
-    /*
      * The path to the table row in the document tree.
      */
     public $table_row_path;
@@ -61,6 +56,11 @@ class UpdateTableCellFormatRequest
      * Object index.
      */
     public $index;
+
+    /*
+     * The properties.
+     */
+    public $format;
 
     /*
      * Original document folder.
@@ -101,9 +101,9 @@ class UpdateTableCellFormatRequest
      * Initializes a new instance of the UpdateTableCellFormatRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\TableCellFormat $format The cell format.
      * @param string $table_row_path The path to the table row in the document tree.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\TableCellFormat $format The properties.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -112,12 +112,12 @@ class UpdateTableCellFormatRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $format, $table_row_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $table_row_path, $index, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->format = $format;
         $this->table_row_path = $table_row_path;
         $this->index = $index;
+        $this->format = $format;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -141,23 +141,6 @@ class UpdateTableCellFormatRequest
     public function set_name($value)
     {
         $this->name = $value;
-        return $this;
-    }
-
-    /*
-     * The cell format.
-     */
-    public function get_format()
-    {
-        return $this->format;
-    }
-
-    /*
-     * The cell format.
-     */
-    public function set_format($value)
-    {
-        $this->format = $value;
         return $this;
     }
 
@@ -192,6 +175,23 @@ class UpdateTableCellFormatRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * The properties.
+     */
+    public function get_format()
+    {
+        return $this->format;
+    }
+
+    /*
+     * The properties.
+     */
+    public function set_format($value)
+    {
+        $this->format = $value;
         return $this;
     }
 
@@ -325,14 +325,14 @@ class UpdateTableCellFormatRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableCellFormat');
         }
-        if ($this->format === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableCellFormat');
-        }
         if ($this->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling updateTableCellFormat');
         }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableCellFormat');
+        }
+        if ($this->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableCellFormat');
         }
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}/cellformat';
@@ -477,7 +477,7 @@ class UpdateTableCellFormatRequest
         }
 
         $result = array();
-        $result['method'] = 'PUT';
+        $result['method'] = 'POST';
         $result['url'] = $resourcePath;
         $result['headers'] = $headerParams;
         $result['body'] = $httpBody;

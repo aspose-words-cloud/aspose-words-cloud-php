@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentPropertiesTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -69,6 +69,23 @@ class DocumentPropertiesTests extends BaseTestContext
     }
 
     /*
+     * Test for getting document properties online.
+     */
+    public function testGetDocumentPropertiesOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentPropertiesOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentPropertiesOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * A test for GetDocumentProperty.
      */
     public function testGetDocumentProperty()
@@ -99,6 +116,24 @@ class DocumentPropertiesTests extends BaseTestContext
     }
 
     /*
+     * A test for GetDocumentProperty online.
+     */
+    public function testGetDocumentPropertyOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentPropertyOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "Author",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentPropertyOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for deleting document property.
      */
     public function testDeleteDocumentProperty()
@@ -125,6 +160,27 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
     $this->words->deleteDocumentProperty($request);
+    }
+
+    /*
+     * Test for deleting document property online.
+     */
+    public function testDeleteDocumentPropertyOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteDocumentPropertyOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "testProp",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteDocumentPropertyOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*
@@ -162,5 +218,30 @@ class DocumentPropertiesTests extends BaseTestContext
         Assert::assertNotNull($result->getDocumentProperty());
         Assert::assertEquals("AsposeAuthor", $result->getDocumentProperty()->getName());
         Assert::assertEquals("Imran Anwar", $result->getDocumentProperty()->getValue());
+    }
+
+    /*
+     * Test for updating document property online.
+     */
+    public function testUpdateDocumentPropertyOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
+            "value" => "Imran Anwar",
+        ));
+        $request = new Requests\CreateOrUpdateDocumentPropertyOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "AsposeAuthor",
+            $requestProperty,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->createOrUpdateDocumentPropertyOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

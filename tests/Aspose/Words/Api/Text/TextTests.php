@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TextTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -72,6 +72,31 @@ class TextTests extends BaseTestContext
     }
 
     /*
+     * Test for replacing text online.
+     */
+    public function testReplaceTextOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
+            "old_value" => "aspose",
+            "new_value" => "aspose new",
+        ));
+        $request = new Requests\ReplaceTextOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestReplaceText,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->replaceTextOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for searching.
      */
     public function testSearch()
@@ -101,5 +126,23 @@ class TextTests extends BaseTestContext
         Assert::assertCount(23, $result->getSearchResults()->getResultsList());
         Assert::assertNotNull($result->getSearchResults()->getResultsList()[0]->getRangeStart());
         Assert::assertEquals(65, $result->getSearchResults()->getResultsList()[0]->getRangeStart()->getOffset());
+    }
+
+    /*
+     * Test for searching online.
+     */
+    public function testSearchOnline()
+    {
+        $localFile = "DocumentElements/Text/SampleWordDocument.docx";
+
+        $request = new Requests\SearchOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "aspose",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->searchOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

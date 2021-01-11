@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateBookmarkRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,14 +48,14 @@ class UpdateBookmarkRequest
     public $name;
 
     /*
-     * The properties of the bookmark.
-     */
-    public $bookmark_data;
-
-    /*
      * The name of the bookmark.
      */
     public $bookmark_name;
+
+    /*
+     * Bookmark data.
+     */
+    public $bookmark_data;
 
     /*
      * Original document folder.
@@ -96,8 +96,8 @@ class UpdateBookmarkRequest
      * Initializes a new instance of the UpdateBookmarkRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\BookmarkData $bookmark_data The properties of the bookmark.
      * @param string $bookmark_name The name of the bookmark.
+     * @param \Aspose\Words\Model\BookmarkData $bookmark_data Bookmark data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -106,11 +106,11 @@ class UpdateBookmarkRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $bookmark_data, $bookmark_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $bookmark_name, $bookmark_data, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->bookmark_data = $bookmark_data;
         $this->bookmark_name = $bookmark_name;
+        $this->bookmark_data = $bookmark_data;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -138,23 +138,6 @@ class UpdateBookmarkRequest
     }
 
     /*
-     * The properties of the bookmark.
-     */
-    public function get_bookmark_data()
-    {
-        return $this->bookmark_data;
-    }
-
-    /*
-     * The properties of the bookmark.
-     */
-    public function set_bookmark_data($value)
-    {
-        $this->bookmark_data = $value;
-        return $this;
-    }
-
-    /*
      * The name of the bookmark.
      */
     public function get_bookmark_name()
@@ -168,6 +151,23 @@ class UpdateBookmarkRequest
     public function set_bookmark_name($value)
     {
         $this->bookmark_name = $value;
+        return $this;
+    }
+
+    /*
+     * Bookmark data.
+     */
+    public function get_bookmark_data()
+    {
+        return $this->bookmark_data;
+    }
+
+    /*
+     * Bookmark data.
+     */
+    public function set_bookmark_data($value)
+    {
+        $this->bookmark_data = $value;
         return $this;
     }
 
@@ -301,11 +301,11 @@ class UpdateBookmarkRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateBookmark');
         }
-        if ($this->bookmark_data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $bookmark_data when calling updateBookmark');
-        }
         if ($this->bookmark_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_name when calling updateBookmark');
+        }
+        if ($this->bookmark_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $bookmark_data when calling updateBookmark');
         }
 
         $resourcePath = '/words/{name}/bookmarks/{bookmarkName}';

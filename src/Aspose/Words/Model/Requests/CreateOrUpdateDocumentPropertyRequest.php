@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CreateOrUpdateDocumentPropertyRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,7 +53,7 @@ class CreateOrUpdateDocumentPropertyRequest
     public $property_name;
 
     /*
-     * The property with a new value.
+     * The property with new value.
      */
     public $property;
 
@@ -97,7 +97,7 @@ class CreateOrUpdateDocumentPropertyRequest
      *
      * @param string $name The filename of the input document.
      * @param string $property_name The name of the property.
-     * @param \Aspose\Words\Model\DocumentPropertyCreateOrUpdate $property The property with a new value.
+     * @param \Aspose\Words\Model\DocumentPropertyCreateOrUpdate $property The property with new value.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -155,7 +155,7 @@ class CreateOrUpdateDocumentPropertyRequest
     }
 
     /*
-     * The property with a new value.
+     * The property with new value.
      */
     public function get_property()
     {
@@ -163,7 +163,7 @@ class CreateOrUpdateDocumentPropertyRequest
     }
 
     /*
-     * The property with a new value.
+     * The property with new value.
      */
     public function set_property($value)
     {

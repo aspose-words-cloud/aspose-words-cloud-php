@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateRunFontRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,11 +48,6 @@ class UpdateRunFontRequest
     public $name;
 
     /*
-     * The font properties of a Run object.
-     */
-    public $font_dto;
-
-    /*
      * The path to the paragraph in the document tree.
      */
     public $paragraph_path;
@@ -61,6 +56,11 @@ class UpdateRunFontRequest
      * Object index.
      */
     public $index;
+
+    /*
+     * Font dto object.
+     */
+    public $font_dto;
 
     /*
      * Original document folder.
@@ -101,9 +101,9 @@ class UpdateRunFontRequest
      * Initializes a new instance of the UpdateRunFontRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\Font $font_dto The font properties of a Run object.
      * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\Font $font_dto Font dto object.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -112,12 +112,12 @@ class UpdateRunFontRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $font_dto, $paragraph_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $paragraph_path, $index, $font_dto, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->font_dto = $font_dto;
         $this->paragraph_path = $paragraph_path;
         $this->index = $index;
+        $this->font_dto = $font_dto;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -141,23 +141,6 @@ class UpdateRunFontRequest
     public function set_name($value)
     {
         $this->name = $value;
-        return $this;
-    }
-
-    /*
-     * The font properties of a Run object.
-     */
-    public function get_font_dto()
-    {
-        return $this->font_dto;
-    }
-
-    /*
-     * The font properties of a Run object.
-     */
-    public function set_font_dto($value)
-    {
-        $this->font_dto = $value;
         return $this;
     }
 
@@ -192,6 +175,23 @@ class UpdateRunFontRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * Font dto object.
+     */
+    public function get_font_dto()
+    {
+        return $this->font_dto;
+    }
+
+    /*
+     * Font dto object.
+     */
+    public function set_font_dto($value)
+    {
+        $this->font_dto = $value;
         return $this;
     }
 
@@ -325,14 +325,14 @@ class UpdateRunFontRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateRunFont');
         }
-        if ($this->font_dto === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $font_dto when calling updateRunFont');
-        }
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling updateRunFont');
         }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRunFont');
+        }
+        if ($this->font_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $font_dto when calling updateRunFont');
         }
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}/font';
@@ -477,7 +477,7 @@ class UpdateRunFontRequest
         }
 
         $result = array();
-        $result['method'] = 'PUT';
+        $result['method'] = 'POST';
         $result['url'] = $resourcePath;
         $result['headers'] = $headerParams;
         $result['body'] = $httpBody;

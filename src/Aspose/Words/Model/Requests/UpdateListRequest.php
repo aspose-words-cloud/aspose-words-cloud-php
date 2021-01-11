@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateListRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,14 +48,14 @@ class UpdateListRequest
     public $name;
 
     /*
-     * The properties of the list.
-     */
-    public $list_update;
-
-    /*
      * The list Id.
      */
     public $list_id;
+
+    /*
+     * List object.
+     */
+    public $list_update;
 
     /*
      * Original document folder.
@@ -96,8 +96,8 @@ class UpdateListRequest
      * Initializes a new instance of the UpdateListRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ListUpdate $list_update The properties of the list.
      * @param int $list_id The list Id.
+     * @param \Aspose\Words\Model\ListUpdate $list_update List object.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -106,11 +106,11 @@ class UpdateListRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $list_update, $list_id, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $list_id, $list_update, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->list_update = $list_update;
         $this->list_id = $list_id;
+        $this->list_update = $list_update;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -138,23 +138,6 @@ class UpdateListRequest
     }
 
     /*
-     * The properties of the list.
-     */
-    public function get_list_update()
-    {
-        return $this->list_update;
-    }
-
-    /*
-     * The properties of the list.
-     */
-    public function set_list_update($value)
-    {
-        $this->list_update = $value;
-        return $this;
-    }
-
-    /*
      * The list Id.
      */
     public function get_list_id()
@@ -168,6 +151,23 @@ class UpdateListRequest
     public function set_list_id($value)
     {
         $this->list_id = $value;
+        return $this;
+    }
+
+    /*
+     * List object.
+     */
+    public function get_list_update()
+    {
+        return $this->list_update;
+    }
+
+    /*
+     * List object.
+     */
+    public function set_list_update($value)
+    {
+        $this->list_update = $value;
         return $this;
     }
 
@@ -301,11 +301,11 @@ class UpdateListRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateList');
         }
-        if ($this->list_update === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $list_update when calling updateList');
-        }
         if ($this->list_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_id when calling updateList');
+        }
+        if ($this->list_update === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $list_update when calling updateList');
         }
 
         $resourcePath = '/words/{name}/lists/{listId}';

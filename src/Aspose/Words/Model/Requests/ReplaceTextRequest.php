@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReplaceTextRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,7 +48,7 @@ class ReplaceTextRequest
     public $name;
 
     /*
-     * The text replacement parameters.
+     * The replace operation settings.
      */
     public $replace_text;
 
@@ -91,7 +91,7 @@ class ReplaceTextRequest
      * Initializes a new instance of the ReplaceTextRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ReplaceTextParameters $replace_text The text replacement parameters.
+     * @param \Aspose\Words\Model\ReplaceTextParameters $replace_text The replace operation settings.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -131,7 +131,7 @@ class ReplaceTextRequest
     }
 
     /*
-     * The text replacement parameters.
+     * The replace operation settings.
      */
     public function get_replace_text()
     {
@@ -139,7 +139,7 @@ class ReplaceTextRequest
     }
 
     /*
-     * The text replacement parameters.
+     * The replace operation settings.
      */
     public function set_replace_text($value)
     {

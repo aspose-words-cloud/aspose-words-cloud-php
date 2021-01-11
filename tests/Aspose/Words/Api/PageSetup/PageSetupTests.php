@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PageSetupTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,6 +66,24 @@ class PageSetupTests extends BaseTestContext
     }
 
     /*
+     * Test for getting page settings online.
+     */
+    public function testGetSectionPageSetupOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetSectionPageSetupOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getSectionPageSetupOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for updating page settings.
      */
     public function testUpdateSectionPageSetup()
@@ -107,6 +125,34 @@ class PageSetupTests extends BaseTestContext
     }
 
     /*
+     * Test for updating page settings online.
+     */
+    public function testUpdateSectionPageSetupOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
+            "rtl_gutter" => true,
+            "left_margin" => 10,
+            "orientation" => "Landscape",
+            "paper_size" => "A5",
+        ));
+        $request = new Requests\UpdateSectionPageSetupOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            $requestPageSetup,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateSectionPageSetupOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for page rendering.
      */
     public function testGetRenderPage()
@@ -132,6 +178,26 @@ class PageSetupTests extends BaseTestContext
         );
 
         $result = $this->words->renderPage($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for page rendering.
+     */
+    public function testGetRenderPageOnline()
+    {
+        $localTextFile = "DocumentElements/Text/SampleWordDocument.docx";
+
+        $request = new Requests\RenderPageOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localTextFile,
+            1,
+            "bmp",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->renderPageOnline($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 }

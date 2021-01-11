@@ -105,7 +105,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -275,7 +275,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -445,7 +445,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -615,7 +615,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -785,7 +785,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -955,7 +955,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -1125,7 +1125,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -1295,7 +1295,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -1465,7 +1465,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -1635,7 +1635,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -1805,7 +1805,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -1975,7 +1975,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -2145,7 +2145,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -2315,7 +2315,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -2483,7 +2483,7 @@ class WordsApi
     $this->copyFileWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -2610,7 +2610,7 @@ class WordsApi
     $this->copyFolderWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -2739,7 +2739,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -2909,7 +2909,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -3079,7 +3079,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -3247,7 +3247,7 @@ class WordsApi
     $this->createFolderWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -3376,7 +3376,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -3546,7 +3546,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -3716,7 +3716,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -3886,7 +3886,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -4056,7 +4056,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -4226,7 +4226,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -4396,7 +4396,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -4566,7 +4566,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -4734,7 +4734,7 @@ class WordsApi
     $this->deleteCommentWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -4863,7 +4863,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -5031,7 +5031,7 @@ class WordsApi
     $this->deleteDocumentPropertyWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -5160,7 +5160,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -5328,7 +5328,7 @@ class WordsApi
     $this->deleteDrawingObjectWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -5457,7 +5457,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -5625,7 +5625,7 @@ class WordsApi
     $this->deleteFieldWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -5754,7 +5754,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -5922,7 +5922,7 @@ class WordsApi
     $this->deleteFieldsWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -6051,7 +6051,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -6219,7 +6219,7 @@ class WordsApi
     $this->deleteFileWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -6346,7 +6346,7 @@ class WordsApi
     $this->deleteFolderWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -6473,7 +6473,7 @@ class WordsApi
     $this->deleteFootnoteWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -6602,7 +6602,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -6770,7 +6770,7 @@ class WordsApi
     $this->deleteFormFieldWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -6899,7 +6899,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -7067,7 +7067,7 @@ class WordsApi
     $this->deleteHeaderFooterWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -7196,7 +7196,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -7364,7 +7364,7 @@ class WordsApi
     $this->deleteHeadersFootersWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -7493,7 +7493,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -7661,7 +7661,7 @@ class WordsApi
     $this->deleteMacrosWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -7790,7 +7790,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -7958,7 +7958,7 @@ class WordsApi
     $this->deleteOfficeMathObjectWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -8087,7 +8087,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -8255,7 +8255,7 @@ class WordsApi
     $this->deleteParagraphWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -8384,7 +8384,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -8554,7 +8554,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -8724,7 +8724,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -8894,7 +8894,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -9064,7 +9064,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -9232,7 +9232,7 @@ class WordsApi
     $this->deleteRunWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -9361,7 +9361,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -9529,7 +9529,7 @@ class WordsApi
     $this->deleteSectionWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -9658,7 +9658,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -9826,7 +9826,7 @@ class WordsApi
     $this->deleteTableWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -9953,7 +9953,7 @@ class WordsApi
     $this->deleteTableCellWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -10082,7 +10082,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -10252,7 +10252,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -10420,7 +10420,7 @@ class WordsApi
     $this->deleteTableRowWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -10549,7 +10549,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -10719,7 +10719,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -10889,7 +10889,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -11059,7 +11059,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -11229,7 +11229,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -11399,7 +11399,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -11569,7 +11569,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -11739,7 +11739,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -11909,7 +11909,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -12079,7 +12079,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -12249,7 +12249,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -12419,7 +12419,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -12589,7 +12589,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -12759,7 +12759,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -12929,7 +12929,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -13099,7 +13099,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -13269,7 +13269,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -13439,7 +13439,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -13609,7 +13609,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -13779,7 +13779,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -13949,7 +13949,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -14119,7 +14119,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -14289,7 +14289,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -14459,7 +14459,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -14629,7 +14629,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -14799,7 +14799,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -14969,7 +14969,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -15139,7 +15139,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -15309,7 +15309,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -15479,7 +15479,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -15649,7 +15649,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -15819,7 +15819,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -15989,7 +15989,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -16159,7 +16159,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -16329,7 +16329,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -16499,7 +16499,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -16669,7 +16669,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -16839,7 +16839,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -17009,7 +17009,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -17179,7 +17179,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -17349,7 +17349,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -17519,7 +17519,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -17689,7 +17689,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -17859,7 +17859,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -18029,7 +18029,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -18199,7 +18199,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -18369,7 +18369,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -18539,7 +18539,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -18709,7 +18709,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -18879,7 +18879,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -19049,7 +19049,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -19219,7 +19219,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -19389,7 +19389,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -19559,7 +19559,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -19729,7 +19729,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -19899,7 +19899,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -20069,7 +20069,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -20239,7 +20239,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -20409,7 +20409,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -20579,7 +20579,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -20749,7 +20749,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -20919,7 +20919,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -21089,7 +21089,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -21259,7 +21259,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -21429,7 +21429,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -21599,7 +21599,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -21769,7 +21769,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -21939,7 +21939,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -22109,7 +22109,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -22279,7 +22279,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -22449,7 +22449,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -22619,7 +22619,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -22789,7 +22789,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -22959,7 +22959,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -23129,7 +23129,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -23299,7 +23299,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -23469,7 +23469,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -23639,7 +23639,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -23809,7 +23809,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -23979,7 +23979,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -24149,7 +24149,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -24319,7 +24319,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -24489,7 +24489,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -24659,7 +24659,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -24829,7 +24829,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -24999,7 +24999,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -25169,7 +25169,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -25339,7 +25339,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -25509,7 +25509,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -25679,7 +25679,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -25849,7 +25849,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -26019,7 +26019,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -26189,7 +26189,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -26359,7 +26359,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -26529,7 +26529,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -26699,7 +26699,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -26869,7 +26869,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -27039,7 +27039,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -27209,7 +27209,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -27379,7 +27379,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -27549,7 +27549,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -27719,7 +27719,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -27889,7 +27889,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -28059,7 +28059,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -28229,7 +28229,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -28399,7 +28399,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -28569,7 +28569,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -28739,7 +28739,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -28909,7 +28909,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -29079,7 +29079,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -29249,7 +29249,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -29419,7 +29419,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -29589,7 +29589,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -29759,7 +29759,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -29929,7 +29929,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -30099,7 +30099,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -30269,7 +30269,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -30439,7 +30439,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -30609,7 +30609,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -30779,7 +30779,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -30949,7 +30949,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -31119,7 +31119,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -31289,7 +31289,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -31459,7 +31459,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -31629,7 +31629,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -31799,7 +31799,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -31969,7 +31969,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -32139,7 +32139,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -32309,7 +32309,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -32479,7 +32479,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -32649,7 +32649,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -32819,7 +32819,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -32989,7 +32989,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -33159,7 +33159,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -33329,7 +33329,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -33499,7 +33499,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -33669,7 +33669,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -33839,7 +33839,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -34009,7 +34009,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -34179,7 +34179,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -34349,7 +34349,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -34519,7 +34519,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -34689,7 +34689,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -34859,7 +34859,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -35029,7 +35029,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -35199,7 +35199,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -35369,7 +35369,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -35539,7 +35539,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -35709,7 +35709,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -35877,7 +35877,7 @@ class WordsApi
     $this->moveFileWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -36004,7 +36004,7 @@ class WordsApi
     $this->moveFolderWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -36131,7 +36131,7 @@ class WordsApi
     $this->optimizeDocumentWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -36260,7 +36260,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -36430,7 +36430,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -36600,7 +36600,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -36770,7 +36770,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -36940,7 +36940,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -37110,7 +37110,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -37280,7 +37280,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -37450,7 +37450,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -37620,7 +37620,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -37790,7 +37790,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -37960,7 +37960,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -38130,7 +38130,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -38300,7 +38300,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -38470,7 +38470,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -38640,7 +38640,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -38810,7 +38810,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -38980,7 +38980,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -39150,7 +39150,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -39320,7 +39320,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -39490,7 +39490,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -39660,7 +39660,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -39828,7 +39828,7 @@ class WordsApi
     $this->resetCacheWithHttpInfo($request);
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -39957,7 +39957,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -40127,7 +40127,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -40297,7 +40297,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -40467,7 +40467,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -40637,7 +40637,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -40807,7 +40807,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -40977,7 +40977,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -41147,7 +41147,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -41317,7 +41317,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -41487,7 +41487,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -41657,7 +41657,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -41827,7 +41827,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -41997,7 +41997,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -42167,7 +42167,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -42337,7 +42337,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -42507,7 +42507,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -42677,7 +42677,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -42847,7 +42847,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -43017,7 +43017,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -43187,7 +43187,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -43357,7 +43357,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -43527,7 +43527,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -43697,7 +43697,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -43867,7 +43867,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -44037,7 +44037,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -44207,7 +44207,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -44377,7 +44377,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -44547,7 +44547,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -44717,7 +44717,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -44887,7 +44887,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -45057,7 +45057,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -45227,7 +45227,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -45397,7 +45397,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -45567,7 +45567,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -45737,7 +45737,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -45907,7 +45907,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -46077,7 +46077,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -46247,7 +46247,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -46417,7 +46417,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -46587,7 +46587,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -46757,7 +46757,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -46927,7 +46927,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -47097,7 +47097,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -47267,7 +47267,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -47437,7 +47437,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -47607,7 +47607,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -47777,7 +47777,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -47947,7 +47947,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -48117,7 +48117,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -48287,7 +48287,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }
@@ -48457,7 +48457,7 @@ class WordsApi
             	return $response;
         	}
         	catch(RepeatRequestException $e) {
-            	throw new ApiException('Authorization failed', , $e->getCode(), null, null);
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
         	} 
         } 
     }

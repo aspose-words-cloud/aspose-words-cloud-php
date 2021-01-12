@@ -124,11 +124,11 @@ class WordsApi
     private function acceptAllRevisionsWithHttpInfo(Requests\acceptAllRevisionsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -294,11 +294,11 @@ class WordsApi
     private function acceptAllRevisionsOnlineWithHttpInfo(Requests\acceptAllRevisionsOnlineRequest $request)
     {
         $returnType = 'AcceptAllRevisionsOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -464,11 +464,11 @@ class WordsApi
     private function appendDocumentWithHttpInfo(Requests\appendDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -634,11 +634,11 @@ class WordsApi
     private function appendDocumentOnlineWithHttpInfo(Requests\appendDocumentOnlineRequest $request)
     {
         $returnType = 'AppendDocumentOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -804,11 +804,11 @@ class WordsApi
     private function applyStyleToDocumentElementWithHttpInfo(Requests\applyStyleToDocumentElementRequest $request)
     {
         $returnType = '\Aspose\Words\Model\WordsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -974,11 +974,11 @@ class WordsApi
     private function applyStyleToDocumentElementOnlineWithHttpInfo(Requests\applyStyleToDocumentElementOnlineRequest $request)
     {
         $returnType = 'ApplyStyleToDocumentElementOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -1144,11 +1144,11 @@ class WordsApi
     private function buildReportWithHttpInfo(Requests\buildReportRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -1314,11 +1314,11 @@ class WordsApi
     private function buildReportOnlineWithHttpInfo(Requests\buildReportOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -1484,11 +1484,11 @@ class WordsApi
     private function classifyWithHttpInfo(Requests\classifyRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ClassificationResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -1654,11 +1654,11 @@ class WordsApi
     private function classifyDocumentWithHttpInfo(Requests\classifyDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ClassificationResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -1824,11 +1824,11 @@ class WordsApi
     private function classifyDocumentOnlineWithHttpInfo(Requests\classifyDocumentOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ClassificationResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -1994,11 +1994,11 @@ class WordsApi
     private function compareDocumentWithHttpInfo(Requests\compareDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -2164,11 +2164,11 @@ class WordsApi
     private function compareDocumentOnlineWithHttpInfo(Requests\compareDocumentOnlineRequest $request)
     {
         $returnType = 'CompareDocumentOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -2334,11 +2334,11 @@ class WordsApi
     private function convertDocumentWithHttpInfo(Requests\convertDocumentRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -2502,11 +2502,11 @@ class WordsApi
     private function copyFileWithHttpInfo(Requests\copyFileRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -2629,11 +2629,11 @@ class WordsApi
     private function copyFolderWithHttpInfo(Requests\copyFolderRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -2758,11 +2758,11 @@ class WordsApi
     private function copyStyleWithHttpInfo(Requests\copyStyleRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -2928,11 +2928,11 @@ class WordsApi
     private function copyStyleOnlineWithHttpInfo(Requests\copyStyleOnlineRequest $request)
     {
         $returnType = 'CopyStyleOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3098,11 +3098,11 @@ class WordsApi
     private function createDocumentWithHttpInfo(Requests\createDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3266,11 +3266,11 @@ class WordsApi
     private function createFolderWithHttpInfo(Requests\createFolderRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3395,11 +3395,11 @@ class WordsApi
     private function createOrUpdateDocumentPropertyWithHttpInfo(Requests\createOrUpdateDocumentPropertyRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3565,11 +3565,11 @@ class WordsApi
     private function createOrUpdateDocumentPropertyOnlineWithHttpInfo(Requests\createOrUpdateDocumentPropertyOnlineRequest $request)
     {
         $returnType = 'CreateOrUpdateDocumentPropertyOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3735,11 +3735,11 @@ class WordsApi
     private function deleteAllParagraphTabStopsWithHttpInfo(Requests\deleteAllParagraphTabStopsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -3905,11 +3905,11 @@ class WordsApi
     private function deleteAllParagraphTabStopsOnlineWithHttpInfo(Requests\deleteAllParagraphTabStopsOnlineRequest $request)
     {
         $returnType = 'DeleteAllParagraphTabStopsOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -4075,11 +4075,11 @@ class WordsApi
     private function deleteBorderWithHttpInfo(Requests\deleteBorderRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -4245,11 +4245,11 @@ class WordsApi
     private function deleteBorderOnlineWithHttpInfo(Requests\deleteBorderOnlineRequest $request)
     {
         $returnType = 'DeleteBorderOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -4415,11 +4415,11 @@ class WordsApi
     private function deleteBordersWithHttpInfo(Requests\deleteBordersRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -4585,11 +4585,11 @@ class WordsApi
     private function deleteBordersOnlineWithHttpInfo(Requests\deleteBordersOnlineRequest $request)
     {
         $returnType = 'DeleteBordersOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -4753,11 +4753,11 @@ class WordsApi
     private function deleteCommentWithHttpInfo(Requests\deleteCommentRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -4882,11 +4882,11 @@ class WordsApi
     private function deleteCommentOnlineWithHttpInfo(Requests\deleteCommentOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5050,11 +5050,11 @@ class WordsApi
     private function deleteDocumentPropertyWithHttpInfo(Requests\deleteDocumentPropertyRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5179,11 +5179,11 @@ class WordsApi
     private function deleteDocumentPropertyOnlineWithHttpInfo(Requests\deleteDocumentPropertyOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5347,11 +5347,11 @@ class WordsApi
     private function deleteDrawingObjectWithHttpInfo(Requests\deleteDrawingObjectRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5476,11 +5476,11 @@ class WordsApi
     private function deleteDrawingObjectOnlineWithHttpInfo(Requests\deleteDrawingObjectOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5644,11 +5644,11 @@ class WordsApi
     private function deleteFieldWithHttpInfo(Requests\deleteFieldRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5773,11 +5773,11 @@ class WordsApi
     private function deleteFieldOnlineWithHttpInfo(Requests\deleteFieldOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -5941,11 +5941,11 @@ class WordsApi
     private function deleteFieldsWithHttpInfo(Requests\deleteFieldsRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6070,11 +6070,11 @@ class WordsApi
     private function deleteFieldsOnlineWithHttpInfo(Requests\deleteFieldsOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6238,11 +6238,11 @@ class WordsApi
     private function deleteFileWithHttpInfo(Requests\deleteFileRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6365,11 +6365,11 @@ class WordsApi
     private function deleteFolderWithHttpInfo(Requests\deleteFolderRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6492,11 +6492,11 @@ class WordsApi
     private function deleteFootnoteWithHttpInfo(Requests\deleteFootnoteRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6621,11 +6621,11 @@ class WordsApi
     private function deleteFootnoteOnlineWithHttpInfo(Requests\deleteFootnoteOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6789,11 +6789,11 @@ class WordsApi
     private function deleteFormFieldWithHttpInfo(Requests\deleteFormFieldRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -6918,11 +6918,11 @@ class WordsApi
     private function deleteFormFieldOnlineWithHttpInfo(Requests\deleteFormFieldOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7086,11 +7086,11 @@ class WordsApi
     private function deleteHeaderFooterWithHttpInfo(Requests\deleteHeaderFooterRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7215,11 +7215,11 @@ class WordsApi
     private function deleteHeaderFooterOnlineWithHttpInfo(Requests\deleteHeaderFooterOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7383,11 +7383,11 @@ class WordsApi
     private function deleteHeadersFootersWithHttpInfo(Requests\deleteHeadersFootersRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7512,11 +7512,11 @@ class WordsApi
     private function deleteHeadersFootersOnlineWithHttpInfo(Requests\deleteHeadersFootersOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7680,11 +7680,11 @@ class WordsApi
     private function deleteMacrosWithHttpInfo(Requests\deleteMacrosRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7809,11 +7809,11 @@ class WordsApi
     private function deleteMacrosOnlineWithHttpInfo(Requests\deleteMacrosOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -7977,11 +7977,11 @@ class WordsApi
     private function deleteOfficeMathObjectWithHttpInfo(Requests\deleteOfficeMathObjectRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8106,11 +8106,11 @@ class WordsApi
     private function deleteOfficeMathObjectOnlineWithHttpInfo(Requests\deleteOfficeMathObjectOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8274,11 +8274,11 @@ class WordsApi
     private function deleteParagraphWithHttpInfo(Requests\deleteParagraphRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8403,11 +8403,11 @@ class WordsApi
     private function deleteParagraphListFormatWithHttpInfo(Requests\deleteParagraphListFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8573,11 +8573,11 @@ class WordsApi
     private function deleteParagraphListFormatOnlineWithHttpInfo(Requests\deleteParagraphListFormatOnlineRequest $request)
     {
         $returnType = 'DeleteParagraphListFormatOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8743,11 +8743,11 @@ class WordsApi
     private function deleteParagraphOnlineWithHttpInfo(Requests\deleteParagraphOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -8913,11 +8913,11 @@ class WordsApi
     private function deleteParagraphTabStopWithHttpInfo(Requests\deleteParagraphTabStopRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9083,11 +9083,11 @@ class WordsApi
     private function deleteParagraphTabStopOnlineWithHttpInfo(Requests\deleteParagraphTabStopOnlineRequest $request)
     {
         $returnType = 'DeleteParagraphTabStopOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9251,11 +9251,11 @@ class WordsApi
     private function deleteRunWithHttpInfo(Requests\deleteRunRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9380,11 +9380,11 @@ class WordsApi
     private function deleteRunOnlineWithHttpInfo(Requests\deleteRunOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9548,11 +9548,11 @@ class WordsApi
     private function deleteSectionWithHttpInfo(Requests\deleteSectionRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9677,11 +9677,11 @@ class WordsApi
     private function deleteSectionOnlineWithHttpInfo(Requests\deleteSectionOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9845,11 +9845,11 @@ class WordsApi
     private function deleteTableWithHttpInfo(Requests\deleteTableRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -9972,11 +9972,11 @@ class WordsApi
     private function deleteTableCellWithHttpInfo(Requests\deleteTableCellRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -10101,11 +10101,11 @@ class WordsApi
     private function deleteTableCellOnlineWithHttpInfo(Requests\deleteTableCellOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -10271,11 +10271,11 @@ class WordsApi
     private function deleteTableOnlineWithHttpInfo(Requests\deleteTableOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -10439,11 +10439,11 @@ class WordsApi
     private function deleteTableRowWithHttpInfo(Requests\deleteTableRowRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -10568,11 +10568,11 @@ class WordsApi
     private function deleteTableRowOnlineWithHttpInfo(Requests\deleteTableRowOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -10738,11 +10738,11 @@ class WordsApi
     private function deleteWatermarkWithHttpInfo(Requests\deleteWatermarkRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -10908,11 +10908,11 @@ class WordsApi
     private function deleteWatermarkOnlineWithHttpInfo(Requests\deleteWatermarkOnlineRequest $request)
     {
         $returnType = 'DeleteWatermarkOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -11078,11 +11078,11 @@ class WordsApi
     private function downloadFileWithHttpInfo(Requests\downloadFileRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -11248,11 +11248,11 @@ class WordsApi
     private function executeMailMergeWithHttpInfo(Requests\executeMailMergeRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -11418,11 +11418,11 @@ class WordsApi
     private function executeMailMergeOnlineWithHttpInfo(Requests\executeMailMergeOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -11588,11 +11588,11 @@ class WordsApi
     private function getAvailableFontsWithHttpInfo(Requests\getAvailableFontsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\AvailableFontsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -11758,11 +11758,11 @@ class WordsApi
     private function getBookmarkByNameWithHttpInfo(Requests\getBookmarkByNameRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -11928,11 +11928,11 @@ class WordsApi
     private function getBookmarkByNameOnlineWithHttpInfo(Requests\getBookmarkByNameOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -12098,11 +12098,11 @@ class WordsApi
     private function getBookmarksWithHttpInfo(Requests\getBookmarksRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BookmarksResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -12268,11 +12268,11 @@ class WordsApi
     private function getBookmarksOnlineWithHttpInfo(Requests\getBookmarksOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BookmarksResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -12438,11 +12438,11 @@ class WordsApi
     private function getBorderWithHttpInfo(Requests\getBorderRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -12608,11 +12608,11 @@ class WordsApi
     private function getBorderOnlineWithHttpInfo(Requests\getBorderOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -12778,11 +12778,11 @@ class WordsApi
     private function getBordersWithHttpInfo(Requests\getBordersRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -12948,11 +12948,11 @@ class WordsApi
     private function getBordersOnlineWithHttpInfo(Requests\getBordersOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -13118,11 +13118,11 @@ class WordsApi
     private function getCommentWithHttpInfo(Requests\getCommentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -13288,11 +13288,11 @@ class WordsApi
     private function getCommentOnlineWithHttpInfo(Requests\getCommentOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -13458,11 +13458,11 @@ class WordsApi
     private function getCommentsWithHttpInfo(Requests\getCommentsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -13628,11 +13628,11 @@ class WordsApi
     private function getCommentsOnlineWithHttpInfo(Requests\getCommentsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -13798,11 +13798,11 @@ class WordsApi
     private function getDocumentWithHttpInfo(Requests\getDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -13968,11 +13968,11 @@ class WordsApi
     private function getDocumentDrawingObjectByIndexWithHttpInfo(Requests\getDocumentDrawingObjectByIndexRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -14138,11 +14138,11 @@ class WordsApi
     private function getDocumentDrawingObjectByIndexOnlineWithHttpInfo(Requests\getDocumentDrawingObjectByIndexOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -14308,11 +14308,11 @@ class WordsApi
     private function getDocumentDrawingObjectImageDataWithHttpInfo(Requests\getDocumentDrawingObjectImageDataRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -14478,11 +14478,11 @@ class WordsApi
     private function getDocumentDrawingObjectImageDataOnlineWithHttpInfo(Requests\getDocumentDrawingObjectImageDataOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -14648,11 +14648,11 @@ class WordsApi
     private function getDocumentDrawingObjectOleDataWithHttpInfo(Requests\getDocumentDrawingObjectOleDataRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -14818,11 +14818,11 @@ class WordsApi
     private function getDocumentDrawingObjectOleDataOnlineWithHttpInfo(Requests\getDocumentDrawingObjectOleDataOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -14988,11 +14988,11 @@ class WordsApi
     private function getDocumentDrawingObjectsWithHttpInfo(Requests\getDocumentDrawingObjectsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -15158,11 +15158,11 @@ class WordsApi
     private function getDocumentDrawingObjectsOnlineWithHttpInfo(Requests\getDocumentDrawingObjectsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -15328,11 +15328,11 @@ class WordsApi
     private function getDocumentFieldNamesWithHttpInfo(Requests\getDocumentFieldNamesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -15498,11 +15498,11 @@ class WordsApi
     private function getDocumentFieldNamesOnlineWithHttpInfo(Requests\getDocumentFieldNamesOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -15668,11 +15668,11 @@ class WordsApi
     private function getDocumentHyperlinkByIndexWithHttpInfo(Requests\getDocumentHyperlinkByIndexRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HyperlinkResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -15838,11 +15838,11 @@ class WordsApi
     private function getDocumentHyperlinkByIndexOnlineWithHttpInfo(Requests\getDocumentHyperlinkByIndexOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HyperlinkResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -16008,11 +16008,11 @@ class WordsApi
     private function getDocumentHyperlinksWithHttpInfo(Requests\getDocumentHyperlinksRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HyperlinksResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -16178,11 +16178,11 @@ class WordsApi
     private function getDocumentHyperlinksOnlineWithHttpInfo(Requests\getDocumentHyperlinksOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HyperlinksResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -16348,11 +16348,11 @@ class WordsApi
     private function getDocumentPropertiesWithHttpInfo(Requests\getDocumentPropertiesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -16518,11 +16518,11 @@ class WordsApi
     private function getDocumentPropertiesOnlineWithHttpInfo(Requests\getDocumentPropertiesOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -16688,11 +16688,11 @@ class WordsApi
     private function getDocumentPropertyWithHttpInfo(Requests\getDocumentPropertyRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -16858,11 +16858,11 @@ class WordsApi
     private function getDocumentPropertyOnlineWithHttpInfo(Requests\getDocumentPropertyOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -17028,11 +17028,11 @@ class WordsApi
     private function getDocumentProtectionWithHttpInfo(Requests\getDocumentProtectionRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -17198,11 +17198,11 @@ class WordsApi
     private function getDocumentProtectionOnlineWithHttpInfo(Requests\getDocumentProtectionOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -17368,11 +17368,11 @@ class WordsApi
     private function getDocumentStatisticsWithHttpInfo(Requests\getDocumentStatisticsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StatDataResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -17538,11 +17538,11 @@ class WordsApi
     private function getDocumentStatisticsOnlineWithHttpInfo(Requests\getDocumentStatisticsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StatDataResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -17708,11 +17708,11 @@ class WordsApi
     private function getDocumentWithFormatWithHttpInfo(Requests\getDocumentWithFormatRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -17878,11 +17878,11 @@ class WordsApi
     private function getFieldWithHttpInfo(Requests\getFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18048,11 +18048,11 @@ class WordsApi
     private function getFieldOnlineWithHttpInfo(Requests\getFieldOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18218,11 +18218,11 @@ class WordsApi
     private function getFieldsWithHttpInfo(Requests\getFieldsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18388,11 +18388,11 @@ class WordsApi
     private function getFieldsOnlineWithHttpInfo(Requests\getFieldsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18558,11 +18558,11 @@ class WordsApi
     private function getFilesListWithHttpInfo(Requests\getFilesListRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FilesList';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18728,11 +18728,11 @@ class WordsApi
     private function getFootnoteWithHttpInfo(Requests\getFootnoteRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -18898,11 +18898,11 @@ class WordsApi
     private function getFootnoteOnlineWithHttpInfo(Requests\getFootnoteOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -19068,11 +19068,11 @@ class WordsApi
     private function getFootnotesWithHttpInfo(Requests\getFootnotesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnotesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -19238,11 +19238,11 @@ class WordsApi
     private function getFootnotesOnlineWithHttpInfo(Requests\getFootnotesOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnotesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -19408,11 +19408,11 @@ class WordsApi
     private function getFormFieldWithHttpInfo(Requests\getFormFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -19578,11 +19578,11 @@ class WordsApi
     private function getFormFieldOnlineWithHttpInfo(Requests\getFormFieldOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -19748,11 +19748,11 @@ class WordsApi
     private function getFormFieldsWithHttpInfo(Requests\getFormFieldsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -19918,11 +19918,11 @@ class WordsApi
     private function getFormFieldsOnlineWithHttpInfo(Requests\getFormFieldsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -20088,11 +20088,11 @@ class WordsApi
     private function getHeaderFooterWithHttpInfo(Requests\getHeaderFooterRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -20258,11 +20258,11 @@ class WordsApi
     private function getHeaderFooterOfSectionWithHttpInfo(Requests\getHeaderFooterOfSectionRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -20428,11 +20428,11 @@ class WordsApi
     private function getHeaderFooterOfSectionOnlineWithHttpInfo(Requests\getHeaderFooterOfSectionOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -20598,11 +20598,11 @@ class WordsApi
     private function getHeaderFooterOnlineWithHttpInfo(Requests\getHeaderFooterOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -20768,11 +20768,11 @@ class WordsApi
     private function getHeaderFootersWithHttpInfo(Requests\getHeaderFootersRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -20938,11 +20938,11 @@ class WordsApi
     private function getHeaderFootersOnlineWithHttpInfo(Requests\getHeaderFootersOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -21108,11 +21108,11 @@ class WordsApi
     private function getListWithHttpInfo(Requests\getListRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -21278,11 +21278,11 @@ class WordsApi
     private function getListOnlineWithHttpInfo(Requests\getListOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -21448,11 +21448,11 @@ class WordsApi
     private function getListsWithHttpInfo(Requests\getListsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ListsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -21618,11 +21618,11 @@ class WordsApi
     private function getListsOnlineWithHttpInfo(Requests\getListsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ListsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -21788,11 +21788,11 @@ class WordsApi
     private function getOfficeMathObjectWithHttpInfo(Requests\getOfficeMathObjectRequest $request)
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -21958,11 +21958,11 @@ class WordsApi
     private function getOfficeMathObjectOnlineWithHttpInfo(Requests\getOfficeMathObjectOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -22128,11 +22128,11 @@ class WordsApi
     private function getOfficeMathObjectsWithHttpInfo(Requests\getOfficeMathObjectsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -22298,11 +22298,11 @@ class WordsApi
     private function getOfficeMathObjectsOnlineWithHttpInfo(Requests\getOfficeMathObjectsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -22468,11 +22468,11 @@ class WordsApi
     private function getParagraphWithHttpInfo(Requests\getParagraphRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -22638,11 +22638,11 @@ class WordsApi
     private function getParagraphFormatWithHttpInfo(Requests\getParagraphFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -22808,11 +22808,11 @@ class WordsApi
     private function getParagraphFormatOnlineWithHttpInfo(Requests\getParagraphFormatOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -22978,11 +22978,11 @@ class WordsApi
     private function getParagraphListFormatWithHttpInfo(Requests\getParagraphListFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -23148,11 +23148,11 @@ class WordsApi
     private function getParagraphListFormatOnlineWithHttpInfo(Requests\getParagraphListFormatOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -23318,11 +23318,11 @@ class WordsApi
     private function getParagraphOnlineWithHttpInfo(Requests\getParagraphOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -23488,11 +23488,11 @@ class WordsApi
     private function getParagraphsWithHttpInfo(Requests\getParagraphsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -23658,11 +23658,11 @@ class WordsApi
     private function getParagraphsOnlineWithHttpInfo(Requests\getParagraphsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -23828,11 +23828,11 @@ class WordsApi
     private function getParagraphTabStopsWithHttpInfo(Requests\getParagraphTabStopsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -23998,11 +23998,11 @@ class WordsApi
     private function getParagraphTabStopsOnlineWithHttpInfo(Requests\getParagraphTabStopsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -24168,11 +24168,11 @@ class WordsApi
     private function getRangeTextWithHttpInfo(Requests\getRangeTextRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RangeTextResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -24338,11 +24338,11 @@ class WordsApi
     private function getRangeTextOnlineWithHttpInfo(Requests\getRangeTextOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RangeTextResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -24508,11 +24508,11 @@ class WordsApi
     private function getRunWithHttpInfo(Requests\getRunRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -24678,11 +24678,11 @@ class WordsApi
     private function getRunFontWithHttpInfo(Requests\getRunFontRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -24848,11 +24848,11 @@ class WordsApi
     private function getRunFontOnlineWithHttpInfo(Requests\getRunFontOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -25018,11 +25018,11 @@ class WordsApi
     private function getRunOnlineWithHttpInfo(Requests\getRunOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -25188,11 +25188,11 @@ class WordsApi
     private function getRunsWithHttpInfo(Requests\getRunsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -25358,11 +25358,11 @@ class WordsApi
     private function getRunsOnlineWithHttpInfo(Requests\getRunsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -25528,11 +25528,11 @@ class WordsApi
     private function getSectionWithHttpInfo(Requests\getSectionRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -25698,11 +25698,11 @@ class WordsApi
     private function getSectionOnlineWithHttpInfo(Requests\getSectionOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -25868,11 +25868,11 @@ class WordsApi
     private function getSectionPageSetupWithHttpInfo(Requests\getSectionPageSetupRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -26038,11 +26038,11 @@ class WordsApi
     private function getSectionPageSetupOnlineWithHttpInfo(Requests\getSectionPageSetupOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -26208,11 +26208,11 @@ class WordsApi
     private function getSectionsWithHttpInfo(Requests\getSectionsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -26378,11 +26378,11 @@ class WordsApi
     private function getSectionsOnlineWithHttpInfo(Requests\getSectionsOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -26548,11 +26548,11 @@ class WordsApi
     private function getStyleWithHttpInfo(Requests\getStyleRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -26718,11 +26718,11 @@ class WordsApi
     private function getStyleFromDocumentElementWithHttpInfo(Requests\getStyleFromDocumentElementRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -26888,11 +26888,11 @@ class WordsApi
     private function getStyleFromDocumentElementOnlineWithHttpInfo(Requests\getStyleFromDocumentElementOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -27058,11 +27058,11 @@ class WordsApi
     private function getStyleOnlineWithHttpInfo(Requests\getStyleOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -27228,11 +27228,11 @@ class WordsApi
     private function getStylesWithHttpInfo(Requests\getStylesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StylesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -27398,11 +27398,11 @@ class WordsApi
     private function getStylesOnlineWithHttpInfo(Requests\getStylesOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StylesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -27568,11 +27568,11 @@ class WordsApi
     private function getTableWithHttpInfo(Requests\getTableRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -27738,11 +27738,11 @@ class WordsApi
     private function getTableCellWithHttpInfo(Requests\getTableCellRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -27908,11 +27908,11 @@ class WordsApi
     private function getTableCellFormatWithHttpInfo(Requests\getTableCellFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -28078,11 +28078,11 @@ class WordsApi
     private function getTableCellFormatOnlineWithHttpInfo(Requests\getTableCellFormatOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -28248,11 +28248,11 @@ class WordsApi
     private function getTableCellOnlineWithHttpInfo(Requests\getTableCellOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -28418,11 +28418,11 @@ class WordsApi
     private function getTableOnlineWithHttpInfo(Requests\getTableOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -28588,11 +28588,11 @@ class WordsApi
     private function getTablePropertiesWithHttpInfo(Requests\getTablePropertiesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -28758,11 +28758,11 @@ class WordsApi
     private function getTablePropertiesOnlineWithHttpInfo(Requests\getTablePropertiesOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -28928,11 +28928,11 @@ class WordsApi
     private function getTableRowWithHttpInfo(Requests\getTableRowRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -29098,11 +29098,11 @@ class WordsApi
     private function getTableRowFormatWithHttpInfo(Requests\getTableRowFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -29268,11 +29268,11 @@ class WordsApi
     private function getTableRowFormatOnlineWithHttpInfo(Requests\getTableRowFormatOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -29438,11 +29438,11 @@ class WordsApi
     private function getTableRowOnlineWithHttpInfo(Requests\getTableRowOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -29608,11 +29608,11 @@ class WordsApi
     private function getTablesWithHttpInfo(Requests\getTablesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -29778,11 +29778,11 @@ class WordsApi
     private function getTablesOnlineWithHttpInfo(Requests\getTablesOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -29948,11 +29948,11 @@ class WordsApi
     private function insertCommentWithHttpInfo(Requests\insertCommentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -30118,11 +30118,11 @@ class WordsApi
     private function insertCommentOnlineWithHttpInfo(Requests\insertCommentOnlineRequest $request)
     {
         $returnType = 'InsertCommentOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -30288,11 +30288,11 @@ class WordsApi
     private function insertDrawingObjectWithHttpInfo(Requests\insertDrawingObjectRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -30458,11 +30458,11 @@ class WordsApi
     private function insertDrawingObjectOnlineWithHttpInfo(Requests\insertDrawingObjectOnlineRequest $request)
     {
         $returnType = 'InsertDrawingObjectOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -30628,11 +30628,11 @@ class WordsApi
     private function insertFieldWithHttpInfo(Requests\insertFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -30798,11 +30798,11 @@ class WordsApi
     private function insertFieldOnlineWithHttpInfo(Requests\insertFieldOnlineRequest $request)
     {
         $returnType = 'InsertFieldOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -30968,11 +30968,11 @@ class WordsApi
     private function insertFootnoteWithHttpInfo(Requests\insertFootnoteRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -31138,11 +31138,11 @@ class WordsApi
     private function insertFootnoteOnlineWithHttpInfo(Requests\insertFootnoteOnlineRequest $request)
     {
         $returnType = 'InsertFootnoteOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -31308,11 +31308,11 @@ class WordsApi
     private function insertFormFieldWithHttpInfo(Requests\insertFormFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -31478,11 +31478,11 @@ class WordsApi
     private function insertFormFieldOnlineWithHttpInfo(Requests\insertFormFieldOnlineRequest $request)
     {
         $returnType = 'InsertFormFieldOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -31648,11 +31648,11 @@ class WordsApi
     private function insertHeaderFooterWithHttpInfo(Requests\insertHeaderFooterRequest $request)
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -31818,11 +31818,11 @@ class WordsApi
     private function insertHeaderFooterOnlineWithHttpInfo(Requests\insertHeaderFooterOnlineRequest $request)
     {
         $returnType = 'InsertHeaderFooterOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -31988,11 +31988,11 @@ class WordsApi
     private function insertListWithHttpInfo(Requests\insertListRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -32158,11 +32158,11 @@ class WordsApi
     private function insertListOnlineWithHttpInfo(Requests\insertListOnlineRequest $request)
     {
         $returnType = 'InsertListOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -32328,11 +32328,11 @@ class WordsApi
     private function insertOrUpdateParagraphTabStopWithHttpInfo(Requests\insertOrUpdateParagraphTabStopRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -32498,11 +32498,11 @@ class WordsApi
     private function insertOrUpdateParagraphTabStopOnlineWithHttpInfo(Requests\insertOrUpdateParagraphTabStopOnlineRequest $request)
     {
         $returnType = 'InsertOrUpdateParagraphTabStopOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -32668,11 +32668,11 @@ class WordsApi
     private function insertPageNumbersWithHttpInfo(Requests\insertPageNumbersRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -32838,11 +32838,11 @@ class WordsApi
     private function insertPageNumbersOnlineWithHttpInfo(Requests\insertPageNumbersOnlineRequest $request)
     {
         $returnType = 'InsertPageNumbersOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -33008,11 +33008,11 @@ class WordsApi
     private function insertParagraphWithHttpInfo(Requests\insertParagraphRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -33178,11 +33178,11 @@ class WordsApi
     private function insertParagraphOnlineWithHttpInfo(Requests\insertParagraphOnlineRequest $request)
     {
         $returnType = 'InsertParagraphOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -33348,11 +33348,11 @@ class WordsApi
     private function insertRunWithHttpInfo(Requests\insertRunRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -33518,11 +33518,11 @@ class WordsApi
     private function insertRunOnlineWithHttpInfo(Requests\insertRunOnlineRequest $request)
     {
         $returnType = 'InsertRunOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -33688,11 +33688,11 @@ class WordsApi
     private function insertStyleWithHttpInfo(Requests\insertStyleRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -33858,11 +33858,11 @@ class WordsApi
     private function insertStyleOnlineWithHttpInfo(Requests\insertStyleOnlineRequest $request)
     {
         $returnType = 'InsertStyleOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -34028,11 +34028,11 @@ class WordsApi
     private function insertTableWithHttpInfo(Requests\insertTableRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -34198,11 +34198,11 @@ class WordsApi
     private function insertTableCellWithHttpInfo(Requests\insertTableCellRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -34368,11 +34368,11 @@ class WordsApi
     private function insertTableCellOnlineWithHttpInfo(Requests\insertTableCellOnlineRequest $request)
     {
         $returnType = 'InsertTableCellOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -34538,11 +34538,11 @@ class WordsApi
     private function insertTableOnlineWithHttpInfo(Requests\insertTableOnlineRequest $request)
     {
         $returnType = 'InsertTableOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -34708,11 +34708,11 @@ class WordsApi
     private function insertTableRowWithHttpInfo(Requests\insertTableRowRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -34878,11 +34878,11 @@ class WordsApi
     private function insertTableRowOnlineWithHttpInfo(Requests\insertTableRowOnlineRequest $request)
     {
         $returnType = 'InsertTableRowOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -35048,11 +35048,11 @@ class WordsApi
     private function insertWatermarkImageWithHttpInfo(Requests\insertWatermarkImageRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -35218,11 +35218,11 @@ class WordsApi
     private function insertWatermarkImageOnlineWithHttpInfo(Requests\insertWatermarkImageOnlineRequest $request)
     {
         $returnType = 'InsertWatermarkImageOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -35388,11 +35388,11 @@ class WordsApi
     private function insertWatermarkTextWithHttpInfo(Requests\insertWatermarkTextRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -35558,11 +35558,11 @@ class WordsApi
     private function insertWatermarkTextOnlineWithHttpInfo(Requests\insertWatermarkTextOnlineRequest $request)
     {
         $returnType = 'InsertWatermarkTextOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -35728,11 +35728,11 @@ class WordsApi
     private function loadWebDocumentWithHttpInfo(Requests\loadWebDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -35896,11 +35896,11 @@ class WordsApi
     private function moveFileWithHttpInfo(Requests\moveFileRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36023,11 +36023,11 @@ class WordsApi
     private function moveFolderWithHttpInfo(Requests\moveFolderRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36150,11 +36150,11 @@ class WordsApi
     private function optimizeDocumentWithHttpInfo(Requests\optimizeDocumentRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36279,11 +36279,11 @@ class WordsApi
     private function optimizeDocumentOnlineWithHttpInfo(Requests\optimizeDocumentOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36449,11 +36449,11 @@ class WordsApi
     private function protectDocumentWithHttpInfo(Requests\protectDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36619,11 +36619,11 @@ class WordsApi
     private function protectDocumentOnlineWithHttpInfo(Requests\protectDocumentOnlineRequest $request)
     {
         $returnType = 'ProtectDocumentOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36789,11 +36789,11 @@ class WordsApi
     private function rejectAllRevisionsWithHttpInfo(Requests\rejectAllRevisionsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -36959,11 +36959,11 @@ class WordsApi
     private function rejectAllRevisionsOnlineWithHttpInfo(Requests\rejectAllRevisionsOnlineRequest $request)
     {
         $returnType = 'RejectAllRevisionsOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -37129,11 +37129,11 @@ class WordsApi
     private function removeRangeWithHttpInfo(Requests\removeRangeRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -37299,11 +37299,11 @@ class WordsApi
     private function removeRangeOnlineWithHttpInfo(Requests\removeRangeOnlineRequest $request)
     {
         $returnType = 'RemoveRangeOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -37469,11 +37469,11 @@ class WordsApi
     private function renderDrawingObjectWithHttpInfo(Requests\renderDrawingObjectRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -37639,11 +37639,11 @@ class WordsApi
     private function renderDrawingObjectOnlineWithHttpInfo(Requests\renderDrawingObjectOnlineRequest $request)
     {
         $returnType = 'RenderDrawingObjectOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -37809,11 +37809,11 @@ class WordsApi
     private function renderMathObjectWithHttpInfo(Requests\renderMathObjectRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -37979,11 +37979,11 @@ class WordsApi
     private function renderMathObjectOnlineWithHttpInfo(Requests\renderMathObjectOnlineRequest $request)
     {
         $returnType = 'RenderMathObjectOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -38149,11 +38149,11 @@ class WordsApi
     private function renderPageWithHttpInfo(Requests\renderPageRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -38319,11 +38319,11 @@ class WordsApi
     private function renderPageOnlineWithHttpInfo(Requests\renderPageOnlineRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -38489,11 +38489,11 @@ class WordsApi
     private function renderParagraphWithHttpInfo(Requests\renderParagraphRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -38659,11 +38659,11 @@ class WordsApi
     private function renderParagraphOnlineWithHttpInfo(Requests\renderParagraphOnlineRequest $request)
     {
         $returnType = 'RenderParagraphOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -38829,11 +38829,11 @@ class WordsApi
     private function renderTableWithHttpInfo(Requests\renderTableRequest $request)
     {
         $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -38999,11 +38999,11 @@ class WordsApi
     private function renderTableOnlineWithHttpInfo(Requests\renderTableOnlineRequest $request)
     {
         $returnType = 'RenderTableOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -39169,11 +39169,11 @@ class WordsApi
     private function replaceTextWithHttpInfo(Requests\replaceTextRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ReplaceTextResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -39339,11 +39339,11 @@ class WordsApi
     private function replaceTextOnlineWithHttpInfo(Requests\replaceTextOnlineRequest $request)
     {
         $returnType = 'ReplaceTextOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -39509,11 +39509,11 @@ class WordsApi
     private function replaceWithTextWithHttpInfo(Requests\replaceWithTextRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -39679,11 +39679,11 @@ class WordsApi
     private function replaceWithTextOnlineWithHttpInfo(Requests\replaceWithTextOnlineRequest $request)
     {
         $returnType = 'ReplaceWithTextOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -39847,11 +39847,11 @@ class WordsApi
     private function resetCacheWithHttpInfo(Requests\resetCacheRequest $request)
     {
         $returnType = 'void';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -39976,11 +39976,11 @@ class WordsApi
     private function saveAsWithHttpInfo(Requests\saveAsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -40146,11 +40146,11 @@ class WordsApi
     private function saveAsOnlineWithHttpInfo(Requests\saveAsOnlineRequest $request)
     {
         $returnType = 'SaveAsOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -40316,11 +40316,11 @@ class WordsApi
     private function saveAsRangeWithHttpInfo(Requests\saveAsRangeRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -40486,11 +40486,11 @@ class WordsApi
     private function saveAsRangeOnlineWithHttpInfo(Requests\saveAsRangeOnlineRequest $request)
     {
         $returnType = 'SaveAsRangeOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -40656,11 +40656,11 @@ class WordsApi
     private function saveAsTiffWithHttpInfo(Requests\saveAsTiffRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -40826,11 +40826,11 @@ class WordsApi
     private function saveAsTiffOnlineWithHttpInfo(Requests\saveAsTiffOnlineRequest $request)
     {
         $returnType = 'SaveAsTiffOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -40996,11 +40996,11 @@ class WordsApi
     private function searchWithHttpInfo(Requests\searchRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SearchResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -41166,11 +41166,11 @@ class WordsApi
     private function searchOnlineWithHttpInfo(Requests\searchOnlineRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SearchResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -41336,11 +41336,11 @@ class WordsApi
     private function splitDocumentWithHttpInfo(Requests\splitDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SplitDocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -41506,11 +41506,11 @@ class WordsApi
     private function splitDocumentOnlineWithHttpInfo(Requests\splitDocumentOnlineRequest $request)
     {
         $returnType = 'SplitDocumentOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -41676,11 +41676,11 @@ class WordsApi
     private function unprotectDocumentWithHttpInfo(Requests\unprotectDocumentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -41846,11 +41846,11 @@ class WordsApi
     private function unprotectDocumentOnlineWithHttpInfo(Requests\unprotectDocumentOnlineRequest $request)
     {
         $returnType = 'UnprotectDocumentOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -42016,11 +42016,11 @@ class WordsApi
     private function updateBookmarkWithHttpInfo(Requests\updateBookmarkRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -42186,11 +42186,11 @@ class WordsApi
     private function updateBookmarkOnlineWithHttpInfo(Requests\updateBookmarkOnlineRequest $request)
     {
         $returnType = 'UpdateBookmarkOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -42356,11 +42356,11 @@ class WordsApi
     private function updateBorderWithHttpInfo(Requests\updateBorderRequest $request)
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -42526,11 +42526,11 @@ class WordsApi
     private function updateBorderOnlineWithHttpInfo(Requests\updateBorderOnlineRequest $request)
     {
         $returnType = 'UpdateBorderOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -42696,11 +42696,11 @@ class WordsApi
     private function updateCommentWithHttpInfo(Requests\updateCommentRequest $request)
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -42866,11 +42866,11 @@ class WordsApi
     private function updateCommentOnlineWithHttpInfo(Requests\updateCommentOnlineRequest $request)
     {
         $returnType = 'UpdateCommentOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -43036,11 +43036,11 @@ class WordsApi
     private function updateDrawingObjectWithHttpInfo(Requests\updateDrawingObjectRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -43206,11 +43206,11 @@ class WordsApi
     private function updateDrawingObjectOnlineWithHttpInfo(Requests\updateDrawingObjectOnlineRequest $request)
     {
         $returnType = 'UpdateDrawingObjectOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -43376,11 +43376,11 @@ class WordsApi
     private function updateFieldWithHttpInfo(Requests\updateFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -43546,11 +43546,11 @@ class WordsApi
     private function updateFieldOnlineWithHttpInfo(Requests\updateFieldOnlineRequest $request)
     {
         $returnType = 'UpdateFieldOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -43716,11 +43716,11 @@ class WordsApi
     private function updateFieldsWithHttpInfo(Requests\updateFieldsRequest $request)
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -43886,11 +43886,11 @@ class WordsApi
     private function updateFieldsOnlineWithHttpInfo(Requests\updateFieldsOnlineRequest $request)
     {
         $returnType = 'UpdateFieldsOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -44056,11 +44056,11 @@ class WordsApi
     private function updateFootnoteWithHttpInfo(Requests\updateFootnoteRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -44226,11 +44226,11 @@ class WordsApi
     private function updateFootnoteOnlineWithHttpInfo(Requests\updateFootnoteOnlineRequest $request)
     {
         $returnType = 'UpdateFootnoteOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -44396,11 +44396,11 @@ class WordsApi
     private function updateFormFieldWithHttpInfo(Requests\updateFormFieldRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -44566,11 +44566,11 @@ class WordsApi
     private function updateFormFieldOnlineWithHttpInfo(Requests\updateFormFieldOnlineRequest $request)
     {
         $returnType = 'UpdateFormFieldOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -44736,11 +44736,11 @@ class WordsApi
     private function updateListWithHttpInfo(Requests\updateListRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -44906,11 +44906,11 @@ class WordsApi
     private function updateListLevelWithHttpInfo(Requests\updateListLevelRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -45076,11 +45076,11 @@ class WordsApi
     private function updateListLevelOnlineWithHttpInfo(Requests\updateListLevelOnlineRequest $request)
     {
         $returnType = 'UpdateListLevelOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -45246,11 +45246,11 @@ class WordsApi
     private function updateListOnlineWithHttpInfo(Requests\updateListOnlineRequest $request)
     {
         $returnType = 'UpdateListOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -45416,11 +45416,11 @@ class WordsApi
     private function updateParagraphFormatWithHttpInfo(Requests\updateParagraphFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -45586,11 +45586,11 @@ class WordsApi
     private function updateParagraphFormatOnlineWithHttpInfo(Requests\updateParagraphFormatOnlineRequest $request)
     {
         $returnType = 'UpdateParagraphFormatOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -45756,11 +45756,11 @@ class WordsApi
     private function updateParagraphListFormatWithHttpInfo(Requests\updateParagraphListFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -45926,11 +45926,11 @@ class WordsApi
     private function updateParagraphListFormatOnlineWithHttpInfo(Requests\updateParagraphListFormatOnlineRequest $request)
     {
         $returnType = 'UpdateParagraphListFormatOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -46096,11 +46096,11 @@ class WordsApi
     private function updateRunWithHttpInfo(Requests\updateRunRequest $request)
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -46266,11 +46266,11 @@ class WordsApi
     private function updateRunFontWithHttpInfo(Requests\updateRunFontRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -46436,11 +46436,11 @@ class WordsApi
     private function updateRunFontOnlineWithHttpInfo(Requests\updateRunFontOnlineRequest $request)
     {
         $returnType = 'UpdateRunFontOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -46606,11 +46606,11 @@ class WordsApi
     private function updateRunOnlineWithHttpInfo(Requests\updateRunOnlineRequest $request)
     {
         $returnType = 'UpdateRunOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -46776,11 +46776,11 @@ class WordsApi
     private function updateSectionPageSetupWithHttpInfo(Requests\updateSectionPageSetupRequest $request)
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -46946,11 +46946,11 @@ class WordsApi
     private function updateSectionPageSetupOnlineWithHttpInfo(Requests\updateSectionPageSetupOnlineRequest $request)
     {
         $returnType = 'UpdateSectionPageSetupOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -47116,11 +47116,11 @@ class WordsApi
     private function updateStyleWithHttpInfo(Requests\updateStyleRequest $request)
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -47286,11 +47286,11 @@ class WordsApi
     private function updateStyleOnlineWithHttpInfo(Requests\updateStyleOnlineRequest $request)
     {
         $returnType = 'UpdateStyleOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -47456,11 +47456,11 @@ class WordsApi
     private function updateTableCellFormatWithHttpInfo(Requests\updateTableCellFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -47626,11 +47626,11 @@ class WordsApi
     private function updateTableCellFormatOnlineWithHttpInfo(Requests\updateTableCellFormatOnlineRequest $request)
     {
         $returnType = 'UpdateTableCellFormatOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -47796,11 +47796,11 @@ class WordsApi
     private function updateTablePropertiesWithHttpInfo(Requests\updateTablePropertiesRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -47966,11 +47966,11 @@ class WordsApi
     private function updateTablePropertiesOnlineWithHttpInfo(Requests\updateTablePropertiesOnlineRequest $request)
     {
         $returnType = 'UpdateTablePropertiesOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -48136,11 +48136,11 @@ class WordsApi
     private function updateTableRowFormatWithHttpInfo(Requests\updateTableRowFormatRequest $request)
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -48306,11 +48306,11 @@ class WordsApi
     private function updateTableRowFormatOnlineWithHttpInfo(Requests\updateTableRowFormatOnlineRequest $request)
     {
         $returnType = 'UpdateTableRowFormatOnlineResponse';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
@@ -48476,11 +48476,11 @@ class WordsApi
     private function uploadFileWithHttpInfo(Requests\uploadFileRequest $request)
     {
         $returnType = '\Aspose\Words\Model\FilesUploadResult';
+        $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
-            $this->_checkAuthToken();
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {

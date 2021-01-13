@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateTableCellFormatResponse;
 
 /*
  * Request model for updateTableCellFormat operation.
@@ -526,5 +527,10 @@ class UpdateTableCellFormatRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\TableCellFormatResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableCellFormatResponse', []);
     }
 }

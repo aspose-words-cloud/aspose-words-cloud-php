@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\RenderDrawingObjectResponse;
 
 /*
  * Request model for renderDrawingObject operation.
@@ -492,5 +493,10 @@ class RenderDrawingObjectRequest
     public function getResponseType()
     {
         return '\SplFileObject';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\SplFileObject', []);
     }
 }

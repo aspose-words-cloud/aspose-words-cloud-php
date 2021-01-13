@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetFormFieldResponse;
 
 /*
  * Request model for getFormField operation.
@@ -387,5 +388,10 @@ class GetFormFieldRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\FormFieldResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FormFieldResponse', []);
     }
 }

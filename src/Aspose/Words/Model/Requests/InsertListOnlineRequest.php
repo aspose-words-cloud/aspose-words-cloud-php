@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertListOnlineResponse;
 
 /*
  * Request model for insertListOnline operation.
@@ -388,5 +389,13 @@ class InsertListOnlineRequest
     public function getResponseType()
     {
         return 'InsertListOnlineResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        $multipart = ObjectSerializer::parseMultipart($responseContent);
+        return new InsertListOnlineResponse(
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\ListResponse', []),
+          ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

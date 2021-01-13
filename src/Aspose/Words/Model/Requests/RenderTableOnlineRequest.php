@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\RenderTableOnlineResponse;
 
 /*
  * Request model for renderTableOnline operation.
@@ -428,5 +429,10 @@ class RenderTableOnlineRequest
     public function getResponseType()
     {
         return '\SplFileObject';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\SplFileObject', []);
     }
 }

@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateSectionPageSetupOnlineResponse;
 
 /*
  * Request model for updateSectionPageSetupOnline operation.
@@ -424,5 +425,13 @@ class UpdateSectionPageSetupOnlineRequest
     public function getResponseType()
     {
         return 'UpdateSectionPageSetupOnlineResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        $multipart = ObjectSerializer::parseMultipart($responseContent);
+        return new UpdateSectionPageSetupOnlineResponse(
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\SectionPageSetupResponse', []),
+          ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

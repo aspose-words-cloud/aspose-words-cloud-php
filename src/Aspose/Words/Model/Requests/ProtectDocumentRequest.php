@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\ProtectDocumentResponse;
 
 /*
  * Request model for protectDocument operation.
@@ -386,5 +387,10 @@ class ProtectDocumentRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\ProtectionDataResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ProtectionDataResponse', []);
     }
 }

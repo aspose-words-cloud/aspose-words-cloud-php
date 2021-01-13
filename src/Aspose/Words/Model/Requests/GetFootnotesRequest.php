@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetFootnotesResponse;
 
 /*
  * Request model for getFootnotes operation.
@@ -351,5 +352,10 @@ class GetFootnotesRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\FootnotesResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FootnotesResponse', []);
     }
 }

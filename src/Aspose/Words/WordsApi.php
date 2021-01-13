@@ -125,26 +125,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -295,46 +295,33 @@ class WordsApi
     {
         $returnType = 'AcceptAllRevisionsOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -465,26 +452,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -635,46 +622,33 @@ class WordsApi
     {
         $returnType = 'AppendDocumentOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -805,26 +779,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\WordsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -975,46 +949,33 @@ class WordsApi
     {
         $returnType = 'ApplyStyleToDocumentElementOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1145,26 +1106,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -1315,26 +1276,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -1485,26 +1446,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ClassificationResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -1655,26 +1616,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ClassificationResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -1825,26 +1786,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ClassificationResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -1995,26 +1956,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -2165,46 +2126,33 @@ class WordsApi
     {
         $returnType = 'CompareDocumentOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2335,26 +2283,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -2503,26 +2451,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -2630,26 +2578,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -2759,26 +2707,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -2929,46 +2877,33 @@ class WordsApi
     {
         $returnType = 'CopyStyleOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -3099,26 +3034,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -3267,26 +3202,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -3396,26 +3331,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -3566,46 +3501,33 @@ class WordsApi
     {
         $returnType = 'CreateOrUpdateDocumentPropertyOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -3736,26 +3658,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -3906,46 +3828,33 @@ class WordsApi
     {
         $returnType = 'DeleteAllParagraphTabStopsOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4076,26 +3985,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -4246,46 +4155,33 @@ class WordsApi
     {
         $returnType = 'DeleteBorderOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4416,26 +4312,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -4586,46 +4482,33 @@ class WordsApi
     {
         $returnType = 'DeleteBordersOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4754,26 +4637,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -4883,26 +4766,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -5051,26 +4934,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -5180,26 +5063,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -5348,26 +5231,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -5477,26 +5360,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -5645,26 +5528,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -5774,26 +5657,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -5942,26 +5825,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -6071,26 +5954,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -6239,26 +6122,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -6366,26 +6249,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -6493,26 +6376,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -6622,26 +6505,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -6790,26 +6673,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -6919,26 +6802,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -7087,26 +6970,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -7216,26 +7099,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -7384,26 +7267,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -7513,26 +7396,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -7681,26 +7564,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -7810,26 +7693,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -7978,26 +7861,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -8107,26 +7990,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -8275,26 +8158,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -8404,26 +8287,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -8574,46 +8457,33 @@ class WordsApi
     {
         $returnType = 'DeleteParagraphListFormatOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -8744,26 +8614,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -8914,26 +8784,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -9084,46 +8954,33 @@ class WordsApi
     {
         $returnType = 'DeleteParagraphTabStopOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -9252,26 +9109,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -9381,26 +9238,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -9549,26 +9406,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -9678,26 +9535,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -9846,26 +9703,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -9973,26 +9830,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -10102,26 +9959,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -10272,26 +10129,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -10440,26 +10297,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -10569,26 +10426,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -10739,26 +10596,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -10909,46 +10766,33 @@ class WordsApi
     {
         $returnType = 'DeleteWatermarkOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -11079,26 +10923,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -11249,26 +11093,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -11419,26 +11263,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -11589,26 +11433,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\AvailableFontsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -11759,26 +11603,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -11929,26 +11773,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -12099,26 +11943,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BookmarksResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -12269,26 +12113,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BookmarksResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -12439,26 +12283,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -12609,26 +12453,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -12779,26 +12623,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -12949,26 +12793,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -13119,26 +12963,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -13289,26 +13133,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -13459,26 +13303,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\CommentsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -13629,26 +13473,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\CommentsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -13799,26 +13643,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -13969,26 +13813,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -14139,26 +13983,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -14309,26 +14153,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -14479,26 +14323,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -14649,26 +14493,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -14819,26 +14663,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -14989,26 +14833,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -15159,26 +15003,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -15329,26 +15173,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -15499,26 +15343,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -15669,26 +15513,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HyperlinkResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -15839,26 +15683,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HyperlinkResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -16009,26 +15853,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HyperlinksResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -16179,26 +16023,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HyperlinksResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -16349,26 +16193,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -16519,26 +16363,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -16689,26 +16533,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -16859,26 +16703,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -17029,26 +16873,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -17199,26 +17043,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -17369,26 +17213,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StatDataResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -17539,26 +17383,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StatDataResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -17709,26 +17553,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -17879,26 +17723,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -18049,26 +17893,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -18219,26 +18063,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FieldsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -18389,26 +18233,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FieldsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -18559,26 +18403,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FilesList';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -18729,26 +18573,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -18899,26 +18743,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -19069,26 +18913,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FootnotesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -19239,26 +19083,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FootnotesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -19409,26 +19253,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -19579,26 +19423,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -19749,26 +19593,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FormFieldsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -19919,26 +19763,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FormFieldsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -20089,26 +19933,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -20259,26 +20103,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -20429,26 +20273,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -20599,26 +20443,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -20769,26 +20613,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -20939,26 +20783,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -21109,26 +20953,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -21279,26 +21123,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -21449,26 +21293,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ListsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -21619,26 +21463,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ListsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -21789,26 +21633,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -21959,26 +21803,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -22129,26 +21973,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -22299,26 +22143,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -22469,26 +22313,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -22639,26 +22483,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -22809,26 +22653,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -22979,26 +22823,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -23149,26 +22993,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -23319,26 +23163,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -23489,26 +23333,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -23659,26 +23503,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -23829,26 +23673,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -23999,26 +23843,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -24169,26 +24013,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RangeTextResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -24339,26 +24183,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RangeTextResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -24509,26 +24353,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -24679,26 +24523,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -24849,26 +24693,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -25019,26 +24863,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -25189,26 +25033,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RunsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -25359,26 +25203,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RunsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -25529,26 +25373,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SectionResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -25699,26 +25543,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SectionResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -25869,26 +25713,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -26039,26 +25883,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -26209,26 +26053,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -26379,26 +26223,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -26549,26 +26393,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -26719,26 +26563,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -26889,26 +26733,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -27059,26 +26903,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -27229,26 +27073,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StylesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -27399,26 +27243,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StylesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -27569,26 +27413,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -27739,26 +27583,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -27909,26 +27753,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -28079,26 +27923,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -28249,26 +28093,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -28419,26 +28263,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -28589,26 +28433,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -28759,26 +28603,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -28929,26 +28773,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -29099,26 +28943,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -29269,26 +29113,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -29439,26 +29283,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -29609,26 +29453,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -29779,26 +29623,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -29949,26 +29793,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -30119,46 +29963,33 @@ class WordsApi
     {
         $returnType = 'InsertCommentOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -30289,26 +30120,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -30459,46 +30290,33 @@ class WordsApi
     {
         $returnType = 'InsertDrawingObjectOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -30629,26 +30447,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -30799,46 +30617,33 @@ class WordsApi
     {
         $returnType = 'InsertFieldOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -30969,26 +30774,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -31139,46 +30944,33 @@ class WordsApi
     {
         $returnType = 'InsertFootnoteOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -31309,26 +31101,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -31479,46 +31271,33 @@ class WordsApi
     {
         $returnType = 'InsertFormFieldOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -31649,26 +31428,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -31819,46 +31598,33 @@ class WordsApi
     {
         $returnType = 'InsertHeaderFooterOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -31989,26 +31755,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -32159,46 +31925,33 @@ class WordsApi
     {
         $returnType = 'InsertListOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -32329,26 +32082,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -32499,46 +32252,33 @@ class WordsApi
     {
         $returnType = 'InsertOrUpdateParagraphTabStopOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -32669,26 +32409,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -32839,46 +32579,33 @@ class WordsApi
     {
         $returnType = 'InsertPageNumbersOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -33009,26 +32736,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -33179,46 +32906,33 @@ class WordsApi
     {
         $returnType = 'InsertParagraphOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -33349,26 +33063,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -33519,46 +33233,33 @@ class WordsApi
     {
         $returnType = 'InsertRunOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -33689,26 +33390,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -33859,46 +33560,33 @@ class WordsApi
     {
         $returnType = 'InsertStyleOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -34029,26 +33717,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -34199,26 +33887,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -34369,46 +34057,33 @@ class WordsApi
     {
         $returnType = 'InsertTableCellOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -34539,46 +34214,33 @@ class WordsApi
     {
         $returnType = 'InsertTableOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -34709,26 +34371,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -34879,46 +34541,33 @@ class WordsApi
     {
         $returnType = 'InsertTableRowOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -35049,26 +34698,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -35219,46 +34868,33 @@ class WordsApi
     {
         $returnType = 'InsertWatermarkImageOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -35389,26 +35025,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -35559,46 +35195,33 @@ class WordsApi
     {
         $returnType = 'InsertWatermarkTextOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -35729,26 +35352,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -35897,26 +35520,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -36024,26 +35647,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -36151,26 +35774,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -36280,26 +35903,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -36450,26 +36073,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -36620,46 +36243,33 @@ class WordsApi
     {
         $returnType = 'ProtectDocumentOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -36790,26 +36400,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -36960,46 +36570,33 @@ class WordsApi
     {
         $returnType = 'RejectAllRevisionsOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -37130,26 +36727,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -37300,46 +36897,33 @@ class WordsApi
     {
         $returnType = 'RemoveRangeOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -37470,26 +37054,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -37640,26 +37224,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -37810,26 +37394,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -37980,26 +37564,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -38150,26 +37734,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -38320,26 +37904,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -38490,26 +38074,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -38660,26 +38244,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -38830,26 +38414,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -39000,26 +38584,26 @@ class WordsApi
     {
         $returnType = '\SplFileObject';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -39170,26 +38754,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ReplaceTextResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -39340,46 +38924,33 @@ class WordsApi
     {
         $returnType = 'ReplaceTextOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -39510,26 +39081,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -39680,46 +39251,33 @@ class WordsApi
     {
         $returnType = 'ReplaceWithTextOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -39848,26 +39406,26 @@ class WordsApi
     {
         $returnType = 'void';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -39977,26 +39535,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -40147,46 +39705,33 @@ class WordsApi
     {
         $returnType = 'SaveAsOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -40317,26 +39862,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -40487,46 +40032,33 @@ class WordsApi
     {
         $returnType = 'SaveAsRangeOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -40657,26 +40189,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -40827,46 +40359,33 @@ class WordsApi
     {
         $returnType = 'SaveAsTiffOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -40997,26 +40516,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SearchResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -41167,26 +40686,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SearchResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -41337,26 +40856,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SplitDocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -41507,46 +41026,33 @@ class WordsApi
     {
         $returnType = 'SplitDocumentOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -41677,26 +41183,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -41847,46 +41353,33 @@ class WordsApi
     {
         $returnType = 'UnprotectDocumentOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -42017,26 +41510,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -42187,46 +41680,33 @@ class WordsApi
     {
         $returnType = 'UpdateBookmarkOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -42357,26 +41837,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -42527,46 +42007,33 @@ class WordsApi
     {
         $returnType = 'UpdateBorderOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -42697,26 +42164,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -42867,46 +42334,33 @@ class WordsApi
     {
         $returnType = 'UpdateCommentOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -43037,26 +42491,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -43207,46 +42661,33 @@ class WordsApi
     {
         $returnType = 'UpdateDrawingObjectOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -43377,26 +42818,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -43547,46 +42988,33 @@ class WordsApi
     {
         $returnType = 'UpdateFieldOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -43717,26 +43145,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -43887,46 +43315,33 @@ class WordsApi
     {
         $returnType = 'UpdateFieldsOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -44057,26 +43472,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -44227,46 +43642,33 @@ class WordsApi
     {
         $returnType = 'UpdateFootnoteOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -44397,26 +43799,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -44567,46 +43969,33 @@ class WordsApi
     {
         $returnType = 'UpdateFormFieldOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -44737,26 +44126,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -44907,26 +44296,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -45077,46 +44466,33 @@ class WordsApi
     {
         $returnType = 'UpdateListLevelOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -45247,46 +44623,33 @@ class WordsApi
     {
         $returnType = 'UpdateListOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -45417,26 +44780,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -45587,46 +44950,33 @@ class WordsApi
     {
         $returnType = 'UpdateParagraphFormatOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -45757,26 +45107,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -45927,46 +45277,33 @@ class WordsApi
     {
         $returnType = 'UpdateParagraphListFormatOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -46097,26 +45434,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -46267,26 +45604,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -46437,46 +45774,33 @@ class WordsApi
     {
         $returnType = 'UpdateRunFontOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -46607,46 +45931,33 @@ class WordsApi
     {
         $returnType = 'UpdateRunOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -46777,26 +46088,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -46947,46 +46258,33 @@ class WordsApi
     {
         $returnType = 'UpdateSectionPageSetupOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -47117,26 +46415,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -47287,46 +46585,33 @@ class WordsApi
     {
         $returnType = 'UpdateStyleOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -47457,26 +46742,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -47627,46 +46912,33 @@ class WordsApi
     {
         $returnType = 'UpdateTableCellFormatOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -47797,26 +47069,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -47967,46 +47239,33 @@ class WordsApi
     {
         $returnType = 'UpdateTablePropertiesOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -48137,26 +47396,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();
@@ -48307,46 +47566,33 @@ class WordsApi
     {
         $returnType = 'UpdateTableRowFormatOnlineResponse';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
+            $resp = $request->deserializeResponse($response);
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -48477,26 +47723,26 @@ class WordsApi
     {
         $returnType = '\Aspose\Words\Model\FilesUploadResult';
         $this->_checkAuthToken();
-        $request = $request->createRequest($this->config);
+        $req = $request->createRequest($this->config);
 
         try {
             $options = $this->_createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $response = $this->client->send($req, $options);
             } catch (RequestException $e) {
                 if ($e->getCode() == 401) {
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", 401, null, null);
                 }
                 else if ($e->getCode() < 200 || $e->getCode() > 299) {
-                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $request->getUri()), $e->getCode(), null, null);
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
                 }
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
             $responseBody = $response->getBody();

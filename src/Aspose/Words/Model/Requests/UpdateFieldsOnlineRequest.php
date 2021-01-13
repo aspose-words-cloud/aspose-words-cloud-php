@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateFieldsOnlineResponse;
 
 /*
  * Request model for updateFieldsOnline operation.
@@ -288,5 +289,13 @@ class UpdateFieldsOnlineRequest
     public function getResponseType()
     {
         return 'UpdateFieldsOnlineResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        $multipart = ObjectSerializer::parseMultipart($responseContent);
+        return new UpdateFieldsOnlineResponse(
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DocumentResponse', []),
+          ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

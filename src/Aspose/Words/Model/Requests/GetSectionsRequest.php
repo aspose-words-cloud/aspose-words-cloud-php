@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetSectionsResponse;
 
 /*
  * Request model for getSections operation.
@@ -318,5 +319,10 @@ class GetSectionsRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\SectionLinkCollectionResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SectionLinkCollectionResponse', []);
     }
 }

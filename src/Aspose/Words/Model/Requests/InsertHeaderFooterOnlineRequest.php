@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertHeaderFooterOnlineResponse;
 
 /*
  * Request model for insertHeaderFooterOnline operation.
@@ -424,5 +425,13 @@ class InsertHeaderFooterOnlineRequest
     public function getResponseType()
     {
         return 'InsertHeaderFooterOnlineResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        $multipart = ObjectSerializer::parseMultipart($responseContent);
+        return new InsertHeaderFooterOnlineResponse(
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\HeaderFooterResponse', []),
+          ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

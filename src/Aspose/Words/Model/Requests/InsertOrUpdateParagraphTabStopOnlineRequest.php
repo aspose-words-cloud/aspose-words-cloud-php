@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertOrUpdateParagraphTabStopOnlineResponse;
 
 /*
  * Request model for insertOrUpdateParagraphTabStopOnline operation.
@@ -389,5 +390,13 @@ class InsertOrUpdateParagraphTabStopOnlineRequest
     public function getResponseType()
     {
         return 'InsertOrUpdateParagraphTabStopOnlineResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        $multipart = ObjectSerializer::parseMultipart($responseContent);
+        return new InsertOrUpdateParagraphTabStopOnlineResponse(
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\TabStopsResponse', []),
+          ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

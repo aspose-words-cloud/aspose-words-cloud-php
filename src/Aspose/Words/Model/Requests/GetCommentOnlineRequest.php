@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetCommentOnlineResponse;
 
 /*
  * Request model for getCommentOnline operation.
@@ -290,5 +291,10 @@ class GetCommentOnlineRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\CommentResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CommentResponse', []);
     }
 }

@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\DeleteFormFieldOnlineResponse;
 
 /*
  * Request model for deleteFormFieldOnline operation.
@@ -425,5 +426,10 @@ class DeleteFormFieldOnlineRequest
     public function getResponseType()
     {
         return '\SplFileObject';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\SplFileObject', []);
     }
 }

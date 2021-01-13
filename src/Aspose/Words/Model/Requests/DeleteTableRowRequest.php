@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\DeleteTableRowResponse;
 
 /*
  * Request model for deleteTableRow operation.
@@ -490,6 +491,11 @@ class DeleteTableRowRequest
      * Gets response type of this request.
      */
     public function getResponseType()
+    {
+        return NULL;
+    }
+
+    public function deserializeResponse($responseContent)
     {
         return NULL;
     }

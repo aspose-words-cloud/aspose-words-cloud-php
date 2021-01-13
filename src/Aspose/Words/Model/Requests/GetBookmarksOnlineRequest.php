@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetBookmarksOnlineResponse;
 
 /*
  * Request model for getBookmarksOnline operation.
@@ -254,5 +255,10 @@ class GetBookmarksOnlineRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\BookmarksResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BookmarksResponse', []);
     }
 }

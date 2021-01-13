@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\ClassifyDocumentResponse;
 
 /*
  * Request model for classifyDocument operation.
@@ -386,5 +387,10 @@ class ClassifyDocumentRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\ClassificationResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ClassificationResponse', []);
     }
 }

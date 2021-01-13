@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetDocumentPropertiesOnlineResponse;
 
 /*
  * Request model for getDocumentPropertiesOnline operation.
@@ -254,5 +255,10 @@ class GetDocumentPropertiesOnlineRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\DocumentPropertiesResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentPropertiesResponse', []);
     }
 }

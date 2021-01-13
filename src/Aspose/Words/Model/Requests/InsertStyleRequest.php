@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertStyleResponse;
 
 /*
  * Request model for insertStyle operation.
@@ -454,5 +455,10 @@ class InsertStyleRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\StyleResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StyleResponse', []);
     }
 }

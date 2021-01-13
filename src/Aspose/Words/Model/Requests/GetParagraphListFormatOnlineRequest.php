@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetParagraphListFormatOnlineResponse;
 
 /*
  * Request model for getParagraphListFormatOnline operation.
@@ -323,5 +324,10 @@ class GetParagraphListFormatOnlineRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\ParagraphListFormatResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphListFormatResponse', []);
     }
 }

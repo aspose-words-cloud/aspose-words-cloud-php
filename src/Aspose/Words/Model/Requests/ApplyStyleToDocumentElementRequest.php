@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\ApplyStyleToDocumentElementResponse;
 
 /*
  * Request model for applyStyleToDocumentElement operation.
@@ -490,5 +491,10 @@ class ApplyStyleToDocumentElementRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\WordsResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\WordsResponse', []);
     }
 }

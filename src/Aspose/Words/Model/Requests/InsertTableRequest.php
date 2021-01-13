@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertTableResponse;
 
 /*
  * Request model for insertTable operation.
@@ -487,5 +488,10 @@ class InsertTableRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\TableResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableResponse', []);
     }
 }

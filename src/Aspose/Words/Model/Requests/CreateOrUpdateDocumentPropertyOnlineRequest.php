@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\CreateOrUpdateDocumentPropertyOnlineResponse;
 
 /*
  * Request model for createOrUpdateDocumentPropertyOnline operation.
@@ -424,5 +425,13 @@ class CreateOrUpdateDocumentPropertyOnlineRequest
     public function getResponseType()
     {
         return 'CreateOrUpdateDocumentPropertyOnlineResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        $multipart = ObjectSerializer::parseMultipart($responseContent);
+        return new CreateOrUpdateDocumentPropertyOnlineResponse(
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DocumentPropertyResponse', []),
+          ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

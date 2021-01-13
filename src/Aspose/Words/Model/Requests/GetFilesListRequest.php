@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetFilesListResponse;
 
 /*
  * Request model for getFilesList operation.
@@ -216,5 +217,10 @@ class GetFilesListRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\FilesList';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FilesList', []);
     }
 }

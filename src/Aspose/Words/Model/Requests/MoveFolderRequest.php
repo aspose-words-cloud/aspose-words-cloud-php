@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\MoveFolderResponse;
 
 /*
  * Request model for moveFolder operation.
@@ -285,6 +286,11 @@ class MoveFolderRequest
      * Gets response type of this request.
      */
     public function getResponseType()
+    {
+        return NULL;
+    }
+
+    public function deserializeResponse($responseContent)
     {
         return NULL;
     }

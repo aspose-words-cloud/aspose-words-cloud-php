@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetSectionPageSetupResponse;
 
 /*
  * Request model for getSectionPageSetup operation.
@@ -354,5 +355,10 @@ class GetSectionPageSetupRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\SectionPageSetupResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SectionPageSetupResponse', []);
     }
 }

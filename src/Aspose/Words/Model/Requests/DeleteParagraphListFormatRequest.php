@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\DeleteParagraphListFormatResponse;
 
 /*
  * Request model for deleteParagraphListFormat operation.
@@ -489,5 +490,10 @@ class DeleteParagraphListFormatRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\ParagraphListFormatResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphListFormatResponse', []);
     }
 }

@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetHeaderFooterResponse;
 
 /*
  * Request model for getHeaderFooter operation.
@@ -388,5 +389,10 @@ class GetHeaderFooterRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\HeaderFooterResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\HeaderFooterResponse', []);
     }
 }

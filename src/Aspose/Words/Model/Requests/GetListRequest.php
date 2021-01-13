@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetListResponse;
 
 /*
  * Request model for getList operation.
@@ -354,5 +355,10 @@ class GetListRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\ListResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ListResponse', []);
     }
 }

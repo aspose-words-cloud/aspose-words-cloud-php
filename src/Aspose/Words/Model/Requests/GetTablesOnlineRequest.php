@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetTablesOnlineResponse;
 
 /*
  * Request model for getTablesOnline operation.
@@ -287,5 +288,10 @@ class GetTablesOnlineRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\TableLinkCollectionResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableLinkCollectionResponse', []);
     }
 }

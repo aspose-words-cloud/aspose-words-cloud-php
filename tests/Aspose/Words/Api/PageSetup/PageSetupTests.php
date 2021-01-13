@@ -149,7 +149,7 @@ class PageSetupTests extends BaseTestContext
         );
 
         $result = $this->words->updateSectionPageSetupOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

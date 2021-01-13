@@ -107,7 +107,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->updateFormFieldOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -384,7 +384,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->insertFormFieldOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

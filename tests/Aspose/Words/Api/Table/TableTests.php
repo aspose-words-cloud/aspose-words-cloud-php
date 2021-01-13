@@ -346,7 +346,7 @@ class TableTests extends BaseTestContext
         );
 
         $result = $this->words->insertTableOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -541,7 +541,7 @@ class TableTests extends BaseTestContext
         );
 
         $result = $this->words->updateTablePropertiesOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -750,7 +750,7 @@ class TableTests extends BaseTestContext
         );
 
         $result = $this->words->insertTableRowOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -870,7 +870,7 @@ class TableTests extends BaseTestContext
         );
 
         $result = $this->words->updateTableRowFormatOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -1030,7 +1030,7 @@ class TableTests extends BaseTestContext
         );
 
         $result = $this->words->insertTableCellOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -1150,7 +1150,7 @@ class TableTests extends BaseTestContext
         );
 
         $result = $this->words->updateTableCellFormatOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

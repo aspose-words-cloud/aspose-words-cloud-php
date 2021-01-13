@@ -89,7 +89,7 @@ class DocumentProtectionTests extends BaseTestContext
         );
 
         $result = $this->words->protectDocumentOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -187,6 +187,6 @@ class DocumentProtectionTests extends BaseTestContext
         );
 
         $result = $this->words->unprotectDocumentOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 }

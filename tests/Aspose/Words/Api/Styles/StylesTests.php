@@ -187,7 +187,7 @@ class StylesTests extends BaseTestContext
         );
 
         $result = $this->words->updateStyleOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -248,7 +248,7 @@ class StylesTests extends BaseTestContext
         );
 
         $result = $this->words->insertStyleOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -307,7 +307,7 @@ class StylesTests extends BaseTestContext
         );
 
         $result = $this->words->copyStyleOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -413,6 +413,6 @@ class StylesTests extends BaseTestContext
         );
 
         $result = $this->words->applyStyleToDocumentElementOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 }

@@ -242,6 +242,6 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
         $result = $this->words->createOrUpdateDocumentPropertyOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 }

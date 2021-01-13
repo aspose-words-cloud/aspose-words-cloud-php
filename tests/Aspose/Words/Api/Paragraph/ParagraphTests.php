@@ -402,7 +402,7 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->updateRunFontOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -465,7 +465,7 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->insertParagraphOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -728,7 +728,7 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->updateParagraphFormatOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -952,7 +952,7 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->updateParagraphListFormatOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -1042,7 +1042,7 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->deleteParagraphListFormatOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -1220,7 +1220,7 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->insertOrUpdateParagraphTabStopOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -1311,7 +1311,7 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->deleteAllParagraphTabStopsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -1395,7 +1395,7 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->deleteParagraphTabStopOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

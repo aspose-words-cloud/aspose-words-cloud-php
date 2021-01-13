@@ -225,7 +225,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->insertCommentOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -325,7 +325,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->updateCommentOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

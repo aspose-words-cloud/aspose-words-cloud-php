@@ -90,7 +90,7 @@ class ConvertDocumentTests extends BaseTestContext
         );
 
         $result = $this->words->saveAsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -216,7 +216,7 @@ class ConvertDocumentTests extends BaseTestContext
         );
 
         $result = $this->words->saveAsTiffOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

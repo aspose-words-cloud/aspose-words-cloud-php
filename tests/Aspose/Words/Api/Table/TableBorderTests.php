@@ -184,7 +184,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->deleteBordersOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -237,7 +237,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->deleteBorderOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -320,6 +320,6 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->updateBorderOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 }

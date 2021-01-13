@@ -130,7 +130,7 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->removeRangeOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -188,7 +188,7 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->saveAsRangeOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -247,6 +247,6 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->replaceWithTextOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 }

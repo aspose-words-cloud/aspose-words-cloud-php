@@ -96,7 +96,7 @@ class RunTests extends BaseTestContext
         );
 
         $result = $this->words->updateRunOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -160,7 +160,7 @@ class RunTests extends BaseTestContext
         );
 
         $result = $this->words->insertRunOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

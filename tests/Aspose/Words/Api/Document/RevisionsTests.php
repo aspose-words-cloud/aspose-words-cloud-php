@@ -80,7 +80,7 @@ class RevisionsTests extends BaseTestContext
         );
 
         $result = $this->words->acceptAllRevisionsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -127,6 +127,6 @@ class RevisionsTests extends BaseTestContext
         );
 
         $result = $this->words->rejectAllRevisionsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 }

@@ -344,7 +344,7 @@ class HeaderFooterTests extends BaseTestContext
         );
 
         $result = $this->words->insertHeaderFooterOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
         Assert::assertNotNull($result->getModel()->getHeaderFooter());
         Assert::assertNotNull($result->getModel()->getHeaderFooter()->getChildNodes());
         Assert::assertCount(1, $result->getModel()->getHeaderFooter()->getChildNodes());

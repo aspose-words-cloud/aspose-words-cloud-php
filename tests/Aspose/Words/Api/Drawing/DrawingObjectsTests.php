@@ -487,7 +487,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->insertDrawingObjectOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -673,7 +673,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->updateDrawingObjectOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

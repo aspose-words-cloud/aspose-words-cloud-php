@@ -261,7 +261,7 @@ class FieldTests extends BaseTestContext
         );
 
         $result = $this->words->insertFieldOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -365,7 +365,7 @@ class FieldTests extends BaseTestContext
         );
 
         $result = $this->words->updateFieldOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -426,7 +426,7 @@ class FieldTests extends BaseTestContext
         );
 
         $result = $this->words->insertPageNumbersOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -752,6 +752,6 @@ class FieldTests extends BaseTestContext
         );
 
         $result = $this->words->updateFieldsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 }

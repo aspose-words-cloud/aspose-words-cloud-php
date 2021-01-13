@@ -97,7 +97,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->insertFootnoteOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -439,7 +439,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->updateFootnoteOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

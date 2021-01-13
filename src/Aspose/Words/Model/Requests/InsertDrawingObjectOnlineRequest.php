@@ -284,7 +284,7 @@ class InsertDrawingObjectOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $image_file when calling insertDrawingObjectOnline');
         }
 
-        $resourcePath = '/words/online/post/{name}/{nodePath}/drawingObjects';
+        $resourcePath = '/words/online/post/{nodePath}/drawingObjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

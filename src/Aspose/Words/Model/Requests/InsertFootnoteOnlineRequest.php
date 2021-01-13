@@ -257,7 +257,7 @@ class InsertFootnoteOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling insertFootnoteOnline');
         }
 
-        $resourcePath = '/words/online/post/{name}/{nodePath}/footnotes';
+        $resourcePath = '/words/online/post/{nodePath}/footnotes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

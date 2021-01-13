@@ -281,7 +281,7 @@ class InsertParagraphOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $paragraph when calling insertParagraphOnline');
         }
 
-        $resourcePath = '/words/online/post/{name}/{nodePath}/paragraphs';
+        $resourcePath = '/words/online/post/{nodePath}/paragraphs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

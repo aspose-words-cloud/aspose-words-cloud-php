@@ -158,7 +158,7 @@ class GetBordersOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getBordersOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/borders';
+        $resourcePath = '/words/online/get/{nodePath}/borders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

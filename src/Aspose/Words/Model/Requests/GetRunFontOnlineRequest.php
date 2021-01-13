@@ -188,7 +188,7 @@ class GetRunFontOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getRunFontOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{paragraphPath}/runs/{index}/font';
+        $resourcePath = '/words/online/get/{paragraphPath}/runs/{index}/font';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

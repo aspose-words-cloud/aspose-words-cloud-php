@@ -236,7 +236,7 @@ class DeleteParagraphTabStopOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteParagraphTabStopOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{nodePath}/paragraphs/{index}/tabstop';
+        $resourcePath = '/words/online/delete/{nodePath}/paragraphs/{index}/tabstop';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

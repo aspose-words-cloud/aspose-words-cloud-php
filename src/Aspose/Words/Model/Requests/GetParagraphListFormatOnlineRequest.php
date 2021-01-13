@@ -185,7 +185,7 @@ class GetParagraphListFormatOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphListFormatOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/paragraphs/{index}/listFormat';
+        $resourcePath = '/words/online/get/{nodePath}/paragraphs/{index}/listFormat';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

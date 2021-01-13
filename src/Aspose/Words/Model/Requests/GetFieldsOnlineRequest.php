@@ -158,7 +158,7 @@ class GetFieldsOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getFieldsOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/fields';
+        $resourcePath = '/words/online/get/{nodePath}/fields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

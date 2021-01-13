@@ -287,7 +287,7 @@ class UpdateRunOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRunOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{paragraphPath}/runs/{index}';
+        $resourcePath = '/words/online/put/{paragraphPath}/runs/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

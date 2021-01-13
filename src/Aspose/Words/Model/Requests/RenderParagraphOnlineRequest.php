@@ -260,7 +260,7 @@ class RenderParagraphOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderParagraphOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/paragraphs/{index}/render';
+        $resourcePath = '/words/online/get/{nodePath}/paragraphs/{index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

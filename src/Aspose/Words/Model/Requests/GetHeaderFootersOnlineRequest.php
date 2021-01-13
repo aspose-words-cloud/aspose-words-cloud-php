@@ -185,7 +185,7 @@ class GetHeaderFootersOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $section_path when calling getHeaderFootersOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{sectionPath}/headersfooters';
+        $resourcePath = '/words/online/get/{sectionPath}/headersfooters';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

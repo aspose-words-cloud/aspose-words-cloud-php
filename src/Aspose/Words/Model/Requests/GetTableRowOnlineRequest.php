@@ -188,7 +188,7 @@ class GetTableRowOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableRowOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{tablePath}/rows/{index}';
+        $resourcePath = '/words/online/get/{tablePath}/rows/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

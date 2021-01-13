@@ -260,7 +260,7 @@ class RenderTableOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderTableOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/tables/{index}/render';
+        $resourcePath = '/words/online/get/{nodePath}/tables/{index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

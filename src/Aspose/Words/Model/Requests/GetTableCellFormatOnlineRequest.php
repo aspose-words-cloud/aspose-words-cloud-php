@@ -188,7 +188,7 @@ class GetTableCellFormatOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCellFormatOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{tableRowPath}/cells/{index}/cellformat';
+        $resourcePath = '/words/online/get/{tableRowPath}/cells/{index}/cellformat';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

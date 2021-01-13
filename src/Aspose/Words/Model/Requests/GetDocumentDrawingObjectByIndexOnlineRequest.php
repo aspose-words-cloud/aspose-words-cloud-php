@@ -185,7 +185,7 @@ class GetDocumentDrawingObjectByIndexOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectByIndexOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/drawingObjects/{index}';
+        $resourcePath = '/words/online/get/{nodePath}/drawingObjects/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

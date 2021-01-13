@@ -158,7 +158,7 @@ class GetOfficeMathObjectsOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getOfficeMathObjectsOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/OfficeMathObjects';
+        $resourcePath = '/words/online/get/{nodePath}/OfficeMathObjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -257,7 +257,7 @@ class DeleteBorderOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling deleteBorderOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{nodePath}/borders/{borderType}';
+        $resourcePath = '/words/online/delete/{nodePath}/borders/{borderType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

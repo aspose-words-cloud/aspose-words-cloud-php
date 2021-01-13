@@ -185,7 +185,7 @@ class GetBorderOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling getBorderOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/borders/{borderType}';
+        $resourcePath = '/words/online/get/{nodePath}/borders/{borderType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

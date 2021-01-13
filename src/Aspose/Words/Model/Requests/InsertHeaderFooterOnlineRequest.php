@@ -260,7 +260,7 @@ class InsertHeaderFooterOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $header_footer_type when calling insertHeaderFooterOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{sectionPath}/headersfooters';
+        $resourcePath = '/words/online/put/{sectionPath}/headersfooters';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

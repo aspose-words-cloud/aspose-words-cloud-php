@@ -260,7 +260,7 @@ class InsertTableCellOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $cell when calling insertTableCellOnline');
         }
 
-        $resourcePath = '/words/online/post/{name}/{tableRowPath}/cells';
+        $resourcePath = '/words/online/post/{tableRowPath}/cells';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

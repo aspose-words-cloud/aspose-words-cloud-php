@@ -185,7 +185,7 @@ class GetParagraphOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/paragraphs/{index}';
+        $resourcePath = '/words/online/get/{nodePath}/paragraphs/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

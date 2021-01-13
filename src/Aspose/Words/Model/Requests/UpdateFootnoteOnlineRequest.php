@@ -284,7 +284,7 @@ class UpdateFootnoteOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFootnoteOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{nodePath}/footnotes/{index}';
+        $resourcePath = '/words/online/put/{nodePath}/footnotes/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

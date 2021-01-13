@@ -158,7 +158,7 @@ class GetFootnotesOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getFootnotesOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/footnotes';
+        $resourcePath = '/words/online/get/{nodePath}/footnotes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

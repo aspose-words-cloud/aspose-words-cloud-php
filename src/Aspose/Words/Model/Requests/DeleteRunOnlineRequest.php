@@ -260,7 +260,7 @@ class DeleteRunOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteRunOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{paragraphPath}/runs/{index}';
+        $resourcePath = '/words/online/delete/{paragraphPath}/runs/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

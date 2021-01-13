@@ -158,7 +158,7 @@ class GetParagraphsOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getParagraphsOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/paragraphs';
+        $resourcePath = '/words/online/get/{nodePath}/paragraphs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -185,7 +185,7 @@ class GetFormFieldOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getFormFieldOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/formfields/{index}';
+        $resourcePath = '/words/online/get/{nodePath}/formfields/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

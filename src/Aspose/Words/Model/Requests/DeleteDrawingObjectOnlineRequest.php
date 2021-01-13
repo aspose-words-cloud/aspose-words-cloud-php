@@ -257,7 +257,7 @@ class DeleteDrawingObjectOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteDrawingObjectOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{nodePath}/drawingObjects/{index}';
+        $resourcePath = '/words/online/delete/{nodePath}/drawingObjects/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

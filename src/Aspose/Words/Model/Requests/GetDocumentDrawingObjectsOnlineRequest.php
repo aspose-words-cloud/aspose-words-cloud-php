@@ -158,7 +158,7 @@ class GetDocumentDrawingObjectsOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getDocumentDrawingObjectsOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/drawingObjects';
+        $resourcePath = '/words/online/get/{nodePath}/drawingObjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

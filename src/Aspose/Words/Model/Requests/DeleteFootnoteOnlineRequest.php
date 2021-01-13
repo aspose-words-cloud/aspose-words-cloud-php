@@ -257,7 +257,7 @@ class DeleteFootnoteOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFootnoteOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{nodePath}/footnotes/{index}';
+        $resourcePath = '/words/online/delete/{nodePath}/footnotes/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

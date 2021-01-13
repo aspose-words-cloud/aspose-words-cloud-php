@@ -260,7 +260,7 @@ class RenderMathObjectOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderMathObjectOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/OfficeMathObjects/{index}/render';
+        $resourcePath = '/words/online/get/{nodePath}/OfficeMathObjects/{index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

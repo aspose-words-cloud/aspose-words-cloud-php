@@ -284,7 +284,7 @@ class UpdateTablePropertiesOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTablePropertiesOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{nodePath}/tables/{index}/properties';
+        $resourcePath = '/words/online/put/{nodePath}/tables/{index}/properties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

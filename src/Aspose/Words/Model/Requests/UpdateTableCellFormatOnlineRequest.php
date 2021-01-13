@@ -287,7 +287,7 @@ class UpdateTableCellFormatOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableCellFormatOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{tableRowPath}/cells/{index}/cellformat';
+        $resourcePath = '/words/online/put/{tableRowPath}/cells/{index}/cellformat';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

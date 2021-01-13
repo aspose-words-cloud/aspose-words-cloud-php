@@ -281,7 +281,7 @@ class InsertFieldOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $field when calling insertFieldOnline');
         }
 
-        $resourcePath = '/words/online/post/{name}/{nodePath}/fields';
+        $resourcePath = '/words/online/post/{nodePath}/fields';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

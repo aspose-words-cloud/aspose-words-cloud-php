@@ -236,7 +236,7 @@ class InsertOrUpdateParagraphTabStopOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling insertOrUpdateParagraphTabStopOnline');
         }
 
-        $resourcePath = '/words/online/post/{name}/{nodePath}/paragraphs/{index}/tabstops';
+        $resourcePath = '/words/online/post/{nodePath}/paragraphs/{index}/tabstops';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

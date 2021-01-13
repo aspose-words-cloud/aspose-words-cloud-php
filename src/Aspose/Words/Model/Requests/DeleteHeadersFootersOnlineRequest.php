@@ -257,7 +257,7 @@ class DeleteHeadersFootersOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $section_path when calling deleteHeadersFootersOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{sectionPath}/headersfooters';
+        $resourcePath = '/words/online/delete/{sectionPath}/headersfooters';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

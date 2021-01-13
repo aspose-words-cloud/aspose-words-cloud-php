@@ -311,7 +311,7 @@ class UpdateDrawingObjectOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateDrawingObjectOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{nodePath}/drawingObjects/{index}';
+        $resourcePath = '/words/online/put/{nodePath}/drawingObjects/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

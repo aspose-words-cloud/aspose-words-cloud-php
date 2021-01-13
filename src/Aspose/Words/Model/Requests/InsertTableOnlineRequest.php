@@ -257,7 +257,7 @@ class InsertTableOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $table when calling insertTableOnline');
         }
 
-        $resourcePath = '/words/online/post/{name}/{nodePath}/tables';
+        $resourcePath = '/words/online/post/{nodePath}/tables';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

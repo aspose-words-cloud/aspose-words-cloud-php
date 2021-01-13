@@ -284,7 +284,7 @@ class UpdateFieldOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFieldOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{nodePath}/fields/{index}';
+        $resourcePath = '/words/online/put/{nodePath}/fields/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -260,7 +260,7 @@ class DeleteTableCellOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableCellOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{tableRowPath}/cells/{index}';
+        $resourcePath = '/words/online/delete/{tableRowPath}/cells/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

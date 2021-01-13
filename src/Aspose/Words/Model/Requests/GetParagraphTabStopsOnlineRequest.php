@@ -185,7 +185,7 @@ class GetParagraphTabStopsOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphTabStopsOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/paragraphs/{index}/tabstops';
+        $resourcePath = '/words/online/get/{nodePath}/paragraphs/{index}/tabstops';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -188,7 +188,7 @@ class GetTableRowFormatOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableRowFormatOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{tablePath}/rows/{index}/rowformat';
+        $resourcePath = '/words/online/get/{tablePath}/rows/{index}/rowformat';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -284,7 +284,7 @@ class InsertRunOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $run when calling insertRunOnline');
         }
 
-        $resourcePath = '/words/online/post/{name}/{paragraphPath}/runs';
+        $resourcePath = '/words/online/post/{paragraphPath}/runs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

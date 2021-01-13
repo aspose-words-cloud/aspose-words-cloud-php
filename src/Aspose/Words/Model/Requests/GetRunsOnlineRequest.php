@@ -161,7 +161,7 @@ class GetRunsOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling getRunsOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{paragraphPath}/runs';
+        $resourcePath = '/words/online/get/{paragraphPath}/runs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

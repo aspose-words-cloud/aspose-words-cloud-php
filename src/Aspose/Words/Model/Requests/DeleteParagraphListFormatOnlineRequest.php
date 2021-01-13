@@ -257,7 +257,7 @@ class DeleteParagraphListFormatOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteParagraphListFormatOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{nodePath}/paragraphs/{index}/listFormat';
+        $resourcePath = '/words/online/delete/{nodePath}/paragraphs/{index}/listFormat';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

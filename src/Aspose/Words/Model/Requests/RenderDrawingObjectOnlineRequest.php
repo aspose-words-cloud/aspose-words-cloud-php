@@ -260,7 +260,7 @@ class RenderDrawingObjectOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderDrawingObjectOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/drawingObjects/{index}/render';
+        $resourcePath = '/words/online/get/{nodePath}/drawingObjects/{index}/render';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

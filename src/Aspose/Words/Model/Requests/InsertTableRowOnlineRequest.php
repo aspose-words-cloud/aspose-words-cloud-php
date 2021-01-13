@@ -260,7 +260,7 @@ class InsertTableRowOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $row when calling insertTableRowOnline');
         }
 
-        $resourcePath = '/words/online/post/{name}/{tablePath}/rows';
+        $resourcePath = '/words/online/post/{tablePath}/rows';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

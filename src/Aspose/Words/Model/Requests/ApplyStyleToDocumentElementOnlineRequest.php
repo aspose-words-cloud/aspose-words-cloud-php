@@ -260,7 +260,7 @@ class ApplyStyleToDocumentElementOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $style_apply when calling applyStyleToDocumentElementOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{styledNodePath}/style';
+        $resourcePath = '/words/online/put/{styledNodePath}/style';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

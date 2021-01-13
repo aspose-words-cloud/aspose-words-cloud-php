@@ -284,7 +284,7 @@ class UpdateParagraphFormatOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateParagraphFormatOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{nodePath}/paragraphs/{index}/format';
+        $resourcePath = '/words/online/put/{nodePath}/paragraphs/{index}/format';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

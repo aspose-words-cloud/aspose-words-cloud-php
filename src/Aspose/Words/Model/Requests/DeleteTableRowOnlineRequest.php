@@ -260,7 +260,7 @@ class DeleteTableRowOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableRowOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{tablePath}/rows/{index}';
+        $resourcePath = '/words/online/delete/{tablePath}/rows/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

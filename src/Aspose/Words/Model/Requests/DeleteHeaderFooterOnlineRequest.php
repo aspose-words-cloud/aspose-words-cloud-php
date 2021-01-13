@@ -260,7 +260,7 @@ class DeleteHeaderFooterOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteHeaderFooterOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{sectionPath}/headersfooters/{index}';
+        $resourcePath = '/words/online/delete/{sectionPath}/headersfooters/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

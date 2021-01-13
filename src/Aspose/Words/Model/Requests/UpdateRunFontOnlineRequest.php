@@ -287,7 +287,7 @@ class UpdateRunFontOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRunFontOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{paragraphPath}/runs/{index}/font';
+        $resourcePath = '/words/online/put/{paragraphPath}/runs/{index}/font';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

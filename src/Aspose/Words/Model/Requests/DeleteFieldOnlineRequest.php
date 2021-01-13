@@ -257,7 +257,7 @@ class DeleteFieldOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFieldOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{nodePath}/fields/{index}';
+        $resourcePath = '/words/online/delete/{nodePath}/fields/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

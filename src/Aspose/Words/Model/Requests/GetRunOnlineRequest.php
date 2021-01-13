@@ -188,7 +188,7 @@ class GetRunOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getRunOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{paragraphPath}/runs/{index}';
+        $resourcePath = '/words/online/get/{paragraphPath}/runs/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

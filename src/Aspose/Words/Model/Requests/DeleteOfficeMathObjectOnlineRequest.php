@@ -257,7 +257,7 @@ class DeleteOfficeMathObjectOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteOfficeMathObjectOnline');
         }
 
-        $resourcePath = '/words/online/delete/{name}/{nodePath}/OfficeMathObjects/{index}';
+        $resourcePath = '/words/online/delete/{nodePath}/OfficeMathObjects/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

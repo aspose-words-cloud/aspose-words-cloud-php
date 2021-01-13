@@ -161,7 +161,7 @@ class GetStyleFromDocumentElementOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $styled_node_path when calling getStyleFromDocumentElementOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{styledNodePath}/style';
+        $resourcePath = '/words/online/get/{styledNodePath}/style';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

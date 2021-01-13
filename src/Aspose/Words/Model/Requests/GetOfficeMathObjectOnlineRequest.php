@@ -185,7 +185,7 @@ class GetOfficeMathObjectOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getOfficeMathObjectOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/OfficeMathObjects/{index}';
+        $resourcePath = '/words/online/get/{nodePath}/OfficeMathObjects/{index}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

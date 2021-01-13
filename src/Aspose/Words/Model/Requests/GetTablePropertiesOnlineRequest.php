@@ -185,7 +185,7 @@ class GetTablePropertiesOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTablePropertiesOnline');
         }
 
-        $resourcePath = '/words/online/get/{name}/{nodePath}/tables/{index}/properties';
+        $resourcePath = '/words/online/get/{nodePath}/tables/{index}/properties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -284,7 +284,7 @@ class UpdateBorderOnlineRequest
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling updateBorderOnline');
         }
 
-        $resourcePath = '/words/online/put/{name}/{nodePath}/borders/{borderType}';
+        $resourcePath = '/words/online/put/{nodePath}/borders/{borderType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

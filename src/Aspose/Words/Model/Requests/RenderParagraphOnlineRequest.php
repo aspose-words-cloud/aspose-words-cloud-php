@@ -427,6 +427,6 @@ class RenderParagraphOnlineRequest
      */
     public function getResponseType()
     {
-        return 'RenderParagraphOnlineResponse';
+        return '\SplFileObject';
     }
 }

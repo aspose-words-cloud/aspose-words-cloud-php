@@ -1203,7 +1203,7 @@ class TableTests extends BaseTestContext
         );
 
         $result = $this->words->renderTableOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*

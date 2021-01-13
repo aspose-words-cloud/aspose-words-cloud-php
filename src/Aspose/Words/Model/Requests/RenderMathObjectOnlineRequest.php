@@ -427,6 +427,6 @@ class RenderMathObjectOnlineRequest
      */
     public function getResponseType()
     {
-        return 'RenderMathObjectOnlineResponse';
+        return '\SplFileObject';
     }
 }

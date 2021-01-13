@@ -427,6 +427,6 @@ class RenderTableOnlineRequest
      */
     public function getResponseType()
     {
-        return 'RenderTableOnlineResponse';
+        return '\SplFileObject';
     }
 }

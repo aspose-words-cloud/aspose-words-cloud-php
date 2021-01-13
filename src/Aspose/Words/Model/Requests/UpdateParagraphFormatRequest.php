@@ -474,7 +474,7 @@ class UpdateParagraphFormatRequest
         }
 
         $result = array();
-        $result['method'] = 'POST';
+        $result['method'] = 'PUT';
         $result['url'] = $resourcePath;
         $result['headers'] = $headerParams;
         $result['body'] = $httpBody;

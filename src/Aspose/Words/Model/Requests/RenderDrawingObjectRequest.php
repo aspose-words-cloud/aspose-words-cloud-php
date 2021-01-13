@@ -443,7 +443,7 @@ class RenderDrawingObjectRequest
         }
 
         $result = array();
-        $result['method'] = 'POST';
+        $result['method'] = 'GET';
         $result['url'] = $resourcePath;
         $result['headers'] = $headerParams;
         $result['body'] = $httpBody;

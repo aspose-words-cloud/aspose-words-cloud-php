@@ -427,6 +427,6 @@ class RenderDrawingObjectOnlineRequest
      */
     public function getResponseType()
     {
-        return 'RenderDrawingObjectOnlineResponse';
+        return '\SplFileObject';
     }
 }

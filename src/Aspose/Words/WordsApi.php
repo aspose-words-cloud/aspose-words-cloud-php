@@ -37606,7 +37606,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RenderDrawingObjectOnlineResponse
+     * @return \SplFileObject
      */
     public function renderDrawingObjectOnline(Requests\renderDrawingObjectOnlineRequest $request)
     {
@@ -37634,11 +37634,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RenderDrawingObjectOnlineResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
     private function renderDrawingObjectOnlineWithHttpInfo(Requests\renderDrawingObjectOnlineRequest $request)
     {
-        $returnType = 'RenderDrawingObjectOnlineResponse';
+        $returnType = '\SplFileObject';
         $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
@@ -37684,7 +37684,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RenderDrawingObjectOnlineResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -37724,7 +37724,7 @@ class WordsApi
      */
     private function renderDrawingObjectOnlineAsyncWithHttpInfo(Requests\renderDrawingObjectOnlineRequest $request) 
     {
-        $returnType = 'RenderDrawingObjectOnlineResponse';
+        $returnType = '\SplFileObject';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -37946,7 +37946,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RenderMathObjectOnlineResponse
+     * @return \SplFileObject
      */
     public function renderMathObjectOnline(Requests\renderMathObjectOnlineRequest $request)
     {
@@ -37974,11 +37974,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RenderMathObjectOnlineResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
     private function renderMathObjectOnlineWithHttpInfo(Requests\renderMathObjectOnlineRequest $request)
     {
-        $returnType = 'RenderMathObjectOnlineResponse';
+        $returnType = '\SplFileObject';
         $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
@@ -38024,7 +38024,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RenderMathObjectOnlineResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -38064,7 +38064,7 @@ class WordsApi
      */
     private function renderMathObjectOnlineAsyncWithHttpInfo(Requests\renderMathObjectOnlineRequest $request) 
     {
-        $returnType = 'RenderMathObjectOnlineResponse';
+        $returnType = '\SplFileObject';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -38626,7 +38626,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RenderParagraphOnlineResponse
+     * @return \SplFileObject
      */
     public function renderParagraphOnline(Requests\renderParagraphOnlineRequest $request)
     {
@@ -38654,11 +38654,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RenderParagraphOnlineResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
     private function renderParagraphOnlineWithHttpInfo(Requests\renderParagraphOnlineRequest $request)
     {
-        $returnType = 'RenderParagraphOnlineResponse';
+        $returnType = '\SplFileObject';
         $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
@@ -38704,7 +38704,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RenderParagraphOnlineResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -38744,7 +38744,7 @@ class WordsApi
      */
     private function renderParagraphOnlineAsyncWithHttpInfo(Requests\renderParagraphOnlineRequest $request) 
     {
-        $returnType = 'RenderParagraphOnlineResponse';
+        $returnType = '\SplFileObject';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -38966,7 +38966,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RenderTableOnlineResponse
+     * @return \SplFileObject
      */
     public function renderTableOnline(Requests\renderTableOnlineRequest $request)
     {
@@ -38994,11 +38994,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RenderTableOnlineResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
     private function renderTableOnlineWithHttpInfo(Requests\renderTableOnlineRequest $request)
     {
-        $returnType = 'RenderTableOnlineResponse';
+        $returnType = '\SplFileObject';
         $this->_checkAuthToken();
         $request = $request->createRequest($this->config);
 
@@ -39044,7 +39044,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RenderTableOnlineResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -39084,7 +39084,7 @@ class WordsApi
      */
     private function renderTableOnlineAsyncWithHttpInfo(Requests\renderTableOnlineRequest $request) 
     {
-        $returnType = 'RenderTableOnlineResponse';
+        $returnType = '\SplFileObject';
         $request = $request->createRequest($this->config);
 
         return $this->client

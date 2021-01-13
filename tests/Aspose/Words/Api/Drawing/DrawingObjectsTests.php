@@ -233,7 +233,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->renderDrawingObjectOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*

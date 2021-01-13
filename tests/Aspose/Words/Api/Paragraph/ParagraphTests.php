@@ -555,7 +555,7 @@ class ParagraphTests extends BaseTestContext
         );
 
         $result = $this->words->renderParagraphOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result, "Error occurred");
     }
 
     /*

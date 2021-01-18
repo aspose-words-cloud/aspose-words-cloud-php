@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentPropertyRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\GetDocumentPropertyResponse;
 
 /*
  * Request model for getDocumentProperty operation.
@@ -354,5 +355,10 @@ class GetDocumentPropertyRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\DocumentPropertyResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentPropertyResponse', []);
     }
 }

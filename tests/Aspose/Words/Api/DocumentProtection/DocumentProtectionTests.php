@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentProtectionTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -71,6 +71,28 @@ class DocumentProtectionTests extends BaseTestContext
     }
 
     /*
+     * Test for setting document protection.
+     */
+    public function testProtectDocumentOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+            "new_password" => "123",
+        ));
+        $request = new Requests\ProtectDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestProtectionRequest,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->protectDocumentOnline($request);
+        Assert::isTrue($result !== NULL);
+    }
+
+    /*
      * Test for getting document protection.
      */
     public function testGetDocumentProtection()
@@ -94,8 +116,23 @@ class DocumentProtectionTests extends BaseTestContext
 
         $result = $this->words->getDocumentProtection($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getProtectionData());
-        Assert::assertEquals("ReadOnly", $result->getProtectionData()->getProtectionType());
+    }
+
+    /*
+     * Test for getting document protection.
+     */
+    public function testGetDocumentProtectionOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentProtectionOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentProtectionOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -129,5 +166,27 @@ class DocumentProtectionTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getProtectionData());
         Assert::assertEquals("NoProtection", $result->getProtectionData()->getProtectionType());
+    }
+
+    /*
+     * Test for deleting unprotect document.
+     */
+    public function testDeleteUnprotectDocumentOnline()
+    {
+        $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
+
+        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+            "password" => "aspose",
+        ));
+        $request = new Requests\UnprotectDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFilePath,
+            $requestProtectionRequest,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->unprotectDocumentOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 }

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateFootnoteRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateFootnoteResponse;
 
 /*
  * Request model for updateFootnote operation.
@@ -48,14 +49,14 @@ class UpdateFootnoteRequest
     public $name;
 
     /*
-     * The properties of the footnote.
-     */
-    public $footnote_dto;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * Footnote data.
+     */
+    public $footnote_dto;
 
     /*
      * The path to the node in the document tree.
@@ -101,8 +102,8 @@ class UpdateFootnoteRequest
      * Initializes a new instance of the UpdateFootnoteRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\FootnoteUpdate $footnote_dto The properties of the footnote.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\FootnoteUpdate $footnote_dto Footnote data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -112,11 +113,11 @@ class UpdateFootnoteRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $footnote_dto, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $index, $footnote_dto, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->footnote_dto = $footnote_dto;
         $this->index = $index;
+        $this->footnote_dto = $footnote_dto;
         $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -145,23 +146,6 @@ class UpdateFootnoteRequest
     }
 
     /*
-     * The properties of the footnote.
-     */
-    public function get_footnote_dto()
-    {
-        return $this->footnote_dto;
-    }
-
-    /*
-     * The properties of the footnote.
-     */
-    public function set_footnote_dto($value)
-    {
-        $this->footnote_dto = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -175,6 +159,23 @@ class UpdateFootnoteRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * Footnote data.
+     */
+    public function get_footnote_dto()
+    {
+        return $this->footnote_dto;
+    }
+
+    /*
+     * Footnote data.
+     */
+    public function set_footnote_dto($value)
+    {
+        $this->footnote_dto = $value;
         return $this;
     }
 
@@ -325,11 +326,11 @@ class UpdateFootnoteRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateFootnote');
         }
-        if ($this->footnote_dto === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling updateFootnote');
-        }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFootnote');
+        }
+        if ($this->footnote_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling updateFootnote');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
@@ -523,5 +524,10 @@ class UpdateFootnoteRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\FootnoteResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FootnoteResponse', []);
     }
 }

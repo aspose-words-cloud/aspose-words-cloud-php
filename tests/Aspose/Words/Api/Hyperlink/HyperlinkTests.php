@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HyperlinkTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,6 +66,24 @@ class HyperlinkTests extends BaseTestContext
     }
 
     /*
+     * Test for getting hyperlink by specified index online.
+     */
+    public function testGetDocumentHyperlinkByIndexOnline()
+    {
+        $localFile = "Common/test_doc.docx";
+
+        $request = new Requests\GetDocumentHyperlinkByIndexOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            0,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentHyperlinkByIndexOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting hyperlinks.
      */
     public function testGetDocumentHyperlinks()
@@ -93,5 +111,22 @@ class HyperlinkTests extends BaseTestContext
         Assert::assertNotNull($result->getHyperlinks()->getHyperlinkList());
         Assert::assertCount(2, $result->getHyperlinks()->getHyperlinkList());
         Assert::assertEquals("Aspose", $result->getHyperlinks()->getHyperlinkList()[0]->getDisplayText());
+    }
+
+    /*
+     * Test for getting hyperlinks online.
+     */
+    public function testGetDocumentHyperlinksOnline()
+    {
+        $localFile = "Common/test_doc.docx";
+
+        $request = new Requests\GetDocumentHyperlinksOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentHyperlinksOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

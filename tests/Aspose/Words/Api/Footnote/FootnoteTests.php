@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FootnoteTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -75,6 +75,32 @@ class FootnoteTests extends BaseTestContext
     }
 
     /*
+     * Test for adding footnote online.
+     */
+    public function testInsertFootnoteOnline()
+    {
+        $footnoteFolder = "DocumentElements/Footnotes";
+
+        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+            "footnote_type" => "Endnote",
+            "text" => "test endnote",
+        ));
+        $request = new Requests\InsertFootnoteOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            $requestFootnoteDto,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertFootnoteOnline($request);
+        Assert::isTrue($result !== NULL);
+    }
+
+    /*
      * Test for adding footnote without node path.
      */
     public function testInsertFootnoteWithoutNodePath()
@@ -143,6 +169,28 @@ class FootnoteTests extends BaseTestContext
     }
 
     /*
+     * Test for deleting footnote online.
+     */
+    public function testDeleteFootnoteOnline()
+    {
+        $footnoteFolder = "DocumentElements/Footnotes";
+
+        $request = new Requests\DeleteFootnoteOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteFootnoteOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
      * Test for deleting footnote without node path.
      */
     public function testDeleteFootnoteWithoutNodePath()
@@ -201,6 +249,24 @@ class FootnoteTests extends BaseTestContext
         Assert::assertNotNull($result->getFootnotes()->getList());
         Assert::assertCount(6, $result->getFootnotes()->getList());
         Assert::assertEquals(" Footnote 1." . "\r\n", $result->getFootnotes()->getList()[0]->getText());
+    }
+
+    /*
+     * Test for getting footnotes online.
+     */
+    public function testGetFootnotesOnline()
+    {
+        $footnoteFolder = "DocumentElements/Footnotes";
+
+        $request = new Requests\GetFootnotesOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getFootnotesOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -265,6 +331,25 @@ class FootnoteTests extends BaseTestContext
     }
 
     /*
+     * Test for getting footnote online.
+     */
+    public function testGetFootnoteOnline()
+    {
+        $footnoteFolder = "DocumentElements/Footnotes";
+
+        $request = new Requests\GetFootnoteOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            0,
+            "",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getFootnoteOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting footnote without node path.
      */
     public function testGetFootnoteWithoutNodePath()
@@ -313,8 +398,8 @@ class FootnoteTests extends BaseTestContext
         ));
         $request = new Requests\UpdateFootnoteRequest(
             $remoteFileName,
-            $requestFootnoteDto,
             0,
+            $requestFootnoteDto,
             "",
             $remoteDataFolder,
             NULL,
@@ -329,6 +414,32 @@ class FootnoteTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFootnote());
         Assert::assertEquals(" new text is here" . "\r\n", $result->getFootnote()->getText());
+    }
+
+    /*
+     * Test for updating footnote online.
+     */
+    public function testUpdateFootnoteOnline()
+    {
+        $footnoteFolder = "DocumentElements/Footnotes";
+
+        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
+            "text" => "new text is here",
+        ));
+        $request = new Requests\UpdateFootnoteOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            $requestFootnoteDto,
+            0,
+            "",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateFootnoteOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -350,8 +461,8 @@ class FootnoteTests extends BaseTestContext
         ));
         $request = new Requests\UpdateFootnoteRequest(
             $remoteFileName,
-            $requestFootnoteDto,
             0,
+            $requestFootnoteDto,
             NULL,
             $remoteDataFolder,
             NULL,

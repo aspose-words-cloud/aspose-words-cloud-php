@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CompatibilityTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,5 +66,29 @@ class CompatibilityTests extends BaseTestContext
         );
 
     $this->words->optimizeDocument($request);
+    }
+
+    /*
+     * Test for optimize document to specific MS Word version.
+     */
+    public function testOptimizeDocumentOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestOptions = new \Aspose\Words\Model\OptimizationOptions(array(
+            "ms_word_version" => "Word2002",
+        ));
+        $request = new Requests\OptimizeDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestOptions,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->optimizeDocumentOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

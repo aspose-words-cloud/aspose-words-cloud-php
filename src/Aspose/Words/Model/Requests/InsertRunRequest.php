@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertRunRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertRunResponse;
 
 /*
  * Request model for insertRun operation.
@@ -53,7 +54,7 @@ class InsertRunRequest
     public $paragraph_path;
 
     /*
-     * The properties of the Run object.
+     * Run data.
      */
     public $run;
 
@@ -102,7 +103,7 @@ class InsertRunRequest
      *
      * @param string $name The filename of the input document.
      * @param string $paragraph_path The path to the paragraph in the document tree.
-     * @param \Aspose\Words\Model\RunInsert $run The properties of the Run object.
+     * @param \Aspose\Words\Model\RunInsert $run Run data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -162,7 +163,7 @@ class InsertRunRequest
     }
 
     /*
-     * The properties of the Run object.
+     * Run data.
      */
     public function get_run()
     {
@@ -170,7 +171,7 @@ class InsertRunRequest
     }
 
     /*
-     * The properties of the Run object.
+     * Run data.
      */
     public function set_run($value)
     {
@@ -524,5 +525,10 @@ class InsertRunRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\RunResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\RunResponse', []);
     }
 }

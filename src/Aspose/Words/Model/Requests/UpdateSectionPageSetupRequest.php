@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateSectionPageSetupRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateSectionPageSetupResponse;
 
 /*
  * Request model for updateSectionPageSetup operation.
@@ -53,7 +54,7 @@ class UpdateSectionPageSetupRequest
     public $section_index;
 
     /*
-     * The properties of the page setup.
+     * Page setup properties dto.
      */
     public $page_setup;
 
@@ -97,7 +98,7 @@ class UpdateSectionPageSetupRequest
      *
      * @param string $name The filename of the input document.
      * @param int $section_index The index of the section.
-     * @param \Aspose\Words\Model\PageSetup $page_setup The properties of the page setup.
+     * @param \Aspose\Words\Model\PageSetup $page_setup Page setup properties dto.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -155,7 +156,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * The properties of the page setup.
+     * Page setup properties dto.
      */
     public function get_page_setup()
     {
@@ -163,7 +164,7 @@ class UpdateSectionPageSetupRequest
     }
 
     /*
-     * The properties of the page setup.
+     * Page setup properties dto.
      */
     public function set_page_setup($value)
     {
@@ -490,5 +491,10 @@ class UpdateSectionPageSetupRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\SectionPageSetupResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SectionPageSetupResponse', []);
     }
 }

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReplaceWithTextRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\ReplaceWithTextResponse;
 
 /*
  * Request model for replaceWithText operation.
@@ -53,7 +54,7 @@ class ReplaceWithTextRequest
     public $range_start_identifier;
 
     /*
-     * The text replacement properties.
+     * Model with text for replacement.
      */
     public $range_text;
 
@@ -92,7 +93,7 @@ class ReplaceWithTextRequest
      *
      * @param string $name The filename of the input document.
      * @param string $range_start_identifier The range start identifier.
-     * @param \Aspose\Words\Model\ReplaceRange $range_text The text replacement properties.
+     * @param \Aspose\Words\Model\ReplaceRange $range_text Model with text for replacement.
      * @param string $range_end_identifier The range end identifier.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -148,7 +149,7 @@ class ReplaceWithTextRequest
     }
 
     /*
-     * The text replacement properties.
+     * Model with text for replacement.
      */
     public function get_range_text()
     {
@@ -156,7 +157,7 @@ class ReplaceWithTextRequest
     }
 
     /*
-     * The text replacement properties.
+     * Model with text for replacement.
      */
     public function set_range_text($value)
     {
@@ -455,5 +456,10 @@ class ReplaceWithTextRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\DocumentResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
     }
 }

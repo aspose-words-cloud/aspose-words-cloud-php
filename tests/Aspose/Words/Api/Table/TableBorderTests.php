@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableBorderTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -69,6 +69,24 @@ class TableBorderTests extends BaseTestContext
     }
 
     /*
+     * Test for getting borders online.
+     */
+    public function testGetBordersOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetBordersOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getBordersOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting border.
      */
     public function testGetBorder()
@@ -100,6 +118,25 @@ class TableBorderTests extends BaseTestContext
     }
 
     /*
+     * Test for getting border online.
+     */
+    public function testGetBorderOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\GetBorderOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "left",
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getBorderOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for deleting borders.
      */
     public function testDeleteBorders()
@@ -127,11 +164,27 @@ class TableBorderTests extends BaseTestContext
 
         $result = $this->words->deleteBorders($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getBorders());
-        Assert::assertNotNull($result->getBorders()->getList());
-        Assert::assertCount(6, $result->getBorders()->getList());
-        Assert::assertNotNull($result->getBorders()->getList()[0]->getColor());
-        Assert::assertEquals("", $result->getBorders()->getList()[0]->getColor()->getWeb());
+    }
+
+    /*
+     * Test for deleting borders online.
+     */
+    public function testDeleteBordersOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\DeleteBordersOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteBordersOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -163,9 +216,28 @@ class TableBorderTests extends BaseTestContext
 
         $result = $this->words->deleteBorder($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getBorder());
-        Assert::assertNotNull($result->getBorder()->getColor());
-        Assert::assertEquals("", $result->getBorder()->getColor()->getWeb());
+    }
+
+    /*
+     * Test for deleting border online.
+     */
+    public function testDeleteBorderOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $request = new Requests\DeleteBorderOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "left",
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteBorderOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -195,8 +267,8 @@ class TableBorderTests extends BaseTestContext
         ));
         $request = new Requests\UpdateBorderRequest(
             $remoteFileName,
-            $requestBorderProperties,
             "left",
+            $requestBorderProperties,
             "tables/1/rows/0/cells/0",
             $remoteDataFolder,
             NULL,
@@ -215,5 +287,39 @@ class TableBorderTests extends BaseTestContext
         Assert::assertEquals(6.0, $result->getBorder()->getDistanceFromText());
         Assert::assertEquals(2.0, $result->getBorder()->getLineWidth());
         Assert::assertTrue($result->getBorder()->getShadow());
+    }
+
+    /*
+     * Test for updating border online.
+     */
+    public function testUpdateBorderOnline()
+    {
+        $localFile = "DocumentElements/Tables/TablesGet.docx";
+
+        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
+            "web" => "#AABBCC",
+        ));
+        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
+            "border_type" => "Left",
+            "color" => $requestBorderPropertiesColor,
+            "distance_from_text" => 6,
+            "line_style" => "DashDotStroker",
+            "line_width" => 2,
+            "shadow" => true,
+        ));
+        $request = new Requests\UpdateBorderOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestBorderProperties,
+            "left",
+            "tables/1/rows/0/cells/0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateBorderOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 }

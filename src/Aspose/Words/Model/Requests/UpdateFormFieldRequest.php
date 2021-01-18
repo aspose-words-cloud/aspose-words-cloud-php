@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateFormFieldRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateFormFieldResponse;
 
 /*
  * Request model for updateFormField operation.
@@ -48,14 +49,14 @@ class UpdateFormFieldRequest
     public $name;
 
     /*
-     * The new form field properties.
-     */
-    public $form_field;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * From field data.
+     */
+    public $form_field;
 
     /*
      * The path to the node in the document tree.
@@ -101,8 +102,8 @@ class UpdateFormFieldRequest
      * Initializes a new instance of the UpdateFormFieldRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\FormField $form_field The new form field properties.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\FormField $form_field From field data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -112,11 +113,11 @@ class UpdateFormFieldRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $form_field, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $index, $form_field, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->form_field = $form_field;
         $this->index = $index;
+        $this->form_field = $form_field;
         $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -145,23 +146,6 @@ class UpdateFormFieldRequest
     }
 
     /*
-     * The new form field properties.
-     */
-    public function get_form_field()
-    {
-        return $this->form_field;
-    }
-
-    /*
-     * The new form field properties.
-     */
-    public function set_form_field($value)
-    {
-        $this->form_field = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -175,6 +159,23 @@ class UpdateFormFieldRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * From field data.
+     */
+    public function get_form_field()
+    {
+        return $this->form_field;
+    }
+
+    /*
+     * From field data.
+     */
+    public function set_form_field($value)
+    {
+        $this->form_field = $value;
         return $this;
     }
 
@@ -325,11 +326,11 @@ class UpdateFormFieldRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateFormField');
         }
-        if ($this->form_field === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $form_field when calling updateFormField');
-        }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFormField');
+        }
+        if ($this->form_field === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $form_field when calling updateFormField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/formfields/{index}';
@@ -523,5 +524,10 @@ class UpdateFormFieldRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\FormFieldResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FormFieldResponse', []);
     }
 }

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateTablePropertiesRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateTablePropertiesResponse;
 
 /*
  * Request model for updateTableProperties operation.
@@ -48,14 +49,14 @@ class UpdateTablePropertiesRequest
     public $name;
 
     /*
-     * The properties of the table.
-     */
-    public $properties;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * The properties.
+     */
+    public $properties;
 
     /*
      * The path to the node in the document tree.
@@ -101,8 +102,8 @@ class UpdateTablePropertiesRequest
      * Initializes a new instance of the UpdateTablePropertiesRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\TableProperties $properties The properties of the table.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\TableProperties $properties The properties.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -112,11 +113,11 @@ class UpdateTablePropertiesRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $properties, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $index, $properties, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->properties = $properties;
         $this->index = $index;
+        $this->properties = $properties;
         $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -145,23 +146,6 @@ class UpdateTablePropertiesRequest
     }
 
     /*
-     * The properties of the table.
-     */
-    public function get_properties()
-    {
-        return $this->properties;
-    }
-
-    /*
-     * The properties of the table.
-     */
-    public function set_properties($value)
-    {
-        $this->properties = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -175,6 +159,23 @@ class UpdateTablePropertiesRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * The properties.
+     */
+    public function get_properties()
+    {
+        return $this->properties;
+    }
+
+    /*
+     * The properties.
+     */
+    public function set_properties($value)
+    {
+        $this->properties = $value;
         return $this;
     }
 
@@ -325,11 +326,11 @@ class UpdateTablePropertiesRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableProperties');
         }
-        if ($this->properties === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $properties when calling updateTableProperties');
-        }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableProperties');
+        }
+        if ($this->properties === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $properties when calling updateTableProperties');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/tables/{index}/properties';
@@ -523,5 +524,10 @@ class UpdateTablePropertiesRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\TablePropertiesResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TablePropertiesResponse', []);
     }
 }

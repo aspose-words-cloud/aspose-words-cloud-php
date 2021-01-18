@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateRunRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateRunResponse;
 
 /*
  * Request model for updateRun operation.
@@ -48,11 +49,6 @@ class UpdateRunRequest
     public $name;
 
     /*
-     * The properties of the Run object.
-     */
-    public $run;
-
-    /*
      * The path to the paragraph in the document tree.
      */
     public $paragraph_path;
@@ -61,6 +57,11 @@ class UpdateRunRequest
      * Object index.
      */
     public $index;
+
+    /*
+     * Run data.
+     */
+    public $run;
 
     /*
      * Original document folder.
@@ -101,9 +102,9 @@ class UpdateRunRequest
      * Initializes a new instance of the UpdateRunRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\RunUpdate $run The properties of the Run object.
      * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\RunUpdate $run Run data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -112,12 +113,12 @@ class UpdateRunRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $run, $paragraph_path, $index, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $paragraph_path, $index, $run, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->run = $run;
         $this->paragraph_path = $paragraph_path;
         $this->index = $index;
+        $this->run = $run;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -141,23 +142,6 @@ class UpdateRunRequest
     public function set_name($value)
     {
         $this->name = $value;
-        return $this;
-    }
-
-    /*
-     * The properties of the Run object.
-     */
-    public function get_run()
-    {
-        return $this->run;
-    }
-
-    /*
-     * The properties of the Run object.
-     */
-    public function set_run($value)
-    {
-        $this->run = $value;
         return $this;
     }
 
@@ -192,6 +176,23 @@ class UpdateRunRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * Run data.
+     */
+    public function get_run()
+    {
+        return $this->run;
+    }
+
+    /*
+     * Run data.
+     */
+    public function set_run($value)
+    {
+        $this->run = $value;
         return $this;
     }
 
@@ -325,14 +326,14 @@ class UpdateRunRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateRun');
         }
-        if ($this->run === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $run when calling updateRun');
-        }
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling updateRun');
         }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRun');
+        }
+        if ($this->run === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $run when calling updateRun');
         }
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}';
@@ -526,5 +527,10 @@ class UpdateRunRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\RunResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\RunResponse', []);
     }
 }

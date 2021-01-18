@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateParagraphListFormatRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateParagraphListFormatResponse;
 
 /*
  * Request model for updateParagraphListFormat operation.
@@ -48,14 +49,14 @@ class UpdateParagraphListFormatRequest
     public $name;
 
     /*
-     * The formatting properties of a paragraph list.
-     */
-    public $dto;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * ListFormatUpdate dto.
+     */
+    public $list_format_dto;
 
     /*
      * The path to the node in the document tree.
@@ -101,8 +102,8 @@ class UpdateParagraphListFormatRequest
      * Initializes a new instance of the UpdateParagraphListFormatRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ListFormatUpdate $dto The formatting properties of a paragraph list.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\ListFormatUpdate $list_format_dto ListFormatUpdate dto.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -112,11 +113,11 @@ class UpdateParagraphListFormatRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $dto, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $index, $list_format_dto, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->dto = $dto;
         $this->index = $index;
+        $this->list_format_dto = $list_format_dto;
         $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -145,23 +146,6 @@ class UpdateParagraphListFormatRequest
     }
 
     /*
-     * The formatting properties of a paragraph list.
-     */
-    public function get_dto()
-    {
-        return $this->dto;
-    }
-
-    /*
-     * The formatting properties of a paragraph list.
-     */
-    public function set_dto($value)
-    {
-        $this->dto = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -175,6 +159,23 @@ class UpdateParagraphListFormatRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * ListFormatUpdate dto.
+     */
+    public function get_list_format_dto()
+    {
+        return $this->list_format_dto;
+    }
+
+    /*
+     * ListFormatUpdate dto.
+     */
+    public function set_list_format_dto($value)
+    {
+        $this->list_format_dto = $value;
         return $this;
     }
 
@@ -325,11 +326,11 @@ class UpdateParagraphListFormatRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateParagraphListFormat');
         }
-        if ($this->dto === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $dto when calling updateParagraphListFormat');
-        }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateParagraphListFormat');
+        }
+        if ($this->list_format_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $list_format_dto when calling updateParagraphListFormat');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/listFormat';
@@ -443,11 +444,11 @@ class UpdateParagraphListFormatRequest
 
         // body params
         $_tempBody = null;
-        if (isset($this->dto)) {
-            if (is_string($this->dto)) {
-                $_tempBody = ['content' => "\"" . $this->dto . "\"", 'mime' => 'application/json'];
+        if (isset($this->list_format_dto)) {
+            if (is_string($this->list_format_dto)) {
+                $_tempBody = ['content' => "\"" . $this->list_format_dto . "\"", 'mime' => 'application/json'];
             } else {
-                $_tempBody = ['content' => $this->dto, 'mime' => 'application/json'];
+                $_tempBody = ['content' => $this->list_format_dto, 'mime' => 'application/json'];
             }
         }
         $headerParams = [];
@@ -523,5 +524,10 @@ class UpdateParagraphListFormatRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\ParagraphListFormatResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphListFormatResponse', []);
     }
 }

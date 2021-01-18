@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BookmarkTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -60,9 +60,23 @@ class BookmarkTests extends BaseTestContext
 
         $result = $this->words->getBookmarks($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getBookmarks());
-        Assert::assertCount(3, $result->getBookmarks()->getBookmarkList());
-        Assert::assertEquals("aspose", $result->getBookmarks()->getBookmarkList()[1]->getName());
+    }
+
+    /*
+     * Test for getting bookmarks from document online.
+     */
+    public function testGetBookmarksOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetBookmarksOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getBookmarksOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -72,8 +86,8 @@ class BookmarkTests extends BaseTestContext
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Bookmarks";
         $localFile = "Common/test_multi_pages.docx";
-        $remoteFileName = "TestGetDocumentBookmarkByName.docx";
         $bookmarkName = "aspose";
+        $remoteFileName = "TestGetDocumentBookmarkByName.docx";
 
         $this->uploadFile(
             realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
@@ -91,8 +105,25 @@ class BookmarkTests extends BaseTestContext
 
         $result = $this->words->getBookmarkByName($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getBookmark());
-        Assert::assertEquals($bookmarkName, $result->getBookmark()->getName());
+    }
+
+    /*
+     * Test for getting bookmark by specified name online.
+     */
+    public function testGetBookmarkByNameOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+        $bookmarkName = "aspose";
+
+        $request = new Requests\GetBookmarkByNameOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $bookmarkName,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getBookmarkByNameOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -102,8 +133,8 @@ class BookmarkTests extends BaseTestContext
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Bookmarks";
         $localFile = "Common/test_multi_pages.docx";
-        $remoteFileName = "TestUpdateDocumentBookmark.docx";
         $bookmarkName = "aspose";
+        $remoteFileName = "TestUpdateDocumentBookmark.docx";
         $bookmarkText = "This will be the text for Aspose";
 
         $this->uploadFile(
@@ -117,8 +148,8 @@ class BookmarkTests extends BaseTestContext
         ));
         $request = new Requests\UpdateBookmarkRequest(
             $remoteFileName,
-            $requestBookmarkData,
             $bookmarkName,
+            $requestBookmarkData,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -130,8 +161,33 @@ class BookmarkTests extends BaseTestContext
 
         $result = $this->words->updateBookmark($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getBookmark());
-        Assert::assertEquals($bookmarkName, $result->getBookmark()->getName());
-        Assert::assertEquals($bookmarkText, $result->getBookmark()->getText());
+    }
+
+    /*
+     * Test for updating existed bookmark online.
+     */
+    public function testUpdateBookmarkOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+        $bookmarkName = "aspose";
+        $remoteFileName = "TestUpdateDocumentBookmark.docx";
+
+        $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
+            "name" => $bookmarkName,
+            "text" => "This will be the text for Aspose",
+        ));
+        $request = new Requests\UpdateBookmarkOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $bookmarkName,
+            $requestBookmarkData,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/" . $remoteFileName,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateBookmarkOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 }

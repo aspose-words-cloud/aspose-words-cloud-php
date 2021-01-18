@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RenderParagraphRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\RenderParagraphResponse;
 
 /*
  * Request model for renderParagraph operation.
@@ -83,6 +84,11 @@ class RenderParagraphRequest
     public $password;
 
     /*
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public $dest_file_name;
+
+    /*
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
@@ -98,9 +104,10 @@ class RenderParagraphRequest
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
+     * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $format, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $fonts_location = null)
+    public function __construct($name, $format, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $fonts_location = null)
     {
         $this->name = $name;
         $this->format = $format;
@@ -110,6 +117,7 @@ class RenderParagraphRequest
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->dest_file_name = $dest_file_name;
         $this->fonts_location = $fonts_location;
     }
 
@@ -250,6 +258,23 @@ class RenderParagraphRequest
     }
 
     /*
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public function get_dest_file_name()
+    {
+        return $this->dest_file_name;
+    }
+
+    /*
+     * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     */
+    public function set_dest_file_name($value)
+    {
+        $this->dest_file_name = $value;
+        return $this;
+    }
+
+    /*
      * Folder in filestorage with custom fonts.
      */
     public function get_fonts_location()
@@ -371,6 +396,16 @@ class RenderParagraphRequest
             }
         }
         // query params
+        if ($this->dest_file_name !== null) {
+            $localName = lcfirst('DestFileName');
+            $localValue = is_bool($this->dest_file_name) ? ($this->dest_file_name ? 'true' : 'false') : $this->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($this->fonts_location !== null) {
             $localName = lcfirst('FontsLocation');
             $localValue = is_bool($this->fonts_location) ? ($this->fonts_location ? 'true' : 'false') : $this->fonts_location;
@@ -458,5 +493,10 @@ class RenderParagraphRequest
     public function getResponseType()
     {
         return '\SplFileObject';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\SplFileObject', []);
     }
 }

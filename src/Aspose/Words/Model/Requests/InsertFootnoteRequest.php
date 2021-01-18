@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertFootnoteRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertFootnoteResponse;
 
 /*
  * Request model for insertFootnote operation.
@@ -48,7 +49,7 @@ class InsertFootnoteRequest
     public $name;
 
     /*
-     * The properties of the footnote.
+     * Footnote data.
      */
     public $footnote_dto;
 
@@ -96,7 +97,7 @@ class InsertFootnoteRequest
      * Initializes a new instance of the InsertFootnoteRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\FootnoteInsert $footnote_dto The properties of the footnote.
+     * @param \Aspose\Words\Model\FootnoteInsert $footnote_dto Footnote data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -138,7 +139,7 @@ class InsertFootnoteRequest
     }
 
     /*
-     * The properties of the footnote.
+     * Footnote data.
      */
     public function get_footnote_dto()
     {
@@ -146,7 +147,7 @@ class InsertFootnoteRequest
     }
 
     /*
-     * The properties of the footnote.
+     * Footnote data.
      */
     public function set_footnote_dto($value)
     {
@@ -487,5 +488,10 @@ class InsertFootnoteRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\FootnoteResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FootnoteResponse', []);
     }
 }

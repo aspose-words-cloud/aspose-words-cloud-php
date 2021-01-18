@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CopyStyleRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\CopyStyleResponse;
 
 /*
  * Request model for copyStyle operation.
@@ -48,7 +49,7 @@ class CopyStyleRequest
     public $name;
 
     /*
-     * The properties of the style.
+     * Style to copy.
      */
     public $style_copy;
 
@@ -91,7 +92,7 @@ class CopyStyleRequest
      * Initializes a new instance of the CopyStyleRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\StyleCopy $style_copy The properties of the style.
+     * @param \Aspose\Words\Model\StyleCopy $style_copy Style to copy.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -131,7 +132,7 @@ class CopyStyleRequest
     }
 
     /*
-     * The properties of the style.
+     * Style to copy.
      */
     public function get_style_copy()
     {
@@ -139,7 +140,7 @@ class CopyStyleRequest
     }
 
     /*
-     * The properties of the style.
+     * Style to copy.
      */
     public function set_style_copy($value)
     {
@@ -454,5 +455,10 @@ class CopyStyleRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\StyleResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StyleResponse', []);
     }
 }

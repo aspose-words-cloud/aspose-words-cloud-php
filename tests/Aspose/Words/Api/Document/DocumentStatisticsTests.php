@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentStatisticsTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -65,5 +65,25 @@ class DocumentStatisticsTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getStatData());
         Assert::assertEquals(10, $result->getStatData()->getWordCount());
+    }
+
+    /*
+     * Test for document classification online.
+     */
+    public function testGetDocumentStatisticsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\GetDocumentStatisticsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getDocumentStatisticsOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

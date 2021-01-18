@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CompareDocumentRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\CompareDocumentResponse;
 
 /*
  * Request model for compareDocument operation.
@@ -48,7 +49,7 @@ class CompareDocumentRequest
     public $name;
 
     /*
-     * The properties of the document to compare with.
+     * Compare data.
      */
     public $compare_data;
 
@@ -81,7 +82,7 @@ class CompareDocumentRequest
      * Initializes a new instance of the CompareDocumentRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\CompareData $compare_data The properties of the document to compare with.
+     * @param \Aspose\Words\Model\CompareData $compare_data Compare data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -117,7 +118,7 @@ class CompareDocumentRequest
     }
 
     /*
-     * The properties of the document to compare with.
+     * Compare data.
      */
     public function get_compare_data()
     {
@@ -125,7 +126,7 @@ class CompareDocumentRequest
     }
 
     /*
-     * The properties of the document to compare with.
+     * Compare data.
      */
     public function set_compare_data($value)
     {
@@ -386,5 +387,10 @@ class CompareDocumentRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\DocumentResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
     }
 }

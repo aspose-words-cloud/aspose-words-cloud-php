@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CompareDocumentTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -76,5 +76,38 @@ class CompareDocumentTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocument());
         Assert::assertEquals("TestCompareDocumentOut.doc", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for document comparison online.
+     */
+    public function testCompareDocumentOnline()
+    {
+        $remoteFolder = self::$baseRemoteFolderPath . "/DocumentActions/CompareDocument";
+        $localFolder = "DocumentActions/CompareDocument";
+        $localName1 = "compareTestDoc1.doc";
+        $localName2 = "compareTestDoc2.doc";
+        $remoteName2 = "TestCompareDocument2.doc";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFolder . "/" . $localName2,
+            $remoteFolder . "/" . $remoteName2
+        );
+
+        $requestCompareData = new \Aspose\Words\Model\CompareData(array(
+            "author" => "author",
+            "comparing_with_document" => $remoteFolder . "/" . $remoteName2,
+            "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
+        ));
+        $request = new Requests\CompareDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFolder . "/" . $localName1,
+            $requestCompareData,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
+        );
+
+        $result = $this->words->compareDocumentOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 }

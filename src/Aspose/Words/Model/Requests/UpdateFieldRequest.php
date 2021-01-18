@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateFieldRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateFieldResponse;
 
 /*
  * Request model for updateField operation.
@@ -48,14 +49,14 @@ class UpdateFieldRequest
     public $name;
 
     /*
-     * The properties of the field.
-     */
-    public $field;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * Field data.
+     */
+    public $field;
 
     /*
      * The path to the node in the document tree.
@@ -101,8 +102,8 @@ class UpdateFieldRequest
      * Initializes a new instance of the UpdateFieldRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\FieldUpdate $field The properties of the field.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\FieldUpdate $field Field data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -112,11 +113,11 @@ class UpdateFieldRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $field, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $index, $field, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->field = $field;
         $this->index = $index;
+        $this->field = $field;
         $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -145,23 +146,6 @@ class UpdateFieldRequest
     }
 
     /*
-     * The properties of the field.
-     */
-    public function get_field()
-    {
-        return $this->field;
-    }
-
-    /*
-     * The properties of the field.
-     */
-    public function set_field($value)
-    {
-        $this->field = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -175,6 +159,23 @@ class UpdateFieldRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * Field data.
+     */
+    public function get_field()
+    {
+        return $this->field;
+    }
+
+    /*
+     * Field data.
+     */
+    public function set_field($value)
+    {
+        $this->field = $value;
         return $this;
     }
 
@@ -325,11 +326,11 @@ class UpdateFieldRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateField');
         }
-        if ($this->field === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $field when calling updateField');
-        }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateField');
+        }
+        if ($this->field === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $field when calling updateField');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
@@ -523,5 +524,10 @@ class UpdateFieldRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\FieldResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FieldResponse', []);
     }
 }

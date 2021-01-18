@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertPageNumbersRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertPageNumbersResponse;
 
 /*
  * Request model for insertPageNumbers operation.
@@ -48,7 +49,7 @@ class InsertPageNumbersRequest
     public $name;
 
     /*
-     * The page numbers settings.
+     * Page number dto.
      */
     public $page_number;
 
@@ -91,7 +92,7 @@ class InsertPageNumbersRequest
      * Initializes a new instance of the InsertPageNumbersRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\PageNumber $page_number The page numbers settings.
+     * @param \Aspose\Words\Model\PageNumber $page_number Page number dto.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -131,7 +132,7 @@ class InsertPageNumbersRequest
     }
 
     /*
-     * The page numbers settings.
+     * Page number dto.
      */
     public function get_page_number()
     {
@@ -139,7 +140,7 @@ class InsertPageNumbersRequest
     }
 
     /*
-     * The page numbers settings.
+     * Page number dto.
      */
     public function set_page_number($value)
     {
@@ -454,5 +455,10 @@ class InsertPageNumbersRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\DocumentResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
     }
 }

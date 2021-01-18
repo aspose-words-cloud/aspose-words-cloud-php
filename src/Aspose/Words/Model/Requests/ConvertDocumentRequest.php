@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ConvertDocumentRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\ConvertDocumentResponse;
 
 /*
  * Request model for convertDocument operation.
@@ -53,11 +54,6 @@ class ConvertDocumentRequest
     public $format;
 
     /*
-     * Original document storage.
-     */
-    public $storage;
-
-    /*
      * The path to the output document on a local storage.
      */
     public $out_path;
@@ -66,6 +62,11 @@ class ConvertDocumentRequest
      * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
      */
     public $file_name_field_value;
+
+    /*
+     * Original document storage.
+     */
+    public $storage;
 
     /*
      * Folder in filestorage with custom fonts.
@@ -77,18 +78,18 @@ class ConvertDocumentRequest
      *
      * @param \SplFileObject $document Converting document.
      * @param string $format The format to convert.
-     * @param string $storage Original document storage.
      * @param string $out_path The path to the output document on a local storage.
      * @param string $file_name_field_value The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
+     * @param string $storage Original document storage.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $format, $storage = null, $out_path = null, $file_name_field_value = null, $fonts_location = null)
+    public function __construct($document, $format, $out_path = null, $file_name_field_value = null, $storage = null, $fonts_location = null)
     {
         $this->document = $document;
         $this->format = $format;
-        $this->storage = $storage;
         $this->out_path = $out_path;
         $this->file_name_field_value = $file_name_field_value;
+        $this->storage = $storage;
         $this->fonts_location = $fonts_location;
     }
 
@@ -127,23 +128,6 @@ class ConvertDocumentRequest
     }
 
     /*
-     * Original document storage.
-     */
-    public function get_storage()
-    {
-        return $this->storage;
-    }
-
-    /*
-     * Original document storage.
-     */
-    public function set_storage($value)
-    {
-        $this->storage = $value;
-        return $this;
-    }
-
-    /*
      * The path to the output document on a local storage.
      */
     public function get_out_path()
@@ -174,6 +158,23 @@ class ConvertDocumentRequest
     public function set_file_name_field_value($value)
     {
         $this->file_name_field_value = $value;
+        return $this;
+    }
+
+    /*
+     * Original document storage.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * Original document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
         return $this;
     }
 
@@ -229,16 +230,6 @@ class ConvertDocumentRequest
             }
         }
         // query params
-        if ($this->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if ($this->out_path !== null) {
             $localName = lcfirst('OutPath');
             $localValue = is_bool($this->out_path) ? ($this->out_path ? 'true' : 'false') : $this->out_path;
@@ -252,6 +243,16 @@ class ConvertDocumentRequest
         if ($this->file_name_field_value !== null) {
             $localName = lcfirst('FileNameFieldValue');
             $localValue = is_bool($this->file_name_field_value) ? ($this->file_name_field_value ? 'true' : 'false') : $this->file_name_field_value;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {
@@ -359,5 +360,10 @@ class ConvertDocumentRequest
     public function getResponseType()
     {
         return '\SplFileObject';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\SplFileObject', []);
     }
 }

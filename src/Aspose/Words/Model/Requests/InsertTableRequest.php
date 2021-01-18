@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertTableResponse;
 
 /*
  * Request model for insertTable operation.
@@ -48,7 +49,7 @@ class InsertTableRequest
     public $name;
 
     /*
-     * The properties of the table.
+     * Table parameters.
      */
     public $table;
 
@@ -96,7 +97,7 @@ class InsertTableRequest
      * Initializes a new instance of the InsertTableRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\TableInsert $table The properties of the table.
+     * @param \Aspose\Words\Model\TableInsert $table Table parameters.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -138,7 +139,7 @@ class InsertTableRequest
     }
 
     /*
-     * The properties of the table.
+     * Table parameters.
      */
     public function get_table()
     {
@@ -146,7 +147,7 @@ class InsertTableRequest
     }
 
     /*
-     * The properties of the table.
+     * Table parameters.
      */
     public function set_table($value)
     {
@@ -487,5 +488,10 @@ class InsertTableRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\TableResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableResponse', []);
     }
 }

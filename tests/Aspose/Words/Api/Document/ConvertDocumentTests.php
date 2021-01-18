@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ConvertDocumentTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,6 +68,29 @@ class ConvertDocumentTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getSaveResult());
         Assert::assertNotNull($result->getSaveResult()->getDestDocument());
+    }
+
+    /*
+     * Test for converting document online to one of the available formats.
+     */
+    public function testSaveAsOnline()
+    {
+        $localName = "test_multi_pages.docx";
+
+        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+            "save_format" => "pdf",
+            "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
+        ));
+        $request = new Requests\SaveAsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localName,
+            $requestSaveOptionsData,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->saveAsOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -154,6 +177,46 @@ class ConvertDocumentTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getSaveResult());
         Assert::assertNotNull($result->getSaveResult()->getDestDocument());
+    }
+
+    /*
+     * Test for converting document to one of the available formats.
+     */
+    public function testSaveAsTiffOnline()
+    {
+        $localName = "test_multi_pages.docx";
+
+        $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
+            "save_format" => "tiff",
+            "file_name" => self::$baseTestOutPath . "/abc.tiff",
+        ));
+        $request = new Requests\SaveAsTiffOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localName,
+            $requestSaveOptions,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->saveAsTiffOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 
     /*

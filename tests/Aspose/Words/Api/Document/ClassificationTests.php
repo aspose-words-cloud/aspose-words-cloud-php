@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ClassificationTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -82,5 +82,24 @@ class ClassificationTests extends BaseTestContext
         Assert::assertEquals("Hobbies_&_Interests", $result->getBestClassName());
         Assert::assertNotNull($result->getBestResults());
         Assert::assertCount(3, $result->getBestResults());
+    }
+
+    /*
+     * Test for document classification online.
+     */
+    public function testClassifyDocumentOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\ClassifyDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            "3",
+            NULL
+        );
+
+        $result = $this->words->classifyDocumentOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
     }
 }

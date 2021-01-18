@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StylesTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,6 +66,23 @@ class StylesTests extends BaseTestContext
     }
 
     /*
+     * Test for getting styles from document online.
+     */
+    public function testGetStylesOnline()
+    {
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
+
+        $request = new Requests\GetStylesOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getStylesOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for getting style from document.
      */
     public function testGetStyle()
@@ -95,6 +112,24 @@ class StylesTests extends BaseTestContext
     }
 
     /*
+     * Test for getting style from document online.
+     */
+    public function testGetStyleOnline()
+    {
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
+
+        $request = new Requests\GetStyleOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "Heading 1",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getStyleOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for updating style from document.
      */
     public function testUpdateStyle()
@@ -113,8 +148,8 @@ class StylesTests extends BaseTestContext
         ));
         $request = new Requests\UpdateStyleRequest(
             $remoteFileName,
-            $requestStyleUpdate,
             "Heading 1",
+            $requestStyleUpdate,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -128,6 +163,31 @@ class StylesTests extends BaseTestContext
         Assert::isTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getStyle());
         Assert::assertEquals("My Style", $result->getStyle()->getName());
+    }
+
+    /*
+     * Test for updating style from document online.
+     */
+    public function testUpdateStyleOnline()
+    {
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
+
+        $requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
+            "name" => "My Style",
+        ));
+        $request = new Requests\UpdateStyleOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "Heading 1",
+            $requestStyleUpdate,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateStyleOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 
     /*
@@ -167,6 +227,31 @@ class StylesTests extends BaseTestContext
     }
 
     /*
+     * Test for inserting style from document online.
+     */
+    public function testInsertStyleOnline()
+    {
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
+
+        $requestStyleInsert = new \Aspose\Words\Model\StyleInsert(array(
+            "style_name" => "My Style",
+            "style_type" => "Paragraph",
+        ));
+        $request = new Requests\InsertStyleOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestStyleInsert,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertStyleOnline($request);
+        Assert::isTrue($result !== NULL);
+    }
+
+    /*
      * Test for coping style from document.
      */
     public function testCopyStyle()
@@ -202,6 +287,30 @@ class StylesTests extends BaseTestContext
     }
 
     /*
+     * Test for coping style from document online.
+     */
+    public function testCopyStyleOnline()
+    {
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
+
+        $requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
+            "style_name" => "Heading 1",
+        ));
+        $request = new Requests\CopyStyleOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $requestStyleCopy,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->copyStyleOnline($request);
+        Assert::isTrue($result !== NULL);
+    }
+
+    /*
      * Test for getting style from document element.
      */
     public function testGetStyleFromDocumentElement()
@@ -231,6 +340,24 @@ class StylesTests extends BaseTestContext
     }
 
     /*
+     * Test for getting style from document element online.
+     */
+    public function testGetStyleFromDocumentElementOnline()
+    {
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
+
+        $request = new Requests\GetStyleFromDocumentElementOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "paragraphs/1/paragraphFormat",
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getStyleFromDocumentElementOnline($request);
+        Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
      * Test for applying style to document element.
      */
     public function testApplyStyleToDocumentElement()
@@ -249,8 +376,8 @@ class StylesTests extends BaseTestContext
         ));
         $request = new Requests\ApplyStyleToDocumentElementRequest(
             $remoteFileName,
-            $requestStyleApply,
             "paragraphs/1/paragraphFormat",
+            $requestStyleApply,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -262,5 +389,30 @@ class StylesTests extends BaseTestContext
 
         $result = $this->words->applyStyleToDocumentElement($request);
         Assert::isTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for applying style to document element online.
+     */
+    public function testApplyStyleToDocumentElementOnline()
+    {
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
+
+        $requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
+            "style_name" => "Heading 1",
+        ));
+        $request = new Requests\ApplyStyleToDocumentElementOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            "paragraphs/1/paragraphFormat",
+            $requestStyleApply,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->applyStyleToDocumentElementOnline($request);
+        Assert::isTrue($result !== NULL);
     }
 }

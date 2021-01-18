@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertFieldRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertFieldResponse;
 
 /*
  * Request model for insertField operation.
@@ -48,7 +49,7 @@ class InsertFieldRequest
     public $name;
 
     /*
-     * The properties of the field.
+     * Field data.
      */
     public $field;
 
@@ -101,7 +102,7 @@ class InsertFieldRequest
      * Initializes a new instance of the InsertFieldRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\FieldInsert $field The properties of the field.
+     * @param \Aspose\Words\Model\FieldInsert $field Field data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -145,7 +146,7 @@ class InsertFieldRequest
     }
 
     /*
-     * The properties of the field.
+     * Field data.
      */
     public function get_field()
     {
@@ -153,7 +154,7 @@ class InsertFieldRequest
     }
 
     /*
-     * The properties of the field.
+     * Field data.
      */
     public function set_field($value)
     {
@@ -521,5 +522,10 @@ class InsertFieldRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\FieldResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FieldResponse', []);
     }
 }

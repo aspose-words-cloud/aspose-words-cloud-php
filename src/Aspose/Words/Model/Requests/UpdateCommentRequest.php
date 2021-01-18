@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateCommentRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateCommentResponse;
 
 /*
  * Request model for updateComment operation.
@@ -53,7 +54,7 @@ class UpdateCommentRequest
     public $comment_index;
 
     /*
-     * The properties of the comment.
+     * Comment data.
      */
     public $comment;
 
@@ -97,7 +98,7 @@ class UpdateCommentRequest
      *
      * @param string $name The filename of the input document.
      * @param int $comment_index The index of the comment.
-     * @param \Aspose\Words\Model\CommentUpdate $comment The properties of the comment.
+     * @param \Aspose\Words\Model\CommentUpdate $comment Comment data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -155,7 +156,7 @@ class UpdateCommentRequest
     }
 
     /*
-     * The properties of the comment.
+     * Comment data.
      */
     public function get_comment()
     {
@@ -163,7 +164,7 @@ class UpdateCommentRequest
     }
 
     /*
-     * The properties of the comment.
+     * Comment data.
      */
     public function set_comment($value)
     {
@@ -490,5 +491,10 @@ class UpdateCommentRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\CommentResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CommentResponse', []);
     }
 }

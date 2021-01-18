@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableRowRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertTableRowResponse;
 
 /*
  * Request model for insertTableRow operation.
@@ -48,14 +49,14 @@ class InsertTableRowRequest
     public $name;
 
     /*
-     * The properties of the row.
-     */
-    public $row;
-
-    /*
      * The path to the table in the document tree.
      */
     public $table_path;
+
+    /*
+     * Table row parameters.
+     */
+    public $row;
 
     /*
      * Original document folder.
@@ -96,8 +97,8 @@ class InsertTableRowRequest
      * Initializes a new instance of the InsertTableRowRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\TableRowInsert $row The properties of the row.
      * @param string $table_path The path to the table in the document tree.
+     * @param \Aspose\Words\Model\TableRowInsert $row Table row parameters.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -106,11 +107,11 @@ class InsertTableRowRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $row, $table_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $table_path, $row, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->row = $row;
         $this->table_path = $table_path;
+        $this->row = $row;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -138,23 +139,6 @@ class InsertTableRowRequest
     }
 
     /*
-     * The properties of the row.
-     */
-    public function get_row()
-    {
-        return $this->row;
-    }
-
-    /*
-     * The properties of the row.
-     */
-    public function set_row($value)
-    {
-        $this->row = $value;
-        return $this;
-    }
-
-    /*
      * The path to the table in the document tree.
      */
     public function get_table_path()
@@ -168,6 +152,23 @@ class InsertTableRowRequest
     public function set_table_path($value)
     {
         $this->table_path = $value;
+        return $this;
+    }
+
+    /*
+     * Table row parameters.
+     */
+    public function get_row()
+    {
+        return $this->row;
+    }
+
+    /*
+     * Table row parameters.
+     */
+    public function set_row($value)
+    {
+        $this->row = $value;
         return $this;
     }
 
@@ -301,11 +302,11 @@ class InsertTableRowRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableRow');
         }
-        if ($this->row === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $row when calling insertTableRow');
-        }
         if ($this->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling insertTableRow');
+        }
+        if ($this->row === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $row when calling insertTableRow');
         }
 
         $resourcePath = '/words/{name}/{tablePath}/rows';
@@ -490,5 +491,10 @@ class InsertTableRowRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\TableRowResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableRowResponse', []);
     }
 }

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AppendDocumentRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\AppendDocumentResponse;
 
 /*
  * Request model for appendDocument operation.
@@ -48,7 +49,7 @@ class AppendDocumentRequest
     public $name;
 
     /*
-     * The collection of documents to append.
+     * <see cref="DocumentEntryList"/> with a list of documents to append.
      */
     public $document_list;
 
@@ -91,7 +92,7 @@ class AppendDocumentRequest
      * Initializes a new instance of the AppendDocumentRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\DocumentEntryList $document_list The collection of documents to append.
+     * @param \Aspose\Words\Model\DocumentEntryList $document_list <see cref="DocumentEntryList"/> with a list of documents to append.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -131,7 +132,7 @@ class AppendDocumentRequest
     }
 
     /*
-     * The collection of documents to append.
+     * <see cref="DocumentEntryList"/> with a list of documents to append.
      */
     public function get_document_list()
     {
@@ -139,7 +140,7 @@ class AppendDocumentRequest
     }
 
     /*
-     * The collection of documents to append.
+     * <see cref="DocumentEntryList"/> with a list of documents to append.
      */
     public function set_document_list($value)
     {
@@ -454,5 +455,10 @@ class AppendDocumentRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\DocumentResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
     }
 }

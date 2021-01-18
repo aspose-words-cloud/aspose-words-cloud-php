@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertOrUpdateParagraphTabStopRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertOrUpdateParagraphTabStopResponse;
 
 /*
  * Request model for insertOrUpdateParagraphTabStop operation.
@@ -48,14 +49,14 @@ class InsertOrUpdateParagraphTabStopRequest
     public $name;
 
     /*
-     * The properties of the paragraph tab stop.
-     */
-    public $dto;
-
-    /*
      * Object index.
      */
     public $index;
+
+    /*
+     * TabStopInsert dto.
+     */
+    public $tab_stop_insert_dto;
 
     /*
      * The path to the node in the document tree.
@@ -91,8 +92,8 @@ class InsertOrUpdateParagraphTabStopRequest
      * Initializes a new instance of the InsertOrUpdateParagraphTabStopRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\TabStopInsert $dto The properties of the paragraph tab stop.
      * @param int $index Object index.
+     * @param \Aspose\Words\Model\TabStopInsert $tab_stop_insert_dto TabStopInsert dto.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -100,11 +101,11 @@ class InsertOrUpdateParagraphTabStopRequest
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $dto, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
+    public function __construct($name, $index, $tab_stop_insert_dto, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
     {
         $this->name = $name;
-        $this->dto = $dto;
         $this->index = $index;
+        $this->tab_stop_insert_dto = $tab_stop_insert_dto;
         $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -131,23 +132,6 @@ class InsertOrUpdateParagraphTabStopRequest
     }
 
     /*
-     * The properties of the paragraph tab stop.
-     */
-    public function get_dto()
-    {
-        return $this->dto;
-    }
-
-    /*
-     * The properties of the paragraph tab stop.
-     */
-    public function set_dto($value)
-    {
-        $this->dto = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -161,6 +145,23 @@ class InsertOrUpdateParagraphTabStopRequest
     public function set_index($value)
     {
         $this->index = $value;
+        return $this;
+    }
+
+    /*
+     * TabStopInsert dto.
+     */
+    public function get_tab_stop_insert_dto()
+    {
+        return $this->tab_stop_insert_dto;
+    }
+
+    /*
+     * TabStopInsert dto.
+     */
+    public function set_tab_stop_insert_dto($value)
+    {
+        $this->tab_stop_insert_dto = $value;
         return $this;
     }
 
@@ -277,11 +278,11 @@ class InsertOrUpdateParagraphTabStopRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertOrUpdateParagraphTabStop');
         }
-        if ($this->dto === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $dto when calling insertOrUpdateParagraphTabStop');
-        }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling insertOrUpdateParagraphTabStop');
+        }
+        if ($this->tab_stop_insert_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $tab_stop_insert_dto when calling insertOrUpdateParagraphTabStop');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/tabstops';
@@ -375,11 +376,11 @@ class InsertOrUpdateParagraphTabStopRequest
 
         // body params
         $_tempBody = null;
-        if (isset($this->dto)) {
-            if (is_string($this->dto)) {
-                $_tempBody = ['content' => "\"" . $this->dto . "\"", 'mime' => 'application/json'];
+        if (isset($this->tab_stop_insert_dto)) {
+            if (is_string($this->tab_stop_insert_dto)) {
+                $_tempBody = ['content' => "\"" . $this->tab_stop_insert_dto . "\"", 'mime' => 'application/json'];
             } else {
-                $_tempBody = ['content' => $this->dto, 'mime' => 'application/json'];
+                $_tempBody = ['content' => $this->tab_stop_insert_dto, 'mime' => 'application/json'];
             }
         }
         $headerParams = [];
@@ -455,5 +456,10 @@ class InsertOrUpdateParagraphTabStopRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\TabStopsResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TabStopsResponse', []);
     }
 }

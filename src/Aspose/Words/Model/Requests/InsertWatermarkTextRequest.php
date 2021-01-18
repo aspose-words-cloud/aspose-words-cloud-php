@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertWatermarkTextRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertWatermarkTextResponse;
 
 /*
  * Request model for insertWatermarkText operation.
@@ -48,7 +49,7 @@ class InsertWatermarkTextRequest
     public $name;
 
     /*
-     * The watermark text to insert.
+     * The watermark data.
      */
     public $watermark_text;
 
@@ -91,7 +92,7 @@ class InsertWatermarkTextRequest
      * Initializes a new instance of the InsertWatermarkTextRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\WatermarkText $watermark_text The watermark text to insert.
+     * @param \Aspose\Words\Model\WatermarkText $watermark_text The watermark data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -131,7 +132,7 @@ class InsertWatermarkTextRequest
     }
 
     /*
-     * The watermark text to insert.
+     * The watermark data.
      */
     public function get_watermark_text()
     {
@@ -139,7 +140,7 @@ class InsertWatermarkTextRequest
     }
 
     /*
-     * The watermark text to insert.
+     * The watermark data.
      */
     public function set_watermark_text($value)
     {
@@ -454,5 +455,10 @@ class InsertWatermarkTextRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\DocumentResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
     }
 }

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MacrosTests.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -62,5 +62,25 @@ class MacrosTests extends BaseTestContext
         );
 
     $this->words->deleteMacros($request);
+    }
+
+    /*
+     * Test for deleting macros online.
+     */
+    public function testDeleteMacrosOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteMacrosOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteMacrosOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

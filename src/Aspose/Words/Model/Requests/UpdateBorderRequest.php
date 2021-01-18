@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UpdateBorderRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\UpdateBorderResponse;
 
 /*
  * Request model for updateBorder operation.
@@ -48,14 +49,14 @@ class UpdateBorderRequest
     public $name;
 
     /*
-     * The new border properties to update.
-     */
-    public $border_properties;
-
-    /*
      * Border type.
      */
     public $border_type;
+
+    /*
+     * Border properties.
+     */
+    public $border_properties;
 
     /*
      * The path to the node in the document tree.
@@ -101,8 +102,8 @@ class UpdateBorderRequest
      * Initializes a new instance of the UpdateBorderRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\Border $border_properties The new border properties to update.
      * @param string $border_type Border type.
+     * @param \Aspose\Words\Model\Border $border_properties Border properties.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -112,11 +113,11 @@ class UpdateBorderRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $border_properties, $border_type, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $border_type, $border_properties, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->border_properties = $border_properties;
         $this->border_type = $border_type;
+        $this->border_properties = $border_properties;
         $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
@@ -145,23 +146,6 @@ class UpdateBorderRequest
     }
 
     /*
-     * The new border properties to update.
-     */
-    public function get_border_properties()
-    {
-        return $this->border_properties;
-    }
-
-    /*
-     * The new border properties to update.
-     */
-    public function set_border_properties($value)
-    {
-        $this->border_properties = $value;
-        return $this;
-    }
-
-    /*
      * Border type.
      */
     public function get_border_type()
@@ -175,6 +159,23 @@ class UpdateBorderRequest
     public function set_border_type($value)
     {
         $this->border_type = $value;
+        return $this;
+    }
+
+    /*
+     * Border properties.
+     */
+    public function get_border_properties()
+    {
+        return $this->border_properties;
+    }
+
+    /*
+     * Border properties.
+     */
+    public function set_border_properties($value)
+    {
+        $this->border_properties = $value;
         return $this;
     }
 
@@ -325,11 +326,11 @@ class UpdateBorderRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateBorder');
         }
-        if ($this->border_properties === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $border_properties when calling updateBorder');
-        }
         if ($this->border_type === null) {
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling updateBorder');
+        }
+        if ($this->border_properties === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $border_properties when calling updateBorder');
         }
 
         $resourcePath = '/words/{name}/{nodePath}/borders/{borderType}';
@@ -523,5 +524,10 @@ class UpdateBorderRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\BorderResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BorderResponse', []);
     }
 }

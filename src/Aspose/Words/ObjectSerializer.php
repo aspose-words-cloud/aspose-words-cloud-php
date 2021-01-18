@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ObjectSerializer.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -117,11 +117,53 @@ class ObjectSerializer
     }
 
     /*
+     * Parse a single part.
+     */
+    public static function parseSinglePart($part, $responseType)
+    {
+        $separator = "\r\n\r\n";
+        $block = $part['body'];
+        $headers = $part['headers'];
+
+        $dataIndex = strpos($block, $separator);
+        if ($dataIndex === false) {
+            $headersData = $block;
+            $bodyData = null;
+        } else {
+            $headersData = substr($block, 0, $dataIndex);
+            $bodyData = substr($block, $dataIndex + strlen($separator));
+        }
+
+        $headerLines = preg_split('/\r\n/', $headersData);
+        if (count($headerLines) == 0) {
+            throw new ApiException("Failed to parse batch part data.", 400, null, null);
+        }
+
+        $statusLine = $headerLines[0];
+        for ($q = 1; $q < count($headerLines); $q++) {
+            $headerLine = $headerLines[$q];
+            $headerParts = preg_split('/:/', $headerLine);
+            if (count($headerParts) == 2) {
+                $headers[trim($headerParts[0])] = trim($headerParts[1]);
+            }
+        }
+
+        $statusCode = intval(preg_split('/ /', $statusLine)[0]);
+        $partResult = null;
+        if ($statusCode != 200) {
+            $partResult = new ApiException(sprintf('[%d] Error connecting to the API', $statusCode), $statusCode, $headers, $bodyData);
+        } else if ($responseType !== null) {
+            $partResult = ObjectSerializer::deserialize($bodyData, $responseType, $headers);
+        }
+
+        return $partResult;
+    }
+
+    /*
      * Parse the multipart response as batch
      */
     public static function parseBatchResponse($response, $requests)
     {
-        $separator = "\r\n\r\n";
         $parts = ObjectSerializer::parseMultipart($response);
         $result = [];
 
@@ -133,41 +175,7 @@ class ObjectSerializer
             $part = $parts[$i];
             $request = $requests[$i];
             $responseType = $request->getResponseType();
-            $block = $part['body'];
-            $headers = $part['headers'];
-
-            $dataIndex = strpos($block, $separator);
-            if ($dataIndex === false) {
-                $headersData = $block;
-                $bodyData = null;
-            } else {
-                $headersData = substr($block, 0, $dataIndex);
-                $bodyData = substr($block, $dataIndex + strlen($separator));
-            }
-
-            $headerLines = preg_split('/\r\n/', $headersData);
-            if (count($headerLines) == 0) {
-                throw new ApiException("Failed to parse batch part data.", 400, null, null);
-            }
-
-            $statusLine = $headerLines[0];
-            for ($q = 1; $q < count($headerLines); $q++) {
-                $headerLine = $headerLines[$q];
-                $headerParts = preg_split('/:/', $headerLine);
-                if (count($headerParts) == 2) {
-                    $headers[trim($headerParts[0])] = trim($headerParts[1]);
-                }
-            }
-
-            $statusCode = intval(preg_split('/ /', $statusLine)[0]);
-            $partResult = null;
-            if ($statusCode != 200) {
-                $partResult = new ApiException(sprintf('[%d] Error connecting to the API', $statusCode), $statusCode, $headers, $bodyData);
-            } else if ($responseType !== null) {
-                $partResult = ObjectSerializer::deserialize($bodyData, $responseType, $headers);
-            }
-
-            $result[] = $partResult;
+            $result[] = self::parseSinglePart($part, $responseType);
         }
 
         return $result;

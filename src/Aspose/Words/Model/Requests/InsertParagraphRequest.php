@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertParagraphRequest.php">
- *   Copyright (c) 2020 Aspose.Words for Cloud
+ *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
+use Aspose\Words\Model\Response\InsertParagraphResponse;
 
 /*
  * Request model for insertParagraph operation.
@@ -48,7 +49,7 @@ class InsertParagraphRequest
     public $name;
 
     /*
-     * The properties of the paragraph.
+     * Paragraph data.
      */
     public $paragraph;
 
@@ -101,7 +102,7 @@ class InsertParagraphRequest
      * Initializes a new instance of the InsertParagraphRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ParagraphInsert $paragraph The properties of the paragraph.
+     * @param \Aspose\Words\Model\ParagraphInsert $paragraph Paragraph data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -145,7 +146,7 @@ class InsertParagraphRequest
     }
 
     /*
-     * The properties of the paragraph.
+     * Paragraph data.
      */
     public function get_paragraph()
     {
@@ -153,7 +154,7 @@ class InsertParagraphRequest
     }
 
     /*
-     * The properties of the paragraph.
+     * Paragraph data.
      */
     public function set_paragraph($value)
     {
@@ -521,5 +522,10 @@ class InsertParagraphRequest
     public function getResponseType()
     {
         return '\Aspose\Words\Model\ParagraphResponse';
+    }
+
+    public function deserializeResponse($responseContent)
+    {
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphResponse', []);
     }
 }

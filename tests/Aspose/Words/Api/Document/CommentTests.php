@@ -377,4 +377,52 @@ class CommentTests extends BaseTestContext
         $result = $this->words->deleteCommentOnline($request);
         Assert::assertNotNull($result, "Error occurred");
     }
+
+    /*
+     * A test for DeleteComments.
+     */
+    public function testDeleteComments()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/Comments";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestDeleteComment.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new Requests\DeleteCommentsRequest(
+            $remoteFileName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/" . $remoteFileName,
+            NULL,
+            NULL
+        );
+
+    $this->words->deleteComments($request);
+    }
+
+    /*
+     * A test for DeleteComments online.
+     */
+    public function testDeleteCommentsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteCommentsOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteCommentsOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
 }

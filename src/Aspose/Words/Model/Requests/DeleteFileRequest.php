@@ -44,7 +44,7 @@ use Aspose\Words\Model\Response\DeleteFileResponse;
 class DeleteFileRequest
 {
     /*
-     * Path of the file including file name and extension e.g. /Folder1/file.ext.
+     * Path of the file including the file name and extension e.g. /folder1/file.ext.
      */
     public $path;
 
@@ -61,7 +61,7 @@ class DeleteFileRequest
     /*
      * Initializes a new instance of the DeleteFileRequest class.
      *
-     * @param string $path Path of the file including file name and extension e.g. /Folder1/file.ext.
+     * @param string $path Path of the file including the file name and extension e.g. /folder1/file.ext.
      * @param string $storage_name Storage name.
      * @param string $version_id File version ID to delete.
      */
@@ -73,7 +73,7 @@ class DeleteFileRequest
     }
 
     /*
-     * Path of the file including file name and extension e.g. /Folder1/file.ext.
+     * Path of the file including the file name and extension e.g. /folder1/file.ext.
      */
     public function get_path()
     {
@@ -81,7 +81,7 @@ class DeleteFileRequest
     }
 
     /*
-     * Path of the file including file name and extension e.g. /Folder1/file.ext.
+     * Path of the file including the file name and extension e.g. /folder1/file.ext.
      */
     public function set_path($value)
     {

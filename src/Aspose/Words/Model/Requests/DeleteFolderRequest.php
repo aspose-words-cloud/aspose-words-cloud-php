@@ -44,7 +44,7 @@ use Aspose\Words\Model\Response\DeleteFolderResponse;
 class DeleteFolderRequest
 {
     /*
-     * Folder path e.g. /Folder1s.
+     * Folder path e.g. '/folder'.
      */
     public $path;
 
@@ -61,7 +61,7 @@ class DeleteFolderRequest
     /*
      * Initializes a new instance of the DeleteFolderRequest class.
      *
-     * @param string $path Folder path e.g. /Folder1s.
+     * @param string $path Folder path e.g. '/folder'.
      * @param string $storage_name Storage name.
      * @param bool $recursive Enable to delete folders, subfolders and files.
      */
@@ -73,7 +73,7 @@ class DeleteFolderRequest
     }
 
     /*
-     * Folder path e.g. /Folder1s.
+     * Folder path e.g. '/folder'.
      */
     public function get_path()
     {
@@ -81,7 +81,7 @@ class DeleteFolderRequest
     }
 
     /*
-     * Folder path e.g. /Folder1s.
+     * Folder path e.g. '/folder'.
      */
     public function set_path($value)
     {

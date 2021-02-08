@@ -52,6 +52,7 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'allow_embedding_post_script_fonts' => 'bool',
         'dml3_d_effects_rendering_mode' => 'string',
         'dml_effects_rendering_mode' => 'string',
         'dml_rendering_mode' => 'string',
@@ -70,6 +71,7 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'allow_embedding_post_script_fonts' => 'null',
         'dml3_d_effects_rendering_mode' => 'null',
         'dml_effects_rendering_mode' => 'null',
         'dml_rendering_mode' => 'null',
@@ -109,6 +111,7 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'allow_embedding_post_script_fonts' => 'AllowEmbeddingPostScriptFonts',
         'dml3_d_effects_rendering_mode' => 'Dml3DEffectsRenderingMode',
         'dml_effects_rendering_mode' => 'DmlEffectsRenderingMode',
         'dml_rendering_mode' => 'DmlRenderingMode',
@@ -127,6 +130,7 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'allow_embedding_post_script_fonts' => 'setAllowEmbeddingPostScriptFonts',
         'dml3_d_effects_rendering_mode' => 'setDml3DEffectsRenderingMode',
         'dml_effects_rendering_mode' => 'setDmlEffectsRenderingMode',
         'dml_rendering_mode' => 'setDmlRenderingMode',
@@ -145,6 +149,7 @@ class SaveOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'allow_embedding_post_script_fonts' => 'getAllowEmbeddingPostScriptFonts',
         'dml3_d_effects_rendering_mode' => 'getDml3DEffectsRenderingMode',
         'dml_effects_rendering_mode' => 'getDmlEffectsRenderingMode',
         'dml_rendering_mode' => 'getDmlRenderingMode',
@@ -229,6 +234,7 @@ class SaveOptionsData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['allow_embedding_post_script_fonts'] = isset($data['allow_embedding_post_script_fonts']) ? $data['allow_embedding_post_script_fonts'] : null;
         $this->container['dml3_d_effects_rendering_mode'] = isset($data['dml3_d_effects_rendering_mode']) ? $data['dml3_d_effects_rendering_mode'] : null;
         $this->container['dml_effects_rendering_mode'] = isset($data['dml_effects_rendering_mode']) ? $data['dml_effects_rendering_mode'] : null;
         $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
@@ -277,6 +283,29 @@ class SaveOptionsData implements ArrayAccess
 
 
         return true;
+    }
+
+    /*
+     * Gets allow_embedding_post_script_fonts
+     *
+     * @return bool
+     */
+    public function getAllowEmbeddingPostScriptFonts()
+    {
+        return $this->container['allow_embedding_post_script_fonts'];
+    }
+
+    /*
+     * Sets allow_embedding_post_script_fonts
+     *
+     * @param bool $allow_embedding_post_script_fonts Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
+     *
+     * @return $this
+     */
+    public function setAllowEmbeddingPostScriptFonts($allow_embedding_post_script_fonts)
+    {
+        $this->container['allow_embedding_post_script_fonts'] = $allow_embedding_post_script_fonts;
+        return $this;
     }
 
     /*

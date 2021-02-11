@@ -4894,6 +4894,303 @@ class WordsApi
     }
 
     /*
+     * Operation deleteComments
+     *
+     * Removes all comments from the document.
+     *
+     * @param Requests\deleteCommentsRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteComments(Requests\deleteCommentsRequest $request)
+    {
+        try {
+    $this->deleteCommentsWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+    $this->deleteCommentsWithHttpInfo($request);
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation deleteCommentsWithHttpInfo
+     *
+     * Removes all comments from the document.
+     *
+     * @param Requests\deleteCommentsRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function deleteCommentsWithHttpInfo(Requests\deleteCommentsRequest $request)
+    {
+        $returnType = 'void';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation deleteCommentsAsync
+     *
+     * Removes all comments from the document.
+     *
+     * @param Requests\deleteCommentsRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteCommentsAsync(Requests\deleteCommentsRequest $request) 
+    {
+        return $this->deleteCommentsAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation deleteCommentsAsyncWithHttpInfo
+     *
+     * Removes all comments from the document.
+     *
+     * @param Requests\deleteCommentsRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function deleteCommentsAsyncWithHttpInfo(Requests\deleteCommentsRequest $request) 
+    {
+        $returnType = 'void';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation deleteCommentsOnline
+     *
+     * Removes all comments from the document.
+     *
+     * @param Requests\deleteCommentsOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject
+     */
+    public function deleteCommentsOnline(Requests\deleteCommentsOnlineRequest $request)
+    {
+        try {
+            list($response) = $this->deleteCommentsOnlineWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->deleteCommentsOnlineWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation deleteCommentsOnlineWithHttpInfo
+     *
+     * Removes all comments from the document.
+     *
+     * @param Requests\deleteCommentsOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function deleteCommentsOnlineWithHttpInfo(Requests\deleteCommentsOnlineRequest $request)
+    {
+        $returnType = '\SplFileObject';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation deleteCommentsOnlineAsync
+     *
+     * Removes all comments from the document.
+     *
+     * @param Requests\deleteCommentsOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteCommentsOnlineAsync(Requests\deleteCommentsOnlineRequest $request) 
+    {
+        return $this->deleteCommentsOnlineAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation deleteCommentsOnlineAsyncWithHttpInfo
+     *
+     * Removes all comments from the document.
+     *
+     * @param Requests\deleteCommentsOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function deleteCommentsOnlineAsyncWithHttpInfo(Requests\deleteCommentsOnlineRequest $request) 
+    {
+        $returnType = '\SplFileObject';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
      * Operation deleteDocumentProperty
      *
      * Removes a document property.

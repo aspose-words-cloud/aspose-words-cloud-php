@@ -15,4 +15,4 @@ $request = new Requests\AcceptAllRevisionsOnlineRequest(
     NULL
 );
 $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);
-rename(acceptAllRevisionsOnlineResult->getDocument->getPathname(), 'test_result.docx');
+rename(acceptAllRevisionsOnlineResult->getDocument()->getPathname(), 'test_result.docx');

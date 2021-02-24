@@ -102,7 +102,7 @@ class CompareDocumentTests extends BaseTestContext
             "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
         ));
         $request = new Requests\CompareDocumentOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFolder . "/" . $localName1,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFolder . "/" . $localName1,
             $requestCompareData,
             NULL,
             NULL,

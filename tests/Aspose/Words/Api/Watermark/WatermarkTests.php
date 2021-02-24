@@ -85,8 +85,8 @@ class WatermarkTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\InsertWatermarkImageOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . "Common/aspose-cloud.png",
             NULL,
             NULL,
             NULL,
@@ -148,7 +148,7 @@ class WatermarkTests extends BaseTestContext
             "rotation_angle" => 90,
         ));
         $request = new Requests\InsertWatermarkTextOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             $requestWatermarkText,
             NULL,
             NULL,
@@ -200,7 +200,7 @@ class WatermarkTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\DeleteWatermarkOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             NULL,
             NULL,
             NULL,

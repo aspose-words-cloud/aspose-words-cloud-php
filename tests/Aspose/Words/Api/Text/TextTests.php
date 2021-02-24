@@ -85,7 +85,7 @@ class TextTests extends BaseTestContext
             "new_value" => "aspose new",
         ));
         $request = new Requests\ReplaceTextOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             $requestReplaceText,
             NULL,
             NULL,
@@ -138,7 +138,7 @@ class TextTests extends BaseTestContext
         $localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
         $request = new Requests\SearchOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "aspose",
             NULL,
             NULL

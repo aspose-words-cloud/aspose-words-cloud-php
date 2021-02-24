@@ -13,7 +13,7 @@ $fileName  = "test_doc.docx";
  * Upload original document to cloud storage.
  */
 $uploadFileRequest = new Requests\UploadFileRequest(
-    realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fileName,
+    $documentsDir . $fileName,
     $fileName,
     NULL
 );

@@ -77,7 +77,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\GetTablesOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "",
             NULL,
             NULL
@@ -159,7 +159,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\GetTableOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             1,
             "",
             NULL,
@@ -241,7 +241,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\DeleteTableOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             1,
             "",
             NULL,
@@ -337,7 +337,7 @@ class TableTests extends BaseTestContext
             "rows_count" => 4,
         ));
         $request = new Requests\InsertTableOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             $requestTable,
             "",
             NULL,
@@ -429,7 +429,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\GetTablePropertiesOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             1,
             "",
             NULL,
@@ -531,7 +531,7 @@ class TableTests extends BaseTestContext
             "style_options" => "ColumnBands",
         ));
         $request = new Requests\UpdateTablePropertiesOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             $requestProperties,
             1,
             "",
@@ -630,7 +630,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\GetTableRowOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "tables/1",
             0,
             NULL,
@@ -679,7 +679,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\DeleteTableRowOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "tables/1",
             0,
             NULL,
@@ -741,7 +741,7 @@ class TableTests extends BaseTestContext
             "columns_count" => 5,
         ));
         $request = new Requests\InsertTableRowOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "sections/0/tables/2",
             $requestRow,
             NULL,
@@ -793,7 +793,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\GetTableRowFormatOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "sections/0/tables/2",
             0,
             NULL,
@@ -860,7 +860,7 @@ class TableTests extends BaseTestContext
             "height_rule" => "Auto",
         ));
         $request = new Requests\UpdateTableRowFormatOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "sections/0/tables/2",
             $requestFormat,
             0,
@@ -913,7 +913,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\GetTableCellOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "sections/0/tables/2/rows/0",
             0,
             NULL,
@@ -962,7 +962,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\DeleteTableCellOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "sections/0/tables/2/rows/0",
             0,
             NULL,
@@ -1021,7 +1021,7 @@ class TableTests extends BaseTestContext
         $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
         ));
         $request = new Requests\InsertTableCellOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "sections/0/tables/2/rows/0",
             $requestCell,
             NULL,
@@ -1073,7 +1073,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\GetTableCellFormatOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "sections/0/tables/2/rows/0",
             0,
             NULL,
@@ -1140,7 +1140,7 @@ class TableTests extends BaseTestContext
             "wrap_text" => true,
         ));
         $request = new Requests\UpdateTableCellFormatOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "sections/0/tables/2/rows/0",
             $requestFormat,
             0,
@@ -1194,7 +1194,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\RenderTableOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "png",
             0,
             "",

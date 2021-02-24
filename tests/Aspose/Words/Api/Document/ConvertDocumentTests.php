@@ -84,7 +84,7 @@ class ConvertDocumentTests extends BaseTestContext
             "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
         ));
         $request = new Requests\SaveAsOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localName,
+            realpath(__DIR__ . '/../../../../../TestData/') . "Common/" . $localName,
             $requestSaveOptionsData,
             NULL,
             NULL,
@@ -193,7 +193,7 @@ class ConvertDocumentTests extends BaseTestContext
             "file_name" => self::$baseTestOutPath . "/abc.tiff",
         ));
         $request = new Requests\SaveAsTiffOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localName,
+            realpath(__DIR__ . '/../../../../../TestData/') . "Common/" . $localName,
             $requestSaveOptions,
             NULL,
             NULL,
@@ -229,7 +229,7 @@ class ConvertDocumentTests extends BaseTestContext
         $localFolder = "DocumentActions/ConvertDocument";
 
         $request = new Requests\ConvertDocumentRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFolder . "/test_uploadfile.docx",
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFolder . "/test_uploadfile.docx",
             "pdf",
             NULL,
             NULL,

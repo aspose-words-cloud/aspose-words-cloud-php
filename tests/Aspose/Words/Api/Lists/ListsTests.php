@@ -76,7 +76,7 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $request = new Requests\GetListsOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             NULL,
             NULL
         );
@@ -122,7 +122,7 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $request = new Requests\GetListOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             1,
             NULL,
             NULL
@@ -177,7 +177,7 @@ class ListsTests extends BaseTestContext
             "is_restart_at_each_section" => true,
         ));
         $request = new Requests\UpdateListOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             1,
             $requestListUpdate,
             NULL,
@@ -240,7 +240,7 @@ class ListsTests extends BaseTestContext
             "alignment" => "Right",
         ));
         $request = new Requests\UpdateListLevelOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             1,
             $requestListUpdate,
             1,
@@ -306,7 +306,7 @@ class ListsTests extends BaseTestContext
             "template" => "OutlineLegal",
         ));
         $request = new Requests\InsertListOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             $requestListInsert,
             NULL,
             NULL,

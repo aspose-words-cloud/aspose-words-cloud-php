@@ -9,7 +9,7 @@ $fileName  = "test_doc.docx";
  * Calls AcceptAllRevisionsOnline method for document in cloud.
  */
 $request = new Requests\AcceptAllRevisionsOnlineRequest(
-    realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fileName,
+    $documentsDir . $fileName,
     NULL,
     NULL,
     NULL

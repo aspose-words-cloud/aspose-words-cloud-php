@@ -81,7 +81,7 @@ class CompatibilityTests extends BaseTestContext
             "ms_word_version" => "Word2002",
         ));
         $request = new Requests\OptimizeDocumentOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             $requestOptions,
             NULL,
             NULL,

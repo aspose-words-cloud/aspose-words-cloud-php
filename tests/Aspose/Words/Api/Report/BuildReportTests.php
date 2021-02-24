@@ -52,7 +52,7 @@ class BuildReportTests extends BaseTestContext
             "data_source_name" => "persons",
         ));
         $request = new Requests\BuildReportOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $reportingFolder . "/" . $localDocumentFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $reportingFolder . "/" . $localDocumentFile,
             $localDataFile,
             $requestReportEngineSettings,
             NULL

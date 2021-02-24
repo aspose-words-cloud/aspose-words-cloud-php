@@ -50,7 +50,7 @@ class ExamplesTests extends BaseTestContext
        * Upload original document to cloud storage.
        */
       $uploadFileRequest = new Requests\UploadFileRequest(
-          realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fileName,
+          $documentsDir . $fileName,
           $fileName,
           NULL
       );
@@ -80,7 +80,7 @@ class ExamplesTests extends BaseTestContext
        * Calls AcceptAllRevisionsOnline method for document in cloud.
        */
       $request = new Requests\AcceptAllRevisionsOnlineRequest(
-          realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fileName,
+          $documentsDir . $fileName,
           NULL,
           NULL,
           NULL

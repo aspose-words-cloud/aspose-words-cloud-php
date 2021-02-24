@@ -97,7 +97,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_default" => "No name",
         ));
         $request = new Requests\UpdateFormFieldOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../../TestData/') . $fieldFolder . "/FormFilled.docx",
             $requestFormField,
             0,
             "sections/0",
@@ -193,7 +193,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $request = new Requests\GetFormFieldOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../../TestData/') . $fieldFolder . "/FormFilled.docx",
             0,
             "sections/0",
             NULL,
@@ -273,7 +273,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $request = new Requests\GetFormFieldsOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../../TestData/') . $fieldFolder . "/FormFilled.docx",
             "sections/0",
             NULL,
             NULL
@@ -374,7 +374,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_format" => "UPPERCASE",
         ));
         $request = new Requests\InsertFormFieldOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../../TestData/') . $fieldFolder . "/FormFilled.docx",
             $requestFormField,
             "sections/0/paragraphs/0",
             NULL,
@@ -470,7 +470,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $request = new Requests\DeleteFormFieldOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/FormFilled.docx",
+            realpath(__DIR__ . '/../../../../../TestData/') . $fieldFolder . "/FormFilled.docx",
             0,
             "sections/0",
             NULL,

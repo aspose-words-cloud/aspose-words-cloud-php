@@ -73,7 +73,7 @@ class DrawingObjectsTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetDocumentDrawingObjectsOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "sections/0",
             NULL,
             NULL
@@ -146,7 +146,7 @@ class DrawingObjectsTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetDocumentDrawingObjectByIndexOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             0,
             "sections/0",
             NULL,
@@ -224,7 +224,7 @@ class DrawingObjectsTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\RenderDrawingObjectOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             "png",
             0,
             "sections/0",
@@ -305,7 +305,7 @@ class DrawingObjectsTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetDocumentDrawingObjectImageDataOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             0,
             "sections/0",
             NULL,
@@ -380,7 +380,7 @@ class DrawingObjectsTests extends BaseTestContext
         $localDrawingFile = "DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx";
 
         $request = new Requests\GetDocumentDrawingObjectOleDataOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localDrawingFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localDrawingFile,
             0,
             "sections/0",
             NULL,
@@ -445,7 +445,7 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new Requests\InsertDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../../TestData/') . "Common/aspose-cloud.png",
             "",
             $remoteDataFolder,
             NULL,
@@ -477,9 +477,9 @@ class DrawingObjectsTests extends BaseTestContext
             "wrap_type" => "Inline",
         ));
         $request = new Requests\InsertDrawingObjectOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../../TestData/') . "Common/aspose-cloud.png",
             "",
             NULL,
             NULL,
@@ -518,7 +518,7 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new Requests\InsertDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../../TestData/') . "Common/aspose-cloud.png",
             NULL,
             $remoteDataFolder,
             NULL,
@@ -571,7 +571,7 @@ class DrawingObjectsTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\DeleteDrawingObjectOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             0,
             "",
             NULL,
@@ -635,7 +635,7 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new Requests\UpdateDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../../TestData/') . "Common/aspose-cloud.png",
             0,
             "",
             $remoteDataFolder,
@@ -662,9 +662,9 @@ class DrawingObjectsTests extends BaseTestContext
             "left" => 0,
         ));
         $request = new Requests\UpdateDrawingObjectOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../../TestData/') . "Common/aspose-cloud.png",
             0,
             "",
             NULL,
@@ -698,7 +698,7 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new Requests\UpdateDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            realpath(__DIR__ . '/../../../../../TestData/') . "Common/aspose-cloud.png",
             0,
             NULL,
             $remoteDataFolder,

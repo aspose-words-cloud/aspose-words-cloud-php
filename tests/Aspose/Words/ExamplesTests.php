@@ -32,7 +32,7 @@ use Aspose\Words\WordsApi;
 use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
-class UrlEncodeTests extends BaseTestContext
+class ExamplesTests extends BaseTestContext
 {
     public function setUp()
     {

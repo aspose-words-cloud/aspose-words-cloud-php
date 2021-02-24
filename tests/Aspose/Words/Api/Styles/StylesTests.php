@@ -75,7 +75,7 @@ class StylesTests extends BaseTestContext
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
         $request = new Requests\GetStylesOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             NULL,
             NULL
         );
@@ -121,7 +121,7 @@ class StylesTests extends BaseTestContext
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
         $request = new Requests\GetStyleOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "Heading 1",
             NULL,
             NULL
@@ -178,7 +178,7 @@ class StylesTests extends BaseTestContext
             "name" => "My Style",
         ));
         $request = new Requests\UpdateStyleOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "Heading 1",
             $requestStyleUpdate,
             NULL,
@@ -240,7 +240,7 @@ class StylesTests extends BaseTestContext
             "style_type" => "Paragraph",
         ));
         $request = new Requests\InsertStyleOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $requestStyleInsert,
             NULL,
             NULL,
@@ -299,7 +299,7 @@ class StylesTests extends BaseTestContext
             "style_name" => "Heading 1",
         ));
         $request = new Requests\CopyStyleOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $requestStyleCopy,
             NULL,
             NULL,
@@ -349,7 +349,7 @@ class StylesTests extends BaseTestContext
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
         $request = new Requests\GetStyleFromDocumentElementOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "paragraphs/1/paragraphFormat",
             NULL,
             NULL
@@ -404,7 +404,7 @@ class StylesTests extends BaseTestContext
             "style_name" => "Heading 1",
         ));
         $request = new Requests\ApplyStyleToDocumentElementOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "paragraphs/1/paragraphFormat",
             $requestStyleApply,
             NULL,

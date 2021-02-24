@@ -42,7 +42,7 @@ class ExamplesTests extends BaseTestContext
 
     public function testExampleAcceptAllRevisions()
     {
-      $documentsDir = realpath(__DIR__ . '/../../../ExamplesData/');
+      $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
       $fileName  = "test_doc.docx";
 
@@ -72,7 +72,7 @@ class ExamplesTests extends BaseTestContext
 
     public function testExampleAcceptAllRevisionsOnline()
     {
-      $documentsDir = realpath(__DIR__ . '/../../../ExamplesData/');
+      $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
       $fileName  = "test_doc.docx";
 

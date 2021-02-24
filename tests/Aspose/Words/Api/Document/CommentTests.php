@@ -75,7 +75,7 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetCommentOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             0,
             NULL,
             NULL
@@ -123,7 +123,7 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetCommentsOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             NULL,
             NULL
         );
@@ -217,7 +217,7 @@ class CommentTests extends BaseTestContext
             "text" => "A new Comment",
         ));
         $request = new Requests\InsertCommentOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $requestComment,
             NULL,
             NULL,
@@ -316,7 +316,7 @@ class CommentTests extends BaseTestContext
             "text" => "A new Comment",
         ));
         $request = new Requests\UpdateCommentOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             0,
             $requestComment,
             NULL,
@@ -367,7 +367,7 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\DeleteCommentOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             0,
             NULL,
             NULL,
@@ -416,7 +416,7 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\DeleteCommentsOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             NULL,
             NULL,
             NULL,

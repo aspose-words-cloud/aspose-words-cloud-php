@@ -105,7 +105,7 @@ class AppendDocumentTests extends BaseTestContext
             "document_entries" => $requestDocumentListDocumentEntries,
         ));
         $request = new Requests\AppendDocumentOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $requestDocumentList,
             NULL,
             NULL,

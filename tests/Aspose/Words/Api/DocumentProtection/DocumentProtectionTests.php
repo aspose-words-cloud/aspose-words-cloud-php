@@ -83,7 +83,7 @@ class DocumentProtectionTests extends BaseTestContext
             "new_password" => "123",
         ));
         $request = new Requests\ProtectDocumentOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $requestProtectionRequest,
             NULL,
             NULL,
@@ -128,7 +128,7 @@ class DocumentProtectionTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetDocumentProtectionOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             NULL,
             NULL
         );
@@ -181,7 +181,7 @@ class DocumentProtectionTests extends BaseTestContext
             "password" => "aspose",
         ));
         $request = new Requests\UnprotectDocumentOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFilePath,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFilePath,
             $requestProtectionRequest,
             NULL,
             NULL,

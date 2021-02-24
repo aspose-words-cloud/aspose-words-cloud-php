@@ -75,7 +75,7 @@ class RangeTests extends BaseTestContext
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
         $request = new Requests\GetRangeTextOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "id0.0.0",
             "id0.0.1",
             NULL,
@@ -123,7 +123,7 @@ class RangeTests extends BaseTestContext
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
         $request = new Requests\RemoveRangeOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "id0.0.0",
             "id0.0.1",
             NULL,
@@ -181,7 +181,7 @@ class RangeTests extends BaseTestContext
             "document_name" => $remoteDataFolder . "/NewDoc.docx",
         ));
         $request = new Requests\SaveAsRangeOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "id0.0.0",
             $requestDocumentParameters,
             "id0.0.1",
@@ -239,7 +239,7 @@ class RangeTests extends BaseTestContext
             "text" => "Replaced header",
         ));
         $request = new Requests\ReplaceWithTextOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "id0.0.0",
             $requestRangeText,
             "id0.0.1",

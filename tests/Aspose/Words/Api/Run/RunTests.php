@@ -86,7 +86,7 @@ class RunTests extends BaseTestContext
             "text" => "run with text",
         ));
         $request = new Requests\UpdateRunOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "paragraphs/1",
             $requestRun,
             0,
@@ -150,7 +150,7 @@ class RunTests extends BaseTestContext
             "text" => "run with text",
         ));
         $request = new Requests\InsertRunOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "paragraphs/1",
             $requestRun,
             NULL,
@@ -203,7 +203,7 @@ class RunTests extends BaseTestContext
         $localFile = "DocumentElements/Runs/Run.doc";
 
         $request = new Requests\DeleteRunOnlineRequest(
-            realpath(__DIR__ . '/../../../../../TestData/') . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "paragraphs/1",
             0,
             NULL,

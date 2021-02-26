@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -79,7 +81,7 @@ class CompatibilityTests extends BaseTestContext
             "ms_word_version" => "Word2002",
         ));
         $request = new Requests\OptimizeDocumentOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $requestOptions,
             NULL,
             NULL,

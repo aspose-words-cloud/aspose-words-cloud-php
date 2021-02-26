@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -45,7 +47,7 @@ class MailMergeFiledsTests extends BaseTestContext
         $localDocumentFile = "SampleExecuteTemplate.docx";
 
         $request = new Requests\GetDocumentFieldNamesOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDocumentFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile,
             NULL,
             NULL,
             true

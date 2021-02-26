@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -70,7 +72,7 @@ class BookmarkTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetBookmarksOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             NULL,
             NULL
         );
@@ -116,7 +118,7 @@ class BookmarkTests extends BaseTestContext
         $bookmarkName = "aspose";
 
         $request = new Requests\GetBookmarkByNameOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $bookmarkName,
             NULL,
             NULL
@@ -177,7 +179,7 @@ class BookmarkTests extends BaseTestContext
             "text" => "This will be the text for Aspose",
         ));
         $request = new Requests\UpdateBookmarkOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $bookmarkName,
             $requestBookmarkData,
             NULL,

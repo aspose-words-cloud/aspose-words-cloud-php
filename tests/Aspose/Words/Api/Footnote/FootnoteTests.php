@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -86,7 +88,7 @@ class FootnoteTests extends BaseTestContext
             "text" => "test endnote",
         ));
         $request = new Requests\InsertFootnoteOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $footnoteFolder . "/Footnote.doc",
             $requestFootnoteDto,
             "",
             NULL,
@@ -176,7 +178,7 @@ class FootnoteTests extends BaseTestContext
         $footnoteFolder = "DocumentElements/Footnotes";
 
         $request = new Requests\DeleteFootnoteOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $footnoteFolder . "/Footnote.doc",
             0,
             "",
             NULL,
@@ -259,7 +261,7 @@ class FootnoteTests extends BaseTestContext
         $footnoteFolder = "DocumentElements/Footnotes";
 
         $request = new Requests\GetFootnotesOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $footnoteFolder . "/Footnote.doc",
             "",
             NULL,
             NULL
@@ -338,7 +340,7 @@ class FootnoteTests extends BaseTestContext
         $footnoteFolder = "DocumentElements/Footnotes";
 
         $request = new Requests\GetFootnoteOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $footnoteFolder . "/Footnote.doc",
             0,
             "",
             NULL,
@@ -427,7 +429,7 @@ class FootnoteTests extends BaseTestContext
             "text" => "new text is here",
         ));
         $request = new Requests\UpdateFootnoteOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $footnoteFolder . "/Footnote.doc",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $footnoteFolder . "/Footnote.doc",
             $requestFootnoteDto,
             0,
             "",

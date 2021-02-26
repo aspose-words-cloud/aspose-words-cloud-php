@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -76,7 +78,7 @@ class FieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/Fields";
 
         $request = new Requests\GetFieldsOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
             "sections/0",
             NULL,
             NULL
@@ -157,7 +159,7 @@ class FieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/Fields";
 
         $request = new Requests\GetFieldOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
             0,
             "sections/0/paragraphs/0",
             NULL,
@@ -249,7 +251,7 @@ class FieldTests extends BaseTestContext
             "field_code" => "{ NUMPAGES }",
         ));
         $request = new Requests\InsertFieldOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
             $requestField,
             "sections/0/paragraphs/0",
             NULL,
@@ -353,7 +355,7 @@ class FieldTests extends BaseTestContext
             "field_code" => "{ NUMPAGES }",
         ));
         $request = new Requests\UpdateFieldOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
             $requestField,
             0,
             "sections/0/paragraphs/0",
@@ -416,7 +418,7 @@ class FieldTests extends BaseTestContext
             "format" => "{PAGE} of {NUMPAGES}",
         ));
         $request = new Requests\InsertPageNumbersOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . "Common/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . "Common/" . $localFileName,
             $requestPageNumber,
             NULL,
             NULL,
@@ -468,7 +470,7 @@ class FieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/Fields";
 
         $request = new Requests\DeleteFieldOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $fieldFolder . "/GetField.docx",
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
             0,
             "sections/0/paragraphs/0",
             NULL,
@@ -695,7 +697,7 @@ class FieldTests extends BaseTestContext
         $localFileName = "Common/test_multi_pages.docx";
 
         $request = new Requests\DeleteFieldsOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFileName,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFileName,
             "",
             NULL,
             NULL,
@@ -745,7 +747,7 @@ class FieldTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\UpdateFieldsOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             NULL,
             NULL,
             NULL

@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -73,7 +75,7 @@ class PageSetupTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetSectionPageSetupOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             0,
             NULL,
             NULL
@@ -138,7 +140,7 @@ class PageSetupTests extends BaseTestContext
             "paper_size" => "A5",
         ));
         $request = new Requests\UpdateSectionPageSetupOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             0,
             $requestPageSetup,
             NULL,
@@ -189,7 +191,7 @@ class PageSetupTests extends BaseTestContext
         $localTextFile = "DocumentElements/Text/SampleWordDocument.docx";
 
         $request = new Requests\RenderPageOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localTextFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localTextFile,
             1,
             "bmp",
             NULL,

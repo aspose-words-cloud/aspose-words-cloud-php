@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -76,7 +78,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetDocumentPropertiesOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             NULL,
             NULL
         );
@@ -123,7 +125,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\GetDocumentPropertyOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "Author",
             NULL,
             NULL
@@ -170,7 +172,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $request = new Requests\DeleteDocumentPropertyOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "testProp",
             NULL,
             NULL,
@@ -231,7 +233,7 @@ class DocumentPropertiesTests extends BaseTestContext
             "value" => "Imran Anwar",
         ));
         $request = new Requests\CreateOrUpdateDocumentPropertyOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "AsposeAuthor",
             $requestProperty,
             NULL,

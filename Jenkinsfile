@@ -3,9 +3,9 @@ properties([
 	[$class: 'ParametersDefinitionProperty', 
 		parameterDefinitions: [
 			[$class: 'StringParameterDefinition', name: 'branch', defaultValue: 'master', description: 'the branch to build'],
-			[$class: 'StringParameterDefinition', name: 'apiUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'api url'],
-			[$class: 'StringParameterDefinition', name: 'credsId', defaultValue: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', description: 'api url'],
+			[$class: 'StringParameterDefinition', name: 'apiUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'api url'],			
             [$class: 'BooleanParameterDefinition', name: 'ignoreCiSkip', defaultValue: false, description: 'ignore CI Skip'],
+            [$class: 'StringParameterDefinition', name: 'credentialsId', defaultValue: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', description: 'credentials id'],
 		]
 	]
 ])
@@ -22,12 +22,11 @@ def runtests(dockerImageVersion)
                 sh 'git show -s HEAD > gitMessage'
                 def commitMessage = readFile('gitMessage').trim()
                 echo commitMessage
-                needToBuild = params.ignoreCiSkip || !commitMessage.contains('[ci skip]')   
-                credsId = params.credsId;
+                needToBuild = params.ignoreCiSkip || !commitMessage.contains('[ci skip]')                   
                 sh 'git clean -fdx'
                 
                 if (needToBuild) {
-                    withCredentials([usernamePassword(credentialsId: credsId, passwordVariable: 'ClientSecret', usernameVariable: 'ClientId')]) {
+                    withCredentials([usernamePassword(credentialsId: params.credentialsId, passwordVariable: 'ClientSecret', usernameVariable: 'ClientId')]) {
                         sh 'mkdir -p Settings'
                         sh 'echo "{\\"ClientId\\": \\"$ClientId\\",\\"ClientSecret\\": \\"$ClientSecret\\", \\"BaseUrl\\": \\"$apiUrl\\"}" > Settings/servercreds.json'
                     }

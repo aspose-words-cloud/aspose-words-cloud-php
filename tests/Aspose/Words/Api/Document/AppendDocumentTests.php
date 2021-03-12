@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -103,7 +105,7 @@ class AppendDocumentTests extends BaseTestContext
             "document_entries" => $requestDocumentListDocumentEntries,
         ));
         $request = new Requests\AppendDocumentOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $requestDocumentList,
             NULL,
             NULL,

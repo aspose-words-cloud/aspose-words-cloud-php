@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -73,7 +75,7 @@ class HyperlinkTests extends BaseTestContext
         $localFile = "Common/test_doc.docx";
 
         $request = new Requests\GetDocumentHyperlinkByIndexOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             0,
             NULL,
             NULL
@@ -121,7 +123,7 @@ class HyperlinkTests extends BaseTestContext
         $localFile = "Common/test_doc.docx";
 
         $request = new Requests\GetDocumentHyperlinksOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             NULL,
             NULL
         );

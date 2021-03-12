@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -76,7 +78,7 @@ class TableBorderTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\GetBordersOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "tables/1/rows/0/cells/0",
             NULL,
             NULL
@@ -125,7 +127,7 @@ class TableBorderTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\GetBorderOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "left",
             "tables/1/rows/0/cells/0",
             NULL,
@@ -174,7 +176,7 @@ class TableBorderTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\DeleteBordersOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "tables/1/rows/0/cells/0",
             NULL,
             NULL,
@@ -226,7 +228,7 @@ class TableBorderTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $request = new Requests\DeleteBorderOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             "left",
             "tables/1/rows/0/cells/0",
             NULL,
@@ -308,7 +310,7 @@ class TableBorderTests extends BaseTestContext
             "shadow" => true,
         ));
         $request = new Requests\UpdateBorderOnlineRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $requestBorderProperties,
             "left",
             "tables/1/rows/0/cells/0",

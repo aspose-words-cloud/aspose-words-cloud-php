@@ -28,6 +28,8 @@
 
 namespace Aspose\Tests;
 
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 
@@ -46,7 +48,7 @@ class FileTests extends BaseTestContext
         $remoteFileName = "TestUploadFile.docx";
 
         $request = new Requests\UploadFileRequest(
-            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFile,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFile,
             $remoteDataFolder . "/" . $remoteFileName,
             NULL
         );

@@ -58,6 +58,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'string',
         'file_name' => 'string',
         'save_format' => 'string',
+        'update_created_time_property' => 'bool',
         'update_fields' => 'bool',
         'update_last_printed_property' => 'bool',
         'update_last_saved_time_property' => 'bool',
@@ -77,6 +78,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'null',
         'file_name' => 'null',
         'save_format' => 'null',
+        'update_created_time_property' => 'null',
         'update_fields' => 'null',
         'update_last_printed_property' => 'null',
         'update_last_saved_time_property' => 'null',
@@ -117,6 +119,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'DmlRenderingMode',
         'file_name' => 'FileName',
         'save_format' => 'SaveFormat',
+        'update_created_time_property' => 'UpdateCreatedTimeProperty',
         'update_fields' => 'UpdateFields',
         'update_last_printed_property' => 'UpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'UpdateLastSavedTimeProperty',
@@ -136,6 +139,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'setDmlRenderingMode',
         'file_name' => 'setFileName',
         'save_format' => 'setSaveFormat',
+        'update_created_time_property' => 'setUpdateCreatedTimeProperty',
         'update_fields' => 'setUpdateFields',
         'update_last_printed_property' => 'setUpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'setUpdateLastSavedTimeProperty',
@@ -155,6 +159,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'getDmlRenderingMode',
         'file_name' => 'getFileName',
         'save_format' => 'getSaveFormat',
+        'update_created_time_property' => 'getUpdateCreatedTimeProperty',
         'update_fields' => 'getUpdateFields',
         'update_last_printed_property' => 'getUpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'getUpdateLastSavedTimeProperty',
@@ -240,6 +245,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
+        $this->container['update_created_time_property'] = isset($data['update_created_time_property']) ? $data['update_created_time_property'] : null;
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
         $this->container['update_last_printed_property'] = isset($data['update_last_printed_property']) ? $data['update_last_printed_property'] : null;
         $this->container['update_last_saved_time_property'] = isset($data['update_last_saved_time_property']) ? $data['update_last_saved_time_property'] : null;
@@ -424,6 +430,29 @@ class SaveOptionsData implements ArrayAccess
     public function setSaveFormat($save_format)
     {
         $this->container['save_format'] = $save_format;
+        return $this;
+    }
+
+    /*
+     * Gets update_created_time_property
+     *
+     * @return bool
+     */
+    public function getUpdateCreatedTimeProperty()
+    {
+        return $this->container['update_created_time_property'];
+    }
+
+    /*
+     * Sets update_created_time_property
+     *
+     * @param bool $update_created_time_property Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.
+     *
+     * @return $this
+     */
+    public function setUpdateCreatedTimeProperty($update_created_time_property)
+    {
+        $this->container['update_created_time_property'] = $update_created_time_property;
         return $this;
     }
 

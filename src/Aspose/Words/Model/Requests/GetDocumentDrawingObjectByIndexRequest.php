@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentDrawingObjectByIndexRequest.php">

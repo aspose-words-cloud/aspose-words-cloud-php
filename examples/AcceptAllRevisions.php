@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model;
 use Aspose\Words\Model\Requests;

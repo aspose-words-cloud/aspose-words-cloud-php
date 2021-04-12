@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PdfSaveOptionsData.php">
@@ -466,7 +466,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets display_doc_title
      *
-     * @param bool $display_doc_title Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
+     * @param bool $display_doc_title Gets or sets a value indicating whether the window�s title bar should display the document title taken from the Title entry of the document information dictionary.
      *
      * @return $this
      */

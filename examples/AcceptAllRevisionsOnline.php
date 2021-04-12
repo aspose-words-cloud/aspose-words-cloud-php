@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);

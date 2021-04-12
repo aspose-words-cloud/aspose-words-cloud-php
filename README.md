@@ -1,4 +1,4 @@
-﻿# Aspose.Words Cloud SDK for PHP
+# Aspose.Words Cloud SDK for PHP
 This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your PHP applications quickly and easily, with zero initial cost.
 
 [Aspose.Words Cloud](https://products.aspose.cloud/words/family "Aspose.Words Cloud")  

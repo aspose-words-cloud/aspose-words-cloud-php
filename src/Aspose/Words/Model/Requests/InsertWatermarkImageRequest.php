@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertWatermarkImageRequest.php">
@@ -94,7 +94,7 @@ class InsertWatermarkImageRequest
     public $rotation_angle;
 
     /*
-     * The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.
+     * The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
     public $image;
 
@@ -111,7 +111,7 @@ class InsertWatermarkImageRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      * @param double $rotation_angle The rotation angle of the watermark.
-     * @param string $image The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.
+     * @param string $image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
     public function __construct($name, $image_file = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)
     {
@@ -299,7 +299,7 @@ class InsertWatermarkImageRequest
     }
 
     /*
-     * The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.
+     * The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
     public function get_image()
     {
@@ -307,7 +307,7 @@ class InsertWatermarkImageRequest
     }
 
     /*
-     * The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.
+     * The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
     public function set_image($value)
     {

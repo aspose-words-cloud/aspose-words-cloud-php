@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UrlEncodeTests.php">
@@ -41,7 +41,7 @@ class UrlEncodeTests extends BaseTestContext
     public function testUrlEncoding()
     {
         $localName = "test_multi_pages.docx";
-        $remoteName = "[â€œTest_Two,_Inc.â€]-_83(b)Election([â€œBill_Gatesâ€]).docx";
+        $remoteName = "[“Test_Two,_Inc.”]-_83(b)Election([“Bill_Gates”]).docx";
         $subfolder = "DocumentElements/Bookmarks";
         $fullName = self::$baseTestPath . $subfolder . "/" . $remoteName;
         $bookmarkName = "aspose";

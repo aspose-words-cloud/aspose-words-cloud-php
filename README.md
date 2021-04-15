@@ -15,6 +15,10 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 
 ## Enhancements in Version 21.4
 
+- Removed obsolete pdf save option 'EscapeUri'
+- SaveOptions now contains CustomTimeZoneInfo to set custom timezone when SdtType.Date structured document tag updated from custom XML
+- Url of child requests in batch can be full now (earlier it can be only relative)
+- Added 'RquestId' header to all responses
 
 
 ## Enhancements in Version 21.3

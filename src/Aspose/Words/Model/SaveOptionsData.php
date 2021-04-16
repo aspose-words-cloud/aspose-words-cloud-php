@@ -53,6 +53,7 @@ class SaveOptionsData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'allow_embedding_post_script_fonts' => 'bool',
+        'custom_time_zone_info_data' => '\Aspose\Words\Model\TimeZoneInfoData',
         'dml3_d_effects_rendering_mode' => 'string',
         'dml_effects_rendering_mode' => 'string',
         'dml_rendering_mode' => 'string',
@@ -73,6 +74,7 @@ class SaveOptionsData implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'allow_embedding_post_script_fonts' => 'null',
+        'custom_time_zone_info_data' => 'null',
         'dml3_d_effects_rendering_mode' => 'null',
         'dml_effects_rendering_mode' => 'null',
         'dml_rendering_mode' => 'null',
@@ -114,6 +116,7 @@ class SaveOptionsData implements ArrayAccess
      */
     protected static $attributeMap = [
         'allow_embedding_post_script_fonts' => 'AllowEmbeddingPostScriptFonts',
+        'custom_time_zone_info_data' => 'CustomTimeZoneInfoData',
         'dml3_d_effects_rendering_mode' => 'Dml3DEffectsRenderingMode',
         'dml_effects_rendering_mode' => 'DmlEffectsRenderingMode',
         'dml_rendering_mode' => 'DmlRenderingMode',
@@ -134,6 +137,7 @@ class SaveOptionsData implements ArrayAccess
      */
     protected static $setters = [
         'allow_embedding_post_script_fonts' => 'setAllowEmbeddingPostScriptFonts',
+        'custom_time_zone_info_data' => 'setCustomTimeZoneInfoData',
         'dml3_d_effects_rendering_mode' => 'setDml3DEffectsRenderingMode',
         'dml_effects_rendering_mode' => 'setDmlEffectsRenderingMode',
         'dml_rendering_mode' => 'setDmlRenderingMode',
@@ -154,6 +158,7 @@ class SaveOptionsData implements ArrayAccess
      */
     protected static $getters = [
         'allow_embedding_post_script_fonts' => 'getAllowEmbeddingPostScriptFonts',
+        'custom_time_zone_info_data' => 'getCustomTimeZoneInfoData',
         'dml3_d_effects_rendering_mode' => 'getDml3DEffectsRenderingMode',
         'dml_effects_rendering_mode' => 'getDmlEffectsRenderingMode',
         'dml_rendering_mode' => 'getDmlRenderingMode',
@@ -240,6 +245,7 @@ class SaveOptionsData implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['allow_embedding_post_script_fonts'] = isset($data['allow_embedding_post_script_fonts']) ? $data['allow_embedding_post_script_fonts'] : null;
+        $this->container['custom_time_zone_info_data'] = isset($data['custom_time_zone_info_data']) ? $data['custom_time_zone_info_data'] : null;
         $this->container['dml3_d_effects_rendering_mode'] = isset($data['dml3_d_effects_rendering_mode']) ? $data['dml3_d_effects_rendering_mode'] : null;
         $this->container['dml_effects_rendering_mode'] = isset($data['dml_effects_rendering_mode']) ? $data['dml_effects_rendering_mode'] : null;
         $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
@@ -311,6 +317,29 @@ class SaveOptionsData implements ArrayAccess
     public function setAllowEmbeddingPostScriptFonts($allow_embedding_post_script_fonts)
     {
         $this->container['allow_embedding_post_script_fonts'] = $allow_embedding_post_script_fonts;
+        return $this;
+    }
+
+    /*
+     * Gets custom_time_zone_info_data
+     *
+     * @return \Aspose\Words\Model\TimeZoneInfoData
+     */
+    public function getCustomTimeZoneInfoData()
+    {
+        return $this->container['custom_time_zone_info_data'];
+    }
+
+    /*
+     * Sets custom_time_zone_info_data
+     *
+     * @param \Aspose\Words\Model\TimeZoneInfoData $custom_time_zone_info_data Gets or sets CustomTimeZoneInfo.
+     *
+     * @return $this
+     */
+    public function setCustomTimeZoneInfoData($custom_time_zone_info_data)
+    {
+        $this->container['custom_time_zone_info_data'] = $custom_time_zone_info_data;
         return $this;
     }
 

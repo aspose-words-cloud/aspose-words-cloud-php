@@ -83,6 +83,10 @@ class RevisionsTests extends BaseTestContext
 
         $result = $this->words->acceptAllRevisionsOnline($request);
         Assert::isTrue($result !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertNotNull($result->getModel());
+        Assert::assertNotNull($result->getModel()->getResult());
+        Assert::assertNotNull($result->getModel()->getResult()->getDest());
     }
 
     /*
@@ -130,5 +134,9 @@ class RevisionsTests extends BaseTestContext
 
         $result = $this->words->rejectAllRevisionsOnline($request);
         Assert::isTrue($result !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertNotNull($result->getModel());
+        Assert::assertNotNull($result->getModel()->getResult());
+        Assert::assertNotNull($result->getModel()->getResult()->getDest());
     }
 }

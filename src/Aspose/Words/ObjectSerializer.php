@@ -87,7 +87,6 @@ class ObjectSerializer
 
         $result = [];
         foreach ($a_blocks as $id => $block) {
-            $block = trim($block);
             if (empty($block)) {
                 continue;
             }
@@ -99,6 +98,7 @@ class ObjectSerializer
 
             $headersData = substr($block, 0, $dataIndex);
             $bodyData = substr($block, $dataIndex + strlen($separator));
+            $bodyData = trim($bodyData, "\r\n");
             $headers = [];
             foreach (preg_split('/\r\n/', $headersData) as $headerLine) {
                 $headerParts = preg_split('/:/', $headerLine);

@@ -26,8 +26,8 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "3.*",
-        "phpunit/phpunit": "^4.8",
-		"behat/behat": "3.8.*",
+        "phpunit/phpunit": "^9.5.*",
+		"behat/behat": "3.8.1",
 		"friendsofphp/php-cs-fixer": "3.0.*"
     },
 	"autoload": {

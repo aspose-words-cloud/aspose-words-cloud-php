@@ -62,7 +62,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->getBorders($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getBorders());
         Assert::assertNotNull($result->getBorders()->getList());
         Assert::assertCount(6, $result->getBorders()->getList());
@@ -85,7 +85,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->getBordersOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -113,7 +113,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->getBorder($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getBorder());
         Assert::assertNotNull($result->getBorder()->getColor());
         Assert::assertEquals("#000000", $result->getBorder()->getColor()->getWeb());
@@ -135,7 +135,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->getBorderOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -165,7 +165,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->deleteBorders($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -186,7 +186,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->deleteBordersOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -217,7 +217,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->deleteBorder($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -239,7 +239,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->deleteBorderOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -282,7 +282,7 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->updateBorder($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getBorder());
         Assert::assertNotNull($result->getBorder()->getColor());
         Assert::assertEquals("#AABBCC", $result->getBorder()->getColor()->getWeb());
@@ -322,6 +322,6 @@ class TableBorderTests extends BaseTestContext
         );
 
         $result = $this->words->updateBorderOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 }

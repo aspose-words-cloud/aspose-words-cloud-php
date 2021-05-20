@@ -54,7 +54,7 @@ class MailMergeFiledsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentFieldNamesOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFieldNames());
         Assert::assertNotNull($result->getFieldNames()->getNames());
         Assert::assertCount(15, $result->getFieldNames()->getNames());
@@ -84,7 +84,7 @@ class MailMergeFiledsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentFieldNames($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFieldNames());
         Assert::assertNotNull($result->getFieldNames()->getNames());
         Assert::assertCount(0, $result->getFieldNames()->getNames());

@@ -49,7 +49,7 @@ class ClassificationTests extends BaseTestContext
         );
 
         $result = $this->words->classify($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertEquals("Science", $result->getBestClassName());
         Assert::assertNotNull($result->getBestResults());
         Assert::assertCount(3, $result->getBestResults());
@@ -80,7 +80,7 @@ class ClassificationTests extends BaseTestContext
         );
 
         $result = $this->words->classifyDocument($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertEquals("Hobbies_&_Interests", $result->getBestClassName());
         Assert::assertNotNull($result->getBestResults());
         Assert::assertCount(3, $result->getBestResults());
@@ -102,6 +102,6 @@ class ClassificationTests extends BaseTestContext
         );
 
         $result = $this->words->classifyDocumentOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 }

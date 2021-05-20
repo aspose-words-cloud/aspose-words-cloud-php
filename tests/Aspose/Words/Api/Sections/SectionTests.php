@@ -62,7 +62,7 @@ class SectionTests extends BaseTestContext
         );
 
         $result = $this->words->getSection($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getSection());
         Assert::assertNotNull($result->getSection()->getChildNodes());
         Assert::assertCount(13, $result->getSection()->getChildNodes());
@@ -84,7 +84,7 @@ class SectionTests extends BaseTestContext
         );
 
         $result = $this->words->getSectionOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -110,7 +110,7 @@ class SectionTests extends BaseTestContext
         );
 
         $result = $this->words->getSections($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getSections());
         Assert::assertNotNull($result->getSections()->getSectionLinkList());
         Assert::assertCount(1, $result->getSections()->getSectionLinkList());
@@ -131,7 +131,7 @@ class SectionTests extends BaseTestContext
         );
 
         $result = $this->words->getSectionsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*

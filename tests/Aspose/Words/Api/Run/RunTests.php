@@ -70,7 +70,7 @@ class RunTests extends BaseTestContext
         );
 
         $result = $this->words->updateRun($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getRun());
         Assert::assertEquals("run with text", $result->getRun()->getText());
     }
@@ -98,7 +98,7 @@ class RunTests extends BaseTestContext
         );
 
         $result = $this->words->updateRunOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -133,7 +133,7 @@ class RunTests extends BaseTestContext
         );
 
         $result = $this->words->insertRun($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getRun());
         Assert::assertEquals("run with text", $result->getRun()->getText());
         Assert::assertEquals("0.0.1.3", $result->getRun()->getNodeId());
@@ -162,7 +162,7 @@ class RunTests extends BaseTestContext
         );
 
         $result = $this->words->insertRunOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*

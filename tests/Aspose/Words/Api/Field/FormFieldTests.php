@@ -75,7 +75,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->updateFormField($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFormField());
         Assert::assertEquals("FullName", $result->getFormField()->getName());
         Assert::assertEquals("", $result->getFormField()->getStatusText());
@@ -109,7 +109,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->updateFormFieldOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -149,7 +149,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->updateFormField($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFormField());
         Assert::assertEquals("FullName", $result->getFormField()->getName());
         Assert::assertEquals("", $result->getFormField()->getStatusText());
@@ -180,7 +180,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->getFormField($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFormField());
         Assert::assertEquals("FullName", $result->getFormField()->getName());
     }
@@ -201,7 +201,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->getFormFieldOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -229,7 +229,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->getFormField($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFormField());
         Assert::assertEquals("FullName", $result->getFormField()->getName());
     }
@@ -258,7 +258,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->getFormFields($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFormFields());
         Assert::assertNotNull($result->getFormFields()->getList());
         Assert::assertCount(5, $result->getFormFields()->getList());
@@ -280,7 +280,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->getFormFieldsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -307,7 +307,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->getFormFields($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFormFields());
         Assert::assertNotNull($result->getFormFields()->getList());
         Assert::assertCount(5, $result->getFormFields()->getList());
@@ -351,7 +351,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->insertFormField($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFormField());
         Assert::assertEquals("FullName", $result->getFormField()->getName());
         Assert::assertEquals("", $result->getFormField()->getStatusText());
@@ -386,7 +386,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->insertFormFieldOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -426,7 +426,7 @@ class FormFieldTests extends BaseTestContext
         );
 
         $result = $this->words->insertFormField($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFormField());
         Assert::assertEquals("FullName", $result->getFormField()->getName());
         Assert::assertEquals("", $result->getFormField()->getStatusText());

@@ -75,7 +75,7 @@ class AppendDocumentTests extends BaseTestContext
         );
 
         $result = $this->words->appendDocument($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocument());
         Assert::assertEquals("TestAppendDocument.docx", $result->getDocument()->getFileName());
     }
@@ -115,6 +115,6 @@ class AppendDocumentTests extends BaseTestContext
         );
 
         $result = $this->words->appendDocumentOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 }

@@ -62,7 +62,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentDrawingObjects($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -80,7 +80,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentDrawingObjectsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -107,7 +107,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentDrawingObjects($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -135,7 +135,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentDrawingObjectByIndex($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -154,7 +154,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentDrawingObjectByIndexOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -182,7 +182,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentDrawingObjectByIndex($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -457,7 +457,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->insertDrawingObject($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -489,7 +489,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->insertDrawingObjectOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -530,7 +530,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->insertDrawingObject($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -648,7 +648,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->updateDrawingObject($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -675,7 +675,7 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->updateDrawingObjectOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -711,6 +711,6 @@ class DrawingObjectsTests extends BaseTestContext
         );
 
         $result = $this->words->updateDrawingObject($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 }

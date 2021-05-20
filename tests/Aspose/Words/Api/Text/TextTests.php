@@ -69,7 +69,7 @@ class TextTests extends BaseTestContext
         );
 
         $result = $this->words->replaceText($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertEquals(3, $result->getMatches());
     }
 
@@ -95,7 +95,7 @@ class TextTests extends BaseTestContext
         );
 
         $result = $this->words->replaceTextOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -122,7 +122,7 @@ class TextTests extends BaseTestContext
         );
 
         $result = $this->words->search($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getSearchResults());
         Assert::assertNotNull($result->getSearchResults()->getResultsList());
         Assert::assertCount(23, $result->getSearchResults()->getResultsList());
@@ -145,6 +145,6 @@ class TextTests extends BaseTestContext
         );
 
         $result = $this->words->searchOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 }

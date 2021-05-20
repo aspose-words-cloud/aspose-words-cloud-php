@@ -59,7 +59,7 @@ class FontTests extends BaseTestContext
         );
 
         $result = $this->words->getAvailableFonts($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getSystemFonts());
     }
 }

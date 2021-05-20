@@ -167,7 +167,7 @@ class FootnoteTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFootnote($request);
+        Assert::assertNull($this->words->deleteFootnote($request));
     }
 
     /*
@@ -219,7 +219,7 @@ class FootnoteTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFootnote($request);
+        Assert::assertNull($this->words->deleteFootnote($request));
     }
 
     /*

@@ -46,7 +46,7 @@ class FontTests extends BaseTestContext
         $request = new Requests\ResetCacheRequest(
         );
 
-    $this->words->resetCache($request);
+        Assert::assertNull($this->words->resetCache($request));
     }
 
     /*

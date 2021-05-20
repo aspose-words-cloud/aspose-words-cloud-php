@@ -760,7 +760,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteParagraph($request);
+        Assert::assertNull($this->words->deleteParagraph($request));
     }
 
     /*
@@ -812,7 +812,7 @@ class ParagraphTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteParagraph($request);
+        Assert::assertNull($this->words->deleteParagraph($request));
     }
 
     /*

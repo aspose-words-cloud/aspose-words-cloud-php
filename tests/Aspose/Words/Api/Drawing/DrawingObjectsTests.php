@@ -560,7 +560,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteDrawingObject($request);
+        Assert::assertNull($this->words->deleteDrawingObject($request));
     }
 
     /*
@@ -612,7 +612,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteDrawingObject($request);
+        Assert::assertNull($this->words->deleteDrawingObject($request));
     }
 
     /*

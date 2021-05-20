@@ -459,7 +459,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteField($request);
+        Assert::assertNull($this->words->deleteField($request));
     }
 
     /*
@@ -512,7 +512,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteField($request);
+        Assert::assertNull($this->words->deleteField($request));
     }
 
     /*
@@ -541,7 +541,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFields($request);
+        Assert::assertNull($this->words->deleteFields($request));
     }
 
     /*
@@ -570,7 +570,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFields($request);
+        Assert::assertNull($this->words->deleteFields($request));
     }
 
     /*
@@ -599,7 +599,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFields($request);
+        Assert::assertNull($this->words->deleteFields($request));
     }
 
     /*
@@ -628,7 +628,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFields($request);
+        Assert::assertNull($this->words->deleteFields($request));
     }
 
     /*
@@ -657,7 +657,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFields($request);
+        Assert::assertNull($this->words->deleteFields($request));
     }
 
     /*
@@ -686,7 +686,7 @@ class FieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFields($request);
+        Assert::assertNull($this->words->deleteFields($request));
     }
 
     /*

@@ -230,7 +230,7 @@ class TableTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteTable($request);
+        Assert::assertNull($this->words->deleteTable($request));
     }
 
     /*
@@ -282,7 +282,7 @@ class TableTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteTable($request);
+        Assert::assertNull($this->words->deleteTable($request));
     }
 
     /*
@@ -668,7 +668,7 @@ class TableTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteTableRow($request);
+        Assert::assertNull($this->words->deleteTableRow($request));
     }
 
     /*
@@ -951,7 +951,7 @@ class TableTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteTableCell($request);
+        Assert::assertNull($this->words->deleteTableCell($request));
     }
 
     /*

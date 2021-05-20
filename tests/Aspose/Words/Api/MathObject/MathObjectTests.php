@@ -308,7 +308,7 @@ class MathObjectTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteOfficeMathObject($request);
+        Assert::assertNull($this->words->deleteOfficeMathObject($request));
     }
 
     /*
@@ -360,6 +360,6 @@ class MathObjectTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteOfficeMathObject($request);
+        Assert::assertNull($this->words->deleteOfficeMathObject($request));
     }
 }

@@ -219,7 +219,7 @@ class HeaderFooterTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteHeaderFooter($request);
+        Assert::assertNull($this->words->deleteHeaderFooter($request));
     }
 
     /*
@@ -271,7 +271,7 @@ class HeaderFooterTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteHeadersFooters($request);
+        Assert::assertNull($this->words->deleteHeadersFooters($request));
     }
 
     /*

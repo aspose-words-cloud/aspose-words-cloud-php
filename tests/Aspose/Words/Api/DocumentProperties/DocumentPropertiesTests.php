@@ -161,7 +161,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteDocumentProperty($request);
+        Assert::assertNull($this->words->deleteDocumentProperty($request));
     }
 
     /*

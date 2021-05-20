@@ -160,7 +160,7 @@ class SectionTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteSection($request);
+        Assert::assertNull($this->words->deleteSection($request));
     }
 
     /*

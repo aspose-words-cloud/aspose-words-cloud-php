@@ -192,7 +192,7 @@ class RunTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteRun($request);
+        Assert::assertNull($this->words->deleteRun($request));
     }
 
     /*

@@ -82,7 +82,7 @@ class FileTests extends BaseTestContext
             NULL
         );
 
-    $this->words->copyFile($request);
+        Assert::assertNull($this->words->copyFile($request));
     }
 
     /*
@@ -107,7 +107,7 @@ class FileTests extends BaseTestContext
             NULL
         );
 
-    $this->words->moveFile($request);
+        Assert::assertNull($this->words->moveFile($request));
     }
 
     /*
@@ -130,7 +130,7 @@ class FileTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFile($request);
+        Assert::assertNull($this->words->deleteFile($request));
     }
 
     /*

@@ -459,7 +459,7 @@ class FormFieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFormField($request);
+        Assert::assertNull($this->words->deleteFormField($request));
     }
 
     /*
@@ -511,6 +511,6 @@ class FormFieldTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFormField($request);
+        Assert::assertNull($this->words->deleteFormField($request));
     }
 }

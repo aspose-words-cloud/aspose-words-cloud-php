@@ -67,7 +67,7 @@ class CompatibilityTests extends BaseTestContext
             NULL
         );
 
-    $this->words->optimizeDocument($request);
+        Assert::assertNull($this->words->optimizeDocument($request));
     }
 
     /*

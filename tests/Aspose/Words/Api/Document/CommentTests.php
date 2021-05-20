@@ -356,7 +356,7 @@ class CommentTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteComment($request);
+        Assert::assertNull($this->words->deleteComment($request));
     }
 
     /*
@@ -405,7 +405,7 @@ class CommentTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteComments($request);
+        Assert::assertNull($this->words->deleteComments($request));
     }
 
     /*

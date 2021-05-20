@@ -34,7 +34,7 @@ use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 class ExamplesTests extends BaseTestContext
 {
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
           $this->uploadFile(realpath(__DIR__ . '/../../../ExamplesData/test_doc.docx'), 'test_doc.docx');

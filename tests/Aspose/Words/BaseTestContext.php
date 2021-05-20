@@ -29,10 +29,10 @@
 namespace Aspose\Tests;
 
 use Aspose\Words\Model\Requests;
-use Aspose\Storage\Api\StorageApi;
 use Aspose\Words\Configuration;
 use Aspose\Words\WordsApi;
-class BaseTestContext extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+class BaseTestContext extends TestCase
 {
     protected $words;
 
@@ -46,7 +46,7 @@ class BaseTestContext extends \PHPUnit_Framework_TestCase
     /**
      * Setup before running each test case
      */
-    public function setUp()
+    public function setUp() : void
     {
         $creds = self::getConfig();
         /*

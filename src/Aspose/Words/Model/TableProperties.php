@@ -591,6 +591,7 @@ class TableProperties extends LinkElement
     const STYLE_IDENTIFIER_LIST_TABLE5_DARK_ACCENT6 = 'ListTable5DarkAccent6';
     const STYLE_IDENTIFIER_LIST_TABLE6_COLORFUL_ACCENT6 = 'ListTable6ColorfulAccent6';
     const STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6 = 'ListTable7ColorfulAccent6';
+    const STYLE_IDENTIFIER_SMART_LINK = 'SmartLink';
     const STYLE_IDENTIFIER_USER = 'User';
     const STYLE_IDENTIFIER_NIL = 'Nil';
     const STYLE_OPTIONS_NONE = 'None';
@@ -998,6 +999,7 @@ class TableProperties extends LinkElement
             self::STYLE_IDENTIFIER_LIST_TABLE5_DARK_ACCENT6,
             self::STYLE_IDENTIFIER_LIST_TABLE6_COLORFUL_ACCENT6,
             self::STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6,
+            self::STYLE_IDENTIFIER_SMART_LINK,
             self::STYLE_IDENTIFIER_USER,
             self::STYLE_IDENTIFIER_NIL
         ];

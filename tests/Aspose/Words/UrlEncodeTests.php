@@ -52,6 +52,6 @@ class UrlEncodeTests extends BaseTestContext
         $request = new Requests\GetBookmarkByNameRequest($remoteName, $bookmarkName, $folder=self::$baseTestPath . $subfolder);
 
         $result = $this->words->getBookmarkByName($request);
-        Assert::greaterThan(0, count(json_decode($result, true)['Bookmark']));
+        Assert::assertGreaterThan(0, count(json_decode($result, true)['Bookmark']));
     }
 }

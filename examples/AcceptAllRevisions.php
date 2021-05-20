@@ -17,7 +17,7 @@ $uploadFileRequest = new Requests\UploadFileRequest(
     $fileName,
     NULL
 );
-$wordsApi->uploadFile($uploadFileRequest);
+Assert::assertNull($wordsApi->uploadFile($uploadFileRequest));
 
 /**
  * Calls AcceptAllRevisions method for document in cloud.
@@ -30,4 +30,4 @@ $request = new Requests\AcceptAllRevisionsRequest(
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisions($request);
+Assert::assertNull($wordsApi->acceptAllRevisions($request));

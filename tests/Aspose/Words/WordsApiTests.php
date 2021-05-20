@@ -44,12 +44,12 @@ class WordsApiTests extends BaseTestContext
         $remoteName = "noFileWithThisName.docx";
         $request = new Requests\GetSectionsRequest($remoteName);
         try{
-            $this->words->GetSections($request);
-            Assert::fail("Expected exception has not been thrown");
+
+            Assert::assertNull($this->words->GetSections($request));
         }
         catch (ApiException $exception)
         {
-            Assert::equalTo(404, $exception->getCode());
+            Assert::assertEquals(404, $exception->getCode());
         }
     }
 
@@ -63,7 +63,7 @@ class WordsApiTests extends BaseTestContext
         }
         catch (RequestException $e)
         {
-            Assert::equalTo(400, $e->getCode());
+            Assert::assertEquals(400, $e->getCode());
         }
     }
 }

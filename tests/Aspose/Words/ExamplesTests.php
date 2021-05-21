@@ -56,7 +56,7 @@ class ExamplesTests extends BaseTestContext
           $fileName,
           NULL
       );
-      Assert::assertNull($wordsApi->uploadFile($uploadFileRequest));
+      $wordsApi->uploadFile($uploadFileRequest);
 
       /**
        * Calls AcceptAllRevisions method for document in cloud.
@@ -69,7 +69,7 @@ class ExamplesTests extends BaseTestContext
           NULL,
           NULL
       );
-      Assert::assertNull($wordsApi->acceptAllRevisions($request));
+      $wordsApi->acceptAllRevisions($request);
     }
 
     public function testExampleAcceptAllRevisionsOnline()
@@ -89,7 +89,7 @@ class ExamplesTests extends BaseTestContext
           NULL,
           NULL
       );
-      $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);Assert::assertNotNull($acceptAllRevisionsOnlineResult);
+      $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);
       rename($acceptAllRevisionsOnlineResult->getDocument()->getPathname(), 'test_result.docx');
     }
 }

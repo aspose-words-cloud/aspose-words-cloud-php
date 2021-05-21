@@ -14,5 +14,5 @@ $request = new Requests\AcceptAllRevisionsOnlineRequest(
     NULL,
     NULL
 );
-$acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);Assert::assertNotNull($acceptAllRevisionsOnlineResult);
+$acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);
 rename($acceptAllRevisionsOnlineResult->getDocument()->getPathname(), 'test_result.docx');

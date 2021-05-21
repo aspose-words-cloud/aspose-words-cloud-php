@@ -63,7 +63,7 @@ class MacrosTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteMacros($request);
+        Assert::assertNull($this->words->deleteMacros($request));
     }
 
     /*

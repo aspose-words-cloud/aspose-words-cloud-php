@@ -34,7 +34,7 @@ use Aspose\Words\Model\Requests;
 use PHPUnit\Framework\Assert;
 class ExamplesTests extends BaseTestContext
 {
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
           $this->uploadFile(realpath(__DIR__ . '/../../../ExamplesData/test_doc.docx'), 'test_doc.docx');
@@ -42,6 +42,8 @@ class ExamplesTests extends BaseTestContext
 
     public function testExampleAcceptAllRevisions()
     {
+      $this->expectNotToPerformAssertions();
+
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
       $fileName  = "test_doc.docx";
@@ -72,6 +74,8 @@ class ExamplesTests extends BaseTestContext
 
     public function testExampleAcceptAllRevisionsOnline()
     {
+      $this->expectNotToPerformAssertions();
+
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
       $fileName  = "test_doc.docx";

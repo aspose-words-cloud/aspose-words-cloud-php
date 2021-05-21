@@ -61,7 +61,7 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentProperties($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocumentProperties());
         Assert::assertNotNull($result->getDocumentProperties()->getList());
         Assert::assertCount(24, $result->getDocumentProperties()->getList());
@@ -84,7 +84,7 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentPropertiesOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -111,7 +111,7 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentProperty($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocumentProperty());
         Assert::assertEquals("Author", $result->getDocumentProperty()->getName());
         Assert::assertEquals("", $result->getDocumentProperty()->getValue());
@@ -132,7 +132,7 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
         $result = $this->words->getDocumentPropertyOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -161,7 +161,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteDocumentProperty($request);
+        Assert::assertNull($this->words->deleteDocumentProperty($request));
     }
 
     /*
@@ -216,7 +216,7 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
         $result = $this->words->createOrUpdateDocumentProperty($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocumentProperty());
         Assert::assertEquals("AsposeAuthor", $result->getDocumentProperty()->getName());
         Assert::assertEquals("Imran Anwar", $result->getDocumentProperty()->getValue());
@@ -244,6 +244,6 @@ class DocumentPropertiesTests extends BaseTestContext
         );
 
         $result = $this->words->createOrUpdateDocumentPropertyOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 }

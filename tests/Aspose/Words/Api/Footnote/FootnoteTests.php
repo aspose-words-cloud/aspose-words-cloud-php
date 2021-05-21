@@ -70,7 +70,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->insertFootnote($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFootnote());
         Assert::assertEquals("0.1.7.1", $result->getFootnote()->getNodeId());
         Assert::assertEquals(" test endnote" . "\r\n", $result->getFootnote()->getText());
@@ -99,7 +99,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->insertFootnoteOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -134,7 +134,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->insertFootnote($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFootnote());
         Assert::assertEquals("0.1.7.1", $result->getFootnote()->getNodeId());
         Assert::assertEquals(" test endnote" . "\r\n", $result->getFootnote()->getText());
@@ -167,7 +167,7 @@ class FootnoteTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFootnote($request);
+        Assert::assertNull($this->words->deleteFootnote($request));
     }
 
     /*
@@ -219,7 +219,7 @@ class FootnoteTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFootnote($request);
+        Assert::assertNull($this->words->deleteFootnote($request));
     }
 
     /*
@@ -246,7 +246,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->getFootnotes($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFootnotes());
         Assert::assertNotNull($result->getFootnotes()->getList());
         Assert::assertCount(6, $result->getFootnotes()->getList());
@@ -268,7 +268,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->getFootnotesOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -295,7 +295,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->getFootnotes($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFootnotes());
         Assert::assertNotNull($result->getFootnotes()->getList());
         Assert::assertCount(6, $result->getFootnotes()->getList());
@@ -327,7 +327,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->getFootnote($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFootnote());
         Assert::assertEquals(" Footnote 1." . "\r\n", $result->getFootnote()->getText());
     }
@@ -348,7 +348,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->getFootnoteOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -376,7 +376,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->getFootnote($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFootnote());
         Assert::assertEquals(" Footnote 1." . "\r\n", $result->getFootnote()->getText());
     }
@@ -413,7 +413,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->updateFootnote($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFootnote());
         Assert::assertEquals(" new text is here" . "\r\n", $result->getFootnote()->getText());
     }
@@ -441,7 +441,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->updateFootnoteOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -476,7 +476,7 @@ class FootnoteTests extends BaseTestContext
         );
 
         $result = $this->words->updateFootnote($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getFootnote());
         Assert::assertEquals(" new text is here" . "\r\n", $result->getFootnote()->getText());
     }

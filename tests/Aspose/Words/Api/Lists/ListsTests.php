@@ -61,7 +61,7 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->getLists($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getLists());
         Assert::assertNotNull($result->getLists()->getListInfo());
         Assert::assertCount(2, $result->getLists()->getListInfo());
@@ -82,7 +82,7 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->getListsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -109,7 +109,7 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->getList($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getList());
         Assert::assertEquals(1, $result->getList()->getListId());
     }
@@ -129,7 +129,7 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->getListOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -163,7 +163,7 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->updateList($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -188,7 +188,7 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->updateListOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
         Assert::assertNotNull($result->getModel()->getList());
         Assert::assertEquals(1, $result->getModel()->getList()->getListId());
         Assert::assertTrue($result->getModel()->getList()->getIsRestartAtEachSection());
@@ -226,7 +226,7 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->updateListLevel($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -252,7 +252,7 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->updateListLevelOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
         Assert::assertNotNull($result->getModel()->getList());
         Assert::assertNotNull($result->getModel()->getList()->getListLevels());
         Assert::assertNotNull($result->getModel()->getList()->getListLevels()->getListLevel());
@@ -290,7 +290,7 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->insertList($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getList());
         Assert::assertEquals(3, $result->getList()->getListId());
     }
@@ -316,6 +316,6 @@ class ListsTests extends BaseTestContext
         );
 
         $result = $this->words->insertListOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 }

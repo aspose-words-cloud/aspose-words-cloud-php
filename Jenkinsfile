@@ -73,5 +73,4 @@ def runtests(dockerImageVersion)
 
 node('words-linux') {
     runtests("latest")
-	runtests("7.1")
 }

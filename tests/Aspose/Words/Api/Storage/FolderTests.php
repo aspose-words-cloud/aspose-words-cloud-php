@@ -50,7 +50,7 @@ class FolderTests extends BaseTestContext
             NULL
         );
 
-    $this->words->createFolder($request);
+        Assert::assertNull($this->words->createFolder($request));
     }
 
     /*
@@ -73,7 +73,7 @@ class FolderTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteFolder($request);
+        Assert::assertNull($this->words->deleteFolder($request));
     }
 
     /*
@@ -89,7 +89,7 @@ class FolderTests extends BaseTestContext
         );
 
         $result = $this->words->getFilesList($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getValue());
     }
 
@@ -114,7 +114,7 @@ class FolderTests extends BaseTestContext
             NULL
         );
 
-    $this->words->copyFolder($request);
+        Assert::assertNull($this->words->copyFolder($request));
     }
 
     /*
@@ -137,6 +137,6 @@ class FolderTests extends BaseTestContext
             NULL
         );
 
-    $this->words->moveFolder($request);
+        Assert::assertNull($this->words->moveFolder($request));
     }
 }

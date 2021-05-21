@@ -62,7 +62,7 @@ class RevisionsTests extends BaseTestContext
         );
 
         $result = $this->words->acceptAllRevisions($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getResult());
         Assert::assertNotNull($result->getResult()->getDest());
     }
@@ -82,7 +82,7 @@ class RevisionsTests extends BaseTestContext
         );
 
         $result = $this->words->acceptAllRevisionsOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
         Assert::assertNotNull($result->getDocument());
         Assert::assertNotNull($result->getModel());
         Assert::assertNotNull($result->getModel()->getResult());
@@ -113,7 +113,7 @@ class RevisionsTests extends BaseTestContext
         );
 
         $result = $this->words->rejectAllRevisions($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getResult());
         Assert::assertNotNull($result->getResult()->getDest());
     }
@@ -133,7 +133,7 @@ class RevisionsTests extends BaseTestContext
         );
 
         $result = $this->words->rejectAllRevisionsOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
         Assert::assertNotNull($result->getDocument());
         Assert::assertNotNull($result->getModel());
         Assert::assertNotNull($result->getModel()->getResult());

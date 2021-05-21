@@ -62,7 +62,7 @@ class PageSetupTests extends BaseTestContext
         );
 
         $result = $this->words->getSectionPageSetup($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getPageSetup());
         Assert::assertEquals(1, $result->getPageSetup()->getLineStartingNumber());
     }
@@ -82,7 +82,7 @@ class PageSetupTests extends BaseTestContext
         );
 
         $result = $this->words->getSectionPageSetupOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -119,7 +119,7 @@ class PageSetupTests extends BaseTestContext
         );
 
         $result = $this->words->updateSectionPageSetup($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getPageSetup());
         Assert::assertTrue($result->getPageSetup()->getRtlGutter());
 
@@ -151,7 +151,7 @@ class PageSetupTests extends BaseTestContext
         );
 
         $result = $this->words->updateSectionPageSetupOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*

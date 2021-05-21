@@ -67,7 +67,7 @@ class SplitDocumentToFormatTests extends BaseTestContext
         );
 
         $result = $this->words->splitDocument($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getSplitResult());
         Assert::assertNotNull($result->getSplitResult()->getPages());
         Assert::assertCount(2, $result->getSplitResult()->getPages());
@@ -93,6 +93,6 @@ class SplitDocumentToFormatTests extends BaseTestContext
         );
 
         $result = $this->words->splitDocumentOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 }

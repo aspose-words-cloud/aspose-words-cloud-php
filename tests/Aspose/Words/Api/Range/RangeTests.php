@@ -63,7 +63,7 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->getRangeText($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertEquals("This is HEADER ", $result->getText());
     }
 
@@ -83,7 +83,7 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->getRangeTextOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -112,7 +112,7 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->removeRange($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -132,7 +132,7 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->removeRangeOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -164,7 +164,7 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->saveAsRange($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocument());
         Assert::assertEquals("NewDoc.docx", $result->getDocument()->getFileName());
     }
@@ -190,7 +190,7 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->saveAsRangeOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -223,7 +223,7 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->replaceWithText($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocument());
         Assert::assertEquals("TestReplaceWithText.docx", $result->getDocument()->getFileName());
     }
@@ -249,6 +249,6 @@ class RangeTests extends BaseTestContext
         );
 
         $result = $this->words->replaceWithTextOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 }

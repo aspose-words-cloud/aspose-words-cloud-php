@@ -61,7 +61,7 @@ class BookmarkTests extends BaseTestContext
         );
 
         $result = $this->words->getBookmarks($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -78,7 +78,7 @@ class BookmarkTests extends BaseTestContext
         );
 
         $result = $this->words->getBookmarksOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -106,7 +106,7 @@ class BookmarkTests extends BaseTestContext
         );
 
         $result = $this->words->getBookmarkByName($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -125,7 +125,7 @@ class BookmarkTests extends BaseTestContext
         );
 
         $result = $this->words->getBookmarkByNameOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -162,7 +162,7 @@ class BookmarkTests extends BaseTestContext
         );
 
         $result = $this->words->updateBookmark($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -190,6 +190,6 @@ class BookmarkTests extends BaseTestContext
         );
 
         $result = $this->words->updateBookmarkOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 }

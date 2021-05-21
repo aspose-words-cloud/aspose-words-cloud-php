@@ -62,7 +62,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->getComment($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getComment());
         Assert::assertEquals("Comment 1" . "\r\n\r\n", $result->getComment()->getText());
     }
@@ -82,7 +82,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->getCommentOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -108,7 +108,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->getComments($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getComments());
         Assert::assertNotNull($result->getComments()->getCommentList());
         Assert::assertCount(1, $result->getComments()->getCommentList());
@@ -129,7 +129,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->getCommentsOnline($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 
     /*
@@ -180,7 +180,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->insertComment($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getComment());
         Assert::assertEquals("A new Comment" . "\r\n", $result->getComment()->getText());
         Assert::assertNotNull($result->getComment()->getRangeStart());
@@ -227,7 +227,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->insertCommentOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -279,7 +279,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->updateComment($request);
-        Assert::isTrue(json_decode($result, true) !== NULL);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getComment());
         Assert::assertEquals("A new Comment" . "\r\n", $result->getComment()->getText());
         Assert::assertNotNull($result->getComment()->getRangeStart());
@@ -327,7 +327,7 @@ class CommentTests extends BaseTestContext
         );
 
         $result = $this->words->updateCommentOnline($request);
-        Assert::isTrue($result !== NULL);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*
@@ -356,7 +356,7 @@ class CommentTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteComment($request);
+        Assert::assertNull($this->words->deleteComment($request));
     }
 
     /*
@@ -405,7 +405,7 @@ class CommentTests extends BaseTestContext
             NULL
         );
 
-    $this->words->deleteComments($request);
+        Assert::assertNull($this->words->deleteComments($request));
     }
 
     /*

@@ -60,6 +60,7 @@ class WordsApiTests extends BaseTestContext
     {
         try{
             $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
+            $this->words->getAvailableFonts(new Requests\GetAvailableFontsRequest());
         }
         catch (RequestException $e)
         {

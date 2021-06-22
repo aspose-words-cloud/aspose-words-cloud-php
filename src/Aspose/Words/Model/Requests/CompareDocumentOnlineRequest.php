@@ -54,6 +54,11 @@ class CompareDocumentOnlineRequest
     public $compare_data;
 
     /*
+     * The comparing document.
+     */
+    public $comparing_document;
+
+    /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
     public $load_encoding;
@@ -73,14 +78,16 @@ class CompareDocumentOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param \Aspose\Words\Model\CompareData $compare_data Compare data.
+     * @param \SplFileObject $comparing_document The comparing document.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($document, $compare_data, $load_encoding = null, $password = null, $dest_file_name = null)
+    public function __construct($document, $compare_data, $comparing_document = null, $load_encoding = null, $password = null, $dest_file_name = null)
     {
         $this->document = $document;
         $this->compare_data = $compare_data;
+        $this->comparing_document = $comparing_document;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->dest_file_name = $dest_file_name;
@@ -117,6 +124,23 @@ class CompareDocumentOnlineRequest
     public function set_compare_data($value)
     {
         $this->compare_data = $value;
+        return $this;
+    }
+
+    /*
+     * The comparing document.
+     */
+    public function get_comparing_document()
+    {
+        return $this->comparing_document;
+    }
+
+    /*
+     * The comparing document.
+     */
+    public function set_comparing_document($value)
+    {
+        $this->comparing_document = $value;
         return $this;
     }
 
@@ -240,6 +264,15 @@ class CompareDocumentOnlineRequest
         if ($this->compare_data !== null) {
             $multipart = true; 
             $formParams['compare_data'] = ['content' => ObjectSerializer::toFormValue($this->compare_data), 'mime' => 'application/json'];
+        }
+        // form params
+        if ($this->comparing_document !== null) {
+            $multipart = true; 
+            $filename = ObjectSerializer::toFormValue($this->comparing_document);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['comparing_document'] = ['content' => $contents, 'mime' => 'application/octet-stream'];
         }
 
         // body params

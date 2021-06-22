@@ -106,6 +106,41 @@ class CompareDocumentTests extends BaseTestContext
             $requestCompareData,
             NULL,
             NULL,
+            NULL,
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
+        );
+
+        $result = $this->words->compareDocumentOnline($request);
+        Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test for document comparison online.
+     */
+    public function testCompareTwoDocumentOnline()
+    {
+        $remoteFolder = self::$baseRemoteFolderPath . "/DocumentActions/CompareDocument";
+        $localFolder = "DocumentActions/CompareDocument";
+        $localName1 = "compareTestDoc1.doc";
+        $localName2 = "compareTestDoc2.doc";
+        $remoteName2 = "TestCompareDocument2.doc";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../../../..') . "/TestData/" . $localFolder . "/" . $localName2,
+            $remoteFolder . "/" . $remoteName2
+        );
+
+        $requestCompareData = new \Aspose\Words\Model\CompareData(array(
+            "author" => "author",
+            "comparing_with_document" => $remoteFolder . "/" . $remoteName2,
+            "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
+        ));
+        $request = new Requests\CompareDocumentOnlineRequest(
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFolder . "/" . $localName1,
+            $requestCompareData,
+            realpath(__DIR__ . '/../../../../..') . '/TestData/' . $localFolder . "/" . $localName2,
+            NULL,
+            NULL,
             self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 

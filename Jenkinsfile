@@ -66,7 +66,6 @@ def runtests(dockerImageVersion)
                 }        
             }
         } finally {                       
-            deleteDir()
         }
     }
 }

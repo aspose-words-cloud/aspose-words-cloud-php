@@ -70,6 +70,6 @@ def runtests(dockerImageVersion)
     }
 }
 
-node('words-linux') {
+node('linux1') {
     runtests("latest")
 }

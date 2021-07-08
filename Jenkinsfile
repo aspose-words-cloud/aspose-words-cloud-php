@@ -34,7 +34,7 @@ def runtests(dockerImageVersion)
             }
             
             if (needToBuild) {
-                def testImage = docker.build("asposewordsphp:${dockerImageVersion}", "./docker/${dockerImageVersion}")
+                /*def testImage = docker.build("asposewordsphp:${dockerImageVersion}", "./docker/${dockerImageVersion}")
                 
                 testImage.inside {
                     stage('build'){
@@ -63,9 +63,12 @@ def runtests(dockerImageVersion)
                             junit 'testReports/bdd/*.xml'
                         }
                     }
-                }        
+                }*/
+                bash 'scripts/runComposer.sh'
+                bash 'scripts/runTests.sh'
             }
-        } finally {                       
+        } finally {  
+            deleteDir()
         }
     }
 }

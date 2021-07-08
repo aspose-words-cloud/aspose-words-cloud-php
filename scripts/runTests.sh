@@ -1,1 +1,1 @@
-docker run -v "$(pwd):/PHP" -v "$(pwd)/Settings/servercreds.json:/Settings/servercreds.json" -v "$(pwd)/TestData:/TestData" -w="/PHP" --rm php:latest vendor/bin/phpunit -c phpunit.xml
+docker run -v "$(pwd):/PHP" -v "$(pwd)/Settings/servercreds.json:/Settings/servercreds.json" -v "$(pwd)/TestData:/TestData" -w="/PHP" --rm asposewordsphp:latest vendor/bin/phpunit -c phpunit.xml

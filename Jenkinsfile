@@ -71,6 +71,6 @@ def runtests(dockerImageVersion)
     }
 }
 
-node('ekimov') {
+node('words-linux') {
     runtests("latest")
 }

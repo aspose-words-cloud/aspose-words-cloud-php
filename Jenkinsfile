@@ -64,8 +64,8 @@ def runtests(dockerImageVersion)
                         }
                     }
                 }*/
-                sh 'scripts/runComposer.sh'
-                sh 'scripts/runTests.sh'
+                sh './scripts/runComposer.sh'
+                sh './scripts/runTests.sh'
             }
         } finally {  
             deleteDir()

@@ -4,4 +4,4 @@ RUN apt-get update && apt install zip unzip
 ADD . ./app
 WORKDIR /app
 RUN composer install --no-interaction && composer dump-autoload -o
-ENTRYPOINT ["sh", "vendor/bin/phpunit"]
+ENTRYPOINT ["vendor/bin/phpunit"]

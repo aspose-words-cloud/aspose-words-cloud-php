@@ -1,3 +1,7 @@
 FROM php:latest
-RUN apt-get update
-RUN apt install zip unzip 
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+RUN apt-get update && apt install zip unzip
+ADD . ./app
+WORKDIR /app
+RUN composer install --no-interaction && composer dump-autoload -o
+ENTRYPOINT ["sh", "vendor/bin/phpunit"]

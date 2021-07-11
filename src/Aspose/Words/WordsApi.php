@@ -48237,8 +48237,8 @@ class WordsApi
         }
 
         $headers['x-aspose-client-version'] = $this->config->getClientVersion();
+        print_r($multipartContents);
         $httpBody = new MultipartStream($multipartContents);
-        print_r($httpBody);
         $headers['Content-Type'] = "multipart/form-data; boundary=" . $httpBody->getBoundary();
 
         $method = 'PUT';

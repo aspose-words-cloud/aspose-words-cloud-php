@@ -52,6 +52,7 @@ class CompareOptions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'accept_all_revisions_before_comparison' => 'bool',
         'ignore_case_changes' => 'bool',
         'ignore_comments' => 'bool',
         'ignore_fields' => 'bool',
@@ -69,6 +70,7 @@ class CompareOptions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'accept_all_revisions_before_comparison' => 'null',
         'ignore_case_changes' => 'null',
         'ignore_comments' => 'null',
         'ignore_fields' => 'null',
@@ -107,6 +109,7 @@ class CompareOptions implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'accept_all_revisions_before_comparison' => 'AcceptAllRevisionsBeforeComparison',
         'ignore_case_changes' => 'IgnoreCaseChanges',
         'ignore_comments' => 'IgnoreComments',
         'ignore_fields' => 'IgnoreFields',
@@ -124,6 +127,7 @@ class CompareOptions implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'accept_all_revisions_before_comparison' => 'setAcceptAllRevisionsBeforeComparison',
         'ignore_case_changes' => 'setIgnoreCaseChanges',
         'ignore_comments' => 'setIgnoreComments',
         'ignore_fields' => 'setIgnoreFields',
@@ -141,6 +145,7 @@ class CompareOptions implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'accept_all_revisions_before_comparison' => 'getAcceptAllRevisionsBeforeComparison',
         'ignore_case_changes' => 'getIgnoreCaseChanges',
         'ignore_comments' => 'getIgnoreComments',
         'ignore_fields' => 'getIgnoreFields',
@@ -224,6 +229,7 @@ class CompareOptions implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['accept_all_revisions_before_comparison'] = isset($data['accept_all_revisions_before_comparison']) ? $data['accept_all_revisions_before_comparison'] : null;
         $this->container['ignore_case_changes'] = isset($data['ignore_case_changes']) ? $data['ignore_case_changes'] : null;
         $this->container['ignore_comments'] = isset($data['ignore_comments']) ? $data['ignore_comments'] : null;
         $this->container['ignore_fields'] = isset($data['ignore_fields']) ? $data['ignore_fields'] : null;
@@ -271,6 +277,29 @@ class CompareOptions implements ArrayAccess
 
 
         return true;
+    }
+
+    /*
+     * Gets accept_all_revisions_before_comparison
+     *
+     * @return bool
+     */
+    public function getAcceptAllRevisionsBeforeComparison()
+    {
+        return $this->container['accept_all_revisions_before_comparison'];
+    }
+
+    /*
+     * Sets accept_all_revisions_before_comparison
+     *
+     * @param bool $accept_all_revisions_before_comparison Gets or sets whether accept revisions before comparison or not.
+     *
+     * @return $this
+     */
+    public function setAcceptAllRevisionsBeforeComparison($accept_all_revisions_before_comparison)
+    {
+        $this->container['accept_all_revisions_before_comparison'] = $accept_all_revisions_before_comparison;
+        return $this;
     }
 
     /*

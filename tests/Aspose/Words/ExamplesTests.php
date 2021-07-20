@@ -92,4 +92,33 @@ class ExamplesTests extends BaseTestContext
       $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);
       rename($acceptAllRevisionsOnlineResult->getDocument()->getPathname(), 'test_result.docx');
     }
+
+    public function testExampleUpdateBookmark()
+    {
+      $this->expectNotToPerformAssertions();
+
+      $wordsApi = $this->words;
+      $remoteFileName = "Sample.docx";
+      $bookmarkName = "aspose";
+
+      /**
+       */
+      $testBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
+          "name" => $bookmarkName,
+          "text" => "New Bookmark Text",
+      ));
+      $updateBookmark = new Requests\UpdateBookmarkRequest(
+          $remoteFileName,
+          $bookmarkName,
+          $testBookmarkData,
+          NULL,
+          NULL,
+          NULL,
+          NULL,
+          NULL,
+          NULL,
+          NULL
+      );
+      $wordsApi->updateBookmark($updateBookmark);
+    }
 }

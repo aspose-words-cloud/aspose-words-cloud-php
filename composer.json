@@ -31,9 +31,9 @@
 		"friendsofphp/php-cs-fixer": "3.0.*"
     },
 	"autoload": {
-        "psr-0": {
-            "Aspose": "src/",
-            "Aspose\\Tests\\": "tests/"
+        "psr-4": {
+            "Aspose\\Words\\": "src/Aspose/Words",
+            "Aspose\\Words\\Tests\\": "tests/Aspose/Words"
         }
     }
 }

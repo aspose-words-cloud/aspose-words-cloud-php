@@ -45,7 +45,7 @@ class BuildReportTests extends BaseTestContext
     {
         $reportingFolder = "DocumentActions/Reporting";
         $localDocumentFile = "ReportTemplate.docx";
-        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../../../..') . "/TestData/" . $reportingFolder . "/ReportData.json");
+        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../..') . "/TestData/" . $reportingFolder . "/ReportData.json");
 
         $requestReportEngineSettings = new \Aspose\Words\Model\ReportEngineSettings(array(
             "data_source_type" => "Json",
@@ -71,7 +71,7 @@ class BuildReportTests extends BaseTestContext
         $reportingFolder = "DocumentActions/Reporting";
         $localDocumentFile = "ReportTemplate.docx";
         $remoteFileName = "TestBuildReport.docx";
-        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../../../..') . "/TestData/" . $reportingFolder . "/ReportData.json");
+        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../..') . "/TestData/" . $reportingFolder . "/ReportData.json");
 
         $this->uploadFile(
             realpath(__DIR__ . '/../../..') . "/TestData/" . $reportingFolder . "/" . $localDocumentFile,

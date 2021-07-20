@@ -68,7 +68,7 @@ class ExecuteMailMergeTests extends BaseTestContext
         $mailMergeFolder = "DocumentActions/MailMerge";
         $localDocumentFile = "SampleExecuteTemplate.docx";
         $remoteFileName = "TestExecuteMailMerge.docx";
-        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../../../..') . "/TestData/" . $mailMergeFolder . "/SampleMailMergeTemplateData.txt");
+        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../..') . "/TestData/" . $mailMergeFolder . "/SampleMailMergeTemplateData.txt");
 
         $this->uploadFile(
             realpath(__DIR__ . '/../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDocumentFile,

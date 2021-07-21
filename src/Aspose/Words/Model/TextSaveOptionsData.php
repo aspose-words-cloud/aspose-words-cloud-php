@@ -52,6 +52,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      */
     protected static $swaggerTypes = [
         'add_bidi_marks' => 'bool',
+        'max_characters_per_line' => 'int',
         'preserve_table_layout' => 'bool',
         'simplify_list_labels' => 'bool'
     ];
@@ -63,6 +64,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      */
     protected static $swaggerFormats = [
         'add_bidi_marks' => 'null',
+        'max_characters_per_line' => 'null',
         'preserve_table_layout' => 'null',
         'simplify_list_labels' => 'null'
     ];
@@ -95,6 +97,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      */
     protected static $attributeMap = [
         'add_bidi_marks' => 'AddBidiMarks',
+        'max_characters_per_line' => 'MaxCharactersPerLine',
         'preserve_table_layout' => 'PreserveTableLayout',
         'simplify_list_labels' => 'SimplifyListLabels'
     ];
@@ -106,6 +109,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      */
     protected static $setters = [
         'add_bidi_marks' => 'setAddBidiMarks',
+        'max_characters_per_line' => 'setMaxCharactersPerLine',
         'preserve_table_layout' => 'setPreserveTableLayout',
         'simplify_list_labels' => 'setSimplifyListLabels'
     ];
@@ -117,6 +121,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      */
     protected static $getters = [
         'add_bidi_marks' => 'getAddBidiMarks',
+        'max_characters_per_line' => 'getMaxCharactersPerLine',
         'preserve_table_layout' => 'getPreserveTableLayout',
         'simplify_list_labels' => 'getSimplifyListLabels'
     ];
@@ -174,6 +179,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     {
         parent::__construct($data);
         $this->container['add_bidi_marks'] = isset($data['add_bidi_marks']) ? $data['add_bidi_marks'] : null;
+        $this->container['max_characters_per_line'] = isset($data['max_characters_per_line']) ? $data['max_characters_per_line'] : null;
         $this->container['preserve_table_layout'] = isset($data['preserve_table_layout']) ? $data['preserve_table_layout'] : null;
         $this->container['simplify_list_labels'] = isset($data['simplify_list_labels']) ? $data['simplify_list_labels'] : null;
     }
@@ -224,6 +230,29 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     public function setAddBidiMarks($add_bidi_marks)
     {
         $this->container['add_bidi_marks'] = $add_bidi_marks;
+        return $this;
+    }
+
+    /*
+     * Gets max_characters_per_line
+     *
+     * @return int
+     */
+    public function getMaxCharactersPerLine()
+    {
+        return $this->container['max_characters_per_line'];
+    }
+
+    /*
+     * Sets max_characters_per_line
+     *
+     * @param int $max_characters_per_line Gets or sets an integer value that specifies the maximum number of characters per one line. The default value is 0, that means no limit.
+     *
+     * @return $this
+     */
+    public function setMaxCharactersPerLine($max_characters_per_line)
+    {
+        $this->container['max_characters_per_line'] = $max_characters_per_line;
         return $this;
     }
 

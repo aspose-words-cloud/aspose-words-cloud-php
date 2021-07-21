@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------
  */
 
-namespace Aspose\Tests;
+namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model;

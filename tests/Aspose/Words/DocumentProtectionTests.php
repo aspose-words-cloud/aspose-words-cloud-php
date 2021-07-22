@@ -52,13 +52,13 @@ class DocumentProtectionTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+        $protectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
             "password" => "123",
             "protection_type" => "ReadOnly",
         ));
         $request = new Requests\ProtectDocumentRequest(
             $remoteFileName,
-            $requestProtectionRequest,
+            $protectionRequest,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -79,12 +79,12 @@ class DocumentProtectionTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+        $protectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
             "new_password" => "123",
         ));
         $request = new Requests\ProtectDocumentOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $requestProtectionRequest,
+            $protectionRequest,
             NULL,
             NULL,
             NULL
@@ -151,12 +151,12 @@ class DocumentProtectionTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+        $protectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
             "password" => "aspose",
         ));
         $request = new Requests\UnprotectDocumentRequest(
             $remoteFileName,
-            $requestProtectionRequest,
+            $protectionRequest,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -177,12 +177,12 @@ class DocumentProtectionTests extends BaseTestContext
     {
         $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
 
-        $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+        $protectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
             "password" => "aspose",
         ));
         $request = new Requests\UnprotectDocumentOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFilePath,
-            $requestProtectionRequest,
+            $protectionRequest,
             NULL,
             NULL,
             NULL

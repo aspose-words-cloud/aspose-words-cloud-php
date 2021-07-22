@@ -59,14 +59,14 @@ class CompareDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName2
         );
 
-        $requestCompareData = new \Aspose\Words\Model\CompareData(array(
+        $compareData = new \Aspose\Words\Model\CompareData(array(
             "author" => "author",
             "comparing_with_document" => $remoteFolder . "/" . $remoteName2,
             "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
         ));
         $request = new Requests\CompareDocumentRequest(
             $remoteName1,
-            $requestCompareData,
+            $compareData,
             $remoteFolder,
             NULL,
             NULL,
@@ -96,14 +96,14 @@ class CompareDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName2
         );
 
-        $requestCompareData = new \Aspose\Words\Model\CompareData(array(
+        $compareData = new \Aspose\Words\Model\CompareData(array(
             "author" => "author",
             "comparing_with_document" => $remoteFolder . "/" . $remoteName2,
             "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
         ));
         $request = new Requests\CompareDocumentOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/" . $localName1,
-            $requestCompareData,
+            $compareData,
             NULL,
             NULL,
             NULL,
@@ -130,14 +130,14 @@ class CompareDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName2
         );
 
-        $requestCompareData = new \Aspose\Words\Model\CompareData(array(
+        $compareData = new \Aspose\Words\Model\CompareData(array(
             "author" => "author",
             "comparing_with_document" => $remoteFolder . "/" . $remoteName2,
             "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
         ));
         $request = new Requests\CompareDocumentOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/" . $localName1,
-            $requestCompareData,
+            $compareData,
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/" . $localName2,
             NULL,
             NULL,

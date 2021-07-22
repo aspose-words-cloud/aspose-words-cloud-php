@@ -199,13 +199,13 @@ class DocumentPropertiesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
+        $property = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
             "value" => "Imran Anwar",
         ));
         $request = new Requests\CreateOrUpdateDocumentPropertyRequest(
             $remoteFileName,
             "AsposeAuthor",
-            $requestProperty,
+            $property,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -229,13 +229,13 @@ class DocumentPropertiesTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
+        $property = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
             "value" => "Imran Anwar",
         ));
         $request = new Requests\CreateOrUpdateDocumentPropertyOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
             "AsposeAuthor",
-            $requestProperty,
+            $property,
             NULL,
             NULL,
             NULL,

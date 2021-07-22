@@ -358,14 +358,14 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFontDto = new \Aspose\Words\Model\Font(array(
+        $fontDto = new \Aspose\Words\Model\Font(array(
             "bold" => true,
         ));
         $request = new Requests\UpdateRunFontRequest(
             $remoteFileName,
             "paragraphs/0",
             0,
-            $requestFontDto,
+            $fontDto,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -388,13 +388,13 @@ class ParagraphTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestFontDto = new \Aspose\Words\Model\Font(array(
+        $fontDto = new \Aspose\Words\Model\Font(array(
             "bold" => true,
         ));
         $request = new Requests\UpdateRunFontOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
             "paragraphs/0",
-            $requestFontDto,
+            $fontDto,
             0,
             NULL,
             NULL,
@@ -421,12 +421,12 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestParagraph = new \Aspose\Words\Model\ParagraphInsert(array(
+        $paragraph = new \Aspose\Words\Model\ParagraphInsert(array(
             "text" => "This is a new paragraph for your document",
         ));
         $request = new Requests\InsertParagraphRequest(
             $remoteFileName,
-            $requestParagraph,
+            $paragraph,
             "sections/0",
             $remoteDataFolder,
             NULL,
@@ -451,12 +451,12 @@ class ParagraphTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestParagraph = new \Aspose\Words\Model\ParagraphInsert(array(
+        $paragraph = new \Aspose\Words\Model\ParagraphInsert(array(
             "text" => "This is a new paragraph for your document",
         ));
         $request = new Requests\InsertParagraphOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $requestParagraph,
+            $paragraph,
             "sections/0",
             NULL,
             NULL,
@@ -484,12 +484,12 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestParagraph = new \Aspose\Words\Model\ParagraphInsert(array(
+        $paragraph = new \Aspose\Words\Model\ParagraphInsert(array(
             "text" => "This is a new paragraph for your document",
         ));
         $request = new Requests\InsertParagraphRequest(
             $remoteFileName,
-            $requestParagraph,
+            $paragraph,
             NULL,
             $remoteDataFolder,
             NULL,
@@ -684,13 +684,13 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestParagraphFormatDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
+        $paragraphFormatDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
             "alignment" => "Right",
         ));
         $request = new Requests\UpdateParagraphFormatRequest(
             $remoteFileName,
             0,
-            $requestParagraphFormatDto,
+            $paragraphFormatDto,
             "",
             $remoteDataFolder,
             NULL,
@@ -714,12 +714,12 @@ class ParagraphTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestParagraphFormatDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
+        $paragraphFormatDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
             "alignment" => "Right",
         ));
         $request = new Requests\UpdateParagraphFormatOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $requestParagraphFormatDto,
+            $paragraphFormatDto,
             0,
             "",
             NULL,
@@ -908,13 +908,13 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestListFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
+        $listFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
             "list_id" => 2,
         ));
         $request = new Requests\UpdateParagraphListFormatRequest(
             $remoteFileName,
             0,
-            $requestListFormatDto,
+            $listFormatDto,
             "",
             $remoteDataFolder,
             NULL,
@@ -938,12 +938,12 @@ class ParagraphTests extends BaseTestContext
     {
         $listFolder = "DocumentElements/ParagraphListFormat";
 
-        $requestListFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
+        $listFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
             "list_id" => 2,
         ));
         $request = new Requests\UpdateParagraphListFormatOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $listFolder . "/ParagraphUpdateListFormat.doc",
-            $requestListFormatDto,
+            $listFormatDto,
             0,
             "",
             NULL,
@@ -971,13 +971,13 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestListFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
+        $listFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
             "list_id" => 2,
         ));
         $request = new Requests\UpdateParagraphListFormatRequest(
             $remoteFileName,
             0,
-            $requestListFormatDto,
+            $listFormatDto,
             NULL,
             $remoteDataFolder,
             NULL,
@@ -1173,7 +1173,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
+        $tabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
             "alignment" => "Left",
             "leader" => "None",
             "position" => 100.0,
@@ -1181,7 +1181,7 @@ class ParagraphTests extends BaseTestContext
         $request = new Requests\InsertOrUpdateParagraphTabStopRequest(
             $remoteFileName,
             0,
-            $requestTabStopInsertDto,
+            $tabStopInsertDto,
             "",
             $remoteDataFolder,
             NULL,
@@ -1206,14 +1206,14 @@ class ParagraphTests extends BaseTestContext
     {
         $tabStopFolder = "DocumentElements/Paragraphs";
 
-        $requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
+        $tabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
             "alignment" => "Left",
             "leader" => "None",
             "position" => 72,
         ));
         $request = new Requests\InsertOrUpdateParagraphTabStopOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $tabStopFolder . "/ParagraphTabStops.docx",
-            $requestTabStopInsertDto,
+            $tabStopInsertDto,
             0,
             "",
             NULL,
@@ -1239,7 +1239,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
+        $tabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
             "alignment" => "Left",
             "leader" => "None",
             "position" => 100.0,
@@ -1247,7 +1247,7 @@ class ParagraphTests extends BaseTestContext
         $request = new Requests\InsertOrUpdateParagraphTabStopRequest(
             $remoteFileName,
             0,
-            $requestTabStopInsertDto,
+            $tabStopInsertDto,
             NULL,
             $remoteDataFolder,
             NULL,

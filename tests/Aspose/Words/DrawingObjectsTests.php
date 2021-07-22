@@ -433,7 +433,7 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
+        $drawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
             "height" => 0,
             "left" => 0,
             "top" => 0,
@@ -444,7 +444,7 @@ class DrawingObjectsTests extends BaseTestContext
         ));
         $request = new Requests\InsertDrawingObjectRequest(
             $remoteFileName,
-            $requestDrawingObject,
+            $drawingObject,
             realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png",
             "",
             $remoteDataFolder,
@@ -467,7 +467,7 @@ class DrawingObjectsTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
+        $drawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
             "height" => 0,
             "left" => 0,
             "top" => 0,
@@ -478,7 +478,7 @@ class DrawingObjectsTests extends BaseTestContext
         ));
         $request = new Requests\InsertDrawingObjectOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $requestDrawingObject,
+            $drawingObject,
             realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png",
             "",
             NULL,
@@ -506,7 +506,7 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
+        $drawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
             "height" => 0,
             "left" => 0,
             "top" => 0,
@@ -517,7 +517,7 @@ class DrawingObjectsTests extends BaseTestContext
         ));
         $request = new Requests\InsertDrawingObjectRequest(
             $remoteFileName,
-            $requestDrawingObject,
+            $drawingObject,
             realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png",
             NULL,
             $remoteDataFolder,
@@ -629,12 +629,12 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
+        $drawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
             "left" => 0,
         ));
         $request = new Requests\UpdateDrawingObjectRequest(
             $remoteFileName,
-            $requestDrawingObject,
+            $drawingObject,
             realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png",
             0,
             "",
@@ -658,12 +658,12 @@ class DrawingObjectsTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
+        $drawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
             "left" => 0,
         ));
         $request = new Requests\UpdateDrawingObjectOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $requestDrawingObject,
+            $drawingObject,
             realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png",
             0,
             "",
@@ -692,12 +692,12 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
+        $drawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
             "left" => 0,
         ));
         $request = new Requests\UpdateDrawingObjectRequest(
             $remoteFileName,
-            $requestDrawingObject,
+            $drawingObject,
             realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png",
             0,
             NULL,

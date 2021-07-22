@@ -114,13 +114,13 @@ class WatermarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
+        $watermarkText = new \Aspose\Words\Model\WatermarkText(array(
             "text" => "This is the text",
             "rotation_angle" => 90.0,
         ));
         $request = new Requests\InsertWatermarkTextRequest(
             $remoteFileName,
-            $requestWatermarkText,
+            $watermarkText,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -143,13 +143,13 @@ class WatermarkTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
+        $watermarkText = new \Aspose\Words\Model\WatermarkText(array(
             "text" => "This is the text",
             "rotation_angle" => 90,
         ));
         $request = new Requests\InsertWatermarkTextOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $requestWatermarkText,
+            $watermarkText,
             NULL,
             NULL,
             NULL,

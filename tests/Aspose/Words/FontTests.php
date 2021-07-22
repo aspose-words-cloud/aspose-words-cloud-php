@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WordsApiTests.php">
+ * <copyright company="Aspose" file="FontTests.php">
  *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,44 +27,39 @@
  */
 
 namespace Aspose\Words\Tests;
-use Aspose\Words\ApiException;
-use Aspose\Words\Model\Requests;
-use Aspose\Words\WordsApi;
-use PHPUnit\Framework\Assert;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 
-class WordsApiTests extends BaseTestContext
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
+use Aspose\Words\Model\Requests;
+use PHPUnit\Framework\Assert;
+
+/*
+ * Example of how to work with font.
+ */
+class FontTests extends BaseTestContext
 {
     /*
-     * Test case for checking correct handle of server errors
+     * Test for reseting cache.
      */
-    public function testHandleServerErrors()
+    public function testResetCache()
     {
-        $remoteName = "noFileWithThisName.docx";
-        $request = new Requests\GetSectionsRequest($remoteName);
-        try{
+        $request = new Requests\ResetCacheRequest(
+        );
 
-            Assert::assertNull($this->words->GetSections($request));
-        }
-        catch (ApiException $exception)
-        {
-            Assert::assertEquals(404, $exception->getCode());
-        }
+        Assert::assertNull($this->words->resetCache($request));
     }
 
     /*
-     * Test case for checking bad clientId
+     * Test for GetAvailableFonts resource.
      */
-    public function testHandleBadClientId()
+    public function testGetAvailableFonts()
     {
-        try{
-            $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
-            $this->words->getAvailableFonts(new Requests\GetAvailableFontsRequest());
-        }
-        catch (RequestException $e)
-        {
-            Assert::assertEquals(400, $e->getCode());
-        }
+        $request = new Requests\GetAvailableFontsRequest(
+            NULL
+        );
+
+        $result = $this->words->getAvailableFonts($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSystemFonts());
     }
 }

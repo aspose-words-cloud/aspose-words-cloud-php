@@ -48222,6 +48222,7 @@ class WordsApi
             $partData = ObjectSerializer::createBatchPart($this->config, $request);
             $multipartContents[] = [
                 'name' => sha1(uniqid('', true)),
+                'filename' => sha1(uniqid('', true)),
                 'contents' => $partData,
                 'headers' => ['Content-Type' => 'application/http; msgtype=request']
             ];

@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------
  */
 
-namespace Aspose\Tests;
+namespace Aspose\Words\Tests;
 
 use Aspose\Words\Model\Requests;
 use Aspose\Words\Configuration;

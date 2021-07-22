@@ -52,13 +52,13 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $footnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
             "footnote_type" => "Endnote",
             "text" => "test endnote",
         ));
         $request = new Requests\InsertFootnoteRequest(
             $remoteFileName,
-            $footnoteDto,
+            $requestFootnoteDto,
             "",
             $remoteDataFolder,
             NULL,
@@ -83,13 +83,13 @@ class FootnoteTests extends BaseTestContext
     {
         $footnoteFolder = "DocumentElements/Footnotes";
 
-        $footnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
             "footnote_type" => "Endnote",
             "text" => "test endnote",
         ));
         $request = new Requests\InsertFootnoteOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $footnoteFolder . "/Footnote.doc",
-            $footnoteDto,
+            $requestFootnoteDto,
             "",
             NULL,
             NULL,
@@ -116,13 +116,13 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $footnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
             "footnote_type" => "Endnote",
             "text" => "test endnote",
         ));
         $request = new Requests\InsertFootnoteRequest(
             $remoteFileName,
-            $footnoteDto,
+            $requestFootnoteDto,
             NULL,
             $remoteDataFolder,
             NULL,
@@ -395,13 +395,13 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $footnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
+        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
             "text" => "new text is here",
         ));
         $request = new Requests\UpdateFootnoteRequest(
             $remoteFileName,
             0,
-            $footnoteDto,
+            $requestFootnoteDto,
             "",
             $remoteDataFolder,
             NULL,
@@ -425,12 +425,12 @@ class FootnoteTests extends BaseTestContext
     {
         $footnoteFolder = "DocumentElements/Footnotes";
 
-        $footnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
+        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
             "text" => "new text is here",
         ));
         $request = new Requests\UpdateFootnoteOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $footnoteFolder . "/Footnote.doc",
-            $footnoteDto,
+            $requestFootnoteDto,
             0,
             "",
             NULL,
@@ -458,13 +458,13 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $footnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
+        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
             "text" => "new text is here",
         ));
         $request = new Requests\UpdateFootnoteRequest(
             $remoteFileName,
             0,
-            $footnoteDto,
+            $requestFootnoteDto,
             NULL,
             $remoteDataFolder,
             NULL,

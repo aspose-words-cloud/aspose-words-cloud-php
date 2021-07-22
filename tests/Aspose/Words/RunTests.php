@@ -52,14 +52,14 @@ class RunTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $run = new \Aspose\Words\Model\RunUpdate(array(
+        $requestRun = new \Aspose\Words\Model\RunUpdate(array(
             "text" => "run with text",
         ));
         $request = new Requests\UpdateRunRequest(
             $remoteFileName,
             "paragraphs/1",
             0,
-            $run,
+            $requestRun,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -82,13 +82,13 @@ class RunTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Runs/Run.doc";
 
-        $run = new \Aspose\Words\Model\RunUpdate(array(
+        $requestRun = new \Aspose\Words\Model\RunUpdate(array(
             "text" => "run with text",
         ));
         $request = new Requests\UpdateRunOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
             "paragraphs/1",
-            $run,
+            $requestRun,
             0,
             NULL,
             NULL,
@@ -115,13 +115,13 @@ class RunTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $run = new \Aspose\Words\Model\RunInsert(array(
+        $requestRun = new \Aspose\Words\Model\RunInsert(array(
             "text" => "run with text",
         ));
         $request = new Requests\InsertRunRequest(
             $remoteFileName,
             "paragraphs/1",
-            $run,
+            $requestRun,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -146,13 +146,13 @@ class RunTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Runs/Run.doc";
 
-        $run = new \Aspose\Words\Model\RunInsert(array(
+        $requestRun = new \Aspose\Words\Model\RunInsert(array(
             "text" => "run with text",
         ));
         $request = new Requests\InsertRunOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
             "paragraphs/1",
-            $run,
+            $requestRun,
             NULL,
             NULL,
             NULL,

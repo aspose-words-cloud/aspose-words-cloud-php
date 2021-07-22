@@ -145,13 +145,13 @@ class StylesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $styleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
+        $requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
             "name" => "My Style",
         ));
         $request = new Requests\UpdateStyleRequest(
             $remoteFileName,
             "Heading 1",
-            $styleUpdate,
+            $requestStyleUpdate,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -174,13 +174,13 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $styleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
+        $requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
             "name" => "My Style",
         ));
         $request = new Requests\UpdateStyleOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
             "Heading 1",
-            $styleUpdate,
+            $requestStyleUpdate,
             NULL,
             NULL,
             NULL,
@@ -206,13 +206,13 @@ class StylesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $styleInsert = new \Aspose\Words\Model\StyleInsert(array(
+        $requestStyleInsert = new \Aspose\Words\Model\StyleInsert(array(
             "style_name" => "My Style",
             "style_type" => "Paragraph",
         ));
         $request = new Requests\InsertStyleRequest(
             $remoteFileName,
-            $styleInsert,
+            $requestStyleInsert,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -235,13 +235,13 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $styleInsert = new \Aspose\Words\Model\StyleInsert(array(
+        $requestStyleInsert = new \Aspose\Words\Model\StyleInsert(array(
             "style_name" => "My Style",
             "style_type" => "Paragraph",
         ));
         $request = new Requests\InsertStyleOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $styleInsert,
+            $requestStyleInsert,
             NULL,
             NULL,
             NULL,
@@ -267,12 +267,12 @@ class StylesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $styleCopy = new \Aspose\Words\Model\StyleCopy(array(
+        $requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
             "style_name" => "Heading 1",
         ));
         $request = new Requests\CopyStyleRequest(
             $remoteFileName,
-            $styleCopy,
+            $requestStyleCopy,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -295,12 +295,12 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $styleCopy = new \Aspose\Words\Model\StyleCopy(array(
+        $requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
             "style_name" => "Heading 1",
         ));
         $request = new Requests\CopyStyleOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $styleCopy,
+            $requestStyleCopy,
             NULL,
             NULL,
             NULL,
@@ -373,13 +373,13 @@ class StylesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $styleApply = new \Aspose\Words\Model\StyleApply(array(
+        $requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
             "style_name" => "Heading 1",
         ));
         $request = new Requests\ApplyStyleToDocumentElementRequest(
             $remoteFileName,
             "paragraphs/1/paragraphFormat",
-            $styleApply,
+            $requestStyleApply,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -400,13 +400,13 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $styleApply = new \Aspose\Words\Model\StyleApply(array(
+        $requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
             "style_name" => "Heading 1",
         ));
         $request = new Requests\ApplyStyleToDocumentElementOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
             "paragraphs/1/paragraphFormat",
-            $styleApply,
+            $requestStyleApply,
             NULL,
             NULL,
             NULL,

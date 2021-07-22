@@ -146,30 +146,30 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $commentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0.3",
         ));
-        $commentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
-            "node" => $commentRangeStartNode,
+        $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+            "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $commentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0.3",
         ));
-        $commentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
-            "node" => $commentRangeEndNode,
+        $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+            "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
-        $comment = new \Aspose\Words\Model\CommentInsert(array(
-            "range_start" => $commentRangeStart,
-            "range_end" => $commentRangeEnd,
+        $requestComment = new \Aspose\Words\Model\CommentInsert(array(
+            "range_start" => $requestCommentRangeStart,
+            "range_end" => $requestCommentRangeEnd,
             "initial" => "IA",
             "author" => "Imran Anwar",
             "text" => "A new Comment",
         ));
         $request = new Requests\InsertCommentRequest(
             $remoteFileName,
-            $comment,
+            $requestComment,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -195,30 +195,30 @@ class CommentTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $commentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0.3",
         ));
-        $commentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
-            "node" => $commentRangeStartNode,
+        $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+            "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $commentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0.3",
         ));
-        $commentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
-            "node" => $commentRangeEndNode,
+        $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+            "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
-        $comment = new \Aspose\Words\Model\CommentInsert(array(
-            "range_start" => $commentRangeStart,
-            "range_end" => $commentRangeEnd,
+        $requestComment = new \Aspose\Words\Model\CommentInsert(array(
+            "range_start" => $requestCommentRangeStart,
+            "range_end" => $requestCommentRangeEnd,
             "initial" => "IA",
             "author" => "Imran Anwar",
             "text" => "A new Comment",
         ));
         $request = new Requests\InsertCommentOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $comment,
+            $requestComment,
             NULL,
             NULL,
             NULL,
@@ -244,23 +244,23 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $commentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0",
         ));
-        $commentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
-            "node" => $commentRangeStartNode,
+        $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+            "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $commentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0",
         ));
-        $commentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
-            "node" => $commentRangeEndNode,
+        $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+            "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
-        $comment = new \Aspose\Words\Model\CommentUpdate(array(
-            "range_start" => $commentRangeStart,
-            "range_end" => $commentRangeEnd,
+        $requestComment = new \Aspose\Words\Model\CommentUpdate(array(
+            "range_start" => $requestCommentRangeStart,
+            "range_end" => $requestCommentRangeEnd,
             "initial" => "IA",
             "author" => "Imran Anwar",
             "text" => "A new Comment",
@@ -268,7 +268,7 @@ class CommentTests extends BaseTestContext
         $request = new Requests\UpdateCommentRequest(
             $remoteFileName,
             0,
-            $comment,
+            $requestComment,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -294,23 +294,23 @@ class CommentTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $commentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0",
         ));
-        $commentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
-            "node" => $commentRangeStartNode,
+        $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+            "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $commentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0",
         ));
-        $commentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
-            "node" => $commentRangeEndNode,
+        $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+            "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
-        $comment = new \Aspose\Words\Model\CommentUpdate(array(
-            "range_start" => $commentRangeStart,
-            "range_end" => $commentRangeEnd,
+        $requestComment = new \Aspose\Words\Model\CommentUpdate(array(
+            "range_start" => $requestCommentRangeStart,
+            "range_end" => $requestCommentRangeEnd,
             "initial" => "IA",
             "author" => "Imran Anwar",
             "text" => "A new Comment",
@@ -318,7 +318,7 @@ class CommentTests extends BaseTestContext
         $request = new Requests\UpdateCommentOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
             0,
-            $comment,
+            $requestComment,
             NULL,
             NULL,
             NULL,

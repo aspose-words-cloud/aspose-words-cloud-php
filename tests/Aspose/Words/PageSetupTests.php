@@ -99,7 +99,7 @@ class PageSetupTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $pageSetup = new \Aspose\Words\Model\PageSetup(array(
+        $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
             "rtl_gutter" => true,
             "left_margin" => 10.0,
             "orientation" => "Landscape",
@@ -108,7 +108,7 @@ class PageSetupTests extends BaseTestContext
         $request = new Requests\UpdateSectionPageSetupRequest(
             $remoteFileName,
             0,
-            $pageSetup,
+            $requestPageSetup,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -133,7 +133,7 @@ class PageSetupTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $pageSetup = new \Aspose\Words\Model\PageSetup(array(
+        $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
             "rtl_gutter" => true,
             "left_margin" => 10,
             "orientation" => "Landscape",
@@ -142,7 +142,7 @@ class PageSetupTests extends BaseTestContext
         $request = new Requests\UpdateSectionPageSetupOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
             0,
-            $pageSetup,
+            $requestPageSetup,
             NULL,
             NULL,
             NULL,

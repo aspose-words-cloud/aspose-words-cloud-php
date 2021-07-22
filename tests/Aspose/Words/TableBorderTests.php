@@ -256,12 +256,12 @@ class TableBorderTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $borderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
+        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
             "web" => "#AABBCC",
         ));
-        $borderProperties = new \Aspose\Words\Model\Border(array(
+        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
             "border_type" => "Left",
-            "color" => $borderPropertiesColor,
+            "color" => $requestBorderPropertiesColor,
             "distance_from_text" => 6.0,
             "line_style" => "DashDotStroker",
             "line_width" => 2.0,
@@ -270,7 +270,7 @@ class TableBorderTests extends BaseTestContext
         $request = new Requests\UpdateBorderRequest(
             $remoteFileName,
             "left",
-            $borderProperties,
+            $requestBorderProperties,
             "tables/1/rows/0/cells/0",
             $remoteDataFolder,
             NULL,
@@ -298,12 +298,12 @@ class TableBorderTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
-        $borderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
+        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
             "web" => "#AABBCC",
         ));
-        $borderProperties = new \Aspose\Words\Model\Border(array(
+        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
             "border_type" => "Left",
-            "color" => $borderPropertiesColor,
+            "color" => $requestBorderPropertiesColor,
             "distance_from_text" => 6,
             "line_style" => "DashDotStroker",
             "line_width" => 2,
@@ -311,7 +311,7 @@ class TableBorderTests extends BaseTestContext
         ));
         $request = new Requests\UpdateBorderOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            $borderProperties,
+            $requestBorderProperties,
             "left",
             "tables/1/rows/0/cells/0",
             NULL,

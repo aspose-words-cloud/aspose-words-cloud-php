@@ -144,14 +144,14 @@ class BookmarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $bookmarkData = new \Aspose\Words\Model\BookmarkData(array(
+        $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
             "name" => $bookmarkName,
             "text" => $bookmarkText,
         ));
         $request = new Requests\UpdateBookmarkRequest(
             $remoteFileName,
             $bookmarkName,
-            $bookmarkData,
+            $requestBookmarkData,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -174,14 +174,14 @@ class BookmarkTests extends BaseTestContext
         $bookmarkName = "aspose";
         $remoteFileName = "TestUpdateDocumentBookmark.docx";
 
-        $bookmarkData = new \Aspose\Words\Model\BookmarkData(array(
+        $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
             "name" => $bookmarkName,
             "text" => "This will be the text for Aspose",
         ));
         $request = new Requests\UpdateBookmarkOnlineRequest(
             realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
             $bookmarkName,
-            $bookmarkData,
+            $requestBookmarkData,
             NULL,
             NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,

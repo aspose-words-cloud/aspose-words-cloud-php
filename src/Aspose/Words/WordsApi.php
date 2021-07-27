@@ -40132,7 +40132,7 @@ class WordsApi
     /*
      * Operation saveAsOnline
      *
-     * Converts a document in cloud storage to the specified format.
+     * Converts a document to the specified format.
      *
      * @param Requests\saveAsOnlineRequest $request is a request object for operation
      *
@@ -40160,7 +40160,7 @@ class WordsApi
     /*
      * Operation saveAsOnlineWithHttpInfo
      *
-     * Converts a document in cloud storage to the specified format.
+     * Converts a document to the specified format.
      *
      * @param Requests\saveAsOnlineRequest $request is a request object for operation
      *
@@ -40214,7 +40214,7 @@ class WordsApi
     /*
      * Operation saveAsOnlineAsync
      *
-     * Converts a document in cloud storage to the specified format.
+     * Converts a document to the specified format.
      *
      * @param Requests\saveAsOnlineRequest $request is a request object for operation
      *
@@ -40234,7 +40234,7 @@ class WordsApi
     /*
      * Operation saveAsOnlineAsyncWithHttpInfo
      *
-     * Converts a document in cloud storage to the specified format.
+     * Converts a document to the specified format.
      *
      * @param Requests\saveAsOnlineRequest $request is a request object for operation
      *
@@ -40786,7 +40786,7 @@ class WordsApi
     /*
      * Operation saveAsTiffOnline
      *
-     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
+     * Converts a document to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffOnlineRequest $request is a request object for operation
      *
@@ -40814,7 +40814,7 @@ class WordsApi
     /*
      * Operation saveAsTiffOnlineWithHttpInfo
      *
-     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
+     * Converts a document to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffOnlineRequest $request is a request object for operation
      *
@@ -40868,7 +40868,7 @@ class WordsApi
     /*
      * Operation saveAsTiffOnlineAsync
      *
-     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
+     * Converts a document to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffOnlineRequest $request is a request object for operation
      *
@@ -40888,7 +40888,7 @@ class WordsApi
     /*
      * Operation saveAsTiffOnlineAsyncWithHttpInfo
      *
-     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
+     * Converts a document to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffOnlineRequest $request is a request object for operation
      *

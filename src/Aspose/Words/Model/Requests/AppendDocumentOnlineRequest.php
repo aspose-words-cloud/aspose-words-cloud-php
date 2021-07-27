@@ -44,7 +44,7 @@ use Aspose\Words\Model\Response\AppendDocumentOnlineResponse;
 class AppendDocumentOnlineRequest
 {
     /*
-     * The document.
+     * Original document.
      */
     public $document;
 
@@ -81,7 +81,7 @@ class AppendDocumentOnlineRequest
     /*
      * Initializes a new instance of the AppendDocumentOnlineRequest class.
      *
-     * @param \SplFileObject $document The document.
+     * @param \SplFileObject $document Original document.
      * @param \Aspose\Words\Model\DocumentEntryList $document_list <see cref="DocumentEntryList"/> with a list of documents to append.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -101,7 +101,7 @@ class AppendDocumentOnlineRequest
     }
 
     /*
-     * The document.
+     * Original document.
      */
     public function get_document()
     {
@@ -109,7 +109,7 @@ class AppendDocumentOnlineRequest
     }
 
     /*
-     * The document.
+     * Original document.
      */
     public function set_document($value)
     {

@@ -44,9 +44,9 @@ use Aspose\Words\Model\Response\GetDocumentFieldNamesOnlineResponse;
 class GetDocumentFieldNamesOnlineRequest
 {
     /*
-     * The document.
+     * The template document.
      */
-    public $document;
+    public $template;
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -66,33 +66,33 @@ class GetDocumentFieldNamesOnlineRequest
     /*
      * Initializes a new instance of the GetDocumentFieldNamesOnlineRequest class.
      *
-     * @param \SplFileObject $document The document.
+     * @param \SplFileObject $template The template document.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param bool $use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
      */
-    public function __construct($document, $load_encoding = null, $password = null, $use_non_merge_fields = null)
+    public function __construct($template, $load_encoding = null, $password = null, $use_non_merge_fields = null)
     {
-        $this->document = $document;
+        $this->template = $template;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->use_non_merge_fields = $use_non_merge_fields;
     }
 
     /*
-     * The document.
+     * The template document.
      */
-    public function get_document()
+    public function get_template()
     {
-        return $this->document;
+        return $this->template;
     }
 
     /*
-     * The document.
+     * The template document.
      */
-    public function set_document($value)
+    public function set_template($value)
     {
-        $this->document = $value;
+        $this->template = $value;
         return $this;
     }
 
@@ -155,8 +155,8 @@ class GetDocumentFieldNamesOnlineRequest
      */
     public function createRequestData($config)
     {
-        if ($this->document === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $document when calling getDocumentFieldNamesOnline');
+        if ($this->template === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $template when calling getDocumentFieldNamesOnline');
         }
 
         $resourcePath = '/words/online/get/mailMerge/FieldNames';
@@ -201,13 +201,13 @@ class GetDocumentFieldNamesOnlineRequest
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
         // form params
-        if ($this->document !== null) {
+        if ($this->template !== null) {
             $multipart = true; 
-            $filename = ObjectSerializer::toFormValue($this->document);
+            $filename = ObjectSerializer::toFormValue($this->template);
             $handle = fopen($filename, "rb");
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
-            $formParams['document'] = ['content' => $contents, 'mime' => 'application/octet-stream'];
+            $formParams['template'] = ['content' => $contents, 'mime' => 'application/octet-stream'];
         }
 
         // body params

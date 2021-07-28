@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TextSaveOptionsData.php">
+ * <copyright company="Aspose" file="PublicKeyResponse.php">
  *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -30,11 +30,11 @@ namespace Aspose\Words\Model;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * TextSaveOptionsData
+ * PublicKeyResponse
  *
- * @description Container class for text save options.
+ * @description REST response for RSA public key info.
  */
-class TextSaveOptionsData extends TxtSaveOptionsBaseData
+class PublicKeyResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +43,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      *
      * @var string
      */
-    protected static $swaggerModelName = "TextSaveOptionsData";
+    protected static $swaggerModelName = "PublicKeyResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,10 +51,8 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'add_bidi_marks' => 'bool',
-        'max_characters_per_line' => 'int',
-        'preserve_table_layout' => 'bool',
-        'simplify_list_labels' => 'bool'
+        'exponent' => 'string',
+        'modulus' => 'string'
     ];
 
     /*
@@ -63,10 +61,8 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'add_bidi_marks' => 'null',
-        'max_characters_per_line' => 'null',
-        'preserve_table_layout' => 'null',
-        'simplify_list_labels' => 'null'
+        'exponent' => 'null',
+        'modulus' => 'null'
     ];
 
     /*
@@ -96,10 +92,8 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $attributeMap = [
-        'add_bidi_marks' => 'AddBidiMarks',
-        'max_characters_per_line' => 'MaxCharactersPerLine',
-        'preserve_table_layout' => 'PreserveTableLayout',
-        'simplify_list_labels' => 'SimplifyListLabels'
+        'exponent' => 'Exponent',
+        'modulus' => 'Modulus'
     ];
 
     /*
@@ -108,10 +102,8 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $setters = [
-        'add_bidi_marks' => 'setAddBidiMarks',
-        'max_characters_per_line' => 'setMaxCharactersPerLine',
-        'preserve_table_layout' => 'setPreserveTableLayout',
-        'simplify_list_labels' => 'setSimplifyListLabels'
+        'exponent' => 'setExponent',
+        'modulus' => 'setModulus'
     ];
 
     /*
@@ -120,10 +112,8 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
      * @var string[]
      */
     protected static $getters = [
-        'add_bidi_marks' => 'getAddBidiMarks',
-        'max_characters_per_line' => 'getMaxCharactersPerLine',
-        'preserve_table_layout' => 'getPreserveTableLayout',
-        'simplify_list_labels' => 'getSimplifyListLabels'
+        'exponent' => 'getExponent',
+        'modulus' => 'getModulus'
     ];
 
     /*
@@ -178,10 +168,8 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['add_bidi_marks'] = isset($data['add_bidi_marks']) ? $data['add_bidi_marks'] : null;
-        $this->container['max_characters_per_line'] = isset($data['max_characters_per_line']) ? $data['max_characters_per_line'] : null;
-        $this->container['preserve_table_layout'] = isset($data['preserve_table_layout']) ? $data['preserve_table_layout'] : null;
-        $this->container['simplify_list_labels'] = isset($data['simplify_list_labels']) ? $data['simplify_list_labels'] : null;
+        $this->container['exponent'] = isset($data['exponent']) ? $data['exponent'] : null;
+        $this->container['modulus'] = isset($data['modulus']) ? $data['modulus'] : null;
     }
 
     /*
@@ -211,94 +199,48 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     }
 
     /*
-     * Gets add_bidi_marks
+     * Gets exponent
      *
-     * @return bool
+     * @return string
      */
-    public function getAddBidiMarks()
+    public function getExponent()
     {
-        return $this->container['add_bidi_marks'];
+        return $this->container['exponent'];
     }
 
     /*
-     * Sets add_bidi_marks
+     * Sets exponent
      *
-     * @param bool $add_bidi_marks Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
+     * @param string $exponent Gets or sets RSA key exponent as Base64 string.
      *
      * @return $this
      */
-    public function setAddBidiMarks($add_bidi_marks)
+    public function setExponent($exponent)
     {
-        $this->container['add_bidi_marks'] = $add_bidi_marks;
+        $this->container['exponent'] = $exponent;
         return $this;
     }
 
     /*
-     * Gets max_characters_per_line
+     * Gets modulus
      *
-     * @return int
+     * @return string
      */
-    public function getMaxCharactersPerLine()
+    public function getModulus()
     {
-        return $this->container['max_characters_per_line'];
+        return $this->container['modulus'];
     }
 
     /*
-     * Sets max_characters_per_line
+     * Sets modulus
      *
-     * @param int $max_characters_per_line Gets or sets an integer value that specifies the maximum number of characters per one line. The default value is 0, that means no limit.
+     * @param string $modulus Gets or sets RSA key modulus as Base64 string.
      *
      * @return $this
      */
-    public function setMaxCharactersPerLine($max_characters_per_line)
+    public function setModulus($modulus)
     {
-        $this->container['max_characters_per_line'] = $max_characters_per_line;
-        return $this;
-    }
-
-    /*
-     * Gets preserve_table_layout
-     *
-     * @return bool
-     */
-    public function getPreserveTableLayout()
-    {
-        return $this->container['preserve_table_layout'];
-    }
-
-    /*
-     * Sets preserve_table_layout
-     *
-     * @param bool $preserve_table_layout Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
-     *
-     * @return $this
-     */
-    public function setPreserveTableLayout($preserve_table_layout)
-    {
-        $this->container['preserve_table_layout'] = $preserve_table_layout;
-        return $this;
-    }
-
-    /*
-     * Gets simplify_list_labels
-     *
-     * @return bool
-     */
-    public function getSimplifyListLabels()
-    {
-        return $this->container['simplify_list_labels'];
-    }
-
-    /*
-     * Sets simplify_list_labels
-     *
-     * @param bool $simplify_list_labels Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
-     *
-     * @return $this
-     */
-    public function setSimplifyListLabels($simplify_list_labels)
-    {
-        $this->container['simplify_list_labels'] = $simplify_list_labels;
+        $this->container['modulus'] = $modulus;
         return $this;
     }
 

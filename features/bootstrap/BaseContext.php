@@ -27,7 +27,7 @@
 */
 
 namespace BaseTest;
-use Aspose\Tests\BaseTestContext;
+use Aspose\Words\Tests\BaseTestContext;
 use Behat\Behat\Context\Context;
 require_once $_SERVER['DOCUMENT_ROOT'] . "tests/Aspose/Words/BaseTestContext.php";
 

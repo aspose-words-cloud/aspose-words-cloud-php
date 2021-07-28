@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WordsApiTests.php">
+ * <copyright company="Aspose" file="MacrosTests.php">
  *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,44 +27,62 @@
  */
 
 namespace Aspose\Words\Tests;
-use Aspose\Words\ApiException;
-use Aspose\Words\Model\Requests;
-use Aspose\Words\WordsApi;
-use PHPUnit\Framework\Assert;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 
-class WordsApiTests extends BaseTestContext
+use Aspose\Words\WordsApi;
+use Aspose\Words\Model;
+use Aspose\Words\Model\Requests;
+use PHPUnit\Framework\Assert;
+
+/*
+ * Example of how to work with macros.
+ */
+class MacrosTests extends BaseTestContext
 {
     /*
-     * Test case for checking correct handle of server errors
+     * Test for deleting macros.
      */
-    public function testHandleServerErrors()
+    public function testDeleteMacros()
     {
-        $remoteName = "noFileWithThisName.docx";
-        $request = new Requests\GetSectionsRequest($remoteName);
-        try{
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Macros";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestDeleteDocumentMacros.docx";
 
-            Assert::assertNull($this->words->GetSections($request));
-        }
-        catch (ApiException $exception)
-        {
-            Assert::assertEquals(404, $exception->getCode());
-        }
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new Requests\DeleteMacrosRequest(
+            $remoteFileName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        Assert::assertNull($this->words->deleteMacros($request));
     }
 
     /*
-     * Test case for checking bad clientId
+     * Test for deleting macros online.
      */
-    public function testHandleBadClientId()
+    public function testDeleteMacrosOnline()
     {
-        try{
-            $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
-            $this->words->getAvailableFonts(new Requests\GetAvailableFontsRequest());
-        }
-        catch (RequestException $e)
-        {
-            Assert::assertEquals(400, $e->getCode());
-        }
+        $localFile = "Common/test_multi_pages.docx";
+
+        $request = new Requests\DeleteMacrosOnlineRequest(
+            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteMacrosOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

@@ -58,6 +58,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'string',
         'dml_rendering_mode' => 'string',
         'file_name' => 'string',
+        'iml_rendering_mode' => 'string',
         'save_format' => 'string',
         'update_created_time_property' => 'bool',
         'update_fields' => 'bool',
@@ -79,6 +80,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'null',
         'dml_rendering_mode' => 'null',
         'file_name' => 'null',
+        'iml_rendering_mode' => 'null',
         'save_format' => 'null',
         'update_created_time_property' => 'null',
         'update_fields' => 'null',
@@ -121,6 +123,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'DmlEffectsRenderingMode',
         'dml_rendering_mode' => 'DmlRenderingMode',
         'file_name' => 'FileName',
+        'iml_rendering_mode' => 'ImlRenderingMode',
         'save_format' => 'SaveFormat',
         'update_created_time_property' => 'UpdateCreatedTimeProperty',
         'update_fields' => 'UpdateFields',
@@ -142,6 +145,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'setDmlEffectsRenderingMode',
         'dml_rendering_mode' => 'setDmlRenderingMode',
         'file_name' => 'setFileName',
+        'iml_rendering_mode' => 'setImlRenderingMode',
         'save_format' => 'setSaveFormat',
         'update_created_time_property' => 'setUpdateCreatedTimeProperty',
         'update_fields' => 'setUpdateFields',
@@ -163,6 +167,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'getDmlEffectsRenderingMode',
         'dml_rendering_mode' => 'getDmlRenderingMode',
         'file_name' => 'getFileName',
+        'iml_rendering_mode' => 'getImlRenderingMode',
         'save_format' => 'getSaveFormat',
         'update_created_time_property' => 'getUpdateCreatedTimeProperty',
         'update_fields' => 'getUpdateFields',
@@ -250,6 +255,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['dml_effects_rendering_mode'] = isset($data['dml_effects_rendering_mode']) ? $data['dml_effects_rendering_mode'] : null;
         $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
+        $this->container['iml_rendering_mode'] = isset($data['iml_rendering_mode']) ? $data['iml_rendering_mode'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
         $this->container['update_created_time_property'] = isset($data['update_created_time_property']) ? $data['update_created_time_property'] : null;
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
@@ -436,6 +442,29 @@ class SaveOptionsData implements ArrayAccess
     public function setFileName($file_name)
     {
         $this->container['file_name'] = $file_name;
+        return $this;
+    }
+
+    /*
+     * Gets iml_rendering_mode
+     *
+     * @return string
+     */
+    public function getImlRenderingMode()
+    {
+        return $this->container['iml_rendering_mode'];
+    }
+
+    /*
+     * Sets iml_rendering_mode
+     *
+     * @param string $iml_rendering_mode Gets or sets the value determining how ink (InkML) objects are rendered.
+     *
+     * @return $this
+     */
+    public function setImlRenderingMode($iml_rendering_mode)
+    {
+        $this->container['iml_rendering_mode'] = $iml_rendering_mode;
         return $this;
     }
 

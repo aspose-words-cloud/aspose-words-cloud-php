@@ -5,10 +5,14 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$renderRequest = new Requests\RenderTableOnlineRequest(
     $documentsDir . "Sample.docx",
+    "png",
+    0,
+    "",
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->renderTableOnline($renderRequest);

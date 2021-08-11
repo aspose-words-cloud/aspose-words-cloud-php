@@ -5,10 +5,15 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$splitRequest = new Requests\SplitDocumentOnlineRequest(
     $documentsDir . "Sample.docx",
+    "text",
     NULL,
+    NULL,
+    "/TestSplitDocument.text",
+    1,
+    2,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->splitDocumentOnline($splitRequest);

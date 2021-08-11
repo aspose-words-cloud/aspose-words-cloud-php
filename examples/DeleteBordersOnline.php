@@ -5,10 +5,13 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$deleteRequest = new Requests\DeleteBordersOnlineRequest(
     $documentsDir . "Sample.docx",
+    "tables/1/rows/0/cells/0",
+    NULL,
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->deleteBordersOnline($deleteRequest);

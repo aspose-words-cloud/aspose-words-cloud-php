@@ -6,12 +6,16 @@ $remoteFileName = "Sample.docx";
 
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsRequest(
+$deleteRequest = new Requests\DeleteFormFieldRequest(
+    $remoteFileName,
+    0,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
     $remoteFileName,
     NULL,
-    NULL,
-    NULL,
-    NULL,
-    $remoteFileName
+    NULL
 );
-$wordsApi->acceptAllRevisions($acceptRequest);
+$wordsApi->deleteFormField($deleteRequest);

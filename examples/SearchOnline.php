@@ -5,10 +5,10 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$searchRequest = new Requests\SearchOnlineRequest(
     $documentsDir . "Sample.docx",
-    NULL,
+    "aspose",
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->searchOnline($searchRequest);

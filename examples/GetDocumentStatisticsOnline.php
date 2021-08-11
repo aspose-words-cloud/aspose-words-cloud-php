@@ -5,10 +5,12 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$request = new Requests\GetDocumentStatisticsOnlineRequest(
     $documentsDir . "Sample.docx",
+    NULL,
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getDocumentStatisticsOnline($request);

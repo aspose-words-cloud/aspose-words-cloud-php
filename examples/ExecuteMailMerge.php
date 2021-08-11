@@ -6,12 +6,17 @@ $remoteFileName = "Sample.docx";
 
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsRequest(
+$mailMergeRequest = new Requests\ExecuteMailMergeRequest(
     $remoteFileName,
+    "TestExecuteTemplateData.txt",
+    NULL,
+    NULL,
+    NULL,
+    NULL,
     NULL,
     NULL,
     NULL,
     NULL,
     $remoteFileName
 );
-$wordsApi->acceptAllRevisions($acceptRequest);
+$wordsApi->executeMailMerge($mailMergeRequest);

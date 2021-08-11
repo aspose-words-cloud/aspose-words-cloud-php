@@ -5,10 +5,15 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$insertRequest = new Requests\InsertWatermarkImageOnlineRequest(
     $documentsDir . "Sample.docx",
+    $documentsDir . "Common/aspose-cloud.png",
+    NULL,
+    NULL,
+    NULL,
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->insertWatermarkImageOnline($insertRequest);

@@ -5,10 +5,10 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$request = new Requests\GetParagraphsOnlineRequest(
     $documentsDir . "Sample.docx",
-    NULL,
+    "sections/0",
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getParagraphsOnline($request);

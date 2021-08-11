@@ -5,10 +5,11 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$request = new Requests\GetDocumentDrawingObjectImageDataOnlineRequest(
     $documentsDir . "Sample.docx",
-    NULL,
+    0,
+    "sections/0",
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getDocumentDrawingObjectImageDataOnline($request);

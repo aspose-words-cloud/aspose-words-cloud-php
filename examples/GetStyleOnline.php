@@ -5,10 +5,10 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$request = new Requests\GetStyleOnlineRequest(
     $documentsDir . "Sample.docx",
-    NULL,
+    "Heading 1",
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getStyleOnline($request);

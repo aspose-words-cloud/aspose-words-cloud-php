@@ -5,10 +5,10 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$request = new Requests\GetOfficeMathObjectsOnlineRequest(
     $documentsDir . "Sample.docx",
-    NULL,
+    "",
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getOfficeMathObjectsOnline($request);

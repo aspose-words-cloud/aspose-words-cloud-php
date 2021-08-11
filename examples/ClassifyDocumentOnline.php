@@ -5,10 +5,11 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$classifyRequest = new Requests\ClassifyDocumentOnlineRequest(
     $documentsDir . "Sample.docx",
     NULL,
     NULL,
+    "3",
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->classifyDocumentOnline($classifyRequest);

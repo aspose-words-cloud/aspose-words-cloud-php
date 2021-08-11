@@ -5,10 +5,11 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$request = new Requests\GetBorderOnlineRequest(
     $documentsDir . "Sample.docx",
-    NULL,
+    "left",
+    "tables/1/rows/0/cells/0",
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getBorderOnline($request);

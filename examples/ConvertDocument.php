@@ -5,10 +5,12 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
-    $documentsDir . "Sample.docx",
+$convertRequest = new Requests\ConvertDocumentRequest(
+    $documentsDir . "/test_uploadfile.docx",
+    "pdf",
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->convertDocument($convertRequest);

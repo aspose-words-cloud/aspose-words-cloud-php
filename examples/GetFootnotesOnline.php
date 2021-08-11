@@ -5,10 +5,10 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
-    $documentsDir . "Sample.docx",
-    NULL,
+$request = new Requests\GetFootnotesOnlineRequest(
+    $documentsDir . "/Footnote.doc",
+    "",
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getFootnotesOnline($request);

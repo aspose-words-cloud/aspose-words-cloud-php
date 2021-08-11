@@ -5,10 +5,14 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$renderRequest = new Requests\RenderDrawingObjectOnlineRequest(
     $documentsDir . "Sample.docx",
+    "png",
+    0,
+    "sections/0",
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->renderDrawingObjectOnline($renderRequest);

@@ -5,10 +5,9 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$uploadRequest = new Requests\UploadFileRequest(
     $documentsDir . "Sample.docx",
-    NULL,
-    NULL,
+    "Sample.docx",
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->uploadFile($uploadRequest);

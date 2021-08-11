@@ -5,10 +5,14 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
-    $documentsDir . "Sample.docx",
+$deleteRequest = new Requests\DeleteFootnoteOnlineRequest(
+    $documentsDir . "/Footnote.doc",
+    0,
+    "",
+    NULL,
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->deleteFootnoteOnline($deleteRequest);

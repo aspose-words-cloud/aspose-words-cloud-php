@@ -5,10 +5,13 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$deleteRequest = new Requests\DeleteDocumentPropertyOnlineRequest(
     $documentsDir . "Sample.docx",
+    "testProp",
+    NULL,
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->deleteDocumentPropertyOnline($deleteRequest);

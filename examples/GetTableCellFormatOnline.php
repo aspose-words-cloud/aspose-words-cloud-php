@@ -5,10 +5,11 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$request = new Requests\GetTableCellFormatOnlineRequest(
     $documentsDir . "Sample.docx",
-    NULL,
+    "sections/0/tables/2/rows/0",
+    0,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getTableCellFormatOnline($request);

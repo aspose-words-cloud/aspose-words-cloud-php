@@ -6,12 +6,15 @@ $remoteFileName = "Sample.docx";
 
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsRequest(
+$deleteRequest = new Requests\DeleteDocumentPropertyRequest(
+    $remoteFileName,
+    "testProp",
+    NULL,
+    NULL,
+    NULL,
+    NULL,
     $remoteFileName,
     NULL,
-    NULL,
-    NULL,
-    NULL,
-    $remoteFileName
+    NULL
 );
-$wordsApi->acceptAllRevisions($acceptRequest);
+$wordsApi->deleteDocumentProperty($deleteRequest);

@@ -5,10 +5,11 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
-    $documentsDir . "Sample.docx",
+$request = new Requests\GetHeaderFooterOnlineRequest(
+    $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+    0,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getHeaderFooterOnline($request);

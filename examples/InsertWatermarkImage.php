@@ -2,16 +2,22 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
+$documentsDir = '...';
 $remoteFileName = "Sample.docx";
 
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsRequest(
+$insertRequest = new Requests\InsertWatermarkImageRequest(
     $remoteFileName,
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName
+    NULL,
+    $remoteFileName,
+    NULL,
+    NULL,
+    NULL,
+    "Sample.png"
 );
-$wordsApi->acceptAllRevisions($acceptRequest);
+$wordsApi->insertWatermarkImage($insertRequest);

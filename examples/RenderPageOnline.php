@@ -5,10 +5,12 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
-    $documentsDir . "Sample.docx",
+$renderRequest = new Requests\RenderPageOnlineRequest(
+    $documentsDir . "DocumentElements/Text/SampleWordDocument.docx",
+    1,
+    "bmp",
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->renderPageOnline($renderRequest);

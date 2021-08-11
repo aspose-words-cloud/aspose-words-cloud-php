@@ -5,10 +5,10 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$rejectRequest = new Requests\RejectAllRevisionsOnlineRequest(
     $documentsDir . "Sample.docx",
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->rejectAllRevisionsOnline($rejectRequest);

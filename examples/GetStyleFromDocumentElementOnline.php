@@ -5,10 +5,10 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$request = new Requests\GetStyleFromDocumentElementOnlineRequest(
     $documentsDir . "Sample.docx",
-    NULL,
+    "paragraphs/1/paragraphFormat",
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getStyleFromDocumentElementOnline($request);

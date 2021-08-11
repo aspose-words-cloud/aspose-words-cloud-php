@@ -6,7 +6,7 @@ $remoteFileName = "Sample.docx";
 
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsRequest(
+$rejectRequest = new Requests\RejectAllRevisionsRequest(
     $remoteFileName,
     NULL,
     NULL,
@@ -14,4 +14,4 @@ $acceptRequest = new Requests\AcceptAllRevisionsRequest(
     NULL,
     $remoteFileName
 );
-$wordsApi->acceptAllRevisions($acceptRequest);
+$wordsApi->rejectAllRevisions($rejectRequest);

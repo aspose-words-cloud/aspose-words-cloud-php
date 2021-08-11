@@ -5,10 +5,14 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$deleteRequest = new Requests\DeleteParagraphOnlineRequest(
     $documentsDir . "Sample.docx",
+    0,
+    "",
+    NULL,
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->deleteParagraphOnline($deleteRequest);

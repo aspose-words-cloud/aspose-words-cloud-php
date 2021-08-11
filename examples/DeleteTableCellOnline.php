@@ -5,10 +5,14 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$deleteRequest = new Requests\DeleteTableCellOnlineRequest(
     $documentsDir . "Sample.docx",
+    "sections/0/tables/2/rows/0",
+    0,
+    NULL,
+    NULL,
     NULL,
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->deleteTableCellOnline($deleteRequest);

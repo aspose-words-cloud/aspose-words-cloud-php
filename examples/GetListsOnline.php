@@ -5,10 +5,9 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
-    $documentsDir . "Sample.docx",
-    NULL,
+$request = new Requests\GetListsOnlineRequest(
+    $documentsDir . "DocumentElements/Lists/ListsGet.doc",
     NULL,
     NULL
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getListsOnline($request);

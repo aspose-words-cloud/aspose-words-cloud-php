@@ -6,12 +6,15 @@ $remoteFileName = "Sample.docx";
 
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsRequest(
+$deleteRequest = new Requests\DeleteCommentRequest(
+    $remoteFileName,
+    0,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
     $remoteFileName,
     NULL,
-    NULL,
-    NULL,
-    NULL,
-    $remoteFileName
+    NULL
 );
-$wordsApi->acceptAllRevisions($acceptRequest);
+$wordsApi->deleteComment($deleteRequest);

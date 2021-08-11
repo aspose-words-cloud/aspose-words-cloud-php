@@ -5,10 +5,10 @@ $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
 /**
  */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
+$request = new Requests\GetDocumentFieldNamesOnlineRequest(
     $documentsDir . "Sample.docx",
     NULL,
     NULL,
-    NULL
+    true
 );
-$wordsApi->acceptAllRevisionsOnline($acceptRequest);
+$wordsApi->getDocumentFieldNamesOnline($request);

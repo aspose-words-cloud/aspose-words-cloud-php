@@ -55,7 +55,8 @@ class CompareData implements ArrayAccess
         'author' => 'string',
         'compare_options' => '\Aspose\Words\Model\CompareOptions',
         'comparing_with_document' => 'string',
-        'date_time' => '\DateTime'
+        'date_time' => '\DateTime',
+        'result_document_format' => 'string'
     ];
 
     /*
@@ -67,7 +68,8 @@ class CompareData implements ArrayAccess
         'author' => 'null',
         'compare_options' => 'null',
         'comparing_with_document' => 'null',
-        'date_time' => 'null'
+        'date_time' => 'null',
+        'result_document_format' => 'null'
     ];
 
     /*
@@ -100,7 +102,8 @@ class CompareData implements ArrayAccess
         'author' => 'Author',
         'compare_options' => 'CompareOptions',
         'comparing_with_document' => 'ComparingWithDocument',
-        'date_time' => 'DateTime'
+        'date_time' => 'DateTime',
+        'result_document_format' => 'ResultDocumentFormat'
     ];
 
     /*
@@ -112,7 +115,8 @@ class CompareData implements ArrayAccess
         'author' => 'setAuthor',
         'compare_options' => 'setCompareOptions',
         'comparing_with_document' => 'setComparingWithDocument',
-        'date_time' => 'setDateTime'
+        'date_time' => 'setDateTime',
+        'result_document_format' => 'setResultDocumentFormat'
     ];
 
     /*
@@ -124,7 +128,8 @@ class CompareData implements ArrayAccess
         'author' => 'getAuthor',
         'compare_options' => 'getCompareOptions',
         'comparing_with_document' => 'getComparingWithDocument',
-        'date_time' => 'getDateTime'
+        'date_time' => 'getDateTime',
+        'result_document_format' => 'getResultDocumentFormat'
     ];
 
     /*
@@ -189,6 +194,7 @@ class CompareData implements ArrayAccess
         $this->container['compare_options'] = isset($data['compare_options']) ? $data['compare_options'] : null;
         $this->container['comparing_with_document'] = isset($data['comparing_with_document']) ? $data['comparing_with_document'] : null;
         $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
+        $this->container['result_document_format'] = isset($data['result_document_format']) ? $data['result_document_format'] : null;
     }
 
     /*
@@ -303,6 +309,29 @@ class CompareData implements ArrayAccess
     public function setDateTime($date_time)
     {
         $this->container['date_time'] = $date_time;
+        return $this;
+    }
+
+    /*
+     * Gets result_document_format
+     *
+     * @return string
+     */
+    public function getResultDocumentFormat()
+    {
+        return $this->container['result_document_format'];
+    }
+
+    /*
+     * Sets result_document_format
+     *
+     * @param string $result_document_format Gets or sets the result document format.
+     *
+     * @return $this
+     */
+    public function setResultDocumentFormat($result_document_format)
+    {
+        $this->container['result_document_format'] = $result_document_format;
         return $this;
     }
 

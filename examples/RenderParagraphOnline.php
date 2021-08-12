@@ -9,7 +9,7 @@ $renderRequest = new Requests\RenderParagraphOnlineRequest(
     $documentsDir . "Sample.docx",
     "png",
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

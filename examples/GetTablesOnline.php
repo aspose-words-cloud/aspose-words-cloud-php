@@ -7,7 +7,7 @@ $documentsDir = '...';
  */
 $request = new Requests\GetTablesOnlineRequest(
     $documentsDir . "Sample.docx",
-    "",
+    NULL,
     NULL,
     NULL
 );

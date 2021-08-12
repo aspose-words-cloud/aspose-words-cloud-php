@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $deleteRequest = new Requests\DeleteFormFieldOnlineRequest(
-    $documentsDir . "/FormFilled.docx",
+    $documentsDir . "Sample.docx",
     0,
     "sections/0",
     NULL,

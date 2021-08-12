@@ -6,10 +6,10 @@ $documentsDir = '...';
 /**
  */
 $deleteRequest = new Requests\DeleteParagraphTabStopOnlineRequest(
-    $documentsDir . "/ParagraphTabStops.docx",
+    $documentsDir . "Sample.docx",
     72.0,
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL

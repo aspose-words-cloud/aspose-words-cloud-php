@@ -8,7 +8,7 @@ $documentsDir = '...';
 $request = new Requests\GetParagraphFormatOnlineRequest(
     $documentsDir . "Sample.docx",
     0,
-    "",
+    NULL,
     NULL,
     NULL
 );

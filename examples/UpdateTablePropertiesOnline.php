@@ -17,7 +17,7 @@ $updateRequest = new Requests\UpdateTablePropertiesOnlineRequest(
     $documentsDir . "Sample.docx",
     $requestProperties,
     1,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

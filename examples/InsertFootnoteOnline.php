@@ -10,9 +10,9 @@ $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
     "text" => "test endnote",
 ));
 $insertRequest = new Requests\InsertFootnoteOnlineRequest(
-    $documentsDir . "/Footnote.doc",
+    $documentsDir . "Sample.doc",
     $requestFootnoteDto,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

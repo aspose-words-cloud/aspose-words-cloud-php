@@ -15,7 +15,7 @@ $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
     "text_input_format" => "UPPERCASE",
 ));
 $insertRequest = new Requests\InsertFormFieldOnlineRequest(
-    $documentsDir . "/FormFilled.docx",
+    $documentsDir . "Sample.docx",
     $requestFormField,
     "sections/0/paragraphs/0",
     NULL,

@@ -12,7 +12,7 @@ $requestTable = new \Aspose\Words\Model\TableInsert(array(
 $insertRequest = new Requests\InsertTableOnlineRequest(
     $documentsDir . "Sample.docx",
     $requestTable,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

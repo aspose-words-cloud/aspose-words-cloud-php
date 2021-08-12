@@ -9,7 +9,7 @@ $requestField = new \Aspose\Words\Model\FieldUpdate(array(
     "field_code" => "{ NUMPAGES }",
 ));
 $updateRequest = new Requests\UpdateFieldOnlineRequest(
-    $documentsDir . "/GetField.docx",
+    $documentsDir . "Sample.docx",
     $requestField,
     0,
     "sections/0/paragraphs/0",

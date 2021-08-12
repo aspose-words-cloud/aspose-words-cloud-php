@@ -345,7 +345,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $convertRequest = new Requests\ConvertDocumentRequest(
-          $documentsDir . "/test_uploadfile.docx",
+          $documentsDir . "Sample.docx",
           "pdf",
           NULL,
           NULL,
@@ -546,9 +546,9 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $deleteRequest = new Requests\DeleteAllParagraphTabStopsOnlineRequest(
-          $documentsDir . "/ParagraphTabStops.docx",
+          $documentsDir . "Sample.docx",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL
@@ -884,7 +884,7 @@ class ExamplesTests extends BaseTestContext
       $deleteRequest = new Requests\DeleteDrawingObjectOnlineRequest(
           $documentsDir . "Sample.docx",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -925,7 +925,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $deleteRequest = new Requests\DeleteFieldOnlineRequest(
-          $documentsDir . "/GetField.docx",
+          $documentsDir . "Sample.docx",
           0,
           "sections/0/paragraphs/0",
           NULL,
@@ -946,7 +946,7 @@ class ExamplesTests extends BaseTestContext
        */
       $deleteRequest = new Requests\DeleteFieldsRequest(
           "Sample.docx",
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -968,7 +968,7 @@ class ExamplesTests extends BaseTestContext
        */
       $deleteRequest = new Requests\DeleteFieldsOnlineRequest(
           $documentsDir . "Sample.docx",
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -1039,9 +1039,9 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $deleteRequest = new Requests\DeleteFootnoteOnlineRequest(
-          $documentsDir . "/Footnote.doc",
+          $documentsDir . "Sample.doc",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -1084,7 +1084,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $deleteRequest = new Requests\DeleteFormFieldOnlineRequest(
-          $documentsDir . "/FormFilled.docx",
+          $documentsDir . "Sample.docx",
           0,
           "sections/0",
           NULL,
@@ -1254,7 +1254,7 @@ class ExamplesTests extends BaseTestContext
       $deleteRequest = new Requests\DeleteOfficeMathObjectOnlineRequest(
           $documentsDir . "Sample.docx",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -1317,9 +1317,9 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $deleteRequest = new Requests\DeleteParagraphListFormatOnlineRequest(
-          $documentsDir . "/ParagraphDeleteListFormat.doc",
+          $documentsDir . "Sample.doc",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -1340,7 +1340,7 @@ class ExamplesTests extends BaseTestContext
       $deleteRequest = new Requests\DeleteParagraphOnlineRequest(
           $documentsDir . "Sample.docx",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -1380,10 +1380,10 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $deleteRequest = new Requests\DeleteParagraphTabStopOnlineRequest(
-          $documentsDir . "/ParagraphTabStops.docx",
+          $documentsDir . "Sample.docx",
           72.0,
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL
@@ -1551,7 +1551,7 @@ class ExamplesTests extends BaseTestContext
       $deleteRequest = new Requests\DeleteTableOnlineRequest(
           $documentsDir . "Sample.docx",
           1,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -2446,7 +2446,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetFieldOnlineRequest(
-          $documentsDir . "/GetField.docx",
+          $documentsDir . "Sample.docx",
           0,
           "sections/0/paragraphs/0",
           NULL,
@@ -2482,7 +2482,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetFieldsOnlineRequest(
-          $documentsDir . "/GetField.docx",
+          $documentsDir . "Sample.docx",
           "sections/0",
           NULL,
           NULL
@@ -2532,9 +2532,9 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetFootnoteOnlineRequest(
-          $documentsDir . "/Footnote.doc",
+          $documentsDir . "Sample.doc",
           0,
-          "",
+          NULL,
           NULL,
           NULL
       );
@@ -2568,8 +2568,8 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetFootnotesOnlineRequest(
-          $documentsDir . "/Footnote.doc",
-          "",
+          $documentsDir . "Sample.doc",
+          NULL,
           NULL,
           NULL
       );
@@ -2604,7 +2604,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetFormFieldOnlineRequest(
-          $documentsDir . "/FormFilled.docx",
+          $documentsDir . "Sample.docx",
           0,
           "sections/0",
           NULL,
@@ -2640,7 +2640,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetFormFieldsOnlineRequest(
-          $documentsDir . "/FormFilled.docx",
+          $documentsDir . "Sample.docx",
           "sections/0",
           NULL,
           NULL
@@ -2859,7 +2859,7 @@ class ExamplesTests extends BaseTestContext
       $request = new Requests\GetOfficeMathObjectOnlineRequest(
           $documentsDir . "Sample.docx",
           0,
-          "",
+          NULL,
           NULL,
           NULL
       );
@@ -2894,7 +2894,7 @@ class ExamplesTests extends BaseTestContext
        */
       $request = new Requests\GetOfficeMathObjectsOnlineRequest(
           $documentsDir . "Sample.docx",
-          "",
+          NULL,
           NULL,
           NULL
       );
@@ -2950,7 +2950,7 @@ class ExamplesTests extends BaseTestContext
       $request = new Requests\GetParagraphFormatOnlineRequest(
           $documentsDir . "Sample.docx",
           0,
-          "",
+          NULL,
           NULL,
           NULL
       );
@@ -2985,9 +2985,9 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetParagraphListFormatOnlineRequest(
-          $documentsDir . "/ParagraphGetListFormat.doc",
+          $documentsDir . "Sample.doc",
           0,
-          "",
+          NULL,
           NULL,
           NULL
       );
@@ -3075,9 +3075,9 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetParagraphTabStopsOnlineRequest(
-          $documentsDir . "/ParagraphTabStops.docx",
+          $documentsDir . "Sample.docx",
           0,
-          "",
+          NULL,
           NULL,
           NULL
       );
@@ -3552,7 +3552,7 @@ class ExamplesTests extends BaseTestContext
       $request = new Requests\GetTableOnlineRequest(
           $documentsDir . "Sample.docx",
           1,
-          "",
+          NULL,
           NULL,
           NULL
       );
@@ -3589,7 +3589,7 @@ class ExamplesTests extends BaseTestContext
       $request = new Requests\GetTablePropertiesOnlineRequest(
           $documentsDir . "Sample.docx",
           1,
-          "",
+          NULL,
           NULL,
           NULL
       );
@@ -3698,7 +3698,7 @@ class ExamplesTests extends BaseTestContext
        */
       $request = new Requests\GetTablesOnlineRequest(
           $documentsDir . "Sample.docx",
-          "",
+          NULL,
           NULL,
           NULL
       );
@@ -3891,7 +3891,7 @@ class ExamplesTests extends BaseTestContext
           $documentsDir . "Sample.docx",
           $requestDrawingObject,
           $documentsDir . "Common/aspose-cloud.png",
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -3939,7 +3939,7 @@ class ExamplesTests extends BaseTestContext
           "field_code" => "{ NUMPAGES }",
       ));
       $insertRequest = new Requests\InsertFieldOnlineRequest(
-          $documentsDir . "/GetField.docx",
+          $documentsDir . "Sample.docx",
           $requestField,
           "sections/0/paragraphs/0",
           NULL,
@@ -3991,9 +3991,9 @@ class ExamplesTests extends BaseTestContext
           "text" => "test endnote",
       ));
       $insertRequest = new Requests\InsertFootnoteOnlineRequest(
-          $documentsDir . "/Footnote.doc",
+          $documentsDir . "Sample.doc",
           $requestFootnoteDto,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -4055,7 +4055,7 @@ class ExamplesTests extends BaseTestContext
           "text_input_format" => "UPPERCASE",
       ));
       $insertRequest = new Requests\InsertFormFieldOnlineRequest(
-          $documentsDir . "/FormFilled.docx",
+          $documentsDir . "Sample.docx",
           $requestFormField,
           "sections/0/paragraphs/0",
           NULL,
@@ -4198,10 +4198,10 @@ class ExamplesTests extends BaseTestContext
           "position" => 72,
       ));
       $insertRequest = new Requests\InsertOrUpdateParagraphTabStopOnlineRequest(
-          $documentsDir . "/ParagraphTabStops.docx",
+          $documentsDir . "Sample.docx",
           $requestTabStopInsertDto,
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL
@@ -4499,7 +4499,7 @@ class ExamplesTests extends BaseTestContext
       $insertRequest = new Requests\InsertTableOnlineRequest(
           $documentsDir . "Sample.docx",
           $requestTable,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -4962,7 +4962,7 @@ class ExamplesTests extends BaseTestContext
           $documentsDir . "Sample.docx",
           "png",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -5044,7 +5044,7 @@ class ExamplesTests extends BaseTestContext
           $documentsDir . "Sample.docx",
           "png",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -5087,7 +5087,7 @@ class ExamplesTests extends BaseTestContext
           $documentsDir . "Sample.docx",
           "png",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -5799,7 +5799,7 @@ class ExamplesTests extends BaseTestContext
           $requestDrawingObject,
           $documentsDir . "Common/aspose-cloud.png",
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -5847,7 +5847,7 @@ class ExamplesTests extends BaseTestContext
           "field_code" => "{ NUMPAGES }",
       ));
       $updateRequest = new Requests\UpdateFieldOnlineRequest(
-          $documentsDir . "/GetField.docx",
+          $documentsDir . "Sample.docx",
           $requestField,
           0,
           "sections/0/paragraphs/0",
@@ -5933,10 +5933,10 @@ class ExamplesTests extends BaseTestContext
           "text" => "new text is here",
       ));
       $updateRequest = new Requests\UpdateFootnoteOnlineRequest(
-          $documentsDir . "/Footnote.doc",
+          $documentsDir . "Sample.doc",
           $requestFootnoteDto,
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -5996,7 +5996,7 @@ class ExamplesTests extends BaseTestContext
           "text_input_default" => "No name",
       ));
       $updateRequest = new Requests\UpdateFormFieldOnlineRequest(
-          $documentsDir . "/FormFilled.docx",
+          $documentsDir . "Sample.docx",
           $requestFormField,
           0,
           "sections/0",
@@ -6123,7 +6123,7 @@ class ExamplesTests extends BaseTestContext
           "Sample.docx",
           0,
           $requestParagraphFormatDto,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -6150,7 +6150,7 @@ class ExamplesTests extends BaseTestContext
           $documentsDir . "Sample.docx",
           $requestParagraphFormatDto,
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -6198,10 +6198,10 @@ class ExamplesTests extends BaseTestContext
           "list_id" => 2,
       ));
       $updateRequest = new Requests\UpdateParagraphListFormatOnlineRequest(
-          $documentsDir . "/ParagraphUpdateListFormat.doc",
+          $documentsDir . "Sample.doc",
           $requestListFormatDto,
           0,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -6527,7 +6527,7 @@ class ExamplesTests extends BaseTestContext
           $documentsDir . "Sample.docx",
           $requestProperties,
           1,
-          "",
+          NULL,
           NULL,
           NULL,
           NULL,

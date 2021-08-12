@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $convertRequest = new Requests\ConvertDocumentRequest(
-    $documentsDir . "/test_uploadfile.docx",
+    $documentsDir . "Sample.docx",
     "pdf",
     NULL,
     NULL,

@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $request = new Requests\GetFieldOnlineRequest(
-    $documentsDir . "/GetField.docx",
+    $documentsDir . "Sample.docx",
     0,
     "sections/0/paragraphs/0",
     NULL,

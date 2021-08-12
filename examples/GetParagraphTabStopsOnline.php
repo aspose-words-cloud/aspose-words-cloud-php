@@ -6,9 +6,9 @@ $documentsDir = '...';
 /**
  */
 $request = new Requests\GetParagraphTabStopsOnlineRequest(
-    $documentsDir . "/ParagraphTabStops.docx",
+    $documentsDir . "Sample.docx",
     0,
-    "",
+    NULL,
     NULL,
     NULL
 );

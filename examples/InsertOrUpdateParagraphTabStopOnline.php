@@ -11,10 +11,10 @@ $requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
     "position" => 72,
 ));
 $insertRequest = new Requests\InsertOrUpdateParagraphTabStopOnlineRequest(
-    $documentsDir . "/ParagraphTabStops.docx",
+    $documentsDir . "Sample.docx",
     $requestTabStopInsertDto,
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL

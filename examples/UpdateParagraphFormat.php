@@ -11,7 +11,7 @@ $updateRequest = new Requests\UpdateParagraphFormatRequest(
     "Sample.docx",
     0,
     $requestParagraphFormatDto,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

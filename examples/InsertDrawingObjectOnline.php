@@ -18,7 +18,7 @@ $insertRequest = new Requests\InsertDrawingObjectOnlineRequest(
     $documentsDir . "Sample.docx",
     $requestDrawingObject,
     $documentsDir . "Common/aspose-cloud.png",
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

@@ -13,7 +13,7 @@ $updateRequest = new Requests\UpdateDrawingObjectOnlineRequest(
     $requestDrawingObject,
     $documentsDir . "Common/aspose-cloud.png",
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

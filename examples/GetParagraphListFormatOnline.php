@@ -6,9 +6,9 @@ $documentsDir = '...';
 /**
  */
 $request = new Requests\GetParagraphListFormatOnlineRequest(
-    $documentsDir . "/ParagraphGetListFormat.doc",
+    $documentsDir . "Sample.doc",
     0,
-    "",
+    NULL,
     NULL,
     NULL
 );

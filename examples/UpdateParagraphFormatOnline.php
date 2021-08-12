@@ -12,7 +12,7 @@ $updateRequest = new Requests\UpdateParagraphFormatOnlineRequest(
     $documentsDir . "Sample.docx",
     $requestParagraphFormatDto,
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

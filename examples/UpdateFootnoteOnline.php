@@ -9,10 +9,10 @@ $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
     "text" => "new text is here",
 ));
 $updateRequest = new Requests\UpdateFootnoteOnlineRequest(
-    $documentsDir . "/Footnote.doc",
+    $documentsDir . "Sample.doc",
     $requestFootnoteDto,
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

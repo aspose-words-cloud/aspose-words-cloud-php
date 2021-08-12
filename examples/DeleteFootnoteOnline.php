@@ -6,9 +6,9 @@ $documentsDir = '...';
 /**
  */
 $deleteRequest = new Requests\DeleteFootnoteOnlineRequest(
-    $documentsDir . "/Footnote.doc",
+    $documentsDir . "Sample.doc",
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

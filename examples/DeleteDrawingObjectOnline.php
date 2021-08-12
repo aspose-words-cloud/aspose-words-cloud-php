@@ -8,7 +8,7 @@ $documentsDir = '...';
 $deleteRequest = new Requests\DeleteDrawingObjectOnlineRequest(
     $documentsDir . "Sample.docx",
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

@@ -6,7 +6,7 @@ $wordsApi = new WordsApi($clientId, $secret);
  */
 $deleteRequest = new Requests\DeleteFieldsRequest(
     "Sample.docx",
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

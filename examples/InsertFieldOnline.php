@@ -9,7 +9,7 @@ $requestField = new \Aspose\Words\Model\FieldInsert(array(
     "field_code" => "{ NUMPAGES }",
 ));
 $insertRequest = new Requests\InsertFieldOnlineRequest(
-    $documentsDir . "/GetField.docx",
+    $documentsDir . "Sample.docx",
     $requestField,
     "sections/0/paragraphs/0",
     NULL,

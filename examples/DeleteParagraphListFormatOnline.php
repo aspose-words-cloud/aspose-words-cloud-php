@@ -6,9 +6,9 @@ $documentsDir = '...';
 /**
  */
 $deleteRequest = new Requests\DeleteParagraphListFormatOnlineRequest(
-    $documentsDir . "/ParagraphDeleteListFormat.doc",
+    $documentsDir . "Sample.doc",
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

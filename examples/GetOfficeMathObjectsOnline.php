@@ -7,7 +7,7 @@ $documentsDir = '...';
  */
 $request = new Requests\GetOfficeMathObjectsOnlineRequest(
     $documentsDir . "Sample.docx",
-    "",
+    NULL,
     NULL,
     NULL
 );

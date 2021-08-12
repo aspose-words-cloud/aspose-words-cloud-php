@@ -6,9 +6,9 @@ $documentsDir = '...';
 /**
  */
 $request = new Requests\GetFootnoteOnlineRequest(
-    $documentsDir . "/Footnote.doc",
+    $documentsDir . "Sample.doc",
     0,
-    "",
+    NULL,
     NULL,
     NULL
 );

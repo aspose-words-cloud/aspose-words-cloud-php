@@ -8,7 +8,7 @@ $documentsDir = '...';
 $deleteRequest = new Requests\DeleteOfficeMathObjectOnlineRequest(
     $documentsDir . "Sample.docx",
     0,
-    "",
+    NULL,
     NULL,
     NULL,
     NULL,

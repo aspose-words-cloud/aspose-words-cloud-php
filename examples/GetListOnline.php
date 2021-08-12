@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $request = new Requests\GetListOnlineRequest(
-    $documentsDir . "DocumentElements/Lists/ListsGet.doc",
+    $documentsDir . "Sample.doc",
     1,
     NULL,
     NULL

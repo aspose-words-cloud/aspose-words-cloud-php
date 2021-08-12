@@ -2,8 +2,6 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
@@ -16,14 +14,14 @@ $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
     "text_input_format" => "UPPERCASE",
 ));
 $insertRequest = new Requests\InsertFormFieldRequest(
-    $remoteFileName,
+    "Sample.docx",
     $requestFormField,
     NULL,
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL,
     NULL

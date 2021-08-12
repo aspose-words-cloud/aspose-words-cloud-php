@@ -2,8 +2,6 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
@@ -11,13 +9,13 @@ $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
     "format" => "{PAGE} of {NUMPAGES}",
 ));
 $insertRequest = new Requests\InsertPageNumbersRequest(
-    $remoteFileName,
+    "Sample.docx",
     $requestPageNumber,
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL
 );

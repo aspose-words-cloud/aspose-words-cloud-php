@@ -2,16 +2,14 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $rejectRequest = new Requests\RejectAllRevisionsRequest(
-    $remoteFileName,
+    "Sample.docx",
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName
+    NULL
 );
 $wordsApi->rejectAllRevisions($rejectRequest);

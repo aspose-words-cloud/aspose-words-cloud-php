@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $request = new Requests\GetHeaderFooterOfSectionOnlineRequest(
-    $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+    $documentsDir . "Sample.doc",
     0,
     0,
     NULL,

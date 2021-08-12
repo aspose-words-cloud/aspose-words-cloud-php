@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $insertRequest = new Requests\InsertHeaderFooterOnlineRequest(
-    $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+    $documentsDir . "Sample.doc",
     "",
     "FooterEven",
     NULL,

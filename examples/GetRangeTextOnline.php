@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $request = new Requests\GetRangeTextOnlineRequest(
-    $documentsDir . "DocumentElements/Range/RangeGet.doc",
+    $documentsDir . "Sample.doc",
     "id0.0.0",
     "id0.0.1",
     NULL,

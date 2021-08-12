@@ -2,8 +2,6 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
@@ -15,7 +13,7 @@ $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
     "text_input_default" => "No name",
 ));
 $updateRequest = new Requests\UpdateFormFieldRequest(
-    $remoteFileName,
+    "Sample.docx",
     0,
     $requestFormField,
     NULL,
@@ -23,7 +21,7 @@ $updateRequest = new Requests\UpdateFormFieldRequest(
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL
 );

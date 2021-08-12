@@ -9,7 +9,7 @@ $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
     "template" => "OutlineLegal",
 ));
 $insertRequest = new Requests\InsertListOnlineRequest(
-    $documentsDir . "DocumentElements/Lists/ListsGet.doc",
+    $documentsDir . "Sample.doc",
     $requestListInsert,
     NULL,
     NULL,

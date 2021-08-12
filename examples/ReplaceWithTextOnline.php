@@ -9,7 +9,7 @@ $requestRangeText = new \Aspose\Words\Model\ReplaceRange(array(
     "text" => "Replaced header",
 ));
 $replaceRequest = new Requests\ReplaceWithTextOnlineRequest(
-    $documentsDir . "DocumentElements/Range/RangeGet.doc",
+    $documentsDir . "Sample.doc",
     "id0.0.0",
     $requestRangeText,
     "id0.0.1",

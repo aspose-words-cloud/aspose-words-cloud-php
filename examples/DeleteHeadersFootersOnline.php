@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $deleteRequest = new Requests\DeleteHeadersFootersOnlineRequest(
-    $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+    $documentsDir . "Sample.doc",
     "",
     NULL,
     NULL,

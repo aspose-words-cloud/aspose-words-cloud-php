@@ -2,22 +2,20 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
     "value" => "Imran Anwar",
 ));
 $createRequest = new Requests\CreateOrUpdateDocumentPropertyRequest(
-    $remoteFileName,
+    "Sample.docx",
     "AsposeAuthor",
     $requestProperty,
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL
 );

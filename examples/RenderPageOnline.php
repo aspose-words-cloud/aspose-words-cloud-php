@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $renderRequest = new Requests\RenderPageOnlineRequest(
-    $documentsDir . "DocumentElements/Text/SampleWordDocument.docx",
+    $documentsDir . "Sample.docx",
     1,
     "bmp",
     NULL,

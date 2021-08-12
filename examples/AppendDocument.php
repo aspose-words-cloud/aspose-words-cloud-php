@@ -23,7 +23,7 @@ $appendRequest = new Requests\AppendDocumentRequest(
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL
 );

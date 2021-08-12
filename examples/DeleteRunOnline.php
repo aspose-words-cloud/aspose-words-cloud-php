@@ -6,7 +6,7 @@ $documentsDir = '...';
 /**
  */
 $deleteRequest = new Requests\DeleteRunOnlineRequest(
-    $documentsDir . "DocumentElements/Runs/Run.doc",
+    $documentsDir . "Sample.doc",
     "paragraphs/1",
     0,
     NULL,

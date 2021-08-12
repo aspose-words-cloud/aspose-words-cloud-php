@@ -44,17 +44,15 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $acceptRequest = new Requests\AcceptAllRevisionsRequest(
-          $remoteFileName,
+          "Sample.docx",
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName
+          NULL
       );
       $wordsApi->acceptAllRevisions($acceptRequest);
     }
@@ -102,7 +100,7 @@ class ExamplesTests extends BaseTestContext
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -471,22 +469,20 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
           "value" => "Imran Anwar",
       ));
       $createRequest = new Requests\CreateOrUpdateDocumentPropertyRequest(
-          $remoteFileName,
+          "Sample.docx",
           "AsposeAuthor",
           $requestProperty,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -645,18 +641,16 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $deleteRequest = new Requests\DeleteCommentRequest(
-          $remoteFileName,
+          "Sample.docx",
           0,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -688,17 +682,15 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $deleteRequest = new Requests\DeleteCommentsRequest(
-          $remoteFileName,
+          "Sample.docx",
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -729,18 +721,16 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $deleteRequest = new Requests\DeleteCustomXmlPartRequest(
-          $remoteFileName,
+          "Sample.docx",
           0,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -772,17 +762,15 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $deleteRequest = new Requests\DeleteCustomXmlPartsRequest(
-          $remoteFileName,
+          "Sample.docx",
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -813,18 +801,16 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $deleteRequest = new Requests\DeleteDocumentPropertyRequest(
-          $remoteFileName,
+          "Sample.docx",
           "testProp",
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -1056,19 +1042,17 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $deleteRequest = new Requests\DeleteFormFieldRequest(
-          $remoteFileName,
+          "Sample.docx",
           0,
           NULL,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -1127,7 +1111,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $deleteRequest = new Requests\DeleteHeaderFooterOnlineRequest(
-          $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+          $documentsDir . "Sample.doc",
           "",
           0,
           NULL,
@@ -1170,7 +1154,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $deleteRequest = new Requests\DeleteHeadersFootersOnlineRequest(
-          $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+          $documentsDir . "Sample.doc",
           "",
           NULL,
           NULL,
@@ -1422,7 +1406,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $deleteRequest = new Requests\DeleteRunOnlineRequest(
-          $documentsDir . "DocumentElements/Runs/Run.doc",
+          $documentsDir . "Sample.doc",
           "paragraphs/1",
           0,
           NULL,
@@ -1609,17 +1593,15 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $deleteRequest = new Requests\DeleteWatermarkRequest(
-          $remoteFileName,
+          "Sample.docx",
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -1665,12 +1647,10 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $mailMergeRequest = new Requests\ExecuteMailMergeRequest(
-          $remoteFileName,
+          "Sample.docx",
           "TestExecuteTemplateData.txt",
           NULL,
           NULL,
@@ -1680,7 +1660,7 @@ class ExamplesTests extends BaseTestContext
           NULL,
           NULL,
           NULL,
-          $remoteFileName
+          NULL
       );
       $wordsApi->executeMailMerge($mailMergeRequest);
     }
@@ -2696,7 +2676,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetHeaderFooterOfSectionOnlineRequest(
-          $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+          $documentsDir . "Sample.doc",
           0,
           0,
           NULL,
@@ -2715,7 +2695,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetHeaderFooterOnlineRequest(
-          $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+          $documentsDir . "Sample.doc",
           0,
           NULL,
           NULL,
@@ -2752,7 +2732,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetHeaderFootersOnlineRequest(
-          $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+          $documentsDir . "Sample.doc",
           "",
           NULL,
           NULL,
@@ -2788,7 +2768,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetListOnlineRequest(
-          $documentsDir . "DocumentElements/Lists/ListsGet.doc",
+          $documentsDir . "Sample.doc",
           1,
           NULL,
           NULL
@@ -2822,7 +2802,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetListsOnlineRequest(
-          $documentsDir . "DocumentElements/Lists/ListsGet.doc",
+          $documentsDir . "Sample.doc",
           NULL,
           NULL
       );
@@ -3124,7 +3104,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $request = new Requests\GetRangeTextOnlineRequest(
-          $documentsDir . "DocumentElements/Range/RangeGet.doc",
+          $documentsDir . "Sample.doc",
           "id0.0.0",
           "id0.0.1",
           NULL,
@@ -4008,8 +3988,6 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
@@ -4022,14 +4000,14 @@ class ExamplesTests extends BaseTestContext
           "text_input_format" => "UPPERCASE",
       ));
       $insertRequest = new Requests\InsertFormFieldRequest(
-          $remoteFileName,
+          "Sample.docx",
           $requestFormField,
           NULL,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL,
           NULL
@@ -4099,7 +4077,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $insertRequest = new Requests\InsertHeaderFooterOnlineRequest(
-          $documentsDir . "DocumentElements/HeaderFooters/HeadersFooters.doc",
+          $documentsDir . "Sample.doc",
           "",
           "FooterEven",
           NULL,
@@ -4147,7 +4125,7 @@ class ExamplesTests extends BaseTestContext
           "template" => "OutlineLegal",
       ));
       $insertRequest = new Requests\InsertListOnlineRequest(
-          $documentsDir . "DocumentElements/Lists/ListsGet.doc",
+          $documentsDir . "Sample.doc",
           $requestListInsert,
           NULL,
           NULL,
@@ -4214,8 +4192,6 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
@@ -4223,13 +4199,13 @@ class ExamplesTests extends BaseTestContext
           "format" => "{PAGE} of {NUMPAGES}",
       ));
       $insertRequest = new Requests\InsertPageNumbersRequest(
-          $remoteFileName,
+          "Sample.docx",
           $requestPageNumber,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -4349,7 +4325,7 @@ class ExamplesTests extends BaseTestContext
           "text" => "run with text",
       ));
       $insertRequest = new Requests\InsertRunOnlineRequest(
-          $documentsDir . "DocumentElements/Runs/Run.doc",
+          $documentsDir . "Sample.doc",
           "paragraphs/1",
           $requestRun,
           NULL,
@@ -4564,18 +4540,16 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $insertRequest = new Requests\InsertWatermarkImageRequest(
-          $remoteFileName,
+          "Sample.docx",
           NULL,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL,
           NULL,
@@ -4611,8 +4585,6 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
@@ -4620,13 +4592,13 @@ class ExamplesTests extends BaseTestContext
           "rotation_angle" => 90.0,
       ));
       $insertRequest = new Requests\InsertWatermarkTextRequest(
-          $remoteFileName,
+          "Sample.docx",
           $requestWatermarkText,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -4768,8 +4740,6 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
@@ -4777,13 +4747,13 @@ class ExamplesTests extends BaseTestContext
           "protection_type" => "ReadOnly",
       ));
       $protectRequest = new Requests\ProtectDocumentRequest(
-          $remoteFileName,
+          "Sample.docx",
           $requestProtectionRequest,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName
+          NULL
       );
       $wordsApi->protectDocument($protectRequest);
     }
@@ -4814,17 +4784,15 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $rejectRequest = new Requests\RejectAllRevisionsRequest(
-          $remoteFileName,
+          "Sample.docx",
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName
+          NULL
       );
       $wordsApi->rejectAllRevisions($rejectRequest);
     }
@@ -4875,7 +4843,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $removeRequest = new Requests\RemoveRangeOnlineRequest(
-          $documentsDir . "DocumentElements/Range/RangeGet.doc",
+          $documentsDir . "Sample.doc",
           "id0.0.0",
           "id0.0.1",
           NULL,
@@ -5000,7 +4968,7 @@ class ExamplesTests extends BaseTestContext
       /**
        */
       $renderRequest = new Requests\RenderPageOnlineRequest(
-          $documentsDir . "DocumentElements/Text/SampleWordDocument.docx",
+          $documentsDir . "Sample.docx",
           1,
           "bmp",
           NULL,
@@ -5101,8 +5069,6 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
@@ -5110,13 +5076,13 @@ class ExamplesTests extends BaseTestContext
           "new_value" => "Aspose testing",
       ));
       $replaceRequest = new Requests\ReplaceTextRequest(
-          $remoteFileName,
+          "Sample.docx",
           $requestReplaceText,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -5183,7 +5149,7 @@ class ExamplesTests extends BaseTestContext
           "text" => "Replaced header",
       ));
       $replaceRequest = new Requests\ReplaceWithTextOnlineRequest(
-          $documentsDir . "DocumentElements/Range/RangeGet.doc",
+          $documentsDir . "Sample.doc",
           "id0.0.0",
           $requestRangeText,
           "id0.0.1",
@@ -5286,7 +5252,7 @@ class ExamplesTests extends BaseTestContext
           "document_name" => "/NewDoc.docx",
       ));
       $saveRequest = new Requests\SaveAsRangeOnlineRequest(
-          $documentsDir . "DocumentElements/Range/RangeGet.doc",
+          $documentsDir . "Sample.doc",
           "id0.0.0",
           $requestDocumentParameters,
           "id0.0.1",
@@ -5504,7 +5470,6 @@ class ExamplesTests extends BaseTestContext
 
       $wordsApi = $this->words;
       $bookmarkName = "aspose";
-      $remoteFileName = "Sample.docx";
 
       /**
        */
@@ -5513,14 +5478,14 @@ class ExamplesTests extends BaseTestContext
           "text" => "This will be the text for Aspose",
       ));
       $updateRequest = new Requests\UpdateBookmarkRequest(
-          $remoteFileName,
+          "Sample.docx",
           $bookmarkName,
           $requestBookmarkData,
           NULL,
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -5951,8 +5916,6 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
@@ -5964,7 +5927,7 @@ class ExamplesTests extends BaseTestContext
           "text_input_default" => "No name",
       ));
       $updateRequest = new Requests\UpdateFormFieldRequest(
-          $remoteFileName,
+          "Sample.docx",
           0,
           $requestFormField,
           NULL,
@@ -5972,7 +5935,7 @@ class ExamplesTests extends BaseTestContext
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -6072,7 +6035,7 @@ class ExamplesTests extends BaseTestContext
           "alignment" => "Right",
       ));
       $updateRequest = new Requests\UpdateListLevelOnlineRequest(
-          $documentsDir . "DocumentElements/Lists/ListsGet.doc",
+          $documentsDir . "Sample.doc",
           1,
           $requestListUpdate,
           1,
@@ -6097,7 +6060,7 @@ class ExamplesTests extends BaseTestContext
           "is_restart_at_each_section" => true,
       ));
       $updateRequest = new Requests\UpdateListOnlineRequest(
-          $documentsDir . "DocumentElements/Lists/ListsGet.doc",
+          $documentsDir . "Sample.doc",
           1,
           $requestListUpdate,
           NULL,
@@ -6242,15 +6205,13 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      $remoteFileName = "Sample.docx";
-
       /**
        */
       $requestFontDto = new \Aspose\Words\Model\Font(array(
           "bold" => true,
       ));
       $updateRequest = new Requests\UpdateRunFontRequest(
-          $remoteFileName,
+          "Sample.docx",
           "paragraphs/0",
           0,
           $requestFontDto,
@@ -6258,7 +6219,7 @@ class ExamplesTests extends BaseTestContext
           NULL,
           NULL,
           NULL,
-          $remoteFileName,
+          NULL,
           NULL,
           NULL
       );
@@ -6302,7 +6263,7 @@ class ExamplesTests extends BaseTestContext
           "text" => "run with text",
       ));
       $updateRequest = new Requests\UpdateRunOnlineRequest(
-          $documentsDir . "DocumentElements/Runs/Run.doc",
+          $documentsDir . "Sample.doc",
           "paragraphs/1",
           $requestRun,
           0,

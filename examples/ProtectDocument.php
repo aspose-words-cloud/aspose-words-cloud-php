@@ -2,8 +2,6 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
@@ -11,12 +9,12 @@ $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
     "protection_type" => "ReadOnly",
 ));
 $protectRequest = new Requests\ProtectDocumentRequest(
-    $remoteFileName,
+    "Sample.docx",
     $requestProtectionRequest,
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName
+    NULL
 );
 $wordsApi->protectDocument($protectRequest);

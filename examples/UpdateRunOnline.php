@@ -9,7 +9,7 @@ $requestRun = new \Aspose\Words\Model\RunUpdate(array(
     "text" => "run with text",
 ));
 $updateRequest = new Requests\UpdateRunOnlineRequest(
-    $documentsDir . "DocumentElements/Runs/Run.doc",
+    $documentsDir . "Sample.doc",
     "paragraphs/1",
     $requestRun,
     0,

@@ -2,12 +2,10 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $mailMergeRequest = new Requests\ExecuteMailMergeRequest(
-    $remoteFileName,
+    "Sample.docx",
     "TestExecuteTemplateData.txt",
     NULL,
     NULL,
@@ -17,6 +15,6 @@ $mailMergeRequest = new Requests\ExecuteMailMergeRequest(
     NULL,
     NULL,
     NULL,
-    $remoteFileName
+    NULL
 );
 $wordsApi->executeMailMerge($mailMergeRequest);

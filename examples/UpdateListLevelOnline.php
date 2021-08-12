@@ -9,7 +9,7 @@ $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
     "alignment" => "Right",
 ));
 $updateRequest = new Requests\UpdateListLevelOnlineRequest(
-    $documentsDir . "DocumentElements/Lists/ListsGet.doc",
+    $documentsDir . "Sample.doc",
     1,
     $requestListUpdate,
     1,

@@ -3,7 +3,6 @@ $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
 $bookmarkName = "aspose";
-$remoteFileName = "Sample.docx";
 
 /**
  */
@@ -12,14 +11,14 @@ $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
     "text" => "This will be the text for Aspose",
 ));
 $updateRequest = new Requests\UpdateBookmarkRequest(
-    $remoteFileName,
+    "Sample.docx",
     $bookmarkName,
     $requestBookmarkData,
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL
 );

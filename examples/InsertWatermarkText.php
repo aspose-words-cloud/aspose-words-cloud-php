@@ -2,8 +2,6 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
@@ -11,13 +9,13 @@ $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
     "rotation_angle" => 90.0,
 ));
 $insertRequest = new Requests\InsertWatermarkTextRequest(
-    $remoteFileName,
+    "Sample.docx",
     $requestWatermarkText,
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL
 );

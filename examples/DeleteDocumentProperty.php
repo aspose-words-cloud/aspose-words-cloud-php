@@ -2,18 +2,16 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $deleteRequest = new Requests\DeleteDocumentPropertyRequest(
-    $remoteFileName,
+    "Sample.docx",
     "testProp",
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL
 );

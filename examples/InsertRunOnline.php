@@ -9,7 +9,7 @@ $requestRun = new \Aspose\Words\Model\RunInsert(array(
     "text" => "run with text",
 ));
 $insertRequest = new Requests\InsertRunOnlineRequest(
-    $documentsDir . "DocumentElements/Runs/Run.doc",
+    $documentsDir . "Sample.doc",
     "paragraphs/1",
     $requestRun,
     NULL,

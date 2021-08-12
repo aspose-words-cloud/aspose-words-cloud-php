@@ -3,18 +3,16 @@ $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $insertRequest = new Requests\InsertWatermarkImageRequest(
-    $remoteFileName,
+    "Sample.docx",
     NULL,
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL,
     NULL,

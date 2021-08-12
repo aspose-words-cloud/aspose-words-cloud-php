@@ -2,8 +2,6 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
@@ -11,13 +9,13 @@ $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
     "new_value" => "Aspose testing",
 ));
 $replaceRequest = new Requests\ReplaceTextRequest(
-    $remoteFileName,
+    "Sample.docx",
     $requestReplaceText,
     NULL,
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL
 );

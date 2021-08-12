@@ -9,7 +9,7 @@ $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
     "is_restart_at_each_section" => true,
 ));
 $updateRequest = new Requests\UpdateListOnlineRequest(
-    $documentsDir . "DocumentElements/Lists/ListsGet.doc",
+    $documentsDir . "Sample.doc",
     1,
     $requestListUpdate,
     NULL,

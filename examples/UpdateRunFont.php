@@ -2,15 +2,13 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$remoteFileName = "Sample.docx";
-
 /**
  */
 $requestFontDto = new \Aspose\Words\Model\Font(array(
     "bold" => true,
 ));
 $updateRequest = new Requests\UpdateRunFontRequest(
-    $remoteFileName,
+    "Sample.docx",
     "paragraphs/0",
     0,
     $requestFontDto,
@@ -18,7 +16,7 @@ $updateRequest = new Requests\UpdateRunFontRequest(
     NULL,
     NULL,
     NULL,
-    $remoteFileName,
+    NULL,
     NULL,
     NULL
 );

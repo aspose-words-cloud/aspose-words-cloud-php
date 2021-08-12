@@ -3,6 +3,8 @@ $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
 $documentsDir = '...';
+$bookmarkName = "aspose";
+
 /**
  */
 $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(

@@ -2,6 +2,7 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
+$bookmarkName = "aspose";
 $remoteFileName = "Sample.docx";
 
 /**

@@ -5503,6 +5503,7 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
+      $bookmarkName = "aspose";
       $remoteFileName = "Sample.docx";
 
       /**
@@ -5532,6 +5533,8 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
+      $bookmarkName = "aspose";
+
       /**
        */
       $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(

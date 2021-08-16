@@ -46,8 +46,9 @@ class MailMergeFiledsTests extends BaseTestContext
         $mailMergeFolder = "DocumentActions/MailMerge";
         $localDocumentFile = "SampleExecuteTemplate.docx";
 
+        $requestTemplate = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile
         $request = new Requests\GetDocumentFieldNamesOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile,
+            $requestTemplate,
             NULL,
             NULL,
             true

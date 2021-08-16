@@ -77,8 +77,9 @@ class DocumentPropertiesTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetDocumentPropertiesOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             NULL,
             NULL
         );
@@ -124,8 +125,9 @@ class DocumentPropertiesTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetDocumentPropertyOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "Author",
             NULL,
             NULL
@@ -171,8 +173,9 @@ class DocumentPropertiesTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteDocumentPropertyOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "testProp",
             NULL,
             NULL,
@@ -199,9 +202,6 @@ class DocumentPropertiesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
-            "value" => "Imran Anwar",
-        ));
         $request = new Requests\CreateOrUpdateDocumentPropertyRequest(
             $remoteFileName,
             "AsposeAuthor",
@@ -229,11 +229,10 @@ class DocumentPropertiesTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
-            "value" => "Imran Anwar",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\CreateOrUpdateDocumentPropertyOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "AsposeAuthor",
             $requestProperty,
             NULL,

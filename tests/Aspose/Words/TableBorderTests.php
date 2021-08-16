@@ -77,8 +77,9 @@ class TableBorderTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetBordersOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "tables/1/rows/0/cells/0",
             NULL,
             NULL
@@ -126,8 +127,9 @@ class TableBorderTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetBorderOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "left",
             "tables/1/rows/0/cells/0",
             NULL,
@@ -175,8 +177,9 @@ class TableBorderTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteBordersOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "tables/1/rows/0/cells/0",
             NULL,
             NULL,
@@ -227,8 +230,9 @@ class TableBorderTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteBorderOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "left",
             "tables/1/rows/0/cells/0",
             NULL,
@@ -256,17 +260,6 @@ class TableBorderTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
-            "web" => "#AABBCC",
-        ));
-        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
-            "border_type" => "Left",
-            "color" => $requestBorderPropertiesColor,
-            "distance_from_text" => 6.0,
-            "line_style" => "DashDotStroker",
-            "line_width" => 2.0,
-            "shadow" => true,
-        ));
         $request = new Requests\UpdateBorderRequest(
             $remoteFileName,
             "left",
@@ -298,19 +291,11 @@ class TableBorderTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
-        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
-            "web" => "#AABBCC",
-        ));
-        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
-            "border_type" => "Left",
-            "color" => $requestBorderPropertiesColor,
-            "distance_from_text" => 6,
-            "line_style" => "DashDotStroker",
-            "line_width" => 2,
-            "shadow" => true,
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
+
         $request = new Requests\UpdateBorderOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             $requestBorderProperties,
             "left",
             "tables/1/rows/0/cells/0",

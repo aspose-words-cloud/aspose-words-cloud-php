@@ -51,9 +51,11 @@ class ExamplesTests extends BaseTestContext
       /**
        * Upload original document to cloud storage.
        */
+      $myVar1 = $documentsDir . $fileName
+      $myVar2 = $fileName;
       $uploadFileRequest = new Requests\UploadFileRequest(
-          $documentsDir . $fileName,
-          $fileName,
+          $myVar1,
+          $myVar2,
           NULL
       );
       $wordsApi->uploadFile($uploadFileRequest);
@@ -61,8 +63,9 @@ class ExamplesTests extends BaseTestContext
       /**
        * Calls AcceptAllRevisions method for document in cloud.
        */
+      $myVar3 = $fileName;
       $request = new Requests\AcceptAllRevisionsRequest(
-          $fileName,
+          $myVar3,
           NULL,
           NULL,
           NULL,
@@ -83,8 +86,9 @@ class ExamplesTests extends BaseTestContext
       /**
        * Calls AcceptAllRevisionsOnline method for document in cloud.
        */
+      $requestDocument = $documentsDir . $fileName
       $request = new Requests\AcceptAllRevisionsOnlineRequest(
-          $documentsDir . $fileName,
+          $requestDocument,
           NULL,
           NULL,
           NULL

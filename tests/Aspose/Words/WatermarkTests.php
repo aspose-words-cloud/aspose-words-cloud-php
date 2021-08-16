@@ -59,7 +59,7 @@ class WatermarkTests extends BaseTestContext
 
         $request = new Requests\InsertWatermarkImageRequest(
             $remoteFileName,
-            NULL,
+            $requestImageFile,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -84,9 +84,11 @@ class WatermarkTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestImageFile = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png"
         $request = new Requests\InsertWatermarkImageOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png",
+            $requestDocument,
+            $requestImageFile,
             NULL,
             NULL,
             NULL,
@@ -114,10 +116,6 @@ class WatermarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
-            "text" => "This is the text",
-            "rotation_angle" => 90.0,
-        ));
         $request = new Requests\InsertWatermarkTextRequest(
             $remoteFileName,
             $requestWatermarkText,
@@ -143,12 +141,10 @@ class WatermarkTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
-            "text" => "This is the text",
-            "rotation_angle" => 90,
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\InsertWatermarkTextOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             $requestWatermarkText,
             NULL,
             NULL,
@@ -199,8 +195,9 @@ class WatermarkTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteWatermarkOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             NULL,
             NULL,
             NULL,

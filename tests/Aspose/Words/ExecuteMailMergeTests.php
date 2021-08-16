@@ -47,9 +47,11 @@ class ExecuteMailMergeTests extends BaseTestContext
         $localDocumentFile = "SampleExecuteTemplate.docx";
         $localDataFile = "SampleExecuteTemplateData.txt";
 
+        $requestTemplate = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile
+        $requestData = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDataFile
         $request = new Requests\ExecuteMailMergeOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile,
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDataFile,
+            $requestTemplate,
+            $requestData,
             NULL,
             NULL,
             NULL

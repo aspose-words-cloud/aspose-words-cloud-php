@@ -52,9 +52,6 @@ class RunTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestRun = new \Aspose\Words\Model\RunUpdate(array(
-            "text" => "run with text",
-        ));
         $request = new Requests\UpdateRunRequest(
             $remoteFileName,
             "paragraphs/1",
@@ -82,11 +79,10 @@ class RunTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Runs/Run.doc";
 
-        $requestRun = new \Aspose\Words\Model\RunUpdate(array(
-            "text" => "run with text",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\UpdateRunOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "paragraphs/1",
             $requestRun,
             0,
@@ -115,9 +111,6 @@ class RunTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestRun = new \Aspose\Words\Model\RunInsert(array(
-            "text" => "run with text",
-        ));
         $request = new Requests\InsertRunRequest(
             $remoteFileName,
             "paragraphs/1",
@@ -146,11 +139,10 @@ class RunTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Runs/Run.doc";
 
-        $requestRun = new \Aspose\Words\Model\RunInsert(array(
-            "text" => "run with text",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\InsertRunOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "paragraphs/1",
             $requestRun,
             NULL,
@@ -202,8 +194,9 @@ class RunTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Runs/Run.doc";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteRunOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "paragraphs/1",
             0,
             NULL,

@@ -47,8 +47,9 @@ class FileTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
         $remoteFileName = "TestUploadFile.docx";
 
+        $requestFileContent = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\UploadFileRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestFileContent,
             $remoteDataFolder . "/" . $remoteFileName,
             NULL
         );

@@ -12,9 +12,11 @@ $fileName  = "test_doc.docx";
 /**
  * Upload original document to cloud storage.
  */
+$myVar1 = $documentsDir . $fileName
+$myVar2 = $fileName;
 $uploadFileRequest = new Requests\UploadFileRequest(
-    $documentsDir . $fileName,
-    $fileName,
+    $myVar1,
+    $myVar2,
     NULL
 );
 $wordsApi->uploadFile($uploadFileRequest);
@@ -22,8 +24,9 @@ $wordsApi->uploadFile($uploadFileRequest);
 /**
  * Calls AcceptAllRevisions method for document in cloud.
  */
+$myVar3 = $fileName;
 $request = new Requests\AcceptAllRevisionsRequest(
-    $fileName,
+    $myVar3,
     NULL,
     NULL,
     NULL,

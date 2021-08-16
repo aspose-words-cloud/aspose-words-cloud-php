@@ -76,8 +76,9 @@ class HeaderFooterTests extends BaseTestContext
     {
         $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetHeaderFootersOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "",
             NULL,
             NULL,
@@ -127,8 +128,9 @@ class HeaderFooterTests extends BaseTestContext
     {
         $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetHeaderFooterOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             0,
             NULL,
             NULL,
@@ -179,8 +181,9 @@ class HeaderFooterTests extends BaseTestContext
     {
         $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetHeaderFooterOfSectionOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             0,
             0,
             NULL,
@@ -229,8 +232,9 @@ class HeaderFooterTests extends BaseTestContext
     {
         $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteHeaderFooterOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "",
             0,
             NULL,
@@ -281,8 +285,9 @@ class HeaderFooterTests extends BaseTestContext
     {
         $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteHeadersFootersOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "",
             NULL,
             NULL,
@@ -334,8 +339,9 @@ class HeaderFooterTests extends BaseTestContext
     {
         $localFile = "DocumentElements/HeaderFooters/HeadersFooters.doc";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\InsertHeaderFooterOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "",
             "FooterEven",
             NULL,

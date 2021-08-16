@@ -76,8 +76,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetTablesOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "",
             NULL,
             NULL
@@ -158,8 +159,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetTableOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             1,
             "",
             NULL,
@@ -240,8 +242,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteTableOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             1,
             "",
             NULL,
@@ -299,10 +302,6 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestTable = new \Aspose\Words\Model\TableInsert(array(
-            "columns_count" => 5,
-            "rows_count" => 4,
-        ));
         $request = new Requests\InsertTableRequest(
             $remoteFileName,
             $requestTable,
@@ -332,12 +331,10 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
-        $requestTable = new \Aspose\Words\Model\TableInsert(array(
-            "columns_count" => 5,
-            "rows_count" => 4,
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\InsertTableOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             $requestTable,
             "",
             NULL,
@@ -365,10 +362,6 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestTable = new \Aspose\Words\Model\TableInsert(array(
-            "columns_count" => 5,
-            "rows_count" => 4,
-        ));
         $request = new Requests\InsertTableRequest(
             $remoteFileName,
             $requestTable,
@@ -428,8 +421,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetTablePropertiesOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             1,
             "",
             NULL,
@@ -484,14 +478,6 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestProperties = new \Aspose\Words\Model\TableProperties(array(
-            "alignment" => "Right",
-            "allow_auto_fit" => false,
-            "bidi" => true,
-            "bottom_padding" => 1,
-            "cell_spacing" => 2.0,
-            "style_options" => "ColumnBands",
-        ));
         $request = new Requests\UpdateTablePropertiesRequest(
             $remoteFileName,
             1,
@@ -522,16 +508,10 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
-        $requestProperties = new \Aspose\Words\Model\TableProperties(array(
-            "alignment" => "Right",
-            "allow_auto_fit" => false,
-            "bidi" => true,
-            "bottom_padding" => 1,
-            "cell_spacing" => 2,
-            "style_options" => "ColumnBands",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\UpdateTablePropertiesOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             $requestProperties,
             1,
             "",
@@ -560,14 +540,6 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestProperties = new \Aspose\Words\Model\TableProperties(array(
-            "alignment" => "Right",
-            "allow_auto_fit" => false,
-            "bidi" => true,
-            "bottom_padding" => 1.0,
-            "cell_spacing" => 2.0,
-            "style_options" => "ColumnBands",
-        ));
         $request = new Requests\UpdateTablePropertiesRequest(
             $remoteFileName,
             1,
@@ -629,8 +601,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetTableRowOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "tables/1",
             0,
             NULL,
@@ -678,8 +651,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteTableRowOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "tables/1",
             0,
             NULL,
@@ -707,9 +681,6 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestRow = new \Aspose\Words\Model\TableRowInsert(array(
-            "columns_count" => 5,
-        ));
         $request = new Requests\InsertTableRowRequest(
             $remoteFileName,
             "sections/0/tables/2",
@@ -737,11 +708,10 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
-        $requestRow = new \Aspose\Words\Model\TableRowInsert(array(
-            "columns_count" => 5,
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\InsertTableRowOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "sections/0/tables/2",
             $requestRow,
             NULL,
@@ -792,8 +762,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetTableRowFormatOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "sections/0/tables/2",
             0,
             NULL,
@@ -818,12 +789,6 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormat = new \Aspose\Words\Model\TableRowFormat(array(
-            "allow_break_across_pages" => true,
-            "heading_format" => true,
-            "height" => 10.0,
-            "height_rule" => "Exactly",
-        ));
         $request = new Requests\UpdateTableRowFormatRequest(
             $remoteFileName,
             "sections/0/tables/2",
@@ -853,14 +818,10 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
-        $requestFormat = new \Aspose\Words\Model\TableRowFormat(array(
-            "allow_break_across_pages" => true,
-            "heading_format" => true,
-            "height" => 10,
-            "height_rule" => "Auto",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\UpdateTableRowFormatOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "sections/0/tables/2",
             $requestFormat,
             0,
@@ -912,8 +873,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetTableCellOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "sections/0/tables/2/rows/0",
             0,
             NULL,
@@ -961,8 +923,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\DeleteTableCellOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "sections/0/tables/2/rows/0",
             0,
             NULL,
@@ -990,8 +953,6 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
-        ));
         $request = new Requests\InsertTableCellRequest(
             $remoteFileName,
             "sections/0/tables/2/rows/0",
@@ -1018,10 +979,10 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
-        $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\InsertTableCellOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "sections/0/tables/2/rows/0",
             $requestCell,
             NULL,
@@ -1072,8 +1033,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetTableCellFormatOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "sections/0/tables/2/rows/0",
             0,
             NULL,
@@ -1098,12 +1060,6 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormat = new \Aspose\Words\Model\TableCellFormat(array(
-            "bottom_padding" => 5.0,
-            "fit_text" => true,
-            "horizontal_merge" => "First",
-            "wrap_text" => true,
-        ));
         $request = new Requests\UpdateTableCellFormatRequest(
             $remoteFileName,
             "sections/0/tables/2/rows/0",
@@ -1133,14 +1089,10 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
-        $requestFormat = new \Aspose\Words\Model\TableCellFormat(array(
-            "bottom_padding" => 5,
-            "fit_text" => true,
-            "horizontal_merge" => "First",
-            "wrap_text" => true,
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\UpdateTableCellFormatOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "sections/0/tables/2/rows/0",
             $requestFormat,
             0,
@@ -1193,8 +1145,9 @@ class TableTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\RenderTableOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "png",
             0,
             "",

@@ -74,8 +74,9 @@ class PageSetupTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetSectionPageSetupOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             0,
             NULL,
             NULL
@@ -99,12 +100,6 @@ class PageSetupTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
-            "rtl_gutter" => true,
-            "left_margin" => 10.0,
-            "orientation" => "Landscape",
-            "paper_size" => "A5",
-        ));
         $request = new Requests\UpdateSectionPageSetupRequest(
             $remoteFileName,
             0,
@@ -133,14 +128,10 @@ class PageSetupTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
-            "rtl_gutter" => true,
-            "left_margin" => 10,
-            "orientation" => "Landscape",
-            "paper_size" => "A5",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\UpdateSectionPageSetupOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             0,
             $requestPageSetup,
             NULL,
@@ -190,8 +181,9 @@ class PageSetupTests extends BaseTestContext
     {
         $localTextFile = "DocumentElements/Text/SampleWordDocument.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localTextFile
         $request = new Requests\RenderPageOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localTextFile,
+            $requestDocument,
             1,
             "bmp",
             NULL,

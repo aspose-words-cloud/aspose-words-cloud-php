@@ -74,8 +74,9 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetStylesOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             NULL,
             NULL
         );
@@ -120,8 +121,9 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetStyleOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "Heading 1",
             NULL,
             NULL
@@ -145,9 +147,6 @@ class StylesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
-            "name" => "My Style",
-        ));
         $request = new Requests\UpdateStyleRequest(
             $remoteFileName,
             "Heading 1",
@@ -174,11 +173,10 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
-            "name" => "My Style",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\UpdateStyleOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "Heading 1",
             $requestStyleUpdate,
             NULL,
@@ -206,10 +204,6 @@ class StylesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestStyleInsert = new \Aspose\Words\Model\StyleInsert(array(
-            "style_name" => "My Style",
-            "style_type" => "Paragraph",
-        ));
         $request = new Requests\InsertStyleRequest(
             $remoteFileName,
             $requestStyleInsert,
@@ -235,12 +229,10 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestStyleInsert = new \Aspose\Words\Model\StyleInsert(array(
-            "style_name" => "My Style",
-            "style_type" => "Paragraph",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\InsertStyleOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             $requestStyleInsert,
             NULL,
             NULL,
@@ -267,9 +259,6 @@ class StylesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
-            "style_name" => "Heading 1",
-        ));
         $request = new Requests\CopyStyleRequest(
             $remoteFileName,
             $requestStyleCopy,
@@ -295,11 +284,10 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
-            "style_name" => "Heading 1",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\CopyStyleOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             $requestStyleCopy,
             NULL,
             NULL,
@@ -348,8 +336,9 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
         $request = new Requests\GetStyleFromDocumentElementOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "paragraphs/1/paragraphFormat",
             NULL,
             NULL
@@ -373,9 +362,6 @@ class StylesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
-            "style_name" => "Heading 1",
-        ));
         $request = new Requests\ApplyStyleToDocumentElementRequest(
             $remoteFileName,
             "paragraphs/1/paragraphFormat",
@@ -400,11 +386,10 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
-            "style_name" => "Heading 1",
-        ));
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+
         $request = new Requests\ApplyStyleToDocumentElementOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+            $requestDocument,
             "paragraphs/1/paragraphFormat",
             $requestStyleApply,
             NULL,

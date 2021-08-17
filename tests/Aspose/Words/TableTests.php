@@ -1003,10 +1003,12 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
+        $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
+        ));
         $request = new Requests\InsertTableCellRequest(
             $remoteFileName,
             "sections/0/tables/2/rows/0",
-            NULL,
+            $requestCell,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -1030,11 +1032,12 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
-
+        $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
+        ));
         $request = new Requests\InsertTableCellOnlineRequest(
             $requestDocument,
             "sections/0/tables/2/rows/0",
-            NULL,
+            $requestCell,
             NULL,
             NULL,
             NULL,

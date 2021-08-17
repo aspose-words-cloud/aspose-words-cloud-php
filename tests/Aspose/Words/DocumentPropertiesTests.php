@@ -77,7 +77,7 @@ class DocumentPropertiesTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetDocumentPropertiesOnlineRequest(
             $requestDocument,
             NULL,
@@ -125,7 +125,7 @@ class DocumentPropertiesTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetDocumentPropertyOnlineRequest(
             $requestDocument,
             "Author",
@@ -173,7 +173,7 @@ class DocumentPropertiesTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\DeleteDocumentPropertyOnlineRequest(
             $requestDocument,
             "testProp",
@@ -232,7 +232,7 @@ class DocumentPropertiesTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
             "value" => "Imran Anwar",
         ));

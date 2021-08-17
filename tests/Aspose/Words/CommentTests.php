@@ -74,7 +74,7 @@ class CommentTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetCommentOnlineRequest(
             $requestDocument,
             0,
@@ -123,7 +123,7 @@ class CommentTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetCommentsOnlineRequest(
             $requestDocument,
             NULL,
@@ -197,7 +197,7 @@ class CommentTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0.3",
         ));
@@ -297,7 +297,7 @@ class CommentTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
             "node_id" => "0.3.0",
         ));
@@ -370,7 +370,7 @@ class CommentTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\DeleteCommentOnlineRequest(
             $requestDocument,
             0,
@@ -420,7 +420,7 @@ class CommentTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\DeleteCommentsOnlineRequest(
             $requestDocument,
             NULL,

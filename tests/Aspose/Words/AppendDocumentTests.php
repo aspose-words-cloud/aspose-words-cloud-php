@@ -94,7 +94,7 @@ class AppendDocumentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestDocumentListDocumentEntries0 = new \Aspose\Words\Model\DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName,
             "import_format_mode" => "KeepSourceFormatting",

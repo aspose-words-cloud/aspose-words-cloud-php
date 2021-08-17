@@ -80,7 +80,7 @@ class TextTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
             "old_value" => "aspose",
             "new_value" => "aspose new",
@@ -138,7 +138,7 @@ class TextTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\SearchOnlineRequest(
             $requestDocument,
             "aspose",

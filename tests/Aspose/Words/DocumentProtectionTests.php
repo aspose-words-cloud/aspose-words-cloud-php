@@ -79,7 +79,7 @@ class DocumentProtectionTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
             "new_password" => "123",
         ));
@@ -128,7 +128,7 @@ class DocumentProtectionTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetDocumentProtectionOnlineRequest(
             $requestDocument,
             NULL,
@@ -179,7 +179,7 @@ class DocumentProtectionTests extends BaseTestContext
     {
         $localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFilePath
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFilePath;
         $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
             "password" => "aspose",
         ));

@@ -51,7 +51,7 @@ class ExamplesTests extends BaseTestContext
       /**
        * Upload original document to cloud storage.
        */
-      $myVar1 = $documentsDir . $fileName
+      $myVar1 = $documentsDir . $fileName;
       $myVar2 = $fileName;
       $uploadFileRequest = new Requests\UploadFileRequest(
           $myVar1,
@@ -86,7 +86,7 @@ class ExamplesTests extends BaseTestContext
       /**
        * Calls AcceptAllRevisionsOnline method for document in cloud.
        */
-      $requestDocument = $documentsDir . $fileName
+      $requestDocument = $documentsDir . $fileName;
       $request = new Requests\AcceptAllRevisionsOnlineRequest(
           $requestDocument,
           NULL,

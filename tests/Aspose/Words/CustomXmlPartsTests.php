@@ -75,7 +75,7 @@ class CustomXmlPartsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetCustomXmlPartOnlineRequest(
             $requestDocument,
             0,
@@ -128,7 +128,7 @@ class CustomXmlPartsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetCustomXmlPartsOnlineRequest(
             $requestDocument,
             NULL,
@@ -188,7 +188,7 @@ class CustomXmlPartsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartInsert(array(
             "id" => "hello",
             "data" => "<data>Hello world</data>",
@@ -254,7 +254,7 @@ class CustomXmlPartsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartUpdate(array(
             "data" => "<data>Hello world</data>",
         ));
@@ -312,7 +312,7 @@ class CustomXmlPartsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\DeleteCustomXmlPartOnlineRequest(
             $requestDocument,
             0,
@@ -362,7 +362,7 @@ class CustomXmlPartsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\DeleteCustomXmlPartsOnlineRequest(
             $requestDocument,
             NULL,

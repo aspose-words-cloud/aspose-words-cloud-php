@@ -8,7 +8,7 @@ $fileName  = "test_doc.docx";
 /**
  * Calls AcceptAllRevisionsOnline method for document in cloud.
  */
-$requestDocument = $documentsDir . $fileName
+$requestDocument = $documentsDir . $fileName;
 $request = new Requests\AcceptAllRevisionsOnlineRequest(
     $requestDocument,
     NULL,

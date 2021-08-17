@@ -74,7 +74,7 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetStylesOnlineRequest(
             $requestDocument,
             NULL,
@@ -121,7 +121,7 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetStyleOnlineRequest(
             $requestDocument,
             "Heading 1",
@@ -176,7 +176,7 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
             "name" => "My Style",
         ));
@@ -238,7 +238,7 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestStyleInsert = new \Aspose\Words\Model\StyleInsert(array(
             "style_name" => "My Style",
             "style_type" => "Paragraph",
@@ -299,7 +299,7 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
             "style_name" => "Heading 1",
         ));
@@ -353,7 +353,7 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetStyleFromDocumentElementOnlineRequest(
             $requestDocument,
             "paragraphs/1/paragraphFormat",
@@ -406,7 +406,7 @@ class StylesTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Styles/GetStyles.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
             "style_name" => "Heading 1",
         ));

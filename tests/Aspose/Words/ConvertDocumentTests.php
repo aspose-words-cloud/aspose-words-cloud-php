@@ -79,7 +79,7 @@ class ConvertDocumentTests extends BaseTestContext
     {
         $localName = "test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
         $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
             "save_format" => "pdf",
             "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
@@ -189,7 +189,7 @@ class ConvertDocumentTests extends BaseTestContext
     {
         $localName = "test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
         $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
             "save_format" => "tiff",
             "file_name" => self::$baseTestOutPath . "/abc.tiff",
@@ -230,7 +230,7 @@ class ConvertDocumentTests extends BaseTestContext
     {
         $localFolder = "DocumentActions/ConvertDocument";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/test_uploadfile.docx"
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/test_uploadfile.docx";
         $request = new Requests\ConvertDocumentRequest(
             $requestDocument,
             "pdf",

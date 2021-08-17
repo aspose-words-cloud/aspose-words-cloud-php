@@ -74,7 +74,7 @@ class RevisionsTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\AcceptAllRevisionsOnlineRequest(
             $requestDocument,
             NULL,
@@ -126,7 +126,7 @@ class RevisionsTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\RejectAllRevisionsOnlineRequest(
             $requestDocument,
             NULL,

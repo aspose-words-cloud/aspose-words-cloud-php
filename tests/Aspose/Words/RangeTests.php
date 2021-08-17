@@ -74,7 +74,7 @@ class RangeTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetRangeTextOnlineRequest(
             $requestDocument,
             "id0.0.0",
@@ -123,7 +123,7 @@ class RangeTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\RemoveRangeOnlineRequest(
             $requestDocument,
             "id0.0.0",
@@ -179,7 +179,7 @@ class RangeTests extends BaseTestContext
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Range";
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestDocumentParameters = new \Aspose\Words\Model\RangeDocument(array(
             "document_name" => $remoteDataFolder . "/NewDoc.docx",
         ));
@@ -238,7 +238,7 @@ class RangeTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestRangeText = new \Aspose\Words\Model\ReplaceRange(array(
             "text" => "Replaced header",
         ));

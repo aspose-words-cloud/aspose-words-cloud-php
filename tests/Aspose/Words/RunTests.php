@@ -82,7 +82,7 @@ class RunTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Runs/Run.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestRun = new \Aspose\Words\Model\RunUpdate(array(
             "text" => "run with text",
         ));
@@ -147,7 +147,7 @@ class RunTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Runs/Run.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestRun = new \Aspose\Words\Model\RunInsert(array(
             "text" => "run with text",
         ));
@@ -204,7 +204,7 @@ class RunTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Runs/Run.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\DeleteRunOnlineRequest(
             $requestDocument,
             "paragraphs/1",

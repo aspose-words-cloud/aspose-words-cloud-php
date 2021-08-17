@@ -88,7 +88,7 @@ class FormFieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/FormFields";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx"
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
         $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
@@ -193,7 +193,7 @@ class FormFieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/FormFields";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx"
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
         $request = new Requests\GetFormFieldOnlineRequest(
             $requestDocument,
             0,
@@ -274,7 +274,7 @@ class FormFieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/FormFields";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx"
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
         $request = new Requests\GetFormFieldsOnlineRequest(
             $requestDocument,
             "sections/0",
@@ -367,7 +367,7 @@ class FormFieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/FormFields";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx"
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
         $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
@@ -473,7 +473,7 @@ class FormFieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/FormFields";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx"
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
         $request = new Requests\DeleteFormFieldOnlineRequest(
             $requestDocument,
             0,

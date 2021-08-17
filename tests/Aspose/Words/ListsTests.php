@@ -75,7 +75,7 @@ class ListsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetListsOnlineRequest(
             $requestDocument,
             NULL,
@@ -122,7 +122,7 @@ class ListsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetListOnlineRequest(
             $requestDocument,
             1,
@@ -175,7 +175,7 @@ class ListsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
             "is_restart_at_each_section" => true,
         ));
@@ -239,7 +239,7 @@ class ListsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
             "alignment" => "Right",
         ));
@@ -306,7 +306,7 @@ class ListsTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
             "template" => "OutlineLegal",
         ));

@@ -74,7 +74,7 @@ class HyperlinkTests extends BaseTestContext
     {
         $localFile = "Common/test_doc.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetDocumentHyperlinkByIndexOnlineRequest(
             $requestDocument,
             0,
@@ -123,7 +123,7 @@ class HyperlinkTests extends BaseTestContext
     {
         $localFile = "Common/test_doc.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetDocumentHyperlinksOnlineRequest(
             $requestDocument,
             NULL,

@@ -76,7 +76,7 @@ class MathObjectTests extends BaseTestContext
     {
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetOfficeMathObjectsOnlineRequest(
             $requestDocument,
             "",
@@ -156,7 +156,7 @@ class MathObjectTests extends BaseTestContext
     {
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetOfficeMathObjectOnlineRequest(
             $requestDocument,
             0,
@@ -237,7 +237,7 @@ class MathObjectTests extends BaseTestContext
     {
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\RenderMathObjectOnlineRequest(
             $requestDocument,
             "png",
@@ -321,7 +321,7 @@ class MathObjectTests extends BaseTestContext
     {
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\DeleteOfficeMathObjectOnlineRequest(
             $requestDocument,
             0,

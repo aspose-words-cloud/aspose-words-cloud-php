@@ -74,7 +74,7 @@ class PageSetupTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new Requests\GetSectionPageSetupOnlineRequest(
             $requestDocument,
             0,
@@ -134,7 +134,7 @@ class PageSetupTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
             "rtl_gutter" => true,
             "left_margin" => 10,
@@ -192,7 +192,7 @@ class PageSetupTests extends BaseTestContext
     {
         $localTextFile = "DocumentElements/Text/SampleWordDocument.docx";
 
-        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localTextFile
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localTextFile;
         $request = new Requests\RenderPageOnlineRequest(
             $requestDocument,
             1,

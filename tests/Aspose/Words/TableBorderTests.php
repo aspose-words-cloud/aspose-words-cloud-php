@@ -260,6 +260,17 @@ class TableBorderTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
+        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
+            "web" => "#AABBCC",
+        ));
+        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
+            "border_type" => "Left",
+            "color" => $requestBorderPropertiesColor,
+            "distance_from_text" => 6.0,
+            "line_style" => "DashDotStroker",
+            "line_width" => 2.0,
+            "shadow" => true,
+        ));
         $request = new Requests\UpdateBorderRequest(
             $remoteFileName,
             "left",
@@ -292,8 +303,17 @@ class TableBorderTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
-
-
+        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
+            "web" => "#AABBCC",
+        ));
+        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
+            "border_type" => "Left",
+            "color" => $requestBorderPropertiesColor,
+            "distance_from_text" => 6,
+            "line_style" => "DashDotStroker",
+            "line_width" => 2,
+            "shadow" => true,
+        ));
         $request = new Requests\UpdateBorderOnlineRequest(
             $requestDocument,
             $requestBorderProperties,

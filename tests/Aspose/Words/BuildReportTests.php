@@ -48,7 +48,10 @@ class BuildReportTests extends BaseTestContext
         $localDataFile = file_get_contents(realpath(__DIR__ . '/../../..') . "/TestData/" . $reportingFolder . "/ReportData.json");
 
         $requestTemplate = realpath(__DIR__ . '/../../..') . '/TestData/' . $reportingFolder . "/" . $localDocumentFile
-
+        $requestReportEngineSettings = new \Aspose\Words\Model\ReportEngineSettings(array(
+            "data_source_type" => "Json",
+            "data_source_name" => "persons",
+        ));
         $request = new Requests\BuildReportOnlineRequest(
             $requestTemplate,
             $localDataFile,
@@ -76,6 +79,14 @@ class BuildReportTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
+        $requestReportEngineSettingsReportBuildOptions = [
+            "AllowMissingMembers",
+            "RemoveEmptyParagraphs",
+        ];
+        $requestReportEngineSettings = new \Aspose\Words\Model\ReportEngineSettings(array(
+            "data_source_type" => "Json",
+            "report_build_options" => $requestReportEngineSettingsReportBuildOptions,
+        ));
         $request = new Requests\BuildReportRequest(
             $remoteFileName,
             $localDataFile,

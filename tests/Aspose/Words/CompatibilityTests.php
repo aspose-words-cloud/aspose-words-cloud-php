@@ -52,6 +52,9 @@ class CompatibilityTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
+        $requestOptions = new \Aspose\Words\Model\OptimizationOptions(array(
+            "ms_word_version" => "Word2002",
+        ));
         $request = new Requests\OptimizeDocumentRequest(
             $remoteFileName,
             $requestOptions,
@@ -75,7 +78,9 @@ class CompatibilityTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile
-
+        $requestOptions = new \Aspose\Words\Model\OptimizationOptions(array(
+            "ms_word_version" => "Word2002",
+        ));
         $request = new Requests\OptimizeDocumentOnlineRequest(
             $requestDocument,
             $requestOptions,

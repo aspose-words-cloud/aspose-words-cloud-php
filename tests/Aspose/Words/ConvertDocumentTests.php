@@ -52,6 +52,10 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
+        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+            "save_format" => "pdf",
+            "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
+        ));
         $request = new Requests\SaveAsRequest(
             $remoteName,
             $requestSaveOptionsData,
@@ -76,7 +80,10 @@ class ConvertDocumentTests extends BaseTestContext
         $localName = "test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName
-
+        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+            "save_format" => "pdf",
+            "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
+        ));
         $request = new Requests\SaveAsOnlineRequest(
             $requestDocument,
             $requestSaveOptionsData,
@@ -104,6 +111,10 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
+        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+            "save_format" => "docx",
+            "file_name" => self::$baseTestOutPath . "/TestSaveAsFromPdfToDoc.docx",
+        ));
         $request = new Requests\SaveAsRequest(
             $remoteName,
             $requestSaveOptionsData,
@@ -134,6 +145,10 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
+        $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
+            "save_format" => "tiff",
+            "file_name" => self::$baseTestOutPath . "/abc.tiff",
+        ));
         $request = new Requests\SaveAsTiffRequest(
             $remoteName,
             $requestSaveOptions,
@@ -175,7 +190,10 @@ class ConvertDocumentTests extends BaseTestContext
         $localName = "test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName
-
+        $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
+            "save_format" => "tiff",
+            "file_name" => self::$baseTestOutPath . "/abc.tiff",
+        ));
         $request = new Requests\SaveAsTiffOnlineRequest(
             $requestDocument,
             $requestSaveOptions,

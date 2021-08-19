@@ -6,13 +6,12 @@ use Aspose\Words\Model\Requests;
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
 $fileName  = "test_doc.docx";
 
 /**
  * Upload original document to cloud storage.
  */
-$myVar1 = $documentsDir . $fileName;
+$myVar1 = $fileName;
 $myVar2 = $fileName;
 $uploadFileRequest = new Requests\UploadFileRequest(
     $myVar1,

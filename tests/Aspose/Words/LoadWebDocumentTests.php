@@ -31,6 +31,8 @@ namespace Aspose\Words\Tests;
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\LoadWebDocumentData;
 use Aspose\Words\Model\Requests\LoadWebDocumentRequest;
+use Aspose\Words\Model\SaveOptionsData;
+use Aspose\Words\Model\TimeZoneInfoData;
 use PHPUnit\Framework\Assert;
 
 /*

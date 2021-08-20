@@ -36,6 +36,7 @@ use Aspose\Words\Model\Requests\SaveAsTiffOnlineRequest;
 use Aspose\Words\Model\Requests\SaveAsTiffRequest;
 use Aspose\Words\Model\SaveOptionsData;
 use Aspose\Words\Model\TiffSaveOptionsData;
+use Aspose\Words\Model\TimeZoneInfoData;
 use PHPUnit\Framework\Assert;
 
 /*

@@ -29,6 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
+use Aspose\Words\Model\Border;
 use Aspose\Words\Model\Font;
 use Aspose\Words\Model\ListFormatUpdate;
 use Aspose\Words\Model\ParagraphFormatUpdate;
@@ -70,6 +71,7 @@ use Aspose\Words\Model\Requests\UpdateParagraphListFormatRequest;
 use Aspose\Words\Model\Requests\UpdateRunFontOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateRunFontRequest;
 use Aspose\Words\Model\TabStopInsert;
+use Aspose\Words\Model\XmlColor;
 use PHPUnit\Framework\Assert;
 
 /*

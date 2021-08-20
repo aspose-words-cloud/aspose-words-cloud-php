@@ -29,6 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
+use Aspose\Words\Model\DocumentEntry;
 use Aspose\Words\Model\DocumentEntryList;
 use Aspose\Words\Model\Requests\AppendDocumentOnlineRequest;
 use Aspose\Words\Model\Requests\AppendDocumentRequest;

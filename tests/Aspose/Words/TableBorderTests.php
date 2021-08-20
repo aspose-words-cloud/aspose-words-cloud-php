@@ -40,6 +40,7 @@ use Aspose\Words\Model\Requests\GetBordersOnlineRequest;
 use Aspose\Words\Model\Requests\GetBordersRequest;
 use Aspose\Words\Model\Requests\UpdateBorderOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateBorderRequest;
+use Aspose\Words\Model\XmlColor;
 use PHPUnit\Framework\Assert;
 
 /*

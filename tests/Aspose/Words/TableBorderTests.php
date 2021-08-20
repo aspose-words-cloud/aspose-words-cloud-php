@@ -30,6 +30,8 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Border;
+use Aspose\Words\Model\Link;
+use Aspose\Words\Model\LinkElement;
 use Aspose\Words\Model\Requests\DeleteBorderOnlineRequest;
 use Aspose\Words\Model\Requests\DeleteBorderRequest;
 use Aspose\Words\Model\Requests\DeleteBordersOnlineRequest;
@@ -40,6 +42,7 @@ use Aspose\Words\Model\Requests\GetBordersOnlineRequest;
 use Aspose\Words\Model\Requests\GetBordersRequest;
 use Aspose\Words\Model\Requests\UpdateBorderOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateBorderRequest;
+use Aspose\Words\Model\WordsApiLink;
 use Aspose\Words\Model\XmlColor;
 use PHPUnit\Framework\Assert;
 

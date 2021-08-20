@@ -29,8 +29,13 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
+use Aspose\Words\Model\DocumentPosition;
+use Aspose\Words\Model\FootnoteBase;
 use Aspose\Words\Model\FootnoteInsert;
 use Aspose\Words\Model\FootnoteUpdate;
+use Aspose\Words\Model\Link;
+use Aspose\Words\Model\LinkElement;
+use Aspose\Words\Model\NodeLink;
 use Aspose\Words\Model\Requests\DeleteFootnoteOnlineRequest;
 use Aspose\Words\Model\Requests\DeleteFootnoteRequest;
 use Aspose\Words\Model\Requests\GetFootnoteOnlineRequest;
@@ -41,6 +46,7 @@ use Aspose\Words\Model\Requests\InsertFootnoteOnlineRequest;
 use Aspose\Words\Model\Requests\InsertFootnoteRequest;
 use Aspose\Words\Model\Requests\UpdateFootnoteOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateFootnoteRequest;
+use Aspose\Words\Model\WordsApiLink;
 use PHPUnit\Framework\Assert;
 
 /*

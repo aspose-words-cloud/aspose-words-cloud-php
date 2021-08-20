@@ -29,12 +29,17 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
+use Aspose\Words\Model\FixedPageSaveOptionsData;
+use Aspose\Words\Model\GraphicsQualityOptionsData;
+use Aspose\Words\Model\ImageSaveOptionsData;
+use Aspose\Words\Model\MetafileRenderingOptionsData;
 use Aspose\Words\Model\Requests\ConvertDocumentRequest;
 use Aspose\Words\Model\Requests\SaveAsOnlineRequest;
 use Aspose\Words\Model\Requests\SaveAsRequest;
 use Aspose\Words\Model\Requests\SaveAsTiffOnlineRequest;
 use Aspose\Words\Model\Requests\SaveAsTiffRequest;
 use Aspose\Words\Model\SaveOptionsData;
+use Aspose\Words\Model\StringFormatData;
 use Aspose\Words\Model\TiffSaveOptionsData;
 use Aspose\Words\Model\TimeZoneInfoData;
 use PHPUnit\Framework\Assert;

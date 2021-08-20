@@ -29,6 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
+use Aspose\Words\Model\FieldBase;
 use Aspose\Words\Model\FieldInsert;
 use Aspose\Words\Model\FieldUpdate;
 use Aspose\Words\Model\PageNumber;

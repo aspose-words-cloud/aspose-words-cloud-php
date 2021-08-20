@@ -29,12 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Border;
 use Aspose\Words\Model\Font;
-use Aspose\Words\Model\Link;
-use Aspose\Words\Model\LinkElement;
 use Aspose\Words\Model\ListFormatUpdate;
-use Aspose\Words\Model\ParagraphFormatBase;
 use Aspose\Words\Model\ParagraphFormatUpdate;
 use Aspose\Words\Model\ParagraphInsert;
 use Aspose\Words\Model\Requests\DeleteAllParagraphTabStopsOnlineRequest;
@@ -73,11 +69,7 @@ use Aspose\Words\Model\Requests\UpdateParagraphListFormatOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateParagraphListFormatRequest;
 use Aspose\Words\Model\Requests\UpdateRunFontOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateRunFontRequest;
-use Aspose\Words\Model\Shading;
-use Aspose\Words\Model\TabStopBase;
 use Aspose\Words\Model\TabStopInsert;
-use Aspose\Words\Model\WordsApiLink;
-use Aspose\Words\Model\XmlColor;
 use PHPUnit\Framework\Assert;
 
 /*

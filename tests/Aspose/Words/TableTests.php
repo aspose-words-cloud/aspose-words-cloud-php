@@ -29,11 +29,6 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\DocumentPosition;
-use Aspose\Words\Model\Link;
-use Aspose\Words\Model\LinkElement;
-use Aspose\Words\Model\NodeLink;
-use Aspose\Words\Model\PreferredWidth;
 use Aspose\Words\Model\Requests\DeleteTableCellOnlineRequest;
 use Aspose\Words\Model\Requests\DeleteTableCellRequest;
 use Aspose\Words\Model\Requests\DeleteTableOnlineRequest;
@@ -74,7 +69,6 @@ use Aspose\Words\Model\TableInsert;
 use Aspose\Words\Model\TableProperties;
 use Aspose\Words\Model\TableRowFormat;
 use Aspose\Words\Model\TableRowInsert;
-use Aspose\Words\Model\WordsApiLink;
 use PHPUnit\Framework\Assert;
 
 /*

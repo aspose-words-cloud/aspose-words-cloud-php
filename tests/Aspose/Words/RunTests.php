@@ -35,7 +35,6 @@ use Aspose\Words\Model\Requests\InsertRunOnlineRequest;
 use Aspose\Words\Model\Requests\InsertRunRequest;
 use Aspose\Words\Model\Requests\UpdateRunOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateRunRequest;
-use Aspose\Words\Model\RunBase;
 use Aspose\Words\Model\RunInsert;
 use Aspose\Words\Model\RunUpdate;
 use PHPUnit\Framework\Assert;

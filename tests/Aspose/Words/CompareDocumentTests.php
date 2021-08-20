@@ -30,7 +30,6 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\CompareData;
-use Aspose\Words\Model\CompareOptions;
 use Aspose\Words\Model\Requests\CompareDocumentOnlineRequest;
 use Aspose\Words\Model\Requests\CompareDocumentRequest;
 use PHPUnit\Framework\Assert;

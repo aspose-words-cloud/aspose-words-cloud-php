@@ -29,10 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\FormField;
-use Aspose\Words\Model\Link;
-use Aspose\Words\Model\LinkElement;
-use Aspose\Words\Model\NodeLink;
+use Aspose\Words\Model\FormFieldTextInput;
 use Aspose\Words\Model\Requests\DeleteFormFieldOnlineRequest;
 use Aspose\Words\Model\Requests\DeleteFormFieldRequest;
 use Aspose\Words\Model\Requests\GetFormFieldOnlineRequest;
@@ -43,7 +40,6 @@ use Aspose\Words\Model\Requests\InsertFormFieldOnlineRequest;
 use Aspose\Words\Model\Requests\InsertFormFieldRequest;
 use Aspose\Words\Model\Requests\UpdateFormFieldOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateFormFieldRequest;
-use Aspose\Words\Model\WordsApiLink;
 use PHPUnit\Framework\Assert;
 
 /*

@@ -29,12 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\CustomXmlPart;
 use Aspose\Words\Model\CustomXmlPartInsert;
-use Aspose\Words\Model\CustomXmlPartLink;
 use Aspose\Words\Model\CustomXmlPartUpdate;
-use Aspose\Words\Model\Link;
-use Aspose\Words\Model\LinkElement;
 use Aspose\Words\Model\Requests\DeleteCustomXmlPartOnlineRequest;
 use Aspose\Words\Model\Requests\DeleteCustomXmlPartRequest;
 use Aspose\Words\Model\Requests\DeleteCustomXmlPartsOnlineRequest;
@@ -47,7 +43,6 @@ use Aspose\Words\Model\Requests\InsertCustomXmlPartOnlineRequest;
 use Aspose\Words\Model\Requests\InsertCustomXmlPartRequest;
 use Aspose\Words\Model\Requests\UpdateCustomXmlPartOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateCustomXmlPartRequest;
-use Aspose\Words\Model\WordsApiLink;
 use PHPUnit\Framework\Assert;
 
 /*

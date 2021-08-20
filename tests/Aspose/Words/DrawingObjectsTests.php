@@ -29,12 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\DocumentPosition;
 use Aspose\Words\Model\DrawingObjectInsert;
 use Aspose\Words\Model\DrawingObjectUpdate;
-use Aspose\Words\Model\Link;
-use Aspose\Words\Model\LinkElement;
-use Aspose\Words\Model\NodeLink;
 use Aspose\Words\Model\Requests\DeleteDrawingObjectOnlineRequest;
 use Aspose\Words\Model\Requests\DeleteDrawingObjectRequest;
 use Aspose\Words\Model\Requests\GetDocumentDrawingObjectByIndexOnlineRequest;
@@ -51,7 +47,6 @@ use Aspose\Words\Model\Requests\RenderDrawingObjectOnlineRequest;
 use Aspose\Words\Model\Requests\RenderDrawingObjectRequest;
 use Aspose\Words\Model\Requests\UpdateDrawingObjectOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateDrawingObjectRequest;
-use Aspose\Words\Model\WordsApiLink;
 use PHPUnit\Framework\Assert;
 
 /*

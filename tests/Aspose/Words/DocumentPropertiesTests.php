@@ -29,7 +29,6 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\DocumentPropertyBase;
 use Aspose\Words\Model\DocumentPropertyCreateOrUpdate;
 use Aspose\Words\Model\Requests\CreateOrUpdateDocumentPropertyOnlineRequest;
 use Aspose\Words\Model\Requests\CreateOrUpdateDocumentPropertyRequest;

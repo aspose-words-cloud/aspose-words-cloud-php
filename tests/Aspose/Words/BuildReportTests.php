@@ -29,8 +29,6 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\CsvDataLoadOptions;
-use Aspose\Words\Model\ReportBuildOptions;
 use Aspose\Words\Model\ReportEngineSettings;
 use Aspose\Words\Model\Requests\BuildReportOnlineRequest;
 use Aspose\Words\Model\Requests\BuildReportRequest;

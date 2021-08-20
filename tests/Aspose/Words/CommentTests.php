@@ -29,12 +29,9 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\CommentBase;
 use Aspose\Words\Model\CommentInsert;
 use Aspose\Words\Model\CommentUpdate;
 use Aspose\Words\Model\DocumentPosition;
-use Aspose\Words\Model\Link;
-use Aspose\Words\Model\LinkElement;
 use Aspose\Words\Model\NodeLink;
 use Aspose\Words\Model\Requests\DeleteCommentOnlineRequest;
 use Aspose\Words\Model\Requests\DeleteCommentRequest;
@@ -48,7 +45,6 @@ use Aspose\Words\Model\Requests\InsertCommentOnlineRequest;
 use Aspose\Words\Model\Requests\InsertCommentRequest;
 use Aspose\Words\Model\Requests\UpdateCommentOnlineRequest;
 use Aspose\Words\Model\Requests\UpdateCommentRequest;
-use Aspose\Words\Model\WordsApiLink;
 use PHPUnit\Framework\Assert;
 
 /*

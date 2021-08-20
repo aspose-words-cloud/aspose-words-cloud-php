@@ -14,9 +14,7 @@ $fileName  = "test_doc.docx";
 $myVar1 = $fileName;
 $myVar2 = $fileName;
 $uploadFileRequest = new Requests\UploadFileRequest(
-    $myVar1,
-    $myVar2,
-    NULL
+    $myVar1, $myVar2, NULL
 );
 $wordsApi->uploadFile($uploadFileRequest);
 
@@ -25,11 +23,6 @@ $wordsApi->uploadFile($uploadFileRequest);
  */
 $myVar3 = $fileName;
 $request = new Requests\AcceptAllRevisionsRequest(
-    $myVar3,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    $myVar3, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->acceptAllRevisions($request);

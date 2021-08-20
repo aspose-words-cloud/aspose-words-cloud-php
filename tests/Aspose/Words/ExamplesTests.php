@@ -54,9 +54,7 @@ class ExamplesTests extends BaseTestContext
       $myVar1 = $documentsDir . $fileName;
       $myVar2 = $fileName;
       $uploadFileRequest = new Requests\UploadFileRequest(
-          $myVar1,
-          $myVar2,
-          NULL
+          $myVar1, $myVar2, NULL
       );
       $wordsApi->uploadFile($uploadFileRequest);
 
@@ -65,12 +63,7 @@ class ExamplesTests extends BaseTestContext
        */
       $myVar3 = $fileName;
       $request = new Requests\AcceptAllRevisionsRequest(
-          $myVar3,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+          $myVar3, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->acceptAllRevisions($request);
     }
@@ -88,10 +81,7 @@ class ExamplesTests extends BaseTestContext
        */
       $requestDocument = $documentsDir . $fileName;
       $request = new Requests\AcceptAllRevisionsOnlineRequest(
-          $requestDocument,
-          NULL,
-          NULL,
-          NULL
+          $requestDocument, NULL, NULL, NULL
       );
       $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);
       rename($acceptAllRevisionsOnlineResult->getDocument()->getPathname(), 'test_result.docx');

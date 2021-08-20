@@ -16,6 +16,9 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 ## Enhancements in Version 21.8
 
 - Added new api methods to get, insert, update or delete custom xml parts from documents.
+- Added parameter 'ResultDocumentFormat' to Compare API
+- Added 'ExportLanguageToSpanTag' pdf save option
+- Added 'FlatOpcXmlMappingOnly' save option
 
 
 ## Enhancements in Version 21.7

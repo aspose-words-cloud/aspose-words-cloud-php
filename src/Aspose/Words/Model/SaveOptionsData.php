@@ -58,6 +58,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'string',
         'dml_rendering_mode' => 'string',
         'file_name' => 'string',
+        'flat_opc_xml_mapping_only' => 'bool',
         'iml_rendering_mode' => 'string',
         'save_format' => 'string',
         'update_created_time_property' => 'bool',
@@ -80,6 +81,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'null',
         'dml_rendering_mode' => 'null',
         'file_name' => 'null',
+        'flat_opc_xml_mapping_only' => 'null',
         'iml_rendering_mode' => 'null',
         'save_format' => 'null',
         'update_created_time_property' => 'null',
@@ -123,6 +125,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'DmlEffectsRenderingMode',
         'dml_rendering_mode' => 'DmlRenderingMode',
         'file_name' => 'FileName',
+        'flat_opc_xml_mapping_only' => 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode' => 'ImlRenderingMode',
         'save_format' => 'SaveFormat',
         'update_created_time_property' => 'UpdateCreatedTimeProperty',
@@ -145,6 +148,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'setDmlEffectsRenderingMode',
         'dml_rendering_mode' => 'setDmlRenderingMode',
         'file_name' => 'setFileName',
+        'flat_opc_xml_mapping_only' => 'setFlatOpcXmlMappingOnly',
         'iml_rendering_mode' => 'setImlRenderingMode',
         'save_format' => 'setSaveFormat',
         'update_created_time_property' => 'setUpdateCreatedTimeProperty',
@@ -167,6 +171,7 @@ class SaveOptionsData implements ArrayAccess
         'dml_effects_rendering_mode' => 'getDmlEffectsRenderingMode',
         'dml_rendering_mode' => 'getDmlRenderingMode',
         'file_name' => 'getFileName',
+        'flat_opc_xml_mapping_only' => 'getFlatOpcXmlMappingOnly',
         'iml_rendering_mode' => 'getImlRenderingMode',
         'save_format' => 'getSaveFormat',
         'update_created_time_property' => 'getUpdateCreatedTimeProperty',
@@ -255,6 +260,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['dml_effects_rendering_mode'] = isset($data['dml_effects_rendering_mode']) ? $data['dml_effects_rendering_mode'] : null;
         $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
+        $this->container['flat_opc_xml_mapping_only'] = isset($data['flat_opc_xml_mapping_only']) ? $data['flat_opc_xml_mapping_only'] : null;
         $this->container['iml_rendering_mode'] = isset($data['iml_rendering_mode']) ? $data['iml_rendering_mode'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
         $this->container['update_created_time_property'] = isset($data['update_created_time_property']) ? $data['update_created_time_property'] : null;
@@ -442,6 +448,29 @@ class SaveOptionsData implements ArrayAccess
     public function setFileName($file_name)
     {
         $this->container['file_name'] = $file_name;
+        return $this;
+    }
+
+    /*
+     * Gets flat_opc_xml_mapping_only
+     *
+     * @return bool
+     */
+    public function getFlatOpcXmlMappingOnly()
+    {
+        return $this->container['flat_opc_xml_mapping_only'];
+    }
+
+    /*
+     * Sets flat_opc_xml_mapping_only
+     *
+     * @param bool $flat_opc_xml_mapping_only Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.
+     *
+     * @return $this
+     */
+    public function setFlatOpcXmlMappingOnly($flat_opc_xml_mapping_only)
+    {
+        $this->container['flat_opc_xml_mapping_only'] = $flat_opc_xml_mapping_only;
         return $this;
     }
 

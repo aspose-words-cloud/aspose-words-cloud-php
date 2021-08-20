@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\CreateDocumentRequest;
+use Aspose\Words\Model\Requests\GetDocumentRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +52,7 @@ class DocumentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentRequest(
+        $request = new GetDocumentRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -74,7 +74,7 @@ class DocumentTests extends BaseTestContext
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Document";
         $remoteFileName = "TestCreateDocument.doc";
 
-        $request = new Requests\CreateDocumentRequest(
+        $request = new CreateDocumentRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL

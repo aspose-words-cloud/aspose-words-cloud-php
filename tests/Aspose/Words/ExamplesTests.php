@@ -29,9 +29,11 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\AcceptAllRevisionsRequest;
+use Aspose\Words\Model\Requests\UploadFileRequest;
+use Aspose\Words\Model\Requests\AcceptAllRevisionsOnlineRequest;
 use PHPUnit\Framework\Assert;
+
 class ExamplesTests extends BaseTestContext
 {
     public function setUp() : void
@@ -53,7 +55,7 @@ class ExamplesTests extends BaseTestContext
        */
       $myVar1 = $documentsDir . $fileName;
       $myVar2 = $fileName;
-      $uploadFileRequest = new Requests\UploadFileRequest(
+      $uploadFileRequest = new UploadFileRequest(
           $myVar1, $myVar2, NULL
       );
       $wordsApi->uploadFile($uploadFileRequest);
@@ -62,7 +64,7 @@ class ExamplesTests extends BaseTestContext
        * Calls AcceptAllRevisions method for document in cloud.
        */
       $myVar3 = $fileName;
-      $request = new Requests\AcceptAllRevisionsRequest(
+      $request = new AcceptAllRevisionsRequest(
           $myVar3, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->acceptAllRevisions($request);
@@ -80,7 +82,7 @@ class ExamplesTests extends BaseTestContext
        * Calls AcceptAllRevisionsOnline method for document in cloud.
        */
       $requestDocument = $documentsDir . $fileName;
-      $request = new Requests\AcceptAllRevisionsOnlineRequest(
+      $request = new AcceptAllRevisionsOnlineRequest(
           $requestDocument, NULL, NULL, NULL
       );
       $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);

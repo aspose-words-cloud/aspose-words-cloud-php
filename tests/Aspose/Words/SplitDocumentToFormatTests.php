@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\SplitDocumentOnlineRequest;
+use Aspose\Words\Model\Requests\SplitDocumentRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +52,7 @@ class SplitDocumentToFormatTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\SplitDocumentRequest(
+        $request = new SplitDocumentRequest(
             $remoteFileName,
             "text",
             $remoteDataFolder,
@@ -81,7 +81,7 @@ class SplitDocumentToFormatTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\SplitDocumentOnlineRequest(
+        $request = new SplitDocumentOnlineRequest(
             $requestDocument,
             "text",
             NULL,

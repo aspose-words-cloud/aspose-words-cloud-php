@@ -29,8 +29,46 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\DeleteTableCellOnlineRequest;
+use Aspose\Words\Model\Requests\DeleteTableCellRequest;
+use Aspose\Words\Model\Requests\DeleteTableOnlineRequest;
+use Aspose\Words\Model\Requests\DeleteTableRequest;
+use Aspose\Words\Model\Requests\DeleteTableRowOnlineRequest;
+use Aspose\Words\Model\Requests\DeleteTableRowRequest;
+use Aspose\Words\Model\Requests\GetTableCellFormatOnlineRequest;
+use Aspose\Words\Model\Requests\GetTableCellFormatRequest;
+use Aspose\Words\Model\Requests\GetTableCellOnlineRequest;
+use Aspose\Words\Model\Requests\GetTableCellRequest;
+use Aspose\Words\Model\Requests\GetTableOnlineRequest;
+use Aspose\Words\Model\Requests\GetTablePropertiesOnlineRequest;
+use Aspose\Words\Model\Requests\GetTablePropertiesRequest;
+use Aspose\Words\Model\Requests\GetTableRequest;
+use Aspose\Words\Model\Requests\GetTableRowFormatOnlineRequest;
+use Aspose\Words\Model\Requests\GetTableRowFormatRequest;
+use Aspose\Words\Model\Requests\GetTableRowOnlineRequest;
+use Aspose\Words\Model\Requests\GetTableRowRequest;
+use Aspose\Words\Model\Requests\GetTablesOnlineRequest;
+use Aspose\Words\Model\Requests\GetTablesRequest;
+use Aspose\Words\Model\Requests\InsertTableCellOnlineRequest;
+use Aspose\Words\Model\Requests\InsertTableCellRequest;
+use Aspose\Words\Model\Requests\InsertTableOnlineRequest;
+use Aspose\Words\Model\Requests\InsertTableRequest;
+use Aspose\Words\Model\Requests\InsertTableRowOnlineRequest;
+use Aspose\Words\Model\Requests\InsertTableRowRequest;
+use Aspose\Words\Model\Requests\RenderTableOnlineRequest;
+use Aspose\Words\Model\Requests\RenderTableRequest;
+use Aspose\Words\Model\Requests\UpdateTableCellFormatOnlineRequest;
+use Aspose\Words\Model\Requests\UpdateTableCellFormatRequest;
+use Aspose\Words\Model\Requests\UpdateTablePropertiesOnlineRequest;
+use Aspose\Words\Model\Requests\UpdateTablePropertiesRequest;
+use Aspose\Words\Model\Requests\UpdateTableRowFormatOnlineRequest;
+use Aspose\Words\Model\Requests\UpdateTableRowFormatRequest;
+use Aspose\Words\Model\TableCellFormat;
+use Aspose\Words\Model\TableCellInsert;
+use Aspose\Words\Model\TableInsert;
+use Aspose\Words\Model\TableProperties;
+use Aspose\Words\Model\TableRowFormat;
+use Aspose\Words\Model\TableRowInsert;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +90,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTablesRequest(
+        $request = new GetTablesRequest(
             $remoteFileName,
             "",
             $remoteDataFolder,
@@ -77,7 +115,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetTablesOnlineRequest(
+        $request = new GetTablesOnlineRequest(
             $requestDocument,
             "",
             NULL,
@@ -102,7 +140,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTablesRequest(
+        $request = new GetTablesRequest(
             $remoteFileName,
             NULL,
             $remoteDataFolder,
@@ -133,7 +171,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTableRequest(
+        $request = new GetTableRequest(
             $remoteFileName,
             1,
             "",
@@ -160,7 +198,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetTableOnlineRequest(
+        $request = new GetTableOnlineRequest(
             $requestDocument,
             1,
             "",
@@ -186,7 +224,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTableRequest(
+        $request = new GetTableRequest(
             $remoteFileName,
             1,
             NULL,
@@ -219,7 +257,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteTableRequest(
+        $request = new DeleteTableRequest(
             $remoteFileName,
             1,
             "",
@@ -243,7 +281,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\DeleteTableOnlineRequest(
+        $request = new DeleteTableOnlineRequest(
             $requestDocument,
             1,
             "",
@@ -272,7 +310,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteTableRequest(
+        $request = new DeleteTableRequest(
             $remoteFileName,
             1,
             NULL,
@@ -302,11 +340,11 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestTable = new \Aspose\Words\Model\TableInsert(array(
+        $requestTable = new TableInsert(array(
             "columns_count" => 5,
             "rows_count" => 4,
         ));
-        $request = new Requests\InsertTableRequest(
+        $request = new InsertTableRequest(
             $remoteFileName,
             $requestTable,
             "",
@@ -336,11 +374,11 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestTable = new \Aspose\Words\Model\TableInsert(array(
+        $requestTable = new TableInsert(array(
             "columns_count" => 5,
             "rows_count" => 4,
         ));
-        $request = new Requests\InsertTableOnlineRequest(
+        $request = new InsertTableOnlineRequest(
             $requestDocument,
             $requestTable,
             "",
@@ -369,11 +407,11 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestTable = new \Aspose\Words\Model\TableInsert(array(
+        $requestTable = new TableInsert(array(
             "columns_count" => 5,
             "rows_count" => 4,
         ));
-        $request = new Requests\InsertTableRequest(
+        $request = new InsertTableRequest(
             $remoteFileName,
             $requestTable,
             NULL,
@@ -409,7 +447,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTablePropertiesRequest(
+        $request = new GetTablePropertiesRequest(
             $remoteFileName,
             1,
             "",
@@ -433,7 +471,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetTablePropertiesOnlineRequest(
+        $request = new GetTablePropertiesOnlineRequest(
             $requestDocument,
             1,
             "",
@@ -459,7 +497,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTablePropertiesRequest(
+        $request = new GetTablePropertiesRequest(
             $remoteFileName,
             1,
             NULL,
@@ -489,7 +527,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestProperties = new \Aspose\Words\Model\TableProperties(array(
+        $requestProperties = new TableProperties(array(
             "alignment" => "Right",
             "allow_auto_fit" => false,
             "bidi" => true,
@@ -497,7 +535,7 @@ class TableTests extends BaseTestContext
             "cell_spacing" => 2.0,
             "style_options" => "ColumnBands",
         ));
-        $request = new Requests\UpdateTablePropertiesRequest(
+        $request = new UpdateTablePropertiesRequest(
             $remoteFileName,
             1,
             $requestProperties,
@@ -528,7 +566,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestProperties = new \Aspose\Words\Model\TableProperties(array(
+        $requestProperties = new TableProperties(array(
             "alignment" => "Right",
             "allow_auto_fit" => false,
             "bidi" => true,
@@ -536,7 +574,7 @@ class TableTests extends BaseTestContext
             "cell_spacing" => 2,
             "style_options" => "ColumnBands",
         ));
-        $request = new Requests\UpdateTablePropertiesOnlineRequest(
+        $request = new UpdateTablePropertiesOnlineRequest(
             $requestDocument,
             $requestProperties,
             1,
@@ -566,7 +604,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestProperties = new \Aspose\Words\Model\TableProperties(array(
+        $requestProperties = new TableProperties(array(
             "alignment" => "Right",
             "allow_auto_fit" => false,
             "bidi" => true,
@@ -574,7 +612,7 @@ class TableTests extends BaseTestContext
             "cell_spacing" => 2.0,
             "style_options" => "ColumnBands",
         ));
-        $request = new Requests\UpdateTablePropertiesRequest(
+        $request = new UpdateTablePropertiesRequest(
             $remoteFileName,
             1,
             $requestProperties,
@@ -611,7 +649,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTableRowRequest(
+        $request = new GetTableRowRequest(
             $remoteFileName,
             "tables/1",
             0,
@@ -636,7 +674,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetTableRowOnlineRequest(
+        $request = new GetTableRowOnlineRequest(
             $requestDocument,
             "tables/1",
             0,
@@ -662,7 +700,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteTableRowRequest(
+        $request = new DeleteTableRowRequest(
             $remoteFileName,
             "tables/1",
             0,
@@ -686,7 +724,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\DeleteTableRowOnlineRequest(
+        $request = new DeleteTableRowOnlineRequest(
             $requestDocument,
             "tables/1",
             0,
@@ -715,10 +753,10 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestRow = new \Aspose\Words\Model\TableRowInsert(array(
+        $requestRow = new TableRowInsert(array(
             "columns_count" => 5,
         ));
-        $request = new Requests\InsertTableRowRequest(
+        $request = new InsertTableRowRequest(
             $remoteFileName,
             "sections/0/tables/2",
             $requestRow,
@@ -746,10 +784,10 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestRow = new \Aspose\Words\Model\TableRowInsert(array(
+        $requestRow = new TableRowInsert(array(
             "columns_count" => 5,
         ));
-        $request = new Requests\InsertTableRowOnlineRequest(
+        $request = new InsertTableRowOnlineRequest(
             $requestDocument,
             "sections/0/tables/2",
             $requestRow,
@@ -778,7 +816,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTableRowFormatRequest(
+        $request = new GetTableRowFormatRequest(
             $remoteFileName,
             "sections/0/tables/2",
             0,
@@ -802,7 +840,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetTableRowFormatOnlineRequest(
+        $request = new GetTableRowFormatOnlineRequest(
             $requestDocument,
             "sections/0/tables/2",
             0,
@@ -828,13 +866,13 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormat = new \Aspose\Words\Model\TableRowFormat(array(
+        $requestFormat = new TableRowFormat(array(
             "allow_break_across_pages" => true,
             "heading_format" => true,
             "height" => 10.0,
             "height_rule" => "Exactly",
         ));
-        $request = new Requests\UpdateTableRowFormatRequest(
+        $request = new UpdateTableRowFormatRequest(
             $remoteFileName,
             "sections/0/tables/2",
             0,
@@ -864,13 +902,13 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestFormat = new \Aspose\Words\Model\TableRowFormat(array(
+        $requestFormat = new TableRowFormat(array(
             "allow_break_across_pages" => true,
             "heading_format" => true,
             "height" => 10,
             "height_rule" => "Auto",
         ));
-        $request = new Requests\UpdateTableRowFormatOnlineRequest(
+        $request = new UpdateTableRowFormatOnlineRequest(
             $requestDocument,
             "sections/0/tables/2",
             $requestFormat,
@@ -900,7 +938,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTableCellRequest(
+        $request = new GetTableCellRequest(
             $remoteFileName,
             "sections/0/tables/2/rows/0",
             0,
@@ -924,7 +962,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetTableCellOnlineRequest(
+        $request = new GetTableCellOnlineRequest(
             $requestDocument,
             "sections/0/tables/2/rows/0",
             0,
@@ -950,7 +988,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteTableCellRequest(
+        $request = new DeleteTableCellRequest(
             $remoteFileName,
             "sections/0/tables/2/rows/0",
             0,
@@ -974,7 +1012,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\DeleteTableCellOnlineRequest(
+        $request = new DeleteTableCellOnlineRequest(
             $requestDocument,
             "sections/0/tables/2/rows/0",
             0,
@@ -1003,9 +1041,9 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
+        $requestCell = new TableCellInsert(array(
         ));
-        $request = new Requests\InsertTableCellRequest(
+        $request = new InsertTableCellRequest(
             $remoteFileName,
             "sections/0/tables/2/rows/0",
             $requestCell,
@@ -1032,9 +1070,9 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
+        $requestCell = new TableCellInsert(array(
         ));
-        $request = new Requests\InsertTableCellOnlineRequest(
+        $request = new InsertTableCellOnlineRequest(
             $requestDocument,
             "sections/0/tables/2/rows/0",
             $requestCell,
@@ -1063,7 +1101,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetTableCellFormatRequest(
+        $request = new GetTableCellFormatRequest(
             $remoteFileName,
             "sections/0/tables/2/rows/0",
             0,
@@ -1087,7 +1125,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetTableCellFormatOnlineRequest(
+        $request = new GetTableCellFormatOnlineRequest(
             $requestDocument,
             "sections/0/tables/2/rows/0",
             0,
@@ -1113,13 +1151,13 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormat = new \Aspose\Words\Model\TableCellFormat(array(
+        $requestFormat = new TableCellFormat(array(
             "bottom_padding" => 5.0,
             "fit_text" => true,
             "horizontal_merge" => "First",
             "wrap_text" => true,
         ));
-        $request = new Requests\UpdateTableCellFormatRequest(
+        $request = new UpdateTableCellFormatRequest(
             $remoteFileName,
             "sections/0/tables/2/rows/0",
             0,
@@ -1149,13 +1187,13 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestFormat = new \Aspose\Words\Model\TableCellFormat(array(
+        $requestFormat = new TableCellFormat(array(
             "bottom_padding" => 5,
             "fit_text" => true,
             "horizontal_merge" => "First",
             "wrap_text" => true,
         ));
-        $request = new Requests\UpdateTableCellFormatOnlineRequest(
+        $request = new UpdateTableCellFormatOnlineRequest(
             $requestDocument,
             "sections/0/tables/2/rows/0",
             $requestFormat,
@@ -1185,7 +1223,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RenderTableRequest(
+        $request = new RenderTableRequest(
             $remoteFileName,
             "png",
             0,
@@ -1210,7 +1248,7 @@ class TableTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\RenderTableOnlineRequest(
+        $request = new RenderTableOnlineRequest(
             $requestDocument,
             "png",
             0,
@@ -1239,7 +1277,7 @@ class TableTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RenderTableRequest(
+        $request = new RenderTableRequest(
             $remoteFileName,
             "png",
             0,

@@ -29,8 +29,13 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\ConvertDocumentRequest;
+use Aspose\Words\Model\Requests\SaveAsOnlineRequest;
+use Aspose\Words\Model\Requests\SaveAsRequest;
+use Aspose\Words\Model\Requests\SaveAsTiffOnlineRequest;
+use Aspose\Words\Model\Requests\SaveAsTiffRequest;
+use Aspose\Words\Model\SaveOptionsData;
+use Aspose\Words\Model\TiffSaveOptionsData;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,11 +57,11 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
-        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+        $requestSaveOptionsData = new SaveOptionsData(array(
             "save_format" => "pdf",
             "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
         ));
-        $request = new Requests\SaveAsRequest(
+        $request = new SaveAsRequest(
             $remoteName,
             $requestSaveOptionsData,
             $remoteFolder,
@@ -80,11 +85,11 @@ class ConvertDocumentTests extends BaseTestContext
         $localName = "test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
-        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+        $requestSaveOptionsData = new SaveOptionsData(array(
             "save_format" => "pdf",
             "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
         ));
-        $request = new Requests\SaveAsOnlineRequest(
+        $request = new SaveAsOnlineRequest(
             $requestDocument,
             $requestSaveOptionsData,
             NULL,
@@ -111,11 +116,11 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
-        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+        $requestSaveOptionsData = new SaveOptionsData(array(
             "save_format" => "docx",
             "file_name" => self::$baseTestOutPath . "/TestSaveAsFromPdfToDoc.docx",
         ));
-        $request = new Requests\SaveAsRequest(
+        $request = new SaveAsRequest(
             $remoteName,
             $requestSaveOptionsData,
             $remoteFolder,
@@ -145,11 +150,11 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
-        $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
+        $requestSaveOptions = new TiffSaveOptionsData(array(
             "save_format" => "tiff",
             "file_name" => self::$baseTestOutPath . "/abc.tiff",
         ));
-        $request = new Requests\SaveAsTiffRequest(
+        $request = new SaveAsTiffRequest(
             $remoteName,
             $requestSaveOptions,
             $remoteFolder,
@@ -190,11 +195,11 @@ class ConvertDocumentTests extends BaseTestContext
         $localName = "test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
-        $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
+        $requestSaveOptions = new TiffSaveOptionsData(array(
             "save_format" => "tiff",
             "file_name" => self::$baseTestOutPath . "/abc.tiff",
         ));
-        $request = new Requests\SaveAsTiffOnlineRequest(
+        $request = new SaveAsTiffOnlineRequest(
             $requestDocument,
             $requestSaveOptions,
             NULL,
@@ -231,7 +236,7 @@ class ConvertDocumentTests extends BaseTestContext
         $localFolder = "DocumentActions/ConvertDocument";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/test_uploadfile.docx";
-        $request = new Requests\ConvertDocumentRequest(
+        $request = new ConvertDocumentRequest(
             $requestDocument,
             "pdf",
             NULL,

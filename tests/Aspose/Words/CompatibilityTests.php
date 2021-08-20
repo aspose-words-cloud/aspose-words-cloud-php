@@ -29,8 +29,9 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\OptimizationOptions;
+use Aspose\Words\Model\Requests\OptimizeDocumentOnlineRequest;
+use Aspose\Words\Model\Requests\OptimizeDocumentRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,10 +53,10 @@ class CompatibilityTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestOptions = new \Aspose\Words\Model\OptimizationOptions(array(
+        $requestOptions = new OptimizationOptions(array(
             "ms_word_version" => "Word2002",
         ));
-        $request = new Requests\OptimizeDocumentRequest(
+        $request = new OptimizeDocumentRequest(
             $remoteFileName,
             $requestOptions,
             $remoteDataFolder,
@@ -78,10 +79,10 @@ class CompatibilityTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestOptions = new \Aspose\Words\Model\OptimizationOptions(array(
+        $requestOptions = new OptimizationOptions(array(
             "ms_word_version" => "Word2002",
         ));
-        $request = new Requests\OptimizeDocumentOnlineRequest(
+        $request = new OptimizeDocumentOnlineRequest(
             $requestDocument,
             $requestOptions,
             NULL,

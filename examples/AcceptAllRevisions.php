@@ -1,7 +1,7 @@
 <?php
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\AcceptAllRevisionsRequest;
+use Aspose\Words\Model\Requests\UploadFileRequest;
 
 $clientId = '####-####-####-####-####';
 $secret = '##################';
@@ -13,7 +13,7 @@ $fileName  = "test_doc.docx";
  */
 $myVar1 = $fileName;
 $myVar2 = $fileName;
-$uploadFileRequest = new Requests\UploadFileRequest(
+$uploadFileRequest = new UploadFileRequest(
     $myVar1, $myVar2, NULL
 );
 $wordsApi->uploadFile($uploadFileRequest);
@@ -22,7 +22,7 @@ $wordsApi->uploadFile($uploadFileRequest);
  * Calls AcceptAllRevisions method for document in cloud.
  */
 $myVar3 = $fileName;
-$request = new Requests\AcceptAllRevisionsRequest(
+$request = new AcceptAllRevisionsRequest(
     $myVar3, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->acceptAllRevisions($request);

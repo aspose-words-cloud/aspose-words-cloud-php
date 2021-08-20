@@ -29,8 +29,13 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\PageSetup;
+use Aspose\Words\Model\Requests\GetSectionPageSetupOnlineRequest;
+use Aspose\Words\Model\Requests\GetSectionPageSetupRequest;
+use Aspose\Words\Model\Requests\RenderPageOnlineRequest;
+use Aspose\Words\Model\Requests\RenderPageRequest;
+use Aspose\Words\Model\Requests\UpdateSectionPageSetupOnlineRequest;
+use Aspose\Words\Model\Requests\UpdateSectionPageSetupRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +57,7 @@ class PageSetupTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetSectionPageSetupRequest(
+        $request = new GetSectionPageSetupRequest(
             $remoteFileName,
             0,
             $remoteDataFolder,
@@ -75,7 +80,7 @@ class PageSetupTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetSectionPageSetupOnlineRequest(
+        $request = new GetSectionPageSetupOnlineRequest(
             $requestDocument,
             0,
             NULL,
@@ -100,13 +105,13 @@ class PageSetupTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
+        $requestPageSetup = new PageSetup(array(
             "rtl_gutter" => true,
             "left_margin" => 10.0,
             "orientation" => "Landscape",
             "paper_size" => "A5",
         ));
-        $request = new Requests\UpdateSectionPageSetupRequest(
+        $request = new UpdateSectionPageSetupRequest(
             $remoteFileName,
             0,
             $requestPageSetup,
@@ -135,13 +140,13 @@ class PageSetupTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
+        $requestPageSetup = new PageSetup(array(
             "rtl_gutter" => true,
             "left_margin" => 10,
             "orientation" => "Landscape",
             "paper_size" => "A5",
         ));
-        $request = new Requests\UpdateSectionPageSetupOnlineRequest(
+        $request = new UpdateSectionPageSetupOnlineRequest(
             $requestDocument,
             0,
             $requestPageSetup,
@@ -170,7 +175,7 @@ class PageSetupTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RenderPageRequest(
+        $request = new RenderPageRequest(
             $remoteFileName,
             1,
             "bmp",
@@ -193,7 +198,7 @@ class PageSetupTests extends BaseTestContext
         $localTextFile = "DocumentElements/Text/SampleWordDocument.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localTextFile;
-        $request = new Requests\RenderPageOnlineRequest(
+        $request = new RenderPageOnlineRequest(
             $requestDocument,
             1,
             "bmp",

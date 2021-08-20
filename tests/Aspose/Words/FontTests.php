@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\GetAvailableFontsRequest;
+use Aspose\Words\Model\Requests\ResetCacheRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -43,7 +43,7 @@ class FontTests extends BaseTestContext
      */
     public function testResetCache()
     {
-        $request = new Requests\ResetCacheRequest(
+        $request = new ResetCacheRequest(
         );
 
         Assert::assertNull($this->words->resetCache($request));
@@ -54,7 +54,7 @@ class FontTests extends BaseTestContext
      */
     public function testGetAvailableFonts()
     {
-        $request = new Requests\GetAvailableFontsRequest(
+        $request = new GetAvailableFontsRequest(
             NULL
         );
 

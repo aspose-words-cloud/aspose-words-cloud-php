@@ -29,8 +29,10 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\GetDocumentHyperlinkByIndexOnlineRequest;
+use Aspose\Words\Model\Requests\GetDocumentHyperlinkByIndexRequest;
+use Aspose\Words\Model\Requests\GetDocumentHyperlinksOnlineRequest;
+use Aspose\Words\Model\Requests\GetDocumentHyperlinksRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +54,7 @@ class HyperlinkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentHyperlinkByIndexRequest(
+        $request = new GetDocumentHyperlinkByIndexRequest(
             $remoteFileName,
             0,
             $remoteDataFolder,
@@ -75,7 +77,7 @@ class HyperlinkTests extends BaseTestContext
         $localFile = "Common/test_doc.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetDocumentHyperlinkByIndexOnlineRequest(
+        $request = new GetDocumentHyperlinkByIndexOnlineRequest(
             $requestDocument,
             0,
             NULL,
@@ -100,7 +102,7 @@ class HyperlinkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentHyperlinksRequest(
+        $request = new GetDocumentHyperlinksRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -124,7 +126,7 @@ class HyperlinkTests extends BaseTestContext
         $localFile = "Common/test_doc.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetDocumentHyperlinksOnlineRequest(
+        $request = new GetDocumentHyperlinksOnlineRequest(
             $requestDocument,
             NULL,
             NULL

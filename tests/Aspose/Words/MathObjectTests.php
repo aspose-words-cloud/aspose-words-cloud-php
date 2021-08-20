@@ -29,8 +29,14 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\DeleteOfficeMathObjectOnlineRequest;
+use Aspose\Words\Model\Requests\DeleteOfficeMathObjectRequest;
+use Aspose\Words\Model\Requests\GetOfficeMathObjectOnlineRequest;
+use Aspose\Words\Model\Requests\GetOfficeMathObjectRequest;
+use Aspose\Words\Model\Requests\GetOfficeMathObjectsOnlineRequest;
+use Aspose\Words\Model\Requests\GetOfficeMathObjectsRequest;
+use Aspose\Words\Model\Requests\RenderMathObjectOnlineRequest;
+use Aspose\Words\Model\Requests\RenderMathObjectRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +58,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetOfficeMathObjectsRequest(
+        $request = new GetOfficeMathObjectsRequest(
             $remoteFileName,
             "",
             $remoteDataFolder,
@@ -77,7 +83,7 @@ class MathObjectTests extends BaseTestContext
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetOfficeMathObjectsOnlineRequest(
+        $request = new GetOfficeMathObjectsOnlineRequest(
             $requestDocument,
             "",
             NULL,
@@ -102,7 +108,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetOfficeMathObjectsRequest(
+        $request = new GetOfficeMathObjectsRequest(
             $remoteFileName,
             NULL,
             $remoteDataFolder,
@@ -133,7 +139,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetOfficeMathObjectRequest(
+        $request = new GetOfficeMathObjectRequest(
             $remoteFileName,
             0,
             "",
@@ -157,7 +163,7 @@ class MathObjectTests extends BaseTestContext
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetOfficeMathObjectOnlineRequest(
+        $request = new GetOfficeMathObjectOnlineRequest(
             $requestDocument,
             0,
             "",
@@ -183,7 +189,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetOfficeMathObjectRequest(
+        $request = new GetOfficeMathObjectRequest(
             $remoteFileName,
             0,
             NULL,
@@ -213,7 +219,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RenderMathObjectRequest(
+        $request = new RenderMathObjectRequest(
             $remoteFileName,
             "png",
             0,
@@ -238,7 +244,7 @@ class MathObjectTests extends BaseTestContext
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\RenderMathObjectOnlineRequest(
+        $request = new RenderMathObjectOnlineRequest(
             $requestDocument,
             "png",
             0,
@@ -267,7 +273,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RenderMathObjectRequest(
+        $request = new RenderMathObjectRequest(
             $remoteFileName,
             "png",
             0,
@@ -298,7 +304,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteOfficeMathObjectRequest(
+        $request = new DeleteOfficeMathObjectRequest(
             $remoteFileName,
             0,
             "",
@@ -322,7 +328,7 @@ class MathObjectTests extends BaseTestContext
         $localFile = "DocumentElements/MathObjects/MathObjects.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\DeleteOfficeMathObjectOnlineRequest(
+        $request = new DeleteOfficeMathObjectOnlineRequest(
             $requestDocument,
             0,
             "",
@@ -351,7 +357,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteOfficeMathObjectRequest(
+        $request = new DeleteOfficeMathObjectRequest(
             $remoteFileName,
             0,
             NULL,

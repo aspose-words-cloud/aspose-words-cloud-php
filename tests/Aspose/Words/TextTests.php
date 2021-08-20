@@ -29,8 +29,11 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\ReplaceTextParameters;
+use Aspose\Words\Model\Requests\ReplaceTextOnlineRequest;
+use Aspose\Words\Model\Requests\ReplaceTextRequest;
+use Aspose\Words\Model\Requests\SearchOnlineRequest;
+use Aspose\Words\Model\Requests\SearchRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,11 +55,11 @@ class TextTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
+        $requestReplaceText = new ReplaceTextParameters(array(
             "old_value" => "Testing",
             "new_value" => "Aspose testing",
         ));
-        $request = new Requests\ReplaceTextRequest(
+        $request = new ReplaceTextRequest(
             $remoteFileName,
             $requestReplaceText,
             $remoteDataFolder,
@@ -81,11 +84,11 @@ class TextTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
+        $requestReplaceText = new ReplaceTextParameters(array(
             "old_value" => "aspose",
             "new_value" => "aspose new",
         ));
-        $request = new Requests\ReplaceTextOnlineRequest(
+        $request = new ReplaceTextOnlineRequest(
             $requestDocument,
             $requestReplaceText,
             NULL,
@@ -113,7 +116,7 @@ class TextTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\SearchRequest(
+        $request = new SearchRequest(
             $remoteFileName,
             "aspose",
             $remoteDataFolder,
@@ -139,7 +142,7 @@ class TextTests extends BaseTestContext
         $localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\SearchOnlineRequest(
+        $request = new SearchOnlineRequest(
             $requestDocument,
             "aspose",
             NULL,

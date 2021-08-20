@@ -29,8 +29,14 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\DeleteRunOnlineRequest;
+use Aspose\Words\Model\Requests\DeleteRunRequest;
+use Aspose\Words\Model\Requests\InsertRunOnlineRequest;
+use Aspose\Words\Model\Requests\InsertRunRequest;
+use Aspose\Words\Model\Requests\UpdateRunOnlineRequest;
+use Aspose\Words\Model\Requests\UpdateRunRequest;
+use Aspose\Words\Model\RunInsert;
+use Aspose\Words\Model\RunUpdate;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,10 +58,10 @@ class RunTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestRun = new \Aspose\Words\Model\RunUpdate(array(
+        $requestRun = new RunUpdate(array(
             "text" => "run with text",
         ));
-        $request = new Requests\UpdateRunRequest(
+        $request = new UpdateRunRequest(
             $remoteFileName,
             "paragraphs/1",
             0,
@@ -83,10 +89,10 @@ class RunTests extends BaseTestContext
         $localFile = "DocumentElements/Runs/Run.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestRun = new \Aspose\Words\Model\RunUpdate(array(
+        $requestRun = new RunUpdate(array(
             "text" => "run with text",
         ));
-        $request = new Requests\UpdateRunOnlineRequest(
+        $request = new UpdateRunOnlineRequest(
             $requestDocument,
             "paragraphs/1",
             $requestRun,
@@ -116,10 +122,10 @@ class RunTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestRun = new \Aspose\Words\Model\RunInsert(array(
+        $requestRun = new RunInsert(array(
             "text" => "run with text",
         ));
-        $request = new Requests\InsertRunRequest(
+        $request = new InsertRunRequest(
             $remoteFileName,
             "paragraphs/1",
             $requestRun,
@@ -148,10 +154,10 @@ class RunTests extends BaseTestContext
         $localFile = "DocumentElements/Runs/Run.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestRun = new \Aspose\Words\Model\RunInsert(array(
+        $requestRun = new RunInsert(array(
             "text" => "run with text",
         ));
-        $request = new Requests\InsertRunOnlineRequest(
+        $request = new InsertRunOnlineRequest(
             $requestDocument,
             "paragraphs/1",
             $requestRun,
@@ -181,7 +187,7 @@ class RunTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteRunRequest(
+        $request = new DeleteRunRequest(
             $remoteFileName,
             "paragraphs/1",
             0,
@@ -205,7 +211,7 @@ class RunTests extends BaseTestContext
         $localFile = "DocumentElements/Runs/Run.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\DeleteRunOnlineRequest(
+        $request = new DeleteRunOnlineRequest(
             $requestDocument,
             "paragraphs/1",
             0,

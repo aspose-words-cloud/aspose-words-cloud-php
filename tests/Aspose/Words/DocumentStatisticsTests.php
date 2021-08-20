@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\GetDocumentStatisticsOnlineRequest;
+use Aspose\Words\Model\Requests\GetDocumentStatisticsRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +52,7 @@ class DocumentStatisticsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentStatisticsRequest(
+        $request = new GetDocumentStatisticsRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -77,7 +77,7 @@ class DocumentStatisticsTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetDocumentStatisticsOnlineRequest(
+        $request = new GetDocumentStatisticsOnlineRequest(
             $requestDocument,
             NULL,
             NULL,

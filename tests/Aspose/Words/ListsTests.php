@@ -29,8 +29,19 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\ListInsert;
+use Aspose\Words\Model\ListLevelUpdate;
+use Aspose\Words\Model\ListUpdate;
+use Aspose\Words\Model\Requests\GetListOnlineRequest;
+use Aspose\Words\Model\Requests\GetListRequest;
+use Aspose\Words\Model\Requests\GetListsOnlineRequest;
+use Aspose\Words\Model\Requests\GetListsRequest;
+use Aspose\Words\Model\Requests\InsertListOnlineRequest;
+use Aspose\Words\Model\Requests\InsertListRequest;
+use Aspose\Words\Model\Requests\UpdateListLevelOnlineRequest;
+use Aspose\Words\Model\Requests\UpdateListLevelRequest;
+use Aspose\Words\Model\Requests\UpdateListOnlineRequest;
+use Aspose\Words\Model\Requests\UpdateListRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +63,7 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetListsRequest(
+        $request = new GetListsRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -76,7 +87,7 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetListsOnlineRequest(
+        $request = new GetListsOnlineRequest(
             $requestDocument,
             NULL,
             NULL
@@ -100,7 +111,7 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetListRequest(
+        $request = new GetListRequest(
             $remoteFileName,
             1,
             $remoteDataFolder,
@@ -123,7 +134,7 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetListOnlineRequest(
+        $request = new GetListOnlineRequest(
             $requestDocument,
             1,
             NULL,
@@ -148,10 +159,10 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
+        $requestListUpdate = new ListUpdate(array(
             "is_restart_at_each_section" => true,
         ));
-        $request = new Requests\UpdateListRequest(
+        $request = new UpdateListRequest(
             $remoteFileName,
             1,
             $requestListUpdate,
@@ -176,10 +187,10 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
+        $requestListUpdate = new ListUpdate(array(
             "is_restart_at_each_section" => true,
         ));
-        $request = new Requests\UpdateListOnlineRequest(
+        $request = new UpdateListOnlineRequest(
             $requestDocument,
             1,
             $requestListUpdate,
@@ -211,10 +222,10 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
+        $requestListUpdate = new ListLevelUpdate(array(
             "alignment" => "Right",
         ));
-        $request = new Requests\UpdateListLevelRequest(
+        $request = new UpdateListLevelRequest(
             $remoteFileName,
             1,
             1,
@@ -240,10 +251,10 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
+        $requestListUpdate = new ListLevelUpdate(array(
             "alignment" => "Right",
         ));
-        $request = new Requests\UpdateListLevelOnlineRequest(
+        $request = new UpdateListLevelOnlineRequest(
             $requestDocument,
             1,
             $requestListUpdate,
@@ -278,10 +289,10 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
+        $requestListInsert = new ListInsert(array(
             "template" => "OutlineLegal",
         ));
-        $request = new Requests\InsertListRequest(
+        $request = new InsertListRequest(
             $remoteFileName,
             $requestListInsert,
             $remoteDataFolder,
@@ -307,10 +318,10 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
+        $requestListInsert = new ListInsert(array(
             "template" => "OutlineLegal",
         ));
-        $request = new Requests\InsertListOnlineRequest(
+        $request = new InsertListOnlineRequest(
             $requestDocument,
             $requestListInsert,
             NULL,

@@ -29,8 +29,9 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\ClassifyDocumentOnlineRequest;
+use Aspose\Words\Model\Requests\ClassifyDocumentRequest;
+use Aspose\Words\Model\Requests\ClassifyRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -43,7 +44,7 @@ class ClassificationTests extends BaseTestContext
      */
     public function testClassify()
     {
-        $request = new Requests\ClassifyRequest(
+        $request = new ClassifyRequest(
             "Try text classification",
             "3"
         );
@@ -69,7 +70,7 @@ class ClassificationTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\ClassifyDocumentRequest(
+        $request = new ClassifyDocumentRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -94,7 +95,7 @@ class ClassificationTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\ClassifyDocumentOnlineRequest(
+        $request = new ClassifyDocumentOnlineRequest(
             $requestDocument,
             NULL,
             NULL,

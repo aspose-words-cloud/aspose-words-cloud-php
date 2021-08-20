@@ -29,8 +29,15 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\DocumentPropertyCreateOrUpdate;
+use Aspose\Words\Model\Requests\CreateOrUpdateDocumentPropertyOnlineRequest;
+use Aspose\Words\Model\Requests\CreateOrUpdateDocumentPropertyRequest;
+use Aspose\Words\Model\Requests\DeleteDocumentPropertyOnlineRequest;
+use Aspose\Words\Model\Requests\DeleteDocumentPropertyRequest;
+use Aspose\Words\Model\Requests\GetDocumentPropertiesOnlineRequest;
+use Aspose\Words\Model\Requests\GetDocumentPropertiesRequest;
+use Aspose\Words\Model\Requests\GetDocumentPropertyOnlineRequest;
+use Aspose\Words\Model\Requests\GetDocumentPropertyRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +59,7 @@ class DocumentPropertiesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentPropertiesRequest(
+        $request = new GetDocumentPropertiesRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -78,7 +85,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetDocumentPropertiesOnlineRequest(
+        $request = new GetDocumentPropertiesOnlineRequest(
             $requestDocument,
             NULL,
             NULL
@@ -102,7 +109,7 @@ class DocumentPropertiesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentPropertyRequest(
+        $request = new GetDocumentPropertyRequest(
             $remoteFileName,
             "Author",
             $remoteDataFolder,
@@ -126,7 +133,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetDocumentPropertyOnlineRequest(
+        $request = new GetDocumentPropertyOnlineRequest(
             $requestDocument,
             "Author",
             NULL,
@@ -151,7 +158,7 @@ class DocumentPropertiesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteDocumentPropertyRequest(
+        $request = new DeleteDocumentPropertyRequest(
             $remoteFileName,
             "testProp",
             $remoteDataFolder,
@@ -174,7 +181,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\DeleteDocumentPropertyOnlineRequest(
+        $request = new DeleteDocumentPropertyOnlineRequest(
             $requestDocument,
             "testProp",
             NULL,
@@ -202,10 +209,10 @@ class DocumentPropertiesTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
+        $requestProperty = new DocumentPropertyCreateOrUpdate(array(
             "value" => "Imran Anwar",
         ));
-        $request = new Requests\CreateOrUpdateDocumentPropertyRequest(
+        $request = new CreateOrUpdateDocumentPropertyRequest(
             $remoteFileName,
             "AsposeAuthor",
             $requestProperty,
@@ -233,10 +240,10 @@ class DocumentPropertiesTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
+        $requestProperty = new DocumentPropertyCreateOrUpdate(array(
             "value" => "Imran Anwar",
         ));
-        $request = new Requests\CreateOrUpdateDocumentPropertyOnlineRequest(
+        $request = new CreateOrUpdateDocumentPropertyOnlineRequest(
             $requestDocument,
             "AsposeAuthor",
             $requestProperty,

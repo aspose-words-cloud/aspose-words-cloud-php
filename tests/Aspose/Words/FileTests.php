@@ -29,8 +29,11 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\CopyFileRequest;
+use Aspose\Words\Model\Requests\DeleteFileRequest;
+use Aspose\Words\Model\Requests\DownloadFileRequest;
+use Aspose\Words\Model\Requests\MoveFileRequest;
+use Aspose\Words\Model\Requests\UploadFileRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -48,7 +51,7 @@ class FileTests extends BaseTestContext
         $remoteFileName = "TestUploadFile.docx";
 
         $requestFileContent = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\UploadFileRequest(
+        $request = new UploadFileRequest(
             $requestFileContent,
             $remoteDataFolder . "/" . $remoteFileName,
             NULL
@@ -75,7 +78,7 @@ class FileTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\CopyFileRequest(
+        $request = new CopyFileRequest(
             $remoteDataFolder . "/TestCopyFileDest.docx",
             $remoteDataFolder . "/" . $remoteFileName,
             NULL,
@@ -100,7 +103,7 @@ class FileTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\MoveFileRequest(
+        $request = new MoveFileRequest(
             self::$baseTestOutPath . "/TestMoveFileDest_" . $this->getGUID() . ".docx",
             $remoteDataFolder . "/" . $remoteFileName,
             NULL,
@@ -125,7 +128,7 @@ class FileTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFileRequest(
+        $request = new DeleteFileRequest(
             $remoteDataFolder . "/" . $remoteFileName,
             NULL,
             NULL
@@ -148,7 +151,7 @@ class FileTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DownloadFileRequest(
+        $request = new DownloadFileRequest(
             $remoteDataFolder . "/" . $remoteFileName,
             NULL,
             NULL

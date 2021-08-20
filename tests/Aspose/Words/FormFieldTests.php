@@ -29,8 +29,17 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\FormField;
+use Aspose\Words\Model\Requests\DeleteFormFieldOnlineRequest;
+use Aspose\Words\Model\Requests\DeleteFormFieldRequest;
+use Aspose\Words\Model\Requests\GetFormFieldOnlineRequest;
+use Aspose\Words\Model\Requests\GetFormFieldRequest;
+use Aspose\Words\Model\Requests\GetFormFieldsOnlineRequest;
+use Aspose\Words\Model\Requests\GetFormFieldsRequest;
+use Aspose\Words\Model\Requests\InsertFormFieldOnlineRequest;
+use Aspose\Words\Model\Requests\InsertFormFieldRequest;
+use Aspose\Words\Model\Requests\UpdateFormFieldOnlineRequest;
+use Aspose\Words\Model\Requests\UpdateFormFieldRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +61,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -60,7 +69,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_type" => "Regular",
             "text_input_default" => "No name",
         ));
-        $request = new Requests\UpdateFormFieldRequest(
+        $request = new UpdateFormFieldRequest(
             $remoteFileName,
             0,
             $requestFormField,
@@ -89,7 +98,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -97,7 +106,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_type" => "Regular",
             "text_input_default" => "No name",
         ));
-        $request = new Requests\UpdateFormFieldOnlineRequest(
+        $request = new UpdateFormFieldOnlineRequest(
             $requestDocument,
             $requestFormField,
             0,
@@ -127,7 +136,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -135,7 +144,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_type" => "Regular",
             "text_input_default" => "No name",
         ));
-        $request = new Requests\UpdateFormFieldRequest(
+        $request = new UpdateFormFieldRequest(
             $remoteFileName,
             0,
             $requestFormField,
@@ -170,7 +179,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFormFieldRequest(
+        $request = new GetFormFieldRequest(
             $remoteFileName,
             0,
             "sections/0",
@@ -194,7 +203,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
-        $request = new Requests\GetFormFieldOnlineRequest(
+        $request = new GetFormFieldOnlineRequest(
             $requestDocument,
             0,
             "sections/0",
@@ -220,7 +229,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFormFieldRequest(
+        $request = new GetFormFieldRequest(
             $remoteFileName,
             0,
             NULL,
@@ -250,7 +259,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFormFieldsRequest(
+        $request = new GetFormFieldsRequest(
             $remoteFileName,
             "sections/0",
             $remoteDataFolder,
@@ -275,7 +284,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
-        $request = new Requests\GetFormFieldsOnlineRequest(
+        $request = new GetFormFieldsOnlineRequest(
             $requestDocument,
             "sections/0",
             NULL,
@@ -300,7 +309,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFormFieldsRequest(
+        $request = new GetFormFieldsRequest(
             $remoteFileName,
             NULL,
             $remoteDataFolder,
@@ -330,7 +339,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -339,7 +348,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_default" => "123",
             "text_input_format" => "UPPERCASE",
         ));
-        $request = new Requests\InsertFormFieldRequest(
+        $request = new InsertFormFieldRequest(
             $remoteFileName,
             $requestFormField,
             "sections/0/paragraphs/0",
@@ -368,7 +377,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -377,7 +386,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_default" => "123",
             "text_input_format" => "UPPERCASE",
         ));
-        $request = new Requests\InsertFormFieldOnlineRequest(
+        $request = new InsertFormFieldOnlineRequest(
             $requestDocument,
             $requestFormField,
             "sections/0/paragraphs/0",
@@ -406,7 +415,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -415,7 +424,7 @@ class FormFieldTests extends BaseTestContext
             "text_input_default" => "123",
             "text_input_format" => "UPPERCASE",
         ));
-        $request = new Requests\InsertFormFieldRequest(
+        $request = new InsertFormFieldRequest(
             $remoteFileName,
             $requestFormField,
             NULL,
@@ -450,7 +459,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFormFieldRequest(
+        $request = new DeleteFormFieldRequest(
             $remoteFileName,
             0,
             "sections/0",
@@ -474,7 +483,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
-        $request = new Requests\DeleteFormFieldOnlineRequest(
+        $request = new DeleteFormFieldOnlineRequest(
             $requestDocument,
             0,
             "sections/0",
@@ -503,7 +512,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFormFieldRequest(
+        $request = new DeleteFormFieldRequest(
             $remoteFileName,
             0,
             NULL,

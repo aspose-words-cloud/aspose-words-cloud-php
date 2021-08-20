@@ -29,8 +29,9 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\DocumentEntryList;
+use Aspose\Words\Model\Requests\AppendDocumentOnlineRequest;
+use Aspose\Words\Model\Requests\AppendDocumentRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,17 +53,17 @@ class AppendDocumentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDocumentListDocumentEntries0 = new \Aspose\Words\Model\DocumentEntry(array(
+        $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName,
             "import_format_mode" => "KeepSourceFormatting",
         ));
         $requestDocumentListDocumentEntries = [
             $requestDocumentListDocumentEntries0,
         ];
-        $requestDocumentList = new \Aspose\Words\Model\DocumentEntryList(array(
+        $requestDocumentList = new DocumentEntryList(array(
             "document_entries" => $requestDocumentListDocumentEntries,
         ));
-        $request = new Requests\AppendDocumentRequest(
+        $request = new AppendDocumentRequest(
             $remoteFileName,
             $requestDocumentList,
             $remoteDataFolder,
@@ -95,17 +96,17 @@ class AppendDocumentTests extends BaseTestContext
         );
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestDocumentListDocumentEntries0 = new \Aspose\Words\Model\DocumentEntry(array(
+        $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName,
             "import_format_mode" => "KeepSourceFormatting",
         ));
         $requestDocumentListDocumentEntries = [
             $requestDocumentListDocumentEntries0,
         ];
-        $requestDocumentList = new \Aspose\Words\Model\DocumentEntryList(array(
+        $requestDocumentList = new DocumentEntryList(array(
             "document_entries" => $requestDocumentListDocumentEntries,
         ));
-        $request = new Requests\AppendDocumentOnlineRequest(
+        $request = new AppendDocumentOnlineRequest(
             $requestDocument,
             $requestDocumentList,
             NULL,

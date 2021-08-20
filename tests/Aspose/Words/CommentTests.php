@@ -29,8 +29,20 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\CommentInsert;
+use Aspose\Words\Model\CommentUpdate;
+use Aspose\Words\Model\Requests\DeleteCommentOnlineRequest;
+use Aspose\Words\Model\Requests\DeleteCommentRequest;
+use Aspose\Words\Model\Requests\DeleteCommentsOnlineRequest;
+use Aspose\Words\Model\Requests\DeleteCommentsRequest;
+use Aspose\Words\Model\Requests\GetCommentOnlineRequest;
+use Aspose\Words\Model\Requests\GetCommentRequest;
+use Aspose\Words\Model\Requests\GetCommentsOnlineRequest;
+use Aspose\Words\Model\Requests\GetCommentsRequest;
+use Aspose\Words\Model\Requests\InsertCommentOnlineRequest;
+use Aspose\Words\Model\Requests\InsertCommentRequest;
+use Aspose\Words\Model\Requests\UpdateCommentOnlineRequest;
+use Aspose\Words\Model\Requests\UpdateCommentRequest;
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +64,7 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetCommentRequest(
+        $request = new GetCommentRequest(
             $remoteFileName,
             0,
             $remoteDataFolder,
@@ -75,7 +87,7 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetCommentOnlineRequest(
+        $request = new GetCommentOnlineRequest(
             $requestDocument,
             0,
             NULL,
@@ -100,7 +112,7 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetCommentsRequest(
+        $request = new GetCommentsRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -124,7 +136,7 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\GetCommentsOnlineRequest(
+        $request = new GetCommentsOnlineRequest(
             $requestDocument,
             NULL,
             NULL
@@ -148,28 +160,28 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeStartNode = new NodeLink(array(
             "node_id" => "0.3.0.3",
         ));
-        $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+        $requestCommentRangeStart = new DocumentPosition(array(
             "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeEndNode = new NodeLink(array(
             "node_id" => "0.3.0.3",
         ));
-        $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+        $requestCommentRangeEnd = new DocumentPosition(array(
             "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
-        $requestComment = new \Aspose\Words\Model\CommentInsert(array(
+        $requestComment = new CommentInsert(array(
             "range_start" => $requestCommentRangeStart,
             "range_end" => $requestCommentRangeEnd,
             "initial" => "IA",
             "author" => "Imran Anwar",
             "text" => "A new Comment",
         ));
-        $request = new Requests\InsertCommentRequest(
+        $request = new InsertCommentRequest(
             $remoteFileName,
             $requestComment,
             $remoteDataFolder,
@@ -198,28 +210,28 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeStartNode = new NodeLink(array(
             "node_id" => "0.3.0.3",
         ));
-        $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+        $requestCommentRangeStart = new DocumentPosition(array(
             "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeEndNode = new NodeLink(array(
             "node_id" => "0.3.0.3",
         ));
-        $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+        $requestCommentRangeEnd = new DocumentPosition(array(
             "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
-        $requestComment = new \Aspose\Words\Model\CommentInsert(array(
+        $requestComment = new CommentInsert(array(
             "range_start" => $requestCommentRangeStart,
             "range_end" => $requestCommentRangeEnd,
             "initial" => "IA",
             "author" => "Imran Anwar",
             "text" => "A new Comment",
         ));
-        $request = new Requests\InsertCommentOnlineRequest(
+        $request = new InsertCommentOnlineRequest(
             $requestDocument,
             $requestComment,
             NULL,
@@ -247,28 +259,28 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeStartNode = new NodeLink(array(
             "node_id" => "0.3.0",
         ));
-        $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+        $requestCommentRangeStart = new DocumentPosition(array(
             "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeEndNode = new NodeLink(array(
             "node_id" => "0.3.0",
         ));
-        $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+        $requestCommentRangeEnd = new DocumentPosition(array(
             "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
-        $requestComment = new \Aspose\Words\Model\CommentUpdate(array(
+        $requestComment = new CommentUpdate(array(
             "range_start" => $requestCommentRangeStart,
             "range_end" => $requestCommentRangeEnd,
             "initial" => "IA",
             "author" => "Imran Anwar",
             "text" => "A new Comment",
         ));
-        $request = new Requests\UpdateCommentRequest(
+        $request = new UpdateCommentRequest(
             $remoteFileName,
             0,
             $requestComment,
@@ -298,28 +310,28 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeStartNode = new NodeLink(array(
             "node_id" => "0.3.0",
         ));
-        $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+        $requestCommentRangeStart = new DocumentPosition(array(
             "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+        $requestCommentRangeEndNode = new NodeLink(array(
             "node_id" => "0.3.0",
         ));
-        $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+        $requestCommentRangeEnd = new DocumentPosition(array(
             "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
-        $requestComment = new \Aspose\Words\Model\CommentUpdate(array(
+        $requestComment = new CommentUpdate(array(
             "range_start" => $requestCommentRangeStart,
             "range_end" => $requestCommentRangeEnd,
             "initial" => "IA",
             "author" => "Imran Anwar",
             "text" => "A new Comment",
         ));
-        $request = new Requests\UpdateCommentOnlineRequest(
+        $request = new UpdateCommentOnlineRequest(
             $requestDocument,
             0,
             $requestComment,
@@ -348,7 +360,7 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteCommentRequest(
+        $request = new DeleteCommentRequest(
             $remoteFileName,
             0,
             $remoteDataFolder,
@@ -371,7 +383,7 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\DeleteCommentOnlineRequest(
+        $request = new DeleteCommentOnlineRequest(
             $requestDocument,
             0,
             NULL,
@@ -399,7 +411,7 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteCommentsRequest(
+        $request = new DeleteCommentsRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -421,7 +433,7 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $request = new Requests\DeleteCommentsOnlineRequest(
+        $request = new DeleteCommentsOnlineRequest(
             $requestDocument,
             NULL,
             NULL,

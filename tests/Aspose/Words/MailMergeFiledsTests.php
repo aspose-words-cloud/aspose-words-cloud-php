@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{GetDocumentFieldNamesOnlineRequest, GetDocumentFieldNamesRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -46,8 +45,9 @@ class MailMergeFiledsTests extends BaseTestContext
         $mailMergeFolder = "DocumentActions/MailMerge";
         $localDocumentFile = "SampleExecuteTemplate.docx";
 
-        $request = new Requests\GetDocumentFieldNamesOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile,
+        $requestTemplate = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile;
+        $request = new GetDocumentFieldNamesOnlineRequest(
+            $requestTemplate,
             NULL,
             NULL,
             true
@@ -74,7 +74,7 @@ class MailMergeFiledsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentFieldNamesRequest(
+        $request = new GetDocumentFieldNamesRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,

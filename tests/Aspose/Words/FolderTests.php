@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{CopyFolderRequest, CreateFolderRequest, DeleteFolderRequest, GetFilesListRequest, MoveFolderRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -45,7 +44,7 @@ class FolderTests extends BaseTestContext
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
 
-        $request = new Requests\CreateFolderRequest(
+        $request = new CreateFolderRequest(
             $remoteDataFolder . "/TestCreateFolder",
             NULL
         );
@@ -67,7 +66,7 @@ class FolderTests extends BaseTestContext
             $testDeleteFolder . "/TestDeleteFolder.docx"
         );
 
-        $request = new Requests\DeleteFolderRequest(
+        $request = new DeleteFolderRequest(
             $testDeleteFolder,
             NULL,
             NULL
@@ -83,7 +82,7 @@ class FolderTests extends BaseTestContext
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/Storage";
 
-        $request = new Requests\GetFilesListRequest(
+        $request = new GetFilesListRequest(
             $remoteDataFolder,
             NULL
         );
@@ -107,7 +106,7 @@ class FolderTests extends BaseTestContext
             $folderToCopy . "Src/TestCopyFolderSrc.docx"
         );
 
-        $request = new Requests\CopyFolderRequest(
+        $request = new CopyFolderRequest(
             $folderToCopy . "Dest",
             $folderToCopy . "Src",
             NULL,
@@ -130,7 +129,7 @@ class FolderTests extends BaseTestContext
             $remoteDataFolder . "/TestMoveFolderSrc/TestMoveFolderSrc.docx"
         );
 
-        $request = new Requests\MoveFolderRequest(
+        $request = new MoveFolderRequest(
             self::$baseTestOutPath . "/TestMoveFolderDest_" . $this->getGUID(),
             $remoteDataFolder . "/TestMoveFolderSrc",
             NULL,

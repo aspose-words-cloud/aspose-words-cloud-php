@@ -29,9 +29,10 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsRequest, UploadFileRequest};
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsOnlineRequest};
 use PHPUnit\Framework\Assert;
+
 class ExamplesTests extends BaseTestContext
 {
     public function setUp() : void
@@ -51,23 +52,19 @@ class ExamplesTests extends BaseTestContext
       /**
        * Upload original document to cloud storage.
        */
-      $uploadFileRequest = new Requests\UploadFileRequest(
-          $documentsDir . $fileName,
-          $fileName,
-          NULL
+      $myVar1 = $documentsDir . $fileName;
+      $myVar2 = $fileName;
+      $uploadFileRequest = new UploadFileRequest(
+          $myVar1, $myVar2, NULL
       );
       $wordsApi->uploadFile($uploadFileRequest);
 
       /**
        * Calls AcceptAllRevisions method for document in cloud.
        */
-      $request = new Requests\AcceptAllRevisionsRequest(
-          $fileName,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $myVar3 = $fileName;
+      $request = new AcceptAllRevisionsRequest(
+          $myVar3, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->acceptAllRevisions($request);
     }
@@ -83,11 +80,9 @@ class ExamplesTests extends BaseTestContext
       /**
        * Calls AcceptAllRevisionsOnline method for document in cloud.
        */
-      $request = new Requests\AcceptAllRevisionsOnlineRequest(
-          $documentsDir . $fileName,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . $fileName;
+      $request = new AcceptAllRevisionsOnlineRequest(
+          $requestDocument, NULL, NULL, NULL
       );
       $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);
       rename($acceptAllRevisionsOnlineResult->getDocument()->getPathname(), 'test_result.docx');

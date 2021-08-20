@@ -29,24 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\DrawingObjectInsert;
-use Aspose\Words\Model\DrawingObjectUpdate;
-use Aspose\Words\Model\Requests\DeleteDrawingObjectOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteDrawingObjectRequest;
-use Aspose\Words\Model\Requests\GetDocumentDrawingObjectByIndexOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentDrawingObjectByIndexRequest;
-use Aspose\Words\Model\Requests\GetDocumentDrawingObjectImageDataOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentDrawingObjectImageDataRequest;
-use Aspose\Words\Model\Requests\GetDocumentDrawingObjectOleDataOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentDrawingObjectOleDataRequest;
-use Aspose\Words\Model\Requests\GetDocumentDrawingObjectsOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentDrawingObjectsRequest;
-use Aspose\Words\Model\Requests\InsertDrawingObjectOnlineRequest;
-use Aspose\Words\Model\Requests\InsertDrawingObjectRequest;
-use Aspose\Words\Model\Requests\RenderDrawingObjectOnlineRequest;
-use Aspose\Words\Model\Requests\RenderDrawingObjectRequest;
-use Aspose\Words\Model\Requests\UpdateDrawingObjectOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateDrawingObjectRequest;
+use Aspose\Words\Model\Requests\{DeleteDrawingObjectOnlineRequest, DeleteDrawingObjectRequest, GetDocumentDrawingObjectByIndexOnlineRequest, GetDocumentDrawingObjectByIndexRequest, GetDocumentDrawingObjectImageDataOnlineRequest, GetDocumentDrawingObjectImageDataRequest, GetDocumentDrawingObjectOleDataOnlineRequest, GetDocumentDrawingObjectOleDataRequest, GetDocumentDrawingObjectsOnlineRequest, GetDocumentDrawingObjectsRequest, InsertDrawingObjectOnlineRequest, InsertDrawingObjectRequest, RenderDrawingObjectOnlineRequest, RenderDrawingObjectRequest, UpdateDrawingObjectOnlineRequest, UpdateDrawingObjectRequest};
+use Aspose\Words\Model\{DrawingObjectInsert, DrawingObjectUpdate};
 use PHPUnit\Framework\Assert;
 
 /*

@@ -29,22 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\CommentInsert;
-use Aspose\Words\Model\CommentUpdate;
-use Aspose\Words\Model\DocumentPosition;
-use Aspose\Words\Model\NodeLink;
-use Aspose\Words\Model\Requests\DeleteCommentOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteCommentRequest;
-use Aspose\Words\Model\Requests\DeleteCommentsOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteCommentsRequest;
-use Aspose\Words\Model\Requests\GetCommentOnlineRequest;
-use Aspose\Words\Model\Requests\GetCommentRequest;
-use Aspose\Words\Model\Requests\GetCommentsOnlineRequest;
-use Aspose\Words\Model\Requests\GetCommentsRequest;
-use Aspose\Words\Model\Requests\InsertCommentOnlineRequest;
-use Aspose\Words\Model\Requests\InsertCommentRequest;
-use Aspose\Words\Model\Requests\UpdateCommentOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateCommentRequest;
+use Aspose\Words\Model\Requests\{DeleteCommentOnlineRequest, DeleteCommentRequest, DeleteCommentsOnlineRequest, DeleteCommentsRequest, GetCommentOnlineRequest, GetCommentRequest, GetCommentsOnlineRequest, GetCommentsRequest, InsertCommentOnlineRequest, InsertCommentRequest, UpdateCommentOnlineRequest, UpdateCommentRequest};
+use Aspose\Words\Model\{CommentInsert, CommentUpdate, DocumentPosition, NodeLink};
 use PHPUnit\Framework\Assert;
 
 /*

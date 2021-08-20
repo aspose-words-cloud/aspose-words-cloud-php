@@ -29,13 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\PageSetup;
-use Aspose\Words\Model\Requests\GetSectionPageSetupOnlineRequest;
-use Aspose\Words\Model\Requests\GetSectionPageSetupRequest;
-use Aspose\Words\Model\Requests\RenderPageOnlineRequest;
-use Aspose\Words\Model\Requests\RenderPageRequest;
-use Aspose\Words\Model\Requests\UpdateSectionPageSetupOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateSectionPageSetupRequest;
+use Aspose\Words\Model\Requests\{GetSectionPageSetupOnlineRequest, GetSectionPageSetupRequest, RenderPageOnlineRequest, RenderPageRequest, UpdateSectionPageSetupOnlineRequest, UpdateSectionPageSetupRequest};
+use Aspose\Words\Model\{PageSetup};
 use PHPUnit\Framework\Assert;
 
 /*

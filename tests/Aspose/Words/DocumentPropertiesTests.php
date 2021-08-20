@@ -29,15 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\DocumentPropertyCreateOrUpdate;
-use Aspose\Words\Model\Requests\CreateOrUpdateDocumentPropertyOnlineRequest;
-use Aspose\Words\Model\Requests\CreateOrUpdateDocumentPropertyRequest;
-use Aspose\Words\Model\Requests\DeleteDocumentPropertyOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteDocumentPropertyRequest;
-use Aspose\Words\Model\Requests\GetDocumentPropertiesOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentPropertiesRequest;
-use Aspose\Words\Model\Requests\GetDocumentPropertyOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentPropertyRequest;
+use Aspose\Words\Model\Requests\{CreateOrUpdateDocumentPropertyOnlineRequest, CreateOrUpdateDocumentPropertyRequest, DeleteDocumentPropertyOnlineRequest, DeleteDocumentPropertyRequest, GetDocumentPropertiesOnlineRequest, GetDocumentPropertiesRequest, GetDocumentPropertyOnlineRequest, GetDocumentPropertyRequest};
+use Aspose\Words\Model\{DocumentPropertyCreateOrUpdate};
 use PHPUnit\Framework\Assert;
 
 /*

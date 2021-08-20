@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\GetDocumentWithFormatRequest;
+use Aspose\Words\Model\Requests\{GetDocumentWithFormatRequest};
 use PHPUnit\Framework\Assert;
 
 /*

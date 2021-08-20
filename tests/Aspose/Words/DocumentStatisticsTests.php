@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\GetDocumentStatisticsOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentStatisticsRequest;
+use Aspose\Words\Model\Requests\{GetDocumentStatisticsOnlineRequest, GetDocumentStatisticsRequest};
 use PHPUnit\Framework\Assert;
 
 /*

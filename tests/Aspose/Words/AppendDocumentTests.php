@@ -29,10 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\DocumentEntry;
-use Aspose\Words\Model\DocumentEntryList;
-use Aspose\Words\Model\Requests\AppendDocumentOnlineRequest;
-use Aspose\Words\Model\Requests\AppendDocumentRequest;
+use Aspose\Words\Model\Requests\{AppendDocumentOnlineRequest, AppendDocumentRequest};
+use Aspose\Words\Model\{DocumentEntry, DocumentEntryList};
 use PHPUnit\Framework\Assert;
 
 /*

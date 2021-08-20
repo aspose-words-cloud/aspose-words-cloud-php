@@ -29,13 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\ConvertDocumentRequest;
-use Aspose\Words\Model\Requests\SaveAsOnlineRequest;
-use Aspose\Words\Model\Requests\SaveAsRequest;
-use Aspose\Words\Model\Requests\SaveAsTiffOnlineRequest;
-use Aspose\Words\Model\Requests\SaveAsTiffRequest;
-use Aspose\Words\Model\SaveOptionsData;
-use Aspose\Words\Model\TiffSaveOptionsData;
+use Aspose\Words\Model\Requests\{ConvertDocumentRequest, SaveAsOnlineRequest, SaveAsRequest, SaveAsTiffOnlineRequest, SaveAsTiffRequest};
+use Aspose\Words\Model\{SaveOptionsData, TiffSaveOptionsData};
 use PHPUnit\Framework\Assert;
 
 /*

@@ -29,19 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\ListInsert;
-use Aspose\Words\Model\ListLevelUpdate;
-use Aspose\Words\Model\ListUpdate;
-use Aspose\Words\Model\Requests\GetListOnlineRequest;
-use Aspose\Words\Model\Requests\GetListRequest;
-use Aspose\Words\Model\Requests\GetListsOnlineRequest;
-use Aspose\Words\Model\Requests\GetListsRequest;
-use Aspose\Words\Model\Requests\InsertListOnlineRequest;
-use Aspose\Words\Model\Requests\InsertListRequest;
-use Aspose\Words\Model\Requests\UpdateListLevelOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateListLevelRequest;
-use Aspose\Words\Model\Requests\UpdateListOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateListRequest;
+use Aspose\Words\Model\Requests\{GetListOnlineRequest, GetListRequest, GetListsOnlineRequest, GetListsRequest, InsertListOnlineRequest, InsertListRequest, UpdateListLevelOnlineRequest, UpdateListLevelRequest, UpdateListOnlineRequest, UpdateListRequest};
+use Aspose\Words\Model\{ListInsert, ListLevelUpdate, ListUpdate};
 use PHPUnit\Framework\Assert;
 
 /*

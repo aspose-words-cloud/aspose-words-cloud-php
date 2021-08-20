@@ -29,25 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\FieldInsert;
-use Aspose\Words\Model\FieldUpdate;
-use Aspose\Words\Model\PageNumber;
-use Aspose\Words\Model\Requests\DeleteFieldOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteFieldRequest;
-use Aspose\Words\Model\Requests\DeleteFieldsOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteFieldsRequest;
-use Aspose\Words\Model\Requests\GetFieldOnlineRequest;
-use Aspose\Words\Model\Requests\GetFieldRequest;
-use Aspose\Words\Model\Requests\GetFieldsOnlineRequest;
-use Aspose\Words\Model\Requests\GetFieldsRequest;
-use Aspose\Words\Model\Requests\InsertFieldOnlineRequest;
-use Aspose\Words\Model\Requests\InsertFieldRequest;
-use Aspose\Words\Model\Requests\InsertPageNumbersOnlineRequest;
-use Aspose\Words\Model\Requests\InsertPageNumbersRequest;
-use Aspose\Words\Model\Requests\UpdateFieldOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateFieldRequest;
-use Aspose\Words\Model\Requests\UpdateFieldsOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateFieldsRequest;
+use Aspose\Words\Model\Requests\{DeleteFieldOnlineRequest, DeleteFieldRequest, DeleteFieldsOnlineRequest, DeleteFieldsRequest, GetFieldOnlineRequest, GetFieldRequest, GetFieldsOnlineRequest, GetFieldsRequest, InsertFieldOnlineRequest, InsertFieldRequest, InsertPageNumbersOnlineRequest, InsertPageNumbersRequest, UpdateFieldOnlineRequest, UpdateFieldRequest, UpdateFieldsOnlineRequest, UpdateFieldsRequest};
+use Aspose\Words\Model\{FieldInsert, FieldUpdate, PageNumber};
 use PHPUnit\Framework\Assert;
 
 /*

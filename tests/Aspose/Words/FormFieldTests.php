@@ -29,17 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\FormFieldTextInput;
-use Aspose\Words\Model\Requests\DeleteFormFieldOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteFormFieldRequest;
-use Aspose\Words\Model\Requests\GetFormFieldOnlineRequest;
-use Aspose\Words\Model\Requests\GetFormFieldRequest;
-use Aspose\Words\Model\Requests\GetFormFieldsOnlineRequest;
-use Aspose\Words\Model\Requests\GetFormFieldsRequest;
-use Aspose\Words\Model\Requests\InsertFormFieldOnlineRequest;
-use Aspose\Words\Model\Requests\InsertFormFieldRequest;
-use Aspose\Words\Model\Requests\UpdateFormFieldOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateFormFieldRequest;
+use Aspose\Words\Model\Requests\{DeleteFormFieldOnlineRequest, DeleteFormFieldRequest, GetFormFieldOnlineRequest, GetFormFieldRequest, GetFormFieldsOnlineRequest, GetFormFieldsRequest, InsertFormFieldOnlineRequest, InsertFormFieldRequest, UpdateFormFieldOnlineRequest, UpdateFormFieldRequest};
+use Aspose\Words\Model\{FormFieldTextInput};
 use PHPUnit\Framework\Assert;
 
 /*

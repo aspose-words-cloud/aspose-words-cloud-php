@@ -29,13 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\BookmarkData;
-use Aspose\Words\Model\Requests\GetBookmarkByNameOnlineRequest;
-use Aspose\Words\Model\Requests\GetBookmarkByNameRequest;
-use Aspose\Words\Model\Requests\GetBookmarksOnlineRequest;
-use Aspose\Words\Model\Requests\GetBookmarksRequest;
-use Aspose\Words\Model\Requests\UpdateBookmarkOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateBookmarkRequest;
+use Aspose\Words\Model\Requests\{GetBookmarkByNameOnlineRequest, GetBookmarkByNameRequest, GetBookmarksOnlineRequest, GetBookmarksRequest, UpdateBookmarkOnlineRequest, UpdateBookmarkRequest};
+use Aspose\Words\Model\{BookmarkData};
 use PHPUnit\Framework\Assert;
 
 /*

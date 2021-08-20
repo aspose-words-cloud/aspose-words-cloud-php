@@ -29,13 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\ProtectionRequest;
-use Aspose\Words\Model\Requests\GetDocumentProtectionOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentProtectionRequest;
-use Aspose\Words\Model\Requests\ProtectDocumentOnlineRequest;
-use Aspose\Words\Model\Requests\ProtectDocumentRequest;
-use Aspose\Words\Model\Requests\UnprotectDocumentOnlineRequest;
-use Aspose\Words\Model\Requests\UnprotectDocumentRequest;
+use Aspose\Words\Model\Requests\{GetDocumentProtectionOnlineRequest, GetDocumentProtectionRequest, ProtectDocumentOnlineRequest, ProtectDocumentRequest, UnprotectDocumentOnlineRequest, UnprotectDocumentRequest};
+use Aspose\Words\Model\{ProtectionRequest};
 use PHPUnit\Framework\Assert;
 
 /*

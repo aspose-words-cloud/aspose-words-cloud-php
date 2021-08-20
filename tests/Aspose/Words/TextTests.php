@@ -29,11 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\ReplaceTextParameters;
-use Aspose\Words\Model\Requests\ReplaceTextOnlineRequest;
-use Aspose\Words\Model\Requests\ReplaceTextRequest;
-use Aspose\Words\Model\Requests\SearchOnlineRequest;
-use Aspose\Words\Model\Requests\SearchRequest;
+use Aspose\Words\Model\Requests\{ReplaceTextOnlineRequest, ReplaceTextRequest, SearchOnlineRequest, SearchRequest};
+use Aspose\Words\Model\{ReplaceTextParameters};
 use PHPUnit\Framework\Assert;
 
 /*

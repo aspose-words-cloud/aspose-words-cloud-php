@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\GetDocumentFieldNamesOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentFieldNamesRequest;
+use Aspose\Words\Model\Requests\{GetDocumentFieldNamesOnlineRequest, GetDocumentFieldNamesRequest};
 use PHPUnit\Framework\Assert;
 
 /*

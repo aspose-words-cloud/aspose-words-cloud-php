@@ -29,14 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\DeleteOfficeMathObjectOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteOfficeMathObjectRequest;
-use Aspose\Words\Model\Requests\GetOfficeMathObjectOnlineRequest;
-use Aspose\Words\Model\Requests\GetOfficeMathObjectRequest;
-use Aspose\Words\Model\Requests\GetOfficeMathObjectsOnlineRequest;
-use Aspose\Words\Model\Requests\GetOfficeMathObjectsRequest;
-use Aspose\Words\Model\Requests\RenderMathObjectOnlineRequest;
-use Aspose\Words\Model\Requests\RenderMathObjectRequest;
+use Aspose\Words\Model\Requests\{DeleteOfficeMathObjectOnlineRequest, DeleteOfficeMathObjectRequest, GetOfficeMathObjectOnlineRequest, GetOfficeMathObjectRequest, GetOfficeMathObjectsOnlineRequest, GetOfficeMathObjectsRequest, RenderMathObjectOnlineRequest, RenderMathObjectRequest};
 use PHPUnit\Framework\Assert;
 
 /*

@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\DeleteMacrosOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteMacrosRequest;
+use Aspose\Words\Model\Requests\{DeleteMacrosOnlineRequest, DeleteMacrosRequest};
 use PHPUnit\Framework\Assert;
 
 /*

@@ -29,10 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\GetDocumentHyperlinkByIndexOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentHyperlinkByIndexRequest;
-use Aspose\Words\Model\Requests\GetDocumentHyperlinksOnlineRequest;
-use Aspose\Words\Model\Requests\GetDocumentHyperlinksRequest;
+use Aspose\Words\Model\Requests\{GetDocumentHyperlinkByIndexOnlineRequest, GetDocumentHyperlinkByIndexRequest, GetDocumentHyperlinksOnlineRequest, GetDocumentHyperlinksRequest};
 use PHPUnit\Framework\Assert;
 
 /*

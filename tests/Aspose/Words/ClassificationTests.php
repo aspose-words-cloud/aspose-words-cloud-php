@@ -29,9 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\ClassifyDocumentOnlineRequest;
-use Aspose\Words\Model\Requests\ClassifyDocumentRequest;
-use Aspose\Words\Model\Requests\ClassifyRequest;
+use Aspose\Words\Model\Requests\{ClassifyDocumentOnlineRequest, ClassifyDocumentRequest, ClassifyRequest};
 use PHPUnit\Framework\Assert;
 
 /*

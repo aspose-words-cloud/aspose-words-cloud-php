@@ -29,20 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\CustomXmlPartInsert;
-use Aspose\Words\Model\CustomXmlPartUpdate;
-use Aspose\Words\Model\Requests\DeleteCustomXmlPartOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteCustomXmlPartRequest;
-use Aspose\Words\Model\Requests\DeleteCustomXmlPartsOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteCustomXmlPartsRequest;
-use Aspose\Words\Model\Requests\GetCustomXmlPartOnlineRequest;
-use Aspose\Words\Model\Requests\GetCustomXmlPartRequest;
-use Aspose\Words\Model\Requests\GetCustomXmlPartsOnlineRequest;
-use Aspose\Words\Model\Requests\GetCustomXmlPartsRequest;
-use Aspose\Words\Model\Requests\InsertCustomXmlPartOnlineRequest;
-use Aspose\Words\Model\Requests\InsertCustomXmlPartRequest;
-use Aspose\Words\Model\Requests\UpdateCustomXmlPartOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateCustomXmlPartRequest;
+use Aspose\Words\Model\Requests\{DeleteCustomXmlPartOnlineRequest, DeleteCustomXmlPartRequest, DeleteCustomXmlPartsOnlineRequest, DeleteCustomXmlPartsRequest, GetCustomXmlPartOnlineRequest, GetCustomXmlPartRequest, GetCustomXmlPartsOnlineRequest, GetCustomXmlPartsRequest, InsertCustomXmlPartOnlineRequest, InsertCustomXmlPartRequest, UpdateCustomXmlPartOnlineRequest, UpdateCustomXmlPartRequest};
+use Aspose\Words\Model\{CustomXmlPartInsert, CustomXmlPartUpdate};
 use PHPUnit\Framework\Assert;
 
 /*

@@ -29,9 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\ReportEngineSettings;
-use Aspose\Words\Model\Requests\BuildReportOnlineRequest;
-use Aspose\Words\Model\Requests\BuildReportRequest;
+use Aspose\Words\Model\Requests\{BuildReportOnlineRequest, BuildReportRequest};
+use Aspose\Words\Model\{ReportEngineSettings};
 use PHPUnit\Framework\Assert;
 
 /*

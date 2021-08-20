@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\SplitDocumentOnlineRequest;
-use Aspose\Words\Model\Requests\SplitDocumentRequest;
+use Aspose\Words\Model\Requests\{SplitDocumentOnlineRequest, SplitDocumentRequest};
 use PHPUnit\Framework\Assert;
 
 /*

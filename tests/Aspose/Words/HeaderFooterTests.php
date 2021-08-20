@@ -29,18 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\DeleteHeaderFooterOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteHeaderFooterRequest;
-use Aspose\Words\Model\Requests\DeleteHeadersFootersOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteHeadersFootersRequest;
-use Aspose\Words\Model\Requests\GetHeaderFooterOfSectionOnlineRequest;
-use Aspose\Words\Model\Requests\GetHeaderFooterOfSectionRequest;
-use Aspose\Words\Model\Requests\GetHeaderFooterOnlineRequest;
-use Aspose\Words\Model\Requests\GetHeaderFooterRequest;
-use Aspose\Words\Model\Requests\GetHeaderFootersOnlineRequest;
-use Aspose\Words\Model\Requests\GetHeaderFootersRequest;
-use Aspose\Words\Model\Requests\InsertHeaderFooterOnlineRequest;
-use Aspose\Words\Model\Requests\InsertHeaderFooterRequest;
+use Aspose\Words\Model\Requests\{DeleteHeaderFooterOnlineRequest, DeleteHeaderFooterRequest, DeleteHeadersFootersOnlineRequest, DeleteHeadersFootersRequest, GetHeaderFooterOfSectionOnlineRequest, GetHeaderFooterOfSectionRequest, GetHeaderFooterOnlineRequest, GetHeaderFooterRequest, GetHeaderFootersOnlineRequest, GetHeaderFootersRequest, InsertHeaderFooterOnlineRequest, InsertHeaderFooterRequest};
 use PHPUnit\Framework\Assert;
 
 /*

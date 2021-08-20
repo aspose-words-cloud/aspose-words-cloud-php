@@ -29,9 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\OptimizationOptions;
-use Aspose\Words\Model\Requests\OptimizeDocumentOnlineRequest;
-use Aspose\Words\Model\Requests\OptimizeDocumentRequest;
+use Aspose\Words\Model\Requests\{OptimizeDocumentOnlineRequest, OptimizeDocumentRequest};
+use Aspose\Words\Model\{OptimizationOptions};
 use PHPUnit\Framework\Assert;
 
 /*

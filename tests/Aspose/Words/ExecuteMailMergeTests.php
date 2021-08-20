@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\ExecuteMailMergeOnlineRequest;
-use Aspose\Words\Model\Requests\ExecuteMailMergeRequest;
+use Aspose\Words\Model\Requests\{ExecuteMailMergeOnlineRequest, ExecuteMailMergeRequest};
 use PHPUnit\Framework\Assert;
 
 /*

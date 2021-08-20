@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\GetAvailableFontsRequest;
-use Aspose\Words\Model\Requests\ResetCacheRequest;
+use Aspose\Words\Model\Requests\{GetAvailableFontsRequest, ResetCacheRequest};
 use PHPUnit\Framework\Assert;
 
 /*

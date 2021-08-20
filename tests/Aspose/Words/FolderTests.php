@@ -29,11 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\CopyFolderRequest;
-use Aspose\Words\Model\Requests\CreateFolderRequest;
-use Aspose\Words\Model\Requests\DeleteFolderRequest;
-use Aspose\Words\Model\Requests\GetFilesListRequest;
-use Aspose\Words\Model\Requests\MoveFolderRequest;
+use Aspose\Words\Model\Requests\{CopyFolderRequest, CreateFolderRequest, DeleteFolderRequest, GetFilesListRequest, MoveFolderRequest};
 use PHPUnit\Framework\Assert;
 
 /*

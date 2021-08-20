@@ -29,46 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\DeleteTableCellOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteTableCellRequest;
-use Aspose\Words\Model\Requests\DeleteTableOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteTableRequest;
-use Aspose\Words\Model\Requests\DeleteTableRowOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteTableRowRequest;
-use Aspose\Words\Model\Requests\GetTableCellFormatOnlineRequest;
-use Aspose\Words\Model\Requests\GetTableCellFormatRequest;
-use Aspose\Words\Model\Requests\GetTableCellOnlineRequest;
-use Aspose\Words\Model\Requests\GetTableCellRequest;
-use Aspose\Words\Model\Requests\GetTableOnlineRequest;
-use Aspose\Words\Model\Requests\GetTablePropertiesOnlineRequest;
-use Aspose\Words\Model\Requests\GetTablePropertiesRequest;
-use Aspose\Words\Model\Requests\GetTableRequest;
-use Aspose\Words\Model\Requests\GetTableRowFormatOnlineRequest;
-use Aspose\Words\Model\Requests\GetTableRowFormatRequest;
-use Aspose\Words\Model\Requests\GetTableRowOnlineRequest;
-use Aspose\Words\Model\Requests\GetTableRowRequest;
-use Aspose\Words\Model\Requests\GetTablesOnlineRequest;
-use Aspose\Words\Model\Requests\GetTablesRequest;
-use Aspose\Words\Model\Requests\InsertTableCellOnlineRequest;
-use Aspose\Words\Model\Requests\InsertTableCellRequest;
-use Aspose\Words\Model\Requests\InsertTableOnlineRequest;
-use Aspose\Words\Model\Requests\InsertTableRequest;
-use Aspose\Words\Model\Requests\InsertTableRowOnlineRequest;
-use Aspose\Words\Model\Requests\InsertTableRowRequest;
-use Aspose\Words\Model\Requests\RenderTableOnlineRequest;
-use Aspose\Words\Model\Requests\RenderTableRequest;
-use Aspose\Words\Model\Requests\UpdateTableCellFormatOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateTableCellFormatRequest;
-use Aspose\Words\Model\Requests\UpdateTablePropertiesOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateTablePropertiesRequest;
-use Aspose\Words\Model\Requests\UpdateTableRowFormatOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateTableRowFormatRequest;
-use Aspose\Words\Model\TableCellFormat;
-use Aspose\Words\Model\TableCellInsert;
-use Aspose\Words\Model\TableInsert;
-use Aspose\Words\Model\TableProperties;
-use Aspose\Words\Model\TableRowFormat;
-use Aspose\Words\Model\TableRowInsert;
+use Aspose\Words\Model\Requests\{DeleteTableCellOnlineRequest, DeleteTableCellRequest, DeleteTableOnlineRequest, DeleteTableRequest, DeleteTableRowOnlineRequest, DeleteTableRowRequest, GetTableCellFormatOnlineRequest, GetTableCellFormatRequest, GetTableCellOnlineRequest, GetTableCellRequest, GetTableOnlineRequest, GetTablePropertiesOnlineRequest, GetTablePropertiesRequest, GetTableRequest, GetTableRowFormatOnlineRequest, GetTableRowFormatRequest, GetTableRowOnlineRequest, GetTableRowRequest, GetTablesOnlineRequest, GetTablesRequest, InsertTableCellOnlineRequest, InsertTableCellRequest, InsertTableOnlineRequest, InsertTableRequest, InsertTableRowOnlineRequest, InsertTableRowRequest, RenderTableOnlineRequest, RenderTableRequest, UpdateTableCellFormatOnlineRequest, UpdateTableCellFormatRequest, UpdateTablePropertiesOnlineRequest, UpdateTablePropertiesRequest, UpdateTableRowFormatOnlineRequest, UpdateTableRowFormatRequest};
+use Aspose\Words\Model\{TableCellFormat, TableCellInsert, TableInsert, TableProperties, TableRowFormat, TableRowInsert};
 use PHPUnit\Framework\Assert;
 
 /*

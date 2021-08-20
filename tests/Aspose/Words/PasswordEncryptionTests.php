@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\GetPublicKeyRequest;
+use Aspose\Words\Model\Requests\{GetPublicKeyRequest};
 use PHPUnit\Framework\Assert;
 
 /*

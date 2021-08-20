@@ -1,7 +1,6 @@
 <?php
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\AcceptAllRevisionsRequest;
-use Aspose\Words\Model\Requests\UploadFileRequest;
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsRequest, UploadFileRequest};
 
 $clientId = '####-####-####-####-####';
 $secret = '##################';

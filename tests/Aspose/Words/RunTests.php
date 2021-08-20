@@ -29,14 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\DeleteRunOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteRunRequest;
-use Aspose\Words\Model\Requests\InsertRunOnlineRequest;
-use Aspose\Words\Model\Requests\InsertRunRequest;
-use Aspose\Words\Model\Requests\UpdateRunOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateRunRequest;
-use Aspose\Words\Model\RunInsert;
-use Aspose\Words\Model\RunUpdate;
+use Aspose\Words\Model\Requests\{DeleteRunOnlineRequest, DeleteRunRequest, InsertRunOnlineRequest, InsertRunRequest, UpdateRunOnlineRequest, UpdateRunRequest};
+use Aspose\Words\Model\{RunInsert, RunUpdate};
 use PHPUnit\Framework\Assert;
 
 /*

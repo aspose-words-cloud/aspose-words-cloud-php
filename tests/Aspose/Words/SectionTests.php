@@ -29,12 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\DeleteSectionOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteSectionRequest;
-use Aspose\Words\Model\Requests\GetSectionOnlineRequest;
-use Aspose\Words\Model\Requests\GetSectionRequest;
-use Aspose\Words\Model\Requests\GetSectionsOnlineRequest;
-use Aspose\Words\Model\Requests\GetSectionsRequest;
+use Aspose\Words\Model\Requests\{DeleteSectionOnlineRequest, DeleteSectionRequest, GetSectionOnlineRequest, GetSectionRequest, GetSectionsOnlineRequest, GetSectionsRequest};
 use PHPUnit\Framework\Assert;
 
 /*

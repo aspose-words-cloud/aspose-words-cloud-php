@@ -29,18 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\FootnoteInsert;
-use Aspose\Words\Model\FootnoteUpdate;
-use Aspose\Words\Model\Requests\DeleteFootnoteOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteFootnoteRequest;
-use Aspose\Words\Model\Requests\GetFootnoteOnlineRequest;
-use Aspose\Words\Model\Requests\GetFootnoteRequest;
-use Aspose\Words\Model\Requests\GetFootnotesOnlineRequest;
-use Aspose\Words\Model\Requests\GetFootnotesRequest;
-use Aspose\Words\Model\Requests\InsertFootnoteOnlineRequest;
-use Aspose\Words\Model\Requests\InsertFootnoteRequest;
-use Aspose\Words\Model\Requests\UpdateFootnoteOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateFootnoteRequest;
+use Aspose\Words\Model\Requests\{DeleteFootnoteOnlineRequest, DeleteFootnoteRequest, GetFootnoteOnlineRequest, GetFootnoteRequest, GetFootnotesOnlineRequest, GetFootnotesRequest, InsertFootnoteOnlineRequest, InsertFootnoteRequest, UpdateFootnoteOnlineRequest, UpdateFootnoteRequest};
+use Aspose\Words\Model\{FootnoteInsert, FootnoteUpdate};
 use PHPUnit\Framework\Assert;
 
 /*

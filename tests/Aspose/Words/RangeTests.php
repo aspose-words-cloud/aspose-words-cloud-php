@@ -29,16 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\RangeDocument;
-use Aspose\Words\Model\ReplaceRange;
-use Aspose\Words\Model\Requests\GetRangeTextOnlineRequest;
-use Aspose\Words\Model\Requests\GetRangeTextRequest;
-use Aspose\Words\Model\Requests\RemoveRangeOnlineRequest;
-use Aspose\Words\Model\Requests\RemoveRangeRequest;
-use Aspose\Words\Model\Requests\ReplaceWithTextOnlineRequest;
-use Aspose\Words\Model\Requests\ReplaceWithTextRequest;
-use Aspose\Words\Model\Requests\SaveAsRangeOnlineRequest;
-use Aspose\Words\Model\Requests\SaveAsRangeRequest;
+use Aspose\Words\Model\Requests\{GetRangeTextOnlineRequest, GetRangeTextRequest, RemoveRangeOnlineRequest, RemoveRangeRequest, ReplaceWithTextOnlineRequest, ReplaceWithTextRequest, SaveAsRangeOnlineRequest, SaveAsRangeRequest};
+use Aspose\Words\Model\{RangeDocument, ReplaceRange};
 use PHPUnit\Framework\Assert;
 
 /*

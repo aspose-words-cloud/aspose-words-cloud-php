@@ -29,24 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\ApplyStyleToDocumentElementOnlineRequest;
-use Aspose\Words\Model\Requests\ApplyStyleToDocumentElementRequest;
-use Aspose\Words\Model\Requests\CopyStyleOnlineRequest;
-use Aspose\Words\Model\Requests\CopyStyleRequest;
-use Aspose\Words\Model\Requests\GetStyleFromDocumentElementOnlineRequest;
-use Aspose\Words\Model\Requests\GetStyleFromDocumentElementRequest;
-use Aspose\Words\Model\Requests\GetStyleOnlineRequest;
-use Aspose\Words\Model\Requests\GetStyleRequest;
-use Aspose\Words\Model\Requests\GetStylesOnlineRequest;
-use Aspose\Words\Model\Requests\GetStylesRequest;
-use Aspose\Words\Model\Requests\InsertStyleOnlineRequest;
-use Aspose\Words\Model\Requests\InsertStyleRequest;
-use Aspose\Words\Model\Requests\UpdateStyleOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateStyleRequest;
-use Aspose\Words\Model\StyleApply;
-use Aspose\Words\Model\StyleCopy;
-use Aspose\Words\Model\StyleInsert;
-use Aspose\Words\Model\StyleUpdate;
+use Aspose\Words\Model\Requests\{ApplyStyleToDocumentElementOnlineRequest, ApplyStyleToDocumentElementRequest, CopyStyleOnlineRequest, CopyStyleRequest, GetStyleFromDocumentElementOnlineRequest, GetStyleFromDocumentElementRequest, GetStyleOnlineRequest, GetStyleRequest, GetStylesOnlineRequest, GetStylesRequest, InsertStyleOnlineRequest, InsertStyleRequest, UpdateStyleOnlineRequest, UpdateStyleRequest};
+use Aspose\Words\Model\{StyleApply, StyleCopy, StyleInsert, StyleUpdate};
 use PHPUnit\Framework\Assert;
 
 /*

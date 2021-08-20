@@ -29,18 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Border;
-use Aspose\Words\Model\Requests\DeleteBorderOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteBorderRequest;
-use Aspose\Words\Model\Requests\DeleteBordersOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteBordersRequest;
-use Aspose\Words\Model\Requests\GetBorderOnlineRequest;
-use Aspose\Words\Model\Requests\GetBorderRequest;
-use Aspose\Words\Model\Requests\GetBordersOnlineRequest;
-use Aspose\Words\Model\Requests\GetBordersRequest;
-use Aspose\Words\Model\Requests\UpdateBorderOnlineRequest;
-use Aspose\Words\Model\Requests\UpdateBorderRequest;
-use Aspose\Words\Model\XmlColor;
+use Aspose\Words\Model\Requests\{DeleteBorderOnlineRequest, DeleteBorderRequest, DeleteBordersOnlineRequest, DeleteBordersRequest, GetBorderOnlineRequest, GetBorderRequest, GetBordersOnlineRequest, GetBordersRequest, UpdateBorderOnlineRequest, UpdateBorderRequest};
+use Aspose\Words\Model\{Border, XmlColor};
 use PHPUnit\Framework\Assert;
 
 /*

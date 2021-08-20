@@ -29,11 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\CopyFileRequest;
-use Aspose\Words\Model\Requests\DeleteFileRequest;
-use Aspose\Words\Model\Requests\DownloadFileRequest;
-use Aspose\Words\Model\Requests\MoveFileRequest;
-use Aspose\Words\Model\Requests\UploadFileRequest;
+use Aspose\Words\Model\Requests\{CopyFileRequest, DeleteFileRequest, DownloadFileRequest, MoveFileRequest, UploadFileRequest};
 use PHPUnit\Framework\Assert;
 
 /*

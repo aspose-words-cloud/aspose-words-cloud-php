@@ -29,9 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\AcceptAllRevisionsRequest;
-use Aspose\Words\Model\Requests\UploadFileRequest;
-use Aspose\Words\Model\Requests\AcceptAllRevisionsOnlineRequest;
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsRequest, UploadFileRequest};
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsOnlineRequest};
 use PHPUnit\Framework\Assert;
 
 class ExamplesTests extends BaseTestContext

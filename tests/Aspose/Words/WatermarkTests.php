@@ -29,13 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\DeleteWatermarkOnlineRequest;
-use Aspose\Words\Model\Requests\DeleteWatermarkRequest;
-use Aspose\Words\Model\Requests\InsertWatermarkImageOnlineRequest;
-use Aspose\Words\Model\Requests\InsertWatermarkImageRequest;
-use Aspose\Words\Model\Requests\InsertWatermarkTextOnlineRequest;
-use Aspose\Words\Model\Requests\InsertWatermarkTextRequest;
-use Aspose\Words\Model\WatermarkText;
+use Aspose\Words\Model\Requests\{DeleteWatermarkOnlineRequest, DeleteWatermarkRequest, InsertWatermarkImageOnlineRequest, InsertWatermarkImageRequest, InsertWatermarkTextOnlineRequest, InsertWatermarkTextRequest};
+use Aspose\Words\Model\{WatermarkText};
 use PHPUnit\Framework\Assert;
 
 /*

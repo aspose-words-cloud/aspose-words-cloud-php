@@ -29,10 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\AcceptAllRevisionsOnlineRequest;
-use Aspose\Words\Model\Requests\AcceptAllRevisionsRequest;
-use Aspose\Words\Model\Requests\RejectAllRevisionsOnlineRequest;
-use Aspose\Words\Model\Requests\RejectAllRevisionsRequest;
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsOnlineRequest, AcceptAllRevisionsRequest, RejectAllRevisionsOnlineRequest, RejectAllRevisionsRequest};
 use PHPUnit\Framework\Assert;
 
 /*

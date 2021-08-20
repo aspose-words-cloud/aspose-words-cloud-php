@@ -51,7 +51,7 @@ class WordsApiErrorResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'error' => 'ApiError'
+        'error' => '\Aspose\Words\Model\ApiError'
     ];
 
     /*
@@ -195,7 +195,7 @@ class WordsApiErrorResponse extends WordsResponse
     /*
      * Gets error
      *
-     * @return ApiError
+     * @return \Aspose\Words\Model\ApiError
      */
     public function getError()
     {
@@ -205,7 +205,7 @@ class WordsApiErrorResponse extends WordsResponse
     /*
      * Sets error
      *
-     * @param ApiError $error Gets or sets the API error.
+     * @param \Aspose\Words\Model\ApiError $error Gets or sets the API error.
      *
      * @return $this
      */

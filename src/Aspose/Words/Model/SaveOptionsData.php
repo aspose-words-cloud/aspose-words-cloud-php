@@ -53,7 +53,7 @@ class SaveOptionsData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'allow_embedding_post_script_fonts' => 'bool',
-        'custom_time_zone_info_data' => 'TimeZoneInfoData',
+        'custom_time_zone_info_data' => '\Aspose\Words\Model\TimeZoneInfoData',
         'dml3_d_effects_rendering_mode' => 'string',
         'dml_effects_rendering_mode' => 'string',
         'dml_rendering_mode' => 'string',
@@ -329,7 +329,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Gets custom_time_zone_info_data
      *
-     * @return TimeZoneInfoData
+     * @return \Aspose\Words\Model\TimeZoneInfoData
      */
     public function getCustomTimeZoneInfoData()
     {
@@ -339,7 +339,7 @@ class SaveOptionsData implements ArrayAccess
     /*
      * Sets custom_time_zone_info_data
      *
-     * @param TimeZoneInfoData $custom_time_zone_info_data Gets or sets CustomTimeZoneInfo.
+     * @param \Aspose\Words\Model\TimeZoneInfoData $custom_time_zone_info_data Gets or sets CustomTimeZoneInfo.
      *
      * @return $this
      */

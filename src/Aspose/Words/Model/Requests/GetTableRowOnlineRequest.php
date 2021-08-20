@@ -326,11 +326,11 @@ class GetTableRowOnlineRequest
      */
     public function getResponseType()
     {
-        return 'TableRowResponse';
+        return '\Aspose\Words\Model\TableRowResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'TableRowResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableRowResponse', []);
     }
 }

@@ -92,7 +92,7 @@ class InsertDrawingObjectOnlineRequest
      * Initializes a new instance of the InsertDrawingObjectOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param DrawingObjectInsert $drawing_object Drawing object parameters.
+     * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
      * @param \SplFileObject $image_file File with image.
      * @param string $node_path The path to the node in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -464,7 +464,7 @@ class InsertDrawingObjectOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new InsertDrawingObjectOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'DrawingObjectResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DrawingObjectResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

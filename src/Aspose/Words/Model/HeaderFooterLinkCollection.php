@@ -51,7 +51,7 @@ class HeaderFooterLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list' => 'HeaderFooterLink[]'
+        'list' => '\Aspose\Words\Model\HeaderFooterLink[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class HeaderFooterLinkCollection extends LinkElement
     /*
      * Gets list
      *
-     * @return HeaderFooterLink[]
+     * @return \Aspose\Words\Model\HeaderFooterLink[]
      */
     public function getList()
     {
@@ -205,7 +205,7 @@ class HeaderFooterLinkCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param HeaderFooterLink[] $list Gets or sets the collection of HeaderFooter's links.
+     * @param \Aspose\Words\Model\HeaderFooterLink[] $list Gets or sets the collection of HeaderFooter's links.
      *
      * @return $this
      */

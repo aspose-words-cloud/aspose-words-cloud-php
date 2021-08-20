@@ -51,7 +51,7 @@ class SearchResultsCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'results_list' => 'SearchResult[]'
+        'results_list' => '\Aspose\Words\Model\SearchResult[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class SearchResultsCollection extends LinkElement
     /*
      * Gets results_list
      *
-     * @return SearchResult[]
+     * @return \Aspose\Words\Model\SearchResult[]
      */
     public function getResultsList()
     {
@@ -205,7 +205,7 @@ class SearchResultsCollection extends LinkElement
     /*
      * Sets results_list
      *
-     * @param SearchResult[] $results_list Gets or sets the collection of comments.
+     * @param \Aspose\Words\Model\SearchResult[] $results_list Gets or sets the collection of comments.
      *
      * @return $this
      */

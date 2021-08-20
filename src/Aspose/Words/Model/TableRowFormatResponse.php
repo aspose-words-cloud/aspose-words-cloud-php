@@ -51,7 +51,7 @@ class TableRowFormatResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'row_format' => 'TableRowFormat'
+        'row_format' => '\Aspose\Words\Model\TableRowFormat'
     ];
 
     /*
@@ -195,7 +195,7 @@ class TableRowFormatResponse extends WordsResponse
     /*
      * Gets row_format
      *
-     * @return TableRowFormat
+     * @return \Aspose\Words\Model\TableRowFormat
      */
     public function getRowFormat()
     {
@@ -205,7 +205,7 @@ class TableRowFormatResponse extends WordsResponse
     /*
      * Sets row_format
      *
-     * @param TableRowFormat $row_format Gets or sets the formatting properties of a table row.
+     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets the formatting properties of a table row.
      *
      * @return $this
      */

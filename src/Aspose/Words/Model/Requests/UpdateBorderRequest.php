@@ -103,7 +103,7 @@ class UpdateBorderRequest
      *
      * @param string $name The filename of the input document.
      * @param string $border_type Border type.
-     * @param Border $border_properties Border properties.
+     * @param \Aspose\Words\Model\Border $border_properties Border properties.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -523,11 +523,11 @@ class UpdateBorderRequest
      */
     public function getResponseType()
     {
-        return 'BorderResponse';
+        return '\Aspose\Words\Model\BorderResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'BorderResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BorderResponse', []);
     }
 }

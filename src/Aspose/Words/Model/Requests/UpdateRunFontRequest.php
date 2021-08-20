@@ -104,7 +104,7 @@ class UpdateRunFontRequest
      * @param string $name The filename of the input document.
      * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param int $index Object index.
-     * @param Font $font_dto Font dto object.
+     * @param \Aspose\Words\Model\Font $font_dto Font dto object.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -526,11 +526,11 @@ class UpdateRunFontRequest
      */
     public function getResponseType()
     {
-        return 'FontResponse';
+        return '\Aspose\Words\Model\FontResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'FontResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FontResponse', []);
     }
 }

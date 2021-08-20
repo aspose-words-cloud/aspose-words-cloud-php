@@ -53,7 +53,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     protected static $swaggerTypes = [
         'color_mode' => 'string',
         'jpeg_quality' => 'int',
-        'metafile_rendering_options' => 'MetafileRenderingOptionsData',
+        'metafile_rendering_options' => '\Aspose\Words\Model\MetafileRenderingOptionsData',
         'numeral_format' => 'string',
         'optimize_output' => 'bool',
         'page_count' => 'int',
@@ -277,7 +277,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Gets metafile_rendering_options
      *
-     * @return MetafileRenderingOptionsData
+     * @return \Aspose\Words\Model\MetafileRenderingOptionsData
      */
     public function getMetafileRenderingOptions()
     {
@@ -287,7 +287,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets metafile_rendering_options
      *
-     * @param MetafileRenderingOptionsData $metafile_rendering_options Gets or sets the metafile rendering options.
+     * @param \Aspose\Words\Model\MetafileRenderingOptionsData $metafile_rendering_options Gets or sets the metafile rendering options.
      *
      * @return $this
      */

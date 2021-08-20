@@ -52,7 +52,7 @@ class FilesList implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'StorageFile[]'
+        'value' => '\Aspose\Words\Model\StorageFile[]'
     ];
 
     /*
@@ -199,7 +199,7 @@ class FilesList implements ArrayAccess
     /*
      * Gets value
      *
-     * @return StorageFile[]
+     * @return \Aspose\Words\Model\StorageFile[]
      */
     public function getValue()
     {
@@ -209,7 +209,7 @@ class FilesList implements ArrayAccess
     /*
      * Sets value
      *
-     * @param StorageFile[] $value Files and folders contained by folder StorageFile.
+     * @param \Aspose\Words\Model\StorageFile[] $value Files and folders contained by folder StorageFile.
      *
      * @return $this
      */

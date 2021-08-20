@@ -104,7 +104,7 @@ class UpdateListLevelRequest
      * @param string $name The filename of the input document.
      * @param int $list_id The list Id.
      * @param int $list_level The list level.
-     * @param ListLevelUpdate $list_update List object.
+     * @param \Aspose\Words\Model\ListLevelUpdate $list_update List object.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -526,11 +526,11 @@ class UpdateListLevelRequest
      */
     public function getResponseType()
     {
-        return 'ListResponse';
+        return '\Aspose\Words\Model\ListResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'ListResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ListResponse', []);
     }
 }

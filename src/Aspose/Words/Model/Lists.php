@@ -51,7 +51,7 @@ class Lists extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list_info' => 'ListInfo[]'
+        'list_info' => '\Aspose\Words\Model\ListInfo[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class Lists extends LinkElement
     /*
      * Gets list_info
      *
-     * @return ListInfo[]
+     * @return \Aspose\Words\Model\ListInfo[]
      */
     public function getListInfo()
     {
@@ -205,7 +205,7 @@ class Lists extends LinkElement
     /*
      * Sets list_info
      *
-     * @param ListInfo[] $list_info Gets or sets the array of document lists.
+     * @param \Aspose\Words\Model\ListInfo[] $list_info Gets or sets the array of document lists.
      *
      * @return $this
      */

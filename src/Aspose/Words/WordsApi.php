@@ -91,7 +91,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RevisionsModificationResponse
+     * @return \Aspose\Words\Model\RevisionsModificationResponse
      */
     public function acceptAllRevisions(Requests\acceptAllRevisionsRequest $request)
     {
@@ -119,11 +119,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RevisionsModificationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RevisionsModificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function acceptAllRevisionsWithHttpInfo(Requests\acceptAllRevisionsRequest $request)
     {
-        $returnType = 'RevisionsModificationResponse';
+        $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -169,7 +169,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RevisionsModificationResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RevisionsModificationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -209,7 +209,7 @@ class WordsApi
      */
     private function acceptAllRevisionsAsyncWithHttpInfo(Requests\acceptAllRevisionsRequest $request) 
     {
-        $returnType = 'RevisionsModificationResponse';
+        $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -418,7 +418,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function appendDocument(Requests\appendDocumentRequest $request)
     {
@@ -446,11 +446,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function appendDocumentWithHttpInfo(Requests\appendDocumentRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -496,7 +496,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -536,7 +536,7 @@ class WordsApi
      */
     private function appendDocumentAsyncWithHttpInfo(Requests\appendDocumentRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -745,7 +745,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return WordsResponse
+     * @return \Aspose\Words\Model\WordsResponse
      */
     public function applyStyleToDocumentElement(Requests\applyStyleToDocumentElementRequest $request)
     {
@@ -773,11 +773,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of WordsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\WordsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function applyStyleToDocumentElementWithHttpInfo(Requests\applyStyleToDocumentElementRequest $request)
     {
-        $returnType = 'WordsResponse';
+        $returnType = '\Aspose\Words\Model\WordsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -823,7 +823,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'WordsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\WordsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -863,7 +863,7 @@ class WordsApi
      */
     private function applyStyleToDocumentElementAsyncWithHttpInfo(Requests\applyStyleToDocumentElementRequest $request) 
     {
-        $returnType = 'WordsResponse';
+        $returnType = '\Aspose\Words\Model\WordsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -1072,7 +1072,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function buildReport(Requests\buildReportRequest $request)
     {
@@ -1100,11 +1100,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function buildReportWithHttpInfo(Requests\buildReportRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -1150,7 +1150,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -1190,7 +1190,7 @@ class WordsApi
      */
     private function buildReportAsyncWithHttpInfo(Requests\buildReportRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -1412,7 +1412,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ClassificationResponse
+     * @return \Aspose\Words\Model\ClassificationResponse
      */
     public function classify(Requests\classifyRequest $request)
     {
@@ -1440,11 +1440,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ClassificationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ClassificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function classifyWithHttpInfo(Requests\classifyRequest $request)
     {
-        $returnType = 'ClassificationResponse';
+        $returnType = '\Aspose\Words\Model\ClassificationResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -1490,7 +1490,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ClassificationResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ClassificationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -1530,7 +1530,7 @@ class WordsApi
      */
     private function classifyAsyncWithHttpInfo(Requests\classifyRequest $request) 
     {
-        $returnType = 'ClassificationResponse';
+        $returnType = '\Aspose\Words\Model\ClassificationResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -1582,7 +1582,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ClassificationResponse
+     * @return \Aspose\Words\Model\ClassificationResponse
      */
     public function classifyDocument(Requests\classifyDocumentRequest $request)
     {
@@ -1610,11 +1610,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ClassificationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ClassificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function classifyDocumentWithHttpInfo(Requests\classifyDocumentRequest $request)
     {
-        $returnType = 'ClassificationResponse';
+        $returnType = '\Aspose\Words\Model\ClassificationResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -1660,7 +1660,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ClassificationResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ClassificationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -1700,7 +1700,7 @@ class WordsApi
      */
     private function classifyDocumentAsyncWithHttpInfo(Requests\classifyDocumentRequest $request) 
     {
-        $returnType = 'ClassificationResponse';
+        $returnType = '\Aspose\Words\Model\ClassificationResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -1752,7 +1752,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ClassificationResponse
+     * @return \Aspose\Words\Model\ClassificationResponse
      */
     public function classifyDocumentOnline(Requests\classifyDocumentOnlineRequest $request)
     {
@@ -1780,11 +1780,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ClassificationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ClassificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function classifyDocumentOnlineWithHttpInfo(Requests\classifyDocumentOnlineRequest $request)
     {
-        $returnType = 'ClassificationResponse';
+        $returnType = '\Aspose\Words\Model\ClassificationResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -1830,7 +1830,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ClassificationResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ClassificationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -1870,7 +1870,7 @@ class WordsApi
      */
     private function classifyDocumentOnlineAsyncWithHttpInfo(Requests\classifyDocumentOnlineRequest $request) 
     {
-        $returnType = 'ClassificationResponse';
+        $returnType = '\Aspose\Words\Model\ClassificationResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -1922,7 +1922,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function compareDocument(Requests\compareDocumentRequest $request)
     {
@@ -1950,11 +1950,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function compareDocumentWithHttpInfo(Requests\compareDocumentRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -2000,7 +2000,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -2040,7 +2040,7 @@ class WordsApi
      */
     private function compareDocumentAsyncWithHttpInfo(Requests\compareDocumentRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -2673,7 +2673,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StyleResponse
+     * @return \Aspose\Words\Model\StyleResponse
      */
     public function copyStyle(Requests\copyStyleRequest $request)
     {
@@ -2701,11 +2701,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function copyStyleWithHttpInfo(Requests\copyStyleRequest $request)
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -2751,7 +2751,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StyleResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -2791,7 +2791,7 @@ class WordsApi
      */
     private function copyStyleAsyncWithHttpInfo(Requests\copyStyleRequest $request) 
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -3000,7 +3000,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function createDocument(Requests\createDocumentRequest $request)
     {
@@ -3028,11 +3028,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function createDocumentWithHttpInfo(Requests\createDocumentRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -3078,7 +3078,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -3118,7 +3118,7 @@ class WordsApi
      */
     private function createDocumentAsyncWithHttpInfo(Requests\createDocumentRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -3297,7 +3297,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentPropertyResponse
+     * @return \Aspose\Words\Model\DocumentPropertyResponse
      */
     public function createOrUpdateDocumentProperty(Requests\createOrUpdateDocumentPropertyRequest $request)
     {
@@ -3325,11 +3325,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function createOrUpdateDocumentPropertyWithHttpInfo(Requests\createOrUpdateDocumentPropertyRequest $request)
     {
-        $returnType = 'DocumentPropertyResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -3375,7 +3375,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentPropertyResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentPropertyResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -3415,7 +3415,7 @@ class WordsApi
      */
     private function createOrUpdateDocumentPropertyAsyncWithHttpInfo(Requests\createOrUpdateDocumentPropertyRequest $request) 
     {
-        $returnType = 'DocumentPropertyResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -3624,7 +3624,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TabStopsResponse
+     * @return \Aspose\Words\Model\TabStopsResponse
      */
     public function deleteAllParagraphTabStops(Requests\deleteAllParagraphTabStopsRequest $request)
     {
@@ -3652,11 +3652,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteAllParagraphTabStopsWithHttpInfo(Requests\deleteAllParagraphTabStopsRequest $request)
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -3702,7 +3702,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TabStopsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TabStopsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -3742,7 +3742,7 @@ class WordsApi
      */
     private function deleteAllParagraphTabStopsAsyncWithHttpInfo(Requests\deleteAllParagraphTabStopsRequest $request) 
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -3951,7 +3951,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BorderResponse
+     * @return \Aspose\Words\Model\BorderResponse
      */
     public function deleteBorder(Requests\deleteBorderRequest $request)
     {
@@ -3979,11 +3979,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BorderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BorderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteBorderWithHttpInfo(Requests\deleteBorderRequest $request)
     {
-        $returnType = 'BorderResponse';
+        $returnType = '\Aspose\Words\Model\BorderResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -4029,7 +4029,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BorderResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BorderResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -4069,7 +4069,7 @@ class WordsApi
      */
     private function deleteBorderAsyncWithHttpInfo(Requests\deleteBorderRequest $request) 
     {
-        $returnType = 'BorderResponse';
+        $returnType = '\Aspose\Words\Model\BorderResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -4278,7 +4278,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BordersResponse
+     * @return \Aspose\Words\Model\BordersResponse
      */
     public function deleteBorders(Requests\deleteBordersRequest $request)
     {
@@ -4306,11 +4306,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BordersResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BordersResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteBordersWithHttpInfo(Requests\deleteBordersRequest $request)
     {
-        $returnType = 'BordersResponse';
+        $returnType = '\Aspose\Words\Model\BordersResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -4356,7 +4356,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BordersResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BordersResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -4396,7 +4396,7 @@ class WordsApi
      */
     private function deleteBordersAsyncWithHttpInfo(Requests\deleteBordersRequest $request) 
     {
-        $returnType = 'BordersResponse';
+        $returnType = '\Aspose\Words\Model\BordersResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -9144,7 +9144,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphListFormatResponse
+     * @return \Aspose\Words\Model\ParagraphListFormatResponse
      */
     public function deleteParagraphListFormat(Requests\deleteParagraphListFormatRequest $request)
     {
@@ -9172,11 +9172,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphListFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphListFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteParagraphListFormatWithHttpInfo(Requests\deleteParagraphListFormatRequest $request)
     {
-        $returnType = 'ParagraphListFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -9222,7 +9222,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphListFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphListFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -9262,7 +9262,7 @@ class WordsApi
      */
     private function deleteParagraphListFormatAsyncWithHttpInfo(Requests\deleteParagraphListFormatRequest $request) 
     {
-        $returnType = 'ParagraphListFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -9641,7 +9641,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TabStopsResponse
+     * @return \Aspose\Words\Model\TabStopsResponse
      */
     public function deleteParagraphTabStop(Requests\deleteParagraphTabStopRequest $request)
     {
@@ -9669,11 +9669,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteParagraphTabStopWithHttpInfo(Requests\deleteParagraphTabStopRequest $request)
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -9719,7 +9719,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TabStopsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TabStopsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -9759,7 +9759,7 @@ class WordsApi
      */
     private function deleteParagraphTabStopAsyncWithHttpInfo(Requests\deleteParagraphTabStopRequest $request) 
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -11453,7 +11453,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function deleteWatermark(Requests\deleteWatermarkRequest $request)
     {
@@ -11481,11 +11481,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteWatermarkWithHttpInfo(Requests\deleteWatermarkRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -11531,7 +11531,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -11571,7 +11571,7 @@ class WordsApi
      */
     private function deleteWatermarkAsyncWithHttpInfo(Requests\deleteWatermarkRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -11950,7 +11950,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function executeMailMerge(Requests\executeMailMergeRequest $request)
     {
@@ -11978,11 +11978,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function executeMailMergeWithHttpInfo(Requests\executeMailMergeRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -12028,7 +12028,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -12068,7 +12068,7 @@ class WordsApi
      */
     private function executeMailMergeAsyncWithHttpInfo(Requests\executeMailMergeRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -12290,7 +12290,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return AvailableFontsResponse
+     * @return \Aspose\Words\Model\AvailableFontsResponse
      */
     public function getAvailableFonts(Requests\getAvailableFontsRequest $request)
     {
@@ -12318,11 +12318,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of AvailableFontsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\AvailableFontsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getAvailableFontsWithHttpInfo(Requests\getAvailableFontsRequest $request)
     {
-        $returnType = 'AvailableFontsResponse';
+        $returnType = '\Aspose\Words\Model\AvailableFontsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -12368,7 +12368,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'AvailableFontsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\AvailableFontsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -12408,7 +12408,7 @@ class WordsApi
      */
     private function getAvailableFontsAsyncWithHttpInfo(Requests\getAvailableFontsRequest $request) 
     {
-        $returnType = 'AvailableFontsResponse';
+        $returnType = '\Aspose\Words\Model\AvailableFontsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -12460,7 +12460,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BookmarkResponse
+     * @return \Aspose\Words\Model\BookmarkResponse
      */
     public function getBookmarkByName(Requests\getBookmarkByNameRequest $request)
     {
@@ -12488,11 +12488,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BookmarkResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BookmarkResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getBookmarkByNameWithHttpInfo(Requests\getBookmarkByNameRequest $request)
     {
-        $returnType = 'BookmarkResponse';
+        $returnType = '\Aspose\Words\Model\BookmarkResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -12538,7 +12538,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BookmarkResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BookmarkResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -12578,7 +12578,7 @@ class WordsApi
      */
     private function getBookmarkByNameAsyncWithHttpInfo(Requests\getBookmarkByNameRequest $request) 
     {
-        $returnType = 'BookmarkResponse';
+        $returnType = '\Aspose\Words\Model\BookmarkResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -12630,7 +12630,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BookmarkResponse
+     * @return \Aspose\Words\Model\BookmarkResponse
      */
     public function getBookmarkByNameOnline(Requests\getBookmarkByNameOnlineRequest $request)
     {
@@ -12658,11 +12658,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BookmarkResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BookmarkResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getBookmarkByNameOnlineWithHttpInfo(Requests\getBookmarkByNameOnlineRequest $request)
     {
-        $returnType = 'BookmarkResponse';
+        $returnType = '\Aspose\Words\Model\BookmarkResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -12708,7 +12708,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BookmarkResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BookmarkResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -12748,7 +12748,7 @@ class WordsApi
      */
     private function getBookmarkByNameOnlineAsyncWithHttpInfo(Requests\getBookmarkByNameOnlineRequest $request) 
     {
-        $returnType = 'BookmarkResponse';
+        $returnType = '\Aspose\Words\Model\BookmarkResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -12800,7 +12800,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BookmarksResponse
+     * @return \Aspose\Words\Model\BookmarksResponse
      */
     public function getBookmarks(Requests\getBookmarksRequest $request)
     {
@@ -12828,11 +12828,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BookmarksResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BookmarksResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getBookmarksWithHttpInfo(Requests\getBookmarksRequest $request)
     {
-        $returnType = 'BookmarksResponse';
+        $returnType = '\Aspose\Words\Model\BookmarksResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -12878,7 +12878,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BookmarksResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BookmarksResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -12918,7 +12918,7 @@ class WordsApi
      */
     private function getBookmarksAsyncWithHttpInfo(Requests\getBookmarksRequest $request) 
     {
-        $returnType = 'BookmarksResponse';
+        $returnType = '\Aspose\Words\Model\BookmarksResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -12970,7 +12970,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BookmarksResponse
+     * @return \Aspose\Words\Model\BookmarksResponse
      */
     public function getBookmarksOnline(Requests\getBookmarksOnlineRequest $request)
     {
@@ -12998,11 +12998,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BookmarksResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BookmarksResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getBookmarksOnlineWithHttpInfo(Requests\getBookmarksOnlineRequest $request)
     {
-        $returnType = 'BookmarksResponse';
+        $returnType = '\Aspose\Words\Model\BookmarksResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -13048,7 +13048,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BookmarksResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BookmarksResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -13088,7 +13088,7 @@ class WordsApi
      */
     private function getBookmarksOnlineAsyncWithHttpInfo(Requests\getBookmarksOnlineRequest $request) 
     {
-        $returnType = 'BookmarksResponse';
+        $returnType = '\Aspose\Words\Model\BookmarksResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -13140,7 +13140,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BorderResponse
+     * @return \Aspose\Words\Model\BorderResponse
      */
     public function getBorder(Requests\getBorderRequest $request)
     {
@@ -13168,11 +13168,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BorderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BorderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getBorderWithHttpInfo(Requests\getBorderRequest $request)
     {
-        $returnType = 'BorderResponse';
+        $returnType = '\Aspose\Words\Model\BorderResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -13218,7 +13218,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BorderResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BorderResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -13258,7 +13258,7 @@ class WordsApi
      */
     private function getBorderAsyncWithHttpInfo(Requests\getBorderRequest $request) 
     {
-        $returnType = 'BorderResponse';
+        $returnType = '\Aspose\Words\Model\BorderResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -13310,7 +13310,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BorderResponse
+     * @return \Aspose\Words\Model\BorderResponse
      */
     public function getBorderOnline(Requests\getBorderOnlineRequest $request)
     {
@@ -13338,11 +13338,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BorderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BorderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getBorderOnlineWithHttpInfo(Requests\getBorderOnlineRequest $request)
     {
-        $returnType = 'BorderResponse';
+        $returnType = '\Aspose\Words\Model\BorderResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -13388,7 +13388,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BorderResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BorderResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -13428,7 +13428,7 @@ class WordsApi
      */
     private function getBorderOnlineAsyncWithHttpInfo(Requests\getBorderOnlineRequest $request) 
     {
-        $returnType = 'BorderResponse';
+        $returnType = '\Aspose\Words\Model\BorderResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -13480,7 +13480,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BordersResponse
+     * @return \Aspose\Words\Model\BordersResponse
      */
     public function getBorders(Requests\getBordersRequest $request)
     {
@@ -13508,11 +13508,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BordersResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BordersResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getBordersWithHttpInfo(Requests\getBordersRequest $request)
     {
-        $returnType = 'BordersResponse';
+        $returnType = '\Aspose\Words\Model\BordersResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -13558,7 +13558,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BordersResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BordersResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -13598,7 +13598,7 @@ class WordsApi
      */
     private function getBordersAsyncWithHttpInfo(Requests\getBordersRequest $request) 
     {
-        $returnType = 'BordersResponse';
+        $returnType = '\Aspose\Words\Model\BordersResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -13650,7 +13650,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BordersResponse
+     * @return \Aspose\Words\Model\BordersResponse
      */
     public function getBordersOnline(Requests\getBordersOnlineRequest $request)
     {
@@ -13678,11 +13678,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BordersResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BordersResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getBordersOnlineWithHttpInfo(Requests\getBordersOnlineRequest $request)
     {
-        $returnType = 'BordersResponse';
+        $returnType = '\Aspose\Words\Model\BordersResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -13728,7 +13728,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BordersResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BordersResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -13768,7 +13768,7 @@ class WordsApi
      */
     private function getBordersOnlineAsyncWithHttpInfo(Requests\getBordersOnlineRequest $request) 
     {
-        $returnType = 'BordersResponse';
+        $returnType = '\Aspose\Words\Model\BordersResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -13820,7 +13820,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CommentResponse
+     * @return \Aspose\Words\Model\CommentResponse
      */
     public function getComment(Requests\getCommentRequest $request)
     {
@@ -13848,11 +13848,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CommentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CommentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getCommentWithHttpInfo(Requests\getCommentRequest $request)
     {
-        $returnType = 'CommentResponse';
+        $returnType = '\Aspose\Words\Model\CommentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -13898,7 +13898,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CommentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CommentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -13938,7 +13938,7 @@ class WordsApi
      */
     private function getCommentAsyncWithHttpInfo(Requests\getCommentRequest $request) 
     {
-        $returnType = 'CommentResponse';
+        $returnType = '\Aspose\Words\Model\CommentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -13990,7 +13990,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CommentResponse
+     * @return \Aspose\Words\Model\CommentResponse
      */
     public function getCommentOnline(Requests\getCommentOnlineRequest $request)
     {
@@ -14018,11 +14018,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CommentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CommentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getCommentOnlineWithHttpInfo(Requests\getCommentOnlineRequest $request)
     {
-        $returnType = 'CommentResponse';
+        $returnType = '\Aspose\Words\Model\CommentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -14068,7 +14068,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CommentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CommentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -14108,7 +14108,7 @@ class WordsApi
      */
     private function getCommentOnlineAsyncWithHttpInfo(Requests\getCommentOnlineRequest $request) 
     {
-        $returnType = 'CommentResponse';
+        $returnType = '\Aspose\Words\Model\CommentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -14160,7 +14160,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CommentsResponse
+     * @return \Aspose\Words\Model\CommentsResponse
      */
     public function getComments(Requests\getCommentsRequest $request)
     {
@@ -14188,11 +14188,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CommentsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CommentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getCommentsWithHttpInfo(Requests\getCommentsRequest $request)
     {
-        $returnType = 'CommentsResponse';
+        $returnType = '\Aspose\Words\Model\CommentsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -14238,7 +14238,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CommentsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CommentsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -14278,7 +14278,7 @@ class WordsApi
      */
     private function getCommentsAsyncWithHttpInfo(Requests\getCommentsRequest $request) 
     {
-        $returnType = 'CommentsResponse';
+        $returnType = '\Aspose\Words\Model\CommentsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -14330,7 +14330,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CommentsResponse
+     * @return \Aspose\Words\Model\CommentsResponse
      */
     public function getCommentsOnline(Requests\getCommentsOnlineRequest $request)
     {
@@ -14358,11 +14358,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CommentsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CommentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getCommentsOnlineWithHttpInfo(Requests\getCommentsOnlineRequest $request)
     {
-        $returnType = 'CommentsResponse';
+        $returnType = '\Aspose\Words\Model\CommentsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -14408,7 +14408,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CommentsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CommentsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -14448,7 +14448,7 @@ class WordsApi
      */
     private function getCommentsOnlineAsyncWithHttpInfo(Requests\getCommentsOnlineRequest $request) 
     {
-        $returnType = 'CommentsResponse';
+        $returnType = '\Aspose\Words\Model\CommentsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -14500,7 +14500,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CustomXmlPartResponse
+     * @return \Aspose\Words\Model\CustomXmlPartResponse
      */
     public function getCustomXmlPart(Requests\getCustomXmlPartRequest $request)
     {
@@ -14528,11 +14528,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CustomXmlPartResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CustomXmlPartResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getCustomXmlPartWithHttpInfo(Requests\getCustomXmlPartRequest $request)
     {
-        $returnType = 'CustomXmlPartResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -14578,7 +14578,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CustomXmlPartResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CustomXmlPartResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -14618,7 +14618,7 @@ class WordsApi
      */
     private function getCustomXmlPartAsyncWithHttpInfo(Requests\getCustomXmlPartRequest $request) 
     {
-        $returnType = 'CustomXmlPartResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -14670,7 +14670,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CustomXmlPartResponse
+     * @return \Aspose\Words\Model\CustomXmlPartResponse
      */
     public function getCustomXmlPartOnline(Requests\getCustomXmlPartOnlineRequest $request)
     {
@@ -14698,11 +14698,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CustomXmlPartResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CustomXmlPartResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getCustomXmlPartOnlineWithHttpInfo(Requests\getCustomXmlPartOnlineRequest $request)
     {
-        $returnType = 'CustomXmlPartResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -14748,7 +14748,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CustomXmlPartResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CustomXmlPartResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -14788,7 +14788,7 @@ class WordsApi
      */
     private function getCustomXmlPartOnlineAsyncWithHttpInfo(Requests\getCustomXmlPartOnlineRequest $request) 
     {
-        $returnType = 'CustomXmlPartResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -14840,7 +14840,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CustomXmlPartsResponse
+     * @return \Aspose\Words\Model\CustomXmlPartsResponse
      */
     public function getCustomXmlParts(Requests\getCustomXmlPartsRequest $request)
     {
@@ -14868,11 +14868,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CustomXmlPartsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CustomXmlPartsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getCustomXmlPartsWithHttpInfo(Requests\getCustomXmlPartsRequest $request)
     {
-        $returnType = 'CustomXmlPartsResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -14918,7 +14918,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CustomXmlPartsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CustomXmlPartsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -14958,7 +14958,7 @@ class WordsApi
      */
     private function getCustomXmlPartsAsyncWithHttpInfo(Requests\getCustomXmlPartsRequest $request) 
     {
-        $returnType = 'CustomXmlPartsResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -15010,7 +15010,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CustomXmlPartsResponse
+     * @return \Aspose\Words\Model\CustomXmlPartsResponse
      */
     public function getCustomXmlPartsOnline(Requests\getCustomXmlPartsOnlineRequest $request)
     {
@@ -15038,11 +15038,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CustomXmlPartsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CustomXmlPartsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getCustomXmlPartsOnlineWithHttpInfo(Requests\getCustomXmlPartsOnlineRequest $request)
     {
-        $returnType = 'CustomXmlPartsResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -15088,7 +15088,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CustomXmlPartsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CustomXmlPartsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -15128,7 +15128,7 @@ class WordsApi
      */
     private function getCustomXmlPartsOnlineAsyncWithHttpInfo(Requests\getCustomXmlPartsOnlineRequest $request) 
     {
-        $returnType = 'CustomXmlPartsResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -15180,7 +15180,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function getDocument(Requests\getDocumentRequest $request)
     {
@@ -15208,11 +15208,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentWithHttpInfo(Requests\getDocumentRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -15258,7 +15258,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -15298,7 +15298,7 @@ class WordsApi
      */
     private function getDocumentAsyncWithHttpInfo(Requests\getDocumentRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -15350,7 +15350,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DrawingObjectResponse
+     * @return \Aspose\Words\Model\DrawingObjectResponse
      */
     public function getDocumentDrawingObjectByIndex(Requests\getDocumentDrawingObjectByIndexRequest $request)
     {
@@ -15378,11 +15378,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentDrawingObjectByIndexWithHttpInfo(Requests\getDocumentDrawingObjectByIndexRequest $request)
     {
-        $returnType = 'DrawingObjectResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -15428,7 +15428,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DrawingObjectResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DrawingObjectResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -15468,7 +15468,7 @@ class WordsApi
      */
     private function getDocumentDrawingObjectByIndexAsyncWithHttpInfo(Requests\getDocumentDrawingObjectByIndexRequest $request) 
     {
-        $returnType = 'DrawingObjectResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -15520,7 +15520,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DrawingObjectResponse
+     * @return \Aspose\Words\Model\DrawingObjectResponse
      */
     public function getDocumentDrawingObjectByIndexOnline(Requests\getDocumentDrawingObjectByIndexOnlineRequest $request)
     {
@@ -15548,11 +15548,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentDrawingObjectByIndexOnlineWithHttpInfo(Requests\getDocumentDrawingObjectByIndexOnlineRequest $request)
     {
-        $returnType = 'DrawingObjectResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -15598,7 +15598,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DrawingObjectResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DrawingObjectResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -15638,7 +15638,7 @@ class WordsApi
      */
     private function getDocumentDrawingObjectByIndexOnlineAsyncWithHttpInfo(Requests\getDocumentDrawingObjectByIndexOnlineRequest $request) 
     {
-        $returnType = 'DrawingObjectResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -16370,7 +16370,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DrawingObjectsResponse
+     * @return \Aspose\Words\Model\DrawingObjectsResponse
      */
     public function getDocumentDrawingObjects(Requests\getDocumentDrawingObjectsRequest $request)
     {
@@ -16398,11 +16398,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DrawingObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DrawingObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentDrawingObjectsWithHttpInfo(Requests\getDocumentDrawingObjectsRequest $request)
     {
-        $returnType = 'DrawingObjectsResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -16448,7 +16448,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DrawingObjectsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DrawingObjectsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -16488,7 +16488,7 @@ class WordsApi
      */
     private function getDocumentDrawingObjectsAsyncWithHttpInfo(Requests\getDocumentDrawingObjectsRequest $request) 
     {
-        $returnType = 'DrawingObjectsResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -16540,7 +16540,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DrawingObjectsResponse
+     * @return \Aspose\Words\Model\DrawingObjectsResponse
      */
     public function getDocumentDrawingObjectsOnline(Requests\getDocumentDrawingObjectsOnlineRequest $request)
     {
@@ -16568,11 +16568,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DrawingObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DrawingObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentDrawingObjectsOnlineWithHttpInfo(Requests\getDocumentDrawingObjectsOnlineRequest $request)
     {
-        $returnType = 'DrawingObjectsResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -16618,7 +16618,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DrawingObjectsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DrawingObjectsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -16658,7 +16658,7 @@ class WordsApi
      */
     private function getDocumentDrawingObjectsOnlineAsyncWithHttpInfo(Requests\getDocumentDrawingObjectsOnlineRequest $request) 
     {
-        $returnType = 'DrawingObjectsResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -16710,7 +16710,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FieldNamesResponse
+     * @return \Aspose\Words\Model\FieldNamesResponse
      */
     public function getDocumentFieldNames(Requests\getDocumentFieldNamesRequest $request)
     {
@@ -16738,11 +16738,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FieldNamesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FieldNamesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentFieldNamesWithHttpInfo(Requests\getDocumentFieldNamesRequest $request)
     {
-        $returnType = 'FieldNamesResponse';
+        $returnType = '\Aspose\Words\Model\FieldNamesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -16788,7 +16788,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FieldNamesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FieldNamesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -16828,7 +16828,7 @@ class WordsApi
      */
     private function getDocumentFieldNamesAsyncWithHttpInfo(Requests\getDocumentFieldNamesRequest $request) 
     {
-        $returnType = 'FieldNamesResponse';
+        $returnType = '\Aspose\Words\Model\FieldNamesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -16880,7 +16880,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FieldNamesResponse
+     * @return \Aspose\Words\Model\FieldNamesResponse
      */
     public function getDocumentFieldNamesOnline(Requests\getDocumentFieldNamesOnlineRequest $request)
     {
@@ -16908,11 +16908,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FieldNamesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FieldNamesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentFieldNamesOnlineWithHttpInfo(Requests\getDocumentFieldNamesOnlineRequest $request)
     {
-        $returnType = 'FieldNamesResponse';
+        $returnType = '\Aspose\Words\Model\FieldNamesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -16958,7 +16958,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FieldNamesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FieldNamesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -16998,7 +16998,7 @@ class WordsApi
      */
     private function getDocumentFieldNamesOnlineAsyncWithHttpInfo(Requests\getDocumentFieldNamesOnlineRequest $request) 
     {
-        $returnType = 'FieldNamesResponse';
+        $returnType = '\Aspose\Words\Model\FieldNamesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -17050,7 +17050,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HyperlinkResponse
+     * @return \Aspose\Words\Model\HyperlinkResponse
      */
     public function getDocumentHyperlinkByIndex(Requests\getDocumentHyperlinkByIndexRequest $request)
     {
@@ -17078,11 +17078,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentHyperlinkByIndexWithHttpInfo(Requests\getDocumentHyperlinkByIndexRequest $request)
     {
-        $returnType = 'HyperlinkResponse';
+        $returnType = '\Aspose\Words\Model\HyperlinkResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -17128,7 +17128,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HyperlinkResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HyperlinkResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -17168,7 +17168,7 @@ class WordsApi
      */
     private function getDocumentHyperlinkByIndexAsyncWithHttpInfo(Requests\getDocumentHyperlinkByIndexRequest $request) 
     {
-        $returnType = 'HyperlinkResponse';
+        $returnType = '\Aspose\Words\Model\HyperlinkResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -17220,7 +17220,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HyperlinkResponse
+     * @return \Aspose\Words\Model\HyperlinkResponse
      */
     public function getDocumentHyperlinkByIndexOnline(Requests\getDocumentHyperlinkByIndexOnlineRequest $request)
     {
@@ -17248,11 +17248,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentHyperlinkByIndexOnlineWithHttpInfo(Requests\getDocumentHyperlinkByIndexOnlineRequest $request)
     {
-        $returnType = 'HyperlinkResponse';
+        $returnType = '\Aspose\Words\Model\HyperlinkResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -17298,7 +17298,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HyperlinkResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HyperlinkResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -17338,7 +17338,7 @@ class WordsApi
      */
     private function getDocumentHyperlinkByIndexOnlineAsyncWithHttpInfo(Requests\getDocumentHyperlinkByIndexOnlineRequest $request) 
     {
-        $returnType = 'HyperlinkResponse';
+        $returnType = '\Aspose\Words\Model\HyperlinkResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -17390,7 +17390,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HyperlinksResponse
+     * @return \Aspose\Words\Model\HyperlinksResponse
      */
     public function getDocumentHyperlinks(Requests\getDocumentHyperlinksRequest $request)
     {
@@ -17418,11 +17418,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HyperlinksResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HyperlinksResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentHyperlinksWithHttpInfo(Requests\getDocumentHyperlinksRequest $request)
     {
-        $returnType = 'HyperlinksResponse';
+        $returnType = '\Aspose\Words\Model\HyperlinksResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -17468,7 +17468,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HyperlinksResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HyperlinksResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -17508,7 +17508,7 @@ class WordsApi
      */
     private function getDocumentHyperlinksAsyncWithHttpInfo(Requests\getDocumentHyperlinksRequest $request) 
     {
-        $returnType = 'HyperlinksResponse';
+        $returnType = '\Aspose\Words\Model\HyperlinksResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -17560,7 +17560,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HyperlinksResponse
+     * @return \Aspose\Words\Model\HyperlinksResponse
      */
     public function getDocumentHyperlinksOnline(Requests\getDocumentHyperlinksOnlineRequest $request)
     {
@@ -17588,11 +17588,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HyperlinksResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HyperlinksResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentHyperlinksOnlineWithHttpInfo(Requests\getDocumentHyperlinksOnlineRequest $request)
     {
-        $returnType = 'HyperlinksResponse';
+        $returnType = '\Aspose\Words\Model\HyperlinksResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -17638,7 +17638,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HyperlinksResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HyperlinksResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -17678,7 +17678,7 @@ class WordsApi
      */
     private function getDocumentHyperlinksOnlineAsyncWithHttpInfo(Requests\getDocumentHyperlinksOnlineRequest $request) 
     {
-        $returnType = 'HyperlinksResponse';
+        $returnType = '\Aspose\Words\Model\HyperlinksResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -17730,7 +17730,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentPropertiesResponse
+     * @return \Aspose\Words\Model\DocumentPropertiesResponse
      */
     public function getDocumentProperties(Requests\getDocumentPropertiesRequest $request)
     {
@@ -17758,11 +17758,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentPropertiesWithHttpInfo(Requests\getDocumentPropertiesRequest $request)
     {
-        $returnType = 'DocumentPropertiesResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -17808,7 +17808,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentPropertiesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentPropertiesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -17848,7 +17848,7 @@ class WordsApi
      */
     private function getDocumentPropertiesAsyncWithHttpInfo(Requests\getDocumentPropertiesRequest $request) 
     {
-        $returnType = 'DocumentPropertiesResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -17900,7 +17900,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentPropertiesResponse
+     * @return \Aspose\Words\Model\DocumentPropertiesResponse
      */
     public function getDocumentPropertiesOnline(Requests\getDocumentPropertiesOnlineRequest $request)
     {
@@ -17928,11 +17928,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentPropertiesOnlineWithHttpInfo(Requests\getDocumentPropertiesOnlineRequest $request)
     {
-        $returnType = 'DocumentPropertiesResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -17978,7 +17978,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentPropertiesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentPropertiesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -18018,7 +18018,7 @@ class WordsApi
      */
     private function getDocumentPropertiesOnlineAsyncWithHttpInfo(Requests\getDocumentPropertiesOnlineRequest $request) 
     {
-        $returnType = 'DocumentPropertiesResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -18070,7 +18070,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentPropertyResponse
+     * @return \Aspose\Words\Model\DocumentPropertyResponse
      */
     public function getDocumentProperty(Requests\getDocumentPropertyRequest $request)
     {
@@ -18098,11 +18098,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentPropertyWithHttpInfo(Requests\getDocumentPropertyRequest $request)
     {
-        $returnType = 'DocumentPropertyResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -18148,7 +18148,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentPropertyResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentPropertyResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -18188,7 +18188,7 @@ class WordsApi
      */
     private function getDocumentPropertyAsyncWithHttpInfo(Requests\getDocumentPropertyRequest $request) 
     {
-        $returnType = 'DocumentPropertyResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -18240,7 +18240,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentPropertyResponse
+     * @return \Aspose\Words\Model\DocumentPropertyResponse
      */
     public function getDocumentPropertyOnline(Requests\getDocumentPropertyOnlineRequest $request)
     {
@@ -18268,11 +18268,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentPropertyOnlineWithHttpInfo(Requests\getDocumentPropertyOnlineRequest $request)
     {
-        $returnType = 'DocumentPropertyResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -18318,7 +18318,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentPropertyResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentPropertyResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -18358,7 +18358,7 @@ class WordsApi
      */
     private function getDocumentPropertyOnlineAsyncWithHttpInfo(Requests\getDocumentPropertyOnlineRequest $request) 
     {
-        $returnType = 'DocumentPropertyResponse';
+        $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -18410,7 +18410,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ProtectionDataResponse
+     * @return \Aspose\Words\Model\ProtectionDataResponse
      */
     public function getDocumentProtection(Requests\getDocumentProtectionRequest $request)
     {
@@ -18438,11 +18438,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentProtectionWithHttpInfo(Requests\getDocumentProtectionRequest $request)
     {
-        $returnType = 'ProtectionDataResponse';
+        $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -18488,7 +18488,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ProtectionDataResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ProtectionDataResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -18528,7 +18528,7 @@ class WordsApi
      */
     private function getDocumentProtectionAsyncWithHttpInfo(Requests\getDocumentProtectionRequest $request) 
     {
-        $returnType = 'ProtectionDataResponse';
+        $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -18580,7 +18580,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ProtectionDataResponse
+     * @return \Aspose\Words\Model\ProtectionDataResponse
      */
     public function getDocumentProtectionOnline(Requests\getDocumentProtectionOnlineRequest $request)
     {
@@ -18608,11 +18608,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentProtectionOnlineWithHttpInfo(Requests\getDocumentProtectionOnlineRequest $request)
     {
-        $returnType = 'ProtectionDataResponse';
+        $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -18658,7 +18658,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ProtectionDataResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ProtectionDataResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -18698,7 +18698,7 @@ class WordsApi
      */
     private function getDocumentProtectionOnlineAsyncWithHttpInfo(Requests\getDocumentProtectionOnlineRequest $request) 
     {
-        $returnType = 'ProtectionDataResponse';
+        $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -18750,7 +18750,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StatDataResponse
+     * @return \Aspose\Words\Model\StatDataResponse
      */
     public function getDocumentStatistics(Requests\getDocumentStatisticsRequest $request)
     {
@@ -18778,11 +18778,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StatDataResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StatDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentStatisticsWithHttpInfo(Requests\getDocumentStatisticsRequest $request)
     {
-        $returnType = 'StatDataResponse';
+        $returnType = '\Aspose\Words\Model\StatDataResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -18828,7 +18828,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StatDataResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StatDataResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -18868,7 +18868,7 @@ class WordsApi
      */
     private function getDocumentStatisticsAsyncWithHttpInfo(Requests\getDocumentStatisticsRequest $request) 
     {
-        $returnType = 'StatDataResponse';
+        $returnType = '\Aspose\Words\Model\StatDataResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -18920,7 +18920,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StatDataResponse
+     * @return \Aspose\Words\Model\StatDataResponse
      */
     public function getDocumentStatisticsOnline(Requests\getDocumentStatisticsOnlineRequest $request)
     {
@@ -18948,11 +18948,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StatDataResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StatDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getDocumentStatisticsOnlineWithHttpInfo(Requests\getDocumentStatisticsOnlineRequest $request)
     {
-        $returnType = 'StatDataResponse';
+        $returnType = '\Aspose\Words\Model\StatDataResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -18998,7 +18998,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StatDataResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StatDataResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -19038,7 +19038,7 @@ class WordsApi
      */
     private function getDocumentStatisticsOnlineAsyncWithHttpInfo(Requests\getDocumentStatisticsOnlineRequest $request) 
     {
-        $returnType = 'StatDataResponse';
+        $returnType = '\Aspose\Words\Model\StatDataResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -19260,7 +19260,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FieldResponse
+     * @return \Aspose\Words\Model\FieldResponse
      */
     public function getField(Requests\getFieldRequest $request)
     {
@@ -19288,11 +19288,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FieldResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFieldWithHttpInfo(Requests\getFieldRequest $request)
     {
-        $returnType = 'FieldResponse';
+        $returnType = '\Aspose\Words\Model\FieldResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -19338,7 +19338,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FieldResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FieldResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -19378,7 +19378,7 @@ class WordsApi
      */
     private function getFieldAsyncWithHttpInfo(Requests\getFieldRequest $request) 
     {
-        $returnType = 'FieldResponse';
+        $returnType = '\Aspose\Words\Model\FieldResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -19430,7 +19430,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FieldResponse
+     * @return \Aspose\Words\Model\FieldResponse
      */
     public function getFieldOnline(Requests\getFieldOnlineRequest $request)
     {
@@ -19458,11 +19458,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FieldResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFieldOnlineWithHttpInfo(Requests\getFieldOnlineRequest $request)
     {
-        $returnType = 'FieldResponse';
+        $returnType = '\Aspose\Words\Model\FieldResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -19508,7 +19508,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FieldResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FieldResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -19548,7 +19548,7 @@ class WordsApi
      */
     private function getFieldOnlineAsyncWithHttpInfo(Requests\getFieldOnlineRequest $request) 
     {
-        $returnType = 'FieldResponse';
+        $returnType = '\Aspose\Words\Model\FieldResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -19600,7 +19600,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FieldsResponse
+     * @return \Aspose\Words\Model\FieldsResponse
      */
     public function getFields(Requests\getFieldsRequest $request)
     {
@@ -19628,11 +19628,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FieldsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FieldsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFieldsWithHttpInfo(Requests\getFieldsRequest $request)
     {
-        $returnType = 'FieldsResponse';
+        $returnType = '\Aspose\Words\Model\FieldsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -19678,7 +19678,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FieldsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FieldsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -19718,7 +19718,7 @@ class WordsApi
      */
     private function getFieldsAsyncWithHttpInfo(Requests\getFieldsRequest $request) 
     {
-        $returnType = 'FieldsResponse';
+        $returnType = '\Aspose\Words\Model\FieldsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -19770,7 +19770,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FieldsResponse
+     * @return \Aspose\Words\Model\FieldsResponse
      */
     public function getFieldsOnline(Requests\getFieldsOnlineRequest $request)
     {
@@ -19798,11 +19798,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FieldsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FieldsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFieldsOnlineWithHttpInfo(Requests\getFieldsOnlineRequest $request)
     {
-        $returnType = 'FieldsResponse';
+        $returnType = '\Aspose\Words\Model\FieldsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -19848,7 +19848,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FieldsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FieldsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -19888,7 +19888,7 @@ class WordsApi
      */
     private function getFieldsOnlineAsyncWithHttpInfo(Requests\getFieldsOnlineRequest $request) 
     {
-        $returnType = 'FieldsResponse';
+        $returnType = '\Aspose\Words\Model\FieldsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -19940,7 +19940,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FilesList
+     * @return \Aspose\Words\Model\FilesList
      */
     public function getFilesList(Requests\getFilesListRequest $request)
     {
@@ -19968,11 +19968,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FilesList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FilesList, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFilesListWithHttpInfo(Requests\getFilesListRequest $request)
     {
-        $returnType = 'FilesList';
+        $returnType = '\Aspose\Words\Model\FilesList';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -20018,7 +20018,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FilesList', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FilesList', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -20058,7 +20058,7 @@ class WordsApi
      */
     private function getFilesListAsyncWithHttpInfo(Requests\getFilesListRequest $request) 
     {
-        $returnType = 'FilesList';
+        $returnType = '\Aspose\Words\Model\FilesList';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -20110,7 +20110,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FootnoteResponse
+     * @return \Aspose\Words\Model\FootnoteResponse
      */
     public function getFootnote(Requests\getFootnoteRequest $request)
     {
@@ -20138,11 +20138,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFootnoteWithHttpInfo(Requests\getFootnoteRequest $request)
     {
-        $returnType = 'FootnoteResponse';
+        $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -20188,7 +20188,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FootnoteResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FootnoteResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -20228,7 +20228,7 @@ class WordsApi
      */
     private function getFootnoteAsyncWithHttpInfo(Requests\getFootnoteRequest $request) 
     {
-        $returnType = 'FootnoteResponse';
+        $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -20280,7 +20280,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FootnoteResponse
+     * @return \Aspose\Words\Model\FootnoteResponse
      */
     public function getFootnoteOnline(Requests\getFootnoteOnlineRequest $request)
     {
@@ -20308,11 +20308,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFootnoteOnlineWithHttpInfo(Requests\getFootnoteOnlineRequest $request)
     {
-        $returnType = 'FootnoteResponse';
+        $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -20358,7 +20358,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FootnoteResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FootnoteResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -20398,7 +20398,7 @@ class WordsApi
      */
     private function getFootnoteOnlineAsyncWithHttpInfo(Requests\getFootnoteOnlineRequest $request) 
     {
-        $returnType = 'FootnoteResponse';
+        $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -20450,7 +20450,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FootnotesResponse
+     * @return \Aspose\Words\Model\FootnotesResponse
      */
     public function getFootnotes(Requests\getFootnotesRequest $request)
     {
@@ -20478,11 +20478,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FootnotesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FootnotesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFootnotesWithHttpInfo(Requests\getFootnotesRequest $request)
     {
-        $returnType = 'FootnotesResponse';
+        $returnType = '\Aspose\Words\Model\FootnotesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -20528,7 +20528,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FootnotesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FootnotesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -20568,7 +20568,7 @@ class WordsApi
      */
     private function getFootnotesAsyncWithHttpInfo(Requests\getFootnotesRequest $request) 
     {
-        $returnType = 'FootnotesResponse';
+        $returnType = '\Aspose\Words\Model\FootnotesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -20620,7 +20620,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FootnotesResponse
+     * @return \Aspose\Words\Model\FootnotesResponse
      */
     public function getFootnotesOnline(Requests\getFootnotesOnlineRequest $request)
     {
@@ -20648,11 +20648,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FootnotesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FootnotesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFootnotesOnlineWithHttpInfo(Requests\getFootnotesOnlineRequest $request)
     {
-        $returnType = 'FootnotesResponse';
+        $returnType = '\Aspose\Words\Model\FootnotesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -20698,7 +20698,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FootnotesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FootnotesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -20738,7 +20738,7 @@ class WordsApi
      */
     private function getFootnotesOnlineAsyncWithHttpInfo(Requests\getFootnotesOnlineRequest $request) 
     {
-        $returnType = 'FootnotesResponse';
+        $returnType = '\Aspose\Words\Model\FootnotesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -20790,7 +20790,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FormFieldResponse
+     * @return \Aspose\Words\Model\FormFieldResponse
      */
     public function getFormField(Requests\getFormFieldRequest $request)
     {
@@ -20818,11 +20818,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFormFieldWithHttpInfo(Requests\getFormFieldRequest $request)
     {
-        $returnType = 'FormFieldResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -20868,7 +20868,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FormFieldResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FormFieldResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -20908,7 +20908,7 @@ class WordsApi
      */
     private function getFormFieldAsyncWithHttpInfo(Requests\getFormFieldRequest $request) 
     {
-        $returnType = 'FormFieldResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -20960,7 +20960,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FormFieldResponse
+     * @return \Aspose\Words\Model\FormFieldResponse
      */
     public function getFormFieldOnline(Requests\getFormFieldOnlineRequest $request)
     {
@@ -20988,11 +20988,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFormFieldOnlineWithHttpInfo(Requests\getFormFieldOnlineRequest $request)
     {
-        $returnType = 'FormFieldResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -21038,7 +21038,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FormFieldResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FormFieldResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -21078,7 +21078,7 @@ class WordsApi
      */
     private function getFormFieldOnlineAsyncWithHttpInfo(Requests\getFormFieldOnlineRequest $request) 
     {
-        $returnType = 'FormFieldResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -21130,7 +21130,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FormFieldsResponse
+     * @return \Aspose\Words\Model\FormFieldsResponse
      */
     public function getFormFields(Requests\getFormFieldsRequest $request)
     {
@@ -21158,11 +21158,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FormFieldsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FormFieldsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFormFieldsWithHttpInfo(Requests\getFormFieldsRequest $request)
     {
-        $returnType = 'FormFieldsResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -21208,7 +21208,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FormFieldsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FormFieldsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -21248,7 +21248,7 @@ class WordsApi
      */
     private function getFormFieldsAsyncWithHttpInfo(Requests\getFormFieldsRequest $request) 
     {
-        $returnType = 'FormFieldsResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -21300,7 +21300,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FormFieldsResponse
+     * @return \Aspose\Words\Model\FormFieldsResponse
      */
     public function getFormFieldsOnline(Requests\getFormFieldsOnlineRequest $request)
     {
@@ -21328,11 +21328,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FormFieldsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FormFieldsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getFormFieldsOnlineWithHttpInfo(Requests\getFormFieldsOnlineRequest $request)
     {
-        $returnType = 'FormFieldsResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -21378,7 +21378,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FormFieldsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FormFieldsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -21418,7 +21418,7 @@ class WordsApi
      */
     private function getFormFieldsOnlineAsyncWithHttpInfo(Requests\getFormFieldsOnlineRequest $request) 
     {
-        $returnType = 'FormFieldsResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -21470,7 +21470,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HeaderFooterResponse
+     * @return \Aspose\Words\Model\HeaderFooterResponse
      */
     public function getHeaderFooter(Requests\getHeaderFooterRequest $request)
     {
@@ -21498,11 +21498,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getHeaderFooterWithHttpInfo(Requests\getHeaderFooterRequest $request)
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -21548,7 +21548,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HeaderFooterResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HeaderFooterResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -21588,7 +21588,7 @@ class WordsApi
      */
     private function getHeaderFooterAsyncWithHttpInfo(Requests\getHeaderFooterRequest $request) 
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -21640,7 +21640,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HeaderFooterResponse
+     * @return \Aspose\Words\Model\HeaderFooterResponse
      */
     public function getHeaderFooterOfSection(Requests\getHeaderFooterOfSectionRequest $request)
     {
@@ -21668,11 +21668,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getHeaderFooterOfSectionWithHttpInfo(Requests\getHeaderFooterOfSectionRequest $request)
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -21718,7 +21718,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HeaderFooterResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HeaderFooterResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -21758,7 +21758,7 @@ class WordsApi
      */
     private function getHeaderFooterOfSectionAsyncWithHttpInfo(Requests\getHeaderFooterOfSectionRequest $request) 
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -21810,7 +21810,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HeaderFooterResponse
+     * @return \Aspose\Words\Model\HeaderFooterResponse
      */
     public function getHeaderFooterOfSectionOnline(Requests\getHeaderFooterOfSectionOnlineRequest $request)
     {
@@ -21838,11 +21838,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getHeaderFooterOfSectionOnlineWithHttpInfo(Requests\getHeaderFooterOfSectionOnlineRequest $request)
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -21888,7 +21888,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HeaderFooterResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HeaderFooterResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -21928,7 +21928,7 @@ class WordsApi
      */
     private function getHeaderFooterOfSectionOnlineAsyncWithHttpInfo(Requests\getHeaderFooterOfSectionOnlineRequest $request) 
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -21980,7 +21980,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HeaderFooterResponse
+     * @return \Aspose\Words\Model\HeaderFooterResponse
      */
     public function getHeaderFooterOnline(Requests\getHeaderFooterOnlineRequest $request)
     {
@@ -22008,11 +22008,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getHeaderFooterOnlineWithHttpInfo(Requests\getHeaderFooterOnlineRequest $request)
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -22058,7 +22058,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HeaderFooterResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HeaderFooterResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -22098,7 +22098,7 @@ class WordsApi
      */
     private function getHeaderFooterOnlineAsyncWithHttpInfo(Requests\getHeaderFooterOnlineRequest $request) 
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -22150,7 +22150,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HeaderFootersResponse
+     * @return \Aspose\Words\Model\HeaderFootersResponse
      */
     public function getHeaderFooters(Requests\getHeaderFootersRequest $request)
     {
@@ -22178,11 +22178,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HeaderFootersResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HeaderFootersResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getHeaderFootersWithHttpInfo(Requests\getHeaderFootersRequest $request)
     {
-        $returnType = 'HeaderFootersResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -22228,7 +22228,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HeaderFootersResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HeaderFootersResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -22268,7 +22268,7 @@ class WordsApi
      */
     private function getHeaderFootersAsyncWithHttpInfo(Requests\getHeaderFootersRequest $request) 
     {
-        $returnType = 'HeaderFootersResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -22320,7 +22320,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HeaderFootersResponse
+     * @return \Aspose\Words\Model\HeaderFootersResponse
      */
     public function getHeaderFootersOnline(Requests\getHeaderFootersOnlineRequest $request)
     {
@@ -22348,11 +22348,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HeaderFootersResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HeaderFootersResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getHeaderFootersOnlineWithHttpInfo(Requests\getHeaderFootersOnlineRequest $request)
     {
-        $returnType = 'HeaderFootersResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -22398,7 +22398,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HeaderFootersResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HeaderFootersResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -22438,7 +22438,7 @@ class WordsApi
      */
     private function getHeaderFootersOnlineAsyncWithHttpInfo(Requests\getHeaderFootersOnlineRequest $request) 
     {
-        $returnType = 'HeaderFootersResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -22490,7 +22490,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ListResponse
+     * @return \Aspose\Words\Model\ListResponse
      */
     public function getList(Requests\getListRequest $request)
     {
@@ -22518,11 +22518,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getListWithHttpInfo(Requests\getListRequest $request)
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -22568,7 +22568,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ListResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ListResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -22608,7 +22608,7 @@ class WordsApi
      */
     private function getListAsyncWithHttpInfo(Requests\getListRequest $request) 
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -22660,7 +22660,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ListResponse
+     * @return \Aspose\Words\Model\ListResponse
      */
     public function getListOnline(Requests\getListOnlineRequest $request)
     {
@@ -22688,11 +22688,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getListOnlineWithHttpInfo(Requests\getListOnlineRequest $request)
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -22738,7 +22738,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ListResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ListResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -22778,7 +22778,7 @@ class WordsApi
      */
     private function getListOnlineAsyncWithHttpInfo(Requests\getListOnlineRequest $request) 
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -22830,7 +22830,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ListsResponse
+     * @return \Aspose\Words\Model\ListsResponse
      */
     public function getLists(Requests\getListsRequest $request)
     {
@@ -22858,11 +22858,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ListsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ListsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getListsWithHttpInfo(Requests\getListsRequest $request)
     {
-        $returnType = 'ListsResponse';
+        $returnType = '\Aspose\Words\Model\ListsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -22908,7 +22908,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ListsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ListsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -22948,7 +22948,7 @@ class WordsApi
      */
     private function getListsAsyncWithHttpInfo(Requests\getListsRequest $request) 
     {
-        $returnType = 'ListsResponse';
+        $returnType = '\Aspose\Words\Model\ListsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -23000,7 +23000,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ListsResponse
+     * @return \Aspose\Words\Model\ListsResponse
      */
     public function getListsOnline(Requests\getListsOnlineRequest $request)
     {
@@ -23028,11 +23028,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ListsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ListsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getListsOnlineWithHttpInfo(Requests\getListsOnlineRequest $request)
     {
-        $returnType = 'ListsResponse';
+        $returnType = '\Aspose\Words\Model\ListsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -23078,7 +23078,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ListsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ListsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -23118,7 +23118,7 @@ class WordsApi
      */
     private function getListsOnlineAsyncWithHttpInfo(Requests\getListsOnlineRequest $request) 
     {
-        $returnType = 'ListsResponse';
+        $returnType = '\Aspose\Words\Model\ListsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -23170,7 +23170,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return OfficeMathObjectResponse
+     * @return \Aspose\Words\Model\OfficeMathObjectResponse
      */
     public function getOfficeMathObject(Requests\getOfficeMathObjectRequest $request)
     {
@@ -23198,11 +23198,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of OfficeMathObjectResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\OfficeMathObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getOfficeMathObjectWithHttpInfo(Requests\getOfficeMathObjectRequest $request)
     {
-        $returnType = 'OfficeMathObjectResponse';
+        $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -23248,7 +23248,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'OfficeMathObjectResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\OfficeMathObjectResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -23288,7 +23288,7 @@ class WordsApi
      */
     private function getOfficeMathObjectAsyncWithHttpInfo(Requests\getOfficeMathObjectRequest $request) 
     {
-        $returnType = 'OfficeMathObjectResponse';
+        $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -23340,7 +23340,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return OfficeMathObjectResponse
+     * @return \Aspose\Words\Model\OfficeMathObjectResponse
      */
     public function getOfficeMathObjectOnline(Requests\getOfficeMathObjectOnlineRequest $request)
     {
@@ -23368,11 +23368,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of OfficeMathObjectResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\OfficeMathObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getOfficeMathObjectOnlineWithHttpInfo(Requests\getOfficeMathObjectOnlineRequest $request)
     {
-        $returnType = 'OfficeMathObjectResponse';
+        $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -23418,7 +23418,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'OfficeMathObjectResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\OfficeMathObjectResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -23458,7 +23458,7 @@ class WordsApi
      */
     private function getOfficeMathObjectOnlineAsyncWithHttpInfo(Requests\getOfficeMathObjectOnlineRequest $request) 
     {
-        $returnType = 'OfficeMathObjectResponse';
+        $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -23510,7 +23510,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return OfficeMathObjectsResponse
+     * @return \Aspose\Words\Model\OfficeMathObjectsResponse
      */
     public function getOfficeMathObjects(Requests\getOfficeMathObjectsRequest $request)
     {
@@ -23538,11 +23538,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of OfficeMathObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\OfficeMathObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getOfficeMathObjectsWithHttpInfo(Requests\getOfficeMathObjectsRequest $request)
     {
-        $returnType = 'OfficeMathObjectsResponse';
+        $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -23588,7 +23588,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'OfficeMathObjectsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\OfficeMathObjectsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -23628,7 +23628,7 @@ class WordsApi
      */
     private function getOfficeMathObjectsAsyncWithHttpInfo(Requests\getOfficeMathObjectsRequest $request) 
     {
-        $returnType = 'OfficeMathObjectsResponse';
+        $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -23680,7 +23680,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return OfficeMathObjectsResponse
+     * @return \Aspose\Words\Model\OfficeMathObjectsResponse
      */
     public function getOfficeMathObjectsOnline(Requests\getOfficeMathObjectsOnlineRequest $request)
     {
@@ -23708,11 +23708,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of OfficeMathObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\OfficeMathObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getOfficeMathObjectsOnlineWithHttpInfo(Requests\getOfficeMathObjectsOnlineRequest $request)
     {
-        $returnType = 'OfficeMathObjectsResponse';
+        $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -23758,7 +23758,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'OfficeMathObjectsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\OfficeMathObjectsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -23798,7 +23798,7 @@ class WordsApi
      */
     private function getOfficeMathObjectsOnlineAsyncWithHttpInfo(Requests\getOfficeMathObjectsOnlineRequest $request) 
     {
-        $returnType = 'OfficeMathObjectsResponse';
+        $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -23850,7 +23850,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphResponse
+     * @return \Aspose\Words\Model\ParagraphResponse
      */
     public function getParagraph(Requests\getParagraphRequest $request)
     {
@@ -23878,11 +23878,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphWithHttpInfo(Requests\getParagraphRequest $request)
     {
-        $returnType = 'ParagraphResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -23928,7 +23928,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -23968,7 +23968,7 @@ class WordsApi
      */
     private function getParagraphAsyncWithHttpInfo(Requests\getParagraphRequest $request) 
     {
-        $returnType = 'ParagraphResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -24020,7 +24020,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphFormatResponse
+     * @return \Aspose\Words\Model\ParagraphFormatResponse
      */
     public function getParagraphFormat(Requests\getParagraphFormatRequest $request)
     {
@@ -24048,11 +24048,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphFormatWithHttpInfo(Requests\getParagraphFormatRequest $request)
     {
-        $returnType = 'ParagraphFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -24098,7 +24098,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -24138,7 +24138,7 @@ class WordsApi
      */
     private function getParagraphFormatAsyncWithHttpInfo(Requests\getParagraphFormatRequest $request) 
     {
-        $returnType = 'ParagraphFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -24190,7 +24190,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphFormatResponse
+     * @return \Aspose\Words\Model\ParagraphFormatResponse
      */
     public function getParagraphFormatOnline(Requests\getParagraphFormatOnlineRequest $request)
     {
@@ -24218,11 +24218,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphFormatOnlineWithHttpInfo(Requests\getParagraphFormatOnlineRequest $request)
     {
-        $returnType = 'ParagraphFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -24268,7 +24268,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -24308,7 +24308,7 @@ class WordsApi
      */
     private function getParagraphFormatOnlineAsyncWithHttpInfo(Requests\getParagraphFormatOnlineRequest $request) 
     {
-        $returnType = 'ParagraphFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -24360,7 +24360,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphListFormatResponse
+     * @return \Aspose\Words\Model\ParagraphListFormatResponse
      */
     public function getParagraphListFormat(Requests\getParagraphListFormatRequest $request)
     {
@@ -24388,11 +24388,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphListFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphListFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphListFormatWithHttpInfo(Requests\getParagraphListFormatRequest $request)
     {
-        $returnType = 'ParagraphListFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -24438,7 +24438,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphListFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphListFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -24478,7 +24478,7 @@ class WordsApi
      */
     private function getParagraphListFormatAsyncWithHttpInfo(Requests\getParagraphListFormatRequest $request) 
     {
-        $returnType = 'ParagraphListFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -24530,7 +24530,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphListFormatResponse
+     * @return \Aspose\Words\Model\ParagraphListFormatResponse
      */
     public function getParagraphListFormatOnline(Requests\getParagraphListFormatOnlineRequest $request)
     {
@@ -24558,11 +24558,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphListFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphListFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphListFormatOnlineWithHttpInfo(Requests\getParagraphListFormatOnlineRequest $request)
     {
-        $returnType = 'ParagraphListFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -24608,7 +24608,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphListFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphListFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -24648,7 +24648,7 @@ class WordsApi
      */
     private function getParagraphListFormatOnlineAsyncWithHttpInfo(Requests\getParagraphListFormatOnlineRequest $request) 
     {
-        $returnType = 'ParagraphListFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -24700,7 +24700,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphResponse
+     * @return \Aspose\Words\Model\ParagraphResponse
      */
     public function getParagraphOnline(Requests\getParagraphOnlineRequest $request)
     {
@@ -24728,11 +24728,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphOnlineWithHttpInfo(Requests\getParagraphOnlineRequest $request)
     {
-        $returnType = 'ParagraphResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -24778,7 +24778,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -24818,7 +24818,7 @@ class WordsApi
      */
     private function getParagraphOnlineAsyncWithHttpInfo(Requests\getParagraphOnlineRequest $request) 
     {
-        $returnType = 'ParagraphResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -24870,7 +24870,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphLinkCollectionResponse
+     * @return \Aspose\Words\Model\ParagraphLinkCollectionResponse
      */
     public function getParagraphs(Requests\getParagraphsRequest $request)
     {
@@ -24898,11 +24898,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphsWithHttpInfo(Requests\getParagraphsRequest $request)
     {
-        $returnType = 'ParagraphLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -24948,7 +24948,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphLinkCollectionResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphLinkCollectionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -24988,7 +24988,7 @@ class WordsApi
      */
     private function getParagraphsAsyncWithHttpInfo(Requests\getParagraphsRequest $request) 
     {
-        $returnType = 'ParagraphLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -25040,7 +25040,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphLinkCollectionResponse
+     * @return \Aspose\Words\Model\ParagraphLinkCollectionResponse
      */
     public function getParagraphsOnline(Requests\getParagraphsOnlineRequest $request)
     {
@@ -25068,11 +25068,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphsOnlineWithHttpInfo(Requests\getParagraphsOnlineRequest $request)
     {
-        $returnType = 'ParagraphLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -25118,7 +25118,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphLinkCollectionResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphLinkCollectionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -25158,7 +25158,7 @@ class WordsApi
      */
     private function getParagraphsOnlineAsyncWithHttpInfo(Requests\getParagraphsOnlineRequest $request) 
     {
-        $returnType = 'ParagraphLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -25210,7 +25210,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TabStopsResponse
+     * @return \Aspose\Words\Model\TabStopsResponse
      */
     public function getParagraphTabStops(Requests\getParagraphTabStopsRequest $request)
     {
@@ -25238,11 +25238,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphTabStopsWithHttpInfo(Requests\getParagraphTabStopsRequest $request)
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -25288,7 +25288,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TabStopsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TabStopsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -25328,7 +25328,7 @@ class WordsApi
      */
     private function getParagraphTabStopsAsyncWithHttpInfo(Requests\getParagraphTabStopsRequest $request) 
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -25380,7 +25380,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TabStopsResponse
+     * @return \Aspose\Words\Model\TabStopsResponse
      */
     public function getParagraphTabStopsOnline(Requests\getParagraphTabStopsOnlineRequest $request)
     {
@@ -25408,11 +25408,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getParagraphTabStopsOnlineWithHttpInfo(Requests\getParagraphTabStopsOnlineRequest $request)
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -25458,7 +25458,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TabStopsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TabStopsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -25498,7 +25498,7 @@ class WordsApi
      */
     private function getParagraphTabStopsOnlineAsyncWithHttpInfo(Requests\getParagraphTabStopsOnlineRequest $request) 
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -25550,7 +25550,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return PublicKeyResponse
+     * @return \Aspose\Words\Model\PublicKeyResponse
      */
     public function getPublicKey(Requests\getPublicKeyRequest $request)
     {
@@ -25578,11 +25578,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of PublicKeyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\PublicKeyResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getPublicKeyWithHttpInfo(Requests\getPublicKeyRequest $request)
     {
-        $returnType = 'PublicKeyResponse';
+        $returnType = '\Aspose\Words\Model\PublicKeyResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -25628,7 +25628,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'PublicKeyResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\PublicKeyResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -25668,7 +25668,7 @@ class WordsApi
      */
     private function getPublicKeyAsyncWithHttpInfo(Requests\getPublicKeyRequest $request) 
     {
-        $returnType = 'PublicKeyResponse';
+        $returnType = '\Aspose\Words\Model\PublicKeyResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -25720,7 +25720,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RangeTextResponse
+     * @return \Aspose\Words\Model\RangeTextResponse
      */
     public function getRangeText(Requests\getRangeTextRequest $request)
     {
@@ -25748,11 +25748,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RangeTextResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RangeTextResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getRangeTextWithHttpInfo(Requests\getRangeTextRequest $request)
     {
-        $returnType = 'RangeTextResponse';
+        $returnType = '\Aspose\Words\Model\RangeTextResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -25798,7 +25798,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RangeTextResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RangeTextResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -25838,7 +25838,7 @@ class WordsApi
      */
     private function getRangeTextAsyncWithHttpInfo(Requests\getRangeTextRequest $request) 
     {
-        $returnType = 'RangeTextResponse';
+        $returnType = '\Aspose\Words\Model\RangeTextResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -25890,7 +25890,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RangeTextResponse
+     * @return \Aspose\Words\Model\RangeTextResponse
      */
     public function getRangeTextOnline(Requests\getRangeTextOnlineRequest $request)
     {
@@ -25918,11 +25918,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RangeTextResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RangeTextResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getRangeTextOnlineWithHttpInfo(Requests\getRangeTextOnlineRequest $request)
     {
-        $returnType = 'RangeTextResponse';
+        $returnType = '\Aspose\Words\Model\RangeTextResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -25968,7 +25968,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RangeTextResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RangeTextResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -26008,7 +26008,7 @@ class WordsApi
      */
     private function getRangeTextOnlineAsyncWithHttpInfo(Requests\getRangeTextOnlineRequest $request) 
     {
-        $returnType = 'RangeTextResponse';
+        $returnType = '\Aspose\Words\Model\RangeTextResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -26060,7 +26060,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RunResponse
+     * @return \Aspose\Words\Model\RunResponse
      */
     public function getRun(Requests\getRunRequest $request)
     {
@@ -26088,11 +26088,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RunResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RunResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getRunWithHttpInfo(Requests\getRunRequest $request)
     {
-        $returnType = 'RunResponse';
+        $returnType = '\Aspose\Words\Model\RunResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -26138,7 +26138,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RunResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RunResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -26178,7 +26178,7 @@ class WordsApi
      */
     private function getRunAsyncWithHttpInfo(Requests\getRunRequest $request) 
     {
-        $returnType = 'RunResponse';
+        $returnType = '\Aspose\Words\Model\RunResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -26230,7 +26230,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FontResponse
+     * @return \Aspose\Words\Model\FontResponse
      */
     public function getRunFont(Requests\getRunFontRequest $request)
     {
@@ -26258,11 +26258,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FontResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FontResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getRunFontWithHttpInfo(Requests\getRunFontRequest $request)
     {
-        $returnType = 'FontResponse';
+        $returnType = '\Aspose\Words\Model\FontResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -26308,7 +26308,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FontResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FontResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -26348,7 +26348,7 @@ class WordsApi
      */
     private function getRunFontAsyncWithHttpInfo(Requests\getRunFontRequest $request) 
     {
-        $returnType = 'FontResponse';
+        $returnType = '\Aspose\Words\Model\FontResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -26400,7 +26400,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FontResponse
+     * @return \Aspose\Words\Model\FontResponse
      */
     public function getRunFontOnline(Requests\getRunFontOnlineRequest $request)
     {
@@ -26428,11 +26428,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FontResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FontResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getRunFontOnlineWithHttpInfo(Requests\getRunFontOnlineRequest $request)
     {
-        $returnType = 'FontResponse';
+        $returnType = '\Aspose\Words\Model\FontResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -26478,7 +26478,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FontResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FontResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -26518,7 +26518,7 @@ class WordsApi
      */
     private function getRunFontOnlineAsyncWithHttpInfo(Requests\getRunFontOnlineRequest $request) 
     {
-        $returnType = 'FontResponse';
+        $returnType = '\Aspose\Words\Model\FontResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -26570,7 +26570,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RunResponse
+     * @return \Aspose\Words\Model\RunResponse
      */
     public function getRunOnline(Requests\getRunOnlineRequest $request)
     {
@@ -26598,11 +26598,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RunResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RunResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getRunOnlineWithHttpInfo(Requests\getRunOnlineRequest $request)
     {
-        $returnType = 'RunResponse';
+        $returnType = '\Aspose\Words\Model\RunResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -26648,7 +26648,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RunResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RunResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -26688,7 +26688,7 @@ class WordsApi
      */
     private function getRunOnlineAsyncWithHttpInfo(Requests\getRunOnlineRequest $request) 
     {
-        $returnType = 'RunResponse';
+        $returnType = '\Aspose\Words\Model\RunResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -26740,7 +26740,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RunsResponse
+     * @return \Aspose\Words\Model\RunsResponse
      */
     public function getRuns(Requests\getRunsRequest $request)
     {
@@ -26768,11 +26768,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RunsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RunsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getRunsWithHttpInfo(Requests\getRunsRequest $request)
     {
-        $returnType = 'RunsResponse';
+        $returnType = '\Aspose\Words\Model\RunsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -26818,7 +26818,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RunsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RunsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -26858,7 +26858,7 @@ class WordsApi
      */
     private function getRunsAsyncWithHttpInfo(Requests\getRunsRequest $request) 
     {
-        $returnType = 'RunsResponse';
+        $returnType = '\Aspose\Words\Model\RunsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -26910,7 +26910,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RunsResponse
+     * @return \Aspose\Words\Model\RunsResponse
      */
     public function getRunsOnline(Requests\getRunsOnlineRequest $request)
     {
@@ -26938,11 +26938,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RunsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RunsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getRunsOnlineWithHttpInfo(Requests\getRunsOnlineRequest $request)
     {
-        $returnType = 'RunsResponse';
+        $returnType = '\Aspose\Words\Model\RunsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -26988,7 +26988,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RunsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RunsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -27028,7 +27028,7 @@ class WordsApi
      */
     private function getRunsOnlineAsyncWithHttpInfo(Requests\getRunsOnlineRequest $request) 
     {
-        $returnType = 'RunsResponse';
+        $returnType = '\Aspose\Words\Model\RunsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -27080,7 +27080,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SectionResponse
+     * @return \Aspose\Words\Model\SectionResponse
      */
     public function getSection(Requests\getSectionRequest $request)
     {
@@ -27108,11 +27108,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SectionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getSectionWithHttpInfo(Requests\getSectionRequest $request)
     {
-        $returnType = 'SectionResponse';
+        $returnType = '\Aspose\Words\Model\SectionResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -27158,7 +27158,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SectionResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SectionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -27198,7 +27198,7 @@ class WordsApi
      */
     private function getSectionAsyncWithHttpInfo(Requests\getSectionRequest $request) 
     {
-        $returnType = 'SectionResponse';
+        $returnType = '\Aspose\Words\Model\SectionResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -27250,7 +27250,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SectionResponse
+     * @return \Aspose\Words\Model\SectionResponse
      */
     public function getSectionOnline(Requests\getSectionOnlineRequest $request)
     {
@@ -27278,11 +27278,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SectionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getSectionOnlineWithHttpInfo(Requests\getSectionOnlineRequest $request)
     {
-        $returnType = 'SectionResponse';
+        $returnType = '\Aspose\Words\Model\SectionResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -27328,7 +27328,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SectionResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SectionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -27368,7 +27368,7 @@ class WordsApi
      */
     private function getSectionOnlineAsyncWithHttpInfo(Requests\getSectionOnlineRequest $request) 
     {
-        $returnType = 'SectionResponse';
+        $returnType = '\Aspose\Words\Model\SectionResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -27420,7 +27420,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SectionPageSetupResponse
+     * @return \Aspose\Words\Model\SectionPageSetupResponse
      */
     public function getSectionPageSetup(Requests\getSectionPageSetupRequest $request)
     {
@@ -27448,11 +27448,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SectionPageSetupResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SectionPageSetupResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getSectionPageSetupWithHttpInfo(Requests\getSectionPageSetupRequest $request)
     {
-        $returnType = 'SectionPageSetupResponse';
+        $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -27498,7 +27498,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SectionPageSetupResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SectionPageSetupResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -27538,7 +27538,7 @@ class WordsApi
      */
     private function getSectionPageSetupAsyncWithHttpInfo(Requests\getSectionPageSetupRequest $request) 
     {
-        $returnType = 'SectionPageSetupResponse';
+        $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -27590,7 +27590,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SectionPageSetupResponse
+     * @return \Aspose\Words\Model\SectionPageSetupResponse
      */
     public function getSectionPageSetupOnline(Requests\getSectionPageSetupOnlineRequest $request)
     {
@@ -27618,11 +27618,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SectionPageSetupResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SectionPageSetupResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getSectionPageSetupOnlineWithHttpInfo(Requests\getSectionPageSetupOnlineRequest $request)
     {
-        $returnType = 'SectionPageSetupResponse';
+        $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -27668,7 +27668,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SectionPageSetupResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SectionPageSetupResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -27708,7 +27708,7 @@ class WordsApi
      */
     private function getSectionPageSetupOnlineAsyncWithHttpInfo(Requests\getSectionPageSetupOnlineRequest $request) 
     {
-        $returnType = 'SectionPageSetupResponse';
+        $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -27760,7 +27760,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SectionLinkCollectionResponse
+     * @return \Aspose\Words\Model\SectionLinkCollectionResponse
      */
     public function getSections(Requests\getSectionsRequest $request)
     {
@@ -27788,11 +27788,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SectionLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SectionLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getSectionsWithHttpInfo(Requests\getSectionsRequest $request)
     {
-        $returnType = 'SectionLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -27838,7 +27838,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SectionLinkCollectionResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SectionLinkCollectionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -27878,7 +27878,7 @@ class WordsApi
      */
     private function getSectionsAsyncWithHttpInfo(Requests\getSectionsRequest $request) 
     {
-        $returnType = 'SectionLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -27930,7 +27930,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SectionLinkCollectionResponse
+     * @return \Aspose\Words\Model\SectionLinkCollectionResponse
      */
     public function getSectionsOnline(Requests\getSectionsOnlineRequest $request)
     {
@@ -27958,11 +27958,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SectionLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SectionLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getSectionsOnlineWithHttpInfo(Requests\getSectionsOnlineRequest $request)
     {
-        $returnType = 'SectionLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -28008,7 +28008,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SectionLinkCollectionResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SectionLinkCollectionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -28048,7 +28048,7 @@ class WordsApi
      */
     private function getSectionsOnlineAsyncWithHttpInfo(Requests\getSectionsOnlineRequest $request) 
     {
-        $returnType = 'SectionLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -28100,7 +28100,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StyleResponse
+     * @return \Aspose\Words\Model\StyleResponse
      */
     public function getStyle(Requests\getStyleRequest $request)
     {
@@ -28128,11 +28128,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getStyleWithHttpInfo(Requests\getStyleRequest $request)
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -28178,7 +28178,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StyleResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -28218,7 +28218,7 @@ class WordsApi
      */
     private function getStyleAsyncWithHttpInfo(Requests\getStyleRequest $request) 
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -28270,7 +28270,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StyleResponse
+     * @return \Aspose\Words\Model\StyleResponse
      */
     public function getStyleFromDocumentElement(Requests\getStyleFromDocumentElementRequest $request)
     {
@@ -28298,11 +28298,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getStyleFromDocumentElementWithHttpInfo(Requests\getStyleFromDocumentElementRequest $request)
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -28348,7 +28348,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StyleResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -28388,7 +28388,7 @@ class WordsApi
      */
     private function getStyleFromDocumentElementAsyncWithHttpInfo(Requests\getStyleFromDocumentElementRequest $request) 
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -28440,7 +28440,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StyleResponse
+     * @return \Aspose\Words\Model\StyleResponse
      */
     public function getStyleFromDocumentElementOnline(Requests\getStyleFromDocumentElementOnlineRequest $request)
     {
@@ -28468,11 +28468,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getStyleFromDocumentElementOnlineWithHttpInfo(Requests\getStyleFromDocumentElementOnlineRequest $request)
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -28518,7 +28518,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StyleResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -28558,7 +28558,7 @@ class WordsApi
      */
     private function getStyleFromDocumentElementOnlineAsyncWithHttpInfo(Requests\getStyleFromDocumentElementOnlineRequest $request) 
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -28610,7 +28610,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StyleResponse
+     * @return \Aspose\Words\Model\StyleResponse
      */
     public function getStyleOnline(Requests\getStyleOnlineRequest $request)
     {
@@ -28638,11 +28638,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getStyleOnlineWithHttpInfo(Requests\getStyleOnlineRequest $request)
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -28688,7 +28688,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StyleResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -28728,7 +28728,7 @@ class WordsApi
      */
     private function getStyleOnlineAsyncWithHttpInfo(Requests\getStyleOnlineRequest $request) 
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -28780,7 +28780,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StylesResponse
+     * @return \Aspose\Words\Model\StylesResponse
      */
     public function getStyles(Requests\getStylesRequest $request)
     {
@@ -28808,11 +28808,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StylesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StylesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getStylesWithHttpInfo(Requests\getStylesRequest $request)
     {
-        $returnType = 'StylesResponse';
+        $returnType = '\Aspose\Words\Model\StylesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -28858,7 +28858,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StylesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StylesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -28898,7 +28898,7 @@ class WordsApi
      */
     private function getStylesAsyncWithHttpInfo(Requests\getStylesRequest $request) 
     {
-        $returnType = 'StylesResponse';
+        $returnType = '\Aspose\Words\Model\StylesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -28950,7 +28950,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StylesResponse
+     * @return \Aspose\Words\Model\StylesResponse
      */
     public function getStylesOnline(Requests\getStylesOnlineRequest $request)
     {
@@ -28978,11 +28978,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StylesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StylesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getStylesOnlineWithHttpInfo(Requests\getStylesOnlineRequest $request)
     {
-        $returnType = 'StylesResponse';
+        $returnType = '\Aspose\Words\Model\StylesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -29028,7 +29028,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StylesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StylesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -29068,7 +29068,7 @@ class WordsApi
      */
     private function getStylesOnlineAsyncWithHttpInfo(Requests\getStylesOnlineRequest $request) 
     {
-        $returnType = 'StylesResponse';
+        $returnType = '\Aspose\Words\Model\StylesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -29120,7 +29120,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableResponse
+     * @return \Aspose\Words\Model\TableResponse
      */
     public function getTable(Requests\getTableRequest $request)
     {
@@ -29148,11 +29148,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableWithHttpInfo(Requests\getTableRequest $request)
     {
-        $returnType = 'TableResponse';
+        $returnType = '\Aspose\Words\Model\TableResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -29198,7 +29198,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -29238,7 +29238,7 @@ class WordsApi
      */
     private function getTableAsyncWithHttpInfo(Requests\getTableRequest $request) 
     {
-        $returnType = 'TableResponse';
+        $returnType = '\Aspose\Words\Model\TableResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -29290,7 +29290,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableCellResponse
+     * @return \Aspose\Words\Model\TableCellResponse
      */
     public function getTableCell(Requests\getTableCellRequest $request)
     {
@@ -29318,11 +29318,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableCellResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableCellResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableCellWithHttpInfo(Requests\getTableCellRequest $request)
     {
-        $returnType = 'TableCellResponse';
+        $returnType = '\Aspose\Words\Model\TableCellResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -29368,7 +29368,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableCellResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableCellResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -29408,7 +29408,7 @@ class WordsApi
      */
     private function getTableCellAsyncWithHttpInfo(Requests\getTableCellRequest $request) 
     {
-        $returnType = 'TableCellResponse';
+        $returnType = '\Aspose\Words\Model\TableCellResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -29460,7 +29460,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableCellFormatResponse
+     * @return \Aspose\Words\Model\TableCellFormatResponse
      */
     public function getTableCellFormat(Requests\getTableCellFormatRequest $request)
     {
@@ -29488,11 +29488,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableCellFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableCellFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableCellFormatWithHttpInfo(Requests\getTableCellFormatRequest $request)
     {
-        $returnType = 'TableCellFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -29538,7 +29538,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableCellFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableCellFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -29578,7 +29578,7 @@ class WordsApi
      */
     private function getTableCellFormatAsyncWithHttpInfo(Requests\getTableCellFormatRequest $request) 
     {
-        $returnType = 'TableCellFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -29630,7 +29630,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableCellFormatResponse
+     * @return \Aspose\Words\Model\TableCellFormatResponse
      */
     public function getTableCellFormatOnline(Requests\getTableCellFormatOnlineRequest $request)
     {
@@ -29658,11 +29658,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableCellFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableCellFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableCellFormatOnlineWithHttpInfo(Requests\getTableCellFormatOnlineRequest $request)
     {
-        $returnType = 'TableCellFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -29708,7 +29708,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableCellFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableCellFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -29748,7 +29748,7 @@ class WordsApi
      */
     private function getTableCellFormatOnlineAsyncWithHttpInfo(Requests\getTableCellFormatOnlineRequest $request) 
     {
-        $returnType = 'TableCellFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -29800,7 +29800,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableCellResponse
+     * @return \Aspose\Words\Model\TableCellResponse
      */
     public function getTableCellOnline(Requests\getTableCellOnlineRequest $request)
     {
@@ -29828,11 +29828,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableCellResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableCellResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableCellOnlineWithHttpInfo(Requests\getTableCellOnlineRequest $request)
     {
-        $returnType = 'TableCellResponse';
+        $returnType = '\Aspose\Words\Model\TableCellResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -29878,7 +29878,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableCellResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableCellResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -29918,7 +29918,7 @@ class WordsApi
      */
     private function getTableCellOnlineAsyncWithHttpInfo(Requests\getTableCellOnlineRequest $request) 
     {
-        $returnType = 'TableCellResponse';
+        $returnType = '\Aspose\Words\Model\TableCellResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -29970,7 +29970,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableResponse
+     * @return \Aspose\Words\Model\TableResponse
      */
     public function getTableOnline(Requests\getTableOnlineRequest $request)
     {
@@ -29998,11 +29998,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableOnlineWithHttpInfo(Requests\getTableOnlineRequest $request)
     {
-        $returnType = 'TableResponse';
+        $returnType = '\Aspose\Words\Model\TableResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -30048,7 +30048,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -30088,7 +30088,7 @@ class WordsApi
      */
     private function getTableOnlineAsyncWithHttpInfo(Requests\getTableOnlineRequest $request) 
     {
-        $returnType = 'TableResponse';
+        $returnType = '\Aspose\Words\Model\TableResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -30140,7 +30140,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TablePropertiesResponse
+     * @return \Aspose\Words\Model\TablePropertiesResponse
      */
     public function getTableProperties(Requests\getTablePropertiesRequest $request)
     {
@@ -30168,11 +30168,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TablePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TablePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTablePropertiesWithHttpInfo(Requests\getTablePropertiesRequest $request)
     {
-        $returnType = 'TablePropertiesResponse';
+        $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -30218,7 +30218,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TablePropertiesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TablePropertiesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -30258,7 +30258,7 @@ class WordsApi
      */
     private function getTablePropertiesAsyncWithHttpInfo(Requests\getTablePropertiesRequest $request) 
     {
-        $returnType = 'TablePropertiesResponse';
+        $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -30310,7 +30310,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TablePropertiesResponse
+     * @return \Aspose\Words\Model\TablePropertiesResponse
      */
     public function getTablePropertiesOnline(Requests\getTablePropertiesOnlineRequest $request)
     {
@@ -30338,11 +30338,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TablePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TablePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTablePropertiesOnlineWithHttpInfo(Requests\getTablePropertiesOnlineRequest $request)
     {
-        $returnType = 'TablePropertiesResponse';
+        $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -30388,7 +30388,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TablePropertiesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TablePropertiesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -30428,7 +30428,7 @@ class WordsApi
      */
     private function getTablePropertiesOnlineAsyncWithHttpInfo(Requests\getTablePropertiesOnlineRequest $request) 
     {
-        $returnType = 'TablePropertiesResponse';
+        $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -30480,7 +30480,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableRowResponse
+     * @return \Aspose\Words\Model\TableRowResponse
      */
     public function getTableRow(Requests\getTableRowRequest $request)
     {
@@ -30508,11 +30508,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableRowResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableRowResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableRowWithHttpInfo(Requests\getTableRowRequest $request)
     {
-        $returnType = 'TableRowResponse';
+        $returnType = '\Aspose\Words\Model\TableRowResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -30558,7 +30558,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableRowResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableRowResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -30598,7 +30598,7 @@ class WordsApi
      */
     private function getTableRowAsyncWithHttpInfo(Requests\getTableRowRequest $request) 
     {
-        $returnType = 'TableRowResponse';
+        $returnType = '\Aspose\Words\Model\TableRowResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -30650,7 +30650,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableRowFormatResponse
+     * @return \Aspose\Words\Model\TableRowFormatResponse
      */
     public function getTableRowFormat(Requests\getTableRowFormatRequest $request)
     {
@@ -30678,11 +30678,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableRowFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableRowFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableRowFormatWithHttpInfo(Requests\getTableRowFormatRequest $request)
     {
-        $returnType = 'TableRowFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -30728,7 +30728,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableRowFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableRowFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -30768,7 +30768,7 @@ class WordsApi
      */
     private function getTableRowFormatAsyncWithHttpInfo(Requests\getTableRowFormatRequest $request) 
     {
-        $returnType = 'TableRowFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -30820,7 +30820,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableRowFormatResponse
+     * @return \Aspose\Words\Model\TableRowFormatResponse
      */
     public function getTableRowFormatOnline(Requests\getTableRowFormatOnlineRequest $request)
     {
@@ -30848,11 +30848,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableRowFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableRowFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableRowFormatOnlineWithHttpInfo(Requests\getTableRowFormatOnlineRequest $request)
     {
-        $returnType = 'TableRowFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -30898,7 +30898,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableRowFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableRowFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -30938,7 +30938,7 @@ class WordsApi
      */
     private function getTableRowFormatOnlineAsyncWithHttpInfo(Requests\getTableRowFormatOnlineRequest $request) 
     {
-        $returnType = 'TableRowFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -30990,7 +30990,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableRowResponse
+     * @return \Aspose\Words\Model\TableRowResponse
      */
     public function getTableRowOnline(Requests\getTableRowOnlineRequest $request)
     {
@@ -31018,11 +31018,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableRowResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableRowResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTableRowOnlineWithHttpInfo(Requests\getTableRowOnlineRequest $request)
     {
-        $returnType = 'TableRowResponse';
+        $returnType = '\Aspose\Words\Model\TableRowResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -31068,7 +31068,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableRowResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableRowResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -31108,7 +31108,7 @@ class WordsApi
      */
     private function getTableRowOnlineAsyncWithHttpInfo(Requests\getTableRowOnlineRequest $request) 
     {
-        $returnType = 'TableRowResponse';
+        $returnType = '\Aspose\Words\Model\TableRowResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -31160,7 +31160,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableLinkCollectionResponse
+     * @return \Aspose\Words\Model\TableLinkCollectionResponse
      */
     public function getTables(Requests\getTablesRequest $request)
     {
@@ -31188,11 +31188,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTablesWithHttpInfo(Requests\getTablesRequest $request)
     {
-        $returnType = 'TableLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -31238,7 +31238,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableLinkCollectionResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableLinkCollectionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -31278,7 +31278,7 @@ class WordsApi
      */
     private function getTablesAsyncWithHttpInfo(Requests\getTablesRequest $request) 
     {
-        $returnType = 'TableLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -31330,7 +31330,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableLinkCollectionResponse
+     * @return \Aspose\Words\Model\TableLinkCollectionResponse
      */
     public function getTablesOnline(Requests\getTablesOnlineRequest $request)
     {
@@ -31358,11 +31358,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableLinkCollectionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function getTablesOnlineWithHttpInfo(Requests\getTablesOnlineRequest $request)
     {
-        $returnType = 'TableLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -31408,7 +31408,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableLinkCollectionResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableLinkCollectionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -31448,7 +31448,7 @@ class WordsApi
      */
     private function getTablesOnlineAsyncWithHttpInfo(Requests\getTablesOnlineRequest $request) 
     {
-        $returnType = 'TableLinkCollectionResponse';
+        $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -31500,7 +31500,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CommentResponse
+     * @return \Aspose\Words\Model\CommentResponse
      */
     public function insertComment(Requests\insertCommentRequest $request)
     {
@@ -31528,11 +31528,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CommentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CommentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertCommentWithHttpInfo(Requests\insertCommentRequest $request)
     {
-        $returnType = 'CommentResponse';
+        $returnType = '\Aspose\Words\Model\CommentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -31578,7 +31578,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CommentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CommentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -31618,7 +31618,7 @@ class WordsApi
      */
     private function insertCommentAsyncWithHttpInfo(Requests\insertCommentRequest $request) 
     {
-        $returnType = 'CommentResponse';
+        $returnType = '\Aspose\Words\Model\CommentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -31827,7 +31827,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CustomXmlPartResponse
+     * @return \Aspose\Words\Model\CustomXmlPartResponse
      */
     public function insertCustomXmlPart(Requests\insertCustomXmlPartRequest $request)
     {
@@ -31855,11 +31855,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CustomXmlPartResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CustomXmlPartResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertCustomXmlPartWithHttpInfo(Requests\insertCustomXmlPartRequest $request)
     {
-        $returnType = 'CustomXmlPartResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -31905,7 +31905,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CustomXmlPartResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CustomXmlPartResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -31945,7 +31945,7 @@ class WordsApi
      */
     private function insertCustomXmlPartAsyncWithHttpInfo(Requests\insertCustomXmlPartRequest $request) 
     {
-        $returnType = 'CustomXmlPartResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -32154,7 +32154,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DrawingObjectResponse
+     * @return \Aspose\Words\Model\DrawingObjectResponse
      */
     public function insertDrawingObject(Requests\insertDrawingObjectRequest $request)
     {
@@ -32182,11 +32182,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertDrawingObjectWithHttpInfo(Requests\insertDrawingObjectRequest $request)
     {
-        $returnType = 'DrawingObjectResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -32232,7 +32232,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DrawingObjectResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DrawingObjectResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -32272,7 +32272,7 @@ class WordsApi
      */
     private function insertDrawingObjectAsyncWithHttpInfo(Requests\insertDrawingObjectRequest $request) 
     {
-        $returnType = 'DrawingObjectResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -32481,7 +32481,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FieldResponse
+     * @return \Aspose\Words\Model\FieldResponse
      */
     public function insertField(Requests\insertFieldRequest $request)
     {
@@ -32509,11 +32509,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FieldResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertFieldWithHttpInfo(Requests\insertFieldRequest $request)
     {
-        $returnType = 'FieldResponse';
+        $returnType = '\Aspose\Words\Model\FieldResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -32559,7 +32559,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FieldResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FieldResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -32599,7 +32599,7 @@ class WordsApi
      */
     private function insertFieldAsyncWithHttpInfo(Requests\insertFieldRequest $request) 
     {
-        $returnType = 'FieldResponse';
+        $returnType = '\Aspose\Words\Model\FieldResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -32808,7 +32808,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FootnoteResponse
+     * @return \Aspose\Words\Model\FootnoteResponse
      */
     public function insertFootnote(Requests\insertFootnoteRequest $request)
     {
@@ -32836,11 +32836,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertFootnoteWithHttpInfo(Requests\insertFootnoteRequest $request)
     {
-        $returnType = 'FootnoteResponse';
+        $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -32886,7 +32886,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FootnoteResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FootnoteResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -32926,7 +32926,7 @@ class WordsApi
      */
     private function insertFootnoteAsyncWithHttpInfo(Requests\insertFootnoteRequest $request) 
     {
-        $returnType = 'FootnoteResponse';
+        $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -33135,7 +33135,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FormFieldResponse
+     * @return \Aspose\Words\Model\FormFieldResponse
      */
     public function insertFormField(Requests\insertFormFieldRequest $request)
     {
@@ -33163,11 +33163,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertFormFieldWithHttpInfo(Requests\insertFormFieldRequest $request)
     {
-        $returnType = 'FormFieldResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -33213,7 +33213,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FormFieldResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FormFieldResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -33253,7 +33253,7 @@ class WordsApi
      */
     private function insertFormFieldAsyncWithHttpInfo(Requests\insertFormFieldRequest $request) 
     {
-        $returnType = 'FormFieldResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -33462,7 +33462,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return HeaderFooterResponse
+     * @return \Aspose\Words\Model\HeaderFooterResponse
      */
     public function insertHeaderFooter(Requests\insertHeaderFooterRequest $request)
     {
@@ -33490,11 +33490,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\HeaderFooterResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertHeaderFooterWithHttpInfo(Requests\insertHeaderFooterRequest $request)
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -33540,7 +33540,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'HeaderFooterResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\HeaderFooterResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -33580,7 +33580,7 @@ class WordsApi
      */
     private function insertHeaderFooterAsyncWithHttpInfo(Requests\insertHeaderFooterRequest $request) 
     {
-        $returnType = 'HeaderFooterResponse';
+        $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -33789,7 +33789,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ListResponse
+     * @return \Aspose\Words\Model\ListResponse
      */
     public function insertList(Requests\insertListRequest $request)
     {
@@ -33817,11 +33817,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertListWithHttpInfo(Requests\insertListRequest $request)
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -33867,7 +33867,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ListResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ListResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -33907,7 +33907,7 @@ class WordsApi
      */
     private function insertListAsyncWithHttpInfo(Requests\insertListRequest $request) 
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -34116,7 +34116,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TabStopsResponse
+     * @return \Aspose\Words\Model\TabStopsResponse
      */
     public function insertOrUpdateParagraphTabStop(Requests\insertOrUpdateParagraphTabStopRequest $request)
     {
@@ -34144,11 +34144,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TabStopsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertOrUpdateParagraphTabStopWithHttpInfo(Requests\insertOrUpdateParagraphTabStopRequest $request)
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -34194,7 +34194,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TabStopsResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TabStopsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -34234,7 +34234,7 @@ class WordsApi
      */
     private function insertOrUpdateParagraphTabStopAsyncWithHttpInfo(Requests\insertOrUpdateParagraphTabStopRequest $request) 
     {
-        $returnType = 'TabStopsResponse';
+        $returnType = '\Aspose\Words\Model\TabStopsResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -34443,7 +34443,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function insertPageNumbers(Requests\insertPageNumbersRequest $request)
     {
@@ -34471,11 +34471,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertPageNumbersWithHttpInfo(Requests\insertPageNumbersRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -34521,7 +34521,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -34561,7 +34561,7 @@ class WordsApi
      */
     private function insertPageNumbersAsyncWithHttpInfo(Requests\insertPageNumbersRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -34770,7 +34770,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphResponse
+     * @return \Aspose\Words\Model\ParagraphResponse
      */
     public function insertParagraph(Requests\insertParagraphRequest $request)
     {
@@ -34798,11 +34798,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertParagraphWithHttpInfo(Requests\insertParagraphRequest $request)
     {
-        $returnType = 'ParagraphResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -34848,7 +34848,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -34888,7 +34888,7 @@ class WordsApi
      */
     private function insertParagraphAsyncWithHttpInfo(Requests\insertParagraphRequest $request) 
     {
-        $returnType = 'ParagraphResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -35097,7 +35097,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RunResponse
+     * @return \Aspose\Words\Model\RunResponse
      */
     public function insertRun(Requests\insertRunRequest $request)
     {
@@ -35125,11 +35125,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RunResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RunResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertRunWithHttpInfo(Requests\insertRunRequest $request)
     {
-        $returnType = 'RunResponse';
+        $returnType = '\Aspose\Words\Model\RunResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -35175,7 +35175,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RunResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RunResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -35215,7 +35215,7 @@ class WordsApi
      */
     private function insertRunAsyncWithHttpInfo(Requests\insertRunRequest $request) 
     {
-        $returnType = 'RunResponse';
+        $returnType = '\Aspose\Words\Model\RunResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -35424,7 +35424,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StyleResponse
+     * @return \Aspose\Words\Model\StyleResponse
      */
     public function insertStyle(Requests\insertStyleRequest $request)
     {
@@ -35452,11 +35452,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertStyleWithHttpInfo(Requests\insertStyleRequest $request)
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -35502,7 +35502,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StyleResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -35542,7 +35542,7 @@ class WordsApi
      */
     private function insertStyleAsyncWithHttpInfo(Requests\insertStyleRequest $request) 
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -35751,7 +35751,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableResponse
+     * @return \Aspose\Words\Model\TableResponse
      */
     public function insertTable(Requests\insertTableRequest $request)
     {
@@ -35779,11 +35779,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertTableWithHttpInfo(Requests\insertTableRequest $request)
     {
-        $returnType = 'TableResponse';
+        $returnType = '\Aspose\Words\Model\TableResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -35829,7 +35829,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -35869,7 +35869,7 @@ class WordsApi
      */
     private function insertTableAsyncWithHttpInfo(Requests\insertTableRequest $request) 
     {
-        $returnType = 'TableResponse';
+        $returnType = '\Aspose\Words\Model\TableResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -35921,7 +35921,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableCellResponse
+     * @return \Aspose\Words\Model\TableCellResponse
      */
     public function insertTableCell(Requests\insertTableCellRequest $request)
     {
@@ -35949,11 +35949,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableCellResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableCellResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertTableCellWithHttpInfo(Requests\insertTableCellRequest $request)
     {
-        $returnType = 'TableCellResponse';
+        $returnType = '\Aspose\Words\Model\TableCellResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -35999,7 +35999,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableCellResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableCellResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -36039,7 +36039,7 @@ class WordsApi
      */
     private function insertTableCellAsyncWithHttpInfo(Requests\insertTableCellRequest $request) 
     {
-        $returnType = 'TableCellResponse';
+        $returnType = '\Aspose\Words\Model\TableCellResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -36405,7 +36405,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableRowResponse
+     * @return \Aspose\Words\Model\TableRowResponse
      */
     public function insertTableRow(Requests\insertTableRowRequest $request)
     {
@@ -36433,11 +36433,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableRowResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableRowResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertTableRowWithHttpInfo(Requests\insertTableRowRequest $request)
     {
-        $returnType = 'TableRowResponse';
+        $returnType = '\Aspose\Words\Model\TableRowResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -36483,7 +36483,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableRowResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableRowResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -36523,7 +36523,7 @@ class WordsApi
      */
     private function insertTableRowAsyncWithHttpInfo(Requests\insertTableRowRequest $request) 
     {
-        $returnType = 'TableRowResponse';
+        $returnType = '\Aspose\Words\Model\TableRowResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -36732,7 +36732,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function insertWatermarkImage(Requests\insertWatermarkImageRequest $request)
     {
@@ -36760,11 +36760,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertWatermarkImageWithHttpInfo(Requests\insertWatermarkImageRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -36810,7 +36810,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -36850,7 +36850,7 @@ class WordsApi
      */
     private function insertWatermarkImageAsyncWithHttpInfo(Requests\insertWatermarkImageRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -37059,7 +37059,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function insertWatermarkText(Requests\insertWatermarkTextRequest $request)
     {
@@ -37087,11 +37087,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function insertWatermarkTextWithHttpInfo(Requests\insertWatermarkTextRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -37137,7 +37137,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -37177,7 +37177,7 @@ class WordsApi
      */
     private function insertWatermarkTextAsyncWithHttpInfo(Requests\insertWatermarkTextRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -37386,7 +37386,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SaveResponse
+     * @return \Aspose\Words\Model\SaveResponse
      */
     public function loadWebDocument(Requests\loadWebDocumentRequest $request)
     {
@@ -37414,11 +37414,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SaveResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function loadWebDocumentWithHttpInfo(Requests\loadWebDocumentRequest $request)
     {
-        $returnType = 'SaveResponse';
+        $returnType = '\Aspose\Words\Model\SaveResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -37464,7 +37464,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SaveResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SaveResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -37504,7 +37504,7 @@ class WordsApi
      */
     private function loadWebDocumentAsyncWithHttpInfo(Requests\loadWebDocumentRequest $request) 
     {
-        $returnType = 'SaveResponse';
+        $returnType = '\Aspose\Words\Model\SaveResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -38107,7 +38107,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ProtectionDataResponse
+     * @return \Aspose\Words\Model\ProtectionDataResponse
      */
     public function protectDocument(Requests\protectDocumentRequest $request)
     {
@@ -38135,11 +38135,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function protectDocumentWithHttpInfo(Requests\protectDocumentRequest $request)
     {
-        $returnType = 'ProtectionDataResponse';
+        $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -38185,7 +38185,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ProtectionDataResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ProtectionDataResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -38225,7 +38225,7 @@ class WordsApi
      */
     private function protectDocumentAsyncWithHttpInfo(Requests\protectDocumentRequest $request) 
     {
-        $returnType = 'ProtectionDataResponse';
+        $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -38434,7 +38434,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RevisionsModificationResponse
+     * @return \Aspose\Words\Model\RevisionsModificationResponse
      */
     public function rejectAllRevisions(Requests\rejectAllRevisionsRequest $request)
     {
@@ -38462,11 +38462,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RevisionsModificationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RevisionsModificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function rejectAllRevisionsWithHttpInfo(Requests\rejectAllRevisionsRequest $request)
     {
-        $returnType = 'RevisionsModificationResponse';
+        $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -38512,7 +38512,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RevisionsModificationResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RevisionsModificationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -38552,7 +38552,7 @@ class WordsApi
      */
     private function rejectAllRevisionsAsyncWithHttpInfo(Requests\rejectAllRevisionsRequest $request) 
     {
-        $returnType = 'RevisionsModificationResponse';
+        $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -38761,7 +38761,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function removeRange(Requests\removeRangeRequest $request)
     {
@@ -38789,11 +38789,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function removeRangeWithHttpInfo(Requests\removeRangeRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -38839,7 +38839,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -38879,7 +38879,7 @@ class WordsApi
      */
     private function removeRangeAsyncWithHttpInfo(Requests\removeRangeRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -40788,7 +40788,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ReplaceTextResponse
+     * @return \Aspose\Words\Model\ReplaceTextResponse
      */
     public function replaceText(Requests\replaceTextRequest $request)
     {
@@ -40816,11 +40816,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ReplaceTextResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ReplaceTextResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function replaceTextWithHttpInfo(Requests\replaceTextRequest $request)
     {
-        $returnType = 'ReplaceTextResponse';
+        $returnType = '\Aspose\Words\Model\ReplaceTextResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -40866,7 +40866,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ReplaceTextResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ReplaceTextResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -40906,7 +40906,7 @@ class WordsApi
      */
     private function replaceTextAsyncWithHttpInfo(Requests\replaceTextRequest $request) 
     {
-        $returnType = 'ReplaceTextResponse';
+        $returnType = '\Aspose\Words\Model\ReplaceTextResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -41115,7 +41115,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function replaceWithText(Requests\replaceWithTextRequest $request)
     {
@@ -41143,11 +41143,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function replaceWithTextWithHttpInfo(Requests\replaceWithTextRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -41193,7 +41193,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -41233,7 +41233,7 @@ class WordsApi
      */
     private function replaceWithTextAsyncWithHttpInfo(Requests\replaceWithTextRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -41569,7 +41569,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SaveResponse
+     * @return \Aspose\Words\Model\SaveResponse
      */
     public function saveAs(Requests\saveAsRequest $request)
     {
@@ -41597,11 +41597,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SaveResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function saveAsWithHttpInfo(Requests\saveAsRequest $request)
     {
-        $returnType = 'SaveResponse';
+        $returnType = '\Aspose\Words\Model\SaveResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -41647,7 +41647,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SaveResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SaveResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -41687,7 +41687,7 @@ class WordsApi
      */
     private function saveAsAsyncWithHttpInfo(Requests\saveAsRequest $request) 
     {
-        $returnType = 'SaveResponse';
+        $returnType = '\Aspose\Words\Model\SaveResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -41896,7 +41896,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function saveAsRange(Requests\saveAsRangeRequest $request)
     {
@@ -41924,11 +41924,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function saveAsRangeWithHttpInfo(Requests\saveAsRangeRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -41974,7 +41974,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -42014,7 +42014,7 @@ class WordsApi
      */
     private function saveAsRangeAsyncWithHttpInfo(Requests\saveAsRangeRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -42223,7 +42223,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SaveResponse
+     * @return \Aspose\Words\Model\SaveResponse
      */
     public function saveAsTiff(Requests\saveAsTiffRequest $request)
     {
@@ -42251,11 +42251,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SaveResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function saveAsTiffWithHttpInfo(Requests\saveAsTiffRequest $request)
     {
-        $returnType = 'SaveResponse';
+        $returnType = '\Aspose\Words\Model\SaveResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -42301,7 +42301,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SaveResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SaveResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -42341,7 +42341,7 @@ class WordsApi
      */
     private function saveAsTiffAsyncWithHttpInfo(Requests\saveAsTiffRequest $request) 
     {
-        $returnType = 'SaveResponse';
+        $returnType = '\Aspose\Words\Model\SaveResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -42550,7 +42550,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SearchResponse
+     * @return \Aspose\Words\Model\SearchResponse
      */
     public function search(Requests\searchRequest $request)
     {
@@ -42578,11 +42578,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SearchResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function searchWithHttpInfo(Requests\searchRequest $request)
     {
-        $returnType = 'SearchResponse';
+        $returnType = '\Aspose\Words\Model\SearchResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -42628,7 +42628,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SearchResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SearchResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -42668,7 +42668,7 @@ class WordsApi
      */
     private function searchAsyncWithHttpInfo(Requests\searchRequest $request) 
     {
-        $returnType = 'SearchResponse';
+        $returnType = '\Aspose\Words\Model\SearchResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -42720,7 +42720,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SearchResponse
+     * @return \Aspose\Words\Model\SearchResponse
      */
     public function searchOnline(Requests\searchOnlineRequest $request)
     {
@@ -42748,11 +42748,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SearchResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SearchResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function searchOnlineWithHttpInfo(Requests\searchOnlineRequest $request)
     {
-        $returnType = 'SearchResponse';
+        $returnType = '\Aspose\Words\Model\SearchResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -42798,7 +42798,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SearchResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SearchResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -42838,7 +42838,7 @@ class WordsApi
      */
     private function searchOnlineAsyncWithHttpInfo(Requests\searchOnlineRequest $request) 
     {
-        $returnType = 'SearchResponse';
+        $returnType = '\Aspose\Words\Model\SearchResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -42890,7 +42890,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SplitDocumentResponse
+     * @return \Aspose\Words\Model\SplitDocumentResponse
      */
     public function splitDocument(Requests\splitDocumentRequest $request)
     {
@@ -42918,11 +42918,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SplitDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SplitDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function splitDocumentWithHttpInfo(Requests\splitDocumentRequest $request)
     {
-        $returnType = 'SplitDocumentResponse';
+        $returnType = '\Aspose\Words\Model\SplitDocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -42968,7 +42968,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SplitDocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SplitDocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -43008,7 +43008,7 @@ class WordsApi
      */
     private function splitDocumentAsyncWithHttpInfo(Requests\splitDocumentRequest $request) 
     {
-        $returnType = 'SplitDocumentResponse';
+        $returnType = '\Aspose\Words\Model\SplitDocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -43217,7 +43217,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ProtectionDataResponse
+     * @return \Aspose\Words\Model\ProtectionDataResponse
      */
     public function unprotectDocument(Requests\unprotectDocumentRequest $request)
     {
@@ -43245,11 +43245,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ProtectionDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function unprotectDocumentWithHttpInfo(Requests\unprotectDocumentRequest $request)
     {
-        $returnType = 'ProtectionDataResponse';
+        $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -43295,7 +43295,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ProtectionDataResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ProtectionDataResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -43335,7 +43335,7 @@ class WordsApi
      */
     private function unprotectDocumentAsyncWithHttpInfo(Requests\unprotectDocumentRequest $request) 
     {
-        $returnType = 'ProtectionDataResponse';
+        $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -43544,7 +43544,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BookmarkResponse
+     * @return \Aspose\Words\Model\BookmarkResponse
      */
     public function updateBookmark(Requests\updateBookmarkRequest $request)
     {
@@ -43572,11 +43572,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BookmarkResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BookmarkResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateBookmarkWithHttpInfo(Requests\updateBookmarkRequest $request)
     {
-        $returnType = 'BookmarkResponse';
+        $returnType = '\Aspose\Words\Model\BookmarkResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -43622,7 +43622,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BookmarkResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BookmarkResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -43662,7 +43662,7 @@ class WordsApi
      */
     private function updateBookmarkAsyncWithHttpInfo(Requests\updateBookmarkRequest $request) 
     {
-        $returnType = 'BookmarkResponse';
+        $returnType = '\Aspose\Words\Model\BookmarkResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -43871,7 +43871,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return BorderResponse
+     * @return \Aspose\Words\Model\BorderResponse
      */
     public function updateBorder(Requests\updateBorderRequest $request)
     {
@@ -43899,11 +43899,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of BorderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\BorderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateBorderWithHttpInfo(Requests\updateBorderRequest $request)
     {
-        $returnType = 'BorderResponse';
+        $returnType = '\Aspose\Words\Model\BorderResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -43949,7 +43949,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'BorderResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\BorderResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -43989,7 +43989,7 @@ class WordsApi
      */
     private function updateBorderAsyncWithHttpInfo(Requests\updateBorderRequest $request) 
     {
-        $returnType = 'BorderResponse';
+        $returnType = '\Aspose\Words\Model\BorderResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -44198,7 +44198,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CommentResponse
+     * @return \Aspose\Words\Model\CommentResponse
      */
     public function updateComment(Requests\updateCommentRequest $request)
     {
@@ -44226,11 +44226,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CommentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CommentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateCommentWithHttpInfo(Requests\updateCommentRequest $request)
     {
-        $returnType = 'CommentResponse';
+        $returnType = '\Aspose\Words\Model\CommentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -44276,7 +44276,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CommentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CommentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -44316,7 +44316,7 @@ class WordsApi
      */
     private function updateCommentAsyncWithHttpInfo(Requests\updateCommentRequest $request) 
     {
-        $returnType = 'CommentResponse';
+        $returnType = '\Aspose\Words\Model\CommentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -44525,7 +44525,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return CustomXmlPartResponse
+     * @return \Aspose\Words\Model\CustomXmlPartResponse
      */
     public function updateCustomXmlPart(Requests\updateCustomXmlPartRequest $request)
     {
@@ -44553,11 +44553,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of CustomXmlPartResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\CustomXmlPartResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateCustomXmlPartWithHttpInfo(Requests\updateCustomXmlPartRequest $request)
     {
-        $returnType = 'CustomXmlPartResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -44603,7 +44603,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CustomXmlPartResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CustomXmlPartResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -44643,7 +44643,7 @@ class WordsApi
      */
     private function updateCustomXmlPartAsyncWithHttpInfo(Requests\updateCustomXmlPartRequest $request) 
     {
-        $returnType = 'CustomXmlPartResponse';
+        $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -44852,7 +44852,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DrawingObjectResponse
+     * @return \Aspose\Words\Model\DrawingObjectResponse
      */
     public function updateDrawingObject(Requests\updateDrawingObjectRequest $request)
     {
@@ -44880,11 +44880,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DrawingObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateDrawingObjectWithHttpInfo(Requests\updateDrawingObjectRequest $request)
     {
-        $returnType = 'DrawingObjectResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -44930,7 +44930,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DrawingObjectResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DrawingObjectResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -44970,7 +44970,7 @@ class WordsApi
      */
     private function updateDrawingObjectAsyncWithHttpInfo(Requests\updateDrawingObjectRequest $request) 
     {
-        $returnType = 'DrawingObjectResponse';
+        $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -45179,7 +45179,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FieldResponse
+     * @return \Aspose\Words\Model\FieldResponse
      */
     public function updateField(Requests\updateFieldRequest $request)
     {
@@ -45207,11 +45207,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FieldResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateFieldWithHttpInfo(Requests\updateFieldRequest $request)
     {
-        $returnType = 'FieldResponse';
+        $returnType = '\Aspose\Words\Model\FieldResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -45257,7 +45257,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FieldResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FieldResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -45297,7 +45297,7 @@ class WordsApi
      */
     private function updateFieldAsyncWithHttpInfo(Requests\updateFieldRequest $request) 
     {
-        $returnType = 'FieldResponse';
+        $returnType = '\Aspose\Words\Model\FieldResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -45506,7 +45506,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return DocumentResponse
+     * @return \Aspose\Words\Model\DocumentResponse
      */
     public function updateFields(Requests\updateFieldsRequest $request)
     {
@@ -45534,11 +45534,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateFieldsWithHttpInfo(Requests\updateFieldsRequest $request)
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -45584,7 +45584,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'DocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\DocumentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -45624,7 +45624,7 @@ class WordsApi
      */
     private function updateFieldsAsyncWithHttpInfo(Requests\updateFieldsRequest $request) 
     {
-        $returnType = 'DocumentResponse';
+        $returnType = '\Aspose\Words\Model\DocumentResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -45833,7 +45833,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FootnoteResponse
+     * @return \Aspose\Words\Model\FootnoteResponse
      */
     public function updateFootnote(Requests\updateFootnoteRequest $request)
     {
@@ -45861,11 +45861,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FootnoteResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateFootnoteWithHttpInfo(Requests\updateFootnoteRequest $request)
     {
-        $returnType = 'FootnoteResponse';
+        $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -45911,7 +45911,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FootnoteResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FootnoteResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -45951,7 +45951,7 @@ class WordsApi
      */
     private function updateFootnoteAsyncWithHttpInfo(Requests\updateFootnoteRequest $request) 
     {
-        $returnType = 'FootnoteResponse';
+        $returnType = '\Aspose\Words\Model\FootnoteResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -46160,7 +46160,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FormFieldResponse
+     * @return \Aspose\Words\Model\FormFieldResponse
      */
     public function updateFormField(Requests\updateFormFieldRequest $request)
     {
@@ -46188,11 +46188,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FormFieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateFormFieldWithHttpInfo(Requests\updateFormFieldRequest $request)
     {
-        $returnType = 'FormFieldResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -46238,7 +46238,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FormFieldResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FormFieldResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -46278,7 +46278,7 @@ class WordsApi
      */
     private function updateFormFieldAsyncWithHttpInfo(Requests\updateFormFieldRequest $request) 
     {
-        $returnType = 'FormFieldResponse';
+        $returnType = '\Aspose\Words\Model\FormFieldResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -46487,7 +46487,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ListResponse
+     * @return \Aspose\Words\Model\ListResponse
      */
     public function updateList(Requests\updateListRequest $request)
     {
@@ -46515,11 +46515,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateListWithHttpInfo(Requests\updateListRequest $request)
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -46565,7 +46565,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ListResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ListResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -46605,7 +46605,7 @@ class WordsApi
      */
     private function updateListAsyncWithHttpInfo(Requests\updateListRequest $request) 
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -46657,7 +46657,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ListResponse
+     * @return \Aspose\Words\Model\ListResponse
      */
     public function updateListLevel(Requests\updateListLevelRequest $request)
     {
@@ -46685,11 +46685,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateListLevelWithHttpInfo(Requests\updateListLevelRequest $request)
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -46735,7 +46735,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ListResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ListResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -46775,7 +46775,7 @@ class WordsApi
      */
     private function updateListLevelAsyncWithHttpInfo(Requests\updateListLevelRequest $request) 
     {
-        $returnType = 'ListResponse';
+        $returnType = '\Aspose\Words\Model\ListResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -47141,7 +47141,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphFormatResponse
+     * @return \Aspose\Words\Model\ParagraphFormatResponse
      */
     public function updateParagraphFormat(Requests\updateParagraphFormatRequest $request)
     {
@@ -47169,11 +47169,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateParagraphFormatWithHttpInfo(Requests\updateParagraphFormatRequest $request)
     {
-        $returnType = 'ParagraphFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -47219,7 +47219,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -47259,7 +47259,7 @@ class WordsApi
      */
     private function updateParagraphFormatAsyncWithHttpInfo(Requests\updateParagraphFormatRequest $request) 
     {
-        $returnType = 'ParagraphFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -47468,7 +47468,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return ParagraphListFormatResponse
+     * @return \Aspose\Words\Model\ParagraphListFormatResponse
      */
     public function updateParagraphListFormat(Requests\updateParagraphListFormatRequest $request)
     {
@@ -47496,11 +47496,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of ParagraphListFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\ParagraphListFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateParagraphListFormatWithHttpInfo(Requests\updateParagraphListFormatRequest $request)
     {
-        $returnType = 'ParagraphListFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -47546,7 +47546,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'ParagraphListFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\ParagraphListFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -47586,7 +47586,7 @@ class WordsApi
      */
     private function updateParagraphListFormatAsyncWithHttpInfo(Requests\updateParagraphListFormatRequest $request) 
     {
-        $returnType = 'ParagraphListFormatResponse';
+        $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -47795,7 +47795,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return RunResponse
+     * @return \Aspose\Words\Model\RunResponse
      */
     public function updateRun(Requests\updateRunRequest $request)
     {
@@ -47823,11 +47823,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of RunResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\RunResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateRunWithHttpInfo(Requests\updateRunRequest $request)
     {
-        $returnType = 'RunResponse';
+        $returnType = '\Aspose\Words\Model\RunResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -47873,7 +47873,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'RunResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\RunResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -47913,7 +47913,7 @@ class WordsApi
      */
     private function updateRunAsyncWithHttpInfo(Requests\updateRunRequest $request) 
     {
-        $returnType = 'RunResponse';
+        $returnType = '\Aspose\Words\Model\RunResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -47965,7 +47965,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FontResponse
+     * @return \Aspose\Words\Model\FontResponse
      */
     public function updateRunFont(Requests\updateRunFontRequest $request)
     {
@@ -47993,11 +47993,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FontResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FontResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateRunFontWithHttpInfo(Requests\updateRunFontRequest $request)
     {
-        $returnType = 'FontResponse';
+        $returnType = '\Aspose\Words\Model\FontResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -48043,7 +48043,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FontResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FontResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -48083,7 +48083,7 @@ class WordsApi
      */
     private function updateRunFontAsyncWithHttpInfo(Requests\updateRunFontRequest $request) 
     {
-        $returnType = 'FontResponse';
+        $returnType = '\Aspose\Words\Model\FontResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -48449,7 +48449,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return SectionPageSetupResponse
+     * @return \Aspose\Words\Model\SectionPageSetupResponse
      */
     public function updateSectionPageSetup(Requests\updateSectionPageSetupRequest $request)
     {
@@ -48477,11 +48477,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of SectionPageSetupResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\SectionPageSetupResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateSectionPageSetupWithHttpInfo(Requests\updateSectionPageSetupRequest $request)
     {
-        $returnType = 'SectionPageSetupResponse';
+        $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -48527,7 +48527,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'SectionPageSetupResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\SectionPageSetupResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -48567,7 +48567,7 @@ class WordsApi
      */
     private function updateSectionPageSetupAsyncWithHttpInfo(Requests\updateSectionPageSetupRequest $request) 
     {
-        $returnType = 'SectionPageSetupResponse';
+        $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -48776,7 +48776,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return StyleResponse
+     * @return \Aspose\Words\Model\StyleResponse
      */
     public function updateStyle(Requests\updateStyleRequest $request)
     {
@@ -48804,11 +48804,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateStyleWithHttpInfo(Requests\updateStyleRequest $request)
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -48854,7 +48854,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'StyleResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StyleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -48894,7 +48894,7 @@ class WordsApi
      */
     private function updateStyleAsyncWithHttpInfo(Requests\updateStyleRequest $request) 
     {
-        $returnType = 'StyleResponse';
+        $returnType = '\Aspose\Words\Model\StyleResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -49103,7 +49103,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableCellFormatResponse
+     * @return \Aspose\Words\Model\TableCellFormatResponse
      */
     public function updateTableCellFormat(Requests\updateTableCellFormatRequest $request)
     {
@@ -49131,11 +49131,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableCellFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableCellFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateTableCellFormatWithHttpInfo(Requests\updateTableCellFormatRequest $request)
     {
-        $returnType = 'TableCellFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -49181,7 +49181,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableCellFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableCellFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -49221,7 +49221,7 @@ class WordsApi
      */
     private function updateTableCellFormatAsyncWithHttpInfo(Requests\updateTableCellFormatRequest $request) 
     {
-        $returnType = 'TableCellFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -49430,7 +49430,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TablePropertiesResponse
+     * @return \Aspose\Words\Model\TablePropertiesResponse
      */
     public function updateTableProperties(Requests\updateTablePropertiesRequest $request)
     {
@@ -49458,11 +49458,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TablePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TablePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateTablePropertiesWithHttpInfo(Requests\updateTablePropertiesRequest $request)
     {
-        $returnType = 'TablePropertiesResponse';
+        $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -49508,7 +49508,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TablePropertiesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TablePropertiesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -49548,7 +49548,7 @@ class WordsApi
      */
     private function updateTablePropertiesAsyncWithHttpInfo(Requests\updateTablePropertiesRequest $request) 
     {
-        $returnType = 'TablePropertiesResponse';
+        $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -49757,7 +49757,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return TableRowFormatResponse
+     * @return \Aspose\Words\Model\TableRowFormatResponse
      */
     public function updateTableRowFormat(Requests\updateTableRowFormatRequest $request)
     {
@@ -49785,11 +49785,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of TableRowFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\TableRowFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
     private function updateTableRowFormatWithHttpInfo(Requests\updateTableRowFormatRequest $request)
     {
-        $returnType = 'TableRowFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -49835,7 +49835,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'TableRowFormatResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\TableRowFormatResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -49875,7 +49875,7 @@ class WordsApi
      */
     private function updateTableRowFormatAsyncWithHttpInfo(Requests\updateTableRowFormatRequest $request) 
     {
-        $returnType = 'TableRowFormatResponse';
+        $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -50084,7 +50084,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return FilesUploadResult
+     * @return \Aspose\Words\Model\FilesUploadResult
      */
     public function uploadFile(Requests\uploadFileRequest $request)
     {
@@ -50112,11 +50112,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of FilesUploadResult, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Words\Model\FilesUploadResult, HTTP status code, HTTP response headers (array of strings)
      */
     private function uploadFileWithHttpInfo(Requests\uploadFileRequest $request)
     {
-        $returnType = 'FilesUploadResult';
+        $returnType = '\Aspose\Words\Model\FilesUploadResult';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -50162,7 +50162,7 @@ class WordsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FilesUploadResult', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\FilesUploadResult', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -50202,7 +50202,7 @@ class WordsApi
      */
     private function uploadFileAsyncWithHttpInfo(Requests\uploadFileRequest $request) 
     {
-        $returnType = 'FilesUploadResult';
+        $returnType = '\Aspose\Words\Model\FilesUploadResult';
         $request = $request->createRequest($this->config);
 
         return $this->client

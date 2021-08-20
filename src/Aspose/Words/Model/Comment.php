@@ -52,11 +52,11 @@ class Comment extends CommentLink
      */
     protected static $swaggerTypes = [
         'author' => 'string',
-        'content' => 'StoryChildNodes',
+        'content' => '\Aspose\Words\Model\StoryChildNodes',
         'date_time' => '\DateTime',
         'initial' => 'string',
-        'range_end' => 'DocumentPosition',
-        'range_start' => 'DocumentPosition',
+        'range_end' => '\Aspose\Words\Model\DocumentPosition',
+        'range_start' => '\Aspose\Words\Model\DocumentPosition',
         'text' => 'string'
     ];
 
@@ -254,7 +254,7 @@ class Comment extends CommentLink
     /*
      * Gets content
      *
-     * @return StoryChildNodes
+     * @return \Aspose\Words\Model\StoryChildNodes
      */
     public function getContent()
     {
@@ -264,7 +264,7 @@ class Comment extends CommentLink
     /*
      * Sets content
      *
-     * @param StoryChildNodes $content Gets or sets the content of the comment.
+     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets the content of the comment.
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class Comment extends CommentLink
     /*
      * Gets range_end
      *
-     * @return DocumentPosition
+     * @return \Aspose\Words\Model\DocumentPosition
      */
     public function getRangeEnd()
     {
@@ -333,7 +333,7 @@ class Comment extends CommentLink
     /*
      * Sets range_end
      *
-     * @param DocumentPosition $range_end Gets or sets the link to comment range end node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets the link to comment range end node.
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class Comment extends CommentLink
     /*
      * Gets range_start
      *
-     * @return DocumentPosition
+     * @return \Aspose\Words\Model\DocumentPosition
      */
     public function getRangeStart()
     {
@@ -356,7 +356,7 @@ class Comment extends CommentLink
     /*
      * Sets range_start
      *
-     * @param DocumentPosition $range_start Gets or sets the link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets the link to comment range start node.
      *
      * @return $this
      */

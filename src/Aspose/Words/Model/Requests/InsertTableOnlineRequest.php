@@ -87,7 +87,7 @@ class InsertTableOnlineRequest
      * Initializes a new instance of the InsertTableOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param TableInsert $table Table parameters.
+     * @param \Aspose\Words\Model\TableInsert $table Table parameters.
      * @param string $node_path The path to the node in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -428,7 +428,7 @@ class InsertTableOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new InsertTableOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'TableResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\TableResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

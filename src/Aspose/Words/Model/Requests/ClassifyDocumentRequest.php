@@ -386,11 +386,11 @@ class ClassifyDocumentRequest
      */
     public function getResponseType()
     {
-        return 'ClassificationResponse';
+        return '\Aspose\Words\Model\ClassificationResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'ClassificationResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ClassificationResponse', []);
     }
 }

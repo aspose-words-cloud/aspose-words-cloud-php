@@ -468,7 +468,7 @@ class SplitDocumentOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new SplitDocumentOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'SplitDocumentResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\SplitDocumentResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

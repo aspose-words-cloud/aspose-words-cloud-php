@@ -93,7 +93,7 @@ class InsertRunOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param string $paragraph_path The path to the paragraph in the document tree.
-     * @param RunInsert $run Run data.
+     * @param \Aspose\Words\Model\RunInsert $run Run data.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -465,7 +465,7 @@ class InsertRunOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new InsertRunOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'RunResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\RunResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

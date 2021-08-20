@@ -51,7 +51,7 @@ class SectionResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'section' => 'Section'
+        'section' => '\Aspose\Words\Model\Section'
     ];
 
     /*
@@ -195,7 +195,7 @@ class SectionResponse extends WordsResponse
     /*
      * Gets section
      *
-     * @return Section
+     * @return \Aspose\Words\Model\Section
      */
     public function getSection()
     {
@@ -205,7 +205,7 @@ class SectionResponse extends WordsResponse
     /*
      * Sets section
      *
-     * @param Section $section Gets or sets the section.
+     * @param \Aspose\Words\Model\Section $section Gets or sets the section.
      *
      * @return $this
      */

@@ -51,11 +51,11 @@ class Section extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'child_nodes' => 'NodeLink[]',
-        'header_footers' => 'LinkElement',
-        'page_setup' => 'LinkElement',
-        'paragraphs' => 'LinkElement',
-        'tables' => 'LinkElement'
+        'child_nodes' => '\Aspose\Words\Model\NodeLink[]',
+        'header_footers' => '\Aspose\Words\Model\LinkElement',
+        'page_setup' => '\Aspose\Words\Model\LinkElement',
+        'paragraphs' => '\Aspose\Words\Model\LinkElement',
+        'tables' => '\Aspose\Words\Model\LinkElement'
     ];
 
     /*
@@ -219,7 +219,7 @@ class Section extends LinkElement
     /*
      * Gets child_nodes
      *
-     * @return NodeLink[]
+     * @return \Aspose\Words\Model\NodeLink[]
      */
     public function getChildNodes()
     {
@@ -229,7 +229,7 @@ class Section extends LinkElement
     /*
      * Sets child_nodes
      *
-     * @param NodeLink[] $child_nodes Gets or sets the list of child nodes.
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets the list of child nodes.
      *
      * @return $this
      */
@@ -242,7 +242,7 @@ class Section extends LinkElement
     /*
      * Gets header_footers
      *
-     * @return LinkElement
+     * @return \Aspose\Words\Model\LinkElement
      */
     public function getHeaderFooters()
     {
@@ -252,7 +252,7 @@ class Section extends LinkElement
     /*
      * Sets header_footers
      *
-     * @param LinkElement $header_footers Gets or sets the link to HeaderFooters resource.
+     * @param \Aspose\Words\Model\LinkElement $header_footers Gets or sets the link to HeaderFooters resource.
      *
      * @return $this
      */
@@ -265,7 +265,7 @@ class Section extends LinkElement
     /*
      * Gets page_setup
      *
-     * @return LinkElement
+     * @return \Aspose\Words\Model\LinkElement
      */
     public function getPageSetup()
     {
@@ -275,7 +275,7 @@ class Section extends LinkElement
     /*
      * Sets page_setup
      *
-     * @param LinkElement $page_setup Gets or sets the link to PageSetup resource.
+     * @param \Aspose\Words\Model\LinkElement $page_setup Gets or sets the link to PageSetup resource.
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class Section extends LinkElement
     /*
      * Gets paragraphs
      *
-     * @return LinkElement
+     * @return \Aspose\Words\Model\LinkElement
      */
     public function getParagraphs()
     {
@@ -298,7 +298,7 @@ class Section extends LinkElement
     /*
      * Sets paragraphs
      *
-     * @param LinkElement $paragraphs Gets or sets the link to Paragraphs resource.
+     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets the link to Paragraphs resource.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class Section extends LinkElement
     /*
      * Gets tables
      *
-     * @return LinkElement
+     * @return \Aspose\Words\Model\LinkElement
      */
     public function getTables()
     {
@@ -321,7 +321,7 @@ class Section extends LinkElement
     /*
      * Sets tables
      *
-     * @param LinkElement $tables Gets or sets the link to Tables resource.
+     * @param \Aspose\Words\Model\LinkElement $tables Gets or sets the link to Tables resource.
      *
      * @return $this
      */

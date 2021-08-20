@@ -51,7 +51,7 @@ class TableCell extends NodeLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'child_nodes' => 'NodeLink[]'
+        'child_nodes' => '\Aspose\Words\Model\NodeLink[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class TableCell extends NodeLink
     /*
      * Gets child_nodes
      *
-     * @return NodeLink[]
+     * @return \Aspose\Words\Model\NodeLink[]
      */
     public function getChildNodes()
     {
@@ -205,7 +205,7 @@ class TableCell extends NodeLink
     /*
      * Sets child_nodes
      *
-     * @param NodeLink[] $child_nodes Gets or sets the list of child nodes.
+     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets the list of child nodes.
      *
      * @return $this
      */

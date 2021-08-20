@@ -52,14 +52,14 @@ class AppendDocumentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
+        $requestDocumentListDocumentEntries0 = new \Aspose\Words\Model\DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName,
             "import_format_mode" => "KeepSourceFormatting",
         ));
         $requestDocumentListDocumentEntries = [
             $requestDocumentListDocumentEntries0,
         ];
-        $requestDocumentList = new DocumentEntryList(array(
+        $requestDocumentList = new \Aspose\Words\Model\DocumentEntryList(array(
             "document_entries" => $requestDocumentListDocumentEntries,
         ));
         $request = new Requests\AppendDocumentRequest(
@@ -95,14 +95,14 @@ class AppendDocumentTests extends BaseTestContext
         );
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
+        $requestDocumentListDocumentEntries0 = new \Aspose\Words\Model\DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName,
             "import_format_mode" => "KeepSourceFormatting",
         ));
         $requestDocumentListDocumentEntries = [
             $requestDocumentListDocumentEntries0,
         ];
-        $requestDocumentList = new DocumentEntryList(array(
+        $requestDocumentList = new \Aspose\Words\Model\DocumentEntryList(array(
             "document_entries" => $requestDocumentListDocumentEntries,
         ));
         $request = new Requests\AppendDocumentOnlineRequest(

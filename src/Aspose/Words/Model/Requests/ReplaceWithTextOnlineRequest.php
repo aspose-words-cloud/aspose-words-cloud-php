@@ -83,7 +83,7 @@ class ReplaceWithTextOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param string $range_start_identifier The range start identifier.
-     * @param ReplaceRange $range_text Model with text for replacement.
+     * @param \Aspose\Words\Model\ReplaceRange $range_text Model with text for replacement.
      * @param string $range_end_identifier The range end identifier.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -396,7 +396,7 @@ class ReplaceWithTextOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new ReplaceWithTextOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'DocumentResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DocumentResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

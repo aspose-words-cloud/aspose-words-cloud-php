@@ -354,11 +354,11 @@ class GetDocumentHyperlinkByIndexRequest
      */
     public function getResponseType()
     {
-        return 'HyperlinkResponse';
+        return '\Aspose\Words\Model\HyperlinkResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'HyperlinkResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\HyperlinkResponse', []);
     }
 }

@@ -51,9 +51,9 @@ class AvailableFontsResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'additional_fonts' => 'FontInfo[]',
-        'custom_fonts' => 'FontInfo[]',
-        'system_fonts' => 'FontInfo[]'
+        'additional_fonts' => '\Aspose\Words\Model\FontInfo[]',
+        'custom_fonts' => '\Aspose\Words\Model\FontInfo[]',
+        'system_fonts' => '\Aspose\Words\Model\FontInfo[]'
     ];
 
     /*
@@ -207,7 +207,7 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Gets additional_fonts
      *
-     * @return FontInfo[]
+     * @return \Aspose\Words\Model\FontInfo[]
      */
     public function getAdditionalFonts()
     {
@@ -217,7 +217,7 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Sets additional_fonts
      *
-     * @param FontInfo[] $additional_fonts Gets or sets the list of additional fonts, provided by Aspose team.
+     * @param \Aspose\Words\Model\FontInfo[] $additional_fonts Gets or sets the list of additional fonts, provided by Aspose team.
      *
      * @return $this
      */
@@ -230,7 +230,7 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Gets custom_fonts
      *
-     * @return FontInfo[]
+     * @return \Aspose\Words\Model\FontInfo[]
      */
     public function getCustomFonts()
     {
@@ -240,7 +240,7 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Sets custom_fonts
      *
-     * @param FontInfo[] $custom_fonts Gets or sets the list of custom user fonts from user cloud storage. To use them, you should specify "fontsLocation" parameter in any request.
+     * @param \Aspose\Words\Model\FontInfo[] $custom_fonts Gets or sets the list of custom user fonts from user cloud storage. To use them, you should specify "fontsLocation" parameter in any request.
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Gets system_fonts
      *
-     * @return FontInfo[]
+     * @return \Aspose\Words\Model\FontInfo[]
      */
     public function getSystemFonts()
     {
@@ -263,7 +263,7 @@ class AvailableFontsResponse extends WordsResponse
     /*
      * Sets system_fonts
      *
-     * @param FontInfo[] $system_fonts Gets or sets the list of system fonts, available on the server.
+     * @param \Aspose\Words\Model\FontInfo[] $system_fonts Gets or sets the list of system fonts, available on the server.
      *
      * @return $this
      */

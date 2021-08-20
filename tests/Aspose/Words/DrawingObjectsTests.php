@@ -438,7 +438,7 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDrawingObject = new DrawingObjectInsert(array(
+        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
             "height" => 0,
             "left" => 0,
             "top" => 0,
@@ -474,7 +474,7 @@ class DrawingObjectsTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestDrawingObject = new DrawingObjectInsert(array(
+        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
             "height" => 0,
             "left" => 0,
             "top" => 0,
@@ -514,7 +514,7 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDrawingObject = new DrawingObjectInsert(array(
+        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
             "height" => 0,
             "left" => 0,
             "top" => 0,
@@ -639,7 +639,7 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDrawingObject = new DrawingObjectUpdate(array(
+        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
             "left" => 0,
         ));
         $requestImageFile = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png";
@@ -670,7 +670,7 @@ class DrawingObjectsTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestDrawingObject = new DrawingObjectUpdate(array(
+        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
             "left" => 0,
         ));
         $requestImageFile = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png";
@@ -705,7 +705,7 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDrawingObject = new DrawingObjectUpdate(array(
+        $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
             "left" => 0,
         ));
         $requestImageFile = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png";

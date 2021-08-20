@@ -51,7 +51,7 @@ class TableCellFormatResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'cell_format' => 'TableCellFormat'
+        'cell_format' => '\Aspose\Words\Model\TableCellFormat'
     ];
 
     /*
@@ -195,7 +195,7 @@ class TableCellFormatResponse extends WordsResponse
     /*
      * Gets cell_format
      *
-     * @return TableCellFormat
+     * @return \Aspose\Words\Model\TableCellFormat
      */
     public function getCellFormat()
     {
@@ -205,7 +205,7 @@ class TableCellFormatResponse extends WordsResponse
     /*
      * Sets cell_format
      *
-     * @param TableCellFormat $cell_format Gets or sets the formatting properties of a table cell.
+     * @param \Aspose\Words\Model\TableCellFormat $cell_format Gets or sets the formatting properties of a table cell.
      *
      * @return $this
      */

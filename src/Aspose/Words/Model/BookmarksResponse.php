@@ -51,7 +51,7 @@ class BookmarksResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'bookmarks' => 'Bookmarks'
+        'bookmarks' => '\Aspose\Words\Model\Bookmarks'
     ];
 
     /*
@@ -195,7 +195,7 @@ class BookmarksResponse extends WordsResponse
     /*
      * Gets bookmarks
      *
-     * @return Bookmarks
+     * @return \Aspose\Words\Model\Bookmarks
      */
     public function getBookmarks()
     {
@@ -205,7 +205,7 @@ class BookmarksResponse extends WordsResponse
     /*
      * Sets bookmarks
      *
-     * @param Bookmarks $bookmarks Gets or sets the collection of bookmarks.
+     * @param \Aspose\Words\Model\Bookmarks $bookmarks Gets or sets the collection of bookmarks.
      *
      * @return $this
      */

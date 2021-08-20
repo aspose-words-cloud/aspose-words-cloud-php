@@ -356,11 +356,11 @@ class GetDocumentStatisticsOnlineRequest
      */
     public function getResponseType()
     {
-        return 'StatDataResponse';
+        return '\Aspose\Words\Model\StatDataResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'StatDataResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StatDataResponse', []);
     }
 }

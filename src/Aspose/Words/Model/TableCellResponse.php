@@ -51,7 +51,7 @@ class TableCellResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'cell' => 'TableCell'
+        'cell' => '\Aspose\Words\Model\TableCell'
     ];
 
     /*
@@ -195,7 +195,7 @@ class TableCellResponse extends WordsResponse
     /*
      * Gets cell
      *
-     * @return TableCell
+     * @return \Aspose\Words\Model\TableCell
      */
     public function getCell()
     {
@@ -205,7 +205,7 @@ class TableCellResponse extends WordsResponse
     /*
      * Sets cell
      *
-     * @param TableCell $cell Gets or sets the table cell.
+     * @param \Aspose\Words\Model\TableCell $cell Gets or sets the table cell.
      *
      * @return $this
      */

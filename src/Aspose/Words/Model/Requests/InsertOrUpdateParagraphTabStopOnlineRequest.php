@@ -82,7 +82,7 @@ class InsertOrUpdateParagraphTabStopOnlineRequest
      * Initializes a new instance of the InsertOrUpdateParagraphTabStopOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param TabStopInsert $tab_stop_insert_dto TabStopInsert dto.
+     * @param \Aspose\Words\Model\TabStopInsert $tab_stop_insert_dto TabStopInsert dto.
      * @param int $index Object index.
      * @param string $node_path The path to the node in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -396,7 +396,7 @@ class InsertOrUpdateParagraphTabStopOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new InsertOrUpdateParagraphTabStopOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'TabStopsResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\TabStopsResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

@@ -93,7 +93,7 @@ class UpdateListLevelOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param int $list_id The list Id.
-     * @param ListLevelUpdate $list_update List object.
+     * @param \Aspose\Words\Model\ListLevelUpdate $list_update List object.
      * @param int $list_level The list level.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -467,7 +467,7 @@ class UpdateListLevelOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateListLevelOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'ListResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\ListResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

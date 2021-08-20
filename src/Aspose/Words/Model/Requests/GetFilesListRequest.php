@@ -216,11 +216,11 @@ class GetFilesListRequest
      */
     public function getResponseType()
     {
-        return 'FilesList';
+        return '\Aspose\Words\Model\FilesList';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'FilesList', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FilesList', []);
     }
 }

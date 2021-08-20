@@ -218,7 +218,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestField = new FieldInsert(array(
+        $requestField = new \Aspose\Words\Model\FieldInsert(array(
             "field_code" => "{ NUMPAGES }",
         ));
         $request = new Requests\InsertFieldRequest(
@@ -250,7 +250,7 @@ class FieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/Fields";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx";
-        $requestField = new FieldInsert(array(
+        $requestField = new \Aspose\Words\Model\FieldInsert(array(
             "field_code" => "{ NUMPAGES }",
         ));
         $request = new Requests\InsertFieldOnlineRequest(
@@ -284,7 +284,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestField = new FieldInsert(array(
+        $requestField = new \Aspose\Words\Model\FieldInsert(array(
             "field_code" => "{ NUMPAGES }",
         ));
         $request = new Requests\InsertFieldRequest(
@@ -323,7 +323,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestField = new FieldUpdate(array(
+        $requestField = new \Aspose\Words\Model\FieldUpdate(array(
             "field_code" => "{ NUMPAGES }",
         ));
         $request = new Requests\UpdateFieldRequest(
@@ -355,7 +355,7 @@ class FieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/Fields";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx";
-        $requestField = new FieldUpdate(array(
+        $requestField = new \Aspose\Words\Model\FieldUpdate(array(
             "field_code" => "{ NUMPAGES }",
         ));
         $request = new Requests\UpdateFieldOnlineRequest(
@@ -388,7 +388,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestPageNumber = new PageNumber(array(
+        $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
             "alignment" => "center",
             "format" => "{PAGE} of {NUMPAGES}",
         ));
@@ -418,7 +418,7 @@ class FieldTests extends BaseTestContext
         $localFileName = "test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localFileName;
-        $requestPageNumber = new PageNumber(array(
+        $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
             "alignment" => "center",
             "format" => "{PAGE} of {NUMPAGES}",
         ));

@@ -51,8 +51,8 @@ class TableRow extends NodeLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'row_format' => 'TableRowFormat',
-        'table_cell_list' => 'TableCell[]'
+        'row_format' => '\Aspose\Words\Model\TableRowFormat',
+        'table_cell_list' => '\Aspose\Words\Model\TableCell[]'
     ];
 
     /*
@@ -201,7 +201,7 @@ class TableRow extends NodeLink
     /*
      * Gets row_format
      *
-     * @return TableRowFormat
+     * @return \Aspose\Words\Model\TableRowFormat
      */
     public function getRowFormat()
     {
@@ -211,7 +211,7 @@ class TableRow extends NodeLink
     /*
      * Sets row_format
      *
-     * @param TableRowFormat $row_format Gets or sets the formatting properties of a row.
+     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets the formatting properties of a row.
      *
      * @return $this
      */
@@ -224,7 +224,7 @@ class TableRow extends NodeLink
     /*
      * Gets table_cell_list
      *
-     * @return TableCell[]
+     * @return \Aspose\Words\Model\TableCell[]
      */
     public function getTableCellList()
     {
@@ -234,7 +234,7 @@ class TableRow extends NodeLink
     /*
      * Sets table_cell_list
      *
-     * @param TableCell[] $table_cell_list Gets or sets the collection of rows.
+     * @param \Aspose\Words\Model\TableCell[] $table_cell_list Gets or sets the collection of rows.
      *
      * @return $this
      */

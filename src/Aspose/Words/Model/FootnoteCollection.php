@@ -51,7 +51,7 @@ class FootnoteCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list' => 'Footnote[]'
+        'list' => '\Aspose\Words\Model\Footnote[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class FootnoteCollection extends LinkElement
     /*
      * Gets list
      *
-     * @return Footnote[]
+     * @return \Aspose\Words\Model\Footnote[]
      */
     public function getList()
     {
@@ -205,7 +205,7 @@ class FootnoteCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param Footnote[] $list Gets or sets the collection of footnotes.
+     * @param \Aspose\Words\Model\Footnote[] $list Gets or sets the collection of footnotes.
      *
      * @return $this
      */

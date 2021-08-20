@@ -97,7 +97,7 @@ class UpdateDrawingObjectOnlineRequest
      * Initializes a new instance of the UpdateDrawingObjectOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param DrawingObjectUpdate $drawing_object Drawing object parameters.
+     * @param \Aspose\Words\Model\DrawingObjectUpdate $drawing_object Drawing object parameters.
      * @param \SplFileObject $image_file File with image.
      * @param int $index Object index.
      * @param string $node_path The path to the node in the document tree.
@@ -500,7 +500,7 @@ class UpdateDrawingObjectOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateDrawingObjectOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'DrawingObjectResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DrawingObjectResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

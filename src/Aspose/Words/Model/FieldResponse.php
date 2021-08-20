@@ -51,7 +51,7 @@ class FieldResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'field' => 'Field'
+        'field' => '\Aspose\Words\Model\Field'
     ];
 
     /*
@@ -195,7 +195,7 @@ class FieldResponse extends WordsResponse
     /*
      * Gets field
      *
-     * @return Field
+     * @return \Aspose\Words\Model\Field
      */
     public function getField()
     {
@@ -205,7 +205,7 @@ class FieldResponse extends WordsResponse
     /*
      * Sets field
      *
-     * @param Field $field Gets or sets the field.
+     * @param \Aspose\Words\Model\Field $field Gets or sets the field.
      *
      * @return $this
      */

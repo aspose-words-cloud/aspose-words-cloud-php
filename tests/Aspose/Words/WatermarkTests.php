@@ -116,7 +116,7 @@ class WatermarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestWatermarkText = new WatermarkText(array(
+        $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
             "text" => "This is the text",
             "rotation_angle" => 90.0,
         ));
@@ -146,7 +146,7 @@ class WatermarkTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestWatermarkText = new WatermarkText(array(
+        $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
             "text" => "This is the text",
             "rotation_angle" => 90,
         ));

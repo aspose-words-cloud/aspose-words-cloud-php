@@ -260,10 +260,10 @@ class TableBorderTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestBorderPropertiesColor = new XmlColor(array(
+        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
             "web" => "#AABBCC",
         ));
-        $requestBorderProperties = new Border(array(
+        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
             "border_type" => "Left",
             "color" => $requestBorderPropertiesColor,
             "distance_from_text" => 6.0,
@@ -303,10 +303,10 @@ class TableBorderTests extends BaseTestContext
         $localFile = "DocumentElements/Tables/TablesGet.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestBorderPropertiesColor = new XmlColor(array(
+        $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
             "web" => "#AABBCC",
         ));
-        $requestBorderProperties = new Border(array(
+        $requestBorderProperties = new \Aspose\Words\Model\Border(array(
             "border_type" => "Left",
             "color" => $requestBorderPropertiesColor,
             "distance_from_text" => 6,

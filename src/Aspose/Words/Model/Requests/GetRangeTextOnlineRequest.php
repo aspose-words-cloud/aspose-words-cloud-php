@@ -323,11 +323,11 @@ class GetRangeTextOnlineRequest
      */
     public function getResponseType()
     {
-        return 'RangeTextResponse';
+        return '\Aspose\Words\Model\RangeTextResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'RangeTextResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\RangeTextResponse', []);
     }
 }

@@ -52,9 +52,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'additional_items' => 'FileLink[]',
-        'dest_document' => 'FileLink',
-        'source_document' => 'FileLink'
+        'additional_items' => '\Aspose\Words\Model\FileLink[]',
+        'dest_document' => '\Aspose\Words\Model\FileLink',
+        'source_document' => '\Aspose\Words\Model\FileLink'
     ];
 
     /*
@@ -211,7 +211,7 @@ class SaveResult implements ArrayAccess
     /*
      * Gets additional_items
      *
-     * @return FileLink[]
+     * @return \Aspose\Words\Model\FileLink[]
      */
     public function getAdditionalItems()
     {
@@ -221,7 +221,7 @@ class SaveResult implements ArrayAccess
     /*
      * Sets additional_items
      *
-     * @param FileLink[] $additional_items Gets or sets the list of links to additional items (css, images etc).
+     * @param \Aspose\Words\Model\FileLink[] $additional_items Gets or sets the list of links to additional items (css, images etc).
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class SaveResult implements ArrayAccess
     /*
      * Gets dest_document
      *
-     * @return FileLink
+     * @return \Aspose\Words\Model\FileLink
      */
     public function getDestDocument()
     {
@@ -244,7 +244,7 @@ class SaveResult implements ArrayAccess
     /*
      * Sets dest_document
      *
-     * @param FileLink $dest_document Gets or sets the link to destination document.
+     * @param \Aspose\Words\Model\FileLink $dest_document Gets or sets the link to destination document.
      *
      * @return $this
      */
@@ -257,7 +257,7 @@ class SaveResult implements ArrayAccess
     /*
      * Gets source_document
      *
-     * @return FileLink
+     * @return \Aspose\Words\Model\FileLink
      */
     public function getSourceDocument()
     {
@@ -267,7 +267,7 @@ class SaveResult implements ArrayAccess
     /*
      * Sets source_document
      *
-     * @param FileLink $source_document Gets or sets the link to source document.
+     * @param \Aspose\Words\Model\FileLink $source_document Gets or sets the link to source document.
      *
      * @return $this
      */

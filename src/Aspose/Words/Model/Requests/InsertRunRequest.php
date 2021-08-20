@@ -103,7 +103,7 @@ class InsertRunRequest
      *
      * @param string $name The filename of the input document.
      * @param string $paragraph_path The path to the paragraph in the document tree.
-     * @param RunInsert $run Run data.
+     * @param \Aspose\Words\Model\RunInsert $run Run data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -524,11 +524,11 @@ class InsertRunRequest
      */
     public function getResponseType()
     {
-        return 'RunResponse';
+        return '\Aspose\Words\Model\RunResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'RunResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\RunResponse', []);
     }
 }

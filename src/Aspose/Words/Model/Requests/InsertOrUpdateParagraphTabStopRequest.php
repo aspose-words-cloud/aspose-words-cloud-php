@@ -93,7 +93,7 @@ class InsertOrUpdateParagraphTabStopRequest
      *
      * @param string $name The filename of the input document.
      * @param int $index Object index.
-     * @param TabStopInsert $tab_stop_insert_dto TabStopInsert dto.
+     * @param \Aspose\Words\Model\TabStopInsert $tab_stop_insert_dto TabStopInsert dto.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -455,11 +455,11 @@ class InsertOrUpdateParagraphTabStopRequest
      */
     public function getResponseType()
     {
-        return 'TabStopsResponse';
+        return '\Aspose\Words\Model\TabStopsResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'TabStopsResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TabStopsResponse', []);
     }
 }

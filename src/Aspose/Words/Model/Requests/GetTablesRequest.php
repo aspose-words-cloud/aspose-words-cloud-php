@@ -351,11 +351,11 @@ class GetTablesRequest
      */
     public function getResponseType()
     {
-        return 'TableLinkCollectionResponse';
+        return '\Aspose\Words\Model\TableLinkCollectionResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'TableLinkCollectionResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableLinkCollectionResponse', []);
     }
 }

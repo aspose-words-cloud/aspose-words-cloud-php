@@ -51,7 +51,7 @@ class ParagraphListFormatResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list_format' => 'ListFormat'
+        'list_format' => '\Aspose\Words\Model\ListFormat'
     ];
 
     /*
@@ -195,7 +195,7 @@ class ParagraphListFormatResponse extends WordsResponse
     /*
      * Gets list_format
      *
-     * @return ListFormat
+     * @return \Aspose\Words\Model\ListFormat
      */
     public function getListFormat()
     {
@@ -205,7 +205,7 @@ class ParagraphListFormatResponse extends WordsResponse
     /*
      * Sets list_format
      *
-     * @param ListFormat $list_format Gets or sets the list format for a paragraph.
+     * @param \Aspose\Words\Model\ListFormat $list_format Gets or sets the list format for a paragraph.
      *
      * @return $this
      */

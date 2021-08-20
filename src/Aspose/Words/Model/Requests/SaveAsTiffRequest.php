@@ -167,7 +167,7 @@ class SaveAsTiffRequest
      * Initializes a new instance of the SaveAsTiffRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param TiffSaveOptionsData $save_options Tiff save options.
+     * @param \Aspose\Words\Model\TiffSaveOptionsData $save_options Tiff save options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -964,11 +964,11 @@ class SaveAsTiffRequest
      */
     public function getResponseType()
     {
-        return 'SaveResponse';
+        return '\Aspose\Words\Model\SaveResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'SaveResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SaveResponse', []);
     }
 }

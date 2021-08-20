@@ -290,11 +290,11 @@ class GetDocumentPropertyOnlineRequest
      */
     public function getResponseType()
     {
-        return 'DocumentPropertyResponse';
+        return '\Aspose\Words\Model\DocumentPropertyResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'DocumentPropertyResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentPropertyResponse', []);
     }
 }

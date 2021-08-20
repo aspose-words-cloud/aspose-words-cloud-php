@@ -54,11 +54,11 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'compliance' => 'string',
         'create_note_hyperlinks' => 'bool',
         'custom_properties_export' => 'string',
-        'digital_signature_details' => 'PdfDigitalSignatureDetailsData',
+        'digital_signature_details' => '\Aspose\Words\Model\PdfDigitalSignatureDetailsData',
         'display_doc_title' => 'bool',
-        'downsample_options' => 'DownsampleOptionsData',
+        'downsample_options' => '\Aspose\Words\Model\DownsampleOptionsData',
         'embed_full_fonts' => 'bool',
-        'encryption_details' => 'PdfEncryptionDetailsData',
+        'encryption_details' => '\Aspose\Words\Model\PdfEncryptionDetailsData',
         'export_document_structure' => 'bool',
         'font_embedding_mode' => 'string',
         'header_footer_bookmarks_export_mode' => 'string',
@@ -66,7 +66,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'image_compression' => 'string',
         'interpolate_images' => 'bool',
         'open_hyperlinks_in_new_window' => 'bool',
-        'outline_options' => 'OutlineOptionsData',
+        'outline_options' => '\Aspose\Words\Model\OutlineOptionsData',
         'page_mode' => 'string',
         'preblend_images' => 'bool',
         'preserve_form_fields' => 'bool',
@@ -433,7 +433,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Gets digital_signature_details
      *
-     * @return PdfDigitalSignatureDetailsData
+     * @return \Aspose\Words\Model\PdfDigitalSignatureDetailsData
      */
     public function getDigitalSignatureDetails()
     {
@@ -443,7 +443,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets digital_signature_details
      *
-     * @param PdfDigitalSignatureDetailsData $digital_signature_details Gets or sets the details for signing the output PDF document.
+     * @param \Aspose\Words\Model\PdfDigitalSignatureDetailsData $digital_signature_details Gets or sets the details for signing the output PDF document.
      *
      * @return $this
      */
@@ -479,7 +479,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Gets downsample_options
      *
-     * @return DownsampleOptionsData
+     * @return \Aspose\Words\Model\DownsampleOptionsData
      */
     public function getDownsampleOptions()
     {
@@ -489,7 +489,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets downsample_options
      *
-     * @param DownsampleOptionsData $downsample_options Gets or sets the downsample options.
+     * @param \Aspose\Words\Model\DownsampleOptionsData $downsample_options Gets or sets the downsample options.
      *
      * @return $this
      */
@@ -525,7 +525,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Gets encryption_details
      *
-     * @return PdfEncryptionDetailsData
+     * @return \Aspose\Words\Model\PdfEncryptionDetailsData
      */
     public function getEncryptionDetails()
     {
@@ -535,7 +535,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets encryption_details
      *
-     * @param PdfEncryptionDetailsData $encryption_details Gets or sets the details for encrypting the output PDF document.
+     * @param \Aspose\Words\Model\PdfEncryptionDetailsData $encryption_details Gets or sets the details for encrypting the output PDF document.
      *
      * @return $this
      */
@@ -713,7 +713,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Gets outline_options
      *
-     * @return OutlineOptionsData
+     * @return \Aspose\Words\Model\OutlineOptionsData
      */
     public function getOutlineOptions()
     {
@@ -723,7 +723,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets outline_options
      *
-     * @param OutlineOptionsData $outline_options Gets or sets the outline options.
+     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets the outline options.
      *
      * @return $this
      */

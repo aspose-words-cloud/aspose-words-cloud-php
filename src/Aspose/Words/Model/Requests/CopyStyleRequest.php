@@ -92,7 +92,7 @@ class CopyStyleRequest
      * Initializes a new instance of the CopyStyleRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param StyleCopy $style_copy Style to copy.
+     * @param \Aspose\Words\Model\StyleCopy $style_copy Style to copy.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -454,11 +454,11 @@ class CopyStyleRequest
      */
     public function getResponseType()
     {
-        return 'StyleResponse';
+        return '\Aspose\Words\Model\StyleResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'StyleResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StyleResponse', []);
     }
 }

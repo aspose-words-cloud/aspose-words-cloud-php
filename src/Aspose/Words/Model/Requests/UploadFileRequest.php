@@ -262,11 +262,11 @@ class UploadFileRequest
      */
     public function getResponseType()
     {
-        return 'FilesUploadResult';
+        return '\Aspose\Words\Model\FilesUploadResult';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'FilesUploadResult', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FilesUploadResult', []);
     }
 }

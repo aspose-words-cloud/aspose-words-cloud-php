@@ -387,11 +387,11 @@ class GetTablePropertiesRequest
      */
     public function getResponseType()
     {
-        return 'TablePropertiesResponse';
+        return '\Aspose\Words\Model\TablePropertiesResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'TablePropertiesResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TablePropertiesResponse', []);
     }
 }

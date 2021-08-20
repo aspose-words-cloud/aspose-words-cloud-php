@@ -53,7 +53,7 @@ class FootnoteBase implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'footnote_type' => 'string',
-        'position' => 'DocumentPosition',
+        'position' => '\Aspose\Words\Model\DocumentPosition',
         'reference_mark' => 'string',
         'text' => 'string'
     ];
@@ -273,7 +273,7 @@ class FootnoteBase implements ArrayAccess
     /*
      * Gets position
      *
-     * @return DocumentPosition
+     * @return \Aspose\Words\Model\DocumentPosition
      */
     public function getPosition()
     {
@@ -283,7 +283,7 @@ class FootnoteBase implements ArrayAccess
     /*
      * Sets position
      *
-     * @param DocumentPosition $position Gets or sets the link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets the link to comment range start node.
      *
      * @return $this
      */

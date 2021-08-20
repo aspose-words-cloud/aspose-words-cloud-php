@@ -88,7 +88,7 @@ class CreateOrUpdateDocumentPropertyOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param string $property_name The name of the property.
-     * @param DocumentPropertyCreateOrUpdate $property The property with new value.
+     * @param \Aspose\Words\Model\DocumentPropertyCreateOrUpdate $property The property with new value.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -431,7 +431,7 @@ class CreateOrUpdateDocumentPropertyOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new CreateOrUpdateDocumentPropertyOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'DocumentPropertyResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DocumentPropertyResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

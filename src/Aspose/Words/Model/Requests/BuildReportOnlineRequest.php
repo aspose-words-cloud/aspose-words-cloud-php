@@ -68,7 +68,7 @@ class BuildReportOnlineRequest
      *
      * @param \SplFileObject $template File with template.
      * @param string $data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
-     * @param ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
+     * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
      * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
     public function __construct($template, $data, $report_engine_settings, $document_file_name = null)

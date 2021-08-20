@@ -98,7 +98,7 @@ class UpdateStyleRequest
      *
      * @param string $name The filename of the input document.
      * @param string $style_name The name of the style.
-     * @param StyleUpdate $style_update Style properties to update.
+     * @param \Aspose\Words\Model\StyleUpdate $style_update Style properties to update.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -490,11 +490,11 @@ class UpdateStyleRequest
      */
     public function getResponseType()
     {
-        return 'StyleResponse';
+        return '\Aspose\Words\Model\StyleResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'StyleResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StyleResponse', []);
     }
 }

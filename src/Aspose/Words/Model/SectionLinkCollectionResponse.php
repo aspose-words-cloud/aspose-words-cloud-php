@@ -51,7 +51,7 @@ class SectionLinkCollectionResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'sections' => 'SectionLinkCollection'
+        'sections' => '\Aspose\Words\Model\SectionLinkCollection'
     ];
 
     /*
@@ -195,7 +195,7 @@ class SectionLinkCollectionResponse extends WordsResponse
     /*
      * Gets sections
      *
-     * @return SectionLinkCollection
+     * @return \Aspose\Words\Model\SectionLinkCollection
      */
     public function getSections()
     {
@@ -205,7 +205,7 @@ class SectionLinkCollectionResponse extends WordsResponse
     /*
      * Sets sections
      *
-     * @param SectionLinkCollection $sections Gets or sets the collection of sections.
+     * @param \Aspose\Words\Model\SectionLinkCollection $sections Gets or sets the collection of sections.
      *
      * @return $this
      */

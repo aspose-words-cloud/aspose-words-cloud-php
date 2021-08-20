@@ -92,7 +92,7 @@ class UpdateTablePropertiesOnlineRequest
      * Initializes a new instance of the UpdateTablePropertiesOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param TableProperties $properties The properties.
+     * @param \Aspose\Words\Model\TableProperties $properties The properties.
      * @param int $index Object index.
      * @param string $node_path The path to the node in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -464,7 +464,7 @@ class UpdateTablePropertiesOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateTablePropertiesOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'TablePropertiesResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\TablePropertiesResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

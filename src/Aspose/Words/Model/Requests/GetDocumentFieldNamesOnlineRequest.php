@@ -288,11 +288,11 @@ class GetDocumentFieldNamesOnlineRequest
      */
     public function getResponseType()
     {
-        return 'FieldNamesResponse';
+        return '\Aspose\Words\Model\FieldNamesResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'FieldNamesResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FieldNamesResponse', []);
     }
 }

@@ -51,7 +51,7 @@ class BordersCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list' => 'Border[]'
+        'list' => '\Aspose\Words\Model\Border[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class BordersCollection extends LinkElement
     /*
      * Gets list
      *
-     * @return Border[]
+     * @return \Aspose\Words\Model\Border[]
      */
     public function getList()
     {
@@ -205,7 +205,7 @@ class BordersCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param Border[] $list Gets or sets the collection of comments.
+     * @param \Aspose\Words\Model\Border[] $list Gets or sets the collection of comments.
      *
      * @return $this
      */

@@ -290,11 +290,11 @@ class GetStyleFromDocumentElementOnlineRequest
      */
     public function getResponseType()
     {
-        return 'StyleResponse';
+        return '\Aspose\Words\Model\StyleResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'StyleResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StyleResponse', []);
     }
 }

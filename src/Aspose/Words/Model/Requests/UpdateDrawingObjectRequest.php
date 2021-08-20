@@ -107,7 +107,7 @@ class UpdateDrawingObjectRequest
      * Initializes a new instance of the UpdateDrawingObjectRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param DrawingObjectUpdate $drawing_object Drawing object parameters.
+     * @param \Aspose\Words\Model\DrawingObjectUpdate $drawing_object Drawing object parameters.
      * @param \SplFileObject $image_file File with image.
      * @param int $index Object index.
      * @param string $node_path The path to the node in the document tree.
@@ -561,11 +561,11 @@ class UpdateDrawingObjectRequest
      */
     public function getResponseType()
     {
-        return 'DrawingObjectResponse';
+        return '\Aspose\Words\Model\DrawingObjectResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'DrawingObjectResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DrawingObjectResponse', []);
     }
 }

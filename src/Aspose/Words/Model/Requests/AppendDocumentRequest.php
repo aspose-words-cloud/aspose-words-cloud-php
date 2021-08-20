@@ -92,7 +92,7 @@ class AppendDocumentRequest
      * Initializes a new instance of the AppendDocumentRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param DocumentEntryList $document_list <see cref="DocumentEntryList"/> with a list of documents to append.
+     * @param \Aspose\Words\Model\DocumentEntryList $document_list <see cref="DocumentEntryList"/> with a list of documents to append.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -454,11 +454,11 @@ class AppendDocumentRequest
      */
     public function getResponseType()
     {
-        return 'DocumentResponse';
+        return '\Aspose\Words\Model\DocumentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'DocumentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
     }
 }

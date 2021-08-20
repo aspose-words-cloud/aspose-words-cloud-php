@@ -82,7 +82,7 @@ class ProtectDocumentRequest
      * Initializes a new instance of the ProtectDocumentRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param ProtectionRequest $protection_request Protection request.
+     * @param \Aspose\Words\Model\ProtectionRequest $protection_request Protection request.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -386,11 +386,11 @@ class ProtectDocumentRequest
      */
     public function getResponseType()
     {
-        return 'ProtectionDataResponse';
+        return '\Aspose\Words\Model\ProtectionDataResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'ProtectionDataResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ProtectionDataResponse', []);
     }
 }

@@ -51,7 +51,7 @@ class SectionLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'section_link_list' => 'SectionLink[]'
+        'section_link_list' => '\Aspose\Words\Model\SectionLink[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class SectionLinkCollection extends LinkElement
     /*
      * Gets section_link_list
      *
-     * @return SectionLink[]
+     * @return \Aspose\Words\Model\SectionLink[]
      */
     public function getSectionLinkList()
     {
@@ -205,7 +205,7 @@ class SectionLinkCollection extends LinkElement
     /*
      * Sets section_link_list
      *
-     * @param SectionLink[] $section_link_list Gets or sets the collection of section's links.
+     * @param \Aspose\Words\Model\SectionLink[] $section_link_list Gets or sets the collection of section's links.
      *
      * @return $this
      */

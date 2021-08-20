@@ -52,7 +52,7 @@ class SearchResponse extends WordsResponse
      */
     protected static $swaggerTypes = [
         'searching_pattern' => 'string',
-        'search_results' => 'SearchResultsCollection'
+        'search_results' => '\Aspose\Words\Model\SearchResultsCollection'
     ];
 
     /*
@@ -224,7 +224,7 @@ class SearchResponse extends WordsResponse
     /*
      * Gets search_results
      *
-     * @return SearchResultsCollection
+     * @return \Aspose\Words\Model\SearchResultsCollection
      */
     public function getSearchResults()
     {
@@ -234,7 +234,7 @@ class SearchResponse extends WordsResponse
     /*
      * Sets search_results
      *
-     * @param SearchResultsCollection $search_results Gets or sets the collection of search results.
+     * @param \Aspose\Words\Model\SearchResultsCollection $search_results Gets or sets the collection of search results.
      *
      * @return $this
      */

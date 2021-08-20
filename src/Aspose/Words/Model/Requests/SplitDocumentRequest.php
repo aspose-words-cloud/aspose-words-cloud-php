@@ -525,11 +525,11 @@ class SplitDocumentRequest
      */
     public function getResponseType()
     {
-        return 'SplitDocumentResponse';
+        return '\Aspose\Words\Model\SplitDocumentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'SplitDocumentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SplitDocumentResponse', []);
     }
 }

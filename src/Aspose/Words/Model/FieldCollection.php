@@ -51,7 +51,7 @@ class FieldCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list' => 'Field[]'
+        'list' => '\Aspose\Words\Model\Field[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class FieldCollection extends LinkElement
     /*
      * Gets list
      *
-     * @return Field[]
+     * @return \Aspose\Words\Model\Field[]
      */
     public function getList()
     {
@@ -205,7 +205,7 @@ class FieldCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param Field[] $list Gets or sets the collection of fields.
+     * @param \Aspose\Words\Model\Field[] $list Gets or sets the collection of fields.
      *
      * @return $this
      */

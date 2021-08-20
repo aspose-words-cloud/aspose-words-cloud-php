@@ -53,7 +53,7 @@ class DocumentEntryList implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'apply_base_document_headers_and_footers_to_appending_documents' => 'bool',
-        'document_entries' => 'DocumentEntry[]'
+        'document_entries' => '\Aspose\Words\Model\DocumentEntry[]'
     ];
 
     /*
@@ -228,7 +228,7 @@ class DocumentEntryList implements ArrayAccess
     /*
      * Gets document_entries
      *
-     * @return DocumentEntry[]
+     * @return \Aspose\Words\Model\DocumentEntry[]
      */
     public function getDocumentEntries()
     {
@@ -238,7 +238,7 @@ class DocumentEntryList implements ArrayAccess
     /*
      * Sets document_entries
      *
-     * @param DocumentEntry[] $document_entries Gets or sets the list of documents.
+     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries Gets or sets the list of documents.
      *
      * @return $this
      */

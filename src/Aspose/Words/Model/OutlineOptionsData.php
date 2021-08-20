@@ -52,7 +52,7 @@ class OutlineOptionsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'bookmarks_outline_levels' => 'BookmarksOutlineLevelData[]',
+        'bookmarks_outline_levels' => '\Aspose\Words\Model\BookmarksOutlineLevelData[]',
         'create_missing_outline_levels' => 'bool',
         'create_outlines_for_headings_in_tables' => 'bool',
         'default_bookmarks_outline_level' => 'int',
@@ -229,7 +229,7 @@ class OutlineOptionsData implements ArrayAccess
     /*
      * Gets bookmarks_outline_levels
      *
-     * @return BookmarksOutlineLevelData[]
+     * @return \Aspose\Words\Model\BookmarksOutlineLevelData[]
      */
     public function getBookmarksOutlineLevels()
     {
@@ -239,7 +239,7 @@ class OutlineOptionsData implements ArrayAccess
     /*
      * Sets bookmarks_outline_levels
      *
-     * @param BookmarksOutlineLevelData[] $bookmarks_outline_levels Gets or sets the individual bookmarks outline level.
+     * @param \Aspose\Words\Model\BookmarksOutlineLevelData[] $bookmarks_outline_levels Gets or sets the individual bookmarks outline level.
      *
      * @return $this
      */

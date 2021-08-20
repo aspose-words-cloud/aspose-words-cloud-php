@@ -421,11 +421,11 @@ class RemoveRangeRequest
      */
     public function getResponseType()
     {
-        return 'DocumentResponse';
+        return '\Aspose\Words\Model\DocumentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'DocumentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
     }
 }

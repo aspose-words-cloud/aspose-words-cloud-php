@@ -54,7 +54,7 @@ class Style extends LinkElement
         'aliases' => 'string[]',
         'base_style_name' => 'string',
         'built_in' => 'bool',
-        'font' => 'Font',
+        'font' => '\Aspose\Words\Model\Font',
         'is_heading' => 'bool',
         'is_quick_style' => 'bool',
         'linked_style_name' => 'string',
@@ -1128,7 +1128,7 @@ class Style extends LinkElement
     /*
      * Gets font
      *
-     * @return Font
+     * @return \Aspose\Words\Model\Font
      */
     public function getFont()
     {
@@ -1138,7 +1138,7 @@ class Style extends LinkElement
     /*
      * Sets font
      *
-     * @param Font $font Gets or sets the character formatting of the style.
+     * @param \Aspose\Words\Model\Font $font Gets or sets the character formatting of the style.
      *
      * @return $this
      */

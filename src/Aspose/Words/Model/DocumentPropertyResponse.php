@@ -51,7 +51,7 @@ class DocumentPropertyResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'document_property' => 'DocumentProperty'
+        'document_property' => '\Aspose\Words\Model\DocumentProperty'
     ];
 
     /*
@@ -195,7 +195,7 @@ class DocumentPropertyResponse extends WordsResponse
     /*
      * Gets document_property
      *
-     * @return DocumentProperty
+     * @return \Aspose\Words\Model\DocumentProperty
      */
     public function getDocumentProperty()
     {
@@ -205,7 +205,7 @@ class DocumentPropertyResponse extends WordsResponse
     /*
      * Sets document_property
      *
-     * @param DocumentProperty $document_property Gets or sets the document property.
+     * @param \Aspose\Words\Model\DocumentProperty $document_property Gets or sets the document property.
      *
      * @return $this
      */

@@ -97,7 +97,7 @@ class InsertFootnoteRequest
      * Initializes a new instance of the InsertFootnoteRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param FootnoteInsert $footnote_dto Footnote data.
+     * @param \Aspose\Words\Model\FootnoteInsert $footnote_dto Footnote data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -487,11 +487,11 @@ class InsertFootnoteRequest
      */
     public function getResponseType()
     {
-        return 'FootnoteResponse';
+        return '\Aspose\Words\Model\FootnoteResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'FootnoteResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FootnoteResponse', []);
     }
 }

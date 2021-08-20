@@ -52,9 +52,9 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'pages' => 'FileLink[]',
-        'source_document' => 'FileLink',
-        'zipped_pages' => 'FileLink'
+        'pages' => '\Aspose\Words\Model\FileLink[]',
+        'source_document' => '\Aspose\Words\Model\FileLink',
+        'zipped_pages' => '\Aspose\Words\Model\FileLink'
     ];
 
     /*
@@ -211,7 +211,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Gets pages
      *
-     * @return FileLink[]
+     * @return \Aspose\Words\Model\FileLink[]
      */
     public function getPages()
     {
@@ -221,7 +221,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Sets pages
      *
-     * @param FileLink[] $pages Gets or sets the list of pages.
+     * @param \Aspose\Words\Model\FileLink[] $pages Gets or sets the list of pages.
      *
      * @return $this
      */
@@ -234,7 +234,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Gets source_document
      *
-     * @return FileLink
+     * @return \Aspose\Words\Model\FileLink
      */
     public function getSourceDocument()
     {
@@ -244,7 +244,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Sets source_document
      *
-     * @param FileLink $source_document Gets or sets the link to the source document.
+     * @param \Aspose\Words\Model\FileLink $source_document Gets or sets the link to the source document.
      *
      * @return $this
      */
@@ -257,7 +257,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Gets zipped_pages
      *
-     * @return FileLink
+     * @return \Aspose\Words\Model\FileLink
      */
     public function getZippedPages()
     {
@@ -267,7 +267,7 @@ class SplitDocumentResult implements ArrayAccess
     /*
      * Sets zipped_pages
      *
-     * @param FileLink $zipped_pages Gets or sets the link to the file archive with pages.
+     * @param \Aspose\Words\Model\FileLink $zipped_pages Gets or sets the link to the file archive with pages.
      *
      * @return $this
      */

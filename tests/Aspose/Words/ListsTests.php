@@ -148,7 +148,7 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestListUpdate = new ListUpdate(array(
+        $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
             "is_restart_at_each_section" => true,
         ));
         $request = new Requests\UpdateListRequest(
@@ -176,7 +176,7 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestListUpdate = new ListUpdate(array(
+        $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
             "is_restart_at_each_section" => true,
         ));
         $request = new Requests\UpdateListOnlineRequest(
@@ -211,7 +211,7 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestListUpdate = new ListLevelUpdate(array(
+        $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
             "alignment" => "Right",
         ));
         $request = new Requests\UpdateListLevelRequest(
@@ -240,7 +240,7 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestListUpdate = new ListLevelUpdate(array(
+        $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
             "alignment" => "Right",
         ));
         $request = new Requests\UpdateListLevelOnlineRequest(
@@ -278,7 +278,7 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestListInsert = new ListInsert(array(
+        $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
             "template" => "OutlineLegal",
         ));
         $request = new Requests\InsertListRequest(
@@ -307,7 +307,7 @@ class ListsTests extends BaseTestContext
         $localFile = "DocumentElements/Lists/ListsGet.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestListInsert = new ListInsert(array(
+        $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
             "template" => "OutlineLegal",
         ));
         $request = new Requests\InsertListOnlineRequest(

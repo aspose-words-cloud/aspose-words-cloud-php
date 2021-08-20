@@ -52,7 +52,7 @@ class Border extends LinkElement
      */
     protected static $swaggerTypes = [
         'border_type' => 'string',
-        'color' => 'XmlColor',
+        'color' => '\Aspose\Words\Model\XmlColor',
         'distance_from_text' => 'double',
         'line_style' => 'string',
         'line_width' => 'double',
@@ -372,7 +372,7 @@ class Border extends LinkElement
     /*
      * Gets color
      *
-     * @return XmlColor
+     * @return \Aspose\Words\Model\XmlColor
      */
     public function getColor()
     {
@@ -382,7 +382,7 @@ class Border extends LinkElement
     /*
      * Sets color
      *
-     * @param XmlColor $color Gets or sets the border color.
+     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the border color.
      *
      * @return $this
      */

@@ -51,7 +51,7 @@ class TableLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'table_link_list' => 'TableLink[]'
+        'table_link_list' => '\Aspose\Words\Model\TableLink[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class TableLinkCollection extends LinkElement
     /*
      * Gets table_link_list
      *
-     * @return TableLink[]
+     * @return \Aspose\Words\Model\TableLink[]
      */
     public function getTableLinkList()
     {
@@ -205,7 +205,7 @@ class TableLinkCollection extends LinkElement
     /*
      * Sets table_link_list
      *
-     * @param TableLink[] $table_link_list Gets or sets the collection of table's links.
+     * @param \Aspose\Words\Model\TableLink[] $table_link_list Gets or sets the collection of table's links.
      *
      * @return $this
      */

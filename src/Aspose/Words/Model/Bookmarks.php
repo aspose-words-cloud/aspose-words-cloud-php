@@ -51,7 +51,7 @@ class Bookmarks extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'bookmark_list' => 'Bookmark[]'
+        'bookmark_list' => '\Aspose\Words\Model\Bookmark[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class Bookmarks extends LinkElement
     /*
      * Gets bookmark_list
      *
-     * @return Bookmark[]
+     * @return \Aspose\Words\Model\Bookmark[]
      */
     public function getBookmarkList()
     {
@@ -205,7 +205,7 @@ class Bookmarks extends LinkElement
     /*
      * Sets bookmark_list
      *
-     * @param Bookmark[] $bookmark_list Gets or sets the array of bookmarks.
+     * @param \Aspose\Words\Model\Bookmark[] $bookmark_list Gets or sets the array of bookmarks.
      *
      * @return $this
      */

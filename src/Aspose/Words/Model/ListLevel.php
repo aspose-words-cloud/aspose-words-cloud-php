@@ -52,9 +52,9 @@ class ListLevel extends LinkElement
      */
     protected static $swaggerTypes = [
         'alignment' => 'string',
-        'font' => 'Font',
+        'font' => '\Aspose\Words\Model\Font',
         'is_legal' => 'bool',
-        'linked_style' => 'Style',
+        'linked_style' => '\Aspose\Words\Model\Style',
         'number_format' => 'string',
         'number_position' => 'double',
         'number_style' => 'string',
@@ -495,7 +495,7 @@ class ListLevel extends LinkElement
     /*
      * Gets font
      *
-     * @return Font
+     * @return \Aspose\Words\Model\Font
      */
     public function getFont()
     {
@@ -505,7 +505,7 @@ class ListLevel extends LinkElement
     /*
      * Sets font
      *
-     * @param Font $font Gets or sets character formatting used for the list label.
+     * @param \Aspose\Words\Model\Font $font Gets or sets character formatting used for the list label.
      *
      * @return $this
      */
@@ -541,7 +541,7 @@ class ListLevel extends LinkElement
     /*
      * Gets linked_style
      *
-     * @return Style
+     * @return \Aspose\Words\Model\Style
      */
     public function getLinkedStyle()
     {
@@ -551,7 +551,7 @@ class ListLevel extends LinkElement
     /*
      * Sets linked_style
      *
-     * @param Style $linked_style Gets or sets the paragraph style that is linked to this list level.
+     * @param \Aspose\Words\Model\Style $linked_style Gets or sets the paragraph style that is linked to this list level.
      *
      * @return $this
      */

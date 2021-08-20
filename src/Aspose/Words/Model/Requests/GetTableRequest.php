@@ -387,11 +387,11 @@ class GetTableRequest
      */
     public function getResponseType()
     {
-        return 'TableResponse';
+        return '\Aspose\Words\Model\TableResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'TableResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableResponse', []);
     }
 }

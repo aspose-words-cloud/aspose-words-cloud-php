@@ -55,8 +55,8 @@ class CommentBase implements ArrayAccess
         'author' => 'string',
         'date_time' => '\DateTime',
         'initial' => 'string',
-        'range_end' => 'DocumentPosition',
-        'range_start' => 'DocumentPosition',
+        'range_end' => '\Aspose\Words\Model\DocumentPosition',
+        'range_start' => '\Aspose\Words\Model\DocumentPosition',
         'text' => 'string'
     ];
 
@@ -298,7 +298,7 @@ class CommentBase implements ArrayAccess
     /*
      * Gets range_end
      *
-     * @return DocumentPosition
+     * @return \Aspose\Words\Model\DocumentPosition
      */
     public function getRangeEnd()
     {
@@ -308,7 +308,7 @@ class CommentBase implements ArrayAccess
     /*
      * Sets range_end
      *
-     * @param DocumentPosition $range_end Gets or sets the link to comment range end node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets the link to comment range end node.
      *
      * @return $this
      */
@@ -321,7 +321,7 @@ class CommentBase implements ArrayAccess
     /*
      * Gets range_start
      *
-     * @return DocumentPosition
+     * @return \Aspose\Words\Model\DocumentPosition
      */
     public function getRangeStart()
     {
@@ -331,7 +331,7 @@ class CommentBase implements ArrayAccess
     /*
      * Sets range_start
      *
-     * @param DocumentPosition $range_start Gets or sets the link to comment range start node.
+     * @param \Aspose\Words\Model\DocumentPosition $range_start Gets or sets the link to comment range start node.
      *
      * @return $this
      */

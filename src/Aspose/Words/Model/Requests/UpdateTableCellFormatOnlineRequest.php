@@ -93,7 +93,7 @@ class UpdateTableCellFormatOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param string $table_row_path The path to the table row in the document tree.
-     * @param TableCellFormat $format The properties.
+     * @param \Aspose\Words\Model\TableCellFormat $format The properties.
      * @param int $index Object index.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -467,7 +467,7 @@ class UpdateTableCellFormatOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateTableCellFormatOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'TableCellFormatResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\TableCellFormatResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

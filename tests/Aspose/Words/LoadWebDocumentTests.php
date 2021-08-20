@@ -43,7 +43,7 @@ class LoadWebDocumentTests extends BaseTestContext
      */
     public function testLoadWebDocument()
     {
-        $requestDataSaveOptions = new SaveOptionsData(array(
+        $requestDataSaveOptions = new \Aspose\Words\Model\SaveOptionsData(array(
             "file_name" => "google.doc",
             "save_format" => "doc",
             "dml_effects_rendering_mode" => "1",
@@ -51,7 +51,7 @@ class LoadWebDocumentTests extends BaseTestContext
             "update_sdt_content" => false,
             "zip_output" => false,
         ));
-        $requestData = new LoadWebDocumentData(array(
+        $requestData = new \Aspose\Words\Model\LoadWebDocumentData(array(
             "loading_document_url" => "http://google.com",
             "save_options" => $requestDataSaveOptions,
         ));

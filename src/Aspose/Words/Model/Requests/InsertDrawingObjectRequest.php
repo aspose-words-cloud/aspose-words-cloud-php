@@ -102,7 +102,7 @@ class InsertDrawingObjectRequest
      * Initializes a new instance of the InsertDrawingObjectRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param DrawingObjectInsert $drawing_object Drawing object parameters.
+     * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
      * @param \SplFileObject $image_file File with image.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
@@ -525,11 +525,11 @@ class InsertDrawingObjectRequest
      */
     public function getResponseType()
     {
-        return 'DrawingObjectResponse';
+        return '\Aspose\Words\Model\DrawingObjectResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'DrawingObjectResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DrawingObjectResponse', []);
     }
 }

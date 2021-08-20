@@ -98,7 +98,7 @@ class UpdateSectionPageSetupRequest
      *
      * @param string $name The filename of the input document.
      * @param int $section_index The index of the section.
-     * @param PageSetup $page_setup Page setup properties dto.
+     * @param \Aspose\Words\Model\PageSetup $page_setup Page setup properties dto.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -490,11 +490,11 @@ class UpdateSectionPageSetupRequest
      */
     public function getResponseType()
     {
-        return 'SectionPageSetupResponse';
+        return '\Aspose\Words\Model\SectionPageSetupResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'SectionPageSetupResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SectionPageSetupResponse', []);
     }
 }

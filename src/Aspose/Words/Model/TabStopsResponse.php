@@ -51,7 +51,7 @@ class TabStopsResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'tab_stops' => 'TabStop[]'
+        'tab_stops' => '\Aspose\Words\Model\TabStop[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class TabStopsResponse extends WordsResponse
     /*
      * Gets tab_stops
      *
-     * @return TabStop[]
+     * @return \Aspose\Words\Model\TabStop[]
      */
     public function getTabStops()
     {
@@ -205,7 +205,7 @@ class TabStopsResponse extends WordsResponse
     /*
      * Sets tab_stops
      *
-     * @param TabStop[] $tab_stops Gets or sets the array of tab stops.
+     * @param \Aspose\Words\Model\TabStop[] $tab_stops Gets or sets the array of tab stops.
      *
      * @return $this
      */

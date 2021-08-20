@@ -49,7 +49,7 @@ class BatchTests extends BaseTestContext
 
         $request2 = new Requests\GetParagraphRequest($name=$remoteName, $index=0, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder);
 
-        $request3Body = new ParagraphInsert(array(
+        $request3Body = new \Aspose\Words\Model\ParagraphInsert(array(
             "text" => "This is a new paragraph for your document",
         ));
 
@@ -61,7 +61,7 @@ class BatchTests extends BaseTestContext
         $localDocumentFile = "ReportTemplate.docx";
         $localDataFile = file_get_contents(realpath(__DIR__ . '/../../..') . "/TestData/" . $reportingFolder . "/ReportData.json");
 
-        $requestReportEngineSettings = new ReportEngineSettings(array(
+        $requestReportEngineSettings = new \Aspose\Words\Model\ReportEngineSettings(array(
             "data_source_type" => "Json",
             "data_source_name" => "persons",
         ));
@@ -75,9 +75,9 @@ class BatchTests extends BaseTestContext
 
         $result = $this->words->batch(array($request1, $request2, $request3, $request4, $request5));
         Assert::assertCount(5, $result);
-        Assert::assertEquals(true, $result[0] instanceof ParagraphLinkCollectionResponse);
-        Assert::assertEquals(true, $result[1] instanceof ParagraphResponse);
-        Assert::assertEquals(true, $result[2] instanceof ParagraphResponse);
+        Assert::assertEquals(true, $result[0] instanceof \Aspose\Words\Model\ParagraphLinkCollectionResponse);
+        Assert::assertEquals(true, $result[1] instanceof \Aspose\Words\Model\ParagraphResponse);
+        Assert::assertEquals(true, $result[2] instanceof \Aspose\Words\Model\ParagraphResponse);
         Assert::assertEquals(null, $result[3]);
         Assert::assertEquals(true, $result[4] instanceof \SplFileObject);
     }

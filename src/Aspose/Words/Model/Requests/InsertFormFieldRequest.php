@@ -102,7 +102,7 @@ class InsertFormFieldRequest
      * Initializes a new instance of the InsertFormFieldRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param FormField $form_field From field data.
+     * @param \Aspose\Words\Model\FormField $form_field From field data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -521,11 +521,11 @@ class InsertFormFieldRequest
      */
     public function getResponseType()
     {
-        return 'FormFieldResponse';
+        return '\Aspose\Words\Model\FormFieldResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'FormFieldResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FormFieldResponse', []);
     }
 }

@@ -351,11 +351,11 @@ class GetBordersRequest
      */
     public function getResponseType()
     {
-        return 'BordersResponse';
+        return '\Aspose\Words\Model\BordersResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'BordersResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BordersResponse', []);
     }
 }

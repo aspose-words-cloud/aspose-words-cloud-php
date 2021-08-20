@@ -88,7 +88,7 @@ class UpdateListOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param int $list_id The list Id.
-     * @param ListUpdate $list_update List object.
+     * @param \Aspose\Words\Model\ListUpdate $list_update List object.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -431,7 +431,7 @@ class UpdateListOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateListOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'ListResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\ListResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

@@ -287,11 +287,11 @@ class GetDocumentDrawingObjectsOnlineRequest
      */
     public function getResponseType()
     {
-        return 'DrawingObjectsResponse';
+        return '\Aspose\Words\Model\DrawingObjectsResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'DrawingObjectsResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DrawingObjectsResponse', []);
     }
 }

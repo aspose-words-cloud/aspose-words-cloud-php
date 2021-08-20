@@ -52,8 +52,8 @@ class Shading implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'background_pattern_color' => 'XmlColor',
-        'foreground_pattern_color' => 'XmlColor',
+        'background_pattern_color' => '\Aspose\Words\Model\XmlColor',
+        'foreground_pattern_color' => '\Aspose\Words\Model\XmlColor',
         'texture' => 'string'
     ];
 
@@ -344,7 +344,7 @@ class Shading implements ArrayAccess
     /*
      * Gets background_pattern_color
      *
-     * @return XmlColor
+     * @return \Aspose\Words\Model\XmlColor
      */
     public function getBackgroundPatternColor()
     {
@@ -354,7 +354,7 @@ class Shading implements ArrayAccess
     /*
      * Sets background_pattern_color
      *
-     * @param XmlColor $background_pattern_color Gets or sets the color that's applied to the background of the Shading object.
+     * @param \Aspose\Words\Model\XmlColor $background_pattern_color Gets or sets the color that's applied to the background of the Shading object.
      *
      * @return $this
      */
@@ -367,7 +367,7 @@ class Shading implements ArrayAccess
     /*
      * Gets foreground_pattern_color
      *
-     * @return XmlColor
+     * @return \Aspose\Words\Model\XmlColor
      */
     public function getForegroundPatternColor()
     {
@@ -377,7 +377,7 @@ class Shading implements ArrayAccess
     /*
      * Sets foreground_pattern_color
      *
-     * @param XmlColor $foreground_pattern_color Gets or sets the color that's applied to the foreground of the Shading object.
+     * @param \Aspose\Words\Model\XmlColor $foreground_pattern_color Gets or sets the color that's applied to the foreground of the Shading object.
      *
      * @return $this
      */

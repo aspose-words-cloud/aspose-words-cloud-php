@@ -93,7 +93,7 @@ class UpdateRunFontOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param string $paragraph_path The path to the paragraph in the document tree.
-     * @param Font $font_dto Font dto object.
+     * @param \Aspose\Words\Model\Font $font_dto Font dto object.
      * @param int $index Object index.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -467,7 +467,7 @@ class UpdateRunFontOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateRunFontOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'FontResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\FontResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

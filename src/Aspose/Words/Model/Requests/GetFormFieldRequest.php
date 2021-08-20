@@ -387,11 +387,11 @@ class GetFormFieldRequest
      */
     public function getResponseType()
     {
-        return 'FormFieldResponse';
+        return '\Aspose\Words\Model\FormFieldResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'FormFieldResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FormFieldResponse', []);
     }
 }

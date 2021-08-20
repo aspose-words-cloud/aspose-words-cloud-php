@@ -52,7 +52,7 @@ class LinkElement implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'link' => 'WordsApiLink'
+        'link' => '\Aspose\Words\Model\WordsApiLink'
     ];
 
     /*
@@ -199,7 +199,7 @@ class LinkElement implements ArrayAccess
     /*
      * Gets link
      *
-     * @return WordsApiLink
+     * @return \Aspose\Words\Model\WordsApiLink
      */
     public function getLink()
     {
@@ -209,7 +209,7 @@ class LinkElement implements ArrayAccess
     /*
      * Sets link
      *
-     * @param WordsApiLink $link Gets or sets the link to the document.
+     * @param \Aspose\Words\Model\WordsApiLink $link Gets or sets the link to the document.
      *
      * @return $this
      */

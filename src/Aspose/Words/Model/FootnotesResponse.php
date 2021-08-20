@@ -51,7 +51,7 @@ class FootnotesResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'footnotes' => 'FootnoteCollection'
+        'footnotes' => '\Aspose\Words\Model\FootnoteCollection'
     ];
 
     /*
@@ -195,7 +195,7 @@ class FootnotesResponse extends WordsResponse
     /*
      * Gets footnotes
      *
-     * @return FootnoteCollection
+     * @return \Aspose\Words\Model\FootnoteCollection
      */
     public function getFootnotes()
     {
@@ -205,7 +205,7 @@ class FootnotesResponse extends WordsResponse
     /*
      * Sets footnotes
      *
-     * @param FootnoteCollection $footnotes Gets or sets the collection of footnotes.
+     * @param \Aspose\Words\Model\FootnoteCollection $footnotes Gets or sets the collection of footnotes.
      *
      * @return $this
      */

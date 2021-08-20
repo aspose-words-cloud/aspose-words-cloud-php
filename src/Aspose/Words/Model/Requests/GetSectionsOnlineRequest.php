@@ -254,11 +254,11 @@ class GetSectionsOnlineRequest
      */
     public function getResponseType()
     {
-        return 'SectionLinkCollectionResponse';
+        return '\Aspose\Words\Model\SectionLinkCollectionResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'SectionLinkCollectionResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SectionLinkCollectionResponse', []);
     }
 }

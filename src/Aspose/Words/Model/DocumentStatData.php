@@ -52,9 +52,9 @@ class DocumentStatData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'footnotes_stat_data' => 'FootnotesStatData',
+        'footnotes_stat_data' => '\Aspose\Words\Model\FootnotesStatData',
         'page_count' => 'int',
-        'page_stat_data' => 'PageStatData[]',
+        'page_stat_data' => '\Aspose\Words\Model\PageStatData[]',
         'paragraph_count' => 'int',
         'word_count' => 'int'
     ];
@@ -223,7 +223,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Gets footnotes_stat_data
      *
-     * @return FootnotesStatData
+     * @return \Aspose\Words\Model\FootnotesStatData
      */
     public function getFootnotesStatData()
     {
@@ -233,7 +233,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets footnotes_stat_data
      *
-     * @param FootnotesStatData $footnotes_stat_data Gets or sets the detailed statistics on footnotes.
+     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets the detailed statistics on footnotes.
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Gets page_stat_data
      *
-     * @return PageStatData[]
+     * @return \Aspose\Words\Model\PageStatData[]
      */
     public function getPageStatData()
     {
@@ -279,7 +279,7 @@ class DocumentStatData implements ArrayAccess
     /*
      * Sets page_stat_data
      *
-     * @param PageStatData[] $page_stat_data Gets or sets the detailed statistics on all pages.
+     * @param \Aspose\Words\Model\PageStatData[] $page_stat_data Gets or sets the detailed statistics on all pages.
      *
      * @return $this
      */

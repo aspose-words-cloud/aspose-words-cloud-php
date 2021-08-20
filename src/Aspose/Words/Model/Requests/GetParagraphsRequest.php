@@ -351,11 +351,11 @@ class GetParagraphsRequest
      */
     public function getResponseType()
     {
-        return 'ParagraphLinkCollectionResponse';
+        return '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'ParagraphLinkCollectionResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphLinkCollectionResponse', []);
     }
 }

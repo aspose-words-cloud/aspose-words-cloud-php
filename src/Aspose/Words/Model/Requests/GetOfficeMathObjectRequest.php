@@ -387,11 +387,11 @@ class GetOfficeMathObjectRequest
      */
     public function getResponseType()
     {
-        return 'OfficeMathObjectResponse';
+        return '\Aspose\Words\Model\OfficeMathObjectResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'OfficeMathObjectResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\OfficeMathObjectResponse', []);
     }
 }

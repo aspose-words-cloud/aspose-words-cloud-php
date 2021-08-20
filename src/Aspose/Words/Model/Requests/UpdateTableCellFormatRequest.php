@@ -104,7 +104,7 @@ class UpdateTableCellFormatRequest
      * @param string $name The filename of the input document.
      * @param string $table_row_path The path to the table row in the document tree.
      * @param int $index Object index.
-     * @param TableCellFormat $format The properties.
+     * @param \Aspose\Words\Model\TableCellFormat $format The properties.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -526,11 +526,11 @@ class UpdateTableCellFormatRequest
      */
     public function getResponseType()
     {
-        return 'TableCellFormatResponse';
+        return '\Aspose\Words\Model\TableCellFormatResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'TableCellFormatResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableCellFormatResponse', []);
     }
 }

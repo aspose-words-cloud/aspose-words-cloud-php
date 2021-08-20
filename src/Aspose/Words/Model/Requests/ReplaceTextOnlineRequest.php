@@ -82,7 +82,7 @@ class ReplaceTextOnlineRequest
      * Initializes a new instance of the ReplaceTextOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param ReplaceTextParameters $replace_text The replace operation settings.
+     * @param \Aspose\Words\Model\ReplaceTextParameters $replace_text The replace operation settings.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -395,7 +395,7 @@ class ReplaceTextOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new ReplaceTextOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'ReplaceTextResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\ReplaceTextResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

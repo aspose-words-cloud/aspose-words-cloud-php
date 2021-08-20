@@ -51,7 +51,7 @@ class ListsResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'lists' => 'Lists'
+        'lists' => '\Aspose\Words\Model\Lists'
     ];
 
     /*
@@ -195,7 +195,7 @@ class ListsResponse extends WordsResponse
     /*
      * Gets lists
      *
-     * @return Lists
+     * @return \Aspose\Words\Model\Lists
      */
     public function getLists()
     {
@@ -205,7 +205,7 @@ class ListsResponse extends WordsResponse
     /*
      * Sets lists
      *
-     * @param Lists $lists Gets or sets the collection of lists, contained in the document.
+     * @param \Aspose\Words\Model\Lists $lists Gets or sets the collection of lists, contained in the document.
      *
      * @return $this
      */

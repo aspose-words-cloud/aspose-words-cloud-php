@@ -290,11 +290,11 @@ class GetSectionPageSetupOnlineRequest
      */
     public function getResponseType()
     {
-        return 'SectionPageSetupResponse';
+        return '\Aspose\Words\Model\SectionPageSetupResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'SectionPageSetupResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SectionPageSetupResponse', []);
     }
 }

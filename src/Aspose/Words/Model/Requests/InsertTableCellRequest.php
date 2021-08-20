@@ -98,7 +98,7 @@ class InsertTableCellRequest
      *
      * @param string $name The filename of the input document.
      * @param string $table_row_path The path to the table row in the document tree.
-     * @param TableCellInsert $cell Table cell parameters.
+     * @param \Aspose\Words\Model\TableCellInsert $cell Table cell parameters.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -490,11 +490,11 @@ class InsertTableCellRequest
      */
     public function getResponseType()
     {
-        return 'TableCellResponse';
+        return '\Aspose\Words\Model\TableCellResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'TableCellResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableCellResponse', []);
     }
 }

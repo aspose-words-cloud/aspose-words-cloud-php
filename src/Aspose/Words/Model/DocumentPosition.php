@@ -52,7 +52,7 @@ class DocumentPosition implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'node' => 'NodeLink',
+        'node' => '\Aspose\Words\Model\NodeLink',
         'offset' => 'int'
     ];
 
@@ -205,7 +205,7 @@ class DocumentPosition implements ArrayAccess
     /*
      * Gets node
      *
-     * @return NodeLink
+     * @return \Aspose\Words\Model\NodeLink
      */
     public function getNode()
     {
@@ -215,7 +215,7 @@ class DocumentPosition implements ArrayAccess
     /*
      * Sets node
      *
-     * @param NodeLink $node Gets or sets the link to a node.
+     * @param \Aspose\Words\Model\NodeLink $node Gets or sets the link to a node.
      *
      * @return $this
      */

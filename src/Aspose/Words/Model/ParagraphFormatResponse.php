@@ -51,7 +51,7 @@ class ParagraphFormatResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'paragraph_format' => 'ParagraphFormat'
+        'paragraph_format' => '\Aspose\Words\Model\ParagraphFormat'
     ];
 
     /*
@@ -195,7 +195,7 @@ class ParagraphFormatResponse extends WordsResponse
     /*
      * Gets paragraph_format
      *
-     * @return ParagraphFormat
+     * @return \Aspose\Words\Model\ParagraphFormat
      */
     public function getParagraphFormat()
     {
@@ -205,7 +205,7 @@ class ParagraphFormatResponse extends WordsResponse
     /*
      * Sets paragraph_format
      *
-     * @param ParagraphFormat $paragraph_format Gets or sets the formatting properties of a paragraph.
+     * @param \Aspose\Words\Model\ParagraphFormat $paragraph_format Gets or sets the formatting properties of a paragraph.
      *
      * @return $this
      */

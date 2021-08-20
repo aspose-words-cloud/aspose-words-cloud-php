@@ -51,7 +51,7 @@ class ParagraphLinkCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'paragraph_link_list' => 'ParagraphLink[]'
+        'paragraph_link_list' => '\Aspose\Words\Model\ParagraphLink[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class ParagraphLinkCollection extends LinkElement
     /*
      * Gets paragraph_link_list
      *
-     * @return ParagraphLink[]
+     * @return \Aspose\Words\Model\ParagraphLink[]
      */
     public function getParagraphLinkList()
     {
@@ -205,7 +205,7 @@ class ParagraphLinkCollection extends LinkElement
     /*
      * Sets paragraph_link_list
      *
-     * @param ParagraphLink[] $paragraph_link_list Gets or sets the collection of paragraph's links.
+     * @param \Aspose\Words\Model\ParagraphLink[] $paragraph_link_list Gets or sets the collection of paragraph's links.
      *
      * @return $this
      */

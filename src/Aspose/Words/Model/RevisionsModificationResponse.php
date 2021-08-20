@@ -51,7 +51,7 @@ class RevisionsModificationResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'result' => 'ModificationOperationResult'
+        'result' => '\Aspose\Words\Model\ModificationOperationResult'
     ];
 
     /*
@@ -195,7 +195,7 @@ class RevisionsModificationResponse extends WordsResponse
     /*
      * Gets result
      *
-     * @return ModificationOperationResult
+     * @return \Aspose\Words\Model\ModificationOperationResult
      */
     public function getResult()
     {
@@ -205,7 +205,7 @@ class RevisionsModificationResponse extends WordsResponse
     /*
      * Sets result
      *
-     * @param ModificationOperationResult $result Gets or sets the result of the modification operations for the revisions collection.
+     * @param \Aspose\Words\Model\ModificationOperationResult $result Gets or sets the result of the modification operations for the revisions collection.
      *
      * @return $this
      */

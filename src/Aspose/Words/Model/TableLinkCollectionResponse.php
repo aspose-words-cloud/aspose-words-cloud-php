@@ -51,7 +51,7 @@ class TableLinkCollectionResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'tables' => 'TableLinkCollection'
+        'tables' => '\Aspose\Words\Model\TableLinkCollection'
     ];
 
     /*
@@ -195,7 +195,7 @@ class TableLinkCollectionResponse extends WordsResponse
     /*
      * Gets tables
      *
-     * @return TableLinkCollection
+     * @return \Aspose\Words\Model\TableLinkCollection
      */
     public function getTables()
     {
@@ -205,7 +205,7 @@ class TableLinkCollectionResponse extends WordsResponse
     /*
      * Sets tables
      *
-     * @param TableLinkCollection $tables Gets or sets the collection of tables.
+     * @param \Aspose\Words\Model\TableLinkCollection $tables Gets or sets the collection of tables.
      *
      * @return $this
      */

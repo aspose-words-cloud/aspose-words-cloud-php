@@ -323,11 +323,11 @@ class GetParagraphTabStopsOnlineRequest
      */
     public function getResponseType()
     {
-        return 'TabStopsResponse';
+        return '\Aspose\Words\Model\TabStopsResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'TabStopsResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TabStopsResponse', []);
     }
 }

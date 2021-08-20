@@ -52,7 +52,7 @@ class TextTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestReplaceText = new ReplaceTextParameters(array(
+        $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
             "old_value" => "Testing",
             "new_value" => "Aspose testing",
         ));
@@ -81,7 +81,7 @@ class TextTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestReplaceText = new ReplaceTextParameters(array(
+        $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
             "old_value" => "aspose",
             "new_value" => "aspose new",
         ));

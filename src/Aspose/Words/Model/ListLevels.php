@@ -51,7 +51,7 @@ class ListLevels extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list_level' => 'ListLevel[]'
+        'list_level' => '\Aspose\Words\Model\ListLevel[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class ListLevels extends LinkElement
     /*
      * Gets list_level
      *
-     * @return ListLevel[]
+     * @return \Aspose\Words\Model\ListLevel[]
      */
     public function getListLevel()
     {
@@ -205,7 +205,7 @@ class ListLevels extends LinkElement
     /*
      * Sets list_level
      *
-     * @param ListLevel[] $list_level Gets or sets the collection of list levels for this list.
+     * @param \Aspose\Words\Model\ListLevel[] $list_level Gets or sets the collection of list levels for this list.
      *
      * @return $this
      */

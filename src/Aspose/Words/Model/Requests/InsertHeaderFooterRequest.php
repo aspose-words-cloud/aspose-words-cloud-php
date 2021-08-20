@@ -490,11 +490,11 @@ class InsertHeaderFooterRequest
      */
     public function getResponseType()
     {
-        return 'HeaderFooterResponse';
+        return '\Aspose\Words\Model\HeaderFooterResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'HeaderFooterResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\HeaderFooterResponse', []);
     }
 }

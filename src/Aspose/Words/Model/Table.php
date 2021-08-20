@@ -51,8 +51,8 @@ class Table extends NodeLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'table_properties' => 'TableProperties',
-        'table_row_list' => 'TableRow[]'
+        'table_properties' => '\Aspose\Words\Model\TableProperties',
+        'table_row_list' => '\Aspose\Words\Model\TableRow[]'
     ];
 
     /*
@@ -201,7 +201,7 @@ class Table extends NodeLink
     /*
      * Gets table_properties
      *
-     * @return TableProperties
+     * @return \Aspose\Words\Model\TableProperties
      */
     public function getTableProperties()
     {
@@ -211,7 +211,7 @@ class Table extends NodeLink
     /*
      * Sets table_properties
      *
-     * @param TableProperties $table_properties Gets or sets table properties.
+     * @param \Aspose\Words\Model\TableProperties $table_properties Gets or sets table properties.
      *
      * @return $this
      */
@@ -224,7 +224,7 @@ class Table extends NodeLink
     /*
      * Gets table_row_list
      *
-     * @return TableRow[]
+     * @return \Aspose\Words\Model\TableRow[]
      */
     public function getTableRowList()
     {
@@ -234,7 +234,7 @@ class Table extends NodeLink
     /*
      * Sets table_row_list
      *
-     * @param TableRow[] $table_row_list Gets or sets the collection of table's rows.
+     * @param \Aspose\Words\Model\TableRow[] $table_row_list Gets or sets the collection of table's rows.
      *
      * @return $this
      */

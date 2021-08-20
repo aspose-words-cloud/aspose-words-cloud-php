@@ -51,7 +51,7 @@ class DrawingObjectResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'drawing_object' => 'DrawingObject'
+        'drawing_object' => '\Aspose\Words\Model\DrawingObject'
     ];
 
     /*
@@ -195,7 +195,7 @@ class DrawingObjectResponse extends WordsResponse
     /*
      * Gets drawing_object
      *
-     * @return DrawingObject
+     * @return \Aspose\Words\Model\DrawingObject
      */
     public function getDrawingObject()
     {
@@ -205,7 +205,7 @@ class DrawingObjectResponse extends WordsResponse
     /*
      * Sets drawing_object
      *
-     * @param DrawingObject $drawing_object Gets or sets the DrawingObject.
+     * @param \Aspose\Words\Model\DrawingObject $drawing_object Gets or sets the DrawingObject.
      *
      * @return $this
      */

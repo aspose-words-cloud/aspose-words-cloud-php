@@ -388,11 +388,11 @@ class GetHeaderFootersRequest
      */
     public function getResponseType()
     {
-        return 'HeaderFootersResponse';
+        return '\Aspose\Words\Model\HeaderFootersResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'HeaderFootersResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\HeaderFootersResponse', []);
     }
 }

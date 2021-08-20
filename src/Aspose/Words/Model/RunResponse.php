@@ -51,7 +51,7 @@ class RunResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'run' => 'Run'
+        'run' => '\Aspose\Words\Model\Run'
     ];
 
     /*
@@ -195,7 +195,7 @@ class RunResponse extends WordsResponse
     /*
      * Gets run
      *
-     * @return Run
+     * @return \Aspose\Words\Model\Run
      */
     public function getRun()
     {
@@ -205,7 +205,7 @@ class RunResponse extends WordsResponse
     /*
      * Sets run
      *
-     * @param Run $run Gets or sets the Run element.
+     * @param \Aspose\Words\Model\Run $run Gets or sets the Run element.
      *
      * @return $this
      */

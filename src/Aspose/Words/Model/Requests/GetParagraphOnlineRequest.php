@@ -323,11 +323,11 @@ class GetParagraphOnlineRequest
      */
     public function getResponseType()
     {
-        return 'ParagraphResponse';
+        return '\Aspose\Words\Model\ParagraphResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'ParagraphResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphResponse', []);
     }
 }

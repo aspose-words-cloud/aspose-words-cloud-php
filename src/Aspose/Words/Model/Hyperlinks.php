@@ -51,7 +51,7 @@ class Hyperlinks extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'hyperlink_list' => 'Hyperlink[]'
+        'hyperlink_list' => '\Aspose\Words\Model\Hyperlink[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class Hyperlinks extends LinkElement
     /*
      * Gets hyperlink_list
      *
-     * @return Hyperlink[]
+     * @return \Aspose\Words\Model\Hyperlink[]
      */
     public function getHyperlinkList()
     {
@@ -205,7 +205,7 @@ class Hyperlinks extends LinkElement
     /*
      * Sets hyperlink_list
      *
-     * @param Hyperlink[] $hyperlink_list Gets or sets the array of Hyperlink.
+     * @param \Aspose\Words\Model\Hyperlink[] $hyperlink_list Gets or sets the array of Hyperlink.
      *
      * @return $this
      */

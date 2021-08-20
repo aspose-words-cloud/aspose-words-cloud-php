@@ -51,7 +51,7 @@ class HyperlinkResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'hyperlink' => 'Hyperlink'
+        'hyperlink' => '\Aspose\Words\Model\Hyperlink'
     ];
 
     /*
@@ -195,7 +195,7 @@ class HyperlinkResponse extends WordsResponse
     /*
      * Gets hyperlink
      *
-     * @return Hyperlink
+     * @return \Aspose\Words\Model\Hyperlink
      */
     public function getHyperlink()
     {
@@ -205,7 +205,7 @@ class HyperlinkResponse extends WordsResponse
     /*
      * Sets hyperlink
      *
-     * @param Hyperlink $hyperlink Gets or sets the hyperlink.
+     * @param \Aspose\Words\Model\Hyperlink $hyperlink Gets or sets the hyperlink.
      *
      * @return $this
      */

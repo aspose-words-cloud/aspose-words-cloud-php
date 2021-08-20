@@ -56,8 +56,8 @@ class ListInfo extends LinkElement
         'is_multi_level' => 'bool',
         'is_restart_at_each_section' => 'bool',
         'list_id' => 'int',
-        'list_levels' => 'ListLevels',
-        'style' => 'Style'
+        'list_levels' => '\Aspose\Words\Model\ListLevels',
+        'style' => '\Aspose\Words\Model\Style'
     ];
 
     /*
@@ -346,7 +346,7 @@ class ListInfo extends LinkElement
     /*
      * Gets list_levels
      *
-     * @return ListLevels
+     * @return \Aspose\Words\Model\ListLevels
      */
     public function getListLevels()
     {
@@ -356,7 +356,7 @@ class ListInfo extends LinkElement
     /*
      * Sets list_levels
      *
-     * @param ListLevels $list_levels Gets or sets the collection of list levels for this list.
+     * @param \Aspose\Words\Model\ListLevels $list_levels Gets or sets the collection of list levels for this list.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class ListInfo extends LinkElement
     /*
      * Gets style
      *
-     * @return Style
+     * @return \Aspose\Words\Model\Style
      */
     public function getStyle()
     {
@@ -379,7 +379,7 @@ class ListInfo extends LinkElement
     /*
      * Sets style
      *
-     * @param Style $style Gets or sets the list style that this list references or defines.
+     * @param \Aspose\Words\Model\Style $style Gets or sets the list style that this list references or defines.
      *
      * @return $this
      */

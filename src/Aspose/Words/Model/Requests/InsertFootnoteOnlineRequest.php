@@ -87,7 +87,7 @@ class InsertFootnoteOnlineRequest
      * Initializes a new instance of the InsertFootnoteOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param FootnoteInsert $footnote_dto Footnote data.
+     * @param \Aspose\Words\Model\FootnoteInsert $footnote_dto Footnote data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -428,7 +428,7 @@ class InsertFootnoteOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new InsertFootnoteOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'FootnoteResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\FootnoteResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

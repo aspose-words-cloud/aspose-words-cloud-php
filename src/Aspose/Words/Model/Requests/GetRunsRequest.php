@@ -354,11 +354,11 @@ class GetRunsRequest
      */
     public function getResponseType()
     {
-        return 'RunsResponse';
+        return '\Aspose\Words\Model\RunsResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, 'RunsResponse', []);
+        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\RunsResponse', []);
     }
 }

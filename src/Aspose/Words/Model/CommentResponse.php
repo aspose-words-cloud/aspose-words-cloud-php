@@ -51,7 +51,7 @@ class CommentResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'comment' => 'Comment'
+        'comment' => '\Aspose\Words\Model\Comment'
     ];
 
     /*
@@ -195,7 +195,7 @@ class CommentResponse extends WordsResponse
     /*
      * Gets comment
      *
-     * @return Comment
+     * @return \Aspose\Words\Model\Comment
      */
     public function getComment()
     {
@@ -205,7 +205,7 @@ class CommentResponse extends WordsResponse
     /*
      * Sets comment
      *
-     * @param Comment $comment Gets or sets the comment.
+     * @param \Aspose\Words\Model\Comment $comment Gets or sets the comment.
      *
      * @return $this
      */

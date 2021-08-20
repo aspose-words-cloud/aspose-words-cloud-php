@@ -52,7 +52,7 @@ class PageStatData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'footnotes_stat_data' => 'FootnotesStatData',
+        'footnotes_stat_data' => '\Aspose\Words\Model\FootnotesStatData',
         'page_number' => 'int',
         'paragraph_count' => 'int',
         'word_count' => 'int'
@@ -217,7 +217,7 @@ class PageStatData implements ArrayAccess
     /*
      * Gets footnotes_stat_data
      *
-     * @return FootnotesStatData
+     * @return \Aspose\Words\Model\FootnotesStatData
      */
     public function getFootnotesStatData()
     {
@@ -227,7 +227,7 @@ class PageStatData implements ArrayAccess
     /*
      * Sets footnotes_stat_data
      *
-     * @param FootnotesStatData $footnotes_stat_data Gets or sets the detailed statistics on the footnotes.
+     * @param \Aspose\Words\Model\FootnotesStatData $footnotes_stat_data Gets or sets the detailed statistics on the footnotes.
      *
      * @return $this
      */

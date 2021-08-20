@@ -88,7 +88,7 @@ class UpdateCommentOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param int $comment_index The index of the comment.
-     * @param CommentUpdate $comment Comment data.
+     * @param \Aspose\Words\Model\CommentUpdate $comment Comment data.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -431,7 +431,7 @@ class UpdateCommentOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateCommentOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'CommentResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\CommentResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

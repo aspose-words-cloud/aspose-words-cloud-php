@@ -51,7 +51,7 @@ class HeaderFooterResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'header_footer' => 'HeaderFooter'
+        'header_footer' => '\Aspose\Words\Model\HeaderFooter'
     ];
 
     /*
@@ -195,7 +195,7 @@ class HeaderFooterResponse extends WordsResponse
     /*
      * Gets header_footer
      *
-     * @return HeaderFooter
+     * @return \Aspose\Words\Model\HeaderFooter
      */
     public function getHeaderFooter()
     {
@@ -205,7 +205,7 @@ class HeaderFooterResponse extends WordsResponse
     /*
      * Sets header_footer
      *
-     * @param HeaderFooter $header_footer Gets or sets the HeaderFooter.
+     * @param \Aspose\Words\Model\HeaderFooter $header_footer Gets or sets the HeaderFooter.
      *
      * @return $this
      */

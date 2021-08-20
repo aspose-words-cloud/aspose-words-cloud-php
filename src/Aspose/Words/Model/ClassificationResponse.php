@@ -53,7 +53,7 @@ class ClassificationResponse extends WordsResponse
     protected static $swaggerTypes = [
         'best_class_name' => 'string',
         'best_class_probability' => 'double',
-        'best_results' => '\Aspose\Words\Model\ClassificationResult[]'
+        'best_results' => 'ClassificationResult[]'
     ];
 
     /*
@@ -253,7 +253,7 @@ class ClassificationResponse extends WordsResponse
     /*
      * Gets best_results
      *
-     * @return \Aspose\Words\Model\ClassificationResult[]
+     * @return ClassificationResult[]
      */
     public function getBestResults()
     {
@@ -263,7 +263,7 @@ class ClassificationResponse extends WordsResponse
     /*
      * Sets best_results
      *
-     * @param \Aspose\Words\Model\ClassificationResult[] $best_results Gets or sets the array of best classes results.
+     * @param ClassificationResult[] $best_results Gets or sets the array of best classes results.
      *
      * @return $this
      */

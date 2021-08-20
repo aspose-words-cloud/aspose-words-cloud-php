@@ -51,7 +51,7 @@ class ReplaceTextResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'document_link' => '\Aspose\Words\Model\FileLink',
+        'document_link' => 'FileLink',
         'matches' => 'int'
     ];
 
@@ -201,7 +201,7 @@ class ReplaceTextResponse extends WordsResponse
     /*
      * Gets document_link
      *
-     * @return \Aspose\Words\Model\FileLink
+     * @return FileLink
      */
     public function getDocumentLink()
     {
@@ -211,7 +211,7 @@ class ReplaceTextResponse extends WordsResponse
     /*
      * Sets document_link
      *
-     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets the link to the document.
+     * @param FileLink $document_link Gets or sets the link to the document.
      *
      * @return $this
      */

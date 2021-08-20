@@ -431,7 +431,7 @@ class InsertHeaderFooterOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new InsertHeaderFooterOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\HeaderFooterResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'HeaderFooterResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

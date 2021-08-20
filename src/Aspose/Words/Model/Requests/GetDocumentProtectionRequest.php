@@ -318,11 +318,11 @@ class GetDocumentProtectionRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ProtectionDataResponse';
+        return 'ProtectionDataResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ProtectionDataResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ProtectionDataResponse', []);
     }
 }

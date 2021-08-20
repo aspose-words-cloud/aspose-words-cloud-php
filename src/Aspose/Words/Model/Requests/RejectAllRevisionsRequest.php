@@ -352,11 +352,11 @@ class RejectAllRevisionsRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\RevisionsModificationResponse';
+        return 'RevisionsModificationResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\RevisionsModificationResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'RevisionsModificationResponse', []);
     }
 }

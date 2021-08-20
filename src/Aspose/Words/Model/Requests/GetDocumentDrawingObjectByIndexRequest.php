@@ -387,11 +387,11 @@ class GetDocumentDrawingObjectByIndexRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DrawingObjectResponse';
+        return 'DrawingObjectResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DrawingObjectResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'DrawingObjectResponse', []);
     }
 }

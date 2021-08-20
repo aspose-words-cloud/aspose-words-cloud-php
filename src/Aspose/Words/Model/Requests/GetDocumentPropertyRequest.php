@@ -354,11 +354,11 @@ class GetDocumentPropertyRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DocumentPropertyResponse';
+        return 'DocumentPropertyResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentPropertyResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'DocumentPropertyResponse', []);
     }
 }

@@ -98,7 +98,7 @@ class UpdateBookmarkRequest
      *
      * @param string $name The filename of the input document.
      * @param string $bookmark_name The name of the bookmark.
-     * @param \Aspose\Words\Model\BookmarkData $bookmark_data Bookmark data.
+     * @param BookmarkData $bookmark_data Bookmark data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -490,11 +490,11 @@ class UpdateBookmarkRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\BookmarkResponse';
+        return 'BookmarkResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BookmarkResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'BookmarkResponse', []);
     }
 }

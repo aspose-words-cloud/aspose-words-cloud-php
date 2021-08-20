@@ -51,7 +51,7 @@ class TablePropertiesResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'properties' => '\Aspose\Words\Model\TableProperties'
+        'properties' => 'TableProperties'
     ];
 
     /*
@@ -195,7 +195,7 @@ class TablePropertiesResponse extends WordsResponse
     /*
      * Gets properties
      *
-     * @return \Aspose\Words\Model\TableProperties
+     * @return TableProperties
      */
     public function getProperties()
     {
@@ -205,7 +205,7 @@ class TablePropertiesResponse extends WordsResponse
     /*
      * Sets properties
      *
-     * @param \Aspose\Words\Model\TableProperties $properties Gets or sets the table.
+     * @param TableProperties $properties Gets or sets the table.
      *
      * @return $this
      */

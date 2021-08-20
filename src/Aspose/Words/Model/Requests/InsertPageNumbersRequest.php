@@ -92,7 +92,7 @@ class InsertPageNumbersRequest
      * Initializes a new instance of the InsertPageNumbersRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\PageNumber $page_number Page number dto.
+     * @param PageNumber $page_number Page number dto.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -454,11 +454,11 @@ class InsertPageNumbersRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DocumentResponse';
+        return 'DocumentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'DocumentResponse', []);
     }
 }

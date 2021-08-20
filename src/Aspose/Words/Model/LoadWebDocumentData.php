@@ -53,7 +53,7 @@ class LoadWebDocumentData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'loading_document_url' => 'string',
-        'save_options' => '\Aspose\Words\Model\SaveOptionsData'
+        'save_options' => 'SaveOptionsData'
     ];
 
     /*
@@ -228,7 +228,7 @@ class LoadWebDocumentData implements ArrayAccess
     /*
      * Gets save_options
      *
-     * @return \Aspose\Words\Model\SaveOptionsData
+     * @return SaveOptionsData
      */
     public function getSaveOptions()
     {
@@ -238,7 +238,7 @@ class LoadWebDocumentData implements ArrayAccess
     /*
      * Sets save_options
      *
-     * @param \Aspose\Words\Model\SaveOptionsData $save_options Gets or sets the save options.
+     * @param SaveOptionsData $save_options Gets or sets the save options.
      *
      * @return $this
      */

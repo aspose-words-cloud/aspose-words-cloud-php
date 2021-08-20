@@ -52,11 +52,11 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'document_properties' => '\Aspose\Words\Model\DocumentProperties',
+        'document_properties' => 'DocumentProperties',
         'file_name' => 'string',
         'is_encrypted' => 'bool',
         'is_signed' => 'bool',
-        'links' => '\Aspose\Words\Model\Link[]',
+        'links' => 'Link[]',
         'source_format' => 'string'
     ];
 
@@ -296,7 +296,7 @@ class Document implements ArrayAccess
     /*
      * Gets document_properties
      *
-     * @return \Aspose\Words\Model\DocumentProperties
+     * @return DocumentProperties
      */
     public function getDocumentProperties()
     {
@@ -306,7 +306,7 @@ class Document implements ArrayAccess
     /*
      * Sets document_properties
      *
-     * @param \Aspose\Words\Model\DocumentProperties $document_properties Gets or sets the document properties.
+     * @param DocumentProperties $document_properties Gets or sets the document properties.
      *
      * @return $this
      */
@@ -388,7 +388,7 @@ class Document implements ArrayAccess
     /*
      * Gets links
      *
-     * @return \Aspose\Words\Model\Link[]
+     * @return Link[]
      */
     public function getLinks()
     {
@@ -398,7 +398,7 @@ class Document implements ArrayAccess
     /*
      * Sets links
      *
-     * @param \Aspose\Words\Model\Link[] $links Gets or sets the list of links that originate from this document.
+     * @param Link[] $links Gets or sets the list of links that originate from this document.
      *
      * @return $this
      */

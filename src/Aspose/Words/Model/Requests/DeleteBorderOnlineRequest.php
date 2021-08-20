@@ -432,7 +432,7 @@ class DeleteBorderOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new DeleteBorderOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\BorderResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'BorderResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

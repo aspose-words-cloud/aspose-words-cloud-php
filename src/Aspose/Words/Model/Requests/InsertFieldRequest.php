@@ -102,7 +102,7 @@ class InsertFieldRequest
      * Initializes a new instance of the InsertFieldRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\FieldInsert $field Field data.
+     * @param FieldInsert $field Field data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -521,11 +521,11 @@ class InsertFieldRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\FieldResponse';
+        return 'FieldResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FieldResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'FieldResponse', []);
     }
 }

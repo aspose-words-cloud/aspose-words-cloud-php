@@ -51,7 +51,7 @@ class ListResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list' => '\Aspose\Words\Model\ListInfo'
+        'list' => 'ListInfo'
     ];
 
     /*
@@ -195,7 +195,7 @@ class ListResponse extends WordsResponse
     /*
      * Gets list
      *
-     * @return \Aspose\Words\Model\ListInfo
+     * @return ListInfo
      */
     public function getList()
     {
@@ -205,7 +205,7 @@ class ListResponse extends WordsResponse
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\ListInfo $list Gets or sets the list information.
+     * @param ListInfo $list Gets or sets the list information.
      *
      * @return $this
      */

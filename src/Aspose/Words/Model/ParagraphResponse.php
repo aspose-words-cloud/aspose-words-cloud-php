@@ -51,7 +51,7 @@ class ParagraphResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'paragraph' => '\Aspose\Words\Model\Paragraph'
+        'paragraph' => 'Paragraph'
     ];
 
     /*
@@ -195,7 +195,7 @@ class ParagraphResponse extends WordsResponse
     /*
      * Gets paragraph
      *
-     * @return \Aspose\Words\Model\Paragraph
+     * @return Paragraph
      */
     public function getParagraph()
     {
@@ -205,7 +205,7 @@ class ParagraphResponse extends WordsResponse
     /*
      * Sets paragraph
      *
-     * @param \Aspose\Words\Model\Paragraph $paragraph Gets or sets the paragraph.
+     * @param Paragraph $paragraph Gets or sets the paragraph.
      *
      * @return $this
      */

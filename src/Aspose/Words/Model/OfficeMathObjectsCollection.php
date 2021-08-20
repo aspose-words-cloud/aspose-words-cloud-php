@@ -51,7 +51,7 @@ class OfficeMathObjectsCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list' => '\Aspose\Words\Model\OfficeMathObject[]'
+        'list' => 'OfficeMathObject[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class OfficeMathObjectsCollection extends LinkElement
     /*
      * Gets list
      *
-     * @return \Aspose\Words\Model\OfficeMathObject[]
+     * @return OfficeMathObject[]
      */
     public function getList()
     {
@@ -205,7 +205,7 @@ class OfficeMathObjectsCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\OfficeMathObject[] $list Gets or sets the collection of OfficeMath objects.
+     * @param OfficeMathObject[] $list Gets or sets the collection of OfficeMath objects.
      *
      * @return $this
      */

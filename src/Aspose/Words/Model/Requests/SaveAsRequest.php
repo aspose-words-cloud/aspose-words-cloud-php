@@ -82,7 +82,7 @@ class SaveAsRequest
      * Initializes a new instance of the SaveAsRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\SaveOptionsData $save_options_data Save options.
+     * @param SaveOptionsData $save_options_data Save options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -386,11 +386,11 @@ class SaveAsRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\SaveResponse';
+        return 'SaveResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SaveResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'SaveResponse', []);
     }
 }

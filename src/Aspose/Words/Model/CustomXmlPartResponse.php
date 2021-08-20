@@ -51,7 +51,7 @@ class CustomXmlPartResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'custom_xml_part' => '\Aspose\Words\Model\CustomXmlPart'
+        'custom_xml_part' => 'CustomXmlPart'
     ];
 
     /*
@@ -195,7 +195,7 @@ class CustomXmlPartResponse extends WordsResponse
     /*
      * Gets custom_xml_part
      *
-     * @return \Aspose\Words\Model\CustomXmlPart
+     * @return CustomXmlPart
      */
     public function getCustomXmlPart()
     {
@@ -205,7 +205,7 @@ class CustomXmlPartResponse extends WordsResponse
     /*
      * Sets custom_xml_part
      *
-     * @param \Aspose\Words\Model\CustomXmlPart $custom_xml_part Gets or sets the custom xml part.
+     * @param CustomXmlPart $custom_xml_part Gets or sets the custom xml part.
      *
      * @return $this
      */

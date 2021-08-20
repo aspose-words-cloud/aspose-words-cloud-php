@@ -354,11 +354,11 @@ class GetListRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ListResponse';
+        return 'ListResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ListResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ListResponse', []);
     }
 }

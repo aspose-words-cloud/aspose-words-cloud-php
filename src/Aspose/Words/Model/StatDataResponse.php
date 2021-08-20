@@ -51,8 +51,8 @@ class StatDataResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'document_link' => '\Aspose\Words\Model\FileLink',
-        'stat_data' => '\Aspose\Words\Model\DocumentStatData'
+        'document_link' => 'FileLink',
+        'stat_data' => 'DocumentStatData'
     ];
 
     /*
@@ -201,7 +201,7 @@ class StatDataResponse extends WordsResponse
     /*
      * Gets document_link
      *
-     * @return \Aspose\Words\Model\FileLink
+     * @return FileLink
      */
     public function getDocumentLink()
     {
@@ -211,7 +211,7 @@ class StatDataResponse extends WordsResponse
     /*
      * Sets document_link
      *
-     * @param \Aspose\Words\Model\FileLink $document_link Gets or sets the link to the document.
+     * @param FileLink $document_link Gets or sets the link to the document.
      *
      * @return $this
      */
@@ -224,7 +224,7 @@ class StatDataResponse extends WordsResponse
     /*
      * Gets stat_data
      *
-     * @return \Aspose\Words\Model\DocumentStatData
+     * @return DocumentStatData
      */
     public function getStatData()
     {
@@ -234,7 +234,7 @@ class StatDataResponse extends WordsResponse
     /*
      * Sets stat_data
      *
-     * @param \Aspose\Words\Model\DocumentStatData $stat_data Gets or sets the statistical data of the document.
+     * @param DocumentStatData $stat_data Gets or sets the statistical data of the document.
      *
      * @return $this
      */

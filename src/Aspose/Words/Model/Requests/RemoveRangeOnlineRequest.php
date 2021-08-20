@@ -364,7 +364,7 @@ class RemoveRangeOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new RemoveRangeOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DocumentResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'DocumentResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

@@ -93,7 +93,7 @@ class ReplaceWithTextRequest
      *
      * @param string $name The filename of the input document.
      * @param string $range_start_identifier The range start identifier.
-     * @param \Aspose\Words\Model\ReplaceRange $range_text Model with text for replacement.
+     * @param ReplaceRange $range_text Model with text for replacement.
      * @param string $range_end_identifier The range end identifier.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -455,11 +455,11 @@ class ReplaceWithTextRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DocumentResponse';
+        return 'DocumentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'DocumentResponse', []);
     }
 }

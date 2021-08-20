@@ -53,7 +53,7 @@ class CompareData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'author' => 'string',
-        'compare_options' => '\Aspose\Words\Model\CompareOptions',
+        'compare_options' => 'CompareOptions',
         'comparing_with_document' => 'string',
         'date_time' => '\DateTime',
         'result_document_format' => 'string'
@@ -246,7 +246,7 @@ class CompareData implements ArrayAccess
     /*
      * Gets compare_options
      *
-     * @return \Aspose\Words\Model\CompareOptions
+     * @return CompareOptions
      */
     public function getCompareOptions()
     {
@@ -256,7 +256,7 @@ class CompareData implements ArrayAccess
     /*
      * Sets compare_options
      *
-     * @param \Aspose\Words\Model\CompareOptions $compare_options Gets or sets the compare options.
+     * @param CompareOptions $compare_options Gets or sets the compare options.
      *
      * @return $this
      */

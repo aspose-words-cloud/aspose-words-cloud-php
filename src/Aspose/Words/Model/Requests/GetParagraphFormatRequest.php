@@ -387,11 +387,11 @@ class GetParagraphFormatRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ParagraphFormatResponse';
+        return 'ParagraphFormatResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphFormatResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ParagraphFormatResponse', []);
     }
 }

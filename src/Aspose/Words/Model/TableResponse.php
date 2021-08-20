@@ -51,7 +51,7 @@ class TableResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'table' => '\Aspose\Words\Model\Table'
+        'table' => 'Table'
     ];
 
     /*
@@ -195,7 +195,7 @@ class TableResponse extends WordsResponse
     /*
      * Gets table
      *
-     * @return \Aspose\Words\Model\Table
+     * @return Table
      */
     public function getTable()
     {
@@ -205,7 +205,7 @@ class TableResponse extends WordsResponse
     /*
      * Sets table
      *
-     * @param \Aspose\Words\Model\Table $table Gets or sets the table.
+     * @param Table $table Gets or sets the table.
      *
      * @return $this
      */

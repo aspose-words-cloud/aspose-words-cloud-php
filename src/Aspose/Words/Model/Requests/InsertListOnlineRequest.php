@@ -82,7 +82,7 @@ class InsertListOnlineRequest
      * Initializes a new instance of the InsertListOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\ListInsert $list_insert List object.
+     * @param ListInsert $list_insert List object.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -395,7 +395,7 @@ class InsertListOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new InsertListOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\ListResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'ListResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

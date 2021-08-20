@@ -72,7 +72,7 @@ class ProtectDocumentOnlineRequest
      * Initializes a new instance of the ProtectDocumentOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\ProtectionRequest $protection_request Protection request.
+     * @param ProtectionRequest $protection_request Protection request.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -327,7 +327,7 @@ class ProtectDocumentOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new ProtectDocumentOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\ProtectionDataResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'ProtectionDataResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

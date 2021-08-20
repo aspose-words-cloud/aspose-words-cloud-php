@@ -55,7 +55,7 @@ class ApiError implements ArrayAccess
         'code' => 'string',
         'date_time' => '\DateTime',
         'description' => 'string',
-        'inner_error' => '\Aspose\Words\Model\ApiError',
+        'inner_error' => 'ApiError',
         'message' => 'string'
     ];
 
@@ -292,7 +292,7 @@ class ApiError implements ArrayAccess
     /*
      * Gets inner_error
      *
-     * @return \Aspose\Words\Model\ApiError
+     * @return ApiError
      */
     public function getInnerError()
     {
@@ -302,7 +302,7 @@ class ApiError implements ArrayAccess
     /*
      * Sets inner_error
      *
-     * @param \Aspose\Words\Model\ApiError $inner_error Gets or sets the inner error.
+     * @param ApiError $inner_error Gets or sets the inner error.
      *
      * @return $this
      */

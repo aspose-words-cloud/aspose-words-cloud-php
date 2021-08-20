@@ -51,7 +51,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'graphics_quality_options' => '\Aspose\Words\Model\GraphicsQualityOptionsData',
+        'graphics_quality_options' => 'GraphicsQualityOptionsData',
         'horizontal_resolution' => 'double',
         'image_brightness' => 'double',
         'image_color_mode' => 'string',
@@ -267,7 +267,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Gets graphics_quality_options
      *
-     * @return \Aspose\Words\Model\GraphicsQualityOptionsData
+     * @return GraphicsQualityOptionsData
      */
     public function getGraphicsQualityOptions()
     {
@@ -277,7 +277,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets graphics_quality_options
      *
-     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options Gets or sets the additional System.Drawing.Graphics quality options.
+     * @param GraphicsQualityOptionsData $graphics_quality_options Gets or sets the additional System.Drawing.Graphics quality options.
      *
      * @return $this
      */

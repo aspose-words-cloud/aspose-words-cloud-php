@@ -102,7 +102,7 @@ class InsertParagraphRequest
      * Initializes a new instance of the InsertParagraphRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ParagraphInsert $paragraph Paragraph data.
+     * @param ParagraphInsert $paragraph Paragraph data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -521,11 +521,11 @@ class InsertParagraphRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ParagraphResponse';
+        return 'ParagraphResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ParagraphResponse', []);
     }
 }

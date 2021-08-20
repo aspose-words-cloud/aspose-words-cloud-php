@@ -158,7 +158,7 @@ class CustomXmlPartsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartInsert(array(
+        $requestCustomXmlPart = new CustomXmlPartInsert(array(
             "id" => "hello",
             "data" => "<data>Hello world</data>",
         ));
@@ -189,7 +189,7 @@ class CustomXmlPartsTests extends BaseTestContext
         $localFile = "DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartInsert(array(
+        $requestCustomXmlPart = new CustomXmlPartInsert(array(
             "id" => "hello",
             "data" => "<data>Hello world</data>",
         ));
@@ -224,7 +224,7 @@ class CustomXmlPartsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartUpdate(array(
+        $requestCustomXmlPart = new CustomXmlPartUpdate(array(
             "data" => "<data>Hello world</data>",
         ));
         $request = new Requests\UpdateCustomXmlPartRequest(
@@ -255,7 +255,7 @@ class CustomXmlPartsTests extends BaseTestContext
         $localFile = "DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartUpdate(array(
+        $requestCustomXmlPart = new CustomXmlPartUpdate(array(
             "data" => "<data>Hello world</data>",
         ));
         $request = new Requests\UpdateCustomXmlPartOnlineRequest(

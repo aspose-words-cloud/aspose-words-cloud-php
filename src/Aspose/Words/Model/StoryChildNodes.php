@@ -52,7 +52,7 @@ class StoryChildNodes implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'child_nodes' => '\Aspose\Words\Model\NodeLink[]'
+        'child_nodes' => 'NodeLink[]'
     ];
 
     /*
@@ -199,7 +199,7 @@ class StoryChildNodes implements ArrayAccess
     /*
      * Gets child_nodes
      *
-     * @return \Aspose\Words\Model\NodeLink[]
+     * @return NodeLink[]
      */
     public function getChildNodes()
     {
@@ -209,7 +209,7 @@ class StoryChildNodes implements ArrayAccess
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets the list of child nodes.
+     * @param NodeLink[] $child_nodes Gets or sets the list of child nodes.
      *
      * @return $this
      */

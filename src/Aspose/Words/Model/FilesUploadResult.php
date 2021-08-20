@@ -52,7 +52,7 @@ class FilesUploadResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'errors' => '\Aspose\Words\Model\Error[]',
+        'errors' => 'Error[]',
         'uploaded' => 'string[]'
     ];
 
@@ -205,7 +205,7 @@ class FilesUploadResult implements ArrayAccess
     /*
      * Gets errors
      *
-     * @return \Aspose\Words\Model\Error[]
+     * @return Error[]
      */
     public function getErrors()
     {
@@ -215,7 +215,7 @@ class FilesUploadResult implements ArrayAccess
     /*
      * Sets errors
      *
-     * @param \Aspose\Words\Model\Error[] $errors List of errors.
+     * @param Error[] $errors List of errors.
      *
      * @return $this
      */

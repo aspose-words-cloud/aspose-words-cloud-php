@@ -290,11 +290,11 @@ class GetCustomXmlPartOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\CustomXmlPartResponse';
+        return 'CustomXmlPartResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CustomXmlPartResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'CustomXmlPartResponse', []);
     }
 }

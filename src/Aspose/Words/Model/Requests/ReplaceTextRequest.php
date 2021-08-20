@@ -92,7 +92,7 @@ class ReplaceTextRequest
      * Initializes a new instance of the ReplaceTextRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ReplaceTextParameters $replace_text The replace operation settings.
+     * @param ReplaceTextParameters $replace_text The replace operation settings.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -454,11 +454,11 @@ class ReplaceTextRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ReplaceTextResponse';
+        return 'ReplaceTextResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ReplaceTextResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ReplaceTextResponse', []);
     }
 }

@@ -92,7 +92,7 @@ class InsertFieldOnlineRequest
      * Initializes a new instance of the InsertFieldOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\FieldInsert $field Field data.
+     * @param FieldInsert $field Field data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -462,7 +462,7 @@ class InsertFieldOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new InsertFieldOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\FieldResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'FieldResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

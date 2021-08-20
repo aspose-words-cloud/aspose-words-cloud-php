@@ -354,11 +354,11 @@ class GetSectionRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\SectionResponse';
+        return 'SectionResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SectionResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'SectionResponse', []);
     }
 }

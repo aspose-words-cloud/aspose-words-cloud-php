@@ -324,11 +324,11 @@ class GetHeaderFooterOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\HeaderFooterResponse';
+        return 'HeaderFooterResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\HeaderFooterResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'HeaderFooterResponse', []);
     }
 }

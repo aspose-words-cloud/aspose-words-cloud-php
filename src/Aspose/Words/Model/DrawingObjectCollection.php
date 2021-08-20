@@ -51,7 +51,7 @@ class DrawingObjectCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list' => '\Aspose\Words\Model\LinkElement[]'
+        'list' => 'LinkElement[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class DrawingObjectCollection extends LinkElement
     /*
      * Gets list
      *
-     * @return \Aspose\Words\Model\LinkElement[]
+     * @return LinkElement[]
      */
     public function getList()
     {
@@ -205,7 +205,7 @@ class DrawingObjectCollection extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\LinkElement[] $list Gets or sets the collection of DrawingObjects links.
+     * @param LinkElement[] $list Gets or sets the collection of DrawingObjects links.
      *
      * @return $this
      */

@@ -318,11 +318,11 @@ class GetCommentsRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\CommentsResponse';
+        return 'CommentsResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CommentsResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'CommentsResponse', []);
     }
 }

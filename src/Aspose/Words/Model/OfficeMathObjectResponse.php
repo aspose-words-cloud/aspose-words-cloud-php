@@ -51,7 +51,7 @@ class OfficeMathObjectResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'office_math_object' => '\Aspose\Words\Model\OfficeMathObject'
+        'office_math_object' => 'OfficeMathObject'
     ];
 
     /*
@@ -195,7 +195,7 @@ class OfficeMathObjectResponse extends WordsResponse
     /*
      * Gets office_math_object
      *
-     * @return \Aspose\Words\Model\OfficeMathObject
+     * @return OfficeMathObject
      */
     public function getOfficeMathObject()
     {
@@ -205,7 +205,7 @@ class OfficeMathObjectResponse extends WordsResponse
     /*
      * Sets office_math_object
      *
-     * @param \Aspose\Words\Model\OfficeMathObject $office_math_object Gets or sets the OfficeMath object.
+     * @param OfficeMathObject $office_math_object Gets or sets the OfficeMath object.
      *
      * @return $this
      */

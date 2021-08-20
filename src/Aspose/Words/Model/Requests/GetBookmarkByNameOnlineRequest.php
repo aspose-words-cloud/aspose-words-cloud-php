@@ -290,11 +290,11 @@ class GetBookmarkByNameOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\BookmarkResponse';
+        return 'BookmarkResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BookmarkResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'BookmarkResponse', []);
     }
 }

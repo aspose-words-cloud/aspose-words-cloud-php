@@ -295,7 +295,7 @@ class RejectAllRevisionsOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new RejectAllRevisionsOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\RevisionsModificationResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'RevisionsModificationResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

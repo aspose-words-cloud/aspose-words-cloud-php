@@ -51,9 +51,9 @@ class Footnote extends FootnoteLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'content' => '\Aspose\Words\Model\StoryChildNodes',
+        'content' => 'StoryChildNodes',
         'footnote_type' => 'string',
-        'position' => '\Aspose\Words\Model\DocumentPosition',
+        'position' => 'DocumentPosition',
         'reference_mark' => 'string',
         'text' => 'string'
     ];
@@ -248,7 +248,7 @@ class Footnote extends FootnoteLink
     /*
      * Gets content
      *
-     * @return \Aspose\Words\Model\StoryChildNodes
+     * @return StoryChildNodes
      */
     public function getContent()
     {
@@ -258,7 +258,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets the content of the footnote.
+     * @param StoryChildNodes $content Gets or sets the content of the footnote.
      *
      * @return $this
      */
@@ -298,7 +298,7 @@ class Footnote extends FootnoteLink
     /*
      * Gets position
      *
-     * @return \Aspose\Words\Model\DocumentPosition
+     * @return DocumentPosition
      */
     public function getPosition()
     {
@@ -308,7 +308,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets the link to comment range start node.
+     * @param DocumentPosition $position Gets or sets the link to comment range start node.
      *
      * @return $this
      */

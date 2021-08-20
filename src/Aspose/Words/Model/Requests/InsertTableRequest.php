@@ -97,7 +97,7 @@ class InsertTableRequest
      * Initializes a new instance of the InsertTableRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\TableInsert $table Table parameters.
+     * @param TableInsert $table Table parameters.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -487,11 +487,11 @@ class InsertTableRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\TableResponse';
+        return 'TableResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'TableResponse', []);
     }
 }

@@ -355,11 +355,11 @@ class SearchRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\SearchResponse';
+        return 'SearchResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SearchResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'SearchResponse', []);
     }
 }

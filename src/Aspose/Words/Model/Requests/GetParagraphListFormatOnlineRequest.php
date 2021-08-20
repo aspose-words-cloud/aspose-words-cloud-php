@@ -323,11 +323,11 @@ class GetParagraphListFormatOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ParagraphListFormatResponse';
+        return 'ParagraphListFormatResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphListFormatResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ParagraphListFormatResponse', []);
     }
 }

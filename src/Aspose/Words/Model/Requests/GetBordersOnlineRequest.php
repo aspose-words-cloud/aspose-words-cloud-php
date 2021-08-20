@@ -287,11 +287,11 @@ class GetBordersOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\BordersResponse';
+        return 'BordersResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BordersResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'BordersResponse', []);
     }
 }

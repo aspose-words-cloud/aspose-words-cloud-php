@@ -148,11 +148,11 @@ class GetPublicKeyRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\PublicKeyResponse';
+        return 'PublicKeyResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\PublicKeyResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'PublicKeyResponse', []);
     }
 }

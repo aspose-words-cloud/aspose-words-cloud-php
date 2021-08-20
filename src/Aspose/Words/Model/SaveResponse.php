@@ -51,7 +51,7 @@ class SaveResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'save_result' => '\Aspose\Words\Model\SaveResult'
+        'save_result' => 'SaveResult'
     ];
 
     /*
@@ -195,7 +195,7 @@ class SaveResponse extends WordsResponse
     /*
      * Gets save_result
      *
-     * @return \Aspose\Words\Model\SaveResult
+     * @return SaveResult
      */
     public function getSaveResult()
     {
@@ -205,7 +205,7 @@ class SaveResponse extends WordsResponse
     /*
      * Sets save_result
      *
-     * @param \Aspose\Words\Model\SaveResult $save_result Gets or sets the save result.
+     * @param SaveResult $save_result Gets or sets the save result.
      *
      * @return $this
      */

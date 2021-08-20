@@ -354,11 +354,11 @@ class GetStyleRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\StyleResponse';
+        return 'StyleResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StyleResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'StyleResponse', []);
     }
 }

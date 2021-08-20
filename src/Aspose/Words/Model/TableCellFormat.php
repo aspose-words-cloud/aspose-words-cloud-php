@@ -56,7 +56,7 @@ class TableCellFormat extends LinkElement
         'horizontal_merge' => 'string',
         'left_padding' => 'double',
         'orientation' => 'string',
-        'preferred_width' => '\Aspose\Words\Model\PreferredWidth',
+        'preferred_width' => 'PreferredWidth',
         'right_padding' => 'double',
         'top_padding' => 'double',
         'vertical_alignment' => 'string',
@@ -508,7 +508,7 @@ class TableCellFormat extends LinkElement
     /*
      * Gets preferred_width
      *
-     * @return \Aspose\Words\Model\PreferredWidth
+     * @return PreferredWidth
      */
     public function getPreferredWidth()
     {
@@ -518,7 +518,7 @@ class TableCellFormat extends LinkElement
     /*
      * Sets preferred_width
      *
-     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets the preferred width of the cell.
+     * @param PreferredWidth $preferred_width Gets or sets the preferred width of the cell.
      *
      * @return $this
      */

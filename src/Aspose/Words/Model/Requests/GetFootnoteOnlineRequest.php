@@ -323,11 +323,11 @@ class GetFootnoteOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\FootnoteResponse';
+        return 'FootnoteResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FootnoteResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'FootnoteResponse', []);
     }
 }

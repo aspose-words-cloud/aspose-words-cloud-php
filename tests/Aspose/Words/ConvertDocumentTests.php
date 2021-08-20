@@ -52,7 +52,7 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
-        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+        $requestSaveOptionsData = new SaveOptionsData(array(
             "save_format" => "pdf",
             "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
         ));
@@ -80,7 +80,7 @@ class ConvertDocumentTests extends BaseTestContext
         $localName = "test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
-        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+        $requestSaveOptionsData = new SaveOptionsData(array(
             "save_format" => "pdf",
             "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
         ));
@@ -111,7 +111,7 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
-        $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+        $requestSaveOptionsData = new SaveOptionsData(array(
             "save_format" => "docx",
             "file_name" => self::$baseTestOutPath . "/TestSaveAsFromPdfToDoc.docx",
         ));
@@ -145,7 +145,7 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
-        $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
+        $requestSaveOptions = new TiffSaveOptionsData(array(
             "save_format" => "tiff",
             "file_name" => self::$baseTestOutPath . "/abc.tiff",
         ));
@@ -190,7 +190,7 @@ class ConvertDocumentTests extends BaseTestContext
         $localName = "test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
-        $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
+        $requestSaveOptions = new TiffSaveOptionsData(array(
             "save_format" => "tiff",
             "file_name" => self::$baseTestOutPath . "/abc.tiff",
         ));

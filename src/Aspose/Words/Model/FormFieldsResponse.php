@@ -51,7 +51,7 @@ class FormFieldsResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'form_fields' => '\Aspose\Words\Model\FormFieldCollection'
+        'form_fields' => 'FormFieldCollection'
     ];
 
     /*
@@ -195,7 +195,7 @@ class FormFieldsResponse extends WordsResponse
     /*
      * Gets form_fields
      *
-     * @return \Aspose\Words\Model\FormFieldCollection
+     * @return FormFieldCollection
      */
     public function getFormFields()
     {
@@ -205,7 +205,7 @@ class FormFieldsResponse extends WordsResponse
     /*
      * Sets form_fields
      *
-     * @param \Aspose\Words\Model\FormFieldCollection $form_fields Gets or sets the collection of form fields.
+     * @param FormFieldCollection $form_fields Gets or sets the collection of form fields.
      *
      * @return $this
      */

@@ -92,7 +92,7 @@ class InsertWatermarkTextRequest
      * Initializes a new instance of the InsertWatermarkTextRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\WatermarkText $watermark_text The watermark data.
+     * @param WatermarkText $watermark_text The watermark data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -454,11 +454,11 @@ class InsertWatermarkTextRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DocumentResponse';
+        return 'DocumentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'DocumentResponse', []);
     }
 }

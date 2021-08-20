@@ -51,7 +51,7 @@ class Paragraph extends NodeLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'child_nodes' => '\Aspose\Words\Model\NodeLink[]'
+        'child_nodes' => 'NodeLink[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class Paragraph extends NodeLink
     /*
      * Gets child_nodes
      *
-     * @return \Aspose\Words\Model\NodeLink[]
+     * @return NodeLink[]
      */
     public function getChildNodes()
     {
@@ -205,7 +205,7 @@ class Paragraph extends NodeLink
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets the list of child nodes.
+     * @param NodeLink[] $child_nodes Gets or sets the list of child nodes.
      *
      * @return $this
      */

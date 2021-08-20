@@ -88,7 +88,7 @@ class UpdateSectionPageSetupOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param int $section_index The index of the section.
-     * @param \Aspose\Words\Model\PageSetup $page_setup Page setup properties dto.
+     * @param PageSetup $page_setup Page setup properties dto.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -431,7 +431,7 @@ class UpdateSectionPageSetupOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateSectionPageSetupOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\SectionPageSetupResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'SectionPageSetupResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

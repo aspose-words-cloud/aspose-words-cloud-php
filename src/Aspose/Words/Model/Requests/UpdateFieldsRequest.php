@@ -352,11 +352,11 @@ class UpdateFieldsRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DocumentResponse';
+        return 'DocumentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'DocumentResponse', []);
     }
 }

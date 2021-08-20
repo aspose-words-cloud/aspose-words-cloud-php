@@ -290,11 +290,11 @@ class GetRunsOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\RunsResponse';
+        return 'RunsResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\RunsResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'RunsResponse', []);
     }
 }

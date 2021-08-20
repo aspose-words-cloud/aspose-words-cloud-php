@@ -52,7 +52,7 @@ class ReportEngineSettings implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'csv_data_load_options' => '\Aspose\Words\Model\CsvDataLoadOptions',
+        'csv_data_load_options' => 'CsvDataLoadOptions',
         'data_source_name' => 'string',
         'data_source_type' => 'string',
         'report_build_options' => 'string[]'
@@ -248,7 +248,7 @@ class ReportEngineSettings implements ArrayAccess
     /*
      * Gets csv_data_load_options
      *
-     * @return \Aspose\Words\Model\CsvDataLoadOptions
+     * @return CsvDataLoadOptions
      */
     public function getCsvDataLoadOptions()
     {
@@ -258,7 +258,7 @@ class ReportEngineSettings implements ArrayAccess
     /*
      * Sets csv_data_load_options
      *
-     * @param \Aspose\Words\Model\CsvDataLoadOptions $csv_data_load_options Gets or sets the options for parsing CSV data.
+     * @param CsvDataLoadOptions $csv_data_load_options Gets or sets the options for parsing CSV data.
      *
      * @return $this
      */

@@ -103,7 +103,7 @@ class UpdateParagraphFormatRequest
      *
      * @param string $name The filename of the input document.
      * @param int $index Object index.
-     * @param \Aspose\Words\Model\ParagraphFormatUpdate $paragraph_format_dto Dto for paragraph format update.
+     * @param ParagraphFormatUpdate $paragraph_format_dto Dto for paragraph format update.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -523,11 +523,11 @@ class UpdateParagraphFormatRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ParagraphFormatResponse';
+        return 'ParagraphFormatResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphFormatResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ParagraphFormatResponse', []);
     }
 }

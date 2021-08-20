@@ -51,7 +51,7 @@ class DocumentResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'document' => '\Aspose\Words\Model\Document'
+        'document' => 'Document'
     ];
 
     /*
@@ -195,7 +195,7 @@ class DocumentResponse extends WordsResponse
     /*
      * Gets document
      *
-     * @return \Aspose\Words\Model\Document
+     * @return Document
      */
     public function getDocument()
     {
@@ -205,7 +205,7 @@ class DocumentResponse extends WordsResponse
     /*
      * Sets document
      *
-     * @param \Aspose\Words\Model\Document $document Gets or sets the document description.
+     * @param Document $document Gets or sets the document description.
      *
      * @return $this
      */

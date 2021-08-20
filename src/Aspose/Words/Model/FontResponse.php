@@ -51,7 +51,7 @@ class FontResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'font' => '\Aspose\Words\Model\Font'
+        'font' => 'Font'
     ];
 
     /*
@@ -195,7 +195,7 @@ class FontResponse extends WordsResponse
     /*
      * Gets font
      *
-     * @return \Aspose\Words\Model\Font
+     * @return Font
      */
     public function getFont()
     {
@@ -205,7 +205,7 @@ class FontResponse extends WordsResponse
     /*
      * Sets font
      *
-     * @param \Aspose\Words\Model\Font $font Gets or sets the font.
+     * @param Font $font Gets or sets the font.
      *
      * @return $this
      */

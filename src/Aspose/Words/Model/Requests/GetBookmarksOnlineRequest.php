@@ -254,11 +254,11 @@ class GetBookmarksOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\BookmarksResponse';
+        return 'BookmarksResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BookmarksResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'BookmarksResponse', []);
     }
 }

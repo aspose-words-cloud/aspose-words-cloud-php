@@ -51,7 +51,7 @@ class SplitDocumentResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'split_result' => '\Aspose\Words\Model\SplitDocumentResult'
+        'split_result' => 'SplitDocumentResult'
     ];
 
     /*
@@ -195,7 +195,7 @@ class SplitDocumentResponse extends WordsResponse
     /*
      * Gets split_result
      *
-     * @return \Aspose\Words\Model\SplitDocumentResult
+     * @return SplitDocumentResult
      */
     public function getSplitResult()
     {
@@ -205,7 +205,7 @@ class SplitDocumentResponse extends WordsResponse
     /*
      * Sets split_result
      *
-     * @param \Aspose\Words\Model\SplitDocumentResult $split_result Gets or sets the result of document splitting.
+     * @param SplitDocumentResult $split_result Gets or sets the result of document splitting.
      *
      * @return $this
      */

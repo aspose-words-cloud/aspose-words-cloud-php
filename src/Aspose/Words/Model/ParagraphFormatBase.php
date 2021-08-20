@@ -67,7 +67,7 @@ class ParagraphFormatBase extends LinkElement
         'outline_level' => 'string',
         'page_break_before' => 'bool',
         'right_indent' => 'double',
-        'shading' => '\Aspose\Words\Model\Shading',
+        'shading' => 'Shading',
         'space_after' => 'double',
         'space_after_auto' => 'bool',
         'space_before' => 'double',
@@ -1644,7 +1644,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Gets shading
      *
-     * @return \Aspose\Words\Model\Shading
+     * @return Shading
      */
     public function getShading()
     {
@@ -1654,7 +1654,7 @@ class ParagraphFormatBase extends LinkElement
     /*
      * Sets shading
      *
-     * @param \Aspose\Words\Model\Shading $shading Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
+     * @param Shading $shading Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
      *
      * @return $this
      */

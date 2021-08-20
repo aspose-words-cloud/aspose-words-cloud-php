@@ -92,7 +92,7 @@ class UpdateParagraphFormatOnlineRequest
      * Initializes a new instance of the UpdateParagraphFormatOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\ParagraphFormatUpdate $paragraph_format_dto Dto for paragraph format update.
+     * @param ParagraphFormatUpdate $paragraph_format_dto Dto for paragraph format update.
      * @param int $index Object index.
      * @param string $node_path The path to the node in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -464,7 +464,7 @@ class UpdateParagraphFormatOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateParagraphFormatOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\ParagraphFormatResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'ParagraphFormatResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

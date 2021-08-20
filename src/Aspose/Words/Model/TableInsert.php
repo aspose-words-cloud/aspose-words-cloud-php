@@ -53,7 +53,7 @@ class TableInsert implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'columns_count' => 'int',
-        'position' => '\Aspose\Words\Model\DocumentPosition',
+        'position' => 'DocumentPosition',
         'rows_count' => 'int'
     ];
 
@@ -234,7 +234,7 @@ class TableInsert implements ArrayAccess
     /*
      * Gets position
      *
-     * @return \Aspose\Words\Model\DocumentPosition
+     * @return DocumentPosition
      */
     public function getPosition()
     {
@@ -244,7 +244,7 @@ class TableInsert implements ArrayAccess
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets the position to insert the table. The table will be inserted before the specified position.
+     * @param DocumentPosition $position Gets or sets the position to insert the table. The table will be inserted before the specified position.
      *
      * @return $this
      */

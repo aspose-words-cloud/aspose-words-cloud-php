@@ -51,7 +51,7 @@ class DocumentProperties extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list' => '\Aspose\Words\Model\DocumentProperty[]'
+        'list' => 'DocumentProperty[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class DocumentProperties extends LinkElement
     /*
      * Gets list
      *
-     * @return \Aspose\Words\Model\DocumentProperty[]
+     * @return DocumentProperty[]
      */
     public function getList()
     {
@@ -205,7 +205,7 @@ class DocumentProperties extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\DocumentProperty[] $list Gets or sets the collection of document properties.
+     * @param DocumentProperty[] $list Gets or sets the collection of document properties.
      *
      * @return $this
      */

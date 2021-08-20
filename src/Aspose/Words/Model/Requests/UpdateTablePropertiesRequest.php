@@ -103,7 +103,7 @@ class UpdateTablePropertiesRequest
      *
      * @param string $name The filename of the input document.
      * @param int $index Object index.
-     * @param \Aspose\Words\Model\TableProperties $properties The properties.
+     * @param TableProperties $properties The properties.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -523,11 +523,11 @@ class UpdateTablePropertiesRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\TablePropertiesResponse';
+        return 'TablePropertiesResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TablePropertiesResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'TablePropertiesResponse', []);
     }
 }

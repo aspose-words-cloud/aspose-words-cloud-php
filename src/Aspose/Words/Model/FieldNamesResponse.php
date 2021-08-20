@@ -51,7 +51,7 @@ class FieldNamesResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'field_names' => '\Aspose\Words\Model\FieldNames'
+        'field_names' => 'FieldNames'
     ];
 
     /*
@@ -195,7 +195,7 @@ class FieldNamesResponse extends WordsResponse
     /*
      * Gets field_names
      *
-     * @return \Aspose\Words\Model\FieldNames
+     * @return FieldNames
      */
     public function getFieldNames()
     {
@@ -205,7 +205,7 @@ class FieldNamesResponse extends WordsResponse
     /*
      * Sets field_names
      *
-     * @param \Aspose\Words\Model\FieldNames $field_names Gets or sets the collection of mail merge fields.
+     * @param FieldNames $field_names Gets or sets the collection of mail merge fields.
      *
      * @return $this
      */

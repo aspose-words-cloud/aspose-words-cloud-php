@@ -103,7 +103,7 @@ class UpdateParagraphListFormatRequest
      *
      * @param string $name The filename of the input document.
      * @param int $index Object index.
-     * @param \Aspose\Words\Model\ListFormatUpdate $list_format_dto ListFormatUpdate dto.
+     * @param ListFormatUpdate $list_format_dto ListFormatUpdate dto.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -523,11 +523,11 @@ class UpdateParagraphListFormatRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ParagraphListFormatResponse';
+        return 'ParagraphListFormatResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphListFormatResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ParagraphListFormatResponse', []);
     }
 }

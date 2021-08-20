@@ -432,7 +432,7 @@ class DeleteParagraphListFormatOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new DeleteParagraphListFormatOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\ParagraphListFormatResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'ParagraphListFormatResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

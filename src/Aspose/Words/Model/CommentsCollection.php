@@ -51,7 +51,7 @@ class CommentsCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'comment_list' => '\Aspose\Words\Model\Comment[]'
+        'comment_list' => 'Comment[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class CommentsCollection extends LinkElement
     /*
      * Gets comment_list
      *
-     * @return \Aspose\Words\Model\Comment[]
+     * @return Comment[]
      */
     public function getCommentList()
     {
@@ -205,7 +205,7 @@ class CommentsCollection extends LinkElement
     /*
      * Sets comment_list
      *
-     * @param \Aspose\Words\Model\Comment[] $comment_list Gets or sets the collection of comments.
+     * @param Comment[] $comment_list Gets or sets the collection of comments.
      *
      * @return $this
      */

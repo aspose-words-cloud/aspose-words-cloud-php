@@ -322,11 +322,11 @@ class ClassifyDocumentOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ClassificationResponse';
+        return 'ClassificationResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ClassificationResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ClassificationResponse', []);
     }
 }

@@ -390,11 +390,11 @@ class GetTableCellFormatRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\TableCellFormatResponse';
+        return 'TableCellFormatResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableCellFormatResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'TableCellFormatResponse', []);
     }
 }

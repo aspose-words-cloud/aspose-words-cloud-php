@@ -52,8 +52,8 @@ class ModificationOperationResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'dest' => '\Aspose\Words\Model\FileLink',
-        'source' => '\Aspose\Words\Model\FileLink'
+        'dest' => 'FileLink',
+        'source' => 'FileLink'
     ];
 
     /*
@@ -205,7 +205,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Gets dest
      *
-     * @return \Aspose\Words\Model\FileLink
+     * @return FileLink
      */
     public function getDest()
     {
@@ -215,7 +215,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Sets dest
      *
-     * @param \Aspose\Words\Model\FileLink $dest Gets or sets the link to the dest document (result of the modification operation).
+     * @param FileLink $dest Gets or sets the link to the dest document (result of the modification operation).
      *
      * @return $this
      */
@@ -228,7 +228,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Gets source
      *
-     * @return \Aspose\Words\Model\FileLink
+     * @return FileLink
      */
     public function getSource()
     {
@@ -238,7 +238,7 @@ class ModificationOperationResult implements ArrayAccess
     /*
      * Sets source
      *
-     * @param \Aspose\Words\Model\FileLink $source Gets or sets the link to the source document (source for the modification operation).
+     * @param FileLink $source Gets or sets the link to the source document (source for the modification operation).
      *
      * @return $this
      */

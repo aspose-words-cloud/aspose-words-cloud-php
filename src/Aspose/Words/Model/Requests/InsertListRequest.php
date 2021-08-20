@@ -92,7 +92,7 @@ class InsertListRequest
      * Initializes a new instance of the InsertListRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ListInsert $list_insert List object.
+     * @param ListInsert $list_insert List object.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -454,11 +454,11 @@ class InsertListRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\ListResponse';
+        return 'ListResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ListResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'ListResponse', []);
     }
 }

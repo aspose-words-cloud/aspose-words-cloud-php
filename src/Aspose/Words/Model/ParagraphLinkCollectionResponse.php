@@ -51,7 +51,7 @@ class ParagraphLinkCollectionResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'paragraphs' => '\Aspose\Words\Model\ParagraphLinkCollection'
+        'paragraphs' => 'ParagraphLinkCollection'
     ];
 
     /*
@@ -195,7 +195,7 @@ class ParagraphLinkCollectionResponse extends WordsResponse
     /*
      * Gets paragraphs
      *
-     * @return \Aspose\Words\Model\ParagraphLinkCollection
+     * @return ParagraphLinkCollection
      */
     public function getParagraphs()
     {
@@ -205,7 +205,7 @@ class ParagraphLinkCollectionResponse extends WordsResponse
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\ParagraphLinkCollection $paragraphs Gets or sets the collection of paragraphs.
+     * @param ParagraphLinkCollection $paragraphs Gets or sets the collection of paragraphs.
      *
      * @return $this
      */

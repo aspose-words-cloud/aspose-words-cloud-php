@@ -326,11 +326,11 @@ class GetRunFontOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\FontResponse';
+        return 'FontResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FontResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'FontResponse', []);
     }
 }

@@ -52,7 +52,7 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+        $requestFootnoteDto = new FootnoteInsert(array(
             "footnote_type" => "Endnote",
             "text" => "test endnote",
         ));
@@ -84,7 +84,7 @@ class FootnoteTests extends BaseTestContext
         $footnoteFolder = "DocumentElements/Footnotes";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $footnoteFolder . "/Footnote.doc";
-        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+        $requestFootnoteDto = new FootnoteInsert(array(
             "footnote_type" => "Endnote",
             "text" => "test endnote",
         ));
@@ -117,7 +117,7 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+        $requestFootnoteDto = new FootnoteInsert(array(
             "footnote_type" => "Endnote",
             "text" => "test endnote",
         ));
@@ -399,7 +399,7 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
+        $requestFootnoteDto = new FootnoteUpdate(array(
             "text" => "new text is here",
         ));
         $request = new Requests\UpdateFootnoteRequest(
@@ -430,7 +430,7 @@ class FootnoteTests extends BaseTestContext
         $footnoteFolder = "DocumentElements/Footnotes";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $footnoteFolder . "/Footnote.doc";
-        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
+        $requestFootnoteDto = new FootnoteUpdate(array(
             "text" => "new text is here",
         ));
         $request = new Requests\UpdateFootnoteOnlineRequest(
@@ -463,7 +463,7 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
+        $requestFootnoteDto = new FootnoteUpdate(array(
             "text" => "new text is here",
         ));
         $request = new Requests\UpdateFootnoteRequest(

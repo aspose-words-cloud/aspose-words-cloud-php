@@ -103,7 +103,7 @@ class UpdateFieldRequest
      *
      * @param string $name The filename of the input document.
      * @param int $index Object index.
-     * @param \Aspose\Words\Model\FieldUpdate $field Field data.
+     * @param FieldUpdate $field Field data.
      * @param string $node_path The path to the node in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -523,11 +523,11 @@ class UpdateFieldRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\FieldResponse';
+        return 'FieldResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FieldResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'FieldResponse', []);
     }
 }

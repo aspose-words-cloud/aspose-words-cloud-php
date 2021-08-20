@@ -82,7 +82,7 @@ class AppendDocumentOnlineRequest
      * Initializes a new instance of the AppendDocumentOnlineRequest class.
      *
      * @param \SplFileObject $document Original document.
-     * @param \Aspose\Words\Model\DocumentEntryList $document_list <see cref="DocumentEntryList"/> with a list of documents to append.
+     * @param DocumentEntryList $document_list <see cref="DocumentEntryList"/> with a list of documents to append.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -395,7 +395,7 @@ class AppendDocumentOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new AppendDocumentOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DocumentResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'DocumentResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

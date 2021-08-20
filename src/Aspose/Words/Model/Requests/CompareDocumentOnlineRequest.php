@@ -77,7 +77,7 @@ class CompareDocumentOnlineRequest
      * Initializes a new instance of the CompareDocumentOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\CompareData $compare_data Compare data.
+     * @param CompareData $compare_data Compare data.
      * @param \SplFileObject $comparing_document The comparing document.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -360,7 +360,7 @@ class CompareDocumentOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new CompareDocumentOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DocumentResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'DocumentResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

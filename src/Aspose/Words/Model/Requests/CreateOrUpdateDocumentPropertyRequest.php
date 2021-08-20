@@ -98,7 +98,7 @@ class CreateOrUpdateDocumentPropertyRequest
      *
      * @param string $name The filename of the input document.
      * @param string $property_name The name of the property.
-     * @param \Aspose\Words\Model\DocumentPropertyCreateOrUpdate $property The property with new value.
+     * @param DocumentPropertyCreateOrUpdate $property The property with new value.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -490,11 +490,11 @@ class CreateOrUpdateDocumentPropertyRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DocumentPropertyResponse';
+        return 'DocumentPropertyResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentPropertyResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'DocumentPropertyResponse', []);
     }
 }

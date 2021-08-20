@@ -58,7 +58,7 @@ class TableProperties extends LinkElement
         'cell_spacing' => 'double',
         'left_indent' => 'double',
         'left_padding' => 'double',
-        'preferred_width' => '\Aspose\Words\Model\PreferredWidth',
+        'preferred_width' => 'PreferredWidth',
         'right_padding' => 'double',
         'style_identifier' => 'string',
         'style_name' => 'string',
@@ -1310,7 +1310,7 @@ class TableProperties extends LinkElement
     /*
      * Gets preferred_width
      *
-     * @return \Aspose\Words\Model\PreferredWidth
+     * @return PreferredWidth
      */
     public function getPreferredWidth()
     {
@@ -1320,7 +1320,7 @@ class TableProperties extends LinkElement
     /*
      * Sets preferred_width
      *
-     * @param \Aspose\Words\Model\PreferredWidth $preferred_width Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special "auto" value.
+     * @param PreferredWidth $preferred_width Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special "auto" value.
      *
      * @return $this
      */

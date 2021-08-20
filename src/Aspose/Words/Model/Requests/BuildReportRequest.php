@@ -88,7 +88,7 @@ class BuildReportRequest
      *
      * @param string $name The filename of the input document.
      * @param string $data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
-     * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
+     * @param ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -420,11 +420,11 @@ class BuildReportRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DocumentResponse';
+        return 'DocumentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'DocumentResponse', []);
     }
 }

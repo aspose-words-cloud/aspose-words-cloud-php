@@ -92,7 +92,7 @@ class UpdateFormFieldOnlineRequest
      * Initializes a new instance of the UpdateFormFieldOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\FormField $form_field From field data.
+     * @param FormField $form_field From field data.
      * @param int $index Object index.
      * @param string $node_path The path to the node in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -464,7 +464,7 @@ class UpdateFormFieldOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateFormFieldOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\FormFieldResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'FormFieldResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

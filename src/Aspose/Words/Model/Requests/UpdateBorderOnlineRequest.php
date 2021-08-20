@@ -92,7 +92,7 @@ class UpdateBorderOnlineRequest
      * Initializes a new instance of the UpdateBorderOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\Border $border_properties Border properties.
+     * @param Border $border_properties Border properties.
      * @param string $border_type Border type.
      * @param string $node_path The path to the node in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -464,7 +464,7 @@ class UpdateBorderOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateBorderOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\BorderResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'BorderResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

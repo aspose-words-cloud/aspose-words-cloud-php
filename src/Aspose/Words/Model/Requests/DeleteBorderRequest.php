@@ -489,11 +489,11 @@ class DeleteBorderRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\BorderResponse';
+        return 'BorderResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BorderResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'BorderResponse', []);
     }
 }

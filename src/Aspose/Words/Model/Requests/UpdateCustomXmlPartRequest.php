@@ -98,7 +98,7 @@ class UpdateCustomXmlPartRequest
      *
      * @param string $name The filename of the input document.
      * @param int $custom_xml_part_index The index of the custom xml part. This index is the number of the entry in the collection of custom xml parts, not the ID of the part.
-     * @param \Aspose\Words\Model\CustomXmlPartUpdate $custom_xml_part Custom xml part.
+     * @param CustomXmlPartUpdate $custom_xml_part Custom xml part.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -490,11 +490,11 @@ class UpdateCustomXmlPartRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\CustomXmlPartResponse';
+        return 'CustomXmlPartResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CustomXmlPartResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'CustomXmlPartResponse', []);
     }
 }

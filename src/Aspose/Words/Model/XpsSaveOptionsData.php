@@ -53,7 +53,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     protected static $swaggerTypes = [
         'bookmarks_outline_level' => 'int',
         'headings_outline_levels' => 'int',
-        'outline_options' => '\Aspose\Words\Model\OutlineOptionsData',
+        'outline_options' => 'OutlineOptionsData',
         'use_book_fold_printing_settings' => 'bool'
     ];
 
@@ -259,7 +259,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Gets outline_options
      *
-     * @return \Aspose\Words\Model\OutlineOptionsData
+     * @return OutlineOptionsData
      */
     public function getOutlineOptions()
     {
@@ -269,7 +269,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets outline_options
      *
-     * @param \Aspose\Words\Model\OutlineOptionsData $outline_options Gets or sets the outline options.
+     * @param OutlineOptionsData $outline_options Gets or sets the outline options.
      *
      * @return $this
      */

@@ -51,7 +51,7 @@ class BordersResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'borders' => '\Aspose\Words\Model\BordersCollection'
+        'borders' => 'BordersCollection'
     ];
 
     /*
@@ -195,7 +195,7 @@ class BordersResponse extends WordsResponse
     /*
      * Gets borders
      *
-     * @return \Aspose\Words\Model\BordersCollection
+     * @return BordersCollection
      */
     public function getBorders()
     {
@@ -205,7 +205,7 @@ class BordersResponse extends WordsResponse
     /*
      * Sets borders
      *
-     * @param \Aspose\Words\Model\BordersCollection $borders Gets or sets the collection of borders.
+     * @param BordersCollection $borders Gets or sets the collection of borders.
      *
      * @return $this
      */

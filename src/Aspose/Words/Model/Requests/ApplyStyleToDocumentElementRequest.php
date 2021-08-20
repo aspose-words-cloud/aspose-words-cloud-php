@@ -98,7 +98,7 @@ class ApplyStyleToDocumentElementRequest
      *
      * @param string $name The filename of the input document.
      * @param string $styled_node_path The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
-     * @param \Aspose\Words\Model\StyleApply $style_apply Style to apply.
+     * @param StyleApply $style_apply Style to apply.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -490,11 +490,11 @@ class ApplyStyleToDocumentElementRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\WordsResponse';
+        return 'WordsResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\WordsResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'WordsResponse', []);
     }
 }

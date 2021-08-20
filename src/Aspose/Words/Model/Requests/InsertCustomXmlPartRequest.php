@@ -92,7 +92,7 @@ class InsertCustomXmlPartRequest
      * Initializes a new instance of the InsertCustomXmlPartRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\CustomXmlPartInsert $custom_xml_part Custom xml part.
+     * @param CustomXmlPartInsert $custom_xml_part Custom xml part.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -454,11 +454,11 @@ class InsertCustomXmlPartRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\CustomXmlPartResponse';
+        return 'CustomXmlPartResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CustomXmlPartResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'CustomXmlPartResponse', []);
     }
 }

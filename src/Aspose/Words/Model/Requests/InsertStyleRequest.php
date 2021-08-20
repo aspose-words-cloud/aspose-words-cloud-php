@@ -92,7 +92,7 @@ class InsertStyleRequest
      * Initializes a new instance of the InsertStyleRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\StyleInsert $style_insert Style to insert.
+     * @param StyleInsert $style_insert Style to insert.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -454,11 +454,11 @@ class InsertStyleRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\StyleResponse';
+        return 'StyleResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StyleResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'StyleResponse', []);
     }
 }

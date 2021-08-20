@@ -54,7 +54,7 @@ class Error implements ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'string',
         'description' => 'string',
-        'inner_error' => '\Aspose\Words\Model\ErrorDetails',
+        'inner_error' => 'ErrorDetails',
         'message' => 'string'
     ];
 
@@ -263,7 +263,7 @@ class Error implements ArrayAccess
     /*
      * Gets inner_error
      *
-     * @return \Aspose\Words\Model\ErrorDetails
+     * @return ErrorDetails
      */
     public function getInnerError()
     {
@@ -273,7 +273,7 @@ class Error implements ArrayAccess
     /*
      * Sets inner_error
      *
-     * @param \Aspose\Words\Model\ErrorDetails $inner_error Inner Error.
+     * @param ErrorDetails $inner_error Inner Error.
      *
      * @return $this
      */

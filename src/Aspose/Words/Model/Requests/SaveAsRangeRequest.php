@@ -88,7 +88,7 @@ class SaveAsRangeRequest
      *
      * @param string $name The filename of the input document.
      * @param string $range_start_identifier The range start identifier.
-     * @param \Aspose\Words\Model\RangeDocument $document_parameters Parameters of a new document.
+     * @param RangeDocument $document_parameters Parameters of a new document.
      * @param string $range_end_identifier The range end identifier.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -421,11 +421,11 @@ class SaveAsRangeRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DocumentResponse';
+        return 'DocumentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'DocumentResponse', []);
     }
 }

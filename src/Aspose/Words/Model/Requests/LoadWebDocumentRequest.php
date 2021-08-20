@@ -56,7 +56,7 @@ class LoadWebDocumentRequest
     /*
      * Initializes a new instance of the LoadWebDocumentRequest class.
      *
-     * @param \Aspose\Words\Model\LoadWebDocumentData $data The properties of data downloading.
+     * @param LoadWebDocumentData $data The properties of data downloading.
      * @param string $storage Original document storage.
      */
     public function __construct($data, $storage = null)
@@ -214,11 +214,11 @@ class LoadWebDocumentRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\SaveResponse';
+        return 'SaveResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SaveResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'SaveResponse', []);
     }
 }

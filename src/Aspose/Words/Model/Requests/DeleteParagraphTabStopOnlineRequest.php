@@ -401,7 +401,7 @@ class DeleteParagraphTabStopOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new DeleteParagraphTabStopOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\TabStopsResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'TabStopsResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

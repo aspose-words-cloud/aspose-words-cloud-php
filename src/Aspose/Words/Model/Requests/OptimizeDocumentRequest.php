@@ -92,7 +92,7 @@ class OptimizeDocumentRequest
      * Initializes a new instance of the OptimizeDocumentRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\OptimizationOptions $options The document optimization options.
+     * @param OptimizationOptions $options The document optimization options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

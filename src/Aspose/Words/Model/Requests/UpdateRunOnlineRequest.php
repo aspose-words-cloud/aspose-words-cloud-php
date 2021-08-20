@@ -93,7 +93,7 @@ class UpdateRunOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param string $paragraph_path The path to the paragraph in the document tree.
-     * @param \Aspose\Words\Model\RunUpdate $run Run data.
+     * @param RunUpdate $run Run data.
      * @param int $index Object index.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
@@ -467,7 +467,7 @@ class UpdateRunOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateRunOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\RunResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'RunResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

@@ -98,7 +98,7 @@ class UpdateCommentRequest
      *
      * @param string $name The filename of the input document.
      * @param int $comment_index The index of the comment.
-     * @param \Aspose\Words\Model\CommentUpdate $comment Comment data.
+     * @param CommentUpdate $comment Comment data.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -490,11 +490,11 @@ class UpdateCommentRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\CommentResponse';
+        return 'CommentResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CommentResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'CommentResponse', []);
     }
 }

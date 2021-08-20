@@ -180,11 +180,11 @@ class GetAvailableFontsRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\AvailableFontsResponse';
+        return 'AvailableFontsResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\AvailableFontsResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'AvailableFontsResponse', []);
     }
 }

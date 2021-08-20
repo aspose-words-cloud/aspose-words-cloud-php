@@ -51,7 +51,7 @@ class OfficeMathObject extends OfficeMathLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'content' => '\Aspose\Words\Model\StoryChildNodes',
+        'content' => 'StoryChildNodes',
         'display_type' => 'string',
         'justification' => 'string',
         'math_object_type' => 'string'
@@ -360,7 +360,7 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Gets content
      *
-     * @return \Aspose\Words\Model\StoryChildNodes
+     * @return StoryChildNodes
      */
     public function getContent()
     {
@@ -370,7 +370,7 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Sets content
      *
-     * @param \Aspose\Words\Model\StoryChildNodes $content Gets or sets the content of a footnote.
+     * @param StoryChildNodes $content Gets or sets the content of a footnote.
      *
      * @return $this
      */

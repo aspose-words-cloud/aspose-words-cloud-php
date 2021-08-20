@@ -157,7 +157,7 @@ class SaveAsTiffOnlineRequest
      * Initializes a new instance of the SaveAsTiffOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\TiffSaveOptionsData $save_options Tiff save options.
+     * @param TiffSaveOptionsData $save_options Tiff save options.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param bool $use_anti_aliasing The flag indicating whether to use antialiasing.
@@ -905,7 +905,7 @@ class SaveAsTiffOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new SaveAsTiffOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\SaveResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'SaveResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

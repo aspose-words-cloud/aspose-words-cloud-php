@@ -287,11 +287,11 @@ class GetTablesOnlineRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\TableLinkCollectionResponse';
+        return 'TableLinkCollectionResponse';
     }
 
     public function deserializeResponse($responseContent)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableLinkCollectionResponse', []);
+        return ObjectSerializer::deserialize($responseContent, 'TableLinkCollectionResponse', []);
     }
 }

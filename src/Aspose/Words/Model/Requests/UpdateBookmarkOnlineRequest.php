@@ -88,7 +88,7 @@ class UpdateBookmarkOnlineRequest
      *
      * @param \SplFileObject $document The document.
      * @param string $bookmark_name The name of the bookmark.
-     * @param \Aspose\Words\Model\BookmarkData $bookmark_data Bookmark data.
+     * @param BookmarkData $bookmark_data Bookmark data.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -431,7 +431,7 @@ class UpdateBookmarkOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new UpdateBookmarkOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\BookmarkResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'BookmarkResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

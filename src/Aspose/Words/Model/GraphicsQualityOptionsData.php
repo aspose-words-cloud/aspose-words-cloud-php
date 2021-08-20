@@ -56,7 +56,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
         'compositing_quality' => 'string',
         'interpolation_mode' => 'string',
         'smoothing_mode' => 'string',
-        'string_format' => '\Aspose\Words\Model\StringFormatData',
+        'string_format' => 'StringFormatData',
         'text_rendering_hint' => 'string'
     ];
 
@@ -512,7 +512,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
     /*
      * Gets string_format
      *
-     * @return \Aspose\Words\Model\StringFormatData
+     * @return StringFormatData
      */
     public function getStringFormat()
     {
@@ -522,7 +522,7 @@ class GraphicsQualityOptionsData implements ArrayAccess
     /*
      * Sets string_format
      *
-     * @param \Aspose\Words\Model\StringFormatData $string_format Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.
+     * @param StringFormatData $string_format Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.
      *
      * @return $this
      */

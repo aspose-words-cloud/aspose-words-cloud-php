@@ -51,7 +51,7 @@ class Runs extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list' => '\Aspose\Words\Model\Run[]'
+        'list' => 'Run[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class Runs extends LinkElement
     /*
      * Gets list
      *
-     * @return \Aspose\Words\Model\Run[]
+     * @return Run[]
      */
     public function getList()
     {
@@ -205,7 +205,7 @@ class Runs extends LinkElement
     /*
      * Sets list
      *
-     * @param \Aspose\Words\Model\Run[] $list Gets or sets the collection of runs.
+     * @param Run[] $list Gets or sets the collection of runs.
      *
      * @return $this
      */

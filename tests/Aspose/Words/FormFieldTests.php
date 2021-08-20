@@ -52,7 +52,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -89,7 +89,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -127,7 +127,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -330,7 +330,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -368,7 +368,7 @@ class FormFieldTests extends BaseTestContext
         $fieldFolder = "DocumentElements/FormFields";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/FormFilled.docx";
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,
@@ -406,7 +406,7 @@ class FormFieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+        $requestFormField = new FormFieldTextInput(array(
             "name" => "FullName",
             "enabled" => true,
             "calculate_on_exit" => true,

@@ -52,12 +52,12 @@ class DrawingObject extends DrawingObjectLink
      */
     protected static $swaggerTypes = [
         'height' => 'double',
-        'image_data_link' => '\Aspose\Words\Model\WordsApiLink',
+        'image_data_link' => 'WordsApiLink',
         'left' => 'double',
-        'ole_data_link' => '\Aspose\Words\Model\WordsApiLink',
+        'ole_data_link' => 'WordsApiLink',
         'relative_horizontal_position' => 'string',
         'relative_vertical_position' => 'string',
-        'render_links' => '\Aspose\Words\Model\WordsApiLink[]',
+        'render_links' => 'WordsApiLink[]',
         'top' => 'double',
         'width' => 'double',
         'wrap_type' => 'string'
@@ -393,7 +393,7 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Gets image_data_link
      *
-     * @return \Aspose\Words\Model\WordsApiLink
+     * @return WordsApiLink
      */
     public function getImageDataLink()
     {
@@ -403,7 +403,7 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Sets image_data_link
      *
-     * @param \Aspose\Words\Model\WordsApiLink $image_data_link Gets or sets the link to image data. Can be null if shape does not have an image.
+     * @param WordsApiLink $image_data_link Gets or sets the link to image data. Can be null if shape does not have an image.
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Gets ole_data_link
      *
-     * @return \Aspose\Words\Model\WordsApiLink
+     * @return WordsApiLink
      */
     public function getOleDataLink()
     {
@@ -449,7 +449,7 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Sets ole_data_link
      *
-     * @param \Aspose\Words\Model\WordsApiLink $ole_data_link Gets or sets the link to OLE object. Can be null if shape does not have OLE data.
+     * @param WordsApiLink $ole_data_link Gets or sets the link to OLE object. Can be null if shape does not have OLE data.
      *
      * @return $this
      */
@@ -516,7 +516,7 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Gets render_links
      *
-     * @return \Aspose\Words\Model\WordsApiLink[]
+     * @return WordsApiLink[]
      */
     public function getRenderLinks()
     {
@@ -526,7 +526,7 @@ class DrawingObject extends DrawingObjectLink
     /*
      * Sets render_links
      *
-     * @param \Aspose\Words\Model\WordsApiLink[] $render_links Gets or sets the list of links that originate from this DrawingObjectDto.
+     * @param WordsApiLink[] $render_links Gets or sets the list of links that originate from this DrawingObjectDto.
      *
      * @return $this
      */

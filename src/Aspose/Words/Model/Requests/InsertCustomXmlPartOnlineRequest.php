@@ -82,7 +82,7 @@ class InsertCustomXmlPartOnlineRequest
      * Initializes a new instance of the InsertCustomXmlPartOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\CustomXmlPartInsert $custom_xml_part Custom xml part.
+     * @param CustomXmlPartInsert $custom_xml_part Custom xml part.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password for opening an encrypted document.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -395,7 +395,7 @@ class InsertCustomXmlPartOnlineRequest
     {
         $multipart = ObjectSerializer::parseMultipart($responseContent);
         return new InsertCustomXmlPartOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\CustomXmlPartResponse', []),
+          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), 'CustomXmlPartResponse', []),
           ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
     }
 }

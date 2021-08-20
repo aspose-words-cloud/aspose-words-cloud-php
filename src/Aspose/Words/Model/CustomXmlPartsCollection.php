@@ -51,7 +51,7 @@ class CustomXmlPartsCollection extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'custom_xml_parts_list' => '\Aspose\Words\Model\CustomXmlPart[]'
+        'custom_xml_parts_list' => 'CustomXmlPart[]'
     ];
 
     /*
@@ -195,7 +195,7 @@ class CustomXmlPartsCollection extends LinkElement
     /*
      * Gets custom_xml_parts_list
      *
-     * @return \Aspose\Words\Model\CustomXmlPart[]
+     * @return CustomXmlPart[]
      */
     public function getCustomXmlPartsList()
     {
@@ -205,7 +205,7 @@ class CustomXmlPartsCollection extends LinkElement
     /*
      * Sets custom_xml_parts_list
      *
-     * @param \Aspose\Words\Model\CustomXmlPart[] $custom_xml_parts_list Gets or sets the collection of CustomXmlPart.
+     * @param CustomXmlPart[] $custom_xml_parts_list Gets or sets the collection of CustomXmlPart.
      *
      * @return $this
      */

@@ -51,7 +51,7 @@ class SectionPageSetupResponse extends WordsResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'page_setup' => '\Aspose\Words\Model\PageSetup'
+        'page_setup' => 'PageSetup'
     ];
 
     /*
@@ -195,7 +195,7 @@ class SectionPageSetupResponse extends WordsResponse
     /*
      * Gets page_setup
      *
-     * @return \Aspose\Words\Model\PageSetup
+     * @return PageSetup
      */
     public function getPageSetup()
     {
@@ -205,7 +205,7 @@ class SectionPageSetupResponse extends WordsResponse
     /*
      * Sets page_setup
      *
-     * @param \Aspose\Words\Model\PageSetup $page_setup Gets or sets the page setup of a section.
+     * @param PageSetup $page_setup Gets or sets the page setup of a section.
      *
      * @return $this
      */

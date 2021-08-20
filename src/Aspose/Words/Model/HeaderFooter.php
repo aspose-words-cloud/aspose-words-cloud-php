@@ -51,9 +51,9 @@ class HeaderFooter extends HeaderFooterLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'child_nodes' => '\Aspose\Words\Model\NodeLink[]',
-        'drawing_objects' => '\Aspose\Words\Model\LinkElement',
-        'paragraphs' => '\Aspose\Words\Model\LinkElement'
+        'child_nodes' => 'NodeLink[]',
+        'drawing_objects' => 'LinkElement',
+        'paragraphs' => 'LinkElement'
     ];
 
     /*
@@ -207,7 +207,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Gets child_nodes
      *
-     * @return \Aspose\Words\Model\NodeLink[]
+     * @return NodeLink[]
      */
     public function getChildNodes()
     {
@@ -217,7 +217,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets child_nodes
      *
-     * @param \Aspose\Words\Model\NodeLink[] $child_nodes Gets or sets the child nodes.
+     * @param NodeLink[] $child_nodes Gets or sets the child nodes.
      *
      * @return $this
      */
@@ -230,7 +230,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Gets drawing_objects
      *
-     * @return \Aspose\Words\Model\LinkElement
+     * @return LinkElement
      */
     public function getDrawingObjects()
     {
@@ -240,7 +240,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets drawing_objects
      *
-     * @param \Aspose\Words\Model\LinkElement $drawing_objects Gets or sets the link to DrawingObjects resource.
+     * @param LinkElement $drawing_objects Gets or sets the link to DrawingObjects resource.
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Gets paragraphs
      *
-     * @return \Aspose\Words\Model\LinkElement
+     * @return LinkElement
      */
     public function getParagraphs()
     {
@@ -263,7 +263,7 @@ class HeaderFooter extends HeaderFooterLink
     /*
      * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets the link to Paragraphs resource.
+     * @param LinkElement $paragraphs Gets or sets the link to Paragraphs resource.
      *
      * @return $this
      */

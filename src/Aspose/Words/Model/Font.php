@@ -55,14 +55,14 @@ class Font extends LinkElement
         'bidi' => 'bool',
         'bold' => 'bool',
         'bold_bi' => 'bool',
-        'border' => '\Aspose\Words\Model\Border',
-        'color' => '\Aspose\Words\Model\XmlColor',
+        'border' => 'Border',
+        'color' => 'XmlColor',
         'complex_script' => 'bool',
         'double_strike_through' => 'bool',
         'emboss' => 'bool',
         'engrave' => 'bool',
         'hidden' => 'bool',
-        'highlight_color' => '\Aspose\Words\Model\XmlColor',
+        'highlight_color' => 'XmlColor',
         'italic' => 'bool',
         'italic_bi' => 'bool',
         'kerning' => 'double',
@@ -90,7 +90,7 @@ class Font extends LinkElement
         'superscript' => 'bool',
         'text_effect' => 'string',
         'underline' => 'string',
-        'underline_color' => '\Aspose\Words\Model\XmlColor'
+        'underline_color' => 'XmlColor'
     ];
 
     /*
@@ -1390,7 +1390,7 @@ class Font extends LinkElement
     /*
      * Gets border
      *
-     * @return \Aspose\Words\Model\Border
+     * @return Border
      */
     public function getBorder()
     {
@@ -1400,7 +1400,7 @@ class Font extends LinkElement
     /*
      * Sets border
      *
-     * @param \Aspose\Words\Model\Border $border Gets or sets the border object, that specifies border for the font.
+     * @param Border $border Gets or sets the border object, that specifies border for the font.
      *
      * @return $this
      */
@@ -1413,7 +1413,7 @@ class Font extends LinkElement
     /*
      * Gets color
      *
-     * @return \Aspose\Words\Model\XmlColor
+     * @return XmlColor
      */
     public function getColor()
     {
@@ -1423,7 +1423,7 @@ class Font extends LinkElement
     /*
      * Sets color
      *
-     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the color of the font.
+     * @param XmlColor $color Gets or sets the color of the font.
      *
      * @return $this
      */
@@ -1551,7 +1551,7 @@ class Font extends LinkElement
     /*
      * Gets highlight_color
      *
-     * @return \Aspose\Words\Model\XmlColor
+     * @return XmlColor
      */
     public function getHighlightColor()
     {
@@ -1561,7 +1561,7 @@ class Font extends LinkElement
     /*
      * Sets highlight_color
      *
-     * @param \Aspose\Words\Model\XmlColor $highlight_color Gets or sets the highlight (marker) color.
+     * @param XmlColor $highlight_color Gets or sets the highlight (marker) color.
      *
      * @return $this
      */
@@ -2207,7 +2207,7 @@ class Font extends LinkElement
     /*
      * Gets underline_color
      *
-     * @return \Aspose\Words\Model\XmlColor
+     * @return XmlColor
      */
     public function getUnderlineColor()
     {
@@ -2217,7 +2217,7 @@ class Font extends LinkElement
     /*
      * Sets underline_color
      *
-     * @param \Aspose\Words\Model\XmlColor $underline_color Gets or sets the color of the underline applied to the font.
+     * @param XmlColor $underline_color Gets or sets the color of the underline applied to the font.
      *
      * @return $this
      */

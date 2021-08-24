@@ -2,8 +2,6 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-/**
- */
-$resetRequest = new Requests\ResetCacheRequest(
+$resetRequest = new ResetCacheRequest(
 );
 $wordsApi->resetCache($resetRequest);

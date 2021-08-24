@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{DeleteWatermarkOnlineRequest, DeleteWatermarkRequest, InsertWatermarkImageOnlineRequest, InsertWatermarkImageRequest, InsertWatermarkTextOnlineRequest, InsertWatermarkTextRequest};
+use Aspose\Words\Model\{WatermarkText};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -57,7 +57,7 @@ class WatermarkTests extends BaseTestContext
             $remoteImagePath
         );
 
-        $request = new Requests\InsertWatermarkImageRequest(
+        $request = new InsertWatermarkImageRequest(
             $remoteFileName,
             NULL,
             $remoteDataFolder,
@@ -84,9 +84,11 @@ class WatermarkTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $request = new Requests\InsertWatermarkImageOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
-            realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png",
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestImageFile = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png";
+        $request = new InsertWatermarkImageOnlineRequest(
+            $requestDocument,
+            $requestImageFile,
             NULL,
             NULL,
             NULL,
@@ -114,11 +116,11 @@ class WatermarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
+        $requestWatermarkText = new WatermarkText(array(
             "text" => "This is the text",
             "rotation_angle" => 90.0,
         ));
-        $request = new Requests\InsertWatermarkTextRequest(
+        $request = new InsertWatermarkTextRequest(
             $remoteFileName,
             $requestWatermarkText,
             $remoteDataFolder,
@@ -143,12 +145,13 @@ class WatermarkTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestWatermarkText = new WatermarkText(array(
             "text" => "This is the text",
             "rotation_angle" => 90,
         ));
-        $request = new Requests\InsertWatermarkTextOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $request = new InsertWatermarkTextOnlineRequest(
+            $requestDocument,
             $requestWatermarkText,
             NULL,
             NULL,
@@ -175,7 +178,7 @@ class WatermarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteWatermarkRequest(
+        $request = new DeleteWatermarkRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -199,8 +202,9 @@ class WatermarkTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $request = new Requests\DeleteWatermarkOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new DeleteWatermarkOnlineRequest(
+            $requestDocument,
             NULL,
             NULL,
             NULL,

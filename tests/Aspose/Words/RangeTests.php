@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{GetRangeTextOnlineRequest, GetRangeTextRequest, RemoveRangeOnlineRequest, RemoveRangeRequest, ReplaceWithTextOnlineRequest, ReplaceWithTextRequest, SaveAsRangeOnlineRequest, SaveAsRangeRequest};
+use Aspose\Words\Model\{RangeDocument, ReplaceRange};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +52,7 @@ class RangeTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetRangeTextRequest(
+        $request = new GetRangeTextRequest(
             $remoteFileName,
             "id0.0.0",
             "id0.0.1",
@@ -74,8 +74,9 @@ class RangeTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
-        $request = new Requests\GetRangeTextOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new GetRangeTextOnlineRequest(
+            $requestDocument,
             "id0.0.0",
             "id0.0.1",
             NULL,
@@ -100,7 +101,7 @@ class RangeTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RemoveRangeRequest(
+        $request = new RemoveRangeRequest(
             $remoteFileName,
             "id0.0.0",
             "id0.0.1",
@@ -122,8 +123,9 @@ class RangeTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
-        $request = new Requests\RemoveRangeOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new RemoveRangeOnlineRequest(
+            $requestDocument,
             "id0.0.0",
             "id0.0.1",
             NULL,
@@ -149,10 +151,10 @@ class RangeTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDocumentParameters = new \Aspose\Words\Model\RangeDocument(array(
+        $requestDocumentParameters = new RangeDocument(array(
             "document_name" => $remoteDataFolder . "/NewDoc.docx",
         ));
-        $request = new Requests\SaveAsRangeRequest(
+        $request = new SaveAsRangeRequest(
             $remoteFileName,
             "id0.0.0",
             $requestDocumentParameters,
@@ -177,11 +179,12 @@ class RangeTests extends BaseTestContext
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Range";
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
-        $requestDocumentParameters = new \Aspose\Words\Model\RangeDocument(array(
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestDocumentParameters = new RangeDocument(array(
             "document_name" => $remoteDataFolder . "/NewDoc.docx",
         ));
-        $request = new Requests\SaveAsRangeOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $request = new SaveAsRangeOnlineRequest(
+            $requestDocument,
             "id0.0.0",
             $requestDocumentParameters,
             "id0.0.1",
@@ -207,10 +210,10 @@ class RangeTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestRangeText = new \Aspose\Words\Model\ReplaceRange(array(
+        $requestRangeText = new ReplaceRange(array(
             "text" => "Replaced header",
         ));
-        $request = new Requests\ReplaceWithTextRequest(
+        $request = new ReplaceWithTextRequest(
             $remoteFileName,
             "id0.0.0",
             $requestRangeText,
@@ -235,11 +238,12 @@ class RangeTests extends BaseTestContext
     {
         $localFile = "DocumentElements/Range/RangeGet.doc";
 
-        $requestRangeText = new \Aspose\Words\Model\ReplaceRange(array(
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestRangeText = new ReplaceRange(array(
             "text" => "Replaced header",
         ));
-        $request = new Requests\ReplaceWithTextOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $request = new ReplaceWithTextOnlineRequest(
+            $requestDocument,
             "id0.0.0",
             $requestRangeText,
             "id0.0.1",

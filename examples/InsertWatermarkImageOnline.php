@@ -2,18 +2,9 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$insertRequest = new Requests\InsertWatermarkImageOnlineRequest(
-    $documentsDir . "Sample.docx",
-    $documentsDir . "Common/aspose-cloud.png",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$requestImageFile = "Common/aspose-cloud.png";
+$insertRequest = new InsertWatermarkImageOnlineRequest(
+    $requestDocument, $requestImageFile, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->insertWatermarkImageOnline($insertRequest);

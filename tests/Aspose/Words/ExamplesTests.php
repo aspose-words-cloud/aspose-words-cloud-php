@@ -29,9 +29,315 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsRequest, UploadFileRequest};
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsOnlineRequest};
+use Aspose\Words\Model\Requests\{AppendDocumentRequest};use Aspose\Words\Model\{DocumentEntry, DocumentEntryList};
+use Aspose\Words\Model\Requests\{AppendDocumentOnlineRequest};use Aspose\Words\Model\{DocumentEntry, DocumentEntryList};
+use Aspose\Words\Model\Requests\{ApplyStyleToDocumentElementRequest};use Aspose\Words\Model\{StyleApply};
+use Aspose\Words\Model\Requests\{ApplyStyleToDocumentElementOnlineRequest};use Aspose\Words\Model\{StyleApply};
+use Aspose\Words\Model\Requests\{BuildReportRequest};use Aspose\Words\Model\{ReportEngineSettings};
+use Aspose\Words\Model\Requests\{BuildReportOnlineRequest};use Aspose\Words\Model\{ReportEngineSettings};
+use Aspose\Words\Model\Requests\{ClassifyRequest};
+use Aspose\Words\Model\Requests\{ClassifyDocumentRequest};
+use Aspose\Words\Model\Requests\{ClassifyDocumentOnlineRequest};
+use Aspose\Words\Model\Requests\{CompareDocumentRequest};use Aspose\Words\Model\{CompareData};
+use Aspose\Words\Model\Requests\{CompareDocumentOnlineRequest};use Aspose\Words\Model\{CompareData};
+use Aspose\Words\Model\Requests\{ConvertDocumentRequest};
+use Aspose\Words\Model\Requests\{CopyFileRequest};
+use Aspose\Words\Model\Requests\{CopyFolderRequest};
+use Aspose\Words\Model\Requests\{CopyStyleRequest};use Aspose\Words\Model\{StyleCopy};
+use Aspose\Words\Model\Requests\{CopyStyleOnlineRequest};use Aspose\Words\Model\{StyleCopy};
+use Aspose\Words\Model\Requests\{CreateDocumentRequest};
+use Aspose\Words\Model\Requests\{CreateFolderRequest};
+use Aspose\Words\Model\Requests\{CreateOrUpdateDocumentPropertyRequest};use Aspose\Words\Model\{DocumentPropertyCreateOrUpdate};
+use Aspose\Words\Model\Requests\{CreateOrUpdateDocumentPropertyOnlineRequest};use Aspose\Words\Model\{DocumentPropertyCreateOrUpdate};
+use Aspose\Words\Model\Requests\{DeleteAllParagraphTabStopsRequest};
+use Aspose\Words\Model\Requests\{DeleteAllParagraphTabStopsOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteBorderRequest};
+use Aspose\Words\Model\Requests\{DeleteBorderOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteBordersRequest};
+use Aspose\Words\Model\Requests\{DeleteBordersOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteCommentRequest};
+use Aspose\Words\Model\Requests\{DeleteCommentOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteCommentsRequest};
+use Aspose\Words\Model\Requests\{DeleteCommentsOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteCustomXmlPartRequest};
+use Aspose\Words\Model\Requests\{DeleteCustomXmlPartOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteCustomXmlPartsRequest};
+use Aspose\Words\Model\Requests\{DeleteCustomXmlPartsOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteDocumentPropertyRequest};
+use Aspose\Words\Model\Requests\{DeleteDocumentPropertyOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteDrawingObjectRequest};
+use Aspose\Words\Model\Requests\{DeleteDrawingObjectOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteFieldRequest};
+use Aspose\Words\Model\Requests\{DeleteFieldOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteFieldsRequest};
+use Aspose\Words\Model\Requests\{DeleteFieldsOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteFileRequest};
+use Aspose\Words\Model\Requests\{DeleteFolderRequest};
+use Aspose\Words\Model\Requests\{DeleteFootnoteRequest};
+use Aspose\Words\Model\Requests\{DeleteFootnoteOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteFormFieldRequest};
+use Aspose\Words\Model\Requests\{DeleteFormFieldOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteHeaderFooterRequest};
+use Aspose\Words\Model\Requests\{DeleteHeaderFooterOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteHeadersFootersRequest};
+use Aspose\Words\Model\Requests\{DeleteHeadersFootersOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteMacrosRequest};
+use Aspose\Words\Model\Requests\{DeleteMacrosOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteOfficeMathObjectRequest};
+use Aspose\Words\Model\Requests\{DeleteOfficeMathObjectOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteParagraphRequest};
+use Aspose\Words\Model\Requests\{DeleteParagraphListFormatRequest};
+use Aspose\Words\Model\Requests\{DeleteParagraphListFormatOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteParagraphOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteParagraphTabStopRequest};
+use Aspose\Words\Model\Requests\{DeleteParagraphTabStopOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteRunRequest};
+use Aspose\Words\Model\Requests\{DeleteRunOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteSectionRequest};
+use Aspose\Words\Model\Requests\{DeleteSectionOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteTableRequest};
+use Aspose\Words\Model\Requests\{DeleteTableCellRequest};
+use Aspose\Words\Model\Requests\{DeleteTableCellOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteTableOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteTableRowRequest};
+use Aspose\Words\Model\Requests\{DeleteTableRowOnlineRequest};
+use Aspose\Words\Model\Requests\{DeleteWatermarkRequest};
+use Aspose\Words\Model\Requests\{DeleteWatermarkOnlineRequest};
+use Aspose\Words\Model\Requests\{DownloadFileRequest};
+use Aspose\Words\Model\Requests\{ExecuteMailMergeRequest};
+use Aspose\Words\Model\Requests\{ExecuteMailMergeOnlineRequest};
+use Aspose\Words\Model\Requests\{GetAvailableFontsRequest};
+use Aspose\Words\Model\Requests\{GetBookmarkByNameRequest};
+use Aspose\Words\Model\Requests\{GetBookmarkByNameOnlineRequest};
+use Aspose\Words\Model\Requests\{GetBookmarksRequest};
+use Aspose\Words\Model\Requests\{GetBookmarksOnlineRequest};
+use Aspose\Words\Model\Requests\{GetBorderRequest};
+use Aspose\Words\Model\Requests\{GetBorderOnlineRequest};
+use Aspose\Words\Model\Requests\{GetBordersRequest};
+use Aspose\Words\Model\Requests\{GetBordersOnlineRequest};
+use Aspose\Words\Model\Requests\{GetCommentRequest};
+use Aspose\Words\Model\Requests\{GetCommentOnlineRequest};
+use Aspose\Words\Model\Requests\{GetCommentsRequest};
+use Aspose\Words\Model\Requests\{GetCommentsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetCustomXmlPartRequest};
+use Aspose\Words\Model\Requests\{GetCustomXmlPartOnlineRequest};
+use Aspose\Words\Model\Requests\{GetCustomXmlPartsRequest};
+use Aspose\Words\Model\Requests\{GetCustomXmlPartsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentRequest};
+use Aspose\Words\Model\Requests\{GetDocumentDrawingObjectByIndexRequest};
+use Aspose\Words\Model\Requests\{GetDocumentDrawingObjectByIndexOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentDrawingObjectImageDataRequest};
+use Aspose\Words\Model\Requests\{GetDocumentDrawingObjectImageDataOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentDrawingObjectOleDataRequest};
+use Aspose\Words\Model\Requests\{GetDocumentDrawingObjectOleDataOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentDrawingObjectsRequest};
+use Aspose\Words\Model\Requests\{GetDocumentDrawingObjectsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentFieldNamesRequest};
+use Aspose\Words\Model\Requests\{GetDocumentFieldNamesOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentHyperlinkByIndexRequest};
+use Aspose\Words\Model\Requests\{GetDocumentHyperlinkByIndexOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentHyperlinksRequest};
+use Aspose\Words\Model\Requests\{GetDocumentHyperlinksOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentPropertiesRequest};
+use Aspose\Words\Model\Requests\{GetDocumentPropertiesOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentPropertyRequest};
+use Aspose\Words\Model\Requests\{GetDocumentPropertyOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentProtectionRequest};
+use Aspose\Words\Model\Requests\{GetDocumentProtectionOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentStatisticsRequest};
+use Aspose\Words\Model\Requests\{GetDocumentStatisticsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetDocumentWithFormatRequest};
+use Aspose\Words\Model\Requests\{GetFieldRequest};
+use Aspose\Words\Model\Requests\{GetFieldOnlineRequest};
+use Aspose\Words\Model\Requests\{GetFieldsRequest};
+use Aspose\Words\Model\Requests\{GetFieldsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetFilesListRequest};
+use Aspose\Words\Model\Requests\{GetFootnoteRequest};
+use Aspose\Words\Model\Requests\{GetFootnoteOnlineRequest};
+use Aspose\Words\Model\Requests\{GetFootnotesRequest};
+use Aspose\Words\Model\Requests\{GetFootnotesOnlineRequest};
+use Aspose\Words\Model\Requests\{GetFormFieldRequest};
+use Aspose\Words\Model\Requests\{GetFormFieldOnlineRequest};
+use Aspose\Words\Model\Requests\{GetFormFieldsRequest};
+use Aspose\Words\Model\Requests\{GetFormFieldsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetHeaderFooterRequest};
+use Aspose\Words\Model\Requests\{GetHeaderFooterOfSectionRequest};
+use Aspose\Words\Model\Requests\{GetHeaderFooterOfSectionOnlineRequest};
+use Aspose\Words\Model\Requests\{GetHeaderFooterOnlineRequest};
+use Aspose\Words\Model\Requests\{GetHeaderFootersRequest};
+use Aspose\Words\Model\Requests\{GetHeaderFootersOnlineRequest};
+use Aspose\Words\Model\Requests\{GetListRequest};
+use Aspose\Words\Model\Requests\{GetListOnlineRequest};
+use Aspose\Words\Model\Requests\{GetListsRequest};
+use Aspose\Words\Model\Requests\{GetListsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetOfficeMathObjectRequest};
+use Aspose\Words\Model\Requests\{GetOfficeMathObjectOnlineRequest};
+use Aspose\Words\Model\Requests\{GetOfficeMathObjectsRequest};
+use Aspose\Words\Model\Requests\{GetOfficeMathObjectsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetParagraphRequest};
+use Aspose\Words\Model\Requests\{GetParagraphFormatRequest};
+use Aspose\Words\Model\Requests\{GetParagraphFormatOnlineRequest};
+use Aspose\Words\Model\Requests\{GetParagraphListFormatRequest};
+use Aspose\Words\Model\Requests\{GetParagraphListFormatOnlineRequest};
+use Aspose\Words\Model\Requests\{GetParagraphOnlineRequest};
+use Aspose\Words\Model\Requests\{GetParagraphsRequest};
+use Aspose\Words\Model\Requests\{GetParagraphsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetParagraphTabStopsRequest};
+use Aspose\Words\Model\Requests\{GetParagraphTabStopsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetPublicKeyRequest};
+use Aspose\Words\Model\Requests\{GetRangeTextRequest};
+use Aspose\Words\Model\Requests\{GetRangeTextOnlineRequest};
+use Aspose\Words\Model\Requests\{GetRunRequest};
+use Aspose\Words\Model\Requests\{GetRunFontRequest};
+use Aspose\Words\Model\Requests\{GetRunFontOnlineRequest};
+use Aspose\Words\Model\Requests\{GetRunOnlineRequest};
+use Aspose\Words\Model\Requests\{GetRunsRequest};
+use Aspose\Words\Model\Requests\{GetRunsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetSectionRequest};
+use Aspose\Words\Model\Requests\{GetSectionOnlineRequest};
+use Aspose\Words\Model\Requests\{GetSectionPageSetupRequest};
+use Aspose\Words\Model\Requests\{GetSectionPageSetupOnlineRequest};
+use Aspose\Words\Model\Requests\{GetSectionsRequest};
+use Aspose\Words\Model\Requests\{GetSectionsOnlineRequest};
+use Aspose\Words\Model\Requests\{GetStyleRequest};
+use Aspose\Words\Model\Requests\{GetStyleFromDocumentElementRequest};
+use Aspose\Words\Model\Requests\{GetStyleFromDocumentElementOnlineRequest};
+use Aspose\Words\Model\Requests\{GetStyleOnlineRequest};
+use Aspose\Words\Model\Requests\{GetStylesRequest};
+use Aspose\Words\Model\Requests\{GetStylesOnlineRequest};
+use Aspose\Words\Model\Requests\{GetTableRequest};
+use Aspose\Words\Model\Requests\{GetTableCellRequest};
+use Aspose\Words\Model\Requests\{GetTableCellFormatRequest};
+use Aspose\Words\Model\Requests\{GetTableCellFormatOnlineRequest};
+use Aspose\Words\Model\Requests\{GetTableCellOnlineRequest};
+use Aspose\Words\Model\Requests\{GetTableOnlineRequest};
+use Aspose\Words\Model\Requests\{GetTablePropertiesRequest};
+use Aspose\Words\Model\Requests\{GetTablePropertiesOnlineRequest};
+use Aspose\Words\Model\Requests\{GetTableRowRequest};
+use Aspose\Words\Model\Requests\{GetTableRowFormatRequest};
+use Aspose\Words\Model\Requests\{GetTableRowFormatOnlineRequest};
+use Aspose\Words\Model\Requests\{GetTableRowOnlineRequest};
+use Aspose\Words\Model\Requests\{GetTablesRequest};
+use Aspose\Words\Model\Requests\{GetTablesOnlineRequest};
+use Aspose\Words\Model\Requests\{InsertCommentRequest};use Aspose\Words\Model\{CommentInsert, DocumentPosition, NodeLink};
+use Aspose\Words\Model\Requests\{InsertCommentOnlineRequest};use Aspose\Words\Model\{CommentInsert, DocumentPosition, NodeLink};
+use Aspose\Words\Model\Requests\{InsertCustomXmlPartRequest};use Aspose\Words\Model\{CustomXmlPartInsert};
+use Aspose\Words\Model\Requests\{InsertCustomXmlPartOnlineRequest};use Aspose\Words\Model\{CustomXmlPartInsert};
+use Aspose\Words\Model\Requests\{InsertDrawingObjectRequest};use Aspose\Words\Model\{DrawingObjectInsert};
+use Aspose\Words\Model\Requests\{InsertDrawingObjectOnlineRequest};use Aspose\Words\Model\{DrawingObjectInsert};
+use Aspose\Words\Model\Requests\{InsertFieldRequest};use Aspose\Words\Model\{FieldInsert};
+use Aspose\Words\Model\Requests\{InsertFieldOnlineRequest};use Aspose\Words\Model\{FieldInsert};
+use Aspose\Words\Model\Requests\{InsertFootnoteRequest};use Aspose\Words\Model\{FootnoteInsert};
+use Aspose\Words\Model\Requests\{InsertFootnoteOnlineRequest};use Aspose\Words\Model\{FootnoteInsert};
+use Aspose\Words\Model\Requests\{InsertFormFieldRequest};use Aspose\Words\Model\{FormFieldTextInput};
+use Aspose\Words\Model\Requests\{InsertFormFieldOnlineRequest};use Aspose\Words\Model\{FormFieldTextInput};
+use Aspose\Words\Model\Requests\{InsertHeaderFooterRequest};
+use Aspose\Words\Model\Requests\{InsertHeaderFooterOnlineRequest};
+use Aspose\Words\Model\Requests\{InsertListRequest};use Aspose\Words\Model\{ListInsert};
+use Aspose\Words\Model\Requests\{InsertListOnlineRequest};use Aspose\Words\Model\{ListInsert};
+use Aspose\Words\Model\Requests\{InsertOrUpdateParagraphTabStopRequest};use Aspose\Words\Model\{TabStopInsert};
+use Aspose\Words\Model\Requests\{InsertOrUpdateParagraphTabStopOnlineRequest};use Aspose\Words\Model\{TabStopInsert};
+use Aspose\Words\Model\Requests\{InsertPageNumbersRequest};use Aspose\Words\Model\{PageNumber};
+use Aspose\Words\Model\Requests\{InsertPageNumbersOnlineRequest};use Aspose\Words\Model\{PageNumber};
+use Aspose\Words\Model\Requests\{InsertParagraphRequest};use Aspose\Words\Model\{ParagraphInsert};
+use Aspose\Words\Model\Requests\{InsertParagraphOnlineRequest};use Aspose\Words\Model\{ParagraphInsert};
+use Aspose\Words\Model\Requests\{InsertRunRequest};use Aspose\Words\Model\{RunInsert};
+use Aspose\Words\Model\Requests\{InsertRunOnlineRequest};use Aspose\Words\Model\{RunInsert};
+use Aspose\Words\Model\Requests\{InsertStyleRequest};use Aspose\Words\Model\{StyleInsert};
+use Aspose\Words\Model\Requests\{InsertStyleOnlineRequest};use Aspose\Words\Model\{StyleInsert};
+use Aspose\Words\Model\Requests\{InsertTableRequest};use Aspose\Words\Model\{TableInsert};
+use Aspose\Words\Model\Requests\{InsertTableCellRequest};use Aspose\Words\Model\{TableCellInsert};
+use Aspose\Words\Model\Requests\{InsertTableCellOnlineRequest};use Aspose\Words\Model\{TableCellInsert};
+use Aspose\Words\Model\Requests\{InsertTableOnlineRequest};use Aspose\Words\Model\{TableInsert};
+use Aspose\Words\Model\Requests\{InsertTableRowRequest};use Aspose\Words\Model\{TableRowInsert};
+use Aspose\Words\Model\Requests\{InsertTableRowOnlineRequest};use Aspose\Words\Model\{TableRowInsert};
+use Aspose\Words\Model\Requests\{InsertWatermarkImageRequest};
+use Aspose\Words\Model\Requests\{InsertWatermarkImageOnlineRequest};
+use Aspose\Words\Model\Requests\{InsertWatermarkTextRequest};use Aspose\Words\Model\{WatermarkText};
+use Aspose\Words\Model\Requests\{InsertWatermarkTextOnlineRequest};use Aspose\Words\Model\{WatermarkText};
+use Aspose\Words\Model\Requests\{LoadWebDocumentRequest};use Aspose\Words\Model\{LoadWebDocumentData, SaveOptionsData};
+use Aspose\Words\Model\Requests\{MoveFileRequest};
+use Aspose\Words\Model\Requests\{MoveFolderRequest};
+use Aspose\Words\Model\Requests\{OptimizeDocumentRequest};use Aspose\Words\Model\{OptimizationOptions};
+use Aspose\Words\Model\Requests\{OptimizeDocumentOnlineRequest};use Aspose\Words\Model\{OptimizationOptions};
+use Aspose\Words\Model\Requests\{ProtectDocumentRequest};use Aspose\Words\Model\{ProtectionRequest};
+use Aspose\Words\Model\Requests\{ProtectDocumentOnlineRequest};use Aspose\Words\Model\{ProtectionRequest};
+use Aspose\Words\Model\Requests\{RejectAllRevisionsRequest};
+use Aspose\Words\Model\Requests\{RejectAllRevisionsOnlineRequest};
+use Aspose\Words\Model\Requests\{RemoveRangeRequest};
+use Aspose\Words\Model\Requests\{RemoveRangeOnlineRequest};
+use Aspose\Words\Model\Requests\{RenderDrawingObjectRequest};
+use Aspose\Words\Model\Requests\{RenderDrawingObjectOnlineRequest};
+use Aspose\Words\Model\Requests\{RenderMathObjectRequest};
+use Aspose\Words\Model\Requests\{RenderMathObjectOnlineRequest};
+use Aspose\Words\Model\Requests\{RenderPageRequest};
+use Aspose\Words\Model\Requests\{RenderPageOnlineRequest};
+use Aspose\Words\Model\Requests\{RenderParagraphRequest};
+use Aspose\Words\Model\Requests\{RenderParagraphOnlineRequest};
+use Aspose\Words\Model\Requests\{RenderTableRequest};
+use Aspose\Words\Model\Requests\{RenderTableOnlineRequest};
+use Aspose\Words\Model\Requests\{ReplaceTextRequest};use Aspose\Words\Model\{ReplaceTextParameters};
+use Aspose\Words\Model\Requests\{ReplaceTextOnlineRequest};use Aspose\Words\Model\{ReplaceTextParameters};
+use Aspose\Words\Model\Requests\{ReplaceWithTextRequest};use Aspose\Words\Model\{ReplaceRange};
+use Aspose\Words\Model\Requests\{ReplaceWithTextOnlineRequest};use Aspose\Words\Model\{ReplaceRange};
+use Aspose\Words\Model\Requests\{ResetCacheRequest};
+use Aspose\Words\Model\Requests\{SaveAsRequest};use Aspose\Words\Model\{SaveOptionsData};
+use Aspose\Words\Model\Requests\{SaveAsOnlineRequest};use Aspose\Words\Model\{SaveOptionsData};
+use Aspose\Words\Model\Requests\{SaveAsRangeRequest};use Aspose\Words\Model\{RangeDocument};
+use Aspose\Words\Model\Requests\{SaveAsRangeOnlineRequest};use Aspose\Words\Model\{RangeDocument};
+use Aspose\Words\Model\Requests\{SaveAsTiffRequest};use Aspose\Words\Model\{TiffSaveOptionsData};
+use Aspose\Words\Model\Requests\{SaveAsTiffOnlineRequest};use Aspose\Words\Model\{TiffSaveOptionsData};
+use Aspose\Words\Model\Requests\{SearchRequest};
+use Aspose\Words\Model\Requests\{SearchOnlineRequest};
+use Aspose\Words\Model\Requests\{SplitDocumentRequest};
+use Aspose\Words\Model\Requests\{SplitDocumentOnlineRequest};
+use Aspose\Words\Model\Requests\{UnprotectDocumentRequest};use Aspose\Words\Model\{ProtectionRequest};
+use Aspose\Words\Model\Requests\{UnprotectDocumentOnlineRequest};use Aspose\Words\Model\{ProtectionRequest};
+use Aspose\Words\Model\Requests\{UpdateBookmarkRequest};use Aspose\Words\Model\{BookmarkData};
+use Aspose\Words\Model\Requests\{UpdateBookmarkOnlineRequest};use Aspose\Words\Model\{BookmarkData};
+use Aspose\Words\Model\Requests\{UpdateBorderRequest};use Aspose\Words\Model\{Border, XmlColor};
+use Aspose\Words\Model\Requests\{UpdateBorderOnlineRequest};use Aspose\Words\Model\{Border, XmlColor};
+use Aspose\Words\Model\Requests\{UpdateCommentRequest};use Aspose\Words\Model\{CommentUpdate, DocumentPosition, NodeLink};
+use Aspose\Words\Model\Requests\{UpdateCommentOnlineRequest};use Aspose\Words\Model\{CommentUpdate, DocumentPosition, NodeLink};
+use Aspose\Words\Model\Requests\{UpdateCustomXmlPartRequest};use Aspose\Words\Model\{CustomXmlPartUpdate};
+use Aspose\Words\Model\Requests\{UpdateCustomXmlPartOnlineRequest};use Aspose\Words\Model\{CustomXmlPartUpdate};
+use Aspose\Words\Model\Requests\{UpdateDrawingObjectRequest};use Aspose\Words\Model\{DrawingObjectUpdate};
+use Aspose\Words\Model\Requests\{UpdateDrawingObjectOnlineRequest};use Aspose\Words\Model\{DrawingObjectUpdate};
+use Aspose\Words\Model\Requests\{UpdateFieldRequest};use Aspose\Words\Model\{FieldUpdate};
+use Aspose\Words\Model\Requests\{UpdateFieldOnlineRequest};use Aspose\Words\Model\{FieldUpdate};
+use Aspose\Words\Model\Requests\{UpdateFieldsRequest};
+use Aspose\Words\Model\Requests\{UpdateFieldsOnlineRequest};
+use Aspose\Words\Model\Requests\{UpdateFootnoteRequest};use Aspose\Words\Model\{FootnoteUpdate};
+use Aspose\Words\Model\Requests\{UpdateFootnoteOnlineRequest};use Aspose\Words\Model\{FootnoteUpdate};
+use Aspose\Words\Model\Requests\{UpdateFormFieldRequest};use Aspose\Words\Model\{FormFieldTextInput};
+use Aspose\Words\Model\Requests\{UpdateFormFieldOnlineRequest};use Aspose\Words\Model\{FormFieldTextInput};
+use Aspose\Words\Model\Requests\{UpdateListRequest};use Aspose\Words\Model\{ListUpdate};
+use Aspose\Words\Model\Requests\{UpdateListLevelRequest};use Aspose\Words\Model\{ListLevelUpdate};
+use Aspose\Words\Model\Requests\{UpdateListLevelOnlineRequest};use Aspose\Words\Model\{ListLevelUpdate};
+use Aspose\Words\Model\Requests\{UpdateListOnlineRequest};use Aspose\Words\Model\{ListUpdate};
+use Aspose\Words\Model\Requests\{UpdateParagraphFormatRequest};use Aspose\Words\Model\{ParagraphFormatUpdate};
+use Aspose\Words\Model\Requests\{UpdateParagraphFormatOnlineRequest};use Aspose\Words\Model\{ParagraphFormatUpdate};
+use Aspose\Words\Model\Requests\{UpdateParagraphListFormatRequest};use Aspose\Words\Model\{ListFormatUpdate};
+use Aspose\Words\Model\Requests\{UpdateParagraphListFormatOnlineRequest};use Aspose\Words\Model\{ListFormatUpdate};
+use Aspose\Words\Model\Requests\{UpdateRunRequest};use Aspose\Words\Model\{RunUpdate};
+use Aspose\Words\Model\Requests\{UpdateRunFontRequest};use Aspose\Words\Model\{Font};
+use Aspose\Words\Model\Requests\{UpdateRunFontOnlineRequest};use Aspose\Words\Model\{Font};
+use Aspose\Words\Model\Requests\{UpdateRunOnlineRequest};use Aspose\Words\Model\{RunUpdate};
+use Aspose\Words\Model\Requests\{UpdateSectionPageSetupRequest};use Aspose\Words\Model\{PageSetup};
+use Aspose\Words\Model\Requests\{UpdateSectionPageSetupOnlineRequest};use Aspose\Words\Model\{PageSetup};
+use Aspose\Words\Model\Requests\{UpdateStyleRequest};use Aspose\Words\Model\{StyleUpdate};
+use Aspose\Words\Model\Requests\{UpdateStyleOnlineRequest};use Aspose\Words\Model\{StyleUpdate};
+use Aspose\Words\Model\Requests\{UpdateTableCellFormatRequest};use Aspose\Words\Model\{TableCellFormat};
+use Aspose\Words\Model\Requests\{UpdateTableCellFormatOnlineRequest};use Aspose\Words\Model\{TableCellFormat};
+use Aspose\Words\Model\Requests\{UpdateTablePropertiesRequest};use Aspose\Words\Model\{TableProperties};
+use Aspose\Words\Model\Requests\{UpdateTablePropertiesOnlineRequest};use Aspose\Words\Model\{TableProperties};
+use Aspose\Words\Model\Requests\{UpdateTableRowFormatRequest};use Aspose\Words\Model\{TableRowFormat};
+use Aspose\Words\Model\Requests\{UpdateTableRowFormatOnlineRequest};use Aspose\Words\Model\{TableRowFormat};
+use Aspose\Words\Model\Requests\{UploadFileRequest};
 use PHPUnit\Framework\Assert;
+
 class ExamplesTests extends BaseTestContext
 {
     public function setUp() : void
@@ -43,18 +349,28 @@ class ExamplesTests extends BaseTestContext
     {
       $this->expectNotToPerformAssertions();
 
+      $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
+      $fileName  = "test_doc.docx";
+
       /**
+       * Upload original document to cloud storage.
        */
-      $acceptRequest = new Requests\AcceptAllRevisionsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $myVar1 = $documentsDir . $fileName;
+      $myVar2 = $fileName;
+      $uploadFileRequest = new UploadFileRequest(
+          $myVar1, $myVar2, NULL
       );
-      $wordsApi->acceptAllRevisions($acceptRequest);
+      $wordsApi->uploadFile($uploadFileRequest);
+
+      /**
+       * Calls AcceptAllRevisions method for document in cloud.
+       */
+      $myVar3 = $fileName;
+      $request = new AcceptAllRevisionsRequest(
+          $myVar3, NULL, NULL, NULL, NULL, NULL
+      );
+      $wordsApi->acceptAllRevisions($request);
     }
 
     public function testExampleAcceptAllRevisionsOnline()
@@ -63,13 +379,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $acceptRequest = new AcceptAllRevisionsOnlineRequest(
+          $requestDocument, NULL, NULL, NULL
       );
       $wordsApi->acceptAllRevisionsOnline($acceptRequest);
     }
@@ -81,28 +393,18 @@ class ExamplesTests extends BaseTestContext
       $wordsApi = $this->words;
       $remoteFileName = "Sample.docx";
 
-      /**
-       */
-      $requestDocumentListDocumentEntries0 = new \Aspose\Words\Model\DocumentEntry(array(
+      $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
           "href" => $remoteFileName,
           "import_format_mode" => "KeepSourceFormatting",
       ));
       $requestDocumentListDocumentEntries = [
           $requestDocumentListDocumentEntries0,
       ];
-      $requestDocumentList = new \Aspose\Words\Model\DocumentEntryList(array(
+      $requestDocumentList = new DocumentEntryList(array(
           "document_entries" => $requestDocumentListDocumentEntries,
       ));
-      $appendRequest = new Requests\AppendDocumentRequest(
-          $remoteFileName,
-          $requestDocumentList,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $appendRequest = new AppendDocumentRequest(
+          $remoteFileName, $requestDocumentList, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->appendDocument($appendRequest);
     }
@@ -113,26 +415,19 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestDocumentListDocumentEntries0 = new \Aspose\Words\Model\DocumentEntry(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
           "href" => "Sample.docx",
           "import_format_mode" => "KeepSourceFormatting",
       ));
       $requestDocumentListDocumentEntries = [
           $requestDocumentListDocumentEntries0,
       ];
-      $requestDocumentList = new \Aspose\Words\Model\DocumentEntryList(array(
+      $requestDocumentList = new DocumentEntryList(array(
           "document_entries" => $requestDocumentListDocumentEntries,
       ));
-      $appendRequest = new Requests\AppendDocumentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestDocumentList,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $appendRequest = new AppendDocumentOnlineRequest(
+          $requestDocument, $requestDocumentList, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->appendDocumentOnline($appendRequest);
     }
@@ -142,22 +437,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
+      $requestStyleApply = new StyleApply(array(
           "style_name" => "Heading 1",
       ));
-      $applyStyleRequest = new Requests\ApplyStyleToDocumentElementRequest(
-          "Sample.docx",
-          "paragraphs/1/paragraphFormat",
-          $requestStyleApply,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $applyStyleRequest = new ApplyStyleToDocumentElementRequest(
+          "Sample.docx", "paragraphs/1/paragraphFormat", $requestStyleApply, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->applyStyleToDocumentElement($applyStyleRequest);
     }
@@ -168,20 +452,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestStyleApply = new StyleApply(array(
           "style_name" => "Heading 1",
       ));
-      $applyStyleRequest = new Requests\ApplyStyleToDocumentElementOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "paragraphs/1/paragraphFormat",
-          $requestStyleApply,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $applyStyleRequest = new ApplyStyleToDocumentElementOnlineRequest(
+          $requestDocument, "paragraphs/1/paragraphFormat", $requestStyleApply, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->applyStyleToDocumentElementOnline($applyStyleRequest);
     }
@@ -191,25 +467,16 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
       $requestReportEngineSettingsReportBuildOptions = [
           "AllowMissingMembers",
           "RemoveEmptyParagraphs",
       ];
-      $requestReportEngineSettings = new \Aspose\Words\Model\ReportEngineSettings(array(
+      $requestReportEngineSettings = new ReportEngineSettings(array(
           "data_source_type" => "Json",
           "report_build_options" => $requestReportEngineSettingsReportBuildOptions,
       ));
-      $buildReportRequest = new Requests\BuildReportRequest(
-          "Sample.docx",
-          "Data.json",
-          $requestReportEngineSettings,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $buildReportRequest = new BuildReportRequest(
+          "Sample.docx", "Data.json", $requestReportEngineSettings, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->buildReport($buildReportRequest);
     }
@@ -220,17 +487,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestReportEngineSettings = new \Aspose\Words\Model\ReportEngineSettings(array(
+      $requestTemplate = $documentsDir . "Sample.docx";
+      $requestReportEngineSettings = new ReportEngineSettings(array(
           "data_source_type" => "Json",
           "data_source_name" => "persons",
       ));
-      $buildReportRequest = new Requests\BuildReportOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "Data.json",
-          $requestReportEngineSettings,
-          NULL
+      $buildReportRequest = new BuildReportOnlineRequest(
+          $requestTemplate, "Data.json", $requestReportEngineSettings, NULL
       );
       $wordsApi->buildReportOnline($buildReportRequest);
     }
@@ -240,11 +503,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $classifyRequest = new Requests\ClassifyRequest(
-          "Try text classification",
-          "3"
+      $classifyRequest = new ClassifyRequest(
+          "Try text classification", "3"
       );
       $wordsApi->classify($classifyRequest);
     }
@@ -254,16 +514,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $classifyRequest = new Requests\ClassifyDocumentRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          "3",
-          NULL
+      $classifyRequest = new ClassifyDocumentRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, "3", NULL
       );
       $wordsApi->classifyDocument($classifyRequest);
     }
@@ -274,14 +526,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $classifyRequest = new Requests\ClassifyDocumentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          "3",
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $classifyRequest = new ClassifyDocumentOnlineRequest(
+          $requestDocument, NULL, NULL, "3", NULL
       );
       $wordsApi->classifyDocumentOnline($classifyRequest);
     }
@@ -291,21 +538,13 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCompareData = new \Aspose\Words\Model\CompareData(array(
+      $requestCompareData = new CompareData(array(
           "author" => "author",
           "comparing_with_document" => "TestCompareDocument2.doc",
           "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
       ));
-      $compareRequest = new Requests\CompareDocumentRequest(
-          "TestCompareDocument1.doc",
-          $requestCompareData,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          "/TestCompareDocumentOut.doc"
+      $compareRequest = new CompareDocumentRequest(
+          "TestCompareDocument1.doc", $requestCompareData, NULL, NULL, NULL, NULL, "/TestCompareDocumentOut.doc"
       );
       $wordsApi->compareDocument($compareRequest);
     }
@@ -316,20 +555,15 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCompareData = new \Aspose\Words\Model\CompareData(array(
+      $requestDocument = $documentsDir . "compareTestDoc1.doc";
+      $requestCompareData = new CompareData(array(
           "author" => "author",
           "comparing_with_document" => "TestCompareDocument2.doc",
           "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
       ));
-      $compareRequest = new Requests\CompareDocumentOnlineRequest(
-          $documentsDir . "compareTestDoc1.doc",
-          $requestCompareData,
-          $documentsDir . "compareTestDoc2.doc",
-          NULL,
-          NULL,
-          "/TestCompareDocumentOut.doc"
+      $requestComparingDocument = $documentsDir . "compareTestDoc2.doc";
+      $compareRequest = new CompareDocumentOnlineRequest(
+          $requestDocument, $requestCompareData, $requestComparingDocument, NULL, NULL, "/TestCompareDocumentOut.doc"
       );
       $wordsApi->compareDocumentOnline($compareRequest);
     }
@@ -340,15 +574,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $convertRequest = new Requests\ConvertDocumentRequest(
-          $documentsDir . "Sample.docx",
-          "pdf",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $convertRequest = new ConvertDocumentRequest(
+          $requestDocument, "pdf", NULL, NULL, NULL, NULL
       );
       $wordsApi->convertDocument($convertRequest);
     }
@@ -358,14 +586,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $copyRequest = new Requests\CopyFileRequest(
-          "/TestCopyFileDest.docx",
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL
+      $copyRequest = new CopyFileRequest(
+          "/TestCopyFileDest.docx", "Sample.docx", NULL, NULL, NULL
       );
       $wordsApi->copyFile($copyRequest);
     }
@@ -377,13 +599,8 @@ class ExamplesTests extends BaseTestContext
       $wordsApi = $this->words;
       $folderToCopy = "/TestCopyFolder";
 
-      /**
-       */
-      $copyRequest = new Requests\CopyFolderRequest(
-          $folderToCopy . "Dest",
-          $folderToCopy . "Src",
-          NULL,
-          NULL
+      $copyRequest = new CopyFolderRequest(
+          $folderToCopy . "Dest", $folderToCopy . "Src", NULL, NULL
       );
       $wordsApi->copyFolder($copyRequest);
     }
@@ -393,21 +610,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
+      $requestStyleCopy = new StyleCopy(array(
           "style_name" => "Heading 1",
       ));
-      $copyRequest = new Requests\CopyStyleRequest(
-          "Sample.docx",
-          $requestStyleCopy,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $copyRequest = new CopyStyleRequest(
+          "Sample.docx", $requestStyleCopy, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->copyStyle($copyRequest);
     }
@@ -418,19 +625,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestStyleCopy = new StyleCopy(array(
           "style_name" => "Heading 1",
       ));
-      $copyRequest = new Requests\CopyStyleOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestStyleCopy,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $copyRequest = new CopyStyleOnlineRequest(
+          $requestDocument, $requestStyleCopy, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->copyStyleOnline($copyRequest);
     }
@@ -440,12 +640,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $createRequest = new Requests\CreateDocumentRequest(
-          "Sample.docx",
-          NULL,
-          NULL
+      $createRequest = new CreateDocumentRequest(
+          "Sample.docx", NULL, NULL
       );
       $wordsApi->createDocument($createRequest);
     }
@@ -455,11 +651,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $createRequest = new Requests\CreateFolderRequest(
-          "/TestCreateFolder",
-          NULL
+      $createRequest = new CreateFolderRequest(
+          "/TestCreateFolder", NULL
       );
       $wordsApi->createFolder($createRequest);
     }
@@ -469,22 +662,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
+      $requestProperty = new DocumentPropertyCreateOrUpdate(array(
           "value" => "Imran Anwar",
       ));
-      $createRequest = new Requests\CreateOrUpdateDocumentPropertyRequest(
-          "Sample.docx",
-          "AsposeAuthor",
-          $requestProperty,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $createRequest = new CreateOrUpdateDocumentPropertyRequest(
+          "Sample.docx", "AsposeAuthor", $requestProperty, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->createOrUpdateDocumentProperty($createRequest);
     }
@@ -495,20 +677,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestProperty = new DocumentPropertyCreateOrUpdate(array(
           "value" => "Imran Anwar",
       ));
-      $createRequest = new Requests\CreateOrUpdateDocumentPropertyOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "AsposeAuthor",
-          $requestProperty,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $createRequest = new CreateOrUpdateDocumentPropertyOnlineRequest(
+          $requestDocument, "AsposeAuthor", $requestProperty, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->createOrUpdateDocumentPropertyOnline($createRequest);
     }
@@ -518,17 +692,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteAllParagraphTabStopsRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteAllParagraphTabStopsRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteAllParagraphTabStops($deleteRequest);
     }
@@ -539,15 +704,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteAllParagraphTabStopsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteAllParagraphTabStopsOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteAllParagraphTabStopsOnline($deleteRequest);
     }
@@ -557,19 +716,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteBorderRequest(
-          "Sample.docx",
-          "left",
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteBorderRequest(
+          "Sample.docx", "left", "tables/1/rows/0/cells/0", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteBorder($deleteRequest);
     }
@@ -580,17 +728,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteBorderOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "left",
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteBorderOnlineRequest(
+          $requestDocument, "left", "tables/1/rows/0/cells/0", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteBorderOnline($deleteRequest);
     }
@@ -600,18 +740,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteBordersRequest(
-          "Sample.docx",
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteBordersRequest(
+          "Sample.docx", "tables/1/rows/0/cells/0", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteBorders($deleteRequest);
     }
@@ -622,16 +752,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteBordersOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteBordersOnlineRequest(
+          $requestDocument, "tables/1/rows/0/cells/0", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteBordersOnline($deleteRequest);
     }
@@ -641,18 +764,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteCommentRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteCommentRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteComment($deleteRequest);
     }
@@ -663,16 +776,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteCommentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteCommentOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteCommentOnline($deleteRequest);
     }
@@ -682,17 +788,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteCommentsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteCommentsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteComments($deleteRequest);
     }
@@ -703,15 +800,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteCommentsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteCommentsOnlineRequest(
+          $requestDocument, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteCommentsOnline($deleteRequest);
     }
@@ -721,18 +812,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteCustomXmlPartRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteCustomXmlPartRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteCustomXmlPart($deleteRequest);
     }
@@ -743,16 +824,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteCustomXmlPartOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteCustomXmlPartOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteCustomXmlPartOnline($deleteRequest);
     }
@@ -762,17 +836,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteCustomXmlPartsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteCustomXmlPartsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteCustomXmlParts($deleteRequest);
     }
@@ -783,15 +848,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteCustomXmlPartsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteCustomXmlPartsOnlineRequest(
+          $requestDocument, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteCustomXmlPartsOnline($deleteRequest);
     }
@@ -801,18 +860,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteDocumentPropertyRequest(
-          "Sample.docx",
-          "testProp",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteDocumentPropertyRequest(
+          "Sample.docx", "testProp", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteDocumentProperty($deleteRequest);
     }
@@ -823,16 +872,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteDocumentPropertyOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "testProp",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteDocumentPropertyOnlineRequest(
+          $requestDocument, "testProp", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteDocumentPropertyOnline($deleteRequest);
     }
@@ -842,19 +884,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteDrawingObjectRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteDrawingObjectRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteDrawingObject($deleteRequest);
     }
@@ -865,17 +896,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteDrawingObjectOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteDrawingObjectOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteDrawingObjectOnline($deleteRequest);
     }
@@ -885,19 +908,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFieldRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteFieldRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteField($deleteRequest);
     }
@@ -908,17 +920,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFieldOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          "sections/0/paragraphs/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteFieldOnlineRequest(
+          $requestDocument, 0, "sections/0/paragraphs/0", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteFieldOnline($deleteRequest);
     }
@@ -928,18 +932,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFieldsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteFieldsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteFields($deleteRequest);
     }
@@ -950,16 +944,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFieldsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteFieldsOnlineRequest(
+          $requestDocument, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteFieldsOnline($deleteRequest);
     }
@@ -969,12 +956,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFileRequest(
-          "Sample.docx",
-          NULL,
-          NULL
+      $deleteRequest = new DeleteFileRequest(
+          "Sample.docx", NULL, NULL
       );
       $wordsApi->deleteFile($deleteRequest);
     }
@@ -984,12 +967,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFolderRequest(
-          "",
-          NULL,
-          NULL
+      $deleteRequest = new DeleteFolderRequest(
+          "", NULL, NULL
       );
       $wordsApi->deleteFolder($deleteRequest);
     }
@@ -999,19 +978,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFootnoteRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteFootnoteRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteFootnote($deleteRequest);
     }
@@ -1022,17 +990,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFootnoteOnlineRequest(
-          $documentsDir . "Sample.doc",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $deleteRequest = new DeleteFootnoteOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteFootnoteOnline($deleteRequest);
     }
@@ -1042,19 +1002,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFormFieldRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteFormFieldRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteFormField($deleteRequest);
     }
@@ -1065,17 +1014,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteFormFieldOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          "sections/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteFormFieldOnlineRequest(
+          $requestDocument, 0, "sections/0", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteFormFieldOnline($deleteRequest);
     }
@@ -1085,19 +1026,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteHeaderFooterRequest(
-          "Sample.docx",
-          "",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteHeaderFooterRequest(
+          "Sample.docx", "", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteHeaderFooter($deleteRequest);
     }
@@ -1108,17 +1038,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteHeaderFooterOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $deleteRequest = new DeleteHeaderFooterOnlineRequest(
+          $requestDocument, "", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteHeaderFooterOnline($deleteRequest);
     }
@@ -1128,19 +1050,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteHeadersFootersRequest(
-          "Sample.docx",
-          "",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteHeadersFootersRequest(
+          "Sample.docx", "", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteHeadersFooters($deleteRequest);
     }
@@ -1151,17 +1062,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteHeadersFootersOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $deleteRequest = new DeleteHeadersFootersOnlineRequest(
+          $requestDocument, "", NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteHeadersFootersOnline($deleteRequest);
     }
@@ -1171,17 +1074,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteMacrosRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteMacrosRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteMacros($deleteRequest);
     }
@@ -1192,15 +1086,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteMacrosOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteMacrosOnlineRequest(
+          $requestDocument, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteMacrosOnline($deleteRequest);
     }
@@ -1210,19 +1098,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteOfficeMathObjectRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteOfficeMathObjectRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteOfficeMathObject($deleteRequest);
     }
@@ -1233,17 +1110,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteOfficeMathObjectOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteOfficeMathObjectOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteOfficeMathObjectOnline($deleteRequest);
     }
@@ -1253,19 +1122,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteParagraphRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteParagraphRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteParagraph($deleteRequest);
     }
@@ -1275,19 +1133,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteParagraphListFormatRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteParagraphListFormatRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteParagraphListFormat($deleteRequest);
     }
@@ -1298,17 +1145,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteParagraphListFormatOnlineRequest(
-          $documentsDir . "Sample.doc",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $deleteRequest = new DeleteParagraphListFormatOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteParagraphListFormatOnline($deleteRequest);
     }
@@ -1319,17 +1158,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteParagraphOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteParagraphOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteParagraphOnline($deleteRequest);
     }
@@ -1339,18 +1170,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteParagraphTabStopRequest(
-          "Sample.docx",
-          72.0,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteParagraphTabStopRequest(
+          "Sample.docx", 72.0, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteParagraphTabStop($deleteRequest);
     }
@@ -1361,16 +1182,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteParagraphTabStopOnlineRequest(
-          $documentsDir . "Sample.docx",
-          72.0,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteParagraphTabStopOnlineRequest(
+          $requestDocument, 72.0, 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteParagraphTabStopOnline($deleteRequest);
     }
@@ -1380,19 +1194,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteRunRequest(
-          "Sample.docx",
-          "paragraphs/1",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteRunRequest(
+          "Sample.docx", "paragraphs/1", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteRun($deleteRequest);
     }
@@ -1403,17 +1206,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteRunOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "paragraphs/1",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $deleteRequest = new DeleteRunOnlineRequest(
+          $requestDocument, "paragraphs/1", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteRunOnline($deleteRequest);
     }
@@ -1423,18 +1218,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteSectionRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteSectionRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteSection($deleteRequest);
     }
@@ -1445,16 +1230,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteSectionOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteSectionOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteSectionOnline($deleteRequest);
     }
@@ -1464,19 +1242,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteTableRequest(
-          "Sample.docx",
-          1,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteTableRequest(
+          "Sample.docx", 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteTable($deleteRequest);
     }
@@ -1486,19 +1253,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteTableCellRequest(
-          "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteTableCellRequest(
+          "Sample.docx", "sections/0/tables/2/rows/0", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteTableCell($deleteRequest);
     }
@@ -1509,17 +1265,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteTableCellOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteTableCellOnlineRequest(
+          $requestDocument, "sections/0/tables/2/rows/0", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteTableCellOnline($deleteRequest);
     }
@@ -1530,17 +1278,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteTableOnlineRequest(
-          $documentsDir . "Sample.docx",
-          1,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteTableOnlineRequest(
+          $requestDocument, 1, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteTableOnline($deleteRequest);
     }
@@ -1550,19 +1290,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteTableRowRequest(
-          "Sample.docx",
-          "tables/1",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteTableRowRequest(
+          "Sample.docx", "tables/1", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteTableRow($deleteRequest);
     }
@@ -1573,17 +1302,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteTableRowOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "tables/1",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteTableRowOnlineRequest(
+          $requestDocument, "tables/1", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteTableRowOnline($deleteRequest);
     }
@@ -1593,17 +1314,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteWatermarkRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $deleteRequest = new DeleteWatermarkRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteWatermark($deleteRequest);
     }
@@ -1614,15 +1326,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $deleteRequest = new Requests\DeleteWatermarkOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $deleteRequest = new DeleteWatermarkOnlineRequest(
+          $requestDocument, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->deleteWatermarkOnline($deleteRequest);
     }
@@ -1632,12 +1338,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $downloadRequest = new Requests\DownloadFileRequest(
-          "Sample.docx",
-          NULL,
-          NULL
+      $downloadRequest = new DownloadFileRequest(
+          "Sample.docx", NULL, NULL
       );
       $wordsApi->downloadFile($downloadRequest);
     }
@@ -1647,20 +1349,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $mailMergeRequest = new Requests\ExecuteMailMergeRequest(
-          "Sample.docx",
-          "TestExecuteTemplateData.txt",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $mailMergeRequest = new ExecuteMailMergeRequest(
+          "Sample.docx", "TestExecuteTemplateData.txt", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->executeMailMerge($mailMergeRequest);
     }
@@ -1671,14 +1361,10 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $mailMergeRequest = new Requests\ExecuteMailMergeOnlineRequest(
-          $documentsDir . "TestExecuteTemplate.doc",
-          $documentsDir . "TestExecuteTemplateData.txt",
-          NULL,
-          NULL,
-          NULL
+      $requestTemplate = $documentsDir . "TestExecuteTemplate.doc";
+      $requestData = $documentsDir . "TestExecuteTemplateData.txt";
+      $mailMergeRequest = new ExecuteMailMergeOnlineRequest(
+          $requestTemplate, $requestData, NULL, NULL, NULL
       );
       $wordsApi->executeMailMergeOnline($mailMergeRequest);
     }
@@ -1688,9 +1374,7 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetAvailableFontsRequest(
+      $request = new GetAvailableFontsRequest(
           NULL
       );
       $wordsApi->getAvailableFonts($request);
@@ -1701,15 +1385,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetBookmarkByNameRequest(
-          "Sample.docx",
-          "aspose",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetBookmarkByNameRequest(
+          "Sample.docx", "aspose", NULL, NULL, NULL, NULL
       );
       $wordsApi->getBookmarkByName($request);
     }
@@ -1720,13 +1397,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetBookmarkByNameOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "aspose",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetBookmarkByNameOnlineRequest(
+          $requestDocument, "aspose", NULL, NULL
       );
       $wordsApi->getBookmarkByNameOnline($request);
     }
@@ -1736,14 +1409,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetBookmarksRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetBookmarksRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL
       );
       $wordsApi->getBookmarks($request);
     }
@@ -1754,12 +1421,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetBookmarksOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetBookmarksOnlineRequest(
+          $requestDocument, NULL, NULL
       );
       $wordsApi->getBookmarksOnline($request);
     }
@@ -1769,16 +1433,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetBorderRequest(
-          "Sample.docx",
-          "left",
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetBorderRequest(
+          "Sample.docx", "left", "tables/1/rows/0/cells/0", NULL, NULL, NULL, NULL
       );
       $wordsApi->getBorder($request);
     }
@@ -1789,14 +1445,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetBorderOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "left",
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetBorderOnlineRequest(
+          $requestDocument, "left", "tables/1/rows/0/cells/0", NULL, NULL
       );
       $wordsApi->getBorderOnline($request);
     }
@@ -1806,15 +1457,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetBordersRequest(
-          "Sample.docx",
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetBordersRequest(
+          "Sample.docx", "tables/1/rows/0/cells/0", NULL, NULL, NULL, NULL
       );
       $wordsApi->getBorders($request);
     }
@@ -1825,13 +1469,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetBordersOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetBordersOnlineRequest(
+          $requestDocument, "tables/1/rows/0/cells/0", NULL, NULL
       );
       $wordsApi->getBordersOnline($request);
     }
@@ -1841,15 +1481,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetCommentRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetCommentRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getComment($request);
     }
@@ -1860,13 +1493,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetCommentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetCommentOnlineRequest(
+          $requestDocument, 0, NULL, NULL
       );
       $wordsApi->getCommentOnline($request);
     }
@@ -1876,14 +1505,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetCommentsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetCommentsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL
       );
       $wordsApi->getComments($request);
     }
@@ -1894,12 +1517,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetCommentsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetCommentsOnlineRequest(
+          $requestDocument, NULL, NULL
       );
       $wordsApi->getCommentsOnline($request);
     }
@@ -1909,15 +1529,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetCustomXmlPartRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetCustomXmlPartRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getCustomXmlPart($request);
     }
@@ -1928,13 +1541,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetCustomXmlPartOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetCustomXmlPartOnlineRequest(
+          $requestDocument, 0, NULL, NULL
       );
       $wordsApi->getCustomXmlPartOnline($request);
     }
@@ -1944,14 +1553,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetCustomXmlPartsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetCustomXmlPartsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL
       );
       $wordsApi->getCustomXmlParts($request);
     }
@@ -1962,12 +1565,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetCustomXmlPartsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetCustomXmlPartsOnlineRequest(
+          $requestDocument, NULL, NULL
       );
       $wordsApi->getCustomXmlPartsOnline($request);
     }
@@ -1977,14 +1577,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocument($request);
     }
@@ -1994,16 +1588,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentDrawingObjectByIndexRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentDrawingObjectByIndexRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentDrawingObjectByIndex($request);
     }
@@ -2014,14 +1600,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentDrawingObjectByIndexOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          "sections/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentDrawingObjectByIndexOnlineRequest(
+          $requestDocument, 0, "sections/0", NULL, NULL
       );
       $wordsApi->getDocumentDrawingObjectByIndexOnline($request);
     }
@@ -2031,16 +1612,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentDrawingObjectImageDataRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentDrawingObjectImageDataRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentDrawingObjectImageData($request);
     }
@@ -2051,14 +1624,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentDrawingObjectImageDataOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          "sections/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentDrawingObjectImageDataOnlineRequest(
+          $requestDocument, 0, "sections/0", NULL, NULL
       );
       $wordsApi->getDocumentDrawingObjectImageDataOnline($request);
     }
@@ -2068,16 +1636,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentDrawingObjectOleDataRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentDrawingObjectOleDataRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentDrawingObjectOleData($request);
     }
@@ -2088,14 +1648,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentDrawingObjectOleDataOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          "sections/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentDrawingObjectOleDataOnlineRequest(
+          $requestDocument, 0, "sections/0", NULL, NULL
       );
       $wordsApi->getDocumentDrawingObjectOleDataOnline($request);
     }
@@ -2105,15 +1660,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentDrawingObjectsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentDrawingObjectsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentDrawingObjects($request);
     }
@@ -2124,13 +1672,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentDrawingObjectsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentDrawingObjectsOnlineRequest(
+          $requestDocument, "sections/0", NULL, NULL
       );
       $wordsApi->getDocumentDrawingObjectsOnline($request);
     }
@@ -2140,15 +1684,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentFieldNamesRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentFieldNamesRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentFieldNames($request);
     }
@@ -2159,13 +1696,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentFieldNamesOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          true
+      $requestTemplate = $documentsDir . "Sample.docx";
+      $request = new GetDocumentFieldNamesOnlineRequest(
+          $requestTemplate, NULL, NULL, true
       );
       $wordsApi->getDocumentFieldNamesOnline($request);
     }
@@ -2175,15 +1708,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentHyperlinkByIndexRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentHyperlinkByIndexRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentHyperlinkByIndex($request);
     }
@@ -2194,13 +1720,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentHyperlinkByIndexOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentHyperlinkByIndexOnlineRequest(
+          $requestDocument, 0, NULL, NULL
       );
       $wordsApi->getDocumentHyperlinkByIndexOnline($request);
     }
@@ -2210,14 +1732,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentHyperlinksRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentHyperlinksRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentHyperlinks($request);
     }
@@ -2228,12 +1744,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentHyperlinksOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentHyperlinksOnlineRequest(
+          $requestDocument, NULL, NULL
       );
       $wordsApi->getDocumentHyperlinksOnline($request);
     }
@@ -2243,14 +1756,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentPropertiesRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentPropertiesRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentProperties($request);
     }
@@ -2261,12 +1768,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentPropertiesOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentPropertiesOnlineRequest(
+          $requestDocument, NULL, NULL
       );
       $wordsApi->getDocumentPropertiesOnline($request);
     }
@@ -2276,15 +1780,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentPropertyRequest(
-          "Sample.docx",
-          "Author",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentPropertyRequest(
+          "Sample.docx", "Author", NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentProperty($request);
     }
@@ -2295,13 +1792,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentPropertyOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "Author",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentPropertyOnlineRequest(
+          $requestDocument, "Author", NULL, NULL
       );
       $wordsApi->getDocumentPropertyOnline($request);
     }
@@ -2311,14 +1804,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentProtectionRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentProtectionRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentProtection($request);
     }
@@ -2329,12 +1816,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentProtectionOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentProtectionOnlineRequest(
+          $requestDocument, NULL, NULL
       );
       $wordsApi->getDocumentProtectionOnline($request);
     }
@@ -2344,17 +1828,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentStatisticsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetDocumentStatisticsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentStatistics($request);
     }
@@ -2365,15 +1840,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentStatisticsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetDocumentStatisticsOnlineRequest(
+          $requestDocument, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getDocumentStatisticsOnline($request);
     }
@@ -2383,17 +1852,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetDocumentWithFormatRequest(
-          "Sample.docx",
-          "text",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          "/TestGetDocumentWithFormatAndOutPath.text",
-          NULL
+      $request = new GetDocumentWithFormatRequest(
+          "Sample.docx", "text", NULL, NULL, NULL, NULL, "/TestGetDocumentWithFormatAndOutPath.text", NULL
       );
       $wordsApi->getDocumentWithFormat($request);
     }
@@ -2403,16 +1863,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFieldRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetFieldRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getField($request);
     }
@@ -2423,14 +1875,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFieldOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          "sections/0/paragraphs/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetFieldOnlineRequest(
+          $requestDocument, 0, "sections/0/paragraphs/0", NULL, NULL
       );
       $wordsApi->getFieldOnline($request);
     }
@@ -2440,15 +1887,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFieldsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetFieldsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getFields($request);
     }
@@ -2459,13 +1899,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFieldsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetFieldsOnlineRequest(
+          $requestDocument, "sections/0", NULL, NULL
       );
       $wordsApi->getFieldsOnline($request);
     }
@@ -2475,11 +1911,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFilesListRequest(
-          "",
-          NULL
+      $request = new GetFilesListRequest(
+          "", NULL
       );
       $wordsApi->getFilesList($request);
     }
@@ -2489,16 +1922,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFootnoteRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetFootnoteRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getFootnote($request);
     }
@@ -2509,14 +1934,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFootnoteOnlineRequest(
-          $documentsDir . "Sample.doc",
-          0,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $request = new GetFootnoteOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL
       );
       $wordsApi->getFootnoteOnline($request);
     }
@@ -2526,15 +1946,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFootnotesRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetFootnotesRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getFootnotes($request);
     }
@@ -2545,13 +1958,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFootnotesOnlineRequest(
-          $documentsDir . "Sample.doc",
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $request = new GetFootnotesOnlineRequest(
+          $requestDocument, NULL, NULL, NULL
       );
       $wordsApi->getFootnotesOnline($request);
     }
@@ -2561,16 +1970,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFormFieldRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetFormFieldRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getFormField($request);
     }
@@ -2581,14 +1982,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFormFieldOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          "sections/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetFormFieldOnlineRequest(
+          $requestDocument, 0, "sections/0", NULL, NULL
       );
       $wordsApi->getFormFieldOnline($request);
     }
@@ -2598,15 +1994,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFormFieldsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetFormFieldsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getFormFields($request);
     }
@@ -2617,13 +2006,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetFormFieldsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetFormFieldsOnlineRequest(
+          $requestDocument, "sections/0", NULL, NULL
       );
       $wordsApi->getFormFieldsOnline($request);
     }
@@ -2633,16 +2018,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetHeaderFooterRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetHeaderFooterRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getHeaderFooter($request);
     }
@@ -2652,17 +2029,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetHeaderFooterOfSectionRequest(
-          "Sample.docx",
-          0,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetHeaderFooterOfSectionRequest(
+          "Sample.docx", 0, 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getHeaderFooterOfSection($request);
     }
@@ -2673,15 +2041,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetHeaderFooterOfSectionOnlineRequest(
-          $documentsDir . "Sample.doc",
-          0,
-          0,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $request = new GetHeaderFooterOfSectionOnlineRequest(
+          $requestDocument, 0, 0, NULL, NULL, NULL
       );
       $wordsApi->getHeaderFooterOfSectionOnline($request);
     }
@@ -2692,14 +2054,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetHeaderFooterOnlineRequest(
-          $documentsDir . "Sample.doc",
-          0,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $request = new GetHeaderFooterOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL
       );
       $wordsApi->getHeaderFooterOnline($request);
     }
@@ -2709,16 +2066,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetHeaderFootersRequest(
-          "Sample.docx",
-          "",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetHeaderFootersRequest(
+          "Sample.docx", "", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getHeaderFooters($request);
     }
@@ -2729,14 +2078,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetHeaderFootersOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "",
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $request = new GetHeaderFootersOnlineRequest(
+          $requestDocument, "", NULL, NULL, NULL
       );
       $wordsApi->getHeaderFootersOnline($request);
     }
@@ -2746,15 +2090,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetListRequest(
-          "TestGetLists.doc",
-          1,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetListRequest(
+          "TestGetLists.doc", 1, NULL, NULL, NULL, NULL
       );
       $wordsApi->getList($request);
     }
@@ -2765,13 +2102,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetListOnlineRequest(
-          $documentsDir . "Sample.doc",
-          1,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $request = new GetListOnlineRequest(
+          $requestDocument, 1, NULL, NULL
       );
       $wordsApi->getListOnline($request);
     }
@@ -2781,14 +2114,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetListsRequest(
-          "TestGetLists.doc",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetListsRequest(
+          "TestGetLists.doc", NULL, NULL, NULL, NULL
       );
       $wordsApi->getLists($request);
     }
@@ -2799,12 +2126,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetListsOnlineRequest(
-          $documentsDir . "Sample.doc",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $request = new GetListsOnlineRequest(
+          $requestDocument, NULL, NULL
       );
       $wordsApi->getListsOnline($request);
     }
@@ -2814,16 +2138,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetOfficeMathObjectRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetOfficeMathObjectRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getOfficeMathObject($request);
     }
@@ -2834,14 +2150,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetOfficeMathObjectOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetOfficeMathObjectOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL
       );
       $wordsApi->getOfficeMathObjectOnline($request);
     }
@@ -2851,15 +2162,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetOfficeMathObjectsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetOfficeMathObjectsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getOfficeMathObjects($request);
     }
@@ -2870,13 +2174,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetOfficeMathObjectsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetOfficeMathObjectsOnlineRequest(
+          $requestDocument, NULL, NULL, NULL
       );
       $wordsApi->getOfficeMathObjectsOnline($request);
     }
@@ -2886,16 +2186,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetParagraphRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getParagraph($request);
     }
@@ -2905,16 +2197,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphFormatRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetParagraphFormatRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getParagraphFormat($request);
     }
@@ -2925,14 +2209,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphFormatOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetParagraphFormatOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL
       );
       $wordsApi->getParagraphFormatOnline($request);
     }
@@ -2942,16 +2221,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphListFormatRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetParagraphListFormatRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getParagraphListFormat($request);
     }
@@ -2962,14 +2233,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphListFormatOnlineRequest(
-          $documentsDir . "Sample.doc",
-          0,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $request = new GetParagraphListFormatOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL
       );
       $wordsApi->getParagraphListFormatOnline($request);
     }
@@ -2980,14 +2246,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          "sections/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetParagraphOnlineRequest(
+          $requestDocument, 0, "sections/0", NULL, NULL
       );
       $wordsApi->getParagraphOnline($request);
     }
@@ -2997,15 +2258,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetParagraphsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getParagraphs($request);
     }
@@ -3016,13 +2270,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetParagraphsOnlineRequest(
+          $requestDocument, "sections/0", NULL, NULL
       );
       $wordsApi->getParagraphsOnline($request);
     }
@@ -3032,16 +2282,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphTabStopsRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetParagraphTabStopsRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getParagraphTabStops($request);
     }
@@ -3052,14 +2294,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetParagraphTabStopsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetParagraphTabStopsOnlineRequest(
+          $requestDocument, 0, NULL, NULL, NULL
       );
       $wordsApi->getParagraphTabStopsOnline($request);
     }
@@ -3069,9 +2306,7 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetPublicKeyRequest(
+      $request = new GetPublicKeyRequest(
       );
       $wordsApi->getPublicKey($request);
     }
@@ -3081,16 +2316,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetRangeTextRequest(
-          "Sample.docx",
-          "id0.0.0",
-          "id0.0.1",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetRangeTextRequest(
+          "Sample.docx", "id0.0.0", "id0.0.1", NULL, NULL, NULL, NULL
       );
       $wordsApi->getRangeText($request);
     }
@@ -3101,14 +2328,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetRangeTextOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "id0.0.0",
-          "id0.0.1",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $request = new GetRangeTextOnlineRequest(
+          $requestDocument, "id0.0.0", "id0.0.1", NULL, NULL
       );
       $wordsApi->getRangeTextOnline($request);
     }
@@ -3118,16 +2340,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetRunRequest(
-          "Sample.docx",
-          "paragraphs/0",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetRunRequest(
+          "Sample.docx", "paragraphs/0", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getRun($request);
     }
@@ -3137,16 +2351,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetRunFontRequest(
-          "Sample.docx",
-          "paragraphs/0",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetRunFontRequest(
+          "Sample.docx", "paragraphs/0", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getRunFont($request);
     }
@@ -3157,14 +2363,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetRunFontOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "paragraphs/0",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetRunFontOnlineRequest(
+          $requestDocument, "paragraphs/0", 0, NULL, NULL
       );
       $wordsApi->getRunFontOnline($request);
     }
@@ -3175,14 +2376,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetRunOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "paragraphs/0",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetRunOnlineRequest(
+          $requestDocument, "paragraphs/0", 0, NULL, NULL
       );
       $wordsApi->getRunOnline($request);
     }
@@ -3192,15 +2388,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetRunsRequest(
-          "Sample.docx",
-          "sections/0/paragraphs/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetRunsRequest(
+          "Sample.docx", "sections/0/paragraphs/0", NULL, NULL, NULL, NULL
       );
       $wordsApi->getRuns($request);
     }
@@ -3211,13 +2400,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetRunsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0/paragraphs/0",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetRunsOnlineRequest(
+          $requestDocument, "sections/0/paragraphs/0", NULL, NULL
       );
       $wordsApi->getRunsOnline($request);
     }
@@ -3227,15 +2412,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetSectionRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetSectionRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getSection($request);
     }
@@ -3246,13 +2424,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetSectionOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetSectionOnlineRequest(
+          $requestDocument, 0, NULL, NULL
       );
       $wordsApi->getSectionOnline($request);
     }
@@ -3262,15 +2436,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetSectionPageSetupRequest(
-          "Sample.docx",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetSectionPageSetupRequest(
+          "Sample.docx", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getSectionPageSetup($request);
     }
@@ -3281,13 +2448,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetSectionPageSetupOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetSectionPageSetupOnlineRequest(
+          $requestDocument, 0, NULL, NULL
       );
       $wordsApi->getSectionPageSetupOnline($request);
     }
@@ -3297,14 +2460,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetSectionsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetSectionsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL
       );
       $wordsApi->getSections($request);
     }
@@ -3315,12 +2472,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetSectionsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetSectionsOnlineRequest(
+          $requestDocument, NULL, NULL
       );
       $wordsApi->getSectionsOnline($request);
     }
@@ -3330,15 +2484,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetStyleRequest(
-          "Sample.docx",
-          "Heading 1",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetStyleRequest(
+          "Sample.docx", "Heading 1", NULL, NULL, NULL, NULL
       );
       $wordsApi->getStyle($request);
     }
@@ -3348,15 +2495,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetStyleFromDocumentElementRequest(
-          "Sample.docx",
-          "paragraphs/1/paragraphFormat",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetStyleFromDocumentElementRequest(
+          "Sample.docx", "paragraphs/1/paragraphFormat", NULL, NULL, NULL, NULL
       );
       $wordsApi->getStyleFromDocumentElement($request);
     }
@@ -3367,13 +2507,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetStyleFromDocumentElementOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "paragraphs/1/paragraphFormat",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetStyleFromDocumentElementOnlineRequest(
+          $requestDocument, "paragraphs/1/paragraphFormat", NULL, NULL
       );
       $wordsApi->getStyleFromDocumentElementOnline($request);
     }
@@ -3384,13 +2520,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetStyleOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "Heading 1",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetStyleOnlineRequest(
+          $requestDocument, "Heading 1", NULL, NULL
       );
       $wordsApi->getStyleOnline($request);
     }
@@ -3400,14 +2532,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetStylesRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetStylesRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL
       );
       $wordsApi->getStyles($request);
     }
@@ -3418,12 +2544,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetStylesOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetStylesOnlineRequest(
+          $requestDocument, NULL, NULL
       );
       $wordsApi->getStylesOnline($request);
     }
@@ -3433,16 +2556,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableRequest(
-          "Sample.docx",
-          1,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetTableRequest(
+          "Sample.docx", 1, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getTable($request);
     }
@@ -3452,16 +2567,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableCellRequest(
-          "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetTableCellRequest(
+          "Sample.docx", "sections/0/tables/2/rows/0", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getTableCell($request);
     }
@@ -3471,16 +2578,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableCellFormatRequest(
-          "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetTableCellFormatRequest(
+          "Sample.docx", "sections/0/tables/2/rows/0", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getTableCellFormat($request);
     }
@@ -3491,14 +2590,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableCellFormatOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetTableCellFormatOnlineRequest(
+          $requestDocument, "sections/0/tables/2/rows/0", 0, NULL, NULL
       );
       $wordsApi->getTableCellFormatOnline($request);
     }
@@ -3509,14 +2603,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableCellOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetTableCellOnlineRequest(
+          $requestDocument, "sections/0/tables/2/rows/0", 0, NULL, NULL
       );
       $wordsApi->getTableCellOnline($request);
     }
@@ -3527,14 +2616,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableOnlineRequest(
-          $documentsDir . "Sample.docx",
-          1,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetTableOnlineRequest(
+          $requestDocument, 1, NULL, NULL, NULL
       );
       $wordsApi->getTableOnline($request);
     }
@@ -3544,16 +2628,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTablePropertiesRequest(
-          "Sample.docx",
-          1,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetTablePropertiesRequest(
+          "Sample.docx", 1, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getTableProperties($request);
     }
@@ -3564,14 +2640,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTablePropertiesOnlineRequest(
-          $documentsDir . "Sample.docx",
-          1,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetTablePropertiesOnlineRequest(
+          $requestDocument, 1, NULL, NULL, NULL
       );
       $wordsApi->getTablePropertiesOnline($request);
     }
@@ -3581,16 +2652,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableRowRequest(
-          "Sample.docx",
-          "tables/1",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetTableRowRequest(
+          "Sample.docx", "tables/1", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getTableRow($request);
     }
@@ -3600,16 +2663,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableRowFormatRequest(
-          "Sample.docx",
-          "sections/0/tables/2",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetTableRowFormatRequest(
+          "Sample.docx", "sections/0/tables/2", 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->getTableRowFormat($request);
     }
@@ -3620,14 +2675,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableRowFormatOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0/tables/2",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetTableRowFormatOnlineRequest(
+          $requestDocument, "sections/0/tables/2", 0, NULL, NULL
       );
       $wordsApi->getTableRowFormatOnline($request);
     }
@@ -3638,14 +2688,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTableRowOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "tables/1",
-          0,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetTableRowOnlineRequest(
+          $requestDocument, "tables/1", 0, NULL, NULL
       );
       $wordsApi->getTableRowOnline($request);
     }
@@ -3655,15 +2700,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTablesRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $request = new GetTablesRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->getTables($request);
     }
@@ -3674,13 +2712,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $request = new Requests\GetTablesOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $request = new GetTablesOnlineRequest(
+          $requestDocument, NULL, NULL, NULL
       );
       $wordsApi->getTablesOnline($request);
     }
@@ -3690,39 +2724,29 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+      $requestCommentRangeStartNode = new NodeLink(array(
           "node_id" => "0.3.0.3",
       ));
-      $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+      $requestCommentRangeStart = new DocumentPosition(array(
           "node" => $requestCommentRangeStartNode,
           "offset" => 0,
       ));
-      $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+      $requestCommentRangeEndNode = new NodeLink(array(
           "node_id" => "0.3.0.3",
       ));
-      $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+      $requestCommentRangeEnd = new DocumentPosition(array(
           "node" => $requestCommentRangeEndNode,
           "offset" => 0,
       ));
-      $requestComment = new \Aspose\Words\Model\CommentInsert(array(
+      $requestComment = new CommentInsert(array(
           "range_start" => $requestCommentRangeStart,
           "range_end" => $requestCommentRangeEnd,
           "initial" => "IA",
           "author" => "Imran Anwar",
           "text" => "A new Comment",
       ));
-      $insertRequest = new Requests\InsertCommentRequest(
-          "Sample.docx",
-          $requestComment,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertCommentRequest(
+          "Sample.docx", $requestComment, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertComment($insertRequest);
     }
@@ -3733,37 +2757,30 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestCommentRangeStartNode = new NodeLink(array(
           "node_id" => "0.3.0.3",
       ));
-      $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+      $requestCommentRangeStart = new DocumentPosition(array(
           "node" => $requestCommentRangeStartNode,
           "offset" => 0,
       ));
-      $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+      $requestCommentRangeEndNode = new NodeLink(array(
           "node_id" => "0.3.0.3",
       ));
-      $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+      $requestCommentRangeEnd = new DocumentPosition(array(
           "node" => $requestCommentRangeEndNode,
           "offset" => 0,
       ));
-      $requestComment = new \Aspose\Words\Model\CommentInsert(array(
+      $requestComment = new CommentInsert(array(
           "range_start" => $requestCommentRangeStart,
           "range_end" => $requestCommentRangeEnd,
           "initial" => "IA",
           "author" => "Imran Anwar",
           "text" => "A new Comment",
       ));
-      $insertRequest = new Requests\InsertCommentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestComment,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertCommentOnlineRequest(
+          $requestDocument, $requestComment, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertCommentOnline($insertRequest);
     }
@@ -3773,22 +2790,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartInsert(array(
+      $requestCustomXmlPart = new CustomXmlPartInsert(array(
           "id" => "hello",
           "data" => "<data>Hello world</data>",
       ));
-      $insertRequest = new Requests\InsertCustomXmlPartRequest(
-          "Sample.docx",
-          $requestCustomXmlPart,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertCustomXmlPartRequest(
+          "Sample.docx", $requestCustomXmlPart, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertCustomXmlPart($insertRequest);
     }
@@ -3799,20 +2806,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartInsert(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestCustomXmlPart = new CustomXmlPartInsert(array(
           "id" => "hello",
           "data" => "<data>Hello world</data>",
       ));
-      $insertRequest = new Requests\InsertCustomXmlPartOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestCustomXmlPart,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertCustomXmlPartOnlineRequest(
+          $requestDocument, $requestCustomXmlPart, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertCustomXmlPartOnline($insertRequest);
     }
@@ -3823,9 +2823,7 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
+      $requestDrawingObject = new DrawingObjectInsert(array(
           "height" => 0,
           "left" => 0,
           "top" => 0,
@@ -3834,18 +2832,9 @@ class ExamplesTests extends BaseTestContext
           "relative_vertical_position" => "Margin",
           "wrap_type" => "Inline",
       ));
-      $insertRequest = new Requests\InsertDrawingObjectRequest(
-          "Sample.docx",
-          $requestDrawingObject,
-          $documentsDir . "Common/aspose-cloud.png",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestImageFile = $documentsDir . "Common/aspose-cloud.png";
+      $insertRequest = new InsertDrawingObjectRequest(
+          "Sample.docx", $requestDrawingObject, $requestImageFile, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertDrawingObject($insertRequest);
     }
@@ -3856,9 +2845,8 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestDrawingObject = new DrawingObjectInsert(array(
           "height" => 0,
           "left" => 0,
           "top" => 0,
@@ -3867,16 +2855,9 @@ class ExamplesTests extends BaseTestContext
           "relative_vertical_position" => "Margin",
           "wrap_type" => "Inline",
       ));
-      $insertRequest = new Requests\InsertDrawingObjectOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestDrawingObject,
-          $documentsDir . "Common/aspose-cloud.png",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestImageFile = $documentsDir . "Common/aspose-cloud.png";
+      $insertRequest = new InsertDrawingObjectOnlineRequest(
+          $requestDocument, $requestDrawingObject, $requestImageFile, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertDrawingObjectOnline($insertRequest);
     }
@@ -3886,23 +2867,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestField = new \Aspose\Words\Model\FieldInsert(array(
+      $requestField = new FieldInsert(array(
           "field_code" => "{ NUMPAGES }",
       ));
-      $insertRequest = new Requests\InsertFieldRequest(
-          "Sample.docx",
-          $requestField,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertFieldRequest(
+          "Sample.docx", $requestField, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertField($insertRequest);
     }
@@ -3913,21 +2882,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestField = new \Aspose\Words\Model\FieldInsert(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestField = new FieldInsert(array(
           "field_code" => "{ NUMPAGES }",
       ));
-      $insertRequest = new Requests\InsertFieldOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestField,
-          "sections/0/paragraphs/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertFieldOnlineRequest(
+          $requestDocument, $requestField, "sections/0/paragraphs/0", NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertFieldOnline($insertRequest);
     }
@@ -3937,23 +2897,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+      $requestFootnoteDto = new FootnoteInsert(array(
           "footnote_type" => "Endnote",
           "text" => "test endnote",
       ));
-      $insertRequest = new Requests\InsertFootnoteRequest(
-          "Sample.docx",
-          $requestFootnoteDto,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertFootnoteRequest(
+          "Sample.docx", $requestFootnoteDto, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertFootnote($insertRequest);
     }
@@ -3964,21 +2913,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestFootnoteDto = new FootnoteInsert(array(
           "footnote_type" => "Endnote",
           "text" => "test endnote",
       ));
-      $insertRequest = new Requests\InsertFootnoteOnlineRequest(
-          $documentsDir . "Sample.doc",
-          $requestFootnoteDto,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertFootnoteOnlineRequest(
+          $requestDocument, $requestFootnoteDto, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertFootnoteOnline($insertRequest);
     }
@@ -3988,9 +2929,7 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+      $requestFormField = new FormFieldTextInput(array(
           "name" => "FullName",
           "enabled" => true,
           "calculate_on_exit" => true,
@@ -3999,18 +2938,8 @@ class ExamplesTests extends BaseTestContext
           "text_input_default" => "123",
           "text_input_format" => "UPPERCASE",
       ));
-      $insertRequest = new Requests\InsertFormFieldRequest(
-          "Sample.docx",
-          $requestFormField,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertFormFieldRequest(
+          "Sample.docx", $requestFormField, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertFormField($insertRequest);
     }
@@ -4021,9 +2950,8 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestFormField = new FormFieldTextInput(array(
           "name" => "FullName",
           "enabled" => true,
           "calculate_on_exit" => true,
@@ -4032,16 +2960,8 @@ class ExamplesTests extends BaseTestContext
           "text_input_default" => "123",
           "text_input_format" => "UPPERCASE",
       ));
-      $insertRequest = new Requests\InsertFormFieldOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestFormField,
-          "sections/0/paragraphs/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertFormFieldOnlineRequest(
+          $requestDocument, $requestFormField, "sections/0/paragraphs/0", NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertFormFieldOnline($insertRequest);
     }
@@ -4051,19 +2971,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $insertRequest = new Requests\InsertHeaderFooterRequest(
-          "Sample.docx",
-          "",
-          "FooterEven",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertHeaderFooterRequest(
+          "Sample.docx", "", "FooterEven", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertHeaderFooter($insertRequest);
     }
@@ -4074,17 +2983,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $insertRequest = new Requests\InsertHeaderFooterOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "",
-          "FooterEven",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $insertRequest = new InsertHeaderFooterOnlineRequest(
+          $requestDocument, "", "FooterEven", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertHeaderFooterOnline($insertRequest);
     }
@@ -4094,21 +2995,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
+      $requestListInsert = new ListInsert(array(
           "template" => "OutlineLegal",
       ));
-      $insertRequest = new Requests\InsertListRequest(
-          "TestGetLists.doc",
-          $requestListInsert,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertListRequest(
+          "TestGetLists.doc", $requestListInsert, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertList($insertRequest);
     }
@@ -4119,19 +3010,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestListInsert = new \Aspose\Words\Model\ListInsert(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestListInsert = new ListInsert(array(
           "template" => "OutlineLegal",
       ));
-      $insertRequest = new Requests\InsertListOnlineRequest(
-          $documentsDir . "Sample.doc",
-          $requestListInsert,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertListOnlineRequest(
+          $requestDocument, $requestListInsert, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertListOnline($insertRequest);
     }
@@ -4141,23 +3025,13 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
+      $requestTabStopInsertDto = new TabStopInsert(array(
           "alignment" => "Left",
           "leader" => "None",
           "position" => 100.0,
       ));
-      $insertRequest = new Requests\InsertOrUpdateParagraphTabStopRequest(
-          "Sample.docx",
-          0,
-          $requestTabStopInsertDto,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertOrUpdateParagraphTabStopRequest(
+          "Sample.docx", 0, $requestTabStopInsertDto, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertOrUpdateParagraphTabStop($insertRequest);
     }
@@ -4168,21 +3042,14 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestTabStopInsertDto = new TabStopInsert(array(
           "alignment" => "Left",
           "leader" => "None",
           "position" => 72,
       ));
-      $insertRequest = new Requests\InsertOrUpdateParagraphTabStopOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestTabStopInsertDto,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertOrUpdateParagraphTabStopOnlineRequest(
+          $requestDocument, $requestTabStopInsertDto, 0, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertOrUpdateParagraphTabStopOnline($insertRequest);
     }
@@ -4192,22 +3059,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
+      $requestPageNumber = new PageNumber(array(
           "alignment" => "center",
           "format" => "{PAGE} of {NUMPAGES}",
       ));
-      $insertRequest = new Requests\InsertPageNumbersRequest(
-          "Sample.docx",
-          $requestPageNumber,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertPageNumbersRequest(
+          "Sample.docx", $requestPageNumber, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertPageNumbers($insertRequest);
     }
@@ -4218,20 +3075,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
+      $requestDocument = $documentsDir . "Common/Sample.docx";
+      $requestPageNumber = new PageNumber(array(
           "alignment" => "center",
           "format" => "{PAGE} of {NUMPAGES}",
       ));
-      $insertRequest = new Requests\InsertPageNumbersOnlineRequest(
-          $documentsDir . "Common/Sample.docx",
-          $requestPageNumber,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertPageNumbersOnlineRequest(
+          $requestDocument, $requestPageNumber, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertPageNumbersOnline($insertRequest);
     }
@@ -4241,23 +3091,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestParagraph = new \Aspose\Words\Model\ParagraphInsert(array(
+      $requestParagraph = new ParagraphInsert(array(
           "text" => "This is a new paragraph for your document",
       ));
-      $insertRequest = new Requests\InsertParagraphRequest(
-          "Sample.docx",
-          $requestParagraph,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertParagraphRequest(
+          "Sample.docx", $requestParagraph, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertParagraph($insertRequest);
     }
@@ -4268,21 +3106,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestParagraph = new \Aspose\Words\Model\ParagraphInsert(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestParagraph = new ParagraphInsert(array(
           "text" => "This is a new paragraph for your document",
       ));
-      $insertRequest = new Requests\InsertParagraphOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestParagraph,
-          "sections/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertParagraphOnlineRequest(
+          $requestDocument, $requestParagraph, "sections/0", NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertParagraphOnline($insertRequest);
     }
@@ -4292,23 +3121,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestRun = new \Aspose\Words\Model\RunInsert(array(
+      $requestRun = new RunInsert(array(
           "text" => "run with text",
       ));
-      $insertRequest = new Requests\InsertRunRequest(
-          "Sample.docx",
-          "paragraphs/1",
-          $requestRun,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertRunRequest(
+          "Sample.docx", "paragraphs/1", $requestRun, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertRun($insertRequest);
     }
@@ -4319,21 +3136,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestRun = new \Aspose\Words\Model\RunInsert(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestRun = new RunInsert(array(
           "text" => "run with text",
       ));
-      $insertRequest = new Requests\InsertRunOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "paragraphs/1",
-          $requestRun,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertRunOnlineRequest(
+          $requestDocument, "paragraphs/1", $requestRun, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertRunOnline($insertRequest);
     }
@@ -4343,22 +3151,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestStyleInsert = new \Aspose\Words\Model\StyleInsert(array(
+      $requestStyleInsert = new StyleInsert(array(
           "style_name" => "My Style",
           "style_type" => "Paragraph",
       ));
-      $insertRequest = new Requests\InsertStyleRequest(
-          "Sample.docx",
-          $requestStyleInsert,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertStyleRequest(
+          "Sample.docx", $requestStyleInsert, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertStyle($insertRequest);
     }
@@ -4369,20 +3167,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestStyleInsert = new \Aspose\Words\Model\StyleInsert(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestStyleInsert = new StyleInsert(array(
           "style_name" => "My Style",
           "style_type" => "Paragraph",
       ));
-      $insertRequest = new Requests\InsertStyleOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestStyleInsert,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertStyleOnlineRequest(
+          $requestDocument, $requestStyleInsert, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertStyleOnline($insertRequest);
     }
@@ -4392,23 +3183,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestTable = new \Aspose\Words\Model\TableInsert(array(
+      $requestTable = new TableInsert(array(
           "columns_count" => 5,
           "rows_count" => 4,
       ));
-      $insertRequest = new Requests\InsertTableRequest(
-          "Sample.docx",
-          $requestTable,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertTableRequest(
+          "Sample.docx", $requestTable, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertTable($insertRequest);
     }
@@ -4418,21 +3198,10 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
+      $requestCell = new TableCellInsert(array(
       ));
-      $insertRequest = new Requests\InsertTableCellRequest(
-          "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          $requestCell,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertTableCellRequest(
+          "Sample.docx", "sections/0/tables/2/rows/0", $requestCell, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertTableCell($insertRequest);
     }
@@ -4443,19 +3212,11 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCell = new \Aspose\Words\Model\TableCellInsert(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestCell = new TableCellInsert(array(
       ));
-      $insertRequest = new Requests\InsertTableCellOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          $requestCell,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertTableCellOnlineRequest(
+          $requestDocument, "sections/0/tables/2/rows/0", $requestCell, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertTableCellOnline($insertRequest);
     }
@@ -4466,21 +3227,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestTable = new \Aspose\Words\Model\TableInsert(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestTable = new TableInsert(array(
           "columns_count" => 5,
           "rows_count" => 4,
       ));
-      $insertRequest = new Requests\InsertTableOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestTable,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertTableOnlineRequest(
+          $requestDocument, $requestTable, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertTableOnline($insertRequest);
     }
@@ -4490,22 +3243,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestRow = new \Aspose\Words\Model\TableRowInsert(array(
+      $requestRow = new TableRowInsert(array(
           "columns_count" => 5,
       ));
-      $insertRequest = new Requests\InsertTableRowRequest(
-          "Sample.docx",
-          "sections/0/tables/2",
-          $requestRow,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertTableRowRequest(
+          "Sample.docx", "sections/0/tables/2", $requestRow, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertTableRow($insertRequest);
     }
@@ -4516,20 +3258,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestRow = new \Aspose\Words\Model\TableRowInsert(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestRow = new TableRowInsert(array(
           "columns_count" => 5,
       ));
-      $insertRequest = new Requests\InsertTableRowOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0/tables/2",
-          $requestRow,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertTableRowOnlineRequest(
+          $requestDocument, "sections/0/tables/2", $requestRow, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertTableRowOnline($insertRequest);
     }
@@ -4540,20 +3274,8 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $insertRequest = new Requests\InsertWatermarkImageRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          "Sample.png"
+      $insertRequest = new InsertWatermarkImageRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "Sample.png"
       );
       $wordsApi->insertWatermarkImage($insertRequest);
     }
@@ -4564,18 +3286,10 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $insertRequest = new Requests\InsertWatermarkImageOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $documentsDir . "Common/aspose-cloud.png",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestImageFile = $documentsDir . "Common/aspose-cloud.png";
+      $insertRequest = new InsertWatermarkImageOnlineRequest(
+          $requestDocument, $requestImageFile, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertWatermarkImageOnline($insertRequest);
     }
@@ -4585,22 +3299,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
+      $requestWatermarkText = new WatermarkText(array(
           "text" => "This is the text",
           "rotation_angle" => 90.0,
       ));
-      $insertRequest = new Requests\InsertWatermarkTextRequest(
-          "Sample.docx",
-          $requestWatermarkText,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertWatermarkTextRequest(
+          "Sample.docx", $requestWatermarkText, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertWatermarkText($insertRequest);
     }
@@ -4611,20 +3315,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestWatermarkText = new \Aspose\Words\Model\WatermarkText(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestWatermarkText = new WatermarkText(array(
           "text" => "This is the text",
           "rotation_angle" => 90,
       ));
-      $insertRequest = new Requests\InsertWatermarkTextOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestWatermarkText,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $insertRequest = new InsertWatermarkTextOnlineRequest(
+          $requestDocument, $requestWatermarkText, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->insertWatermarkTextOnline($insertRequest);
     }
@@ -4634,9 +3331,7 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestDataSaveOptions = new \Aspose\Words\Model\SaveOptionsData(array(
+      $requestDataSaveOptions = new SaveOptionsData(array(
           "file_name" => "google.doc",
           "save_format" => "doc",
           "dml_effects_rendering_mode" => "1",
@@ -4644,13 +3339,12 @@ class ExamplesTests extends BaseTestContext
           "update_sdt_content" => false,
           "zip_output" => false,
       ));
-      $requestData = new \Aspose\Words\Model\LoadWebDocumentData(array(
+      $requestData = new LoadWebDocumentData(array(
           "loading_document_url" => "http://google.com",
           "save_options" => $requestDataSaveOptions,
       ));
-      $loadRequest = new Requests\LoadWebDocumentRequest(
-          $requestData,
-          NULL
+      $loadRequest = new LoadWebDocumentRequest(
+          $requestData, NULL
       );
       $wordsApi->loadWebDocument($loadRequest);
     }
@@ -4660,14 +3354,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $moveRequest = new Requests\MoveFileRequest(
-          "/TestMoveFileDest_Sample.docx",
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL
+      $moveRequest = new MoveFileRequest(
+          "/TestMoveFileDest_Sample.docx", "Sample.docx", NULL, NULL, NULL
       );
       $wordsApi->moveFile($moveRequest);
     }
@@ -4677,13 +3365,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $moveRequest = new Requests\MoveFolderRequest(
-          "/TestMoveFolderDest_Sample",
-          "/TestMoveFolderSrc",
-          NULL,
-          NULL
+      $moveRequest = new MoveFolderRequest(
+          "/TestMoveFolderDest_Sample", "/TestMoveFolderSrc", NULL, NULL
       );
       $wordsApi->moveFolder($moveRequest);
     }
@@ -4693,21 +3376,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestOptions = new \Aspose\Words\Model\OptimizationOptions(array(
+      $requestOptions = new OptimizationOptions(array(
           "ms_word_version" => "Word2002",
       ));
-      $optimizeRequest = new Requests\OptimizeDocumentRequest(
-          "Sample.docx",
-          $requestOptions,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $optimizeRequest = new OptimizeDocumentRequest(
+          "Sample.docx", $requestOptions, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->optimizeDocument($optimizeRequest);
     }
@@ -4718,19 +3391,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestOptions = new \Aspose\Words\Model\OptimizationOptions(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestOptions = new OptimizationOptions(array(
           "ms_word_version" => "Word2002",
       ));
-      $optimizeRequest = new Requests\OptimizeDocumentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestOptions,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $optimizeRequest = new OptimizeDocumentOnlineRequest(
+          $requestDocument, $requestOptions, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->optimizeDocumentOnline($optimizeRequest);
     }
@@ -4740,20 +3406,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+      $requestProtectionRequest = new ProtectionRequest(array(
           "password" => "123",
           "protection_type" => "ReadOnly",
       ));
-      $protectRequest = new Requests\ProtectDocumentRequest(
-          "Sample.docx",
-          $requestProtectionRequest,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $protectRequest = new ProtectDocumentRequest(
+          "Sample.docx", $requestProtectionRequest, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->protectDocument($protectRequest);
     }
@@ -4764,17 +3422,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestProtectionRequest = new ProtectionRequest(array(
           "new_password" => "123",
       ));
-      $protectRequest = new Requests\ProtectDocumentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestProtectionRequest,
-          NULL,
-          NULL,
-          NULL
+      $protectRequest = new ProtectDocumentOnlineRequest(
+          $requestDocument, $requestProtectionRequest, NULL, NULL, NULL
       );
       $wordsApi->protectDocumentOnline($protectRequest);
     }
@@ -4784,15 +3437,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $rejectRequest = new Requests\RejectAllRevisionsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $rejectRequest = new RejectAllRevisionsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->rejectAllRevisions($rejectRequest);
     }
@@ -4803,13 +3449,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $rejectRequest = new Requests\RejectAllRevisionsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $rejectRequest = new RejectAllRevisionsOnlineRequest(
+          $requestDocument, NULL, NULL, NULL
       );
       $wordsApi->rejectAllRevisionsOnline($rejectRequest);
     }
@@ -4819,17 +3461,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $removeRequest = new Requests\RemoveRangeRequest(
-          "Sample.docx",
-          "id0.0.0",
-          "id0.0.1",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $removeRequest = new RemoveRangeRequest(
+          "Sample.docx", "id0.0.0", "id0.0.1", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->removeRange($removeRequest);
     }
@@ -4840,15 +3473,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $removeRequest = new Requests\RemoveRangeOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "id0.0.0",
-          "id0.0.1",
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.doc";
+      $removeRequest = new RemoveRangeOnlineRequest(
+          $requestDocument, "id0.0.0", "id0.0.1", NULL, NULL, NULL
       );
       $wordsApi->removeRangeOnline($removeRequest);
     }
@@ -4858,19 +3485,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderDrawingObjectRequest(
-          "Sample.docx",
-          "png",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $renderRequest = new RenderDrawingObjectRequest(
+          "Sample.docx", "png", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->renderDrawingObject($renderRequest);
     }
@@ -4881,17 +3497,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderDrawingObjectOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "png",
-          0,
-          "sections/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $renderRequest = new RenderDrawingObjectOnlineRequest(
+          $requestDocument, "png", 0, "sections/0", NULL, NULL, NULL, NULL
       );
       $wordsApi->renderDrawingObjectOnline($renderRequest);
     }
@@ -4901,19 +3509,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderMathObjectRequest(
-          "Sample.docx",
-          "png",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $renderRequest = new RenderMathObjectRequest(
+          "Sample.docx", "png", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->renderMathObject($renderRequest);
     }
@@ -4924,17 +3521,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderMathObjectOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "png",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $renderRequest = new RenderMathObjectOnlineRequest(
+          $requestDocument, "png", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->renderMathObjectOnline($renderRequest);
     }
@@ -4944,17 +3533,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderPageRequest(
-          "Sample.docx",
-          1,
-          "bmp",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $renderRequest = new RenderPageRequest(
+          "Sample.docx", 1, "bmp", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->renderPage($renderRequest);
     }
@@ -4965,15 +3545,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderPageOnlineRequest(
-          $documentsDir . "Sample.docx",
-          1,
-          "bmp",
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $renderRequest = new RenderPageOnlineRequest(
+          $requestDocument, 1, "bmp", NULL, NULL, NULL
       );
       $wordsApi->renderPageOnline($renderRequest);
     }
@@ -4983,19 +3557,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderParagraphRequest(
-          "Sample.docx",
-          "png",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $renderRequest = new RenderParagraphRequest(
+          "Sample.docx", "png", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->renderParagraph($renderRequest);
     }
@@ -5006,17 +3569,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderParagraphOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "png",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $renderRequest = new RenderParagraphOnlineRequest(
+          $requestDocument, "png", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->renderParagraphOnline($renderRequest);
     }
@@ -5026,19 +3581,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderTableRequest(
-          "Sample.docx",
-          "png",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $renderRequest = new RenderTableRequest(
+          "Sample.docx", "png", 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->renderTable($renderRequest);
     }
@@ -5049,17 +3593,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $renderRequest = new Requests\RenderTableOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "png",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $renderRequest = new RenderTableOnlineRequest(
+          $requestDocument, "png", 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->renderTableOnline($renderRequest);
     }
@@ -5069,22 +3605,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
+      $requestReplaceText = new ReplaceTextParameters(array(
           "old_value" => "Testing",
           "new_value" => "Aspose testing",
       ));
-      $replaceRequest = new Requests\ReplaceTextRequest(
-          "Sample.docx",
-          $requestReplaceText,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $replaceRequest = new ReplaceTextRequest(
+          "Sample.docx", $requestReplaceText, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->replaceText($replaceRequest);
     }
@@ -5095,20 +3621,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestReplaceText = new \Aspose\Words\Model\ReplaceTextParameters(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestReplaceText = new ReplaceTextParameters(array(
           "old_value" => "aspose",
           "new_value" => "aspose new",
       ));
-      $replaceRequest = new Requests\ReplaceTextOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestReplaceText,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $replaceRequest = new ReplaceTextOnlineRequest(
+          $requestDocument, $requestReplaceText, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->replaceTextOnline($replaceRequest);
     }
@@ -5118,21 +3637,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestRangeText = new \Aspose\Words\Model\ReplaceRange(array(
+      $requestRangeText = new ReplaceRange(array(
           "text" => "Replaced header",
       ));
-      $replaceRequest = new Requests\ReplaceWithTextRequest(
-          "Sample.docx",
-          "id0.0.0",
-          $requestRangeText,
-          "id0.0.1",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $replaceRequest = new ReplaceWithTextRequest(
+          "Sample.docx", "id0.0.0", $requestRangeText, "id0.0.1", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->replaceWithText($replaceRequest);
     }
@@ -5143,19 +3652,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestRangeText = new \Aspose\Words\Model\ReplaceRange(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestRangeText = new ReplaceRange(array(
           "text" => "Replaced header",
       ));
-      $replaceRequest = new Requests\ReplaceWithTextOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "id0.0.0",
-          $requestRangeText,
-          "id0.0.1",
-          NULL,
-          NULL,
-          NULL
+      $replaceRequest = new ReplaceWithTextOnlineRequest(
+          $requestDocument, "id0.0.0", $requestRangeText, "id0.0.1", NULL, NULL, NULL
       );
       $wordsApi->replaceWithTextOnline($replaceRequest);
     }
@@ -5165,9 +3667,7 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $resetRequest = new Requests\ResetCacheRequest(
+      $resetRequest = new ResetCacheRequest(
       );
       $wordsApi->resetCache($resetRequest);
     }
@@ -5177,20 +3677,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+      $requestSaveOptionsData = new SaveOptionsData(array(
           "save_format" => "docx",
           "file_name" => "/TestSaveAsFromPdfToDoc.docx",
       ));
-      $saveRequest = new Requests\SaveAsRequest(
-          "Sample.docx",
-          $requestSaveOptionsData,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $saveRequest = new SaveAsRequest(
+          "Sample.docx", $requestSaveOptionsData, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->saveAs($saveRequest);
     }
@@ -5201,18 +3693,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+      $requestDocument = $documentsDir . "Common/test_multi_pages.docx";
+      $requestSaveOptionsData = new SaveOptionsData(array(
           "save_format" => "pdf",
           "file_name" => "/TestSaveAs.pdf",
       ));
-      $saveRequest = new Requests\SaveAsOnlineRequest(
-          $documentsDir . "Common/test_multi_pages.docx",
-          $requestSaveOptionsData,
-          NULL,
-          NULL,
-          NULL
+      $saveRequest = new SaveAsOnlineRequest(
+          $requestDocument, $requestSaveOptionsData, NULL, NULL, NULL
       );
       $wordsApi->saveAsOnline($saveRequest);
     }
@@ -5222,20 +3709,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestDocumentParameters = new \Aspose\Words\Model\RangeDocument(array(
+      $requestDocumentParameters = new RangeDocument(array(
           "document_name" => "/NewDoc.docx",
       ));
-      $saveRequest = new Requests\SaveAsRangeRequest(
-          "Sample.docx",
-          "id0.0.0",
-          $requestDocumentParameters,
-          "id0.0.1",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $saveRequest = new SaveAsRangeRequest(
+          "Sample.docx", "id0.0.0", $requestDocumentParameters, "id0.0.1", NULL, NULL, NULL, NULL
       );
       $wordsApi->saveAsRange($saveRequest);
     }
@@ -5246,18 +3724,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestDocumentParameters = new \Aspose\Words\Model\RangeDocument(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestDocumentParameters = new RangeDocument(array(
           "document_name" => "/NewDoc.docx",
       ));
-      $saveRequest = new Requests\SaveAsRangeOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "id0.0.0",
-          $requestDocumentParameters,
-          "id0.0.1",
-          NULL,
-          NULL
+      $saveRequest = new SaveAsRangeOnlineRequest(
+          $requestDocument, "id0.0.0", $requestDocumentParameters, "id0.0.1", NULL, NULL
       );
       $wordsApi->saveAsRangeOnline($saveRequest);
     }
@@ -5267,37 +3739,12 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
+      $requestSaveOptions = new TiffSaveOptionsData(array(
           "save_format" => "tiff",
           "file_name" => "/abc.tiff",
       ));
-      $saveRequest = new Requests\SaveAsTiffRequest(
-          "Sample.docx",
-          $requestSaveOptions,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $saveRequest = new SaveAsTiffRequest(
+          "Sample.docx", $requestSaveOptions, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->saveAsTiff($saveRequest);
     }
@@ -5308,35 +3755,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestSaveOptions = new \Aspose\Words\Model\TiffSaveOptionsData(array(
+      $requestDocument = $documentsDir . "Common/test_multi_pages.docx";
+      $requestSaveOptions = new TiffSaveOptionsData(array(
           "save_format" => "tiff",
           "file_name" => "/abc.tiff",
       ));
-      $saveRequest = new Requests\SaveAsTiffOnlineRequest(
-          $documentsDir . "Common/test_multi_pages.docx",
-          $requestSaveOptions,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $saveRequest = new SaveAsTiffOnlineRequest(
+          $requestDocument, $requestSaveOptions, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->saveAsTiffOnline($saveRequest);
     }
@@ -5346,15 +3771,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $searchRequest = new Requests\SearchRequest(
-          "Sample.docx",
-          "aspose",
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $searchRequest = new SearchRequest(
+          "Sample.docx", "aspose", NULL, NULL, NULL, NULL
       );
       $wordsApi->search($searchRequest);
     }
@@ -5365,13 +3783,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $searchRequest = new Requests\SearchOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "aspose",
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $searchRequest = new SearchOnlineRequest(
+          $requestDocument, "aspose", NULL, NULL
       );
       $wordsApi->searchOnline($searchRequest);
     }
@@ -5381,20 +3795,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $splitRequest = new Requests\SplitDocumentRequest(
-          "Sample.docx",
-          "text",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          "/TestSplitDocument.text",
-          1,
-          2,
-          NULL,
-          NULL
+      $splitRequest = new SplitDocumentRequest(
+          "Sample.docx", "text", NULL, NULL, NULL, NULL, "/TestSplitDocument.text", 1, 2, NULL, NULL
       );
       $wordsApi->splitDocument($splitRequest);
     }
@@ -5405,18 +3807,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $splitRequest = new Requests\SplitDocumentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "text",
-          NULL,
-          NULL,
-          "/TestSplitDocument.text",
-          1,
-          2,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $splitRequest = new SplitDocumentOnlineRequest(
+          $requestDocument, "text", NULL, NULL, "/TestSplitDocument.text", 1, 2, NULL, NULL
       );
       $wordsApi->splitDocumentOnline($splitRequest);
     }
@@ -5426,19 +3819,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+      $requestProtectionRequest = new ProtectionRequest(array(
           "password" => "aspose",
       ));
-      $unprotectRequest = new Requests\UnprotectDocumentRequest(
-          "Sample.docx",
-          $requestProtectionRequest,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $unprotectRequest = new UnprotectDocumentRequest(
+          "Sample.docx", $requestProtectionRequest, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->unprotectDocument($unprotectRequest);
     }
@@ -5449,17 +3834,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestProtectionRequest = new \Aspose\Words\Model\ProtectionRequest(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestProtectionRequest = new ProtectionRequest(array(
           "password" => "aspose",
       ));
-      $unprotectRequest = new Requests\UnprotectDocumentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestProtectionRequest,
-          NULL,
-          NULL,
-          NULL
+      $unprotectRequest = new UnprotectDocumentOnlineRequest(
+          $requestDocument, $requestProtectionRequest, NULL, NULL, NULL
       );
       $wordsApi->unprotectDocumentOnline($unprotectRequest);
     }
@@ -5471,23 +3851,12 @@ class ExamplesTests extends BaseTestContext
       $wordsApi = $this->words;
       $bookmarkName = "aspose";
 
-      /**
-       */
-      $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
+      $requestBookmarkData = new BookmarkData(array(
           "name" => $bookmarkName,
           "text" => "This will be the text for Aspose",
       ));
-      $updateRequest = new Requests\UpdateBookmarkRequest(
-          "Sample.docx",
-          $bookmarkName,
-          $requestBookmarkData,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateBookmarkRequest(
+          "Sample.docx", $bookmarkName, $requestBookmarkData, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateBookmark($updateRequest);
     }
@@ -5500,21 +3869,13 @@ class ExamplesTests extends BaseTestContext
       $wordsApi = $this->words;
       $bookmarkName = "aspose";
 
-      /**
-       */
-      $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestBookmarkData = new BookmarkData(array(
           "name" => $bookmarkName,
           "text" => "This will be the text for Aspose",
       ));
-      $updateRequest = new Requests\UpdateBookmarkOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $bookmarkName,
-          $requestBookmarkData,
-          NULL,
-          NULL,
-          "Sample.docx",
-          NULL,
-          NULL
+      $updateRequest = new UpdateBookmarkOnlineRequest(
+          $requestDocument, $bookmarkName, $requestBookmarkData, NULL, NULL, "Sample.docx", NULL, NULL
       );
       $wordsApi->updateBookmarkOnline($updateRequest);
     }
@@ -5524,12 +3885,10 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
+      $requestBorderPropertiesColor = new XmlColor(array(
           "web" => "#AABBCC",
       ));
-      $requestBorderProperties = new \Aspose\Words\Model\Border(array(
+      $requestBorderProperties = new Border(array(
           "border_type" => "Left",
           "color" => $requestBorderPropertiesColor,
           "distance_from_text" => 6.0,
@@ -5537,18 +3896,8 @@ class ExamplesTests extends BaseTestContext
           "line_width" => 2.0,
           "shadow" => true,
       ));
-      $updateRequest = new Requests\UpdateBorderRequest(
-          "Sample.docx",
-          "left",
-          $requestBorderProperties,
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateBorderRequest(
+          "Sample.docx", "left", $requestBorderProperties, "tables/1/rows/0/cells/0", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateBorder($updateRequest);
     }
@@ -5559,12 +3908,11 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestBorderPropertiesColor = new \Aspose\Words\Model\XmlColor(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestBorderPropertiesColor = new XmlColor(array(
           "web" => "#AABBCC",
       ));
-      $requestBorderProperties = new \Aspose\Words\Model\Border(array(
+      $requestBorderProperties = new Border(array(
           "border_type" => "Left",
           "color" => $requestBorderPropertiesColor,
           "distance_from_text" => 6,
@@ -5572,16 +3920,8 @@ class ExamplesTests extends BaseTestContext
           "line_width" => 2,
           "shadow" => true,
       ));
-      $updateRequest = new Requests\UpdateBorderOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestBorderProperties,
-          "left",
-          "tables/1/rows/0/cells/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateBorderOnlineRequest(
+          $requestDocument, $requestBorderProperties, "left", "tables/1/rows/0/cells/0", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateBorderOnline($updateRequest);
     }
@@ -5591,40 +3931,29 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+      $requestCommentRangeStartNode = new NodeLink(array(
           "node_id" => "0.3.0",
       ));
-      $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+      $requestCommentRangeStart = new DocumentPosition(array(
           "node" => $requestCommentRangeStartNode,
           "offset" => 0,
       ));
-      $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+      $requestCommentRangeEndNode = new NodeLink(array(
           "node_id" => "0.3.0",
       ));
-      $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+      $requestCommentRangeEnd = new DocumentPosition(array(
           "node" => $requestCommentRangeEndNode,
           "offset" => 0,
       ));
-      $requestComment = new \Aspose\Words\Model\CommentUpdate(array(
+      $requestComment = new CommentUpdate(array(
           "range_start" => $requestCommentRangeStart,
           "range_end" => $requestCommentRangeEnd,
           "initial" => "IA",
           "author" => "Imran Anwar",
           "text" => "A new Comment",
       ));
-      $updateRequest = new Requests\UpdateCommentRequest(
-          "Sample.docx",
-          0,
-          $requestComment,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateCommentRequest(
+          "Sample.docx", 0, $requestComment, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateComment($updateRequest);
     }
@@ -5635,38 +3964,30 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestCommentRangeStartNode = new NodeLink(array(
           "node_id" => "0.3.0",
       ));
-      $requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+      $requestCommentRangeStart = new DocumentPosition(array(
           "node" => $requestCommentRangeStartNode,
           "offset" => 0,
       ));
-      $requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+      $requestCommentRangeEndNode = new NodeLink(array(
           "node_id" => "0.3.0",
       ));
-      $requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+      $requestCommentRangeEnd = new DocumentPosition(array(
           "node" => $requestCommentRangeEndNode,
           "offset" => 0,
       ));
-      $requestComment = new \Aspose\Words\Model\CommentUpdate(array(
+      $requestComment = new CommentUpdate(array(
           "range_start" => $requestCommentRangeStart,
           "range_end" => $requestCommentRangeEnd,
           "initial" => "IA",
           "author" => "Imran Anwar",
           "text" => "A new Comment",
       ));
-      $updateRequest = new Requests\UpdateCommentOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          $requestComment,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateCommentOnlineRequest(
+          $requestDocument, 0, $requestComment, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateCommentOnline($updateRequest);
     }
@@ -5676,22 +3997,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartUpdate(array(
+      $requestCustomXmlPart = new CustomXmlPartUpdate(array(
           "data" => "<data>Hello world</data>",
       ));
-      $updateRequest = new Requests\UpdateCustomXmlPartRequest(
-          "Sample.docx",
-          0,
-          $requestCustomXmlPart,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateCustomXmlPartRequest(
+          "Sample.docx", 0, $requestCustomXmlPart, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateCustomXmlPart($updateRequest);
     }
@@ -5702,20 +4012,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestCustomXmlPart = new \Aspose\Words\Model\CustomXmlPartUpdate(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestCustomXmlPart = new CustomXmlPartUpdate(array(
           "data" => "<data>Hello world</data>",
       ));
-      $updateRequest = new Requests\UpdateCustomXmlPartOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          $requestCustomXmlPart,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateCustomXmlPartOnlineRequest(
+          $requestDocument, 0, $requestCustomXmlPart, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateCustomXmlPartOnline($updateRequest);
     }
@@ -5726,24 +4028,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
+      $requestDrawingObject = new DrawingObjectUpdate(array(
           "left" => 0,
       ));
-      $updateRequest = new Requests\UpdateDrawingObjectRequest(
-          "Sample.docx",
-          $requestDrawingObject,
-          $documentsDir . "Common/aspose-cloud.png",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestImageFile = $documentsDir . "Common/aspose-cloud.png";
+      $updateRequest = new UpdateDrawingObjectRequest(
+          "Sample.docx", $requestDrawingObject, $requestImageFile, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateDrawingObject($updateRequest);
     }
@@ -5754,22 +4044,13 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestDrawingObject = new DrawingObjectUpdate(array(
           "left" => 0,
       ));
-      $updateRequest = new Requests\UpdateDrawingObjectOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestDrawingObject,
-          $documentsDir . "Common/aspose-cloud.png",
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $requestImageFile = $documentsDir . "Common/aspose-cloud.png";
+      $updateRequest = new UpdateDrawingObjectOnlineRequest(
+          $requestDocument, $requestDrawingObject, $requestImageFile, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateDrawingObjectOnline($updateRequest);
     }
@@ -5779,23 +4060,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestField = new \Aspose\Words\Model\FieldUpdate(array(
+      $requestField = new FieldUpdate(array(
           "field_code" => "{ NUMPAGES }",
       ));
-      $updateRequest = new Requests\UpdateFieldRequest(
-          "Sample.docx",
-          0,
-          $requestField,
-          "sections/0/paragraphs/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateFieldRequest(
+          "Sample.docx", 0, $requestField, "sections/0/paragraphs/0", NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateField($updateRequest);
     }
@@ -5806,21 +4075,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestField = new \Aspose\Words\Model\FieldUpdate(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestField = new FieldUpdate(array(
           "field_code" => "{ NUMPAGES }",
       ));
-      $updateRequest = new Requests\UpdateFieldOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestField,
-          0,
-          "sections/0/paragraphs/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateFieldOnlineRequest(
+          $requestDocument, $requestField, 0, "sections/0/paragraphs/0", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateFieldOnline($updateRequest);
     }
@@ -5830,15 +4090,8 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $updateRequest = new Requests\UpdateFieldsRequest(
-          "Sample.docx",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateFieldsRequest(
+          "Sample.docx", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateFields($updateRequest);
     }
@@ -5849,13 +4102,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $updateRequest = new Requests\UpdateFieldsOnlineRequest(
-          $documentsDir . "Sample.docx",
-          NULL,
-          NULL,
-          NULL
+      $requestDocument = $documentsDir . "Sample.docx";
+      $updateRequest = new UpdateFieldsOnlineRequest(
+          $requestDocument, NULL, NULL, NULL
       );
       $wordsApi->updateFieldsOnline($updateRequest);
     }
@@ -5865,23 +4114,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
+      $requestFootnoteDto = new FootnoteUpdate(array(
           "text" => "new text is here",
       ));
-      $updateRequest = new Requests\UpdateFootnoteRequest(
-          "Sample.docx",
-          0,
-          $requestFootnoteDto,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateFootnoteRequest(
+          "Sample.docx", 0, $requestFootnoteDto, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateFootnote($updateRequest);
     }
@@ -5892,21 +4129,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFootnoteDto = new \Aspose\Words\Model\FootnoteUpdate(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestFootnoteDto = new FootnoteUpdate(array(
           "text" => "new text is here",
       ));
-      $updateRequest = new Requests\UpdateFootnoteOnlineRequest(
-          $documentsDir . "Sample.doc",
-          $requestFootnoteDto,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateFootnoteOnlineRequest(
+          $requestDocument, $requestFootnoteDto, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateFootnoteOnline($updateRequest);
     }
@@ -5916,9 +4144,7 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+      $requestFormField = new FormFieldTextInput(array(
           "name" => "FullName",
           "enabled" => true,
           "calculate_on_exit" => true,
@@ -5926,18 +4152,8 @@ class ExamplesTests extends BaseTestContext
           "text_input_type" => "Regular",
           "text_input_default" => "No name",
       ));
-      $updateRequest = new Requests\UpdateFormFieldRequest(
-          "Sample.docx",
-          0,
-          $requestFormField,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateFormFieldRequest(
+          "Sample.docx", 0, $requestFormField, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateFormField($updateRequest);
     }
@@ -5948,9 +4164,8 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestFormField = new FormFieldTextInput(array(
           "name" => "FullName",
           "enabled" => true,
           "calculate_on_exit" => true,
@@ -5958,16 +4173,8 @@ class ExamplesTests extends BaseTestContext
           "text_input_type" => "Regular",
           "text_input_default" => "No name",
       ));
-      $updateRequest = new Requests\UpdateFormFieldOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestFormField,
-          0,
-          "sections/0",
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateFormFieldOnlineRequest(
+          $requestDocument, $requestFormField, 0, "sections/0", NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateFormFieldOnline($updateRequest);
     }
@@ -5977,22 +4184,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
+      $requestListUpdate = new ListUpdate(array(
           "is_restart_at_each_section" => true,
       ));
-      $updateRequest = new Requests\UpdateListRequest(
-          "TestGetLists.doc",
-          1,
-          $requestListUpdate,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateListRequest(
+          "TestGetLists.doc", 1, $requestListUpdate, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateList($updateRequest);
     }
@@ -6002,23 +4198,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
+      $requestListUpdate = new ListLevelUpdate(array(
           "alignment" => "Right",
       ));
-      $updateRequest = new Requests\UpdateListLevelRequest(
-          "TestGetLists.doc",
-          1,
-          1,
-          $requestListUpdate,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateListLevelRequest(
+          "TestGetLists.doc", 1, 1, $requestListUpdate, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateListLevel($updateRequest);
     }
@@ -6029,21 +4213,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestListUpdate = new \Aspose\Words\Model\ListLevelUpdate(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestListUpdate = new ListLevelUpdate(array(
           "alignment" => "Right",
       ));
-      $updateRequest = new Requests\UpdateListLevelOnlineRequest(
-          $documentsDir . "Sample.doc",
-          1,
-          $requestListUpdate,
-          1,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateListLevelOnlineRequest(
+          $requestDocument, 1, $requestListUpdate, 1, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateListLevelOnline($updateRequest);
     }
@@ -6054,20 +4229,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestListUpdate = new \Aspose\Words\Model\ListUpdate(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestListUpdate = new ListUpdate(array(
           "is_restart_at_each_section" => true,
       ));
-      $updateRequest = new Requests\UpdateListOnlineRequest(
-          $documentsDir . "Sample.doc",
-          1,
-          $requestListUpdate,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateListOnlineRequest(
+          $requestDocument, 1, $requestListUpdate, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateListOnline($updateRequest);
     }
@@ -6077,23 +4244,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestParagraphFormatDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
+      $requestParagraphFormatDto = new ParagraphFormatUpdate(array(
           "alignment" => "Right",
       ));
-      $updateRequest = new Requests\UpdateParagraphFormatRequest(
-          "Sample.docx",
-          0,
-          $requestParagraphFormatDto,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateParagraphFormatRequest(
+          "Sample.docx", 0, $requestParagraphFormatDto, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateParagraphFormat($updateRequest);
     }
@@ -6104,21 +4259,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestParagraphFormatDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestParagraphFormatDto = new ParagraphFormatUpdate(array(
           "alignment" => "Right",
       ));
-      $updateRequest = new Requests\UpdateParagraphFormatOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestParagraphFormatDto,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateParagraphFormatOnlineRequest(
+          $requestDocument, $requestParagraphFormatDto, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateParagraphFormatOnline($updateRequest);
     }
@@ -6128,23 +4274,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestListFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
+      $requestListFormatDto = new ListFormatUpdate(array(
           "list_id" => 2,
       ));
-      $updateRequest = new Requests\UpdateParagraphListFormatRequest(
-          "Sample.docx",
-          0,
-          $requestListFormatDto,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateParagraphListFormatRequest(
+          "Sample.docx", 0, $requestListFormatDto, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateParagraphListFormat($updateRequest);
     }
@@ -6155,21 +4289,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestListFormatDto = new \Aspose\Words\Model\ListFormatUpdate(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestListFormatDto = new ListFormatUpdate(array(
           "list_id" => 2,
       ));
-      $updateRequest = new Requests\UpdateParagraphListFormatOnlineRequest(
-          $documentsDir . "Sample.doc",
-          $requestListFormatDto,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateParagraphListFormatOnlineRequest(
+          $requestDocument, $requestListFormatDto, 0, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateParagraphListFormatOnline($updateRequest);
     }
@@ -6179,23 +4304,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestRun = new \Aspose\Words\Model\RunUpdate(array(
+      $requestRun = new RunUpdate(array(
           "text" => "run with text",
       ));
-      $updateRequest = new Requests\UpdateRunRequest(
-          "Sample.docx",
-          "paragraphs/1",
-          0,
-          $requestRun,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateRunRequest(
+          "Sample.docx", "paragraphs/1", 0, $requestRun, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateRun($updateRequest);
     }
@@ -6205,23 +4318,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFontDto = new \Aspose\Words\Model\Font(array(
+      $requestFontDto = new Font(array(
           "bold" => true,
       ));
-      $updateRequest = new Requests\UpdateRunFontRequest(
-          "Sample.docx",
-          "paragraphs/0",
-          0,
-          $requestFontDto,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateRunFontRequest(
+          "Sample.docx", "paragraphs/0", 0, $requestFontDto, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateRunFont($updateRequest);
     }
@@ -6232,21 +4333,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFontDto = new \Aspose\Words\Model\Font(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestFontDto = new Font(array(
           "bold" => true,
       ));
-      $updateRequest = new Requests\UpdateRunFontOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "paragraphs/0",
-          $requestFontDto,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateRunFontOnlineRequest(
+          $requestDocument, "paragraphs/0", $requestFontDto, 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateRunFontOnline($updateRequest);
     }
@@ -6257,21 +4349,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestRun = new \Aspose\Words\Model\RunUpdate(array(
+      $requestDocument = $documentsDir . "Sample.doc";
+      $requestRun = new RunUpdate(array(
           "text" => "run with text",
       ));
-      $updateRequest = new Requests\UpdateRunOnlineRequest(
-          $documentsDir . "Sample.doc",
-          "paragraphs/1",
-          $requestRun,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateRunOnlineRequest(
+          $requestDocument, "paragraphs/1", $requestRun, 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateRunOnline($updateRequest);
     }
@@ -6281,25 +4364,14 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
+      $requestPageSetup = new PageSetup(array(
           "rtl_gutter" => true,
           "left_margin" => 10.0,
           "orientation" => "Landscape",
           "paper_size" => "A5",
       ));
-      $updateRequest = new Requests\UpdateSectionPageSetupRequest(
-          "Sample.docx",
-          0,
-          $requestPageSetup,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateSectionPageSetupRequest(
+          "Sample.docx", 0, $requestPageSetup, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateSectionPageSetup($updateRequest);
     }
@@ -6310,23 +4382,15 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestPageSetup = new \Aspose\Words\Model\PageSetup(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestPageSetup = new PageSetup(array(
           "rtl_gutter" => true,
           "left_margin" => 10,
           "orientation" => "Landscape",
           "paper_size" => "A5",
       ));
-      $updateRequest = new Requests\UpdateSectionPageSetupOnlineRequest(
-          $documentsDir . "Sample.docx",
-          0,
-          $requestPageSetup,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateSectionPageSetupOnlineRequest(
+          $requestDocument, 0, $requestPageSetup, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateSectionPageSetupOnline($updateRequest);
     }
@@ -6336,22 +4400,11 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
+      $requestStyleUpdate = new StyleUpdate(array(
           "name" => "My Style",
       ));
-      $updateRequest = new Requests\UpdateStyleRequest(
-          "Sample.docx",
-          "Heading 1",
-          $requestStyleUpdate,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateStyleRequest(
+          "Sample.docx", "Heading 1", $requestStyleUpdate, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateStyle($updateRequest);
     }
@@ -6362,20 +4415,12 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestStyleUpdate = new StyleUpdate(array(
           "name" => "My Style",
       ));
-      $updateRequest = new Requests\UpdateStyleOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "Heading 1",
-          $requestStyleUpdate,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateStyleOnlineRequest(
+          $requestDocument, "Heading 1", $requestStyleUpdate, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateStyleOnline($updateRequest);
     }
@@ -6385,26 +4430,14 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFormat = new \Aspose\Words\Model\TableCellFormat(array(
+      $requestFormat = new TableCellFormat(array(
           "bottom_padding" => 5.0,
           "fit_text" => true,
           "horizontal_merge" => "First",
           "wrap_text" => true,
       ));
-      $updateRequest = new Requests\UpdateTableCellFormatRequest(
-          "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          0,
-          $requestFormat,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateTableCellFormatRequest(
+          "Sample.docx", "sections/0/tables/2/rows/0", 0, $requestFormat, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateTableCellFormat($updateRequest);
     }
@@ -6415,24 +4448,15 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFormat = new \Aspose\Words\Model\TableCellFormat(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestFormat = new TableCellFormat(array(
           "bottom_padding" => 5,
           "fit_text" => true,
           "horizontal_merge" => "First",
           "wrap_text" => true,
       ));
-      $updateRequest = new Requests\UpdateTableCellFormatOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0/tables/2/rows/0",
-          $requestFormat,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateTableCellFormatOnlineRequest(
+          $requestDocument, "sections/0/tables/2/rows/0", $requestFormat, 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateTableCellFormatOnline($updateRequest);
     }
@@ -6442,9 +4466,7 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestProperties = new \Aspose\Words\Model\TableProperties(array(
+      $requestProperties = new TableProperties(array(
           "alignment" => "Right",
           "allow_auto_fit" => false,
           "bidi" => true,
@@ -6452,18 +4474,8 @@ class ExamplesTests extends BaseTestContext
           "cell_spacing" => 2.0,
           "style_options" => "ColumnBands",
       ));
-      $updateRequest = new Requests\UpdateTablePropertiesRequest(
-          "Sample.docx",
-          1,
-          $requestProperties,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateTablePropertiesRequest(
+          "Sample.docx", 1, $requestProperties, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateTableProperties($updateRequest);
     }
@@ -6474,9 +4486,8 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestProperties = new \Aspose\Words\Model\TableProperties(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestProperties = new TableProperties(array(
           "alignment" => "Right",
           "allow_auto_fit" => false,
           "bidi" => true,
@@ -6484,16 +4495,8 @@ class ExamplesTests extends BaseTestContext
           "cell_spacing" => 2,
           "style_options" => "ColumnBands",
       ));
-      $updateRequest = new Requests\UpdateTablePropertiesOnlineRequest(
-          $documentsDir . "Sample.docx",
-          $requestProperties,
-          1,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateTablePropertiesOnlineRequest(
+          $requestDocument, $requestProperties, 1, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateTablePropertiesOnline($updateRequest);
     }
@@ -6503,26 +4506,14 @@ class ExamplesTests extends BaseTestContext
       $this->expectNotToPerformAssertions();
 
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFormat = new \Aspose\Words\Model\TableRowFormat(array(
+      $requestFormat = new TableRowFormat(array(
           "allow_break_across_pages" => true,
           "heading_format" => true,
           "height" => 10.0,
           "height_rule" => "Exactly",
       ));
-      $updateRequest = new Requests\UpdateTableRowFormatRequest(
-          "Sample.docx",
-          "sections/0/tables/2",
-          0,
-          $requestFormat,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateTableRowFormatRequest(
+          "Sample.docx", "sections/0/tables/2", 0, $requestFormat, NULL, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateTableRowFormat($updateRequest);
     }
@@ -6533,24 +4524,15 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $requestFormat = new \Aspose\Words\Model\TableRowFormat(array(
+      $requestDocument = $documentsDir . "Sample.docx";
+      $requestFormat = new TableRowFormat(array(
           "allow_break_across_pages" => true,
           "heading_format" => true,
           "height" => 10,
           "height_rule" => "Auto",
       ));
-      $updateRequest = new Requests\UpdateTableRowFormatOnlineRequest(
-          $documentsDir . "Sample.docx",
-          "sections/0/tables/2",
-          $requestFormat,
-          0,
-          NULL,
-          NULL,
-          NULL,
-          NULL,
-          NULL
+      $updateRequest = new UpdateTableRowFormatOnlineRequest(
+          $requestDocument, "sections/0/tables/2", $requestFormat, 0, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->updateTableRowFormatOnline($updateRequest);
     }
@@ -6561,12 +4543,9 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      /**
-       */
-      $uploadRequest = new Requests\UploadFileRequest(
-          $documentsDir . "Sample.docx",
-          "Sample.docx",
-          NULL
+      $requestFileContent = $documentsDir . "Sample.docx";
+      $uploadRequest = new UploadFileRequest(
+          $requestFileContent, "Sample.docx", NULL
       );
       $wordsApi->uploadFile($uploadRequest);
     }

@@ -2,21 +2,10 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-/**
- */
-$requestStyleApply = new \Aspose\Words\Model\StyleApply(array(
+$requestStyleApply = new StyleApply(array(
     "style_name" => "Heading 1",
 ));
-$applyStyleRequest = new Requests\ApplyStyleToDocumentElementRequest(
-    "Sample.docx",
-    "paragraphs/1/paragraphFormat",
-    $requestStyleApply,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$applyStyleRequest = new ApplyStyleToDocumentElementRequest(
+    "Sample.docx", "paragraphs/1/paragraphFormat", $requestStyleApply, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->applyStyleToDocumentElement($applyStyleRequest);

@@ -2,10 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestProperties = new \Aspose\Words\Model\TableProperties(array(
+$requestDocument = "Sample.docx";
+$requestProperties = new TableProperties(array(
     "alignment" => "Right",
     "allow_auto_fit" => false,
     "bidi" => true,
@@ -13,15 +11,7 @@ $requestProperties = new \Aspose\Words\Model\TableProperties(array(
     "cell_spacing" => 2,
     "style_options" => "ColumnBands",
 ));
-$updateRequest = new Requests\UpdateTablePropertiesOnlineRequest(
-    $documentsDir . "Sample.docx",
-    $requestProperties,
-    1,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$updateRequest = new UpdateTablePropertiesOnlineRequest(
+    $requestDocument, $requestProperties, 1, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->updateTablePropertiesOnline($updateRequest);

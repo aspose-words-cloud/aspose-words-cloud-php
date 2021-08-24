@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsOnlineRequest, AcceptAllRevisionsRequest, RejectAllRevisionsOnlineRequest, RejectAllRevisionsRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +51,7 @@ class RevisionsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\AcceptAllRevisionsRequest(
+        $request = new AcceptAllRevisionsRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -74,8 +73,9 @@ class RevisionsTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $request = new Requests\AcceptAllRevisionsOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new AcceptAllRevisionsOnlineRequest(
+            $requestDocument,
             NULL,
             NULL,
             NULL
@@ -103,7 +103,7 @@ class RevisionsTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\RejectAllRevisionsRequest(
+        $request = new RejectAllRevisionsRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -125,8 +125,9 @@ class RevisionsTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $request = new Requests\RejectAllRevisionsOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new RejectAllRevisionsOnlineRequest(
+            $requestDocument,
             NULL,
             NULL,
             NULL

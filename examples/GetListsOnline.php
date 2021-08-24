@@ -2,12 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$request = new Requests\GetListsOnlineRequest(
-    $documentsDir . "Sample.doc",
-    NULL,
-    NULL
+$requestDocument = "Sample.doc";
+$request = new GetListsOnlineRequest(
+    $requestDocument, NULL, NULL
 );
 $wordsApi->getListsOnline($request);

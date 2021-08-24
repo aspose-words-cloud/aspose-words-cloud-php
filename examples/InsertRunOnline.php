@@ -2,21 +2,11 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestRun = new \Aspose\Words\Model\RunInsert(array(
+$requestDocument = "Sample.doc";
+$requestRun = new RunInsert(array(
     "text" => "run with text",
 ));
-$insertRequest = new Requests\InsertRunOnlineRequest(
-    $documentsDir . "Sample.doc",
-    "paragraphs/1",
-    $requestRun,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$insertRequest = new InsertRunOnlineRequest(
+    $requestDocument, "paragraphs/1", $requestRun, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->insertRunOnline($insertRequest);

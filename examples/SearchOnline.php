@@ -2,13 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$searchRequest = new Requests\SearchOnlineRequest(
-    $documentsDir . "Sample.docx",
-    "aspose",
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$searchRequest = new SearchOnlineRequest(
+    $requestDocument, "aspose", NULL, NULL
 );
 $wordsApi->searchOnline($searchRequest);

@@ -2,17 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$deleteRequest = new Requests\DeleteFootnoteOnlineRequest(
-    $documentsDir . "Sample.doc",
-    0,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.doc";
+$deleteRequest = new DeleteFootnoteOnlineRequest(
+    $requestDocument, 0, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->deleteFootnoteOnline($deleteRequest);

@@ -2,21 +2,11 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestParagraphFormatDto = new \Aspose\Words\Model\ParagraphFormatUpdate(array(
+$requestDocument = "Sample.docx";
+$requestParagraphFormatDto = new ParagraphFormatUpdate(array(
     "alignment" => "Right",
 ));
-$updateRequest = new Requests\UpdateParagraphFormatOnlineRequest(
-    $documentsDir . "Sample.docx",
-    $requestParagraphFormatDto,
-    0,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$updateRequest = new UpdateParagraphFormatOnlineRequest(
+    $requestDocument, $requestParagraphFormatDto, 0, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->updateParagraphFormatOnline($updateRequest);

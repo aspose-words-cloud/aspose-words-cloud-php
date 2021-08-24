@@ -2,10 +2,7 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-/**
- */
-$request = new Requests\GetFilesListRequest(
-    "",
-    NULL
+$request = new GetFilesListRequest(
+    "", NULL
 );
 $wordsApi->getFilesList($request);

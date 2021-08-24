@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{GetBookmarkByNameOnlineRequest, GetBookmarkByNameRequest, GetBookmarksOnlineRequest, GetBookmarksRequest, UpdateBookmarkOnlineRequest, UpdateBookmarkRequest};
+use Aspose\Words\Model\{BookmarkData};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +52,7 @@ class BookmarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetBookmarksRequest(
+        $request = new GetBookmarksRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -71,8 +71,9 @@ class BookmarkTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $request = new Requests\GetBookmarksOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new GetBookmarksOnlineRequest(
+            $requestDocument,
             NULL,
             NULL
         );
@@ -96,7 +97,7 @@ class BookmarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetBookmarkByNameRequest(
+        $request = new GetBookmarkByNameRequest(
             $remoteFileName,
             $bookmarkName,
             $remoteDataFolder,
@@ -117,8 +118,9 @@ class BookmarkTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
         $bookmarkName = "aspose";
 
-        $request = new Requests\GetBookmarkByNameOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new GetBookmarkByNameOnlineRequest(
+            $requestDocument,
             $bookmarkName,
             NULL,
             NULL
@@ -144,11 +146,11 @@ class BookmarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
+        $requestBookmarkData = new BookmarkData(array(
             "name" => $bookmarkName,
             "text" => $bookmarkText,
         ));
-        $request = new Requests\UpdateBookmarkRequest(
+        $request = new UpdateBookmarkRequest(
             $remoteFileName,
             $bookmarkName,
             $requestBookmarkData,
@@ -174,12 +176,13 @@ class BookmarkTests extends BaseTestContext
         $bookmarkName = "aspose";
         $remoteFileName = "TestUpdateDocumentBookmark.docx";
 
-        $requestBookmarkData = new \Aspose\Words\Model\BookmarkData(array(
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestBookmarkData = new BookmarkData(array(
             "name" => $bookmarkName,
             "text" => "This will be the text for Aspose",
         ));
-        $request = new Requests\UpdateBookmarkOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $request = new UpdateBookmarkOnlineRequest(
+            $requestDocument,
             $bookmarkName,
             $requestBookmarkData,
             NULL,

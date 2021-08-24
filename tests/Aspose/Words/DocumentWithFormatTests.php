@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{GetDocumentWithFormatRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +51,7 @@ class DocumentWithFormatTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentWithFormatRequest(
+        $request = new GetDocumentWithFormatRequest(
             $remoteFileName,
             "text",
             $remoteDataFolder,
@@ -81,7 +80,7 @@ class DocumentWithFormatTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetDocumentWithFormatRequest(
+        $request = new GetDocumentWithFormatRequest(
             $remoteFileName,
             "text",
             $remoteDataFolder,

@@ -2,37 +2,29 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestCommentRangeStartNode = new \Aspose\Words\Model\NodeLink(array(
+$requestDocument = "Sample.docx";
+$requestCommentRangeStartNode = new NodeLink(array(
     "node_id" => "0.3.0.3",
 ));
-$requestCommentRangeStart = new \Aspose\Words\Model\DocumentPosition(array(
+$requestCommentRangeStart = new DocumentPosition(array(
     "node" => $requestCommentRangeStartNode,
     "offset" => 0,
 ));
-$requestCommentRangeEndNode = new \Aspose\Words\Model\NodeLink(array(
+$requestCommentRangeEndNode = new NodeLink(array(
     "node_id" => "0.3.0.3",
 ));
-$requestCommentRangeEnd = new \Aspose\Words\Model\DocumentPosition(array(
+$requestCommentRangeEnd = new DocumentPosition(array(
     "node" => $requestCommentRangeEndNode,
     "offset" => 0,
 ));
-$requestComment = new \Aspose\Words\Model\CommentInsert(array(
+$requestComment = new CommentInsert(array(
     "range_start" => $requestCommentRangeStart,
     "range_end" => $requestCommentRangeEnd,
     "initial" => "IA",
     "author" => "Imran Anwar",
     "text" => "A new Comment",
 ));
-$insertRequest = new Requests\InsertCommentOnlineRequest(
-    $documentsDir . "Sample.docx",
-    $requestComment,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$insertRequest = new InsertCommentOnlineRequest(
+    $requestDocument, $requestComment, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->insertCommentOnline($insertRequest);

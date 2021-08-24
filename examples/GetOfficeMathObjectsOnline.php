@@ -2,13 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$request = new Requests\GetOfficeMathObjectsOnlineRequest(
-    $documentsDir . "Sample.docx",
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$request = new GetOfficeMathObjectsOnlineRequest(
+    $requestDocument, NULL, NULL, NULL
 );
 $wordsApi->getOfficeMathObjectsOnline($request);

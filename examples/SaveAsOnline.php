@@ -2,18 +2,12 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestSaveOptionsData = new \Aspose\Words\Model\SaveOptionsData(array(
+$requestDocument = "Common/test_multi_pages.docx";
+$requestSaveOptionsData = new SaveOptionsData(array(
     "save_format" => "pdf",
     "file_name" => "/TestSaveAs.pdf",
 ));
-$saveRequest = new Requests\SaveAsOnlineRequest(
-    $documentsDir . "Common/test_multi_pages.docx",
-    $requestSaveOptionsData,
-    NULL,
-    NULL,
-    NULL
+$saveRequest = new SaveAsOnlineRequest(
+    $requestDocument, $requestSaveOptionsData, NULL, NULL, NULL
 );
 $wordsApi->saveAsOnline($saveRequest);

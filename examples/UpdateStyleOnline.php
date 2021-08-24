@@ -2,20 +2,11 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestStyleUpdate = new \Aspose\Words\Model\StyleUpdate(array(
+$requestDocument = "Sample.docx";
+$requestStyleUpdate = new StyleUpdate(array(
     "name" => "My Style",
 ));
-$updateRequest = new Requests\UpdateStyleOnlineRequest(
-    $documentsDir . "Sample.docx",
-    "Heading 1",
-    $requestStyleUpdate,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$updateRequest = new UpdateStyleOnlineRequest(
+    $requestDocument, "Heading 1", $requestStyleUpdate, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->updateStyleOnline($updateRequest);

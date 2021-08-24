@@ -2,22 +2,12 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-/**
- */
-$requestTabStopInsertDto = new \Aspose\Words\Model\TabStopInsert(array(
+$requestTabStopInsertDto = new TabStopInsert(array(
     "alignment" => "Left",
     "leader" => "None",
     "position" => 100.0,
 ));
-$insertRequest = new Requests\InsertOrUpdateParagraphTabStopRequest(
-    "Sample.docx",
-    0,
-    $requestTabStopInsertDto,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$insertRequest = new InsertOrUpdateParagraphTabStopRequest(
+    "Sample.docx", 0, $requestTabStopInsertDto, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->insertOrUpdateParagraphTabStop($insertRequest);

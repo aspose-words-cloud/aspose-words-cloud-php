@@ -2,10 +2,7 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
+$requestDrawingObject = new DrawingObjectInsert(array(
     "height" => 0,
     "left" => 0,
     "top" => 0,
@@ -14,17 +11,8 @@ $requestDrawingObject = new \Aspose\Words\Model\DrawingObjectInsert(array(
     "relative_vertical_position" => "Margin",
     "wrap_type" => "Inline",
 ));
-$insertRequest = new Requests\InsertDrawingObjectRequest(
-    "Sample.docx",
-    $requestDrawingObject,
-    $documentsDir . "Common/aspose-cloud.png",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestImageFile = "Common/aspose-cloud.png";
+$insertRequest = new InsertDrawingObjectRequest(
+    "Sample.docx", $requestDrawingObject, $requestImageFile, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->insertDrawingObject($insertRequest);

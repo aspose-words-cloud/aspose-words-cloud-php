@@ -2,15 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$deleteRequest = new Requests\DeleteAllParagraphTabStopsOnlineRequest(
-    $documentsDir . "Sample.docx",
-    0,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$deleteRequest = new DeleteAllParagraphTabStopsOnlineRequest(
+    $requestDocument, 0, NULL, NULL, NULL, NULL
 );
 $wordsApi->deleteAllParagraphTabStopsOnline($deleteRequest);

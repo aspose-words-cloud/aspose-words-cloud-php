@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{DeleteFieldOnlineRequest, DeleteFieldRequest, DeleteFieldsOnlineRequest, DeleteFieldsRequest, GetFieldOnlineRequest, GetFieldRequest, GetFieldsOnlineRequest, GetFieldsRequest, InsertFieldOnlineRequest, InsertFieldRequest, InsertPageNumbersOnlineRequest, InsertPageNumbersRequest, UpdateFieldOnlineRequest, UpdateFieldRequest, UpdateFieldsOnlineRequest, UpdateFieldsRequest};
+use Aspose\Words\Model\{FieldInsert, FieldUpdate, PageNumber};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -53,7 +53,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFieldsRequest(
+        $request = new GetFieldsRequest(
             $remoteFileName,
             "sections/0",
             $remoteDataFolder,
@@ -77,8 +77,9 @@ class FieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/Fields";
 
-        $request = new Requests\GetFieldsOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx";
+        $request = new GetFieldsOnlineRequest(
+            $requestDocument,
             "sections/0",
             NULL,
             NULL
@@ -103,7 +104,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFieldsRequest(
+        $request = new GetFieldsRequest(
             $remoteFileName,
             NULL,
             $remoteDataFolder,
@@ -135,7 +136,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFieldRequest(
+        $request = new GetFieldRequest(
             $remoteFileName,
             0,
             "sections/0/paragraphs/0",
@@ -158,8 +159,9 @@ class FieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/Fields";
 
-        $request = new Requests\GetFieldOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx";
+        $request = new GetFieldOnlineRequest(
+            $requestDocument,
             0,
             "sections/0/paragraphs/0",
             NULL,
@@ -185,7 +187,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetFieldRequest(
+        $request = new GetFieldRequest(
             $remoteFileName,
             0,
             NULL,
@@ -216,10 +218,10 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestField = new \Aspose\Words\Model\FieldInsert(array(
+        $requestField = new FieldInsert(array(
             "field_code" => "{ NUMPAGES }",
         ));
-        $request = new Requests\InsertFieldRequest(
+        $request = new InsertFieldRequest(
             $remoteFileName,
             $requestField,
             "sections/0/paragraphs/0",
@@ -247,11 +249,12 @@ class FieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/Fields";
 
-        $requestField = new \Aspose\Words\Model\FieldInsert(array(
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx";
+        $requestField = new FieldInsert(array(
             "field_code" => "{ NUMPAGES }",
         ));
-        $request = new Requests\InsertFieldOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
+        $request = new InsertFieldOnlineRequest(
+            $requestDocument,
             $requestField,
             "sections/0/paragraphs/0",
             NULL,
@@ -281,10 +284,10 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestField = new \Aspose\Words\Model\FieldInsert(array(
+        $requestField = new FieldInsert(array(
             "field_code" => "{ NUMPAGES }",
         ));
-        $request = new Requests\InsertFieldRequest(
+        $request = new InsertFieldRequest(
             $remoteFileName,
             $requestField,
             NULL,
@@ -320,10 +323,10 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestField = new \Aspose\Words\Model\FieldUpdate(array(
+        $requestField = new FieldUpdate(array(
             "field_code" => "{ NUMPAGES }",
         ));
-        $request = new Requests\UpdateFieldRequest(
+        $request = new UpdateFieldRequest(
             $remoteFileName,
             0,
             $requestField,
@@ -351,11 +354,12 @@ class FieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/Fields";
 
-        $requestField = new \Aspose\Words\Model\FieldUpdate(array(
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx";
+        $requestField = new FieldUpdate(array(
             "field_code" => "{ NUMPAGES }",
         ));
-        $request = new Requests\UpdateFieldOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
+        $request = new UpdateFieldOnlineRequest(
+            $requestDocument,
             $requestField,
             0,
             "sections/0/paragraphs/0",
@@ -384,11 +388,11 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
+        $requestPageNumber = new PageNumber(array(
             "alignment" => "center",
             "format" => "{PAGE} of {NUMPAGES}",
         ));
-        $request = new Requests\InsertPageNumbersRequest(
+        $request = new InsertPageNumbersRequest(
             $remoteFileName,
             $requestPageNumber,
             $remoteDataFolder,
@@ -413,12 +417,13 @@ class FieldTests extends BaseTestContext
     {
         $localFileName = "test_multi_pages.docx";
 
-        $requestPageNumber = new \Aspose\Words\Model\PageNumber(array(
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localFileName;
+        $requestPageNumber = new PageNumber(array(
             "alignment" => "center",
             "format" => "{PAGE} of {NUMPAGES}",
         ));
-        $request = new Requests\InsertPageNumbersOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localFileName,
+        $request = new InsertPageNumbersOnlineRequest(
+            $requestDocument,
             $requestPageNumber,
             NULL,
             NULL,
@@ -446,7 +451,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldRequest(
+        $request = new DeleteFieldRequest(
             $remoteFileName,
             0,
             "sections/0/paragraphs/0",
@@ -469,8 +474,9 @@ class FieldTests extends BaseTestContext
     {
         $fieldFolder = "DocumentElements/Fields";
 
-        $request = new Requests\DeleteFieldOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx",
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $fieldFolder . "/GetField.docx";
+        $request = new DeleteFieldOnlineRequest(
+            $requestDocument,
             0,
             "sections/0/paragraphs/0",
             NULL,
@@ -499,7 +505,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldRequest(
+        $request = new DeleteFieldRequest(
             $remoteFileName,
             0,
             NULL,
@@ -529,7 +535,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldsRequest(
+        $request = new DeleteFieldsRequest(
             $remoteFileName,
             "paragraphs/0",
             $remoteDataFolder,
@@ -558,7 +564,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldsRequest(
+        $request = new DeleteFieldsRequest(
             $remoteFileName,
             NULL,
             $remoteDataFolder,
@@ -587,7 +593,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldsRequest(
+        $request = new DeleteFieldsRequest(
             $remoteFileName,
             "sections/0",
             $remoteDataFolder,
@@ -616,7 +622,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldsRequest(
+        $request = new DeleteFieldsRequest(
             $remoteFileName,
             NULL,
             $remoteDataFolder,
@@ -645,7 +651,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldsRequest(
+        $request = new DeleteFieldsRequest(
             $remoteFileName,
             "sections/0/paragraphs/0",
             $remoteDataFolder,
@@ -674,7 +680,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteFieldsRequest(
+        $request = new DeleteFieldsRequest(
             $remoteFileName,
             "",
             $remoteDataFolder,
@@ -696,8 +702,9 @@ class FieldTests extends BaseTestContext
     {
         $localFileName = "Common/test_multi_pages.docx";
 
-        $request = new Requests\DeleteFieldsOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFileName,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFileName;
+        $request = new DeleteFieldsOnlineRequest(
+            $requestDocument,
             "",
             NULL,
             NULL,
@@ -724,7 +731,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\UpdateFieldsRequest(
+        $request = new UpdateFieldsRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -746,8 +753,9 @@ class FieldTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $request = new Requests\UpdateFieldsOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new UpdateFieldsOnlineRequest(
+            $requestDocument,
             NULL,
             NULL,
             NULL

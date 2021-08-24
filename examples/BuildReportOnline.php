@@ -2,17 +2,12 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestReportEngineSettings = new \Aspose\Words\Model\ReportEngineSettings(array(
+$requestTemplate = "Sample.docx";
+$requestReportEngineSettings = new ReportEngineSettings(array(
     "data_source_type" => "Json",
     "data_source_name" => "persons",
 ));
-$buildReportRequest = new Requests\BuildReportOnlineRequest(
-    $documentsDir . "Sample.docx",
-    "Data.json",
-    $requestReportEngineSettings,
-    NULL
+$buildReportRequest = new BuildReportOnlineRequest(
+    $requestTemplate, "Data.json", $requestReportEngineSettings, NULL
 );
 $wordsApi->buildReportOnline($buildReportRequest);

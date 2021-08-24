@@ -2,17 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$deleteRequest = new Requests\DeleteFormFieldOnlineRequest(
-    $documentsDir . "Sample.docx",
-    0,
-    "sections/0",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$deleteRequest = new DeleteFormFieldOnlineRequest(
+    $requestDocument, 0, "sections/0", NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->deleteFormFieldOnline($deleteRequest);

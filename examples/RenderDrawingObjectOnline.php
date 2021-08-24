@@ -2,17 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$renderRequest = new Requests\RenderDrawingObjectOnlineRequest(
-    $documentsDir . "Sample.docx",
-    "png",
-    0,
-    "sections/0",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$renderRequest = new RenderDrawingObjectOnlineRequest(
+    $requestDocument, "png", 0, "sections/0", NULL, NULL, NULL, NULL
 );
 $wordsApi->renderDrawingObjectOnline($renderRequest);

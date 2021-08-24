@@ -2,19 +2,10 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestCell = new \Aspose\Words\Model\TableCellInsert(array(
+$requestDocument = "Sample.docx";
+$requestCell = new TableCellInsert(array(
 ));
-$insertRequest = new Requests\InsertTableCellOnlineRequest(
-    $documentsDir . "Sample.docx",
-    "sections/0/tables/2/rows/0",
-    $requestCell,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$insertRequest = new InsertTableCellOnlineRequest(
+    $requestDocument, "sections/0/tables/2/rows/0", $requestCell, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->insertTableCellOnline($insertRequest);

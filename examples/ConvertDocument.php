@@ -2,15 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$convertRequest = new Requests\ConvertDocumentRequest(
-    $documentsDir . "Sample.docx",
-    "pdf",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$convertRequest = new ConvertDocumentRequest(
+    $requestDocument, "pdf", NULL, NULL, NULL, NULL
 );
 $wordsApi->convertDocument($convertRequest);

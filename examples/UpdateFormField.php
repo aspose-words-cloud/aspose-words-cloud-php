@@ -2,9 +2,7 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-/**
- */
-$requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+$requestFormField = new FormFieldTextInput(array(
     "name" => "FullName",
     "enabled" => true,
     "calculate_on_exit" => true,
@@ -12,17 +10,7 @@ $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
     "text_input_type" => "Regular",
     "text_input_default" => "No name",
 ));
-$updateRequest = new Requests\UpdateFormFieldRequest(
-    "Sample.docx",
-    0,
-    $requestFormField,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$updateRequest = new UpdateFormFieldRequest(
+    "Sample.docx", 0, $requestFormField, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->updateFormField($updateRequest);

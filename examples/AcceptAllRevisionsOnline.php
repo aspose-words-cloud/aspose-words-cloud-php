@@ -2,13 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$acceptRequest = new Requests\AcceptAllRevisionsOnlineRequest(
-    $documentsDir . "Sample.docx",
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$acceptRequest = new AcceptAllRevisionsOnlineRequest(
+    $requestDocument, NULL, NULL, NULL
 );
 $wordsApi->acceptAllRevisionsOnline($acceptRequest);

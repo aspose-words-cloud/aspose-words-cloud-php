@@ -2,15 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$request = new Requests\GetHeaderFooterOfSectionOnlineRequest(
-    $documentsDir . "Sample.doc",
-    0,
-    0,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.doc";
+$request = new GetHeaderFooterOfSectionOnlineRequest(
+    $requestDocument, 0, 0, NULL, NULL, NULL
 );
 $wordsApi->getHeaderFooterOfSectionOnline($request);

@@ -2,8 +2,6 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-/**
- */
-$request = new Requests\GetPublicKeyRequest(
+$request = new GetPublicKeyRequest(
 );
 $wordsApi->getPublicKey($request);

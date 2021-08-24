@@ -2,10 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
+$requestDocument = "Sample.docx";
+$requestFormField = new FormFieldTextInput(array(
     "name" => "FullName",
     "enabled" => true,
     "calculate_on_exit" => true,
@@ -14,15 +12,7 @@ $requestFormField = new \Aspose\Words\Model\FormFieldTextInput(array(
     "text_input_default" => "123",
     "text_input_format" => "UPPERCASE",
 ));
-$insertRequest = new Requests\InsertFormFieldOnlineRequest(
-    $documentsDir . "Sample.docx",
-    $requestFormField,
-    "sections/0/paragraphs/0",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$insertRequest = new InsertFormFieldOnlineRequest(
+    $requestDocument, $requestFormField, "sections/0/paragraphs/0", NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->insertFormFieldOnline($insertRequest);

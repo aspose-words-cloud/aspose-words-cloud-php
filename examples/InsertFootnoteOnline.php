@@ -2,21 +2,12 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestFootnoteDto = new \Aspose\Words\Model\FootnoteInsert(array(
+$requestDocument = "Sample.doc";
+$requestFootnoteDto = new FootnoteInsert(array(
     "footnote_type" => "Endnote",
     "text" => "test endnote",
 ));
-$insertRequest = new Requests\InsertFootnoteOnlineRequest(
-    $documentsDir . "Sample.doc",
-    $requestFootnoteDto,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$insertRequest = new InsertFootnoteOnlineRequest(
+    $requestDocument, $requestFootnoteDto, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->insertFootnoteOnline($insertRequest);

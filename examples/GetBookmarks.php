@@ -2,13 +2,7 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-/**
- */
-$request = new Requests\GetBookmarksRequest(
-    "Sample.docx",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$request = new GetBookmarksRequest(
+    "Sample.docx", NULL, NULL, NULL, NULL
 );
 $wordsApi->getBookmarks($request);

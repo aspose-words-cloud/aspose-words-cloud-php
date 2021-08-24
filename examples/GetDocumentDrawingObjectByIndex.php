@@ -2,15 +2,7 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-/**
- */
-$request = new Requests\GetDocumentDrawingObjectByIndexRequest(
-    "Sample.docx",
-    0,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$request = new GetDocumentDrawingObjectByIndexRequest(
+    "Sample.docx", 0, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->getDocumentDrawingObjectByIndex($request);

@@ -2,24 +2,11 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestDrawingObject = new \Aspose\Words\Model\DrawingObjectUpdate(array(
+$requestDrawingObject = new DrawingObjectUpdate(array(
     "left" => 0,
 ));
-$updateRequest = new Requests\UpdateDrawingObjectRequest(
-    "Sample.docx",
-    $requestDrawingObject,
-    $documentsDir . "Common/aspose-cloud.png",
-    0,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestImageFile = "Common/aspose-cloud.png";
+$updateRequest = new UpdateDrawingObjectRequest(
+    "Sample.docx", $requestDrawingObject, $requestImageFile, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->updateDrawingObject($updateRequest);

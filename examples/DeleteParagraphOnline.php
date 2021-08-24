@@ -2,17 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$deleteRequest = new Requests\DeleteParagraphOnlineRequest(
-    $documentsDir . "Sample.docx",
-    0,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$deleteRequest = new DeleteParagraphOnlineRequest(
+    $requestDocument, 0, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->deleteParagraphOnline($deleteRequest);

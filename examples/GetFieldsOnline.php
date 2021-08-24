@@ -2,13 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$request = new Requests\GetFieldsOnlineRequest(
-    $documentsDir . "Sample.docx",
-    "sections/0",
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$request = new GetFieldsOnlineRequest(
+    $requestDocument, "sections/0", NULL, NULL
 );
 $wordsApi->getFieldsOnline($request);

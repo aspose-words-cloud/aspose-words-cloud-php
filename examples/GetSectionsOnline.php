@@ -2,12 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$request = new Requests\GetSectionsOnlineRequest(
-    $documentsDir . "Sample.docx",
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$request = new GetSectionsOnlineRequest(
+    $requestDocument, NULL, NULL
 );
 $wordsApi->getSectionsOnline($request);

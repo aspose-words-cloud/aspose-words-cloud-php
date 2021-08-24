@@ -2,17 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$insertRequest = new Requests\InsertHeaderFooterOnlineRequest(
-    $documentsDir . "Sample.doc",
-    "",
-    "FooterEven",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.doc";
+$insertRequest = new InsertHeaderFooterOnlineRequest(
+    $requestDocument, "", "FooterEven", NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->insertHeaderFooterOnline($insertRequest);

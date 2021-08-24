@@ -2,17 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$deleteRequest = new Requests\DeleteTableOnlineRequest(
-    $documentsDir . "Sample.docx",
-    1,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$deleteRequest = new DeleteTableOnlineRequest(
+    $requestDocument, 1, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->deleteTableOnline($deleteRequest);

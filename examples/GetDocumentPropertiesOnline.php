@@ -2,12 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$request = new Requests\GetDocumentPropertiesOnlineRequest(
-    $documentsDir . "Sample.docx",
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$request = new GetDocumentPropertiesOnlineRequest(
+    $requestDocument, NULL, NULL
 );
 $wordsApi->getDocumentPropertiesOnline($request);

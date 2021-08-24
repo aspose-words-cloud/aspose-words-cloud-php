@@ -2,20 +2,11 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestProperty = new \Aspose\Words\Model\DocumentPropertyCreateOrUpdate(array(
+$requestDocument = "Sample.docx";
+$requestProperty = new DocumentPropertyCreateOrUpdate(array(
     "value" => "Imran Anwar",
 ));
-$createRequest = new Requests\CreateOrUpdateDocumentPropertyOnlineRequest(
-    $documentsDir . "Sample.docx",
-    "AsposeAuthor",
-    $requestProperty,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$createRequest = new CreateOrUpdateDocumentPropertyOnlineRequest(
+    $requestDocument, "AsposeAuthor", $requestProperty, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->createOrUpdateDocumentPropertyOnline($createRequest);

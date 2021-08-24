@@ -2,13 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$request = new Requests\GetFootnotesOnlineRequest(
-    $documentsDir . "Sample.doc",
-    NULL,
-    NULL,
-    NULL
+$requestDocument = "Sample.doc";
+$request = new GetFootnotesOnlineRequest(
+    $requestDocument, NULL, NULL, NULL
 );
 $wordsApi->getFootnotesOnline($request);

@@ -2,12 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$request = new Requests\GetCustomXmlPartsOnlineRequest(
-    $documentsDir . "Sample.docx",
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$request = new GetCustomXmlPartsOnlineRequest(
+    $requestDocument, NULL, NULL
 );
 $wordsApi->getCustomXmlPartsOnline($request);

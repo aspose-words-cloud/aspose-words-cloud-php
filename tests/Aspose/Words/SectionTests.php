@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{DeleteSectionOnlineRequest, DeleteSectionRequest, GetSectionOnlineRequest, GetSectionRequest, GetSectionsOnlineRequest, GetSectionsRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,7 +51,7 @@ class SectionTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetSectionRequest(
+        $request = new GetSectionRequest(
             $remoteFileName,
             0,
             $remoteDataFolder,
@@ -76,8 +75,9 @@ class SectionTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $request = new Requests\GetSectionOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new GetSectionOnlineRequest(
+            $requestDocument,
             0,
             NULL,
             NULL
@@ -101,7 +101,7 @@ class SectionTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\GetSectionsRequest(
+        $request = new GetSectionsRequest(
             $remoteFileName,
             $remoteDataFolder,
             NULL,
@@ -124,8 +124,9 @@ class SectionTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $request = new Requests\GetSectionsOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new GetSectionsOnlineRequest(
+            $requestDocument,
             NULL,
             NULL
         );
@@ -148,7 +149,7 @@ class SectionTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\DeleteSectionRequest(
+        $request = new DeleteSectionRequest(
             $remoteFileName,
             0,
             $remoteDataFolder,
@@ -170,8 +171,9 @@ class SectionTests extends BaseTestContext
     {
         $localFile = "Common/test_multi_pages.docx";
 
-        $request = new Requests\DeleteSectionOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile,
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new DeleteSectionOnlineRequest(
+            $requestDocument,
             0,
             NULL,
             NULL,

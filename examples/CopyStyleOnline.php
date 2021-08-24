@@ -2,19 +2,11 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$requestStyleCopy = new \Aspose\Words\Model\StyleCopy(array(
+$requestDocument = "Sample.docx";
+$requestStyleCopy = new StyleCopy(array(
     "style_name" => "Heading 1",
 ));
-$copyRequest = new Requests\CopyStyleOnlineRequest(
-    $documentsDir . "Sample.docx",
-    $requestStyleCopy,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+$copyRequest = new CopyStyleOnlineRequest(
+    $requestDocument, $requestStyleCopy, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->copyStyleOnline($copyRequest);

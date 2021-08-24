@@ -2,9 +2,7 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-/**
- */
-$request = new Requests\GetAvailableFontsRequest(
+$request = new GetAvailableFontsRequest(
     NULL
 );
 $wordsApi->getAvailableFonts($request);

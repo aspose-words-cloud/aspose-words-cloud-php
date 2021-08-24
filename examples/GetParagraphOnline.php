@@ -2,14 +2,8 @@
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$documentsDir = '...';
-/**
- */
-$request = new Requests\GetParagraphOnlineRequest(
-    $documentsDir . "Sample.docx",
-    0,
-    "sections/0",
-    NULL,
-    NULL
+$requestDocument = "Sample.docx";
+$request = new GetParagraphOnlineRequest(
+    $requestDocument, 0, "sections/0", NULL, NULL
 );
 $wordsApi->getParagraphOnline($request);

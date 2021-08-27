@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{GetPublicKeyRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -43,7 +42,7 @@ class PasswordEncryptionTests extends BaseTestContext
      */
     public function testGetPublicKey()
     {
-        $request = new Requests\GetPublicKeyRequest(
+        $request = new GetPublicKeyRequest(
         );
 
         $result = $this->words->getPublicKey($request);

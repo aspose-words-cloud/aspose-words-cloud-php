@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{BuildReportOnlineRequest, BuildReportRequest};
+use Aspose\Words\Model\{ReportEngineSettings};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -47,12 +47,13 @@ class BuildReportTests extends BaseTestContext
         $localDocumentFile = "ReportTemplate.docx";
         $localDataFile = file_get_contents(realpath(__DIR__ . '/../../..') . "/TestData/" . $reportingFolder . "/ReportData.json");
 
-        $requestReportEngineSettings = new \Aspose\Words\Model\ReportEngineSettings(array(
+        $requestTemplate = realpath(__DIR__ . '/../../..') . '/TestData/' . $reportingFolder . "/" . $localDocumentFile;
+        $requestReportEngineSettings = new ReportEngineSettings(array(
             "data_source_type" => "Json",
             "data_source_name" => "persons",
         ));
-        $request = new Requests\BuildReportOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $reportingFolder . "/" . $localDocumentFile,
+        $request = new BuildReportOnlineRequest(
+            $requestTemplate,
             $localDataFile,
             $requestReportEngineSettings,
             NULL
@@ -82,11 +83,11 @@ class BuildReportTests extends BaseTestContext
             "AllowMissingMembers",
             "RemoveEmptyParagraphs",
         ];
-        $requestReportEngineSettings = new \Aspose\Words\Model\ReportEngineSettings(array(
+        $requestReportEngineSettings = new ReportEngineSettings(array(
             "data_source_type" => "Json",
             "report_build_options" => $requestReportEngineSettingsReportBuildOptions,
         ));
-        $request = new Requests\BuildReportRequest(
+        $request = new BuildReportRequest(
             $remoteFileName,
             $localDataFile,
             $requestReportEngineSettings,

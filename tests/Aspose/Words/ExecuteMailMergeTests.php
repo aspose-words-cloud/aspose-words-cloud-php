@@ -29,8 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model;
-use Aspose\Words\Model\Requests;
+use Aspose\Words\Model\Requests\{ExecuteMailMergeOnlineRequest, ExecuteMailMergeRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -47,9 +46,11 @@ class ExecuteMailMergeTests extends BaseTestContext
         $localDocumentFile = "SampleExecuteTemplate.docx";
         $localDataFile = "SampleExecuteTemplateData.txt";
 
-        $request = new Requests\ExecuteMailMergeOnlineRequest(
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile,
-            realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDataFile,
+        $requestTemplate = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile;
+        $requestData = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDataFile;
+        $request = new ExecuteMailMergeOnlineRequest(
+            $requestTemplate,
+            $requestData,
             NULL,
             NULL,
             NULL
@@ -75,7 +76,7 @@ class ExecuteMailMergeTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $request = new Requests\ExecuteMailMergeRequest(
+        $request = new ExecuteMailMergeRequest(
             $remoteFileName,
             $localDataFile,
             $remoteDataFolder,

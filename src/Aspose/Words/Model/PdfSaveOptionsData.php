@@ -60,6 +60,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'embed_full_fonts' => 'bool',
         'encryption_details' => '\Aspose\Words\Model\PdfEncryptionDetailsData',
         'export_document_structure' => 'bool',
+        'export_language_to_span_tag' => 'bool',
         'font_embedding_mode' => 'string',
         'header_footer_bookmarks_export_mode' => 'string',
         'image_color_space_export_mode' => 'string',
@@ -92,6 +93,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'embed_full_fonts' => 'null',
         'encryption_details' => 'null',
         'export_document_structure' => 'null',
+        'export_language_to_span_tag' => 'null',
         'font_embedding_mode' => 'null',
         'header_footer_bookmarks_export_mode' => 'null',
         'image_color_space_export_mode' => 'null',
@@ -145,6 +147,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'embed_full_fonts' => 'EmbedFullFonts',
         'encryption_details' => 'EncryptionDetails',
         'export_document_structure' => 'ExportDocumentStructure',
+        'export_language_to_span_tag' => 'ExportLanguageToSpanTag',
         'font_embedding_mode' => 'FontEmbeddingMode',
         'header_footer_bookmarks_export_mode' => 'HeaderFooterBookmarksExportMode',
         'image_color_space_export_mode' => 'ImageColorSpaceExportMode',
@@ -177,6 +180,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'embed_full_fonts' => 'setEmbedFullFonts',
         'encryption_details' => 'setEncryptionDetails',
         'export_document_structure' => 'setExportDocumentStructure',
+        'export_language_to_span_tag' => 'setExportLanguageToSpanTag',
         'font_embedding_mode' => 'setFontEmbeddingMode',
         'header_footer_bookmarks_export_mode' => 'setHeaderFooterBookmarksExportMode',
         'image_color_space_export_mode' => 'setImageColorSpaceExportMode',
@@ -209,6 +213,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'embed_full_fonts' => 'getEmbedFullFonts',
         'encryption_details' => 'getEncryptionDetails',
         'export_document_structure' => 'getExportDocumentStructure',
+        'export_language_to_span_tag' => 'getExportLanguageToSpanTag',
         'font_embedding_mode' => 'getFontEmbeddingMode',
         'header_footer_bookmarks_export_mode' => 'getHeaderFooterBookmarksExportMode',
         'image_color_space_export_mode' => 'getImageColorSpaceExportMode',
@@ -303,6 +308,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['embed_full_fonts'] = isset($data['embed_full_fonts']) ? $data['embed_full_fonts'] : null;
         $this->container['encryption_details'] = isset($data['encryption_details']) ? $data['encryption_details'] : null;
         $this->container['export_document_structure'] = isset($data['export_document_structure']) ? $data['export_document_structure'] : null;
+        $this->container['export_language_to_span_tag'] = isset($data['export_language_to_span_tag']) ? $data['export_language_to_span_tag'] : null;
         $this->container['font_embedding_mode'] = isset($data['font_embedding_mode']) ? $data['font_embedding_mode'] : null;
         $this->container['header_footer_bookmarks_export_mode'] = isset($data['header_footer_bookmarks_export_mode']) ? $data['header_footer_bookmarks_export_mode'] : null;
         $this->container['image_color_space_export_mode'] = isset($data['image_color_space_export_mode']) ? $data['image_color_space_export_mode'] : null;
@@ -565,6 +571,29 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setExportDocumentStructure($export_document_structure)
     {
         $this->container['export_document_structure'] = $export_document_structure;
+        return $this;
+    }
+
+    /*
+     * Gets export_language_to_span_tag
+     *
+     * @return bool
+     */
+    public function getExportLanguageToSpanTag()
+    {
+        return $this->container['export_language_to_span_tag'];
+    }
+
+    /*
+     * Sets export_language_to_span_tag
+     *
+     * @param bool $export_language_to_span_tag Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language.
+     *
+     * @return $this
+     */
+    public function setExportLanguageToSpanTag($export_language_to_span_tag)
+    {
+        $this->container['export_language_to_span_tag'] = $export_language_to_span_tag;
         return $this;
     }
 

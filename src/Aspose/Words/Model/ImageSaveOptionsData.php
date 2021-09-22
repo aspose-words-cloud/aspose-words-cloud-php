@@ -51,7 +51,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'graphics_quality_options' => '\Aspose\Words\Model\GraphicsQualityOptionsData',
         'horizontal_resolution' => 'double',
         'image_brightness' => 'double',
         'image_color_mode' => 'string',
@@ -72,7 +71,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'graphics_quality_options' => 'null',
         'horizontal_resolution' => 'null',
         'image_brightness' => 'null',
         'image_color_mode' => 'null',
@@ -114,7 +112,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'graphics_quality_options' => 'GraphicsQualityOptions',
         'horizontal_resolution' => 'HorizontalResolution',
         'image_brightness' => 'ImageBrightness',
         'image_color_mode' => 'ImageColorMode',
@@ -135,7 +132,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'graphics_quality_options' => 'setGraphicsQualityOptions',
         'horizontal_resolution' => 'setHorizontalResolution',
         'image_brightness' => 'setImageBrightness',
         'image_color_mode' => 'setImageColorMode',
@@ -156,7 +152,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'graphics_quality_options' => 'getGraphicsQualityOptions',
         'horizontal_resolution' => 'getHorizontalResolution',
         'image_brightness' => 'getImageBrightness',
         'image_color_mode' => 'getImageColorMode',
@@ -223,7 +218,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['graphics_quality_options'] = isset($data['graphics_quality_options']) ? $data['graphics_quality_options'] : null;
         $this->container['horizontal_resolution'] = isset($data['horizontal_resolution']) ? $data['horizontal_resolution'] : null;
         $this->container['image_brightness'] = isset($data['image_brightness']) ? $data['image_brightness'] : null;
         $this->container['image_color_mode'] = isset($data['image_color_mode']) ? $data['image_color_mode'] : null;
@@ -262,29 +256,6 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         }
 
         return true;
-    }
-
-    /*
-     * Gets graphics_quality_options
-     *
-     * @return \Aspose\Words\Model\GraphicsQualityOptionsData
-     */
-    public function getGraphicsQualityOptions()
-    {
-        return $this->container['graphics_quality_options'];
-    }
-
-    /*
-     * Sets graphics_quality_options
-     *
-     * @param \Aspose\Words\Model\GraphicsQualityOptionsData $graphics_quality_options Gets or sets the additional System.Drawing.Graphics quality options.
-     *
-     * @return $this
-     */
-    public function setGraphicsQualityOptions($graphics_quality_options)
-    {
-        $this->container['graphics_quality_options'] = $graphics_quality_options;
-        return $this;
     }
 
     /*

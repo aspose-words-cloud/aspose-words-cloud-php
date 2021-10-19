@@ -55,7 +55,9 @@ class ReportEngineSettings implements ArrayAccess
         'csv_data_load_options' => '\Aspose\Words\Model\CsvDataLoadOptions',
         'data_source_name' => 'string',
         'data_source_type' => 'string',
-        'report_build_options' => 'string[]'
+        'json_data_load_options' => '\Aspose\Words\Model\JsonDataLoadOptions',
+        'report_build_options' => 'string[]',
+        'xml_data_load_options' => '\Aspose\Words\Model\XmlDataLoadOptions'
     ];
 
     /*
@@ -67,7 +69,9 @@ class ReportEngineSettings implements ArrayAccess
         'csv_data_load_options' => 'null',
         'data_source_name' => 'null',
         'data_source_type' => 'null',
-        'report_build_options' => 'null'
+        'json_data_load_options' => 'null',
+        'report_build_options' => 'null',
+        'xml_data_load_options' => 'null'
     ];
 
     /*
@@ -100,7 +104,9 @@ class ReportEngineSettings implements ArrayAccess
         'csv_data_load_options' => 'CsvDataLoadOptions',
         'data_source_name' => 'DataSourceName',
         'data_source_type' => 'DataSourceType',
-        'report_build_options' => 'ReportBuildOptions'
+        'json_data_load_options' => 'JsonDataLoadOptions',
+        'report_build_options' => 'ReportBuildOptions',
+        'xml_data_load_options' => 'XmlDataLoadOptions'
     ];
 
     /*
@@ -112,7 +118,9 @@ class ReportEngineSettings implements ArrayAccess
         'csv_data_load_options' => 'setCsvDataLoadOptions',
         'data_source_name' => 'setDataSourceName',
         'data_source_type' => 'setDataSourceType',
-        'report_build_options' => 'setReportBuildOptions'
+        'json_data_load_options' => 'setJsonDataLoadOptions',
+        'report_build_options' => 'setReportBuildOptions',
+        'xml_data_load_options' => 'setXmlDataLoadOptions'
     ];
 
     /*
@@ -124,7 +132,9 @@ class ReportEngineSettings implements ArrayAccess
         'csv_data_load_options' => 'getCsvDataLoadOptions',
         'data_source_name' => 'getDataSourceName',
         'data_source_type' => 'getDataSourceType',
-        'report_build_options' => 'getReportBuildOptions'
+        'json_data_load_options' => 'getJsonDataLoadOptions',
+        'report_build_options' => 'getReportBuildOptions',
+        'xml_data_load_options' => 'getXmlDataLoadOptions'
     ];
 
     /*
@@ -204,7 +214,9 @@ class ReportEngineSettings implements ArrayAccess
         $this->container['csv_data_load_options'] = isset($data['csv_data_load_options']) ? $data['csv_data_load_options'] : null;
         $this->container['data_source_name'] = isset($data['data_source_name']) ? $data['data_source_name'] : null;
         $this->container['data_source_type'] = isset($data['data_source_type']) ? $data['data_source_type'] : null;
+        $this->container['json_data_load_options'] = isset($data['json_data_load_options']) ? $data['json_data_load_options'] : null;
         $this->container['report_build_options'] = isset($data['report_build_options']) ? $data['report_build_options'] : null;
+        $this->container['xml_data_load_options'] = isset($data['xml_data_load_options']) ? $data['xml_data_load_options'] : null;
     }
 
     /*
@@ -319,6 +331,29 @@ class ReportEngineSettings implements ArrayAccess
     }
 
     /*
+     * Gets json_data_load_options
+     *
+     * @return \Aspose\Words\Model\JsonDataLoadOptions
+     */
+    public function getJsonDataLoadOptions()
+    {
+        return $this->container['json_data_load_options'];
+    }
+
+    /*
+     * Sets json_data_load_options
+     *
+     * @param \Aspose\Words\Model\JsonDataLoadOptions $json_data_load_options Gets or sets the options for parsing JSON data.
+     *
+     * @return $this
+     */
+    public function setJsonDataLoadOptions($json_data_load_options)
+    {
+        $this->container['json_data_load_options'] = $json_data_load_options;
+        return $this;
+    }
+
+    /*
      * Gets report_build_options
      *
      * @return string[]
@@ -342,6 +377,29 @@ class ReportEngineSettings implements ArrayAccess
             throw new \InvalidArgumentException(sprintf("Invalid value for 'report_build_options', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['report_build_options'] = $report_build_options;
+        return $this;
+    }
+
+    /*
+     * Gets xml_data_load_options
+     *
+     * @return \Aspose\Words\Model\XmlDataLoadOptions
+     */
+    public function getXmlDataLoadOptions()
+    {
+        return $this->container['xml_data_load_options'];
+    }
+
+    /*
+     * Sets xml_data_load_options
+     *
+     * @param \Aspose\Words\Model\XmlDataLoadOptions $xml_data_load_options Gets or sets the options for parsing XML data.
+     *
+     * @return $this
+     */
+    public function setXmlDataLoadOptions($xml_data_load_options)
+    {
+        $this->container['xml_data_load_options'] = $xml_data_load_options;
         return $this;
     }
 

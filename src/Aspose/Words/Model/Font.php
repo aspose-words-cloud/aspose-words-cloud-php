@@ -719,6 +719,10 @@ class Font extends LinkElement
     const STYLE_IDENTIFIER_LIST_TABLE6_COLORFUL_ACCENT6 = 'ListTable6ColorfulAccent6';
     const STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6 = 'ListTable7ColorfulAccent6';
     const STYLE_IDENTIFIER_SMART_LINK = 'SmartLink';
+    const STYLE_IDENTIFIER_MENTION = 'Mention';
+    const STYLE_IDENTIFIER_SMART_HYPERLINK = 'SmartHyperlink';
+    const STYLE_IDENTIFIER_HASHTAG = 'Hashtag';
+    const STYLE_IDENTIFIER_UNRESOLVED_MENTION = 'UnresolvedMention';
     const STYLE_IDENTIFIER_USER = 'User';
     const STYLE_IDENTIFIER_NIL = 'Nil';
     const TEXT_EFFECT_NONE = 'None';
@@ -1127,6 +1131,10 @@ class Font extends LinkElement
             self::STYLE_IDENTIFIER_LIST_TABLE6_COLORFUL_ACCENT6,
             self::STYLE_IDENTIFIER_LIST_TABLE7_COLORFUL_ACCENT6,
             self::STYLE_IDENTIFIER_SMART_LINK,
+            self::STYLE_IDENTIFIER_MENTION,
+            self::STYLE_IDENTIFIER_SMART_HYPERLINK,
+            self::STYLE_IDENTIFIER_HASHTAG,
+            self::STYLE_IDENTIFIER_UNRESOLVED_MENTION,
             self::STYLE_IDENTIFIER_USER,
             self::STYLE_IDENTIFIER_NIL
         ];

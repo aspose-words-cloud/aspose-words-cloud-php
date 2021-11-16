@@ -35,6 +35,8 @@ use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\Model\Requests;
+use phpseclib3\Crypt\PublicKeyLoader;
+use phpseclib3\Math\BigInteger;
 
 /*
  * WordsApi Aspose.Words for Cloud API.
@@ -59,7 +61,7 @@ class WordsApi
      * @param string   $clientSecret client secret
      * @param string   $baseUrl base url for requests
      */
-    public function __construct(string $clientId, string $clientSecret)
+    public function __construct(string $clientId, string $clientSecret, string $baseUrl = null)
     {
         if (!isset($clientId) || trim($clientId) === '') {
             throw new ApiException('clientId could not be an empty string.');
@@ -71,6 +73,11 @@ class WordsApi
 
         $this->client = new Client();
         $this->config = new Configuration($clientId, $clientSecret);
+        if (!empty($baseUrl))
+        {
+            $this->config->setHost($baseUrl);
+        }
+        $this->_checkRsaKey();
     }
 
     /*
@@ -50409,7 +50416,7 @@ class WordsApi
     }
 
     /*
-     * Executes header and boy formatting
+     * Executes header and body formatting
      */
     private function _writeHeadersAndBody($logInfo, $headers, $body)
     {
@@ -50449,6 +50456,24 @@ class WordsApi
     {
         if ($this->config->getAccessToken() === "") {
             $this->_requestToken();
+        }
+    }
+
+    private function _getKey()
+    {
+        $this->_checkAuthToken();
+        $data = $this->getPublicKey(new Requests\GetPublicKeyRequest());
+        $this->config->setRsaKey(PublicKeyLoader::load([
+            'e' => new BigInteger(base64_decode($data->getExponent()), 256),
+            'n' => new BigInteger(base64_decode($data->getModulus()), 256)
+        ]));
+    }
+
+    private function _checkRsaKey()
+    {
+        if (empty($this->config->getRsaKey()))
+        {
+            $this->_getKey();
         }
     }
 }

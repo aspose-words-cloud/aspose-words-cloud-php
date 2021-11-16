@@ -137,6 +137,12 @@ class Configuration
     protected $clientVersion = '21.11';
 
     /*
+     * Stores rsa key data
+     * @var string data
+     */
+    protected $rsa;
+
+    /*
      * Constructor
      * @param string   $clientId client client id
      * @param string   $clientSecret client secret
@@ -545,5 +551,24 @@ class Configuration
         }
 
         return $keyWithPrefix;
+    }
+
+        /*
+     * Gets rsa key
+     * @return rsa key
+     */
+    public function getRsaKey()
+    {
+        return $this->rsa;
+    }
+
+    /*
+     * Sets rsa key
+     * @return $this
+     */
+    public function setRsaKey($value)
+    {
+        $this->rsa = $value;
+        return $this;
     }
 }

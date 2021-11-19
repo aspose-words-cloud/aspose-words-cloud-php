@@ -50426,18 +50426,19 @@ class WordsApi
      * Operation bacth requests
      *
      * @param array of requests
+     * @param display intermediate results or not
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of response objects
      */
-    public function batch($requests)
+    public function batch($requests, $displayIntermediateResults = true)
     {
         try {
-            return $this->batchWithHttpInfo($requests);
+            return $this->batchWithHttpInfo($requests, $displayIntermediateResults);
         }
         catch(RepeatRequestException $e) {
-            return $this->batchWithHttpInfo($requests);
+            return $this->batchWithHttpInfo($requests, $displayIntermediateResults);
         }
     }
 
@@ -50445,27 +50446,29 @@ class WordsApi
      * Operation batch requests
      *
      * @param array of requests
+     * @param display intermediate results or not
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of response objects
      */
-    private function batchWithHttpInfo($requests)
+    private function batchWithHttpInfo($requests, $displayIntermediateResults = true)
     {
-        return $this->batchAsyncWithHttpInfo($requests)->wait();
+        return $this->batchAsyncWithHttpInfo($requests, $displayIntermediateResults)->wait();
     }
 
     /*
      * Async operation batch requests
      *
      * @param array of requests
+     * @param display intermediate results or not
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function batchAsync($requests) 
+    public function batchAsync($requests, $displayIntermediateResults = true) 
     {
-        return $this->batchAsyncWithHttpInfo($requests)
+        return $this->batchAsyncWithHttpInfo($requests, $displayIntermediateResults)
             ->then(
                 function ($response) {
                     return $response;
@@ -50477,11 +50480,12 @@ class WordsApi
      * Async operation batch requests
      *
      * @param array of requests
+     * @param display intermediate results or not
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    private function batchAsyncWithHttpInfo($requests) 
+    private function batchAsyncWithHttpInfo($requests, $displayIntermediateResults = true) 
     {
         if (count($requests) == 0)
         {
@@ -50492,15 +50496,18 @@ class WordsApi
         $this->_checkAuthToken();
 
         $multipartContents = [];
+        $idToRequestMap = array();
         foreach ($requests as $request)
         {
-            $partData = ObjectSerializer::createBatchPart($this->config, $request);
+            $reqId = ObjectSerializer::guidv4();
+            $partData = ObjectSerializer::createBatchPart($this->config, $request, $reqId);
             $multipartContents[] = [
                 'name' => sha1(uniqid('', true)),
                 'filename' => sha1(uniqid('', true)),
                 'contents' => $partData,
-                'headers' => ['Content-Type' => 'application/http; msgtype=request']
+                'headers' => ['Content-Type' => 'application/http; msgtype=request', 'RequestId' => $reqId]
             ];
+            $idToRequestMap[$reqId] = $request;
         }
 
         $headers = [];
@@ -50517,7 +50524,8 @@ class WordsApi
         $headers['Content-Type'] = "multipart/form-data; boundary=" . $httpBody->getBoundary();
 
         $method = 'PUT';
-        $url = ObjectSerializer::parseURL($this->config, '/words/batch', array());
+        $apiUrl = !$displayIntermediateResults ? '/words/batch?displayIntermediateResults=false' : '/words/batch';
+        $url = ObjectSerializer::parseURL($this->config, $apiUrl, array());
         $batchRequest = new Request(
             $method,
             $url,
@@ -50532,8 +50540,8 @@ class WordsApi
         return $this->client
             ->sendAsync($batchRequest, $options)
             ->then(
-                function ($response) use ($requests) {
-                    return ObjectSerializer::parseBatchResponse($response, $requests);
+                function ($response) use ($requests, $displayIntermediateResults, $idToRequestMap) {
+                    return ObjectSerializer::parseBatchResponse($response, $requests, $displayIntermediateResults, $idToRequestMap);
                 },
                 function ($e) use ($batchRequest) {
                     if ($e->getCode() == 401) {

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getRangeTextOnline operation.
  */
-class GetRangeTextOnlineRequest
+class GetRangeTextOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for uploadFile operation.
  */
-class UploadFileRequest
+class UploadFileRequest extends BaseApiRequest
 {
     /*
      * File to upload.

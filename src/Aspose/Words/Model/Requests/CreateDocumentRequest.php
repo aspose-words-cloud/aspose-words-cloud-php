@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for createDocument operation.
  */
-class CreateDocumentRequest
+class CreateDocumentRequest extends BaseApiRequest
 {
     /*
      * The filename of the document.

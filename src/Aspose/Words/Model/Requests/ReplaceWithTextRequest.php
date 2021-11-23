@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for replaceWithText operation.
  */
-class ReplaceWithTextRequest
+class ReplaceWithTextRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

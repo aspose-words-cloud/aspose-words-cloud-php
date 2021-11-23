@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertList operation.
  */
-class InsertListRequest
+class InsertListRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

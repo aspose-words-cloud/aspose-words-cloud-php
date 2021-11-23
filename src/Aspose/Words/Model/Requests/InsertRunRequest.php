@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertRun operation.
  */
-class InsertRunRequest
+class InsertRunRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

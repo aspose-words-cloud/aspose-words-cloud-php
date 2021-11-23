@@ -51,13 +51,17 @@ class ObjectSerializer
     /*
      * Creates the batch part data from request
      */
-    public static function createBatchPart($config, $request, $reqId)
+    public static function createBatchPart($config, $request)
     {
-        $requestData = $request->createRequestData($config);
+        $requestData = $request->getRequest()->createRequestData($config);
         $stream = new \GuzzleHttp\Psr7\AppendStream();
         $prefixPath = $config->getHost() . $config->getBasePath() . "/words/";
         $relPath = substr($requestData['url'], strlen($prefixPath));
-        $requestData['headers']['RequestId'] = $reqId;
+        $requestData['headers']['RequestId'] = $request->getRequestId();
+        if ($request->getParentRequestId() != null)
+        {
+            $requestData['headers']['DependsOn'] = $request->getParentRequestId();
+        }
 
         $stream->addStream(\GuzzleHttp\Psr7\Utils::streamFor($requestData['method'] . " " . $relPath . " \r\n"));
         foreach ($requestData['headers'] as $key => $value) {
@@ -209,7 +213,7 @@ class ObjectSerializer
         for ($i = 0; $i < count($parts); $i++) {
             $part = $parts[$i];
             $requestId = self::parseRequestIdFromBatchPart($part);
-            $responseType = $idToRequestMap[$requestId]->getResponseType();
+            $responseType = $idToRequestMap[$requestId]->getRequest()->getResponseType();
             $result[] = self::parseSinglePart($part, $responseType);
         }
 

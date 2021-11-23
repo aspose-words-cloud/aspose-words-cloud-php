@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for removeRangeOnline operation.
  */
-class RemoveRangeOnlineRequest
+class RemoveRangeOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

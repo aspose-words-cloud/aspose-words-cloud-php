@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteMacros operation.
  */
-class DeleteMacrosRequest
+class DeleteMacrosRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

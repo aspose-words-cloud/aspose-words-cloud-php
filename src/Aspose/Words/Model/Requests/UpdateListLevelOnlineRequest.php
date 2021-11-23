@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateListLevelOnline operation.
  */
-class UpdateListLevelOnlineRequest
+class UpdateListLevelOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

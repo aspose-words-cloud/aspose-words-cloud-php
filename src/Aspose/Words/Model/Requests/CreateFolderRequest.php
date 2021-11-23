@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for createFolder operation.
  */
-class CreateFolderRequest
+class CreateFolderRequest extends BaseApiRequest
 {
     /*
      * Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.

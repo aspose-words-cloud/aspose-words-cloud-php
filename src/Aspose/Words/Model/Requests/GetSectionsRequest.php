@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getSections operation.
  */
-class GetSectionsRequest
+class GetSectionsRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

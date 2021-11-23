@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getBookmarkByName operation.
  */
-class GetBookmarkByNameRequest
+class GetBookmarkByNameRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

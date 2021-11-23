@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getFilesList operation.
  */
-class GetFilesListRequest
+class GetFilesListRequest extends BaseApiRequest
 {
     /*
      * Folder path e.g. '/folder'.

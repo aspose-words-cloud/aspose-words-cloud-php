@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteParagraph operation.
  */
-class DeleteParagraphRequest
+class DeleteParagraphRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

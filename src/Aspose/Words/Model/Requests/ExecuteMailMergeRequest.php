@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for executeMailMerge operation.
  */
-class ExecuteMailMergeRequest
+class ExecuteMailMergeRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

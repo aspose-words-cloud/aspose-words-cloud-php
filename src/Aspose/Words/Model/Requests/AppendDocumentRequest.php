@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for appendDocument operation.
  */
-class AppendDocumentRequest
+class AppendDocumentRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

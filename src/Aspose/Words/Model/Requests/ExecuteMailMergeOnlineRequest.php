@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for executeMailMergeOnline operation.
  */
-class ExecuteMailMergeOnlineRequest
+class ExecuteMailMergeOnlineRequest extends BaseApiRequest
 {
     /*
      * File with template.

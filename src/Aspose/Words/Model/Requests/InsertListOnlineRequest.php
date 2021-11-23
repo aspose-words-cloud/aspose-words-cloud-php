@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertListOnline operation.
  */
-class InsertListOnlineRequest
+class InsertListOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

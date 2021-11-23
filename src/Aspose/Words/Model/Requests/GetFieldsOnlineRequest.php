@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getFieldsOnline operation.
  */
-class GetFieldsOnlineRequest
+class GetFieldsOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for downloadFile operation.
  */
-class DownloadFileRequest
+class DownloadFileRequest extends BaseApiRequest
 {
     /*
      * Path of the file including the file name and extension e.g. /folder1/file.ext.

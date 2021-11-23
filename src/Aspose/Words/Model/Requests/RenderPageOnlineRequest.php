@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for renderPageOnline operation.
  */
-class RenderPageOnlineRequest
+class RenderPageOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

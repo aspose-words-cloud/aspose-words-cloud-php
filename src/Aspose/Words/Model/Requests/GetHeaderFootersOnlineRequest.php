@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getHeaderFootersOnline operation.
  */
-class GetHeaderFootersOnlineRequest
+class GetHeaderFootersOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

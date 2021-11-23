@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertParagraphOnline operation.
  */
-class InsertParagraphOnlineRequest
+class InsertParagraphOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for loadWebDocument operation.
  */
-class LoadWebDocumentRequest
+class LoadWebDocumentRequest extends BaseApiRequest
 {
     /*
      * The properties of data downloading.

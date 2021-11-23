@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for createOrUpdateDocumentPropertyOnline operation.
  */
-class CreateOrUpdateDocumentPropertyOnlineRequest
+class CreateOrUpdateDocumentPropertyOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

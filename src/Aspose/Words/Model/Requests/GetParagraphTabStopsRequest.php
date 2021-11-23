@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getParagraphTabStops operation.
  */
-class GetParagraphTabStopsRequest
+class GetParagraphTabStopsRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

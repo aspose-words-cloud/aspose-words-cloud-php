@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getDocumentHyperlinkByIndexOnline operation.
  */
-class GetDocumentHyperlinkByIndexOnlineRequest
+class GetDocumentHyperlinkByIndexOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

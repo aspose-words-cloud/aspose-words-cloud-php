@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for protectDocumentOnline operation.
  */
-class ProtectDocumentOnlineRequest
+class ProtectDocumentOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

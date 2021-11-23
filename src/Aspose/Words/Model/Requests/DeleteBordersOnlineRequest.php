@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteBordersOnline operation.
  */
-class DeleteBordersOnlineRequest
+class DeleteBordersOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteHeaderFooter operation.
  */
-class DeleteHeaderFooterRequest
+class DeleteHeaderFooterRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

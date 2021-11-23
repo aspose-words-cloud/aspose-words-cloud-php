@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getSectionOnline operation.
  */
-class GetSectionOnlineRequest
+class GetSectionOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

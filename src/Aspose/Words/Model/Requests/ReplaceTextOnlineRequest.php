@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for replaceTextOnline operation.
  */
-class ReplaceTextOnlineRequest
+class ReplaceTextOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

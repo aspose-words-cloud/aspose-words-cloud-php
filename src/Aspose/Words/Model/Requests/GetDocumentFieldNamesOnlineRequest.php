@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getDocumentFieldNamesOnline operation.
  */
-class GetDocumentFieldNamesOnlineRequest
+class GetDocumentFieldNamesOnlineRequest extends BaseApiRequest
 {
     /*
      * The template document.

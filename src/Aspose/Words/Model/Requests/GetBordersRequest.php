@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getBorders operation.
  */
-class GetBordersRequest
+class GetBordersRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

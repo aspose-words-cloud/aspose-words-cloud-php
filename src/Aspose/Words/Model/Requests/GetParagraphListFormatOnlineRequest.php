@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getParagraphListFormatOnline operation.
  */
-class GetParagraphListFormatOnlineRequest
+class GetParagraphListFormatOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

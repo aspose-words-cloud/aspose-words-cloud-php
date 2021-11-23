@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getComments operation.
  */
-class GetCommentsRequest
+class GetCommentsRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

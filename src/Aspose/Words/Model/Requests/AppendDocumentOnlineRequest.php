@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for appendDocumentOnline operation.
  */
-class AppendDocumentOnlineRequest
+class AppendDocumentOnlineRequest extends BaseApiRequest
 {
     /*
      * Original document.

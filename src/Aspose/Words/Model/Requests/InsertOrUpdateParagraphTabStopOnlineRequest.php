@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertOrUpdateParagraphTabStopOnline operation.
  */
-class InsertOrUpdateParagraphTabStopOnlineRequest
+class InsertOrUpdateParagraphTabStopOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

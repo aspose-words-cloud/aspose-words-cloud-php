@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteParagraphListFormat operation.
  */
-class DeleteParagraphListFormatRequest
+class DeleteParagraphListFormatRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

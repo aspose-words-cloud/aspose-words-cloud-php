@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteOfficeMathObject operation.
  */
-class DeleteOfficeMathObjectRequest
+class DeleteOfficeMathObjectRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

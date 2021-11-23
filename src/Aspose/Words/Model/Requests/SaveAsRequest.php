@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for saveAs operation.
  */
-class SaveAsRequest
+class SaveAsRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

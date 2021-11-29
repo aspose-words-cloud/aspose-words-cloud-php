@@ -45,17 +45,17 @@ class BatchTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../..') . '/TestData/Common/' . $localName;
         $request0 = new Requests\UploadFileRequest($file, $fullName);
 
-        $request1 = new Requests\GetParagraphsRequest($name=$remoteName, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder);
+        $request1 = new Requests\BatchPartRequest(new Requests\GetParagraphsRequest($name=$remoteName, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder));
 
-        $request2 = new Requests\GetParagraphRequest($name=$remoteName, $index=0, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder);
+        $request2 = new Requests\BatchPartRequest(new Requests\GetParagraphRequest($name=$remoteName, $index=0, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder));
 
         $request3Body = new \Aspose\Words\Model\ParagraphInsert(array(
             "text" => "This is a new paragraph for your document",
         ));
 
-        $request3 = new Requests\InsertParagraphRequest($name=$remoteName, $paragraph=$request3Body, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder);
+        $request3 = new Requests\BatchPartRequest(new Requests\InsertParagraphRequest($name=$remoteName, $paragraph=$request3Body, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder));
 
-        $request4 = new Requests\DeleteParagraphRequest($name=$remoteName, $index=0, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder);
+        $request4 = new Requests\BatchPartRequest(new Requests\DeleteParagraphRequest($name=$remoteName, $index=0, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder));
 
         $reportingFolder = "DocumentActions/Reporting";
         $localDocumentFile = "ReportTemplate.docx";
@@ -65,12 +65,13 @@ class BatchTests extends BaseTestContext
             "data_source_type" => "Json",
             "data_source_name" => "persons",
         ));
-        $request5 = new Requests\BuildReportOnlineRequest(
+        $buildRequest = new Requests\BuildReportOnlineRequest(
             realpath(__DIR__ . '/../../..') . "/TestData/" . $reportingFolder . "/" . $localDocumentFile,
             $localDataFile,
             $requestReportEngineSettings,
             NULL
         );
+        $request5 = new Requests\BatchPartRequest($buildRequest);
         $upload_result = $this->words->uploadFile($request0);
 
         $result = $this->words->batch(array($request1, $request2, $request3, $request4, $request5));
@@ -95,17 +96,17 @@ class BatchTests extends BaseTestContext
         $file = realpath(__DIR__ . '/../../..') . '/TestData/Common/' . $localName;
         $request0 = new Requests\UploadFileRequest($file, $fullName);
 
-        $request1 = new Requests\GetParagraphsRequest($name=$remoteName, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder);
+        $request1 = new Requests\BatchPartRequest(new Requests\GetParagraphsRequest($name=$remoteName, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder));
 
-        $request2 = new Requests\GetParagraphRequest($name=$remoteName, $index=0, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder);
+        $request2 = new Requests\BatchPartRequest(new Requests\GetParagraphRequest($name=$remoteName, $index=0, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder));
 
         $request3Body = new \Aspose\Words\Model\ParagraphInsert(array(
             "text" => "This is a new paragraph for your document",
         ));
 
-        $request3 = new Requests\InsertParagraphRequest($name=$remoteName, $paragraph=$request3Body, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder);
+        $request3 = new Requests\BatchPartRequest(new Requests\InsertParagraphRequest($name=$remoteName, $paragraph=$request3Body, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder));
 
-        $request4 = new Requests\DeleteParagraphRequest($name=$remoteName, $index=0, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder);
+        $request4 = new Requests\BatchPartRequest(new Requests\DeleteParagraphRequest($name=$remoteName, $index=0, $nodePath="sections/0", $folder=self::$baseRemoteFolderPath . $subfolder));
 
         $reportingFolder = "DocumentActions/Reporting";
         $localDocumentFile = "ReportTemplate.docx";
@@ -115,12 +116,13 @@ class BatchTests extends BaseTestContext
             "data_source_type" => "Json",
             "data_source_name" => "persons",
         ));
-        $request5 = new Requests\BuildReportOnlineRequest(
+        $buildRequest = new Requests\BuildReportOnlineRequest(
             realpath(__DIR__ . '/../../..') . "/TestData/" . $reportingFolder . "/" . $localDocumentFile,
             $localDataFile,
             $requestReportEngineSettings,
             NULL
         );
+        $request5 = new Requests\BatchPartRequest($buildRequest);
         $upload_result = $this->words->uploadFile($request0);
 
         $result = $this->words->batch(array($request1, $request2, $request3, $request4, $request5), false);

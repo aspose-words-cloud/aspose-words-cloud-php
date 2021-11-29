@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for buildReportOnline operation.
  */
-class BuildReportOnlineRequest
+class BuildReportOnlineRequest extends BaseApiRequest
 {
     /*
      * File with template.

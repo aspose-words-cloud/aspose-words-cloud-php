@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for renderParagraph operation.
  */
-class RenderParagraphRequest
+class RenderParagraphRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

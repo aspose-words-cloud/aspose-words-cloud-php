@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for acceptAllRevisions operation.
  */
-class AcceptAllRevisionsRequest
+class AcceptAllRevisionsRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

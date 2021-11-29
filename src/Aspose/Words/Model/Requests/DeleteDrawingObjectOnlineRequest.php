@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteDrawingObjectOnline operation.
  */
-class DeleteDrawingObjectOnlineRequest
+class DeleteDrawingObjectOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

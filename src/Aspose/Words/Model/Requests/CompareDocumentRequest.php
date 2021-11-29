@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for compareDocument operation.
  */
-class CompareDocumentRequest
+class CompareDocumentRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

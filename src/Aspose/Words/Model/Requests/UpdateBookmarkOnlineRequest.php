@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateBookmarkOnline operation.
  */
-class UpdateBookmarkOnlineRequest
+class UpdateBookmarkOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

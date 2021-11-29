@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getFormFieldOnline operation.
  */
-class GetFormFieldOnlineRequest
+class GetFormFieldOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

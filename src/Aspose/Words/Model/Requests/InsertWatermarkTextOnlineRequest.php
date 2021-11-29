@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertWatermarkTextOnline operation.
  */
-class InsertWatermarkTextOnlineRequest
+class InsertWatermarkTextOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

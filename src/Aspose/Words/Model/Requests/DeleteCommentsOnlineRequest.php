@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteCommentsOnline operation.
  */
-class DeleteCommentsOnlineRequest
+class DeleteCommentsOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

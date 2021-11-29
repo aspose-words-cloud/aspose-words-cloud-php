@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getDocumentDrawingObjectImageData operation.
  */
-class GetDocumentDrawingObjectImageDataRequest
+class GetDocumentDrawingObjectImageDataRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

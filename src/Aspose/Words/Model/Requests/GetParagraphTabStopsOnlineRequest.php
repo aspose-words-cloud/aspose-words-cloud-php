@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getParagraphTabStopsOnline operation.
  */
-class GetParagraphTabStopsOnlineRequest
+class GetParagraphTabStopsOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

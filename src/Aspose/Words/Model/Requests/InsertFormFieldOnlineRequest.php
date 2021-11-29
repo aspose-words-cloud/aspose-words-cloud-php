@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertFormFieldOnline operation.
  */
-class InsertFormFieldOnlineRequest
+class InsertFormFieldOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

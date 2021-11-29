@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteFile operation.
  */
-class DeleteFileRequest
+class DeleteFileRequest extends BaseApiRequest
 {
     /*
      * Path of the file including the file name and extension e.g. /folder1/file.ext.

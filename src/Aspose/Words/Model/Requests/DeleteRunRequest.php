@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteRun operation.
  */
-class DeleteRunRequest
+class DeleteRunRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

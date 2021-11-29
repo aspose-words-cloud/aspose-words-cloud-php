@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertHeaderFooter operation.
  */
-class InsertHeaderFooterRequest
+class InsertHeaderFooterRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

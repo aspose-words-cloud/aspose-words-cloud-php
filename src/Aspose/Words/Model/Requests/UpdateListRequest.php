@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateList operation.
  */
-class UpdateListRequest
+class UpdateListRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

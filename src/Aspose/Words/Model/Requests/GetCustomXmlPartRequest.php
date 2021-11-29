@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getCustomXmlPart operation.
  */
-class GetCustomXmlPartRequest
+class GetCustomXmlPartRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

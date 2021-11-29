@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for moveFolder operation.
  */
-class MoveFolderRequest
+class MoveFolderRequest extends BaseApiRequest
 {
     /*
      * Destination folder path to move to e.g '/dst'.

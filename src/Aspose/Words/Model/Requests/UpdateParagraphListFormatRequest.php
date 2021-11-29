@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateParagraphListFormat operation.
  */
-class UpdateParagraphListFormatRequest
+class UpdateParagraphListFormatRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getAvailableFonts operation.
  */
-class GetAvailableFontsRequest
+class GetAvailableFontsRequest extends BaseApiRequest
 {
     /*
      * The folder in cloud storage with custom fonts.

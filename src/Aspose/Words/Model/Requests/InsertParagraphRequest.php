@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertParagraph operation.
  */
-class InsertParagraphRequest
+class InsertParagraphRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

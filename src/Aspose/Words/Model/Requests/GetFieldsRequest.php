@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getFields operation.
  */
-class GetFieldsRequest
+class GetFieldsRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

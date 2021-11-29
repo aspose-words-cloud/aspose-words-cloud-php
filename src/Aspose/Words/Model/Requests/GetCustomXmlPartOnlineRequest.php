@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getCustomXmlPartOnline operation.
  */
-class GetCustomXmlPartOnlineRequest
+class GetCustomXmlPartOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

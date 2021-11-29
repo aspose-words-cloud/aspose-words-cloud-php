@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteParagraphTabStopOnline operation.
  */
-class DeleteParagraphTabStopOnlineRequest
+class DeleteParagraphTabStopOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

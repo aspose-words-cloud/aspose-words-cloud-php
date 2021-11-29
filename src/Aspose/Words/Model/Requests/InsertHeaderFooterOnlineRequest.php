@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertHeaderFooterOnline operation.
  */
-class InsertHeaderFooterOnlineRequest
+class InsertHeaderFooterOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

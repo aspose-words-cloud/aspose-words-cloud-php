@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteCustomXmlPartOnline operation.
  */
-class DeleteCustomXmlPartOnlineRequest
+class DeleteCustomXmlPartOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

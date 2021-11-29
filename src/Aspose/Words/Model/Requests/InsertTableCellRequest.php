@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertTableCell operation.
  */
-class InsertTableCellRequest
+class InsertTableCellRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

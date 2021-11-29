@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateSectionPageSetup operation.
  */
-class UpdateSectionPageSetupRequest
+class UpdateSectionPageSetupRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getParagraphFormat operation.
  */
-class GetParagraphFormatRequest
+class GetParagraphFormatRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

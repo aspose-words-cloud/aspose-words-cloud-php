@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for search operation.
  */
-class SearchRequest
+class SearchRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

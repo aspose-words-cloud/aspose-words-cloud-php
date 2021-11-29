@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteComment operation.
  */
-class DeleteCommentRequest
+class DeleteCommentRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

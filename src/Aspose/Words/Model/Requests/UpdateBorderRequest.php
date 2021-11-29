@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateBorder operation.
  */
-class UpdateBorderRequest
+class UpdateBorderRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

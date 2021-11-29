@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getList operation.
  */
-class GetListRequest
+class GetListRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

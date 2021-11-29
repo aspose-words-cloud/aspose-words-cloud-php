@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for buildReport operation.
  */
-class BuildReportRequest
+class BuildReportRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

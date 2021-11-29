@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getOfficeMathObjectsOnline operation.
  */
-class GetOfficeMathObjectsOnlineRequest
+class GetOfficeMathObjectsOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateTableProperties operation.
  */
-class UpdateTablePropertiesRequest
+class UpdateTablePropertiesRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

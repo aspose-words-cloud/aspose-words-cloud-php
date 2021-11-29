@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for resetCache operation.
  */
-class ResetCacheRequest
+class ResetCacheRequest extends BaseApiRequest
 {
 
     /*

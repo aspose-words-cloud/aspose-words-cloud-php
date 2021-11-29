@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for copyFolder operation.
  */
-class CopyFolderRequest
+class CopyFolderRequest extends BaseApiRequest
 {
     /*
      * Destination folder path e.g. '/dst'.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getStylesOnline operation.
  */
-class GetStylesOnlineRequest
+class GetStylesOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getDocumentDrawingObjectOleDataOnline operation.
  */
-class GetDocumentDrawingObjectOleDataOnlineRequest
+class GetDocumentDrawingObjectOleDataOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.

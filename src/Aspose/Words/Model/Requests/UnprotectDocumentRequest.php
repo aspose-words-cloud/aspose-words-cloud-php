@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for unprotectDocument operation.
  */
-class UnprotectDocumentRequest
+class UnprotectDocumentRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

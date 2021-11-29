@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getPublicKey operation.
  */
-class GetPublicKeyRequest
+class GetPublicKeyRequest extends BaseApiRequest
 {
 
     /*

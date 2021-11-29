@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertStyle operation.
  */
-class InsertStyleRequest
+class InsertStyleRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

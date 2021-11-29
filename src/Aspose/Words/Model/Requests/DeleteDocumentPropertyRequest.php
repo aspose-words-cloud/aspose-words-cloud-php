@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteDocumentProperty operation.
  */
-class DeleteDocumentPropertyRequest
+class DeleteDocumentPropertyRequest extends BaseApiRequest
 {
     /*
      * The filename of the input document.

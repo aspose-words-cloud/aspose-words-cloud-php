@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for classify operation.
  */
-class ClassifyRequest extends BaseApiRequest
+class ClassifyRequest
 {
     /*
      * The text to classify.

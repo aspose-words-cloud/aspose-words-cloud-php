@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateFormField operation.
  */
-class UpdateFormFieldRequest extends BaseApiRequest
+class UpdateFormFieldRequest
 {
     /*
      * The filename of the input document.

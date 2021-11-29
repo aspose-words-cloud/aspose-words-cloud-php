@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getRangeText operation.
  */
-class GetRangeTextRequest extends BaseApiRequest
+class GetRangeTextRequest
 {
     /*
      * The filename of the input document.

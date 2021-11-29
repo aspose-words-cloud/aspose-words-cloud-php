@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteFolder operation.
  */
-class DeleteFolderRequest extends BaseApiRequest
+class DeleteFolderRequest
 {
     /*
      * Folder path e.g. '/folder'.

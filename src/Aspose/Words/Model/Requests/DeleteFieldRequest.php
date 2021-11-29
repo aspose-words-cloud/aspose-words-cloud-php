@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteField operation.
  */
-class DeleteFieldRequest extends BaseApiRequest
+class DeleteFieldRequest
 {
     /*
      * The filename of the input document.

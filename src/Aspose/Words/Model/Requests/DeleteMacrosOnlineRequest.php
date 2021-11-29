@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteMacrosOnline operation.
  */
-class DeleteMacrosOnlineRequest extends BaseApiRequest
+class DeleteMacrosOnlineRequest
 {
     /*
      * The document.

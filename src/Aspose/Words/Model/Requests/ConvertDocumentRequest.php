@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for convertDocument operation.
  */
-class ConvertDocumentRequest extends BaseApiRequest
+class ConvertDocumentRequest
 {
     /*
      * Converting document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteTableCellOnline operation.
  */
-class DeleteTableCellOnlineRequest extends BaseApiRequest
+class DeleteTableCellOnlineRequest
 {
     /*
      * The document.

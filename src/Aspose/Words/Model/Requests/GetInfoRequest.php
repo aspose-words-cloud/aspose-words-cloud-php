@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getInfo operation.
  */
-class GetInfoRequest extends BaseApiRequest
+class GetInfoRequest
 {
 
     /*

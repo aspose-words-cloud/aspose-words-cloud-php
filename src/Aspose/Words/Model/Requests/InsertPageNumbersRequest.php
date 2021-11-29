@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertPageNumbers operation.
  */
-class InsertPageNumbersRequest extends BaseApiRequest
+class InsertPageNumbersRequest
 {
     /*
      * The filename of the input document.

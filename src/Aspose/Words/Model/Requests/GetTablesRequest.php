@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getTables operation.
  */
-class GetTablesRequest extends BaseApiRequest
+class GetTablesRequest
 {
     /*
      * The filename of the input document.

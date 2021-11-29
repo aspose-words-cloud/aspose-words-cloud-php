@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteWatermark operation.
  */
-class DeleteWatermarkRequest extends BaseApiRequest
+class DeleteWatermarkRequest
 {
     /*
      * The filename of the input document.

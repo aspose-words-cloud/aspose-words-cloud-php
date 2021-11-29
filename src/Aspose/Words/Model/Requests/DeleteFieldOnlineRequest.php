@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteFieldOnline operation.
  */
-class DeleteFieldOnlineRequest extends BaseApiRequest
+class DeleteFieldOnlineRequest
 {
     /*
      * The document.

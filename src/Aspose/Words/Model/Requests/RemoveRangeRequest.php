@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for removeRange operation.
  */
-class RemoveRangeRequest extends BaseApiRequest
+class RemoveRangeRequest
 {
     /*
      * The filename of the input document.

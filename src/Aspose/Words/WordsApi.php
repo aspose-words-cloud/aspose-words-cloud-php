@@ -50499,13 +50499,13 @@ class WordsApi
         $idToRequestMap = array();
         foreach ($requests as $request)
         {
-            $reqId = $request->getRequestId();
-            $partData = ObjectSerializer::createBatchPart($this->config, $request);
+            $reqId = ObjectSerializer::guidv4();
+            $partData = ObjectSerializer::createBatchPart($this->config, $request, $reqId);
             $multipartContents[] = [
                 'name' => sha1(uniqid('', true)),
                 'filename' => sha1(uniqid('', true)),
                 'contents' => $partData,
-                'headers' => ['Content-Type' => 'application/http; msgtype=request']
+                'headers' => ['Content-Type' => 'application/http; msgtype=request', 'RequestId' => $reqId]
             ];
             $idToRequestMap[$reqId] = $request;
         }

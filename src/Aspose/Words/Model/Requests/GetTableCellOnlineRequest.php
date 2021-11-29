@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getTableCellOnline operation.
  */
-class GetTableCellOnlineRequest extends BaseApiRequest
+class GetTableCellOnlineRequest
 {
     /*
      * The document.

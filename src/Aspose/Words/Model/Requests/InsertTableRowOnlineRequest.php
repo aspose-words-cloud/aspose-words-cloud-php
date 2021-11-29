@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertTableRowOnline operation.
  */
-class InsertTableRowOnlineRequest extends BaseApiRequest
+class InsertTableRowOnlineRequest
 {
     /*
      * The document.

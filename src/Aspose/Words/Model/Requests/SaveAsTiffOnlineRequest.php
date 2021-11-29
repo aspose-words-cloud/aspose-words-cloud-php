@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for saveAsTiffOnline operation.
  */
-class SaveAsTiffOnlineRequest extends BaseApiRequest
+class SaveAsTiffOnlineRequest
 {
     /*
      * The document.

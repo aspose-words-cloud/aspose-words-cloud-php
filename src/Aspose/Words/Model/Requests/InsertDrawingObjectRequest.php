@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertDrawingObject operation.
  */
-class InsertDrawingObjectRequest extends BaseApiRequest
+class InsertDrawingObjectRequest
 {
     /*
      * The filename of the input document.

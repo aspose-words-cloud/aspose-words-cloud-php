@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteTable operation.
  */
-class DeleteTableRequest extends BaseApiRequest
+class DeleteTableRequest
 {
     /*
      * The filename of the input document.

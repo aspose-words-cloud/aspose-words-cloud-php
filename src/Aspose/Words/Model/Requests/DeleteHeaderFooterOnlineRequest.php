@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteHeaderFooterOnline operation.
  */
-class DeleteHeaderFooterOnlineRequest extends BaseApiRequest
+class DeleteHeaderFooterOnlineRequest
 {
     /*
      * The document.

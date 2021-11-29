@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for saveAsRange operation.
  */
-class SaveAsRangeRequest extends BaseApiRequest
+class SaveAsRangeRequest
 {
     /*
      * The filename of the input document.

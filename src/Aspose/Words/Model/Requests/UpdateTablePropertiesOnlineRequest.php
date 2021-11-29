@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateTablePropertiesOnline operation.
  */
-class UpdateTablePropertiesOnlineRequest extends BaseApiRequest
+class UpdateTablePropertiesOnlineRequest
 {
     /*
      * The document.

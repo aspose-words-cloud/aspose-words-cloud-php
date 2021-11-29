@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteSectionOnline operation.
  */
-class DeleteSectionOnlineRequest extends BaseApiRequest
+class DeleteSectionOnlineRequest
 {
     /*
      * The document.

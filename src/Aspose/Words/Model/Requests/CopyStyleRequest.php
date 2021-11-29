@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for copyStyle operation.
  */
-class CopyStyleRequest extends BaseApiRequest
+class CopyStyleRequest
 {
     /*
      * The filename of the input document.

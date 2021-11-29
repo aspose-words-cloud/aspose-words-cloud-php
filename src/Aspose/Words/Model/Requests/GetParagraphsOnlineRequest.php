@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getParagraphsOnline operation.
  */
-class GetParagraphsOnlineRequest extends BaseApiRequest
+class GetParagraphsOnlineRequest
 {
     /*
      * The document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertFootnoteOnline operation.
  */
-class InsertFootnoteOnlineRequest extends BaseApiRequest
+class InsertFootnoteOnlineRequest
 {
     /*
      * The document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getRunFont operation.
  */
-class GetRunFontRequest extends BaseApiRequest
+class GetRunFontRequest
 {
     /*
      * The filename of the input document.

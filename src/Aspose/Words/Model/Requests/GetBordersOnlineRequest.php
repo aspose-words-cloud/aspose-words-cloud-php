@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getBordersOnline operation.
  */
-class GetBordersOnlineRequest extends BaseApiRequest
+class GetBordersOnlineRequest
 {
     /*
      * The document.

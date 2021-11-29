@@ -53,6 +53,7 @@ class ExecuteMailMergeTests extends BaseTestContext
             $requestData,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -79,6 +80,7 @@ class ExecuteMailMergeTests extends BaseTestContext
         $request = new ExecuteMailMergeRequest(
             $remoteFileName,
             $localDataFile,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,

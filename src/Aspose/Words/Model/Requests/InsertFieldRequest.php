@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertField operation.
  */
-class InsertFieldRequest extends BaseApiRequest
+class InsertFieldRequest
 {
     /*
      * The filename of the input document.

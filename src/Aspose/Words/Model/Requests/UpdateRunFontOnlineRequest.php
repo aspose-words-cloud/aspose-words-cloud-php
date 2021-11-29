@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateRunFontOnline operation.
  */
-class UpdateRunFontOnlineRequest extends BaseApiRequest
+class UpdateRunFontOnlineRequest
 {
     /*
      * The document.

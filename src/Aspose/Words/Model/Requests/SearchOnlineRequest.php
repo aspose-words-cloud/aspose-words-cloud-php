@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for searchOnline operation.
  */
-class SearchOnlineRequest extends BaseApiRequest
+class SearchOnlineRequest
 {
     /*
      * The document.

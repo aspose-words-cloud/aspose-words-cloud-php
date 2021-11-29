@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getTableCellFormat operation.
  */
-class GetTableCellFormatRequest extends BaseApiRequest
+class GetTableCellFormatRequest
 {
     /*
      * The filename of the input document.

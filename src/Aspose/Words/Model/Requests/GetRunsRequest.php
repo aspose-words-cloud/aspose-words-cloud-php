@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getRuns operation.
  */
-class GetRunsRequest extends BaseApiRequest
+class GetRunsRequest
 {
     /*
      * The filename of the input document.

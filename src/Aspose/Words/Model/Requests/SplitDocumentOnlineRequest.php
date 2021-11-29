@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for splitDocumentOnline operation.
  */
-class SplitDocumentOnlineRequest extends BaseApiRequest
+class SplitDocumentOnlineRequest
 {
     /*
      * The document.

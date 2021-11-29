@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getDocumentWithFormat operation.
  */
-class GetDocumentWithFormatRequest extends BaseApiRequest
+class GetDocumentWithFormatRequest
 {
     /*
      * The filename of the input document.

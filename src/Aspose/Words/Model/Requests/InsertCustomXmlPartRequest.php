@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertCustomXmlPart operation.
  */
-class InsertCustomXmlPartRequest extends BaseApiRequest
+class InsertCustomXmlPartRequest
 {
     /*
      * The filename of the input document.

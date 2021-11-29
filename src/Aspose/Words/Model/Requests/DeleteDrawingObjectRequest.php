@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteDrawingObject operation.
  */
-class DeleteDrawingObjectRequest extends BaseApiRequest
+class DeleteDrawingObjectRequest
 {
     /*
      * The filename of the input document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getDocumentStatistics operation.
  */
-class GetDocumentStatisticsRequest extends BaseApiRequest
+class GetDocumentStatisticsRequest
 {
     /*
      * The filename of the input document.

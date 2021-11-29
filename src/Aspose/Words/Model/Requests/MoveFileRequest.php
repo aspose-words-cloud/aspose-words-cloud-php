@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for moveFile operation.
  */
-class MoveFileRequest extends BaseApiRequest
+class MoveFileRequest
 {
     /*
      * Destination file path e.g. '/dest.ext'.

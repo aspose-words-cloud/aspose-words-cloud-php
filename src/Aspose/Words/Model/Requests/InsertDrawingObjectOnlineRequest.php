@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertDrawingObjectOnline operation.
  */
-class InsertDrawingObjectOnlineRequest extends BaseApiRequest
+class InsertDrawingObjectOnlineRequest
 {
     /*
      * The document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for renderPage operation.
  */
-class RenderPageRequest extends BaseApiRequest
+class RenderPageRequest
 {
     /*
      * The filename of the input document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertWatermarkImage operation.
  */
-class InsertWatermarkImageRequest extends BaseApiRequest
+class InsertWatermarkImageRequest
 {
     /*
      * The filename of the input document.

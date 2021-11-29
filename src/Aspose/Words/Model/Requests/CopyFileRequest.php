@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for copyFile operation.
  */
-class CopyFileRequest extends BaseApiRequest
+class CopyFileRequest
 {
     /*
      * Destination file path.

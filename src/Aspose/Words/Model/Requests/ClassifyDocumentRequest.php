@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for classifyDocument operation.
  */
-class ClassifyDocumentRequest extends BaseApiRequest
+class ClassifyDocumentRequest
 {
     /*
      * The document name.

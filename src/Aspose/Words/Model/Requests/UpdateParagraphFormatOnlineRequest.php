@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateParagraphFormatOnline operation.
  */
-class UpdateParagraphFormatOnlineRequest extends BaseApiRequest
+class UpdateParagraphFormatOnlineRequest
 {
     /*
      * The document.

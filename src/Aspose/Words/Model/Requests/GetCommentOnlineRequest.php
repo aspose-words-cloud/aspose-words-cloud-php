@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for getCommentOnline operation.
  */
-class GetCommentOnlineRequest extends BaseApiRequest
+class GetCommentOnlineRequest
 {
     /*
      * The document.

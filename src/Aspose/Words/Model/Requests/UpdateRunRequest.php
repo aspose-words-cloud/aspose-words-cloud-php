@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for updateRun operation.
  */
-class UpdateRunRequest extends BaseApiRequest
+class UpdateRunRequest
 {
     /*
      * The filename of the input document.

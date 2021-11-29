@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for applyStyleToDocumentElement operation.
  */
-class ApplyStyleToDocumentElementRequest extends BaseApiRequest
+class ApplyStyleToDocumentElementRequest
 {
     /*
      * The filename of the input document.

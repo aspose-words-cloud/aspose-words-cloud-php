@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for renderMathObject operation.
  */
-class RenderMathObjectRequest extends BaseApiRequest
+class RenderMathObjectRequest
 {
     /*
      * The filename of the input document.

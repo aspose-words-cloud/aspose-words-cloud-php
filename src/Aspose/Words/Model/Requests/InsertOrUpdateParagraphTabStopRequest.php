@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for insertOrUpdateParagraphTabStop operation.
  */
-class InsertOrUpdateParagraphTabStopRequest extends BaseApiRequest
+class InsertOrUpdateParagraphTabStopRequest
 {
     /*
      * The filename of the input document.

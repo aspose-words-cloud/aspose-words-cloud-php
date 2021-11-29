@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteBorder operation.
  */
-class DeleteBorderRequest extends BaseApiRequest
+class DeleteBorderRequest
 {
     /*
      * The filename of the input document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for deleteFootnote operation.
  */
-class DeleteFootnoteRequest extends BaseApiRequest
+class DeleteFootnoteRequest
 {
     /*
      * The filename of the input document.

@@ -42,7 +42,7 @@ use phpseclib3\Crypt\RSA;
 /*
  * Request model for saveAsRangeOnline operation.
  */
-class SaveAsRangeOnlineRequest extends BaseApiRequest
+class SaveAsRangeOnlineRequest
 {
     /*
      * The document.

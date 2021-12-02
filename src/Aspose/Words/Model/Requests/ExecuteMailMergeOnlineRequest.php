@@ -55,6 +55,11 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
     public $data;
 
     /*
+     * Mail merge options.
+     */
+    public $options;
+
+    /*
      * The flag indicating whether to execute Mail Merge operation with regions.
      */
     public $with_regions;
@@ -74,14 +79,16 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
      *
      * @param \SplFileObject $template File with template.
      * @param \SplFileObject $data File with mailmerge data.
+     * @param \Aspose\Words\Model\FieldOptions $options Mail merge options.
      * @param bool $with_regions The flag indicating whether to execute Mail Merge operation with regions.
      * @param string $cleanup The cleanup options.
      * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
-    public function __construct($template, $data, $with_regions = null, $cleanup = null, $document_file_name = null)
+    public function __construct($template, $data, $options = null, $with_regions = null, $cleanup = null, $document_file_name = null)
     {
         $this->template = $template;
         $this->data = $data;
+        $this->options = $options;
         $this->with_regions = $with_regions;
         $this->cleanup = $cleanup;
         $this->document_file_name = $document_file_name;
@@ -118,6 +125,23 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
     public function set_data($value)
     {
         $this->data = $value;
+        return $this;
+    }
+
+    /*
+     * Mail merge options.
+     */
+    public function get_options()
+    {
+        return $this->options;
+    }
+
+    /*
+     * Mail merge options.
+     */
+    public function set_options($value)
+    {
+        $this->options = $value;
         return $this;
     }
 
@@ -251,6 +275,11 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
             $formParams['data'] = ['content' => $contents, 'mime' => 'application/octet-stream'];
+        }
+        // form params
+        if ($this->options !== null) {
+            $multipart = true; 
+            $formParams['options'] = ['content' => ObjectSerializer::toFormValue($this->options), 'mime' => 'application/json'];
         }
 
         // body params

@@ -50566,10 +50566,15 @@ class WordsApi
     {
         $options = [];
         if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
+            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'w');
             if (!$options[RequestOptions::DEBUG]) {
                 throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
+        }
+
+        if ($this->config->getTimeout() != 0)
+        {
+            $options[RequestOptions::TIMEOUT] = $this->config->getTimeout();
         }
 
         return $options;
@@ -50599,7 +50604,14 @@ class WordsApi
     private function _writeHeadersAndBody($logInfo, $headers, $body)
     {
         foreach ($headers as $name => $value) {
-            $logInfo .= $name . ': ' . $value . "\n";
+            if (is_array($value))
+            {
+                $logInfo .= $name . ': ' . implode($value) . "\n";
+            }
+            else
+            {
+                $logInfo .= $name . ': ' . $value . "\n";
+            }
         }
 
         return $logInfo .= "Body: " . $body . "\n";

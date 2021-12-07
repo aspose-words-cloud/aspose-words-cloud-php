@@ -32,4 +32,40 @@ namespace Aspose\Words\Model\Requests;
  */
 class BaseApiRequest
 {
+    /*
+     * Executes response logging
+     */
+    protected function _writeResponseLog($statusCode, $headers, $body)
+    {
+        $logInfo = "\nResponse: $statusCode \n";
+        echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
+    }
+
+    /*
+     * Executes request logging
+     */
+    protected function _writeRequestLog($method, $url, $headers, $body)
+    {
+        $logInfo = "\n$method: $url \n";
+        echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
+    }
+
+    /*
+     * Executes header and body formatting
+     */
+    protected function _writeHeadersAndBody($logInfo, $headers, $body)
+    {
+        foreach ($headers as $name => $value) {
+            if (is_array($value))
+            {
+                $logInfo .= $name . ': ' . implode($value) . "\n";
+            }
+            else
+            {
+                $logInfo .= $name . ': ' . $value . "\n";
+            }
+        }
+
+        return $logInfo .= "Body: " . $body . "\n";
+    }
 }

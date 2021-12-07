@@ -55,7 +55,7 @@ class ExecuteMailMergeRequest extends BaseApiRequest
     public $data;
 
     /*
-     * Mail merge options.
+     * Field options.
      */
     public $options;
 
@@ -109,7 +109,7 @@ class ExecuteMailMergeRequest extends BaseApiRequest
      *
      * @param string $name The filename of the input document.
      * @param string $data Mail merge data.
-     * @param \Aspose\Words\Model\FieldOptions $options Mail merge options.
+     * @param \Aspose\Words\Model\FieldOptions $options Field options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -171,7 +171,7 @@ class ExecuteMailMergeRequest extends BaseApiRequest
     }
 
     /*
-     * Mail merge options.
+     * Field options.
      */
     public function get_options()
     {
@@ -179,7 +179,7 @@ class ExecuteMailMergeRequest extends BaseApiRequest
     }
 
     /*
-     * Mail merge options.
+     * Field options.
      */
     public function set_options($value)
     {

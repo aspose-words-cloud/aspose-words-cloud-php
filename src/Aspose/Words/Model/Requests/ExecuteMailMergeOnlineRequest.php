@@ -55,7 +55,7 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
     public $data;
 
     /*
-     * Mail merge options.
+     * Field options.
      */
     public $options;
 
@@ -79,7 +79,7 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
      *
      * @param \SplFileObject $template File with template.
      * @param \SplFileObject $data File with mailmerge data.
-     * @param \Aspose\Words\Model\FieldOptions $options Mail merge options.
+     * @param \Aspose\Words\Model\FieldOptions $options Field options.
      * @param bool $with_regions The flag indicating whether to execute Mail Merge operation with regions.
      * @param string $cleanup The cleanup options.
      * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
@@ -129,7 +129,7 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Mail merge options.
+     * Field options.
      */
     public function get_options()
     {
@@ -137,7 +137,7 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Mail merge options.
+     * Field options.
      */
     public function set_options($value)
     {

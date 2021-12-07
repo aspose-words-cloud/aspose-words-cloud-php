@@ -43,6 +43,7 @@ class ReportBuildOptions
     const ALLOW_MISSING_MEMBERS = 'AllowMissingMembers';
     const REMOVE_EMPTY_PARAGRAPHS = 'RemoveEmptyParagraphs';
     const INLINE_ERROR_MESSAGES = 'InlineErrorMessages';
+    const USE_LEGACY_HEADER_FOOTER_VISITING = 'UseLegacyHeaderFooterVisiting';
 
     /*
      * Gets allowable values of the enum
@@ -54,7 +55,8 @@ class ReportBuildOptions
             self::NONE,
             self::ALLOW_MISSING_MEMBERS,
             self::REMOVE_EMPTY_PARAGRAPHS,
-            self::INLINE_ERROR_MESSAGES
+            self::INLINE_ERROR_MESSAGES,
+            self::USE_LEGACY_HEADER_FOOTER_VISITING
         ];
     }
 }

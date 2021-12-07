@@ -15,7 +15,10 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 
 ## Enhancements in Version 21.12
 
-
+- Added dependsOn and resultOf features for batch requests
+- Added query parameter 'displayIntermediateResults' for batch requests. If 'false', the last response in batch will be returned only. Default is 'true'
+- Added 'timeout' in seconds
+- Support encryption of 'CommonRequest.Password'. Automatic encryption of all passwords sent to the API server as request parameters.
 
 ## Enhancements in Version 21.11
 

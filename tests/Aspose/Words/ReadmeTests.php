@@ -51,7 +51,8 @@ class ReadmeTests extends BaseTestContext
 
         // Start README example
 
-        $api = new WordsApi($clientId, $clientSecret);
+        // You can specify baseUrl directly in WordsApi constructor or set later
+        $api = new WordsApi($clientId, $clientSecret, $baseUrl);
         // the step is optional, the default value is https://api.aspose.cloud
         $api->getConfig()->setHost($baseUrl);
 

@@ -35,6 +35,8 @@ use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\Model\Requests;
+use phpseclib3\Crypt\PublicKeyLoader;
+use phpseclib3\Math\BigInteger;
 
 /*
  * WordsApi Aspose.Words for Cloud API.
@@ -59,7 +61,7 @@ class WordsApi
      * @param string   $clientSecret client secret
      * @param string   $baseUrl base url for requests
      */
-    public function __construct(string $clientId, string $clientSecret)
+    public function __construct(string $clientId, string $clientSecret, string $baseUrl = null)
     {
         if (!isset($clientId) || trim($clientId) === '') {
             throw new ApiException('clientId could not be an empty string.');
@@ -71,6 +73,11 @@ class WordsApi
 
         $this->client = new Client();
         $this->config = new Configuration($clientId, $clientSecret);
+        if (!empty($baseUrl))
+        {
+            $this->config->setHost($baseUrl);
+        }
+        $this->_checkRsaKey();
     }
 
     /*
@@ -22439,6 +22446,176 @@ class WordsApi
     private function getHeaderFootersOnlineAsyncWithHttpInfo(Requests\getHeaderFootersOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation getInfo
+     *
+     * Returns application info.
+     *
+     * @param Requests\getInfoRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\InfoResponse
+     */
+    public function getInfo(Requests\getInfoRequest $request)
+    {
+        try {
+            list($response) = $this->getInfoWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->getInfoWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation getInfoWithHttpInfo
+     *
+     * Returns application info.
+     *
+     * @param Requests\getInfoRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\InfoResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function getInfoWithHttpInfo(Requests\getInfoRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\InfoResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\InfoResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getInfoAsync
+     *
+     * Returns application info.
+     *
+     * @param Requests\getInfoRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getInfoAsync(Requests\getInfoRequest $request) 
+    {
+        return $this->getInfoAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getInfoAsyncWithHttpInfo
+     *
+     * Returns application info.
+     *
+     * @param Requests\getInfoRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function getInfoAsyncWithHttpInfo(Requests\getInfoRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\InfoResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -50249,18 +50426,19 @@ class WordsApi
      * Operation bacth requests
      *
      * @param array of requests
+     * @param display intermediate results or not
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of response objects
      */
-    public function batch($requests)
+    public function batch($requests, $displayIntermediateResults = true)
     {
         try {
-            return $this->batchWithHttpInfo($requests);
+            return $this->batchWithHttpInfo($requests, $displayIntermediateResults);
         }
         catch(RepeatRequestException $e) {
-            return $this->batchWithHttpInfo($requests);
+            return $this->batchWithHttpInfo($requests, $displayIntermediateResults);
         }
     }
 
@@ -50268,27 +50446,29 @@ class WordsApi
      * Operation batch requests
      *
      * @param array of requests
+     * @param display intermediate results or not
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of response objects
      */
-    private function batchWithHttpInfo($requests)
+    private function batchWithHttpInfo($requests, $displayIntermediateResults = true)
     {
-        return $this->batchAsyncWithHttpInfo($requests)->wait();
+        return $this->batchAsyncWithHttpInfo($requests, $displayIntermediateResults)->wait();
     }
 
     /*
      * Async operation batch requests
      *
      * @param array of requests
+     * @param display intermediate results or not
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function batchAsync($requests) 
+    public function batchAsync($requests, $displayIntermediateResults = true) 
     {
-        return $this->batchAsyncWithHttpInfo($requests)
+        return $this->batchAsyncWithHttpInfo($requests, $displayIntermediateResults)
             ->then(
                 function ($response) {
                     return $response;
@@ -50300,11 +50480,12 @@ class WordsApi
      * Async operation batch requests
      *
      * @param array of requests
+     * @param display intermediate results or not
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    private function batchAsyncWithHttpInfo($requests) 
+    private function batchAsyncWithHttpInfo($requests, $displayIntermediateResults = true) 
     {
         if (count($requests) == 0)
         {
@@ -50315,8 +50496,10 @@ class WordsApi
         $this->_checkAuthToken();
 
         $multipartContents = [];
+        $idToRequestMap = array();
         foreach ($requests as $request)
         {
+            $reqId = $request->getRequestId();
             $partData = ObjectSerializer::createBatchPart($this->config, $request);
             $multipartContents[] = [
                 'name' => sha1(uniqid('', true)),
@@ -50324,6 +50507,7 @@ class WordsApi
                 'contents' => $partData,
                 'headers' => ['Content-Type' => 'application/http; msgtype=request']
             ];
+            $idToRequestMap[$reqId] = $request;
         }
 
         $headers = [];
@@ -50340,7 +50524,8 @@ class WordsApi
         $headers['Content-Type'] = "multipart/form-data; boundary=" . $httpBody->getBoundary();
 
         $method = 'PUT';
-        $url = ObjectSerializer::parseURL($this->config, '/words/batch', array());
+        $apiUrl = !$displayIntermediateResults ? '/words/batch?displayIntermediateResults=false' : '/words/batch';
+        $url = ObjectSerializer::parseURL($this->config, $apiUrl, array());
         $batchRequest = new Request(
             $method,
             $url,
@@ -50355,8 +50540,8 @@ class WordsApi
         return $this->client
             ->sendAsync($batchRequest, $options)
             ->then(
-                function ($response) use ($requests) {
-                    return ObjectSerializer::parseBatchResponse($response, $requests);
+                function ($response) use ($requests, $displayIntermediateResults, $idToRequestMap) {
+                    return ObjectSerializer::parseBatchResponse($response, $requests, $displayIntermediateResults, $idToRequestMap);
                 },
                 function ($e) use ($batchRequest) {
                     if ($e->getCode() == 401) {
@@ -50381,10 +50566,15 @@ class WordsApi
     {
         $options = [];
         if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
+            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'w');
             if (!$options[RequestOptions::DEBUG]) {
                 throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
+        }
+
+        if ($this->config->getTimeout() != 0)
+        {
+            $options[RequestOptions::TIMEOUT] = $this->config->getTimeout();
         }
 
         return $options;
@@ -50409,12 +50599,19 @@ class WordsApi
     }
 
     /*
-     * Executes header and boy formatting
+     * Executes header and body formatting
      */
     private function _writeHeadersAndBody($logInfo, $headers, $body)
     {
         foreach ($headers as $name => $value) {
-            $logInfo .= $name . ': ' . $value . "\n";
+            if (is_array($value))
+            {
+                $logInfo .= $name . ': ' . implode($value) . "\n";
+            }
+            else
+            {
+                $logInfo .= $name . ': ' . $value . "\n";
+            }
         }
 
         return $logInfo .= "Body: " . $body . "\n";
@@ -50449,6 +50646,24 @@ class WordsApi
     {
         if ($this->config->getAccessToken() === "") {
             $this->_requestToken();
+        }
+    }
+
+    private function _getKey()
+    {
+        $this->_checkAuthToken();
+        $data = $this->getPublicKey(new Requests\GetPublicKeyRequest());
+        $this->config->setRsaKey(PublicKeyLoader::load([
+            'e' => new BigInteger(base64_decode($data->getExponent()), 256),
+            'n' => new BigInteger(base64_decode($data->getModulus()), 256)
+        ]));
+    }
+
+    private function _checkRsaKey()
+    {
+        if (empty($this->config->getRsaKey()))
+        {
+            $this->_getKey();
         }
     }
 }

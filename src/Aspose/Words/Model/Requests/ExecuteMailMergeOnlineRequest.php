@@ -37,11 +37,12 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
 use Aspose\Words\Model\Response\ExecuteMailMergeOnlineResponse;
+use phpseclib3\Crypt\RSA;
 
 /*
  * Request model for executeMailMergeOnline operation.
  */
-class ExecuteMailMergeOnlineRequest
+class ExecuteMailMergeOnlineRequest extends BaseApiRequest
 {
     /*
      * File with template.
@@ -52,6 +53,11 @@ class ExecuteMailMergeOnlineRequest
      * File with mailmerge data.
      */
     public $data;
+
+    /*
+     * Field options.
+     */
+    public $options;
 
     /*
      * The flag indicating whether to execute Mail Merge operation with regions.
@@ -73,14 +79,16 @@ class ExecuteMailMergeOnlineRequest
      *
      * @param \SplFileObject $template File with template.
      * @param \SplFileObject $data File with mailmerge data.
+     * @param \Aspose\Words\Model\FieldOptions $options Field options.
      * @param bool $with_regions The flag indicating whether to execute Mail Merge operation with regions.
      * @param string $cleanup The cleanup options.
      * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
-    public function __construct($template, $data, $with_regions = null, $cleanup = null, $document_file_name = null)
+    public function __construct($template, $data, $options = null, $with_regions = null, $cleanup = null, $document_file_name = null)
     {
         $this->template = $template;
         $this->data = $data;
+        $this->options = $options;
         $this->with_regions = $with_regions;
         $this->cleanup = $cleanup;
         $this->document_file_name = $document_file_name;
@@ -117,6 +125,23 @@ class ExecuteMailMergeOnlineRequest
     public function set_data($value)
     {
         $this->data = $value;
+        return $this;
+    }
+
+    /*
+     * Field options.
+     */
+    public function get_options()
+    {
+        return $this->options;
+    }
+
+    /*
+     * Field options.
+     */
+    public function set_options($value)
+    {
+        $this->options = $value;
         return $this;
     }
 
@@ -225,6 +250,12 @@ class ExecuteMailMergeOnlineRequest
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
         }
+        if (property_exists($this, 'password') && $this->password != null)
+        {
+            unset($queryParams['password']);
+            $pub = RSA::loadPublicKey($config->getRsaKey());
+            $queryParams['encryptedPassword'] = base64_encode($pub->withPadding(RSA::ENCRYPTION_PKCS1)->encrypt($this->password));
+        }
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
         // form params
@@ -244,6 +275,11 @@ class ExecuteMailMergeOnlineRequest
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
             $formParams['data'] = ['content' => $contents, 'mime' => 'application/octet-stream'];
+        }
+        // form params
+        if ($this->options !== null) {
+            $multipart = true; 
+            $formParams['options'] = ['content' => ObjectSerializer::toFormValue($this->options), 'mime' => 'application/json'];
         }
 
         // body params

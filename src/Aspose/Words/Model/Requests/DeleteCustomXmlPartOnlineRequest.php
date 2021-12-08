@@ -37,11 +37,12 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
 use Aspose\Words\Model\Response\DeleteCustomXmlPartOnlineResponse;
+use phpseclib3\Crypt\RSA;
 
 /*
  * Request model for deleteCustomXmlPartOnline operation.
  */
-class DeleteCustomXmlPartOnlineRequest
+class DeleteCustomXmlPartOnlineRequest extends BaseApiRequest
 {
     /*
      * The document.
@@ -301,6 +302,12 @@ class DeleteCustomXmlPartOnlineRequest
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
+        }
+        if (property_exists($this, 'password') && $this->password != null)
+        {
+            unset($queryParams['password']);
+            $pub = RSA::loadPublicKey($config->getRsaKey());
+            $queryParams['encryptedPassword'] = base64_encode($pub->withPadding(RSA::ENCRYPTION_PKCS1)->encrypt($this->password));
         }
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);

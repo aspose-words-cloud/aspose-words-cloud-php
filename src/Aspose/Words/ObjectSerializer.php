@@ -51,12 +51,17 @@ class ObjectSerializer
     /*
      * Creates the batch part data from request
      */
-    public static function createBatchPart($config, $request) 
+    public static function createBatchPart($config, $request)
     {
-        $requestData = $request->createRequestData($config);
+        $requestData = $request->getRequest()->createRequestData($config);
         $stream = new \GuzzleHttp\Psr7\AppendStream();
         $prefixPath = $config->getHost() . $config->getBasePath() . "/words/";
         $relPath = substr($requestData['url'], strlen($prefixPath));
+        $requestData['headers']['RequestId'] = $request->getRequestId();
+        if ($request->getParentRequestId() != null)
+        {
+            $requestData['headers']['DependsOn'] = $request->getParentRequestId();
+        }
 
         $stream->addStream(\GuzzleHttp\Psr7\Utils::streamFor($requestData['method'] . " " . $relPath . " \r\n"));
         foreach ($requestData['headers'] as $key => $value) {
@@ -160,21 +165,55 @@ class ObjectSerializer
     }
 
     /*
+     * Parse a request id header from  single part.
+     */
+    public static function parseRequestIdFromBatchPart($part)
+    {
+        $separator = "\r\n\r\n";
+        $block = $part['body'];
+        $headers = $part['headers'];
+
+        $dataIndex = strpos($block, $separator);
+        if ($dataIndex === false) {
+            $headersData = $block;
+            $bodyData = null;
+        } else {
+            $headersData = substr($block, 0, $dataIndex);
+            $bodyData = substr($block, $dataIndex + strlen($separator));
+        }
+
+        $headerLines = preg_split('/\r\n/', $headersData);
+        if (count($headerLines) == 0) {
+            throw new ApiException("Failed to parse batch part data.", 400, null, null);
+        }
+
+        for ($q = 1; $q < count($headerLines); $q++) {
+            $headerLine = $headerLines[$q];
+            $headerParts = preg_split('/:/', $headerLine);
+            if (count($headerParts) == 2) {
+                $headers[trim($headerParts[0])] = trim($headerParts[1]);
+            }
+        }
+
+        return $headers['RequestId'];
+    }    
+
+    /*
      * Parse the multipart response as batch
      */
-    public static function parseBatchResponse($response, $requests)
+    public static function parseBatchResponse($response, $requests, $displayIntermediateResults, $idToRequestMap)
     {
         $parts = ObjectSerializer::parseMultipart($response);
         $result = [];
 
-        if (count($parts) != count($requests)) {
+        if ($displayIntermediateResults && count($parts) != count($requests)) {
             throw new ApiException("Request and response parts mismatch.", 400, null, null);
         }
 
-        for ($i = 0; $i < count($requests); $i++) {
+        for ($i = 0; $i < count($parts); $i++) {
             $part = $parts[$i];
-            $request = $requests[$i];
-            $responseType = $request->getResponseType();
+            $requestId = self::parseRequestIdFromBatchPart($part);
+            $responseType = $idToRequestMap[$requestId]->getRequest()->getResponseType();
             $result[] = self::parseSinglePart($part, $responseType);
         }
 
@@ -453,5 +492,19 @@ class ObjectSerializer
             }
             return $instance;
         }
+    }
+
+    public static function guidv4($data = null) {
+        // Generate 16 bytes (128 bits) of random data or use the data passed into the function.
+        $data = $data ?? random_bytes(16);
+        assert(strlen($data) == 16);
+
+        // Set version to 0100
+        $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
+        // Set bits 6-7 to 10
+        $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
+
+        // Output the 36 character UUID.
+        return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
 }

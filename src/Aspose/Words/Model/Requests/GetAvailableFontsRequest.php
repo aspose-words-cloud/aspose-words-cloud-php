@@ -37,11 +37,12 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
 use Aspose\Words\Model\Response\GetAvailableFontsResponse;
+use phpseclib3\Crypt\RSA;
 
 /*
  * Request model for getAvailableFonts operation.
  */
-class GetAvailableFontsRequest
+class GetAvailableFontsRequest extends BaseApiRequest
 {
     /*
      * The folder in cloud storage with custom fonts.
@@ -102,6 +103,12 @@ class GetAvailableFontsRequest
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
+        }
+        if (property_exists($this, 'password') && $this->password != null)
+        {
+            unset($queryParams['password']);
+            $pub = RSA::loadPublicKey($config->getRsaKey());
+            $queryParams['encryptedPassword'] = base64_encode($pub->withPadding(RSA::ENCRYPTION_PKCS1)->encrypt($this->password));
         }
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);

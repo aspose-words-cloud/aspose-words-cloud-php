@@ -121,7 +121,7 @@ class Configuration
      *
      * @var string
      */
-    protected $debugFile = 'php://output';
+    protected $debugFile = 'php://stdout';
 
     /*
      * Debug file location (log to STDOUT by default)
@@ -134,7 +134,19 @@ class Configuration
      * Version of Aspose.Words Cloud API
      *
      */
-    protected $clientVersion = '21.11';
+    protected $clientVersion = '21.12';
+
+    /*
+     * Stores rsa key data
+     * @var string data
+     */
+    protected $rsa;
+
+    /*
+     * Stores timeout in seconds
+     * @var int
+     */
+    protected $timeout;
 
     /*
      * Constructor
@@ -516,7 +528,7 @@ class Configuration
         $report  = 'PHP SDK (Aspose\Words) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 21.11' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 21.12' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
@@ -545,5 +557,42 @@ class Configuration
         }
 
         return $keyWithPrefix;
+    }
+
+        /*
+     * Gets rsa key
+     * @return rsa key
+     */
+    public function getRsaKey()
+    {
+        return $this->rsa;
+    }
+
+    /*
+     * Sets rsa key
+     * @return $this
+     */
+    public function setRsaKey($value)
+    {
+        $this->rsa = $value;
+        return $this;
+    }
+
+    /*
+     * Gets a timeout
+     * @return timeout in seconds
+     */
+    public function getTimeout()
+    {
+        return $this->timeout;
+    }
+
+    /*
+     * Sets timeout in seconds.
+     */
+    public function setTimeout($value)
+    {
+        $this->timeout = $value;
+        return $this;
     }
 }

@@ -53,8 +53,7 @@ class BaseTestContext extends TestCase
          * To run with your own credentials please, replace parameter in methods 'setClientId' and 'setClientSecret' accordingly to your's ClientId and ClientSecret
          */
 
-        $this->words = new WordsApi($creds["ClientId"], $creds["ClientSecret"]);
-        $this->words->getConfig()->setHost($creds["BaseUrl"]);
+        $this->words = new WordsApi($creds["ClientId"], $creds["ClientSecret"], $creds["BaseUrl"]);
     }
 
     public function getConfig() {

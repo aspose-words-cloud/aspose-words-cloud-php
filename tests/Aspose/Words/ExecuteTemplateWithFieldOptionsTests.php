@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ExecuteMailMergeTests.php">
+ * <copyright company="Aspose" file="ExecuteTemplateWithFieldOptionsTests.php">
  *   Copyright (c) 2021 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -30,62 +30,45 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{ExecuteMailMergeOnlineRequest, ExecuteMailMergeRequest};
+use Aspose\Words\Model\{FieldOptions, UserInformation};
 use PHPUnit\Framework\Assert;
 
 /*
- * Example of how to perform mail merge.
+ * Example of how to perform template execution.
  */
-class ExecuteMailMergeTests extends BaseTestContext
+class ExecuteTemplateWithFieldOptionsTests extends BaseTestContext
 {
     /*
-     * Test for executing mail merge online.
+     * Test for posting execute template.
      */
-    public function testExecuteMailMergeOnline()
-    {
-        $mailMergeFolder = "DocumentActions/MailMerge";
-        $localDocumentFile = "SampleExecuteTemplate.docx";
-        $localDataFile = "SampleExecuteTemplateData.txt";
-
-        $requestTemplate = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile;
-        $requestData = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDataFile;
-        $request = new ExecuteMailMergeOnlineRequest(
-            $requestTemplate,
-            $requestData,
-            NULL,
-            NULL,
-            NULL,
-            NULL
-        );
-
-        $result = $this->words->executeMailMergeOnline($request);
-        Assert::assertNotNull($result, "Error occurred");
-    }
-
-    /*
-     * Test for executing mail merge.
-     */
-    public function testExecuteMailMerge()
+    public function testExecuteTemplateWithFieldOptions()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/MailMerge";
         $mailMergeFolder = "DocumentActions/MailMerge";
-        $localDocumentFile = "SampleExecuteTemplate.docx";
-        $remoteFileName = "TestExecuteMailMerge.docx";
-        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../..') . "/TestData/" . $mailMergeFolder . "/SampleMailMergeTemplateData.txt");
+        $localDocumentFile = "TestMailMergeWithOptions.docx";
+        $remoteFileName = "TestMailMergeWithOptions.docx";
+        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../..') . "/TestData/" . $mailMergeFolder . "/TestMailMergeData.xml");
 
         $this->uploadFile(
             realpath(__DIR__ . '/../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDocumentFile,
             $remoteDataFolder . "/" . $remoteFileName
         );
 
+        $requestOptionsCurrentUser = new UserInformation(array(
+            "name" => "SdkTestUser",
+        ));
+        $requestOptions = new FieldOptions(array(
+            "current_user" => $requestOptionsCurrentUser,
+        ));
         $request = new ExecuteMailMergeRequest(
             $remoteFileName,
             $localDataFile,
-            NULL,
+            $requestOptions,
             $remoteDataFolder,
             NULL,
             NULL,
             NULL,
-            false,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -95,6 +78,36 @@ class ExecuteMailMergeTests extends BaseTestContext
         $result = $this->words->executeMailMerge($request);
         Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocument());
-        Assert::assertEquals("TestExecuteMailMerge.docx", $result->getDocument()->getFileName());
+        Assert::assertEquals("TestMailMergeWithOptions.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for execute template online.
+     */
+    public function testExecuteTemplateOnlineWithFieldOptions()
+    {
+        $mailMergeFolder = "DocumentActions/MailMerge";
+        $localDocumentFile = "TestMailMergeWithOptions.docx";
+        $localDataFile = "TestMailMergeData.xml";
+
+        $requestTemplate = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile;
+        $requestData = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDataFile;
+        $requestOptionsCurrentUser = new UserInformation(array(
+            "name" => "SdkTestUser",
+        ));
+        $requestOptions = new FieldOptions(array(
+            "current_user" => $requestOptionsCurrentUser,
+        ));
+        $request = new ExecuteMailMergeOnlineRequest(
+            $requestTemplate,
+            $requestData,
+            $requestOptions,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->executeMailMergeOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

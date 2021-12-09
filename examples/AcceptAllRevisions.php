@@ -5,7 +5,7 @@ use Aspose\Words\Model\Requests\{AcceptAllRevisionsRequest, UploadFileRequest};
 $clientId = '####-####-####-####-####';
 $secret = '##################';
 $wordsApi = new WordsApi($clientId, $secret);
-$fileName  = "test_doc.docx";
+$fileName = "test_doc.docx";
 
 /**
  * Upload original document to cloud storage.

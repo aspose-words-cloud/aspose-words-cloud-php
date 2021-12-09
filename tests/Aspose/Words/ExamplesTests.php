@@ -47,7 +47,7 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      $fileName  = "test_doc.docx";
+      $fileName = "test_doc.docx";
 
       /**
        * Upload original document to cloud storage.
@@ -75,7 +75,7 @@ class ExamplesTests extends BaseTestContext
 
       $documentsDir = realpath(__DIR__ . '/../../..') . '/ExamplesData/';
       $wordsApi = $this->words;
-      $fileName  = "test_doc.docx";
+      $fileName = "test_doc.docx";
 
       /**
        * Calls AcceptAllRevisionsOnline method for document in cloud.

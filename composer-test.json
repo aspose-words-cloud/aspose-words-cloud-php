@@ -1,0 +1,40 @@
+{
+    "description": 	"Open, generate, edit, split, merge, compare and convert Word documents. Integrate Cloud API into your solutions to manipulate documents. Convert PDF to Word (DOC, DOCX, ODT, RTF and HTML) and in the opposite direction.",
+    "name": 		"aspose-cloud/aspose-words-cloud-test",
+    "type": 		"library",
+    "keywords" : 	["office", "convert", "word", "pdf", "docx", "html", "rtf", "png", "jpg", "split", "merge", "edit", "word to pdf",
+    "pdf to word", "docx to pdf", "pdf to docx", "word to html", "html to word", "reporting", "mailmerge", "statistics",
+    "watermark", "fields", "generate", "create", "report", "table", "paragraph", "images", "text", "generator", "creator", "maker"],
+	"license": 		"MIT",
+    "homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php",
+    "authors": [
+        {
+            "name": "YaroslawEkimov",
+			"homepage": "https://github.com/aspose-words-cloud"
+        },
+		{
+            "name": "IvanovJohnAspose",
+			"homepage": "https://github.com/aspose-words-cloud"
+		}
+    ],
+    
+    "require": {
+        "php": "^7.2.5 || ^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.3.0",
+        "aspose-cloud/aspose-words-cloud": "21.12"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*",
+        "phpunit/phpunit": "9.5.4",
+		"behat/behat": "3.8.1",
+		"friendsofphp/php-cs-fixer": "3.0.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "Aspose\\Words\\Tests\\": "tests/Aspose/Words"
+        }
+    }
+}

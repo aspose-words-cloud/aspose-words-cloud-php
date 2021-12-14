@@ -6,6 +6,7 @@ properties([
 			[$class: 'StringParameterDefinition', name: 'apiUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'api url'],			
             [$class: 'BooleanParameterDefinition', name: 'ignoreCiSkip', defaultValue: false, description: 'ignore CI Skip'],
             [$class: 'StringParameterDefinition', name: 'credentialsId', defaultValue: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', description: 'credentials id'],
+            [$class: 'BooleanParameterDefinition', name: 'packageTesting', defaultValue: false, description: 'is ran from healthcheck']
 		]
 	]
 ])
@@ -38,6 +39,10 @@ def runtests(dockerImageVersion)
                 
                 testImage.inside {
                     stage('build'){
+                        if (params.packageTesting) {
+                            sh "rm -rf src"
+                            sh "mv composer-test.json composer.json"
+                        }
                         sh "php composer.phar install --no-interaction"
                         sh "mkdir testReports"
                         try {

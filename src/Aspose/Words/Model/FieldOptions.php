@@ -57,6 +57,7 @@ class FieldOptions implements ArrayAccess
         'custom_toc_style_separator' => 'string',
         'default_document_author' => 'string',
         'field_index_format' => 'string',
+        'field_update_culture_name' => 'string',
         'field_update_culture_source' => 'string',
         'file_name' => 'string',
         'is_bidi_text_supported_on_update' => 'bool',
@@ -77,6 +78,7 @@ class FieldOptions implements ArrayAccess
         'custom_toc_style_separator' => 'null',
         'default_document_author' => 'null',
         'field_index_format' => 'null',
+        'field_update_culture_name' => 'null',
         'field_update_culture_source' => 'null',
         'file_name' => 'null',
         'is_bidi_text_supported_on_update' => 'null',
@@ -118,6 +120,7 @@ class FieldOptions implements ArrayAccess
         'custom_toc_style_separator' => 'CustomTocStyleSeparator',
         'default_document_author' => 'DefaultDocumentAuthor',
         'field_index_format' => 'FieldIndexFormat',
+        'field_update_culture_name' => 'FieldUpdateCultureName',
         'field_update_culture_source' => 'FieldUpdateCultureSource',
         'file_name' => 'FileName',
         'is_bidi_text_supported_on_update' => 'IsBidiTextSupportedOnUpdate',
@@ -138,6 +141,7 @@ class FieldOptions implements ArrayAccess
         'custom_toc_style_separator' => 'setCustomTocStyleSeparator',
         'default_document_author' => 'setDefaultDocumentAuthor',
         'field_index_format' => 'setFieldIndexFormat',
+        'field_update_culture_name' => 'setFieldUpdateCultureName',
         'field_update_culture_source' => 'setFieldUpdateCultureSource',
         'file_name' => 'setFileName',
         'is_bidi_text_supported_on_update' => 'setIsBidiTextSupportedOnUpdate',
@@ -158,6 +162,7 @@ class FieldOptions implements ArrayAccess
         'custom_toc_style_separator' => 'getCustomTocStyleSeparator',
         'default_document_author' => 'getDefaultDocumentAuthor',
         'field_index_format' => 'getFieldIndexFormat',
+        'field_update_culture_name' => 'getFieldUpdateCultureName',
         'field_update_culture_source' => 'getFieldUpdateCultureSource',
         'file_name' => 'getFileName',
         'is_bidi_text_supported_on_update' => 'getIsBidiTextSupportedOnUpdate',
@@ -268,6 +273,7 @@ class FieldOptions implements ArrayAccess
         $this->container['custom_toc_style_separator'] = isset($data['custom_toc_style_separator']) ? $data['custom_toc_style_separator'] : null;
         $this->container['default_document_author'] = isset($data['default_document_author']) ? $data['default_document_author'] : null;
         $this->container['field_index_format'] = isset($data['field_index_format']) ? $data['field_index_format'] : null;
+        $this->container['field_update_culture_name'] = isset($data['field_update_culture_name']) ? $data['field_update_culture_name'] : null;
         $this->container['field_update_culture_source'] = isset($data['field_update_culture_source']) ? $data['field_update_culture_source'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
         $this->container['is_bidi_text_supported_on_update'] = isset($data['is_bidi_text_supported_on_update']) ? $data['is_bidi_text_supported_on_update'] : null;
@@ -448,6 +454,29 @@ class FieldOptions implements ArrayAccess
     }
 
     /*
+     * Gets field_update_culture_name
+     *
+     * @return string
+     */
+    public function getFieldUpdateCultureName()
+    {
+        return $this->container['field_update_culture_name'];
+    }
+
+    /*
+     * Sets field_update_culture_name
+     *
+     * @param string $field_update_culture_name Gets or sets Field Update Culture Name. It is used for all fields if FieldUpdateCultureSource is FieldCode.
+     *
+     * @return $this
+     */
+    public function setFieldUpdateCultureName($field_update_culture_name)
+    {
+        $this->container['field_update_culture_name'] = $field_update_culture_name;
+        return $this;
+    }
+
+    /*
      * Gets field_update_culture_source
      *
      * @return string
@@ -556,7 +585,7 @@ class FieldOptions implements ArrayAccess
     /*
      * Sets pre_process_culture_name
      *
-     * @param string $pre_process_culture_name Gets or sets PreProcess Culture Name.
+     * @param string $pre_process_culture_name Gets or sets PreProcess Culture Name. It is a culture code for DOC fields.
      *
      * @return $this
      */

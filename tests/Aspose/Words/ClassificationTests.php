@@ -74,6 +74,7 @@ class ClassificationTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             "3",
             NULL
         );
@@ -95,6 +96,7 @@ class ClassificationTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new ClassifyDocumentOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             "3",

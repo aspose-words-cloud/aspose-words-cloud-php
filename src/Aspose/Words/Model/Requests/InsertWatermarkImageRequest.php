@@ -70,9 +70,14 @@ class InsertWatermarkImageRequest extends BaseApiRequest
     public $load_encoding;
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public $password;
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public $encrypted_password;
 
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -107,14 +112,15 @@ class InsertWatermarkImageRequest extends BaseApiRequest
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
+     * @param string $password Password for opening an encrypted document. The password is provided as is (obsolete).
+     * @param string $encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      * @param double $rotation_angle The rotation angle of the watermark.
      * @param string $image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
-    public function __construct($name, $image_file = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)
+    public function __construct($name, $image_file = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)
     {
         $this->name = $name;
         $this->image_file = $image_file;
@@ -122,6 +128,7 @@ class InsertWatermarkImageRequest extends BaseApiRequest
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->encrypted_password = $encrypted_password;
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
@@ -215,7 +222,7 @@ class InsertWatermarkImageRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public function get_password()
     {
@@ -223,11 +230,28 @@ class InsertWatermarkImageRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public function set_password($value)
     {
         $this->password = $value;
+        return $this;
+    }
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public function get_encrypted_password()
+    {
+        return $this->encrypted_password;
+    }
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public function set_encrypted_password($value)
+    {
+        $this->encrypted_password = $value;
         return $this;
     }
 
@@ -380,6 +404,16 @@ class InsertWatermarkImageRequest extends BaseApiRequest
         if ($this->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->encrypted_password !== null) {
+            $localName = lcfirst('EncryptedPassword');
+            $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

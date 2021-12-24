@@ -63,6 +63,7 @@ class TextTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -88,6 +89,7 @@ class TextTests extends BaseTestContext
         $request = new ReplaceTextOnlineRequest(
             $requestDocument,
             $requestReplaceText,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -119,6 +121,7 @@ class TextTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -142,6 +145,7 @@ class TextTests extends BaseTestContext
         $request = new SearchOnlineRequest(
             $requestDocument,
             "aspose",
+            NULL,
             NULL,
             NULL
         );

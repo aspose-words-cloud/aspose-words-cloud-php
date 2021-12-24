@@ -72,6 +72,7 @@ class ExecuteTemplateWithFieldOptionsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName
         );
 

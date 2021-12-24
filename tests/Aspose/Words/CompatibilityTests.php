@@ -64,6 +64,7 @@ class CompatibilityTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -84,6 +85,7 @@ class CompatibilityTests extends BaseTestContext
         $request = new OptimizeDocumentOnlineRequest(
             $requestDocument,
             $requestOptions,
+            NULL,
             NULL,
             NULL,
             NULL,

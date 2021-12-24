@@ -59,6 +59,7 @@ class DocumentStatisticsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -78,6 +79,7 @@ class DocumentStatisticsTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetDocumentStatisticsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL,

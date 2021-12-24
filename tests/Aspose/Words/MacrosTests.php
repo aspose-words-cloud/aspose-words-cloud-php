@@ -59,6 +59,7 @@ class MacrosTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -75,6 +76,7 @@ class MacrosTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new DeleteMacrosOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL,

@@ -58,6 +58,7 @@ class TableBorderTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -81,6 +82,7 @@ class TableBorderTests extends BaseTestContext
         $request = new GetBordersOnlineRequest(
             $requestDocument,
             "tables/1/rows/0/cells/0",
+            NULL,
             NULL,
             NULL
         );
@@ -110,6 +112,7 @@ class TableBorderTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -132,6 +135,7 @@ class TableBorderTests extends BaseTestContext
             $requestDocument,
             "left",
             "tables/1/rows/0/cells/0",
+            NULL,
             NULL,
             NULL
         );
@@ -163,6 +167,7 @@ class TableBorderTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -181,6 +186,7 @@ class TableBorderTests extends BaseTestContext
         $request = new DeleteBordersOnlineRequest(
             $requestDocument,
             "tables/1/rows/0/cells/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -216,6 +222,7 @@ class TableBorderTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -235,6 +242,7 @@ class TableBorderTests extends BaseTestContext
             $requestDocument,
             "left",
             "tables/1/rows/0/cells/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -282,6 +290,7 @@ class TableBorderTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -319,6 +328,7 @@ class TableBorderTests extends BaseTestContext
             $requestBorderProperties,
             "left",
             "tables/1/rows/0/cells/0",
+            NULL,
             NULL,
             NULL,
             NULL,

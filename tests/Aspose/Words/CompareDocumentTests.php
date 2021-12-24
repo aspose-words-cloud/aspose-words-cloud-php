@@ -71,6 +71,7 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 
@@ -108,6 +109,7 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 
@@ -142,6 +144,7 @@ class CompareDocumentTests extends BaseTestContext
             $requestDocument,
             $requestCompareData,
             $requestComparingDocument,
+            NULL,
             NULL,
             NULL,
             self::$baseTestOutPath . "/TestCompareDocumentOut.doc"

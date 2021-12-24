@@ -63,6 +63,7 @@ class ConvertDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -87,6 +88,7 @@ class ConvertDocumentTests extends BaseTestContext
         $request = new SaveAsOnlineRequest(
             $requestDocument,
             $requestSaveOptionsData,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -119,6 +121,7 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteName,
             $requestSaveOptionsData,
             $remoteFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -173,6 +176,7 @@ class ConvertDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -197,6 +201,7 @@ class ConvertDocumentTests extends BaseTestContext
         $request = new SaveAsTiffOnlineRequest(
             $requestDocument,
             $requestSaveOptions,
+            NULL,
             NULL,
             NULL,
             NULL,

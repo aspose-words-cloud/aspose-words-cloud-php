@@ -50,6 +50,7 @@ class MailMergeFiledsTests extends BaseTestContext
             $requestTemplate,
             NULL,
             NULL,
+            NULL,
             true
         );
 
@@ -77,6 +78,7 @@ class MailMergeFiledsTests extends BaseTestContext
         $request = new GetDocumentFieldNamesRequest(
             $remoteFileName,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

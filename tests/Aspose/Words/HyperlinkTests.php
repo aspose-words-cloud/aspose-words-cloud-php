@@ -57,6 +57,7 @@ class HyperlinkTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -77,6 +78,7 @@ class HyperlinkTests extends BaseTestContext
         $request = new GetDocumentHyperlinkByIndexOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL
         );
@@ -104,6 +106,7 @@ class HyperlinkTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -125,6 +128,7 @@ class HyperlinkTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetDocumentHyperlinksOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL
         );

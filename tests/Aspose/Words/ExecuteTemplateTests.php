@@ -65,6 +65,7 @@ class ExecuteTemplateTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName
         );
 

@@ -60,9 +60,14 @@ class GetHeaderFooterOnlineRequest extends BaseApiRequest
     public $load_encoding;
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public $password;
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public $encrypted_password;
 
     /*
      * The list of HeaderFooter types.
@@ -75,15 +80,17 @@ class GetHeaderFooterOnlineRequest extends BaseApiRequest
      * @param \SplFileObject $document The document.
      * @param int $header_footer_index The index of the HeaderFooter object.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
+     * @param string $password Password for opening an encrypted document. The password is provided as is (obsolete).
+     * @param string $encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
      * @param string $filter_by_type The list of HeaderFooter types.
      */
-    public function __construct($document, $header_footer_index, $load_encoding = null, $password = null, $filter_by_type = null)
+    public function __construct($document, $header_footer_index, $load_encoding = null, $password = null, $encrypted_password = null, $filter_by_type = null)
     {
         $this->document = $document;
         $this->header_footer_index = $header_footer_index;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->encrypted_password = $encrypted_password;
         $this->filter_by_type = $filter_by_type;
     }
 
@@ -139,7 +146,7 @@ class GetHeaderFooterOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public function get_password()
     {
@@ -147,11 +154,28 @@ class GetHeaderFooterOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public function set_password($value)
     {
         $this->password = $value;
+        return $this;
+    }
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public function get_encrypted_password()
+    {
+        return $this->encrypted_password;
+    }
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public function set_encrypted_password($value)
+    {
+        $this->encrypted_password = $value;
         return $this;
     }
 
@@ -219,6 +243,16 @@ class GetHeaderFooterOnlineRequest extends BaseApiRequest
         if ($this->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->encrypted_password !== null) {
+            $localName = lcfirst('EncryptedPassword');
+            $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

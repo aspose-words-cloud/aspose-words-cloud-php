@@ -65,9 +65,14 @@ class GetTableCellOnlineRequest extends BaseApiRequest
     public $load_encoding;
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public $password;
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public $encrypted_password;
 
     /*
      * Initializes a new instance of the GetTableCellOnlineRequest class.
@@ -76,15 +81,17 @@ class GetTableCellOnlineRequest extends BaseApiRequest
      * @param string $table_row_path The path to the table row in the document tree.
      * @param int $index Object index.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
+     * @param string $password Password for opening an encrypted document. The password is provided as is (obsolete).
+     * @param string $encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
      */
-    public function __construct($document, $table_row_path, $index, $load_encoding = null, $password = null)
+    public function __construct($document, $table_row_path, $index, $load_encoding = null, $password = null, $encrypted_password = null)
     {
         $this->document = $document;
         $this->table_row_path = $table_row_path;
         $this->index = $index;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->encrypted_password = $encrypted_password;
     }
 
     /*
@@ -156,7 +163,7 @@ class GetTableCellOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public function get_password()
     {
@@ -164,11 +171,28 @@ class GetTableCellOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public function set_password($value)
     {
         $this->password = $value;
+        return $this;
+    }
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public function get_encrypted_password()
+    {
+        return $this->encrypted_password;
+    }
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public function set_encrypted_password($value)
+    {
+        $this->encrypted_password = $value;
         return $this;
     }
 
@@ -231,6 +255,16 @@ class GetTableCellOnlineRequest extends BaseApiRequest
         if ($this->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->encrypted_password !== null) {
+            $localName = lcfirst('EncryptedPassword');
+            $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

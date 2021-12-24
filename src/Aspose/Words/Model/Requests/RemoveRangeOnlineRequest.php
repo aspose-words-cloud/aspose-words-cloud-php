@@ -65,9 +65,14 @@ class RemoveRangeOnlineRequest extends BaseApiRequest
     public $load_encoding;
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public $password;
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public $encrypted_password;
 
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -81,16 +86,18 @@ class RemoveRangeOnlineRequest extends BaseApiRequest
      * @param string $range_start_identifier The range start identifier.
      * @param string $range_end_identifier The range end identifier.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
+     * @param string $password Password for opening an encrypted document. The password is provided as is (obsolete).
+     * @param string $encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($document, $range_start_identifier, $range_end_identifier = null, $load_encoding = null, $password = null, $dest_file_name = null)
+    public function __construct($document, $range_start_identifier, $range_end_identifier = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null)
     {
         $this->document = $document;
         $this->range_start_identifier = $range_start_identifier;
         $this->range_end_identifier = $range_end_identifier;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->encrypted_password = $encrypted_password;
         $this->dest_file_name = $dest_file_name;
     }
 
@@ -163,7 +170,7 @@ class RemoveRangeOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public function get_password()
     {
@@ -171,11 +178,28 @@ class RemoveRangeOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password for opening an encrypted document. The password is provided as is (obsolete).
      */
     public function set_password($value)
     {
         $this->password = $value;
+        return $this;
+    }
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public function get_encrypted_password()
+    {
+        return $this->encrypted_password;
+    }
+
+    /*
+     * Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+     */
+    public function set_encrypted_password($value)
+    {
+        $this->encrypted_password = $value;
         return $this;
     }
 
@@ -252,6 +276,16 @@ class RemoveRangeOnlineRequest extends BaseApiRequest
         if ($this->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->encrypted_password !== null) {
+            $localName = lcfirst('EncryptedPassword');
+            $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

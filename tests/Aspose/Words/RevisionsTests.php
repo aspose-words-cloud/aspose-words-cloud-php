@@ -57,6 +57,7 @@ class RevisionsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName
         );
 
@@ -76,6 +77,7 @@ class RevisionsTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new AcceptAllRevisionsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -109,6 +111,7 @@ class RevisionsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName
         );
 
@@ -128,6 +131,7 @@ class RevisionsTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new RejectAllRevisionsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL

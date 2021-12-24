@@ -59,6 +59,7 @@ class DocumentWithFormatTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -84,6 +85,7 @@ class DocumentWithFormatTests extends BaseTestContext
             $remoteFileName,
             "text",
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

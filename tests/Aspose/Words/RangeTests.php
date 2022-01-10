@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RangeTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -59,6 +59,7 @@ class RangeTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -79,6 +80,7 @@ class RangeTests extends BaseTestContext
             $requestDocument,
             "id0.0.0",
             "id0.0.1",
+            NULL,
             NULL,
             NULL
         );
@@ -109,6 +111,7 @@ class RangeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -128,6 +131,7 @@ class RangeTests extends BaseTestContext
             $requestDocument,
             "id0.0.0",
             "id0.0.1",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -162,6 +166,7 @@ class RangeTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -188,6 +193,7 @@ class RangeTests extends BaseTestContext
             "id0.0.0",
             $requestDocumentParameters,
             "id0.0.1",
+            NULL,
             NULL,
             NULL
         );
@@ -222,6 +228,7 @@ class RangeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -247,6 +254,7 @@ class RangeTests extends BaseTestContext
             "id0.0.0",
             $requestRangeText,
             "id0.0.1",
+            NULL,
             NULL,
             NULL,
             NULL

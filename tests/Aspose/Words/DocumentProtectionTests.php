@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentProtectionTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -63,6 +63,7 @@ class DocumentProtectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName
         );
 
@@ -86,6 +87,7 @@ class DocumentProtectionTests extends BaseTestContext
         $request = new ProtectDocumentOnlineRequest(
             $requestDocument,
             $requestProtectionRequest,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -114,6 +116,7 @@ class DocumentProtectionTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -131,6 +134,7 @@ class DocumentProtectionTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetDocumentProtectionOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL
         );
@@ -163,6 +167,7 @@ class DocumentProtectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -186,6 +191,7 @@ class DocumentProtectionTests extends BaseTestContext
         $request = new UnprotectDocumentOnlineRequest(
             $requestDocument,
             $requestProtectionRequest,
+            NULL,
             NULL,
             NULL,
             NULL

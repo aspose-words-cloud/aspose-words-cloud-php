@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AppendDocumentTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -69,6 +69,7 @@ class AppendDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -108,6 +109,7 @@ class AppendDocumentTests extends BaseTestContext
         $request = new AppendDocumentOnlineRequest(
             $requestDocument,
             $requestDocumentList,
+            NULL,
             NULL,
             NULL,
             NULL,

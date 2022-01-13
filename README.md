@@ -13,11 +13,19 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 22.1
+
+- Added 'FieldOptions.FieldUpdateCultureName' to set Culture for fields
+- Added 'DocumentEntry.Password' to set an encrypted password for appending document
+- Added 'encryptedPassword2' query parameter to CompareDocuments to set an encrypted password for the second comparing document
+
+
 ## Enhancements in Version 21.12
 
+- Added FieldOptions parameter to mail merge operations
+- Added timeout parameter to api configuration
 - Added dependsOn and resultOf features for batch requests
 - Added query parameter 'displayIntermediateResults' for batch requests. If 'false', the last response in batch will be returned only. Default is 'true'
-- Added 'timeout' in seconds
 - Support encryption of 'CommonRequest.Password'. Automatic encryption of all passwords sent to the API server as request parameters.
 
 ## Enhancements in Version 21.11

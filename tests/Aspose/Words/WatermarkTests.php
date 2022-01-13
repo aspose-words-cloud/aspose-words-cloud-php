@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WatermarkTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,6 +64,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL,
@@ -89,6 +90,7 @@ class WatermarkTests extends BaseTestContext
         $request = new InsertWatermarkImageOnlineRequest(
             $requestDocument,
             $requestImageFile,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -127,6 +129,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -153,6 +156,7 @@ class WatermarkTests extends BaseTestContext
         $request = new InsertWatermarkTextOnlineRequest(
             $requestDocument,
             $requestWatermarkText,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -184,6 +188,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -205,6 +210,7 @@ class WatermarkTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new DeleteWatermarkOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL,

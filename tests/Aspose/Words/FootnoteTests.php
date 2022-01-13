@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FootnoteTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,6 +66,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -92,6 +93,7 @@ class FootnoteTests extends BaseTestContext
             $requestDocument,
             $requestFootnoteDto,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -131,6 +133,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -165,6 +168,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -183,6 +187,7 @@ class FootnoteTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -218,6 +223,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -244,6 +250,7 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -266,6 +273,7 @@ class FootnoteTests extends BaseTestContext
         $request = new GetFootnotesOnlineRequest(
             $requestDocument,
             "",
+            NULL,
             NULL,
             NULL
         );
@@ -292,6 +300,7 @@ class FootnoteTests extends BaseTestContext
             $remoteFileName,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -326,6 +335,7 @@ class FootnoteTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -347,6 +357,7 @@ class FootnoteTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL
         );
@@ -374,6 +385,7 @@ class FootnoteTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -413,6 +425,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -438,6 +451,7 @@ class FootnoteTests extends BaseTestContext
             $requestFootnoteDto,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -472,6 +486,7 @@ class FootnoteTests extends BaseTestContext
             $requestFootnoteDto,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

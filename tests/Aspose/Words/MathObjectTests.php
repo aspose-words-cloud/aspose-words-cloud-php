@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MathObjectTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,6 +57,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -79,6 +80,7 @@ class MathObjectTests extends BaseTestContext
         $request = new GetOfficeMathObjectsOnlineRequest(
             $requestDocument,
             "",
+            NULL,
             NULL,
             NULL
         );
@@ -105,6 +107,7 @@ class MathObjectTests extends BaseTestContext
             $remoteFileName,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -139,6 +142,7 @@ class MathObjectTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -160,6 +164,7 @@ class MathObjectTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL
         );
@@ -187,6 +192,7 @@ class MathObjectTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -222,6 +228,7 @@ class MathObjectTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -242,6 +249,7 @@ class MathObjectTests extends BaseTestContext
             "png",
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -272,6 +280,7 @@ class MathObjectTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -307,6 +316,7 @@ class MathObjectTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -325,6 +335,7 @@ class MathObjectTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -355,6 +366,7 @@ class MathObjectTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

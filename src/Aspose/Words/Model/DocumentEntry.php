@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentEntry.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,7 +53,8 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'href' => 'string',
-        'import_format_mode' => 'string'
+        'import_format_mode' => 'string',
+        'password' => 'string'
     ];
 
     /*
@@ -63,7 +64,8 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'href' => 'null',
-        'import_format_mode' => 'null'
+        'import_format_mode' => 'null',
+        'password' => 'null'
     ];
 
     /*
@@ -94,7 +96,8 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $attributeMap = [
         'href' => 'Href',
-        'import_format_mode' => 'ImportFormatMode'
+        'import_format_mode' => 'ImportFormatMode',
+        'password' => 'Password'
     ];
 
     /*
@@ -104,7 +107,8 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $setters = [
         'href' => 'setHref',
-        'import_format_mode' => 'setImportFormatMode'
+        'import_format_mode' => 'setImportFormatMode',
+        'password' => 'setPassword'
     ];
 
     /*
@@ -114,7 +118,8 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $getters = [
         'href' => 'getHref',
-        'import_format_mode' => 'getImportFormatMode'
+        'import_format_mode' => 'getImportFormatMode',
+        'password' => 'getPassword'
     ];
 
     /*
@@ -177,6 +182,7 @@ class DocumentEntry implements ArrayAccess
     {
         $this->container['href'] = isset($data['href']) ? $data['href'] : null;
         $this->container['import_format_mode'] = isset($data['import_format_mode']) ? $data['import_format_mode'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
     /*
@@ -245,6 +251,29 @@ class DocumentEntry implements ArrayAccess
     public function setImportFormatMode($import_format_mode)
     {
         $this->container['import_format_mode'] = $import_format_mode;
+        return $this;
+    }
+
+    /*
+     * Gets password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /*
+     * Sets password
+     *
+     * @param string $password Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->container['password'] = $password;
         return $this;
     }
 

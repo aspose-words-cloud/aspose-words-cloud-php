@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ClassificationTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -74,6 +74,7 @@ class ClassificationTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             "3",
             NULL
         );
@@ -95,6 +96,7 @@ class ClassificationTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new ClassifyDocumentOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             "3",

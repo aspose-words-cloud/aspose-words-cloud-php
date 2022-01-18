@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MacrosTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -59,6 +59,7 @@ class MacrosTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -75,6 +76,7 @@ class MacrosTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new DeleteMacrosOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL,

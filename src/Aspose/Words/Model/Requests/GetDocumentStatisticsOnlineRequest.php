@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetDocumentStatisticsOnlineRequest.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,9 +55,14 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
     public $load_encoding;
 
     /*
-     * Password for opening an encrypted document.
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      */
     public $password;
+
+    /*
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     */
+    public $encrypted_password;
 
     /*
      * The flag indicating whether to include comments from the WordCount. The default value is "false".
@@ -79,16 +84,18 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
      *
      * @param \SplFileObject $document The document.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
+     * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+     * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param bool $include_comments The flag indicating whether to include comments from the WordCount. The default value is "false".
      * @param bool $include_footnotes The flag indicating whether to include footnotes from the WordCount. The default value is "false".
      * @param bool $include_text_in_shapes The flag indicating whether to include shape's text from the WordCount. The default value is "false".
      */
-    public function __construct($document, $load_encoding = null, $password = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)
+    public function __construct($document, $load_encoding = null, $password = null, $encrypted_password = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)
     {
         $this->document = $document;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->encrypted_password = $encrypted_password;
         $this->include_comments = $include_comments;
         $this->include_footnotes = $include_footnotes;
         $this->include_text_in_shapes = $include_text_in_shapes;
@@ -129,7 +136,7 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      */
     public function get_password()
     {
@@ -137,11 +144,28 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      */
     public function set_password($value)
     {
         $this->password = $value;
+        return $this;
+    }
+
+    /*
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     */
+    public function get_encrypted_password()
+    {
+        return $this->encrypted_password;
+    }
+
+    /*
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     */
+    public function set_encrypted_password($value)
+    {
+        $this->encrypted_password = $value;
         return $this;
     }
 
@@ -231,6 +255,16 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
         if ($this->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->encrypted_password !== null) {
+            $localName = lcfirst('EncryptedPassword');
+            $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

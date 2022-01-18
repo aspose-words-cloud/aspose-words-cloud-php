@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentPropertiesTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,6 +57,7 @@ class DocumentPropertiesTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -80,6 +81,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetDocumentPropertiesOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL
         );
@@ -108,6 +110,7 @@ class DocumentPropertiesTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -129,6 +132,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $request = new GetDocumentPropertyOnlineRequest(
             $requestDocument,
             "Author",
+            NULL,
             NULL,
             NULL
         );
@@ -158,6 +162,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -177,6 +182,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $request = new DeleteDocumentPropertyOnlineRequest(
             $requestDocument,
             "testProp",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -213,6 +219,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -240,6 +247,7 @@ class DocumentPropertiesTests extends BaseTestContext
             $requestDocument,
             "AsposeAuthor",
             $requestProperty,
+            NULL,
             NULL,
             NULL,
             NULL,

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CompareDocumentTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -71,7 +71,9 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
+            NULL,
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc",
+            NULL
         );
 
         $result = $this->words->compareDocument($request);
@@ -108,7 +110,9 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
+            NULL,
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc",
+            NULL
         );
 
         $result = $this->words->compareDocumentOnline($request);
@@ -144,7 +148,9 @@ class CompareDocumentTests extends BaseTestContext
             $requestComparingDocument,
             NULL,
             NULL,
-            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
+            NULL,
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc",
+            NULL
         );
 
         $result = $this->words->compareDocumentOnline($request);

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ListsTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,6 +57,7 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -78,6 +79,7 @@ class ListsTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetListsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL
         );
@@ -106,6 +108,7 @@ class ListsTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -126,6 +129,7 @@ class ListsTests extends BaseTestContext
         $request = new GetListOnlineRequest(
             $requestDocument,
             1,
+            NULL,
             NULL,
             NULL
         );
@@ -161,6 +165,7 @@ class ListsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -183,6 +188,7 @@ class ListsTests extends BaseTestContext
             $requestDocument,
             1,
             $requestListUpdate,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -225,6 +231,7 @@ class ListsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -248,6 +255,7 @@ class ListsTests extends BaseTestContext
             1,
             $requestListUpdate,
             1,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -290,6 +298,7 @@ class ListsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -313,6 +322,7 @@ class ListsTests extends BaseTestContext
         $request = new InsertListOnlineRequest(
             $requestDocument,
             $requestListInsert,
+            NULL,
             NULL,
             NULL,
             NULL,

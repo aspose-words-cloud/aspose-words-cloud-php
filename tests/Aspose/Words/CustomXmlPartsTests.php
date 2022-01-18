@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CustomXmlPartsTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,6 +58,7 @@ class CustomXmlPartsTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -79,6 +80,7 @@ class CustomXmlPartsTests extends BaseTestContext
         $request = new GetCustomXmlPartOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL
         );
@@ -109,6 +111,7 @@ class CustomXmlPartsTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -131,6 +134,7 @@ class CustomXmlPartsTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetCustomXmlPartsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL
         );
@@ -171,6 +175,7 @@ class CustomXmlPartsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -196,6 +201,7 @@ class CustomXmlPartsTests extends BaseTestContext
         $request = new InsertCustomXmlPartOnlineRequest(
             $requestDocument,
             $requestCustomXmlPart,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -237,6 +243,7 @@ class CustomXmlPartsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -262,6 +269,7 @@ class CustomXmlPartsTests extends BaseTestContext
             $requestDocument,
             0,
             $requestCustomXmlPart,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -297,6 +305,7 @@ class CustomXmlPartsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -316,6 +325,7 @@ class CustomXmlPartsTests extends BaseTestContext
         $request = new DeleteCustomXmlPartOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -347,6 +357,7 @@ class CustomXmlPartsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -365,6 +376,7 @@ class CustomXmlPartsTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new DeleteCustomXmlPartsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL,

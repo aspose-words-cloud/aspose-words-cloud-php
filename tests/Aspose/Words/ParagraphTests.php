@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ParagraphTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -59,6 +59,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -80,6 +81,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0",
+            NULL,
             NULL,
             NULL
         );
@@ -107,6 +109,7 @@ class ParagraphTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -138,6 +141,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -160,6 +164,7 @@ class ParagraphTests extends BaseTestContext
         $request = new GetParagraphsOnlineRequest(
             $requestDocument,
             "sections/0",
+            NULL,
             NULL,
             NULL
         );
@@ -186,6 +191,7 @@ class ParagraphTests extends BaseTestContext
             $remoteFileName,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -220,6 +226,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -241,6 +248,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             "paragraphs/0",
             0,
+            NULL,
             NULL,
             NULL
         );
@@ -270,6 +278,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -291,6 +300,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             "paragraphs/0",
             0,
+            NULL,
             NULL,
             NULL
         );
@@ -319,6 +329,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -341,6 +352,7 @@ class ParagraphTests extends BaseTestContext
         $request = new GetRunsOnlineRequest(
             $requestDocument,
             "sections/0/paragraphs/0",
+            NULL,
             NULL,
             NULL
         );
@@ -375,6 +387,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -402,6 +415,7 @@ class ParagraphTests extends BaseTestContext
             "paragraphs/0",
             $requestFontDto,
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -441,6 +455,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -465,6 +480,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             $requestParagraph,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -505,6 +521,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -538,6 +555,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -558,6 +576,7 @@ class ParagraphTests extends BaseTestContext
             "png",
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -592,6 +611,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -620,6 +640,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -641,6 +662,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL
         );
@@ -668,6 +690,7 @@ class ParagraphTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -707,6 +730,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -732,6 +756,7 @@ class ParagraphTests extends BaseTestContext
             $requestParagraphFormatDto,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -767,6 +792,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -785,6 +811,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -820,6 +847,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -847,6 +875,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -868,6 +897,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL
         );
@@ -895,6 +925,7 @@ class ParagraphTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -934,6 +965,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -959,6 +991,7 @@ class ParagraphTests extends BaseTestContext
             $requestListFormatDto,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -998,6 +1031,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1031,6 +1065,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1050,6 +1085,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -1085,6 +1121,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1113,6 +1150,7 @@ class ParagraphTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1135,6 +1173,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL
         );
@@ -1162,6 +1201,7 @@ class ParagraphTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -1202,6 +1242,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1232,6 +1273,7 @@ class ParagraphTests extends BaseTestContext
             $requestTabStopInsertDto,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -1269,6 +1311,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1303,6 +1346,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1324,6 +1368,7 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -1352,6 +1397,7 @@ class ParagraphTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -1387,6 +1433,7 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1409,6 +1456,7 @@ class ParagraphTests extends BaseTestContext
             72.0,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -1438,6 +1486,7 @@ class ParagraphTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

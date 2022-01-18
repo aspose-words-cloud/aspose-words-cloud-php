@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HeaderFooterTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,6 +58,7 @@ class HeaderFooterTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -79,6 +80,7 @@ class HeaderFooterTests extends BaseTestContext
         $request = new GetHeaderFootersOnlineRequest(
             $requestDocument,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -109,6 +111,7 @@ class HeaderFooterTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -131,6 +134,7 @@ class HeaderFooterTests extends BaseTestContext
         $request = new GetHeaderFooterOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -162,6 +166,7 @@ class HeaderFooterTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -185,6 +190,7 @@ class HeaderFooterTests extends BaseTestContext
             $requestDocument,
             0,
             0,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -218,6 +224,7 @@ class HeaderFooterTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -236,6 +243,7 @@ class HeaderFooterTests extends BaseTestContext
             $requestDocument,
             "",
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -271,6 +279,7 @@ class HeaderFooterTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -288,6 +297,7 @@ class HeaderFooterTests extends BaseTestContext
         $request = new DeleteHeadersFootersOnlineRequest(
             $requestDocument,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -324,6 +334,7 @@ class HeaderFooterTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -343,6 +354,7 @@ class HeaderFooterTests extends BaseTestContext
             $requestDocument,
             "",
             "FooterEven",
+            NULL,
             NULL,
             NULL,
             NULL,

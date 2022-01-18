@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BookmarkTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,6 +57,7 @@ class BookmarkTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -74,6 +75,7 @@ class BookmarkTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetBookmarksOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL
         );
@@ -103,6 +105,7 @@ class BookmarkTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -122,6 +125,7 @@ class BookmarkTests extends BaseTestContext
         $request = new GetBookmarkByNameOnlineRequest(
             $requestDocument,
             $bookmarkName,
+            NULL,
             NULL,
             NULL
         );
@@ -158,6 +162,7 @@ class BookmarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -185,6 +190,7 @@ class BookmarkTests extends BaseTestContext
             $requestDocument,
             $bookmarkName,
             $requestBookmarkData,
+            NULL,
             NULL,
             NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,

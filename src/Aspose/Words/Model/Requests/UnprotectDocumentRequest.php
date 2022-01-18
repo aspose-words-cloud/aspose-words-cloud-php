@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UnprotectDocumentRequest.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -70,9 +70,14 @@ class UnprotectDocumentRequest extends BaseApiRequest
     public $load_encoding;
 
     /*
-     * Password for opening an encrypted document.
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      */
     public $password;
+
+    /*
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     */
+    public $encrypted_password;
 
     /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -87,10 +92,11 @@ class UnprotectDocumentRequest extends BaseApiRequest
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-     * @param string $password Password for opening an encrypted document.
+     * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+     * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $protection_request, $folder = null, $storage = null, $load_encoding = null, $password = null, $dest_file_name = null)
+    public function __construct($name, $protection_request, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null)
     {
         $this->name = $name;
         $this->protection_request = $protection_request;
@@ -98,6 +104,7 @@ class UnprotectDocumentRequest extends BaseApiRequest
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
+        $this->encrypted_password = $encrypted_password;
         $this->dest_file_name = $dest_file_name;
     }
 
@@ -187,7 +194,7 @@ class UnprotectDocumentRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      */
     public function get_password()
     {
@@ -195,11 +202,28 @@ class UnprotectDocumentRequest extends BaseApiRequest
     }
 
     /*
-     * Password for opening an encrypted document.
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      */
     public function set_password($value)
     {
         $this->password = $value;
+        return $this;
+    }
+
+    /*
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     */
+    public function get_encrypted_password()
+    {
+        return $this->encrypted_password;
+    }
+
+    /*
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     */
+    public function set_encrypted_password($value)
+    {
+        $this->encrypted_password = $value;
         return $this;
     }
 
@@ -287,6 +311,16 @@ class UnprotectDocumentRequest extends BaseApiRequest
         if ($this->password !== null) {
             $localName = lcfirst('Password');
             $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->encrypted_password !== null) {
+            $localName = lcfirst('EncryptedPassword');
+            $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

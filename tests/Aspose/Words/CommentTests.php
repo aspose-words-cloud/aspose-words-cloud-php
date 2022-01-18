@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CommentTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,6 +58,7 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -78,6 +79,7 @@ class CommentTests extends BaseTestContext
         $request = new GetCommentOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL
         );
@@ -105,6 +107,7 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -126,6 +129,7 @@ class CommentTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetCommentsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL
         );
@@ -178,6 +182,7 @@ class CommentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -222,6 +227,7 @@ class CommentTests extends BaseTestContext
         $request = new InsertCommentOnlineRequest(
             $requestDocument,
             $requestComment,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -278,6 +284,7 @@ class CommentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -327,6 +334,7 @@ class CommentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -355,6 +363,7 @@ class CommentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -374,6 +383,7 @@ class CommentTests extends BaseTestContext
         $request = new DeleteCommentOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -405,6 +415,7 @@ class CommentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -423,6 +434,7 @@ class CommentTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new DeleteCommentsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL,

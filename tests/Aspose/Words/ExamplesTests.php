@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ExamplesTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,7 +64,7 @@ class ExamplesTests extends BaseTestContext
        */
       $myVar3 = $fileName;
       $request = new AcceptAllRevisionsRequest(
-          $myVar3, NULL, NULL, NULL, NULL, NULL
+          $myVar3, NULL, NULL, NULL, NULL, NULL, NULL
       );
       $wordsApi->acceptAllRevisions($request);
     }
@@ -82,7 +82,7 @@ class ExamplesTests extends BaseTestContext
        */
       $requestDocument = $documentsDir . $fileName;
       $request = new AcceptAllRevisionsOnlineRequest(
-          $requestDocument, NULL, NULL, NULL
+          $requestDocument, NULL, NULL, NULL, NULL
       );
       $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);
       rename($acceptAllRevisionsOnlineResult->getDocument()->getPathname(), 'test_result.docx');

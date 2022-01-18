@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ConvertDocumentTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -63,6 +63,7 @@ class ConvertDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -87,6 +88,7 @@ class ConvertDocumentTests extends BaseTestContext
         $request = new SaveAsOnlineRequest(
             $requestDocument,
             $requestSaveOptionsData,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -119,6 +121,7 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteName,
             $requestSaveOptionsData,
             $remoteFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -173,6 +176,7 @@ class ConvertDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -197,6 +201,7 @@ class ConvertDocumentTests extends BaseTestContext
         $request = new SaveAsTiffOnlineRequest(
             $requestDocument,
             $requestSaveOptions,
+            NULL,
             NULL,
             NULL,
             NULL,

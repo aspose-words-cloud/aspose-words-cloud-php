@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SectionTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,6 +57,7 @@ class SectionTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -79,6 +80,7 @@ class SectionTests extends BaseTestContext
         $request = new GetSectionOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL
         );
@@ -106,6 +108,7 @@ class SectionTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -127,6 +130,7 @@ class SectionTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetSectionsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL
         );
@@ -158,6 +162,7 @@ class SectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -175,6 +180,7 @@ class SectionTests extends BaseTestContext
         $request = new DeleteSectionOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL,
             NULL,

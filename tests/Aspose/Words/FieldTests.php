@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FieldTests.php">
- *   Copyright (c) 2021 Aspose.Words for Cloud
+ *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -59,6 +59,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -81,6 +82,7 @@ class FieldTests extends BaseTestContext
         $request = new GetFieldsOnlineRequest(
             $requestDocument,
             "sections/0",
+            NULL,
             NULL,
             NULL
         );
@@ -108,6 +110,7 @@ class FieldTests extends BaseTestContext
             $remoteFileName,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -143,6 +146,7 @@ class FieldTests extends BaseTestContext
             $remoteDataFolder,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -164,6 +168,7 @@ class FieldTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0/paragraphs/0",
+            NULL,
             NULL,
             NULL
         );
@@ -192,6 +197,7 @@ class FieldTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -232,6 +238,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -257,6 +264,7 @@ class FieldTests extends BaseTestContext
             $requestDocument,
             $requestField,
             "sections/0/paragraphs/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -292,6 +300,7 @@ class FieldTests extends BaseTestContext
             $requestField,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -337,6 +346,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -363,6 +373,7 @@ class FieldTests extends BaseTestContext
             $requestField,
             0,
             "sections/0/paragraphs/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -399,6 +410,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -425,6 +437,7 @@ class FieldTests extends BaseTestContext
         $request = new InsertPageNumbersOnlineRequest(
             $requestDocument,
             $requestPageNumber,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -461,6 +474,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -479,6 +493,7 @@ class FieldTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0/paragraphs/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -515,6 +530,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -539,6 +555,7 @@ class FieldTests extends BaseTestContext
             $remoteFileName,
             "paragraphs/0",
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -573,6 +590,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -597,6 +615,7 @@ class FieldTests extends BaseTestContext
             $remoteFileName,
             "sections/0",
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -631,6 +650,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -655,6 +675,7 @@ class FieldTests extends BaseTestContext
             $remoteFileName,
             "sections/0/paragraphs/0",
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -689,6 +710,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -706,6 +728,7 @@ class FieldTests extends BaseTestContext
         $request = new DeleteFieldsOnlineRequest(
             $requestDocument,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -737,6 +760,7 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -756,6 +780,7 @@ class FieldTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new UpdateFieldsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL

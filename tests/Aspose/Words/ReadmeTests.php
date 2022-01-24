@@ -33,7 +33,7 @@ use Aspose\Words\WordsApi;
 use PHPUnit\Framework\Assert;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
-use Aspose\Words\Model\SaveOptionsData;
+use Aspose\Words\Model\PdfSaveOptionsData;
 
 class ReadmeTests extends BaseTestContext
 {

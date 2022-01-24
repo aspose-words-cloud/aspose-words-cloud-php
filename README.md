@@ -203,7 +203,7 @@ require_once('vendor/autoload.php');
         $upload_result = $api->uploadFile($upload_request);
 
         // save as pdf file
-        $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => 'destination.pdf'));
+        $saveOptions = new PdfSaveOptionsData(array("file_name" => 'destination.pdf'));
         $request = new Requests\SaveAsRequest('fileStoredInCloud.doc', $saveOptions);
         $result = $api->saveAs($request);
 

@@ -225,6 +225,7 @@ class SearchResult implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets range_start
      *
@@ -247,6 +248,7 @@ class SearchResult implements ArrayAccess
         $this->container['range_start'] = $range_start;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

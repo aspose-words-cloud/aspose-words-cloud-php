@@ -221,6 +221,7 @@ class Bookmark extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets text
      *
@@ -243,6 +244,7 @@ class Bookmark extends LinkElement
         $this->container['text'] = $text;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -225,6 +225,7 @@ class DocumentEntryList implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets document_entries
      *
@@ -247,6 +248,7 @@ class DocumentEntryList implements ArrayAccess
         $this->container['document_entries'] = $document_entries;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

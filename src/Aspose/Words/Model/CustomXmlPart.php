@@ -221,6 +221,7 @@ class CustomXmlPart extends CustomXmlPartLink
         return $this;
     }
 
+
     /*
      * Gets id
      *
@@ -243,6 +244,7 @@ class CustomXmlPart extends CustomXmlPartLink
         $this->container['id'] = $id;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

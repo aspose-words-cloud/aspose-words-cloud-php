@@ -196,6 +196,7 @@ class OdtSaveOptionsData extends SaveOptionsData
         $this->container['measure_unit'] = isset($data['measure_unit']) ? $data['measure_unit'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
+        $this->container['save_format'] = "odt";
     }
 
     /*
@@ -262,6 +263,7 @@ class OdtSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets measure_unit
      *
@@ -289,6 +291,7 @@ class OdtSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets password
      *
@@ -312,6 +315,7 @@ class OdtSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets pretty_format
      *
@@ -334,6 +338,7 @@ class OdtSaveOptionsData extends SaveOptionsData
         $this->container['pretty_format'] = $pretty_format;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -239,6 +239,7 @@ class Section extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets header_footers
      *
@@ -261,6 +262,7 @@ class Section extends LinkElement
         $this->container['header_footers'] = $header_footers;
         return $this;
     }
+
 
     /*
      * Gets page_setup
@@ -285,6 +287,7 @@ class Section extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets paragraphs
      *
@@ -308,6 +311,7 @@ class Section extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets tables
      *
@@ -330,6 +334,7 @@ class Section extends LinkElement
         $this->container['tables'] = $tables;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

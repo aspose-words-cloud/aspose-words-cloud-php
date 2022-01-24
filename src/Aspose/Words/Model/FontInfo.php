@@ -237,6 +237,7 @@ class FontInfo implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets font_family_name
      *
@@ -259,6 +260,7 @@ class FontInfo implements ArrayAccess
         $this->container['font_family_name'] = $font_family_name;
         return $this;
     }
+
 
     /*
      * Gets full_font_name
@@ -283,6 +285,7 @@ class FontInfo implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets version
      *
@@ -305,6 +308,7 @@ class FontInfo implements ArrayAccess
         $this->container['version'] = $version;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

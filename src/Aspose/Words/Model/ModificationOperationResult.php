@@ -225,6 +225,7 @@ class ModificationOperationResult implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets source
      *
@@ -247,6 +248,7 @@ class ModificationOperationResult implements ArrayAccess
         $this->container['source'] = $source;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

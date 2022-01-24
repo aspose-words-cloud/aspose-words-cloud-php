@@ -302,6 +302,7 @@ class CompareOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets ignore_case_changes
      *
@@ -324,6 +325,7 @@ class CompareOptions implements ArrayAccess
         $this->container['ignore_case_changes'] = $ignore_case_changes;
         return $this;
     }
+
 
     /*
      * Gets ignore_comments
@@ -348,6 +350,7 @@ class CompareOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets ignore_fields
      *
@@ -370,6 +373,7 @@ class CompareOptions implements ArrayAccess
         $this->container['ignore_fields'] = $ignore_fields;
         return $this;
     }
+
 
     /*
      * Gets ignore_footnotes
@@ -394,6 +398,7 @@ class CompareOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets ignore_formatting
      *
@@ -416,6 +421,7 @@ class CompareOptions implements ArrayAccess
         $this->container['ignore_formatting'] = $ignore_formatting;
         return $this;
     }
+
 
     /*
      * Gets ignore_headers_and_footers
@@ -440,6 +446,7 @@ class CompareOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets ignore_tables
      *
@@ -463,6 +470,7 @@ class CompareOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets ignore_textboxes
      *
@@ -485,6 +493,7 @@ class CompareOptions implements ArrayAccess
         $this->container['ignore_textboxes'] = $ignore_textboxes;
         return $this;
     }
+
 
     /*
      * Gets target
@@ -512,6 +521,7 @@ class CompareOptions implements ArrayAccess
         $this->container['target'] = $target;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -249,6 +249,7 @@ class CommentBase implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets date_time
      *
@@ -271,6 +272,7 @@ class CommentBase implements ArrayAccess
         $this->container['date_time'] = $date_time;
         return $this;
     }
+
 
     /*
      * Gets initial
@@ -295,6 +297,7 @@ class CommentBase implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets range_end
      *
@@ -317,6 +320,7 @@ class CommentBase implements ArrayAccess
         $this->container['range_end'] = $range_end;
         return $this;
     }
+
 
     /*
      * Gets range_start
@@ -341,6 +345,7 @@ class CommentBase implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets text
      *
@@ -363,6 +368,7 @@ class CommentBase implements ArrayAccess
         $this->container['text'] = $text;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

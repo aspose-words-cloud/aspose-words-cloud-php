@@ -1177,6 +1177,7 @@ class TableProperties extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets allow_auto_fit
      *
@@ -1199,6 +1200,7 @@ class TableProperties extends LinkElement
         $this->container['allow_auto_fit'] = $allow_auto_fit;
         return $this;
     }
+
 
     /*
      * Gets bidi
@@ -1223,6 +1225,7 @@ class TableProperties extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets bottom_padding
      *
@@ -1245,6 +1248,7 @@ class TableProperties extends LinkElement
         $this->container['bottom_padding'] = $bottom_padding;
         return $this;
     }
+
 
     /*
      * Gets cell_spacing
@@ -1269,6 +1273,7 @@ class TableProperties extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets left_indent
      *
@@ -1291,6 +1296,7 @@ class TableProperties extends LinkElement
         $this->container['left_indent'] = $left_indent;
         return $this;
     }
+
 
     /*
      * Gets left_padding
@@ -1315,6 +1321,7 @@ class TableProperties extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets preferred_width
      *
@@ -1338,6 +1345,7 @@ class TableProperties extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets right_padding
      *
@@ -1360,6 +1368,7 @@ class TableProperties extends LinkElement
         $this->container['right_padding'] = $right_padding;
         return $this;
     }
+
 
     /*
      * Gets style_identifier
@@ -1388,6 +1397,7 @@ class TableProperties extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets style_name
      *
@@ -1410,6 +1420,7 @@ class TableProperties extends LinkElement
         $this->container['style_name'] = $style_name;
         return $this;
     }
+
 
     /*
      * Gets style_options
@@ -1438,6 +1449,7 @@ class TableProperties extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets text_wrapping
      *
@@ -1465,6 +1477,7 @@ class TableProperties extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets top_padding
      *
@@ -1487,6 +1500,7 @@ class TableProperties extends LinkElement
         $this->container['top_padding'] = $top_padding;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

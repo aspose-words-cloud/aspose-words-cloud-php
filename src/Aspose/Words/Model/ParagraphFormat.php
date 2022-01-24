@@ -221,6 +221,7 @@ class ParagraphFormat extends ParagraphFormatBase
         return $this;
     }
 
+
     /*
      * Gets is_list_item
      *
@@ -243,6 +244,7 @@ class ParagraphFormat extends ParagraphFormatBase
         $this->container['is_list_item'] = $is_list_item;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

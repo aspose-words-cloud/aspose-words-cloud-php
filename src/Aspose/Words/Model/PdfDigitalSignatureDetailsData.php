@@ -243,6 +243,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets hash_algorithm
      *
@@ -265,6 +266,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
         $this->container['hash_algorithm'] = $hash_algorithm;
         return $this;
     }
+
 
     /*
      * Gets location
@@ -289,6 +291,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets reason
      *
@@ -312,6 +315,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets signature_date
      *
@@ -334,6 +338,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
         $this->container['signature_date'] = $signature_date;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

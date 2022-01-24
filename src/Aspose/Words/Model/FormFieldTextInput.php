@@ -270,6 +270,7 @@ class FormFieldTextInput extends FormField
         return $this;
     }
 
+
     /*
      * Gets text_input_default
      *
@@ -293,6 +294,7 @@ class FormFieldTextInput extends FormField
         return $this;
     }
 
+
     /*
      * Gets text_input_format
      *
@@ -315,6 +317,7 @@ class FormFieldTextInput extends FormField
         $this->container['text_input_format'] = $text_input_format;
         return $this;
     }
+
 
     /*
      * Gets text_input_type
@@ -342,6 +345,7 @@ class FormFieldTextInput extends FormField
         $this->container['text_input_type'] = $text_input_type;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

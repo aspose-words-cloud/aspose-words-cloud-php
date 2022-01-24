@@ -192,6 +192,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['fit_to_view_port'] = isset($data['fit_to_view_port']) ? $data['fit_to_view_port'] : null;
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
+        $this->container['save_format'] = "svg";
         $this->container['show_page_border'] = isset($data['show_page_border']) ? $data['show_page_border'] : null;
         $this->container['text_output_mode'] = isset($data['text_output_mode']) ? $data['text_output_mode'] : null;
     }
@@ -245,6 +246,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets fit_to_view_port
      *
@@ -267,6 +269,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['fit_to_view_port'] = $fit_to_view_port;
         return $this;
     }
+
 
     /*
      * Gets resources_folder
@@ -291,6 +294,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets resources_folder_alias
      *
@@ -313,6 +317,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['resources_folder_alias'] = $resources_folder_alias;
         return $this;
     }
+
 
     /*
      * Gets show_page_border
@@ -337,6 +342,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets text_output_mode
      *
@@ -359,6 +365,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['text_output_mode'] = $text_output_mode;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

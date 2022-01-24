@@ -231,6 +231,7 @@ class DocumentEntry implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets import_format_mode
      *
@@ -254,6 +255,7 @@ class DocumentEntry implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets password
      *
@@ -276,6 +278,7 @@ class DocumentEntry implements ArrayAccess
         $this->container['password'] = $password;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

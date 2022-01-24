@@ -1087,6 +1087,7 @@ class Style extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets base_style_name
      *
@@ -1109,6 +1110,7 @@ class Style extends LinkElement
         $this->container['base_style_name'] = $base_style_name;
         return $this;
     }
+
 
     /*
      * Gets built_in
@@ -1133,6 +1135,7 @@ class Style extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets font
      *
@@ -1155,6 +1158,7 @@ class Style extends LinkElement
         $this->container['font'] = $font;
         return $this;
     }
+
 
     /*
      * Gets is_heading
@@ -1179,6 +1183,7 @@ class Style extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets is_quick_style
      *
@@ -1201,6 +1206,7 @@ class Style extends LinkElement
         $this->container['is_quick_style'] = $is_quick_style;
         return $this;
     }
+
 
     /*
      * Gets linked_style_name
@@ -1225,6 +1231,7 @@ class Style extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets name
      *
@@ -1248,6 +1255,7 @@ class Style extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets next_paragraph_style_name
      *
@@ -1270,6 +1278,7 @@ class Style extends LinkElement
         $this->container['next_paragraph_style_name'] = $next_paragraph_style_name;
         return $this;
     }
+
 
     /*
      * Gets style_identifier
@@ -1298,6 +1307,7 @@ class Style extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets type
      *
@@ -1324,6 +1334,7 @@ class Style extends LinkElement
         $this->container['type'] = $type;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

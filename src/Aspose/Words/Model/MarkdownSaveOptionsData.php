@@ -181,6 +181,7 @@ class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+        $this->container['save_format'] = "md";
         $this->container['table_content_alignment'] = isset($data['table_content_alignment']) ? $data['table_content_alignment'] : null;
     }
 
@@ -251,6 +252,7 @@ class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
         $this->container['table_content_alignment'] = $table_content_alignment;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -249,6 +249,7 @@ class OutlineOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets create_missing_outline_levels
      *
@@ -271,6 +272,7 @@ class OutlineOptionsData implements ArrayAccess
         $this->container['create_missing_outline_levels'] = $create_missing_outline_levels;
         return $this;
     }
+
 
     /*
      * Gets create_outlines_for_headings_in_tables
@@ -295,6 +297,7 @@ class OutlineOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets default_bookmarks_outline_level
      *
@@ -317,6 +320,7 @@ class OutlineOptionsData implements ArrayAccess
         $this->container['default_bookmarks_outline_level'] = $default_bookmarks_outline_level;
         return $this;
     }
+
 
     /*
      * Gets expanded_outline_levels
@@ -341,6 +345,7 @@ class OutlineOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets headings_outline_levels
      *
@@ -363,6 +368,7 @@ class OutlineOptionsData implements ArrayAccess
         $this->container['headings_outline_levels'] = $headings_outline_levels;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

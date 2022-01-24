@@ -215,6 +215,7 @@ class BordersCollection extends LinkElement
         return $this;
     }
 
+
     /*
      * Returns true if offset exists. False otherwise.
      *

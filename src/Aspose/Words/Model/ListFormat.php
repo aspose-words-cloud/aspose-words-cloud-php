@@ -227,6 +227,7 @@ class ListFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets list_id
      *
@@ -250,6 +251,7 @@ class ListFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets list_level_number
      *
@@ -272,6 +274,7 @@ class ListFormat extends LinkElement
         $this->container['list_level_number'] = $list_level_number;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -221,6 +221,7 @@ class SearchResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets search_results
      *
@@ -243,6 +244,7 @@ class SearchResponse extends WordsResponse
         $this->container['search_results'] = $search_results;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

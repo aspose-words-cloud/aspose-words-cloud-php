@@ -436,6 +436,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['resolve_font_names'] = isset($data['resolve_font_names']) ? $data['resolve_font_names'] : null;
         $this->container['resource_folder'] = isset($data['resource_folder']) ? $data['resource_folder'] : null;
         $this->container['resource_folder_alias'] = isset($data['resource_folder_alias']) ? $data['resource_folder_alias'] : null;
+        $this->container['save_format'] = "html";
         $this->container['scale_image_to_shape_size'] = isset($data['scale_image_to_shape_size']) ? $data['scale_image_to_shape_size'] : null;
         $this->container['table_width_output_mode'] = isset($data['table_width_output_mode']) ? $data['table_width_output_mode'] : null;
     }
@@ -530,6 +531,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets css_class_name_prefix
      *
@@ -552,6 +554,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['css_class_name_prefix'] = $css_class_name_prefix;
         return $this;
     }
+
 
     /*
      * Gets css_style_sheet_file_name
@@ -576,6 +579,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets css_style_sheet_type
      *
@@ -598,6 +602,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['css_style_sheet_type'] = $css_style_sheet_type;
         return $this;
     }
+
 
     /*
      * Gets document_split_criteria
@@ -622,6 +627,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets document_split_heading_level
      *
@@ -644,6 +650,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['document_split_heading_level'] = $document_split_heading_level;
         return $this;
     }
+
 
     /*
      * Gets encoding
@@ -668,6 +675,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_document_properties
      *
@@ -690,6 +698,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_document_properties'] = $export_document_properties;
         return $this;
     }
+
 
     /*
      * Gets export_drop_down_form_field_as_text
@@ -714,6 +723,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_font_resources
      *
@@ -736,6 +746,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_font_resources'] = $export_font_resources;
         return $this;
     }
+
 
     /*
      * Gets export_fonts_as_base64
@@ -760,6 +771,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_headers_footers_mode
      *
@@ -782,6 +794,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_headers_footers_mode'] = $export_headers_footers_mode;
         return $this;
     }
+
 
     /*
      * Gets export_images_as_base64
@@ -806,6 +819,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_language_information
      *
@@ -828,6 +842,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_language_information'] = $export_language_information;
         return $this;
     }
+
 
     /*
      * Gets export_list_labels
@@ -852,6 +867,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_original_url_for_linked_images
      *
@@ -874,6 +890,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_original_url_for_linked_images'] = $export_original_url_for_linked_images;
         return $this;
     }
+
 
     /*
      * Gets export_page_margins
@@ -898,6 +915,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_page_setup
      *
@@ -920,6 +938,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_page_setup'] = $export_page_setup;
         return $this;
     }
+
 
     /*
      * Gets export_relative_font_size
@@ -944,6 +963,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_roundtrip_information
      *
@@ -966,6 +986,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_roundtrip_information'] = $export_roundtrip_information;
         return $this;
     }
+
 
     /*
      * Gets export_text_box_as_svg
@@ -990,6 +1011,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_text_input_form_field_as_text
      *
@@ -1012,6 +1034,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_text_input_form_field_as_text'] = $export_text_input_form_field_as_text;
         return $this;
     }
+
 
     /*
      * Gets export_toc_page_numbers
@@ -1036,6 +1059,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_xhtml_transitional
      *
@@ -1058,6 +1082,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_xhtml_transitional'] = $export_xhtml_transitional;
         return $this;
     }
+
 
     /*
      * Gets font_resources_subsetting_size_threshold
@@ -1082,6 +1107,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets fonts_folder
      *
@@ -1105,6 +1131,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets fonts_folder_alias
      *
@@ -1127,6 +1154,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['fonts_folder_alias'] = $fonts_folder_alias;
         return $this;
     }
+
 
     /*
      * Gets html_version
@@ -1155,6 +1183,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets image_resolution
      *
@@ -1177,6 +1206,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['image_resolution'] = $image_resolution;
         return $this;
     }
+
 
     /*
      * Gets images_folder
@@ -1201,6 +1231,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets images_folder_alias
      *
@@ -1223,6 +1254,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['images_folder_alias'] = $images_folder_alias;
         return $this;
     }
+
 
     /*
      * Gets metafile_format
@@ -1251,6 +1283,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets office_math_output_mode
      *
@@ -1278,6 +1311,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets pretty_format
      *
@@ -1300,6 +1334,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['pretty_format'] = $pretty_format;
         return $this;
     }
+
 
     /*
      * Gets resolve_font_names
@@ -1324,6 +1359,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets resource_folder
      *
@@ -1346,6 +1382,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['resource_folder'] = $resource_folder;
         return $this;
     }
+
 
     /*
      * Gets resource_folder_alias
@@ -1370,6 +1407,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets scale_image_to_shape_size
      *
@@ -1393,6 +1431,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets table_width_output_mode
      *
@@ -1415,6 +1454,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['table_width_output_mode'] = $table_width_output_mode;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

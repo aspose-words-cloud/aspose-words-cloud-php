@@ -231,6 +231,7 @@ class SplitDocumentResult implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets source_document
      *
@@ -254,6 +255,7 @@ class SplitDocumentResult implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets zipped_pages
      *
@@ -276,6 +278,7 @@ class SplitDocumentResult implements ArrayAccess
         $this->container['zipped_pages'] = $zipped_pages;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -170,6 +170,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
         parent::__construct($data);
         $this->container['falllback_font_name'] = isset($data['falllback_font_name']) ? $data['falllback_font_name'] : null;
         $this->container['rasterize_transformed_elements'] = isset($data['rasterize_transformed_elements']) ? $data['rasterize_transformed_elements'] : null;
+        $this->container['save_format'] = "pcl";
     }
 
     /*
@@ -221,6 +222,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets rasterize_transformed_elements
      *
@@ -243,6 +245,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['rasterize_transformed_elements'] = $rasterize_transformed_elements;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

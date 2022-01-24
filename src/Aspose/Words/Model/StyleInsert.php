@@ -258,6 +258,7 @@ class StyleInsert implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets style_type
      *
@@ -284,6 +285,7 @@ class StyleInsert implements ArrayAccess
         $this->container['style_type'] = $style_type;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

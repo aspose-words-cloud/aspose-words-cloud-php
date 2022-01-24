@@ -227,6 +227,7 @@ class HeaderFooter extends HeaderFooterLink
         return $this;
     }
 
+
     /*
      * Gets drawing_objects
      *
@@ -250,6 +251,7 @@ class HeaderFooter extends HeaderFooterLink
         return $this;
     }
 
+
     /*
      * Gets paragraphs
      *
@@ -272,6 +274,7 @@ class HeaderFooter extends HeaderFooterLink
         $this->container['paragraphs'] = $paragraphs;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

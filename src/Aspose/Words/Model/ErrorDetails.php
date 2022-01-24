@@ -225,6 +225,7 @@ class ErrorDetails implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets request_id
      *
@@ -247,6 +248,7 @@ class ErrorDetails implements ArrayAccess
         $this->container['request_id'] = $request_id;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

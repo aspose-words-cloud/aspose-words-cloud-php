@@ -1288,6 +1288,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets add_space_between_far_east_and_digit
      *
@@ -1310,6 +1311,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['add_space_between_far_east_and_digit'] = $add_space_between_far_east_and_digit;
         return $this;
     }
+
 
     /*
      * Gets alignment
@@ -1338,6 +1340,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets bidi
      *
@@ -1360,6 +1363,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['bidi'] = $bidi;
         return $this;
     }
+
 
     /*
      * Gets drop_cap_position
@@ -1388,6 +1392,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets first_line_indent
      *
@@ -1410,6 +1415,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['first_line_indent'] = $first_line_indent;
         return $this;
     }
+
 
     /*
      * Gets keep_together
@@ -1434,6 +1440,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets keep_with_next
      *
@@ -1456,6 +1463,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['keep_with_next'] = $keep_with_next;
         return $this;
     }
+
 
     /*
      * Gets left_indent
@@ -1480,6 +1488,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets line_spacing
      *
@@ -1502,6 +1511,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['line_spacing'] = $line_spacing;
         return $this;
     }
+
 
     /*
      * Gets line_spacing_rule
@@ -1530,6 +1540,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets lines_to_drop
      *
@@ -1553,6 +1564,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets no_space_between_paragraphs_of_same_style
      *
@@ -1575,6 +1587,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['no_space_between_paragraphs_of_same_style'] = $no_space_between_paragraphs_of_same_style;
         return $this;
     }
+
 
     /*
      * Gets outline_level
@@ -1603,6 +1616,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets page_break_before
      *
@@ -1625,6 +1639,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['page_break_before'] = $page_break_before;
         return $this;
     }
+
 
     /*
      * Gets right_indent
@@ -1649,6 +1664,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets shading
      *
@@ -1671,6 +1687,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['shading'] = $shading;
         return $this;
     }
+
 
     /*
      * Gets space_after
@@ -1695,6 +1712,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets space_after_auto
      *
@@ -1717,6 +1735,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['space_after_auto'] = $space_after_auto;
         return $this;
     }
+
 
     /*
      * Gets space_before
@@ -1741,6 +1760,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets space_before_auto
      *
@@ -1763,6 +1783,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['space_before_auto'] = $space_before_auto;
         return $this;
     }
+
 
     /*
      * Gets style_identifier
@@ -1791,6 +1812,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets style_name
      *
@@ -1813,6 +1835,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['style_name'] = $style_name;
         return $this;
     }
+
 
     /*
      * Gets suppress_auto_hyphens
@@ -1837,6 +1860,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets suppress_line_numbers
      *
@@ -1860,6 +1884,7 @@ class ParagraphFormatBase extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets widow_control
      *
@@ -1882,6 +1907,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['widow_control'] = $widow_control;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

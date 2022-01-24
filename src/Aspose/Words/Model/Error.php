@@ -237,6 +237,7 @@ class Error implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets description
      *
@@ -259,6 +260,7 @@ class Error implements ArrayAccess
         $this->container['description'] = $description;
         return $this;
     }
+
 
     /*
      * Gets inner_error
@@ -283,6 +285,7 @@ class Error implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets message
      *
@@ -305,6 +308,7 @@ class Error implements ArrayAccess
         $this->container['message'] = $message;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

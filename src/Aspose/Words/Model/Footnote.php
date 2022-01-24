@@ -268,6 +268,7 @@ class Footnote extends FootnoteLink
         return $this;
     }
 
+
     /*
      * Gets footnote_type
      *
@@ -295,6 +296,7 @@ class Footnote extends FootnoteLink
         return $this;
     }
 
+
     /*
      * Gets position
      *
@@ -317,6 +319,7 @@ class Footnote extends FootnoteLink
         $this->container['position'] = $position;
         return $this;
     }
+
 
     /*
      * Gets reference_mark
@@ -341,6 +344,7 @@ class Footnote extends FootnoteLink
         return $this;
     }
 
+
     /*
      * Gets text
      *
@@ -363,6 +367,7 @@ class Footnote extends FootnoteLink
         $this->container['text'] = $text;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

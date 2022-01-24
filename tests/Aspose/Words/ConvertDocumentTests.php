@@ -30,7 +30,7 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{ConvertDocumentRequest, SaveAsOnlineRequest, SaveAsRequest, SaveAsTiffOnlineRequest, SaveAsTiffRequest};
-use Aspose\Words\Model\{SaveOptionsData, TiffSaveOptionsData};
+use Aspose\Words\Model\{DocxSaveOptionsData, PdfSaveOptionsData, TiffSaveOptionsData};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,8 +52,7 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
-        $requestSaveOptionsData = new SaveOptionsData(array(
-            "save_format" => "pdf",
+        $requestSaveOptionsData = new PdfSaveOptionsData(array(
             "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
         ));
         $request = new SaveAsRequest(
@@ -81,8 +80,7 @@ class ConvertDocumentTests extends BaseTestContext
         $localName = "test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
-        $requestSaveOptionsData = new SaveOptionsData(array(
-            "save_format" => "pdf",
+        $requestSaveOptionsData = new PdfSaveOptionsData(array(
             "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
         ));
         $request = new SaveAsOnlineRequest(
@@ -113,8 +111,7 @@ class ConvertDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName
         );
 
-        $requestSaveOptionsData = new SaveOptionsData(array(
-            "save_format" => "docx",
+        $requestSaveOptionsData = new DocxSaveOptionsData(array(
             "file_name" => self::$baseTestOutPath . "/TestSaveAsFromPdfToDoc.docx",
         ));
         $request = new SaveAsRequest(
@@ -149,7 +146,6 @@ class ConvertDocumentTests extends BaseTestContext
         );
 
         $requestSaveOptions = new TiffSaveOptionsData(array(
-            "save_format" => "tiff",
             "file_name" => self::$baseTestOutPath . "/abc.tiff",
         ));
         $request = new SaveAsTiffRequest(
@@ -195,7 +191,6 @@ class ConvertDocumentTests extends BaseTestContext
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
         $requestSaveOptions = new TiffSaveOptionsData(array(
-            "save_format" => "tiff",
             "file_name" => self::$baseTestOutPath . "/abc.tiff",
         ));
         $request = new SaveAsTiffOnlineRequest(

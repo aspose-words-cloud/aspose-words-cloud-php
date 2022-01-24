@@ -221,6 +221,7 @@ class Hyperlink extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets value
      *
@@ -243,6 +244,7 @@ class Hyperlink extends LinkElement
         $this->container['value'] = $value;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

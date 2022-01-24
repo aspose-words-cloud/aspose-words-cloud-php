@@ -170,6 +170,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
         parent::__construct($data);
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
+        $this->container['save_format'] = "xamlfixed";
     }
 
     /*
@@ -221,6 +222,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets resources_folder_alias
      *
@@ -243,6 +245,7 @@ class XamlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['resources_folder_alias'] = $resources_folder_alias;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -225,6 +225,7 @@ class FootnotesStatData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets word_count
      *
@@ -247,6 +248,7 @@ class FootnotesStatData implements ArrayAccess
         $this->container['word_count'] = $word_count;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

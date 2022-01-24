@@ -225,6 +225,7 @@ class DocumentPosition implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets offset
      *
@@ -247,6 +248,7 @@ class DocumentPosition implements ArrayAccess
         $this->container['offset'] = $offset;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

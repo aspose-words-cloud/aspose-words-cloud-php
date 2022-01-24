@@ -225,6 +225,7 @@ class ListFormatUpdate implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets list_level_number
      *
@@ -247,6 +248,7 @@ class ListFormatUpdate implements ArrayAccess
         $this->container['list_level_number'] = $list_level_number;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

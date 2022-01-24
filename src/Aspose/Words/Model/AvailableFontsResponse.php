@@ -227,6 +227,7 @@ class AvailableFontsResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets custom_fonts
      *
@@ -250,6 +251,7 @@ class AvailableFontsResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets system_fonts
      *
@@ -272,6 +274,7 @@ class AvailableFontsResponse extends WordsResponse
         $this->container['system_fonts'] = $system_fonts;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

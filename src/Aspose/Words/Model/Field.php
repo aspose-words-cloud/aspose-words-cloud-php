@@ -221,6 +221,7 @@ class Field extends FieldLink
         return $this;
     }
 
+
     /*
      * Gets result
      *
@@ -243,6 +244,7 @@ class Field extends FieldLink
         $this->container['result'] = $result;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

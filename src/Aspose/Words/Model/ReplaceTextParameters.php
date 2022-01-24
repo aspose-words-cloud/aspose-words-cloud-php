@@ -243,6 +243,7 @@ class ReplaceTextParameters implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets is_match_whole_word
      *
@@ -265,6 +266,7 @@ class ReplaceTextParameters implements ArrayAccess
         $this->container['is_match_whole_word'] = $is_match_whole_word;
         return $this;
     }
+
 
     /*
      * Gets is_old_value_regex
@@ -289,6 +291,7 @@ class ReplaceTextParameters implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets new_value
      *
@@ -312,6 +315,7 @@ class ReplaceTextParameters implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets old_value
      *
@@ -334,6 +338,7 @@ class ReplaceTextParameters implements ArrayAccess
         $this->container['old_value'] = $old_value;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

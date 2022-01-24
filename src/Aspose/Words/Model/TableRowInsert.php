@@ -225,6 +225,7 @@ class TableRowInsert implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets insert_after
      *
@@ -247,6 +248,7 @@ class TableRowInsert implements ArrayAccess
         $this->container['insert_after'] = $insert_after;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -369,6 +369,7 @@ class Border extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets color
      *
@@ -392,6 +393,7 @@ class Border extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets distance_from_text
      *
@@ -414,6 +416,7 @@ class Border extends LinkElement
         $this->container['distance_from_text'] = $distance_from_text;
         return $this;
     }
+
 
     /*
      * Gets line_style
@@ -442,6 +445,7 @@ class Border extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets line_width
      *
@@ -465,6 +469,7 @@ class Border extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets shadow
      *
@@ -487,6 +492,7 @@ class Border extends LinkElement
         $this->container['shadow'] = $shadow;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

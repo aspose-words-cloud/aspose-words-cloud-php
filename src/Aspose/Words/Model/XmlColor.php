@@ -225,6 +225,7 @@ class XmlColor implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets web
      *
@@ -247,6 +248,7 @@ class XmlColor implements ArrayAccess
         $this->container['web'] = $web;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

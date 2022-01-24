@@ -227,6 +227,7 @@ class DocumentProperty extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets name
      *
@@ -250,6 +251,7 @@ class DocumentProperty extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets value
      *
@@ -272,6 +274,7 @@ class DocumentProperty extends LinkElement
         $this->container['value'] = $value;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

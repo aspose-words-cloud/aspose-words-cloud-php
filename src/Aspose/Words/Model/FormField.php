@@ -263,6 +263,7 @@ class FormField extends NodeLink
         return $this;
     }
 
+
     /*
      * Gets enabled
      *
@@ -285,6 +286,7 @@ class FormField extends NodeLink
         $this->container['enabled'] = $enabled;
         return $this;
     }
+
 
     /*
      * Gets entry_macro
@@ -309,6 +311,7 @@ class FormField extends NodeLink
         return $this;
     }
 
+
     /*
      * Gets exit_macro
      *
@@ -331,6 +334,7 @@ class FormField extends NodeLink
         $this->container['exit_macro'] = $exit_macro;
         return $this;
     }
+
 
     /*
      * Gets help_text
@@ -355,6 +359,7 @@ class FormField extends NodeLink
         return $this;
     }
 
+
     /*
      * Gets name
      *
@@ -377,6 +382,7 @@ class FormField extends NodeLink
         $this->container['name'] = $name;
         return $this;
     }
+
 
     /*
      * Gets own_help
@@ -401,6 +407,7 @@ class FormField extends NodeLink
         return $this;
     }
 
+
     /*
      * Gets own_status
      *
@@ -424,6 +431,7 @@ class FormField extends NodeLink
         return $this;
     }
 
+
     /*
      * Gets status_text
      *
@@ -446,6 +454,7 @@ class FormField extends NodeLink
         $this->container['status_text'] = $status_text;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

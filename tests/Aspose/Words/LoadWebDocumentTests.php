@@ -30,7 +30,7 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{LoadWebDocumentRequest};
-use Aspose\Words\Model\{LoadWebDocumentData, SaveOptionsData};
+use Aspose\Words\Model\{DocSaveOptionsData, LoadWebDocumentData};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -43,9 +43,8 @@ class LoadWebDocumentTests extends BaseTestContext
      */
     public function testLoadWebDocument()
     {
-        $requestDataSaveOptions = new SaveOptionsData(array(
+        $requestDataSaveOptions = new DocSaveOptionsData(array(
             "file_name" => "google.doc",
-            "save_format" => "doc",
             "dml_effects_rendering_mode" => "1",
             "dml_rendering_mode" => "1",
             "update_sdt_content" => false,

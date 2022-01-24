@@ -240,6 +240,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
         $this->container['save_font_face_css_separately'] = isset($data['save_font_face_css_separately']) ? $data['save_font_face_css_separately'] : null;
+        $this->container['save_format'] = "htmlfixed";
         $this->container['show_page_border'] = isset($data['show_page_border']) ? $data['show_page_border'] : null;
         $this->container['use_target_machine_fonts'] = isset($data['use_target_machine_fonts']) ? $data['use_target_machine_fonts'] : null;
     }
@@ -293,6 +294,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets encoding
      *
@@ -315,6 +317,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['encoding'] = $encoding;
         return $this;
     }
+
 
     /*
      * Gets export_embedded_css
@@ -339,6 +342,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_embedded_fonts
      *
@@ -361,6 +365,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['export_embedded_fonts'] = $export_embedded_fonts;
         return $this;
     }
+
 
     /*
      * Gets export_embedded_images
@@ -385,6 +390,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_form_fields
      *
@@ -407,6 +413,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['export_form_fields'] = $export_form_fields;
         return $this;
     }
+
 
     /*
      * Gets font_format
@@ -431,6 +438,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets page_horizontal_alignment
      *
@@ -453,6 +461,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['page_horizontal_alignment'] = $page_horizontal_alignment;
         return $this;
     }
+
 
     /*
      * Gets page_margins
@@ -477,6 +486,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets resources_folder
      *
@@ -499,6 +509,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['resources_folder'] = $resources_folder;
         return $this;
     }
+
 
     /*
      * Gets resources_folder_alias
@@ -523,6 +534,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets save_font_face_css_separately
      *
@@ -545,6 +557,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['save_font_face_css_separately'] = $save_font_face_css_separately;
         return $this;
     }
+
 
     /*
      * Gets show_page_border
@@ -569,6 +582,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets use_target_machine_fonts
      *
@@ -591,6 +605,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['use_target_machine_fonts'] = $use_target_machine_fonts;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

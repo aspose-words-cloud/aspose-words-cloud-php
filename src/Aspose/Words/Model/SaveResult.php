@@ -231,6 +231,7 @@ class SaveResult implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets dest_document
      *
@@ -254,6 +255,7 @@ class SaveResult implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets source_document
      *
@@ -276,6 +278,7 @@ class SaveResult implements ArrayAccess
         $this->container['source_document'] = $source_document;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

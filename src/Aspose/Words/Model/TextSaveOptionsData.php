@@ -181,6 +181,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
         $this->container['add_bidi_marks'] = isset($data['add_bidi_marks']) ? $data['add_bidi_marks'] : null;
         $this->container['max_characters_per_line'] = isset($data['max_characters_per_line']) ? $data['max_characters_per_line'] : null;
         $this->container['preserve_table_layout'] = isset($data['preserve_table_layout']) ? $data['preserve_table_layout'] : null;
+        $this->container['save_format'] = "txt";
         $this->container['simplify_list_labels'] = isset($data['simplify_list_labels']) ? $data['simplify_list_labels'] : null;
     }
 
@@ -233,6 +234,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
         return $this;
     }
 
+
     /*
      * Gets max_characters_per_line
      *
@@ -255,6 +257,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
         $this->container['max_characters_per_line'] = $max_characters_per_line;
         return $this;
     }
+
 
     /*
      * Gets preserve_table_layout
@@ -279,6 +282,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
         return $this;
     }
 
+
     /*
      * Gets simplify_list_labels
      *
@@ -301,6 +305,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
         $this->container['simplify_list_labels'] = $simplify_list_labels;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

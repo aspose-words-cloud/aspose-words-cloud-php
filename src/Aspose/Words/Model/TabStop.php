@@ -215,6 +215,7 @@ class TabStop extends TabStopBase
         return $this;
     }
 
+
     /*
      * Returns true if offset exists. False otherwise.
      *

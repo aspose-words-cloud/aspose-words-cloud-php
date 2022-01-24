@@ -492,6 +492,7 @@ class ListLevel extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets font
      *
@@ -514,6 +515,7 @@ class ListLevel extends LinkElement
         $this->container['font'] = $font;
         return $this;
     }
+
 
     /*
      * Gets is_legal
@@ -538,6 +540,7 @@ class ListLevel extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets linked_style
      *
@@ -560,6 +563,7 @@ class ListLevel extends LinkElement
         $this->container['linked_style'] = $linked_style;
         return $this;
     }
+
 
     /*
      * Gets number_format
@@ -584,6 +588,7 @@ class ListLevel extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets number_position
      *
@@ -606,6 +611,7 @@ class ListLevel extends LinkElement
         $this->container['number_position'] = $number_position;
         return $this;
     }
+
 
     /*
      * Gets number_style
@@ -634,6 +640,7 @@ class ListLevel extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets restart_after_level
      *
@@ -656,6 +663,7 @@ class ListLevel extends LinkElement
         $this->container['restart_after_level'] = $restart_after_level;
         return $this;
     }
+
 
     /*
      * Gets start_at
@@ -680,6 +688,7 @@ class ListLevel extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets tab_position
      *
@@ -703,6 +712,7 @@ class ListLevel extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets text_position
      *
@@ -725,6 +735,7 @@ class ListLevel extends LinkElement
         $this->container['text_position'] = $text_position;
         return $this;
     }
+
 
     /*
      * Gets trailing_character
@@ -752,6 +763,7 @@ class ListLevel extends LinkElement
         $this->container['trailing_character'] = $trailing_character;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

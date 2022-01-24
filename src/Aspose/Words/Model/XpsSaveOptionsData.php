@@ -181,6 +181,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['bookmarks_outline_level'] = isset($data['bookmarks_outline_level']) ? $data['bookmarks_outline_level'] : null;
         $this->container['headings_outline_levels'] = isset($data['headings_outline_levels']) ? $data['headings_outline_levels'] : null;
         $this->container['outline_options'] = isset($data['outline_options']) ? $data['outline_options'] : null;
+        $this->container['save_format'] = "xps";
         $this->container['use_book_fold_printing_settings'] = isset($data['use_book_fold_printing_settings']) ? $data['use_book_fold_printing_settings'] : null;
     }
 
@@ -233,6 +234,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets headings_outline_levels
      *
@@ -255,6 +257,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['headings_outline_levels'] = $headings_outline_levels;
         return $this;
     }
+
 
     /*
      * Gets outline_options
@@ -279,6 +282,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets use_book_fold_printing_settings
      *
@@ -301,6 +305,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['use_book_fold_printing_settings'] = $use_book_fold_printing_settings;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

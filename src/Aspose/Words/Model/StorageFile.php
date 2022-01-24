@@ -243,6 +243,7 @@ class StorageFile implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets modified_date
      *
@@ -265,6 +266,7 @@ class StorageFile implements ArrayAccess
         $this->container['modified_date'] = $modified_date;
         return $this;
     }
+
 
     /*
      * Gets name
@@ -289,6 +291,7 @@ class StorageFile implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets path
      *
@@ -312,6 +315,7 @@ class StorageFile implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets size
      *
@@ -334,6 +338,7 @@ class StorageFile implements ArrayAccess
         $this->container['size'] = $size;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

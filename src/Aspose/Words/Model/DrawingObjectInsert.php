@@ -382,6 +382,7 @@ class DrawingObjectInsert implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets left
      *
@@ -405,6 +406,7 @@ class DrawingObjectInsert implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets position
      *
@@ -427,6 +429,7 @@ class DrawingObjectInsert implements ArrayAccess
         $this->container['position'] = $position;
         return $this;
     }
+
 
     /*
      * Gets relative_horizontal_position
@@ -455,6 +458,7 @@ class DrawingObjectInsert implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets relative_vertical_position
      *
@@ -482,6 +486,7 @@ class DrawingObjectInsert implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets top
      *
@@ -505,6 +510,7 @@ class DrawingObjectInsert implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets width
      *
@@ -527,6 +533,7 @@ class DrawingObjectInsert implements ArrayAccess
         $this->container['width'] = $width;
         return $this;
     }
+
 
     /*
      * Gets wrap_type
@@ -554,6 +561,7 @@ class DrawingObjectInsert implements ArrayAccess
         $this->container['wrap_type'] = $wrap_type;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

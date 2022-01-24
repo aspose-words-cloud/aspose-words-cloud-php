@@ -390,6 +390,7 @@ class DrawingObject extends DrawingObjectLink
         return $this;
     }
 
+
     /*
      * Gets image_data_link
      *
@@ -412,6 +413,7 @@ class DrawingObject extends DrawingObjectLink
         $this->container['image_data_link'] = $image_data_link;
         return $this;
     }
+
 
     /*
      * Gets left
@@ -436,6 +438,7 @@ class DrawingObject extends DrawingObjectLink
         return $this;
     }
 
+
     /*
      * Gets ole_data_link
      *
@@ -458,6 +461,7 @@ class DrawingObject extends DrawingObjectLink
         $this->container['ole_data_link'] = $ole_data_link;
         return $this;
     }
+
 
     /*
      * Gets relative_horizontal_position
@@ -486,6 +490,7 @@ class DrawingObject extends DrawingObjectLink
         return $this;
     }
 
+
     /*
      * Gets relative_vertical_position
      *
@@ -513,6 +518,7 @@ class DrawingObject extends DrawingObjectLink
         return $this;
     }
 
+
     /*
      * Gets render_links
      *
@@ -535,6 +541,7 @@ class DrawingObject extends DrawingObjectLink
         $this->container['render_links'] = $render_links;
         return $this;
     }
+
 
     /*
      * Gets top
@@ -559,6 +566,7 @@ class DrawingObject extends DrawingObjectLink
         return $this;
     }
 
+
     /*
      * Gets width
      *
@@ -581,6 +589,7 @@ class DrawingObject extends DrawingObjectLink
         $this->container['width'] = $width;
         return $this;
     }
+
 
     /*
      * Gets wrap_type
@@ -608,6 +617,7 @@ class DrawingObject extends DrawingObjectLink
         $this->container['wrap_type'] = $wrap_type;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -380,6 +380,7 @@ class OfficeMathObject extends OfficeMathLink
         return $this;
     }
 
+
     /*
      * Gets display_type
      *
@@ -406,6 +407,7 @@ class OfficeMathObject extends OfficeMathLink
         $this->container['display_type'] = $display_type;
         return $this;
     }
+
 
     /*
      * Gets justification
@@ -434,6 +436,7 @@ class OfficeMathObject extends OfficeMathLink
         return $this;
     }
 
+
     /*
      * Gets math_object_type
      *
@@ -460,6 +463,7 @@ class OfficeMathObject extends OfficeMathLink
         $this->container['math_object_type'] = $math_object_type;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

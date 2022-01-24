@@ -251,6 +251,7 @@ class ListInfo extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets is_list_style_reference
      *
@@ -273,6 +274,7 @@ class ListInfo extends LinkElement
         $this->container['is_list_style_reference'] = $is_list_style_reference;
         return $this;
     }
+
 
     /*
      * Gets is_multi_level
@@ -297,6 +299,7 @@ class ListInfo extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets is_restart_at_each_section
      *
@@ -319,6 +322,7 @@ class ListInfo extends LinkElement
         $this->container['is_restart_at_each_section'] = $is_restart_at_each_section;
         return $this;
     }
+
 
     /*
      * Gets list_id
@@ -343,6 +347,7 @@ class ListInfo extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets list_levels
      *
@@ -366,6 +371,7 @@ class ListInfo extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets style
      *
@@ -388,6 +394,7 @@ class ListInfo extends LinkElement
         $this->container['style'] = $style;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

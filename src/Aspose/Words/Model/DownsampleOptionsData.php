@@ -231,6 +231,7 @@ class DownsampleOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets resolution
      *
@@ -254,6 +255,7 @@ class DownsampleOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets resolution_threshold
      *
@@ -276,6 +278,7 @@ class DownsampleOptionsData implements ArrayAccess
         $this->container['resolution_threshold'] = $resolution_threshold;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

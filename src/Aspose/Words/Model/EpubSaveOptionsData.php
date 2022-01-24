@@ -164,6 +164,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
     {
         parent::__construct($data);
         $this->container['epub_navigation_map_level'] = isset($data['epub_navigation_map_level']) ? $data['epub_navigation_map_level'] : null;
+        $this->container['save_format'] = "epub";
     }
 
     /*
@@ -214,6 +215,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
         $this->container['epub_navigation_map_level'] = $epub_navigation_map_level;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

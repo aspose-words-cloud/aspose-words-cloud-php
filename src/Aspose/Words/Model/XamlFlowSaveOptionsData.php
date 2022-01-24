@@ -170,6 +170,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
         parent::__construct($data);
         $this->container['images_folder'] = isset($data['images_folder']) ? $data['images_folder'] : null;
         $this->container['images_folder_alias'] = isset($data['images_folder_alias']) ? $data['images_folder_alias'] : null;
+        $this->container['save_format'] = "xamlflow";
     }
 
     /*
@@ -221,6 +222,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets images_folder_alias
      *
@@ -243,6 +245,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
         $this->container['images_folder_alias'] = $images_folder_alias;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

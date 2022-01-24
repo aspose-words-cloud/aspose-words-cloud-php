@@ -215,6 +215,7 @@ class CommentsResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Returns true if offset exists. False otherwise.
      *

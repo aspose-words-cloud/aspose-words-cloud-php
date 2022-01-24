@@ -24,7 +24,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^7.3.0",
-        "aspose-cloud/aspose-words-cloud": "21.12"
+        "aspose-cloud/aspose-words-cloud": "*"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "3.*",

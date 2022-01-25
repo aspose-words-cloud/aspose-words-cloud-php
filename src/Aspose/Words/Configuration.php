@@ -157,7 +157,6 @@ class Configuration
     public function __construct(string $clientId, string $clientSecret)
     {
         $this->tempFolderPath = sys_get_temp_dir();
-        date_default_timezone_set('UTC');
         $this->setClientId($clientId);
         $this->setClientSecret($clientSecret);
     }

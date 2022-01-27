@@ -251,6 +251,7 @@ class Comment extends CommentLink
         return $this;
     }
 
+
     /*
      * Gets content
      *
@@ -273,6 +274,7 @@ class Comment extends CommentLink
         $this->container['content'] = $content;
         return $this;
     }
+
 
     /*
      * Gets date_time
@@ -297,6 +299,7 @@ class Comment extends CommentLink
         return $this;
     }
 
+
     /*
      * Gets initial
      *
@@ -319,6 +322,7 @@ class Comment extends CommentLink
         $this->container['initial'] = $initial;
         return $this;
     }
+
 
     /*
      * Gets range_end
@@ -343,6 +347,7 @@ class Comment extends CommentLink
         return $this;
     }
 
+
     /*
      * Gets range_start
      *
@@ -366,6 +371,7 @@ class Comment extends CommentLink
         return $this;
     }
 
+
     /*
      * Gets text
      *
@@ -388,6 +394,7 @@ class Comment extends CommentLink
         $this->container['text'] = $text;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

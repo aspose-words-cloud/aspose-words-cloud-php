@@ -227,6 +227,7 @@ class InfoResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets name
      *
@@ -250,6 +251,7 @@ class InfoResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets version
      *
@@ -272,6 +274,7 @@ class InfoResponse extends WordsResponse
         $this->container['version'] = $version;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

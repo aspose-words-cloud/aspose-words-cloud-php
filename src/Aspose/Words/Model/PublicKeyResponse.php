@@ -221,6 +221,7 @@ class PublicKeyResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets modulus
      *
@@ -243,6 +244,7 @@ class PublicKeyResponse extends WordsResponse
         $this->container['modulus'] = $modulus;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

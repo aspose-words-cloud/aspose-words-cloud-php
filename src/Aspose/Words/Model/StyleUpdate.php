@@ -237,6 +237,7 @@ class StyleUpdate implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets is_quick_style
      *
@@ -259,6 +260,7 @@ class StyleUpdate implements ArrayAccess
         $this->container['is_quick_style'] = $is_quick_style;
         return $this;
     }
+
 
     /*
      * Gets name
@@ -283,6 +285,7 @@ class StyleUpdate implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets next_paragraph_style_name
      *
@@ -305,6 +308,7 @@ class StyleUpdate implements ArrayAccess
         $this->container['next_paragraph_style_name'] = $next_paragraph_style_name;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

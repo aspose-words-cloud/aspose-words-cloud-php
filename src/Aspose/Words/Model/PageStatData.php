@@ -237,6 +237,7 @@ class PageStatData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets page_number
      *
@@ -259,6 +260,7 @@ class PageStatData implements ArrayAccess
         $this->container['page_number'] = $page_number;
         return $this;
     }
+
 
     /*
      * Gets paragraph_count
@@ -283,6 +285,7 @@ class PageStatData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets word_count
      *
@@ -305,6 +308,7 @@ class PageStatData implements ArrayAccess
         $this->container['word_count'] = $word_count;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -357,6 +357,7 @@ class FieldOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets current_user
      *
@@ -379,6 +380,7 @@ class FieldOptions implements ArrayAccess
         $this->container['current_user'] = $current_user;
         return $this;
     }
+
 
     /*
      * Gets custom_toc_style_separator
@@ -403,6 +405,7 @@ class FieldOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets default_document_author
      *
@@ -425,6 +428,7 @@ class FieldOptions implements ArrayAccess
         $this->container['default_document_author'] = $default_document_author;
         return $this;
     }
+
 
     /*
      * Gets field_index_format
@@ -453,6 +457,7 @@ class FieldOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets field_update_culture_name
      *
@@ -475,6 +480,7 @@ class FieldOptions implements ArrayAccess
         $this->container['field_update_culture_name'] = $field_update_culture_name;
         return $this;
     }
+
 
     /*
      * Gets field_update_culture_source
@@ -503,6 +509,7 @@ class FieldOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets file_name
      *
@@ -525,6 +532,7 @@ class FieldOptions implements ArrayAccess
         $this->container['file_name'] = $file_name;
         return $this;
     }
+
 
     /*
      * Gets is_bidi_text_supported_on_update
@@ -549,6 +557,7 @@ class FieldOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets legacy_number_format
      *
@@ -571,6 +580,7 @@ class FieldOptions implements ArrayAccess
         $this->container['legacy_number_format'] = $legacy_number_format;
         return $this;
     }
+
 
     /*
      * Gets pre_process_culture_name
@@ -595,6 +605,7 @@ class FieldOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets template_name
      *
@@ -618,6 +629,7 @@ class FieldOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets use_invariant_culture_number_format
      *
@@ -640,6 +652,7 @@ class FieldOptions implements ArrayAccess
         $this->container['use_invariant_culture_number_format'] = $use_invariant_culture_number_format;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

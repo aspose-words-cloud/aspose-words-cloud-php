@@ -765,6 +765,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets border_always_in_front
      *
@@ -787,6 +788,7 @@ class PageSetup extends LinkElement
         $this->container['border_always_in_front'] = $border_always_in_front;
         return $this;
     }
+
 
     /*
      * Gets border_applies_to
@@ -815,6 +817,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets border_distance_from
      *
@@ -842,6 +845,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets bottom_margin
      *
@@ -864,6 +868,7 @@ class PageSetup extends LinkElement
         $this->container['bottom_margin'] = $bottom_margin;
         return $this;
     }
+
 
     /*
      * Gets different_first_page_header_footer
@@ -888,6 +893,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets first_page_tray
      *
@@ -910,6 +916,7 @@ class PageSetup extends LinkElement
         $this->container['first_page_tray'] = $first_page_tray;
         return $this;
     }
+
 
     /*
      * Gets footer_distance
@@ -934,6 +941,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets gutter
      *
@@ -956,6 +964,7 @@ class PageSetup extends LinkElement
         $this->container['gutter'] = $gutter;
         return $this;
     }
+
 
     /*
      * Gets header_distance
@@ -980,6 +989,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets left_margin
      *
@@ -1002,6 +1012,7 @@ class PageSetup extends LinkElement
         $this->container['left_margin'] = $left_margin;
         return $this;
     }
+
 
     /*
      * Gets line_number_count_by
@@ -1026,6 +1037,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets line_number_distance_from_text
      *
@@ -1048,6 +1060,7 @@ class PageSetup extends LinkElement
         $this->container['line_number_distance_from_text'] = $line_number_distance_from_text;
         return $this;
     }
+
 
     /*
      * Gets line_number_restart_mode
@@ -1076,6 +1089,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets line_starting_number
      *
@@ -1098,6 +1112,7 @@ class PageSetup extends LinkElement
         $this->container['line_starting_number'] = $line_starting_number;
         return $this;
     }
+
 
     /*
      * Gets orientation
@@ -1126,6 +1141,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets other_pages_tray
      *
@@ -1149,6 +1165,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets page_height
      *
@@ -1171,6 +1188,7 @@ class PageSetup extends LinkElement
         $this->container['page_height'] = $page_height;
         return $this;
     }
+
 
     /*
      * Gets page_number_style
@@ -1199,6 +1217,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets page_starting_number
      *
@@ -1222,6 +1241,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets page_width
      *
@@ -1244,6 +1264,7 @@ class PageSetup extends LinkElement
         $this->container['page_width'] = $page_width;
         return $this;
     }
+
 
     /*
      * Gets paper_size
@@ -1272,6 +1293,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets restart_page_numbering
      *
@@ -1294,6 +1316,7 @@ class PageSetup extends LinkElement
         $this->container['restart_page_numbering'] = $restart_page_numbering;
         return $this;
     }
+
 
     /*
      * Gets right_margin
@@ -1318,6 +1341,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets rtl_gutter
      *
@@ -1340,6 +1364,7 @@ class PageSetup extends LinkElement
         $this->container['rtl_gutter'] = $rtl_gutter;
         return $this;
     }
+
 
     /*
      * Gets section_start
@@ -1368,6 +1393,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets suppress_endnotes
      *
@@ -1391,6 +1417,7 @@ class PageSetup extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets top_margin
      *
@@ -1413,6 +1440,7 @@ class PageSetup extends LinkElement
         $this->container['top_margin'] = $top_margin;
         return $this;
     }
+
 
     /*
      * Gets vertical_alignment
@@ -1440,6 +1468,7 @@ class PageSetup extends LinkElement
         $this->container['vertical_alignment'] = $vertical_alignment;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

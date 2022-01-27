@@ -262,7 +262,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
         $this->container['flat_opc_xml_mapping_only'] = isset($data['flat_opc_xml_mapping_only']) ? $data['flat_opc_xml_mapping_only'] : null;
         $this->container['iml_rendering_mode'] = isset($data['iml_rendering_mode']) ? $data['iml_rendering_mode'] : null;
-        $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
+        $this->container['save_format'] = null;
         $this->container['update_created_time_property'] = isset($data['update_created_time_property']) ? $data['update_created_time_property'] : null;
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
         $this->container['update_last_printed_property'] = isset($data['update_last_printed_property']) ? $data['update_last_printed_property'] : null;
@@ -332,6 +332,7 @@ class SaveOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets custom_time_zone_info_data
      *
@@ -354,6 +355,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['custom_time_zone_info_data'] = $custom_time_zone_info_data;
         return $this;
     }
+
 
     /*
      * Gets dml3_d_effects_rendering_mode
@@ -382,6 +384,7 @@ class SaveOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets dml_effects_rendering_mode
      *
@@ -404,6 +407,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['dml_effects_rendering_mode'] = $dml_effects_rendering_mode;
         return $this;
     }
+
 
     /*
      * Gets dml_rendering_mode
@@ -428,6 +432,7 @@ class SaveOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets file_name
      *
@@ -450,6 +455,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['file_name'] = $file_name;
         return $this;
     }
+
 
     /*
      * Gets flat_opc_xml_mapping_only
@@ -474,6 +480,7 @@ class SaveOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets iml_rendering_mode
      *
@@ -497,6 +504,7 @@ class SaveOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets save_format
      *
@@ -507,18 +515,7 @@ class SaveOptionsData implements ArrayAccess
         return $this->container['save_format'];
     }
 
-    /*
-     * Sets save_format
-     *
-     * @param string $save_format Gets or sets the format of save.
-     *
-     * @return $this
-     */
-    public function setSaveFormat($save_format)
-    {
-        $this->container['save_format'] = $save_format;
-        return $this;
-    }
+
 
     /*
      * Gets update_created_time_property
@@ -543,6 +540,7 @@ class SaveOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets update_fields
      *
@@ -565,6 +563,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['update_fields'] = $update_fields;
         return $this;
     }
+
 
     /*
      * Gets update_last_printed_property
@@ -589,6 +588,7 @@ class SaveOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets update_last_saved_time_property
      *
@@ -611,6 +611,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['update_last_saved_time_property'] = $update_last_saved_time_property;
         return $this;
     }
+
 
     /*
      * Gets update_sdt_content
@@ -635,6 +636,7 @@ class SaveOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets zip_output
      *
@@ -657,6 +659,7 @@ class SaveOptionsData implements ArrayAccess
         $this->container['zip_output'] = $zip_output;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

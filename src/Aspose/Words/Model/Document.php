@@ -316,6 +316,7 @@ class Document implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets file_name
      *
@@ -338,6 +339,7 @@ class Document implements ArrayAccess
         $this->container['file_name'] = $file_name;
         return $this;
     }
+
 
     /*
      * Gets is_encrypted
@@ -362,6 +364,7 @@ class Document implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets is_signed
      *
@@ -385,6 +388,7 @@ class Document implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets links
      *
@@ -407,6 +411,7 @@ class Document implements ArrayAccess
         $this->container['links'] = $links;
         return $this;
     }
+
 
     /*
      * Gets source_format
@@ -434,6 +439,7 @@ class Document implements ArrayAccess
         $this->container['source_format'] = $source_format;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

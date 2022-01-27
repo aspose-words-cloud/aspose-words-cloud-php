@@ -221,6 +221,7 @@ class ReplaceTextResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets matches
      *
@@ -243,6 +244,7 @@ class ReplaceTextResponse extends WordsResponse
         $this->container['matches'] = $matches;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

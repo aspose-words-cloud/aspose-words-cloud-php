@@ -231,6 +231,7 @@ class TableInsertDto implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets position
      *
@@ -254,6 +255,7 @@ class TableInsertDto implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets rows_count
      *
@@ -276,6 +278,7 @@ class TableInsertDto implements ArrayAccess
         $this->container['rows_count'] = $rows_count;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -1326,6 +1326,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets bidi
      *
@@ -1348,6 +1349,7 @@ class Font extends LinkElement
         $this->container['bidi'] = $bidi;
         return $this;
     }
+
 
     /*
      * Gets bold
@@ -1372,6 +1374,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets bold_bi
      *
@@ -1394,6 +1397,7 @@ class Font extends LinkElement
         $this->container['bold_bi'] = $bold_bi;
         return $this;
     }
+
 
     /*
      * Gets border
@@ -1418,6 +1422,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets color
      *
@@ -1440,6 +1445,7 @@ class Font extends LinkElement
         $this->container['color'] = $color;
         return $this;
     }
+
 
     /*
      * Gets complex_script
@@ -1464,6 +1470,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets double_strike_through
      *
@@ -1486,6 +1493,7 @@ class Font extends LinkElement
         $this->container['double_strike_through'] = $double_strike_through;
         return $this;
     }
+
 
     /*
      * Gets emboss
@@ -1510,6 +1518,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets engrave
      *
@@ -1532,6 +1541,7 @@ class Font extends LinkElement
         $this->container['engrave'] = $engrave;
         return $this;
     }
+
 
     /*
      * Gets hidden
@@ -1556,6 +1566,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets highlight_color
      *
@@ -1578,6 +1589,7 @@ class Font extends LinkElement
         $this->container['highlight_color'] = $highlight_color;
         return $this;
     }
+
 
     /*
      * Gets italic
@@ -1602,6 +1614,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets italic_bi
      *
@@ -1624,6 +1637,7 @@ class Font extends LinkElement
         $this->container['italic_bi'] = $italic_bi;
         return $this;
     }
+
 
     /*
      * Gets kerning
@@ -1648,6 +1662,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets locale_id
      *
@@ -1670,6 +1685,7 @@ class Font extends LinkElement
         $this->container['locale_id'] = $locale_id;
         return $this;
     }
+
 
     /*
      * Gets locale_id_bi
@@ -1694,6 +1710,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets locale_id_far_east
      *
@@ -1716,6 +1733,7 @@ class Font extends LinkElement
         $this->container['locale_id_far_east'] = $locale_id_far_east;
         return $this;
     }
+
 
     /*
      * Gets name
@@ -1740,6 +1758,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets name_ascii
      *
@@ -1762,6 +1781,7 @@ class Font extends LinkElement
         $this->container['name_ascii'] = $name_ascii;
         return $this;
     }
+
 
     /*
      * Gets name_bi
@@ -1786,6 +1806,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets name_far_east
      *
@@ -1808,6 +1829,7 @@ class Font extends LinkElement
         $this->container['name_far_east'] = $name_far_east;
         return $this;
     }
+
 
     /*
      * Gets name_other
@@ -1832,6 +1854,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets no_proofing
      *
@@ -1854,6 +1877,7 @@ class Font extends LinkElement
         $this->container['no_proofing'] = $no_proofing;
         return $this;
     }
+
 
     /*
      * Gets outline
@@ -1878,6 +1902,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets position
      *
@@ -1900,6 +1925,7 @@ class Font extends LinkElement
         $this->container['position'] = $position;
         return $this;
     }
+
 
     /*
      * Gets scaling
@@ -1924,6 +1950,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets shadow
      *
@@ -1946,6 +1973,7 @@ class Font extends LinkElement
         $this->container['shadow'] = $shadow;
         return $this;
     }
+
 
     /*
      * Gets size
@@ -1970,6 +1998,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets size_bi
      *
@@ -1992,6 +2021,7 @@ class Font extends LinkElement
         $this->container['size_bi'] = $size_bi;
         return $this;
     }
+
 
     /*
      * Gets small_caps
@@ -2016,6 +2046,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets spacing
      *
@@ -2039,6 +2070,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets strike_through
      *
@@ -2061,6 +2093,7 @@ class Font extends LinkElement
         $this->container['strike_through'] = $strike_through;
         return $this;
     }
+
 
     /*
      * Gets style_identifier
@@ -2089,6 +2122,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets style_name
      *
@@ -2111,6 +2145,7 @@ class Font extends LinkElement
         $this->container['style_name'] = $style_name;
         return $this;
     }
+
 
     /*
      * Gets subscript
@@ -2135,6 +2170,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets superscript
      *
@@ -2157,6 +2193,7 @@ class Font extends LinkElement
         $this->container['superscript'] = $superscript;
         return $this;
     }
+
 
     /*
      * Gets text_effect
@@ -2185,6 +2222,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets underline
      *
@@ -2212,6 +2250,7 @@ class Font extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets underline_color
      *
@@ -2234,6 +2273,7 @@ class Font extends LinkElement
         $this->container['underline_color'] = $underline_color;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

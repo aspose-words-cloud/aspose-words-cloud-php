@@ -237,6 +237,7 @@ class TimeZoneInfoData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets display_name
      *
@@ -259,6 +260,7 @@ class TimeZoneInfoData implements ArrayAccess
         $this->container['display_name'] = $display_name;
         return $this;
     }
+
 
     /*
      * Gets id
@@ -283,6 +285,7 @@ class TimeZoneInfoData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets standard_display_name
      *
@@ -305,6 +308,7 @@ class TimeZoneInfoData implements ArrayAccess
         $this->container['standard_display_name'] = $standard_display_name;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

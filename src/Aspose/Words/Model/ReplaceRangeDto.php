@@ -254,6 +254,7 @@ class ReplaceRangeDto implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets text_type
      *
@@ -280,6 +281,7 @@ class ReplaceRangeDto implements ArrayAccess
         $this->container['text_type'] = $text_type;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

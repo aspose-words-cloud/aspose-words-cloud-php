@@ -260,6 +260,7 @@ class JsonDataLoadOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets exact_date_time_parse_formats
      *
@@ -282,6 +283,7 @@ class JsonDataLoadOptions implements ArrayAccess
         $this->container['exact_date_time_parse_formats'] = $exact_date_time_parse_formats;
         return $this;
     }
+
 
     /*
      * Gets simple_value_parse_mode
@@ -309,6 +311,7 @@ class JsonDataLoadOptions implements ArrayAccess
         $this->container['simple_value_parse_mode'] = $simple_value_parse_mode;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

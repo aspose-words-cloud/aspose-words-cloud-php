@@ -164,6 +164,7 @@ class WordMLSaveOptionsData extends SaveOptionsData
     {
         parent::__construct($data);
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
+        $this->container['save_format'] = "wml";
     }
 
     /*
@@ -214,6 +215,7 @@ class WordMLSaveOptionsData extends SaveOptionsData
         $this->container['pretty_format'] = $pretty_format;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

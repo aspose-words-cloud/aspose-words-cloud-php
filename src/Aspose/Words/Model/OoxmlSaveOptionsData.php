@@ -266,6 +266,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets compression_level
      *
@@ -293,6 +294,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets password
      *
@@ -316,6 +318,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets pretty_format
      *
@@ -338,6 +341,7 @@ class OoxmlSaveOptionsData extends SaveOptionsData
         $this->container['pretty_format'] = $pretty_format;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

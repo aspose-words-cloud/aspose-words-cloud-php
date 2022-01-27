@@ -219,6 +219,7 @@ class DocumentPropertyBase implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Returns true if offset exists. False otherwise.
      *

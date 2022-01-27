@@ -173,6 +173,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+        $this->container['save_format'] = "tiff";
         $this->container['threshold_for_floyd_steinberg_dithering'] = isset($data['threshold_for_floyd_steinberg_dithering']) ? $data['threshold_for_floyd_steinberg_dithering'] : null;
         $this->container['tiff_binarization_method'] = isset($data['tiff_binarization_method']) ? $data['tiff_binarization_method'] : null;
         $this->container['tiff_compression'] = isset($data['tiff_compression']) ? $data['tiff_compression'] : null;
@@ -227,6 +228,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets tiff_binarization_method
      *
@@ -250,6 +252,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets tiff_compression
      *
@@ -272,6 +275,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
         $this->container['tiff_compression'] = $tiff_compression;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

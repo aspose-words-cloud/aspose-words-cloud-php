@@ -243,6 +243,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets emulate_raster_operations
      *
@@ -265,6 +266,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         $this->container['emulate_raster_operations'] = $emulate_raster_operations;
         return $this;
     }
+
 
     /*
      * Gets rendering_mode
@@ -289,6 +291,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets scale_wmf_fonts_to_metafile_size
      *
@@ -312,6 +315,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets use_emf_embedded_to_wmf
      *
@@ -334,6 +338,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         $this->container['use_emf_embedded_to_wmf'] = $use_emf_embedded_to_wmf;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

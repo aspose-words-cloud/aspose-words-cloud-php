@@ -225,6 +225,7 @@ class BookmarksOutlineLevelData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets name
      *
@@ -247,6 +248,7 @@ class BookmarksOutlineLevelData implements ArrayAccess
         $this->container['name'] = $name;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

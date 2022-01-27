@@ -227,6 +227,7 @@ class ClassificationResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets best_class_probability
      *
@@ -250,6 +251,7 @@ class ClassificationResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets best_results
      *
@@ -272,6 +274,7 @@ class ClassificationResponse extends WordsResponse
         $this->container['best_results'] = $best_results;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

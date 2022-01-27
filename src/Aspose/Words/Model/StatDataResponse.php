@@ -221,6 +221,7 @@ class StatDataResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets stat_data
      *
@@ -243,6 +244,7 @@ class StatDataResponse extends WordsResponse
         $this->container['stat_data'] = $stat_data;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

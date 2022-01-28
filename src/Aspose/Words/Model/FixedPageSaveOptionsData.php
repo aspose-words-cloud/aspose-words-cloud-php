@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, images etc).
  */
-class FixedPageSaveOptionsData extends SaveOptionsData
+abstract class FixedPageSaveOptionsData extends SaveOptionsData
 {
     const DISCRIMINATOR = null;
 

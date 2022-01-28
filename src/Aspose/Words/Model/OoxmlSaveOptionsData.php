@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container class for docx/docm/dotx/dotm/flatopc save options.
  */
-class OoxmlSaveOptionsData extends SaveOptionsData
+abstract class OoxmlSaveOptionsData extends SaveOptionsData
 {
     const DISCRIMINATOR = null;
 

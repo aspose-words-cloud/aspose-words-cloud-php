@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description FromField.
  */
-class FormField extends NodeLink
+abstract class FormField extends NodeLink
 {
     const DISCRIMINATOR = null;
 

@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Base class for save options of text formats.
  */
-class TxtSaveOptionsBaseData extends SaveOptionsData
+abstract class TxtSaveOptionsBaseData extends SaveOptionsData
 {
     const DISCRIMINATOR = null;
 

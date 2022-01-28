@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container abstract class for image save options.
  */
-class ImageSaveOptionsData extends FixedPageSaveOptionsData
+abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
 {
     const DISCRIMINATOR = null;
 

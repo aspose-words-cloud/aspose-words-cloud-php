@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Field.
  */
-class FieldBase implements ArrayAccess
+abstract class FieldBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 

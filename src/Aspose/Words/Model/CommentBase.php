@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Comment.
  */
-class CommentBase implements ArrayAccess
+abstract class CommentBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 

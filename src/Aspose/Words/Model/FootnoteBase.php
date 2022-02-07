@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Footnote base class.
  */
-class FootnoteBase implements ArrayAccess
+abstract class FootnoteBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 

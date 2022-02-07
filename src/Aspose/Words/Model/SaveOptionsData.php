@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description base container class for save options data.
  */
-class SaveOptionsData implements ArrayAccess
+abstract class SaveOptionsData implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 

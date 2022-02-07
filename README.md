@@ -17,6 +17,7 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 
 - Made 'SaveOprionsData.SaveFormat' property readonly with default value.
 - Added subclasses for all formats of SaveOprionsData with specified SaveFormat.
+- 'SaveOptionsData', 'FixedPageSaveOptionsData', 'ImageSaveOptionsData', 'OoxmlSaveOptionsData', 'TxtSaveOptionsBaseData' classes now is abstract.
 
 
 ## Enhancements in Version 22.1

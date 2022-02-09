@@ -84,6 +84,9 @@ class ObjectSerializer
     {
         foreach ($multipart as $id => $part) {
             $disposition = $part['headers']['Content-Disposition'];
+            if (is_array($disposition)) {
+                $disposition = $disposition[0];
+            }
             foreach (preg_split('/;/', $disposition) as $dispPart) {
                 $subParts = preg_split('/=/', $dispPart);
                 if (count($subParts) == 2) {
@@ -107,12 +110,18 @@ class ObjectSerializer
     {
         $result = [];
         $contentType = $headers['Content-Type'];
+        if ($contentType !== NULL && is_array($contentType)) {
+            $contentType = $contentType[0];
+        }
         if ($contentType !== NULL && str_starts_with($contentType, 'multipart/mixed')) {
             $parts = ObjectSerializer::parseMultipart($data, $headers);
             for ($i = 0; $i < count($parts); $i++) {
                 $part = $parts[$i];
                 $filename = '';
                 $disposition = $part['headers']['Content-Disposition'];
+                if (is_array($disposition)) {
+                    $disposition = $disposition[0];
+                }
                 foreach (preg_split('/;/', $disposition) as $dispPart) {
                     $subParts = preg_split('/=/', $dispPart);
                     if (count($subParts) == 2) {
@@ -142,6 +151,9 @@ class ObjectSerializer
     {
         $separator = "\r\n\r\n";
         $contentType = $headers['Content-Type'];
+        if (is_array($contentType)) {
+            $contentType = $contentType[0];
+        }
         preg_match('/boundary=(.*)$/', $contentType, $matches);
         $boundary = trim($matches[1], "\"");
 
@@ -503,9 +515,14 @@ class ObjectSerializer
             // \Psr\Http\Message\StreamInterface $data 
 
             // determine file name
-            if (array_key_exists('Content-Disposition', $httpHeaders)
-                && preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)
-            ) {
+            $disposition = NULL;
+            if (array_key_exists('Content-Disposition', $httpHeaders)) {
+                $disposition = $httpHeaders['Content-Disposition'];
+            }
+            if ($disposition != NULL && is_array($disposition)) {
+                $disposition = $disposition[0];
+            }
+            if ($disposition != NULL && preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $disposition, $match)) {
                 $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . self::sanitizeFilename($match[1]);
             } else {
                 $filename = tempnam(Configuration::getDefaultConfiguration()->getTempFolderPath(), '');

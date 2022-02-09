@@ -534,8 +534,8 @@ class UpdateSectionPageSetupRequest extends BaseApiRequest
         return '\Aspose\Words\Model\SectionPageSetupResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SectionPageSetupResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\SectionPageSetupResponse', $response->getHeaders());
     }
 }

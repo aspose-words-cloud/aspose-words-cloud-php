@@ -362,8 +362,8 @@ class GetStylesRequest extends BaseApiRequest
         return '\Aspose\Words\Model\StylesResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StylesResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\StylesResponse', $response->getHeaders());
     }
 }

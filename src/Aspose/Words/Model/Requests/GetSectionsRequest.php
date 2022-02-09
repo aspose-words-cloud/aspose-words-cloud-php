@@ -362,8 +362,8 @@ class GetSectionsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\SectionLinkCollectionResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SectionLinkCollectionResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\SectionLinkCollectionResponse', $response->getHeaders());
     }
 }

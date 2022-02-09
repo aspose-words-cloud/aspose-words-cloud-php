@@ -497,8 +497,8 @@ class DeleteBordersRequest extends BaseApiRequest
         return '\Aspose\Words\Model\BordersResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BordersResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\BordersResponse', $response->getHeaders());
     }
 }

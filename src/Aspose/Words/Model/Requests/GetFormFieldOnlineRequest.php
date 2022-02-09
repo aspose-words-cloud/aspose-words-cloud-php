@@ -367,8 +367,8 @@ class GetFormFieldOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FormFieldResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FormFieldResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FormFieldResponse', $response->getHeaders());
     }
 }

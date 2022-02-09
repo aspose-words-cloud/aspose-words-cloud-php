@@ -469,8 +469,8 @@ class RenderPageRequest extends BaseApiRequest
         return '\SplFileObject';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\SplFileObject', []);
+        return ObjectSerializer::deserialize($response, '\SplFileObject', $response->getHeaders());
     }
 }

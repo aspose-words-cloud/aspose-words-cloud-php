@@ -30,7 +30,7 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{ConvertDocumentRequest, SaveAsOnlineRequest, SaveAsRequest, SaveAsTiffOnlineRequest, SaveAsTiffRequest};
-use Aspose\Words\Model\{DocxSaveOptionsData, PdfSaveOptionsData, TiffSaveOptionsData};
+use Aspose\Words\Model\{DocxSaveOptionsData, HtmlSaveOptionsData, PdfSaveOptionsData, TiffSaveOptionsData};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -82,6 +82,32 @@ class ConvertDocumentTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
         $requestSaveOptionsData = new PdfSaveOptionsData(array(
             "file_name" => self::$baseTestOutPath . "/TestSaveAs.pdf",
+        ));
+        $request = new SaveAsOnlineRequest(
+            $requestDocument,
+            $requestSaveOptionsData,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->saveAsOnline($request);
+        Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test for converting document online to html with additional files like css and images.
+     */
+    public function testSaveAsOnlineHtmlMultifile()
+    {
+        $localName = "test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
+        $requestSaveOptionsData = new HtmlSaveOptionsData(array(
+            "file_name" => self::$baseTestOutPath . "/TestSaveAsHtml.html",
+            "css_style_sheet_type" => "External",
+            "css_style_sheet_file_name" => self::$baseTestOutPath . "/TestSaveAsHtml.css",
         ));
         $request = new SaveAsOnlineRequest(
             $requestDocument,

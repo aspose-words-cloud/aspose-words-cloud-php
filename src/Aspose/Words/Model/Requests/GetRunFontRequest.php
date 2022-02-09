@@ -434,8 +434,8 @@ class GetRunFontRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FontResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FontResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FontResponse', $response->getHeaders());
     }
 }

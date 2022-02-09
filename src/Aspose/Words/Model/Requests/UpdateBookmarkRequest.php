@@ -534,8 +534,8 @@ class UpdateBookmarkRequest extends BaseApiRequest
         return '\Aspose\Words\Model\BookmarkResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BookmarkResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\BookmarkResponse', $response->getHeaders());
     }
 }

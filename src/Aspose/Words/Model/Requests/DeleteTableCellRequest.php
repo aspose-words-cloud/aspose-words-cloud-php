@@ -536,7 +536,7 @@ class DeleteTableCellRequest extends BaseApiRequest
         return NULL;
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
         return NULL;
     }

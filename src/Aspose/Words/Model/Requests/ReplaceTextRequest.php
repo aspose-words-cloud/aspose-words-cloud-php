@@ -498,8 +498,8 @@ class ReplaceTextRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ReplaceTextResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ReplaceTextResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ReplaceTextResponse', $response->getHeaders());
     }
 }

@@ -370,8 +370,8 @@ class GetTableCellFormatOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TableCellFormatResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableCellFormatResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TableCellFormatResponse', $response->getHeaders());
     }
 }

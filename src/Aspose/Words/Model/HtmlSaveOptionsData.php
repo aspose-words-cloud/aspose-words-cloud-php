@@ -342,6 +342,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const CSS_STYLE_SHEET_TYPE_INLINE = 'Inline';
+    const CSS_STYLE_SHEET_TYPE_EMBEDDED = 'Embedded';
+    const CSS_STYLE_SHEET_TYPE_EXTERNAL = 'External';
     const HTML_VERSION_XHTML = 'Xhtml';
     const HTML_VERSION_HTML5 = 'Html5';
     const METAFILE_FORMAT_PNG = 'Png';
@@ -351,6 +354,19 @@ class HtmlSaveOptionsData extends SaveOptionsData
     const OFFICE_MATH_OUTPUT_MODE_MATH_ML = 'MathML';
     const OFFICE_MATH_OUTPUT_MODE_TEXT = 'Text';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCssStyleSheetTypeAllowableValues()
+    {
+        return [
+            self::CSS_STYLE_SHEET_TYPE_INLINE,
+            self::CSS_STYLE_SHEET_TYPE_EMBEDDED,
+            self::CSS_STYLE_SHEET_TYPE_EXTERNAL
+        ];
+    }
     /*
      * Gets allowable values of the enum
      *
@@ -449,6 +465,14 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getCssStyleSheetTypeAllowableValues();
+        if (!in_array($this->container['css_style_sheet_type'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'css_style_sheet_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getHtmlVersionAllowableValues();
         if (!in_array($this->container['html_version'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -486,6 +510,11 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function valid()
     {
         if (!parent::valid()) {
+            return false;
+        }
+
+        $allowedValues = $this->getCssStyleSheetTypeAllowableValues();
+        if (!in_array($this->container['css_style_sheet_type'], $allowedValues)) {
             return false;
         }
 
@@ -599,6 +628,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
      */
     public function setCssStyleSheetType($css_style_sheet_type)
     {
+        $allowedValues = $this->getCssStyleSheetTypeAllowableValues();
+        if ((!is_numeric($css_style_sheet_type) && !in_array($css_style_sheet_type, $allowedValues)) || (is_numeric($css_style_sheet_type) && !in_array($allowedValues[$css_style_sheet_type], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'css_style_sheet_type', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['css_style_sheet_type'] = $css_style_sheet_type;
         return $this;
     }

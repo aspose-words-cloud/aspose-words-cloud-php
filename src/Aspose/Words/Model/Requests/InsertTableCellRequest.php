@@ -534,8 +534,8 @@ class InsertTableCellRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TableCellResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableCellResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TableCellResponse', $response->getHeaders());
     }
 }

@@ -158,8 +158,8 @@ class GetPublicKeyRequest extends BaseApiRequest
         return '\Aspose\Words\Model\PublicKeyResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\PublicKeyResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\PublicKeyResponse', $response->getHeaders());
     }
 }

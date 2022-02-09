@@ -395,8 +395,8 @@ class GetDocumentDrawingObjectsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\DrawingObjectsResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DrawingObjectsResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\DrawingObjectsResponse', $response->getHeaders());
     }
 }

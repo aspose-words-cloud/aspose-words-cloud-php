@@ -78,6 +78,36 @@ class ObjectSerializer
     }
 
     /*
+     * Find multipart part by name
+     */
+    public static function findPartByName($multipart, $name)
+    {
+        foreach ($multipart as $id => $part) {
+            $disposition = $part['headers']['Content-Disposition'];
+            foreach (preg_split('/;/', $disposition) as $dispPart) {
+                $subParts = preg_split('/=/', $dispPart);
+                if (count($subParts) == 2) {
+                    $hname = trim($subParts[0]);
+                    $hval = trim($subParts[1]);
+                    if (strcmp($hname, 'name') == 0 && strcmp($hval, $name) == 0) {
+                        return $part;
+                    }
+                }
+            }
+        }
+
+        return NULL;
+    }
+
+    /*
+     * Parse files collection
+     */
+    public static function parseFilesCollection($data, $headers)
+    {
+        return NULL;
+    }
+
+    /*
      * Parse the multipart form data from response
      */
     public static function parseMultipart($response)
@@ -399,7 +429,7 @@ class ObjectSerializer
      *
      * @return object|array|null an single or an array of $class instances
      */
-    public static function deserialize($data, $class, $httpHeaders = null)
+    public static function deserialize($data, $class, $httpHeaders)
     {
         if (null === $data) {
             return null;
@@ -424,6 +454,8 @@ class ObjectSerializer
         } elseif ($class === 'object') {
             settype($data, 'array');
             return $data;
+        } elseif ($class === 'FILES_COLLECTION') {
+            return parseFilesCollection($data, $httpHeaders);
         } elseif ($class === '\DateTime') {
             // Some API's return an invalid, empty string as a
             // date-time property. DateTime::__construct() will return

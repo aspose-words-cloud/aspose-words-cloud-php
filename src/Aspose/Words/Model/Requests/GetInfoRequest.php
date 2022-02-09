@@ -158,8 +158,8 @@ class GetInfoRequest extends BaseApiRequest
         return '\Aspose\Words\Model\InfoResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\InfoResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\InfoResponse', $response->getHeaders());
     }
 }

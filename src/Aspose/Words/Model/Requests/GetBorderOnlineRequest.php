@@ -367,8 +367,8 @@ class GetBorderOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\BorderResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\BorderResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\BorderResponse', $response->getHeaders());
     }
 }

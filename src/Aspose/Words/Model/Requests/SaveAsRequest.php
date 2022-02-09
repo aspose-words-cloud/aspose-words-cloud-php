@@ -430,8 +430,8 @@ class SaveAsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\SaveResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SaveResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\SaveResponse', $response->getHeaders());
     }
 }

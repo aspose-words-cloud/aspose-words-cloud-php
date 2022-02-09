@@ -569,8 +569,8 @@ class SplitDocumentRequest extends BaseApiRequest
         return '\Aspose\Words\Model\SplitDocumentResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SplitDocumentResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\SplitDocumentResponse', $response->getHeaders());
     }
 }

@@ -569,8 +569,8 @@ class InsertWatermarkImageRequest extends BaseApiRequest
         return '\Aspose\Words\Model\DocumentResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\DocumentResponse', $response->getHeaders());
     }
 }

@@ -366,7 +366,7 @@ class UnprotectDocumentOnlineRequest extends BaseApiRequest
 
     public function deserializeResponse($response)
     {
-        $multipart = ObjectSerializer::parseMultipart($response);
+        $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());
         return new UnprotectDocumentOnlineResponse(
           ObjectSerializer::deserialize(json_decode(ObjectSerializer::findPartByName($multipart, 'Model')['body']), '\Aspose\Words\Model\ProtectionDataResponse', ObjectSerializer::findPartByName($multipart, 'Model')['headers']),
           ObjectSerializer::deserialize(ObjectSerializer::findPartByName($multipart, 'Document')['body'], 'FILES_COLLECTION', ObjectSerializer::findPartByName($multipart, 'Document')['headers']));

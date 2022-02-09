@@ -89,6 +89,7 @@ class ObjectSerializer
                 if (count($subParts) == 2) {
                     $hname = trim($subParts[0]);
                     $hval = trim($subParts[1]);
+                    $hval = preg_replace('/"/', '', $hval);
                     if (strcmp($hname, 'name') == 0 && strcmp($hval, $name) == 0) {
                         return $part;
                     }
@@ -104,20 +105,47 @@ class ObjectSerializer
      */
     public static function parseFilesCollection($data, $headers)
     {
-        return NULL;
+        $result = [];
+        $contentType = $headers['Content-Type'];
+        if ($contentType !== NULL && str_starts_with($contentType, 'multipart/mixed')) {
+            $parts = ObjectSerializer::parseMultipart($data, $headers);
+            for ($i = 0; $i < count($parts); $i++) {
+                $part = $parts[$i];
+                $filename = '';
+                $disposition = $part['headers']['Content-Disposition'];
+                foreach (preg_split('/;/', $disposition) as $dispPart) {
+                    $subParts = preg_split('/=/', $dispPart);
+                    if (count($subParts) == 2) {
+                        $hname = trim($subParts[0]);
+                        $hval = trim($subParts[1]);
+                        $hval = preg_replace('/"/', '', $hval);
+                        if (strcmp($hname, 'filename') == 0) {
+                            $filename = $hval;
+                            break;
+                        }
+                    }
+                }
+
+                $result[$filename] = ObjectSerializer::deserialize($part['body'], '\SplFileObject', $part['headers']);
+            }
+        }
+        else {
+            $result[''] = ObjectSerializer::deserialize($data, '\SplFileObject', $headers);
+        }
+        return $result;
     }
 
     /*
      * Parse the multipart form data from response
      */
-    public static function parseMultipart($response)
+    public static function parseMultipart($body, $headers)
     {
         $separator = "\r\n\r\n";
-        $contentType = $response->getHeader('Content-Type')[0];
+        $contentType = $headers['Content-Type'];
         preg_match('/boundary=(.*)$/', $contentType, $matches);
         $boundary = trim($matches[1], "\"");
 
-        $a_blocks = preg_split("/-+$boundary/", $response->getBody());
+        $a_blocks = preg_split("/-+$boundary/", $body);
         array_pop($a_blocks);
 
         $result = [];
@@ -233,7 +261,7 @@ class ObjectSerializer
      */
     public static function parseBatchResponse($response, $requests, $displayIntermediateResults, $idToRequestMap)
     {
-        $parts = ObjectSerializer::parseMultipart($response);
+        $parts = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());
         $result = [];
 
         if ($displayIntermediateResults && count($parts) != count($requests)) {
@@ -455,7 +483,7 @@ class ObjectSerializer
             settype($data, 'array');
             return $data;
         } elseif ($class === 'FILES_COLLECTION') {
-            return parseFilesCollection($data, $httpHeaders);
+            return ObjectSerializer::parseFilesCollection($data, $httpHeaders);
         } elseif ($class === '\DateTime') {
             // Some API's return an invalid, empty string as a
             // date-time property. DateTime::__construct() will return

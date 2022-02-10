@@ -85,6 +85,6 @@ class ExamplesTests extends BaseTestContext
           $requestDocument, NULL, NULL, NULL, NULL
       );
       $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);
-      rename($acceptAllRevisionsOnlineResult->getDocument()->getPathname(), 'test_result.docx');
+      rename(reset($acceptAllRevisionsOnlineResult->getDocument())->getPathname(), 'test_result.docx');
     }
 }

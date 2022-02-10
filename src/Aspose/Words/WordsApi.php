@@ -155,7 +155,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -224,7 +224,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -381,7 +381,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -482,7 +482,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -551,7 +551,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -708,7 +708,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -809,7 +809,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -878,7 +878,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1035,7 +1035,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1136,7 +1136,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1205,7 +1205,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1306,7 +1306,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1375,7 +1375,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1476,7 +1476,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1545,7 +1545,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1646,7 +1646,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1715,7 +1715,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1816,7 +1816,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1885,7 +1885,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1986,7 +1986,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -2055,7 +2055,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -2212,7 +2212,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -2313,7 +2313,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -2382,7 +2382,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -2737,7 +2737,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -2806,7 +2806,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -2963,7 +2963,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3064,7 +3064,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -3133,7 +3133,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3361,7 +3361,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -3430,7 +3430,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3587,7 +3587,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3688,7 +3688,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -3757,7 +3757,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3914,7 +3914,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4015,7 +4015,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -4084,7 +4084,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4241,7 +4241,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4342,7 +4342,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -4411,7 +4411,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4568,7 +4568,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4796,7 +4796,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -4865,7 +4865,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -5093,7 +5093,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -5162,7 +5162,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -5390,7 +5390,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -5459,7 +5459,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -5687,7 +5687,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -5756,7 +5756,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -5984,7 +5984,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -6053,7 +6053,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -6281,7 +6281,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -6350,7 +6350,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -6578,7 +6578,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -6647,7 +6647,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -6875,7 +6875,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -6944,7 +6944,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -7426,7 +7426,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -7495,7 +7495,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -7723,7 +7723,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -7792,7 +7792,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -8020,7 +8020,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -8089,7 +8089,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -8317,7 +8317,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -8386,7 +8386,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -8614,7 +8614,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -8683,7 +8683,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -8911,7 +8911,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -8980,7 +8980,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9208,7 +9208,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -9277,7 +9277,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9434,7 +9434,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9535,7 +9535,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -9604,7 +9604,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9705,7 +9705,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -9774,7 +9774,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9931,7 +9931,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -10159,7 +10159,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -10228,7 +10228,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -10456,7 +10456,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -10525,7 +10525,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -10880,7 +10880,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -10949,7 +10949,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11050,7 +11050,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -11119,7 +11119,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11347,7 +11347,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -11416,7 +11416,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11517,7 +11517,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -11586,7 +11586,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11743,7 +11743,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11844,7 +11844,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -11913,7 +11913,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12014,7 +12014,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12083,7 +12083,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12184,7 +12184,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12253,7 +12253,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12354,7 +12354,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12423,7 +12423,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12524,7 +12524,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12593,7 +12593,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12694,7 +12694,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12763,7 +12763,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12864,7 +12864,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12933,7 +12933,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13034,7 +13034,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13103,7 +13103,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13204,7 +13204,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13273,7 +13273,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13374,7 +13374,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13443,7 +13443,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13544,7 +13544,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13613,7 +13613,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13714,7 +13714,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13783,7 +13783,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13884,7 +13884,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13953,7 +13953,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14054,7 +14054,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14123,7 +14123,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14224,7 +14224,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14293,7 +14293,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14394,7 +14394,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14463,7 +14463,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14564,7 +14564,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14633,7 +14633,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14734,7 +14734,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14803,7 +14803,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14904,7 +14904,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14973,7 +14973,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15074,7 +15074,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15143,7 +15143,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15244,7 +15244,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15313,7 +15313,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15414,7 +15414,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15483,7 +15483,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15584,7 +15584,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15653,7 +15653,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15754,7 +15754,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15823,7 +15823,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15924,7 +15924,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15993,7 +15993,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16094,7 +16094,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16163,7 +16163,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16264,7 +16264,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16333,7 +16333,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16434,7 +16434,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16503,7 +16503,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16604,7 +16604,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16673,7 +16673,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16774,7 +16774,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16843,7 +16843,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16944,7 +16944,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17013,7 +17013,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17114,7 +17114,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17183,7 +17183,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17284,7 +17284,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17353,7 +17353,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17454,7 +17454,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17523,7 +17523,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17624,7 +17624,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17693,7 +17693,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17794,7 +17794,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17863,7 +17863,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17964,7 +17964,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18033,7 +18033,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18134,7 +18134,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18203,7 +18203,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18304,7 +18304,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18373,7 +18373,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18474,7 +18474,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18543,7 +18543,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18644,7 +18644,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18713,7 +18713,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18814,7 +18814,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18883,7 +18883,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18984,7 +18984,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19053,7 +19053,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19154,7 +19154,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19223,7 +19223,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19324,7 +19324,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19393,7 +19393,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19494,7 +19494,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19563,7 +19563,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19664,7 +19664,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19733,7 +19733,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19834,7 +19834,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19903,7 +19903,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20004,7 +20004,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20073,7 +20073,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20174,7 +20174,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20243,7 +20243,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20344,7 +20344,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20413,7 +20413,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20514,7 +20514,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20583,7 +20583,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20684,7 +20684,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20753,7 +20753,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20854,7 +20854,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20923,7 +20923,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21024,7 +21024,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21093,7 +21093,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21194,7 +21194,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21263,7 +21263,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21364,7 +21364,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21433,7 +21433,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21534,7 +21534,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21603,7 +21603,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21704,7 +21704,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21773,7 +21773,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21874,7 +21874,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21943,7 +21943,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22044,7 +22044,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22113,7 +22113,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22214,7 +22214,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22283,7 +22283,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22384,7 +22384,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22453,7 +22453,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22554,7 +22554,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22623,7 +22623,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22724,7 +22724,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22793,7 +22793,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22894,7 +22894,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22963,7 +22963,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23064,7 +23064,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23133,7 +23133,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23234,7 +23234,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23303,7 +23303,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23404,7 +23404,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23473,7 +23473,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23574,7 +23574,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23643,7 +23643,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23744,7 +23744,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23813,7 +23813,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23914,7 +23914,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23983,7 +23983,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24084,7 +24084,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24153,7 +24153,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24254,7 +24254,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24323,7 +24323,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24424,7 +24424,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24493,7 +24493,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24594,7 +24594,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24663,7 +24663,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24764,7 +24764,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24833,7 +24833,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24934,7 +24934,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25003,7 +25003,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25104,7 +25104,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25173,7 +25173,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25274,7 +25274,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25343,7 +25343,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25444,7 +25444,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25513,7 +25513,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25614,7 +25614,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25683,7 +25683,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25784,7 +25784,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25853,7 +25853,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25954,7 +25954,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26023,7 +26023,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26124,7 +26124,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26193,7 +26193,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26294,7 +26294,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26363,7 +26363,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26464,7 +26464,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26533,7 +26533,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26634,7 +26634,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26703,7 +26703,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26804,7 +26804,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26873,7 +26873,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26974,7 +26974,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27043,7 +27043,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27144,7 +27144,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27213,7 +27213,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27314,7 +27314,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27383,7 +27383,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27484,7 +27484,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27553,7 +27553,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27654,7 +27654,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27723,7 +27723,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27824,7 +27824,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27893,7 +27893,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27994,7 +27994,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28063,7 +28063,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28164,7 +28164,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28233,7 +28233,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28334,7 +28334,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28403,7 +28403,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28504,7 +28504,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28573,7 +28573,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28674,7 +28674,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28743,7 +28743,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28844,7 +28844,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28913,7 +28913,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29014,7 +29014,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29083,7 +29083,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29184,7 +29184,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29253,7 +29253,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29354,7 +29354,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29423,7 +29423,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29524,7 +29524,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29593,7 +29593,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29694,7 +29694,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29763,7 +29763,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29864,7 +29864,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29933,7 +29933,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30034,7 +30034,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30103,7 +30103,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30204,7 +30204,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30273,7 +30273,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30374,7 +30374,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30443,7 +30443,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30544,7 +30544,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30613,7 +30613,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30714,7 +30714,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30783,7 +30783,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30884,7 +30884,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30953,7 +30953,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31054,7 +31054,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31123,7 +31123,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31224,7 +31224,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31293,7 +31293,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31394,7 +31394,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31463,7 +31463,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31564,7 +31564,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31633,7 +31633,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31734,7 +31734,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31803,7 +31803,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31960,7 +31960,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32061,7 +32061,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -32130,7 +32130,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32287,7 +32287,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32388,7 +32388,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -32457,7 +32457,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32614,7 +32614,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32715,7 +32715,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -32784,7 +32784,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32941,7 +32941,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33042,7 +33042,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -33111,7 +33111,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33268,7 +33268,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33369,7 +33369,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -33438,7 +33438,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33595,7 +33595,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33696,7 +33696,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -33765,7 +33765,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33922,7 +33922,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34023,7 +34023,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -34092,7 +34092,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34249,7 +34249,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34350,7 +34350,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -34419,7 +34419,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34576,7 +34576,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34677,7 +34677,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -34746,7 +34746,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34903,7 +34903,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35004,7 +35004,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -35073,7 +35073,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35230,7 +35230,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35331,7 +35331,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -35400,7 +35400,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35557,7 +35557,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35658,7 +35658,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -35727,7 +35727,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35884,7 +35884,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35985,7 +35985,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -36054,7 +36054,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36155,7 +36155,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -36224,7 +36224,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36381,7 +36381,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36538,7 +36538,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36639,7 +36639,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -36708,7 +36708,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36865,7 +36865,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36966,7 +36966,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -37035,7 +37035,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -37192,7 +37192,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -37293,7 +37293,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -37362,7 +37362,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -37519,7 +37519,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -37620,7 +37620,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -37689,7 +37689,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38171,7 +38171,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -38240,7 +38240,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38341,7 +38341,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -38410,7 +38410,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38567,7 +38567,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38668,7 +38668,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -38737,7 +38737,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38894,7 +38894,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38995,7 +38995,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39064,7 +39064,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39221,7 +39221,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39322,7 +39322,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39391,7 +39391,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39492,7 +39492,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39561,7 +39561,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39662,7 +39662,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39731,7 +39731,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39832,7 +39832,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39901,7 +39901,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40002,7 +40002,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40071,7 +40071,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40172,7 +40172,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40241,7 +40241,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40342,7 +40342,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40411,7 +40411,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40512,7 +40512,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40581,7 +40581,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40682,7 +40682,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40751,7 +40751,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40852,7 +40852,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40921,7 +40921,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41022,7 +41022,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -41091,7 +41091,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41248,7 +41248,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41349,7 +41349,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -41418,7 +41418,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41575,7 +41575,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41803,7 +41803,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -41872,7 +41872,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42029,7 +42029,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42130,7 +42130,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -42199,7 +42199,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42356,7 +42356,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42457,7 +42457,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -42526,7 +42526,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42683,7 +42683,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42784,7 +42784,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -42853,7 +42853,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42954,7 +42954,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -43023,7 +43023,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43124,7 +43124,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -43193,7 +43193,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43350,7 +43350,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43451,7 +43451,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -43520,7 +43520,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43677,7 +43677,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43778,7 +43778,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -43847,7 +43847,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44004,7 +44004,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44105,7 +44105,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -44174,7 +44174,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44331,7 +44331,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44432,7 +44432,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -44501,7 +44501,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44658,7 +44658,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44759,7 +44759,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -44828,7 +44828,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44985,7 +44985,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45086,7 +45086,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -45155,7 +45155,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45312,7 +45312,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45413,7 +45413,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -45482,7 +45482,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45639,7 +45639,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45740,7 +45740,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -45809,7 +45809,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45966,7 +45966,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46067,7 +46067,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -46136,7 +46136,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46293,7 +46293,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46394,7 +46394,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -46463,7 +46463,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46620,7 +46620,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46721,7 +46721,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -46790,7 +46790,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46891,7 +46891,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -46960,7 +46960,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47117,7 +47117,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47274,7 +47274,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47375,7 +47375,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -47444,7 +47444,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47601,7 +47601,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47702,7 +47702,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -47771,7 +47771,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47928,7 +47928,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48029,7 +48029,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -48098,7 +48098,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48199,7 +48199,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -48268,7 +48268,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48425,7 +48425,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48582,7 +48582,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48683,7 +48683,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -48752,7 +48752,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48909,7 +48909,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49010,7 +49010,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -49079,7 +49079,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49236,7 +49236,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49337,7 +49337,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -49406,7 +49406,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49563,7 +49563,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49664,7 +49664,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -49733,7 +49733,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49890,7 +49890,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49991,7 +49991,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -50060,7 +50060,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -50217,7 +50217,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -50318,7 +50318,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -50387,7 +50387,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();

@@ -13,6 +13,13 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 22.2
+
+- Made 'SaveOprionsData.SaveFormat' property readonly with default value.
+- Added subclasses for all formats of SaveOprionsData with specified SaveFormat.
+- 'SaveOptionsData', 'FixedPageSaveOptionsData', 'ImageSaveOptionsData', 'OoxmlSaveOptionsData', 'TxtSaveOptionsBaseData' classes now is abstract.
+
+
 ## Enhancements in Version 22.1
 
 - Added 'FieldOptions.FieldUpdateCultureName' to set Culture for fields
@@ -204,7 +211,7 @@ require_once('vendor/autoload.php');
         $upload_result = $api->uploadFile($upload_request);
 
         // save as pdf file
-        $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => 'destination.pdf'));
+        $saveOptions = new PdfSaveOptionsData(array("file_name" => 'destination.pdf'));
         $request = new Requests\SaveAsRequest('fileStoredInCloud.doc', $saveOptions);
         $result = $api->saveAs($request);
 

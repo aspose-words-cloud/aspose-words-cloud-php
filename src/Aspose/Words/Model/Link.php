@@ -237,6 +237,7 @@ class Link implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets rel
      *
@@ -259,6 +260,7 @@ class Link implements ArrayAccess
         $this->container['rel'] = $rel;
         return $this;
     }
+
 
     /*
      * Gets title
@@ -283,6 +285,7 @@ class Link implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets type
      *
@@ -305,6 +308,7 @@ class Link implements ArrayAccess
         $this->container['type'] = $type;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

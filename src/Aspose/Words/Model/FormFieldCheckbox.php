@@ -227,6 +227,7 @@ class FormFieldCheckbox extends FormField
         return $this;
     }
 
+
     /*
      * Gets checked
      *
@@ -250,6 +251,7 @@ class FormFieldCheckbox extends FormField
         return $this;
     }
 
+
     /*
      * Gets is_check_box_exact_size
      *
@@ -272,6 +274,7 @@ class FormFieldCheckbox extends FormField
         $this->container['is_check_box_exact_size'] = $is_check_box_exact_size;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -163,6 +163,7 @@ class PsSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+        $this->container['save_format'] = "ps";
         $this->container['use_book_fold_printing_settings'] = isset($data['use_book_fold_printing_settings']) ? $data['use_book_fold_printing_settings'] : null;
     }
 
@@ -214,6 +215,7 @@ class PsSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['use_book_fold_printing_settings'] = $use_book_fold_printing_settings;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

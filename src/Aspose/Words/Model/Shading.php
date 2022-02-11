@@ -364,6 +364,7 @@ class Shading implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets foreground_pattern_color
      *
@@ -386,6 +387,7 @@ class Shading implements ArrayAccess
         $this->container['foreground_pattern_color'] = $foreground_pattern_color;
         return $this;
     }
+
 
     /*
      * Gets texture
@@ -413,6 +415,7 @@ class Shading implements ArrayAccess
         $this->container['texture'] = $texture;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

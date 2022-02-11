@@ -405,6 +405,7 @@ class TableCellFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets fit_text
      *
@@ -427,6 +428,7 @@ class TableCellFormat extends LinkElement
         $this->container['fit_text'] = $fit_text;
         return $this;
     }
+
 
     /*
      * Gets horizontal_merge
@@ -455,6 +457,7 @@ class TableCellFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets left_padding
      *
@@ -477,6 +480,7 @@ class TableCellFormat extends LinkElement
         $this->container['left_padding'] = $left_padding;
         return $this;
     }
+
 
     /*
      * Gets orientation
@@ -505,6 +509,7 @@ class TableCellFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets preferred_width
      *
@@ -527,6 +532,7 @@ class TableCellFormat extends LinkElement
         $this->container['preferred_width'] = $preferred_width;
         return $this;
     }
+
 
     /*
      * Gets right_padding
@@ -551,6 +557,7 @@ class TableCellFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets top_padding
      *
@@ -573,6 +580,7 @@ class TableCellFormat extends LinkElement
         $this->container['top_padding'] = $top_padding;
         return $this;
     }
+
 
     /*
      * Gets vertical_alignment
@@ -601,6 +609,7 @@ class TableCellFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets vertical_merge
      *
@@ -628,6 +637,7 @@ class TableCellFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets width
      *
@@ -651,6 +661,7 @@ class TableCellFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets wrap_text
      *
@@ -673,6 +684,7 @@ class TableCellFormat extends LinkElement
         $this->container['wrap_text'] = $wrap_text;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

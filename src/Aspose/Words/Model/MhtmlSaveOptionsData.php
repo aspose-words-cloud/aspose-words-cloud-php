@@ -164,6 +164,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
     {
         parent::__construct($data);
         $this->container['export_cid_urls_for_mhtml_resources'] = isset($data['export_cid_urls_for_mhtml_resources']) ? $data['export_cid_urls_for_mhtml_resources'] : null;
+        $this->container['save_format'] = "mht";
     }
 
     /*
@@ -214,6 +215,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
         $this->container['export_cid_urls_for_mhtml_resources'] = $export_cid_urls_for_mhtml_resources;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

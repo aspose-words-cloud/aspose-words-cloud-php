@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Base class for save options of text formats.
  */
-class TxtSaveOptionsBaseData extends SaveOptionsData
+abstract class TxtSaveOptionsBaseData extends SaveOptionsData
 {
     const DISCRIMINATOR = null;
 
@@ -264,6 +264,7 @@ class TxtSaveOptionsBaseData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_headers_footers_mode
      *
@@ -291,6 +292,7 @@ class TxtSaveOptionsBaseData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets force_page_breaks
      *
@@ -314,6 +316,7 @@ class TxtSaveOptionsBaseData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets paragraph_break
      *
@@ -336,6 +339,7 @@ class TxtSaveOptionsBaseData extends SaveOptionsData
         $this->container['paragraph_break'] = $paragraph_break;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

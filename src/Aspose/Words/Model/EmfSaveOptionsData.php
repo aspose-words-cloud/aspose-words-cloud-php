@@ -158,6 +158,7 @@ class EmfSaveOptionsData extends ImageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+        $this->container['save_format'] = "emf";
     }
 
     /*

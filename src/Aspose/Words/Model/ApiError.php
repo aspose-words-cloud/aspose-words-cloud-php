@@ -243,6 +243,7 @@ class ApiError implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets date_time
      *
@@ -265,6 +266,7 @@ class ApiError implements ArrayAccess
         $this->container['date_time'] = $date_time;
         return $this;
     }
+
 
     /*
      * Gets description
@@ -289,6 +291,7 @@ class ApiError implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets inner_error
      *
@@ -312,6 +315,7 @@ class ApiError implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets message
      *
@@ -334,6 +338,7 @@ class ApiError implements ArrayAccess
         $this->container['message'] = $message;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

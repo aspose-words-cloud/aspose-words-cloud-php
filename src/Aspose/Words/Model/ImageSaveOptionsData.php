@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Container abstract class for image save options.
  */
-class ImageSaveOptionsData extends FixedPageSaveOptionsData
+abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
 {
     const DISCRIMINATOR = null;
 
@@ -281,6 +281,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets image_brightness
      *
@@ -303,6 +304,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['image_brightness'] = $image_brightness;
         return $this;
     }
+
 
     /*
      * Gets image_color_mode
@@ -327,6 +329,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets image_contrast
      *
@@ -349,6 +352,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['image_contrast'] = $image_contrast;
         return $this;
     }
+
 
     /*
      * Gets paper_color
@@ -373,6 +377,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets pixel_format
      *
@@ -395,6 +400,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['pixel_format'] = $pixel_format;
         return $this;
     }
+
 
     /*
      * Gets resolution
@@ -419,6 +425,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets scale
      *
@@ -441,6 +448,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['scale'] = $scale;
         return $this;
     }
+
 
     /*
      * Gets use_anti_aliasing
@@ -465,6 +473,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets use_gdi_emf_renderer
      *
@@ -487,6 +496,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['use_gdi_emf_renderer'] = $use_gdi_emf_renderer;
         return $this;
     }
+
 
     /*
      * Gets use_high_quality_rendering
@@ -511,6 +521,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets vertical_resolution
      *
@@ -533,6 +544,7 @@ class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['vertical_resolution'] = $vertical_resolution;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

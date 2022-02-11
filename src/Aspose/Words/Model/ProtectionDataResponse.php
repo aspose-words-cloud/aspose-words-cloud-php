@@ -221,6 +221,7 @@ class ProtectionDataResponse extends WordsResponse
         return $this;
     }
 
+
     /*
      * Gets protection_data
      *
@@ -243,6 +244,7 @@ class ProtectionDataResponse extends WordsResponse
         $this->container['protection_data'] = $protection_data;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

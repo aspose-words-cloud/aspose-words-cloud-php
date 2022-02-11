@@ -243,6 +243,7 @@ class DocumentStatData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets page_count
      *
@@ -265,6 +266,7 @@ class DocumentStatData implements ArrayAccess
         $this->container['page_count'] = $page_count;
         return $this;
     }
+
 
     /*
      * Gets page_stat_data
@@ -289,6 +291,7 @@ class DocumentStatData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets paragraph_count
      *
@@ -312,6 +315,7 @@ class DocumentStatData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets word_count
      *
@@ -334,6 +338,7 @@ class DocumentStatData implements ArrayAccess
         $this->container['word_count'] = $word_count;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

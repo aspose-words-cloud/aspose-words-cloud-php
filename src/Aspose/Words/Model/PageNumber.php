@@ -237,6 +237,7 @@ class PageNumber implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets format
      *
@@ -259,6 +260,7 @@ class PageNumber implements ArrayAccess
         $this->container['format'] = $format;
         return $this;
     }
+
 
     /*
      * Gets is_top
@@ -283,6 +285,7 @@ class PageNumber implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets set_page_number_on_first_page
      *
@@ -305,6 +308,7 @@ class PageNumber implements ArrayAccess
         $this->container['set_page_number_on_first_page'] = $set_page_number_on_first_page;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

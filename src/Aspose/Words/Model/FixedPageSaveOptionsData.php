@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, images etc).
  */
-class FixedPageSaveOptionsData extends SaveOptionsData
+abstract class FixedPageSaveOptionsData extends SaveOptionsData
 {
     const DISCRIMINATOR = null;
 
@@ -251,6 +251,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets jpeg_quality
      *
@@ -273,6 +274,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         $this->container['jpeg_quality'] = $jpeg_quality;
         return $this;
     }
+
 
     /*
      * Gets metafile_rendering_options
@@ -297,6 +299,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets numeral_format
      *
@@ -319,6 +322,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         $this->container['numeral_format'] = $numeral_format;
         return $this;
     }
+
 
     /*
      * Gets optimize_output
@@ -343,6 +347,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets page_count
      *
@@ -366,6 +371,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets page_index
      *
@@ -388,6 +394,7 @@ class FixedPageSaveOptionsData extends SaveOptionsData
         $this->container['page_index'] = $page_index;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

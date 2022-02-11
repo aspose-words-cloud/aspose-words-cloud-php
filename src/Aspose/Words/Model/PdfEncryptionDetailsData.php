@@ -237,6 +237,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets owner_password
      *
@@ -259,6 +260,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
         $this->container['owner_password'] = $owner_password;
         return $this;
     }
+
 
     /*
      * Gets permissions
@@ -283,6 +285,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets user_password
      *
@@ -305,6 +308,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
         $this->container['user_password'] = $user_password;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -280,6 +280,7 @@ class ReportEngineSettings implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets data_source_name
      *
@@ -302,6 +303,7 @@ class ReportEngineSettings implements ArrayAccess
         $this->container['data_source_name'] = $data_source_name;
         return $this;
     }
+
 
     /*
      * Gets data_source_type
@@ -330,6 +332,7 @@ class ReportEngineSettings implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets json_data_load_options
      *
@@ -352,6 +355,7 @@ class ReportEngineSettings implements ArrayAccess
         $this->container['json_data_load_options'] = $json_data_load_options;
         return $this;
     }
+
 
     /*
      * Gets report_build_options
@@ -380,6 +384,7 @@ class ReportEngineSettings implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets xml_data_load_options
      *
@@ -402,6 +407,7 @@ class ReportEngineSettings implements ArrayAccess
         $this->container['xml_data_load_options'] = $xml_data_load_options;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

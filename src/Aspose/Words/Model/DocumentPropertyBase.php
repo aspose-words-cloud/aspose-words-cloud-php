@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Words document property DTO base class.
  */
-class DocumentPropertyBase implements ArrayAccess
+abstract class DocumentPropertyBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -218,6 +218,7 @@ class DocumentPropertyBase implements ArrayAccess
         $this->container['value'] = $value;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -33,7 +33,7 @@ use Aspose\Words\WordsApi;
 use PHPUnit\Framework\Assert;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
-use Aspose\Words\Model\SaveOptionsData;
+use Aspose\Words\Model\PdfSaveOptionsData;
 
 class ReadmeTests extends BaseTestContext
 {
@@ -61,7 +61,7 @@ class ReadmeTests extends BaseTestContext
         $upload_result = $api->uploadFile($upload_request);
 
         // save as pdf file
-        $saveOptions = new SaveOptionsData(array("save_format" => "pdf", "file_name" => 'destination.pdf'));
+        $saveOptions = new PdfSaveOptionsData(array("file_name" => 'destination.pdf'));
         $request = new Requests\SaveAsRequest('fileStoredInCloud.doc', $saveOptions);
         $result = $api->saveAs($request);
 

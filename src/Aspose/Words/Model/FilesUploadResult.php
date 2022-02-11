@@ -225,6 +225,7 @@ class FilesUploadResult implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets uploaded
      *
@@ -247,6 +248,7 @@ class FilesUploadResult implements ArrayAccess
         $this->container['uploaded'] = $uploaded;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

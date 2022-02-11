@@ -237,6 +237,7 @@ class CsvDataLoadOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets delimiter
      *
@@ -259,6 +260,7 @@ class CsvDataLoadOptions implements ArrayAccess
         $this->container['delimiter'] = $delimiter;
         return $this;
     }
+
 
     /*
      * Gets has_headers
@@ -283,6 +285,7 @@ class CsvDataLoadOptions implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets quote_char
      *
@@ -305,6 +308,7 @@ class CsvDataLoadOptions implements ArrayAccess
         $this->container['quote_char'] = $quote_char;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

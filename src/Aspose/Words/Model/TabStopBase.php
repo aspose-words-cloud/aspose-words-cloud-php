@@ -309,6 +309,7 @@ class TabStopBase implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets leader
      *
@@ -336,6 +337,7 @@ class TabStopBase implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets position
      *
@@ -358,6 +360,7 @@ class TabStopBase implements ArrayAccess
         $this->container['position'] = $position;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

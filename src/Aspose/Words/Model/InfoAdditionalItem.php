@@ -225,6 +225,7 @@ class InfoAdditionalItem implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets value
      *
@@ -247,6 +248,7 @@ class InfoAdditionalItem implements ArrayAccess
         $this->container['value'] = $value;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

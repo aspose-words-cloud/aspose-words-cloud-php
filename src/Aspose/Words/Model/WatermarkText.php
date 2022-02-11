@@ -225,6 +225,7 @@ class WatermarkText implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets text
      *
@@ -247,6 +248,7 @@ class WatermarkText implements ArrayAccess
         $this->container['text'] = $text;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

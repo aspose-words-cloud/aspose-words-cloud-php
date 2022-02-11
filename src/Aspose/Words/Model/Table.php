@@ -221,6 +221,7 @@ class Table extends NodeLink
         return $this;
     }
 
+
     /*
      * Gets table_row_list
      *
@@ -243,6 +244,7 @@ class Table extends NodeLink
         $this->container['table_row_list'] = $table_row_list;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

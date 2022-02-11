@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Run element.
  */
-class RunBase implements ArrayAccess
+abstract class RunBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -218,6 +218,7 @@ class RunBase implements ArrayAccess
         $this->container['text'] = $text;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

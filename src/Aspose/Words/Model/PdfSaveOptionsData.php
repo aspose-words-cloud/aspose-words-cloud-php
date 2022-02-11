@@ -319,6 +319,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['page_mode'] = isset($data['page_mode']) ? $data['page_mode'] : null;
         $this->container['preblend_images'] = isset($data['preblend_images']) ? $data['preblend_images'] : null;
         $this->container['preserve_form_fields'] = isset($data['preserve_form_fields']) ? $data['preserve_form_fields'] : null;
+        $this->container['save_format'] = "pdf";
         $this->container['text_compression'] = isset($data['text_compression']) ? $data['text_compression'] : null;
         $this->container['use_book_fold_printing_settings'] = isset($data['use_book_fold_printing_settings']) ? $data['use_book_fold_printing_settings'] : null;
         $this->container['use_core_fonts'] = isset($data['use_core_fonts']) ? $data['use_core_fonts'] : null;
@@ -390,6 +391,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets create_note_hyperlinks
      *
@@ -412,6 +414,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['create_note_hyperlinks'] = $create_note_hyperlinks;
         return $this;
     }
+
 
     /*
      * Gets custom_properties_export
@@ -436,6 +439,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets digital_signature_details
      *
@@ -458,6 +462,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['digital_signature_details'] = $digital_signature_details;
         return $this;
     }
+
 
     /*
      * Gets display_doc_title
@@ -482,6 +487,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets downsample_options
      *
@@ -504,6 +510,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['downsample_options'] = $downsample_options;
         return $this;
     }
+
 
     /*
      * Gets embed_full_fonts
@@ -528,6 +535,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets encryption_details
      *
@@ -550,6 +558,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['encryption_details'] = $encryption_details;
         return $this;
     }
+
 
     /*
      * Gets export_document_structure
@@ -574,6 +583,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets export_language_to_span_tag
      *
@@ -597,6 +607,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets font_embedding_mode
      *
@@ -619,6 +630,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['font_embedding_mode'] = $font_embedding_mode;
         return $this;
     }
+
 
     /*
      * Gets header_footer_bookmarks_export_mode
@@ -647,6 +659,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets image_color_space_export_mode
      *
@@ -669,6 +682,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['image_color_space_export_mode'] = $image_color_space_export_mode;
         return $this;
     }
+
 
     /*
      * Gets image_compression
@@ -693,6 +707,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets interpolate_images
      *
@@ -715,6 +730,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['interpolate_images'] = $interpolate_images;
         return $this;
     }
+
 
     /*
      * Gets open_hyperlinks_in_new_window
@@ -739,6 +755,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets outline_options
      *
@@ -761,6 +778,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['outline_options'] = $outline_options;
         return $this;
     }
+
 
     /*
      * Gets page_mode
@@ -785,6 +803,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets preblend_images
      *
@@ -807,6 +826,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['preblend_images'] = $preblend_images;
         return $this;
     }
+
 
     /*
      * Gets preserve_form_fields
@@ -831,6 +851,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets text_compression
      *
@@ -853,6 +874,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['text_compression'] = $text_compression;
         return $this;
     }
+
 
     /*
      * Gets use_book_fold_printing_settings
@@ -877,6 +899,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets use_core_fonts
      *
@@ -899,6 +922,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['use_core_fonts'] = $use_core_fonts;
         return $this;
     }
+
 
     /*
      * Gets zoom_behavior
@@ -923,6 +947,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return $this;
     }
 
+
     /*
      * Gets zoom_factor
      *
@@ -945,6 +970,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['zoom_factor'] = $zoom_factor;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

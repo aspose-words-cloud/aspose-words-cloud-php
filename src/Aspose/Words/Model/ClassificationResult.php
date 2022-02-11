@@ -225,6 +225,7 @@ class ClassificationResult implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets class_probability
      *
@@ -247,6 +248,7 @@ class ClassificationResult implements ArrayAccess
         $this->container['class_probability'] = $class_probability;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

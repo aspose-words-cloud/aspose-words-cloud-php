@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Field.
  */
-class FieldBase implements ArrayAccess
+abstract class FieldBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -225,6 +225,7 @@ class FieldBase implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets locale_id
      *
@@ -247,6 +248,7 @@ class FieldBase implements ArrayAccess
         $this->container['locale_id'] = $locale_id;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

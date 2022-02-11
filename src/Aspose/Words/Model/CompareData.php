@@ -243,6 +243,7 @@ class CompareData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets compare_options
      *
@@ -265,6 +266,7 @@ class CompareData implements ArrayAccess
         $this->container['compare_options'] = $compare_options;
         return $this;
     }
+
 
     /*
      * Gets comparing_with_document
@@ -289,6 +291,7 @@ class CompareData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets date_time
      *
@@ -312,6 +315,7 @@ class CompareData implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets result_document_format
      *
@@ -334,6 +338,7 @@ class CompareData implements ArrayAccess
         $this->container['result_document_format'] = $result_document_format;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

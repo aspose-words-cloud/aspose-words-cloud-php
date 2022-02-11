@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Footnote base class.
  */
-class FootnoteBase implements ArrayAccess
+abstract class FootnoteBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -270,6 +270,7 @@ class FootnoteBase implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets position
      *
@@ -292,6 +293,7 @@ class FootnoteBase implements ArrayAccess
         $this->container['position'] = $position;
         return $this;
     }
+
 
     /*
      * Gets reference_mark
@@ -316,6 +318,7 @@ class FootnoteBase implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets text
      *
@@ -338,6 +341,7 @@ class FootnoteBase implements ArrayAccess
         $this->container['text'] = $text;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

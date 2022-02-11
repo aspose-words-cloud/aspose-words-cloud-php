@@ -264,6 +264,7 @@ class TableRowFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets heading_format
      *
@@ -287,6 +288,7 @@ class TableRowFormat extends LinkElement
         return $this;
     }
 
+
     /*
      * Gets height
      *
@@ -309,6 +311,7 @@ class TableRowFormat extends LinkElement
         $this->container['height'] = $height;
         return $this;
     }
+
 
     /*
      * Gets height_rule
@@ -336,6 +339,7 @@ class TableRowFormat extends LinkElement
         $this->container['height_rule'] = $height_rule;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

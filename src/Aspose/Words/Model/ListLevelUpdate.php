@@ -484,6 +484,7 @@ class ListLevelUpdate implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets is_legal
      *
@@ -506,6 +507,7 @@ class ListLevelUpdate implements ArrayAccess
         $this->container['is_legal'] = $is_legal;
         return $this;
     }
+
 
     /*
      * Gets number_format
@@ -530,6 +532,7 @@ class ListLevelUpdate implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets number_position
      *
@@ -552,6 +555,7 @@ class ListLevelUpdate implements ArrayAccess
         $this->container['number_position'] = $number_position;
         return $this;
     }
+
 
     /*
      * Gets number_style
@@ -580,6 +584,7 @@ class ListLevelUpdate implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets restart_after_level
      *
@@ -602,6 +607,7 @@ class ListLevelUpdate implements ArrayAccess
         $this->container['restart_after_level'] = $restart_after_level;
         return $this;
     }
+
 
     /*
      * Gets start_at
@@ -626,6 +632,7 @@ class ListLevelUpdate implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets tab_position
      *
@@ -649,6 +656,7 @@ class ListLevelUpdate implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets text_position
      *
@@ -671,6 +679,7 @@ class ListLevelUpdate implements ArrayAccess
         $this->container['text_position'] = $text_position;
         return $this;
     }
+
 
     /*
      * Gets trailing_character
@@ -698,6 +707,7 @@ class ListLevelUpdate implements ArrayAccess
         $this->container['trailing_character'] = $trailing_character;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

@@ -231,6 +231,7 @@ class ProtectionRequest implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets password
      *
@@ -254,6 +255,7 @@ class ProtectionRequest implements ArrayAccess
         return $this;
     }
 
+
     /*
      * Gets protection_type
      *
@@ -276,6 +278,7 @@ class ProtectionRequest implements ArrayAccess
         $this->container['protection_type'] = $protection_type;
         return $this;
     }
+
 
     /*
      * Returns true if offset exists. False otherwise.

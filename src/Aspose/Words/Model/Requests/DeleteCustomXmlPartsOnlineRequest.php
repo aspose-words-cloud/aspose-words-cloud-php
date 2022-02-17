@@ -397,11 +397,11 @@ class DeleteCustomXmlPartsOnlineRequest extends BaseApiRequest
      */
     public function getResponseType()
     {
-        return '\SplFileObject';
+        return 'FILES_COLLECTION';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\SplFileObject', []);
+        return ObjectSerializer::deserialize($response, 'FILES_COLLECTION', $response->getHeaders());
     }
 }

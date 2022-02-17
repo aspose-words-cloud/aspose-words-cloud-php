@@ -400,8 +400,8 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\StatDataResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StatDataResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\StatDataResponse', $response->getHeaders());
     }
 }

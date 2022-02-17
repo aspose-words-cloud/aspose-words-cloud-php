@@ -272,8 +272,8 @@ class UploadFileRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FilesUploadResult';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FilesUploadResult', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FilesUploadResult', $response->getHeaders());
     }
 }

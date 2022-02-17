@@ -395,8 +395,8 @@ class GetFootnotesRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FootnotesResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FootnotesResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FootnotesResponse', $response->getHeaders());
     }
 }

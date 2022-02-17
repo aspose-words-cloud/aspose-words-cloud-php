@@ -395,8 +395,8 @@ class GetOfficeMathObjectsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\OfficeMathObjectsResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\OfficeMathObjectsResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\OfficeMathObjectsResponse', $response->getHeaders());
     }
 }

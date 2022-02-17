@@ -398,8 +398,8 @@ class GetDocumentPropertyRequest extends BaseApiRequest
         return '\Aspose\Words\Model\DocumentPropertyResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\DocumentPropertyResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\DocumentPropertyResponse', $response->getHeaders());
     }
 }

@@ -465,8 +465,8 @@ class DeleteAllParagraphTabStopsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TabStopsResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TabStopsResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TabStopsResponse', $response->getHeaders());
     }
 }

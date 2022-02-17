@@ -504,11 +504,11 @@ class UpdateTableCellFormatOnlineRequest extends BaseApiRequest
         return 'UpdateTableCellFormatOnlineResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        $multipart = ObjectSerializer::parseMultipart($responseContent);
+        $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());
         return new UpdateTableCellFormatOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\TableCellFormatResponse', []),
-          ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
+          ObjectSerializer::deserialize(json_decode(ObjectSerializer::findPartByName($multipart, 'Model')['body']), '\Aspose\Words\Model\TableCellFormatResponse', ObjectSerializer::findPartByName($multipart, 'Model')['headers']),
+          ObjectSerializer::deserialize(ObjectSerializer::findPartByName($multipart, 'Document')['body'], 'FILES_COLLECTION', ObjectSerializer::findPartByName($multipart, 'Document')['headers']));
     }
 }

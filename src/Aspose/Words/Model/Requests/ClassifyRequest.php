@@ -224,8 +224,8 @@ class ClassifyRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ClassificationResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ClassificationResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ClassificationResponse', $response->getHeaders());
     }
 }

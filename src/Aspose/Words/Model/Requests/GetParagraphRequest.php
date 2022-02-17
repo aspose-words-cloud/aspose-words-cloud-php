@@ -431,8 +431,8 @@ class GetParagraphRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ParagraphResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ParagraphResponse', $response->getHeaders());
     }
 }

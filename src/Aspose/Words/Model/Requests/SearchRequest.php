@@ -399,8 +399,8 @@ class SearchRequest extends BaseApiRequest
         return '\Aspose\Words\Model\SearchResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\SearchResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\SearchResponse', $response->getHeaders());
     }
 }

@@ -226,8 +226,8 @@ class GetFilesListRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FilesList';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\FilesList', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FilesList', $response->getHeaders());
     }
 }

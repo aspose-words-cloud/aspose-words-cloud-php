@@ -398,8 +398,8 @@ class GetCommentRequest extends BaseApiRequest
         return '\Aspose\Words\Model\CommentResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CommentResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\CommentResponse', $response->getHeaders());
     }
 }

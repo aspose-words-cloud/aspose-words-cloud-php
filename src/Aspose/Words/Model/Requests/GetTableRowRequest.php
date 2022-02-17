@@ -434,8 +434,8 @@ class GetTableRowRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TableRowResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableRowResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TableRowResponse', $response->getHeaders());
     }
 }

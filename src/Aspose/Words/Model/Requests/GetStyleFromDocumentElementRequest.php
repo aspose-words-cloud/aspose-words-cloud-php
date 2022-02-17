@@ -398,8 +398,8 @@ class GetStyleFromDocumentElementRequest extends BaseApiRequest
         return '\Aspose\Words\Model\StyleResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\StyleResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\StyleResponse', $response->getHeaders());
     }
 }

@@ -190,8 +190,8 @@ class GetAvailableFontsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\AvailableFontsResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\AvailableFontsResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\AvailableFontsResponse', $response->getHeaders());
     }
 }

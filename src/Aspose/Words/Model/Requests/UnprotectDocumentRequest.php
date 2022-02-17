@@ -430,8 +430,8 @@ class UnprotectDocumentRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ProtectionDataResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ProtectionDataResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ProtectionDataResponse', $response->getHeaders());
     }
 }

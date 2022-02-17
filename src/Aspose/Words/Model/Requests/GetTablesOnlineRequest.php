@@ -331,8 +331,8 @@ class GetTablesOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TableLinkCollectionResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TableLinkCollectionResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TableLinkCollectionResponse', $response->getHeaders());
     }
 }

@@ -534,8 +534,8 @@ class UpdateCustomXmlPartRequest extends BaseApiRequest
         return '\Aspose\Words\Model\CustomXmlPartResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CustomXmlPartResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\CustomXmlPartResponse', $response->getHeaders());
     }
 }

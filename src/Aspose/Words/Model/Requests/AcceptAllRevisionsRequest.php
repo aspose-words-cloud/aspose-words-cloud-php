@@ -396,8 +396,8 @@ class AcceptAllRevisionsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\RevisionsModificationResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\RevisionsModificationResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\RevisionsModificationResponse', $response->getHeaders());
     }
 }

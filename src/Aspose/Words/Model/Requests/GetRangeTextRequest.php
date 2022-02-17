@@ -431,8 +431,8 @@ class GetRangeTextRequest extends BaseApiRequest
         return '\Aspose\Words\Model\RangeTextResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\RangeTextResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\RangeTextResponse', $response->getHeaders());
     }
 }

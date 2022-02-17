@@ -298,8 +298,8 @@ class GetCustomXmlPartsOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\CustomXmlPartsResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\CustomXmlPartsResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\CustomXmlPartsResponse', $response->getHeaders());
     }
 }

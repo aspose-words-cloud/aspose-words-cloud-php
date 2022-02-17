@@ -567,8 +567,8 @@ class UpdateParagraphFormatRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ParagraphFormatResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ParagraphFormatResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ParagraphFormatResponse', $response->getHeaders());
     }
 }

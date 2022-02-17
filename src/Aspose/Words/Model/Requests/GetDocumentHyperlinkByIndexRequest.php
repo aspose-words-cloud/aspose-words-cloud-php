@@ -398,8 +398,8 @@ class GetDocumentHyperlinkByIndexRequest extends BaseApiRequest
         return '\Aspose\Words\Model\HyperlinkResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\HyperlinkResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\HyperlinkResponse', $response->getHeaders());
     }
 }

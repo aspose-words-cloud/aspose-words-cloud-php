@@ -155,7 +155,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -165,11 +165,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -224,7 +224,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -234,11 +234,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -381,7 +381,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -391,11 +391,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -482,7 +482,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -492,11 +492,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -551,7 +551,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -561,11 +561,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -708,7 +708,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -718,11 +718,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -809,7 +809,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -819,11 +819,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -878,7 +878,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -888,11 +888,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1035,7 +1035,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1045,11 +1045,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1136,7 +1136,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1146,11 +1146,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -1205,7 +1205,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1215,11 +1215,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1306,7 +1306,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1316,11 +1316,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -1375,7 +1375,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1385,11 +1385,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1476,7 +1476,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1486,11 +1486,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -1545,7 +1545,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1555,11 +1555,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1646,7 +1646,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1656,11 +1656,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -1715,7 +1715,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1725,11 +1725,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1816,7 +1816,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1826,11 +1826,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -1885,7 +1885,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -1895,11 +1895,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1986,7 +1986,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -1996,11 +1996,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -2055,7 +2055,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -2065,11 +2065,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2212,7 +2212,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -2222,11 +2222,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2313,7 +2313,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -2323,11 +2323,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -2382,7 +2382,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -2392,11 +2392,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2737,7 +2737,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -2747,11 +2747,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -2806,7 +2806,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -2816,11 +2816,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2963,7 +2963,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -2973,11 +2973,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3064,7 +3064,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -3074,11 +3074,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -3133,7 +3133,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3143,11 +3143,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3361,7 +3361,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -3371,11 +3371,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -3430,7 +3430,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3440,11 +3440,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3587,7 +3587,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3597,11 +3597,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3688,7 +3688,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -3698,11 +3698,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -3757,7 +3757,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3767,11 +3767,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3914,7 +3914,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -3924,11 +3924,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4015,7 +4015,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -4025,11 +4025,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -4084,7 +4084,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4094,11 +4094,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4241,7 +4241,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4251,11 +4251,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4342,7 +4342,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -4352,11 +4352,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -4411,7 +4411,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4421,11 +4421,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4568,7 +4568,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4578,11 +4578,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4739,7 +4739,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteCommentOnline(Requests\deleteCommentOnlineRequest $request)
     {
@@ -4767,11 +4767,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteCommentOnlineWithHttpInfo(Requests\deleteCommentOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -4796,7 +4796,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -4806,18 +4806,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -4857,7 +4857,7 @@ class WordsApi
      */
     private function deleteCommentOnlineAsyncWithHttpInfo(Requests\deleteCommentOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -4865,7 +4865,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -4875,11 +4875,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5036,7 +5036,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteCommentsOnline(Requests\deleteCommentsOnlineRequest $request)
     {
@@ -5064,11 +5064,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteCommentsOnlineWithHttpInfo(Requests\deleteCommentsOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -5093,7 +5093,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -5103,18 +5103,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -5154,7 +5154,7 @@ class WordsApi
      */
     private function deleteCommentsOnlineAsyncWithHttpInfo(Requests\deleteCommentsOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -5162,7 +5162,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -5172,11 +5172,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5333,7 +5333,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteCustomXmlPartOnline(Requests\deleteCustomXmlPartOnlineRequest $request)
     {
@@ -5361,11 +5361,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteCustomXmlPartOnlineWithHttpInfo(Requests\deleteCustomXmlPartOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -5390,7 +5390,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -5400,18 +5400,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -5451,7 +5451,7 @@ class WordsApi
      */
     private function deleteCustomXmlPartOnlineAsyncWithHttpInfo(Requests\deleteCustomXmlPartOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -5459,7 +5459,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -5469,11 +5469,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5630,7 +5630,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteCustomXmlPartsOnline(Requests\deleteCustomXmlPartsOnlineRequest $request)
     {
@@ -5658,11 +5658,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteCustomXmlPartsOnlineWithHttpInfo(Requests\deleteCustomXmlPartsOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -5687,7 +5687,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -5697,18 +5697,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -5748,7 +5748,7 @@ class WordsApi
      */
     private function deleteCustomXmlPartsOnlineAsyncWithHttpInfo(Requests\deleteCustomXmlPartsOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -5756,7 +5756,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -5766,11 +5766,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5927,7 +5927,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteDocumentPropertyOnline(Requests\deleteDocumentPropertyOnlineRequest $request)
     {
@@ -5955,11 +5955,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteDocumentPropertyOnlineWithHttpInfo(Requests\deleteDocumentPropertyOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -5984,7 +5984,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -5994,18 +5994,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -6045,7 +6045,7 @@ class WordsApi
      */
     private function deleteDocumentPropertyOnlineAsyncWithHttpInfo(Requests\deleteDocumentPropertyOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -6053,7 +6053,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -6063,11 +6063,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -6224,7 +6224,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteDrawingObjectOnline(Requests\deleteDrawingObjectOnlineRequest $request)
     {
@@ -6252,11 +6252,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteDrawingObjectOnlineWithHttpInfo(Requests\deleteDrawingObjectOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -6281,7 +6281,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -6291,18 +6291,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -6342,7 +6342,7 @@ class WordsApi
      */
     private function deleteDrawingObjectOnlineAsyncWithHttpInfo(Requests\deleteDrawingObjectOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -6350,7 +6350,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -6360,11 +6360,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -6521,7 +6521,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteFieldOnline(Requests\deleteFieldOnlineRequest $request)
     {
@@ -6549,11 +6549,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteFieldOnlineWithHttpInfo(Requests\deleteFieldOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -6578,7 +6578,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -6588,18 +6588,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -6639,7 +6639,7 @@ class WordsApi
      */
     private function deleteFieldOnlineAsyncWithHttpInfo(Requests\deleteFieldOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -6647,7 +6647,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -6657,11 +6657,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -6818,7 +6818,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteFieldsOnline(Requests\deleteFieldsOnlineRequest $request)
     {
@@ -6846,11 +6846,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteFieldsOnlineWithHttpInfo(Requests\deleteFieldsOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -6875,7 +6875,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -6885,18 +6885,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -6936,7 +6936,7 @@ class WordsApi
      */
     private function deleteFieldsOnlineAsyncWithHttpInfo(Requests\deleteFieldsOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -6944,7 +6944,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -6954,11 +6954,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -7369,7 +7369,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteFootnoteOnline(Requests\deleteFootnoteOnlineRequest $request)
     {
@@ -7397,11 +7397,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteFootnoteOnlineWithHttpInfo(Requests\deleteFootnoteOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -7426,7 +7426,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -7436,18 +7436,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -7487,7 +7487,7 @@ class WordsApi
      */
     private function deleteFootnoteOnlineAsyncWithHttpInfo(Requests\deleteFootnoteOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -7495,7 +7495,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -7505,11 +7505,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -7666,7 +7666,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteFormFieldOnline(Requests\deleteFormFieldOnlineRequest $request)
     {
@@ -7694,11 +7694,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteFormFieldOnlineWithHttpInfo(Requests\deleteFormFieldOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -7723,7 +7723,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -7733,18 +7733,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -7784,7 +7784,7 @@ class WordsApi
      */
     private function deleteFormFieldOnlineAsyncWithHttpInfo(Requests\deleteFormFieldOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -7792,7 +7792,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -7802,11 +7802,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -7963,7 +7963,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteHeaderFooterOnline(Requests\deleteHeaderFooterOnlineRequest $request)
     {
@@ -7991,11 +7991,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteHeaderFooterOnlineWithHttpInfo(Requests\deleteHeaderFooterOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -8020,7 +8020,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -8030,18 +8030,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -8081,7 +8081,7 @@ class WordsApi
      */
     private function deleteHeaderFooterOnlineAsyncWithHttpInfo(Requests\deleteHeaderFooterOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -8089,7 +8089,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -8099,11 +8099,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -8260,7 +8260,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteHeadersFootersOnline(Requests\deleteHeadersFootersOnlineRequest $request)
     {
@@ -8288,11 +8288,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteHeadersFootersOnlineWithHttpInfo(Requests\deleteHeadersFootersOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -8317,7 +8317,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -8327,18 +8327,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -8378,7 +8378,7 @@ class WordsApi
      */
     private function deleteHeadersFootersOnlineAsyncWithHttpInfo(Requests\deleteHeadersFootersOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -8386,7 +8386,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -8396,11 +8396,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -8557,7 +8557,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteMacrosOnline(Requests\deleteMacrosOnlineRequest $request)
     {
@@ -8585,11 +8585,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteMacrosOnlineWithHttpInfo(Requests\deleteMacrosOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -8614,7 +8614,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -8624,18 +8624,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -8675,7 +8675,7 @@ class WordsApi
      */
     private function deleteMacrosOnlineAsyncWithHttpInfo(Requests\deleteMacrosOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -8683,7 +8683,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -8693,11 +8693,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -8854,7 +8854,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteOfficeMathObjectOnline(Requests\deleteOfficeMathObjectOnlineRequest $request)
     {
@@ -8882,11 +8882,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteOfficeMathObjectOnlineWithHttpInfo(Requests\deleteOfficeMathObjectOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -8911,7 +8911,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -8921,18 +8921,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -8972,7 +8972,7 @@ class WordsApi
      */
     private function deleteOfficeMathObjectOnlineAsyncWithHttpInfo(Requests\deleteOfficeMathObjectOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -8980,7 +8980,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -8990,11 +8990,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -9208,7 +9208,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -9218,11 +9218,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -9277,7 +9277,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9287,11 +9287,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -9434,7 +9434,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9444,11 +9444,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -9478,7 +9478,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteParagraphOnline(Requests\deleteParagraphOnlineRequest $request)
     {
@@ -9506,11 +9506,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteParagraphOnlineWithHttpInfo(Requests\deleteParagraphOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -9535,7 +9535,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -9545,18 +9545,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -9596,7 +9596,7 @@ class WordsApi
      */
     private function deleteParagraphOnlineAsyncWithHttpInfo(Requests\deleteParagraphOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -9604,7 +9604,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9614,11 +9614,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -9705,7 +9705,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -9715,11 +9715,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -9774,7 +9774,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9784,11 +9784,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -9931,7 +9931,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -9941,11 +9941,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -10102,7 +10102,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteRunOnline(Requests\deleteRunOnlineRequest $request)
     {
@@ -10130,11 +10130,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteRunOnlineWithHttpInfo(Requests\deleteRunOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -10159,7 +10159,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -10169,18 +10169,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -10220,7 +10220,7 @@ class WordsApi
      */
     private function deleteRunOnlineAsyncWithHttpInfo(Requests\deleteRunOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -10228,7 +10228,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -10238,11 +10238,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -10399,7 +10399,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteSectionOnline(Requests\deleteSectionOnlineRequest $request)
     {
@@ -10427,11 +10427,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteSectionOnlineWithHttpInfo(Requests\deleteSectionOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -10456,7 +10456,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -10466,18 +10466,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -10517,7 +10517,7 @@ class WordsApi
      */
     private function deleteSectionOnlineAsyncWithHttpInfo(Requests\deleteSectionOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -10525,7 +10525,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -10535,11 +10535,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -10823,7 +10823,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteTableCellOnline(Requests\deleteTableCellOnlineRequest $request)
     {
@@ -10851,11 +10851,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteTableCellOnlineWithHttpInfo(Requests\deleteTableCellOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -10880,7 +10880,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -10890,18 +10890,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -10941,7 +10941,7 @@ class WordsApi
      */
     private function deleteTableCellOnlineAsyncWithHttpInfo(Requests\deleteTableCellOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -10949,7 +10949,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -10959,11 +10959,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -10993,7 +10993,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteTableOnline(Requests\deleteTableOnlineRequest $request)
     {
@@ -11021,11 +11021,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteTableOnlineWithHttpInfo(Requests\deleteTableOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -11050,7 +11050,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -11060,18 +11060,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -11111,7 +11111,7 @@ class WordsApi
      */
     private function deleteTableOnlineAsyncWithHttpInfo(Requests\deleteTableOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -11119,7 +11119,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11129,11 +11129,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11290,7 +11290,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function deleteTableRowOnline(Requests\deleteTableRowOnlineRequest $request)
     {
@@ -11318,11 +11318,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function deleteTableRowOnlineWithHttpInfo(Requests\deleteTableRowOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -11347,7 +11347,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -11357,18 +11357,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -11408,7 +11408,7 @@ class WordsApi
      */
     private function deleteTableRowOnlineAsyncWithHttpInfo(Requests\deleteTableRowOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -11416,7 +11416,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11426,11 +11426,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11517,7 +11517,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -11527,11 +11527,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -11586,7 +11586,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11596,11 +11596,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11743,7 +11743,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11753,11 +11753,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11844,7 +11844,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -11854,11 +11854,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -11913,7 +11913,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -11923,11 +11923,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12014,7 +12014,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12024,11 +12024,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -12083,7 +12083,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12093,11 +12093,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12184,7 +12184,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12194,11 +12194,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -12253,7 +12253,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12263,11 +12263,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12354,7 +12354,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12364,11 +12364,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -12423,7 +12423,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12433,11 +12433,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12524,7 +12524,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12534,11 +12534,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -12593,7 +12593,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12603,11 +12603,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12694,7 +12694,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12704,11 +12704,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -12763,7 +12763,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12773,11 +12773,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12864,7 +12864,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -12874,11 +12874,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -12933,7 +12933,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -12943,11 +12943,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13034,7 +13034,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13044,11 +13044,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -13103,7 +13103,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13113,11 +13113,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13204,7 +13204,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13214,11 +13214,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -13273,7 +13273,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13283,11 +13283,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13374,7 +13374,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13384,11 +13384,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -13443,7 +13443,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13453,11 +13453,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13544,7 +13544,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13554,11 +13554,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -13613,7 +13613,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13623,11 +13623,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13714,7 +13714,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13724,11 +13724,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -13783,7 +13783,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13793,11 +13793,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13884,7 +13884,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -13894,11 +13894,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -13953,7 +13953,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -13963,11 +13963,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14054,7 +14054,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14064,11 +14064,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -14123,7 +14123,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14133,11 +14133,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14224,7 +14224,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14234,11 +14234,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -14293,7 +14293,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14303,11 +14303,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14394,7 +14394,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14404,11 +14404,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -14463,7 +14463,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14473,11 +14473,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14564,7 +14564,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14574,11 +14574,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -14633,7 +14633,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14643,11 +14643,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14734,7 +14734,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14744,11 +14744,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -14803,7 +14803,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14813,11 +14813,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14904,7 +14904,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -14914,11 +14914,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -14973,7 +14973,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -14983,11 +14983,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15074,7 +15074,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15084,11 +15084,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -15143,7 +15143,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15153,11 +15153,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15244,7 +15244,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15254,11 +15254,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -15313,7 +15313,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15323,11 +15323,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15414,7 +15414,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15424,11 +15424,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -15483,7 +15483,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15493,11 +15493,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15584,7 +15584,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15594,11 +15594,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -15653,7 +15653,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15663,11 +15663,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15754,7 +15754,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15764,11 +15764,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -15823,7 +15823,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -15833,11 +15833,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15924,7 +15924,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -15934,11 +15934,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -15993,7 +15993,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16003,11 +16003,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -16094,7 +16094,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16104,11 +16104,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -16163,7 +16163,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16173,11 +16173,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -16264,7 +16264,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16274,11 +16274,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -16333,7 +16333,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16343,11 +16343,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -16434,7 +16434,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16444,11 +16444,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -16503,7 +16503,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16513,11 +16513,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -16604,7 +16604,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16614,11 +16614,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -16673,7 +16673,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16683,11 +16683,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -16774,7 +16774,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16784,11 +16784,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -16843,7 +16843,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -16853,11 +16853,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -16944,7 +16944,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -16954,11 +16954,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -17013,7 +17013,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17023,11 +17023,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -17114,7 +17114,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17124,11 +17124,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -17183,7 +17183,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17193,11 +17193,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -17284,7 +17284,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17294,11 +17294,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -17353,7 +17353,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17363,11 +17363,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -17454,7 +17454,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17464,11 +17464,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -17523,7 +17523,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17533,11 +17533,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -17624,7 +17624,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17634,11 +17634,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -17693,7 +17693,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17703,11 +17703,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -17794,7 +17794,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17804,11 +17804,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -17863,7 +17863,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -17873,11 +17873,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -17964,7 +17964,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -17974,11 +17974,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -18033,7 +18033,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18043,11 +18043,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -18134,7 +18134,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18144,11 +18144,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -18203,7 +18203,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18213,11 +18213,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -18304,7 +18304,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18314,11 +18314,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -18373,7 +18373,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18383,11 +18383,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -18474,7 +18474,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18484,11 +18484,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -18543,7 +18543,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18553,11 +18553,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -18644,7 +18644,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18654,11 +18654,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -18713,7 +18713,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18723,11 +18723,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -18814,7 +18814,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18824,11 +18824,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -18883,7 +18883,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -18893,11 +18893,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -18984,7 +18984,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -18994,11 +18994,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -19053,7 +19053,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19063,11 +19063,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -19154,7 +19154,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19164,11 +19164,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -19223,7 +19223,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19233,11 +19233,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -19324,7 +19324,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19334,11 +19334,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -19393,7 +19393,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19403,11 +19403,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -19494,7 +19494,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19504,11 +19504,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -19563,7 +19563,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19573,11 +19573,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -19664,7 +19664,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19674,11 +19674,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -19733,7 +19733,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19743,11 +19743,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -19834,7 +19834,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -19844,11 +19844,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -19903,7 +19903,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -19913,11 +19913,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -20004,7 +20004,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20014,11 +20014,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -20073,7 +20073,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20083,11 +20083,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -20174,7 +20174,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20184,11 +20184,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -20243,7 +20243,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20253,11 +20253,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -20344,7 +20344,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20354,11 +20354,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -20413,7 +20413,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20423,11 +20423,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -20514,7 +20514,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20524,11 +20524,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -20583,7 +20583,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20593,11 +20593,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -20684,7 +20684,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20694,11 +20694,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -20753,7 +20753,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20763,11 +20763,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -20854,7 +20854,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -20864,11 +20864,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -20923,7 +20923,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -20933,11 +20933,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -21024,7 +21024,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21034,11 +21034,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -21093,7 +21093,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21103,11 +21103,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -21194,7 +21194,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21204,11 +21204,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -21263,7 +21263,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21273,11 +21273,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -21364,7 +21364,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21374,11 +21374,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -21433,7 +21433,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21443,11 +21443,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -21534,7 +21534,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21544,11 +21544,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -21603,7 +21603,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21613,11 +21613,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -21704,7 +21704,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21714,11 +21714,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -21773,7 +21773,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21783,11 +21783,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -21874,7 +21874,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -21884,11 +21884,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -21943,7 +21943,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -21953,11 +21953,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -22044,7 +22044,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22054,11 +22054,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -22113,7 +22113,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22123,11 +22123,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -22214,7 +22214,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22224,11 +22224,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -22283,7 +22283,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22293,11 +22293,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -22384,7 +22384,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22394,11 +22394,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -22453,7 +22453,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22463,11 +22463,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -22554,7 +22554,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22564,11 +22564,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -22623,7 +22623,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22633,11 +22633,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -22724,7 +22724,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22734,11 +22734,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -22793,7 +22793,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22803,11 +22803,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -22894,7 +22894,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -22904,11 +22904,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -22963,7 +22963,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -22973,11 +22973,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -23064,7 +23064,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23074,11 +23074,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -23133,7 +23133,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23143,11 +23143,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -23234,7 +23234,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23244,11 +23244,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -23303,7 +23303,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23313,11 +23313,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -23404,7 +23404,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23414,11 +23414,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -23473,7 +23473,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23483,11 +23483,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -23574,7 +23574,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23584,11 +23584,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -23643,7 +23643,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23653,11 +23653,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -23744,7 +23744,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23754,11 +23754,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -23813,7 +23813,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23823,11 +23823,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -23914,7 +23914,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -23924,11 +23924,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -23983,7 +23983,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -23993,11 +23993,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -24084,7 +24084,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24094,11 +24094,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -24153,7 +24153,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24163,11 +24163,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -24254,7 +24254,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24264,11 +24264,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -24323,7 +24323,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24333,11 +24333,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -24424,7 +24424,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24434,11 +24434,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -24493,7 +24493,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24503,11 +24503,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -24594,7 +24594,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24604,11 +24604,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -24663,7 +24663,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24673,11 +24673,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -24764,7 +24764,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24774,11 +24774,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -24833,7 +24833,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -24843,11 +24843,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -24934,7 +24934,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -24944,11 +24944,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -25003,7 +25003,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25013,11 +25013,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -25104,7 +25104,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25114,11 +25114,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -25173,7 +25173,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25183,11 +25183,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -25274,7 +25274,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25284,11 +25284,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -25343,7 +25343,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25353,11 +25353,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -25444,7 +25444,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25454,11 +25454,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -25513,7 +25513,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25523,11 +25523,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -25614,7 +25614,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25624,11 +25624,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -25683,7 +25683,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25693,11 +25693,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -25784,7 +25784,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25794,11 +25794,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -25853,7 +25853,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -25863,11 +25863,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -25954,7 +25954,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -25964,11 +25964,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -26023,7 +26023,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26033,11 +26033,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -26124,7 +26124,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26134,11 +26134,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -26193,7 +26193,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26203,11 +26203,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -26294,7 +26294,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26304,11 +26304,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -26363,7 +26363,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26373,11 +26373,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -26464,7 +26464,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26474,11 +26474,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -26533,7 +26533,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26543,11 +26543,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -26634,7 +26634,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26644,11 +26644,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -26703,7 +26703,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26713,11 +26713,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -26804,7 +26804,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26814,11 +26814,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -26873,7 +26873,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -26883,11 +26883,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -26974,7 +26974,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -26984,11 +26984,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -27043,7 +27043,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27053,11 +27053,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -27144,7 +27144,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27154,11 +27154,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -27213,7 +27213,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27223,11 +27223,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -27314,7 +27314,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27324,11 +27324,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -27383,7 +27383,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27393,11 +27393,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -27484,7 +27484,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27494,11 +27494,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -27553,7 +27553,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27563,11 +27563,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -27654,7 +27654,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27664,11 +27664,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -27723,7 +27723,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27733,11 +27733,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -27824,7 +27824,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -27834,11 +27834,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -27893,7 +27893,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -27903,11 +27903,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -27994,7 +27994,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28004,11 +28004,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -28063,7 +28063,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28073,11 +28073,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -28164,7 +28164,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28174,11 +28174,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -28233,7 +28233,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28243,11 +28243,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -28334,7 +28334,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28344,11 +28344,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -28403,7 +28403,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28413,11 +28413,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -28504,7 +28504,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28514,11 +28514,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -28573,7 +28573,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28583,11 +28583,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -28674,7 +28674,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28684,11 +28684,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -28743,7 +28743,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28753,11 +28753,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -28844,7 +28844,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -28854,11 +28854,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -28913,7 +28913,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -28923,11 +28923,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -29014,7 +29014,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29024,11 +29024,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -29083,7 +29083,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29093,11 +29093,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -29184,7 +29184,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29194,11 +29194,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -29253,7 +29253,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29263,11 +29263,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -29354,7 +29354,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29364,11 +29364,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -29423,7 +29423,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29433,11 +29433,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -29524,7 +29524,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29534,11 +29534,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -29593,7 +29593,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29603,11 +29603,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -29694,7 +29694,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29704,11 +29704,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -29763,7 +29763,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29773,11 +29773,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -29864,7 +29864,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -29874,11 +29874,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -29933,7 +29933,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -29943,11 +29943,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -30034,7 +30034,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30044,11 +30044,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -30103,7 +30103,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30113,11 +30113,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -30204,7 +30204,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30214,11 +30214,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -30273,7 +30273,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30283,11 +30283,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -30374,7 +30374,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30384,11 +30384,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -30443,7 +30443,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30453,11 +30453,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -30544,7 +30544,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30554,11 +30554,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -30613,7 +30613,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30623,11 +30623,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -30714,7 +30714,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30724,11 +30724,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -30783,7 +30783,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30793,11 +30793,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -30884,7 +30884,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -30894,11 +30894,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -30953,7 +30953,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -30963,11 +30963,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -31054,7 +31054,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31064,11 +31064,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -31123,7 +31123,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31133,11 +31133,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -31224,7 +31224,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31234,11 +31234,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -31293,7 +31293,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31303,11 +31303,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -31394,7 +31394,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31404,11 +31404,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -31463,7 +31463,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31473,11 +31473,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -31564,7 +31564,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31574,11 +31574,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -31633,7 +31633,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31643,11 +31643,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -31734,7 +31734,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -31744,11 +31744,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -31803,7 +31803,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31813,11 +31813,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -31960,7 +31960,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -31970,11 +31970,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -32061,7 +32061,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -32071,11 +32071,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -32130,7 +32130,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32140,11 +32140,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -32287,7 +32287,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32297,11 +32297,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -32388,7 +32388,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -32398,11 +32398,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -32457,7 +32457,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32467,11 +32467,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -32614,7 +32614,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32624,11 +32624,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -32715,7 +32715,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -32725,11 +32725,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -32784,7 +32784,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32794,11 +32794,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -32941,7 +32941,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -32951,11 +32951,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -33042,7 +33042,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -33052,11 +33052,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -33111,7 +33111,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33121,11 +33121,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -33268,7 +33268,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33278,11 +33278,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -33369,7 +33369,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -33379,11 +33379,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -33438,7 +33438,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33448,11 +33448,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -33595,7 +33595,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33605,11 +33605,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -33696,7 +33696,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -33706,11 +33706,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -33765,7 +33765,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33775,11 +33775,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -33922,7 +33922,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -33932,11 +33932,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -34023,7 +34023,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -34033,11 +34033,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -34092,7 +34092,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34102,11 +34102,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -34249,7 +34249,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34259,11 +34259,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -34350,7 +34350,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -34360,11 +34360,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -34419,7 +34419,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34429,11 +34429,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -34576,7 +34576,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34586,11 +34586,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -34677,7 +34677,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -34687,11 +34687,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -34746,7 +34746,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34756,11 +34756,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -34903,7 +34903,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -34913,11 +34913,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -35004,7 +35004,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -35014,11 +35014,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -35073,7 +35073,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35083,11 +35083,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -35230,7 +35230,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35240,11 +35240,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -35331,7 +35331,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -35341,11 +35341,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -35400,7 +35400,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35410,11 +35410,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -35557,7 +35557,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35567,11 +35567,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -35658,7 +35658,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -35668,11 +35668,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -35727,7 +35727,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35737,11 +35737,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -35884,7 +35884,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -35894,11 +35894,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -35985,7 +35985,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -35995,11 +35995,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -36054,7 +36054,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36064,11 +36064,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -36155,7 +36155,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -36165,11 +36165,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -36224,7 +36224,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36234,11 +36234,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -36381,7 +36381,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36391,11 +36391,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -36538,7 +36538,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36548,11 +36548,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -36639,7 +36639,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -36649,11 +36649,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -36708,7 +36708,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36718,11 +36718,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -36865,7 +36865,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -36875,11 +36875,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -36966,7 +36966,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -36976,11 +36976,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -37035,7 +37035,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -37045,11 +37045,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -37192,7 +37192,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -37202,11 +37202,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -37293,7 +37293,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -37303,11 +37303,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -37362,7 +37362,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -37372,11 +37372,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -37519,7 +37519,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -37529,11 +37529,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -37620,7 +37620,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -37630,11 +37630,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -37689,7 +37689,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -37699,11 +37699,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -38114,7 +38114,7 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return FILES_COLLECTION
      */
     public function optimizeDocumentOnline(Requests\optimizeDocumentOnlineRequest $request)
     {
@@ -38142,11 +38142,11 @@ class WordsApi
      *
      * @throws \Aspose\Words\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
      */
     private function optimizeDocumentOnlineWithHttpInfo(Requests\optimizeDocumentOnlineRequest $request)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $this->_checkAuthToken();
         $req = $request->createRequest($this->config);
 
@@ -38171,7 +38171,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -38181,18 +38181,18 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -38232,7 +38232,7 @@ class WordsApi
      */
     private function optimizeDocumentOnlineAsyncWithHttpInfo(Requests\optimizeDocumentOnlineRequest $request) 
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'FILES_COLLECTION';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -38240,7 +38240,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38250,11 +38250,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -38341,7 +38341,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -38351,11 +38351,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -38410,7 +38410,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38420,11 +38420,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -38567,7 +38567,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38577,11 +38577,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -38668,7 +38668,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -38678,11 +38678,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -38737,7 +38737,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38747,11 +38747,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -38894,7 +38894,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -38904,11 +38904,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -38995,7 +38995,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39005,11 +39005,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -39064,7 +39064,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39074,11 +39074,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -39221,7 +39221,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39231,11 +39231,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -39322,7 +39322,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39332,11 +39332,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -39391,7 +39391,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39401,11 +39401,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -39492,7 +39492,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39502,11 +39502,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -39561,7 +39561,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39571,11 +39571,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -39662,7 +39662,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39672,11 +39672,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -39731,7 +39731,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39741,11 +39741,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -39832,7 +39832,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -39842,11 +39842,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -39901,7 +39901,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -39911,11 +39911,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -40002,7 +40002,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40012,11 +40012,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -40071,7 +40071,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40081,11 +40081,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -40172,7 +40172,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40182,11 +40182,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -40241,7 +40241,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40251,11 +40251,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -40342,7 +40342,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40352,11 +40352,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -40411,7 +40411,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40421,11 +40421,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -40512,7 +40512,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40522,11 +40522,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -40581,7 +40581,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40591,11 +40591,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -40682,7 +40682,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40692,11 +40692,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -40751,7 +40751,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40761,11 +40761,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -40852,7 +40852,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -40862,11 +40862,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -40921,7 +40921,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -40931,11 +40931,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -41022,7 +41022,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -41032,11 +41032,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -41091,7 +41091,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41101,11 +41101,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -41248,7 +41248,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41258,11 +41258,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -41349,7 +41349,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -41359,11 +41359,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -41418,7 +41418,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41428,11 +41428,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -41575,7 +41575,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41585,11 +41585,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -41803,7 +41803,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -41813,11 +41813,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -41872,7 +41872,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -41882,11 +41882,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -42029,7 +42029,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42039,11 +42039,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -42130,7 +42130,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -42140,11 +42140,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -42199,7 +42199,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42209,11 +42209,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -42356,7 +42356,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42366,11 +42366,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -42457,7 +42457,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -42467,11 +42467,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -42526,7 +42526,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42536,11 +42536,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -42683,7 +42683,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42693,11 +42693,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -42784,7 +42784,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -42794,11 +42794,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -42853,7 +42853,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -42863,11 +42863,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -42954,7 +42954,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -42964,11 +42964,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -43023,7 +43023,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43033,11 +43033,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -43124,7 +43124,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -43134,11 +43134,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -43193,7 +43193,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43203,11 +43203,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -43350,7 +43350,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43360,11 +43360,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -43451,7 +43451,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -43461,11 +43461,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -43520,7 +43520,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43530,11 +43530,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -43677,7 +43677,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43687,11 +43687,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -43778,7 +43778,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -43788,11 +43788,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -43847,7 +43847,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -43857,11 +43857,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -44004,7 +44004,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44014,11 +44014,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -44105,7 +44105,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -44115,11 +44115,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -44174,7 +44174,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44184,11 +44184,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -44331,7 +44331,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44341,11 +44341,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -44432,7 +44432,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -44442,11 +44442,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -44501,7 +44501,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44511,11 +44511,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -44658,7 +44658,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44668,11 +44668,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -44759,7 +44759,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -44769,11 +44769,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -44828,7 +44828,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44838,11 +44838,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -44985,7 +44985,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -44995,11 +44995,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -45086,7 +45086,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -45096,11 +45096,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -45155,7 +45155,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45165,11 +45165,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -45312,7 +45312,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45322,11 +45322,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -45413,7 +45413,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -45423,11 +45423,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -45482,7 +45482,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45492,11 +45492,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -45639,7 +45639,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45649,11 +45649,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -45740,7 +45740,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -45750,11 +45750,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -45809,7 +45809,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45819,11 +45819,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -45966,7 +45966,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -45976,11 +45976,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -46067,7 +46067,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -46077,11 +46077,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -46136,7 +46136,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46146,11 +46146,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -46293,7 +46293,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46303,11 +46303,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -46394,7 +46394,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -46404,11 +46404,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -46463,7 +46463,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46473,11 +46473,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -46620,7 +46620,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46630,11 +46630,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -46721,7 +46721,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -46731,11 +46731,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -46790,7 +46790,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46800,11 +46800,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -46891,7 +46891,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -46901,11 +46901,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -46960,7 +46960,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -46970,11 +46970,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -47117,7 +47117,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47127,11 +47127,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -47274,7 +47274,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47284,11 +47284,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -47375,7 +47375,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -47385,11 +47385,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -47444,7 +47444,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47454,11 +47454,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -47601,7 +47601,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47611,11 +47611,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -47702,7 +47702,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -47712,11 +47712,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -47771,7 +47771,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47781,11 +47781,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -47928,7 +47928,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -47938,11 +47938,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -48029,7 +48029,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -48039,11 +48039,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -48098,7 +48098,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48108,11 +48108,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -48199,7 +48199,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -48209,11 +48209,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -48268,7 +48268,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48278,11 +48278,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -48425,7 +48425,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48435,11 +48435,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -48582,7 +48582,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48592,11 +48592,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -48683,7 +48683,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -48693,11 +48693,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -48752,7 +48752,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48762,11 +48762,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -48909,7 +48909,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -48919,11 +48919,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -49010,7 +49010,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -49020,11 +49020,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -49079,7 +49079,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49089,11 +49089,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -49236,7 +49236,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49246,11 +49246,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -49337,7 +49337,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -49347,11 +49347,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -49406,7 +49406,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49416,11 +49416,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -49563,7 +49563,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49573,11 +49573,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -49664,7 +49664,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -49674,11 +49674,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -49733,7 +49733,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49743,11 +49743,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -49890,7 +49890,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -49900,11 +49900,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -49991,7 +49991,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -50001,11 +50001,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -50060,7 +50060,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -50070,11 +50070,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -50217,7 +50217,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -50227,11 +50227,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -50318,7 +50318,7 @@ class WordsApi
             }
 
             $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
@@ -50328,11 +50328,11 @@ class WordsApi
             }
 
             if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -50387,7 +50387,7 @@ class WordsApi
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
@@ -50397,11 +50397,11 @@ class WordsApi
                     }
 
                     if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];

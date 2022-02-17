@@ -498,8 +498,8 @@ class InsertListRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ListResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\ListResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ListResponse', $response->getHeaders());
     }
 }

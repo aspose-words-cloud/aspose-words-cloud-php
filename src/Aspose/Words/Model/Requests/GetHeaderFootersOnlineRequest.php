@@ -368,8 +368,8 @@ class GetHeaderFootersOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\HeaderFootersResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\HeaderFootersResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\HeaderFootersResponse', $response->getHeaders());
     }
 }

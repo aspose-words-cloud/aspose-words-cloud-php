@@ -52,9 +52,9 @@ class DocumentEntry implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'encrypted_password' => 'string',
         'href' => 'string',
-        'import_format_mode' => 'string',
-        'password' => 'string'
+        'import_format_mode' => 'string'
     ];
 
     /*
@@ -63,9 +63,9 @@ class DocumentEntry implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'encrypted_password' => 'null',
         'href' => 'null',
-        'import_format_mode' => 'null',
-        'password' => 'null'
+        'import_format_mode' => 'null'
     ];
 
     /*
@@ -95,9 +95,9 @@ class DocumentEntry implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'encrypted_password' => 'EncryptedPassword',
         'href' => 'Href',
-        'import_format_mode' => 'ImportFormatMode',
-        'password' => 'Password'
+        'import_format_mode' => 'ImportFormatMode'
     ];
 
     /*
@@ -106,9 +106,9 @@ class DocumentEntry implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'encrypted_password' => 'setEncryptedPassword',
         'href' => 'setHref',
-        'import_format_mode' => 'setImportFormatMode',
-        'password' => 'setPassword'
+        'import_format_mode' => 'setImportFormatMode'
     ];
 
     /*
@@ -117,9 +117,9 @@ class DocumentEntry implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'encrypted_password' => 'getEncryptedPassword',
         'href' => 'getHref',
-        'import_format_mode' => 'getImportFormatMode',
-        'password' => 'getPassword'
+        'import_format_mode' => 'getImportFormatMode'
     ];
 
     /*
@@ -180,9 +180,9 @@ class DocumentEntry implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['encrypted_password'] = isset($data['encrypted_password']) ? $data['encrypted_password'] : null;
         $this->container['href'] = isset($data['href']) ? $data['href'] : null;
         $this->container['import_format_mode'] = isset($data['import_format_mode']) ? $data['import_format_mode'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
     /*
@@ -207,6 +207,30 @@ class DocumentEntry implements ArrayAccess
     {
         return true;
     }
+
+    /*
+     * Gets encrypted_password
+     *
+     * @return string
+     */
+    public function getEncryptedPassword()
+    {
+        return $this->container['encrypted_password'];
+    }
+
+    /*
+     * Sets encrypted_password
+     *
+     * @param string $encrypted_password Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
+     *
+     * @return $this
+     */
+    public function setEncryptedPassword($encrypted_password)
+    {
+        $this->container['encrypted_password'] = $encrypted_password;
+        return $this;
+    }
+
 
     /*
      * Gets href
@@ -252,30 +276,6 @@ class DocumentEntry implements ArrayAccess
     public function setImportFormatMode($import_format_mode)
     {
         $this->container['import_format_mode'] = $import_format_mode;
-        return $this;
-    }
-
-
-    /*
-     * Gets password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->container['password'];
-    }
-
-    /*
-     * Sets password
-     *
-     * @param string $password Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->container['password'] = $password;
         return $this;
     }
 

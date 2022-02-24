@@ -137,16 +137,28 @@ class Configuration
     protected $clientVersion = '22.2';
 
     /*
-     * Stores rsa key data
-     * @var string data
-     */
-    protected $rsa;
-
-    /*
      * Stores timeout in seconds
      * @var int
      */
     protected $timeout;
+
+    /*
+     * Stores RSA key exponent as base64 encoded string
+     * @var string
+     */
+    protected $exponent;
+
+    /*
+     * Stores RSA key modulus as base64 encoded string
+     * @var string
+     */
+    protected $modulus;
+
+    /*
+     * Stores data encryptor
+     * @var Encryptor
+     */
+    protected $encryptor;
 
     /*
      * Constructor
@@ -592,6 +604,60 @@ class Configuration
     public function setTimeout($value)
     {
         $this->timeout = $value;
+        return $this;
+    }
+
+    /*
+     * Gets a RSA key exponent
+     * @return RSA key exponent as base64 encoded string
+     */
+    public function getExponent()
+    {
+        return $this->exponent;
+    }
+
+    /*
+     * Sets RSA key exponent as base64 encoded string.
+     */
+    public function setExponent($value)
+    {
+        $this->exponent = $value;
+        return $this;
+    }
+
+    /*
+     * Gets a RSA key modulus
+     * @return RSA key modulus as base64 encoded string
+     */
+    public function getModulus()
+    {
+        return $this->modulus;
+    }
+
+    /*
+     * Sets RSA key modulus as base64 encoded string.
+     */
+    public function setModulus($value)
+    {
+        $this->modulus = $value;
+        return $this;
+    }
+
+    /*
+     * Gets data encryptor
+     * @return data encryptor
+     */
+    public function getEncryptor()
+    {
+        return $this->encryptor;
+    }
+
+    /*
+     * Sets data encryptor.
+     */
+    public function setEncryptor($value)
+    {
+        $this->encryptor = $value;
         return $this;
     }
 }

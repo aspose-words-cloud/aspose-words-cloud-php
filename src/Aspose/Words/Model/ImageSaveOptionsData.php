@@ -207,7 +207,55 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const IMAGE_COLOR_MODE_NONE = 'None';
+    const IMAGE_COLOR_MODE_GRAYSCALE = 'Grayscale';
+    const IMAGE_COLOR_MODE_BLACK_AND_WHITE = 'BlackAndWhite';
+    const PIXEL_FORMAT_FORMAT16_BPP_RGB555 = 'Format16BppRgb555';
+    const PIXEL_FORMAT_FORMAT16_BPP_RGB565 = 'Format16BppRgb565';
+    const PIXEL_FORMAT_FORMAT16_BPP_ARGB1555 = 'Format16BppArgb1555';
+    const PIXEL_FORMAT_FORMAT24_BPP_RGB = 'Format24BppRgb';
+    const PIXEL_FORMAT_FORMAT32_BPP_RGB = 'Format32BppRgb';
+    const PIXEL_FORMAT_FORMAT32_BPP_ARGB = 'Format32BppArgb';
+    const PIXEL_FORMAT_FORMAT32_BPP_P_ARGB = 'Format32BppPArgb';
+    const PIXEL_FORMAT_FORMAT48_BPP_RGB = 'Format48BppRgb';
+    const PIXEL_FORMAT_FORMAT64_BPP_ARGB = 'Format64BppArgb';
+    const PIXEL_FORMAT_FORMAT64_BPP_P_ARGB = 'Format64BppPArgb';
+    const PIXEL_FORMAT_FORMAT1BPP_INDEXED = 'Format1bppIndexed';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getImageColorModeAllowableValues()
+    {
+        return [
+            self::IMAGE_COLOR_MODE_NONE,
+            self::IMAGE_COLOR_MODE_GRAYSCALE,
+            self::IMAGE_COLOR_MODE_BLACK_AND_WHITE
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPixelFormatAllowableValues()
+    {
+        return [
+            self::PIXEL_FORMAT_FORMAT16_BPP_RGB555,
+            self::PIXEL_FORMAT_FORMAT16_BPP_RGB565,
+            self::PIXEL_FORMAT_FORMAT16_BPP_ARGB1555,
+            self::PIXEL_FORMAT_FORMAT24_BPP_RGB,
+            self::PIXEL_FORMAT_FORMAT32_BPP_RGB,
+            self::PIXEL_FORMAT_FORMAT32_BPP_ARGB,
+            self::PIXEL_FORMAT_FORMAT32_BPP_P_ARGB,
+            self::PIXEL_FORMAT_FORMAT48_BPP_RGB,
+            self::PIXEL_FORMAT_FORMAT64_BPP_ARGB,
+            self::PIXEL_FORMAT_FORMAT64_BPP_P_ARGB,
+            self::PIXEL_FORMAT_FORMAT1BPP_INDEXED
+        ];
+    }
 
     /*
      * Constructor
@@ -240,6 +288,23 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getImageColorModeAllowableValues();
+        if (!in_array($this->container['image_color_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'image_color_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getPixelFormatAllowableValues();
+        if (!in_array($this->container['pixel_format'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'pixel_format', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -254,6 +319,17 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         if (!parent::valid()) {
             return false;
         }
+
+        $allowedValues = $this->getImageColorModeAllowableValues();
+        if (!in_array($this->container['image_color_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getPixelFormatAllowableValues();
+        if (!in_array($this->container['pixel_format'], $allowedValues)) {
+            return false;
+        }
+
 
         return true;
     }
@@ -325,6 +401,10 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setImageColorMode($image_color_mode)
     {
+        $allowedValues = $this->getImageColorModeAllowableValues();
+        if ((!is_numeric($image_color_mode) && !in_array($image_color_mode, $allowedValues)) || (is_numeric($image_color_mode) && !in_array($allowedValues[$image_color_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'image_color_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['image_color_mode'] = $image_color_mode;
         return $this;
     }
@@ -397,6 +477,10 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setPixelFormat($pixel_format)
     {
+        $allowedValues = $this->getPixelFormatAllowableValues();
+        if ((!is_numeric($pixel_format) && !in_array($pixel_format, $allowedValues)) || (is_numeric($pixel_format) && !in_array($allowedValues[$pixel_format], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'pixel_format', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['pixel_format'] = $pixel_format;
         return $this;
     }

@@ -182,7 +182,41 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const COLOR_MODE_NORMAL = 'Normal';
+    const COLOR_MODE_GRAYSCALE = 'Grayscale';
+    const NUMERAL_FORMAT_EUROPEAN = 'European';
+    const NUMERAL_FORMAT_ARABIC_INDIC = 'ArabicIndic';
+    const NUMERAL_FORMAT_EASTERN_ARABIC_INDIC = 'EasternArabicIndic';
+    const NUMERAL_FORMAT_CONTEXT = 'Context';
+    const NUMERAL_FORMAT_SYSTEM = 'System';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getColorModeAllowableValues()
+    {
+        return [
+            self::COLOR_MODE_NORMAL,
+            self::COLOR_MODE_GRAYSCALE
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getNumeralFormatAllowableValues()
+    {
+        return [
+            self::NUMERAL_FORMAT_EUROPEAN,
+            self::NUMERAL_FORMAT_ARABIC_INDIC,
+            self::NUMERAL_FORMAT_EASTERN_ARABIC_INDIC,
+            self::NUMERAL_FORMAT_CONTEXT,
+            self::NUMERAL_FORMAT_SYSTEM
+        ];
+    }
 
     /*
      * Constructor
@@ -210,6 +244,23 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getColorModeAllowableValues();
+        if (!in_array($this->container['color_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'color_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getNumeralFormatAllowableValues();
+        if (!in_array($this->container['numeral_format'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'numeral_format', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -224,6 +275,17 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
         if (!parent::valid()) {
             return false;
         }
+
+        $allowedValues = $this->getColorModeAllowableValues();
+        if (!in_array($this->container['color_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getNumeralFormatAllowableValues();
+        if (!in_array($this->container['numeral_format'], $allowedValues)) {
+            return false;
+        }
+
 
         return true;
     }
@@ -247,6 +309,10 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
      */
     public function setColorMode($color_mode)
     {
+        $allowedValues = $this->getColorModeAllowableValues();
+        if ((!is_numeric($color_mode) && !in_array($color_mode, $allowedValues)) || (is_numeric($color_mode) && !in_array($allowedValues[$color_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'color_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['color_mode'] = $color_mode;
         return $this;
     }
@@ -319,6 +385,10 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
      */
     public function setNumeralFormat($numeral_format)
     {
+        $allowedValues = $this->getNumeralFormatAllowableValues();
+        if ((!is_numeric($numeral_format) && !in_array($numeral_format, $allowedValues)) || (is_numeric($numeral_format) && !in_array($allowedValues[$numeral_format], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'numeral_format', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['numeral_format'] = $numeral_format;
         return $this;
     }

@@ -167,11 +167,27 @@ abstract class OoxmlSaveOptionsData extends SaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const COMPLIANCE_ECMA376_2006 = 'Ecma376_2006';
+    const COMPLIANCE_ISO29500_2008__TRANSITIONAL = 'Iso29500_2008_Transitional';
+    const COMPLIANCE_ISO29500_2008__STRICT = 'Iso29500_2008_Strict';
     const COMPRESSION_LEVEL_NORMAL = 'Normal';
     const COMPRESSION_LEVEL_MAXIMUM = 'Maximum';
     const COMPRESSION_LEVEL_FAST = 'Fast';
     const COMPRESSION_LEVEL_SUPER_FAST = 'SuperFast';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getComplianceAllowableValues()
+    {
+        return [
+            self::COMPLIANCE_ECMA376_2006,
+            self::COMPLIANCE_ISO29500_2008__TRANSITIONAL,
+            self::COMPLIANCE_ISO29500_2008__STRICT
+        ];
+    }
     /*
      * Gets allowable values of the enum
      *
@@ -210,6 +226,14 @@ abstract class OoxmlSaveOptionsData extends SaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getComplianceAllowableValues();
+        if (!in_array($this->container['compliance'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'compliance', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getCompressionLevelAllowableValues();
         if (!in_array($this->container['compression_level'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -231,6 +255,11 @@ abstract class OoxmlSaveOptionsData extends SaveOptionsData
     public function valid()
     {
         if (!parent::valid()) {
+            return false;
+        }
+
+        $allowedValues = $this->getComplianceAllowableValues();
+        if (!in_array($this->container['compliance'], $allowedValues)) {
             return false;
         }
 
@@ -262,6 +291,10 @@ abstract class OoxmlSaveOptionsData extends SaveOptionsData
      */
     public function setCompliance($compliance)
     {
+        $allowedValues = $this->getComplianceAllowableValues();
+        if ((!is_numeric($compliance) && !in_array($compliance, $allowedValues)) || (is_numeric($compliance) && !in_array($allowedValues[$compliance], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'compliance', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['compliance'] = $compliance;
         return $this;
     }

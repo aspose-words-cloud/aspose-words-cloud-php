@@ -177,7 +177,23 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const TEXT_OUTPUT_MODE_USE_SVG_FONTS = 'UseSvgFonts';
+    const TEXT_OUTPUT_MODE_USE_TARGET_MACHINE_FONTS = 'UseTargetMachineFonts';
+    const TEXT_OUTPUT_MODE_USE_PLACED_GLYPHS = 'UsePlacedGlyphs';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTextOutputModeAllowableValues()
+    {
+        return [
+            self::TEXT_OUTPUT_MODE_USE_SVG_FONTS,
+            self::TEXT_OUTPUT_MODE_USE_TARGET_MACHINE_FONTS,
+            self::TEXT_OUTPUT_MODE_USE_PLACED_GLYPHS
+        ];
+    }
 
     /*
      * Constructor
@@ -205,6 +221,15 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getTextOutputModeAllowableValues();
+        if (!in_array($this->container['text_output_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'text_output_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -219,6 +244,12 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         if (!parent::valid()) {
             return false;
         }
+
+        $allowedValues = $this->getTextOutputModeAllowableValues();
+        if (!in_array($this->container['text_output_mode'], $allowedValues)) {
+            return false;
+        }
+
 
         return true;
     }
@@ -362,6 +393,10 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setTextOutputMode($text_output_mode)
     {
+        $allowedValues = $this->getTextOutputModeAllowableValues();
+        if ((!is_numeric($text_output_mode) && !in_array($text_output_mode, $allowedValues)) || (is_numeric($text_output_mode) && !in_array($allowedValues[$text_output_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'text_output_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['text_output_mode'] = $text_output_mode;
         return $this;
     }

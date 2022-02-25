@@ -217,7 +217,37 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const FONT_FORMAT_WOFF = 'Woff';
+    const FONT_FORMAT_TTF = 'Ttf';
+    const PAGE_HORIZONTAL_ALIGNMENT_LEFT = 'Left';
+    const PAGE_HORIZONTAL_ALIGNMENT_CENTER = 'Center';
+    const PAGE_HORIZONTAL_ALIGNMENT_RIGHT = 'Right';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getFontFormatAllowableValues()
+    {
+        return [
+            self::FONT_FORMAT_WOFF,
+            self::FONT_FORMAT_TTF
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPageHorizontalAlignmentAllowableValues()
+    {
+        return [
+            self::PAGE_HORIZONTAL_ALIGNMENT_LEFT,
+            self::PAGE_HORIZONTAL_ALIGNMENT_CENTER,
+            self::PAGE_HORIZONTAL_ALIGNMENT_RIGHT
+        ];
+    }
 
     /*
      * Constructor
@@ -253,6 +283,23 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getFontFormatAllowableValues();
+        if (!in_array($this->container['font_format'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'font_format', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getPageHorizontalAlignmentAllowableValues();
+        if (!in_array($this->container['page_horizontal_alignment'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'page_horizontal_alignment', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -267,6 +314,17 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         if (!parent::valid()) {
             return false;
         }
+
+        $allowedValues = $this->getFontFormatAllowableValues();
+        if (!in_array($this->container['font_format'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getPageHorizontalAlignmentAllowableValues();
+        if (!in_array($this->container['page_horizontal_alignment'], $allowedValues)) {
+            return false;
+        }
+
 
         return true;
     }
@@ -434,6 +492,10 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setFontFormat($font_format)
     {
+        $allowedValues = $this->getFontFormatAllowableValues();
+        if ((!is_numeric($font_format) && !in_array($font_format, $allowedValues)) || (is_numeric($font_format) && !in_array($allowedValues[$font_format], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'font_format', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['font_format'] = $font_format;
         return $this;
     }
@@ -458,6 +520,10 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setPageHorizontalAlignment($page_horizontal_alignment)
     {
+        $allowedValues = $this->getPageHorizontalAlignmentAllowableValues();
+        if ((!is_numeric($page_horizontal_alignment) && !in_array($page_horizontal_alignment, $allowedValues)) || (is_numeric($page_horizontal_alignment) && !in_array($allowedValues[$page_horizontal_alignment], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'page_horizontal_alignment', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['page_horizontal_alignment'] = $page_horizontal_alignment;
         return $this;
     }

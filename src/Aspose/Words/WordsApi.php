@@ -37,11 +37,12 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Words\Model\Requests;
 use phpseclib3\Crypt\PublicKeyLoader;
 use phpseclib3\Math\BigInteger;
+use Aspose\Words\Encryptor;
 
 /*
  * WordsApi Aspose.Words for Cloud API.
  */
-class WordsApi
+class WordsApi implements Encryptor
 {
     /*
      * Stores client instance
@@ -54,6 +55,12 @@ class WordsApi
      * @var Configuration configuration info
      */
     protected $config;
+
+    /*
+     * Stores RSA key
+     * @var phpseclib3\Crypt\Common\AsymmetricKey RSA key
+     */
+    protected $rsaKey;
 
     /*
      * Initialize a new instance of WordsApi
@@ -73,11 +80,12 @@ class WordsApi
 
         $this->client = new Client();
         $this->config = new Configuration($clientId, $clientSecret);
+        $this->config->setEncryptor($this);
         if (!empty($baseUrl))
         {
             $this->config->setHost($baseUrl);
         }
-        $this->_checkRsaKey();
+        $this->_checkAuthToken();
     }
 
     /*
@@ -50477,6 +50485,43 @@ class WordsApi
     }
 
     /*
+     * data encrypting
+     *
+     * @param data string to encrypt
+     * @param display intermediate results or not
+     *
+     * @throws \InvalidArgumentException
+     * @return encrypted data as base64 encoded string
+     */
+    public function encrypt($data)
+    {
+        if (!isSet( $data ) || empty( $data ) )
+        {
+            return $data;
+        }
+
+        if (!isset($this->rsaKey))
+        {
+            $exponent = (null !== $this->config->getExponent()) &&  !empty($this->config->getExponent()) ? $this->config->getExponent() : null;
+            $modulus = (null !== $this->config->getModulus()) &&  !empty($this->config->getModulus()) ? $this->config->getModulus() : null;
+
+            if ( !isset($modulus) || !isset($exponent)  )
+            {
+                $response = $this->getPublicKey(new Requests\GetPublicKeyRequest());
+                $exponent = $response->getExponent();
+                $modulus = $response->getModulues();
+            }
+
+            $this->rsaKey = PublicKeyLoader::load([
+                'e' => new BigInteger(base64_decode($exponent), 256),
+                'n' => new BigInteger(base64_decode($modulus), 256)
+            ]);
+        }
+
+        return base64_encode(RSA::loadPublicKey($this->rsaKey)->withPadding(RSA::ENCRYPTION_PKCS1)->encrypt($data));
+    }
+
+    /*
      * Async operation batch requests
      *
      * @param array of requests
@@ -50646,24 +50691,6 @@ class WordsApi
     {
         if ($this->config->getAccessToken() === "") {
             $this->_requestToken();
-        }
-    }
-
-    private function _getKey()
-    {
-        $this->_checkAuthToken();
-        $data = $this->getPublicKey(new Requests\GetPublicKeyRequest());
-        $this->config->setRsaKey(PublicKeyLoader::load([
-            'e' => new BigInteger(base64_decode($data->getExponent()), 256),
-            'n' => new BigInteger(base64_decode($data->getModulus()), 256)
-        ]));
-    }
-
-    private function _checkRsaKey()
-    {
-        if (empty($this->config->getRsaKey()))
-        {
-            $this->_getKey();
         }
     }
 }

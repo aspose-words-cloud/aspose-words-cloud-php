@@ -54,7 +54,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
     protected static $swaggerTypes = [
         'encryption_algorithm' => 'string',
         'owner_password' => 'string',
-        'permissions' => 'string',
+        'permissions' => 'string[]',
         'user_password' => 'string'
     ];
 
@@ -168,7 +168,21 @@ class PdfEncryptionDetailsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const ENCRYPTION_ALGORITHM_R_C4_40 = 'RC4_40';
+    const ENCRYPTION_ALGORITHM_R_C4_128 = 'RC4_128';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEncryptionAlgorithmAllowableValues()
+    {
+        return [
+            self::ENCRYPTION_ALGORITHM_R_C4_40,
+            self::ENCRYPTION_ALGORITHM_R_C4_128
+        ];
+    }
 
     /*
      * Associative array for storing property values
@@ -200,6 +214,15 @@ class PdfEncryptionDetailsData implements ArrayAccess
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getEncryptionAlgorithmAllowableValues();
+        if (!in_array($this->container['encryption_algorithm'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'encryption_algorithm', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -211,6 +234,12 @@ class PdfEncryptionDetailsData implements ArrayAccess
      */
     public function valid()
     {
+        $allowedValues = $this->getEncryptionAlgorithmAllowableValues();
+        if (!in_array($this->container['encryption_algorithm'], $allowedValues)) {
+            return false;
+        }
+
+
         return true;
     }
 
@@ -233,6 +262,10 @@ class PdfEncryptionDetailsData implements ArrayAccess
      */
     public function setEncryptionAlgorithm($encryption_algorithm)
     {
+        $allowedValues = $this->getEncryptionAlgorithmAllowableValues();
+        if ((!is_numeric($encryption_algorithm) && !in_array($encryption_algorithm, $allowedValues)) || (is_numeric($encryption_algorithm) && !in_array($allowedValues[$encryption_algorithm], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'encryption_algorithm', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['encryption_algorithm'] = $encryption_algorithm;
         return $this;
     }
@@ -265,7 +298,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
     /*
      * Gets permissions
      *
-     * @return string
+     * @return string[]
      */
     public function getPermissions()
     {
@@ -275,12 +308,16 @@ class PdfEncryptionDetailsData implements ArrayAccess
     /*
      * Sets permissions
      *
-     * @param string $permissions Gets or sets the operations that are allowed to a user on the encrypted PDF document.
+     * @param string[] $permissions Gets or sets the operations that are allowed to a user on the encrypted PDF document.
      *
      * @return $this
      */
     public function setPermissions($permissions)
     {
+        $allowedValues = $this->getPermissionsAllowableValues();
+        if (!is_null($permissions) && array_diff($permissions, $allowedValues)) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'permissions', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['permissions'] = $permissions;
         return $this;
     }

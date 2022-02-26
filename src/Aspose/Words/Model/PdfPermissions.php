@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="LoadWebDocumentTests.php">
+ * <copyright company="Aspose" file="PdfPermissions.php">
  *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,43 +26,47 @@
  * --------------------------------------------------------------------------------
  */
 
-namespace Aspose\Words\Tests;
-
-use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{LoadWebDocumentRequest};
-use Aspose\Words\Model\{DocSaveOptionsData, LoadWebDocumentData};
-use PHPUnit\Framework\Assert;
+namespace Aspose\Words\Model;
+use \Aspose\Words\ObjectSerializer;
 
 /*
- * Example of how to load web document.
+ * PdfPermissions
+ *
+ * @description Specifies the operations that are allowed to a user on an encrypted PDF document.
  */
-class LoadWebDocumentTests extends BaseTestContext
+class PdfPermissions
 {
     /*
-     * Test for loading web document.
+     * Possible values of this enum
      */
-    public function testLoadWebDocument()
-    {
-        $requestDataSaveOptions = new DocSaveOptionsData(array(
-            "file_name" => "google.doc",
-            "dml_effects_rendering_mode" => "None",
-            "dml_rendering_mode" => "DrawingML",
-            "update_sdt_content" => false,
-            "zip_output" => false,
-        ));
-        $requestData = new LoadWebDocumentData(array(
-            "loading_document_url" => "http://google.com",
-            "save_options" => $requestDataSaveOptions,
-        ));
-        $request = new LoadWebDocumentRequest(
-            $requestData,
-            NULL
-        );
+    const DISALLOW_ALL = 'DisallowAll';
+    const PRINTING = 'Printing';
+    const MODIFY_CONTENTS = 'ModifyContents';
+    const CONTENT_COPY = 'ContentCopy';
+    const MODIFY_ANNOTATIONS = 'ModifyAnnotations';
+    const FILL_IN = 'FillIn';
+    const CONTENT_COPY_FOR_ACCESSIBILITY = 'ContentCopyForAccessibility';
+    const DOCUMENT_ASSEMBLY = 'DocumentAssembly';
+    const HIGH_RESOLUTION_PRINTING = 'HighResolutionPrinting';
+    const ALLOW_ALL = 'AllowAll';
 
-        $result = $this->words->loadWebDocument($request);
-        Assert::assertTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getSaveResult());
-        Assert::assertNotNull($result->getSaveResult()->getDestDocument());
-        Assert::assertEquals("google.doc", $result->getSaveResult()->getDestDocument()->getHref());
+    /*
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public static function getAllowableEnumValues()
+    {
+        return [
+            self::DISALLOW_ALL,
+            self::PRINTING,
+            self::MODIFY_CONTENTS,
+            self::CONTENT_COPY,
+            self::MODIFY_ANNOTATIONS,
+            self::FILL_IN,
+            self::CONTENT_COPY_FOR_ACCESSIBILITY,
+            self::DOCUMENT_ASSEMBLY,
+            self::HIGH_RESOLUTION_PRINTING,
+            self::ALLOW_ALL
+        ];
     }
 }

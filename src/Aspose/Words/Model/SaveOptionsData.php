@@ -225,6 +225,13 @@ abstract class SaveOptionsData implements ArrayAccess
 
     const DML3_D_EFFECTS_RENDERING_MODE_BASIC = 'Basic';
     const DML3_D_EFFECTS_RENDERING_MODE_ADVANCED = 'Advanced';
+    const DML_EFFECTS_RENDERING_MODE_SIMPLIFIED = 'Simplified';
+    const DML_EFFECTS_RENDERING_MODE_NONE = 'None';
+    const DML_EFFECTS_RENDERING_MODE_FINE = 'Fine';
+    const DML_RENDERING_MODE_FALLBACK = 'Fallback';
+    const DML_RENDERING_MODE_DRAWING_ML = 'DrawingML';
+    const IML_RENDERING_MODE_FALLBACK = 'Fallback';
+    const IML_RENDERING_MODE_INK_ML = 'InkML';
 
     /*
      * Gets allowable values of the enum
@@ -236,6 +243,43 @@ abstract class SaveOptionsData implements ArrayAccess
         return [
             self::DML3_D_EFFECTS_RENDERING_MODE_BASIC,
             self::DML3_D_EFFECTS_RENDERING_MODE_ADVANCED
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDmlEffectsRenderingModeAllowableValues()
+    {
+        return [
+            self::DML_EFFECTS_RENDERING_MODE_SIMPLIFIED,
+            self::DML_EFFECTS_RENDERING_MODE_NONE,
+            self::DML_EFFECTS_RENDERING_MODE_FINE
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDmlRenderingModeAllowableValues()
+    {
+        return [
+            self::DML_RENDERING_MODE_FALLBACK,
+            self::DML_RENDERING_MODE_DRAWING_ML
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getImlRenderingModeAllowableValues()
+    {
+        return [
+            self::IML_RENDERING_MODE_FALLBACK,
+            self::IML_RENDERING_MODE_INK_ML
         ];
     }
 
@@ -288,6 +332,30 @@ abstract class SaveOptionsData implements ArrayAccess
             );
         }
 
+        $allowedValues = $this->getDmlEffectsRenderingModeAllowableValues();
+        if (!in_array($this->container['dml_effects_rendering_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'dml_effects_rendering_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getDmlRenderingModeAllowableValues();
+        if (!in_array($this->container['dml_rendering_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'dml_rendering_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getImlRenderingModeAllowableValues();
+        if (!in_array($this->container['iml_rendering_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'iml_rendering_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
 
         return $invalidProperties;
     }
@@ -302,6 +370,21 @@ abstract class SaveOptionsData implements ArrayAccess
     {
         $allowedValues = $this->getDml3DEffectsRenderingModeAllowableValues();
         if (!in_array($this->container['dml3_d_effects_rendering_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getDmlEffectsRenderingModeAllowableValues();
+        if (!in_array($this->container['dml_effects_rendering_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getDmlRenderingModeAllowableValues();
+        if (!in_array($this->container['dml_rendering_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getImlRenderingModeAllowableValues();
+        if (!in_array($this->container['iml_rendering_mode'], $allowedValues)) {
             return false;
         }
 
@@ -404,6 +487,10 @@ abstract class SaveOptionsData implements ArrayAccess
      */
     public function setDmlEffectsRenderingMode($dml_effects_rendering_mode)
     {
+        $allowedValues = $this->getDmlEffectsRenderingModeAllowableValues();
+        if ((!is_numeric($dml_effects_rendering_mode) && !in_array($dml_effects_rendering_mode, $allowedValues)) || (is_numeric($dml_effects_rendering_mode) && !in_array($allowedValues[$dml_effects_rendering_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'dml_effects_rendering_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['dml_effects_rendering_mode'] = $dml_effects_rendering_mode;
         return $this;
     }
@@ -428,6 +515,10 @@ abstract class SaveOptionsData implements ArrayAccess
      */
     public function setDmlRenderingMode($dml_rendering_mode)
     {
+        $allowedValues = $this->getDmlRenderingModeAllowableValues();
+        if ((!is_numeric($dml_rendering_mode) && !in_array($dml_rendering_mode, $allowedValues)) || (is_numeric($dml_rendering_mode) && !in_array($allowedValues[$dml_rendering_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'dml_rendering_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['dml_rendering_mode'] = $dml_rendering_mode;
         return $this;
     }
@@ -500,6 +591,10 @@ abstract class SaveOptionsData implements ArrayAccess
      */
     public function setImlRenderingMode($iml_rendering_mode)
     {
+        $allowedValues = $this->getImlRenderingModeAllowableValues();
+        if ((!is_numeric($iml_rendering_mode) && !in_array($iml_rendering_mode, $allowedValues)) || (is_numeric($iml_rendering_mode) && !in_array($allowedValues[$iml_rendering_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'iml_rendering_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['iml_rendering_mode'] = $iml_rendering_mode;
         return $this;
     }

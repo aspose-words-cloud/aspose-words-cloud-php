@@ -272,10 +272,82 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const COMPLIANCE_PDF17 = 'Pdf17';
+    const COMPLIANCE_PDF15 = 'Pdf15';
+    const COMPLIANCE_PDF_A1A = 'PdfA1a';
+    const COMPLIANCE_PDF_A1B = 'PdfA1b';
+    const COMPLIANCE_PDF_A2A = 'PdfA2a';
+    const COMPLIANCE_PDF_A2U = 'PdfA2u';
+    const COMPLIANCE_PDF_UA1 = 'PdfUa1';
+    const CUSTOM_PROPERTIES_EXPORT_NONE = 'None';
+    const CUSTOM_PROPERTIES_EXPORT_STANDARD = 'Standard';
+    const CUSTOM_PROPERTIES_EXPORT_METADATA = 'Metadata';
+    const FONT_EMBEDDING_MODE_EMBED_ALL = 'EmbedAll';
+    const FONT_EMBEDDING_MODE_EMBED_NONSTANDARD = 'EmbedNonstandard';
+    const FONT_EMBEDDING_MODE_EMBED_NONE = 'EmbedNone';
     const HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_NONE = 'None';
     const HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_FIRST = 'First';
     const HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_ALL = 'All';
+    const IMAGE_COLOR_SPACE_EXPORT_MODE_AUTO = 'Auto';
+    const IMAGE_COLOR_SPACE_EXPORT_MODE_SIMPLE_CMYK = 'SimpleCmyk';
+    const PAGE_MODE_USE_NONE = 'UseNone';
+    const PAGE_MODE_USE_OUTLINES = 'UseOutlines';
+    const PAGE_MODE_USE_THUMBS = 'UseThumbs';
+    const PAGE_MODE_FULL_SCREEN = 'FullScreen';
+    const PAGE_MODE_USE_OC = 'UseOC';
+    const PAGE_MODE_USE_ATTACHMENTS = 'UseAttachments';
+    const TEXT_COMPRESSION_NONE = 'None';
+    const TEXT_COMPRESSION_FLATE = 'Flate';
+    const ZOOM_BEHAVIOR_NONE = 'None';
+    const ZOOM_BEHAVIOR_ZOOM_FACTOR = 'ZoomFactor';
+    const ZOOM_BEHAVIOR_FIT_PAGE = 'FitPage';
+    const ZOOM_BEHAVIOR_FIT_WIDTH = 'FitWidth';
+    const ZOOM_BEHAVIOR_FIT_HEIGHT = 'FitHeight';
+    const ZOOM_BEHAVIOR_FIT_BOX = 'FitBox';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getComplianceAllowableValues()
+    {
+        return [
+            self::COMPLIANCE_PDF17,
+            self::COMPLIANCE_PDF15,
+            self::COMPLIANCE_PDF_A1A,
+            self::COMPLIANCE_PDF_A1B,
+            self::COMPLIANCE_PDF_A2A,
+            self::COMPLIANCE_PDF_A2U,
+            self::COMPLIANCE_PDF_UA1
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCustomPropertiesExportAllowableValues()
+    {
+        return [
+            self::CUSTOM_PROPERTIES_EXPORT_NONE,
+            self::CUSTOM_PROPERTIES_EXPORT_STANDARD,
+            self::CUSTOM_PROPERTIES_EXPORT_METADATA
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getFontEmbeddingModeAllowableValues()
+    {
+        return [
+            self::FONT_EMBEDDING_MODE_EMBED_ALL,
+            self::FONT_EMBEDDING_MODE_EMBED_NONSTANDARD,
+            self::FONT_EMBEDDING_MODE_EMBED_NONE
+        ];
+    }
     /*
      * Gets allowable values of the enum
      *
@@ -287,6 +359,62 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
             self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_NONE,
             self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_FIRST,
             self::HEADER_FOOTER_BOOKMARKS_EXPORT_MODE_ALL
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getImageColorSpaceExportModeAllowableValues()
+    {
+        return [
+            self::IMAGE_COLOR_SPACE_EXPORT_MODE_AUTO,
+            self::IMAGE_COLOR_SPACE_EXPORT_MODE_SIMPLE_CMYK
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPageModeAllowableValues()
+    {
+        return [
+            self::PAGE_MODE_USE_NONE,
+            self::PAGE_MODE_USE_OUTLINES,
+            self::PAGE_MODE_USE_THUMBS,
+            self::PAGE_MODE_FULL_SCREEN,
+            self::PAGE_MODE_USE_OC,
+            self::PAGE_MODE_USE_ATTACHMENTS
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTextCompressionAllowableValues()
+    {
+        return [
+            self::TEXT_COMPRESSION_NONE,
+            self::TEXT_COMPRESSION_FLATE
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getZoomBehaviorAllowableValues()
+    {
+        return [
+            self::ZOOM_BEHAVIOR_NONE,
+            self::ZOOM_BEHAVIOR_ZOOM_FACTOR,
+            self::ZOOM_BEHAVIOR_FIT_PAGE,
+            self::ZOOM_BEHAVIOR_FIT_WIDTH,
+            self::ZOOM_BEHAVIOR_FIT_HEIGHT,
+            self::ZOOM_BEHAVIOR_FIT_BOX
         ];
     }
 
@@ -335,10 +463,66 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getComplianceAllowableValues();
+        if (!in_array($this->container['compliance'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'compliance', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getCustomPropertiesExportAllowableValues();
+        if (!in_array($this->container['custom_properties_export'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'custom_properties_export', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getFontEmbeddingModeAllowableValues();
+        if (!in_array($this->container['font_embedding_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'font_embedding_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getHeaderFooterBookmarksExportModeAllowableValues();
         if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValues)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'header_footer_bookmarks_export_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getImageColorSpaceExportModeAllowableValues();
+        if (!in_array($this->container['image_color_space_export_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'image_color_space_export_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getPageModeAllowableValues();
+        if (!in_array($this->container['page_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'page_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTextCompressionAllowableValues();
+        if (!in_array($this->container['text_compression'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'text_compression', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getZoomBehaviorAllowableValues();
+        if (!in_array($this->container['zoom_behavior'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'zoom_behavior', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -359,8 +543,43 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
             return false;
         }
 
+        $allowedValues = $this->getComplianceAllowableValues();
+        if (!in_array($this->container['compliance'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getCustomPropertiesExportAllowableValues();
+        if (!in_array($this->container['custom_properties_export'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getFontEmbeddingModeAllowableValues();
+        if (!in_array($this->container['font_embedding_mode'], $allowedValues)) {
+            return false;
+        }
+
         $allowedValues = $this->getHeaderFooterBookmarksExportModeAllowableValues();
         if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getImageColorSpaceExportModeAllowableValues();
+        if (!in_array($this->container['image_color_space_export_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getPageModeAllowableValues();
+        if (!in_array($this->container['page_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getTextCompressionAllowableValues();
+        if (!in_array($this->container['text_compression'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getZoomBehaviorAllowableValues();
+        if (!in_array($this->container['zoom_behavior'], $allowedValues)) {
             return false;
         }
 
@@ -387,6 +606,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setCompliance($compliance)
     {
+        $allowedValues = $this->getComplianceAllowableValues();
+        if ((!is_numeric($compliance) && !in_array($compliance, $allowedValues)) || (is_numeric($compliance) && !in_array($allowedValues[$compliance], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'compliance', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['compliance'] = $compliance;
         return $this;
     }
@@ -435,6 +658,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setCustomPropertiesExport($custom_properties_export)
     {
+        $allowedValues = $this->getCustomPropertiesExportAllowableValues();
+        if ((!is_numeric($custom_properties_export) && !in_array($custom_properties_export, $allowedValues)) || (is_numeric($custom_properties_export) && !in_array($allowedValues[$custom_properties_export], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'custom_properties_export', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['custom_properties_export'] = $custom_properties_export;
         return $this;
     }
@@ -627,6 +854,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setFontEmbeddingMode($font_embedding_mode)
     {
+        $allowedValues = $this->getFontEmbeddingModeAllowableValues();
+        if ((!is_numeric($font_embedding_mode) && !in_array($font_embedding_mode, $allowedValues)) || (is_numeric($font_embedding_mode) && !in_array($allowedValues[$font_embedding_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'font_embedding_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['font_embedding_mode'] = $font_embedding_mode;
         return $this;
     }
@@ -679,6 +910,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setImageColorSpaceExportMode($image_color_space_export_mode)
     {
+        $allowedValues = $this->getImageColorSpaceExportModeAllowableValues();
+        if ((!is_numeric($image_color_space_export_mode) && !in_array($image_color_space_export_mode, $allowedValues)) || (is_numeric($image_color_space_export_mode) && !in_array($allowedValues[$image_color_space_export_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'image_color_space_export_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['image_color_space_export_mode'] = $image_color_space_export_mode;
         return $this;
     }
@@ -799,6 +1034,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setPageMode($page_mode)
     {
+        $allowedValues = $this->getPageModeAllowableValues();
+        if ((!is_numeric($page_mode) && !in_array($page_mode, $allowedValues)) || (is_numeric($page_mode) && !in_array($allowedValues[$page_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'page_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['page_mode'] = $page_mode;
         return $this;
     }
@@ -871,6 +1110,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setTextCompression($text_compression)
     {
+        $allowedValues = $this->getTextCompressionAllowableValues();
+        if ((!is_numeric($text_compression) && !in_array($text_compression, $allowedValues)) || (is_numeric($text_compression) && !in_array($allowedValues[$text_compression], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'text_compression', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['text_compression'] = $text_compression;
         return $this;
     }
@@ -943,6 +1186,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      */
     public function setZoomBehavior($zoom_behavior)
     {
+        $allowedValues = $this->getZoomBehaviorAllowableValues();
+        if ((!is_numeric($zoom_behavior) && !in_array($zoom_behavior, $allowedValues)) || (is_numeric($zoom_behavior) && !in_array($allowedValues[$zoom_behavior], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'zoom_behavior', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['zoom_behavior'] = $zoom_behavior;
         return $this;
     }

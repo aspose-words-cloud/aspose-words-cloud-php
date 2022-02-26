@@ -162,7 +162,41 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const TIFF_BINARIZATION_METHOD_THRESHOLD = 'Threshold';
+    const TIFF_BINARIZATION_METHOD_FLOYD_STEINBERG_DITHERING = 'FloydSteinbergDithering';
+    const TIFF_COMPRESSION_NONE = 'None';
+    const TIFF_COMPRESSION_RLE = 'Rle';
+    const TIFF_COMPRESSION_LZW = 'Lzw';
+    const TIFF_COMPRESSION_CCITT3 = 'Ccitt3';
+    const TIFF_COMPRESSION_CCITT4 = 'Ccitt4';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTiffBinarizationMethodAllowableValues()
+    {
+        return [
+            self::TIFF_BINARIZATION_METHOD_THRESHOLD,
+            self::TIFF_BINARIZATION_METHOD_FLOYD_STEINBERG_DITHERING
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTiffCompressionAllowableValues()
+    {
+        return [
+            self::TIFF_COMPRESSION_NONE,
+            self::TIFF_COMPRESSION_RLE,
+            self::TIFF_COMPRESSION_LZW,
+            self::TIFF_COMPRESSION_CCITT3,
+            self::TIFF_COMPRESSION_CCITT4
+        ];
+    }
 
     /*
      * Constructor
@@ -187,6 +221,23 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getTiffBinarizationMethodAllowableValues();
+        if (!in_array($this->container['tiff_binarization_method'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'tiff_binarization_method', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTiffCompressionAllowableValues();
+        if (!in_array($this->container['tiff_compression'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'tiff_compression', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -201,6 +252,17 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
         if (!parent::valid()) {
             return false;
         }
+
+        $allowedValues = $this->getTiffBinarizationMethodAllowableValues();
+        if (!in_array($this->container['tiff_binarization_method'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getTiffCompressionAllowableValues();
+        if (!in_array($this->container['tiff_compression'], $allowedValues)) {
+            return false;
+        }
+
 
         return true;
     }
@@ -248,6 +310,10 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
      */
     public function setTiffBinarizationMethod($tiff_binarization_method)
     {
+        $allowedValues = $this->getTiffBinarizationMethodAllowableValues();
+        if ((!is_numeric($tiff_binarization_method) && !in_array($tiff_binarization_method, $allowedValues)) || (is_numeric($tiff_binarization_method) && !in_array($allowedValues[$tiff_binarization_method], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'tiff_binarization_method', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['tiff_binarization_method'] = $tiff_binarization_method;
         return $this;
     }
@@ -272,6 +338,10 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
      */
     public function setTiffCompression($tiff_compression)
     {
+        $allowedValues = $this->getTiffCompressionAllowableValues();
+        if ((!is_numeric($tiff_compression) && !in_array($tiff_compression, $allowedValues)) || (is_numeric($tiff_compression) && !in_array($allowedValues[$tiff_compression], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'tiff_compression', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['tiff_compression'] = $tiff_compression;
         return $this;
     }

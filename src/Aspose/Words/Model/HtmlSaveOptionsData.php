@@ -345,6 +345,18 @@ class HtmlSaveOptionsData extends SaveOptionsData
     const CSS_STYLE_SHEET_TYPE_INLINE = 'Inline';
     const CSS_STYLE_SHEET_TYPE_EMBEDDED = 'Embedded';
     const CSS_STYLE_SHEET_TYPE_EXTERNAL = 'External';
+    const DOCUMENT_SPLIT_CRITERIA_NONE = 'None';
+    const DOCUMENT_SPLIT_CRITERIA_PAGE_BREAK = 'PageBreak';
+    const DOCUMENT_SPLIT_CRITERIA_COLUMN_BREAK = 'ColumnBreak';
+    const DOCUMENT_SPLIT_CRITERIA_SECTION_BREAK = 'SectionBreak';
+    const DOCUMENT_SPLIT_CRITERIA_HEADING_PARAGRAPH = 'HeadingParagraph';
+    const EXPORT_HEADERS_FOOTERS_MODE_NONE = 'None';
+    const EXPORT_HEADERS_FOOTERS_MODE_PER_SECTION = 'PerSection';
+    const EXPORT_HEADERS_FOOTERS_MODE_FIRST_SECTION_HEADER_LAST_SECTION_FOOTER = 'FirstSectionHeaderLastSectionFooter';
+    const EXPORT_HEADERS_FOOTERS_MODE_FIRST_PAGE_HEADER_FOOTER_PER_SECTION = 'FirstPageHeaderFooterPerSection';
+    const EXPORT_LIST_LABELS_AUTO = 'Auto';
+    const EXPORT_LIST_LABELS_AS_INLINE_TEXT = 'AsInlineText';
+    const EXPORT_LIST_LABELS_BY_HTML_TAGS = 'ByHtmlTags';
     const HTML_VERSION_XHTML = 'Xhtml';
     const HTML_VERSION_HTML5 = 'Html5';
     const METAFILE_FORMAT_PNG = 'Png';
@@ -353,6 +365,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
     const OFFICE_MATH_OUTPUT_MODE_IMAGE = 'Image';
     const OFFICE_MATH_OUTPUT_MODE_MATH_ML = 'MathML';
     const OFFICE_MATH_OUTPUT_MODE_TEXT = 'Text';
+    const TABLE_WIDTH_OUTPUT_MODE_ALL = 'All';
+    const TABLE_WIDTH_OUTPUT_MODE_RELATIVE_ONLY = 'RelativeOnly';
+    const TABLE_WIDTH_OUTPUT_MODE_NONE = 'None';
 
     /*
      * Gets allowable values of the enum
@@ -365,6 +380,48 @@ class HtmlSaveOptionsData extends SaveOptionsData
             self::CSS_STYLE_SHEET_TYPE_INLINE,
             self::CSS_STYLE_SHEET_TYPE_EMBEDDED,
             self::CSS_STYLE_SHEET_TYPE_EXTERNAL
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDocumentSplitCriteriaAllowableValues()
+    {
+        return [
+            self::DOCUMENT_SPLIT_CRITERIA_NONE,
+            self::DOCUMENT_SPLIT_CRITERIA_PAGE_BREAK,
+            self::DOCUMENT_SPLIT_CRITERIA_COLUMN_BREAK,
+            self::DOCUMENT_SPLIT_CRITERIA_SECTION_BREAK,
+            self::DOCUMENT_SPLIT_CRITERIA_HEADING_PARAGRAPH
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getExportHeadersFootersModeAllowableValues()
+    {
+        return [
+            self::EXPORT_HEADERS_FOOTERS_MODE_NONE,
+            self::EXPORT_HEADERS_FOOTERS_MODE_PER_SECTION,
+            self::EXPORT_HEADERS_FOOTERS_MODE_FIRST_SECTION_HEADER_LAST_SECTION_FOOTER,
+            self::EXPORT_HEADERS_FOOTERS_MODE_FIRST_PAGE_HEADER_FOOTER_PER_SECTION
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getExportListLabelsAllowableValues()
+    {
+        return [
+            self::EXPORT_LIST_LABELS_AUTO,
+            self::EXPORT_LIST_LABELS_AS_INLINE_TEXT,
+            self::EXPORT_LIST_LABELS_BY_HTML_TAGS
         ];
     }
     /*
@@ -403,6 +460,19 @@ class HtmlSaveOptionsData extends SaveOptionsData
             self::OFFICE_MATH_OUTPUT_MODE_IMAGE,
             self::OFFICE_MATH_OUTPUT_MODE_MATH_ML,
             self::OFFICE_MATH_OUTPUT_MODE_TEXT
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTableWidthOutputModeAllowableValues()
+    {
+        return [
+            self::TABLE_WIDTH_OUTPUT_MODE_ALL,
+            self::TABLE_WIDTH_OUTPUT_MODE_RELATIVE_ONLY,
+            self::TABLE_WIDTH_OUTPUT_MODE_NONE
         ];
     }
 
@@ -473,6 +543,30 @@ class HtmlSaveOptionsData extends SaveOptionsData
             );
         }
 
+        $allowedValues = $this->getDocumentSplitCriteriaAllowableValues();
+        if (!in_array($this->container['document_split_criteria'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'document_split_criteria', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
+        if (!in_array($this->container['export_headers_footers_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'export_headers_footers_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getExportListLabelsAllowableValues();
+        if (!in_array($this->container['export_list_labels'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'export_list_labels', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getHtmlVersionAllowableValues();
         if (!in_array($this->container['html_version'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -493,6 +587,14 @@ class HtmlSaveOptionsData extends SaveOptionsData
         if (!in_array($this->container['office_math_output_mode'], $allowedValues)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'office_math_output_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTableWidthOutputModeAllowableValues();
+        if (!in_array($this->container['table_width_output_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'table_width_output_mode', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -518,6 +620,21 @@ class HtmlSaveOptionsData extends SaveOptionsData
             return false;
         }
 
+        $allowedValues = $this->getDocumentSplitCriteriaAllowableValues();
+        if (!in_array($this->container['document_split_criteria'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
+        if (!in_array($this->container['export_headers_footers_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getExportListLabelsAllowableValues();
+        if (!in_array($this->container['export_list_labels'], $allowedValues)) {
+            return false;
+        }
+
         $allowedValues = $this->getHtmlVersionAllowableValues();
         if (!in_array($this->container['html_version'], $allowedValues)) {
             return false;
@@ -530,6 +647,11 @@ class HtmlSaveOptionsData extends SaveOptionsData
 
         $allowedValues = $this->getOfficeMathOutputModeAllowableValues();
         if (!in_array($this->container['office_math_output_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getTableWidthOutputModeAllowableValues();
+        if (!in_array($this->container['table_width_output_mode'], $allowedValues)) {
             return false;
         }
 
@@ -656,6 +778,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
      */
     public function setDocumentSplitCriteria($document_split_criteria)
     {
+        $allowedValues = $this->getDocumentSplitCriteriaAllowableValues();
+        if ((!is_numeric($document_split_criteria) && !in_array($document_split_criteria, $allowedValues)) || (is_numeric($document_split_criteria) && !in_array($allowedValues[$document_split_criteria], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'document_split_criteria', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['document_split_criteria'] = $document_split_criteria;
         return $this;
     }
@@ -824,6 +950,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
      */
     public function setExportHeadersFootersMode($export_headers_footers_mode)
     {
+        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
+        if ((!is_numeric($export_headers_footers_mode) && !in_array($export_headers_footers_mode, $allowedValues)) || (is_numeric($export_headers_footers_mode) && !in_array($allowedValues[$export_headers_footers_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'export_headers_footers_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['export_headers_footers_mode'] = $export_headers_footers_mode;
         return $this;
     }
@@ -896,6 +1026,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
      */
     public function setExportListLabels($export_list_labels)
     {
+        $allowedValues = $this->getExportListLabelsAllowableValues();
+        if ((!is_numeric($export_list_labels) && !in_array($export_list_labels, $allowedValues)) || (is_numeric($export_list_labels) && !in_array($allowedValues[$export_list_labels], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'export_list_labels', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['export_list_labels'] = $export_list_labels;
         return $this;
     }
@@ -1484,6 +1618,10 @@ class HtmlSaveOptionsData extends SaveOptionsData
      */
     public function setTableWidthOutputMode($table_width_output_mode)
     {
+        $allowedValues = $this->getTableWidthOutputModeAllowableValues();
+        if ((!is_numeric($table_width_output_mode) && !in_array($table_width_output_mode, $allowedValues)) || (is_numeric($table_width_output_mode) && !in_array($allowedValues[$table_width_output_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'table_width_output_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['table_width_output_mode'] = $table_width_output_mode;
         return $this;
     }

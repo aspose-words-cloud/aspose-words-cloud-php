@@ -273,7 +273,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     const COMPLIANCE_PDF17 = 'Pdf17';
-    const COMPLIANCE_PDF15 = 'Pdf15';
+    const COMPLIANCE_PDF20 = 'Pdf20';
     const COMPLIANCE_PDF_A1A = 'PdfA1a';
     const COMPLIANCE_PDF_A1B = 'PdfA1b';
     const COMPLIANCE_PDF_A2A = 'PdfA2a';
@@ -314,7 +314,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     {
         return [
             self::COMPLIANCE_PDF17,
-            self::COMPLIANCE_PDF15,
+            self::COMPLIANCE_PDF20,
             self::COMPLIANCE_PDF_A1A,
             self::COMPLIANCE_PDF_A1B,
             self::COMPLIANCE_PDF_A2A,

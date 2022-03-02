@@ -52,7 +52,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'encryption_algorithm' => 'string',
         'owner_password' => 'string',
         'permissions' => 'string[]',
         'user_password' => 'string'
@@ -64,7 +63,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'encryption_algorithm' => 'null',
         'owner_password' => 'null',
         'permissions' => 'null',
         'user_password' => 'null'
@@ -97,7 +95,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'encryption_algorithm' => 'EncryptionAlgorithm',
         'owner_password' => 'OwnerPassword',
         'permissions' => 'Permissions',
         'user_password' => 'UserPassword'
@@ -109,7 +106,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'encryption_algorithm' => 'setEncryptionAlgorithm',
         'owner_password' => 'setOwnerPassword',
         'permissions' => 'setPermissions',
         'user_password' => 'setUserPassword'
@@ -121,7 +117,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'encryption_algorithm' => 'getEncryptionAlgorithm',
         'owner_password' => 'getOwnerPassword',
         'permissions' => 'getPermissions',
         'user_password' => 'getUserPassword'
@@ -168,21 +163,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const ENCRYPTION_ALGORITHM_R_C4_40 = 'RC4_40';
-    const ENCRYPTION_ALGORITHM_R_C4_128 = 'RC4_128';
 
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getEncryptionAlgorithmAllowableValues()
-    {
-        return [
-            self::ENCRYPTION_ALGORITHM_R_C4_40,
-            self::ENCRYPTION_ALGORITHM_R_C4_128
-        ];
-    }
 
     /*
      * Associative array for storing property values
@@ -199,7 +180,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['encryption_algorithm'] = isset($data['encryption_algorithm']) ? $data['encryption_algorithm'] : null;
         $this->container['owner_password'] = isset($data['owner_password']) ? $data['owner_password'] : null;
         $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
         $this->container['user_password'] = isset($data['user_password']) ? $data['user_password'] : null;
@@ -214,15 +194,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getEncryptionAlgorithmAllowableValues();
-        if (!in_array($this->container['encryption_algorithm'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'encryption_algorithm', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
         return $invalidProperties;
     }
 
@@ -234,42 +205,8 @@ class PdfEncryptionDetailsData implements ArrayAccess
      */
     public function valid()
     {
-        $allowedValues = $this->getEncryptionAlgorithmAllowableValues();
-        if (!in_array($this->container['encryption_algorithm'], $allowedValues)) {
-            return false;
-        }
-
-
         return true;
     }
-
-    /*
-     * Gets encryption_algorithm
-     *
-     * @return string
-     */
-    public function getEncryptionAlgorithm()
-    {
-        return $this->container['encryption_algorithm'];
-    }
-
-    /*
-     * Sets encryption_algorithm
-     *
-     * @param string $encryption_algorithm Gets or sets the encryption algorithm to use.
-     *
-     * @return $this
-     */
-    public function setEncryptionAlgorithm($encryption_algorithm)
-    {
-        $allowedValues = $this->getEncryptionAlgorithmAllowableValues();
-        if ((!is_numeric($encryption_algorithm) && !in_array($encryption_algorithm, $allowedValues)) || (is_numeric($encryption_algorithm) && !in_array($allowedValues[$encryption_algorithm], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'encryption_algorithm', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-        $this->container['encryption_algorithm'] = $encryption_algorithm;
-        return $this;
-    }
-
 
     /*
      * Gets owner_password
